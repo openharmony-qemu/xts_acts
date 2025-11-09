@@ -109,12 +109,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "*************Unit Test end*************");
     })
     /**
-     * @tc.name  getRows errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10000
-     * @tc.desc getRows errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getRows errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode001 start *************");
@@ -135,12 +136,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode001 end *************");
     })
     /**
-     * @tc.name offsetAs errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10100
-     * @tc.desc offsetAs errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   offsetAs errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode002 start *************");
@@ -162,12 +164,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode002 end *************");
     })
     /**
-     * @tc.name on errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10200
-     * @tc.desc on errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   on errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode004 start *************");
@@ -183,12 +186,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode004 end *************");
     })
     /**
-     * @tc.name off errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10300
-     * @tc.desc off errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   off errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode005 start *************");
@@ -205,12 +209,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name off_statistics errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10400
-     * @tc.desc off_statistics errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   off_statistics errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode006 start *************");
@@ -226,12 +231,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode006 end *************");
     })
     /**
-     * @tc.name transaction.querySql rrcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10500
-     * @tc.desc transaction.querySql rrcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction.querySql rrcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode007 start *************");
@@ -250,12 +256,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name transaction.execute rrcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10600
-     * @tc.desc transaction.execute rrcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction.execute rrcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode008 start *************");
@@ -284,12 +291,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode008 end *************");
     })
     /**
-     * @tc.name transaction.executeSync errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10700
-     * @tc.desc transaction.executeSync errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction.executeSync errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode009 start *************");
@@ -318,14 +326,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode009 end *************");
     })
     /**
-
-     /**
-     * @tc.name transaction.executeSync errcode is 801
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10800
-     * @tc.desc transaction.executeSync errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction.executeSync errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode010 start *************");
@@ -355,12 +362,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name transaction.execute errcode is 801
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_10900
-     * @tc.desc transaction.execute errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction.execute errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode011 start *************");
@@ -389,12 +397,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode011 end *************");
     })
     /**
-     * @tc.name  getColumnNamee errcode is 14800014
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11000
-     * @tc.desc getColumnNamee errcode is 14800014
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getColumnNamee errcode is 14800014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode012 start *************");
@@ -416,12 +425,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name  getAssets errcode is 14800032
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11100
-     * @tc.desc getAssets errcode is 14800032
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getAssets errcode is 14800032
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode013 start *************");
@@ -445,12 +455,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode013 end *************");
     })
     /**
-     * @tc.name  getAssets errcode is 14800033
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11200
-     * @tc.desc getAssets errcode is 14800033
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getAssets errcode is 14800033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode014 start *************");
@@ -474,12 +485,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode014 end *************");
     })
     /**
-     * @tc.name  isColumnNull errcode is 14800032
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11300
-     * @tc.desc isColumnNull errcode is 14800032
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   isColumnNull errcode is 14800032
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode015 start *************");
@@ -512,12 +524,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode015 end *************");
     })
     /**
-     * @tc.name  isColumnNull errcode is 14800033
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11400
-     * @tc.desc isColumnNull errcode is 14800033
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   isColumnNull errcode is 14800033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode016 start *************");
@@ -550,12 +563,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode016 end *************");
     })
     /**
-     * @tc.name transaction.querySqlSync errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11500
-     * @tc.desc transaction.querySqlSync errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction.querySqlSync errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode017 start *************");
@@ -574,12 +588,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode017 end *************");
     })
     /**
-     * @tc.name rdbStore.querySync errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11600
-     * @tc.desc rdbStore.querySync errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.querySync errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode018 start *************");
@@ -595,12 +610,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode018 end *************");
     })
     /**
-     * @tc.name rdbStore.querySql errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11700
-     * @tc.desc rdbStore.querySql errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.querySql errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode019 start *************");
@@ -619,12 +635,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name rdbStore.querySql errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11800
-     * @tc.desc rdbStore.querySql errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.querySql errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode020 start *************");
@@ -640,12 +657,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode020 end *************");
     })
     /**
-     * @tc.name rdbStore.cloudSync errcode is 801
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_11900
-     * @tc.desc rdbStore.cloudSync errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.cloudSync errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode022 start *************");
@@ -663,12 +681,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode022 end *************");
     })
     /**
-     * @tc.name rdbStore.remoteQuery errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12000
-     * @tc.desc rdbStore.remoteQuery errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.remoteQuery errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode023 start *************");
@@ -686,12 +705,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode023 end *************");
     })
     /**
-     * @tc.name rdbStore.remoteQuery errcode is 401
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode024
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12100
-     * @tc.desc rdbStore.remoteQuery errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.remoteQuery errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode024 start *************");
@@ -722,12 +742,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode024 end *************");
     })
     /**
-     * @tc.name errcode025
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12200
-     * @tc.desc rdbStore.getModifyTime errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.getModifyTime errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode025 start *************");
@@ -742,12 +763,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode025 end *************");
     })
     /**
-     * @tc.name errcode026
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12300
-     * @tc.desc rdbStore.update errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.update errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode026 start *************");
@@ -764,12 +786,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode026 end *************");
     })
     /**
-     * @tc.name errcode027
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12400
-     * @tc.desc transaction.update errcode is 14800027
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   transaction.update errcode is 14800027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode027 start *************");
@@ -804,12 +827,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode027 end *************");
     })
     /**
-     * @tc.name errcode028
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12500
-     * @tc.desc rdbStore.update errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.update errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode028 start *************");
@@ -838,12 +862,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode028 end *************");
     })
     /**
-     * @tc.name errcode029
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12600
-     * @tc.desc rdbStore.insertSync errcode is 14800021
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.insertSync errcode is 14800021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode029 start *************");
@@ -866,12 +891,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name errcode030
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12700
-     * @tc.desc rdbStore.insertSync errcode is 14800021
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.insertSync errcode is 14800021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode030 start *************");
@@ -895,12 +921,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name errcode031
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12800
-     * @tc.desc rdbStore.insert errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.insert errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode031 start *************");
@@ -923,12 +950,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name errcode032
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_12900
-     * @tc.desc rdbStore.setDistributedTables callback errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.setDistributedTables callback errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode032 start *************");
@@ -951,12 +979,13 @@ export default function relationalStoreErrorCodeTest() {
     })
 
     /**
-     * @tc.name errcode033
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13000
-     * @tc.desc rdbStore.setDistributedTables promise errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.setDistributedTables promise errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode033 start *************");
@@ -977,12 +1006,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode033 end *************");
     })
     /**
-     * @tc.name errcode034
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13100
-     * @tc.desc rdbStore.setDistributedTables  errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.setDistributedTables  errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode034 start *************");
@@ -1001,12 +1031,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode034 end *************");
     })
     /**
-     * @tc.name errcode035
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13200
-     * @tc.desc rdbStore.setDistributedTables  errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.setDistributedTables  errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode035 start *************");
@@ -1024,12 +1055,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode035 end *************");
     })
     /**
-     * @tc.name errcode036
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode036
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13300
-     * @tc.desc rdbStore.setDistributedTables  errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.setDistributedTables  errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode036 start *************");
@@ -1047,12 +1079,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode036 end *************");
     })
     /**
-     * @tc.name errcode037
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode037
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13400
-     * @tc.desc rdbStore.setDistributedTables  errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.setDistributedTables  errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode037 start *************");
@@ -1070,12 +1103,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode037 end *************");
     })
     /**
-     * @tc.name errcode038
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode038
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13500
-     * @tc.desc rdbStore.setDistributedTables  errcode is 801
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.setDistributedTables  errcode is 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode038 start *************");
@@ -1094,12 +1128,13 @@ export default function relationalStoreErrorCodeTest() {
       console.info(TAG + "************* errcode038 end *************");
     })
     /**
-     * @tc.name errcode039
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode039
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_13600
-     * @tc.desc rdbStore.executeSql  errcode is 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rdbStore.executeSql  errcode is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode039 start *************");

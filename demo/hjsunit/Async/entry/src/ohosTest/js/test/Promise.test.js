@@ -15,6 +15,15 @@
 import {describe, it, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('promise', function () {
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   promiseDemo
+     * @tc.number promiseDemo
+     * @tc.desc   promiseDemo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('promiseDemo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         await new Promise(
             function (resolve, reject) {

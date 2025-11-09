@@ -89,12 +89,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0550
-     * @tc.name   : testResultSetColumnNames001
-     * @tc.desc   : ResultSet columnNames test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetColumnNames001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0550
+     * @tc.desc   ResultSet columnNames test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetColumnNames001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetColumnNames001 start *************");
@@ -111,12 +112,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0530
-     * @tc.name   : testResultSetColumnCount001
-     * @tc.desc   : ResultSet columnCount test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetColumnCount001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0530
+     * @tc.desc   ResultSet columnCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetColumnCount001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetColumnCount001 start *************");
@@ -133,12 +135,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0540
-     * @tc.name   : testResultSetColumnCount002
-     * @tc.desc   : ResultSet columnCount test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetColumnCount002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0540
+     * @tc.desc   ResultSet columnCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetColumnCount002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetColumnCount002 start *************");
@@ -156,12 +159,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1070
-     * @tc.name   : testResultSetRowCount001
-     * @tc.desc   : ResultSet rowCount test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetRowCount001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1070
+     * @tc.desc   ResultSet rowCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetRowCount001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetRowCount001 start *************");
@@ -176,12 +180,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0470
-     * @tc.name   : testResultSetRowCount002
-     * @tc.desc   : ResultSet rowCount test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetRowCount002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0470
+     * @tc.desc   ResultSet rowCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetRowCount002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetRowCount002 start *************");
@@ -197,12 +202,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0480
-     * @tc.name   : testResultSetRowCount003
-     * @tc.desc   : ResultSet rowCount test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetRowCount003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0480
+     * @tc.desc   ResultSet rowCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetRowCount003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetRowCount003 start *************");
@@ -218,12 +224,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1090
-     * @tc.name   : testResultSetRowCount004
-     * @tc.desc   : ResultSet rowCount test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetRowCount004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1090
+     * @tc.desc   ResultSet rowCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetRowCount004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetRowCount004 start *************");
@@ -240,12 +247,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0220
-     * @tc.name   : testResultSetRowIndex001
-     * @tc.desc   : ResultSet rowIndex test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetRowIndex001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0220
+     * @tc.desc   ResultSet rowIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetRowIndex001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetRowIndex001 *************");
@@ -272,12 +280,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0310
-     * @tc.name   : testResultSetRowIndex002
-     * @tc.desc   : ResultSet rowIndex test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetRowIndex002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0310
+     * @tc.desc   ResultSet rowIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetRowIndex002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetRowIndex002 *************");
@@ -300,12 +309,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0940
-     * @tc.name   : testResultSetIsAtFirstRow001
-     * @tc.desc   : ResultSet isAtFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtFirstRow001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0940
+     * @tc.desc   ResultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtFirstRow001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtFirstRow001 start *************");
@@ -332,12 +342,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0450
-     * @tc.name   : testResultSetIsAtFirstRow002
-     * @tc.desc   : ResultSet isAtFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtFirstRow002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0450
+     * @tc.desc   ResultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtFirstRow002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtFirstRow002 start *************");
@@ -354,12 +365,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0160
-     * @tc.name   : testResultSetIsAtFirstRow003
-     * @tc.desc   : ResultSet isAtFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtFirstRow003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0160
+     * @tc.desc   ResultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtFirstRow003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtFirstRow003 start *************");
@@ -387,12 +399,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0290
-     * @tc.name   : testResultSetIsAtFirstRow004
-     * @tc.desc   : ResultSet isAtFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtFirstRow004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0290
+     * @tc.desc   ResultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtFirstRow004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtFirstRow004 start *************");
@@ -415,12 +428,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0360
-     * @tc.name   : testResultSetIsAtFirstRow005
-     * @tc.desc   : ResultSet isAtFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtFirstRow005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0360
+     * @tc.desc   ResultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtFirstRow005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtFirstRow005 start *************");
@@ -448,12 +462,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number :  SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0340
-     * @tc.name   : testResultSetIsAtFirstRow006
-     * @tc.desc   : ResultSet isAtFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtFirstRow006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0340
+     * @tc.desc   ResultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtFirstRow006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtFirstRow006 start *************");
@@ -481,12 +496,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0960
-     * @tc.name   : testResultSetIsAtLastRow001
-     * @tc.desc   : ResultSet isAtLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtLastRow001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0960
+     * @tc.desc   ResultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtLastRow001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtLastRow001 start *************");
@@ -509,12 +525,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0460
-     * @tc.name   : testResultSetIsAtLastRow002
-     * @tc.desc   : ResultSet isAtLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtLastRow002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0460
+     * @tc.desc   ResultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtLastRow002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtLastRow002 start *************");
@@ -531,12 +548,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0140
-     * @tc.name   : testResultSetIsAtLastRow003
-     * @tc.desc   : ResultSet isAtLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtLastRow003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0140
+     * @tc.desc   ResultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtLastRow003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtLastRow003 start *************");
@@ -564,12 +582,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0200
-     * @tc.name   : testResultSetIsAtLastRow004
-     * @tc.desc   : ResultSet isAtLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtLastRow004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0200
+     * @tc.desc   ResultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtLastRow004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtLastRow004 start *************");
@@ -596,12 +615,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0370
-     * @tc.name   : testResultSetIsAtLastRow005
-     * @tc.desc   : ResultSet isAtLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtLastRow005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0370
+     * @tc.desc   ResultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtLastRow005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtLastRow005 start *************");
@@ -629,12 +649,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0350
-     * @tc.name   : testResultSetIsAtLastRow006
-     * @tc.desc   : ResultSet isAtLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsAtLastRow006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0350
+     * @tc.desc   ResultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsAtLastRow006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsAtLastRow006 start *************");
@@ -661,12 +682,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0210
-     * @tc.name   : testResultSetIsEnded001
-     * @tc.desc   : ResultSet isEnded test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsEnded001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0210
+     * @tc.desc   ResultSet isEnded test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsEnded001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       try {
@@ -696,12 +718,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0300
-     * @tc.name   : testResultSetIsEnded002
-     * @tc.desc   : ResultSet isEnded test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsEnded002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0300
+     * @tc.desc   ResultSet isEnded test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsEnded002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsEnded002 start *************");
@@ -722,12 +745,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0330
-     * @tc.name   : testResultSetIsEnded003
-     * @tc.desc   : ResultSet isEnded test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsEnded003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0330
+     * @tc.desc   ResultSet isEnded test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsEnded003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsEnded003 start *************");
@@ -742,12 +766,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0500
-     * @tc.name   : testResultSetIsStarted001
-     * @tc.desc   : ResultSet isStarted test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsStarted001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0500
+     * @tc.desc   ResultSet isStarted test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsStarted001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsStarted001 start *************");
@@ -761,12 +786,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0120
-     * @tc.name   : testResultSetIsStarted002
-     * @tc.desc   : ResultSet isStarted test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsStarted002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0120
+     * @tc.desc   ResultSet isStarted test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsStarted002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsStarted002 start *************");
@@ -781,12 +807,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0380
-     * @tc.name   : testResultSetIsStarted003
-     * @tc.desc   : ResultSet isStarted test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsStarted003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0380
+     * @tc.desc   ResultSet isStarted test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsStarted003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsStarted003 start *************");
@@ -803,12 +830,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0110
-     * @tc.name   : testResultSetIsClosed001
-     * @tc.desc   : ResultSet isClosed test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsClosed001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0110
+     * @tc.desc   ResultSet isClosed test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsClosed001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsClosed001 start *************");
@@ -825,12 +853,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0490
-     * @tc.name   : testResultSetIsClosed002
-     * @tc.desc   : ResultSet isClosed test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsClosed002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0490
+     * @tc.desc   ResultSet isClosed test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsClosed002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsClosed002 start *************");
@@ -845,12 +874,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number :  SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0390
-     * @tc.name   : testResultSetIsClosed003
-     * @tc.desc   : ResultSet isClosed test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsClosed003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0390
+     * @tc.desc   ResultSet isClosed test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsClosed003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsClosed003 start *************");
@@ -866,12 +896,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0660
-     * @tc.name   : testResultSetGetColumnIndex001
-     * @tc.desc   : ResultSet getColumnIndex test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetColumnIndex001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0660
+     * @tc.desc   ResultSet getColumnIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetColumnIndex001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetColumnIndex001 start *************");
@@ -889,12 +920,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0670
-     * @tc.name   : testResultSetGetColumnIndex002
-     * @tc.desc   : ResultSet getColumnIndex test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetColumnIndex002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0670
+     * @tc.desc   ResultSet getColumnIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetColumnIndex002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetColumnIndex002 start *************");
@@ -912,12 +944,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0650
-     * @tc.name   : testResultSetGetColumnIndex003
-     * @tc.desc   : ResultSet getColumnIndex test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetColumnIndex003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0650
+     * @tc.desc   ResultSet getColumnIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetColumnIndex003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetColumnIndex003 start *************");
@@ -934,12 +967,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0690
-     * @tc.name   : testResultSetGetColumnName001
-     * @tc.desc   : ResultSet getColumnName test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetColumnName001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0690
+     * @tc.desc   ResultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetColumnName001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetColumnName001 start *************");
@@ -958,12 +992,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0710
-     * @tc.name   : testResultSetGetColumnName002
-     * @tc.desc   : ResultSet getColumnName test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetColumnName002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0710
+     * @tc.desc   ResultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetColumnName002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetColumnName002 start *************");
@@ -983,12 +1018,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0680
-     * @tc.name   : testResultSetGetColumnName003
-     * @tc.desc   : ResultSet getColumnName test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetColumnName003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0680
+     * @tc.desc   ResultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetColumnName003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetColumnName003 start *************");
@@ -1006,12 +1042,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0700
-     * @tc.name   : testResultSetGetColumnName004
-     * @tc.desc   : ResultSet getColumnName test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetColumnName004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0700
+     * @tc.desc   ResultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetColumnName004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetColumnName004 start *************");
@@ -1030,12 +1067,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0130
-     * @tc.name   : testResultSetGoTo001
-     * @tc.desc   : ResultSet goTo test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoTo001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0130
+     * @tc.desc   ResultSet goTo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoTo001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoTo001 start *************");
@@ -1056,12 +1094,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0100
-     * @tc.name   : testResultSetGoTo002
-     * @tc.desc   : ResultSet goTo test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoTo002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0100
+     * @tc.desc   ResultSet goTo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoTo002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoTo002 start *************");
@@ -1081,12 +1120,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0170
-     * @tc.name   : testResultSetGoTo003
-     * @tc.desc   : ResultSet goTo test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoTo003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0170
+     * @tc.desc   ResultSet goTo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoTo003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoTo003 start *************");
@@ -1108,12 +1148,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0240
-     * @tc.name   : testResultSetGoTo004
-     * @tc.desc   : ResultSet goTo test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoTo004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0240
+     * @tc.desc   ResultSet goTo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoTo004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoTo004 start *************");
@@ -1135,12 +1176,13 @@ export default function rdbResultSetTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0190
-     * @tc.name   : testResultSetGoToRow001
-     * @tc.desc   : ResultSet goToRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToRow001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0190
+     * @tc.desc   ResultSet goToRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToRow001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToRow001 start *************");
@@ -1162,12 +1204,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0440
-     * @tc.name   : testResultSetGoToRow002
-     * @tc.desc   : ResultSet goToRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToRow002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0440
+     * @tc.desc   ResultSet goToRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToRow002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToRow002 start *************");
@@ -1189,12 +1232,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0230
-     * @tc.name   : testResultSetGoToRow003
-     * @tc.desc   : ResultSet goToRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToRow003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0230
+     * @tc.desc   ResultSet goToRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToRow003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToRow003 start *************");
@@ -1218,12 +1262,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0280
-     * @tc.name   : testResultSetGoToRow004
-     * @tc.desc   : ResultSet goToRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToRow004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0280
+     * @tc.desc   ResultSet goToRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToRow004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToRow004 start *************");
@@ -1246,12 +1291,13 @@ export default function rdbResultSetTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0950
-     * @tc.name   : testResultSetGoToFirstRow001
-     * @tc.desc   : ResultSet goToFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToFirstRow001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0950
+     * @tc.desc   ResultSet goToFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToFirstRow001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToFirstRow001 start *************");
@@ -1268,12 +1314,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0400
-     * @tc.name   : testResultSetGoToFirstRow002
-     * @tc.desc   : ResultSet goToFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToFirstRow002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0400
+     * @tc.desc   ResultSet goToFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToFirstRow002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToFirstRow002 start *************");
@@ -1290,12 +1337,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0150
-     * @tc.name   : testResultSetGoToFirstRow003
-     * @tc.desc   : ResultSet goToFirstRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToFirstRow003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0150
+     * @tc.desc   ResultSet goToFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToFirstRow003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToFirstRow003 start *************");
@@ -1314,12 +1362,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0970
-     * @tc.name   : testResultSetGoToLastRow001
-     * @tc.desc   : ResultSet goToLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToLastRow001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0970
+     * @tc.desc   ResultSet goToLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToLastRow001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToLastRow001 start *************");
@@ -1336,12 +1385,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0410
-     * @tc.name   : testResultSetGoToLastRow002
-     * @tc.desc   : ResultSet goToLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToLastRow002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0410
+     * @tc.desc   ResultSet goToLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToLastRow002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToLastRow002 start *************");
@@ -1358,12 +1408,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0250
-     * @tc.name   : testResultSetGoToLastRow003
-     * @tc.desc   : ResultSet goToLastRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToLastRow003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0250
+     * @tc.desc   ResultSet goToLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToLastRow003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToLastRow003 start *************");
@@ -1382,12 +1433,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0980
-     * @tc.name   : testResultSetGoToNextRow001
-     * @tc.desc   : ResultSet goToNextRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToNextRow001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0980
+     * @tc.desc   ResultSet goToNextRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToNextRow001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToNextRow001 start *************");
@@ -1403,12 +1455,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0420
-     * @tc.name   : testResultSetGoToNextRow002
-     * @tc.desc   : ResultSet goToNextRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToNextRow002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0420
+     * @tc.desc   ResultSet goToNextRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToNextRow002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToNextRow002 start *************");
@@ -1424,12 +1477,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1080
-     * @tc.name   : testResultSetGoToNextRow003
-     * @tc.desc   : ResultSet goToNextRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToNextRow003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1080
+     * @tc.desc   ResultSet goToNextRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToNextRow003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToNextRow003 start *************");
@@ -1448,12 +1502,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0260
-     * @tc.name   : testResultSetGoToNextRow004
-     * @tc.desc   : ResultSet goToNextRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToNextRow004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0260
+     * @tc.desc   ResultSet goToNextRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToNextRow004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToNextRow004 start *************");
@@ -1469,12 +1524,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0510
-     * @tc.name   : testResultSetGoToPreviousRow001
-     * @tc.desc   : ResultSet goToPreviousRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToPreviousRow001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0510
+     * @tc.desc   ResultSet goToPreviousRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToPreviousRow001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToPreviousRow001 start *************");
@@ -1489,12 +1545,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0430
-     * @tc.name   : testResultSetGoToPreviousRow002
-     * @tc.desc   : ResultSet goToPreviousRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToPreviousRow002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0430
+     * @tc.desc   ResultSet goToPreviousRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToPreviousRow002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToPreviousRow002 start *************");
@@ -1510,12 +1567,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0180
-     * @tc.name   : testResultSetGoToPreviousRow003
-     * @tc.desc   : ResultSet goToPreviousRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToPreviousRow003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0180
+     * @tc.desc   ResultSet goToPreviousRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToPreviousRow003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToPreviousRow003 start *************");
@@ -1534,12 +1592,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0270
-     * @tc.name   : testResultSetGoToPreviousRow004
-     * @tc.desc   : ResultSet goToPreviousRow test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGoToPreviousRow004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0270
+     * @tc.desc   ResultSet goToPreviousRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGoToPreviousRow004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGoToPreviousRow004 start *************");
@@ -1557,12 +1616,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0600
-     * @tc.name   : testResultSetGetBlob001
-     * @tc.desc   : ResultSet getBlob test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetBlob001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0600
+     * @tc.desc   ResultSet getBlob test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetBlob001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetBlob001 start *************");
@@ -1589,12 +1649,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0610
-     * @tc.name   : testResultSetGetBlob002
-     * @tc.desc   : ResultSet getBlob test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetBlob002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0610
+     * @tc.desc   ResultSet getBlob test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetBlob002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetBlob002 start *************");
@@ -1622,12 +1683,13 @@ export default function rdbResultSetTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0850
-     * @tc.name   : testResultSetGetString001
-     * @tc.desc   : ResultSet getString test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetString001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0850
+     * @tc.desc   ResultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetString001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetString001 start *************");
@@ -1650,12 +1712,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0860
-     * @tc.name   : testResultSetGetString002
-     * @tc.desc   : ResultSet getString test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetString002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0860
+     * @tc.desc   ResultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetString002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetString002 start *************");
@@ -1678,12 +1741,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0880
-     * @tc.name   : testResultSetGetString003
-     * @tc.desc   : ResultSet getString test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetString003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0880
+     * @tc.desc   ResultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetString003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetString003 start *************");
@@ -1706,12 +1770,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0870
-     * @tc.name   : testResultSetGetString004
-     * @tc.desc   : ResultSet getString test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetString004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0870
+     * @tc.desc   ResultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetString004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetString004 start *************");
@@ -1738,12 +1803,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0840
-     * @tc.name   : testResultSetGetLong001
-     * @tc.desc   : ResultSet getLong test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetLong001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0840
+     * @tc.desc   ResultSet getLong test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetLong001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetLong001 start *************");
@@ -1768,12 +1834,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0790
-     * @tc.name   : testResultSetGetLong002
-     * @tc.desc   : ResultSet getLong test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetLong002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0790
+     * @tc.desc   ResultSet getLong test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetLong002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetLong002 start *************");
@@ -1797,12 +1864,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0800
-     * @tc.name   : testResultSetGetLong003
-     * @tc.desc   : ResultSet getLong test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetLong003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0800
+     * @tc.desc   ResultSet getLong test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetLong003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetLong003 start *************");
@@ -1826,12 +1894,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0820
-     * @tc.name   : testResultSetGetLong004
-     * @tc.desc   : ResultSet getLong test null
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetLong004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0820
+     * @tc.desc   ResultSet getLong test null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetLong004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetLong004 start *************");
@@ -1855,12 +1924,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0810
-     * @tc.name   : testResultSetGetLong005
-     * @tc.desc   : ResultSet getLong test err parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetLong005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0810
+     * @tc.desc   ResultSet getLong test err parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetLong005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetLong005 start *************");
@@ -1884,12 +1954,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0830
-     * @tc.name   : testResultSetGetLong006
-     * @tc.desc   : ResultSet getLong test err typr parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetLong006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0830
+     * @tc.desc   ResultSet getLong test err typr parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetLong006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetLong006 start *************");
@@ -1914,12 +1985,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0730
-     * @tc.name   : testResultSetGetDouble001
-     * @tc.desc   : ResultSet getDouble test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetDouble001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0730
+     * @tc.desc   ResultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetDouble001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetDouble001 start *************");
@@ -1939,12 +2011,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0750
-     * @tc.name   : testResultSetGetDouble002
-     * @tc.desc   : ResultSet getDouble test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetDouble002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0750
+     * @tc.desc   ResultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetDouble002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetDouble002 start *************");
@@ -1964,12 +2037,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0740
-     * @tc.name   : testResultSetGetDouble003
-     * @tc.desc   : ResultSet getDouble test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetDouble003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0740
+     * @tc.desc   ResultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetDouble003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetDouble003 start *************");
@@ -1989,12 +2063,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0720
-     * @tc.name   : testResultSetGetDouble004
-     * @tc.desc   : ResultSet getDouble test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetDouble004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0720
+     * @tc.desc   ResultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetDouble004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetDouble004 start *************");
@@ -2014,12 +2089,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0770
-     * @tc.name   : testResultSetGetDouble005
-     * @tc.desc   : ResultSet getDouble test null
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetDouble005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0770
+     * @tc.desc   ResultSet getDouble test null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetDouble005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetDouble005 start *************");
@@ -2046,12 +2122,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0760
-     * @tc.name   : testResultSetGetDouble006 err parameter
-     * @tc.desc   : ResultSet getDouble test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetDouble006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0760
+     * @tc.desc   ResultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetDouble006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetDouble006 start *************");
@@ -2078,12 +2155,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0780
-     * @tc.name   : testResultSetGetDouble007
-     * @tc.desc   : ResultSet getDouble test err type parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetGetDouble007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0780
+     * @tc.desc   ResultSet getDouble test err type parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetGetDouble007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetGetDouble007 start *************");
@@ -2110,12 +2188,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1060
-     * @tc.name   : testResultSetIsColumnNull001
-     * @tc.desc   : ResultSet isColumnNull test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsColumnNull001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1060
+     * @tc.desc   ResultSet isColumnNull test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsColumnNull001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsColumnNull001 start *************");
@@ -2137,12 +2216,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1010
-     * @tc.name   : testResultSetIsColumnNull002
-     * @tc.desc   : ResultSet isColumnNull test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsColumnNull002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1010
+     * @tc.desc   ResultSet isColumnNull test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsColumnNull002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsColumnNull002 start *************");
@@ -2162,12 +2242,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1030
-     * @tc.name   : testResultSetIsColumnNull003
-     * @tc.desc   : ResultSet isColumnNull test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsColumnNull003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1030
+     * @tc.desc   ResultSet isColumnNull test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsColumnNull003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsColumnNull003 start *************");
@@ -2188,12 +2269,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1040
-     * @tc.name   : testResultSetIsColumnNull003
-     * @tc.desc   : ResultSet isColumnNull test null
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsColumnNull004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1040
+     * @tc.desc   ResultSet isColumnNull test null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsColumnNull004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsColumnNull004 start *************");
@@ -2219,12 +2301,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1020
-     * @tc.name   : testResultSetIsColumnNull005
-     * @tc.desc   : ResultSet isColumnNull test err parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsColumnNull005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1020
+     * @tc.desc   ResultSet isColumnNull test err parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsColumnNull005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsColumnNull005 start *************");
@@ -2250,12 +2333,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1050
-     * @tc.name   : testResultSetIsColumnNull006
-     * @tc.desc   : ResultSet isColumnNull test err type parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetIsColumnNull006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_1050
+     * @tc.desc   ResultSet isColumnNull test err type parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetIsColumnNull006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetIsColumnNull006 start *************");
@@ -2282,12 +2366,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0320
-     * @tc.name   : testResultSetClose001
-     * @tc.desc   : ResultSet close test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetClose001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0320
+     * @tc.desc   ResultSet close test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetClose001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetClose001 start *************");
@@ -2305,12 +2390,13 @@ export default function rdbResultSetTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0520
-     * @tc.name   : testResultSetClose002
-     * @tc.desc   : ResultSet close test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testResultSetClose002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0520
+     * @tc.desc   ResultSet close test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testResultSetClose002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testResultSetClose002 start *************");

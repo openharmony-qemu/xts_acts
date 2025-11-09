@@ -113,12 +113,13 @@ export default function objectStoreTestV9() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_001
-     * @tc.desc: object join session and on,object can receive callback when data has been changed
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2900
-     * @tc.type: Function
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_001
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2900
+     * @tc.desc   object join session and on,object can receive callback when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -161,12 +162,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_002
-     * @tc.desc: object join session and on,object can receive callback when data has been changed
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3000
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_002
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3000
+     * @tc.desc   object join session and on,object can receive callback when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -189,12 +191,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_003
-     * @tc.desc: object join session and on,object can receive callback when data has been changed
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_003
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3100
+     * @tc.desc   object join session and on,object can receive callback when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -223,12 +226,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_004
-     * @tc.desc: object join session and on,object can receive callback when data has been changed
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_004
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3200
+     * @tc.desc   object join session and on,object can receive callback when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -252,12 +256,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_005
-     * @tc.desc: object join session and on,object can receive callback when data has been changed
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3300
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_005
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3300
+     * @tc.desc   object join session and on,object can receive callback when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (done: Function) => {
@@ -291,12 +296,13 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_On_001
-     * @tc.desc: object join session and on,object can receive callback when data has been changed
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_On_001
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2100
+     * @tc.desc   object join session and on,object can receive callback when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_On_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_On_001 start *************");
@@ -340,12 +346,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_On_002
-     * @tc.desc: object join session and on,then object change data twice,object can receive two callbacks when data has been changed
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_On_002
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2200
+     * @tc.desc   object join session and on,then object change data twice,object can receive two callbacks when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_On_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_On_002 start *************");
@@ -379,12 +386,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_On_003
-     * @tc.desc object join session and on,then object do not change data,object can not receive callbacks
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1500
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_On_003
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1500
+     * @tc.desc   object join session and on,then object do not change data,object can not receive callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_On_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_On_003 start *************");
@@ -422,12 +430,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name SUB_DDM_AppDataFWK_Object_Api9_Off_001
-     * @tc.desc object join session and on&off,object can not receive callback after off
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2000
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Off_001
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2000
+     * @tc.desc   object join session and on&off,object can not receive callback after off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_Off_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_Off_001 start *************");
@@ -475,12 +484,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name:SUB_DDM_AppDataFWK_Object_Api9_Off_002
-     * @tc.desc object join session and off,object can not receive callback
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1000
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Off_002
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1000
+     * @tc.desc   object join session and off,object can not receive callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_Off_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_Off_002 start *************");
@@ -514,12 +524,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_OnStatus_001
-     * @tc.desc: object set a listener to watch another object online/offline
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2300
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_OnStatus_001
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2300
+     * @tc.desc   object set a listener to watch another object online/offline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_OnStatus_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -549,12 +560,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_OnStatus_002
-     * @tc.desc: object set several listener and can unWatch all watcher
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_OnStatus_002
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2400
+     * @tc.desc   object set several listener and can unWatch all watcher
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_OnStatus_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -581,12 +593,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: V9testSave001
-     * @tc.desc: test save local
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2700
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Save_001
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2700
+     * @tc.desc   test save local
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_Save_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_Save_001 start *************");
@@ -624,12 +637,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_Save_002
-     * @tc.desc: test save local
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2800
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_Save_002
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2800
+     * @tc.desc   test save local
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_Save_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_Save_002 start *************");
@@ -664,12 +678,13 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_001
-     * @tc.desc: test RevokeSave
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2500
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_001
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2500
+     * @tc.desc   test RevokeSave
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -714,12 +729,13 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_002
-     * @tc.desc: test RevokeSave
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2600
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_002
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_2600
+     * @tc.desc   test RevokeSave
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_RevokeSave_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -760,12 +776,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_NumberMax_0100
-     * @tc.desc: test NumberMax
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1800
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberMax_0100
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1800
+     * @tc.desc   test NumberMax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_NumberMax_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -786,12 +803,13 @@ export default function objectStoreTestV9() {
         done();
       })
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_NumberMin_0100
-     * @tc.desc: test NumberMin
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1900
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberMin_0100
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1900
+     * @tc.desc   test NumberMin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_NumberMin_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -812,12 +830,13 @@ export default function objectStoreTestV9() {
         done();
       })
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0100
-     * @tc.desc: test NumberAbnormal
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1600
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0100
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1600
+     * @tc.desc   test NumberAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -838,12 +857,13 @@ export default function objectStoreTestV9() {
         done();
       })
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0200
-     * @tc.desc: test NumberAbnormal
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1700
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0200
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1700
+     * @tc.desc   test NumberAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_NumberAbnormal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -865,12 +885,13 @@ export default function objectStoreTestV9() {
       })
 
     /**
-     * @tc.name: V9testbindAssetStore010
-     * @tc.desc: Test bindAssetStore
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0010
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore010
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0010
+     * @tc.desc   Test bindAssetStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore010 start *************");
@@ -951,12 +972,13 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @tc.name: V9testbindAssetStorePromise010
-     * @tc.desc: Test bindAssetStore
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStorePromise_0010
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStorePromise010
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStorePromise_0010
+     * @tc.desc   Test bindAssetStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStorePromise010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStorePromise010 start *************");
@@ -1036,12 +1058,13 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @tc.name: V9testbindAssetStore020
-     * @tc.desc: Test bindAssetStore
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0020
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore020
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0020
+     * @tc.desc   Test bindAssetStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore020 start *************");
@@ -1123,12 +1146,13 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @tc.name: V9testbindAssetStore030
-     * @tc.desc: Test bindAssetStore
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0030
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore030
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0030
+     * @tc.desc   Test bindAssetStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore030 start *************");
@@ -1209,12 +1233,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testbindAssetStore002
-     * @tc.desc: Test bindAssetStore with invalid args,storeName is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore002
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0200
+     * @tc.desc   Test bindAssetStore with invalid args,storeName is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore002 start *************");
@@ -1256,12 +1281,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testbindAssetStore003
-     * @tc.desc: Test bindAssetStore with invalid args,tableName is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0300
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore003
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0300
+     * @tc.desc   Test bindAssetStore with invalid args,tableName is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore003 start *************");
@@ -1303,12 +1329,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testbindAssetStore004
-     * @tc.desc: Test bindAssetStore with invalid args,primaryKey is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore004
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0400
+     * @tc.desc   Test bindAssetStore with invalid args,primaryKey is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore004 start *************");
@@ -1350,12 +1377,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testbindAssetStore005
-     * @tc.desc: Test bindAssetStore with invalid args,field is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0500
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore005
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0500
+     * @tc.desc   Test bindAssetStore with invalid args,field is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore005 start *************");
@@ -1397,12 +1425,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testbindAssetStore006
-     * @tc.desc: Test bindAssetStore with invalid args,assetName is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0600
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore006
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0600
+     * @tc.desc   Test bindAssetStore with invalid args,assetName is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore006 start *************");
@@ -1444,12 +1473,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testbindAssetStore007
-     * @tc.desc: Test bindAssetStore with invalid args,assetKey is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0700
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore007
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0700
+     * @tc.desc   Test bindAssetStore with invalid args,assetKey is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore007 start *************");
@@ -1501,12 +1531,13 @@ export default function objectStoreTestV9() {
 
 
     /**
-     * @tc.name: V9testbindAssetStore008
-     * @tc.desc: Test bindAssetStore with invalid args,assetKey is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0800
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore008
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0800
+     * @tc.desc   Test bindAssetStore with invalid args,assetKey is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* V9testbindAssetStore008 start *************");
@@ -1557,12 +1588,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testbindAssetStore009
-     * @tc.desc: Test bindAssetStore with invalid args,assetKey is null
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0900
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetStore009
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetStore_0900
+     * @tc.desc   Test bindAssetStore with invalid args,assetKey is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetStore009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* V9testbindAssetStore009 start *************");
@@ -1610,12 +1642,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: V9testModifyAsset001
-     * @tc.desc: object with asset create distributed data object
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_ModifyAsset_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testModifyAsset001
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_ModifyAsset_0100
+     * @tc.desc   object with asset create distributed data object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testModifyAsset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* V9testModifyAsset001 start *************");
@@ -1662,12 +1695,13 @@ export default function objectStoreTestV9() {
     })
 
     /**
-     * @tc.name: SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_006
-     * @tc.desc: object join session and on,object can receive callback when data has been changed
-     * @tc.type: Function
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_006
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3400
+     * @tc.desc   object join session and on,object can receive callback when data has been changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_AppDataFWK_Object_Api9_SetSessionId_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (done: Function) => {

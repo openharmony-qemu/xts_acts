@@ -64,12 +64,13 @@ export default function InsertTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1320
-     * @tc.name   : testRdbStoreVersion001
-     * @tc.desc   : RdbStore version test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreVersion001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1320
+     * @tc.desc   RdbStore version test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testRdbStoreVersion001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
       console.log(TAG + "************* testRdbStoreVersion001 start *************");
@@ -80,12 +81,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1310
-     * @tc.name   : testRdbStoreVersionError001
-     * @tc.desc   : RdbStore version Error test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 1
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreVersionError001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1310
+     * @tc.desc   RdbStore version Error test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testRdbStoreVersionError001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
       console.log(TAG + "************* testRdbStoreVersionError001 start *************");
@@ -102,12 +104,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0890
-     * @tc.name   : testRdbStoreInsert001
-     * @tc.desc   : RdbStore insert callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsert001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0890
+     * @tc.desc   RdbStore insert callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsert001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsert001 start *************");
@@ -161,12 +164,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0840
-     * @tc.name   : testRdbStoreInsertError0011
-     * @tc.desc   : RdbStore insert error callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0840
+     * @tc.desc   RdbStore insert error callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0011 start *************");
@@ -189,12 +193,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0800
-     * @tc.name   : testRdbStoreInsertError0012
-     * @tc.desc   : RdbStore insert error callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0800
+     * @tc.desc   RdbStore insert error callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0012 start *************");
@@ -217,12 +222,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0880
-     * @tc.name   : testRdbStoreInsert002
-     * @tc.desc   : RdbStore insert promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsert002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0880
+     * @tc.desc   RdbStore insert promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsert002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsert002 start *************");
@@ -262,12 +268,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0850
-     * @tc.name   : testRdbStoreInsertError0021
-     * @tc.desc   : RdbStore insert promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0021
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0850
+     * @tc.desc   RdbStore insert promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0021 start *************");
@@ -291,12 +298,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0810
-     * @tc.name   : testRdbStoreInsertError0022
-     * @tc.desc   : RdbStore insert promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0022
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0810
+     * @tc.desc   RdbStore insert promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0022 start *************");
@@ -320,12 +328,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0910
-     * @tc.name   : testRdbStoreInsert003
-     * @tc.desc   : RdbStore insert callback with ConflictResolution test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsert003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0910
+     * @tc.desc   RdbStore insert callback with ConflictResolution test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsert003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsert003 start *************");
@@ -379,12 +388,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0870
-     * @tc.name   : testRdbStoreInsertError0031
-     * @tc.desc   : RdbStore insert error callback with ConflictResolution test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0031
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0870
+     * @tc.desc   RdbStore insert error callback with ConflictResolution test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0031 start *************");
@@ -408,12 +418,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0830
-     * @tc.name   : testRdbStoreInsertError0032
-     * @tc.desc   : RdbStore insert error callback with ConflictResolution test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0032
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0830
+     * @tc.desc   RdbStore insert error callback with ConflictResolution test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0032 start *************");
@@ -438,12 +449,13 @@ export default function InsertTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0900
-     * @tc.name   : testRdbStoreInsert004
-     * @tc.desc   : RdbStore insert promise with ConflictResolution test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsert004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0900
+     * @tc.desc   RdbStore insert promise with ConflictResolution test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsert004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsert004 start *************");
@@ -483,12 +495,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0860
-     * @tc.name   : testRdbStoreInsertError0041
-     * @tc.desc   : RdbStore insert promise with ConflictResolution test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0041
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0860
+     * @tc.desc   RdbStore insert promise with ConflictResolution test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0041 start *************");
@@ -513,12 +526,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0820
-     * @tc.name   : testRdbStoreInsertError0042
-     * @tc.desc   : RdbStore insert promise with ConflictResolution test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreInsertError0042
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0820
+     * @tc.desc   RdbStore insert promise with ConflictResolution test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreInsertError0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreInsertError0042 start *************");
@@ -542,12 +556,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0390
-     * @tc.name   : testRdbStoreBatchInsert001
-     * @tc.desc   : RdbStore batchInsert callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsert001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0390
+     * @tc.desc   RdbStore batchInsert callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsert001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsert001 start *************");
@@ -613,12 +628,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0350
-     * @tc.name   : testRdbStoreBatchInsertError0011
-     * @tc.desc   : RdbStore batchInsert callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsertError0011
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0350
+     * @tc.desc   RdbStore batchInsert callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsertError0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsertError0011 start *************");
@@ -661,12 +677,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0420
-     * @tc.name   : testRdbStoreBatchInsertError0012
-     * @tc.desc   : RdbStore batchInsert callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsertError0012
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0420
+     * @tc.desc   RdbStore batchInsert callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsertError0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsertError0012 start *************");
@@ -708,12 +725,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0430
-     * @tc.name   : testRdbStoreBatchInsertError0013
-     * @tc.desc   : RdbStore batchInsert callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsertError0013
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0430
+     * @tc.desc   RdbStore batchInsert callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsertError0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsertError0013 start *************");
@@ -755,12 +773,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0360
-     * @tc.name   : testRdbStoreBatchInsertError0014
-     * @tc.desc   : RdbStore batchInsert callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsertError0014
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0360
+     * @tc.desc   RdbStore batchInsert callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsertError0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsertError0014 start *************");
@@ -798,12 +817,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0400
-     * @tc.name   : testRdbStoreBatchInsertError0015
-     * @tc.desc   : RdbStore batchInsert callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsertError0015
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0400
+     * @tc.desc   RdbStore batchInsert callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsertError0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsertError0015 start *************");
@@ -845,12 +865,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0380
-     * @tc.name   : testRdbStoreBatchInsert002
-     * @tc.desc   : RdbStore batchInsert promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsert002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0380
+     * @tc.desc   RdbStore batchInsert promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsert002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsert002 start *************");
@@ -899,12 +920,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0340
-     * @tc.name   : testRdbStoreBatchInsertError0021
-     * @tc.desc   : RdbStore batchInsert promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsertError0021
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0340
+     * @tc.desc   RdbStore batchInsert promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsertError0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsertError0021 start *************");
@@ -946,12 +968,13 @@ export default function InsertTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0410
-     * @tc.name   : testRdbStoreBatchInsertError0022
-     * @tc.desc   : RdbStore batchInsert promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreBatchInsertError0022
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0410
+     * @tc.desc   RdbStore batchInsert promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreBatchInsertError0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreBatchInsertError0022 start *************");

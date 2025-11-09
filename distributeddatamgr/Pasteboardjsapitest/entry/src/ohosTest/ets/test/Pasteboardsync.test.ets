@@ -76,12 +76,13 @@ export default function pasteboardSyncTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0100
-     * @tc.name clearDataSync interface test
-     * @tc.desc Test clearDataSync when systemPasteBoard has data
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test clearDataSync when systemPasteBoard has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SDK_PasteboardSync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0100 ---------start")
@@ -104,12 +105,13 @@ export default function pasteboardSyncTest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0200
-     * @tc.name setDataSync interface test
-     * @tc.desc Test setDataSync in systemPasteBoard
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test setDataSync in systemPasteBoard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SDK_PasteboardSync_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0200 ---------start")
@@ -129,12 +131,13 @@ export default function pasteboardSyncTest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0300
-     * @tc.name setDataSync interface test
-     * @tc.desc Test setDataSync when parameter is null
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test setDataSync when parameter is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SDK_PasteboardSync_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0300 ---------start")
@@ -153,12 +156,13 @@ export default function pasteboardSyncTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0400
-     * @tc.name setDataSync interface test
-     * @tc.desc Test setDataSync parameter is undefined
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test setDataSync parameter is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SDK_PasteboardSync_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0400 ---------start")
@@ -178,12 +182,13 @@ export default function pasteboardSyncTest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0500
-     * @tc.name getDataSync interface test
-     * @tc.desc Test getDataSync when setDataSync in systemPasteBoard
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test getDataSync when setDataSync in systemPasteBoard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SDK_PasteboardSync_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0500 ---------start")
@@ -204,12 +209,13 @@ export default function pasteboardSyncTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0600
-     * @tc.name hasDataSync interface test
-     * @tc.desc Test hasDataSync when systemPasteBoard has parameter
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test hasDataSync when systemPasteBoard has parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SDK_PasteboardSync_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0600 ---------start")
@@ -228,12 +234,13 @@ export default function pasteboardSyncTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardSync_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardSync_0700
-     * @tc.name hasDataSync interface test
-     * @tc.desc Test hasDataSync when systemPasteBoard is null
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test hasDataSync when systemPasteBoard is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Pasteboard_Local_SDK_PasteboardSync_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(tag + "SUB_Pasteboard_Local_SDK_PasteboardSync_0700 ---------start")

@@ -90,12 +90,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0100
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0100
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0100 start *************");
@@ -157,12 +158,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0200
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0200
-     * @tc.desc querySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   querySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0200 start *************");
@@ -215,12 +217,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0300
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0300
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0300 start *************");
@@ -251,12 +254,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0400
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0400
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0400 start *************");
@@ -285,12 +289,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0500
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0500
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0500 start *************");
@@ -323,12 +328,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0600
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0600
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0600 start *************");
@@ -359,12 +365,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0700
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0700
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0700 start *************");
@@ -395,12 +402,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0800
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0800
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0800 start *************");
@@ -429,12 +437,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync0900
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_0900
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync0900 start *************");
@@ -463,12 +472,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync1000
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1000
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync1000 start *************");
@@ -497,12 +507,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync1100
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1100
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync1100 start *************");
@@ -564,12 +575,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync1200
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1200
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync1200 start *************");
@@ -622,12 +634,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync1300
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1300
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync1300 start *************");
@@ -661,12 +674,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync1400
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1400
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync1400 start *************");
@@ -699,12 +713,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync1500
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1500
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync1500 start *************");
@@ -734,12 +749,13 @@ export default function rdbResultSetSyncTest() {
     });
 
     /**
-     * @tc.name testgetColumnTypeSync1600
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testgetColumnTypeSync1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSet_EtsAPI16Test_1600
-     * @tc.desc uerySharingResource test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   uerySharingResource test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetColumnTypeSync1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testgetColumnTypeSync1600 start *************");

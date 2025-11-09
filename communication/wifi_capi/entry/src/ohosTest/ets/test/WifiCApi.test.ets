@@ -47,12 +47,13 @@ export default function wifiCApiTest() {
     afterAll(() => {
     })
     /**
-     * @tc.number: SUB_COMMUNICATION_WIFI_NAPI_0100
-     * @tc.name: testOHWifiIsWifiEnabled
-     * @tc.desc: test OH_Wifi_IsWifiEnabled
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_WIFI_NAPI_0100
+     * @tc.number SUB_COMMUNICATION_WIFI_NAPI_0100
+     * @tc.desc   test OH_Wifi_IsWifiEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_COMMUNICATION_WIFI_NAPI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

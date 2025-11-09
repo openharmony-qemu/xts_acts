@@ -114,12 +114,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0100
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Creates an ndef message using the original bytes. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Creates an ndef message using the original bytes. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0100', Level.LEVEL1, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -143,12 +144,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0200
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Creates an ndef message using the original bytes. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Creates an ndef message using the original bytes. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0200', Level.LEVEL1, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -178,12 +180,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0300
-         * @tc.name Test readNdef NDEF
-         * @tc.desc Read the ndef message on the tag promise. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Read the ndef message on the tag promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0300', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -205,12 +208,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0400
-         * @tc.name Test readNdef NDEF
-         * @tc.desc Read the ndef message on the tag callback .The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Read the ndef message on the tag callback .The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0400', Level.LEVEL1, async function (done) {     
             if (NdefTag != null && NdefTag != undefined) {             
@@ -237,12 +241,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0500
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0500
-         * @tc.name Test writeNdef NDEF
-         * @tc.desc Write ndef messages to this tag promise. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Write ndef messages to this tag promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0500', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -268,12 +273,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0600
-         * @tc.name Test writeNdef NDEF
-         * @tc.desc Write ndef messages to this tag callback. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Write ndef messages to this tag callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0600', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -304,12 +310,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0700
-         * @tc.name Test setReadOnly NDEF
-         * @tc.desc Set the Ndef label to read-only Promise. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Set the Ndef label to read-only Promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0700', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -331,12 +338,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0800
-         * @tc.name Test setReadOnly NDEF
-         * @tc.desc Set the Ndef label to read-only callback. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Set the Ndef label to read-only callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0800', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {               
@@ -362,15 +370,15 @@ export default function nfcNDEFErrorTest() {
             }
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_nfcNDEF_js_0900
-         * @tc.name getNdef
-         * @tc.desc Test getNdef api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:44
+          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0900
+          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0900
+          * @tc.desc   Test getNdef api. The error code is 401
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL1
+          */
          it('SUB_Communication_NFC_nfcNDEF_js_0900', Level.LEVEL1, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
                 try {
@@ -387,12 +395,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1000
-         * @tc.name Test getNdefTagTypeString NDEF
-         * @tc.desc Converts the Nfc forum type to the byte array defined in the Nfc forum. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Converts the Nfc forum type to the byte array defined in the Nfc forum. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1000', Level.LEVEL1, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -411,12 +420,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1100
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag Promise. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag Promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1100', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -441,12 +451,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1200
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag callback. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1200', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -475,12 +486,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1300
-         * @tc.name Test formatReadOnly NDEF
-         * @tc.desc Format as NDEF and set the NDEF message write label to read-only Promise. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Format as NDEF and set the NDEF message write label to read-only Promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1300', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -507,12 +519,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1400
-         * @tc.name Test formatReadOnly NDEF
-         * @tc.desc Format as NDEF and set the NDEF message write label to read-only callback. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Format as NDEF and set the NDEF message write label to read-only callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1400', Level.LEVEL1, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -541,14 +554,15 @@ export default function nfcNDEFErrorTest() {
             }
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_nfcNDEF_js_1500
-         * @tc.name Test makeUriRecord NDEF
-         * @tc.desc Obtains all records of ndef makeUriRecord. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:44
+          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1500
+          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1500
+          * @tc.desc   Obtains all records of ndef makeUriRecord. The error code is 401
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL1
+          */
          it('SUB_Communication_NFC_nfcNDEF_js_1500', Level.LEVEL1, function () {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
@@ -574,12 +588,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1600
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Obtains all records of createNdefMessage NDEF. The error code is 401 
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains all records of createNdefMessage NDEF. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1600', Level.LEVEL1, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -606,12 +621,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1700
-         * @tc.name Test makeMimeRecord NDEF
-         * @tc.desc Obtains all records of ndef makeMimeRecord. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains all records of ndef makeMimeRecord. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1700', Level.LEVEL1, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -639,12 +655,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1800
-         * @tc.name Test makeExternalRecord NDEF
-         * @tc.desc Obtains all records of ndef makeExternalRecord. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains all records of ndef makeExternalRecord. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1800', Level.LEVEL1, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -671,12 +688,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1900
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1900
-         * @tc.name Test messageToBytes NDEF
-         * @tc.desc Obtains all records of ndef messageToBytes. The error code is 401
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains all records of ndef messageToBytes. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1900', Level.LEVEL1, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -715,13 +733,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2000
-         * @tc.name getNdefFormatable
-         * @tc.desc Test getNdefFormatable api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test getNdefFormatable api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2000', Level.LEVEL1, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -739,13 +757,13 @@ export default function nfcNDEFErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2100
-         * @tc.name Test makeApplicationRecord NDEF
-         * @tc.desc Test makeApplicationRecord api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test makeApplicationRecord api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2100', Level.LEVEL2, function () {
             if (NdefTag != null && NdefTag != undefined) {

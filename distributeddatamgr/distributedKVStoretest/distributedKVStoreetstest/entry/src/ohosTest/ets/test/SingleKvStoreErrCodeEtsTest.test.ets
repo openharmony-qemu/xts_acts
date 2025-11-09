@@ -102,12 +102,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0010
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0010
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0010
-     * @tc.desc distributedKVStore ChangeNotification.deviceId
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore ChangeNotification.deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0010 start');
@@ -130,12 +131,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0020
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0020
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0020
-     * @tc.desc distributedKVStore move errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore move errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0020 start');
@@ -156,12 +158,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0030
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0030
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0030
-     * @tc.desc distributedKVStore moveToPosition errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore moveToPosition errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0030 start');
@@ -189,12 +192,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0040
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0040
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0040
-     * @tc.desc distributedKVStore equalTo errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore equalTo errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0040 start');
@@ -212,12 +216,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0050
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0050
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0050
-     * @tc.desc distributedKVStore notEqualTo errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore notEqualTo errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0050 start');
@@ -235,12 +240,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0060
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0060
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0060
-     * @tc.desc distributedKVStore greaterThan errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore greaterThan errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0060 start');
@@ -258,12 +264,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0070
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0070
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0070
-     * @tc.desc distributedKVStore lessThan errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore lessThan errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0070 start');
@@ -282,12 +289,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0080
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0080
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0080
-     * @tc.desc distributedKVStore greaterThanOrEqualTo errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore greaterThanOrEqualTo errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0080 start');
@@ -306,12 +314,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0090
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0090
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0090
-     * @tc.desc distributedKVStore lessThanOrEqualTo errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore lessThanOrEqualTo errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0090 start');
@@ -330,12 +339,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0100
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0100
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0100
-     * @tc.desc distributedKVStore put errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore put errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0100 start');
@@ -357,12 +367,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0110
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0110
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0110
-     * @tc.desc distributedKVStore putBatch errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore putBatch errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0110 start');
@@ -384,12 +395,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0120
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0120
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0120
-     * @tc.desc distributedKVStore putBatch errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore putBatch errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0120 start');
@@ -406,12 +418,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0130
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0130
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0130
-     * @tc.desc distributedKVStore delete errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore delete errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0130 start');
@@ -428,12 +441,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0140
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0140
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0140
-     * @tc.desc distributedKVStore deleteBatch errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deleteBatch errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0140 start');
@@ -455,12 +469,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0150
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0150
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0150
-     * @tc.desc distributedKVStore deleteBatch errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deleteBatch errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0150 start');
@@ -477,12 +492,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0160
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0160
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0160
-     * @tc.desc distributedKVStore removeDeviceData errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore removeDeviceData errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0160 start');
@@ -504,12 +520,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0170
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0170
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0170
-     * @tc.desc distributedKVStore removeDeviceData errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore removeDeviceData errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0170 start');
@@ -526,12 +543,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0180
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0180
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0180
-     * @tc.desc distributedKVStore get errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore get errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0180 start');
@@ -553,12 +571,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0190
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0190
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0190
-     * @tc.desc distributedKVStore get errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore get errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0190 start');
@@ -575,12 +594,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0200
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0200
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0200
-     * @tc.desc distributedKVStore getEntries errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0200 start');
@@ -602,12 +622,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0210
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0210
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0210
-     * @tc.desc distributedKVStore getEntries errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0210 start');
@@ -624,12 +645,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0220
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0220
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0220
-     * @tc.desc distributedKVStore getEntries query errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries query errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0220 start');
@@ -653,12 +675,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0230
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0230
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0230
-     * @tc.desc distributedKVStore getEntries query errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries query errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0230 start');
@@ -677,12 +700,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0240
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0240
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0240
-     * @tc.desc distributedKVStore getResultSize errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSize errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0240 start');
@@ -706,12 +730,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0250
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0250
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0250
-     * @tc.desc distributedKVStore getResultSize errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSize errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0250 start');
@@ -730,12 +755,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0260
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0260
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0260
-     * @tc.desc distributedKVStore deleteBackup errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deleteBackup errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0260 start');
@@ -758,12 +784,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0270
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0270
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0270
-     * @tc.desc distributedKVStore deleteBackup errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deleteBackup errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0270 start');
@@ -780,12 +807,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0280
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0280
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0280
-     * @tc.desc distributedKVStore enableSync errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore enableSync errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0280 start');
@@ -808,12 +836,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0290
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0290
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0290
-     * @tc.desc distributedKVStore enableSync errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore enableSync errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0290 start');
@@ -830,12 +859,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0300
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0300
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0300
-     * @tc.desc distributedKVStore setSyncRange errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore setSyncRange errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0300 start');
@@ -858,12 +888,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0310
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0310
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0310
-     * @tc.desc distributedKVStore setSyncRange errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore setSyncRange errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0310 start');
@@ -880,12 +911,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0320
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0320
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0320
-     * @tc.desc distributedKVStore setSyncParam errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore setSyncParam errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0320 start');
@@ -908,12 +940,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0330
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0330
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0330
-     * @tc.desc distributedKVStore setSyncParam errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore setSyncParam errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0330 start');
@@ -930,12 +963,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0340
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0340
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0340
-     * @tc.desc distributedKVStore sync errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore sync errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0340 start');
@@ -952,12 +986,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0350
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0350
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0350
-     * @tc.desc distributedKVStore query sync errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore query sync errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0350 start');
@@ -976,12 +1011,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0360
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0360
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0360
-     * @tc.desc distributedKVStore on dataChange errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore on dataChange errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0360 start');
@@ -998,12 +1034,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0370
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0370
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0370
-     * @tc.desc distributedKVStore off dataChange errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore off dataChange errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0370 start');
@@ -1020,12 +1057,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0380
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0380
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0380
-     * @tc.desc distributedKVStore on syncComplete errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore on syncComplete errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0380 start');
@@ -1042,12 +1080,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0390
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0390
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0390
-     * @tc.desc distributedKVStore off syncComplete errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore off syncComplete errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0390 start');
@@ -1064,12 +1103,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0400
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0400
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0400
-     * @tc.desc distributedKVStore appendChild errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore appendChild errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0400 start');
@@ -1087,12 +1127,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0410
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0410
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0410
-     * @tc.desc distributedKVStore isNull errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore isNull errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0410 start');
@@ -1111,12 +1152,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0420
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0420
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0420
-     * @tc.desc distributedKVStore inNumber errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore inNumber errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0420 start');
@@ -1135,12 +1177,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0430
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0430
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0430
-     * @tc.desc distributedKVStore inString errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore inString errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0430 start');
@@ -1159,12 +1202,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0440
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0440
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0440
-     * @tc.desc distributedKVStore notInNumber errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore notInNumber errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0440 start');
@@ -1183,12 +1227,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0450
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0450
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0450
-     * @tc.desc distributedKVStore notInString errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore notInString errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0450 start');
@@ -1207,12 +1252,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0460
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0460
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0460
-     * @tc.desc distributedKVStore like errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore like errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0460 start');
@@ -1231,12 +1277,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0470
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0470
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0470
-     * @tc.desc distributedKVStore unlike errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore unlike errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0470', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0450 start');
@@ -1255,12 +1302,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0480
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0480
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0480
-     * @tc.desc distributedKVStore orderByAsc errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore orderByAsc errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0480 start');
@@ -1279,12 +1327,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0490
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0490
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0490
-     * @tc.desc distributedKVStore orderByAsc errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore orderByAsc errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0490', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0490 start');
@@ -1303,12 +1352,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0500
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0500
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0500
-     * @tc.desc distributedKVStore orderByDesc errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore orderByDesc errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0500 start');
@@ -1327,12 +1377,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0510
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0510
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0510
-     * @tc.desc distributedKVStore limit errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore limit errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0510 start');
@@ -1351,12 +1402,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0520
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0520
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0520
-     * @tc.desc distributedKVStore isNotNull errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore isNotNull errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0520', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0520 start');
@@ -1375,12 +1427,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0530
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0530
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0530
-     * @tc.desc distributedKVStore prefixKey errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore prefixKey errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0530', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0530 start');
@@ -1399,12 +1452,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0540
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0540
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0540
-     * @tc.desc distributedKVStore setSuggestIndex errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore setSuggestIndex errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0540', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0540 start');
@@ -1423,12 +1477,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1190
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1190
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1190
-     * @tc.desc distributedKVStore deviceId errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deviceId errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1190 start');
@@ -1447,12 +1502,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0550
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0550
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0550
-     * @tc.desc distributedKVStore deviceId errcode 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deviceId errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0550 start');
@@ -1471,12 +1527,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0560
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0560
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0560
-     * @tc.desc distributedKVStore put errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore put errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0560', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0560 start');
@@ -1493,12 +1550,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0570
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0570
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0570
-     * @tc.desc distributedKVStore delete errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore delete errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0570', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0570 start');
@@ -1521,12 +1579,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0580
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0580
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0580
-     * @tc.desc distributedKVStore getResultSet query errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet query errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0580', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0580 start');
@@ -1550,12 +1609,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0590
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0590
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0590
-     * @tc.desc distributedKVStore getResultSet query errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet query errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0590', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0590 start');
@@ -1574,12 +1634,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0600
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0600
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0600
-     * @tc.desc distributedKVStore getResultSet errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0600 start');
@@ -1601,12 +1662,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0610
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0610
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0610
-     * @tc.desc distributedKVStore getResultSet errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0610 start');
@@ -1623,12 +1685,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0620
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0620
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0620
-     * @tc.desc distributedKVStore closeResultSet errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore closeResultSet errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0620', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0620 start');
@@ -1650,12 +1713,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0630
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0630
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0630
-     * @tc.desc distributedKVStore closeResultSet errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore closeResultSet errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0630', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0630 start');
@@ -1672,12 +1736,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0640
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0640
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0640
-     * @tc.desc distributedKVStore backup errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore backup errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0640 start');
@@ -1699,12 +1764,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0650
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0650
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0650
-     * @tc.desc distributedKVStore backup errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore backup errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0650 start');
@@ -1721,12 +1787,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0660
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0660
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0660
-     * @tc.desc distributedKVStore restore errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore restore errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0660', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0660 start');
@@ -1748,12 +1815,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0670
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0670
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0670
-     * @tc.desc distributedKVStore restore errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore restore errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0670', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0670 start');
@@ -1770,12 +1838,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0680
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0680
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0680
-     * @tc.desc distributedKVStore getAllKVStoreId errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getAllKVStoreId errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0680', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0680 start');
@@ -1797,12 +1866,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0690
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0690
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0690
-     * @tc.desc distributedKVStore restore errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore restore errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0690', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0690 start');
@@ -1819,12 +1889,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0700
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0700
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0700
-     * @tc.desc distributedKVStore on errcode 401 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore on errcode 401 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0700 start');
@@ -1841,12 +1912,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0710
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0710
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0710
-     * @tc.desc distributedKVStore on errcode 401 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore on errcode 401 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0710 start');
@@ -1863,12 +1935,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0720
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0720
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0720
-     * @tc.desc distributedKVStore getResultSet errcode 15100001 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 15100001 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0720 start');
@@ -1914,12 +1987,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0730
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0730
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0730
-     * @tc.desc distributedKVStore getResultSet errcode 15100001 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 15100001 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0730', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0730 start');
@@ -1957,12 +2031,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0740
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0740
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0740
-     * @tc.desc distributedKVStore query getResultSet errcode 15100001 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore query getResultSet errcode 15100001 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0740 start');
@@ -2015,12 +2090,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0750
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0750
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0750
-     * @tc.desc distributedKVStore query getResultSet errcode 15100001 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore query getResultSet errcode 15100001 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0750 start');
@@ -2059,12 +2135,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0760
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0760
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0760
-     * @tc.desc distributedKVStore on dataChange errcode 15100001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore on dataChange errcode 15100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0760', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0760 start');
@@ -2084,12 +2161,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770
-     * @tc.desc distributedKVStore getKVStore errcode 15100002 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getKVStore errcode 15100002 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0770 start');
@@ -2110,12 +2188,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780
-     * @tc.desc distributedKVStore getKVStore errcode 15100002 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getKVStore errcode 15100002 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0780 start');
@@ -2143,12 +2222,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0790
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0790
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0790
-     * @tc.desc distributedKVStore get errcode 15100004 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore get errcode 15100004 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0790', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0790 start');
@@ -2164,12 +2244,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0800
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0800
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0800
-     * @tc.desc distributedKVStore get errcode 15100004 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore get errcode 15100004 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0800 start');
@@ -2192,12 +2273,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0810
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0810
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0810
-     * @tc.desc distributedKVStore put errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore put errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0810 start');
@@ -2224,12 +2306,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0820
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0820
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0820
-     * @tc.desc distributedKVStore put errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore put errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0820', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0820 start');
@@ -2249,12 +2332,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0830
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0830
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0830
-     * @tc.desc distributedKVStore putBatch errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore putBatch errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0830', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0830 start');
@@ -2294,12 +2378,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0840
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0840
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0840
-     * @tc.desc distributedKVStore putBatch errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore putBatch errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0840', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0840 start');
@@ -2332,12 +2417,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0850
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0850
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0850
-     * @tc.desc distributedKVStore delete errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore delete errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0850 start');
@@ -2364,12 +2450,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0860
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0860
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0860
-     * @tc.desc distributedKVStore delete errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore delete errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0860', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0860 start');
@@ -2389,12 +2476,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0870
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0870
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0870
-     * @tc.desc distributedKVStore deleteBatch errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deleteBatch errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0870', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0870 start');
@@ -2422,12 +2510,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0880
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0880
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0880
-     * @tc.desc distributedKVStore deleteBatch errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore deleteBatch errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0880', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0880 start');
@@ -2448,12 +2537,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0890
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0890
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0890
-     * @tc.desc distributedKVStore removeDeviceData errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore removeDeviceData errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0890', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0890 start');
@@ -2480,12 +2570,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0900
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0900
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0900
-     * @tc.desc distributedKVStore removeDeviceData errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore removeDeviceData errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0900 start');
@@ -2505,12 +2596,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0910
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0910
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0910
-     * @tc.desc distributedKVStore get errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore get errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0910 start');
@@ -2535,12 +2627,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0920
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0920
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0920
-     * @tc.desc distributedKVStore get errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore get errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0920', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0920 start');
@@ -2558,12 +2651,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0930
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0930
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0930
-     * @tc.desc distributedKVStore getEntries errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0930', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0930 start');
@@ -2588,12 +2682,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0940
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0940
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0940
-     * @tc.desc distributedKVStore getEntries errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0940', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0940 start');
@@ -2611,12 +2706,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0950
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0950
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0950
-     * @tc.desc distributedKVStore getEntries errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0950 start');
@@ -2642,12 +2738,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0960
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0960
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0960
-     * @tc.desc distributedKVStore getEntries errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getEntries errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0960 start');
@@ -2666,12 +2763,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0970
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0970
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0970
-     * @tc.desc distributedKVStore getResultSet errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0970', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0970 start');
@@ -2696,12 +2794,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0980
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0980
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0980
-     * @tc.desc distributedKVStore getResultSet errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0980', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0980 start');
@@ -2719,12 +2818,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0990
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0990
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0990
-     * @tc.desc distributedKVStore getResultSet errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0990', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_0990 start');
@@ -2750,12 +2850,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1000
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1000
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1000
-     * @tc.desc distributedKVStore getResultSet errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSet errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1000 start');
@@ -2774,12 +2875,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1010
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1010
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1010
-     * @tc.desc distributedKVStore getResultSize errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSize errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1010 start');
@@ -2805,12 +2907,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1020
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1020
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1020
-     * @tc.desc distributedKVStore getResultSize errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getResultSize errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1020 start');
@@ -2829,12 +2932,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1030
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1030
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1030
-     * @tc.desc distributedKVStore backup errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore backup errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1030 start');
@@ -2859,12 +2963,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1040
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1040
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1040
-     * @tc.desc distributedKVStore backup errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore backup errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1040 start');
@@ -2882,12 +2987,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1050
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1050
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1050
-     * @tc.desc distributedKVStore restore errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore restore errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1050 start');
@@ -2912,12 +3018,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1060
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1060
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1060
-     * @tc.desc distributedKVStore restore errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore restore errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1060 start');
@@ -2935,12 +3042,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1070
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1070
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1070
-     * @tc.desc distributedKVStore startTransaction errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore startTransaction errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1070 start');
@@ -2965,12 +3073,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1080
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1080
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1080
-     * @tc.desc distributedKVStore startTransaction errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore startTransaction errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1080 start');
@@ -2988,12 +3097,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SSUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1090
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1090
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1090
-     * @tc.desc distributedKVStore commit errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore commit errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1090 start');
@@ -3018,12 +3128,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1100
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1100
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1100
-     * @tc.desc distributedKVStore commit errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore commit errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1100 start');
@@ -3041,12 +3152,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1110
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1110
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1110
-     * @tc.desc distributedKVStore rollback errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore rollback errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1110 start');
@@ -3071,12 +3183,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1120
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1120
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1120
-     * @tc.desc distributedKVStore rollback errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore rollback errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1120 start');
@@ -3094,12 +3207,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130
-     * @tc.desc distributedKVStore on errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore on errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1130 start');
@@ -3119,12 +3233,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1150
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1150
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1150
-     * @tc.desc distributedKVStore getSecurityLevel errcode 15100005 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getSecurityLevel errcode 15100005 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1110 start');
@@ -3149,12 +3264,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1160
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1160
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1160
-     * @tc.desc distributedKVStore getSecurityLevel errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore getSecurityLevel errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1160 start');
@@ -3172,12 +3288,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170
-     * @tc.desc distributedKVStore put errcode 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore put errcode 14800047
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1170 start');
@@ -3216,12 +3333,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180
-     * @tc.desc distributedKVStore putbatch errcode 14800047 callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore putbatch errcode 14800047 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1180 start');
@@ -3273,12 +3391,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200
-     * @tc.desc distributedKVStore putbatch errcode 14800047 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore putbatch errcode 14800047 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1200 start');
@@ -3324,12 +3443,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210
-     * @tc.desc distributedKVStore delete errcode 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore delete errcode 14800047
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1210 start');
@@ -3376,12 +3496,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220
-     * @tc.desc distributedKVStore delete errcode 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore delete errcode 14800047
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1220 start');
@@ -3430,12 +3551,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230
-     * @tc.desc distributedKVStore startTransaction errcode 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore startTransaction errcode 14800047
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1230 start');
@@ -3483,12 +3605,13 @@ export default function SingleKvStoreErrCodeTest(){
     });
 
     /**
-     * @tc.name test_SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1240
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1240
      * @tc.number SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1240
-     * @tc.desc distributedKVStore off errcode 15100005 promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   distributedKVStore off errcode 15100005 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'SUB_DDM_DKV_SINGLEKVSTORE_ERRCODE_1240 start');

@@ -43,12 +43,13 @@ export default function wifiEapErrorTest(){
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0100
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0100
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0100
-         * @tc.desc Test eap register api functionality.
-         * @tc.size LargeTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0100',TestType.FUNCTION|Size.LARGETEST|Level.LEVEL1, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -118,12 +119,13 @@ export default function wifiEapErrorTest(){
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0200
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0200
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0200
-         * @tc.desc Test eap register api functionality.
-         * @tc.size LargeTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0200',TestType.FUNCTION|Size.LARGETEST|Level.LEVEL1, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -194,12 +196,13 @@ export default function wifiEapErrorTest(){
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0300
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0300
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0300
-         * @tc.desc Test eap register api functionality.
-         * @tc.size LargeTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0300',TestType.FUNCTION|Size.LARGETEST|Level.LEVEL1, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -269,12 +272,13 @@ export default function wifiEapErrorTest(){
         })
         
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0400
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0400
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0400
-         * @tc.desc Test eap register api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -336,13 +340,14 @@ export default function wifiEapErrorTest(){
                 done();
             }
         })   
-         /**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0500
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0500
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0500
-         * @tc.desc Test eap register api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test eap register api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0500',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -404,13 +409,14 @@ export default function wifiEapErrorTest(){
                 done();
             }
         })
-         /**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0600
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0600
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0600
-         * @tc.desc Test eap unregister api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test eap unregister api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0600',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -475,12 +481,13 @@ export default function wifiEapErrorTest(){
         })
         
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0700
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0700
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0700
-         * @tc.desc Test eap reply api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test eap reply api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0700',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");
@@ -525,12 +532,13 @@ export default function wifiEapErrorTest(){
             }
         })
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Netmanager_Eap_ErrorCode_0800
          * @tc.number SUB_Communication_Netmanager_Eap_ErrorCode_0800
-         * @tc.name SUB_Communication_Netmanager_Eap_ErrorCode_0800
-         * @tc.desc Test eap reply api functionality.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test eap reply api functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Netmanager_Eap_ErrorCode_0800',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
             let isAccessToken = canIUse("SystemCapability.Communication.NetManager.Eap");

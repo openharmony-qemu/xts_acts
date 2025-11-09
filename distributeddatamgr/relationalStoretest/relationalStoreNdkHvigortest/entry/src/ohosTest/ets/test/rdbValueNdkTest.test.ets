@@ -46,12 +46,13 @@ export default function rdbValueNdkTest() {
     afterAll(() => {})
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Rdb_BatchInsert_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_BatchInsert_0100
-     * @tc.name OH_Rdb_BatchInsert_0100
-     * @tc.desc OH_Rdb_BatchInsert_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Rdb_BatchInsert_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Rdb_BatchInsert_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Rdb_BatchInsert_0100();
@@ -61,12 +62,13 @@ export default function rdbValueNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Value_PutNull_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0100
-     * @tc.name OH_Value_PutNull_0100
-     * @tc.desc OH_Value_PutNull_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Value_PutNull_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Value_PutNull_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Value_PutNull_0100();
@@ -76,12 +78,13 @@ export default function rdbValueNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Value_Put_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0200
-     * @tc.name OH_Value_Put_0100
-     * @tc.desc OH_Value_Put_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Value_Put_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Value_Put_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Value_Put_0100();
@@ -91,12 +94,13 @@ export default function rdbValueNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Values_Put_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0300
-     * @tc.name OH_Values_Put_0100
-     * @tc.desc OH_Values_Put_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Values_Put_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Values_Put_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Values_Put_0100();
@@ -106,12 +110,13 @@ export default function rdbValueNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Value_PutFloatVector_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0400
-     * @tc.name OH_Value_PutFloatVector_0100
-     * @tc.desc OH_Value_PutFloatVector_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Value_PutFloatVector_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Value_PutFloatVector_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Value_PutFloatVector_0100();
@@ -121,12 +126,13 @@ export default function rdbValueNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   OH_Values_PutFloatVector_0100
      * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_ValuePut_0500
-     * @tc.name OH_Values_PutFloatVector_0100
-     * @tc.desc OH_Values_PutFloatVector_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Values_PutFloatVector_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Values_PutFloatVector_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let res = testndk.OH_Values_PutFloatVector_0100();

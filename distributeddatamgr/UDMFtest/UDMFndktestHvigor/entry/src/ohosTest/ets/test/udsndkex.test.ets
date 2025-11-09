@@ -30,12 +30,13 @@ export default function UdsNdkexTest() {
     });
     // PlainText =======================================================
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_GetType_0100
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0100
-     * @tc.name OH_UdsPlainText_GetType_0100
-     * @tc.desc OH_UdsPlainText_GetType_0100
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_GetType_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_GetType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_GetType_0100');
@@ -44,12 +45,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetContent_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0200
-     * @tc.name OH_UdsPlainText_SetContent_001
-     * @tc.desc OH_UdsPlainText_SetContent_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetContent_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetContent_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetContent_001');
@@ -58,12 +60,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetContent_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0300
-     * @tc.name OH_UdsPlainText_SetContent_002
-     * @tc.desc OH_UdsPlainText_SetContent_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetContent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetContent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetContent_002');
@@ -72,12 +75,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetContent_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0400
-     * @tc.name OH_UdsPlainText_SetContent_003
-     * @tc.desc OH_UdsPlainText_SetContent_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetContent_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetContent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetContent_003');
@@ -86,12 +90,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetContent_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0500
-     * @tc.name OH_UdsPlainText_SetContent_004
-     * @tc.desc OH_UdsPlainText_SetContent_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetContent_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetContent_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetContent_004');
@@ -100,12 +105,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetContent_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0600
-     * @tc.name OH_UdsPlainText_SetContent_005
-     * @tc.desc OH_UdsPlainText_SetContent_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetContent_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetContent_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetContent_005');
@@ -114,12 +120,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_GetContent_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0700
-     * @tc.name OH_UdsPlainText_GetContent_001
-     * @tc.desc OH_UdsPlainText_Create
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_GetContent_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_GetContent_001');
@@ -128,12 +135,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_GetContent_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0800
-     * @tc.name OH_UdsPlainText_GetContent_002
-     * @tc.desc OH_UdsPlainText_GetContent_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_GetContent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_GetContent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_GetContent_002');
@@ -142,12 +150,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_GetContent_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_0900
-     * @tc.name OH_UdsPlainText_GetContent_003
-     * @tc.desc OH_UdsPlainText_GetContent_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_GetContent_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_GetContent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_GetContent_003');
@@ -156,12 +165,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetAbstract_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1000
-     * @tc.name OH_UdsPlainText_SetAbstract_001
-     * @tc.desc OH_UdsPlainText_Create
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetAbstract_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetAbstract_001');
@@ -170,12 +180,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetAbstract_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1100
-     * @tc.name OH_UdsPlainText_SetAbstract_002
-     * @tc.desc OH_UdsPlainText_SetAbstract_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetAbstract_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetAbstract_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetAbstract_002');
@@ -184,12 +195,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetAbstract_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1200
-     * @tc.name OH_UdsPlainText_SetAbstract_003
-     * @tc.desc OH_UdsPlainText_Create
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetAbstract_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetAbstract_003');
@@ -198,12 +210,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetAbstract_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1300
-     * @tc.name OH_UdsPlainText_Create_0100
-     * @tc.desc OH_UdsPlainText_SetAbstract_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetAbstract_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetAbstract_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetAbstract_004');
@@ -212,12 +225,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_SetAbstract_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsPlainText_SetAbstract_005
-     * @tc.desc OH_UdsPlainText_SetAbstract_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_SetAbstract_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_SetAbstract_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_SetAbstract_005');
@@ -226,12 +240,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_GetAbstract_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetType_001
-     * @tc.desc OH_UdsHyperlink_GetType_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetType_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_GetAbstract_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_GetAbstract_001');
@@ -240,12 +255,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_GetAbstract_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsPlainText_GetAbstract_002
-     * @tc.desc OH_UdsPlainText_GetAbstract_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_GetAbstract_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_GetAbstract_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_GetAbstract_002');
@@ -254,12 +270,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsPlainText_GetAbstract_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsPlainText_GetAbstract_003
-     * @tc.desc OH_UdsPlainText_GetAbstract_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsPlainText_GetAbstract_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsPlainText_GetAbstract_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsPlainText_GetAbstract_003');
@@ -268,12 +285,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetType_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetType_001
-     * @tc.desc OH_UdsHyperlink_GetType_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetType_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetType_001');
@@ -282,12 +300,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetUrl_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetUrl_001
-     * @tc.desc OH_UdsHyperlink_SetUrl_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetUrl_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetUrl_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetUrl_001');
@@ -296,12 +315,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetUrl_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetUrl_002
-     * @tc.desc OH_UdsHyperlink_SetUrl_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetUrl_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetUrl_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetUrl_002');
@@ -310,12 +330,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetUrl_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetUrl_003
-     * @tc.desc OH_UdsHyperlink_SetUrl_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetUrl_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetUrl_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetUrl_003');
@@ -324,12 +345,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetUrl_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetUrl_004
-     * @tc.desc OH_UdsHyperlink_SetUrl_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetUrl_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetUrl_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetUrl_004');
@@ -338,12 +360,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetUrl_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetUrl_005
-     * @tc.desc OH_UdsHyperlink_SetUrl_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetUrl_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetUrl_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetUrl_005');
@@ -352,12 +375,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetUrl_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetUrl_001
-     * @tc.desc OH_UdsHyperlink_GetUrl_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetUrl_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetUrl_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetUrl_001');
@@ -366,12 +390,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetUrl_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetUrl_002
-     * @tc.desc OH_UdsHyperlink_GetUrl_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetUrl_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetUrl_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetUrl_002');
@@ -380,12 +405,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetUrl_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetUrl_003
-     * @tc.desc OH_UdsHyperlink_GetUrl_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetUrl_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetUrl_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetUrl_003');
@@ -394,12 +420,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetDescription_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetDescription_001
-     * @tc.desc OH_UdsHyperlink_SetDescription_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetDescription_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetDescription_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_001');
@@ -408,12 +435,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetDescription_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetDescription_002
-     * @tc.desc OH_UdsHyperlink_SetDescription_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetDescription_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetDescription_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_002');
@@ -422,12 +450,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetDescription_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetDescription_003
-     * @tc.desc OH_UdsHyperlink_SetDescription_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetDescription_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetDescription_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_003');
@@ -436,12 +465,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetDescription_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetDescription_003
-     * @tc.desc OH_UdsHyperlink_SetDescription_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetDescription_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetDescription_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_003');
@@ -450,12 +480,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_SetDescription_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_SetDescription_004
-     * @tc.desc OH_UdsHyperlink_SetDescription_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_SetDescription_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_SetDescription_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_SetDescription_004');
@@ -464,12 +495,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetDescription_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetDescription_005
-     * @tc.desc OH_UdsHyperlink_GetDescription_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetDescription_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetDescription_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetDescription_005');
@@ -478,12 +510,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetDescription_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetDescription_001
-     * @tc.desc OH_UdsHyperlink_GetDescription_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetDescription_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetDescription_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetDescription_001');
@@ -492,12 +525,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetDescription_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetContent_005
-     * @tc.desc OH_UdsHtml_SetContent_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetContent_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetDescription_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetDescription_002');
@@ -506,12 +540,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHyperlink_GetDescription_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHyperlink_GetDescription_003
-     * @tc.desc OH_UdsHyperlink_GetDescription_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHyperlink_GetDescription_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHyperlink_GetDescription_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHyperlink_GetDescription_003');
@@ -520,12 +555,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_GetType_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetType_001
-     * @tc.desc OH_UdsHtml_GetType_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetType_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_GetType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_GetType_001');
@@ -534,12 +570,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetContent_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetContent_001
-     * @tc.desc OH_UdsHtml_SetContent_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetContent_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetContent_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetContent_001');
@@ -548,12 +585,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetContent_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetContent_002
-     * @tc.desc OH_UdsHtml_SetContent_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetContent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetContent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetContent_002');
@@ -562,12 +600,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetContent_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetContent_003
-     * @tc.desc OH_UdsHtml_SetContent_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetContent_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetContent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetContent_003');
@@ -576,12 +615,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetContent_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetContent_004
-     * @tc.desc OH_UdsHtml_SetContent_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetContent_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetContent_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetContent_004');
@@ -590,12 +630,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetContent_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetContent_005
-     * @tc.desc OH_UdsHtml_SetContent_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetContent_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetContent_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetContent_005');
@@ -604,12 +645,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_GetContent_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetContent_001
-     * @tc.desc OH_UdsHtml_GetContent_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetContent_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_GetContent_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_GetContent_001');
@@ -618,12 +660,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_GetContent_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetContent_002
-     * @tc.desc OH_UdsHtml_GetContent_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetContent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_GetContent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_GetContent_002');
@@ -632,12 +675,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_GetContent_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetContent_003
-     * @tc.desc OH_UdsHtml_GetContent_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetContent_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_GetContent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_GetContent_003');
@@ -646,12 +690,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetPlainContent_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetPlainContent_001
-     * @tc.desc OH_UdsHtml_SetPlainContent_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetPlainContent_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetPlainContent_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetPlainContent_001');
@@ -660,12 +705,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetPlainContent_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetPlainContent_002
-     * @tc.desc OH_UdsHtml_SetPlainContent_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetPlainContent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetPlainContent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetPlainContent_002');
@@ -674,12 +720,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetPlainContent_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetPlainContent_003
-     * @tc.desc OH_UdsHtml_SetPlainContent_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetPlainContent_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetPlainContent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetPlainContent_003');
@@ -688,12 +735,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetPlainContent_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetPlainContent_004
-     * @tc.desc OH_UdsHtml_SetPlainContent_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetPlainContent_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetPlainContent_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetPlainContent_004');
@@ -702,12 +750,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_SetPlainContent_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_SetPlainContent_005
-     * @tc.desc OH_UdsHtml_SetPlainContent_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_SetPlainContent_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_SetPlainContent_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_SetPlainContent_005');
@@ -716,12 +765,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_GetPlainContent_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetPlainContent_001
-     * @tc.desc OH_UdsHtml_GetPlainContent_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetPlainContent_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_GetPlainContent_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_GetPlainContent_001');
@@ -730,12 +780,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_GetPlainContent_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetPlainContent_002
-     * @tc.desc OH_UdsHtml_GetPlainContent_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetPlainContent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_GetPlainContent_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_GetPlainContent_002');
@@ -744,12 +795,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsHtml_GetPlainContent_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetPlainContent_003
-     * @tc.desc OH_UdsHtml_GetPlainContent_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetPlainContent_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsHtml_GetPlainContent_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsHtml_GetPlainContent_003');
@@ -758,12 +810,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetType_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetType_001
-     * @tc.desc OH_UdsAppItem_GetType_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetType_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetType_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetType_001');
@@ -772,12 +825,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetId_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetId_001
-     * @tc.desc OH_UdsAppItem_SetId_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetId_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetId_001');
@@ -786,12 +840,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetId_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetId_002
-     * @tc.desc OH_UdsAppItem_SetId_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetId_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetId_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetId_002');
@@ -800,12 +855,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetId_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetId_003
-     * @tc.desc OH_UdsAppItem_SetId_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetId_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetId_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetId_003');
@@ -814,12 +870,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetId_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetId_004
-     * @tc.desc OH_UdsAppItem_SetId_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetId_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetId_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetId_004');
@@ -828,12 +885,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetId_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetId_005
-     * @tc.desc OH_UdsAppItem_SetId_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetId_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetId_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetId_005');
@@ -842,12 +900,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetId_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetId_001
-     * @tc.desc OH_UdsAppItem_GetId_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetId_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetId_001');
@@ -856,12 +915,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetId_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetId_002
-     * @tc.desc OH_UdsAppItem_GetId_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetId_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetId_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetId_002');
@@ -870,12 +930,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetId_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetId_003
-     * @tc.desc OH_UdsAppItem_GetId_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetId_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetId_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetId_003');
@@ -884,12 +945,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetName_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetName_001
-     * @tc.desc OH_UdsAppItem_SetName_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetName_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetName_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetName_001');
@@ -898,12 +960,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetName_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetName_002
-     * @tc.desc OH_UdsAppItem_SetName_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetName_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetName_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetName_002');
@@ -912,12 +975,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetName_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetName_003
-     * @tc.desc OH_UdsAppItem_SetName_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetName_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetName_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetName_003');
@@ -926,12 +990,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetName_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetName_004
-     * @tc.desc OH_UdsAppItem_SetName_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetName_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetName_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetName_004');
@@ -940,12 +1005,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetName_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetName_005
-     * @tc.desc OH_UdsAppItem_SetName_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetName_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetName_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetName_005');
@@ -954,12 +1020,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetName_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetName_001
-     * @tc.desc OH_UdsAppItem_GetName_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetName_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetName_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetName_001');
@@ -968,12 +1035,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetName_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetName_002
-     * @tc.desc OH_UdsAppItem_GetName_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetName_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetName_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetName_002');
@@ -982,12 +1050,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetName_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetName_003
-     * @tc.desc OH_UdsAppItem_GetName_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetName_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetName_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetName_003');
@@ -996,12 +1065,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetIconId_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetIconId_001
-     * @tc.desc OH_UdsAppItem_SetIconId_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetIconId_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetIconId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetIconId_001');
@@ -1010,12 +1080,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetIconId_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsHtml_GetPlainContent_002
-     * @tc.desc OH_UdsHtml_GetPlainContent_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsHtml_GetPlainContent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetIconId_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetIconId_002');
@@ -1024,12 +1095,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetIconId_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetIconId_003
-     * @tc.desc OH_UdsAppItem_SetIconId_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetIconId_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetIconId_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetIconId_003');
@@ -1038,12 +1110,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetIconId_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetIconId_004
-     * @tc.desc OH_UdsAppItem_SetIconId_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetIconId_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetIconId_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetIconId_004');
@@ -1052,12 +1125,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetIconId_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetIconId_005
-     * @tc.desc OH_UdsAppItem_SetIconId_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetIconId_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetIconId_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetIconId_005');
@@ -1066,12 +1140,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetIconId_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetIconId_001
-     * @tc.desc OH_UdsAppItem_GetIconId_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetIconId_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetIconId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetIconId_001');
@@ -1080,12 +1155,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetIconId_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetIconId_002
-     * @tc.desc OH_UdsAppItem_GetIconId_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetIconId_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetIconId_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetIconId_002');
@@ -1094,12 +1170,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetIconId_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetIconId_003
-     * @tc.desc OH_UdsAppItem_GetIconId_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetIconId_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetIconId_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetIconId_003');
@@ -1108,12 +1185,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetLabelId_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetLabelId_001
-     * @tc.desc OH_UdsAppItem_SetLabelId_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetLabelId_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetLabelId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetLabelId_001');
@@ -1122,12 +1200,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetLabelId_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetLabelId_002
-     * @tc.desc OH_UdsAppItem_SetLabelId_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetLabelId_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetLabelId_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetLabelId_002');
@@ -1136,12 +1215,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetLabelId_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetLabelId_003
-     * @tc.desc OH_UdsAppItem_SetLabelId_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetLabelId_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetLabelId_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetLabelId_003');
@@ -1150,12 +1230,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetLabelId_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetLabelId_004
-     * @tc.desc OH_UdsAppItem_SetLabelId_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetLabelId_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetLabelId_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetLabelId_004');
@@ -1164,12 +1245,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetLabelId_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetLabelId_005
-     * @tc.desc OH_UdsAppItem_SetLabelId_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetLabelId_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetLabelId_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetLabelId_005');
@@ -1178,12 +1260,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetLabelId_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetLabelId_001
-     * @tc.desc OH_UdsAppItem_GetLabelId_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetLabelId_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetLabelId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetLabelId_001');
@@ -1192,12 +1275,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetLabelId_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetLabelId_002
-     * @tc.desc OH_UdsAppItem_GetLabelId_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetLabelId_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetLabelId_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetLabelId_002');
@@ -1206,12 +1290,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetLabelId_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetLabelId_003
-     * @tc.desc OH_UdsAppItem_GetLabelId_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetLabelId_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetLabelId_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetLabelId_003');
@@ -1220,12 +1305,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetBundleName_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetBundleName_001
-     * @tc.desc OH_UdsAppItem_SetBundleName_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetBundleName_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetBundleName_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetBundleName_001');
@@ -1234,12 +1320,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetBundleName_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetBundleName_002
-     * @tc.desc OH_UdsAppItem_SetBundleName_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetBundleName_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetBundleName_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetBundleName_002');
@@ -1248,12 +1335,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetBundleName_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetBundleName_003
-     * @tc.desc OH_UdsAppItem_SetBundleName_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetBundleName_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetBundleName_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetBundleName_003');
@@ -1262,12 +1350,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetBundleName_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetBundleName_004
-     * @tc.desc OH_UdsAppItem_SetBundleName_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetBundleName_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetBundleName_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetBundleName_004');
@@ -1276,12 +1365,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetBundleName_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetBundleName_005
-     * @tc.desc OH_UdsAppItem_SetBundleName_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetBundleName_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetBundleName_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetBundleName_005');
@@ -1290,12 +1380,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetBundleName_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetBundleName_001
-     * @tc.desc OH_UdsAppItem_GetBundleName_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetBundleName_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetBundleName_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetBundleName_001');
@@ -1304,12 +1395,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetBundleName_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetBundleName_002
-     * @tc.desc OH_UdsAppItem_GetBundleName_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetBundleName_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetBundleName_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetBundleName_002');
@@ -1318,12 +1410,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetBundleName_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetBundleName_003
-     * @tc.desc OH_UdsAppItem_GetBundleName_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetBundleName_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetBundleName_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetBundleName_003');
@@ -1332,12 +1425,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetAbilityName_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetAbilityName_001
-     * @tc.desc OH_UdsAppItem_SetAbilityName_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetAbilityName_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetAbilityName_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetAbilityName_001');
@@ -1346,12 +1440,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetAbilityName_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetAbilityName_002
-     * @tc.desc OH_UdsAppItem_SetAbilityName_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetAbilityName_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetAbilityName_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetAbilityName_002');
@@ -1360,12 +1455,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetAbilityName_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetAbilityName_003
-     * @tc.desc OH_UdsAppItem_SetAbilityName_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetAbilityName_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetAbilityName_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetAbilityName_003');
@@ -1374,12 +1470,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetAbilityName_004
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetAbilityName_004
-     * @tc.desc OH_UdsAppItem_SetAbilityName_004
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetAbilityName_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetAbilityName_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetAbilityName_004');
@@ -1388,12 +1485,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_SetAbilityName_005
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_SetAbilityName_005
-     * @tc.desc OH_UdsAppItem_SetAbilityName_005
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_SetAbilityName_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_SetAbilityName_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_SetAbilityName_005');
@@ -1402,12 +1500,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetAbilityName_001
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetAbilityName_001
-     * @tc.desc OH_UdsAppItem_GetAbilityName_001
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetAbilityName_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetAbilityName_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetAbilityName_001');
@@ -1416,12 +1515,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetAbilityName_002
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetAbilityName_002
-     * @tc.desc OH_UdsAppItem_GetAbilityName_002
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetAbilityName_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetAbilityName_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetAbilityName_002');
@@ -1430,12 +1530,13 @@ export default function UdsNdkexTest() {
       expect(data).assertEqual(1);
     });
     /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   OH_UdsAppItem_GetAbilityName_003
      * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_1400
-     * @tc.name OH_UdsAppItem_GetAbilityName_003
-     * @tc.desc OH_UdsAppItem_GetAbilityName_003
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_UdsAppItem_GetAbilityName_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_UdsAppItem_GetAbilityName_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + 'OH_UdsAppItem_GetAbilityName_003');

@@ -53,12 +53,13 @@ export default function relationalStoreDeleteTest() {
     console.info(TAG + '*************Unit Test Begin*************');
 
     /**
-     * @tc.name RelationalStore delete test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStoreDelete0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0100
-     * @tc.desc RelationalStore delete test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RelationalStore delete test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + '************* testRdbStoreDelete0001 start *************');
@@ -105,12 +106,13 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @tc.name RelationalStore delete test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStoreDelete0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0200
-     * @tc.desc RelationalStore delete test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RelationalStore delete test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + '************* testRdbStoreDelete0002 start *************');
@@ -158,12 +160,13 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @tc.name RelationalStore delete test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStoreDelete0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0300
-     * @tc.desc RelationalStore delete test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RelationalStore delete test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDelete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + '************* testRdbStoreDelete0003 start *************');
@@ -215,12 +218,13 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @tc.name RelationalStore delete test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStoreDelete0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0400
-     * @tc.desc RelationalStore delete test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RelationalStore delete test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDelete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + '************* testRdbStoreDelete0004 start *************');
@@ -268,12 +272,13 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @tc.name RelationalStore delete test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStoreDelete0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0500
-     * @tc.desc RelationalStore delete test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RelationalStore delete test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDelete0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + '************* testRdbStoreDelete0005 start *************');
@@ -322,12 +327,13 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @tc.name RelationalStore delete test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStoreDelete0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0600
-     * @tc.desc RelationalStore delete test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RelationalStore delete test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreDelete0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + '************* testRdbStoreDelete0006 start *************');

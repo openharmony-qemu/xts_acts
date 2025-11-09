@@ -52,13 +52,14 @@ export default function wifiManagerTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_On_P2pDiscoveryChange_Callback_Nop
-     * @tc.name: testOn
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_P2pDiscoveryChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_P2pDiscoveryChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_P2pDiscoveryChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_P2pDiscoveryChange_Callback_Nop begin');
@@ -75,13 +76,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_Off_P2pDiscoveryChange_Callback_Nop
-     * @tc.name: testOff
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_Off_P2pDiscoveryChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_Off_P2pDiscoveryChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_Off_P2pDiscoveryChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_Off_P2pDiscoveryChange_Callback_Nop begin');
@@ -98,13 +100,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_On_P2pPersistentGroupChange_Callback_Nop
-     * @tc.name: testOn
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_P2pPersistentGroupChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_P2pPersistentGroupChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_P2pPersistentGroupChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_P2pPersistentGroupChange_Callback_Nop begin');
@@ -121,13 +124,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_Off_P2pPersistentGroupChange_Callback_Nop
-     * @tc.name: testOff
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_Off_P2pPersistentGroupChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_Off_P2pPersistentGroupChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_Off_P2pPersistentGroupChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_Off_P2pPersistentGroupChange_Callback_Nop begin');
@@ -145,13 +149,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_On_P2pPeerDeviceChange_Callback_Nop
-     * @tc.name: testOn
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_P2pPeerDeviceChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_P2pPeerDeviceChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_P2pPeerDeviceChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_P2pPeerDeviceChange_Callback_Nop begin');
@@ -169,13 +174,14 @@ export default function wifiManagerTest() {
     });
 
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_On_P2pDeviceChange_Callback_Nop
-     * @tc.name: testOff
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_P2pDeviceChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_P2pDeviceChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_P2pDeviceChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_P2pDeviceChange_Callback_Nop begin');
@@ -193,13 +199,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_On_P2pConnectionChange_Callback_Nop
-     * @tc.name: testOn
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_P2pConnectionChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_P2pConnectionChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_P2pConnectionChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_P2pConnectionChange_Callback_Nop begin');
@@ -217,13 +224,14 @@ export default function wifiManagerTest() {
     });
 
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_Off_P2pConnectionChange_Callback_Nop
-     * @tc.name: testOff
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_Off_P2pConnectionChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_Off_P2pConnectionChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_Off_P2pConnectionChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_Off_P2pConnectionChange_Callback_Nop begin');
@@ -240,13 +248,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_On_P2pStateChange_Callback_Nop
-     * @tc.name: testOn
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_P2pStateChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_P2pStateChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_P2pStateChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_P2pStateChange_Callback_Nop begin');
@@ -262,13 +271,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_Off_P2pStateChange_Callback_Nop
-     * @tc.name: testOff
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_Off_P2pStateChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_Off_P2pStateChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_Off_P2pStateChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_Off_P2pStateChange_Callback_Nop begin');
@@ -285,13 +295,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Communication_WiFi_On_HotspotStateChange_Callback_Nop
-     * @tc.name: testOn
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_HotspotStateChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_HotspotStateChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_HotspotStateChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_HotspotStateChange_Callback_Nop begin');
@@ -308,13 +319,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_Off_HotspotStateChange_Callback_Nop
-     * @tc.name: testOff
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_Off_HotspotStateChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_Off_HotspotStateChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_Off_HotspotStateChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_Off_HotspotStateChange_Callback_Nop begin');
@@ -331,13 +343,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number: SUB_Communication_WiFi_On_WifiRssiChange_Callback_Nop
-     * @tc.name: testOn
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_On_WifiRssiChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_On_WifiRssiChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_On_WifiRssiChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_On_WifiRssiChange_Callback_Nop begin');
@@ -354,13 +367,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_Off_WifiRssiChange_Callback_Nop
-     * @tc.name: testOff
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_Off_WifiRssiChange_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_Off_WifiRssiChange_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_Off_WifiRssiChange_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_Off_WifiRssiChange_Callback_Nop begin');
@@ -377,13 +391,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_P2P_CreateGroup_Nop
-     * @tc.name: testWifiP2PConfig
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_P2P_CreateGroup_Nop
+     * @tc.number SUB_Communication_WiFi_P2P_CreateGroup_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_P2P_CreateGroup_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_P2P_CreateGroup_Nop begin');
@@ -406,13 +421,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_IsMeteredHotspot_Nop
-     * @tc.name: testisMeteredHotspot
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_IsMeteredHotspot_Nop
+     * @tc.number SUB_Communication_WiFi_IsMeteredHotspot_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_IsMeteredHotspot_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_IsMeteredHotspot_Nop begin');
@@ -427,13 +443,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_IsBandTypeSupported_Nop
-     * @tc.name: testIsBandTypeSupported
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_IsBandTypeSupported_Nop
+     * @tc.number SUB_Communication_WiFi_IsBandTypeSupported_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_IsBandTypeSupported_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_IsBandTypeSupported_Nop begin');
@@ -453,13 +470,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetCountryCode_Nop
-     * @tc.name: testGetCountryCode
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetCountryCode_Nop
+     * @tc.number SUB_Communication_WiFi_GetCountryCode_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetCountryCode_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetCountryCode_Nop begin');
@@ -474,13 +492,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetIpv6Info_Nop
-     * @tc.name: testGetIpv6Info
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetIpv6Info_Nop
+     * @tc.number SUB_Communication_WiFi_GetIpv6Info_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetIpv6Info_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetIpv6Info_Nop begin');
@@ -495,13 +514,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetCurrentGroup_Callback_Nop
-     * @tc.name: testGetCurrentGroup
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetCurrentGroup_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_GetCurrentGroup_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetCurrentGroup_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetCurrentGroup_Callback_Nop begin');
@@ -523,13 +543,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetCurrentGroup_Promise_Nop
-     * @tc.name: testGetCurrentGroup
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetCurrentGroup_Promise_Nop
+     * @tc.number SUB_Communication_WiFi_GetCurrentGroup_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetCurrentGroup_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetCurrentGroup_Promise_Nop begin');
@@ -554,13 +575,14 @@ export default function wifiManagerTest() {
       });
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_StartDiscoverDevices_Nop
-     * @tc.name: testStartDiscoverDevices
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_StartDiscoverDevices_Nop
+     * @tc.number SUB_Communication_WiFi_StartDiscoverDevices_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_StartDiscoverDevices_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_StartDiscoverDevices_Nop begin');
@@ -575,13 +597,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_StopDiscoverDevices_Nop
-     * @tc.name: testStopDiscoverDevices
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_StopDiscoverDevices_Nop
+     * @tc.number SUB_Communication_WiFi_StopDiscoverDevices_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_StopDiscoverDevices_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_StopDiscoverDevices_Nop begin');
@@ -596,13 +619,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_RemoveGroup_Nop
-     * @tc.name: testRemoveGroup
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_RemoveGroup_Nop
+     * @tc.number SUB_Communication_WiFi_RemoveGroup_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_RemoveGroup_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_RemoveGroup_Nop begin');
@@ -617,13 +641,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetSupportedPowerMode_Callback_Nop
-     * @tc.name: testGetSupportedPowerMode
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetSupportedPowerMode_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_GetSupportedPowerMode_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetSupportedPowerMode_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetSupportedPowerMode_Callback_Nop begin');
@@ -652,13 +677,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetSupportedPowerMode_Promise_Nop
-     * @tc.name: testGetSupportedPowerMode
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetSupportedPowerMode_Promise_Nop
+     * @tc.number SUB_Communication_WiFi_GetSupportedPowerMode_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetSupportedPowerMode_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetSupportedPowerMode_Promise_Nop begin');
@@ -684,13 +710,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetPowerMode_Promise_Nop
-     * @tc.name: testGetPowerMode
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetPowerMode_Promise_Nop
+     * @tc.number SUB_Communication_WiFi_GetPowerMode_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetPowerMode_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetPowerMode_Promise_Nop begin');
@@ -716,13 +743,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetPowerMode_Callback_Nop
-     * @tc.name: testGetPowerMode
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetPowerMode_Callback_Nop
+     * @tc.number SUB_Communication_WiFi_GetPowerMode_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetPowerMode_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetPowerMode_Callback_Nop begin');
@@ -751,13 +779,14 @@ export default function wifiManagerTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_IsHotspotActive_Nop
-     * @tc.name: testIsHotspotActive
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_isHotspotActive_Nop
+     * @tc.number SUB_Communication_WiFi_IsHotspotActive_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_isHotspotActive_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_isHotspotActive_Nop begin');
@@ -771,13 +800,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_Disconnect_Nop
-     * @tc.name: testDisconnect
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_Disconnect_Nop
+     * @tc.number SUB_Communication_WiFi_Disconnect_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_Disconnect_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_Disconnect_Nop begin');
@@ -791,13 +821,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_EnableWifi_Nop
-     * @tc.name: testEnableWifi
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_EnableWifi_Nop
+     * @tc.number SUB_Communication_WiFi_EnableWifi_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_EnableWifi_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_EnableWifi_Nop begin');
@@ -811,13 +842,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_RemoveDevice_Nop
-     * @tc.name: testRemoveDevice
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_RemoveDevice_Nop
+     * @tc.number SUB_Communication_WiFi_RemoveDevice_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_RemoveDevice_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_RemoveDevice_Nop begin');
@@ -831,13 +863,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_ConnectToNetwork_Nop
-     * @tc.name: testConnectToNetwork
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_ConnectToNetwork_Nop
+     * @tc.number SUB_Communication_WiFi_ConnectToNetwork_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_ConnectToNetwork_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_ConnectToNetwork_Nop begin');
@@ -851,13 +884,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetDeviceConfigs_Nop
-     * @tc.name: testGetDeviceConfigs
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetDeviceConfigs_Nop
+     * @tc.number SUB_Communication_WiFi_GetDeviceConfigs_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetDeviceConfigs_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetDeviceConfigs_Nop begin');
@@ -871,13 +905,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_AddDeviceConfig_Nop
-     * @tc.name: testAddDeviceConfig
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_AddDeviceConfig_Nop
+     * @tc.number SUB_Communication_WiFi_AddDeviceConfig_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_AddDeviceConfig_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_AddDeviceConfig_Nop begin');
@@ -901,13 +936,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetDeviceMacAddress_Nop
-     * @tc.name: testGetDeviceMacAddress
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetDeviceMacAddress_Nop
+     * @tc.number SUB_Communication_WiFi_GetDeviceMacAddress_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetDeviceMacAddress_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetDeviceMacAddress_Nop begin');
@@ -921,13 +957,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_EnableHotspot_Nop
-     * @tc.name: testEnableHotspot
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_EnableHotspot_Nop
+     * @tc.number SUB_Communication_WiFi_EnableHotspot_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_EnableHotspot_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_EnableHotspot_Nop begin');
@@ -946,13 +983,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_DisableHotspot_Nop
-     * @tc.name: testDisableHotspot
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_DisableHotspot_Nop
+     * @tc.number SUB_Communication_WiFi_DisableHotspot_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_DisableHotspot_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisableHotspot_Nop begin');
@@ -971,13 +1009,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_SetPowerMode_Nop
-     * @tc.name: testSetPowerMode
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_SetPowerMode_Nop
+     * @tc.number SUB_Communication_WiFi_SetPowerMode_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_SetPowerMode_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_SetPowerMode_Nop begin');
@@ -996,13 +1035,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetScanResultsCallback_Nop
-     * @tc.name: testGetScanResults
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetScanResultsCallback_Nop
+     * @tc.number SUB_Communication_WiFi_GetScanResultsCallback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetScanResultsCallback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetScanResultsCallback_Nop begin');
@@ -1028,13 +1068,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetScanResultsPromise_Nop
-     * @tc.name: testGetScanResults
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetScanResultsPromise_Nop
+     * @tc.number SUB_Communication_WiFi_GetScanResultsPromise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetScanResultsPromise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetScanResultsPromise_Nop begin');
@@ -1049,13 +1090,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetScanResultsSync_Nop
-     * @tc.name: testGetScanResultsSync
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetScanResultsSync_Nop
+     * @tc.number SUB_Communication_WiFi_GetScanResultsSync_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetScanResultsSync_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetScanResultsSync_Nop begin');
@@ -1069,13 +1111,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetMultiLinkedInfo_Nop
-     * @tc.name: testGetMultiLinkedInfo
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetMultiLinkedInfo_Nop
+     * @tc.number SUB_Communication_WiFi_GetMultiLinkedInfo_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetMultiLinkedInfo_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetMultiLinkedInfo_Nop begin');
@@ -1089,13 +1132,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_GetLinkedInfoSync_Nop
-     * @tc.name: testGetLinkedInfoSync
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_GetLinkedInfoSync_Nop
+     * @tc.number SUB_Communication_WiFi_GetLinkedInfoSync_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Communication_WiFi_GetLinkedInfoSync_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_GetLinkedInfoSync_Nop begin');
@@ -1109,13 +1153,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_ConnectToCandidateConfigWithUserAction_Nop
-     * @tc.name: SUB_Communication_WiFi_ConnectToCandidateConfigWithUserAction_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_ConnectToCandidateConfigWithUserAction_Nop
+     * @tc.number SUB_Communication_WiFi_ConnectToCandidateConfigWithUserAction_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_WiFi_ConnectToCandidateConfigWithUserAction_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_ConnectToCandidateConfigWithUserAction_Nop begin');
@@ -1136,13 +1181,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_DisableWifi_Nop
-     * @tc.name: SUB_Communication_WiFi_DisableWifi_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_DisableWifi_Nop
+     * @tc.number SUB_Communication_WiFi_DisableWifi_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_WiFi_DisableWifi_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisableWifi_Nop begin');
@@ -1161,13 +1207,14 @@ export default function wifiManagerTest() {
       done();
     });
 
-    /*
-     * @tc.number:SUB_Communication_WiFi_StartScan_Nop
-     * @tc.name: SUB_Communication_WiFi_StartScan_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:46
+     * @tc.name   SUB_Communication_WiFi_StartScan_Nop
+     * @tc.number SUB_Communication_WiFi_StartScan_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_WiFi_StartScan_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_StartScan_Nop begin');
