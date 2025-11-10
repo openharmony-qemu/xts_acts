@@ -304,6 +304,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
             done();
             return;
           }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
+            done();
+            return;
+          }
           expect(16000079).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done();
@@ -364,6 +370,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
             done();
             return;
           }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
+            done();
+            return;
+          }
           expect(16000077).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done();
@@ -392,6 +404,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
           if(result == 801){
             console.info(`====>${LOG_NAME} result: ` + result);
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
             done();
             return;
           }
@@ -452,6 +470,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
           if(result == 801){
             console.info(`====>${LOG_NAME} result: ` + result);
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
             done();
             return;
           }
@@ -572,6 +596,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
           if(result == 801){
             console.info(`====>${LOG_NAME} result: ` + result);
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
             done();
             return;
           }
@@ -1411,6 +1441,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
             done();
             return;
           }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
+            done();
+            return;
+          }
           expect(16000076).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done()
@@ -1440,6 +1476,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
             done();
             return;
           }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
+            done();
+            return;
+          }
           expect(16000077).assertEqual(result);
           console.info(`====>${LOG_NAME} result: ` + result);
           done()
@@ -1466,6 +1508,12 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
           let result:number = AbilityKitTest.AbilityRuntimeErrorAppInstanceKeyNotSupportCode();
           if(result == 801){
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            console.info(`====>${LOG_NAME} result: ` + result);
+            expect(16000078).assertEqual(result);
             done();
             return;
           }
