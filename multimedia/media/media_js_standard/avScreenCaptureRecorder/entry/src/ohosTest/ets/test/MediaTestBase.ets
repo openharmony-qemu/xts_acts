@@ -182,13 +182,15 @@ export default class MediaTestBase {
       case this.SET_PICKER_MODE:
         steps.shift();
         if (this.isTestSucceeded()) {
-          const pickerMode: number = 1;
-          await avScreenCaptureRecorder?.setPickerMode(pickerMode).then(() => {
+          try {
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.WINDOW_ONLY);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_ONLY);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW);
             console.info('avScreenCaptureRecorder setPickerMode success');
-          }).catch((err: BusinessError) => {
-            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          } catch (error) {
+            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
             this.testFail();
-          });
+          }
         }
 
         this.driveFnNoSleep(1)
