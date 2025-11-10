@@ -15,6 +15,16 @@
 {
   "apiType": "stageMode",
   "buildOption": {
+    "sourceOption": {
+      "workers": [
+        './src/ohosTest/ets/test/atomics/workers/Worker01.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker02.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker03.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker04.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker05.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker06.ets',
+      ]
+    }
   },
   "buildOptionSet": [
     {
