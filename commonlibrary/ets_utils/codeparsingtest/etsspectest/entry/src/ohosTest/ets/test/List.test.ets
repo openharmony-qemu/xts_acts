@@ -26,6 +26,7 @@ import builtinsStatementReturnTest from './statement/StatementReturnTest.test';
 import builtinsStatementSwitchTest from './statement/StatementSwitchTest.test';
 import numberTest from './numberstring/NumberTest.test';
 import RegExpTest from './regexp/regexp.test';
+import InheritTest from './Inherit/Inherit.test'
 import KeyCollectionTest from './keycollection/keycollection.test';
 import stringTest from './numberstring/StringTest.test';
 import dateTimeTest from './datetime/DateTimeTest.test';
@@ -40,6 +41,7 @@ import expressionTest3 from './expression/ExpressionTest3.test';
 import expressionTest4 from './expression/ExpressionTest4.test';
 import expressionTest5 from './expression/ExpressionTest5.test';
 import expressionTest6 from './expression/ExpressionTest6.test';
+import expressionTest7 from './expression/ExpressionTest7.test';
 import looper1Test from './looper/Looper1.test';
 import looper2Test from './looper/Looper2.test';
 import looper3Test from './looper/Looper3.test';
@@ -79,11 +81,13 @@ export default function testsuite() {
   expressionTest4();
   expressionTest5();
   expressionTest6();
+  expressionTest7();
   looper1Test();
   looper2Test();
   looper3Test();
   looper4Test();
   looper5Test();
   RegExpTest();
+  InheritTest();
   KeyCollectionTest();
 }
