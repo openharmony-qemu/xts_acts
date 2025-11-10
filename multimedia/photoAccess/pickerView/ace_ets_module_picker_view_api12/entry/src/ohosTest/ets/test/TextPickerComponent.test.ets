@@ -46,6 +46,7 @@ import {
   PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
+import fs from '@ohos.file.fs';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
@@ -157,6 +158,18 @@ async function testCompleteButton(driver: Driver, options: router.RouterOptions,
   router.back();
 }
 
+async function isSupportHdrFn(){
+  return await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean)=>{
+    if(res){
+      console.info("file exists");
+      return true;
+    } else {
+      console.info("file not exists");
+      return false;
+    }
+  });
+}
+
 export default function TextPicker() {
   describe('testPicker', () => {
     const isExecutePicker = canIUse('SystemCapability.FileManagement.PhotoAccessHelper.Core');
@@ -173,10 +186,14 @@ export default function TextPicker() {
       }
       await CommonFunc.sleep(1000);
       if (!isExecuteTestCase) {
-        try {
-          driver.triggerCombineKeys(17, 18);
-        } catch (error) {
-          console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
+        const isSupportHdr = await isSupportHdrFn();
+        console.log(`isSupportHdr = ${isSupportHdr}`);
+        if(isSupportHdr){
+          try {
+            driver.triggerCombineKeys(17, 18);
+          } catch (error) {
+            console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
+          }
         }
       }
       done();
