@@ -34,12 +34,13 @@ export default function MultimodalInputKeyCodeTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100
-     * @tc.desc: Test keycode KEYCODE_SWITCHVIDEOMODE.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100
+     * @tc.desc   Test keycode KEYCODE_SWITCHVIDEOMODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_SWITCHVIDEOMODE_0100";
@@ -56,12 +57,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_SEARCH_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_SEARCH_0100
-     * @tc.desc: Test keycode KEYCODE_SEARCH.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_SEARCH_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_SEARCH_0100
+     * @tc.desc   Test keycode KEYCODE_SEARCH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_SEARCH_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_SEARCH_0100";
@@ -78,12 +80,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100
-     * @tc.desc: Test keycode KEYCODE_MEDIA_RECORD.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100
+     * @tc.desc   Test keycode KEYCODE_MEDIA_RECORD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_MEDIA_RECORD_0100";
@@ -100,12 +103,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100
-     * @tc.desc: Test keycode KEYCODE_ASSISTANT.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100
+     * @tc.desc   Test keycode KEYCODE_ASSISTANT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_ASSISTANT_0100";
@@ -122,12 +126,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
-     * @tc.desc: Test keycode KEYCODE_DAGGER_CLICK.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100
+     * @tc.desc   Test keycode KEYCODE_DAGGER_CLICK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_DAGGER_CLICK_0100";
@@ -144,12 +149,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100
-     * @tc.desc: Test keycode KEYCODE_DAGGER_DOUBLE_CLICK.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100
+     * @tc.desc   Test keycode KEYCODE_DAGGER_DOUBLE_CLICK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_DAGGER_DOUBLE_CLICK_0100";
@@ -166,12 +172,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100
-     * @tc.desc: Test keycode KEYCODE_DAGGER_LONG_PRESS.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100
+     * @tc.desc   Test keycode KEYCODE_DAGGER_LONG_PRESS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_DAGGER_LONG_PRESS_0100";
@@ -188,12 +195,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_A.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_A.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_A_0100";
@@ -210,12 +218,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_B.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_B.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_B_0100";
@@ -232,12 +241,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_X.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_X.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_X_0100";
@@ -254,12 +264,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_Y.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_Y.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_Y_0100";
@@ -276,12 +287,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_L1.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_L1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_L1_0100";
@@ -298,12 +310,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_R1.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_R1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_R1_0100";
@@ -320,12 +333,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_L2.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_L2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_L2_0100";
@@ -342,12 +356,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_R2.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_R2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_R2_0100";
@@ -364,12 +379,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_SELECT.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_SELECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_SELECT_0100";
@@ -386,12 +402,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_START.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_START.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_START_0100";
@@ -408,12 +425,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_MODE.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_MODE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_MODE_0100";
@@ -430,12 +448,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_THUMBL.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_THUMBL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBL_0100";
@@ -452,12 +471,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100
-     * @tc.desc: Test keycode KEYCODE_BUTTON_THUMBR.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100
+     * @tc.desc   Test keycode KEYCODE_BUTTON_THUMBR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_BUTTON_THUMBR_0100";
@@ -474,12 +494,13 @@ export default function MultimodalInputKeyCodeTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_KEYCODE_DIV_0100
-     * @tc.name: SUB_MMI_Input_Api_KEYCODE_DIV_0100
-     * @tc.desc: Test keycode KEYCODE_DIV.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_DIV_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_DIV_0100
+     * @tc.desc   Test keycode KEYCODE_DIV.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_KEYCODE_DIV_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_KEYCODE_DIV_0100";

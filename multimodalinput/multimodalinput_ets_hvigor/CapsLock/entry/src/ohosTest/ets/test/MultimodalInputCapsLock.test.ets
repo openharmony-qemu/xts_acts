@@ -35,12 +35,13 @@ export default function MultimodalInputCapsLockTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0100
-     * @tc.name: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0100
-     * @tc.desc: Test promise setFunctionKeyEnabled and isFunctionKeyEnabled interface to call a non-input method application.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0100
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0100
+     * @tc.desc   Test promise setFunctionKeyEnabled and isFunctionKeyEnabled interface to call a non-input method application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0100";
@@ -69,12 +70,13 @@ export default function MultimodalInputCapsLockTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0200
-     * @tc.name: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0200
-     * @tc.desc: Test promise setFunctionKeyEnabled interface to  set error FunctionKey(10000).
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0200
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0200
+     * @tc.desc   Test promise setFunctionKeyEnabled interface to  set error FunctionKey(10000).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0200";
@@ -96,12 +98,13 @@ export default function MultimodalInputCapsLockTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0300
-     * @tc.name: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0300
-     * @tc.desc: Test promise setFunctionKeyEnabled interface to  set error FunctionKey(-1).
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0300
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0300
+     * @tc.desc   Test promise setFunctionKeyEnabled interface to  set error FunctionKey(-1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0300";
@@ -123,12 +126,13 @@ export default function MultimodalInputCapsLockTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400
-     * @tc.name: SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400
-     * @tc.desc: Test promise setFunctionKeyEnabled interface to call a non-input method application.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400
+     * @tc.desc   Test promise setFunctionKeyEnabled interface to call a non-input method application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0400";

@@ -46,12 +46,13 @@ export default function MultimodalGestureEventTest() {
     }
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_GestureEvent_0100
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0100
-     * @tc.name SUB_MMI_Input_Api_GestureEvent_0100
-     * @tc.desc Test GestureEvent Pinch
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test GestureEvent Pinch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_GestureEvent_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -74,12 +75,13 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_GestureEvent_0200
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0200
-     * @tc.name SUB_MMI_Input_Api_GestureEvent_0200
-     * @tc.desc Test GestureEvent Rotate
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test GestureEvent Rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_GestureEvent_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -102,12 +104,13 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_GestureEvent_0300
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0300
-     * @tc.name SUB_MMI_Input_Api_GestureEvent_0300
-     * @tc.desc Test GestureEvent ThreeFingersSwipe
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test GestureEvent ThreeFingersSwipe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_GestureEvent_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -130,12 +133,13 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_GestureEvent_0400
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0400
-     * @tc.name SUB_MMI_Input_Api_GestureEvent_0400
-     * @tc.desc Test GestureEvent FourFingersSwipe
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test GestureEvent FourFingersSwipe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_GestureEvent_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -159,12 +163,13 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_GestureEvent_0500
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0500
-     * @tc.name SUB_MMI_Input_Api_GestureEvent_0500
-     * @tc.desc Test GestureEvent ThreeFingersTap
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test GestureEvent ThreeFingersTap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_GestureEvent_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -186,12 +191,13 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_GestureEvent_0600
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0600
-     * @tc.name SUB_MMI_Input_Api_GestureEvent_0600
-     * @tc.desc Test GestureEvent ActionType
-     * @tc.level: Level 2
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test GestureEvent ActionType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MMI_Input_Api_GestureEvent_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

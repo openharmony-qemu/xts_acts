@@ -28,12 +28,13 @@ export default function RunningLockPermissionTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockPermissionTest_static_0100
      * @tc.number RunningLockPermissionETSTest_0100
-     * @tc.name testRunningLockPermissionTest_static_0100
-     * @tc.desc Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRunningLockPermissionTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -59,12 +60,13 @@ export default function RunningLockPermissionTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testRunningLockPermissionTest_static_0200
      * @tc.number RunningLockPermissionETSTest_0200
-     * @tc.name testRunningLockPermissionTest_static_0200
-     * @tc.desc Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockPermissionTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

@@ -67,13 +67,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-SECURITY-0101
-     * @tc.name: testPermissionUserGrant0100
-     * @tc.desc: 【STD-SECURITY-0101】必须为用户提供专用的界面或接口用于授权和管理动态权限(user_grant)，必要时用户可以撤销授权。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPermissionUserGrant0100
+     * @tc.number STD-SECURITY-0101
+     * @tc.desc   【STD-SECURITY-0101】必须为用户提供专用的界面或接口用于授权和管理动态权限(user_grant)，必要时用户可以撤销授权。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPermissionUserGrant0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if(!canIUse("SystemCapability.Multimedia.Camera.Core")) {
@@ -94,13 +95,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-SECURITY-0105
-     * @tc.name: testBackgroundCameraBanned0100
-     * @tc.desc: 【STD-SECURITY-0105】禁止允许应用在后台时使用相机权限。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBackgroundCameraBanned0100
+     * @tc.number STD-SECURITY-0105
+     * @tc.desc   【STD-SECURITY-0105】禁止允许应用在后台时使用相机权限。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBackgroundCameraBanned0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if(!canIUse("SystemCapability.Multimedia.Camera.Core")) {
@@ -174,13 +176,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-SECURITY-0106
-     * @tc.name: testAuthenticationCall0100
-     * @tc.desc: 【STD-SECURITY-0106】涉及权限保护的接口，必须通过鉴权之后才允许被调用。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAuthenticationCall0100
+     * @tc.number STD-SECURITY-0106
+     * @tc.desc   【STD-SECURITY-0106】涉及权限保护的接口，必须通过鉴权之后才允许被调用。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAuthenticationCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`testAuthenticationCall0100 start`)
@@ -230,13 +233,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-SECURITY-0300
-     * @tc.name: testHardwareSupportAESGCM256Alg0100
-     * @tc.desc: 【C-ALL-SECURITY-0300】必须至少支持 AES-GCM-256 算法，用于报文传输的加密和解密。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testHardwareSupportAESGCM256Alg0100
+     * @tc.number C-ALL-SECURITY-0300
+     * @tc.desc   【C-ALL-SECURITY-0300】必须至少支持 AES-GCM-256 算法，用于报文传输的加密和解密。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHardwareSupportAESGCM256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -262,13 +266,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-SECURITY-0302
-     * @tc.name: testSupportHASHAndHMACAlg0100
-     * @tc.desc: 【C-ALL-SECURITY-0302】必须支持硬件 HASH-SHA256、HMAC_SHA256 算法。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportHASHAndHMACAlg0100
+     * @tc.number C-ALL-SECURITY-0302
+     * @tc.desc   【C-ALL-SECURITY-0302】必须支持硬件 HASH-SHA256、HMAC_SHA256 算法。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportHASHAndHMACAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -307,13 +312,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-SECURITY-0303
-     * @tc.name: testSupportRSA2048Alg0100
-     * @tc.desc: 【C-ALL-SECURITY-0303】必须支持硬件 RSA、ECC 签名校验算法。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportRSA2048Alg0100
+     * @tc.number C-ALL-SECURITY-0303
+     * @tc.desc   【C-ALL-SECURITY-0303】必须支持硬件 RSA、ECC 签名校验算法。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportRSA2048Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -335,13 +341,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-SECURITY-0303
-     * @tc.name: testSupportECCAlg0100
-     * @tc.desc: 【C-ALL-SECURITY-0303】必须支持硬件 RSA、ECC 签名校验算法。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportECCAlg0100
+     * @tc.number C-ALL-SECURITY-0303
+     * @tc.desc   【C-ALL-SECURITY-0303】必须支持硬件 RSA、ECC 签名校验算法。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportECCAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -363,13 +370,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SECURITY-0308
-     * @tc.name: testSupportSecureRandomNumber0100
-     * @tc.desc: 【G-SECURITY-0308】必须支持安全随机数。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportSecureRandomNumber0100
+     * @tc.number G-SECURITY-0308
+     * @tc.desc   【G-SECURITY-0308】必须支持安全随机数。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportSecureRandomNumber0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -390,13 +398,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SECURITY-0309
-     * @tc.name: testSupportHASHSHA256Alg0100
-     * @tc.desc: 【G-SECURITY-0309】必须支持 HASH 算法，至少包括 SHA256。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportHASHSHA256Alg0100
+     * @tc.number G-SECURITY-0309
+     * @tc.desc   【G-SECURITY-0309】必须支持 HASH 算法，至少包括 SHA256。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportHASHSHA256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -417,13 +426,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0310
-     * @tc.name: testSupportHKDFAlg0100
-     * @tc.desc: 【S|STD-SECURITY-0310】必须支持 HMAC 和 HKDF 算法，至少包括 HMAC-SHA256。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportHKDFAlg0100
+     * @tc.number S|STD-SECURITY-0310
+     * @tc.desc   【S|STD-SECURITY-0310】必须支持 HMAC 和 HKDF 算法，至少包括 HMAC-SHA256。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportHKDFAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyAlias = 'hkdf_key'
@@ -457,13 +467,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SECURITY-0311
-     * @tc.name: testSupportAESCBC128Alg0100
-     * @tc.desc: 【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCBC128Alg0100
+     * @tc.number G-SECURITY-0311
+     * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCBC128Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -487,13 +498,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SECURITY-0311
-     * @tc.name: testSupportAESCBC192Alg0100
-     * @tc.desc: 【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCBC192Alg0100
+     * @tc.number G-SECURITY-0311
+     * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCBC192Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -517,13 +529,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SECURITY-0311
-     * @tc.name: testSupportAESCBC256Alg0100
-     * @tc.desc: 【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCBC256Alg0100
+     * @tc.number G-SECURITY-0311
+     * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCBC256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -547,13 +560,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SECURITY-0311
-     * @tc.name: testSupportAESGCM128Alg0100
-     * @tc.desc: 【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESGCM128Alg0100
+     * @tc.number G-SECURITY-0311
+     * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESGCM128Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -577,14 +591,15 @@ export default function securityTest() {
       done()
     })
 
-    /*
-      * @tc.number: G-SECURITY-0311
-      * @tc.name: testSupportAESGCM192Alg0100
-      * @tc.desc: 【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 0
-      */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESGCM192Alg0100
+     * @tc.number G-SECURITY-0311
+     * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSupportAESGCM192Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let keyData2 = new Uint8Array(buffer.from('12345678abcdefgh12345678', 'utf8').buffer)
@@ -607,14 +622,15 @@ export default function securityTest() {
       done()
     })
 
-    /*
-      * @tc.number: G-SECURITY-0311
-      * @tc.name: testSupportAESGCM256Alg0100
-      * @tc.desc: 【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 0
-      */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESGCM256Alg0100
+     * @tc.number G-SECURITY-0311
+     * @tc.desc   【G-SECURITY-0311】必须支持 AES 对称加密算法，分组模式支持 CBC、GCM，密钥长度支持 128、192、256 位。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSupportAESGCM256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let keyData3 = new Uint8Array(buffer.from('12345678abcdefgh12345678abcdefgh', 'utf8').buffer)
@@ -637,14 +653,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESECB128Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESECB128Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESECB128Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -667,14 +683,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESECB192Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESECB192Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESECB192Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -697,14 +713,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESECB256Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESECB256Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESECB256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -727,14 +743,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESOFB128Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESOFB128Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESOFB128Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -758,14 +774,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESOFB192Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESOFB192Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESOFB192Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -789,14 +805,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESOFB256Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESOFB256Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESOFB256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -820,14 +836,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCFB128Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCFB128Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCFB128Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -851,14 +867,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCFB192Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCFB192Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCFB192Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -882,14 +898,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCFB256Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCFB256Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCFB256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -913,14 +929,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCTR128Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCTR128Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCTR128Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -944,14 +960,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCTR192Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCTR192Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCTR192Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -976,14 +992,14 @@ export default function securityTest() {
     })
 
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCTR256Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCTR256Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCTR256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1007,14 +1023,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCCM128Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCCM128Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCCM128Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1038,14 +1054,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCCM192Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCCM192Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCCM192Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1069,14 +1085,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0312
-     * @tc.name: testSupportAESCCM256Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
-     *            密钥长度支持 128、192、256 位。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportAESCCM256Alg0100
+     * @tc.number S|STD-SECURITY-0312
+     * @tc.desc   【S|STD-SECURITY-0312】必须支持 AES 对称加密算法，分组模式支持 ECB、OFB、CFB、CTR、CCM、
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportAESCCM256Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1100,14 +1116,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0313
-     * @tc.name: testSupportRSA3072Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0313】必须支持非对称加密算法 RSA，包括 2048 位、3072 位、4096 位，
-     *            能够实现密钥管理、加解密以及签名服务。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportRSA3072Alg0100
+     * @tc.number S|STD-SECURITY-0313
+     * @tc.desc   【S|STD-SECURITY-0313】必须支持非对称加密算法 RSA，包括 2048 位、3072 位、4096 位，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportRSA3072Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1129,14 +1145,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0313
-     * @tc.name: testSupportRSA4096Alg0100
-     * @tc.desc: 【S|STD-SECURITY-0313】必须支持非对称加密算法 RSA，包括 2048 位、3072 位、4096 位，
-     *            能够实现密钥管理、加解密以及签名服务。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportRSA4096Alg0100
+     * @tc.number S|STD-SECURITY-0313
+     * @tc.desc   【S|STD-SECURITY-0313】必须支持非对称加密算法 RSA，包括 2048 位、3072 位、4096 位，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportRSA4096Alg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1158,14 +1174,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0314
-     * @tc.name: testSupportSignatureVerifyAlg0100
-     * @tc.desc: 【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
-     *            支持椭圆曲线签名算法 ED25519 和密钥协商算法 X25519、25519曲线。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportSignatureVerifyAlg0100
+     * @tc.number S|STD-SECURITY-0314
+     * @tc.desc   【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportSignatureVerifyAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1203,14 +1219,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: S|STD-SECURITY-0314
-     * @tc.name: testSupportKeySignatureAlg0100
-     * @tc.desc: 【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
-     *            支持椭圆曲线签名算法 ED25519 和密钥协商算法 X25519、25519曲线。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportKeySignatureAlg0100
+     * @tc.number S|STD-SECURITY-0314
+     * @tc.desc   【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportKeySignatureAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1242,15 +1258,15 @@ export default function securityTest() {
       done()
     })
 
-    /*
-    * @tc.number: S|STD-SECURITY-0314
-    * @tc.name: testSupportKeyAgreementAlg0100
-    * @tc.desc: 【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
-    *            支持椭圆曲线签名算法 ED25519 和密钥协商算法 X25519、25519曲线。
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSupportKeyAgreementAlg0100
+     * @tc.number S|STD-SECURITY-0314
+     * @tc.desc   【S|STD-SECURITY-0314】支持椭圆曲线签名算法 ECDSA 和密钥协商算法 ECDH，至少支持 P256 曲线；
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSupportKeyAgreementAlg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let eccGen = cryptoFramework.createAsyKeyGenerator('ECC256')
@@ -1281,14 +1297,15 @@ export default function securityTest() {
       done()
     })
 
-    /*
-    * @tc.number: STD-SECURITY-0315
-    * @tc.name: testKeyStorage0100
-    * @tc.desc: 【STD-SECURITY-0315】HUKS 应提供密钥安全存储能力，保护业务所存储密钥的机密性与完整性。
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testKeyStorage0100
+     * @tc.number STD-SECURITY-0315
+     * @tc.desc   【STD-SECURITY-0315】HUKS 应提供密钥安全存储能力，保护业务所存储密钥的机密性与完整性。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testKeyStorage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let keyAlias = 'hkdf_key'
       try {
@@ -1307,14 +1324,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-SECURITY-0316
-     * @tc.name: testKeyIdentityAssociation0100
-     * @tc.desc: 【STD-SECURITY-0316】业务存储密钥时，系统级的密钥管理模块应将该业务的身份与密钥进行关联存储，并对该业务身份进行完整性保护。
-     *           【STD-SECURITY-0317】业务访问密钥时，系统级的密钥管理模块应判断业务身份，确认调用方是该密钥合法的属主。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testKeyIdentityAssociation0100
+     * @tc.number STD-SECURITY-0316
+     * @tc.desc   【STD-SECURITY-0316】业务存储密钥时，系统级的密钥管理模块应将该业务的身份与密钥进行关联存储，并对该业务身份进行完整性保护。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testKeyIdentityAssociation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'TestAbility', abilityContext)).assertTrue()
@@ -1385,15 +1402,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SECURITY-0500
-     * @tc.name: testFileRiskLevelEnable0100
-     * @tc.desc: 【C-S|STD-SECURITY-0500】对于要求提供风险等级标签设置能力的系统，对应的文件系统（包括本地文件系统和分布式文件系统）
-     *            应提供文件风险等级标签设置的能力，供业务设置数据风险等级。数据以文件形式（包括本地文件系统和分布式文件系统）存储的场景下，
-     *            生成数据的应用或服务需要根据文件之中数据的最高风险等级为对应的文件设置风险等级标签并使能标签对应的机密性保护能力。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testFileRiskLevelEnable0100
+     * @tc.number C-S|STD-SECURITY-0500
+     * @tc.desc   【C-S|STD-SECURITY-0500】对于要求提供风险等级标签设置能力的系统，对应的文件系统（包括本地文件系统和分布式文件系统）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFileRiskLevelEnable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1413,16 +1429,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SECURITY-0501
-     * @tc.name: testDatabaseRiskLevelEnable0100
-     * @tc.desc: 【C-S|STD-SECURITY-0501】对于要求提供风险等级标签设置能力的系统，对应的数据库系统（包括本地数据库和分布式数据库）
-     *            应提供数据风险等级标签设置的能力，供业务使用设置风险等级。数据在数据库（包括本地数据库和分布式数据库）存储的场景下，
-     *            生成数据的应用或服务以数据库文件（如.db 文件）为单位，按照数据库中存储数据的最高风险等级为数据库文件设置风险等级标签
-     *            并使能标签对应的机密性保护能力。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testDatabaseRiskLevelEnable0100
+     * @tc.number C-S|STD-SECURITY-0501
+     * @tc.desc   【C-S|STD-SECURITY-0501】对于要求提供风险等级标签设置能力的系统，对应的数据库系统（包括本地数据库和分布式数据库）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatabaseRiskLevelEnable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1455,13 +1469,14 @@ export default function securityTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-SECURITY-0201
-     * @tc.name: testDriverNodeAccess
-     * @tc.desc: 【STD-SECURITY-0201】不应给应用开放直接访问设备驱动节点的能力，需通过服务层访问。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testDriverNodeAccess
+     * @tc.number STD-SECURITY-0201
+     * @tc.desc   【STD-SECURITY-0201】不应给应用开放直接访问设备驱动节点的能力，需通过服务层访问。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDriverNodeAccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let driverList = ['/dev', '/dev/auth_ctrl', '/dev/bbox', '/dev/block', '/dev/bus', '/dev/char', '/dev/code_sign',

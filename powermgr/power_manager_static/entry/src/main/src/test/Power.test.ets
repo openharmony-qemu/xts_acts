@@ -27,12 +27,13 @@ export default function PowerTest() {
   describe("PowerTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0100
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0010
-     * @tc.name testPowerTest_static_0100
-     * @tc.desc Checks whether the screen of a device is on or off
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the screen of a device is on or off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPowerTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -52,12 +53,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0200
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0020
-     * @tc.name testPowerTest_static_0200
-     * @tc.desc Gets and sets the power mode
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Gets and sets the power mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPowerTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -78,12 +80,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0300
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0030
-     * @tc.name testPowerTest_static_0300
-     * @tc.desc Device isStandby interface verification
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Device isStandby interface verification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -104,12 +107,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0400
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0040
-     * @tc.name testPowerTest_static_0400
-     * @tc.desc Get device power mode MODE_NORMAL
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -128,12 +132,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0500
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0050
-     * @tc.name testPowerTest_static_0500
-     * @tc.desc Get device power mode MODE_POWER_SAVE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_POWER_SAVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -152,12 +157,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0600
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0060
-     * @tc.name testPowerTest_static_0600
-     * @tc.desc Get device power mode MODE_PERFORMANCE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_PERFORMANCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -176,12 +182,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0700
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0070
-     * @tc.name testPowerTest_static_0700
-     * @tc.desc Get device power mode MODE_EXTREME_POWER_SAVE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_EXTREME_POWER_SAVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -200,12 +207,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0710
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0071
-     * @tc.name testPowerTest_static_0710
-     * @tc.desc Get device power mode MODE_CUSTOM_POWER_SAVE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_CUSTOM_POWER_SAVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -224,12 +232,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0800
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0080
-     * @tc.name testPowerTest_static_0800
-     * @tc.desc Test the third-party application call shutdown will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call shutdown will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -245,12 +254,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_0900
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0090
-     * @tc.name testPowerTest_static_0900
-     * @tc.desc Test the third-party application call reboot will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call reboot will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -266,12 +276,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1000
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0100
-     * @tc.name testPowerTest_static_1000
-     * @tc.desc Test the third-party application call wakeup will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call wakeup will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -287,12 +298,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0110
-     * @tc.name testPowerTest_static_1100
-     * @tc.desc Test the third-party application call suspend will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call suspend will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -308,12 +320,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0120
-     * @tc.name testPowerTest_static_1200
-     * @tc.desc Test the third-party application call suspend will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call suspend will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -329,12 +342,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0130
-     * @tc.name testPowerTest_static_1300
-     * @tc.desc Test the third-party application call suspend will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call suspend will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -350,12 +364,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1400
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0140
-     * @tc.name testPowerTest_static_1400
-     * @tc.desc Test the third-party application call setPowerMode will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerMode will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -381,12 +396,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1500
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0150
-     * @tc.name testPowerTest_static_1500
-     * @tc.desc Test the third-party application call setPowerMode will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerMode will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -412,12 +428,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1600
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0160
-     * @tc.name testPowerTest_static_1600
-     * @tc.desc Test the third-party application call setScreenOffTime will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -433,12 +450,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1700
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0170
-     * @tc.name testPowerTest_static_1700
-     * @tc.desc Test the third-party application call hibernate will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call hibernate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -454,12 +472,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1800
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0180
-     * @tc.name testPowerTest_static_1800
-     * @tc.desc Test the third-party application call hibernate will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call hibernate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -475,12 +494,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerTest_static_1900
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0190
-     * @tc.name testPowerTest_static_1900
-     * @tc.desc Test the third-party application call refreshActivity will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testPowerTest_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
