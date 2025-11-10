@@ -2347,7 +2347,7 @@ function testSetExternalSourceExtensionsPolicy() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0400
    * @tc.name      : test_set_external_source_extensions_policy_0400
-   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with super admin
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with parameterverification failed
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
@@ -2355,11 +2355,33 @@ function testSetExternalSourceExtensionsPolicy() {
   it("test_set_external_source_extensions_policy_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, 3);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0400 error.code = ' + error.code);
+      expect(error.code == 9200012 && error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0500
+   * @tc.name      : test_set_external_source_extensions_policy_0500
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with super admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_external_source_extensions_policy_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
       securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DEFAULT);
       let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(managedPolicy == common.ManagedPolicy.DEFAULT).assertTrue();
     } catch (error) {
-      console.info('test_set_external_source_extensions_policy_0400 error.code = ' + error.code);
+      console.info('test_set_external_source_extensions_policy_0500 error.code = ' + error.code);
       expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
