@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import ImagePropertyKeyTest from './image/ImagePropertyKeyEnum.test.ets';
+import ImagePropertyKeyTest from './image/ImagePropertyKeyEnum.test';
 import ImageCreateImageSourceBufTest from './image/ImageCreateImageSourceBuf.test';
 import ImageCreateIncrementalSourceTest from './image/ImageCreateIncrementalSource.test';
 import ImageCreatePixelMapTest from './image/ImageCreatePixelMap.test';
@@ -63,6 +63,9 @@ import ImagePropertyKeySyncEnum2A from "./image/ImageGetImagePropertySyncEnum2A.
 import ImagePropertyKeySyncEnum3A from "./image/ImageGetImagePropertySyncEnum3A.test";
 import ImagePropertyKeySyncEnum4A from "./image/ImageGetImagePropertySyncEnum4A.test";
 import PictureSetMetadataTestSupp from './Picture/PictureSetGetMetadata.test';
+import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
+import ImageCreatePixelMapFromSurface from './image/ImageCreatePixelMapFromSurface.test';
+
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -115,4 +118,9 @@ export default function testsuite() {
   ImagePropertyKeySyncEnum1A();
   ImagePropertyKeySyncEnum3A();
   ImagePropertyKeySyncEnum4A();
+
+
+  ImageCreateIncrementalSourceSupp();
+  ImageCreatePixelMapFromSurface();
+
 }
