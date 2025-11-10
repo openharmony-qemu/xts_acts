@@ -22,6 +22,8 @@ add_library(nativerender SHARED
     component/ListComponentTest.cpp
     component/TextComponentTest.cpp
     list/SnapSpeedTest.cpp
+    component/WaterFlowComponentTest.cpp
+    waterFlow/WaterFlowFillPolicyTest.cpp
     image/ImageDrawableDescriptorTest.cpp
     image/ImageErrorTest.cpp
 )

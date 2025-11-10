@@ -19,6 +19,7 @@
 #include "hasAxisTest/HasAxisTest.h"
 #include "list/CoastingAxisTest.h"
 #include "list/SnapSpeedTest.h"
+#include "waterFlow/WaterFlowFillPolicyTest.h"
 #include "image/ImageDrawableDescriptorTest.h"
 #include "image/ImageErrorTest.h"
 
@@ -42,7 +43,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CoastingAxisTest_b", nullptr, CoastingAxisTest::CoastingAxisEventTest_b,
          nullptr, nullptr, nullptr, napi_default, nullptr},
-
+        {"WaterFlowFillPolicyTest", nullptr, WaterFlowTest::WaterFlowFillPolicyTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"snapSpeedTest", nullptr, SnapSpeedTest::snapSpeedTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"imageDrawableDescriptorTest", nullptr, ImageDrawableDescriptorTest::imageDrawableDescriptorTest,
