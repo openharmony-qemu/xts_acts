@@ -47,6 +47,7 @@ ohos_moduletest_suite("ActsAvAudioEncoderCapiNdkTest") {
   include_dirs += [
     "./",
     "//interface/sdk_c",
+    "//interface/sdk_c/graphic/graphic_2d",
     "//interface/sdk_c/multimedia/av_codec",
     "//interface/sdk_c/multimedia/media_foundation",
   ]
