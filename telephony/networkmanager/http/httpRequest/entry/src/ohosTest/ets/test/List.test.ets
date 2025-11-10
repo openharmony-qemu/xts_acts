@@ -24,6 +24,7 @@ import HttpRequestGmssl from './HttpRequestGmssl.test.ets';
 import HttpRequestInterceptor from './HttpRequestInterceptor.test';
 
 export default function testsuite() {
+  HttpRequestInterceptor();
   if (sim.getMaxSimCount() > 1) {
     HttpRequestGmssl();
     HttpRequestDataCATest();
@@ -32,7 +33,6 @@ export default function testsuite() {
     HttpRequestInStreamTest();
     HttpRequestOptionsTest();
     httpErrorCodeTest();
-    HttpRequestInterceptor();
   } else {
     EmptyTest()
   }
