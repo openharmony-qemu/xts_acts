@@ -37,7 +37,6 @@ export default function WebViewActiveWebEngineVersion() {
         if (!("WebViewActiveWebEngineVersion" == pages.name)) {
           console.info("get WebViewActiveWebEngineVersion state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewActiveWebEngineVersion page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -60,7 +59,6 @@ export default function WebViewActiveWebEngineVersion() {
 
     afterEach(async (done: Function) => {
       console.info("WebViewActiveWebEngineVersion afterEach start");
-      await Utils.sleep(2000);
       console.info("WebViewActiveWebEngineVersion afterEach end");
       done();
     })
@@ -89,7 +87,7 @@ export default function WebViewActiveWebEngineVersion() {
     */
     it('emitActiveWebEngineVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion002', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion002', webview.ArkWebEngineVersion.M114, 20250904, done);
+      Utils.registerEvent('emitActiveWebEngineVersion002', true, 20250904, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
