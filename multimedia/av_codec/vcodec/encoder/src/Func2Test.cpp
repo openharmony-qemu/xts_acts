@@ -1640,4 +1640,29 @@ HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_RGBA1010102_0190, TestSize.Level2)
         ASSERT_LT(AV_ERR_OK, vEncSample->errCount);
     }
 }
+
+/**
+ * @tc.number    : VIDEO_ENCODE_PIXE_FORMAT_0010
+ * @tc.name      : 264 pixelformat query key
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwEncFunc2NdkTest, VIDEO_ENCODE_PIXE_FORMAT_0010, TestSize.Level2)
+{
+    if (cap != nullptr && !access("/system/lib64/media/", 0)) {
+        auto vEncSample = make_shared<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/test/media/1280_720_nv.yuv";
+        vEncSample->isGetVideoSupportedPixelFormats = true;
+        vEncSample->isGetFormatKey = true;
+        vEncSample->avcodecMimeType = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
+        vEncSample->isEncoder = true;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecName));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_LT(1, vEncSample->pixlFormatNum);
+        ASSERT_EQ(0, vEncSample->firstCallBackKey);
+        ASSERT_EQ(0, vEncSample->onStreamChangedKey);
+    }
+}
 } // namespace
