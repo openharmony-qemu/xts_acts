@@ -148,7 +148,6 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0003, TestSize.Level0)
         ASSERT_EQ(0, vDecSample->errCount);
         ASSERT_EQ(FRAMESIZE30, vDecSample->outFrameCount);
     }
-
 }
 
 /**
