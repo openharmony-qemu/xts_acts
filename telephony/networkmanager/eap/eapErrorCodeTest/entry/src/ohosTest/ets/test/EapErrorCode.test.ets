@@ -285,7 +285,7 @@ export default function EapErrorCodeTest() {
           eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
           bufferLen: 5,
         };
-        eap.replyCustomEapData(netId,eapData );
+        eap.replyCustomEapData(validNetId, eapData );
         console.info(`${caseName } replyCustomEapData success`);
         ExpectFail();
         console.info(`${caseName}---End`);
