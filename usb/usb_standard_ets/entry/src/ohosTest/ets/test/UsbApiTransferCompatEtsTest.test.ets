@@ -237,12 +237,13 @@ export default function UsbApiTransferCompatEtsTest() {
 
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1000
-     * @tc.name     : testBulkTransferCompat001
-     * @tc.desc     : Negative test: send data, pipe busNum +1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat001
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1000
+     * @tc.desc   Negative test: send data, pipe busNum +1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat001 begin');
@@ -273,12 +274,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1100
-     * @tc.name     : testBulkTransferCompat002
-     * @tc.desc     : Negative test: send data, pipe devAddress +1000
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat002
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1100
+     * @tc.desc   Negative test: send data, pipe devAddress +1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat002 begin');
@@ -308,12 +310,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1200
-     * @tc.name     : testBulkTransferCompat003
-     * @tc.desc     : Negative test: send data, pipe busNum -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat003
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1200
+     * @tc.desc   Negative test: send data, pipe busNum -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat003 begin');
@@ -343,12 +346,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1300
-     * @tc.name     : testBulkTransferCompat004
-     * @tc.desc     : Negative test: send data, pipe devAddress -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat004
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1300
+     * @tc.desc   Negative test: send data, pipe devAddress -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat004 begin');
@@ -378,12 +382,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1400
-     * @tc.name     : testBulkTransferCompat005
-     * @tc.desc     : Negative test: send data, endpoint address +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat005
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1400
+     * @tc.desc   Negative test: send data, endpoint address +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat005 begin');
@@ -413,12 +418,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1500
-     * @tc.name     : testBulkTransferCompat006
-     * @tc.desc     : Negative test: send data, endpoint number +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat006
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1500
+     * @tc.desc   Negative test: send data, endpoint number +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat006 begin');
@@ -448,12 +454,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1600
-     * @tc.name     : testBulkTransferCompat007
-     * @tc.desc     : Negative test: send data, endpoint type +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat007
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1600
+     * @tc.desc   Negative test: send data, endpoint type +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat007 begin');
@@ -483,12 +490,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1700
-     * @tc.name     : testBulkTransferCompat008
-     * @tc.desc     : Negative test: send data, endpoint address -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat008
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1700
+     * @tc.desc   Negative test: send data, endpoint address -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat008 begin');
@@ -518,12 +526,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1800
-     * @tc.name     : testBulkTransferCompat009
-     * @tc.desc     : Negative test: send data, endpoint number -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat009
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1800
+     * @tc.desc   Negative test: send data, endpoint number -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat009 begin');
@@ -553,12 +562,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_1900
-     * @tc.name     : testBulkTransferCompat010
-     * @tc.desc     : Negative test: send data, endpoint type -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat010
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_1900
+     * @tc.desc   Negative test: send data, endpoint type -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat010 begin');
@@ -588,12 +598,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2000
-     * @tc.name     : testBulkTransferCompat011
-     * @tc.desc     : Negative test: send data, endpoint attributes +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat011
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2000
+     * @tc.desc   Negative test: send data, endpoint attributes +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat011 begin');
@@ -623,12 +634,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2100
-     * @tc.name     : testBulkTransferCompat012
-     * @tc.desc     : Negative test: send data, endpoint attributes -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat012
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2100
+     * @tc.desc   Negative test: send data, endpoint attributes -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat012 begin');
@@ -658,12 +670,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2200
-     * @tc.name     : testBulkTransferCompat013
-     * @tc.desc     : Negative test: send data, endpoint interval +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat013
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2200
+     * @tc.desc   Negative test: send data, endpoint interval +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat013 begin');
@@ -693,12 +706,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2300
-     * @tc.name     : testBulkTransferCompat014
-     * @tc.desc     : Negative test: send data, endpoint interval -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat014
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2300
+     * @tc.desc   Negative test: send data, endpoint interval -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat014 begin');
@@ -728,12 +742,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2400
-     * @tc.name     : testBulkTransferCompat015
-     * @tc.desc     : Negative test: send data, endpoint maxPacketSize +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat015
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2400
+     * @tc.desc   Negative test: send data, endpoint maxPacketSize +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat015 begin');
@@ -763,12 +778,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2500
-     * @tc.name     : testBulkTransferCompat016
-     * @tc.desc     : Negative test: send data, endpoint maxPacketSize -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat016
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2500
+     * @tc.desc   Negative test: send data, endpoint maxPacketSize -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat016 begin');
@@ -798,12 +814,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2600
-     * @tc.name     : testBulkTransferCompat017
-     * @tc.desc     : Negative test: send data, endpoint direction +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat017
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2600
+     * @tc.desc   Negative test: send data, endpoint direction +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat017 begin');
@@ -835,12 +852,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2700
-     * @tc.name     : testBulkTransferCompat018
-     * @tc.desc     : Negative test: send data, endpoint direction -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat018
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2700
+     * @tc.desc   Negative test: send data, endpoint direction -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat018 begin');
@@ -872,12 +890,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2800
-     * @tc.name     : testBulkTransferCompat019
-     * @tc.desc     : Negative test: send data, endpoint interfaceId +10
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat019
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2800
+     * @tc.desc   Negative test: send data, endpoint interfaceId +10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat019 begin');
@@ -907,12 +926,13 @@ export default function UsbApiTransferCompatEtsTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostManager_JS_TranCompatibility_2900
-     * @tc.name     : testBulkTransferCompat020
-     * @tc.desc     : Negative test: send data, endpoint interfaceId -1
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testBulkTransferCompat020
+     * @tc.number SUB_USB_HostManager_JS_TranCompatibility_2900
+     * @tc.desc   Negative test: send data, endpoint interfaceId -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBulkTransferCompat020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testBulkTransferCompat020 begin');

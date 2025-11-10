@@ -135,13 +135,14 @@ export default function signNormalAccessBiometricExecute() {
     })
 
     /**
-      * @tc.number     Security_IAM_getUserAuthInstance_Func_Static_0043
-      * @tc.name       Security_IAM_getUserAuthInstance_Func_Static_0043
-      * @tc.desc       call any userauth UserAuthResultCode return value check
-      * @tc.size       MediumTest
-      * @tc.type       Function
-      * @tc.level      Level.LEVEL0
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_getUserAuthInstance_Func_Static_0043
+     * @tc.number Security_IAM_getUserAuthInstance_Func_Static_0043
+     * @tc.desc   call any userauth UserAuthResultCode return value check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Security_IAM_getUserAuthInstance_Func_Static_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, format, 'Security_IAM_getUserAuthInstance_Func_Static_0043 start');
@@ -272,14 +273,15 @@ export default function signNormalAccessBiometricExecute() {
 
 
 
-    /**
-        * @tc.number     Security_IAM_getUserAuthInstance_Func_Static_0088
-        * @tc.name       Security_IAM_getUserAuthInstance_Func_Static_0088
-        * @tc.desc       call off return value check
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level.LEVEL2
-    */
+     /**
+      * @generated.time 2025-11-09 20:57:57
+      * @tc.name   Security_IAM_getUserAuthInstance_Func_Static_0088
+      * @tc.number Security_IAM_getUserAuthInstance_Func_Static_0088
+      * @tc.desc   call off return value check
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('Security_IAM_getUserAuthInstance_Func_Static_0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
        hilog.info(domain, tag, format,"Security_IAM_getUserAuthInstance_Func_Static_0088 start");
        try {
@@ -298,13 +300,14 @@ export default function signNormalAccessBiometricExecute() {
      });
 
     /**
-        * @tc.number     Security_IAM_getUserAuthInstance_Func_Static_0089
-        * @tc.name       Security_IAM_getUserAuthInstance_Func_Static_0089
-        * @tc.desc       call cancel return value check
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level.LEVEL2
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_getUserAuthInstance_Func_Static_0089
+     * @tc.number Security_IAM_getUserAuthInstance_Func_Static_0089
+     * @tc.desc   call cancel return value check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_getUserAuthInstance_Func_Static_0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,"Security_IAM_getUserAuthInstance_Func_Static_0089 start");
       try {

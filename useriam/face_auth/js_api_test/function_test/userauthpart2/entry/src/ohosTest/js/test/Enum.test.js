@@ -18,13 +18,15 @@ import userAuth from '@ohos.userIAM.userAuth'
 
 export default function signNormalNotAccessBiometricEnumExecute() {
   describe('signNormalNotAccessBiometricEnumExecute', function () {
-    /*
-        * @tc.number    : Security_IAM_userAuthType_Kit_Func_0084
-        * @tc.name      : execute_enum_userAuthType
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_userAuthType_Kit_Func_0084
+     * @tc.number Security_IAM_userAuthType_Kit_Func_0084
+     * @tc.desc   Security_IAM_userAuthType_Kit_Func_0084
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_userAuthType_Kit_Func_0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testFace Security_IAM_userAuthType_Kit_Func_0084 start');
       expect(1).assertEqual(userAuth.UserAuthType.PIN);
@@ -35,13 +37,15 @@ export default function signNormalNotAccessBiometricEnumExecute() {
       done();
     })
 
-    /*
-        * @tc.number    : Security_IAM_widgetNotice_Kit_Func_0085
-        * @tc.name      : execute_enum_windowModeType
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_widgetNotice_Kit_Func_0085
+     * @tc.number Security_IAM_widgetNotice_Kit_Func_0085
+     * @tc.desc   Security_IAM_widgetNotice_Kit_Func_0085
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_widgetNotice_Kit_Func_0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('Security_IAM_widgetNotice_Kit_Func_0085 start');
       expect(1).assertEqual(userAuth.WindowModeType.DIALOG_BOX);
@@ -50,13 +54,15 @@ export default function signNormalNotAccessBiometricEnumExecute() {
       done();
     })
 
-    /*
-        * @tc.number    : Security_IAM_widgetNotice_Kit_Func_0086
-        * @tc.name      : execute_enum_noticeType
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_widgetNotice_Kit_Func_0086
+     * @tc.number Security_IAM_widgetNotice_Kit_Func_0086
+     * @tc.desc   Security_IAM_widgetNotice_Kit_Func_0086
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_widgetNotice_Kit_Func_0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testFace Security_IAM_widgetNotice_Kit_Func_0086 start');
       expect(1).assertEqual(userAuth.NoticeType.WIDGET_NOTICE);
@@ -64,13 +70,15 @@ export default function signNormalNotAccessBiometricEnumExecute() {
       done();
     })
 
-    /*
-        * @tc.number    : Security_IAM_userAuthResultCode_Kit_Func_0087
-        * @tc.name      : execute_enum_userAuthResultCode
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_userAuthResultCode_Kit_Func_0087
+     * @tc.number Security_IAM_userAuthResultCode_Kit_Func_0087
+     * @tc.desc   Security_IAM_userAuthResultCode_Kit_Func_0087
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_userAuthResultCode_Kit_Func_0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('Security_IAM_userAuthResultCode_Kit_Func_0087 start');
       expect(12500011).assertEqual(userAuth.UserAuthResultCode.CANCELED_FROM_WIDGET);
