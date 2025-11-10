@@ -110,8 +110,6 @@ export default function ImagePropertyKeyTest() {
           if (data != undefined) {
             expect(data).assertEqual('2.2.0.0');
           }
-
-
           if (error != undefined) {
             expect().assertFail();
           }
