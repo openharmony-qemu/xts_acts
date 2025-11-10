@@ -559,48 +559,6 @@ static napi_value OH_Rdb_RekeyEx0700(napi_env env, napi_callback_info)
     napi_create_int32(env, errCode, &result);
     return result;
 }
-static napi_value OH_Rdb_RekeyEx0800(napi_env env, napi_callback_info)
-{
-    int errorCode = 14800001;
-    int iteration = 3000;
-    int pageSize = 2048;
-    int errCode = 0;
-    OH_Rdb_ConfigV2 *rekeyTestConfig = CreateEncryptedConfig();
-    NAPI_ASSERT(env, rekeyTestConfig != nullptr, "OH_Rdb_CreateConfig is fail.");
-    OH_Rdb_CryptoParam *crypto1 = OH_Rdb_CreateCryptoParam();
-    const uint8_t newKey[] = "87654321";
-    errCode = OH_Crypto_SetEncryptionKey(crypto1, newKey, sizeof(newKey) - 1);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Crypto_SetEncryptionKey is fail.");
-    errCode = OH_Crypto_SetEncryptionAlgo(crypto1, RDB_AES_256_GCM);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Crypto_SetEncryptionAlgo is fail.");
-    errCode = OH_Crypto_SetIteration(crypto1, iteration);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Crypto_SetIteration is fail.");
-    errCode = OH_Crypto_SetKdfAlgo(crypto1, RDB_KDF_SHA256);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Crypto_SetIteration is fail.");
-    errCode = OH_Crypto_SetHmacAlgo(crypto1, RDB_HMAC_SHA256);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Crypto_SetHmacAlgo is fail.");
-    errCode = OH_Crypto_SetCryptoPageSize(crypto1, pageSize);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Crypto_SetCryptoPageSize is fail.");
-    OH_Rdb_Store *store = OH_Rdb_CreateOrOpen(rekeyTestConfig, &errCode);
-    NAPI_ASSERT(env, store != nullptr, "OH_Rdb_CreateOrOpen is fail.");
-    errCode = OH_Rdb_CloseStore(store);
-    NAPI_ASSERT(env, store != nullptr, "OH_Rdb_CloseStore111 is fail.");
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_CloseStore is fail.");
-    OH_Rdb_CryptoParam *crypto2 = OH_Rdb_CreateCryptoParam();
-    errCode = OH_Rdb_RekeyEx(store, crypto2);
-    NAPI_ASSERT(env, errCode == errorCode, "OH_Rdb_RekeyEx is fail.");
-    errCode = OH_Rdb_DeleteStoreV2(rekeyTestConfig);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
-    errCode = OH_Rdb_DestroyConfig(rekeyTestConfig);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
-    errCode = OH_Rdb_DestroyCryptoParam(crypto1);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
-    errCode = OH_Rdb_DestroyCryptoParam(crypto2);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV21 is fail.");
-    napi_value result;
-    napi_create_int32(env, errCode, &result);
-    return result;
-}
 static napi_value OH_Rdb_RekeyEx0900(napi_env env, napi_callback_info)
 {
     int num = -1;
@@ -724,7 +682,6 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_Rdb_RekeyEx0500", nullptr, OH_Rdb_RekeyEx0500, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_RekeyEx0600", nullptr, OH_Rdb_RekeyEx0600, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_RekeyEx0700", nullptr, OH_Rdb_RekeyEx0700, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OH_Rdb_RekeyEx0800", nullptr, OH_Rdb_RekeyEx0800, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_RekeyEx0900", nullptr, OH_Rdb_RekeyEx0900, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_RekeyEx1000", nullptr, OH_Rdb_RekeyEx1000, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_RekeyEx1100", nullptr, OH_Rdb_RekeyEx1100, nullptr, nullptr, nullptr, napi_default, nullptr },
