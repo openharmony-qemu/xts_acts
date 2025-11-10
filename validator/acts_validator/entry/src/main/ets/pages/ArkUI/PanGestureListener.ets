@@ -21,7 +21,7 @@ import fs from '@ohos.file.fs';
 import FirstDialog from '../model/FirstDialog';
 import { BusinessError } from '@ohos.base';
 
-function pinchGesture(info: GestureTriggerInfo) {
+function panGesture(info: GestureTriggerInfo) {
   console.info('aaa --- callback event' + JSON.stringify(info.event))
   console.info('aaa --- callback current getTag:' + JSON.stringify(info.current))
   console.info('aaa --- callback currentPhase:' + JSON.stringify(info.currentPhase))
@@ -30,16 +30,17 @@ function pinchGesture(info: GestureTriggerInfo) {
 
 @Entry
 @Component
-struct PinchGestureExample {
+struct PanExample {
   @State value: string = ''
-  @State name: string = 'PinchGestureListener';
-  @State scaleValue: number = 1
-  @State pinchValue: number = 1
-  @State pinchX: number = 0
-  @State pinchY: number = 0
+  @State name: string = 'PanGestureListener';
+  @State offsetX: number = 0;
+  @State offsetY: number = 0;
+  @State positionX: number = 0;
+  @State positionY: number = 0;
+  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.All, distance: 50, fingers: 1 });
   @State stepTips: string = '操作步骤:\n' + '1.点击[点击添加监听]按钮\n' +
-    '2.双指捏合Column组件\n' + '3.过滤日志[aaa ---]\n' +
-    '4.点击[点击移除监听]按钮\n' + '5.双指捏合Column组件\n' + '6.过滤日志[aaa ---]\n' +
+    '2.单指滑动Column组件\n' + '3.过滤日志[aaa ---]\n' +
+    '4.点击[点击移除监听]按钮\n' + '5.单指滑动Column组件\n' + '6.过滤日志[aaa ---]\n' +
     '预期结果：\n' + '1.添加监听后callback回调日志能够触发\n' +
     '2.添加监听后先触发callback回调日志，再触发onAction start事件日志，再触发callback回调日志，最后触发onAction end事件日志\n' +
     '3.移除监听后callback回调函数不会触发，只会触发onAction start/end事件的日志'
@@ -138,12 +139,7 @@ struct PinchGestureExample {
 
       Column() {
         Column() {
-          Text('PinchGesture scale:\n' + this.scaleValue)
-            .width('100%')
-            .fontColor(Color.Black)
-            .textAlign(TextAlign.Center)
-
-          Text('PinchGesture center:\n(' + this.pinchX + ',' + this.pinchY + ')')
+          Text('PanGesture :\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
             .width('100%')
             .fontColor(Color.Black)
             .textAlign(TextAlign.Center)
@@ -153,20 +149,20 @@ struct PinchGestureExample {
         .padding('5%')
         .border({ width: 3 })
         .margin('5%')
-        .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
+        .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
+        .id('columnOuter')
         .gesture(
-          PinchGesture({ fingers: 2, distance: 5, isFingerCountLimited: true })
-            .allowedTypes([SourceTool.Unknown, SourceTool.Finger, SourceTool.Pen, SourceTool.MOUSE, SourceTool.TOUCHPAD,
-              SourceTool.JOYSTICK])
-            .tag('pinch')
+          PanGesture(this.panOption)
+            .allowedTypes([SourceTool.Unknown, SourceTool.Finger, SourceTool.Pen,
+              SourceTool.MOUSE, SourceTool.TOUCHPAD, SourceTool.JOYSTICK])
+            .tag('pan')
             .onActionStart((event: GestureEvent) => {
-              console.info('aaa --- Pinch start')
-              console.info(`aaa --- onAction Pinch start event: ${JSON.stringify(event)}`)
+              console.info('aaa --- Pan start');
+              console.info(`aaa --- onAction Pan start event: ${JSON.stringify(event)}`)
             })
             .onActionEnd((event: GestureEvent) => {
-              this.pinchValue = this.scaleValue
-              console.info('aaa --- Pinch end')
-              console.info(`aaa --- onAction Pinch end event: ${JSON.stringify(event)}`)
+              console.info('aaa --- Pan end');
+              console.info(`aaa --- onAction Pan end event: ${JSON.stringify(event)}`)
             })
         )
 
@@ -176,8 +172,8 @@ struct PinchGestureExample {
           .margin('5%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
-            observer.addGlobalGestureListener(GestureListenerType.PINCH,
-              { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, pinchGesture);
+            observer.addGlobalGestureListener(GestureListenerType.PAN,
+              { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, panGesture);
             console.info('aaa --- 添加监听')
           })
 
@@ -187,7 +183,7 @@ struct PinchGestureExample {
           .margin('5%')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
-            observer.removeGlobalGestureListener(GestureListenerType.PINCH, pinchGesture);
+            observer.removeGlobalGestureListener(GestureListenerType.PAN, panGesture);
             console.info('aaa --- 移除监听')
           })
       }
