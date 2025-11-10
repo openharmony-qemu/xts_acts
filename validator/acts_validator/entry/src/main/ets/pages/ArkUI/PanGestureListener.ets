@@ -21,7 +21,7 @@ import fs from '@ohos.file.fs';
 import FirstDialog from '../model/FirstDialog';
 import { BusinessError } from '@ohos.base';
 
-function panGesture(info: GestureTriggerInfo) {
+function pinchGesture(info: GestureTriggerInfo) {
   console.info('aaa --- callback event' + JSON.stringify(info.event))
   console.info('aaa --- callback current getTag:' + JSON.stringify(info.current))
   console.info('aaa --- callback currentPhase:' + JSON.stringify(info.currentPhase))
@@ -30,17 +30,16 @@ function panGesture(info: GestureTriggerInfo) {
 
 @Entry
 @Component
-struct PanExample {
+struct PinchGestureExample {
   @State value: string = ''
-  @State name: string = 'PanGestureListener';
-  @State offsetX: number = 0;
-  @State offsetY: number = 0;
-  @State positionX: number = 0;
-  @State positionY: number = 0;
-  private panOption: PanGestureOptions = new PanGestureOptions({direction: PanDirection.All, distance: 50, fingers: 1});
+  @State name: string = 'PinchGestureListener';
+  @State scaleValue: number = 1
+  @State pinchValue: number = 1
+  @State pinchX: number = 0
+  @State pinchY: number = 0
   @State stepTips: string = '操作步骤:\n' + '1.点击[点击添加监听]按钮\n' +
-    '2.单指滑动Column组件\n' + '3.过滤日志[aaa ---]\n' +
-    '4.点击[点击移除监听]按钮\n' + '5.单指滑动Column组件\n' + '6.过滤日志[aaa ---]\n' +
+    '2.双指捏合Column组件\n' + '3.过滤日志[aaa ---]\n' +
+    '4.点击[点击移除监听]按钮\n' + '5.双指捏合Column组件\n' + '6.过滤日志[aaa ---]\n' +
     '预期结果：\n' + '1.添加监听后callback回调日志能够触发\n' +
     '2.添加监听后先触发callback回调日志，再触发onAction start事件日志，再触发callback回调日志，最后触发onAction end事件日志\n' +
     '3.移除监听后callback回调函数不会触发，只会触发onAction start/end事件的日志'
@@ -54,7 +53,6 @@ struct PanExample {
         .width('20vp')
         .height('20vp')
     }
-    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -64,7 +62,7 @@ struct PanExample {
         params: {
           result: 'true ', title: this.name,
         }
-      })
+      });
       promptAction.showToast({
         message: '通过', duration: 1000
       });
@@ -78,7 +76,6 @@ struct PanExample {
         .width('20vp')
         .height('20vp')
     }
-    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -117,7 +114,7 @@ struct PanExample {
             .margin({ left: '20vp' })
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
+        .size({ width: '10%', height: '10%' })
         .onClick(() => {
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
@@ -129,6 +126,7 @@ struct PanExample {
           .fontColor(Color.White)
           .fontSize('18fp')
           .margin({ left: '-20vp' })
+
         Text('hello')
           .fontColor(Color.White)
           .visibility(Visibility.Hidden)
@@ -139,46 +137,61 @@ struct PanExample {
       .justifyContent(FlexAlign.SpaceBetween)
 
       Column() {
-        Column(){
-        Text('PanGesture :\nX: ' + this.offsetX + '\n' + 'Y: ' + this.offsetY)
-      }
-      .height(200)
-      .width(300)
-      .padding(20)
-      .border({ width: 3 })
-      .margin(50)
-      .translate({ x: this.offsetX, y: this.offsetY, z: 0 })
-      .id('columnOuter')
-      .gesture(
-        PanGesture(this.panOption)
-          .allowedTypes([SourceTool.Unknown, SourceTool.Finger, SourceTool.Pen,
-                        SourceTool.MOUSE, SourceTool.TOUCHPAD, SourceTool.JOYSTICK])
-          .tag('pan')
-          .onActionStart((event: GestureEvent) => {
-            console.info('aaa --- Pan start');
-            console.info(`aaa --- onAction Pan start event: ${JSON.stringify(event)}`)
+        Column() {
+          Text('PinchGesture scale:\n' + this.scaleValue)
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
+
+          Text('PinchGesture center:\n(' + this.pinchX + ',' + this.pinchY + ')')
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
+        }
+        .height('30%')
+        .width('80%')
+        .padding('5%')
+        .border({ width: 3 })
+        .margin('5%')
+        .scale({ x: this.scaleValue, y: this.scaleValue, z: 1 })
+        .gesture(
+          PinchGesture({ fingers: 2, distance: 5, isFingerCountLimited: true })
+            .allowedTypes([SourceTool.Unknown, SourceTool.Finger, SourceTool.Pen, SourceTool.MOUSE, SourceTool.TOUCHPAD,
+              SourceTool.JOYSTICK])
+            .tag('pinch')
+            .onActionStart((event: GestureEvent) => {
+              console.info('aaa --- Pinch start')
+              console.info(`aaa --- onAction Pinch start event: ${JSON.stringify(event)}`)
+            })
+            .onActionEnd((event: GestureEvent) => {
+              this.pinchValue = this.scaleValue
+              console.info('aaa --- Pinch end')
+              console.info(`aaa --- onAction Pinch end event: ${JSON.stringify(event)}`)
+            })
+        )
+
+        Button('点击添加监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.addGlobalGestureListener(GestureListenerType.PINCH,
+              { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, pinchGesture);
+            console.info('aaa --- 添加监听')
           })
-          .onActionEnd((event: GestureEvent) => {
-            console.info('aaa --- Pan end');
-            console.info(`aaa --- onAction Pan end event: ${JSON.stringify(event)}`)
-          }
-          )
-      )
 
-      Button('点击添加监听').onClick(() => {
-        let observer = this.getUIContext().getUIObserver();
-        observer.addGlobalGestureListener(GestureListenerType.PAN,
-          { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, panGesture);
-        console.info('aaa --- 添加监听')
-      })
-
-      Button('点击移除监听').onClick(() => {
-        let observer = this.getUIContext().getUIObserver();
-        observer.removeGlobalGestureListener(GestureListenerType.PAN, panGesture);
-        console.info('aaa --- 移除监听')
-      })
+        Button('点击移除监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.removeGlobalGestureListener(GestureListenerType.PINCH, pinchGesture);
+            console.info('aaa --- 移除监听')
+          })
       }
-      .height('80%')
+      .height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -189,7 +202,6 @@ struct PanExample {
             .width('20vp')
             .height('20vp')
         }
-        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)
