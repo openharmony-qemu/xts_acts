@@ -63,6 +63,7 @@ import ImagePropertyKeySyncEnum2A from "./image/ImageGetImagePropertySyncEnum2A.
 import ImagePropertyKeySyncEnum3A from "./image/ImageGetImagePropertySyncEnum3A.test";
 import ImagePropertyKeySyncEnum4A from "./image/ImageGetImagePropertySyncEnum4A.test";
 import PictureSetMetadataTestSupp from './Picture/PictureSetGetMetadata.test';
+import modifyImagePropertyTest from './image/ModifyImageProperty.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -115,4 +116,5 @@ export default function testsuite() {
   ImagePropertyKeySyncEnum1A();
   ImagePropertyKeySyncEnum3A();
   ImagePropertyKeySyncEnum4A();
+  modifyImagePropertyTest()
 }
