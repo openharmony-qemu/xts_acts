@@ -48,6 +48,9 @@ export default function ActsNotificationEmitterTest() {
       await Utils.msSleep(500)
       console.info(`${TAG} afterEach END`)
     })
+    afterEach(()=>{
+      await Utils.msSleep(500)
+    })
 
     /**
      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100
@@ -818,6 +821,7 @@ export default function ActsNotificationEmitterTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
             done();
           })
+          await Utils.msSleep(1000)
           emitter.emit('eventid');
           done()
         } catch (e) {
