@@ -49,3 +49,10 @@ target_link_libraries(interfacetest PUBLIC
      libhilog_ndk.z.so 
      libnative_rdb_ndk.z.so
 )
+
+add_library(rekeyextest SHARED RekeyExTest.cpp)
+target_link_libraries(rekeyextest PUBLIC
+     libace_napi.z.so
+     libhilog_ndk.z.so
+     libnative_rdb_ndk.z.so
+)
