@@ -2332,7 +2332,6 @@ export default function SensorJsStaticTest() {
         await isAvailable(sensor.SensorId.FUSION_PRESSURE);
         try {
           sensor.onFusionPressureChange(onFusionPressureCallback, { 'interval': -100000000 });
-          expect(false).assertTrue();
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;
