@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -42,7 +44,7 @@ export default function webMessageExtErrorCode() {
         } catch (err) {
           console.error(`push ${pageName} page error: ` + err);
         }
-        await waitForComponent("WebMessageExtButton");
+        await waitForComponent("WebMessageExtErrorCodeButton");
         done()
       });
 
@@ -74,7 +76,8 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetStringErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetStringErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetStringErrorCode001", "17100014", 170300, done);
-      sendEventByKey('WebMessageExtButton', 10, '');
+      sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
+
     })
 
     /*
@@ -88,7 +91,7 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetNumberErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetNumberErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetNumberErrorCode001", "17100014", 170310, done);
-      sendEventByKey('WebMessageExtButton', 10, '');
+      sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
     /*
@@ -102,7 +105,7 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetBooleanErrorCode001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetBooleanErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetBooleanErrorCode001", "17100014", 170320, done);
-      sendEventByKey('WebMessageExtButton', 10, '');
+      sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
     /*
@@ -116,7 +119,7 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetArrayBufferErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetArrayBufferErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetArrayBufferErrorCode001", "17100014", 170330, done);
-      sendEventByKey('WebMessageExtButton', 10, '');
+      sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
     /*
@@ -130,7 +133,7 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetArrayErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetArrayErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetArrayErrorCode001", "17100014", 170340, done);
-      sendEventByKey('WebMessageExtButton', 10, '');
+      sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
     /*
@@ -144,7 +147,7 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetErrorErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetErrorErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetError002", "17100014", 170350, done);
-      sendEventByKey('WebMessageExtButton', 10, '');
+      sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 
 
