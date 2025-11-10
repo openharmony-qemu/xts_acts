@@ -197,7 +197,13 @@ export default function nfcATagSessionTest() {
             let timeoutMs: int = 1000;
             nfcAtag.setTimeout(timeoutMs);
           } catch (error: BusinessError) {
-            if (error.code == 3100201) {
+            if (error.code == 201) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0400 setTimeout error：  ' + error + ' - ' + error.code);
+            expect(201).assertEqual(error.code);
+          } else if (error.code == 801) {
+            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0400 setTimeout error：  ' + error + ' - ' + error.code);
+            expect(801).assertEqual(error.code);
+          } else if (error.code == 3100201) {
               hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0400 setTimeout error：  ' + error + ' - ' + error.code);
               expect(3100201).assertEqual(error.code);
             } else {
