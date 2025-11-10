@@ -25,15 +25,10 @@ const TAG = LOG_TAG + 'setGetMetadataSupp';
 async function setMetadataPromiseTest(done: Function, testName: string, pathUri: string,
   metadataType: image.MetadataType,callback: (errCode?: number) => void) {
   try {
-    // let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    // const resourceMgr = testContext.resourceManager;
-    // const rawFile = await resourceMgr.getRawFileContent(path);
-
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let array = new ArrayBuffer(300000000);
     let path = `file://${testContext.filesDir}/${pathUri}`;
     console.info(TAG, testName, `path: ${path}`);
-    // const fd = await fs.open(path, fs.OpenMode.READ_ONLY );
     const fd = await fs.open(path);
     console.info(TAG, testName, `open: ${fd.fd}`);
     await fs.close(fd );
@@ -51,7 +46,6 @@ async function setMetadataPromiseTest(done: Function, testName: string, pathUri:
       let exifMetaData: image.Metadata = await exifPictureObj.getMetadata(metadataType);
       pictureObj.setMetadata(metadataType, exifMetaData).then(() => {
         console.info(TAG,'Set metadata success');
-        // callback(exifMetaData, undefined)
         expect(exifMetaData != null).assertTrue();
       }).catch((error: BusinessError) => {
         console.error(TAG,'Failed to set metadata. error.code: ' + JSON.stringify(error.code) + ' ,error.message:' +
@@ -78,7 +72,6 @@ async function getMetadataPromiseTest(done: Function, testName: string, pathUri:
     let array = new ArrayBuffer(300000000);
     let path = `file://${testContext.filesDir}/${pathUri}`;
     console.info(TAG, testName, `path: ${path}`);
-    // const fd = await fs.open(path, fs.OpenMode.READ_ONLY );
     const fd = await fs.open(path);
     console.info(TAG, testName, `open: ${fd.fd}`);
     await fs.close(fd );
