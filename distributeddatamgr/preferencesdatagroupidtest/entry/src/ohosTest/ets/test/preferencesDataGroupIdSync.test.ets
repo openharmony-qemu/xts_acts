@@ -38,18 +38,19 @@ export default function preferencesDataGroupIdSync() {
       mPreferences = null;
     })
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1500
-     * @tc.name getPreferencesSync interface test
-     * @tc.desc getPreferencesSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
      class Option{
       name : string = '';
       dataGroupId: null | undefined
      }
+    /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_GetPreferencesSync_0100
+     * @tc.number SUB_DDM_Preferences_GetPreferencesSync_0100
+     * @tc.desc   SUB_DDM_Preferences_GetPreferencesSync_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_Preferences_GetPreferencesSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options : Option= {
         name: "test_preferences_callback",
@@ -66,12 +67,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_GetPreferencesSync_0200
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1600
-     * @tc.name getPreferencesSync interface test
-     * @tc.desc getPreferencesSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_GetPreferencesSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: data_preferences.Options = {
@@ -89,12 +91,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_GetPreferencesSync_0300
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1700
-     * @tc.name getPreferencesSync interface test
-     * @tc.desc getPreferencesSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_GetPreferencesSync_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: data_preferences.Options = {
@@ -112,12 +115,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_GetPreferencesSync_0400
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1800
-     * @tc.name getPreferencesSync interface test
-     * @tc.desc getPreferencesSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_GetPreferencesSync_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: data_preferences.Options = {
@@ -136,12 +140,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0100
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1900
-     * @tc.name removePreferencesFromCacheSync interface test
-     * @tc.desc removePreferencesFromCacheSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCacheSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_removePreferencesFromCacheSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options1: data_preferences.Options = {
@@ -165,12 +170,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0200
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_2000
-     * @tc.name removePreferencesFromCacheSync interface test
-     * @tc.desc removePreferencesFromCacheSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCacheSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_removePreferencesFromCacheSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options1: data_preferences.Options = {
@@ -194,12 +200,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0300
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_2100
-     * @tc.name removePreferencesFromCacheSync interface test
-     * @tc.desc removePreferencesFromCacheSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCacheSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_removePreferencesFromCacheSync_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options1: data_preferences.Options = {
@@ -223,12 +230,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0400
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_2200
-     * @tc.name removePreferencesFromCacheSync interface test
-     * @tc.desc removePreferencesFromCacheSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCacheSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_removePreferencesFromCacheSync_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_DDM_Preferences_removePreferencesFromCacheSync_0100 begin.");
@@ -258,12 +266,13 @@ export default function preferencesDataGroupIdSync() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_PreferencesEl3_0100
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_2300
-     * @tc.name SUB_DDM_Preferences_PreferencesEl3_0100
-     * @tc.desc PreferencesSync interface PreferencesEl3 test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   PreferencesSync interface PreferencesEl3 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_PreferencesEl3_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG, 'SUB_DDM_Preferences_PreferencesEl3_0100 start.');
@@ -298,12 +307,13 @@ export default function preferencesDataGroupIdSync() {
     })
     
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_PreferencesEl4_0100
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_2400
-     * @tc.name SUB_DDM_Preferences_PreferencesEl4_0100
-     * @tc.desc PreferencesSync interface PreferencesEl4 test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   PreferencesSync interface PreferencesEl4 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_PreferencesEl4_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG, 'SUB_DDM_Preferences_PreferencesEl4_0100 start.');

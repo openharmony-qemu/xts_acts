@@ -55,12 +55,13 @@ export default function FivePointOne_resMgrStageTest() {
     });
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETTIMEPERIODNAME_STAGE_static_0100
-     * @tc.name      : getTimePeriodName_stagetest_static_0100
-     * @tc.desc      : getTimePeriodName
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getTimePeriodName_stagetest_static_0100
+     * @tc.number SUB_GLOBAL_GETTIMEPERIODNAME_STAGE_static_0100
+     * @tc.desc   getTimePeriodName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTimePeriodName_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let value = i18n.I18NUtil.getTimePeriodName(2, 'zh-CN');
@@ -70,12 +71,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ADD_STAGE_static_0100
-     * @tc.name      : add_stagetest_static_0100
-     * @tc.desc      : calendar.add
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   add_stagetest_static_0100
+     * @tc.number SUB_GLOBAL_ADD_STAGE_static_0100
+     * @tc.desc   calendar.add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('add_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let calendar = i18n.getCalendar('zh-CN');
@@ -88,12 +90,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETTIMEINMILLIS_STAGE_static_0100
-     * @tc.name      : getTimeInMillis_stagetest_static_0100
-     * @tc.desc      : calendar.getTimeInMillis
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getTimeInMillis_stagetest_static_0100
+     * @tc.number SUB_GLOBAL_GETTIMEINMILLIS_STAGE_static_0100
+     * @tc.desc   calendar.getTimeInMillis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTimeInMillis_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let calendar = i18n.getCalendar('zh-CN');
@@ -105,12 +108,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_COMPAREDAYS_STAGE_static_0100
-     * @tc.name      : compareDays_stagetest_static_0100
-     * @tc.desc      : calendar.compareDays
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   compareDays_stagetest_static_0100
+     * @tc.number SUB_GLOBAL_COMPAREDAYS_STAGE_static_0100
+     * @tc.desc   calendar.compareDays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('compareDays_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let calendar = i18n.getCalendar('zh-CN');
@@ -123,12 +127,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_HOLIDAYMANAGER_STAGE_0100
-     * @tc.name      : HolidayManager_stagetest_static_0100
-     * @tc.desc      : HolidayManager
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   HolidayManager_stagetest_static_0100
+     * @tc.number SUB_GLOBAL_HOLIDAYMANAGER_STAGE_0100
+     * @tc.desc   HolidayManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HolidayManager_stagetest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let holiday = new i18n.HolidayManager('/system/lib/US.ics');
@@ -152,12 +157,13 @@ export default function FivePointOne_resMgrStageTest() {
       done();
     })
     /**
-     * @tc.number   :i18n_test_getBestMatchLocale_static_0010
-     * @tc.name     :i18n_test_getBestMatchLocale_static_0010
-     * @tc.desc     :resource list is empty
-     * @tc.size     :MEDIUM
-     * @tc.type     :Function
-     * @tc.level    :Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   i18n_test_getBestMatchLocale_static_0010
+     * @tc.number i18n_test_getBestMatchLocale_static_0010
+     * @tc.desc   resource list is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('i18n_test_getBestMatchLocale_static_0010', Level.LEVEL3, async (): Promise<void> => {
       console.log('i18n_test_getBestMatchLocale_static_0010' + 'start');
@@ -171,12 +177,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number   :testgetThreeLetterRegion_static_0030
-     * @tc.name     :testgetThreeLetterRegion_static_0030
-     * @tc.desc     :transfer GB and return GBR
-     * @tc.size     :MEDIUM
-     * @tc.type     :Function
-     * @tc.level    :Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   testgetThreeLetterRegion_static_0030
+     * @tc.number testgetThreeLetterRegion_static_0030
+     * @tc.desc   transfer GB and return GBR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetThreeLetterRegion_static_0030', Level.LEVEL0, async (): Promise<void> => {
       let language: string = i18n.I18NUtil.getThreeLetterRegion('GB');
@@ -185,12 +192,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number   :testgetThreeLetterLanguage_static_0030
-     * @tc.name     :testgetThreeLetterLanguage_static_0030
-     * @tc.desc     :transfer en and return eng
-     * @tc.size     :MEDIUM
-     * @tc.type     :Function
-     * @tc.level    :Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   testgetThreeLetterLanguage_static_0030
+     * @tc.number testgetThreeLetterLanguage_static_0030
+     * @tc.desc   transfer en and return eng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetThreeLetterLanguage_static_0030', Level.LEVEL0, async (): Promise<void> => {
       let language: string = i18n.I18NUtil.getThreeLetterLanguage('en');

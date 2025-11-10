@@ -63,13 +63,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1000
-     * @tc.name testExecute0001
-     * @tc.desc 1. Execute sql: PRAGMA integrity_check
-     *          2. Check returned value
+     * @tc.desc   1. Execute sql: PRAGMA integrity_check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0001 start *************");
@@ -85,13 +85,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1100
-     * @tc.name testExecute0002
-     * @tc.desc 1. Execute sql: PRAGMA quick_check
-     *          2. Check returned value
+     * @tc.desc   1. Execute sql: PRAGMA quick_check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0002 start *************");
@@ -107,13 +107,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1200
-     * @tc.name testExecute0003
-     * @tc.desc 1. Execute sql: PRAGMA user_version
-     *          2. Check returned value
+     * @tc.desc   1. Execute sql: PRAGMA user_version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0003 start *************");
@@ -130,13 +130,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1300
-     * @tc.name testExecute0004
-     * @tc.desc 1. Execute select sql
-     *          2. Check returned value
+     * @tc.desc   1. Execute select sql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0004 start *************");
@@ -152,13 +152,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1400
-     * @tc.name testExecute0005
-     * @tc.desc 1. Execute insert sql
-     *          2. Check returned value
+     * @tc.desc   1. Execute insert sql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0005 start *************");
@@ -174,13 +174,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1500
-     * @tc.name testExecute0006
-     * @tc.desc 1. Execute insert sql
-     *          2. Check returned value
+     * @tc.desc   1. Execute insert sql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0006 start *************");
@@ -196,13 +196,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1600
-     * @tc.name testExecute0007
-     * @tc.desc 1. Execute batch insert sql
-     *          2. Check returned value
+     * @tc.desc   1. Execute batch insert sql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0007 start *************");
@@ -219,13 +219,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1700
-     * @tc.name testExecute0008
-     * @tc.desc 1. Execute update sql
-     *          2. Check returned value
+     * @tc.desc   1. Execute update sql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0008 start *************");
@@ -245,13 +245,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1800
-     * @tc.name testExecute0009
-     * @tc.desc 1. Execute delete sql
-     *          2. Check returned value
+     * @tc.desc   1. Execute delete sql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0009 start *************");
@@ -270,15 +270,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_1900
-     * @tc.name testExecute0010
-     * @tc.desc 1. Execute attach sql
-     *          2. Execute detach sql
-     *          3. Execute transaction sql
-     *          4. Check returned value
+     * @tc.desc   1. Execute attach sql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0010 start *************");
@@ -330,13 +328,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2000
-     * @tc.name testExecute0011
-     * @tc.desc 1. Create table
-     *          2. Drop table
+     * @tc.desc   1. Create table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0011 start *************");
@@ -364,15 +362,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2100
-     * @tc.name testExecute0012
-     * @tc.desc 1. Create table
-     *          2. Insert data
-     *          3. Query data
-     *          4. Drop table
+     * @tc.desc   1. Create table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0012 start *************");
@@ -397,13 +393,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2200
-     * @tc.name testExecute0013
-     * @tc.desc 1. Execute sql: ""
-     *          2. Check returned value
+     * @tc.desc   1. Execute sql: ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0013 start *************");
@@ -420,13 +416,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2300
-     * @tc.name testExecute0014
-     * @tc.desc 1. Insert data
-     *          2. Check returned value
+     * @tc.desc   1. Insert data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0014 start *************");
@@ -442,13 +438,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2400
-     * @tc.name testExecute0015
-     * @tc.desc 1. Insert data and set sql as null or undefined
-     *          2. Check returned value
+     * @tc.desc   1. Insert data and set sql as null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0015 start *************");
@@ -472,13 +468,13 @@ export default function rdbStoreExcuteTest(){
     })
 
     /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2500
-     * @tc.name testExecute0016
-     * @tc.desc 1. Insert data and set args as null or undefined
-     *          2. Check returned value
+     * @tc.desc   1. Insert data and set args as null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testExecute0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testExecute0016 start *************");
@@ -502,16 +498,16 @@ export default function rdbStoreExcuteTest(){
     })
 
 
-          /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2600
-     * @tc.name testExecute0017
-     * @tc.desc 1. Insert data and set args as null or undefined
-     *          2. Check returned value
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0017
+     * @tc.number testExecute0017
+     * @tc.desc   testExecute0017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testExecute0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testExecute0017 start *************");
         try {
@@ -527,16 +523,16 @@ export default function rdbStoreExcuteTest(){
 
 
 
-    /**
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExecuteJsAPITest_2700
-     * @tc.name testExecute0018
-     * @tc.desc 1. Insert data and set args as null or undefined
-     *          2. Check returned value
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testExecute0018
+     * @tc.number testExecute0018
+     * @tc.desc   testExecute0018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testExecute0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testExecute0018 start *************");
         try {

@@ -40,12 +40,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0600
-     * @tc.name   : testPreferencesGetPreferences001
-     * @tc.desc   : GetPreferences callback interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesGetPreferences001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0600
+     * @tc.desc   GetPreferences callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesGetPreferences001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -69,12 +70,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0600
-     * @tc.name   : testPreferencesDeletePreferences002
-     * @tc.desc   : DeletePreferences callback interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesDeletePreferences002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0600
+     * @tc.desc   DeletePreferences callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeletePreferences002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       dataPreferences.getPreferences(context, NAME1, (err, preferences) => {
@@ -105,12 +107,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1500
-     * @tc.name   : testPreferencesDeletePreferences003
-     * @tc.desc   : DeletePreferences callback interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesDeletePreferences003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1500
+     * @tc.desc   DeletePreferences callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeletePreferences003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       dataPreferences.getPreferences(context, NAME1, (err, preferences) => {
@@ -143,13 +146,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1000
-
-     * @tc.name   : testRemovePreferencesFromCache002
-     * @tc.desc   : RemovePreferencesFromCache callback interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testRemovePreferencesFromCache002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1000
+     * @tc.desc   RemovePreferencesFromCache callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRemovePreferencesFromCache002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       dataPreferences.getPreferences(context, NAME, (err, preferences) => {
@@ -179,12 +182,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0400
-     * @tc.name   : testGetPreferencesHelper0003
-     * @tc.desc   : GetPreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testGetPreferencesHelper0003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_0400
+     * @tc.desc   GetPreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testGetPreferencesHelper0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -200,13 +204,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1000
-
-     * @tc.name   : testGetPreferencesHelper0004
-     * @tc.desc   : GetPreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testGetPreferencesHelper0004
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1000
+     * @tc.desc   GetPreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testGetPreferencesHelper0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -222,12 +226,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1100
-     * @tc.name   : testRemovePreferencesFromCacheHelper0002
-     * @tc.desc   : RemovePreferencesFromCache interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testRemovePreferencesFromCacheHelper0002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1100
+     * @tc.desc   RemovePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRemovePreferencesFromCacheHelper0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -244,12 +249,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1200
-     * @tc.name   : testRemovePreferencesFromCacheHelper0003
-     * @tc.desc   : RemovePreferencesFromCache interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testRemovePreferencesFromCacheHelper0003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1200
+     * @tc.desc   RemovePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRemovePreferencesFromCacheHelper0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -266,12 +272,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1700
-     * @tc.name   : testPreferencesDeleteHelper0002
-     * @tc.desc   : DeletePreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesDeleteHelper0002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1700
+     * @tc.desc   DeletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeleteHelper0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -288,12 +295,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1900
-     * @tc.name   : testPreferencesDeleteHelper0003
-     * @tc.desc   : DeletePreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesDeleteHelper0003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1900
+     * @tc.desc   DeletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeleteHelper0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -310,12 +318,13 @@ export default function preferencesIgnoreTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2000
-     * @tc.name   : testPreferencesDeleteHelper0004
-     * @tc.desc   : DeletePreferences interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesDeleteHelper0004
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2000
+     * @tc.desc   DeletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesDeleteHelper0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {

@@ -97,12 +97,13 @@ export default function dataShareConfigUnSubscribeTest() {
     })
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest001
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest001
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0890
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/test1";
@@ -123,12 +124,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest002
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest002
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0900
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/test1";
@@ -149,12 +151,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest003
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0910
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/test1";
@@ -171,12 +174,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest004
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest004
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0920
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/test1";
@@ -193,12 +197,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest005
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest005
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0930
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/test1";
@@ -215,12 +220,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest006
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest006
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0940
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/test1";
@@ -237,12 +243,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest008
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest008
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0960
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "";
@@ -264,12 +271,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest009
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest009
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0970
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
@@ -291,12 +299,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest010
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest010
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0980
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
@@ -315,12 +324,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest011
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest011
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0990
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = " ";
@@ -341,12 +351,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest012
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest012
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1000
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "@#￥%^&*";
@@ -367,12 +378,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest013
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest013
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1010
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -386,12 +398,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest014
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest014
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1020
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -405,12 +418,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest015
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1030
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/ ";
@@ -431,12 +445,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest016
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest016
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1050
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/路径";
@@ -457,12 +472,13 @@ export default function dataShareConfigUnSubscribeTest() {
     });
 
     /**
-     * @tc.name dataShareConfigUnSubscribeTest017
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigUnSubscribeTest017
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1060
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigUnSubscribeTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri = "datashareproxy://com.acts.dataShare.config/test1";

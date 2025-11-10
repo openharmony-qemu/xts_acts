@@ -37,12 +37,13 @@ export default function RdbNdkStoreLevelTest() {
         afterAll(() => {})
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0200
-         * @tc.desc: Normal testCase of NDK SecurityLevel is S1
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_0100
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_0200
+         * @tc.desc   Normal testCase of NDK SecurityLevel is S1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_0100' , ' begin');
@@ -52,12 +53,13 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1200
-         * @tc.desc: Normal testCase of NDK SecurityLevel is S2
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_0200
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1200
+         * @tc.desc   Normal testCase of NDK SecurityLevel is S2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_0200' , ' begin');
@@ -67,12 +69,13 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1300
-         * @tc.desc: Normal testCase of NDK SecurityLevel is S3
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_0300
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1300
+         * @tc.desc   Normal testCase of NDK SecurityLevel is S3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_0300' , ' begin');
@@ -82,12 +85,13 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1400
-         * @tc.desc: Normal testCase of NDK SecurityLevel is S4
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_0400
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1400
+         * @tc.desc   Normal testCase of NDK SecurityLevel is S4
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_0400' , ' begin');
@@ -97,12 +101,13 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1500
-         * @tc.desc: Normal testCase of NDK SecurityLevel is S4
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_EL_0100
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1500
+         * @tc.desc   Normal testCase of NDK SecurityLevel is S4
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_EL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_EL_0100' , ' begin');
@@ -112,12 +117,13 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1600
-         * @tc.desc: Normal testCase of NDK
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_EL_0200
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1600
+         * @tc.desc   Normal testCase of NDK
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_EL_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_EL_0200' , ' begin');
@@ -127,12 +133,13 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1700
-         * @tc.desc: Normal testCase of NDK
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_EL_0300
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1700
+         * @tc.desc   Normal testCase of NDK
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_EL_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_EL_0300' , ' begin');
@@ -142,12 +149,13 @@ export default function RdbNdkStoreLevelTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1800
-         * @tc.desc: Normal testCase of NDK
-         * @tc.type: FUNC
-         * @tc.name predicates level normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   SUB_DDM_RDB_LEVEL_EL_0400
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_BackupRestoreNdkAPITest_1800
+         * @tc.desc   Normal testCase of NDK
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_LEVEL_EL_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_LEVEL_EL_0400' , ' begin');

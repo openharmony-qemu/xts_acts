@@ -111,12 +111,14 @@ export default function channelCallbacktest() {
             done();
         })
 
-       /**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_0900
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_0900
-         * @tc.name Test isBasicChannel
-         * @tc.desc open BasicChannel Check whether the channel is a basic channel.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open BasicChannel Check whether the channel is a basic channel.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_0900', Level.LEVEL0, async function (done) {
             try {
@@ -182,11 +184,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1000
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1000
-         * @tc.name Test isClosed
-         * @tc.desc open LogicalChannel Check whether the channel is closed.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Check whether the channel is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1000', Level.LEVEL0, async function (done) {
             try {
@@ -258,11 +262,13 @@ export default function channelCallbacktest() {
 
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1100
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1100
-         * @tc.name Test getSelectResponse
-         * @tc.desc open BasicChannel Returns the data received from the application selection command.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open BasicChannel Returns the data received from the application selection command.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1100', Level.LEVEL0, async function (done) {
             try {
@@ -311,11 +317,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1200
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1200
-         * @tc.name Test transmit
-         * @tc.desc open LogicalChannel Send an APDU command to the SE 
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Send an APDU command to the SE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1200', Level.LEVEL0, async function (done) {
             try {
@@ -371,11 +379,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1201
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1201
-         * @tc.name Test transmit
-         * @tc.desc open LogicalChannel Send an APDU command to the SE 
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Send an APDU command to the SE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1201', Level.LEVEL0, async function (done) {
             let command1 = [];
@@ -431,12 +441,14 @@ export default function channelCallbacktest() {
             done();
         })
 
-       /**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1300
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1300
-         * @tc.name Test transmit
-         * @tc.desc open LogicalChannel Send an APDU command to the SE 
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Send an APDU command to the SE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1300', Level.LEVEL0, async function (done) {
             try {
@@ -469,11 +481,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1400
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1400
-         * @tc.name Test isClosed
-         * @tc.desc open LogicalChannel Check whether the channel is a basic channel.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Check whether the channel is a basic channel.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1400', Level.LEVEL0, async function (done) {
             try {
@@ -513,11 +527,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1500
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1500
-         * @tc.name Test isClosed
-         * @tc.desc open BasicChannel Check whether the channel is a basic channel.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open BasicChannel Check whether the channel is a basic channel.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1500', Level.LEVEL0, async function (done) {
             try {
@@ -557,11 +573,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1600
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1600
-         * @tc.name Test isClosed
-         * @tc.desc Check whether the channel is closed.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether the channel is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1600', Level.LEVEL0, async function (done) {
             try {
@@ -600,13 +618,14 @@ export default function channelCallbacktest() {
             done();
         })
 
-		/**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1700
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1700
-         * @tc.name Test closeChannels
-         * @tc.desc hasHceCapability to support a certain type of card emulation.
-		 * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   hasHceCapability to support a certain type of card emulation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1700', Level.LEVEL0, function () {
 			try{
@@ -622,12 +641,14 @@ export default function channelCallbacktest() {
 				}
 			})
 			
-		/**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1900
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1900
-         * @tc.name Test isBasicChannel
-         * @tc.desc open asicChannel Check whether the channel is a basic channel
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open asicChannel Check whether the channel is a basic channel
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1900', Level.LEVEL0, async function (done) {
 			try{
@@ -648,12 +669,14 @@ export default function channelCallbacktest() {
 			}
 		})
 		
-		/**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_2500
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_2500
-         * @tc.name Test transmit
-         * @tc.desc createService
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   createService
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_2500', Level.LEVEL0, async function (done) {
 			try{
@@ -679,11 +702,13 @@ export default function channelCallbacktest() {
 		})
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_2600
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_2600
-         * @tc.name Test transmit
-         * @tc.desc open LogicalChannel Send an APDU command to the SE 
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Send an APDU command to the SE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_2600', Level.LEVEL0, async function (done) {
             try {
@@ -751,11 +776,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_2601
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_2601
-         * @tc.name Test transmit
-         * @tc.desc open LogicalChannel Send an APDU command to the SE 
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Send an APDU command to the SE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_2601', Level.LEVEL0, async function (done) {
             try {

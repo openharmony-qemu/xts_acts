@@ -29,15 +29,16 @@ let TAG = '[testLog-ets]';
 export default function pasteboardTestNdkTest() {
   describe('pasteboardTestNdkTest', async (done: Function) => {
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0100
-     * @tc.name OH_Pasteboard_GetMimeTypes0100
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 0
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetMimeTypes0100
+     * @tc.number OH_Pasteboard_GetMimeTypes0100
+     * @tc.desc   OH_Pasteboard_GetMimeTypes0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('OH_Pasteboard_GetMimeTypes0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data = testndk.OH_Pasteboard_GetMimeTypes0100();
       console.info(TAG + "OH_Pasteboard_GetMimeTypes0100 data = " + data);
@@ -45,15 +46,16 @@ export default function pasteboardTestNdkTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_Pasteboard_GetMimeTypes0200
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetMimeTypes0200
+     * @tc.number OH_Pasteboard_GetMimeTypes0200
+     * @tc.desc   OH_Pasteboard_GetMimeTypes0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetMimeTypes0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = testndk.OH_Pasteboard_GetMimeTypes0200();
       console.info(TAG + "OH_Pasteboard_GetMimeTypes0200 data = " + data);
@@ -61,15 +63,16 @@ export default function pasteboardTestNdkTest() {
       done();
     });
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0300
-     * @tc.name OH_Pasteboard_GetMimeTypes0300
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetMimeTypes0300
+     * @tc.number OH_Pasteboard_GetMimeTypes0300
+     * @tc.desc   OH_Pasteboard_GetMimeTypes0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OH_Pasteboard_GetMimeTypes0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = testndk.OH_Pasteboard_GetMimeTypes0300();
       console.info(TAG + "OH_Pasteboard_GetMimeTypes0300 data = " + data);
@@ -78,12 +81,13 @@ export default function pasteboardTestNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetDataWithNoProgress001
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0400
-     * @tc.name OH_Pasteboard_GetDataWithNoProgress001
-     * @tc.desc OH_Pasteboard_GetDataWithNoProgress test
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_GetDataWithNoProgress test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_GetDataWithNoProgress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let fileFullName = BASE_PATH +'/dstFile.txt';

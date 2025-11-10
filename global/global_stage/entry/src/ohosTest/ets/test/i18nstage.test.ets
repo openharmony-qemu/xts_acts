@@ -35,12 +35,13 @@ export default function i18nStageTest() {
     });
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETTIMEPERIODNAME_STAGE_0100
-     * @tc.name      : getTimePeriodName
-     * @tc.desc      : getTimePeriodName
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getTimePeriodName_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETTIMEPERIODNAME_STAGE_0100
+     * @tc.desc   getTimePeriodName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTimePeriodName_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value = I18n.I18NUtil.getTimePeriodName(2, 'zh-CN');
@@ -50,12 +51,13 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ADD_STAGE_0100
-     * @tc.name      : calendar.add
-     * @tc.desc      : calendar.add
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   add_stagetest_0100
+     * @tc.number SUB_GLOBAL_ADD_STAGE_0100
+     * @tc.desc   calendar.add
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('add_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let calendar = I18n.getCalendar('zh-CN');
@@ -68,12 +70,13 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETTIMEINMILLIS_STAGE_0100
-     * @tc.name      : calendar.getTimeInMillis
-     * @tc.desc      : calendar.getTimeInMillis
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getTimeInMillis_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETTIMEINMILLIS_STAGE_0100
+     * @tc.desc   calendar.getTimeInMillis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTimeInMillis_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let calendar = I18n.getCalendar('zh-CN');
@@ -85,12 +88,13 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_COMPAREDAYS_STAGE_0100
-     * @tc.name      : calendar.compareDays
-     * @tc.desc      : calendar.compareDays
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   compareDays_stagetest_0100
+     * @tc.number SUB_GLOBAL_COMPAREDAYS_STAGE_0100
+     * @tc.desc   calendar.compareDays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('compareDays_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let calendar = I18n.getCalendar('zh-CN');
@@ -103,12 +107,13 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_HOLIDAYMANAGER_STAGE_0100
-     * @tc.name      : HolidayManager
-     * @tc.desc      : HolidayManager
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   HolidayManager_stagetest_0100
+     * @tc.number SUB_GLOBAL_HOLIDAYMANAGER_STAGE_0100
+     * @tc.desc   HolidayManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('HolidayManager_stagetest_0100', Level.LEVEL2, async (done: Function) => {
       let holiday = new I18n.HolidayManager('/system/lib/US.ics');
@@ -133,12 +138,13 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   :i18n_test_getBestMatchLocale_0010
-     * @tc.name     :test the getBestMatchLocale interface
-     * @tc.desc     :resource list is empty
-     * @tc.size     :MEDIUM
-     * @tc.type     :Function
-     * @tc.level    :Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   i18n_test_getBestMatchLocale_0010
+     * @tc.number i18n_test_getBestMatchLocale_0010
+     * @tc.desc   resource list is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('i18n_test_getBestMatchLocale_0010', Level.LEVEL3, () => {
       console.log('i18n_test_getBestMatchLocale_0010' + 'start');
@@ -151,12 +157,13 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   :testgetThreeLetterRegion_0030
-     * @tc.name     :Get a three-letter abbreviation of the specified language
-     * @tc.desc     :transfer GB and return GBR
-     * @tc.size     :MEDIUM
-     * @tc.type     :Function
-     * @tc.level    :Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   testgetThreeLetterRegion_0030
+     * @tc.number testgetThreeLetterRegion_0030
+     * @tc.desc   transfer GB and return GBR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetThreeLetterRegion_0030', Level.LEVEL0, () => {
       let language: string = I18n.I18NUtil.getThreeLetterRegion('GB');
@@ -165,12 +172,13 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.number   :testgetThreeLetterLanguage_0030
-     * @tc.name     :Get a three-letter abbreviation of the specified language
-     * @tc.desc     :transfer en and return eng
-     * @tc.size     :MEDIUM
-     * @tc.type     :Function
-     * @tc.level    :Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   testgetThreeLetterLanguage_0030
+     * @tc.number testgetThreeLetterLanguage_0030
+     * @tc.desc   transfer en and return eng
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetThreeLetterLanguage_0030', Level.LEVEL0, () => {
       let language: string = I18n.I18NUtil.getThreeLetterLanguage('en');
