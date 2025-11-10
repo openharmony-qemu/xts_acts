@@ -261,7 +261,6 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0002, TestSize.Level1)
         ASSERT_NE(cap, nullptr);
         ASSERT_EQ(64, OH_AVCapability_GetMaxSupportedInstances(cap));
     }
-
 }
 
 /**
@@ -315,7 +314,7 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0004, TestSize.Level2)
             OH_VideoDecoder_Destroy(vdec_);
             format = nullptr;
             vdec_ = nullptr;
-           }
+        }
     }
 }
 
@@ -359,7 +358,6 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0005, TestSize.Level1)
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV21 + AV_PIXEL_FORMAT_NV21);
         ASSERT_NE(AV_ERR_OK, OH_VideoDecoder_Configure(vdec_, format));
     }
-
 }
 
 
@@ -384,7 +382,6 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0006, TestSize.Level1)
             ASSERT_EQ(CheckProfile(profiles[i]), true);
         }
     }
-
 }
 
 /**
@@ -452,7 +449,6 @@ HWTEST_F(DecApiNdkTest, VIDEO_VC1DEC_CAP_API_0008, TestSize.Level1)
             }
         }
     }
-
 }
 
 /**
@@ -496,7 +492,6 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0010, TestSize.Level1)
             EXPECT_GE(profiles[i], 0);
         }
     }
-
 }
 
 /**
@@ -529,6 +524,5 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0011, TestSize.Level1)
             }
         }
     }
-
 }
 } // namespace
