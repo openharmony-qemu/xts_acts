@@ -169,7 +169,6 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0004, TestSize.Level0)
         vDecSample->WaitForEOS();
         ASSERT_EQ(FRAMESIZE30, vDecSample->outFrameCount);
     }
-
 }
 
 /**
