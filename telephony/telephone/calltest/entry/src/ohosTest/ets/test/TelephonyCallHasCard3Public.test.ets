@@ -204,8 +204,8 @@ export default function HasCard2PublicNeedCardTest() {
               call.CallState.CALL_STATE_OFFHOOK,
               call.CallState.CALL_STATE_ANSWERED
             ]
-            ExpectTrue(callStateSyncAry.includes(data));
-            console.info(`${caseName} getCallState success, data->${JSON.stringify(callState)}`);
+            ExpectTrue(callStateSyncAry.includes(callState));
+            console.info(`${caseName} getCallState success, callState->${JSON.stringify(callState)}`);
             done();
         } catch (err) {
           console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
