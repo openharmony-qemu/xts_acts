@@ -114,8 +114,10 @@ struct CustomDialogExample {
     builder: CustomDialogOne({
       cancel: this.onCancel,
       confirm: this.onAccept,
-      
-      
+      // textValue: $textValue,  // 这是原写法，根据
+      // inputValue: $inputValue
+      textValue: this.textValue,
+      inputValue: this.inputValue
     }),
     cancel: this.exitApp,
     autoCancel: true,

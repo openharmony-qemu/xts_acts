@@ -44,31 +44,31 @@ struct AlertDialogParam1 {
     Column({ space: 5 } as ColumnOptions,) {
       Button('one button dialog')
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.uiContext.showAlertDialog(
+            {
+              title: 'title',
+              subtitle: 'subtitle',
+              message: 'text',
+              alignment: DialogAlignment.TopStart,
+              offset: { dx: 10, dy: 100 },
+              maskRect: {
+                x: 0,
+                y: 90,
+                width: 1000,
+                height: 250
+              },
+              // buttonDirection: DialogButtonDirection.AUTO,  // 参数冲突，注释处理使编译通过
+              confirm: {
+                value: 'button',
+                action: () => {
+                  console.info('Button-clicking callback')
+                }
+              },
+              cancel: () => {
+                console.info('Closed callbacks')
+              }
+            } as AlertDialogParamWithConfirm
+          )
         }).id('AlertDialogJsunit_0100')
 
         .backgroundColor(0x317aff)

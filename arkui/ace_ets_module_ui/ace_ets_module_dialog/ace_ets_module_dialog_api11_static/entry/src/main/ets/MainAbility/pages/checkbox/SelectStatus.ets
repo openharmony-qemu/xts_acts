@@ -43,7 +43,7 @@ struct CheckboxExample {
   build() {
     Scroll() {
       Column() {
-        
+        // 全选按钮
         Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
           CheckboxGroup({ group: 'checkboxGroup' })
             .id('SelectAll')
@@ -57,7 +57,7 @@ struct CheckboxExample {
           Text(this.text1).id('text1')
         }
 
-        
+        // 选项1
         Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
           Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
             .id('Checkbox1')
@@ -69,7 +69,7 @@ struct CheckboxExample {
           Text('Checkbox1').fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500)
         }.margin({ left: 36 } as Margin)
 
-        
+        // 选项2
         Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
           Checkbox({ name: 'checkbox2', group: 'checkboxGroup' })
             .id('Checkbox2')
@@ -82,7 +82,7 @@ struct CheckboxExample {
           Text('Checkbox2').fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500)
         }.margin({ left: 36 } as Margin)
 
-        
+        // 选项3
         Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
           Checkbox({ name: 'checkbox3', group: 'checkboxGroup' })
             .id('Checkbox3')

@@ -36,34 +36,34 @@ struct PromptExampleA {
     Column({ space: 5 } as ColumnOptions,) {
       Button('prompt按esc弹窗逐层退出').key('Prompt_Dialog_A')
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.getUIContext().getPromptAction().showDialog({
+            title: 'Title Info',
+            message: 'Message Info',
+            buttons: [
+              {
+                text: 'button1',
+                color: '#000000'
+              },
+              {
+                text: 'button2',
+                color: '#000000'
+              }
+            ],
+          })
+          this.getUIContext().getPromptAction().showDialog({
+            title: 'Title Info',
+            message: 'Message Info',
+            buttons: [
+              {
+                text: 'button1',
+                color: '#000000'
+              },
+              {
+                text: 'button2',
+                color: '#000000'
+              }
+            ],
+          })
         }).backgroundColor(0x317aff)
     }.width('100%').margin({ top: 100 } as Margin)
   }

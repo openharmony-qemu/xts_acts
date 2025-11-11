@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -906,7 +906,6 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  // this.height('100%')
   this.key(componentKey)
   return this
 }
@@ -1141,7 +1140,7 @@ struct blurPage {
   @State componentKey: string = '';
   @State parentWidth: number = 0;
   @State parentHeight: number = 0;
-  @State columns: int = 0;
+  @State columns: number = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
 
@@ -1238,7 +1237,7 @@ struct blurPage {
   }
 
   build() {
-    GridRow({ columns: this.columns, gutter: this.gutter}) {
+    GridRow({ columns: this.columns as Int, gutter: this.gutter}) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').commonStyleButton(this.componentKey, this.blurButton.blur).attributeModifier(this._blurButttonMod)

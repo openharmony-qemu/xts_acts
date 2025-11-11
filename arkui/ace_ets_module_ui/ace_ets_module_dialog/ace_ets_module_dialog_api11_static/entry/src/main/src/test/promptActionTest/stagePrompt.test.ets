@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -43,7 +43,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -58,7 +58,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function stagePromptTest() {
   describe('stagePromptTest', () => {
-    
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stagePromptTest beforeAll start")
       await UtilsTest.msSleep(4000)
@@ -80,10 +80,10 @@ export default function stagePromptTest() {
         console.info("get stagePrompt state pages: " + JSON.stringify(pages));
         if (!("stagePrompt" == pages.name)) {
           console.info("get stagePrompt state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push stagePrompt success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push stagePrompt page error: " + err);
@@ -91,37 +91,38 @@ export default function stagePromptTest() {
 
     });
     afterEach(() => {
-      
-      
-      
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      
-      
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
 
+    
     /*
-         * @tc.number   testPromptActionShowToast001_static
-         * @tc.name     testPromptActionShowToast001_static
-         * @tc.desc     testPromptActionShowToast001_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testPromptActionShowToast001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testPromptActionShowToast001_static
+     * @tc.name     testPromptActionShowToast001_static
+     * @tc.desc     testPromptActionShowToast001_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testPromptActionShowToast001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast001_static START');
       try {
-        let innerEventOne: events_emitter.InnerEvent = {
+        let innerEventOne: emitter.InnerEvent = {
           eventId: 60220,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback1 = (eventData: events_emitter.EventData) => {
+        let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast001_static get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string, RecordData>)?.["STATUS"]).assertEqual(true);
+          expect(((eventData.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
           done();
         }
         try {
-          events_emitter.on(innerEventOne, callback1);
+          emitter.on(innerEventOne, callback1);
         } catch (err) {
-          console.info("testPromptActionShowToast001_static on events_emitter err : " + JSON.stringify(err));
+          console.info("testPromptActionShowToast001_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('showToastText', 10, "")));
@@ -134,28 +135,29 @@ export default function stagePromptTest() {
     });
 
 
+    
     /*
-         * @tc.number   testPromptActionShowToast002_static
-         * @tc.name     testPromptActionShowToast002_static
-         * @tc.desc     testPromptActionShowToast002_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testPromptActionShowToast002_static
+     * @tc.name     testPromptActionShowToast002_static
+     * @tc.desc     testPromptActionShowToast002_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast002_static START');
       try {
-        let innerEventTwo: events_emitter.InnerEvent = {
+        let innerEventTwo: emitter.InnerEvent = {
           eventId: 60221,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback1 = (eventData: events_emitter.EventData) => {
+        let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast002_static get event state result is: " + JSON.stringify(eventData));
-          
+          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
           done();
         }
         try {
-          events_emitter.on(innerEventTwo, callback1);
+          emitter.on(innerEventTwo, callback1);
         } catch (err) {
-          console.info("testPromptActionShowToast002_static on events_emitter err : " + JSON.stringify(err));
+          console.info("testPromptActionShowToast002_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
@@ -167,28 +169,29 @@ export default function stagePromptTest() {
       done();
     });
 
+    
     /*
-         * @tc.number   testPromptActionShowToast003_static
-         * @tc.name     testPromptActionShowToast003_static
-         * @tc.desc     testPromptActionShowToast003_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testPromptActionShowToast003_static
+     * @tc.name     testPromptActionShowToast003_static
+     * @tc.desc     testPromptActionShowToast003_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast003_static START');
       try {
-        let innerEventThree: events_emitter.InnerEvent = {
+        let innerEventThree: emitter.InnerEvent = {
           eventId: 60222,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback1 = (eventData: events_emitter.EventData) => {
+        let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast003_static get event state result is: " + JSON.stringify(eventData));
-          
+          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
           done();
         }
         try {
-          events_emitter.on(innerEventThree, callback1);
+          emitter.on(innerEventThree, callback1);
         } catch (err) {
-          console.info("testPromptActionShowToast003_static on events_emitter err : " + JSON.stringify(err));
+          console.info("testPromptActionShowToast003_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
@@ -200,28 +203,29 @@ export default function stagePromptTest() {
       done();
     });
 
+    
     /*
-         * @tc.number   testPromptActionShowToast004_static
-         * @tc.name     testPromptActionShowToast004_static
-         * @tc.desc     testPromptActionShowToast004_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testPromptActionShowToast004_static
+     * @tc.name     testPromptActionShowToast004_static
+     * @tc.desc     testPromptActionShowToast004_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast004_static START');
       try {
-        let innerEventFour: events_emitter.InnerEvent = {
+        let innerEventFour: emitter.InnerEvent = {
           eventId: 60223,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback1 = (eventData: events_emitter.EventData) => {
+        let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast004_static get event state result is: " + JSON.stringify(eventData));
-          
+          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
           done();
         }
         try {
-          events_emitter.on(innerEventFour, callback1);
+          emitter.on(innerEventFour, callback1);
         } catch (err) {
-          console.info("testPromptActionShowToast004_static on events_emitter err : " + JSON.stringify(err));
+          console.info("testPromptActionShowToast004_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
@@ -233,28 +237,29 @@ export default function stagePromptTest() {
       done();
     });
 
+    
     /*
-         * @tc.number   testPromptActionShowToast005_static
-         * @tc.name     testPromptActionShowToast005_static
-         * @tc.desc     testPromptActionShowToast005_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testPromptActionShowToast005_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testPromptActionShowToast005_static
+     * @tc.name     testPromptActionShowToast005_static
+     * @tc.desc     testPromptActionShowToast005_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testPromptActionShowToast005_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testPromptActionShowToast005_static START');
       try {
-        let innerEventFive: events_emitter.InnerEvent = {
+        let innerEventFive: emitter.InnerEvent = {
           eventId: 60224,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback1 = (eventData: events_emitter.EventData) => {
+        let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast005_static get event state result is: " + JSON.stringify(eventData));
-          
+          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
           done();
         }
         try {
-          events_emitter.on(innerEventFive, callback1);
+          emitter.on(innerEventFive, callback1);
         } catch (err) {
-          console.info("testPromptActionShowToast005_static on events_emitter err : " + JSON.stringify(err));
+          console.info("testPromptActionShowToast005_static on emitter err : " + JSON.stringify(err));
         }
         console.info("onSelect_001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));

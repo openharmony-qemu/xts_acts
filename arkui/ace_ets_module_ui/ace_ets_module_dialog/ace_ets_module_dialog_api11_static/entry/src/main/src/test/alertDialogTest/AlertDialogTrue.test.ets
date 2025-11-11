@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
@@ -68,26 +68,27 @@ export default function AlertDialogTrue() {
         console.info("get AlertDialogTrue state pages: " + JSON.stringify(pages));
         if (!("AlertDialogTrue" == pages.name)) {
           console.info("get AlertDialogTrue state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push AlertDialogTrue success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push AlertDialogTrue page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
-         * @tc.number   AlertDialogTrue_static_0100
-         * @tc.name     AlertDialogTrue_static_0100
-         * @tc.desc     AlertDialogTrue_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('AlertDialogTrue_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   AlertDialogTrue_static_0100
+     * @tc.name     AlertDialogTrue_static_0100
+     * @tc.desc     AlertDialogTrue_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('AlertDialogTrue_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AlertDialogTrue_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -101,7 +102,7 @@ export default function AlertDialogTrue() {
       ;
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[AlertDialogTrue_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0) 
+      expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070)

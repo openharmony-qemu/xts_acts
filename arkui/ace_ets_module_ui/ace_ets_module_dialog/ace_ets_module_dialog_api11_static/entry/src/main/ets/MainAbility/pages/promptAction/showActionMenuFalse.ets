@@ -28,6 +28,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router, PromptAction } from '@ohos.arkui.UIContext';
 
 @Entry
@@ -39,29 +40,35 @@ struct showActionMenuFalseExample {
     Column({ space: 5 } as ColumnOptions,) {
       Button('showActionMenuFalse')
         .margin(100)
-        .id("showActionMenuFalse")
+        .id('showActionMenuFalse')
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.promptAction.showActionMenu({
+            title: 'showActionMenu Title Info',
+            isModal: true,
+            showInSubWindow: false,
+            buttons: [
+              {
+                text: 'item1',
+                color: '#666666'
+              } as promptAction.Button,
+              {
+                text: 'item2',
+                color: '#000000'
+              } as promptAction.Button,
+            ] as promptAction.PromptActionDoubleButtons
+          } as promptAction.ActionMenuOptions, (err:BusinessError|null, data:promptAction.ActionMenuSuccessResponse|undefined) => {
+            if (err) {
+              console.info('showActionMenu error: ' + err);
+              return;
+            }
+            console.info('showActionMenu success, click button: ' + data!.index);
+          })
+            // .then(data => {
+            //   console.info('showActionMenu success, click button: ' + data.index);
+            // })
+            // .catch((err: Error) => {
+            //   console.info('showActionMenu error: ' + err);
+            // })
         }).backgroundColor(0x317aff)
     }.width('100%').margin({ top: 5 } as Margin)
   }

@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
@@ -68,10 +68,10 @@ export default function CustomDialogFalse() {
         console.info("get CustomDialogFalse state pages: " + JSON.stringify(pages));
         if (!("CustomDialogFalse" == pages.name)) {
           console.info("get CustomDialogFalse state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CustomDialogFalse success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CustomDialogFalse page error: " + err);
@@ -81,13 +81,14 @@ export default function CustomDialogFalse() {
     });
 
 
+    
     /*
-         * @tc.number   CustomDialogFalse_static_0100
-         * @tc.name     CustomDialogFalse_static_0100
-         * @tc.desc     CustomDialogFalse_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('CustomDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   CustomDialogFalse_static_0100
+     * @tc.name     CustomDialogFalse_static_0100
+     * @tc.desc     CustomDialogFalse_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('CustomDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CustomDialogFalse_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -101,7 +102,7 @@ export default function CustomDialogFalse() {
       ;
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[CustomDialogFalse_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1) 
+      expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070)

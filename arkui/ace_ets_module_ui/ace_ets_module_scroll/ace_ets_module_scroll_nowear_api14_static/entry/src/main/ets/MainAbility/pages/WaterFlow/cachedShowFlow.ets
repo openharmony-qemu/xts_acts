@@ -32,13 +32,16 @@ import {
 import events_emitter from '@ohos.events.emitter';
 import { WaterFlowDataSource } from './WaterFlowDataSource';
 import { State } from '@ohos.arkui.stateManagement';
-
+interface ObjClass {
+  clip1: boolean,
+  show1: boolean | undefined
+}
 @Entry
 @Component
 struct cachedCountShowFlowExample {
   @State minSize: number = 80
   @State maxSize: number = 180
-  @State colors: double[] | int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F]
+  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   scroller: Scroller = new Scroller()
   @State clip1: boolean = false
@@ -55,61 +58,64 @@ struct cachedCountShowFlowExample {
 
   private stateChangClipShow: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info('[stateChangClipShow] stateChangeEvent');
-    if (eventData != null) {
-      console.info('[stateChangClipShow] state change called:' + JSON.stringify(eventData));
-      
-        
-      
-      
+    if (eventData != null && eventData.data != null) {
+      console.info("[stateChangClipShow] state change called: " + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, object|null|undefined>
+      if (data['clip1'] != null) {
+        this.clip1 = data['clip1'] as boolean
+      }
+      if (data['show1'] != null) {
+        this.show1 = data['show1'] as boolean
+      }
     }
   }
 
   build() {
     Column() {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      WaterFlow({ scroller: this.scroller } as WaterFlowOptions) {
+        LazyForEach(this.dataSource, (item: number) => {
+          FlowItem() {
+            Column() {
+              Text('N' + item)
+                .id('show_flow_' + item)
+                .width('100%')
+                .height('34%')
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .borderRadius(10)
+            }
+          }
+          .width('100%')
+          // .backgroundColor(this.colors[item.toInt() % 5])
+        }, (item: number) => String(item))
+      }
+      .id('cachedCount_show_flow')
+      .columnsTemplate('1fr 1fr 1fr')
+      .clip(this.clip1)
+      .cachedCount(6, this.show1)
+      .border({ width: 1 })
+      .width('90%')
+      .height('40%')
+      .friction(0.6)
+      .padding('3%')
+      .scrollBar(BarState.On)
+      .onScrollIndex((first: Int, last: Int) => {
+        console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
+      })
+      .onReachStart(() => {
+        console.info('waterFlow reach start')
+      })
+      .onReachEnd(() => {
+        console.info('waterFlow reach end')
+      })
+      .onScrollFrameBegin((offset: number, state: ScrollState) => {
+        console.info('waterFlow scrollFrameBegin offset: ' + offset + ' state: ' + state.toString())
+        return { offsetRemain: offset } as OnScrollFrameBeginHandlerResult
+      })
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    // .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

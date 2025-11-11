@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -80,10 +80,10 @@ export default function DialogTest() {
         console.info("get Index state pages: " + JSON.stringify(pages));
         if (!("Index" == pages.name)) {
           console.info("get Index state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push Index success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Index page error: " + err);
@@ -92,17 +92,18 @@ export default function DialogTest() {
     });
 
 
+    
     /*
-         * @tc.number   ArkUX_Dialog_Visual_static_0060
-         * @tc.name     ArkUX_Dialog_Visual_static_0060
-         * @tc.desc     ArkUX_Dialog_Visual_static_0060
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUX_Dialog_Visual_static_0060
+     * @tc.name     ArkUX_Dialog_Visual_static_0060
+     * @tc.desc     ArkUX_Dialog_Visual_static_0060
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Dialog_Visual_static_0060 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Dialog_Visual_static_0060');
+          let strJson = inspector.getInspectorByKey('ArkUX_Dialog_Visual_0060');
           console.info('ArkUX_Dialog_Visual_static_0060 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Dialog_Visual_static_0060 obj is: " + JSON.stringify(obj));

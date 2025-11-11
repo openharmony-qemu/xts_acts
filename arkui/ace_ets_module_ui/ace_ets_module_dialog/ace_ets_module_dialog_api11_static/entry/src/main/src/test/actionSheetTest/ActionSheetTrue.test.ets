@@ -67,26 +67,27 @@ export default function ActionSheetTrue() {
         console.info("get ActionSheetTrue state pages: " + JSON.stringify(pages));
         if (!("ActionSheetTrue" == pages.name)) {
           console.info("get ActionSheetTrue state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ActionSheetTrue success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ActionSheetTrue page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
-         * @tc.number   ActionSheetTrue_static_0100
-         * @tc.name     ActionSheetTrue_static_0100
-         * @tc.desc     ActionSheetTrue_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ActionSheetTrue_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ActionSheetTrue_static_0100
+     * @tc.name     ActionSheetTrue_static_0100
+     * @tc.desc     ActionSheetTrue_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ActionSheetTrue_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ActionSheetTrue_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -99,7 +100,7 @@ export default function ActionSheetTrue() {
         await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[ActionSheetTrue_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0) 
+      expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070)

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import emitter from '@ohos.events.emitter'
 import {
   Entry,
   Column,
@@ -38,11 +38,11 @@ import {
   Placement,
   PopupOptions,
   CustomPopupOptions,
-  PopupStateChangeParam
+  PopupStateChangeParam,
+  PopupMaskType
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -69,49 +69,49 @@ struct PopupExample {
         .onClick((e: ClickEvent) => {
           this.noHandlePopup = !this.noHandlePopup
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "placementOnTop": this.placementOnTop,
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 65,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button2 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        .bindPopup(this.noHandlePopup, {
+          message: 'content1 content1',
+          // placement: this.placementOnTop,   //  源代码逻辑问题，Boolean 与 Placement不匹配
+          onStateChange: (e:PopupStateChangeParam) => {
+            console.info(e.isVisible.toString())
+            if (!e.isVisible) {
+              this.noHandlePopup = false
+            }
+          }
+        } as PopupOptions)
         .position({ x: 100, y: 50 } as Position)
 
       Button('custom popup 1')
         .key('button1')
         .onClick((e: ClickEvent) => {
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "maskColor": this.maskColor,
                 "enableArrow": this.enableArrow
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 66,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button1 start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -123,56 +123,56 @@ struct PopupExample {
         .onClick((e: ClickEvent) => {
           this.customPopup = !this.customPopup
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "maskColor": this.maskColor,
                 "enableArrow": this.enableArrow
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 67,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("button start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        .bindPopup(this.customPopup, {
+          builder: this.popupBuilder,
+          placement: Placement.Bottom,
+          mask: { color: this.maskColor },
+          popupColor: Color.White,
+          enableArrow: this.enableArrow,
+          onStateChange: (e:PopupStateChangeParam) => {
+            if (!e.isVisible) {
+              this.customPopup = false
+            }
+          }
+        } as CustomPopupOptions)
         .position({ x: 100, y: 350 } as Position)
     }.width('100%').padding({ top: 5 } as Padding)
   }
 
   onPageShow() {
     console.info('customPopupOption page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 68,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
+    emitter.on(stateChangeEvent, this.stateChangCallBack)
   }
 
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     if (eventData != null) {
       console.info("customPopupOption page state change called:" + JSON.stringify(eventData));
-      
-      
-      
-      
-      
-      
+      if (((eventData.data) as  ESObject)?.getProperty('enableArrow') != null) {
+        this.enableArrow = ((eventData.data) as  ESObject)!.getProperty('enableArrow').toBoolean() as boolean;
+      }
+      if (((eventData.data) as  ESObject)?.getProperty('maskColor') != null) {
+        this.maskColor = ((eventData.data) as  ESObject)!.getProperty('maskColor').toStaticObject() as ResourceColor;
+      }
     }
   }
 }

@@ -14,31 +14,29 @@
  */
 
 import { Constants } from '../../constants/Constants';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
-import {SetValue} from './Utils'
-import { RecordData } from '@ohos.base';
 
 export interface Message {
-  value: SetValue
+  value: AlignRuleOption
 }
 
 interface EventMessage {
   src: Message
 }
 
-export type Callback = (message: SetValue) => void;
+export type Callback = (message: AlignRuleOption) => void;
 
 export class AttrsManager {
   callBack?: Callback = undefined;
 
-  static change(caseName: string, setValue: SetValue) {
+  static change(caseName: string, setValue: AlignRuleOption) {
     const message: Message = { value: setValue };
 
-    const eventData: events_emitter.EventData = {
+    const eventData: emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, RecordData>
+      } as Record<String,undefined|null|Object>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
@@ -49,28 +47,28 @@ export class AttrsManager {
   }
 
   static unRegisterDataChange() {
-    events_emitter.off(Constants.EVENT_ID_CHANGE_DATA);
+    emitter.off(Constants.EVENT_ID_CHANGE_DATA);
   }
 
-  private onEvent(eventId: long) {
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: eventId,
-      priority: events_emitter.EventPriority.LOW
+  private onEvent(eventId: number) {
+    let stateChangeEvent: emitter.InnerEvent = {
+      eventId: eventId.toLong(),
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.off(eventId);
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.off(eventId.toLong());
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
-  private static emitEvent(tag: string, eventId: long, eventData: events_emitter.EventData) {
-    let innerEvent: events_emitter.InnerEvent = {
-      eventId: eventId,
-      priority: events_emitter.EventPriority.LOW
+  private static emitEvent(tag: string, eventId: number, eventData: emitter.EventData) {
+    let innerEvent: emitter.InnerEvent = {
+      eventId: eventId.toLong(),
+      priority: emitter.EventPriority.LOW
     }
     console.info(tag + ' start to publish emit');
-    events_emitter.emit(innerEvent, eventData);
+    emitter.emit(innerEvent, eventData);
   }
 
-  private stateChangCallBack = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack = (eventData: emitter.EventData) => {
     console.info('[stateChangCallBack] stateChangCallBack ');
     if (eventData != null && eventData.data != null) {
       console.info('[stateChangCallBack] state change called: ' + JSON.stringify(eventData));
@@ -81,8 +79,7 @@ export class AttrsManager {
           if (message && message?.value) {
             this.callBack!(message!.value!)
           }
-        } catch (e) {
-          e = e as Error;
+        } catch (e: Error) {
           console.error("fail :", e);
         }
       }

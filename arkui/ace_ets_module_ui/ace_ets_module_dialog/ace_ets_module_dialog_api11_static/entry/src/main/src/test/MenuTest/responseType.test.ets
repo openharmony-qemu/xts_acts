@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -79,12 +79,12 @@ export default function responseTypeJsunit() {
         console.info("get responseType state pages: " + JSON.stringify(pages));
         if (!("responseType" == pages.name)) {
           console.info("get responseType state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push responseType success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push responseType page error: " + err);
       }
 
@@ -96,40 +96,42 @@ export default function responseTypeJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   testresponseType0002_static
-         * @tc.name     testresponseType0002_static
-         * @tc.desc     testresponseType0002_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testresponseType0002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testresponseType0002_static
+     * @tc.name     testresponseType0002_static
+     * @tc.desc     testresponseType0002_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testresponseType0002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('responseType testresponseType0002_static START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('RightClickText');
       console.info("[testresponseType0002_static] component bindContextMenu strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindContextMenu')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('bindContextMenu')).assertEqual(undefined);
       console.info("[testresponseType0002_static] bindContextMenu value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindContextMenu'));
+      JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('bindContextMenu'));
       done();
     });
 
 
+    
     /*
-         * @tc.number   testresponseType0003_static
-         * @tc.name     testresponseType0003_static
-         * @tc.desc     testresponseType0003_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testresponseType0003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testresponseType0003_static
+     * @tc.name     testresponseType0003_static
+     * @tc.desc     testresponseType0003_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testresponseType0003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('responseType testresponseType0003_static START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('LongPressText');
       console.info("[testresponseType0003_static] component bindContextMenu strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindContextMenu')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('bindContextMenu')).assertEqual(undefined);
       console.info("[testresponseType0003_static] bindContextMenu value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('bindContextMenu'));
+      JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('bindContextMenu'));
       done();
     });
   })

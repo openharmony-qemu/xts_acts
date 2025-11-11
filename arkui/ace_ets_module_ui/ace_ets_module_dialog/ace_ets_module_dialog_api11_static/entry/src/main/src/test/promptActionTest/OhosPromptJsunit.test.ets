@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -43,7 +43,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -79,10 +79,10 @@ export default function ohosPromptJsunit() {
         console.info("get OhosPrompt state pages: " + JSON.stringify(pages));
         if (!("OhosPrompt" == pages.name)) {
           console.info("get OhosPrompt state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push OhosPrompt success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push OhosPrompt  page error:" + err);
@@ -96,26 +96,27 @@ export default function ohosPromptJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   test_OhosPrompt_static_001
-         * @tc.name     test_OhosPrompt_static_001
-         * @tc.desc     test_OhosPrompt_static_001
-         * @tc.level    Level.LEVEL2
-         */
-    it('test_OhosPrompt_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   test_OhosPrompt_static_001
+     * @tc.name     test_OhosPrompt_static_001
+     * @tc.desc     test_OhosPrompt_static_001
+     * @tc.level    Level.LEVEL2
+     */
+it('test_OhosPrompt_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       await Utils.sleep(1000)
-      let callback = (eventData: events_emitter.EventData) => {
+      let callback = (eventData: emitter.EventData) => {
         console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<string, RecordData>)?.['matrix1']).assertEqual("[100, 10]")
+        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['matrix1']).assertEqual("[100, 10]")
       }
-      let innerEvent: events_emitter.InnerEvent = {
+      let innerEvent: emitter.InnerEvent = {
         eventId: 142,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(innerEvent, callback)
+        emitter.on(innerEvent, callback)
       } catch (err) {
-        console.info("[test_OhosPrompt_static_001] on events_emitter err : " + JSON.stringify(err));
+        console.info("[test_OhosPrompt_static_001] on emitter err : " + JSON.stringify(err));
       }
       console.info('[test_OhosPrompt_static_001] sendEventByKey ' +
       JSON.stringify(inspector.sendEventByKey('rotate5', 10, "")));

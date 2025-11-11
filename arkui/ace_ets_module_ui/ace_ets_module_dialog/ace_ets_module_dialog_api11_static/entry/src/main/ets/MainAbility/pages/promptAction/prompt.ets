@@ -34,28 +34,28 @@ import promptAction from '@ohos.promptAction'
 
 import { UIContext, Router, PromptAction } from '@ohos.arkui.UIContext';
 
-let customDialogId: number = 0
+let customDialogId: int = 0
 
 
+@Builder
+function customDialogBuilder() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  Column() {
+    Text('Custom dialog Message:' + `${customDialogId}`)
+      .fontSize(30)
+    Row() {
+      Button("确认")
+        .key('prompt_2')
+        .onClick((e: ClickEvent) => {
+          AppStorage.get<UIContext>('uiContent')!.getPromptAction().closeCustomDialog(customDialogId)
+        })
+      Blank().width(50)
+      Button("取消").onClick((e: ClickEvent) => {
+        AppStorage.get<UIContext>('uiContent')!.getPromptAction().closeCustomDialog(customDialogId)
+      })
+    }
+  }.height(200).padding(5)
+}
 
 @Entry
 @Component
@@ -71,11 +71,12 @@ struct Index {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .onClick((e: ClickEvent) => {
-            
-            
-            
-            
-            
+            this.promptAction.openCustomDialog({
+              // builder: customDialogBuilder.bind(this)
+              builder: customDialogBuilder
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
+              customDialogId = dialogId
+            })
           })
       }
       .width('100%')

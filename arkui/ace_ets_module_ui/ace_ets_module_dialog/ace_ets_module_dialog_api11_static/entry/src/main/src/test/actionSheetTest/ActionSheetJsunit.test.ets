@@ -67,26 +67,27 @@ export default function ActionSheetJsunit() {
         console.info("get ActionSheetJsunit state pages: " + JSON.stringify(pages));
         if (!("ActionSheetJsunit" == pages.name)) {
           console.info("get ActionSheetJsunit state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ActionSheetJsunit success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ActionSheetJsunit page error: " + err);
         expect().assertFail();
       }
-      
+      // done()
     });
 
 
+    
     /*
-         * @tc.number   ActionSheetJsunit_static_0100
-         * @tc.name     ActionSheetJsunit_static_0100
-         * @tc.desc     ActionSheetJsunit_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ActionSheetJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ActionSheetJsunit_static_0100
+     * @tc.name     ActionSheetJsunit_static_0100
+     * @tc.desc     ActionSheetJsunit_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ActionSheetJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
 
       console.info('ActionSheetJsunit_static_0100 START');

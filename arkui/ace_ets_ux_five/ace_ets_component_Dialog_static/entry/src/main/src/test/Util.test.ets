@@ -17,11 +17,12 @@ import  hilog  from '@ohos.hilog'
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: int = 0x0000;
-let tag: string = 'ActsAceEtsModuleXNodeApi12StaticTest';
+let tag: string = 'DialogStaticTest';
 
 class UtilsTest{
   static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
+
 
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {

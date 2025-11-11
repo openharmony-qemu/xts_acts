@@ -15,7 +15,7 @@
 
 import prompt from '@ohos.prompt'
 import Log from '../../common/Log';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import {
   Entry,
@@ -35,7 +35,7 @@ import {
   ItemAlign,
   TextAlign,
   TextOverflow,
-  Alignment
+  Alignment,
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
@@ -69,18 +69,19 @@ struct PromptShowDialog {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.getUIContext().getPromptAction().showDialog({
+            title: 'Title Info',
+            message: 'Message Info',
+            buttons: [
+              { text: 'button1', color: 'red' },
+              { text: 'button2', color: 'blue' }
+            ]
+          })
+          //   .then(data => {  // 原写法
+          //   console.info('showDialog success, click button: ' + data.index)
+          // }).catch((err: Error) => {
+          //   console.info('showDialog error: ' + err)
+          // })
         })
 
       Text("prompt-ShowActionMenu")
@@ -96,18 +97,20 @@ struct PromptShowDialog {
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // 编译问题
+          // this.getUIContext().getPromptAction().showActionMenu({
+          //   title: 'Title Info',
+          //   buttons: [
+          //     { text: 'item1', color: '#666666' },
+          //     { text: 'item2', color: '#000000' }
+          //   ]
+          // })
+          // .then(data => {   // 原写法
+          //   let result = true
+          //   console.info('showDialog success, click button: ' + data.index)
+          // }).catch(err => {
+          //   console.info('showDialog error: ' + err)
+          // })
         })
 
     }.width("100%").height("100%")

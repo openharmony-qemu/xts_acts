@@ -64,7 +64,8 @@ struct CustomDialogUserA {
   @State inputValue: string = 'CustomDialog按esc弹窗逐层退出'
   dialogController: CustomDialogController | null = new CustomDialogController({
     builder: CustomDialogExampleA({
-      
+      // inputValue: $inputValue
+      inputValue: this.inputValue
     }),
     autoCancel: true,
     alignment: DialogAlignment.Bottom,

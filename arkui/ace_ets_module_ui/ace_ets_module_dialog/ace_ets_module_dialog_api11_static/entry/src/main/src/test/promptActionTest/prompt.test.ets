@@ -16,7 +16,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -44,7 +44,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -81,10 +81,10 @@ export default function promptShowDialogJsunit() {
         console.info("get prompt state pages: " + JSON.stringify(pages));
         if (!("prompt" == pages.name)) {
           console.info("get prompt state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push prompt success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push prompt page error: " + err);
@@ -97,59 +97,61 @@ export default function promptShowDialogJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   testpromptShowDialog001
-         * @tc.name     testpromptShowDialog001
-         * @tc.desc     testpromptShowDialog001
-         * @tc.level    Level.LEVEL2
-         */
-    it('testpromptShowDialog001', Level.LEVEL2, async () => {
+     * @tc.number   testpromptShowDialog001
+     * @tc.name     testpromptShowDialog001
+     * @tc.desc     testpromptShowDialog001
+     * @tc.level    Level.LEVEL2
+     */
+it('testpromptShowDialog001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptShowDialog testpromptShowDialog001 START');
       await Utils.sleep(1000);
       try {
-        let innerEventOne: events_emitter.InnerEvent = {
+        let innerEventOne: emitter.InnerEvent = {
           eventId: 60220,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback1 = (eventData: events_emitter.EventData) => {
+        let callback1 = (eventData: emitter.EventData) => {
           console.info("testpromptShowDialog001 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string, RecordData>)?.["STATUS"]).assertEqual(true);
-
+          expect(((eventData.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          done()
         }
         console.info("onSelect_001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
-        events_emitter.on(innerEventOne, callback1);
+        emitter.on(innerEventOne, callback1);
       } catch (err) {
-        console.info("testpromptShowDialog001 on events_emitter err : " + JSON.stringify(err));
+        console.info("testpromptShowDialog001 on emitter err : " + JSON.stringify(err));
       }
       console.info('testpromptShowDialog001 END');
     });
 
 
+    
     /*
-         * @tc.number   testshowActionMenu0001_static
-         * @tc.name     testshowActionMenu0001_static
-         * @tc.desc     testshowActionMenu0001_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testshowActionMenu0001_static', Level.LEVEL2, async () => {
+     * @tc.number   testshowActionMenu0001_static
+     * @tc.name     testshowActionMenu0001_static
+     * @tc.desc     testshowActionMenu0001_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testshowActionMenu0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptShowDialog testshowActionMenu0001_static START');
       await Utils.sleep(1000);
       try {
-        let innerEventTwo: events_emitter.InnerEvent = {
+        let innerEventTwo: emitter.InnerEvent = {
           eventId: 60221,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback2 = (backData1: events_emitter.EventData) => {
+        let callback2 = (backData1: emitter.EventData) => {
           console.info("onRequestPopupData_0011 get event state result is: " + JSON.stringify(backData1));
-          expect(((backData1.data) as Record<string, RecordData>)?.["STATUS"]).assertEqual(true);
-
+          expect(((backData1.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          done()
         }
         console.info("onSelect_002 click result is: " +
         JSON.stringify(inspector.sendEventByKey('showActionMenuText', 10, "")));
-        events_emitter.on(innerEventTwo, callback2);
+        emitter.on(innerEventTwo, callback2);
       } catch (err) {
-        console.info("onRequestPopupData_0011 on events_emitter err : " + JSON.stringify(err));
+        console.info("onRequestPopupData_0011 on emitter err : " + JSON.stringify(err));
       }
       console.info('testshowActionMenu0001_static END');
     });

@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import promptAction from '@ohos.promptAction';
 import {
   Entry,
   Column,
@@ -42,27 +43,27 @@ struct showDialogExample {
         .margin(100)
         .id("showDialog")
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.promptAction.showDialog({
+            title: 'showDialog Title Info',
+            message: 'Message Info',
+            isModal: true,
+            buttons: [
+              {
+                text: 'button1',
+                color: '#000000'
+              } as promptAction.Button,
+              {
+                text: 'button2',
+                color: '#000000'
+              } as promptAction.Button
+            ]
+          } as promptAction.ShowDialogOptions, (err, data) => {
+            if (err) {
+              console.info('showDialog err: ' + err);
+              return;
+            }
+            console.info('showDialog success callback, click button: ' + data?.index);
+          });
         }).backgroundColor(0x317aff)
     }.width('100%').margin({ top: 5 } as Margin)
   }

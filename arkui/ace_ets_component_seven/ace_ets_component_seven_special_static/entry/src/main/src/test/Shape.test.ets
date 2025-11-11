@@ -20,43 +20,43 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from './Util.test'
 
-export default function shape(){
+export default function shape() {
   describe("shapeJsunit", () => {
     beforeAll(() => {
-        console.info("shapeJsunit beforeEach start");
-        await UtilsTest.msSleep(4000)
-        await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
+      console.info("shapeJsunit beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("shapeJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/shape',
       }
-      try{
+      try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get shape state pages: " + JSON.stringify(pages));
         if (!("shape" == pages.name)) {
           console.info("get shape state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);;
+          routerInstance.pushUrl(options);
+          ;
           await Utils.sleep(2000);
         }
-      }catch(err) {
+      } catch (err) {
         console.error("push panel page error: " + err);
       }
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_001
      * @tc.name     ShapeJsunit_static_001
      * @tc.desc     ShapeJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_001] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -72,14 +72,13 @@ it('ShapeJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_002
      * @tc.name     ShapeJsunit_static_002
      * @tc.desc     ShapeJsunit_static_002
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_002] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -92,14 +91,13 @@ it('ShapeJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_003
      * @tc.name     ShapeJsunit_static_003
      * @tc.desc     ShapeJsunit_static_003
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_003] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -112,14 +110,13 @@ it('ShapeJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_004
      * @tc.name     ShapeJsunit_static_004
      * @tc.desc     ShapeJsunit_static_004
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_004] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -132,14 +129,13 @@ it('ShapeJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_005
      * @tc.name     ShapeJsunit_static_005
      * @tc.desc     ShapeJsunit_static_005
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_005] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -151,14 +147,13 @@ it('ShapeJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_006
      * @tc.name     ShapeJsunit_static_006
      * @tc.desc     ShapeJsunit_static_006
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_006] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -171,14 +166,13 @@ it('ShapeJsunit_static_006', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_007
      * @tc.name     ShapeJsunit_static_007
      * @tc.desc     ShapeJsunit_static_007
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_007] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -191,14 +185,13 @@ it('ShapeJsunit_static_007', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_008
      * @tc.name     ShapeJsunit_static_008
      * @tc.desc     ShapeJsunit_static_008
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_008] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -211,14 +204,13 @@ it('ShapeJsunit_static_008', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
     /*
      * @tc.number   ShapeJsunit_static_009
      * @tc.name     ShapeJsunit_static_009
      * @tc.desc     ShapeJsunit_static_009
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_009] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -230,20 +222,20 @@ it('ShapeJsunit_static_009', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
 
-  
-    
+
     /*
      * @tc.number   ShapeJsunit_static_0010
      * @tc.name     ShapeJsunit_static_0010
      * @tc.desc     ShapeJsunit_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0010] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ShapeJsunit_static_0010] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
-      console.info("[ShapeJsunit_static_0010] mesh  is: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('mesh')));
+      console.info("[ShapeJsunit_static_0010] mesh  is: " +
+      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('mesh')));
       expect(obj.getElement('$attrs').getElement('mesh').getArray('value')[0].asString()).assertEqual('10.000000');
       expect(obj.getElement('$attrs').getElement('mesh').getDouble('row')).assertEqual(1);
       expect(obj.getElement('$attrs').getElement('mesh').getDouble('column')).assertEqual(1);
@@ -252,15 +244,14 @@ it('ShapeJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
 
-   
-    
+
     /*
      * @tc.number   ShapeJsunit_static_0011
      * @tc.name     ShapeJsunit_static_0011
      * @tc.desc     ShapeJsunit_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0011] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -279,7 +270,7 @@ it('ShapeJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.desc     ShapeJsunit_static_0012
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0012] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -291,13 +282,14 @@ it('ShapeJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<vo
       done();
     });
 
+
     /*
      * @tc.number   ShapeJsunit_static_0013
      * @tc.name     ShapeJsunit_static_0013
      * @tc.desc     ShapeJsunit_static_0013
      * @tc.level    Level.LEVEL0
      */
-it('ShapeJsunit_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ShapeJsunit_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0013] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);

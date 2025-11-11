@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,Image,ImageFit, Scroller,
   Scroll,FontWeight,TextArea,ScrollState,ScrollSource,
   ForEach,NodeContainer,Grid,GridItem,
   Search,Flex,ButtonType,
@@ -36,7 +36,7 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

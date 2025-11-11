@@ -45,12 +45,10 @@ export default function waterFlowAniTrue() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get waterFlowAniTrue state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("waterFlowAniTrue" == pages.name)) {
           console.info("get waterFlowAniTrue pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlowAniTrue page error:" + err);
@@ -77,7 +75,7 @@ it('waterFlowAniTrue_static_0100', Level.LEVEL1, (done: () => void): Promise<voi
       btn?.click();
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('waterFlow_true_onText');
-      console.info("[waterFlowAniTrue_static_0100] component obj is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
+      console.info("[waterFlowAniTrue_static_0100] component obj is: " + strJson);
       console.info("[waterFlowAniTrue_static_0100] content: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('WaterFlow: onReachStart-onScrollStart-onDidScroll-onScrollStop');

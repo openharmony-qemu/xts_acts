@@ -28,6 +28,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
+import { BusinessError } from '@ohos.base';
 
 import { UIContext, Router, PromptAction } from '@ohos.arkui.UIContext';
 
@@ -40,28 +41,28 @@ struct showActionMenuTrueExample {
     Column({ space: 5 } as ColumnOptions,) {
       Button('showActionMenuTrue')
         .margin(100)
-        .id("showActionMenuTrue")
+        .id('showActionMenuTrue')
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.promptAction.showActionMenu({
+            title: 'Title Info',
+            showInSubWindow: true,
+            buttons: [
+              {
+                text: 'item1',
+                color: '#666666'
+              } as promptAction.Button,
+              {
+                text: 'item2',
+                color: '#000000'
+              } as promptAction.Button,
+            ] as promptAction.PromptActionDoubleButtons
+          }  as promptAction.ActionMenuOptions, (err, data) => {
+            if (err) {
+              console.info('showActionMenu err: ' + err);
+              return;
+            }
+            console.info('showActionMenu success callback, click button: ' + data?.index);
+          })
         }).backgroundColor(0x317aff)
     }.width('100%').margin({ top: 5 } as Margin)
   }

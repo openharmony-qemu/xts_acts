@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -80,10 +80,10 @@ export default function ShowDialogJsunit() {
         console.info("get ShowDialogJsunit state pages: " + JSON.stringify(pages));
         if (!("ShowDialogJsunit" == pages.name)) {
           console.info("get ShowDialogJsunit state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ShowDialogJsunit success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ShowDialogJsunit page error: " + err);
@@ -93,13 +93,14 @@ export default function ShowDialogJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   ShowDialogJsunit_static_0100
-         * @tc.name     ShowDialogJsunit_static_0100
-         * @tc.desc     ShowDialogJsunit_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ShowDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ShowDialogJsunit_static_0100
+     * @tc.name     ShowDialogJsunit_static_0100
+     * @tc.desc     ShowDialogJsunit_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ShowDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ShowDialogJsunit_static_0100 START');
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('ShowDialog'));

@@ -16,7 +16,7 @@ import hilog from '@ohos.hilog';
 import { Hypium } from '../../../../../hypium/index';
 
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
+import { BusinessError } from '@ohos.base';
 import promptAction from '@ohos.promptAction';
 import {
   Entry,
@@ -36,7 +36,8 @@ import {
   CustomDialog,
   DialogAlignment,
   AlertDialogParamWithConfirm,
-  ActionSheetOptions
+  ActionSheetOptions,
+  AlertDialogParamWithOptions,
 } from '@ohos.arkui.component';
 import { State, AppStorage, Link } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
@@ -64,25 +65,27 @@ struct Index {
   @State textValue: string = '';
   @State inputValue: string = 'click me';
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample({
+      cancel: this.onCancel,
+      confirm: this.onAccept,
+      // textValue: $textValue,
+      // inputValue: $inputValue
+      textValue: this.textValue,
+      inputValue: this.inputValue
+    }),
+    cancel: this.existApp,
+    autoCancel: true,
+    alignment: DialogAlignment.CenterStart,
+    gridCount: 2,
+    showInSubWindow: true,
+    isModal: true,
+    customStyle: false
+  })
 
-  
+  // 在自定义组件即将析构销毁时将dialogControlle置空
   aboutToDisappear() {
-    
+    this.dialogController = null; // 将dialogController置空
   }
 
   onCancel() {
@@ -125,8 +128,8 @@ struct Index {
       Button('Click to Show ActionSheet')
         .onClick((e: ClickEvent) => {
           this.uiContext.showActionSheet({
-            showInSubWindow: true,
-            isModal: true,
+            // showInSubWindow: true,
+            // isModal: true,
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
             message: 'message',
@@ -165,42 +168,42 @@ struct Index {
             ]
           } as ActionSheetOptions)
         })
-        .key("ArkUX_Dialog_Visual_static_0060")
+        .key("ArkUX_Dialog_Visual_0060")
         .fontSize(20)
         .margin(10);
       Button('showInSubWindow true autoCancel true')
         .margin(20)
         .onClick((e: ClickEvent) => {
-          
-          
-          
+          if (this.dialogController != undefined) {
+            this.dialogController!.open()
+          }
         })
         .backgroundColor(0x317aff)
         .fontSize(20)
         .margin(10);
       Button('one button dialog')
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.promptAction.showActionMenu({
+            showInSubWindow: true,
+            isModal: true,
+            title: 'Title Info',
+            buttons: [
+              {
+                text: 'item1',
+                color: '#666666'
+              } as promptAction.Button,
+              {
+                text: 'item2',
+                color: '#000000'
+              }as promptAction.Button,
+            ] as promptAction.PromptActionDoubleButtons
+          } as promptAction.ActionMenuOptions, (err:BusinessError|null, data:promptAction.ActionMenuSuccessResponse|undefined) => {
+            if (err) {
+              console.info('showActionMenu err: ' + err);
+              return;
+            }
+            console.info('showActionMenu success callback, click button: ' + data?.index);
+          })
         });
       Button('promptAction.showDialog')
         .onClick((e: ClickEvent) => {
@@ -213,13 +216,13 @@ struct Index {
               {
                 text: 'button1',
                 color: '#000000'
-              },
+              } as promptAction.Button,
               {
                 text: 'button2',
                 color: '#000000'
-              }
+              } as promptAction.Button
             ]
-          }, (err, data) => {
+          } as promptAction.ShowDialogOptions, (err:BusinessError|null, data:promptAction.ShowDialogSuccessResponse|undefined)=> {
             if (err) {
               console.info('showDialog err: ' + err);
               return;
@@ -239,7 +242,7 @@ struct CustomDialogExample {
   @Link textValue: string;
   @Link inputValue: string;
   controller?: CustomDialogController;
-  
+  // 若尝试在CustomDialog中传入多个其他的Controller，以实现在CustomDialog中打开另一个或另一些CustomDialog，那么此处需要将指向自己的controller放在最后
   cancel: () => void = () => {
   };
   confirm: () => void = () => {
@@ -264,6 +267,6 @@ struct CustomDialogExample {
       }.margin({ bottom: 10 } as Margin)
     }
 
-    
+    // dialog默认的borderRadius为24vp，如果需要使用border属性，请和borderRadius属性一起使用。
   }
 }

@@ -29,7 +29,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function WaterFlowEffectEdge() {
   const SUITE: string = 'WaterFlowEffectEdge'
-  const waitUiReadyMs = 1500
+  const waitUiReadyMs: number = 1500
 
   describe('WaterFlowEffectEdge', () => {
     beforeAll(() => {
@@ -49,12 +49,10 @@ export default function WaterFlowEffectEdge() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get WaterFlowEffectEdge state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("WaterFlowEffectEdge" == pages.name)) {
           console.info("get WaterFlowEffectEdge pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push WaterFlowEffectEdge page error:" + err);
@@ -62,29 +60,29 @@ export default function WaterFlowEffectEdge() {
       console.info("WaterFlowEffectEdge beforeEach end");
     });
 
-
+    
     /*
      * @tc.number   ArkUI_WaterFlow_EffectEdge_static_0500
      * @tc.name     ArkUI_WaterFlow_EffectEdge_static_0500
      * @tc.desc     ArkUI_WaterFlow_EffectEdge_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('ArkUI_WaterFlow_EffectEdge_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let json1 = inspector.getInspectorByKey('waterFlow4')
-        await CommonFunc.sleep(1000)
-        let obj = JSON.parseJsonElement(json1);
-        console.log('ArkUI_WaterFlow_EffectEdge_static_0500 json1 ' + json1)
-        await CommonFunc.sleep(1000)
-        done()
-      } catch (ERROR) {
-        expect().assertFail();
-      }
+it('ArkUI_WaterFlow_EffectEdge_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let json1 = inspector.getInspectorByKey('waterFlow4')
+      await CommonFunc.sleep(1000)
+      let obj = JSON.parseJsonElement(json1);
+      let value = obj.getElement('$attrs').getElement('edgeEffectOptions').getString('effectEdge');
+      console.log('ArkUI_WaterFlow_EffectEdge_static_0500 json1 ' + json1)
+      console.log('ArkUI_WaterFlow_EffectEdge_static_0500 value ' + value)
+
+      await CommonFunc.sleep(1000)
+      expect(value).assertEqual('EffectEdge.Start')
+      done()
     });
   })
 }
 
-async function sleep(count: int): Promise<int> {
+async function sleep(count:int) : Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
       resolve(0)

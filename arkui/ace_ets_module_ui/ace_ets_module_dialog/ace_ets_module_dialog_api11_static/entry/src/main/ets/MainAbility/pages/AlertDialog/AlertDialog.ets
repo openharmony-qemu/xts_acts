@@ -74,7 +74,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog')  // 按照结论删除处理，如果跑测没问题，删掉即可
         })
       Button('Show Dialog With Two Buttons')
         .width(300)
@@ -105,7 +105,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog1')
         })
 
       Button('Show Dialog With Two Buttons')
@@ -137,7 +137,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog2')
         })
 
       Button('Show Dialog With Two Buttons')
@@ -169,7 +169,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog3')
         })
       Button('Show Dialog With Two Buttons')
         .width(300)
@@ -200,7 +200,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog4')
         })
       Button('Show Dialog With Two Buttons')
         .width(300)
@@ -231,7 +231,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog5')
         })
       Button('Show Dialog With Two Buttons')
         .width(300)
@@ -262,7 +262,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog6')
         })
       Button('Show Dialog With Two Buttons')
         .width(300)
@@ -293,7 +293,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog7')
         })
       Button('Show Dialog With Two Buttons')
         .width(300)
@@ -324,7 +324,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithButtons)
-          
+          // .key('alertDialog8')
         })
 
       Button('Show Dialog With Confirm')
@@ -349,7 +349,7 @@ struct alertdialog {
               this.currentTest = 'cancel'
             }
           } as AlertDialogParamWithConfirm)
-          
+          // .key('alertDialog9')
         })
     }
     .width('100%')

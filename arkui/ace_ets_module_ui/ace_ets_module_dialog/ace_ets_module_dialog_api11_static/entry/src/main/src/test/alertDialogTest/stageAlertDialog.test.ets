@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
@@ -31,7 +31,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function stageAlertDialog() {
   describe('stageAlertDialog', () => {
-    
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stageAlertDialog beforeAll start")
       await UtilsTest.msSleep(4000)
@@ -69,50 +69,51 @@ export default function stageAlertDialog() {
         console.info("get stageAlertDialog state pages: " + JSON.stringify(pages));
         if (!("stageAlertDialog" == pages.name)) {
           console.info("get stageAlertDialog state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push stageAlertDialog success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push stageAlertDialog page error: " + err);
       }
-      
+      // done()
     });
     afterEach(() => {
-      
-      
-      
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      
-      
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
 
 
+    
     /*
-         * @tc.number   stageAlertDialog001
-         * @tc.name     stageAlertDialog001
-         * @tc.desc     stageAlertDialog001
-         * @tc.level    Level.LEVEL2
-         */
-    it('stageAlertDialog001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   stageAlertDialog001
+     * @tc.name     stageAlertDialog001
+     * @tc.desc     stageAlertDialog001
+     * @tc.level    Level.LEVEL2
+     */
+it('stageAlertDialog001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('stageAlertDialog001 START');
       setTimeout(() => {
         try {
-          let innerEventOne: events_emitter.InnerEvent = {
+          let innerEventOne: emitter.InnerEvent = {
             eventId: 60220,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
-          let callback1 = (eventData: events_emitter.EventData) => {
+          let callback1 = (eventData: emitter.EventData) => {
             console.info("stageAlertDialog001 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<string, RecordData>)?.['STATUS']).assertEqual(true);
+            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(true);
             done();
           }
           try {
-            events_emitter.on(innerEventOne, callback1);
+            emitter.on(innerEventOne, callback1);
           } catch (err) {
-            console.info("stageAlertDialog001 on events_emitter err : " + JSON.stringify(err));
+            console.info("stageAlertDialog001 on emitter err : " + JSON.stringify(err));
           }
           console.info("stageAlertDialog001 click result is: " +
           JSON.stringify(inspector.sendEventByKey('routerInstanceText', 10, "")));
@@ -126,29 +127,30 @@ export default function stageAlertDialog() {
     });
 
 
+    
     /*
-         * @tc.number   stageAlertDialog002
-         * @tc.name     stageAlertDialog002
-         * @tc.desc     stageAlertDialog002
-         * @tc.level    Level.LEVEL2
-         */
-    it('stageAlertDialog002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   stageAlertDialog002
+     * @tc.name     stageAlertDialog002
+     * @tc.desc     stageAlertDialog002
+     * @tc.level    Level.LEVEL2
+     */
+it('stageAlertDialog002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('stageAlertDialog002 START');
       setTimeout(() => {
         try {
-          let innerEventTwo: events_emitter.InnerEvent = {
+          let innerEventTwo: emitter.InnerEvent = {
             eventId: 60221,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
-          let callback1 = (eventData: events_emitter.EventData) => {
+          let callback1 = (eventData: emitter.EventData) => {
             console.info("stageAlertDialog002 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<string, RecordData>)?.['STATUS']).assertEqual(10);
+            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(10);
             done();
           }
           try {
-            events_emitter.on(innerEventTwo, callback1);
+            emitter.on(innerEventTwo, callback1);
           } catch (err) {
-            console.info("stageAlertDialog002 on events_emitter err : " + JSON.stringify(err));
+            console.info("stageAlertDialog002 on emitter err : " + JSON.stringify(err));
           }
           console.info("stageAlertDialog002 click result is: " +
           JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
@@ -162,29 +164,30 @@ export default function stageAlertDialog() {
     });
 
 
+    
     /*
-         * @tc.number   stageAlertDialog003_static
-         * @tc.name     stageAlertDialog003_static
-         * @tc.desc     stageAlertDialog003_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('stageAlertDialog003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   stageAlertDialog003_static
+     * @tc.name     stageAlertDialog003_static
+     * @tc.desc     stageAlertDialog003_static
+     * @tc.level    Level.LEVEL2
+     */
+it('stageAlertDialog003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('stageAlertDialog003_static START');
       setTimeout(() => {
         try {
-          let innerEventThree: events_emitter.InnerEvent = {
+          let innerEventThree: emitter.InnerEvent = {
             eventId: 60222,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
-          let callback1 = (eventData: events_emitter.EventData) => {
+          let callback1 = (eventData: emitter.EventData) => {
             console.info("stageAlertDialog003_static get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<string, RecordData>)?.['STATUS']).assertEqual("STATUS");
+            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual("STATUS");
             done();
           }
           try {
-            events_emitter.on(innerEventThree, callback1);
+            emitter.on(innerEventThree, callback1);
           } catch (err) {
-            console.info("stageAlertDialog003_static on events_emitter err : " + JSON.stringify(err));
+            console.info("stageAlertDialog003_static on emitter err : " + JSON.stringify(err));
           }
           console.info("stageAlertDialog003_static click result is: " +
           JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));

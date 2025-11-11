@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -74,7 +74,7 @@ export default function menuDividerTest() {
       await UtilsTest.msSleep(4000)
       console.info("ActsMenuDividerTest  beforeAll end")
     })
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Menu/menuDivider",
       }
@@ -87,12 +87,12 @@ export default function menuDividerTest() {
         console.info("get menuDivider state pages: " + JSON.stringify(pages));
         if (!("menuDivider" == pages.name)) {
           console.info("get menuDivider state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push menuDivider success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push menuDivider page error " + JSON.stringify(err));
       }
       await sleep(2000)
@@ -101,11 +101,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0001
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0001
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0001
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0001
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0001
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0001
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0001] START');
 
@@ -123,11 +123,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0002
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0002
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0002
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0002
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0002
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0002
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0200] START');
 
@@ -144,11 +144,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0003
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0003
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0003
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0003
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0003
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0003
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0003] START');
 
@@ -165,11 +165,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0004
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0004
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0004
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0004
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0004
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0004
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0004', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0004] START');
 
@@ -186,11 +186,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0005
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0005
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0005
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0005
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0005
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0005
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0005', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0005] START');
 
@@ -208,11 +208,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0006
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0006
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0006
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0006
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0006
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0006
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0006', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0006] START');
 
@@ -229,11 +229,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0007
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0007
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0007
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0007
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0007
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0007
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0007', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0007] START');
 
@@ -248,13 +248,12 @@ export default function menuDividerTest() {
       done();
     });
 
-
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0008
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0008
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0008
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0008
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0008
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0008
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0008', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0012] START');
 
@@ -271,11 +270,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0009
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0009
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0009
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0009
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0009
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0009
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0009', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[menuItemDivider_static_0100] START');
 
@@ -293,11 +292,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0010
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0010
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0010
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0010
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0010
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0010
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0010] START');
 
@@ -314,11 +313,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0011
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0011
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0011
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0011
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0011
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0011
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0011', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0011] START');
 
@@ -335,11 +334,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0012
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0012
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0012
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0012
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0012
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0012
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0012', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0012] START');
 
@@ -356,11 +355,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0013
-         * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0013
-         * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0013
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemDivider_static_0013
+     * @tc.name     ArkUX_Stage_Menu_menuItemDivider_static_0013
+     * @tc.desc     ArkUX_Stage_Menu_menuItemDivider_static_0013
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_static_0013', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_static_0013] START');
 
@@ -377,11 +376,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_001
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_001
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_001
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_001
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_001
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_001
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_001] START');
 
@@ -398,11 +397,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0002
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0002] START');
 
@@ -419,11 +418,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0003
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0003] START');
 
@@ -440,11 +439,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0004
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0004', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0004] START');
 
@@ -461,11 +460,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0005
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0005', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0005] START');
 
@@ -483,11 +482,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0006
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0006', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0006] START');
 
@@ -504,11 +503,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0007
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0007', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_006] START');
 
@@ -526,11 +525,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0008
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0008', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_007] START');
 
@@ -547,11 +546,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0009
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0009', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0009] START');
 
@@ -569,11 +568,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0010
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0010] START');
 
@@ -590,11 +589,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0011
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0011', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0011] START');
 
@@ -612,11 +611,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0012
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0012', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0013] START');
 
@@ -631,13 +630,12 @@ export default function menuDividerTest() {
       done();
     });
 
-
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0013
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0013', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0013] START');
 
@@ -654,11 +652,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0014
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0014', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0014] START');
 
@@ -675,11 +673,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0015
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0015', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0015] START');
 
@@ -696,11 +694,11 @@ export default function menuDividerTest() {
 
 
     /*
-         * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
-         * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
-         * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
-         * @tc.level    Level.LEVEL2
-         */
+     * @tc.number   ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
+     * @tc.name     ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
+     * @tc.desc     ArkUX_Stage_Menu_menuItemGroupDivider_static_0016
+     * @tc.level    Level.LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_static_0016', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_static_0016] START');
 
