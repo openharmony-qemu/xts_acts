@@ -45,6 +45,10 @@ import ArrayCombinationTest2 from './array/ArrayCombination002.test';
 import ArrayCombinationTest3 from './array/ArrayCombination003.test';
 import ArrayCombinationTest4 from './array/ArrayCombination004.test';
 export default function testsuite() {
+  ArrayCombinationTest1();
+  ArrayCombinationTest2();
+  ArrayCombinationTest3();
+  ArrayCombinationTest4();
   ArrayConcatTest();
   ArrayConstructTest();
   ArrayEveryTest();
@@ -72,9 +76,5 @@ export default function testsuite() {
   ArraySortTest();
   ArraySpliceTest();
   ArrayCombinationTest();
-  ArrayCombinationTest1();
-  ArrayCombinationTest2();
-  ArrayCombinationTest3();
-  ArrayCombinationTest4();
 };
 
