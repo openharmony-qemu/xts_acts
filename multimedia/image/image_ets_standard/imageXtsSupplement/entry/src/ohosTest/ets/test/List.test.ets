@@ -66,10 +66,10 @@ import ImageGetImagePropertySyncEnumSoftware from './image/ImageGetImageProperty
 import ImageGetImagePropertySyncEnumStripOffset from './image/ImageGetImagePropertySyncEnumStripOffset.test';
 import ImageGetImagePropertySyncSUBFILE from './image/ImageGetImagePropertySyncSUBFILE.test';
 import ImagePropertyKeySyncEnumJpgEmpty from './image/ImagePropertyKeySyncEnumJpgEmpty.test';
-import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
 import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEnumGpsTimeTamp.test';
 import ImagePropertyKeySyncEnumSoftWare from './image/ImagePropertyKeySyncEnumSoftWare.test';
 import ImagePropertyKeySyncEnumStripOffsets from './image/ImagePropertyKeySyncEnumStripOffsets.test';
+import ImageImagePackerPackingSupp from './image/ImagePackerPackingSupp.test';
 
 
 export default function testsuite() {
@@ -121,14 +121,13 @@ export default function testsuite() {
   PictureSetMetadataTestSupp();
   ImageCreateIncrementalSourceSupp();
   ImageCreatePixelMapFromSurface();
-  ImageCreatePixelMapSync();
   ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
   ImageGetImagePropertySyncEnumSoftware();
   ImageGetImagePropertySyncEnumStripOffset();
   ImageGetImagePropertySyncSUBFILE();
-  ImageCreatePixelMapSync();
   ImagePropertyKeySyncEnumJpgEmpty();
   ImagePropertyKeySyncEnumGPSTIMESTAMP();
   ImagePropertyKeySyncEnumStripOffsets();
   ImagePropertyKeySyncEnumSoftWare();
+  ImageImagePackerPackingSupp();
 }
