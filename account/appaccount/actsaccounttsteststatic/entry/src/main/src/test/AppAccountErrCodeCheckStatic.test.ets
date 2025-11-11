@@ -29,16 +29,20 @@ export default function AppAccountErrCodeCheckStatic() {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>AppAccountManager create finish====");
 
-    beforeEach(
-      async (done: () => void): Promise<void> => {
-        hilog.info(0x0000, tag, "====>afterEach start====");
-        let accounts: Array<account.AppAccountInfo> = await accountManager.getAllAccounts();
-        for (let i: int = 0; i < accounts.length; i++) {
-          let localName: string = accounts[i].name;
+    beforeEach(async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, "====>beforeEach start====");
+      let accounts: Array<account.AppAccountInfo> = await accountManager.getAccountsByOwner("com.example.accounttstest.static");
+      hilog.info(0x0000, tag, "====>getAccountsByOwner accounts length: " + JSON.stringify(accounts.length));
+      for (let i: int = 0; i < accounts.length; i++) {
+        let localName: string = accounts[i].name;
+        try {
           await accountManager.removeAccount(localName);
+        } catch (err: BusinessError<void>) {
+          hilog.info(0x0000, tag, "====>removeAccount err: " + JSON.stringify(err));
         }
-        done();
-      })
+      }
+      done();
+    })
 
     /**
     * @tc.number     AppAccountErrCodeCheck_1500
