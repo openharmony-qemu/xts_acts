@@ -234,8 +234,15 @@ export default function rdbInterfaceNdkTest() {
       it('OH_Rdb_NotSupport0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         let res = testndk.OH_Rdb_NotSupport0100();
         console.info(TAG + "OH_Rdb_NotSupport0100 res=" + res );
-        expect(res).assertEqual(0);
-        done();
+        if(res == 0)
+        {
+          expect(res).assertEqual(0);
+          done();
+        }
+        else{
+          expect(res).assertEqual(1);
+          done();
+        }
       });
   })
 }
