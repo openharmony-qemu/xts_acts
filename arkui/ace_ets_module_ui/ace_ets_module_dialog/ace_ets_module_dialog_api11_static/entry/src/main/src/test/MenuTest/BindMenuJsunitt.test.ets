@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -42,7 +42,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -78,12 +78,12 @@ export default function bindMenuTesttt() {
         console.info("get bindMenu state pages: " + JSON.stringify(pages));
         if (!("bindMenuu" == pages.name)) {
           console.info("get bindMenu state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push bindMenu success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push bindMenu page error:" + err);
       }
 
@@ -95,31 +95,32 @@ export default function bindMenuTesttt() {
     });
 
 
+    
     /*
-         * @tc.number   bindMenuTest_static_0100
-         * @tc.name     bindMenuTest_static_0100
-         * @tc.desc     bindMenuTest_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   bindMenuTest_static_0100
+     * @tc.name     bindMenuTest_static_0100
+     * @tc.desc     bindMenuTest_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindMenuTest_static_0100 START');
       await CommonFunc.sleep(1000);
       console.info("bindMenuTest_static_0100 text click result is: " +
       JSON.stringify(inspector.sendEventByKey('text', 10, "")));
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("bindMenuTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<string, RecordData>)?.['ACTION']).assertEqual(true);
+        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['ACTION']).assertEqual(true);
         done();
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 64,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("bindMenuTest_static_0100 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("bindMenuTest_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindMenuTest_static_0100 button click result is: " +
       JSON.stringify(inspector.sendEventByKey('button', 10, "")));

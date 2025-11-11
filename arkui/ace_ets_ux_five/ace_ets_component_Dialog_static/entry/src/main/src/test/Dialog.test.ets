@@ -40,26 +40,21 @@ export default function DialogTest() {
         console.info("get Index state success " + JSON.stringify(pages));
         if (!("Index" == pages.name)) {
           console.info("get Index state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          // console.info("push Index page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Index page error: " + err);
       }
     });
 
+    
     /*
-     *@tc.number ArkUX_Dialog_Visual_0060
-     *@tc.name   Support modifying the change of Dialog component
-     *@tc.desc   Sets the Dialog property parameter to default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number   ArkUX_Dialog_Visual_static_0060
+     * @tc.name     ArkUX_Dialog_Visual_static_0060
+     * @tc.desc     ArkUX_Dialog_Visual_static_0060
+     * @tc.level    Level.LEVEL0
      */
-
-
-    it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Dialog_Visual_0060 START');
       setTimeout(() => {
         try {

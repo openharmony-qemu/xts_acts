@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   Entry,
   Column,
@@ -34,7 +34,6 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -76,18 +75,18 @@ struct stageAlertDialog {
                   }
                 } as AlertDialogParamWithConfirm
               )
-              let backData: events_emitter.EventData = {
+              let backData: emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent: events_emitter.InnerEvent = {
+              let backEvent: emitter.InnerEvent = {
                 eventId: 60220,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showDialog start to emit action state")
-              events_emitter.emit(backEvent, backData)
-            } catch (error) {
+              emitter.emit(backEvent, backData)
+            } catch (error: Error) {
               console.error("showToast emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -128,18 +127,18 @@ struct stageAlertDialog {
                 } as AlertDialogParamWithConfirm
               )
 
-              let backData1: events_emitter.EventData = {
+              let backData1: emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent1: events_emitter.InnerEvent = {
+              let backEvent1: emitter.InnerEvent = {
                 eventId: 60221,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showActionMenu start to emit action state")
-              events_emitter.emit(backEvent1, backData1)
-            } catch (error) {
+              emitter.emit(backEvent1, backData1)
+            } catch (error: Error) {
 
             }
             ;
@@ -180,18 +179,18 @@ struct stageAlertDialog {
                   }
                 } as AlertDialogParamWithConfirm
               )
-              let backData2: events_emitter.EventData = {
+              let backData2: emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent2: events_emitter.InnerEvent = {
+              let backEvent2: emitter.InnerEvent = {
                 eventId: 60222,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showActionMenu start to emit action state")
-              events_emitter.emit(backEvent2, backData2)
-            } catch (error) {
+              emitter.emit(backEvent2, backData2)
+            } catch (error: Error) {
               console.error(`showActionMenu args error code is ${error.code}, message is ${error.message}`);
             }
           })

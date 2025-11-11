@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -42,7 +42,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -51,7 +51,7 @@ import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from '@kit.ArkUI';
+import { sendTouchEvent } from "@ohos.arkui.Test";
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -77,17 +77,17 @@ export default function ResponseRegionJsunit() {
 
 
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get ResponseRegion state pages: " + JSON.stringify(pages));
         if (!("ResponseRegion" == pages.name)) {
           console.info("get ResponseRegion state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ResponseRegion success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push ResponseRegion page error:" + err);
       }
 
@@ -99,30 +99,31 @@ export default function ResponseRegionJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   testResponseRegion01_static
-         * @tc.name     testResponseRegion01_static
-         * @tc.desc     testResponseRegion01_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testResponseRegion01_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testResponseRegion01_static
+     * @tc.name     testResponseRegion01_static
+     * @tc.desc     testResponseRegion01_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testResponseRegion01_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       try {
         console.info('[testResponseRegion01_static] START');
         try {
-          let eventData: events_emitter.EventData = {
+          let eventData: emitter.EventData = {
             data: {
               "touchable": true,
-            } as Record<string, RecordData>
+            } as Record<String,undefined|null|Object>
           }
-          let innerEvent: events_emitter.InnerEvent = {
+          let innerEvent: emitter.InnerEvent = {
             eventId: 30,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
           console.info("[testResponseRegion01_static] start to publish emit:" +
-          JSON.stringify(((eventData.data) as Record<string, RecordData>)));
-          events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
+          JSON.stringify(((eventData.data) as Record<String,undefined|null|Object>)));
+          emitter.emit(innerEvent, eventData);
+        } catch (err: Error) {
           console.log("[testResponseRegion01_static] change component data error: " + err.message);
         }
         await Utils.sleep(1000);
@@ -134,13 +135,14 @@ export default function ResponseRegionJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   testResponseRegion02_static
-         * @tc.name     testResponseRegion02_static
-         * @tc.desc     testResponseRegion02_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testResponseRegion02_static
+     * @tc.name     testResponseRegion02_static
+     * @tc.desc     testResponseRegion02_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let rect = Utils.getComponentRect('region')
       console.info("[testResponseRegion02_static] rectInfo is " + JSON.stringify(rect));
       x_value = rect.left + (rect.right - rect.left) / 10
@@ -156,20 +158,20 @@ export default function ResponseRegionJsunit() {
         displayX: 0,
         displayY: 0
       }
-      let callbackTwo = (eventData: events_emitter.EventData) => {
+      let callbackTwo = (eventData: emitter.EventData) => {
         console.info("[testResponseRegion02_static] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<string, RecordData>)?.['ACTION']).assertEqual(true)
-        expect(((eventData.data) as Record<string, RecordData>)?.['EVENT_TYPE']).assertEqual('Down')
+        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['ACTION']).assertEqual(true)
+        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['EVENT_TYPE']).assertEqual('Down')
         done();
       }
-      let innerEventTwo: events_emitter.InnerEvent = {
+      let innerEventTwo: emitter.InnerEvent = {
         eventId: 31,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(innerEventTwo, callbackTwo)
-      } catch (err) {
-        console.info("[testResponseRegion02_static] on events_emitter err : " + JSON.stringify(err));
+        emitter.on(innerEventTwo, callbackTwo)
+      } catch (err: Error) {
+        console.info("[testResponseRegion02_static] on emitter err : " + JSON.stringify(err));
       }
       console.info('[testResponseRegion02_static] testSendTouchEvent ' + sendTouchEvent(point));
       await Utils.sleep(1000)

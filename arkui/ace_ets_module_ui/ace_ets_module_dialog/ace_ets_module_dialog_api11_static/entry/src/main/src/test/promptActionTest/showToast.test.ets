@@ -78,10 +78,10 @@ export default function showToast() {
         console.info("get showToast state pages: " + JSON.stringify(pages));
         if (!("showToast" == pages.name)) {
           console.info("get showToast state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await showToast.pushUrl(options);
           showToast.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push showToast success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push showToast page error: " + err);
@@ -90,13 +90,14 @@ export default function showToast() {
     });
 
 
+    
     /*
-         * @tc.number   showToast_static_0100
-         * @tc.name     showToast_static_0100
-         * @tc.desc     showToast_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   showToast_static_0100
+     * @tc.name     showToast_static_0100
+     * @tc.desc     showToast_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('showToast_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -105,10 +106,11 @@ export default function showToast() {
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
-      windowClass = await window.getLastWindow(abilityStage as common.BaseContext);
+      windowClass =
+        await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[showToast_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1) 
+      expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070)

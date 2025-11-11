@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -80,10 +80,10 @@ export default function openCustomDialog() {
         console.info("get openCustomDialog state pages: " + JSON.stringify(pages));
         if (!("openCustomDialog" == pages.name)) {
           console.info("get openCustomDialog state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push openCustomDialog success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push openCustomDialog page error: " + err);
@@ -93,13 +93,14 @@ export default function openCustomDialog() {
     });
 
 
+    
     /*
-         * @tc.number   openCustomDialog_static_0100
-         * @tc.name     openCustomDialog_static_0100
-         * @tc.desc     openCustomDialog_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('openCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   openCustomDialog_static_0100
+     * @tc.name     openCustomDialog_static_0100
+     * @tc.desc     openCustomDialog_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('openCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('openCustomDialog_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

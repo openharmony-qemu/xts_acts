@@ -41,7 +41,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
-
+import testsuite from '../../../../src/test/List.test';
 @Entry
 @Component
 struct Index {
@@ -88,14 +88,6 @@ struct Index {
         } as MenuItemOptions | CustomBuilder).selectIcon(true).selected(false)
       }
     }
-  }
-
-  aboutToAppear() {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    
   }
 
   build() {

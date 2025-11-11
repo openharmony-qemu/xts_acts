@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { MeasureOptions } from '@ohos.measure'
 import {
   Component,
@@ -33,7 +33,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router, MeasureUtils } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -69,15 +69,15 @@ export default function alertDialogCenterStartJsunit() {
         console.info("get alertDialog state pages: " + JSON.stringify(pages));
         if (!("alertDialog2" == pages.name)) {
           console.info("get alertDialog state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push alertDialog success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push alertDialog page error: " + err);
       }
-      
+      // done()
     });
 
     afterEach(async () => {
@@ -86,32 +86,33 @@ export default function alertDialogCenterStartJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   testalertDialogCenterStart0001_static
-         * @tc.name     testalertDialogCenterStart0001_static
-         * @tc.desc     testalertDialogCenterStart0001_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testalertDialogCenterStart0001_static
+     * @tc.name     testalertDialogCenterStart0001_static
+     * @tc.desc     testalertDialogCenterStart0001_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('alertDialogCenterStart testalertDialogCenterStart0011 START');
       let driver = Driver.create()
       await Utils.sleep(2000);
       try {
-        let event: events_emitter.InnerEvent = {
+        let event: emitter.InnerEvent = {
           eventId: 81601,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
-        let callback = (eventData: events_emitter.EventData) => {
+        let callback = (eventData: emitter.EventData) => {
           console.info("testalertDialogCenterStart0001_static get event data is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<string, RecordData>)?.['Result']).assertEqual(true);
+          expect(((eventData.data) as Record<String,undefined|null|Object>)?.['Result']).assertEqual(true);
           console.info('testalertDialogCenterStart0001_static END');
           done();
         }
         console.info("testalertDialogCenterStart0001_static click result is: " +
         JSON.stringify(inspector.sendEventByKey('CenterStartButton', 10, "")));
-        events_emitter.on(event, callback);
+        emitter.on(event, callback);
       } catch (err) {
-        console.info("testalertDialogCenterStart0001_static on events_emitter err : " + JSON.stringify(err));
+        console.info("testalertDialogCenterStart0001_static on emitter err : " + JSON.stringify(err));
       }
       let button = await driver.findComponent(ON.text('button'));
       await (button?.click() as Promise<void>);
@@ -119,13 +120,14 @@ export default function alertDialogCenterStartJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   testMeasureText0001_static
-         * @tc.name     testMeasureText0001_static
-         * @tc.desc     testMeasureText0001_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testMeasureText0001_static
+     * @tc.name     testMeasureText0001_static
+     * @tc.desc     testMeasureText0001_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testMeasureText0001_static start');
       let driver = Driver.create()
       await Utils.sleep(2000);

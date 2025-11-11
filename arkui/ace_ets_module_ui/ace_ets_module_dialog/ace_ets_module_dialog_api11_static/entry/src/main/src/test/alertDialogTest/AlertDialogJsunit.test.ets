@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
@@ -54,13 +54,6 @@ export default function AlertDialogJsunit() {
       await UtilsTest.msSleep(4000)
       console.info("AlertDialogJsunit  beforeAll end")
     })
-    beforeAll(() => {
-      console.info("alertDialogCenterStartTest beforeAll start")
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-      console.info("alertDialogCenterStartTest beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("AlertDialogJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -75,33 +68,34 @@ export default function AlertDialogJsunit() {
         console.info("get AlertDialogJsunit state pages: " + JSON.stringify(pages));
         if (!("AlertDialogParam" == pages.name)) {
           console.info("get AlertDialogJsunit state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push AlertDialogJsunit success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push AlertDialogJsunit page error: " + err);
         expect().assertFail();
       }
-      
+      // done()
     });
 
 
+    
     /*
-         * @tc.number   AlertDialogJsunit_static_0100
-         * @tc.name     AlertDialogJsunit_static_0100
-         * @tc.desc     AlertDialogJsunit_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('AlertDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   AlertDialogJsunit_static_0100
+     * @tc.name     AlertDialogJsunit_static_0100
+     * @tc.desc     AlertDialogJsunit_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('AlertDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AlertDialogJsunit_static_0100 START');
       let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('AlertDialogJsunit_static_0100'));
+      let button = await driver.findComponent(ON.id('AlertDialogJsunit_0100'));
       await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('AlertDialogJsunit_static_0100');
+      let strJson = inspector.getInspectorByKey('AlertDialogJsunit_0100');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[AlertDialogJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('label')).assertEqual("one button dialog");

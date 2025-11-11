@@ -34,7 +34,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 
-
+//Menu禁用
 @Entry
 @Component
 struct menuEnabledDemo {

@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -80,10 +80,10 @@ export default function SelectStatusTest() {
         console.info("get SelectStatus state pages: " + JSON.stringify(pages));
         if (!("SelectStatus" == pages.name)) {
           console.info("get SelectStatus state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push SelectStatus success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push SelectStatus page error ' + JSON.stringify(err));
@@ -91,15 +91,14 @@ export default function SelectStatusTest() {
 
     });
 
+    
     /*
-          * @tc.number   SelectStatusTest_static_0100
-          * @tc.name     SelectStatusTest_static_0100
-          * @tc.desc     SelectStatusTest_static_0100
-          * @tc.level    Level.LEVEL2
-          */
-    it('SelectStatusTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let tagName = 'SelectStatusTest_static_0100';
+     * @tc.number   SelectStatusTest_static_0100
+     * @tc.name     SelectStatusTest_static_0100
+     * @tc.desc     SelectStatusTest_static_0100
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+     */
+it('SelectStatusTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {        let tagName = 'SelectStatusTest_static_0100';
         console.info('[' + tagName + '] START============================');
         let driver: Driver = Driver.create();
         let btnCheckboxGroup1 = await driver.findComponent(ON.id('SelectAll'));
@@ -121,15 +120,14 @@ export default function SelectStatusTest() {
         done();
       });
 
+    
     /*
-              * @tc.number   SelectStatusTest_static_0200
-              * @tc.name     SelectStatusTest_static_0200
-              * @tc.desc     SelectStatusTest_static_0200
-              * @tc.level    Level.LEVEL2
-              */
-    it('SelectStatusTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        let tagName = 'SelectStatusTest_static_0200';
+     * @tc.number   SelectStatusTest_static_0200
+     * @tc.name     SelectStatusTest_static_0200
+     * @tc.desc     SelectStatusTest_static_0200
+     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+     */
+it('SelectStatusTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {        let tagName = 'SelectStatusTest_static_0200';
         console.info('[' + tagName + '] START============================');
         let driver: Driver = Driver.create();
         let btnCheckboxGroup2 = await driver.findComponent(ON.id('SelectAll'));

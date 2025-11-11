@@ -114,8 +114,10 @@ struct CustomDialogFalseExample {
     builder: CustomDialogFalseOne({
       cancel: this.onCancel,
       confirm: this.onAccept,
-      
-      
+      // textValue: $textValue,
+      // inputValue: $inputValue
+      textValue: this.textValue,
+      inputValue: this.inputValue
     }),
     cancel: this.exitApp,
     autoCancel: true,

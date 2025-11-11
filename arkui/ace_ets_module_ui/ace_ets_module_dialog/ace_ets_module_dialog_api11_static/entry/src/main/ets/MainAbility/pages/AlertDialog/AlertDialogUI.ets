@@ -26,7 +26,7 @@ import {
   Flex,
   DialogAlignment,
   DialogButtonDirection,
-  AlertDialogParamWithOptions
+  AlertDialogParamWithConfirm,
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
@@ -41,32 +41,32 @@ struct AlertDialogExampleA {
     Column({ space: 5 } as ColumnOptions,) {
       Button('AlertDialog按esc弹窗逐层退出').key('Alert_Dialog_A')
         .onClick((e: ClickEvent) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          this.uiContext.showAlertDialog(
+            {
+              title: 'title',
+              subtitle: 'subtitle',
+              message: 'text',
+              autoCancel: true,
+              alignment: DialogAlignment.Bottom,
+              // buttonDirection: DialogButtonDirection.HORIZONTAL,  // 此项为非必输,无法判断真实类型，注释处理使编译通过
+              cancel: () => {
+                console.info('Closed callbacks')
+              }
+            } as AlertDialogParamWithConfirm
+          )
+          this.uiContext.showAlertDialog(
+            {
+              title: 'title',
+              subtitle: 'subtitle',
+              message: 'text',
+              autoCancel: true,
+              alignment: DialogAlignment.Bottom,
+              // buttonDirection: DialogButtonDirection.HORIZONTAL, // 此项为非必输,无法判断真实类型
+              cancel: () => {
+                console.info('Closed callbacks')
+              }
+            } as AlertDialogParamWithConfirm
+          )
         }).backgroundColor(0x317aff)
     }.width('100%').margin({ top: 200 } as Margin)
   }

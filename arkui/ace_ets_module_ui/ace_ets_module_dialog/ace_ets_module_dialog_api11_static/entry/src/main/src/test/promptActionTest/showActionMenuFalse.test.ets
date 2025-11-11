@@ -53,7 +53,7 @@ export default function showActionMenuFalse() {
       console.info("showActionMenuFalse beforeAll start");
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
@@ -70,27 +70,28 @@ export default function showActionMenuFalse() {
         console.info("get showActionMenuFalse state pages:" + JSON.stringify(pages));
         if (!("showActionMenuFalse" == pages.name)) {
           console.info("get showActionMenuFalse pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push showActionMenuFalse page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push showActionMenuFalse page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
-         * @tc.number   showActionMenuFalse_static_0100
-         * @tc.name     showActionMenuFalse_static_0100
-         * @tc.desc     showActionMenuFalse_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('showActionMenuFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   showActionMenuFalse_static_0100
+     * @tc.name     showActionMenuFalse_static_0100
+     * @tc.desc     showActionMenuFalse_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('showActionMenuFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('showActionMenuFalse_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,7 +104,7 @@ export default function showActionMenuFalse() {
         await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[showActionMenuFalse_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1) 
+      expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070)

@@ -34,8 +34,8 @@ struct Index {
     builder: CustomDialogExample({
       cancel: this.onCancel,
       confirm: this.onAccept,
-      // textValue: $textValue,
-      // inputValue: $inputValue
+      textValue: this.textValue,
+      inputValue: this.inputValue
     }),
     cancel: this.existApp,
     autoCancel: true,
@@ -48,7 +48,7 @@ struct Index {
 
   // 在自定义组件即将析构销毁时将dialogController置空
   aboutToDisappear() {
-    //this.dialogController = null; // 将dialogController置空
+    
   }
 
   onCancel() {
@@ -69,6 +69,8 @@ struct Index {
         .onClick((e: ClickEvent) => {
           this.getUIContext().showAlertDialog(
             {
+             // showInSubWindow: true,
+             // isModal: true,
               title: 'title',
               message: '1',
               autoCancel: true,
@@ -89,6 +91,8 @@ struct Index {
       Button('Click to Show ActionSheet')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showActionSheet({
+           // showInSubWindow: true,
+           // isModal: true,
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
             message: 'message',
@@ -137,7 +141,7 @@ struct Index {
             this.dialogController.open()
           }
         })
-        .backgroundColor(0x317aff)
+        // .backgroundColor(0x317aff)
         .fontSize(20)
         .margin(10);
       Button('one button dialog')
@@ -216,13 +220,13 @@ struct CustomDialogExample {
           .onClick((e: ClickEvent) => {
             this.controller.close()
             this.cancel()
-          }).backgroundColor(0xffffff).fontColor(Color.Black)
+          })//.backgroundColor(0xffffff).fontColor(Color.Black)
         Button('confirm')
           .onClick((e: ClickEvent) => {
             this.inputValue = this.textValue
             this.controller.close()
             this.confirm()
-          }).backgroundColor(0xffffff).fontColor(Color.Red)
+          })//.backgroundColor(0xffffff).fontColor(Color.Red)
       }.margin({ bottom: 10 } as Margin)
     }
 

@@ -68,26 +68,27 @@ export default function ActionSheetFalse() {
         console.info("get ActionSheetFalse state pages: " + JSON.stringify(pages));
         if (!("ActionSheetFalse" == pages.name)) {
           console.info("get ActionSheetFalse state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ActionSheetFalse success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ActionSheetFalse page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
-         * @tc.number   ActionSheetFalse_static_0100
-         * @tc.name     ActionSheetFalse_static_0100
-         * @tc.desc     ActionSheetFalse_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ActionSheetFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ActionSheetFalse_static_0100
+     * @tc.name     ActionSheetFalse_static_0100
+     * @tc.desc     ActionSheetFalse_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ActionSheetFalse_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ActionSheetFalse_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -100,7 +101,7 @@ export default function ActionSheetFalse() {
         await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[ActionSheetFalse_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1) 
+      expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070)

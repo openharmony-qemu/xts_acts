@@ -52,7 +52,7 @@ export default function showActionMenuTrue() {
       console.info("showActionMenuTrue beforeAll start");
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
@@ -69,27 +69,28 @@ export default function showActionMenuTrue() {
         console.info("get showActionMenuTrue state pages:" + JSON.stringify(pages));
         if (!("showActionMenuTrue" == pages.name)) {
           console.info("get showActionMenuTrue pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push showActionMenuTrue page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push showActionMenuTrue page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
-         * @tc.number   showActionMenuTrue_static_0100
-         * @tc.name     showActionMenuTrue_static_0100
-         * @tc.desc     showActionMenuTrue_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('showActionMenuTrue_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   showActionMenuTrue_static_0100
+     * @tc.name     showActionMenuTrue_static_0100
+     * @tc.desc     showActionMenuTrue_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('showActionMenuTrue_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('showActionMenuTrue_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,7 +104,7 @@ export default function showActionMenuTrue() {
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[showActionMenuTrue_static_0100] title: " + JSON.stringify(properties));
       console.info("[showActionMenuTrue_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0) 
+      expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070);

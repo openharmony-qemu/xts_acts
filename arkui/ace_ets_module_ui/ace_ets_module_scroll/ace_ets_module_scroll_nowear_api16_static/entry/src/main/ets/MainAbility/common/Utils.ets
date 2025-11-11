@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
+import { Memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 
 export default class Utils {
   static rect_left: number = 0;
@@ -40,9 +41,10 @@ export default class Utils {
     }
   }
 
-  static async sleep(time: int) : Promise<int>  {
+  static async sleep(time:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
+        console.info(`sleep ${time} over...`)
         resolve(0)
       }, time)
     })

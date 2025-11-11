@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -80,10 +80,10 @@ export default function promptTest() {
         console.info("get promptTest state pages: " + JSON.stringify(pages));
         if (!("prompt" == pages.name)) {
           console.info("get promptTest state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push promptTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push promptTest page error: " + err);
@@ -93,13 +93,14 @@ export default function promptTest() {
     });
 
 
+    
     /*
-         * @tc.number   promptTest_static_0100
-         * @tc.name     promptTest_static_0100
-         * @tc.desc     promptTest_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   promptTest_static_0100
+     * @tc.name     promptTest_static_0100
+     * @tc.desc     promptTest_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -117,7 +118,7 @@ export default function promptTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[promptTest_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[promptTest_static_0100] component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
-      console.info("[promptTest_static_0100] text: " + JSON.stringify(obj.getElement('$attrs').getString("label")));
+      // console.info("[promptTest_static_0100] text: " + JSON.stringify(obj.getElement('$attrs').getString("label")));
       expect(obj.getElement('$attrs').getString("content")).assertEqual('Hello World');
       console.info('[promptTest_static_0100] END');
       done();

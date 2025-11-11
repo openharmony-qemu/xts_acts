@@ -30,7 +30,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -38,7 +38,7 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function stageActionSheet() {
   describe('stageActionSheet', () => {
-    
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       console.info("stageActionSheet beforeAll start")
       await UtilsTest.msSleep(4000)
@@ -68,50 +68,51 @@ export default function stageActionSheet() {
         console.info("get stageActionSheet state pages: " + JSON.stringify(pages));
         if (!("stageActionSheet" == pages.name)) {
           console.info("get stageActionSheet state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push stageActionSheet success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push stageActionSheet page error: " + err);
       }
-      
+      // done()
     });
     afterEach(() => {
-      
-      
-      
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      
-      
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
 
 
+    
     /*
-         * @tc.number   testShowActionShee001
-         * @tc.name     testShowActionShee001
-         * @tc.desc     testShowActionShee001
-         * @tc.level    Level.LEVEL2
-         */
-    it('testShowActionShee001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testShowActionShee001
+     * @tc.name     testShowActionShee001
+     * @tc.desc     testShowActionShee001
+     * @tc.level    Level.LEVEL2
+     */
+it('testShowActionShee001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testShowActionShee001 START');
       setTimeout(() => {
         try {
-          let innerEventOne: events_emitter.InnerEvent = {
+          let innerEventOne: emitter.InnerEvent = {
             eventId: 60220,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
-          let callback1 = (eventData: events_emitter.EventData) => {
+          let callback1 = (eventData: emitter.EventData) => {
             console.info("testShowActionShee001 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<string, RecordData>)?.['STATUS']).assertEqual(true);
+            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(true);
             done();
           }
           try {
-            events_emitter.on(innerEventOne, callback1);
+            emitter.on(innerEventOne, callback1);
           } catch (err) {
-            console.info("testShowActionShee001 on events_emitter err : " + JSON.stringify(err));
+            console.info("testShowActionShee001 on emitter err : " + JSON.stringify(err));
           }
           console.info("onSelect_001 click result is: " +
           JSON.stringify(inspector.sendEventByKey('routerInstance Text', 10, "")));
@@ -125,29 +126,30 @@ export default function stageActionSheet() {
     });
 
 
+    
     /*
-         * @tc.number   testShowActionShee002
-         * @tc.name     testShowActionShee002
-         * @tc.desc     testShowActionShee002
-         * @tc.level    Level.LEVEL2
-         */
-    it('testShowActionShee002', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testShowActionShee002
+     * @tc.name     testShowActionShee002
+     * @tc.desc     testShowActionShee002
+     * @tc.level    Level.LEVEL2
+     */
+it('testShowActionShee002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testShowActionShee002 START');
       setTimeout(() => {
         try {
-          let innerEventTwo: events_emitter.InnerEvent = {
+          let innerEventTwo: emitter.InnerEvent = {
             eventId: 60221,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
-          let callback1 = (eventData: events_emitter.EventData) => {
+          let callback1 = (eventData: emitter.EventData) => {
             console.info("testShowActionShee002 get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<string, RecordData>)?.['STATUS']).assertEqual(10);
+            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual(10);
             done();
           }
           try {
-            events_emitter.on(innerEventTwo, callback1);
+            emitter.on(innerEventTwo, callback1);
           } catch (err) {
-            console.info("testShowActionShee002 on events_emitter err : " + JSON.stringify(err));
+            console.info("testShowActionShee002 on emitter err : " + JSON.stringify(err));
           }
           console.info("onSelect_001 click result is: " +
           JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));
@@ -161,29 +163,30 @@ export default function stageActionSheet() {
     });
 
 
+    
     /*
-         * @tc.number   testShowActionShee003_static
-         * @tc.name     testShowActionShee003_static
-         * @tc.desc     testShowActionShee003_static
-         * @tc.level    Level.LEVEL2
-         */
-    it('testShowActionShee003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testShowActionShee003_static
+     * @tc.name     testShowActionShee003_static
+     * @tc.desc     testShowActionShee003_static
+     * @tc.level    Level.LEVEL2
+     */
+it('testShowActionShee003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testShowActionShee003_static START');
       setTimeout(() => {
         try {
-          let innerEventThree: events_emitter.InnerEvent = {
+          let innerEventThree: emitter.InnerEvent = {
             eventId: 60222,
-            priority: events_emitter.EventPriority.LOW
+            priority: emitter.EventPriority.LOW
           }
-          let callback1 = (eventData: events_emitter.EventData) => {
+          let callback1 = (eventData: emitter.EventData) => {
             console.info("testShowActionShee003_static get event state result is: " + JSON.stringify(eventData));
-            expect(((eventData.data) as Record<string, RecordData>)?.['STATUS']).assertEqual("STATUS");
+            expect(((eventData.data) as Record<String,undefined|null|Object>)?.['STATUS']).assertEqual("STATUS");
             done();
           }
           try {
-            events_emitter.on(innerEventThree, callback1);
+            emitter.on(innerEventThree, callback1);
           } catch (err) {
-            console.info("testShowActionShee003_static on events_emitter err : " + JSON.stringify(err));
+            console.info("testShowActionShee003_static on emitter err : " + JSON.stringify(err));
           }
           console.info("onSelect_001 click result is: " +
           JSON.stringify(inspector.sendEventByKey('showDialogText', 10, "")));

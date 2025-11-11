@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -82,10 +82,10 @@ export default function CustomDialogMaskTest() {
         console.info("get CustomDialogMask state pages: " + JSON.stringify(pages));
         if (!("CustomDialogMask" == pages.name)) {
           console.info("get CustomDialogMask state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CustomDialogMask success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
@@ -99,13 +99,14 @@ export default function CustomDialogMaskTest() {
      *tc.desc   CustomDialogController#maskColor not set
      */
 
+    
     /*
-         * @tc.number   ArkUI_CustomDialog_Mask_static_0100
-         * @tc.name     ArkUI_CustomDialog_Mask_static_0100
-         * @tc.desc     ArkUI_CustomDialog_Mask_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUI_CustomDialog_Mask_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUI_CustomDialog_Mask_static_0100
+     * @tc.name     ArkUI_CustomDialog_Mask_static_0100
+     * @tc.desc     ArkUI_CustomDialog_Mask_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUI_CustomDialog_Mask_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_CustomDialog_Mask_static_0100'
       console.info(`${SUITE} ${CASE} START`);
 
@@ -129,13 +130,14 @@ export default function CustomDialogMaskTest() {
      *tc.desc   CustomDialogController#maskColor set by Color
      */
 
+    
     /*
-         * @tc.number   ArkUI_CustomDialog_static_Mask0200
-         * @tc.name     ArkUI_CustomDialog_static_Mask0200
-         * @tc.desc     ArkUI_CustomDialog_static_Mask0200
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUI_CustomDialog_static_Mask0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUI_CustomDialog_static_Mask0200
+     * @tc.name     ArkUI_CustomDialog_static_Mask0200
+     * @tc.desc     ArkUI_CustomDialog_static_Mask0200
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUI_CustomDialog_static_Mask0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0200'
       console.info(`${SUITE} ${CASE} START`);
       await CommonFunc.sleep(1000);
@@ -158,13 +160,14 @@ export default function CustomDialogMaskTest() {
      *tc.desc   CustomDialogController#maskColor set by string
      */
 
+    
     /*
-         * @tc.number   ArkUI_CustomDialog_static_Mask0300
-         * @tc.name     ArkUI_CustomDialog_static_Mask0300
-         * @tc.desc     ArkUI_CustomDialog_static_Mask0300
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUI_CustomDialog_static_Mask0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUI_CustomDialog_static_Mask0300
+     * @tc.name     ArkUI_CustomDialog_static_Mask0300
+     * @tc.desc     ArkUI_CustomDialog_static_Mask0300
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUI_CustomDialog_static_Mask0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0300'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
@@ -186,13 +189,14 @@ export default function CustomDialogMaskTest() {
      *tc.desc   CustomDialogController#maskColor set by Resource
      */
 
+    
     /*
-         * @tc.number   ArkUI_CustomDialog_static_Mask0400
-         * @tc.name     ArkUI_CustomDialog_static_Mask0400
-         * @tc.desc     ArkUI_CustomDialog_static_Mask0400
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUI_CustomDialog_static_Mask0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUI_CustomDialog_static_Mask0400
+     * @tc.name     ArkUI_CustomDialog_static_Mask0400
+     * @tc.desc     ArkUI_CustomDialog_static_Mask0400
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUI_CustomDialog_static_Mask0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0400'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
@@ -214,13 +218,14 @@ export default function CustomDialogMaskTest() {
      *tc.desc   CustomDialogController#maskColor set by number
      */
 
+    
     /*
-         * @tc.number   ArkUI_CustomDialog_static_Mask0500
-         * @tc.name     ArkUI_CustomDialog_static_Mask0500
-         * @tc.desc     ArkUI_CustomDialog_static_Mask0500
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUI_CustomDialog_static_Mask0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUI_CustomDialog_static_Mask0500
+     * @tc.name     ArkUI_CustomDialog_static_Mask0500
+     * @tc.desc     ArkUI_CustomDialog_static_Mask0500
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUI_CustomDialog_static_Mask0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0500'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()

@@ -40,7 +40,7 @@ struct CustomDialogExampleOptions {
   @State heightSize: number = 100
   private flag: boolean = true
   controller?: CustomDialogController
-  
+  // 若尝试在CustomDialog中传入多个其他的Controller，以实现在CustomDialog中打开另一个或另一些CustomDialog，那么此处需要将指向自己的controller放在最后
   cancel: () => void = () => {
   }
   confirm: () => void = () => {
@@ -78,7 +78,7 @@ struct CustomDialogExampleOptions {
       }.margin({ bottom: 10 } as Margin)
     }
 
-    
+    // dialog默认的borderRadius为24vp，如果需要使用border属性，请和borderRadius属性一起使用。
   }
 }
 
@@ -91,8 +91,10 @@ struct CustomDialogUser {
     builder: CustomDialogExampleOptions({
       cancel: this.onCancel,
       confirm: this.onAccept,
-      
-      
+      // textValue: $textValue,
+      // inputValue: $inputValue,
+      textValue: this.textValue,
+      inputValue: this.inputValue,
     }),
     openAnimation: {
       duration: 2000,
@@ -122,9 +124,9 @@ struct CustomDialogUser {
     customStyle: false
   })
 
-  
+  // 在自定义组件即将析构销毁时将dialogControlle删除和置空
   aboutToDisappear() {
-    this.dialogController = undefined 
+    this.dialogController = undefined // 将dialogController置空
   }
 
   onCancel() {

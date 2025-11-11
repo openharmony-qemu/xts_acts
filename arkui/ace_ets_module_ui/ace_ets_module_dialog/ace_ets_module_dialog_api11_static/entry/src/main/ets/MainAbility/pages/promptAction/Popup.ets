@@ -39,7 +39,7 @@ import { ClickEvent } from '@ohos.arkui.component';
 struct PopupExampleA {
   @State customPopup: boolean = false
 
-  
+  // popup构造器定义弹框内容
   @Builder
   popupBuilder() {
     Row({ space: 2 } as RowOptions) {
@@ -49,7 +49,7 @@ struct PopupExampleA {
 
   build() {
     Flex({ direction: FlexDirection.Column }) {
-      
+      // CustomPopupOptions 类型设置弹框内容
       Button('Popup按esc逐层退出').key('Popup_dialog_A')
         .onClick((e: ClickEvent) => {
           this.customPopup = !this.customPopup

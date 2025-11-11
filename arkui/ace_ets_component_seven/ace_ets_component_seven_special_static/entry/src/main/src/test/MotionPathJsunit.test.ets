@@ -66,7 +66,7 @@ it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
       console.info('motionPathTest_static_0100 START');
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {
-        console.info("motionPathTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
+        console.info("motionPathTest_static_0100 get state result is: " + (indexEvent.data as Record<string,undefined|null|Object>)['ACTION']);
         expect((indexEvent.data as Record<string,undefined|null|Object>)['ACTION']).assertEqual(true);
 
         done();
@@ -83,7 +83,7 @@ it('motionPathTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
       console.info("motionPathTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
       await Utils.sleep(1000);
       console.info('motionPathTest_static_0100 END');
-      done();
+      // done();
     });
   })
 }

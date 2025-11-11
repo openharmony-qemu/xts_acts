@@ -71,7 +71,6 @@ import showToast from './promptActionTest/showToast.test';
 import stagePromptTest from './promptActionTest/stagePrompt.test';
 import ToastShowMode from './promptActionTest/ToastShowMode.test';
 
-
 export default function testsuite() {
   bindPopupOffsetTest()
   CustomDialogMaskTest()

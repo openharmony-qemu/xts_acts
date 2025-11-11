@@ -1,3 +1,4 @@
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   Entry,
   Column,
@@ -36,7 +37,6 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -46,20 +46,20 @@ struct ResponseRegionExample {
   @State eventType: string = ''
 
   onPageShow() {
-    let ChangeEvent: events_emitter.InnerEvent = {
+    let ChangeEvent: emitter.InnerEvent = {
       eventId: 30,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(ChangeEvent, this.ChangCallBack)
+    emitter.on(ChangeEvent, this.ChangCallBack)
   }
 
-  private ChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private ChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("[ResponseRegion] ChangCallBack stateChangCallBack");
     if (eventData != null) {
       console.info("[ResponseRegion] ChangCallBack state change called:" + JSON.stringify(eventData));
-      
-      
-      
+      if (((eventData.data) as  ESObject)?.getProperty('touchable') != null) {
+        this.touchableValue = ((eventData.data) as  ESObject).getProperty('touchable').toBoolean() as boolean;
+      }
     }
   }
 
@@ -82,7 +82,7 @@ struct ResponseRegionExample {
     .height('100%')
     .margin({ top: 5 } as Margin)
     .key('region')
-    
+    // .touchable(this.touchableValue)   // 如果使用 hitTestBehavior 替代，参数发生变化，代码逻辑需要重写
     .onTouch((event: TouchEvent) => {
       this.isTouched = true
       if (event.type === TouchType.Down) {
@@ -96,18 +96,18 @@ struct ResponseRegionExample {
       }
       console.info('[ResponseRegion] TouchType:' + this.eventType)
       try {
-        let backData: events_emitter.EventData = {
+        let backData: emitter.EventData = {
           data: {
             "ACTION": this.isTouched,
             "EVENT_TYPE": this.eventType
-          } as Record<string, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let backEvent: events_emitter.InnerEvent = {
+        let backEvent: emitter.InnerEvent = {
           eventId: 31,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("[ResponseRegion] start to emit action state")
-        events_emitter.emit(backEvent, backData)
+        emitter.emit(backEvent, backData)
       } catch (err) {
         console.info("[ResponseRegion] emit action state err: " + JSON.stringify((err as Error)?.message))
       }

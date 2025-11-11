@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -74,7 +74,7 @@ export default function menuTest() {
       await UtilsTest.msSleep(4000)
       console.info("ActsMenuFirstTest  beforeAll end")
     })
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Menu/menufirst",
       }
@@ -87,12 +87,12 @@ export default function menuTest() {
         console.info("get menufirst state pages: " + JSON.stringify(pages));
         if (!("menufirst" == pages.name)) {
           console.info("get menufirst state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push menufirst success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push menufirst page error " + JSON.stringify(err));
       }
       await sleep(2000)
@@ -100,31 +100,35 @@ export default function menuTest() {
     });
 
 
+    
     /*
-         * @tc.number   ArkUX_Stage_Menu_EnableArrow_static_0100
-         * @tc.name     ArkUX_Stage_Menu_EnableArrow_static_0100
-         * @tc.desc     ArkUX_Stage_Menu_EnableArrow_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUX_Stage_Menu_EnableArrow_static_0100', Level.LEVEL2, async () => {
+     * @tc.number   ArkUX_Stage_Menu_EnableArrow_static_0100
+     * @tc.name     ArkUX_Stage_Menu_EnableArrow_static_0100
+     * @tc.desc     ArkUX_Stage_Menu_EnableArrow_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Stage_Menu_EnableArrow_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("menu"))
       console.info('ArkUX_Stage_Menu_EnableArrow_static_0100 enableArrow :' +
-      JSON.stringify(obj.getElement('$attrs').getString('enableArrow')));
-      expect(obj.getElement('$attrs').getString('enableArrow')).assertEqual(undefined)
+      JSON.stringify(obj.getElement('$attrs').tryGetElement('enableArrow')));
+      expect(obj.getElement('$attrs').tryGetElement('enableArrow')).assertEqual(undefined)
+      done()
     })
 
 
+    
     /*
-         * @tc.number   ArkUX_Stage_Menu_ArrowOffset_static_0100
-         * @tc.name     ArkUX_Stage_Menu_ArrowOffset_static_0100
-         * @tc.desc     ArkUX_Stage_Menu_ArrowOffset_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUX_Stage_Menu_ArrowOffset_static_0100', Level.LEVEL2, async () => {
+     * @tc.number   ArkUX_Stage_Menu_ArrowOffset_static_0100
+     * @tc.name     ArkUX_Stage_Menu_ArrowOffset_static_0100
+     * @tc.desc     ArkUX_Stage_Menu_ArrowOffset_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Stage_Menu_ArrowOffset_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey("menu"))
       console.info('ArkUX_Stage_Menu_ArrowOffset_static_0100 arrowOffset :' +
-      JSON.stringify(obj.getElement('$attrs').getString('arrowOffset')));
-      expect(obj.getElement('$attrs').getString('arrowOffset')).assertEqual(undefined)
+      JSON.stringify(obj.getElement('$attrs').tryGetElement('arrowOffset')));
+      expect(obj.getElement('$attrs').tryGetElement('arrowOffset')).assertEqual(undefined)
+      done()
     })
   })
 }

@@ -34,7 +34,7 @@ import { UIContext, Router, PromptAction } from '@ohos.arkui.UIContext';
 @Component
 struct PromptActionShowMode {
   @State message: string = 'Hello World'
-  promptAction: PromptAction = this.getUIContext().getPromptAction();
+  promptActionT: PromptAction = this.getUIContext().getPromptAction();
 
   build() {
     Column({ space: 5 } as ColumnOptions,) {
@@ -43,23 +43,23 @@ struct PromptActionShowMode {
       Button('DEFAULT').key('ShowMode_p1')
         .onClick((e: ClickEvent) => {
           this.message = 'Message DEFAULT'
-          
-          
-          
-          
-          
-          
+          this.promptActionT.showToast({
+            message: this.message,
+            duration: 2000,
+            bottom: 100,
+            showMode: promptAction.ToastShowMode.DEFAULT
+          })
         }).backgroundColor(0x317aff)
 
       Button('TOP_MOST').id('ShowMode_p2')
         .onClick((e: ClickEvent) => {
           this.message = 'Message TOP_MOST'
-          
-          
-          
-          
-          
-          
+          this.promptActionT.showToast({
+            message: this.message,
+            duration: 2000,
+            bottom: 100,
+            showMode: promptAction.ToastShowMode.TOP_MOST
+          })
         }).backgroundColor(0x317aff)
     }.width('100%').height('100%')
   }

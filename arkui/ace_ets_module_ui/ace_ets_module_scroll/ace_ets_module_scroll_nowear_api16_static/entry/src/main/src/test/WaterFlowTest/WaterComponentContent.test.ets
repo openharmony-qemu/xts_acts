@@ -38,19 +38,17 @@ export default function WaterComponentContent() {
     beforeEach(async (): Promise<void> => {
       console.info("WaterComponentContent beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/WaterFlow/WaterComponentContent"
+        url: 'MainAbility/pages/WaterFlow/WaterComponentContent',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get WaterComponentContent state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!('WaterComponentContent' == pages.name)) {
           console.info("get WaterComponentContent pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push WaterComponentContent page error:" + err);
@@ -68,14 +66,17 @@ export default function WaterComponentContent() {
 it('WaterComponentContent_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       let button1 = await driver.findComponent(ON.id('button1'));
-      button1?.click();
-      console.info('[WaterComponentContent_static_0100] Button1 Onclick');
+      await (button1?.click() as Promise<void>);
+      console.info('[WaterComponentContent_0100] Button1 Onclick');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('WaterFlow1');
-      let obj = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
-      console.info('[WaterComponentContent_static_0100] component obj is: ' + JSON.stringify(obj));
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('[WaterComponentContent_static_0100] component obj is: ' + JSON.stringifyJsonElement(obj));
       let text = await driver.findComponent(ON.id('footerContent1'));
-      let textContent = text?.getText();
+      console.info('[WaterComponentContent_static_0100] footerContent1 is: ' + JSON.stringify(text));
+      let obj1 = JSON.parseJsonElement(inspector.getInspectorByKey("footerContent1"));
+      let textContent = obj1.getElement('$attrs').getString('content');
+      console.info('[WaterComponentContent_static_0100] textContent is: ' + JSON.stringify(textContent));
       expect(textContent).assertEqual('footer');
       console.info('[WaterComponentContent_static_0100] END');
       done();
@@ -89,10 +90,11 @@ it('WaterComponentContent_static_0100', Level.LEVEL1, async (done: () => void): 
      * @tc.level    Level.LEVEL1
      */
 it('WaterComponentContent_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let button2 = await driver.findComponent(ON.id('button2'));
-      button2?.click();
-      console.info('[WaterComponentContent_static_0200] Button2 Onclick');
+      await (button2?.click() as Promise<void>);
+      console.info('[WaterComponentContent_0200] Button2 Onclick');
       await CommonFunc.sleep(1000);
       let text01 = await driver.findComponent(ON.id('footerContent1'));
       expect(text01).assertEqual(null);
@@ -110,7 +112,7 @@ it('WaterComponentContent_static_0200', Level.LEVEL1, async (done: () => void): 
 it('WaterComponentContent_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       let button3 = await driver.findComponent(ON.id('button3'));
-      button3?.click();
+      await (button3?.click() as Promise<void>);
       console.info('[WaterComponentContent_static_0300] Button3 Onclick');
       await CommonFunc.sleep(1000);
       let text02 = await driver.findComponent(ON.id('footerContent1'));

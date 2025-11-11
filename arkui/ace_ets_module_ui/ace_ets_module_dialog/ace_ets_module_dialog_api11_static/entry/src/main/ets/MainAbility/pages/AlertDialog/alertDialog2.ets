@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,7 +14,7 @@
  */
 
 import Log from '../../common/Log.ets';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   Entry,
   Column,
@@ -40,7 +40,6 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -108,17 +107,17 @@ struct AlertDialogCenterStart {
             } as AlertDialogParamWithConfirm
           )
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "Result": true
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 81601,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("CenterStart start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("CenterStart emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -151,17 +150,17 @@ struct AlertDialogCenterStart {
             } as AlertDialogParamWithButtons
           )
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "Result": true
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 81602,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("CenterEnd start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("CenterEnd emit action state err: " + JSON.stringify((err as Error)?.message))
           }

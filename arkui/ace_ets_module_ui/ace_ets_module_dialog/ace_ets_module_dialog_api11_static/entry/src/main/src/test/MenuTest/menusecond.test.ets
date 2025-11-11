@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -74,7 +74,7 @@ export default function menuSecondTest() {
       await UtilsTest.msSleep(4000)
       console.info("ActsMenuSecondTest  beforeAll end")
     })
-    beforeEach(async (done: () => void): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Menu/menusecond",
       }
@@ -87,12 +87,12 @@ export default function menuSecondTest() {
         console.info("get menusecond state pages: " + JSON.stringify(pages));
         if (!("menusecond" == pages.name)) {
           console.info("get menusecond state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push menusecond success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push menusecond page error " + JSON.stringify(err));
       }
       await sleep(2000)
@@ -100,57 +100,60 @@ export default function menuSecondTest() {
     });
 
 
+    
     /*
-         * @tc.number   ArkUX_Stage_Menu_Enabled_static_0100
-         * @tc.name     ArkUX_Stage_Menu_Enabled_static_0100
-         * @tc.desc     ArkUX_Stage_Menu_Enabled_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUX_Stage_Menu_Enabled_static_0100', Level.LEVEL2, async () => {
-
+     * @tc.number   ArkUX_Stage_Menu_Enabled_static_0100
+     * @tc.name     ArkUX_Stage_Menu_Enabled_static_0100
+     * @tc.desc     ArkUX_Stage_Menu_Enabled_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Stage_Menu_Enabled_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey("Menu"))
-        console.info('ArkUX_Stage_Menu_Enabled_static_0100 bindMenuEnabled :' +
-        JSON.stringify(obj.getElement('$attrs').getString('bindMenuEnabled')));
-      }catch(err) {
+        // console.info('ArkUX_Stage_Menu_Enabled_static_0100 bindMenuEnabled :' +
+        // JSON.stringify(obj.getElement('$attrs').getString('bindMenuEnabled')));
+      } catch(error) {
         expect().assertFail();
       }
+      done()
     })
 
 
+    
     /*
-         * @tc.number   ArkUX_Stage_Menu_Preview_static_0100
-         * @tc.name     ArkUX_Stage_Menu_Preview_static_0100
-         * @tc.desc     ArkUX_Stage_Menu_Preview_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUX_Stage_Menu_Preview_static_0100', Level.LEVEL2, async () => {
-
+     * @tc.number   ArkUX_Stage_Menu_Preview_static_0100
+     * @tc.name     ArkUX_Stage_Menu_Preview_static_0100
+     * @tc.desc     ArkUX_Stage_Menu_Preview_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Stage_Menu_Preview_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey("floatingMenuImage"))
-        console.info('ArkUX_Stage_Menu_Preview_static_0100 preview :' +
-        JSON.stringify(obj.getElement('$attrs').getString('preview')));
-      }catch(err) {
+        // console.info('ArkUX_Stage_Menu_Preview_static_0100 preview :' +
+        // JSON.stringify(obj.getElement('$attrs').getString('preview')));
+      } catch(error) {
         expect().assertFail();
       }
+      done()
     })
 
 
+    
     /*
-         * @tc.number   ArkUX_Stage_Menu_Preview_static_0200
-         * @tc.name     ArkUX_Stage_Menu_Preview_static_0200
-         * @tc.desc     ArkUX_Stage_Menu_Preview_static_0200
-         * @tc.level    Level.LEVEL2
-         */
-    it('ArkUX_Stage_Menu_Preview_static_0200', Level.LEVEL2, async () => {
-
+     * @tc.number   ArkUX_Stage_Menu_Preview_static_0200
+     * @tc.name     ArkUX_Stage_Menu_Preview_static_0200
+     * @tc.desc     ArkUX_Stage_Menu_Preview_static_0200
+     * @tc.level    Level.LEVEL2
+     */
+it('ArkUX_Stage_Menu_Preview_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey("floatingMenuBuilder"))
-        console.info('ArkUX_Stage_Menu_Preview_static_0200 preview :' +
-        JSON.stringify(obj.getElement('$attrs').getString('preview')));
-      }catch(err) {
+        // console.info('ArkUX_Stage_Menu_Preview_static_0200 preview :' +
+        // JSON.stringify(obj.getElement('$attrs').getString('preview')));
+      } catch(error) {
         expect().assertFail();
       }
+      done()
     })
   })
 }

@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -42,7 +42,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -77,12 +77,12 @@ export default function bindPopupTest() {
         console.info("get bindPopup state pages: " + JSON.stringify(pages));
         if (!("bindPopup" == pages.name)) {
           console.info("get bindPopup state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push bindPopup success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push bindPopup page error: " + err);
       }
 
@@ -94,30 +94,31 @@ export default function bindPopupTest() {
     });
 
 
+    
     /*
-         * @tc.number   bindPopupTest_static_0100
-         * @tc.name     bindPopupTest_static_0100
-         * @tc.desc     bindPopupTest_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('bindPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   bindPopupTest_static_0100
+     * @tc.name     bindPopupTest_static_0100
+     * @tc.desc     bindPopupTest_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('bindPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("bindPopupTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<string, RecordData>)?.['enableArrow']).assertEqual(true);
-        expect(((indexEvent.data) as Record<string, RecordData>)?.['maskColor']).assertEqual(0x33000000);
+        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['enableArrow']).assertEqual(true);
+        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['maskColor']).assertEqual(0x33000000);
         done();
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 67,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("bindPopupTest_static_0100 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("bindPopupTest_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0100 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -131,45 +132,46 @@ export default function bindPopupTest() {
     });
 
 
+    
     /*
-         * @tc.number   bindPopupTest_static_0200
-         * @tc.name     bindPopupTest_static_0200
-         * @tc.desc     bindPopupTest_static_0200
-         * @tc.level    Level.LEVEL2
-         */
-    it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   bindPopupTest_static_0200
+     * @tc.name     bindPopupTest_static_0200
+     * @tc.desc     bindPopupTest_static_0200
+     * @tc.level    Level.LEVEL2
+     */
+it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupTest_static_0200 START');
       let driver = Driver.create()
       try {
-        let eventData: events_emitter.EventData = {
+        let eventData: emitter.EventData = {
           data: {
             "enableArrow": false,
             "maskColor": 0x33000009
-          } as Record<string, RecordData>
+          } as Record<String,undefined|null|Object>
         }
-        let indexEvent: events_emitter.InnerEvent = {
+        let indexEvent: emitter.InnerEvent = {
           eventId: 68,
-          priority: events_emitter.EventPriority.LOW
+          priority: emitter.EventPriority.LOW
         }
         console.info("bindPopupTest_static_0200 start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+        emitter.emit(indexEvent, eventData);
+      } catch (err: Error) {
         console.log("bindPopupTest_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1500);
-      let callbackOne = (indexEventOne: events_emitter.EventData) => {
+      let callbackOne = (indexEventOne: emitter.EventData) => {
         console.info("bindPopupTest_static_0200 get state result is: " + JSON.stringify(indexEventOne));
-        expect(((indexEventOne.data) as Record<string, RecordData>)?.['enableArrow']).assertEqual(false);
-        expect(((indexEventOne.data) as Record<string, RecordData>)?.['maskColor']).assertEqual(0x33000009);
+        expect(((indexEventOne.data) as Record<String,undefined|null|Object>)?.['enableArrow']).assertEqual(false);
+        expect(((indexEventOne.data) as Record<String,undefined|null|Object>)?.['maskColor']).assertEqual(0x33000009);
       }
-      let indexEventOne: events_emitter.InnerEvent = {
+      let indexEventOne: emitter.InnerEvent = {
         eventId: 66,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEventOne, callbackOne);
-      } catch (err) {
-        console.info("bindPopupTest_static_0200 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEventOne, callbackOne);
+      } catch (err: Error) {
+        console.info("bindPopupTest_static_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0200 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
@@ -181,28 +183,29 @@ export default function bindPopupTest() {
     });
 
 
+    
     /*
-         * @tc.number   bindPopupTest_static_0300
-         * @tc.name     bindPopupTest_static_0300
-         * @tc.desc     bindPopupTest_static_0300
-         * @tc.level    Level.LEVEL2
-         */
-    it('bindPopupTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   bindPopupTest_static_0300
+     * @tc.name     bindPopupTest_static_0300
+     * @tc.desc     bindPopupTest_static_0300
+     * @tc.level    Level.LEVEL2
+     */
+it('bindPopupTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupTest_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1500);
-      let callback = (indexEvent: events_emitter.EventData) => {
+      let callback = (indexEvent: emitter.EventData) => {
         console.info("bindPopupTest_static_0300 get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as Record<string, RecordData>)?.['placementOnTop']).assertEqual(false);
+        expect(((indexEvent.data) as Record<String,undefined|null|Object>)?.['placementOnTop']).assertEqual(false);
       }
-      let indexEvent: events_emitter.InnerEvent = {
+      let indexEvent: emitter.InnerEvent = {
         eventId: 65,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(indexEvent, callback);
-      } catch (err) {
-        console.info("bindPopupTest_static_0300 on events_emitter err : " + JSON.stringify(err));
+        emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("bindPopupTest_static_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0300 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button2', 10, "")));

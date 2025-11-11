@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
@@ -67,26 +67,27 @@ export default function DialogJsunit() {
         console.info("get DialogJsunit state pages: " + JSON.stringify(pages));
         if (!("DialogPage" == pages.name)) {
           console.info("get DialogJsunit state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push DialogJsunit success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push DialogJsunit page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
-         * @tc.number   DialogJsunit_static_0100
-         * @tc.name     DialogJsunit_static_0100
-         * @tc.desc     DialogJsunit_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('DialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   DialogJsunit_static_0100
+     * @tc.name     DialogJsunit_static_0100
+     * @tc.desc     DialogJsunit_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('DialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       console.info('[DialogJsunit_static_0100] START');
       await CommonFunc.sleep(1000);

@@ -46,17 +46,19 @@ export default function clipContent() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get clipContent state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("clipContent" == pages.name)) {
           console.info("get clipContent pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push clipContent page error:" + err);
       }
       console.info("clipContent beforeEach end");
+    });
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info("clipContent after each called");
     });
 
     
@@ -70,10 +72,10 @@ it('clipContent_static_0100', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info('[clipContent_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('common_clipContent_water');
-      console.info("[clipContent_static_0100] component obj1 is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
-      console.info("[clipContent_static_0100] clipContent1: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
+      console.info("[clipContent_static_0100] component obj1 is: " + JSON.parseJsonElement(strJson1));
+      console.info("[clipContent_static_0100] clipContent1: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('clipContent'));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual("ContentClipMode.CONTENT_ONLY");
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('clipContent')).assertEqual("ContentClipMode.CONTENT_ONLY");
       console.info('[focusedList_0100] ContentClipMode.CONTENT_ONLY END');
       done();
     });
@@ -93,10 +95,10 @@ it('clipContent_static_0200', Level.LEVEL1, (done: () => void): Promise<void> =>
       btn2?.click();
       await CommonFunc.sleep(2000);
       let strJson2 = inspector.getInspectorByKey('common_clipContent_water');
-      console.info("[clipContent_static_0200] component obj2 is: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
-      console.info("[clipContent_static_0200] clipContent2: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
+      console.info("[clipContent_static_0200] component obj2 is: " + JSON.parseJsonElement(strJson2));
+      console.info("[clipContent_static_0200] clipContent2: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('clipContent'));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual("ContentClipMode.BOUNDARY");
+      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('clipContent')).assertEqual("ContentClipMode.BOUNDARY");
       console.info('[clipContent_static_0200] ContentClipMode.BOUNDARY END');
       done();
     });
@@ -116,10 +118,10 @@ it('clipContent_static_0300', Level.LEVEL1, (done: () => void): Promise<void> =>
       btn3?.click();
       await CommonFunc.sleep(2000);
       let strJson3 = inspector.getInspectorByKey('common_clipContent_water');
-      console.info("[clipContent_static_0300] component obj3 is: " + JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'));
-      console.info("[clipContent_static_0300] clipContent3: " + JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'));
+      console.info("[clipContent_static_0300] component obj3 is: " + JSON.parseJsonElement(strJson3));
+      console.info("[clipContent_static_0300] clipContent3: " + JSON.parseJsonElement(strJson3).getElement('$attrs').getString('clipContent'));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')).assertEqual("ContentClipMode.SAFE_AREA");
+      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('clipContent')).assertEqual("ContentClipMode.SAFE_AREA");
       console.info('[focusedList_0300] ContentClipMode.SAFE_AREA END');
       done();
     });

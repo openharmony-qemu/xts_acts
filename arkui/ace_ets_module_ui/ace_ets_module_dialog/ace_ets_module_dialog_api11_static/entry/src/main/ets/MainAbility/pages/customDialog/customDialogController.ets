@@ -32,8 +32,7 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
 
 @CustomDialog
 struct CustomDialogExample {
@@ -82,7 +81,7 @@ struct CustomDialogUser {
   @State customStyle: boolean = false
   @State alignment: DialogAlignment = DialogAlignment.Default
   @State onClickValue: boolean = false
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("checkboxGroup page stateChangCallBack");
     if (eventData != null) {
       console.info("checkboxGroup page state change called:" + JSON.stringify(eventData));
@@ -91,11 +90,11 @@ struct CustomDialogUser {
 
   onPageShow() {
     console.info('checkboxGroup page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: 79,
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
+    emitter.on(stateChangeEvent, this.stateChangCallBack)
   }
 
   dialogController: CustomDialogController = new CustomDialogController({
@@ -127,17 +126,17 @@ struct CustomDialogUser {
           this.onClickValue = true;
           this.dialogController.open();
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "ACTION": this.onClickValue
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 236,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("click to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("click action state err: " + JSON.stringify((err as Error)?.message))
           }

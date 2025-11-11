@@ -25,10 +25,10 @@ import { UtilsTest, startAbility } from './Util.test'
 export default function datapanelJsunit() {
   describe('dataPanelTest', () => {
     beforeAll(() => {
-        console.info("dataPanelTest beforeEach start");
-        await UtilsTest.msSleep(4000)
-        await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
+      console.info("dataPanelTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -53,15 +53,14 @@ export default function datapanelJsunit() {
       await Utils.sleep(2000);
     });
 
-    
-    
+
     /*
-     * @tc.number   testDataPanel01_static_01
-     * @tc.name     testDataPanel01_static_01
-     * @tc.desc     testDataPanel01_static_01
-     * @tc.level    Level.LEVEL0
-     */
-it('testDataPanel01_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      * @tc.number   testDataPanel01_static_01
+      * @tc.name     testDataPanel01_static_01
+      * @tc.desc     testDataPanel01_static_01
+      * @tc.level    Level.LEVEL0
+      */
+    it('testDataPanel01_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel01_static_01 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -73,15 +72,13 @@ it('testDataPanel01_static_01', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-
-    
     /*
      * @tc.number   testDataPanel02_static_02
      * @tc.name     testDataPanel02_static_02
      * @tc.desc     testDataPanel02_static_02
      * @tc.level    Level.LEVEL0
      */
-it('testDataPanel02_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testDataPanel02_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel02_static_02 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -92,14 +89,13 @@ it('testDataPanel02_static_02', Level.LEVEL0, async (done: () => void): Promise<
     });
 
 
-    
     /*
      * @tc.number   testDataPanel03_static_03
      * @tc.name     testDataPanel03_static_03
      * @tc.desc     testDataPanel03_static_03
      * @tc.level    Level.LEVEL0
      */
-it('testDataPanel03_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testDataPanel03_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel03_static_03 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -109,36 +105,38 @@ it('testDataPanel03_static_03', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-   
-    
+
     /*
      * @tc.number   testDataPanel04_static_04
      * @tc.name     testDataPanel04_static_04
      * @tc.desc     testDataPanel04_static_04
      * @tc.level    Level.LEVEL0
      */
-it('testDataPanel04_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testDataPanel04_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel04_static_04 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.log("cd DataPanel obj" + JSON.stringify(obj.getElement('$attrs')));
-      console.log("cd DataPanel obj valueColors0 = " + JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[0]));
-      console.log("cd DataPanel obj valueColors1 = " + JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[1]));
-      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[0])).assertEqual('[{"color":"#FF123456","offset":"0.000000"},{"color":"#FF123456","offset":"1.000000"}]')
-      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[1])).assertEqual('[{"color":"#FF654321","offset":"0.000000"},{"color":"#FF654321","offset":"1.000000"}]')
+      console.log("cd DataPanel obj valueColors0 = " +
+      JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[0]));
+      console.log("cd DataPanel obj valueColors1 = " +
+      JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[1]));
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[0]))
+        .assertEqual('[{"color":"#FF123456","offset":"0.000000"},{"color":"#FF123456","offset":"1.000000"}]')
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('valueColors')[1]))
+        .assertEqual('[{"color":"#FF654321","offset":"0.000000"},{"color":"#FF654321","offset":"1.000000"}]')
       console.info('testDataPanel04_static_04 END');
       done();
     });
 
-    
-    
+
     /*
      * @tc.number   testDataPanel05_static_05
      * @tc.name     testDataPanel05_static_05
      * @tc.desc     testDataPanel05_static_05
      * @tc.level    Level.LEVEL0
      */
-it('testDataPanel05_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testDataPanel05_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testDataPanel05_static_05 START');
       let strJson = inspector.getInspectorByKey('DataPanelKey1');
       let obj = JSON.parseJsonElement(strJson);

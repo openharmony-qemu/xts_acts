@@ -25,30 +25,31 @@ import {
   Margin,
   ColumnOptions,
   Flex,
-  Builder
+  Builder,
+  Blank,
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext, Router, PromptAction } from '@ohos.arkui.UIContext';
 
-let customDialogId: number = 0
+let customDialogId: int = 0
 
+@Builder
+function customDialogBuilder() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  Column() {
+    Text('Custom dialog Message').fontSize(10)
+    Row() {
+      Button("确认").onClick((e: ClickEvent) => {
+        AppStorage.get<UIContext>('uiContent')!.getPromptAction().closeCustomDialog(customDialogId)
+      })
+      Blank().width(50)
+      Button("取消").onClick((e: ClickEvent) => {
+        AppStorage.get<UIContext>('uiContent')!.getPromptAction().closeCustomDialog(customDialogId)
+      })
+    }
+  }.height(200).padding(5)
+}
 
 @Entry
 @Component
@@ -63,13 +64,14 @@ struct openCustomDialogFalseExample {
           .id("openCustomDialogFalse")
           .margin(100)
           .onClick((e: ClickEvent) => {
-            
-            
-            
-            
-            
-            
-            
+            this.promptAction.openCustomDialog({
+              isModal: true,
+              showInSubWindow: false,
+              // builder: customDialogBuilder.bind(this)
+              builder: customDialogBuilder
+            } as promptAction.CustomDialogOptions).then((dialogId: int) => {
+              customDialogId = dialogId
+            })
           })
       }
       .width('100%')

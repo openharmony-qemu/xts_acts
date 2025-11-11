@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -80,10 +80,10 @@ export default function ToastShowMode() {
         console.info("get ToastShowMode state pages: " + JSON.stringify(pages));
         if (!("ToastShowMode" == pages.name)) {
           console.info("get ToastShowMode state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ToastShowMode success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ToastShowMode page error: " + err);
@@ -93,13 +93,14 @@ export default function ToastShowMode() {
     });
 
 
+    
     /*
-         * @tc.number   ToastShowMode_static_0100
-         * @tc.name     ToastShowMode_static_0100
-         * @tc.desc     ToastShowMode_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('ToastShowMode_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ToastShowMode_static_0100
+     * @tc.name     ToastShowMode_static_0100
+     * @tc.desc     ToastShowMode_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('ToastShowMode_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ToastShowMode_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -116,13 +117,14 @@ export default function ToastShowMode() {
     });
 
 
+    
     /*
-         * @tc.number   ToastShowMode_static_0200
-         * @tc.name     ToastShowMode_static_0200
-         * @tc.desc     ToastShowMode_static_0200
-         * @tc.level    Level.LEVEL2
-         */
-    it('ToastShowMode_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   ToastShowMode_static_0200
+     * @tc.name     ToastShowMode_static_0200
+     * @tc.desc     ToastShowMode_static_0200
+     * @tc.level    Level.LEVEL2
+     */
+it('ToastShowMode_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ToastShowMode_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

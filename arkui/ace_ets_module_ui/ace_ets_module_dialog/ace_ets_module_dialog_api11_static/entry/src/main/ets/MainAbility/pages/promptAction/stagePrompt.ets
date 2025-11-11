@@ -12,8 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
+import emitter from '@ohos.events.emitter';
+import { BusinessError } from '@ohos.base';
+import promptAction from '@ohos.promptAction';
 import {
   Entry,
   Column,
@@ -64,18 +65,18 @@ struct stagePrompt {
                 message: 'Message Info',
                 duration: 2000,
               });
-              let backData: events_emitter.EventData = {
+              let backData: emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent: events_emitter.InnerEvent = {
+              let backEvent: emitter.InnerEvent = {
                 eventId: 60220,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showDialog start to emit action state")
-              events_emitter.emit(backEvent, backData)
-            } catch (error) {
+              emitter.emit(backEvent, backData)
+            } catch (error: Error) {
               console.error("showToast emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -96,18 +97,46 @@ struct stagePrompt {
           .key("showDialogText")
           .onClick((e: ClickEvent) => {
             try {
-              let backData1: events_emitter.EventData = {
+
+              AppStorage.get<UIContext>('uiContent')!.getPromptAction()
+                .showDialog({
+                  title: 'Title Info',
+                  message: 'Message Info',
+                  buttons: [
+                    {
+                      text: 'button1',
+                      color: '#000000',
+                    } as promptAction.Button,
+                    {
+                      text: 'button2',
+                      color: '#000000',
+                    } as promptAction.Button
+                  ],
+                } as promptAction.ShowDialogOptions,  (err, data) => {
+                  if (err) {
+                    console.info('showDialog err: ' + err);
+                    return;
+                  }
+                  console.info('showDialog success , click button: ' + data?.index);
+                })
+              //   .then((data) => {
+              //     console.info('showDialog success, click button: ' + data.index);
+              //   })
+              //   .catch((err: Error) => {
+              //     console.info('showDialog error: ' + err);
+              //   })
+              let backData1: emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent1: events_emitter.InnerEvent = {
+              let backEvent1: emitter.InnerEvent = {
                 eventId: 60221,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showActionMenu start to emit action state")
-              events_emitter.emit(backEvent1, backData1)
-            } catch (error) {
+              emitter.emit(backEvent1, backData1)
+            } catch (error: Error) {
               console.error("showDialog emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -128,39 +157,44 @@ struct stagePrompt {
           .key("showActionMenuText")
           .onClick((e: ClickEvent) => {
             try {
-
-              /*   AppStorage.get<UIContext>('uiContent',Type.from<UIContext>())!.getPromptAction()
-                   .showActionMenu({
-                     title: 'showActionMenu Title Info',
-                     buttons: [
-                       {
-                         text: 'item1',
-                         color: '#666666',
-                       },
-                       {
-                         text: 'item2',
-                         color: '#000000',
-                       },
-                     ]
-                   })
-                   .then((data) => {
-                     console.info('showActionMenu success, click button: ' + data.index);
-                   })
-                   .catch((err: Error) => {
-                     console.info('showActionMenu error: ' + err);
-                   })*/
-              let backData2: events_emitter.EventData = {
+              AppStorage.get<UIContext>('uiContent')!.getPromptAction()
+                .showActionMenu({
+                  title: 'showActionMenu Title Info',
+                  buttons: [
+                    {
+                      text: 'item1',
+                      color: '#666666',
+                    } as promptAction.Button,
+                    {
+                      text: 'item2',
+                      color: '#000000',
+                    } as promptAction.Button,
+                  ]  as promptAction.PromptActionDoubleButtons
+                } as promptAction.ActionMenuOptions,  (err, data) => {
+                  if (err) {
+                    console.info('showActionMenu err: ' + err);
+                    return;
+                  }
+                  console.info('showActionMenu success , click button: ' + data?.index);
+                })
+                // .then((data) => {
+                //   console.info('showActionMenu success, click button: ' + data.index);
+                // })
+                // .catch((err: Error) => {
+                //   console.info('showActionMenu error: ' + err);
+                // })
+              let backData2: emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent2: events_emitter.InnerEvent = {
+              let backEvent2: emitter.InnerEvent = {
                 eventId: 60222,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showActionMenu start to emit action state")
-              events_emitter.emit(backEvent2, backData2)
-            } catch (error) {
+              emitter.emit(backEvent2, backData2)
+            } catch (error: Error) {
               console.error(`showActionMenu args error code is ${error.code}, message is ${error.message}`);
             }
             ;
@@ -180,18 +214,39 @@ struct stagePrompt {
           .key("showDialogTextTwo")
           .onClick((e: ClickEvent) => {
             try {
-              let backData3: events_emitter.EventData = {
+
+              AppStorage.get<UIContext>('uiContent')!.getPromptAction().showDialog({
+                title: 'showDialog Title Info',
+                message: 'Message Info',
+                buttons: [
+                  {
+                    text: 'button1',
+                    color: '#000000',
+                  } as promptAction.Button,
+                  {
+                    text: 'button2',
+                    color: '#000000',
+                  } as promptAction.Button
+                ]
+              } as promptAction.ShowDialogOptions, (err: BusinessError<void>|null, data) => {
+                if (err) {
+                  console.info('showDialog err: ' + err);
+                  return;
+                }
+                console.info('showDialog success callback, click button: ' + data?.index);
+              });
+              let backData3: emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent3: events_emitter.InnerEvent = {
+              let backEvent3: emitter.InnerEvent = {
                 eventId: 60223,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showActionMenu start to emit action state")
-              events_emitter.emit(backEvent3, backData3)
-            } catch (error) {
+              emitter.emit(backEvent3, backData3)
+            } catch (error: Error) {
               console.error("showDialog emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -211,18 +266,38 @@ struct stagePrompt {
           .key("showActionMenuTextTwo")
           .onClick((e: ClickEvent) => {
             try {
-              let backData4: events_emitter.EventData = {
+
+              AppStorage.get<UIContext>('uiContent')!.getPromptAction().showActionMenu({
+                title: 'Title Info',
+                buttons: [
+                  {
+                    text: 'item1',
+                    color: '#666666',
+                  } as promptAction.Button,
+                  {
+                    text: 'item2',
+                    color: '#000000',
+                  } as promptAction.Button,
+                ] as promptAction.PromptActionDoubleButtons
+              } as promptAction.ActionMenuOptions, (err:  BusinessError<void>|null, data) => {
+                if (err) {
+                  console.info('showActionMenu err: ' + err);
+                  return;
+                }
+                console.info('showActionMenu success callback, click button: ' + data?.index);
+              })
+              let backData4: emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, RecordData>
+                } as Record<String,undefined|null|Object>
               }
-              let backEvent4: events_emitter.InnerEvent = {
+              let backEvent4: emitter.InnerEvent = {
                 eventId: 60224,
-                priority: events_emitter.EventPriority.LOW
+                priority: emitter.EventPriority.LOW
               }
               console.info("showActionMenu start to emit action state")
-              events_emitter.emit(backEvent4, backData4)
-            } catch (error) {
+              emitter.emit(backEvent4, backData4)
+            } catch (error: Error) {
               console.error(`showActionMenu args error code is ${error.code}, message is ${error.message}`);
             }
             ;

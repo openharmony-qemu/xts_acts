@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
@@ -31,7 +31,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -67,10 +67,10 @@ export default function customDialogControllerJsunit() {
         console.info("get customDialogController state pages: " + JSON.stringify(pages));
         if (!("customDialogController" == pages.name)) {
           console.info("get customDialogController state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push customDialogController success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push customDialogController page error " + err);
@@ -84,28 +84,29 @@ export default function customDialogControllerJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   testCustomDialogControllers_static_100
-         * @tc.name     testCustomDialogControllers_static_100
-         * @tc.desc     testCustomDialogControllers_static_100
-         * @tc.level    Level.LEVEL2
-         */
-    it('testCustomDialogControllers_static_100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   testCustomDialogControllers_static_100
+     * @tc.name     testCustomDialogControllers_static_100
+     * @tc.desc     testCustomDialogControllers_static_100
+     * @tc.level    Level.LEVEL2
+     */
+it('testCustomDialogControllers_static_100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testCustomDialogControllers_static_100] START');
       let driver = Driver.create()
-      let callback = (eventData: events_emitter.EventData) => {
+      let callback = (eventData: emitter.EventData) => {
         console.info("[testClickEvent001] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<string, RecordData>)?.['ACTION']).assertEqual(true)
+        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['ACTION']).assertEqual(true)
         done();
       }
-      let innerEvent: events_emitter.InnerEvent = {
+      let innerEvent: emitter.InnerEvent = {
         eventId: 236,
-        priority: events_emitter.EventPriority.LOW
+        priority: emitter.EventPriority.LOW
       }
       try {
-        events_emitter.on(innerEvent, callback)
+        emitter.on(innerEvent, callback)
       } catch (err) {
-        console.info("[testClickEvent001] on events_emitter err : " + JSON.stringify(err));
+        console.info("[testClickEvent001] on emitter err : " + JSON.stringify(err));
       }
       console.info('[testClickEvent001] sendEventByKey ' +
       JSON.stringify(inspector.sendEventByKey('dialogController', 10, "")));

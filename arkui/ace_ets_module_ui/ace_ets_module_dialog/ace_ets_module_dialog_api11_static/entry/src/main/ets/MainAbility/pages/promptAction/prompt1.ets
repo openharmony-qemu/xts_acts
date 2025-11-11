@@ -15,7 +15,7 @@
 
 import prompt from '@ohos.prompt'
 import Log from '../../common/Log';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   Entry,
   Column,
@@ -39,7 +39,6 @@ import {
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -72,17 +71,17 @@ struct PromptShowDialog {
         .key("showDialogText")
         .onClick((e: ClickEvent) => {
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "STATUS": true
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 60220,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("showDialog start to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("showDialog emit action state err: " + JSON.stringify((err as Error)?.message))
           }
@@ -103,17 +102,17 @@ struct PromptShowDialog {
         .key("showActionMenuText")
         .onClick((e: ClickEvent) => {
           try {
-            let backData1: events_emitter.EventData = {
+            let backData1: emitter.EventData = {
               data: {
                 "STATUS": true
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent1: events_emitter.InnerEvent = {
+            let backEvent1: emitter.InnerEvent = {
               eventId: 60221,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("showActionMenu start to emit action state")
-            events_emitter.emit(backEvent1, backData1)
+            emitter.emit(backEvent1, backData1)
           } catch (err) {
             console.info("showActionMenu emit action state err: " + JSON.stringify((err as Error)?.message))
           }

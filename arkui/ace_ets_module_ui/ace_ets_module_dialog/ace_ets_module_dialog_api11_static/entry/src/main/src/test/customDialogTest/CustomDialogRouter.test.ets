@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
@@ -67,10 +67,10 @@ export default function CustomDialogRouter() {
         console.info("get CustomDialogRouter state pages: " + JSON.stringify(pages));
         if (!("CustomDialog" == pages.name)) {
           console.info("get CustomDialogRouter state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CustomDialogRouter success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CustomDialogRouter page error: " + err);
@@ -80,13 +80,14 @@ export default function CustomDialogRouter() {
     });
 
 
+    
     /*
-         * @tc.number   CustomDialogRouter_static_0100
-         * @tc.name     CustomDialogRouter_static_0100
-         * @tc.desc     CustomDialogRouter_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('CustomDialogRouter_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   CustomDialogRouter_static_0100
+     * @tc.name     CustomDialogRouter_static_0100
+     * @tc.desc     CustomDialogRouter_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('CustomDialogRouter_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CustomDialogRouter_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -94,12 +95,12 @@ export default function CustomDialogRouter() {
       await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
-      
+      // router page is change
       let routerButton = await driver.findComponent(ON.id('CustomDialogRouterButton'));
       await (routerButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      
+      // api 11, dialog is closed, confirmButton is not exist
       let confirmButton = await driver.findComponent(ON.id('CustomDialogConfirm'));
       expect(confirmButton != null).assertTrue();
       await driver.triggerKey(2070)

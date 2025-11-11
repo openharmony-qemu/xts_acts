@@ -14,10 +14,8 @@
  */
 import { Entry, Component, $r, Column, ColumnOptions, Button, ClickEvent, } from '@ohos.arkui.component';
 import { edgeWidths, LengthMetrics } from '@ohos.arkui.node';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 import { PromptAction } from '@ohos.arkui.UIContext';
-
-const promptAction = new PromptAction()
 
 @Entry
 @Component
@@ -27,10 +25,10 @@ struct showToastExample {
   build() {
     Column() {
       Button("showToast")
-        .id("showToast")
+        .id('showToast')
         .margin(100)
         .onClick((e: ClickEvent) => {
-          promptAction.showToast({
+          this.getUIContext().getPromptAction().showToast({
             message: 'Message Info',
             duration: 2000
           });

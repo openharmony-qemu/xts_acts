@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -79,12 +79,12 @@ export default function menuEnabledJsunit() {
         console.info("get menuEnabledJsunit state pages: " + JSON.stringify(pages));
         if (!("menuEnabled" == pages.name)) {
           console.info("get menuEnabledJsunit state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push menuEnabledJsunit success: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push menuEnabledJsunit page error: " + err);
         expect().assertFail();
       }
@@ -92,13 +92,14 @@ export default function menuEnabledJsunit() {
     });
 
 
+    
     /*
-         * @tc.number   menuEnabledJsunit_static_0100
-         * @tc.name     menuEnabledJsunit_static_0100
-         * @tc.desc     menuEnabledJsunit_static_0100
-         * @tc.level    Level.LEVEL2
-         */
-    it('menuEnabledJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   menuEnabledJsunit_static_0100
+     * @tc.name     menuEnabledJsunit_static_0100
+     * @tc.desc     menuEnabledJsunit_static_0100
+     * @tc.level    Level.LEVEL2
+     */
+it('menuEnabledJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       console.info('menuEnabledJsunit_static_0100 START');
       let driver: Driver = Driver.create();
@@ -107,20 +108,21 @@ export default function menuEnabledJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuEnabledJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[menuEnabledJsunit_static_0100] enabled: " +
-      JSON.stringify(obj.getElement('$attrs').getString('enabled')));
-      expect(obj.getElement('$attrs').getString('enabled')).assertEqual(false);
+      JSON.stringify(obj.getElement('$attrs').getBoolean('enabled')));
+      expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(false);
       console.info('[menuEnabledJsunit_static_0100] END');
       done();
     });
 
 
+    
     /*
-         * @tc.number   menuEnabledJsunit_static_0200
-         * @tc.name     menuEnabledJsunit_static_0200
-         * @tc.desc     menuEnabledJsunit_static_0200
-         * @tc.level    Level.LEVEL2
-         */
-    it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+     * @tc.number   menuEnabledJsunit_static_0200
+     * @tc.name     menuEnabledJsunit_static_0200
+     * @tc.desc     menuEnabledJsunit_static_0200
+     * @tc.level    Level.LEVEL2
+     */
+it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       console.info('menuEnabledJsunit_static_0200 START');
       let driver = Driver.create()

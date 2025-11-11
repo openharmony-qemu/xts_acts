@@ -12,8 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
-import prompt from '@ohos.prompt';
+import emitter from '@ohos.events.emitter';
+import { PromptAction } from '@ohos.arkui.UIContext';
+import promptAction from '@ohos.promptAction'
 import {
   Entry,
   Column,
@@ -25,11 +26,11 @@ import {
   $r,
   Margin,
   ColumnOptions,
-  Flex
+  Flex,
+  AlertDialogParamWithOptions,
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
-import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -40,44 +41,45 @@ struct OhosPrompt {
     Column() {
       Button("get Point").padding(40)
         .onClick((e: ClickEvent) => {
-          prompt.showToast({ message: "sucessful", duration: 200 })
+          this.getUIContext().getPromptAction().showToast({ message: "sucessful", duration: 200 })
           this.onClickValue = true;
           try {
-            let backData: events_emitter.EventData = {
+            let backData: emitter.EventData = {
               data: {
                 "matrix1": "[100, 10]",
                 "ACTION": this.onClickValue
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
-            let backEvent: events_emitter.InnerEvent = {
+            let backEvent: emitter.InnerEvent = {
               eventId: 142,
-              priority: events_emitter.EventPriority.LOW
+              priority: emitter.EventPriority.LOW
             }
             console.info("click to emit action state")
-            events_emitter.emit(backEvent, backData)
+            emitter.emit(backEvent, backData)
           } catch (err) {
             console.info("click action state err: " + JSON.stringify((err as Error)?.message))
           }
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-        }).backgroundColor(0x2788D9).key('rotate5')
+          this.getUIContext().getPromptAction().showActionMenu({
+            title: 'Title Info',
+            buttons: [
+              {
+                text: 'item1',
+                color: '#666666',
+              }
+            ] as promptAction.PromptActionSingleButton
+          });
+          this.getUIContext().getPromptAction().showDialog({
+            title: 'Title Info',
+            message: 'Message Info',
+            buttons: [
+              {
+                text: 'showDialog',
+                color: '#666666',
+              }
+            ]
+          });
+        })//.backgroundColor(0x2788D9)
+      .key('rotate5')
     }
     .width('100%')
     .height('100%')
