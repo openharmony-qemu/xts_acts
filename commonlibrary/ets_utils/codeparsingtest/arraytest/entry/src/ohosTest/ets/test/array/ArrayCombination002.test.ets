@@ -1269,10 +1269,12 @@ export default function ArrayCombinationTest2() {
       const caseName = 'ArrayCombinationTest2070';
       console.info(`${caseName}, test start`);
       const arr = [3, 1, 2];
-      arr.sort((a, b) => a - b).forEach((v, i) => expect(v).assertEqual(i + 1));
+      arr.sort((a, b) => a - b).forEach((v, i) => arr[i] = i -1);
+      expect(arr).assertDeepEquals([-1,0,1]);
 
       const ta = new Int8Array([3, 1, 2]);
-      ta.sort().forEach((v, i) => expect(v).assertEqual(i + 1));
+      ta.sort().forEach((v, i) => ta[i] = i -1);
+      expect(Array.from(ta)).assertDeepEquals([-1,0,1]);
       console.info(`${caseName}, test end`);
     });
     /**
