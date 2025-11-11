@@ -146,6 +146,11 @@ export default function Sim4Public() {
             ExpectTrue(true);
             console.info(`${caseName} test end`);
             done();
+          } else if (!err && data.index <= 2 && data.simType == sim.SimType.ESIM) {
+            console.info(`${caseName} sim card is ESIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end`);
+            done();
           } else {
             console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -171,35 +176,42 @@ export default function Sim4Public() {
      */
     it('testTelephonySimGetSimLabelCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimLabelCallback0300';
-      let hasSimCard: Boolean = await sim.hasSimCardSync(1);
-      if (!hasSimCard) {
-        console.info(`${caseName} failed, No SIM exists in slot 0`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      }
-      try {
-        sim.getSimLabel(1, (err: BusinessError, data: sim.SimLabel) => {
-          if (!err && data.index <= 2 && data.simType == sim.SimType.PSIM) {
-            console.info(`${caseName} sim card2 is PSIM, success, data->${JSON.stringify(data)}`);
-            ExpectTrue(true);
-            console.info(`${caseName} 01 test end`);
-            done();
-          } else if (!err && data.index <= 10 && data.simType == sim.SimType.ESIM){
-            console.info(`${caseName} sim card2 is ESIM, success, data->${JSON.stringify(data)}`);
-            ExpectTrue(true);
-            console.info(`${caseName} 02 test end`);
-            done();
-          } else {
-            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
-            ExpectFail();
-            console.info(`${caseName} 03 test end`);
-            done();
-          }
-        });  
-      } catch (err) {
-        console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
-        ExpectFail();
+      if (sim.getMaxSimCount() > 1 ){
+        let hasSimCard: Boolean = await sim.hasSimCardSync(1);
+        if (!hasSimCard) {
+          console.info(`${caseName} failed, No SIM exists in slot 0`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+        try {
+          sim.getSimLabel(1, (err: BusinessError, data: sim.SimLabel) => {
+            if (!err && data.index <= 2 && data.simType == sim.SimType.PSIM) {
+              console.info(`${caseName} sim card2 is PSIM, success, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} 01 test end`);
+              done();
+            } else if (!err && data.index <= 2 && data.simType == sim.SimType.ESIM){
+              console.info(`${caseName} sim card2 is ESIM, success, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} 02 test end`);
+              done();
+            } else {
+              console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} 03 test end`);
+              done();
+            }
+          });
+        } catch (err) {
+          console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+      } else {
+        console.info(`${caseName}: Non-single SIM card case.`);
+        ExpectTrue(true);
         console.info(`${caseName} test end`);
         done();
       }
@@ -271,7 +283,7 @@ export default function Sim4Public() {
       try {
         sim.getSimLabel(null, (err: BusinessError, data: sim.SimLabel) => {
           if (err && err.code === 401) {
-            console.info(`${caseName} successfully: Parameter error and return 8300001, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            console.info(`${caseName} successfully: Parameter error and return 401, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
             ExpectTrue(true);
             console.info(`${caseName} test end`);
             done();
@@ -284,7 +296,7 @@ export default function Sim4Public() {
         });
       } catch(error)  {
         if ((error as BusinessError).code === 401) {
-          console.info(`${caseName} successfully: Parameter error and return 8300001`);
+          console.info(`${caseName} successfully: Parameter error and return 401`);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
           done();
@@ -357,6 +369,11 @@ export default function Sim4Public() {
           ExpectTrue(true);
           console.info(`${caseName} test end`);
           done();
+        } else if (data.index <= 2 && data.simType == sim.SimType.ESIM) {
+          console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
+          done();
         } else {
           ExpectFail();
           console.info(`${caseName} test end`);
@@ -387,42 +404,49 @@ export default function Sim4Public() {
      */
     it('testTelephonySimGetSimLabelPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimLabelPromise0300';
-      let hasSimCard: Boolean = await sim.hasSimCardSync(1);
-      if (!hasSimCard) {
-        console.info(`${caseName} failed, No SIM exists in slot 1`);
-        ExpectFail();
+      if (sim.getMaxSimCount() > 1 ){
+        let hasSimCard: Boolean = await sim.hasSimCardSync(1);
+        if (!hasSimCard) {
+          console.info(`${caseName} failed, No SIM exists in slot 1`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+        sim.getSimLabel(1).then((data: sim.SimLabel) => {
+          if (data.index <= 2 && data.simType == sim.SimType.PSIM) {
+            console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            console.info(`${caseName} 01 test end`);
+            done();
+          } else if (data.index <= 2 && data.simType == sim.SimType.ESIM){
+            console.info(`${caseName} sim card is ESIM,data -> ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            console.info(`${caseName} 02 test end`);
+            done();
+          } else {
+            ExpectFail();
+            console.info(`${caseName} 03 test end`);
+            done();
+          }
+        }).catch((err: BusinessError) =>{
+          if (err && err.code === 801){
+            console.info(`${caseName} successfully: Parameter error and return 801`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      } else {
+        console.info(`${caseName}: Non-single SIM card case.`);
+        ExpectTrue(true);
         console.info(`${caseName} test end`);
         done();
       }
-      sim.getSimLabel(1).then((data: sim.SimLabel) => {
-        if (data.index <= 2 && data.simType == sim.SimType.PSIM) {
-          console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
-          ExpectTrue(true);
-          console.info(`${caseName} 01 test end`);
-          done();
-        } else if (data.index <= 10 && data.simType == sim.SimType.ESIM){
-          console.info(`${caseName} sim card is ESIM,data -> ${JSON.stringify(data)}`);
-          ExpectTrue(true);
-          console.info(`${caseName} 02 test end`);
-          done();
-        } else {
-          ExpectFail();
-          console.info(`${caseName} 03 test end`);
-          done();
-        }
-      }).catch((err: BusinessError) =>{
-        if (err && err.code === 801){
-          console.info(`${caseName} successfully: Parameter error and return 801`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
-          ExpectFail();
-          console.info(`${caseName} test end`);
-          done();
-        }
-      });
     });
 
     /**
@@ -480,15 +504,20 @@ export default function Sim4Public() {
         done();
       }
       try{
-        let simLabel: sim.SimLabel = sim.getSimLabelSync(-1);
-        if (simLabel.index <= 2 && simLabel.simType == sim.SimType.PSIM) {
-          console.info(`${caseName} sim card is PSIM,simLabel -> ${JSON.stringify(simLabel)}`);
+        let data: sim.SimLabel = sim.getSimLabelSync(-1);
+        if (data.index <= 2 && data.simType == sim.SimType.PSIM) {
+          console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
           ExpectTrue(true);
-          console.info(`${caseName} 01 test end`);
+          console.info(`${caseName} test end`);
+          done();
+        } else if (data.index <= 2 && data.simType == sim.SimType.ESIM) {
+          console.info(`${caseName} sim card is ESIM, data->${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
           done();
         } else {
           ExpectFail();
-          console.info(`${caseName} 02 test end`);
+          console.info(`${caseName} test end`);
           done();
         }
       } catch (err) {
@@ -517,15 +546,20 @@ export default function Sim4Public() {
         done();
       }
       try{
-        let simLabel: sim.SimLabel = sim.getSimLabelSync(0);
-        if (simLabel.index <= 2 && simLabel.simType == sim.SimType.PSIM) {
-          console.info(`${caseName} sim card is PSIM,simLabel -> ${JSON.stringify(simLabel)}`);
+        let data: sim.SimLabel = sim.getSimLabelSync(0);
+        if (data.index <= 2 && data.simType == sim.SimType.PSIM) {
+          console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
           ExpectTrue(true);
-          console.info(`${caseName} 01 test end`);
+          console.info(`${caseName} test end`);
+          done();
+        } else if (data.index <= 2 && data.simType == sim.SimType.ESIM) {
+          console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
           done();
         } else {
           ExpectFail();
-          console.info(`${caseName} 02 test end`);
+          console.info(`${caseName} test end`);
           done();
         }
       } catch (err) {
@@ -546,42 +580,49 @@ export default function Sim4Public() {
      */
     it('testTelephonySimGetSimLabelSync0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonySimGetSimLabelSync0300';
-      let hasSimCard: Boolean = await sim.hasSimCardSync(1);
-      if (!hasSimCard) {
-        console.info(`${caseName} failed, No SIM exists in slot 1`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      }
-      try{
-        let simLabel: sim.SimLabel = sim.getSimLabelSync(1);
-        if (simLabel.index <= 2 && simLabel.simType == sim.SimType.PSIM) {
-          console.info(`${caseName} sim card is PSIM,simLabel -> ${JSON.stringify(simLabel)}`);
-          ExpectTrue(true);
-          console.info(`${caseName} 01 test end`);
-          done();
-        } else if (simLabel.index <= 10 && simLabel.simType == sim.SimType.ESIM) {
-            console.info(`${caseName} sim card is ESIM,simLabel -> ${JSON.stringify(simLabel)}`);
-            ExpectTrue(true);
-            console.info(`${caseName} 01 test end`);
-            done();
-        } else {
-          ExpectFail();
-          console.info(`${caseName} 02 test end`);
-          done();
-        }
-      } catch (err) {
-        if (err.code == 801) {
-          console.info(`${caseName} successfully: Parameter error and return 801`);
-          ExpectTrue(true);
-          console.info(`${caseName} 01 test end`);
-          done();
-        } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+      if (sim.getMaxSimCount() > 1 ){
+        let hasSimCard: Boolean = await sim.hasSimCardSync(1);
+        if (!hasSimCard) {
+          console.info(`${caseName} failed, No SIM exists in slot 1`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
         }
+        try{
+          let data: sim.SimLabel = sim.getSimLabelSync(1);
+          if (data.index <= 2 && data.simType == sim.SimType.PSIM) {
+            console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end`);
+            done();
+          } else if (data.index <= 2 && data.simType == sim.SimType.ESIM) {
+            console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        } catch (err) {
+          if (err.code == 801) {
+            console.info(`${caseName} successfully: Parameter error and return 801`);
+            ExpectTrue(true);
+            console.info(`${caseName} 01 test end`);
+            done();
+          } else {
+            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        }
+      } else {
+        console.info(`${caseName}: Non-single SIM card case.`);
+        ExpectTrue(true);
+        console.info(`${caseName} test end`);
+        done();
       }
     });
 
@@ -603,15 +644,20 @@ export default function Sim4Public() {
         done();
       }
       try{
-        let simLabel: sim.SimLabel = sim.getSimLabelSync(2);
-        if (simLabel.index <= 2 && simLabel.simType == sim.SimType.PSIM) {
-          console.info(`${caseName} sim card is PSIM,simLabel -> ${JSON.stringify(simLabel)}`);
+        let data: sim.SimLabel = sim.getSimLabelSync(2);
+        if (data.index <= 2 && data.simType == sim.SimType.PSIM) {
+          console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
           ExpectTrue(true);
-          console.info(`${caseName} 01 test end`);
+          console.info(`${caseName} test end`);
+          done();
+        } else if (data.index <= 2 && data.simType == sim.SimType.ESIM) {
+          console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
           done();
         } else {
           ExpectFail();
-          console.info(`${caseName} 02 test end`);
+          console.info(`${caseName} test end`);
           done();
         }
       } catch (err) {
@@ -640,11 +686,22 @@ export default function Sim4Public() {
         done();
       }
       try{
-        let simLabel: sim.SimLabel = sim.getSimLabelSync(null);
-        console.info(`${caseName} sim card is PSIM,simLabel -> ${JSON.stringify(simLabel)}`);
-        ExpectTrue(true);
-        console.info(`${caseName} 01 test end`);
-        done();
+        let data: sim.SimLabel = sim.getSimLabelSync(null);
+        if ( data.index <= 2 && data.simType == sim.SimType.PSIM) {
+          console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
+          done();
+        } else if (data.index <= 2 && data.simType == sim.SimType.ESIM) {
+          console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          console.info(`${caseName} test end`);
+          done();
+        } else {
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
       } catch (err) {
         console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
         ExpectFail();
