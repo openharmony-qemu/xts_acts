@@ -27,6 +27,7 @@
 
 OH_Rdb_Store *storeTestRdbStore_;
 OH_Rdb_Store *predicatesTestRdbStore_;
+const char *RDB_TEST_PATH = "/data/storage/el2/database/com.example.buchongndktest/entry/";
 static napi_value OH_Rdb_Predicates_NotLike0100(napi_env env, napi_callback_info)
 {
     const char *data5Value = "BBCD%";
@@ -155,12 +156,12 @@ static napi_value OH_Rdb_Setlocale0100(napi_env env, napi_callback_info)
 static napi_value OH_Rdb_NotSupport0100(napi_env env, napi_callback_info)
 {
     OH_Rdb_ConfigV2* config = OH_Rdb_CreateConfig();
-    OH_Rdb_SetDatabaseDir(config, "data/storage/el2/database");
-    OH_Rdb_SetStoreName(config, "RdbTest.db");
+    OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH);
+    OH_Rdb_SetStoreName(config, "Rdb_Test.db");
     OH_Rdb_SetBundleName(config, "com.ohos.example.distributedndk");
     OH_Rdb_SetEncrypted(config, false);
-    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S3);
-    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL2);
+    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
     OH_Rdb_SetDbType(config, RDB_CAYLEY);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
@@ -179,31 +180,33 @@ static napi_value OH_Rdb_NotSupport0100(napi_env env, napi_callback_info)
 static napi_value OH_Rdb_LockRow_0100(napi_env env, napi_callback_info)
 {
     OH_Rdb_ConfigV2* config = OH_Rdb_CreateConfig();
-    OH_Rdb_SetDatabaseDir(config, "data/storage/el2/database");
-    OH_Rdb_SetStoreName(config, "RdbTest.db");
+    OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH);
+    OH_Rdb_SetStoreName(config, "Rdb_Test.db");
     OH_Rdb_SetBundleName(config, "com.ohos.example.distributedndk");
     OH_Rdb_SetEncrypted(config, false);
-    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S3);
-    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL2);
+    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
     char createTableSql[] = "CREATE TABLE EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, "
     "SALARY FLOAT, CODES BLOB);";
     errCode = OH_Rdb_Execute(store1, createTableSql);
     Rdb_DistributedConfig distributedConfig1{ distributedConfig1.version = 1, distributedConfig1.isAutoSync = true};
-    const int TABLE_COUNT = 1;
-    const char *table[TABLE_COUNT];
+    const int tableCount = 1;
+    const char *table[tableCount];
+    int age = 18;
+    float sal = 100.5;
     table[0] = "EMPLOYEE";
     OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
     valueBucket->putText(valueBucket, "NAME", "Lisa");
-    valueBucket->putInt64(valueBucket, "AGE", 18);
-    valueBucket->putReal(valueBucket, "SALARY", 100.5);
+    valueBucket->putInt64(valueBucket, "AGE", age);
+    valueBucket->putReal(valueBucket, "SALARY", sal);
     uint8_t arr[] = {1, 2, 3, 4, 5};
     int len = sizeof(arr) / sizeof(arr[0]);
     valueBucket->putBlob(valueBucket, "CODES", arr, len);
     OH_Rdb_Insert(store1, "EMPLOYEE", valueBucket);
     valueBucket->clear(valueBucket);
-    errCode = OH_Rdb_SetDistributedTables(store1, table, TABLE_COUNT, RDB_DISTRIBUTED_CLOUD, &distributedConfig1);
+    errCode = OH_Rdb_SetDistributedTables(store1, table, tableCount, RDB_DISTRIBUTED_CLOUD, &distributedConfig1);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_SetDistributedTables is fail");
     OH_Predicates *predicates = OH_Rdb_CreatePredicates("EMPLOYEE");
     OH_VObject *valueObject = OH_Rdb_CreateValueObject();
@@ -228,20 +231,19 @@ static napi_value OH_Rdb_LockRow_0100(napi_env env, napi_callback_info)
 static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info)
 {
     int errorCode = 14800000;
-    OH_Rdb_ConfigV2* config = OH_Rdb_CreateConfig();
-    OH_Rdb_SetDatabaseDir(config, "data/storage/el2/database");
-    OH_Rdb_SetStoreName(config, "RdbTest.db");
+    OH_Rdb_ConfigV2 *config = OH_Rdb_CreateConfig();
+    OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH);
+    OH_Rdb_SetStoreName(config, "Rdb_Test.db");
     OH_Rdb_SetBundleName(config, "com.ohos.example.distributedndk");
     OH_Rdb_SetEncrypted(config, false);
-    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S3);
-    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL2);
+    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
     char createTableSql[] = "CREATE TABLE EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, "
     "SALARY FLOAT, CODES BLOB);";
     errCode = OH_Rdb_Execute(store1, createTableSql);
-    OH_RDB_TransOptions *options;
-    options = OH_RdbTrans_CreateOptions();
+    OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
     OH_RdbTransOption_SetType(options, RDB_TRANS_EXCLUSIVE);
     OH_Rdb_Transaction *trans = nullptr;
     errCode = OH_Rdb_CreateTransaction(store1, options, &trans);
@@ -257,7 +259,7 @@ static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RdbTrans_DestroyOptions is fail.");
     napi_value result;
     napi_create_int32(env, errCode, &result);
-}  
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
