@@ -49,6 +49,7 @@ import ImageEnumSupp from "./image/ImageEnum.test";
 import PictureSetMetadataTestSupp from './Picture/PictureSetGetMetadata.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import ImageCreatePixelMapFromSurface from './image/ImageCreatePixelMapFromSurface.test';
+import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
 
 import ImageGetImagePropertySyncEnumFlash from './image/ImageGetImagePropertySyncEnumFlash.test';
 import ImageGetImagePropertySyncEnumFlashEmpty from './image/ImageGetImagePropertySyncEnumFlashEmpty.test';
@@ -67,6 +68,12 @@ import ImageGetImagePropertySyncEnumSensitiveTypeEmpty
 import ImageGetImagePropertySyncEnumSoftware from './image/ImageGetImagePropertySyncEnumSoftware.test';
 import ImageGetImagePropertySyncEnumStripOffset from './image/ImageGetImagePropertySyncEnumStripOffset.test';
 import ImageGetImagePropertySyncSUBFILE from './image/ImageGetImagePropertySyncSUBFILE.test';
+
+import ImagePropertyKeySyncEnumJpgEmpty from './image/ImagePropertyKeySyncEnumJpgEmpty.test';
+import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
+import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEnumGpsTimeTamp.test';
+import ImagePropertyKeySyncEnumSoftWare from './image/ImagePropertyKeySyncEnumSoftWare.test';
+import ImagePropertyKeySyncEnumStripOffsets from './image/ImagePropertyKeySyncEnumStripOffsets.test';
 
 
 export default function testsuite() {
@@ -116,17 +123,18 @@ export default function testsuite() {
   ImageGetImagePropertySyncEnumSensitiveType();
   ImageEnumSupp();
   PictureSetMetadataTestSupp();
-  ImagePropertyKeySyncEnum2A();
-  ImagePropertyKeySyncEnum1A();
-  ImagePropertyKeySyncEnum3A();
-  ImagePropertyKeySyncEnum4A();
-
 
   ImageCreateIncrementalSourceSupp();
   ImageCreatePixelMapFromSurface();
+  ImageCreatePixelMapSync();
 
   ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
   ImageGetImagePropertySyncEnumSoftware();
   ImageGetImagePropertySyncEnumStripOffset();
   ImageGetImagePropertySyncSUBFILE();
+  ImageCreatePixelMapSync();
+  ImagePropertyKeySyncEnumJpgEmpty();
+  ImagePropertyKeySyncEnumGPSTIMESTAMP();
+  ImagePropertyKeySyncEnumStripOffsets();
+  ImagePropertyKeySyncEnumSoftWare();
 }

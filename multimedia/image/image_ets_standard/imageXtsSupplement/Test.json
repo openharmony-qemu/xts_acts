@@ -69,7 +69,9 @@
                 "./resource/image/pixel_gif_3072x4096.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/pixel_gif_481x361.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/flower.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
-                "./resource/image/test8.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
+                "./resource/image/test8.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/AllAuxiliaryPictures.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_exif_empty2.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
             ]
         },
         {
