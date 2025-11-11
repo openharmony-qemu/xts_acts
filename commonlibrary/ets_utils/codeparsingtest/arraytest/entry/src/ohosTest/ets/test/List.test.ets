@@ -40,9 +40,11 @@ import ArraySomeTest from './array/ArraySome.test';
 import ArraySortTest from './array/ArraySortTest.test';
 import ArraySpliceTest from './array/ArraySplice.test';
 import ArrayCombinationTest from './array/ArrayCombinationTest.test';
-
+import ArrayCombinationTest1 from './array/ArrayCombination001.test';
+import ArrayCombinationTest2 from './array/ArrayCombination002.test';
+import ArrayCombinationTest3 from './array/ArrayCombination003.test';
+import ArrayCombinationTest4 from './array/ArrayCombination004.test';
 export default function testsuite() {
-
   ArrayConcatTest();
   ArrayConstructTest();
   ArrayEveryTest();
@@ -70,5 +72,9 @@ export default function testsuite() {
   ArraySortTest();
   ArraySpliceTest();
   ArrayCombinationTest();
+  ArrayCombinationTest1();
+  ArrayCombinationTest2();
+  ArrayCombinationTest3();
+  ArrayCombinationTest4();
 };
 
