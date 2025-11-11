@@ -14,6 +14,7 @@
         "MainAbility/pages/Grid/GridContentSize",
         "MainAbility/pages/List/ListContentSize",
         "MainAbility/pages/Scroll/ScrollContentSize",
-        "MainAbility/pages/WaterFlow/WaterFlowContentSize"
+        "MainAbility/pages/WaterFlow/WaterFlowContentSize",
+        "MainAbility/pages/WaterFlow/WaterFlowFillPolicyModifier"
     ]
 }

@@ -27,8 +27,10 @@ import WaterFlowContentSize from './WaterFlowTest/WaterFlowContentSize.test';
 import ListFillPolicy from './ListTest/ListFillPolicy.test';
 import GridFillPolicy from './GridTest/GridFillPolicy.test';
 import WaterFlowFillPolicy from './WaterFlowTest/WaterFlowFillPolicy.test';
+import WaterFlowFillPolicyModifier from './WaterFlowTest/WaterFlowFillPolicyModifier.test';
 
 export default function testsuite() {
+  WaterFlowFillPolicyModifier();
   ContentOffset();
   scrollSnapAnimationSpeedModifier();
   scrollSnapAnimationSpeed();

@@ -17,6 +17,7 @@ import textMinLinesTest from './textMinLines/TextMinLinesTest.test'
 import HasAxisTest from './hasAxisTest/HasAxisTest.test'
 import CoastingAxisTest from "./list/coastingAxisTest.test";
 import snapSpeedTest from "./list/snapSpeedTest.test";
+import WaterFlowFillPolicyTest from "./waterFlow/WaterFlowFillPolicyTest.test"
 import imageDrawableDescriptorTest from "./image/imageDrawableDescriptorTest.test";
 import imageErrorTest from "./image/imageErrorTest.test";
 
@@ -26,6 +27,7 @@ export default function testsuite() {
   snapSpeedTest();
   textMinLinesTest();
   HasAxisTest();
+  WaterFlowFillPolicyTest();
   imageDrawableDescriptorTest();
   imageErrorTest();
 }
