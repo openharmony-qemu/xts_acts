@@ -144,14 +144,14 @@ export default function InputDeviceTest() {
         try {
           inputDevice.getDeviceInfo(1).then((deviceData: inputDevice.InputDeviceData) => {
             hilog.info(domain, tag, `${caseName} Device info: ${JSON.stringify(deviceData)}`);
-            expect(deviceData.id).assertInstanceOf('Number');
+            expect(deviceData.id).assertInstanceOf('int');
             expect(deviceData.name).assertInstanceOf('String');
             expect(deviceData.sources).assertInstanceOf('Array');
             expect(deviceData.axisRanges).assertInstanceOf('Array');
-            expect(deviceData.bus).assertInstanceOf('Number');
-            expect(deviceData.product).assertInstanceOf('Number');
-            expect(deviceData.vendor).assertInstanceOf('Number');
-            expect(deviceData.version).assertInstanceOf('Number');
+            expect(deviceData.bus).assertInstanceOf('int');
+            expect(deviceData.product).assertInstanceOf('int');
+            expect(deviceData.vendor).assertInstanceOf('int');
+            expect(deviceData.version).assertInstanceOf('int');
             expect(deviceData.phys).assertInstanceOf('String');
             expect(deviceData.uniq).assertInstanceOf('String');
             expect(deviceData).assertInstanceOf('Object');
@@ -164,12 +164,12 @@ export default function InputDeviceTest() {
                 || deviceData.axisRanges[j].axis == 'y' || deviceData.axisRanges[j].axis == 'pressure'
                 || deviceData.axisRanges[j].axis == 'toolminor' || deviceData.axisRanges[j].axis == 'toolmajor'
                 || deviceData.axisRanges[j].axis == 'null');
-              expect(deviceData.axisRanges[j].max).assertInstanceOf('Number');
+              expect(deviceData.axisRanges[j].max).assertInstanceOf('int');
               expect(deviceData.axisRanges[j]).assertInstanceOf('Object');
-              expect(deviceData.axisRanges[j].min).assertInstanceOf('Number');
-              expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('Number');
-              expect(deviceData.axisRanges[j].flat).assertInstanceOf('Number');
-              expect(deviceData.axisRanges[j].resolution).assertInstanceOf('Number');
+              expect(deviceData.axisRanges[j].min).assertInstanceOf('int');
+              expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('int');
+              expect(deviceData.axisRanges[j].flat).assertInstanceOf('int');
+              expect(deviceData.axisRanges[j].resolution).assertInstanceOf('int');
             }
             done();
           });
