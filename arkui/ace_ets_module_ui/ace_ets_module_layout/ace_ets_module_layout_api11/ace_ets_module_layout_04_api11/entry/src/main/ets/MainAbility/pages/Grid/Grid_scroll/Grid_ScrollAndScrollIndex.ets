@@ -16,7 +16,7 @@
 @Entry
 @Component
 struct Grid_ScrollAndScrollIndex {
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
   @State index: number = 0;
   @State text2: string = '';
@@ -36,8 +36,8 @@ struct Grid_ScrollAndScrollIndex {
 
       Stack({ alignContent: Alignment.BottomEnd }) {
         Grid(this.scroller) {
-          ForEach(this.Number, (day: string) => {
-            ForEach(this.Number, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

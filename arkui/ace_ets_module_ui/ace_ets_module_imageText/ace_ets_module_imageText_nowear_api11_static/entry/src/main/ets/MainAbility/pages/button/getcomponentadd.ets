@@ -26,7 +26,7 @@ struct getcomponentadd {
   
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
   
-  @State Number: Array<String> = new Array<String>('0', '1', '2', '3', '4')
+  @State numberData: Array<String> = new Array<String>('0', '1', '2', '3', '4')
   @State message: string = 'Hello World';
   build() {
     Row() {
@@ -116,8 +116,8 @@ struct getcomponentadd {
           .key('ArkUX_Get_component_add_0070')
 
         Grid() {
-          ForEach(this.Number, (day: string) => {
-            ForEach(this.Number, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

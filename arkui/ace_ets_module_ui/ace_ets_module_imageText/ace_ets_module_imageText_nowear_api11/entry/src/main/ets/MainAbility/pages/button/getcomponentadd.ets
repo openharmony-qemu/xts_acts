@@ -19,7 +19,7 @@
 struct getcomponentadd {
   private scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
   @State message: string = 'Hello World';
 
   build() {
@@ -110,8 +110,8 @@ struct getcomponentadd {
           .key('ArkUX_Get_component_add_0070')
 
         Grid() {
-          ForEach(this.Number, (day: string) => {
-            ForEach(this.Number, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

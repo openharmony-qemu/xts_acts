@@ -16,7 +16,7 @@
 @Entry
 @Component
 struct grid_testcase {
-  @State Number: String[] = ['0', '1', '2', '3', '4']
+  @State numberData: String[] = ['0', '1', '2', '3', '4']
   @State active: boolean = false
 
   build() {
@@ -24,8 +24,8 @@ struct grid_testcase {
       Navigator({ target: "pages/index", type: NavigationType.Back }) {
         Column({ space: 5 }) {
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)

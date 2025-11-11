@@ -16,13 +16,13 @@
 @Entry
 @Component
 struct GridExample {
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
 
   build() {
     Column({ space: 5 }) {
       Grid() {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -48,8 +48,8 @@ struct GridExample {
       .supportAnimation(true)
 
       Grid() {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -71,8 +71,8 @@ struct GridExample {
       .layoutDirection(GridDirection.ColumnReverse)
 
       Grid() {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -98,8 +98,8 @@ struct GridExample {
         .fontSize(9)
         .width('90%')
       Grid() {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

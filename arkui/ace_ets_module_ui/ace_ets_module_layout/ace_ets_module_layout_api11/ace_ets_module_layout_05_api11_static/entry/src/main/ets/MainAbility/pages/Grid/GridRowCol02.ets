@@ -41,7 +41,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct GridRowCol02 {
-  @State Number: String[] = ['0', '1', '2', '3', '4']
+  @State numberData: String[] = ['0', '1', '2', '3', '4']
   scroller: Scroller = new Scroller()
   @State rowsTemplate: string = '1fr 1fr 1fr'
   messageManager: MessageManager<string | GridDirection> = new MessageManager<string | GridDirection>()
@@ -68,8 +68,8 @@ struct GridRowCol02 {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid() {
-        ForEach(this.Number, (day: string ,index1:int|undefined) => {
-          ForEach(this.Number, (day: string ,index2:int|undefined) => {
+        ForEach(this.numberData, (day: string ,index1:int|undefined) => {
+          ForEach(this.numberData, (day: string ,index2:int|undefined) => {
             GridItem() {
               Text('' + index1 + index2)
                 .fontSize(16)

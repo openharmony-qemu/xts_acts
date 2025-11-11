@@ -127,7 +127,7 @@ struct webViewObjectEmbedEnhance {
   @State isChange: boolean = false;
   @State eventTypes: string[] = []
   @State eventType: string = ''
-  @State number: number = 0
+  @State numberData: number = 0
   @State objectType: string = 'object'
   @State objectValue: string = 'application/view'
   @State isEmbed: boolean = true
@@ -427,7 +427,7 @@ struct webViewObjectEmbedEnhance {
               }
             })
             .onNativeEmbedGestureEvent((event) => {
-              this.number += 1
+              this.numberData += 1
 
             })
         } else {

@@ -41,7 +41,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ListRebound {
-  @State Number: String[] = ['0', '1', '2', '3']
+  @State numberData: String[] = ['0', '1', '2', '3']
   scroller: Scroller = new Scroller()
   @State isRefreshing: boolean = false
 
@@ -58,8 +58,8 @@ struct ListRebound {
   build() {
     Column() {
       Grid(this.scroller) {
-        ForEach(this.Number, (day1: string) => {
-          ForEach(this.Number, (day2: string) => {
+        ForEach(this.numberData, (day1: string) => {
+          ForEach(this.numberData, (day2: string) => {
             GridItem() {
               Text(day1 + day2)
                 .fontSize(16)
@@ -91,8 +91,8 @@ struct ListRebound {
           builder: this.customBuilder
         }) {
           Grid(this.scroller) {
-            ForEach(this.Number, (day1: string, index: int) => {
-              ForEach(this.Number, (day2: string, index: int) => {
+            ForEach(this.numberData, (day1: string, index: int) => {
+              ForEach(this.numberData, (day2: string, index: int) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)
@@ -126,8 +126,8 @@ struct ListRebound {
           builder: this.customBuilder
         }) {
           Grid(this.scroller) {
-            ForEach(this.Number, (day1: string, index: int) => {
-              ForEach(this.Number, (day2: string, index: int) => {
+            ForEach(this.numberData, (day1: string, index: int) => {
+              ForEach(this.numberData, (day2: string, index: int) => {
                 GridItem() {
                   Text(day1 + day2)
                     .fontSize(16)

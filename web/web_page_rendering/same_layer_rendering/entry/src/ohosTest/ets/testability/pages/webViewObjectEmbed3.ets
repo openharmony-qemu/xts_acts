@@ -128,7 +128,7 @@ struct webViewObjectEmbed3 {
   @State isChange: boolean = false;
   @State eventTypes: string[] = []
   @State eventType: string = ''
-  @State number: number = 0
+  @State numberData: number = 0
   @State isEmbed: boolean = false;
 
 

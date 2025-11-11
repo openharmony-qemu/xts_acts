@@ -59,7 +59,7 @@ struct comSizeAbilityTest_05 {
   @State bgColors: Color[] =
     [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown, Color.Black]
   @State currentBp: string = 'unknown'
-  @State Number: String[] = ['0', '1', '2', '3', '4']
+  @State numberData: String[] = ['0', '1', '2', '3', '4']
   scroller: Scroller = new Scroller()
 
   build() {
@@ -153,8 +153,8 @@ struct comSizeAbilityTest_05 {
 
         ListItem() {
           Grid() {
-            ForEach(this.Number, (day: string) => {
-              ForEach(this.Number, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
+              ForEach(this.numberData, (day: string) => {
                 GridItem() {
                   Text(day)
                     .fontSize(16)

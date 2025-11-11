@@ -38,7 +38,7 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct GridItemOnSelect {
-  @State Number: String[] = ['5', '6', '7', '8', '9']
+  @State numberData: String[] = ['5', '6', '7', '8', '9']
   @State isSelect: boolean = false;
 
   aboutToAppear():void {
@@ -68,8 +68,8 @@ struct GridItemOnSelect {
 
       Column({ space: 5 } as ColumnOptions) {
         Grid() {
-          ForEach(this.Number, (day: string) => {
-            ForEach(this.Number, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
+            ForEach(this.numberData, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

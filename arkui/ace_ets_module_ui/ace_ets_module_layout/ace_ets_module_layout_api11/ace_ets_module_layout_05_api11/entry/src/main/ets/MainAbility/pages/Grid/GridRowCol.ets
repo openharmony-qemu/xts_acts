@@ -21,7 +21,7 @@ type MessageData = string
 @Entry
 @Component
 struct GridRowCol {
-  @State Number: String[] = ['0', '1', '2', '3', '4']
+  @State numberData: String[] = ['0', '1', '2', '3', '4']
   scroller: Scroller = new Scroller()
   @State columnsTemplate: string = '1fr 1fr 1fr'
   messageManager: MessageManager<MessageData> = new MessageManager()
@@ -45,8 +45,8 @@ struct GridRowCol {
   build() {
     Column({ space: 5 }) {
       Grid() {
-        ForEach(this.Number, (day: string ,index1:number|undefined) => {
-          ForEach(this.Number, (day: string ,index2:number|undefined) => {
+        ForEach(this.numberData, (day: string ,index1:number|undefined) => {
+          ForEach(this.numberData, (day: string ,index2:number|undefined) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

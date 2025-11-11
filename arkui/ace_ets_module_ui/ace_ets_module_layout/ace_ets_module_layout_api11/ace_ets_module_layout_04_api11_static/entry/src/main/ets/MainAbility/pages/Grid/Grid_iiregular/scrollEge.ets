@@ -17,14 +17,14 @@ import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct scrollEge {
-  @State Number: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
   scroller: Scroller = new Scroller();
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
         
-        ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
           GridItem() {
             Text(day)
               .fontSize(16)

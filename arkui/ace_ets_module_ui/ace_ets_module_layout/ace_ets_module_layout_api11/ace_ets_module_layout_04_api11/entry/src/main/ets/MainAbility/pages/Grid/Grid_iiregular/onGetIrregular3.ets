@@ -17,7 +17,7 @@
 @Entry
 @Component
 struct onGetIrregular3 {
-  @State Number: String[] = ['0', '1', '2', '3', '4'];
+  @State numberData: String[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
@@ -31,8 +31,8 @@ struct onGetIrregular3 {
     Column({ space: 5 }) {
       // 不使用scroll，需要undefined占位
       Grid(undefined, this.layoutOptions2) {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

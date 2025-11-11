@@ -35,7 +35,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridExampleAdd {
-  @State Number: String[] = ['0', '1', '2', '3', '4']
+  @State numberData: String[] = ['0', '1', '2', '3', '4']
   scroller: Scroller = new Scroller()
 
   build() {
@@ -46,8 +46,8 @@ struct GridExampleAdd {
           this.scroller.scrollPage({ next: true })
         }).key('nexpageAdd')
       Grid() {
-        ForEach(this.Number, (day: string) => {
-          ForEach(this.Number, (day: string) => {
+        ForEach(this.numberData, (day: string) => {
+          ForEach(this.numberData, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -73,8 +73,8 @@ struct GridExampleAdd {
           return [index, index] as [int, int]
         }
       }) {
-        ForEach(this.Number, (day: string, index: int) => {
-          ForEach(this.Number, (day: string, index: int) => {
+        ForEach(this.numberData, (day: string, index: int) => {
+          ForEach(this.numberData, (day: string, index: int) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
