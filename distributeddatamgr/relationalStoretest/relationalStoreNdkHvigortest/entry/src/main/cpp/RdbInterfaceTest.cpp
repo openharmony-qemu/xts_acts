@@ -164,8 +164,8 @@ static napi_value OH_Rdb_LockRow_0100(napi_env env, napi_callback_info)
     OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
-    char createTableSql[] = "CREATE TABLE EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, "
-    "SALARY FLOAT, CODES BLOB);";
+    char createTableSql[] = "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
+    "AGE INTEGER, SALARY FLOAT, CODES BLOB);";
     errCode = OH_Rdb_Execute(store1, createTableSql);
     Rdb_DistributedConfig distributedConfig1{ distributedConfig1.version = 1, distributedConfig1.isAutoSync = true};
     const int tableCount = 1;
@@ -202,6 +202,7 @@ static napi_value OH_Rdb_LockRow_0100(napi_env env, napi_callback_info)
     predicates->destroy(predicates);
     napi_value result;
     napi_create_int32(env, errCode, &result);
+    return result;
 }
 
 static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info)
@@ -216,8 +217,8 @@ static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info
     OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
-    char createTableSql[] = "CREATE TABLE EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, "
-    "SALARY FLOAT, CODES BLOB);";
+    char createTableSql[] ="CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
+    "AGE INTEGER, SALARY FLOAT, CODES BLOB);";
     errCode = OH_Rdb_Execute(store1, createTableSql);
     OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
     OH_RdbTransOption_SetType(options, RDB_TRANS_EXCLUSIVE);
@@ -235,6 +236,7 @@ static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_RdbTrans_DestroyOptions is fail.");
     napi_value result;
     napi_create_int32(env, errCode, &result);
+    return result;
 }
 
 static napi_value OH_Rdb_NotSupport0100(napi_env env, napi_callback_info)
@@ -249,8 +251,8 @@ static napi_value OH_Rdb_NotSupport0100(napi_env env, napi_callback_info)
     OH_Rdb_SetDbType(config, RDB_CAYLEY);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
-    char createTableSql[] = "CREATE TABLE EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, "
-    "SALARY FLOAT, CODES BLOB);";
+    char createTableSql[] = "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
+    "AGE INTEGER, SALARY FLOAT, CODES BLOB);";
     errCode = OH_Rdb_Execute(store1, createTableSql);
     NAPI_ASSERT(env, errCode == RDB_E_NOT_SUPPORTED, "OH_Rdb_Execute is fail");
     errCode = OH_Rdb_DeleteStoreV2(config);
@@ -259,6 +261,7 @@ static napi_value OH_Rdb_NotSupport0100(napi_env env, napi_callback_info)
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DestroyConfig is fail.");
     napi_value result;
     napi_create_int32(env, errCode, &result);
+    return result;
 }
 
 EXTERN_C_START
