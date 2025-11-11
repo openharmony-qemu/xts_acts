@@ -67,7 +67,6 @@ class MySequence implements rpc.Parcelable {
 }
 async function createPixelMapFromParcelTest(done: Function, testName: string, color: ArrayBuffer,
   ) {
-  // const color: ArrayBuffer = new ArrayBuffer(color);
   let bufferArr: Uint8Array = new Uint8Array(color);
   for (let i = 0; i < bufferArr.length; i++) {
     bufferArr[i] = 0x80;
@@ -83,16 +82,11 @@ async function createPixelMapFromParcelTest(done: Function, testName: string, co
     pixelMap = srcPixelMap;
   })
   if (pixelMap != undefined) {
-    // 序列化。
     let parcelable: MySequence = new MySequence(pixelMap);
     let data: rpc.MessageSequence = rpc.MessageSequence.create();
     data.writeParcelable(parcelable);
-
-    // 反序列化rpc获取到data。
     let ret: MySequence = new MySequence(pixelMap);
     data.readParcelable(ret);
-
-    // 获取到pixelmap。
     let unmarshPixelmap = ret.pixel_map;
   }
 }
