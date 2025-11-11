@@ -223,8 +223,9 @@ static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info
     OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
     OH_RdbTransOption_SetType(options, RDB_TRANS_EXCLUSIVE);
     OH_Rdb_Transaction *trans = nullptr;
+    OH_Rdb_Transaction *trans1 = nullptr;
     errCode = OH_Rdb_CreateTransaction(store1, options, &trans);
-    errCode = OH_Rdb_CreateTransaction(store1, options, &trans);
+    errCode = OH_Rdb_CreateTransaction(store1, options, &trans1);
     NAPI_ASSERT(env, errCode == errorCode, "OH_Rdb_CreateTransaction is fail");
     errCode = OH_Rdb_DeleteStoreV2(config);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
