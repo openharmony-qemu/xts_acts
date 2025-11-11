@@ -74,17 +74,17 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
   onConnectNative(connect: ConnectionInfo): void {
     hilog.info(0x0000, TAG, `WebExtensionAbility1 onConnectNative, connectionId: ${connect.connectionId} fdRead: ${connect.fdRead} fdWrite: ${connect.fdWrite}  bundleName: ${connect.bundleName} extensionOrgin: ${connect.extensionOrigin}`);
     this.waitForCommand(connect.connectionId, connect.fdRead);
-      this.context.stopNativeConnection(10000000).catch((err: object) => {
-        console.error(`failed to enable, ${err}`);
-        hilog.info(0x0000, 'testTag', `connect or disconnect failed: ${JSON.stringify(err)}`);
-        if(err.code == '16000011') {
-          publishEvent("webNativeMessaging1_startAbility_400", 200);
-        } else {
-          publishEvent("webNativeMessaging1_startAbility_400", 100);
-        }
-      })
-    
+    this.context.stopNativeConnection(10000000).catch((err: BusinessError) => {
+      console.error(`failed to enable, ${err}`);
+      hilog.info(0x0000, 'testTag', `connect or disconnect failed: ${JSON.stringify(err)}`);
+      if(err.code == 16000011) {
+        publishEvent("webNativeMessaging1_startAbility_400", 200);
+      } else {
+        publishEvent("webNativeMessaging1_startAbility_400", 100);
+      }
+    })
   }
+  
   onDisconnectNative(connect: ConnectionInfo): void {
     hilog.info(0x0000, TAG, `WebExtensionAbility1 onDisconnectNative, connectionId: ${connect.connectionId}`);
   }
