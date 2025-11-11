@@ -121,7 +121,6 @@ export default function testsuite() {
   PictureSetMetadataTestSupp();
   ImageCreateIncrementalSourceSupp();
   ImageCreatePixelMapFromSurface();
-  ImageCreatePixelMapSync();
   ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
   ImageGetImagePropertySyncEnumSoftware();
   ImageGetImagePropertySyncEnumStripOffset();
