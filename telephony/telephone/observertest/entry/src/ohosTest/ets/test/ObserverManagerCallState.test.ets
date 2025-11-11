@@ -450,6 +450,39 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
+     * @tc.number  SUB_Telephony_Observer_CallStateChangeExOn_0900
+     * @tc.name    testTelephonyObserverCallStateChangeExOn0900
+     * @tc.desc    Subscribe to call status change event
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   level 0
+     */
+    it('testTelephonyObserverCallStateChangeExOn0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverCallStateChangeExOn0900';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
+          console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
+          const telCallStateAry: number[] = [
+            call.TelCallState.TEL_CALL_STATE_UNKNOWN,
+            call.TelCallState.TEL_CALL_STATE_IDLE,
+            call.TelCallState.TEL_CALL_STATE_RINGING,
+            call.TelCallState.TEL_CALL_STATE_OFFHOOK,
+            call.TelCallState.TEL_CALL_STATE_ANSWERED,
+            call.TelCallState.TEL_CALL_STATE_CONNECTED
+          ]
+          ExpectTrue(telCallStateAry.includes(data));        }
+        observer.on('callStateChangeEx', callback);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
     * @tc.number  SUB_Telephony_Observer_CallStateChangeExOff_0100
     * @tc.name    testTelephonyObserverCallStateChangeExOff0100
     * @tc.desc    Unsubscribe to call status change event
