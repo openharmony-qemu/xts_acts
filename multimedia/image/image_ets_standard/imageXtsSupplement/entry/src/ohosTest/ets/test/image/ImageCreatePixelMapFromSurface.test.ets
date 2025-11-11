@@ -509,7 +509,6 @@ export default function ImageCreatePixelMapFromSurface() {
     it('image_CreatePixelMapFromSurface_Sync_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_007';
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-      // let region: image.Region = AppStorage.get('empty') as ESObject;
       try {
         let pixelMap : image.PixelMap = image.createPixelMapFromSurfaceSync('',region)
         console.info(TAG, testName,'Succeeded in creating pixelmap from Surface',pixelMap);
@@ -531,7 +530,6 @@ export default function ImageCreatePixelMapFromSurface() {
     it('image_CreatePixelMapFromSurface_Sync_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_008';
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-      // let region: image.Region = AppStorage.get('empty') as ESObject;
       try {
         let pixelMap : image.PixelMap = image.createPixelMapFromSurfaceSync(null,region)
         console.info(TAG, testName,'Succeeded in creating pixelmap from Surface',pixelMap);
@@ -553,7 +551,6 @@ export default function ImageCreatePixelMapFromSurface() {
     it('image_CreatePixelMapFromSurface_Sync_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_009';
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-      // let region: image.Region = AppStorage.get('empty') as ESObject;
       try {
         let pixelMap : image.PixelMap = image.createPixelMapFromSurfaceSync(undefined,region)
         console.info(TAG, testName,'Succeeded in creating pixelmap from Surface',pixelMap);
@@ -596,7 +593,6 @@ export default function ImageCreatePixelMapFromSurface() {
     it('image_CreatePixelMapFromSurface_Sync_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_011';
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-      // let region: image.Region = AppStorage.get('empty') as ESObject;
       try {
         let pixelMap : image.PixelMap = image.createPixelMapFromSurfaceSync(undefined,null)
         console.info(TAG, testName,'Succeeded in creating pixelmap from Surface',pixelMap);
@@ -618,7 +614,6 @@ export default function ImageCreatePixelMapFromSurface() {
     it('image_CreatePixelMapFromSurface_Sync_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_012';
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-      // let region: image.Region = AppStorage.get('empty') as ESObject;
       try {
         let pixelMap : image.PixelMap = image.createPixelMapFromSurfaceSync(null,null)
         console.info(TAG, testName,'Succeeded in creating pixelmap from Surface',pixelMap);
@@ -640,7 +635,6 @@ export default function ImageCreatePixelMapFromSurface() {
     it('image_CreatePixelMapFromSurface_Sync_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'image_CreatePixelMapFromSurface_Sync_013';
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
-      // let region: image.Region = AppStorage.get('empty') as ESObject;
       try {
         let pixelMap : image.PixelMap = image.createPixelMapFromSurfaceSync('',null)
         console.info(TAG, testName,'Succeeded in creating pixelmap from Surface',pixelMap);
