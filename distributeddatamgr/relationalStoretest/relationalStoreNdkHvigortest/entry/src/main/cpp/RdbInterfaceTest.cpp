@@ -218,7 +218,7 @@ static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info
     OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
-    char createTableSql[] ="CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
+    char createTableSql[] = "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
     "AGE INTEGER, SALARY FLOAT, CODES BLOB);";
     errCode = OH_Rdb_Execute(store1, createTableSql);
     OH_RDB_TransOptions *options = OH_RdbTrans_CreateOptions();
