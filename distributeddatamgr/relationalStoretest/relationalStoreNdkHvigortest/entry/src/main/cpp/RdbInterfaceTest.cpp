@@ -243,27 +243,39 @@ static napi_value OH_Rdb_CreateTransaction_0100(napi_env env, napi_callback_info
 
 static napi_value OH_Rdb_NotSupport0100(napi_env env, napi_callback_info)
 {
-    OH_Rdb_ConfigV2* config = OH_Rdb_CreateConfig();
-    OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH);
-    OH_Rdb_SetStoreName(config, "Rdb_Test.db");
-    OH_Rdb_SetBundleName(config, "com.ohos.example.distributedndk");
-    OH_Rdb_SetEncrypted(config, false);
-    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
-    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
-    OH_Rdb_SetDbType(config, RDB_CAYLEY);
     int errCode = 0;
-    OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
-    char createTableSql[] = "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
-    "AGE INTEGER, SALARY FLOAT, CODES BLOB);";
-    errCode = OH_Rdb_Execute(store1, createTableSql);
-    NAPI_ASSERT(env, errCode == RDB_E_NOT_SUPPORTED, "OH_Rdb_Execute is fail");
-    errCode = OH_Rdb_DeleteStoreV2(config);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
-    errCode = OH_Rdb_DestroyConfig(config);
-    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DestroyConfig is fail.");
-    napi_value result;
-    napi_create_int32(env, errCode, &result);
-    return result;
+    int numType = 0;
+    int numLan = 1;
+    int numHuang = 2;
+    const int *supportTypeList = OH_Rdb_GetSupportedDbType(&numType);
+    NAPI_ASSERT(env, supportTypeList != nullptr, "OH_Rdb_GetSupportedDbType 1 is fail.");
+    NAPI_ASSERT(env, (numType == numLan) || (numType == numHuang), "OH_Rdb_GetSupportedDbType numType is fail.");
+    if (numType == 1) {
+       napi_value result;
+       napi_create_int32(env, 1, &result);
+       return result;
+    } else {
+        OH_Rdb_ConfigV2* config = OH_Rdb_CreateConfig();
+        OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH);
+        OH_Rdb_SetStoreName(config, "Rdb_Test.db");
+        OH_Rdb_SetBundleName(config, "com.ohos.example.distributedndk");
+        OH_Rdb_SetEncrypted(config, false);
+        OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
+        OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
+        OH_Rdb_SetDbType(config, RDB_CAYLEY);
+       OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
+       char createTableSql[] = "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
+       "AGE INTEGER, SALARY FLOAT, CODES BLOB);";
+        errCode = OH_Rdb_Execute(store1, createTableSql);
+       NAPI_ASSERT(env, errCode == RDB_E_NOT_SUPPORTED, "OH_Rdb_Execute is fail");
+       errCode = OH_Rdb_DeleteStoreV2(config);
+       NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
+       errCode = OH_Rdb_DestroyConfig(config);
+       NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DestroyConfig is fail.");
+       napi_value result;
+       napi_create_int32(env, errCode, &result);
+       return result;
+    }
 }
 
 EXTERN_C_START
