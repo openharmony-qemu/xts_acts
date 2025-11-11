@@ -1751,7 +1751,7 @@ export default function LightWeightMapTest2() {
           arr.push(temp.value as Number);
           temp = iter.next();
         }
-        expect(arr.sort()).assertDeepEquals([123, 356]);
+        expect(arr.sort().toString()).assertDeepEquals("123,356");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
