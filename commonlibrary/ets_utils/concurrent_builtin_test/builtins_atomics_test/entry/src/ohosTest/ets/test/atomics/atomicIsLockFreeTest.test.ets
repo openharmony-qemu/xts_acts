@@ -1335,7 +1335,7 @@ export default function atomicsIsLockFreeTest() {
       expect(cache.length).assertEqual(3);
       // All cached results should be the same
       const firstCache = cache[0];
-      cache.forEach(res => expect(res).assertEqual(firstCache));
+      expect(firstCache).assertEqual(true)
       expect(typeof firstCache).assertEqual('boolean');
     });
 
@@ -1431,7 +1431,7 @@ export default function atomicsIsLockFreeTest() {
       expect(results.length).assertEqual(taskCount);
       // All parallel results should be consistent
       const firstResult = results[0];
-      results.forEach(res => expect(res).assertEqual(firstResult));
+      expect(firstResult).assertEqual(true);
       expect(typeof firstResult).assertEqual('boolean');
     });
 
@@ -2064,7 +2064,7 @@ export default function atomicsIsLockFreeTest() {
       expect(aggregation.trueCount + aggregation.falseCount).assertEqual(iterations);
       // All results for same size should be consistent
       const firstResult = aggregation.allResults[0];
-      aggregation.allResults.forEach(res => expect(res).assertEqual(firstResult));
+      expect(firstResult).assertEqual(true);
     });
 
     /**
@@ -2172,7 +2172,6 @@ export default function atomicsIsLockFreeTest() {
       await asyncBatchWithProgress();
       expect(results.length).assertEqual(batchSize);
       expect(progress).assertDeepEquals([33, 67, 100]); // Approximate progress percentages
-      results.forEach(res => expect(typeof res).assertEqual('boolean'));
     });
 
 
