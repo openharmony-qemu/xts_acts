@@ -49,8 +49,6 @@ import ImageEnumSupp from "./image/ImageEnum.test";
 import PictureSetMetadataTestSupp from './Picture/PictureSetGetMetadata.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import ImageCreatePixelMapFromSurface from './image/ImageCreatePixelMapFromSurface.test';
-import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
-
 import ImageGetImagePropertySyncEnumFlash from './image/ImageGetImagePropertySyncEnumFlash.test';
 import ImageGetImagePropertySyncEnumFlashEmpty from './image/ImageGetImagePropertySyncEnumFlashEmpty.test';
 import ImageGetImagePropertySyncEnumFrontCamera from './image/ImageGetImagePropertySyncEnumFrontCamera.test';
@@ -63,12 +61,10 @@ import ImageGetImagePropertySyncEnumLightSource from './image/ImageGetImagePrope
 import ImageGetImagePropertySyncEnumReference from './image/ImageGetImagePropertySyncEnumReference.test';
 import ImageGetImagePropertySyncEnumScenePointer from './image/ImageGetImagePropertySyncEnumScenePointer.test';
 import ImageGetImagePropertySyncEnumSensitiveType from './image/ImageGetImagePropertySyncEnumSensitiveType.test';
-import ImageGetImagePropertySyncEnumSensitiveTypeEmpty
-  from './image/ImageGetImagePropertySyncEnumSensitiveTypeEmpty.test';
+import ImageGetImagePropertySyncEnumSensitiveTypeEmpty from './image/ImageGetImagePropertySyncEnumSensitiveTypeEmpty.test';
 import ImageGetImagePropertySyncEnumSoftware from './image/ImageGetImagePropertySyncEnumSoftware.test';
 import ImageGetImagePropertySyncEnumStripOffset from './image/ImageGetImagePropertySyncEnumStripOffset.test';
 import ImageGetImagePropertySyncSUBFILE from './image/ImageGetImagePropertySyncSUBFILE.test';
-
 import ImagePropertyKeySyncEnumJpgEmpty from './image/ImagePropertyKeySyncEnumJpgEmpty.test';
 import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
 import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEnumGpsTimeTamp.test';
@@ -123,11 +119,9 @@ export default function testsuite() {
   ImageGetImagePropertySyncEnumSensitiveType();
   ImageEnumSupp();
   PictureSetMetadataTestSupp();
-
   ImageCreateIncrementalSourceSupp();
   ImageCreatePixelMapFromSurface();
   ImageCreatePixelMapSync();
-
   ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
   ImageGetImagePropertySyncEnumSoftware();
   ImageGetImagePropertySyncEnumStripOffset();
