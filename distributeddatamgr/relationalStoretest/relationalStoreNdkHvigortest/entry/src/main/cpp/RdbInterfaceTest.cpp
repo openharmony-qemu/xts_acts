@@ -159,16 +159,16 @@ static napi_value OH_Rdb_LockRow_0100(napi_env env, napi_callback_info)
     OH_Rdb_ConfigV2* config = OH_Rdb_CreateConfig();
     OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH1);
     OH_Rdb_SetStoreName(config, "Rdb_Test.db");
-    OH_Rdb_SetBundleName(config, "com.ohos.example.distributedndk");
+    OH_Rdb_SetBundleName(config, "ohos.acts.relationalstorendktesthvigor");
     OH_Rdb_SetEncrypted(config, false);
-    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S1);
-    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL1);
+    OH_Rdb_SetSecurityLevel(config, OH_Rdb_SecurityLevel::S3);
+    OH_Rdb_SetArea(config, RDB_SECURITY_AREA_EL2);
     int errCode = 0;
     OH_Rdb_Store *store1 = OH_Rdb_CreateOrOpen(config, &errCode);
     char createTableSql[] = "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, "
     "AGE INTEGER, SALARY FLOAT, CODES BLOB);";
     errCode = OH_Rdb_Execute(store1, createTableSql);
-    Rdb_DistributedConfig distributedConfig1{ distributedConfig1.version = 1, distributedConfig1.isAutoSync = true};
+    Rdb_DistributedConfig distributedConfig1{ .version = 1, .isAutoSync = true };
     const int tableCount = 1;
     const char *table[tableCount];
     int age = 18;
