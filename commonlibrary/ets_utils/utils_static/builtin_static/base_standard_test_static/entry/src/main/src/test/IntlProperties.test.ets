@@ -1551,8 +1551,8 @@ export default function etsIntlPtsFunTest() {
       let array = [new arr()];
       let value = array.toLocaleString();
       console.log('ArrayTest012 :' + value);
-      expect(value.length).assertEqual(31);
-      expect(value == '[object Object],[object Object]').assertTrue();
+      expect(value.length).assertEqual(15);
+      expect(value == '[object Object]').assertTrue();
     })
     console.log('*************end IntlPPtsFunTest*************');
   })
