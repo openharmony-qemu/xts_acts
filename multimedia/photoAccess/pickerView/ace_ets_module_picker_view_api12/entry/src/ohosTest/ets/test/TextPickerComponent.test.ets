@@ -159,7 +159,7 @@ async function testCompleteButton(driver: Driver, options: router.RouterOptions,
 }
 
 async function isSupportHdrFn(){
-  return await fs.access('/system/lib64/ndk/libvideo_processing_capi.so').then((res: boolean)=>{
+  return await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean)=>{
     if(res){
       console.info("file exists");
       return true;
