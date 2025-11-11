@@ -28,6 +28,7 @@
 OH_Rdb_Store *storeTestRdbStore_;
 OH_Rdb_Store *predicatesTestRdbStore_;
 const char *RDB_TEST_PATH = "/data/storage/el2/database/com.example.buchongndktest/entry/";
+const char *RDB_TEST_PATH1 = "/data/storage/el2/database";
 static napi_value OH_Rdb_Predicates_NotLike0100(napi_env env, napi_callback_info)
 {
     const char *data5Value = "BBCD%";
@@ -156,7 +157,7 @@ static napi_value OH_Rdb_Setlocale0100(napi_env env, napi_callback_info)
 static napi_value OH_Rdb_LockRow_0100(napi_env env, napi_callback_info)
 {
     OH_Rdb_ConfigV2* config = OH_Rdb_CreateConfig();
-    OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH);
+    OH_Rdb_SetDatabaseDir(config, RDB_TEST_PATH1);
     OH_Rdb_SetStoreName(config, "Rdb_Test.db");
     OH_Rdb_SetBundleName(config, "com.ohos.example.distributedndk");
     OH_Rdb_SetEncrypted(config, false);
