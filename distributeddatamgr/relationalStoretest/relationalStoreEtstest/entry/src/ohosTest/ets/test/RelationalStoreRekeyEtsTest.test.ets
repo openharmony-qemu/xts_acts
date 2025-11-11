@@ -1044,7 +1044,7 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0026 end *************");
     });
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2700
      * @tc.name testRekey0027
      * @tc.desc rekey 14800011 test
      * @tc.size MediumTest
@@ -1102,7 +1102,7 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0027 end *************");
     });
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_2800
      * @tc.name testRekey0028
      * @tc.desc rekey test
      * @tc.size MediumTest
@@ -1470,7 +1470,7 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0033 end *************");
     });
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3400
      * @tc.name testRekey0034
      * @tc.desc all enum test
      * @tc.size MediumTest
@@ -1541,7 +1541,7 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0034 end *************");
     });
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3500
      * @tc.name testRekey0035
      * @tc.desc encryptionAlgo all enum test
      * @tc.size MediumTest
@@ -1597,7 +1597,7 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0035 end *************");
     });
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3600
      * @tc.name testRekey0036
      * @tc.desc hmacAlgo all enum test
      * @tc.size MediumTest
@@ -1653,7 +1653,7 @@ export default function rdbstoreRekeyEtsTest() {
       console.log(TAG + "************* testRekey0036 end *************");
     });
     /**
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_3700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyJsAPITest_3700
      * @tc.name testRekey0037
      * @tc.desc kdfAlgo all enum test
      * @tc.size MediumTest
