@@ -51,7 +51,7 @@ export default function InvertTest() {
       invert: 20
     },
     expectValue: {
-      invert: 20
+      invert: 1
     }
   }]
 

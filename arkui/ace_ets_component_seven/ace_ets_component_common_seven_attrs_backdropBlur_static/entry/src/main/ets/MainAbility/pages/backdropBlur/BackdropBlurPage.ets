@@ -1226,9 +1226,7 @@ struct BackdropBlurPage {
       }
       if (this.targetView == 'Button') {
         Button('button1')
-        .backdropBlur(2)
-        .key(this.componentKey)
-          // .commonStyleButton(this.componentKey, this._backdropBlurButton.backdropBlur)
+          .commonStyleButton(this.componentKey, this._backdropBlurButton.backdropBlur)
           // .attributeModifier(this._backdropBlurButtonModifier)
       }
       if (this.targetView == 'Blank') {

@@ -568,6 +568,7 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   }
 }
 function commonStyleAlphabetIndexer(this: AlphabetIndexerAttribute, componentKey: string, invert: number): this {
+  console.log('---------invert = ' + invert)
   this.invert(invert)
   this.height('100%')
   this.key(componentKey)
@@ -1155,6 +1156,7 @@ struct invertPage {
     let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this.invertAlphabetIndexer = routerParamOptions.view.testValue.setValue
     this._invertAlphabetIndexerMod.mInvert = routerParamOptions.view.testValue.setValue.invert
+    this._invertAlphabetIndexerMod.mInvert = routerParamOptions.view.testValue.setValue.invert
     const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
       .getElement("view")
     this.targetView = viewElement.getString("targetView")
@@ -1166,7 +1168,7 @@ struct invertPage {
     this.parentComponentKey = viewElement.getString("parentComponentKey")
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.invert))
-      this._invertAlphabetIndexerMod.mInvert = value.invert
+
       this._invertBadgeMod.mInvert = value.invert
       this._invertBlankMod.mInvert = value.invert
       this._invertButttonMod.mInvert = value.invert
