@@ -23,7 +23,7 @@ import common from '@ohos.app.ability.common';
 const TAG = 'ImageSource.CreateIncrementalSourceSupp'
 
 
-// let fdNumber: number;
+let fdNumber: number;
 
 function imageArray(): [Uint8Array,Uint8Array,Uint8Array] {
   let context: Context= AppStorage.get('testContext') as common.UIAbilityContext;
