@@ -93,17 +93,19 @@ namespace {
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0001, TestSize.Level0)
 {
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    const char *file = ginpDirVc1;
-    vDecSample->getFormat(file);
-    vDecSample->outputYuvFlag = true;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVc1));
-    ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
-    ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
-    ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
-    vDecSample->WaitForEOS();
-    ASSERT_EQ(0, vDecSample->errCount);
-    ASSERT_EQ(FRAMESIZE60, vDecSample->outFrameCount);
+    if (g_capVc1 != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        const char* file = ginpDirVc1;
+        vDecSample->getFormat(file);
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVc1));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE60, vDecSample->outFrameCount);
+    }
 }
 
 /**
@@ -113,15 +115,17 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0001, TestSize.Level0)
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0002, TestSize.Level0)
 {
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    const char *file = ginpDirVc1;
-    vDecSample->getFormat(file);
-    vDecSample->SF_OUTPUT = true;
-    vDecSample->outputYuvSurface = true;
-    vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameVc1));
-    vDecSample->WaitForEOS();
-    ASSERT_EQ(FRAMESIZE60, vDecSample->outFrameCount);
+    if (g_capVc1 != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        const char* file = ginpDirVc1;
+        vDecSample->getFormat(file);
+        vDecSample->SF_OUTPUT = true;
+        vDecSample->outputYuvSurface = true;
+        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameVc1));
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(FRAMESIZE60, vDecSample->outFrameCount);
+    }
 }
 
 /**
@@ -131,17 +135,19 @@ HWTEST_F(DecFuncNdkTest, VIDEO_VC1DEC_FUNCTION_0002, TestSize.Level0)
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0003, TestSize.Level0)
 {
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    const char* file = ginpDirMjpeg;
-    vDecSample->getFormat(file);
-    vDecSample->outputYuvFlag = true;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameMjpeg));
-    ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
-    ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
-    ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
-    vDecSample->WaitForEOS();
-    ASSERT_EQ(0, vDecSample->errCount);
-    ASSERT_EQ(FRAMESIZE30, vDecSample->outFrameCount);
+    if (g_capMjpeg != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        const char* file = ginpDirMjpeg;
+        vDecSample->getFormat(file);
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameMjpeg));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE30, vDecSample->outFrameCount);
+    }
 }
 
 /**
@@ -151,15 +157,17 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0003, TestSize.Level0)
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0004, TestSize.Level0)
 {
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    const char* file = ginpDirMjpeg;
-    vDecSample->getFormat(file);
-    vDecSample->SF_OUTPUT = true;
-    vDecSample->outputYuvSurface = true;
-    vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameMjpeg));
-    vDecSample->WaitForEOS();
-    ASSERT_EQ(FRAMESIZE30, vDecSample->outFrameCount);
+    if (g_capMjpeg != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        const char* file = ginpDirMjpeg;
+        vDecSample->getFormat(file);
+        vDecSample->SF_OUTPUT = true;
+        vDecSample->outputYuvSurface = true;
+        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameMjpeg));
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(FRAMESIZE30, vDecSample->outFrameCount);
+    }
 }
 
 /**
@@ -169,17 +177,19 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MJPEGDEC_FUNCTION_0004, TestSize.Level0)
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0005, TestSize.Level0)
 {
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    const char* file = ginpDirMsvideo1;
-    vDecSample->getFormat(file);
-    vDecSample->outputYuvFlag = true;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameMsvideo1));
-    ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
-    ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
-    ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
-    vDecSample->WaitForEOS();
-    ASSERT_EQ(0, vDecSample->errCount);
-    ASSERT_EQ(FRAMESIZE98, vDecSample->outFrameCount);
+    if (g_capMsvideo1 != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        const char* file = ginpDirMsvideo1;
+        vDecSample->getFormat(file);
+        vDecSample->outputYuvFlag = true;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameMsvideo1));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(0, vDecSample->errCount);
+        ASSERT_EQ(FRAMESIZE98, vDecSample->outFrameCount);
+    }
 }
 
 /**
@@ -189,14 +199,16 @@ HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0005, TestSize.Level0)
  */
 HWTEST_F(DecFuncNdkTest, VIDEO_MSVIDEO1DEC_FUNCTION_0006, TestSize.Level0)
 {
-    auto vDecSample = make_shared<VDecAPI11Sample>();
-    const char* file = ginpDirMsvideo1;
-    vDecSample->getFormat(file);
-    vDecSample->SF_OUTPUT = true;
-    vDecSample->outputYuvSurface = true;
-    vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
-    ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameMsvideo1));
-    vDecSample->WaitForEOS();
-    ASSERT_EQ(FRAMESIZE98, vDecSample->outFrameCount);
+    if (g_capMsvideo1 != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        const char* file = ginpDirMsvideo1;
+        vDecSample->getFormat(file);
+        vDecSample->SF_OUTPUT = true;
+        vDecSample->outputYuvSurface = true;
+        vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameMsvideo1));
+        vDecSample->WaitForEOS();
+        ASSERT_EQ(FRAMESIZE98, vDecSample->outFrameCount);
+    }
 }
 } // namespace
