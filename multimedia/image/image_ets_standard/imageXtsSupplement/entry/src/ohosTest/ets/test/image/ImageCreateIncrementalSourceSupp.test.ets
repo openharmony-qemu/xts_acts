@@ -93,7 +93,7 @@ export default function ImageCreateIncrementalSourceSupp() {
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
-    //  */
+     */
     it('SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_CreateIncrementalSource_002';
      try{
@@ -153,9 +153,6 @@ export default function ImageCreateIncrementalSourceSupp() {
         done();
       }
     })
-
-
-
 
 
     /**
