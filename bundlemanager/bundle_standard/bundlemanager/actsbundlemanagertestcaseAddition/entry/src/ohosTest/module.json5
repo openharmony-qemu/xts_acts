@@ -218,6 +218,10 @@
         "description": "$string:form_description",
         "icon": "$media:icon",
         "label": "$string:entry_label",
+        "metadata": [{
+            "name": "ohos.extension.form",
+            "resource": "$profile:form_config"
+        }],
         "name": "Form1",
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "form",
@@ -227,10 +231,6 @@
         "description": "$string:form_description",
         "icon": "$media:icon",
         "label": "$string:entry_label",
-        "metadata": [{
-            "name": "ohos.extension.form",
-            "resource": "$profile:form_config"
-        }],
         "name": "workScheduler",
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "workScheduler",
