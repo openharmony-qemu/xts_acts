@@ -19,6 +19,8 @@
 #include "hasAxisTest/HasAxisTest.h"
 #include "list/CoastingAxisTest.h"
 #include "list/SnapSpeedTest.h"
+#include "image/ImageDrawableDescriptorTest.h"
+#include "image/ImageErrorTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -43,6 +45,9 @@ static napi_value Init(napi_env env, napi_value exports)
 
         {"snapSpeedTest", nullptr, SnapSpeedTest::snapSpeedTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"imageDrawableDescriptorTest", nullptr, ImageDrawableDescriptorTest::imageDrawableDescriptorTest,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"imageErrorTest", nullptr, ImageErrorTest::imageErrorTest, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

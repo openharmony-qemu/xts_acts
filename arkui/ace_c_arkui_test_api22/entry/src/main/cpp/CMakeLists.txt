@@ -22,6 +22,8 @@ add_library(nativerender SHARED
     component/ListComponentTest.cpp
     component/TextComponentTest.cpp
     list/SnapSpeedTest.cpp
+    image/ImageDrawableDescriptorTest.cpp
+    image/ImageErrorTest.cpp
 )
 
 add_library(nativefunc SHARED
@@ -61,6 +63,6 @@ find_library(
 )
 
 target_link_libraries(nativerender PUBLIC
-    libnative_drawing.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
+    libnative_drawing.so libpixelmap.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so)
 target_link_libraries(nativefunc PUBLIC
 libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
