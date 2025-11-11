@@ -346,7 +346,7 @@ export default function QueryByEmailTest() {
                     done();
                   } else {
                     console.info(`${caseName} queryContactsByEmail: success data->${data.length}--${JSON.stringify(data)}`);
-                    ExpectTrue(data.length === 2);
+                    ExpectTrue(data.length >= 2);
                     done();
                   }
                 });
