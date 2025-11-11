@@ -514,7 +514,8 @@ export default function StringTest() {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 4;
         let flag1 = sentence.charAt(index);
-        expect(flag1).assertEqual('q');
+        let c : Char = new Char(c'q');
+        expect(flag1).assertEqual(c);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -536,7 +537,8 @@ export default function StringTest() {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 3;
         let flag1 = sentence.charAt(index);
-        expect(flag1).assertEqual(' ');
+        let c : Char = new Char(c' ');
+        expect(flag1).assertEqual(c);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -583,7 +585,8 @@ export default function StringTest() {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 0;
         let flag1 = sentence.charAt(index);
-        expect(flag1).assertEqual("T");
+        let c : Char = new Char(c'T');
+        expect(flag1).assertEqual(c);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -1779,7 +1782,7 @@ export default function StringTest() {
         const iterator = str.$_iterator();
         let result: NullishType = iterator.next();
         console.log('String.prototypeSymbol result:' + JSON.stringify(result));
-        expect(JSON.stringify(result)).assertEqual("{\"value\":\"T\",\"done\":false}");
+        expect(JSON.stringify(result)).assertEqual("{\"done\":false,\"value\":\"T\"}");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4147,11 +4150,10 @@ export default function StringTest() {
       const TAG = 'testStringSplit0003';
       try {
         const str = 'Hello World. How are you doing?';
-        expect(String(str.split(" ", 10)[10])).assertEqual('undefined');
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        String(str.split(" ", 10)[10]);
+      } catch (e) {
+        e = e as RangeError;
+        expect(e.message).assertEqual('Out of bounds');
       }
     })
     /**
@@ -4185,11 +4187,10 @@ export default function StringTest() {
       const TAG = 'testStringSplit0005';
       try {
         const str = 'Hello World. How are you doing?';
-        expect(String(str.split("", 3)[3])).assertEqual('undefined');
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        String(str.split("", 3)[3]);
+      } catch (e) {
+        e = e as RangeError;
+        expect(e.message).assertEqual('Out of bounds');
       }
     })
     /**

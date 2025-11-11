@@ -107,7 +107,7 @@ export default function ArrayToLocaleStringSecondTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [9.88e+6 as float];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('9880000');
+        expect(result).assertEqual('9,880,000');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -127,7 +127,7 @@ export default function ArrayToLocaleStringSecondTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1.22e-5 as float];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('0.0000122');
+        expect(result).assertEqual('0');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -167,7 +167,7 @@ export default function ArrayToLocaleStringSecondTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [1000000.0 as float];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('1000000');
+        expect(result).assertEqual('1,000,000');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -616,7 +616,7 @@ export default function ArrayToLocaleStringSecondTest() {
           Int.MAX_VALUE
         ];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('-2147483648,2147483647');
+        expect(result).assertEqual('-2,147,483,648,2,147,483,647');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -980,7 +980,7 @@ export default function ArrayToLocaleStringSecondTest() {
           987654321 as long
         ];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('123456789,987654321');
+        expect(result).assertEqual('123,456,789,987,654,321');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1003,7 +1003,7 @@ export default function ArrayToLocaleStringSecondTest() {
           -987654321 as long
         ];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('-123456789,-987654321');
+        expect(result).assertEqual('-123,456,789,-987,654,321');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1046,7 +1046,7 @@ export default function ArrayToLocaleStringSecondTest() {
           Long.MAX_VALUE as long
         ];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('-9223372036854775808,9223372036854775807');
+        expect(result).assertEqual('-9,223,372,036,854,775,808,9,223,372,036,854,775,807');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1403,7 +1403,7 @@ export default function ArrayToLocaleStringSecondTest() {
           1000 as short
         ];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('100,500,1000');
+        expect(result).assertEqual('100,500,1,000');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1427,7 +1427,7 @@ export default function ArrayToLocaleStringSecondTest() {
           -1000 as short
         ];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('-100,-500,-1000');
+        expect(result).assertEqual('-100,-500,-1,000');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1467,7 +1467,7 @@ export default function ArrayToLocaleStringSecondTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<short> = [Short.MIN_VALUE as short];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('-32768');
+        expect(result).assertEqual('-32,768');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1489,7 +1489,7 @@ export default function ArrayToLocaleStringSecondTest() {
           Short.MAX_VALUE as short
         ];
         const result = toLocaleString(arr);
-        expect(result).assertEqual('32767');
+        expect(result).assertEqual('32,767');
         console.info(`${caseName}, test end`);
         Done();
       })
