@@ -111,7 +111,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testWebView_deleteJavaScriptRegister_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('testWebView_deleteJavaScriptRegister_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0003",
         '17100008Failed to delete JavaScriptProxy because it does not exist.', 10074, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -129,7 +129,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('testWebView_deleteJavaScriptRegister_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('testWebView_deleteJavaScriptRegister_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0004",
         "401BusinessError 401: Parameter error. The type of 'name' must be string.", 10075, done,
         (backData: events_emitter.EventData, expected: Object) => {
