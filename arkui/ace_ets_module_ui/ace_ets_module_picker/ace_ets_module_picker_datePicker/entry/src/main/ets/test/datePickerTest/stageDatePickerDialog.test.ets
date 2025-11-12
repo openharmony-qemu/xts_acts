@@ -126,8 +126,8 @@ export default function stageDatePickerDialog() {
     });
 
     /**
-     * @tc.number: testDatePickerDialog002
-     * @tc.name  : testDatePickerDialog002
+     * @tc.number: testDatePickerDialog003
+     * @tc.name  : testDatePickerDialog003
      * @tc.desc  : To test the eventData
      * @tc.level : Level 0
      * @tc.type
