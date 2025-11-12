@@ -14,7 +14,13 @@
  */
 
 import DatePickerCanLoopTest from './datePickerTest/datePickerCanLoop.test';
+import datePickerMode from './datePickerTest/DatePickerMode.test';
+import EnableHapticFeedbackTest from './datePickerTest/datePickerEnableHapticFeedback.test';
+import EnableHapticFeedbackModifierTest from './datePickerTest/datePickerEnableHapticFeedbackModifier.test';
 
 export default function testsuite() {
     DatePickerCanLoopTest();
+	datePickerMode();
+	EnableHapticFeedbackTest();
+    EnableHapticFeedbackModifierTest();
 }
