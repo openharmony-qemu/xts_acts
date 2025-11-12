@@ -17,10 +17,24 @@ import DatePickerCanLoopTest from './datePickerTest/datePickerCanLoop.test';
 import datePickerMode from './datePickerTest/DatePickerMode.test';
 import EnableHapticFeedbackTest from './datePickerTest/datePickerEnableHapticFeedback.test';
 import EnableHapticFeedbackModifierTest from './datePickerTest/datePickerEnableHapticFeedbackModifier.test';
+import datePickerOnChangeModifierTest from './datePickerTest/datePickerOnChangeModifier.test';
+import datepicker from './datePickerTest/DatePicker';
+import ActsDatePickerTest from './datePickerTest/DatePicker.test';
+import datePickerLunarJsunit from './datePickerTest/datePicker3.test';
+import datePickerJsunit from './datePickerTest/DatePickerJsunit.test';
+import datePickerUIJsunit from './datePickerTest/datePickerUIJsunit.test';
+import stageDatePickerDialog from './datePickerTest/stageDatePickerDialog.test';
 
 export default function testsuite() {
-    DatePickerCanLoopTest();
-	datePickerMode();
-	EnableHapticFeedbackTest();
-    EnableHapticFeedbackModifierTest();
+  DatePickerCanLoopTest();
+  datePickerMode();
+  EnableHapticFeedbackTest();
+  EnableHapticFeedbackModifierTest();
+  datePickerOnChangeModifierTest();
+  datepicker();
+  ActsDatePickerTest();
+  datePickerLunarJsunit();
+  datePickerJsunit();
+  datePickerUIJsunit();
+  stageDatePickerDialog();
 }
