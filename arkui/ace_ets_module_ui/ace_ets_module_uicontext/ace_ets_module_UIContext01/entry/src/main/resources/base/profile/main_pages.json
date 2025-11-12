@@ -8,6 +8,8 @@
     "MainAbility/pages/window/GetWindowWidthAndHeight",
     "MainAbility/pages/xts/PixelUnitsConversion",
     "MainAbility/pages/Context/UIContextWithoutWindowTest",
-    "MainAbility/pages/Context/UIContextGetOpacityTest"
+    "MainAbility/pages/Context/UIContextGetOpacityTest",
+    "MainAbility/pages/Context/IsAvailableTest",
+    "MainAbility/pages/Context/IsFollowingSystemFontScaleFalseTest"
   ]
 }

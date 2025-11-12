@@ -20,6 +20,8 @@ import GetWindowWidthAndHeight from './window/GetWindowWidthAndHeight.test';
 import PixelUnitsConversion from './xts/PixelUnitsConversion.test';
 import UIContextWithoutWindowTest from './ContextTest/UIContextWithoutWindow.test';
 import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
+import IsAvailableTest from './ContextTest/IsAvailableTest.test';
+import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
 
 export default function testsuite() {
   CacheMaxCountForHSPTest();
@@ -30,4 +32,6 @@ export default function testsuite() {
   PixelUnitsConversion();
   UIContextWithoutWindowTest();
   UIContextGetOpacityTest();
+  IsAvailableTest();
+  IsFollowingSystemFontScaleFalseTest();
 }
