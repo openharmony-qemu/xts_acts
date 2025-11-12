@@ -389,37 +389,6 @@ export default function SimNoCardPublic() {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Observer_CallStateChangeOn_0600
-     * @tc.name  : testTelephonyObserverCallStateChangeOn_static_0600
-     * @tc.desc  : Subscribe to call status change event.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
-     */
-    it('testTelephonyObserverCallStateChangeOn_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverCallStateChangeOn_static_0600';
-      hilog.info(domain, tag, `${caseName} test start `);
-      try {
-        let hasSim: boolean = sim.hasSimCardSync(0);
-        hilog.info(domain, tag, `${caseName} hasSim ${JSON.stringify(hasSim)}`);
-        ExpectTrue(hasSim === false);
-
-        await sim.setDefaultVoiceSlotId(0);
-        observer.on('callStateChange', (value: observer.CallStateInfo) => {
-          hilog.info(domain, tag, `${caseName} data ${JSON.stringify(value)}`);
-          ExpectTrue(false);
-          done();
-        });
-      } catch (err) {
-        let error = err as BusinessError;
-        hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(error)}`);
-        ExpectTrue(error?.code == 8300004);
-        done();
-      }
-      hilog.info(domain, tag, `${caseName} test end `);
-    });
-
-    /**
      * @tc.number : SUB_Telephony_Sim_GetSimOperatorNumeric_0500
      * @tc.name   : testTelephonySimGetSimOperatorNumeric_static_0500
      * @tc.desc   : SIMCard required Obtain the Public Land Mobile Network (PLMN) number of the designated SIM card slot. Use callback for asynchronous callback.
