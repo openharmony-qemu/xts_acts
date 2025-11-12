@@ -46,8 +46,9 @@ async function getPermissions() {
     let applicationFlags: int = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
     let applicationInfo: bundleManager.ApplicationInfo = bundleManager.getApplicationInfoSync('com.example.actstelephonysimhascardtest.static', applicationFlags, userId);
     let tokenId: long = applicationInfo.accessTokenId;
+    let tokenValue: int = tokenId as int;
     for (let index = 0; index < list.length; index++) {
-      await abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenId, list[index], 1);
+      abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenValue, list[index] as Permissions, 1);
     }
   } catch (err) {
     console.info(`getPermission error ${JSON.stringify(err)}`);
@@ -234,8 +235,8 @@ export default function Sim4Public() {
         done();
       }
       try {
-        sim.getSimLabel(2, (err: BusinessError, data: sim.SimLabel) => {
-          if (err && err.code === 8300001) {
+        sim.getSimLabel(2, (err: BusinessError | null, data: sim.SimLabel | undefined) => {
+          if (err && err?.code === 8300001) {
             console.info(`${caseName} successfully: Parameter error and return 8300001, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
             ExpectTrue(true);
             console.info(`${caseName} test end`);
@@ -248,7 +249,7 @@ export default function Sim4Public() {
           }
         });
       } catch(error)  {
-        if ((error as BusinessError).code === 8300001) {
+        if ((error as BusinessError)?.code === 8300001) {
           console.info(`${caseName} successfully: Parameter error and return 8300001`);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
