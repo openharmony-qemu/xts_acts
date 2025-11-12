@@ -304,9 +304,9 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
             done();
             return;
           }
-          if(result == 16000078){
+          if(result == 16000050){
             console.info(`====>${LOG_NAME} result: ` + result);
-            expect(16000078).assertEqual(result);
+            expect(16000050).assertEqual(result);
             done();
             return;
           }
@@ -370,9 +370,9 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
             done();
             return;
           }
-          if(result == 16000078){
+          if(result == 16000050){
             console.info(`====>${LOG_NAME} result: ` + result);
-            expect(16000078).assertEqual(result);
+            expect(16000050).assertEqual(result);
             done();
             return;
           }
@@ -1476,9 +1476,9 @@ export default function ActsCapabilityStartSelfUIAbilityTest1() {
             done();
             return;
           }
-          if(result == 16000078){
+          if(result == 16000050){
             console.info(`====>${LOG_NAME} result: ` + result);
-            expect(16000078).assertEqual(result);
+            expect(16000050).assertEqual(result);
             done();
             return;
           }
