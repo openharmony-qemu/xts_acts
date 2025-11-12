@@ -7753,6 +7753,35 @@ static napi_value StartAudioRenderer(napi_env env, napi_callback_info info)
     return result;
 }
 
+static void AvailableDeviceChangedCallback(OH_AudioDevice_ChangeType type,
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    return;
+}
+static void OH_AudioSession_CurrentInputDeviceChangedCallback(OH_AudioDeviceDescriptorArray *devices,
+    OH_AudioStream_DeviceChangeReason changeReason)
+{
+    return;
+}
+
+static napi_value IsIntelligentNoiseReductionEnabledForCurrentDevice_001(napi_env env, napi_callback_info info)
+{    
+    napi_value result;
+    OH_AudioStreamManager *streamManager;
+    bool isIntelligentNoise = false;
+    for (auto source : VALID_OH_SOURCE_TYPES) {
+        isIntelligentNoise = OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice(streamManager, source);
+        if (isIntelligentNoise != false && isIntelligentNoise != true) {
+            LOG("OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice FAIL, isIntelligentNoise is: %{public}d", isIntelligentNoise);
+            napi_create_int32(env, TEST_FAIL, &result);
+            return result;
+        }
+    }
+
+    napi_create_int32(env, TEST_PASS, &result);
+    return result;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"audioManagerGetAudioStreamManagerTest_001", nullptr, AudioManagerGetAudioStreamManagerTest_001,
@@ -8187,7 +8216,9 @@ napi_property_descriptor desc2[] = {
     {"audioRendererStop", nullptr, AudioRendererStop, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioRendererRelease", nullptr, AudioRendererRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioCapturerSetWillMuteWhenInterrupted", nullptr,
-        AudioCapturerSetWillMuteWhenInterrupted, nullptr, nullptr, nullptr, napi_default, nullptr}
+        AudioCapturerSetWillMuteWhenInterrupted, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"isIntelligentNoiseReductionEnabledForCurrentDevice_001", nullptr,
+        IsIntelligentNoiseReductionEnabledForCurrentDevice_001, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 napi_property_descriptor desc3[] = {
     {"audioManagerGetAudioVolumeManager_001", nullptr, AudioManagerGetAudioVolumeManager_001,

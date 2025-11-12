@@ -298,3 +298,4 @@ export const audioStreamBuilderSetCapturerFastStatusChangeCallback_001: () => nu
 export const audioStreamBuilderSetCapturerFastStatusChangeCallback_002: () => number;
 export const audioStreamBuilderSetRendererFastStatusChangeCallback_001: () => number;
 export const audioStreamBuilderSetRendererFastStatusChangeCallback_002: () => number;
+export const isIntelligentNoiseReductionEnabledForCurrentDevice_001: () => number;
