@@ -125,15 +125,16 @@ export default function telSyncTest() {
         done();
       } else {
         let slotId = 0;
+        let res = radio.getSignalInformationSync(slotId)
         radio.isRadioOn((err, data) => {
           if (err) {
             try {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 111  " +
-              radio.getSignalInformationSync(slotId));
-              expect(radio.getSignalInformationSync(slotId).length).assertEqual(0);
+              ${JSON.stringify(err)});
+              expect(res.length).assertEqual(0);
               done();
             } catch (err) {
-              console.info("SUB_Telephony_radio_getSignalInformationSync_0100 err " + JSON.stringify(err));
+              console.info("SUB_Telephony_radio_getSignalInformationSync_0100 err " + ${JSON.stringify(err)});
               expect(true).assertFalse();
               done();
             }
@@ -141,7 +142,7 @@ export default function telSyncTest() {
             try {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 " +
               radio.getSignalInformationSync(slotId));
-              expect(radio.getSignalInformationSync(slotId).length >= 0).assertTrue();
+              expect(res.length >= 0).assertTrue();
               done();
             } catch (err) {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 err " + JSON.stringify(err));

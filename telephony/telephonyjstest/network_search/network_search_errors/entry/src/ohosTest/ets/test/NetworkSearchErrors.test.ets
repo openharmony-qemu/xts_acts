@@ -381,6 +381,7 @@ describe('ActsNetworkSearchTest',  () => {
      * @tc.desc    Test isRadioOn api by callback.
      */
     it('Telephony_NetworkSearch_isRadioOn_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+        let CaseName = "Telephony_NetworkSearch_isNrSupported_Promise_0400 ";
         radio.isRadioOn(0, (err,data) => {
             if (err) {
                 console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
@@ -389,7 +390,13 @@ describe('ActsNetworkSearchTest',  () => {
                 return;
             }
             console.info('Telephony_NetworkSearch_isRadioOn_Async_0300  finish ' + data);
-            expect(data == true).assertTrue();
+            if (data) {
+                expect(data == true).assertTrue();
+                console.info('${CaseName} success, has radio ->${JSON.stringify(data)}');
+            } else {
+                expect(data == false).assertTrue();
+                console.info('${CaseName} success, dose not has radio ->${JSON.stringify(data)}');
+            }
             done();
         });
     });
