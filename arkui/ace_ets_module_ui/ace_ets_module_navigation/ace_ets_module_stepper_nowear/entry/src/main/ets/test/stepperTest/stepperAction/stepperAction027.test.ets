@@ -47,9 +47,9 @@ export default function stepperAction027() {
     });
 
     /*
-     * @tc.number       SUB_ACE_UI_COMPONENT_NAV_STEPPER_ACTION_0270
+     * @tc.number       stepperAction0270
      * @tc.name         stepperAction0270
-     * @tc.desic         stepperAction0270
+     * @tc.desc         stepperAction0270
      */
     it('stepperAction0270',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperAction0270 START');

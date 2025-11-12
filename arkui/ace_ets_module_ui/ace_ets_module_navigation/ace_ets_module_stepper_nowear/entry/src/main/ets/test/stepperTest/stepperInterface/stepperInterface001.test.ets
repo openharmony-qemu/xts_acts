@@ -47,9 +47,9 @@ export default function stepperInterface001() {
     });
 
     /*
-     * @tc.number       SUB_ACE_UI_COMPONENT_NAV_STEPPER_INTERFACE_0010
+     * @tc.number       stepperInterface0010
      * @tc.name         stepperInterface0010
-     * @tc.desic         stepperInterface0010
+     * @tc.desc         stepperInterface0010
      */
     it('stepperInterface0010',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperInterface0010 START');

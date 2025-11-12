@@ -52,9 +52,9 @@ export default function stepperLayout001() {
     });
 
     /*
-     * @tc.number       SUB_ACE_UI_COMPONENT_NAV_STEPPER_LAYOUT_0010
+     * @tc.number       stepperLayout0010
      * @tc.name         stepperLayout0010
-     * @tc.desic         stepperLayout0010
+     * @tc.desc         stepperLayout0010
      */
     it('stepperLayout0010',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperLayout0010 START');

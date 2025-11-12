@@ -14,7 +14,6 @@
  */
 
 import stepperUIJsunit from './stepperTest/stepperUIJsunit.test';
-import sidebarIconsJsunit from './SideBarContainerTest/sidebarfirst.test'
 import stepperItemDisabledJsunit from './stepperTest/stepperItem.test';
 import stepperLayout001 from './stepperTest/stepperLayout/stepperLayout001.test';
 import stepperLayout002 from './stepperTest/stepperLayout/stepperLayout002.test';

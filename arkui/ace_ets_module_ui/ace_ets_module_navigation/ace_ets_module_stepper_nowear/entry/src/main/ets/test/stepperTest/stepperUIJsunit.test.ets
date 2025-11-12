@@ -42,6 +42,12 @@ export default function stepperUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.number    stepperUIJsunit_0100
+     * @tc.name      stepperUIJsunit_0100
+     * @tc.desc      Test stepperUIJsunit_0100
+     * @tc.level     Level 0
+     */
     it('stepperUIJsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
        console.info('stepperUIJsunit_0100');
        await CommonFunc.sleep(1000);
@@ -55,6 +61,12 @@ export default function stepperUIJsunit() {
        done();
     });
 
+    /**
+     * @tc.number    stepperUIJsunit_0200
+     * @tc.name      stepperUIJsunit_0200
+     * @tc.desc      Test stepperUIJsunit_0200
+     * @tc.level     Level 0
+     */
    it('stepperUIJsunit_0200',  Level.LEVEL0, async  (done:Function) =>{
       console.info('stepperUIJsunit_0200 START');
       // modify the normal value of stepperItem dynamically
@@ -74,6 +86,12 @@ export default function stepperUIJsunit() {
       done();   
     });
 
+    /**
+     * @tc.number    stepperUIJsunit_0300
+     * @tc.name      stepperUIJsunit_0300
+     * @tc.desc      Test stepperUIJsunit_0300
+     * @tc.level     Level 0
+     */
     it('stepperUIJsunit_0300',  Level.LEVEL0, async  (done:Function) =>{
       console.info('stepperUIJsunit_0300 START');
       await CommonFunc.sleep(1000);
@@ -93,6 +111,12 @@ export default function stepperUIJsunit() {
       done();   
    });
    
+    /**
+     * @tc.number    stepperUIJsunit_0400
+     * @tc.name      stepperUIJsunit_0400
+     * @tc.desc      Test stepperUIJsunit_0400
+     * @tc.level     Level 0
+     */
     it('stepperUIJsunit_0400',  Level.LEVEL0, async  (done:Function) =>{
       console.info('stepperUIJsunit_0400 START');
        await CommonFunc.sleep(1000);
@@ -106,6 +130,13 @@ export default function stepperUIJsunit() {
       done();   
     });
 
+
+    /**
+     * @tc.number    stepperUIJsunit_0500
+     * @tc.name      stepperUIJsunit_0500
+     * @tc.desc      Test stepperUIJsunit_0500
+     * @tc.level     Level 0
+     */
     it('stepperUIJsunit_0500',  Level.LEVEL0, async  (done:Function) =>{
        console.info('stepperUIJsunit_0500 START');
       // get the stepper component and test attribute
@@ -118,6 +149,12 @@ export default function stepperUIJsunit() {
        done();
     });
 
+    /**
+     * @tc.number    stepperUIJsunit_0600
+     * @tc.name      stepperUIJsunit_0600
+     * @tc.desc      Test stepperUIJsunit_0600
+     * @tc.level     Level 0
+     */
     it('stepperUIJsunit_0600',  Level.LEVEL0, async  (done:Function) =>{
       console.info('stepperUIJsunit_0600 START');
       globalThis.value.message.notify({name:'status',value:ItemState.Normal});
@@ -153,6 +190,12 @@ export default function stepperUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.number    stepperUIJsunit_0700
+     * @tc.name      stepperUIJsunit_0700
+     * @tc.desc      Test stepperUIJsunit_0700
+     * @tc.level     Level 0
+     */
     it('stepperUIJsunit_0700',  Level.LEVEL0, async  (done:Function) =>{
       console.info('stepperUIJsunit_0700 START');
       // test the stepper onFinish event
@@ -178,6 +221,12 @@ export default function stepperUIJsunit() {
       done();
     });
     
+    /**
+     * @tc.number    stepperUIJsunit_0800
+     * @tc.name      stepperUIJsunit_0800
+     * @tc.desc      Test stepperUIJsunit_0800
+     * @tc.level     Level 0
+     */
     it('stepperUIJsunit_0800',  Level.LEVEL0, async  (done:Function) =>{
       console.info('stepperUIJsunit_0800');
       // test the stepper onSkip event

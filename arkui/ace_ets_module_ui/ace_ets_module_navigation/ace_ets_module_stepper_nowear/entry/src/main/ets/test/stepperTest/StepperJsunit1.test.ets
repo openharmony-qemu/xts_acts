@@ -44,7 +44,7 @@ export default function stepperJsunit1() {
 
 
     /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_1400
+     * @tc.number testStepper010
      * @tc.name testStepper010
      * @tc.desc aceEtsTest
      */
