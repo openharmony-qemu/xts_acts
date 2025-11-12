@@ -255,7 +255,7 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
@@ -292,7 +292,7 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
@@ -329,23 +329,16 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
         }
       }).catch((err) =>{
-        if (err && err?.code === 801){
-          console.info(`${caseName} successfully: Parameter error and return 801`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+        console.info(`${caseName} failed`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
-        }
       });
     });
 
@@ -384,17 +377,10 @@ export default function Sim4Public() {
             done();
           }
         }).catch ((err) =>{
-          if (err && err?.code === 801){
-            console.info(`${caseName} successfully: Parameter error and return 801`);
-            ExpectTrue(true);
-            console.info(`${caseName} test end`);
-            done();
-          } else {
-            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
-            ExpectFail();
-            console.info(`${caseName} test end`);
-            done();
-          }
+          console.info(`${caseName} failed`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
         });
       } else {
         console.info(`${caseName}, Non-single SIM card case.`);
@@ -433,7 +419,7 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+          console.info(`${caseName} failed`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
