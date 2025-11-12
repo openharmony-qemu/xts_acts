@@ -156,18 +156,18 @@ export default function SimNoCardPublic1() {
           console.info(`${caseName}:success have not card,data->${JSON.stringify(data)}`);
           ExpectTrue(data === false);
           sim.getSimLabel(0).then((data: sim.SimLabel) => {
-            if (!err && data.index <= 2 && data.simType == sim.SimType.PSIM) {
-              console.info(`${caseName} sim card is PSIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            if (data.index <= 2 && data.simType == sim.SimType.PSIM) {
+              console.info(`${caseName} sim card is PSIM, data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end`);
               done();
-            } else if (!err && data.index <= 2 && data.simType == sim.SimType.ESIM) {
-              console.info(`${caseName} sim card is ESIM, err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            } else if (data.index <= 2 && data.simType == sim.SimType.ESIM) {
+              console.info(`${caseName} sim card is ESIM,  data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end`);
               done();
             } else {
-              console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+              console.info(`${caseName} failed`);
               ExpectFail();
               console.info(`${caseName} test end`);
               done();
