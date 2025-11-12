@@ -71,7 +71,7 @@ import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEn
 import ImagePropertyKeySyncEnumSoftWare from './image/ImagePropertyKeySyncEnumSoftWare.test';
 import ImagePropertyKeySyncEnumStripOffsets from './image/ImagePropertyKeySyncEnumStripOffsets.test';
 import modifyImagePropertyTest from './image/ModifyImageProperty.test';
-import modifyImagePropertyTests from './image/ModifyImageProperty1.test';
+import modifyImagePropertyTests from './image/ModifyImagePropertyKey.test';
 
 
 export default function testsuite() {
