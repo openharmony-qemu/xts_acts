@@ -440,9 +440,6 @@ export default function nfcNDEFTagTest() {
           if (error.code == 201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1300 readNdef error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 401) {
-            console.info("[NFC_test]ndef7 readNdef1 err: " + error + error.code);
-            expect(401).assertEqual(error.code);
           } else if (error.code == 3100201) {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1300 readNdef error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
@@ -481,9 +478,6 @@ export default function nfcNDEFTagTest() {
           if (error.code == 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 readNdef error is ' + error.code + " - " + error);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 401) {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 readNdef error is ' + error.code + " - " + error);
-            expect(401).assertEqual(error.code);
           } else if (error.code == 3100201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 readNdef error is ' + error.code + " - " + error);
             expect(3100201).assertEqual(error.code);
@@ -548,34 +542,34 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_1600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-        if (ndefTag != null && ndefTag != undefined) {
-          let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
-          let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
-            error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef finish ');
-          }
-          try {
-            ndefTag.writeNdef(ndefMessage,AsyncCallback);
-          } catch (error: BusinessError) {
-            if (error.code == 201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
-              expect(201).assertEqual(error.code);
-            } else if (error.code == 3100201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
-              expect(3100201).assertEqual(error.code);
-            } else if (error.code == 3100204) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
-              expect(3100204).assertEqual(error.code);
-            } else {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
-              expect().assertFail();
-            }
-          }
-        } else {
-            hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-            expect().assertFail();
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+        let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
+          error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef finish ');
         }
-        done();
+        try {
+          ndefTag.writeNdef(ndefMessage,AsyncCallback);
+        } catch (error: BusinessError) {
+          if (error.code == 201) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
+            expect(201).assertEqual(error.code);
+          } else if (error.code == 3100201) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
+            expect(3100201).assertEqual(error.code);
+          } else if (error.code == 3100204) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
+            expect(3100204).assertEqual(error.code);
+          } else {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1600 writeNdef error is ' + error.code + " - " + error);
+            expect().assertFail();
+          }
+        }
+      } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+          expect().assertFail();
+      }
+      done();
     })
 
     /**
@@ -635,9 +629,6 @@ export default function nfcNDEFTagTest() {
           if (error.code == 201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1800  error is ' + error + " - " + error.code);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 401) {
-            hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1800  error is ' + error + " - " + error.code);
-            expect(401).assertEqual(error.code);
           } else if (error.code == 3100201) {
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1800 error is ' + error + " - " + error.code);
             expect(3100201).assertEqual(error.code);
@@ -676,9 +667,6 @@ export default function nfcNDEFTagTest() {
           if (error.code == 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1900  error is ' + error + " - " + error.code);
             expect(201).assertEqual(error.code);
-          } else if (error.code == 401) {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1900  error is ' + error + " - " + error.code);
-            expect(401).assertEqual(error.code);
           } else if (error.code == 3100201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1900 error is ' + error + " - " + error.code);
             expect(3100201).assertEqual(error.code);
@@ -763,34 +751,34 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_2200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-        if (ndefTag != null && ndefTag != undefined) {
-          let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
-          let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
-            error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format finish ');
-          }
-          try {
-            ndefTag.format(ndefMessage, AsyncCallback);
-          } catch (error: BusinessError) {
-            if (error.code == 201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
-              expect(201).assertEqual(error.code);
-            } else if (error.code == 3100201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
-              expect(3100201).assertEqual(error.code);
-            } else if (error.code == 3100204) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
-              expect(3100204).assertEqual(error.code);
-            } else {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
-              expect().assertFail();
-            }
-          }
-        } else {
-            hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-            expect().assertFail();
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+        let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
+          error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format finish ');
         }
-        done();
+        try {
+          ndefTag.format(ndefMessage, AsyncCallback);
+        } catch (error: BusinessError) {
+          if (error.code == 201) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
+            expect(201).assertEqual(error.code);
+          } else if (error.code == 3100201) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
+            expect(3100201).assertEqual(error.code);
+          } else if (error.code == 3100204) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
+            expect(3100204).assertEqual(error.code);
+          } else {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
+            expect().assertFail();
+          }
+        }
+      } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+          expect().assertFail();
+      }
+      done();
     })
 
     /**
@@ -839,34 +827,34 @@ export default function nfcNDEFTagTest() {
      * @tc.level Level 1
      */
     it('SUB_COMMUNICATION_NFC_NDEFTag_static_2400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-        if (ndefTag != null && ndefTag != undefined) {
-          let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
-          let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
-            error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly finish ');
-          }
-          try {
-            ndefTag.formatReadOnly(ndefMessage, AsyncCallback);
-          } catch (error: BusinessError) {
-            if (error.code == 201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
-              expect(201).assertEqual(error.code);
-            } else if (error.code == 3100201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
-              expect(3100201).assertEqual(error.code);
-            } else if (error.code == 3100204) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
-              expect(3100204).assertEqual(error.code);
-            } else {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
-              expect().assertFail();
-            }
-          }
-        } else {
-            hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-            expect().assertFail();
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefMessage:tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
+        let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
+          error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly finish ');
         }
-        done();
+        try {
+          ndefTag.formatReadOnly(ndefMessage, AsyncCallback);
+        } catch (error: BusinessError) {
+          if (error.code == 201) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
+            expect(201).assertEqual(error.code);
+          } else if (error.code == 3100201) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
+            expect(3100201).assertEqual(error.code);
+          } else if (error.code == 3100204) {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
+            expect(3100204).assertEqual(error.code);
+          } else {
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
+            expect().assertFail();
+          }
+        }
+      } else {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+          expect().assertFail();
+      }
+      done();
     })
 
     console.info("*************[nfc_test] start nfc js unit test end*************");
