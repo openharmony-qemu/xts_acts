@@ -218,7 +218,7 @@ export default function abilitystaticTest() {
           console.log(`${domain} ${tag} ${itName} abilityStateData: `,observer.abilityStateData);
           expect(observer.abilityStateData?.bundleName).assertEqual(`${RELY_BUNDLE_NAME}`);
           expect(observer.abilityStateData?.uid).assertLarger(0);
-          expect(typeof (observer.abilityStateData?.state)).assertEqual('number');
+          expect(typeof (observer.abilityStateData?.state)).assertEqual('int');
           expect(observer.abilityStateData?.abilityName).assertEqual('EntryAbility');
           expect(observer.abilityStateData?.pid).assertEqual(observer.processData?.pid);
           expect(observer.abilityStateData?.moduleName).assertEqual('entry');
@@ -234,7 +234,7 @@ export default function abilitystaticTest() {
           expect(observer.processData?.uid).assertLarger(0);
           expect(observer.processData?.isContinuousTask).assertFalse();
           expect(observer.processData?.isKeepAlive).assertFalse();
-          expect(typeof (observer.processData?.state)).assertEqual('number');
+          expect(typeof (observer.processData?.state)).assertEqual('int');
           hilog.info(domain, tag, `${itName} ProcessData assert End`);
 
           hilog.info(domain, tag, `${itName} off applicationState`);
