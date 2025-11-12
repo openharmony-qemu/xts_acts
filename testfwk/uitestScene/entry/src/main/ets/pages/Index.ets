@@ -28,6 +28,7 @@ struct ScrollExample {
       Text('MainPage')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
+        .accessibilityDefaultFocus(true)
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           Column() {
