@@ -20,6 +20,10 @@ import getAllObjectsTest from './photoAccess/getAllObjects.test';
 import getSupportedPhotoFormatsTest from './photoAccess/getSupportedPhotoFormats.test';
 import IsAfterLastTest from './photoAccess/isAfterLast.test';
 import PhotoAccessHelperAssetsCloseTest from "./photoAccess/PhotoAccessHelperAssetsClose.test";
+import MediaAssetManagerCancelRequestTest from './photoAccess/cancelRequest.test';
+import MediaAssetDataHandlerOnDataPreparedTest from './photoAccess/onDataPrepared.test';
+import setTest from './photoAccess/PhotoAssetSet.test';
+import sendAbleSetTest from './photoAccess/SendAblePhotoAssetSet.test';
 import PhotoAccessMediaAlbumChangeRequestAddAssetsTest
   from './photoAccess/PhotoAccessMediaAlbumChangeRequestAddAssetsTest.test';
 
@@ -46,5 +50,9 @@ export default function testsuite() {
   getSupportedPhotoFormatsTest();
   IsAfterLastTest ();
   PhotoAccessHelperAssetsCloseTest();
+  MediaAssetManagerCancelRequestTest();
+  MediaAssetDataHandlerOnDataPreparedTest();
+  setTest();
+  sendAbleSetTest();
   PhotoAccessMediaAlbumChangeRequestAddAssetsTest();
 }
