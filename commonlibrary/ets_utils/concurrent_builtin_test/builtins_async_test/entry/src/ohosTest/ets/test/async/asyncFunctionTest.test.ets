@@ -20,6 +20,7 @@ import {
   type68,
   type71,
   type83,
+  type86,
   type93,
   type94,
   type96,
@@ -545,7 +546,28 @@ export default function asyncFunctionTest() {
      * @tc.level Level 1
      */
     it('asyncFunctionTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 0b0101; // Initial value (5 in decimal)
+      const orVal = 0b1010; // OR mask (10 in decimal)
 
+      // Async function wrapping atomic OR operation
+      const asyncAtomicOr = async (mask:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            const oldVal = Atomics.or(ia, 0, mask); // Atomic OR: return old value
+            const currentVal = Atomics.load(ia, 0); // Atomic load: get updated value
+            resolve( currentVal );
+          }, 0);
+        });
+      };
+
+      // Execute async atomic OR operation
+      const result = await asyncAtomicOr(orVal);
+
+      // Key assertions (5 | 10 = 15 = 0b1111)
+      expect(result).assertEqual(15); // Verify OR operation result
+      expect(ia[0]).assertEqual(15); // Verify memory consistency
     });
 
     /**
@@ -694,7 +716,41 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const asyncCalculate = async (base:number, shouldMultiply:boolean) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            let result = base + 10; // Basic async calculation
+            if (shouldMultiply) {
+              result *= 2; // Conditional secondary operation
+            }
+            resolve(result);
+          }, 0);
+        });
+      };
 
+      // Simulate dependent async operation (uses previous result)
+      const asyncDependentProcess = async (prevResult:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            resolve(prevResult - 3); // Dependent logic
+          }, 0);
+        });
+      };
+
+      // Execute async workflow: sequential + chaining + conditional
+      const firstResult = await asyncCalculate(8, true); // 8+10=18 → 18*2=36
+      const finalResult = await asyncDependentProcess(firstResult); // 36-3=33
+
+      // Parallel verification: different condition
+      const secondResult = await asyncCalculate(8, false); // 8+10=18 (no multiply)
+      const finalResult2 = await asyncDependentProcess(secondResult); // 18-3=15
+
+      // Key assertions
+      expect(firstResult).assertEqual(36);
+      expect(finalResult).assertEqual(33);
+
+      expect(secondResult).assertEqual(18);
+      expect(finalResult2).assertEqual(15);
     });
 
     /**
@@ -825,7 +881,29 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      // Initialize shared memory (atomic operation carrier)
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 25;
 
+      // Minimal async function: Wrap atomic subtraction (simulate async business scenarios)
+      const asyncAtomicSub = async (subtractVal:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            Atomics.sub(ia, 0, subtractVal);
+            resolve(Atomics.load(ia, 0));
+          }, 0);
+        });
+      };
+
+      // Execute async atomic operations (two consecutive calls to verify execution order)
+      const result1 = await asyncAtomicSub(8);
+      const result2 = await asyncAtomicSub(5);
+
+      // Key assertions (verify async results and memory consistency)
+      expect(result1).assertEqual(17);
+      expect(result2).assertEqual(12);
+      expect(ia[0]).assertEqual(12);
     });
 
     /**
@@ -1384,7 +1462,54 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const fetchInitialData = async (value?:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            resolve(value?value:15); // Initial raw data
+          }, 0);
+        });
+      };
 
+      // Simulate async data transformation 1 (second link)
+      const transformData1 = async (data:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            resolve(data * 3); // Transform: multiply by 3
+          }, 0);
+        });
+      };
+
+      // Simulate async data transformation 2 (third link)
+      const transformData2 = async (data:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            resolve(data + 8); // Transform: add 8
+          }, 0);
+        });
+      };
+
+      // Execute async chain: fetch → transform1 → transform2
+      const rawData = await fetchInitialData();
+      const transformedData1 = await transformData1(rawData);
+      const finalData = await transformData2(transformedData1);
+
+      // Parallel chain with different initial value
+      const rawData2 = await fetchInitialData(20);
+      const transformedData2_2 = await transformData1(rawData2 || 20);
+      const finalData2 = await transformData2(transformedData2_2);
+
+      // Key assertions
+      expect(rawData).assertEqual(15);
+      expect(transformedData1).assertEqual(45); // 15 * 3 = 45
+      expect(finalData).assertEqual(53); // 45 + 8 = 53
+
+      expect(rawData2 || 20).assertEqual(20);
+      expect(transformedData2_2).assertEqual(60); // 20 * 3 = 60
+      expect(finalData2).assertEqual(68); // 60 + 8 = 68
+
+      // Verify chain order and data consistency
+      expect(transformedData1).assertEqual(rawData * 3);
+      expect(finalData).assertEqual(transformedData1 + 8);
     });
 
     /**
@@ -1505,7 +1630,30 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      const initialVal = 28;
+      const updateVal = 56;
 
+      // Async function wrapping atomic store + load
+      const asyncAtomicStoreLoad = async (val:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            Atomics.store(ia, 0, val); // Atomic store: set new value
+            const currentVal = Atomics.load(ia, 0); // Atomic load: get latest value
+            resolve(currentVal);
+          }, 0);
+        });
+      };
+
+      // Execute async atomic operations (initial store + update store)
+      const result1 = await asyncAtomicStoreLoad(initialVal);
+      const result2 = await asyncAtomicStoreLoad(updateVal);
+
+      // Key assertions
+      expect(result1).assertEqual(initialVal); // Verify initial store/load result
+      expect(result2).assertEqual(updateVal); // Verify update store/load result
+      expect(Atomics.load(ia, 0)).assertEqual(updateVal); // Verify final memory consistency
     });
 
     /**
@@ -1579,7 +1727,25 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 10;
 
+      const asyncAtomicAdd = async (addVal:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            Atomics.add(ia, 0, addVal);
+            resolve(Atomics.load(ia, 0));
+          }, 0);
+        });
+      };
+
+      const result1 = await asyncAtomicAdd(6);
+      const result2 = await asyncAtomicAdd(9);
+
+      expect(result1).assertEqual(16);
+      expect(result2).assertEqual(25);
+      expect(ia[0]).assertEqual(25);
     });
 
     /**
@@ -1633,7 +1799,26 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 0b1010; // Initial value (10 in decimal)
 
+      // Async function wrapping atomic xor
+      const asyncAtomicXor = async (xorVal:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            const oldVal = Atomics.xor(ia, 0, xorVal);
+            resolve(Atomics.load(ia, 0) );
+          }, 0);
+        });
+      };
+
+      // Execute async atomic operation (xor with 0b0111 = 7)
+      const result = await asyncAtomicXor(7);
+
+      // Key assertions (10 ^ 7 = 13 = 0b1101)
+      expect(result).assertEqual(13); // Verify xor result
+      expect(ia[0]).assertEqual(13); // Verify memory consistency
     });
 
     /**
@@ -1725,7 +1910,26 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 42; // Initial value
 
+      // Async function wrapping atomic exchange
+      const asyncAtomicExchange = async (newVal:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            const oldVal = Atomics.exchange(ia, 0, newVal);
+            resolve(Atomics.load(ia, 0) );
+          }, 0);
+        });
+      };
+
+      // Execute async atomic operation
+      const result = await asyncAtomicExchange(99);
+
+      // Key assertions
+      expect(result).assertEqual(99); // Verify updated value
+      expect(ia[0]).assertEqual(99); // Verify memory consistency
     });
 
     /**
@@ -1920,7 +2124,41 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const asyncTask = async (taskId:number, delayMs:number) => {
+        return new Promise<type86>(resolve => {
+          setTimeout(() => {
+            const result = taskId * 10; // Simple task logic
+            resolve({ taskId:taskId, result :result} as type86);
+          }, delayMs);
+        });
+      };
 
+      // Execute multiple async tasks in parallel using Promise.all
+      const parallelTasks = [
+        asyncTask(1, 20),  // Task 1: delay 20ms, result = 10
+        asyncTask(2, 10),  // Task 2: delay 10ms, result = 20
+        asyncTask(3, 30)   // Task 3: delay 30ms, result = 30
+      ];
+
+      // Aggregate parallel results
+      const results = await Promise.all(parallelTasks);
+      const aggregatedSum = results.reduce((sum, item) => sum + item.result, 0);
+
+      // Key assertions
+      // Verify number of completed tasks
+      expect(results.length).assertEqual(3);
+
+      // Verify individual task results
+      expect(results.find(r => r.taskId === 1)?.result).assertEqual(10);
+      expect(results.find(r => r.taskId === 2)?.result).assertEqual(20);
+      expect(results.find(r => r.taskId === 3)?.result).assertEqual(30);
+
+      // Verify aggregated result
+      expect(aggregatedSum).assertEqual(60); // 10 + 20 + 30 = 60
+
+      // Verify parallel execution (all tasks complete regardless of delay order)
+      const taskIds = results.map(r => r.taskId).sort();
+      expect(taskIds).assertDeepEquals([1, 2, 3]);
     });
 
     /**
@@ -2106,7 +2344,42 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      // Simulate async data fetch operation
+      const fetchData = async (delayMs:number, data:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            resolve(data); // Resolve with target data after delay
+          }, delayMs);
+        });
+      };
 
+      // Simulate async data processing operation
+      const processData = async (input:number) => {
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            const processed = input * 2 + 3; // Simple processing logic
+            resolve(processed);
+          }, 10);
+        });
+      };
+
+      // Execute async operations in sequence
+      const rawData1 = await fetchData(0, 7);
+      const processedData1 = await processData(rawData1);
+
+      const rawData2 = await fetchData(0, 12);
+      const processedData2 = await processData(rawData2);
+
+      // Key assertions
+      expect(rawData1).assertEqual(7);
+      expect(processedData1).assertEqual(17); // 7*2+3=17
+
+      expect(rawData2).assertEqual(12);
+      expect(processedData2).assertEqual(27); // 12*2+3=27
+
+      // Verify independent execution of async operations
+      expect(rawData1 !== rawData2).assertEqual(true);
+      expect(processedData1 !== processedData2).assertEqual(true);
     });
 
     /**
@@ -2118,7 +2391,24 @@ export default function asyncFunctionTest() {
      * @tc.level Level 3
      */
     it('asyncFunctionTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 10; // 初始值
 
+      const asyncAtomicAdd = async () => {
+        // 异步执行原子操作（模拟实际异步场景）
+        return new Promise<number>(resolve => {
+          setTimeout(() => {
+            Atomics.add(ia, 0, 5); // 原子+5
+            resolve(Atomics.load(ia, 0)); // 返回最新值
+          }, 0);
+        });
+      };
+
+      const result = await asyncAtomicAdd();
+
+      expect(result).assertEqual(15); // 异步执行结果正确
+      expect(ia[0]).assertEqual(15); // 内存中值与异步返回结果一致
     });
 
     /**

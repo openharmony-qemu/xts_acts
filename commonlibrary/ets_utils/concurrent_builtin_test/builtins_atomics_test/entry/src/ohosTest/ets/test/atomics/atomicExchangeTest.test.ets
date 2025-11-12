@@ -2940,7 +2940,7 @@ export default function atomicsExchangeTest() {
     /**
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_094
      * @tc.name atomicsExchangeTest094
-     * @desc Test async exchange with closure that limits update frequency
+     * @tc.desc Test async exchange with closure that limits update frequency
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
@@ -2989,7 +2989,7 @@ export default function atomicsExchangeTest() {
     /**
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_095
      * @tc.name atomicsExchangeTest095
-     * @desc Test nested async exchange with Promise.all and cross-index dependency
+     * @tc.desc Test nested async exchange with Promise.all and cross-index dependency
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
@@ -3036,7 +3036,7 @@ export default function atomicsExchangeTest() {
     /**
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_096
      * @tc.name atomicsExchangeTest096
-     * @desc Test exchange in async iterator with dynamic stop condition
+     * @tc.desc Test exchange in async iterator with dynamic stop condition
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
@@ -3051,7 +3051,7 @@ export default function atomicsExchangeTest() {
     /**
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_097
      * @tc.name atomicsExchangeTest097
-     * @desc Test async exchange with finally block for audit log
+     * @tc.desc Test async exchange with finally block for audit log
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
@@ -3103,7 +3103,7 @@ export default function atomicsExchangeTest() {
     /**
      * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_098
      * @tc.name atomicsExchangeTest098
-     * @desc Test nested exchange with async validation of both old and new values
+     * @tc.desc Test nested exchange with async validation of both old and new values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3

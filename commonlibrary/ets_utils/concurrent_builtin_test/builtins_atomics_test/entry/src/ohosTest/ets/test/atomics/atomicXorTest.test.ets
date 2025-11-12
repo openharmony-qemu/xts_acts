@@ -141,7 +141,38 @@ export default function atomicsXorTest() {
      * @tc.level Level 2
      */
     it('atomicsXorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      const initialVal = 0b1100; // 12 in decimal
+      const xorMask1 = 0b0110;  // 6 in decimal (first XOR mask)
+      const xorMask2 = 0b1001;  // 9 in decimal (second XOR mask)
 
+      // Initialize shared memory value
+      ia[0] = initialVal;
+
+      // First atomic XOR operation (12 ^ 6 = 10 = 0b1010)
+      const oldVal1 = Atomics.xor(ia, 0, xorMask1);
+      const result1 = Atomics.load(ia, 0);
+
+      // Second atomic XOR operation (10 ^ 9 = 3 = 0b0011)
+      const oldVal2 = Atomics.xor(ia, 0, xorMask2);
+      const finalResult = Atomics.load(ia, 0);
+
+      // Key assertions
+      // Verify first XOR operation
+      expect(oldVal1).assertEqual(initialVal); // Return original value before first XOR
+      expect(result1).assertEqual(initialVal ^ xorMask1); // 12 ^ 6 = 10
+      expect(ia[0]).assertEqual(3); // Memory consistency after first XOR
+
+      // Verify second XOR operation
+      expect(oldVal2).assertEqual(result1); // Return value before second XOR
+      expect(finalResult).assertEqual(result1 ^ xorMask2); // 10 ^ 9 = 3
+      expect(ia[0]).assertEqual(finalResult); // Final memory consistency
+
+      // Verify idempotency: XOR with same mask twice returns original value
+      Atomics.xor(ia, 0, xorMask2);
+      Atomics.xor(ia, 0, xorMask2);
+      expect(Atomics.load(ia, 0)).assertEqual(3); // 3 ^ 9 ^ 9 = 10
     });
 
     /**

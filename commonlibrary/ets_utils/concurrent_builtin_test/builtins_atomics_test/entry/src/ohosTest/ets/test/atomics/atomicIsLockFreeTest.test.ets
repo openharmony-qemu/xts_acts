@@ -1655,7 +1655,7 @@ export default function atomicsIsLockFreeTest() {
 
       const flowLog = await asyncInvalidInfinityCheck();
       expect(flowLog).assertDeepEquals(['try-start', 'try-success']); // No error thrown
-       // -Infinity is invalid, returns false
+      // -Infinity is invalid, returns false
     });
 
     /**

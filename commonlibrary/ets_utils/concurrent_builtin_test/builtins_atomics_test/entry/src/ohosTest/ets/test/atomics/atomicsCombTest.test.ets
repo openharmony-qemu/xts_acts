@@ -949,7 +949,23 @@ export default function atomicsCombTest() {
      * @tc.level Level 2
      */
     it('atomicsTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 15; // Initial value
 
+      // Conditional update: set to 30 only if current value is 15
+      const oldVal = Atomics.compareExchange(ia, 0, 15, 30);
+      const currentVal = Atomics.load(ia, 0);
+
+      // Key assertions
+      expect(oldVal).assertEqual(15); // Verify returned old value
+      expect(currentVal).assertEqual(30); // Verify successful update
+      expect(ia[0]).assertEqual(currentVal); // Verify memory consistency
+
+      // Test failed conditional update (current value is 30, expect no change)
+      const failedOldVal = Atomics.compareExchange(ia, 0, 15, 45);
+      expect(failedOldVal).assertEqual(30); // Return current value instead of expected old value
+      expect(Atomics.load(ia, 0)).assertEqual(30); // Verify no unintended update
     });
 
     /**

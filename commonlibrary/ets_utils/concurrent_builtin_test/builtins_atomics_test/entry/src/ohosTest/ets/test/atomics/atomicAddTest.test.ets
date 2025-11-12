@@ -88,12 +88,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0005
-     * .name atomicsAddTest005
-     * .desc Test Atomics.add with Int32Array and positive value addition
-     * .size MediumTest
-     * .type Function
-     * .level Level 1
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0005
+     * @tc.name atomicsAddTest005
+     * @tc.desc Test Atomics.add with Int32Array and positive value addition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('atomicsAddTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -114,12 +114,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0006
-     * .name atomicsAddTest006
-     * .desc Test Atomics.add with Int32Array and zero value addition
-     * .size MediumTest
-     * .type Function
-     * .level Level 1
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0006
+     * @tc.name atomicsAddTest006
+     * @tc.desc Test Atomics.add with Int32Array and zero value addition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('atomicsAddTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -140,12 +140,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0007
-     * .name atomicsAddTest007
-     * .desc Test Atomics.add with Int32Array and maximum value addition
-     * .size MediumTest
-     * .type Function | Boundary
-     * .level Level 2
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0007
+     * @tc.name atomicsAddTest007
+     * @tc.desc Test Atomics.add with Int32Array and maximum value addition
+     * @tc.size MediumTest
+     * @tc.type Function | Boundary
+     * @tc.level Level 2
      */
     it('atomicsAddTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -166,12 +166,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0008
-     * .name atomicsAddTest008
-     * .desc Test Atomics.add with Uint32Array and overflow behavior
-     * .size MediumTest
-     * .type Function | Boundary
-     * .level Level 2
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0008
+     * @tc.name atomicsAddTest008
+     * @tc.desc Test Atomics.add with Uint32Array and overflow behavior
+     * @tc.size MediumTest
+     * @tc.type Function | Boundary
+     * @tc.level Level 2
      */
     it('atomicsAddTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -192,12 +192,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0009
-     * .name atomicsAddTest009
-     * .desc Test Atomics.add with multiple indices in the same array
-     * .size MediumTest
-     * .type Function
-     * .level Level 1
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0009
+     * @tc.name atomicsAddTest009
+     * @tc.desc Test Atomics.add with multiple indices in the same array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('atomicsAddTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(8); // 2 elements of 4 bytes each
@@ -660,12 +660,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0028
-     * .name atomicsAddTest028
-     * .desc Test Atomics.add with Int16Array and basic functionality
-     * .size MediumTest
-     * .type Function
-     * .level Level 1
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0028
+     * @tc.name atomicsAddTest028
+     * @tc.desc Test Atomics.add with Int16Array and basic functionality
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('atomicsAddTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(2);
@@ -686,12 +686,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0029
-     * .name atomicsAddTest029
-     * .desc Test Atomics.add with Uint16Array and overflow behavior
-     * .size MediumTest
-     * .type Function | Boundary
-     * .level Level 2
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0029
+     * @tc.name atomicsAddTest029
+     * @tc.desc Test Atomics.add with Uint16Array and overflow behavior
+     * @tc.size MediumTest
+     * @tc.type Function | Boundary
+     * @tc.level Level 2
      */
     it('atomicsAddTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(2);
@@ -712,12 +712,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0030
-     * .name atomicsAddTest030
-     * .desc Test Atomics.add with Int8Array and negative value addition
-     * .size MediumTest
-     * .type Function
-     * .level Level 1
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0030
+     * @tc.name atomicsAddTest030
+     * @tc.desc Test Atomics.add with Int8Array and negative value addition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('atomicsAddTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(1);
@@ -738,12 +738,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0031
-     * .name atomicsAddTest031
-     * .desc Test Atomics.add with Int8Array and underflow behavior
-     * .size MediumTest
-     * .type Function | Boundary
-     * .level Level 2
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0031
+     * @tc.name atomicsAddTest031
+     * @tc.desc Test Atomics.add with Int8Array and underflow behavior
+     * @tc.size MediumTest
+     * @tc.type Function | Boundary
+     * @tc.level Level 2
      */
     it('atomicsAddTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(1);
@@ -764,12 +764,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0032
-     * .name atomicsAddTest032
-     * .desc Test Atomics.add with multiple operations on the same index
-     * .size MediumTest
-     * .type Function
-     * .level Level 1
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0032
+     * @tc.name atomicsAddTest032
+     * @tc.desc Test Atomics.add with multiple operations on the same index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('atomicsAddTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(4);
@@ -793,12 +793,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0033
-     * .name atomicsAddTest033
-     * .desc Test Atomics.add with large negative value addition
-     * .size MediumTest
-     * .type Function | Boundary
-     * .level Level 2
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0033
+     * @tc.name atomicsAddTest033
+     * @tc.desc Test Atomics.add with large negative value addition
+     * @tc.size MediumTest
+     * @tc.type Function | Boundary
+     * @tc.level Level 2
      */
     it('atomicsAddTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(4);
@@ -819,12 +819,12 @@ export default function atomicsAddTest() {
     });
 
     /**
-     * .number SUB_BUILTINS_Atomics_ADD_TEST_0034
-     * .name atomicsAddTest034
-     * .desc Test Atomics.add with different data types in the same buffer
-     * .size MediumTest
-     * .type Function
-     * .level Level 2
+     * @tc.number SUB_BUILTINS_Atomics_ADD_TEST_0034
+     * @tc.name atomicsAddTest034
+     * @tc.desc Test Atomics.add with different data types in the same buffer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('atomicsAddTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(8);

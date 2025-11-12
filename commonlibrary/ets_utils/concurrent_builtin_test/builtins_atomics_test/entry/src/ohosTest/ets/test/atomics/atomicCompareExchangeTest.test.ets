@@ -2150,7 +2150,32 @@ export default function atomicsCompareExchangeTest() {
      * @tc.level Level 3
      */
     it('atomicsCompareExchangeTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      const initialVal = 22;
+      const expectedOldVal = initialVal;
+      const updateVal = 47;
+      const invalidOldVal = 99; // Value not matching initial state
 
+      // Initialize shared memory value
+      ia[0] = initialVal;
+
+      // 1. Test successful conditional update (current value matches expected old value)
+      const successOldVal = Atomics.compareExchange(ia, 0, expectedOldVal, updateVal);
+      const updatedVal = Atomics.load(ia, 0);
+
+      // 2. Test failed conditional update (current value doesn't match invalid old value)
+      const failOldVal = Atomics.compareExchange(ia, 0, invalidOldVal, 100);
+      const finalVal = Atomics.load(ia, 0);
+
+      // Key assertions
+      // Verify successful update results
+      expect(successOldVal).assertEqual(expectedOldVal); // Return original value on success
+      expect(updatedVal).assertEqual(updateVal); // Verify value is updated
+      expect(ia[0]).assertEqual(updateVal); // Memory consistency check
+
+      // Verify failed update results
+      expect(failOldVal).assertEqual(updateVal); // Return current
     });
 
     /**

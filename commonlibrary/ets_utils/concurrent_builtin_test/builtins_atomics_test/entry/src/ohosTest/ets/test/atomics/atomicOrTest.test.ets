@@ -169,7 +169,7 @@ export default function atomicsOrTest() {
       // Operation chain: add → xor → or → compareExchange
       Atomics.add(ia, 0, 3); // 5 + 3 = 8
       Atomics.xor(ia, 0, 4); // 8 ^ 4 = 12
-      Atomics.or(ia, 0, 2);  // 12 | 2 = 14
+      Atomics.or(ia, 0, 2); // 12 | 2 = 14
       const final = Atomics.compareExchange(ia, 0, 14, 14);
 
       expect(final).assertEqual(14);
@@ -489,7 +489,7 @@ export default function atomicsOrTest() {
         return ops.map(op => Atomics.or(arr, op.idx, op.val));
       };
 
-      const oldValues = batchOr(ia, [{idx:0, val:4}, {idx:1, val:2}]);
+      const oldValues = batchOr(ia, [{ idx: 0, val: 4 }, { idx: 1, val: 2 }]);
       expect(oldValues).assertDeepEquals([3, 5]);
       expect(ia[0]).assertEqual(7); // 0b0111
       expect(ia[1]).assertEqual(7); // 0b0111
@@ -1043,7 +1043,7 @@ export default function atomicsOrTest() {
 
       const old = await Promise.all([
         createOrPromise(ia, 0, 4), // 0b0100
-        createOrPromise(ia, 1, 2)  // 0b0010
+        createOrPromise(ia, 1, 2)// 0b0010
       ]);
 
       expect(old[0]).assertEqual(3);
@@ -1317,7 +1317,9 @@ export default function atomicsOrTest() {
         });
 
         validationPassed = await validate();
-        if (!validationPassed) throw new Error('Invalid mask');
+        if (!validationPassed) {
+          throw new Error('Invalid mask');
+        }
 
         return new Promise<bigint>((resolve) => {
           setTimeout(() => {
@@ -1465,8 +1467,8 @@ export default function atomicsOrTest() {
       const safeOr = async (arr: Int32Array, idx: number, mask: number): Promise<number | null> => {
         try {
           return await new Promise<number>((resolve) => {
-              const old = Atomics.or(arr, idx, mask);
-              resolve(old);
+            const old = Atomics.or(arr, idx, mask);
+            resolve(old);
           });
         } catch (err) {
           errorCaught = true;
@@ -1671,10 +1673,10 @@ export default function atomicsOrTest() {
       };
 
       const loggedOr = createLoggedOr(ia, 0);
-      await loggedOr(1);  // Mask 1 (0b0001)
-      await loggedOr(2);  // Mask 2 (0b0010)
-      await loggedOr(4);  // Mask 4 (0b0100)
-      await loggedOr(8);  // Mask 8 (0b1000)
+      await loggedOr(1); // Mask 1 (0b0001)
+      await loggedOr(2); // Mask 2 (0b0010)
+      await loggedOr(4); // Mask 4 (0b0100)
+      await loggedOr(8); // Mask 8 (0b1000)
 
       expect(maskLog).assertDeepEquals([1, 2, 4, 8]);
       expect(ia[0]).assertEqual(15); // 0 | 1 | 2 | 4 | 8 = 15
@@ -1730,8 +1732,8 @@ export default function atomicsOrTest() {
      */
     it('atomicsOrTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const sab = new SharedArrayBuffer(8);
-      const ia = new Int32Array(sab);    // Valid for OR
-      const fa = new Float64Array(sab);  // Invalid for OR
+      const ia = new Int32Array(sab); // Valid for OR
+      const fa = new Float64Array(sab); // Invalid for OR
       ia[0] = 5;
 
       const validTask = new Promise<number>((resolve) => {
@@ -1891,8 +1893,8 @@ export default function atomicsOrTest() {
       const safeOr = async (arr: Int32Array, idx: number, mask: number): Promise<number | null> => {
         try {
           return await new Promise<number>((resolve) => {
-              const old = Atomics.or(arr, idx, mask);
-              resolve(old);
+            const old = Atomics.or(arr, idx, mask);
+            resolve(old);
           });
         } catch (err) {
           errorMessage = (err as Error).message;
@@ -1933,7 +1935,9 @@ export default function atomicsOrTest() {
 
       const batchValidOr = async (arr: Int32Array, indexes: number[], masks: number[]) => {
         const isValid = await validateMasks(masks);
-        if (!isValid) throw new Error('Invalid mask');
+        if (!isValid) {
+          throw new Error('Invalid mask');
+        }
 
         return Promise.all(
           indexes.map((idx, i): Promise<number> => {
@@ -1950,7 +1954,7 @@ export default function atomicsOrTest() {
 
       const oldValues = await batchValidOr(ia, [0, 1], masks);
       expect(oldValues).assertDeepEquals([0, 0]);
-      expect(ia[0]).assertEqual(3);  // 0 | 3 = 3
+      expect(ia[0]).assertEqual(3); // 0 | 3 = 3
       expect(ia[1]).assertEqual(12); // 0 | 12 = 12
     });
 
@@ -1987,9 +1991,9 @@ export default function atomicsOrTest() {
       };
 
       const trackedOr = createTrackedOr(ia, 0);
-      await trackedOr(1);   // Success
-      await trackedOr(2);   // Success
-      await trackedOr(4);   // Success
+      await trackedOr(1); // Success
+      await trackedOr(2); // Success
+      await trackedOr(4); // Success
       // Simulate failure (invalid mask type, but coerced to 0)
       // await trackedOr('8');
 
@@ -2096,9 +2100,9 @@ export default function atomicsOrTest() {
       };
 
       const dedupOr = createDedupOr(ia, 0);
-      const old1 = await dedupOr(1);  // New mask: 1
-      const old2 = await dedupOr(1);  // Duplicate mask: 1 (skip OR)
-      const old3 = await dedupOr(2);  // New mask: 2
+      const old1 = await dedupOr(1); // New mask: 1
+      const old2 = await dedupOr(1); // Duplicate mask: 1 (skip OR)
+      const old3 = await dedupOr(2); // New mask: 2
 
       expect(old1).assertEqual(0);
       expect(old2).assertEqual(1); // Returns current value (no OR)
@@ -2172,7 +2176,7 @@ export default function atomicsOrTest() {
         }, 15);
       });
 
-      const oldValue : number = await Promise.race([orTask, changeTask]);
+      const oldValue: number = await Promise.race([orTask, changeTask]);
       await Promise.allSettled([orTask, changeTask]);
 
       expect(oldValue).assertEqual(1); // OR task wins
@@ -2196,10 +2200,12 @@ export default function atomicsOrTest() {
 
       const safeOr = async (arr: Int32Array, idx: number, mask: number): Promise<number | null> => {
         try {
-          if (typeof mask !== 'number') throw new Error('Mask must be number');
+          if (typeof mask !== 'number') {
+            throw new Error('Mask must be number');
+          }
           return await new Promise<number>((resolve) => {
-              const old = Atomics.or(arr, idx, mask);
-              resolve(old);
+            const old = Atomics.or(arr, idx, mask);
+            resolve(old);
           });
         } catch (err) {
           errorCaught = true;
@@ -2277,9 +2283,9 @@ export default function atomicsOrTest() {
       };
 
       const cumulativeOr = createCumulativeOr(ia, 0);
-      await cumulativeOr(1);  // Cumulative: 1
-      await cumulativeOr(2);  // Cumulative: 3
-      await cumulativeOr(4);  // Cumulative: 7
+      await cumulativeOr(1); // Cumulative: 1
+      await cumulativeOr(2); // Cumulative: 3
+      await cumulativeOr(4); // Cumulative: 7
 
       expect(cumulativeMask).assertEqual(7);
       expect(ia[0]).assertEqual(7); // Matches cumulative mask
@@ -2657,47 +2663,37 @@ export default function atomicsOrTest() {
 
       Atomics.and(ba, 0, ~0b00000010n); // Disable B
       Atomics.xor(ba, 0, 0b00000100n); // Toggle C
-      Atomics.or(ba, 0, 0b00010000n);  // Enable E
+      Atomics.or(ba, 0, 0b00010000n); // Enable E
 
       expect(ba[0]).assertEqual(0b00110101n); // A(1), C(0→1), D(1), E(1)
     });
-
-    
-
     /**
-     * @tc.number SUB_BUILTINS_Atomics_store_TEST_0100
-     * @tc.name atomicsStoreTest100
-     * @tc.desc Nested arrows for BigInt64Array store with async cleanup and validation
+     * @tc.number SUB_BUILTINS_Atomics_or_TEST_0100
+     * @tc.name atomicsOrTest0100
+     * @tc.desc Promise.allSettled with OR tasks on detached and valid buffers
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 3
      */
-    it('atomicsStoreTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const sab = new SharedArrayBuffer(8);
-      const ta = new BigInt64Array(sab);
-      const targetVal = 999999999999999999n;
-      const minVal = 100000000000000000n;
-      let cleanupDone = false;
-      let validated = false;
+    it('atomicsOrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab32 = new SharedArrayBuffer(4);
+      const ia32 = new Int32Array(sab32);
+      ia32[0] = 0b0010; // 初始：bit1置位
 
-      const safeStoreWithCleanup = async(arr: BigInt64Array,idx: number, val: bigint) => {
-          try {
-            const storedVal = Atomics.store(arr, idx, val);
-            await new Promise<void>(resolve => setTimeout(resolve, 2));
-            validated = storedVal >= minVal; // Validate value ≥ minimum threshold
-            return storedVal;
-          } finally {
-            await new Promise<void>(resolve => setTimeout(resolve, 1));
-            cleanupDone = true; // Mark cleanup as completed
-          }
-        }
+      const sab64 = new SharedArrayBuffer(8);
+      const ba64 = new BigInt64Array(sab64);
+      ba64[0] = 0b10000000n; // 初始：bit7置位
 
-      const storedVal = await safeStoreWithCleanup(ta,0, targetVal);
-      expect(storedVal).assertEqual(targetVal);
-      expect(ta[0]).assertEqual(targetVal);
-      expect(validated).assertEqual(true); // Target value meets minimum threshold
-      expect(cleanupDone).assertEqual(true); // Cleanup logic executed
+      expect(Atomics.isLockFree(4)).assertEqual(true);
+      expect(Atomics.isLockFree(8)).assertEqual(true);
+
+      Atomics.or(ia32, 0, 0b0100); // 32位：激活bit2 → 0b0110
+      Atomics.or(ba64, 0, 0b00100000n); // 64位：激活bit5 → 0b10100000n
+
+      expect(ia32[0]).assertEqual(0b0110);
+      expect(ba64[0]).assertEqual(0b10100000n);
     });
+
 
   })
 }

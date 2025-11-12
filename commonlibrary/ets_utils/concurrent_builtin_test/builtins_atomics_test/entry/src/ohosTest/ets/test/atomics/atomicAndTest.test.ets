@@ -1900,7 +1900,22 @@ export default function atomicsAndTest() {
      * @tc.level Level 3
      */
     it('atomicsAndTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      const sab = new SharedArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 0b1101; // Initial value (13 in decimal)
 
+      // Atomic AND operation: retain only bits where mask is 1 (mask = 0b1001 = 9)
+      const oldVal = Atomics.and(ia, 0, 9);
+      const currentVal = Atomics.load(ia, 0);
+
+      // Key assertions (13 & 9 = 9 = 0b1001)
+      expect(oldVal).assertEqual(13); // Verify returned old value
+      expect(currentVal).assertEqual(9); // Verify AND operation result
+      expect(ia[0]).assertEqual(9); // Verify memory consistency
+
+      // Secondary test: AND with 0b0100 (4) to clear other bits
+      Atomics.and(ia, 0, 4);
+      expect(Atomics.load(ia, 0)).assertEqual(0); // 9 & 4 = 0
     });
 
     /**
