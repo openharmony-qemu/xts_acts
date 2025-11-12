@@ -508,10 +508,10 @@ export default function DeviceInfoTest() {
     it('deviceinfo_test_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1800 start');
       let ret = false;
-      let majorVersionInfo = deviceinfo.majorVersion;
+      let majorVersionInfo: int = deviceinfo.majorVersion;
       console.info('the value of the majorVersion is :' + majorVersionInfo);
 
-      expect(majorVersionInfo).assertInstanceOf('Number');
+      expect(majorVersionInfo).assertInstanceOf('int');
       if (majorVersionInfo >= 1 && majorVersionInfo <= 99) {
         ret = true;
         expect(ret).assertTrue();
@@ -536,10 +536,10 @@ export default function DeviceInfoTest() {
     it('deviceinfo_test_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_1900 start');
       let ret = false;
-      let seniorVersionInfo = deviceinfo.seniorVersion;
+      let seniorVersionInfo: int = deviceinfo.seniorVersion;
       console.info('the value of the seniorVersion is :' + seniorVersionInfo);
 
-      expect(seniorVersionInfo).assertInstanceOf('Number');
+      expect(seniorVersionInfo).assertInstanceOf('int');
       if (seniorVersionInfo >= 0 && seniorVersionInfo <= 99) {
         ret = true;
         expect(ret).assertTrue();
@@ -564,10 +564,10 @@ export default function DeviceInfoTest() {
     it('deviceinfo_test_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2000 start');
       let ret = false;
-      let featureVersionInfo = deviceinfo.featureVersion;
+      let featureVersionInfo: int = deviceinfo.featureVersion;
       console.info('the value of the featureVersion is :' + featureVersionInfo);
 
-      expect(featureVersionInfo).assertInstanceOf('Number');
+      expect(featureVersionInfo).assertInstanceOf('int');
       if ((featureVersionInfo >= 1 && featureVersionInfo <= 99) || featureVersionInfo == 0) {
         ret = true;
         expect(ret).assertTrue();
@@ -592,10 +592,10 @@ export default function DeviceInfoTest() {
     it('deviceinfo_test_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2100 start');
       let ret = false;
-      let buildVersionInfo = deviceinfo.buildVersion;
+      let buildVersionInfo: int = deviceinfo.buildVersion;
       console.info('the value of the buildVersion is :' + buildVersionInfo);
 
-      expect(buildVersionInfo).assertInstanceOf('Number');
+      expect(buildVersionInfo).assertInstanceOf('int');
       if (buildVersionInfo == 0 || (buildVersionInfo >= 1 && buildVersionInfo <= 999)) {
         ret = true;
         expect(ret).assertTrue();
@@ -620,10 +620,10 @@ export default function DeviceInfoTest() {
     it('deviceinfo_test_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2200 start');
       let ret = false;
-      let sdkApiVersionInfo = deviceinfo.sdkApiVersion;
+      let sdkApiVersionInfo: int = deviceinfo.sdkApiVersion;
       console.info('the value of the sdkApiVersion is :' + sdkApiVersionInfo);
 
-      expect(sdkApiVersionInfo).assertInstanceOf('Number');
+      expect(sdkApiVersionInfo).assertInstanceOf('int');
       if (sdkApiVersionInfo >= 0) {
         ret = true;
         expect(ret).assertTrue();
@@ -648,10 +648,10 @@ export default function DeviceInfoTest() {
     it('deviceinfo_test_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_2300 start');
       let ret = false;
-      let firstApiVersionInfo = deviceinfo.firstApiVersion;
+      let firstApiVersionInfo: int = deviceinfo.firstApiVersion;
       console.info('the value of the firstApiVersion is :' + firstApiVersionInfo);
 
-      expect(firstApiVersionInfo).assertInstanceOf('Number');
+      expect(firstApiVersionInfo).assertInstanceOf('int');
       if (firstApiVersionInfo >= 0) {
         ret = true;
         expect(ret).assertTrue();
@@ -923,10 +923,10 @@ export default function DeviceInfoTest() {
     it('deviceinfo_test_static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_3300 start');
       let ret = false;
-      let distributionOSApiVersionInfo = deviceinfo.distributionOSApiVersion;
+      let distributionOSApiVersionInfo: int = deviceinfo.distributionOSApiVersion;
       console.info('the value of the distributionOSApiVersion is :' + distributionOSApiVersionInfo);
 
-      expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
+      expect(distributionOSApiVersionInfo).assertInstanceOf('int');
       if (distributionOSApiVersionInfo >= 0) {
         ret = true;
         expect(ret).assertTrue();
