@@ -194,7 +194,7 @@ export default function nfcNDEFTagTest() {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0300 makeApplicationRecord payload: ' +  makeApplicationRecord.payload);
           } else {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0300 makeApplicationRecord ndefRecord: ' + makeApplicationRecord);
-            expect()/assertFail();
+            expect().assertFail();
           }
         } catch (error: BusinessError) {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0300 error is ' + error + " - " + error.code);
@@ -357,7 +357,7 @@ export default function nfcNDEFTagTest() {
           if (ndefMessage != null && ndefMessage != undefined) {
             let getNdefRecords: Array<tag.NdefRecord> = ndefMessage.getNdefRecords();
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0900 getNdefRecords: ' + getNdefRecords);
-          } else  {
+          } else {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefMessage = null & = undefined:');
             expect().assertFail();
           }
