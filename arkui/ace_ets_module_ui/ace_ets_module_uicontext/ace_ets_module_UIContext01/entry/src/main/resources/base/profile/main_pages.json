@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPTest",
+    "MainAbility/pages/Context/GetNodeByIdNullTest",
+    "MainAbility/pages/Context/UIContextUndefinedTest"
+  ]
+}
