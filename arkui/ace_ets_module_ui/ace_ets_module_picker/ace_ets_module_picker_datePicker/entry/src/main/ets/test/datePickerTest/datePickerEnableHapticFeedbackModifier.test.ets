@@ -96,8 +96,8 @@ export default function EnableHapticFeedbackModifierTest() {
     });
     
     /* *
-     * @tc.number: DatePickerEnableHapticFeedback_004
-     * @tc.name  : DatePickerEnableHapticFeedback_004
+     * @tc.number: DatePickerEnableHapticFeedbackModifier_004
+     * @tc.name  : DatePickerEnableHapticFeedbackModifier_004
      * @tc.desc  : To test the enableHapticFeedback interface null
      * @tc.level : Level 1
      * @tc.type
