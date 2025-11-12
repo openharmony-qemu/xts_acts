@@ -36,7 +36,7 @@ export default function customDialogLevelOrder() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api18.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     })
 
@@ -55,7 +55,7 @@ export default function customDialogLevelOrder() {
           // let result = await customDialogLevelOrder.pushUrl(options);
           customDialogLevelOrder.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push customDialogLevelOrder success: " + JSON.stringify(result));
+          // console.info("push customDialogLevelOrder success: ");
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -68,7 +68,7 @@ export default function customDialogLevelOrder() {
 
 
     afterEach(async () => {
-      if (AppStorage.get('customLevel') != undefined) {
+      if (AppStorage.get<number>('customLevel') != undefined) {
         AppStorage.delete('customLevel')
       }
       await CommonFunc.sleep(1000);
@@ -76,8 +76,7 @@ export default function customDialogLevelOrder() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   customDialogLevelOrder_static_0100
      * @tc.name     customDialogLevelOrder_static_0100
      * @tc.desc     customDialogLevelOrder_static_0100
@@ -93,7 +92,7 @@ it('customDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | L
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get('customLevel')
+      let top = AppStorage.get<number>('customLevel')
       expect(top).assertEqual(100)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
@@ -104,8 +103,7 @@ it('customDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | L
     });
 
     
-    
-/*
+    /*
      * @tc.number   customDialogLevelOrder_static_0200
      * @tc.name     customDialogLevelOrder_static_0200
      * @tc.desc     customDialogLevelOrder_static_0200
@@ -121,7 +119,7 @@ it('customDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | L
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get('customLevel')
+      let top = AppStorage.get<number>('customLevel')
       expect(top).assertEqual(100000)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
@@ -132,8 +130,7 @@ it('customDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | L
     });
 
     
-    
-/*
+    /*
      * @tc.number   customDialogLevelOrder_static_0300
      * @tc.name     customDialogLevelOrder_static_0300
      * @tc.desc     customDialogLevelOrder_static_0300
@@ -149,7 +146,7 @@ it('customDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | L
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get('customLevel')
+      let top = AppStorage.get<number>('customLevel')
       expect(top).assertEqual(-100000)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
@@ -159,8 +156,7 @@ it('customDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | L
       done();
     });
     
-    
-/*
+    /*
      * @tc.number   customDialogLevelOrder_static_0400
      * @tc.name     customDialogLevelOrder_static_0400
      * @tc.desc     customDialogLevelOrder_static_0400
@@ -176,7 +172,7 @@ it('customDialogLevelOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | L
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get('customLevel')
+      let top = AppStorage.get<number>('customLevel')
       expect(top).assertEqual(0)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.id('close'));
