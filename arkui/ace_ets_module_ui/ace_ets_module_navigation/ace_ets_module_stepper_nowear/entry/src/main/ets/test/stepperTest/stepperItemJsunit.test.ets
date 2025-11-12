@@ -22,7 +22,7 @@ export default function stepperItemJsunit() {
       beforeEach(async (done: Function) => {
         console.info("stepperItemJsunit beforeEach start");
         let options: router.RouterOptions = {
-          url: 'MainAbility/pages/stepperItem2',
+          url: 'MainAbility/pages/stepper/stepperItem2',
         }
         let result: ESObject;
         try {
