@@ -373,6 +373,25 @@ export default function nfcNDEFTagTest() {
     })
 
     /**
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_1000
+     * @tc.name getNdefTagType
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      if (ndefTag != null && ndefTag != undefined) {
+        let ndefTagType: tag.NfcForumType = ndefTag.getNdefTagType();
+        expect(tag.NfcForumType.NFC_FORUM_TYPE_1).assertEqual(ndefTagType);
+      } else {
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_1100
      * @tc.name getNdefMessage
      * @tc.desc Check whether the NFC function is enabled.
