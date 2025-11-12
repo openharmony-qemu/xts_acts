@@ -40,7 +40,7 @@ export default function GetWindowWidthAndHeightTest() {
       done();
     });
     /**
-     * @tc.number
+     * @tc.number    GetWindowWidthBreakpoint_0100
      * @tc.name      GetWindowWidthBreakpoint_0100
      * @tc.desc      api
      * @tc.level:    Level 2
@@ -67,9 +67,10 @@ export default function GetWindowWidthAndHeightTest() {
       console.info('[GetWindowWidthBreakpoint_0100] END');
       done();
     });
+
     /**
-     * @tc.number
-    * @tc.name      GetWindowHeightBreakpoint_0200
+     * @tc.number    GetWindowHeightBreakpoint_0200
+     * @tc.name      GetWindowHeightBreakpoint_0200
      * @tc.desc      api
      * @tc.level:    Level 2
      * @tc.type :
