@@ -173,7 +173,7 @@ export default function SimNoCardPublic1() {
               done();
             }
           }).catch((err) => {
-            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+            console.info(`${caseName} failed, err->` + err);
             ExpectFail();
             console.info(`${caseName} test end`);
             done();
@@ -220,7 +220,7 @@ export default function SimNoCardPublic1() {
                 done();
               }
             }).catch((err) => {
-              console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+              console.info(`${caseName} failed, err->` + err);
               ExpectFail();
               console.info(`${caseName} test end`);
               done();
