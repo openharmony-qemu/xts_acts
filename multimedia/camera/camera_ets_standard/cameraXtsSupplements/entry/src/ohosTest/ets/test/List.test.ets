@@ -20,6 +20,7 @@ import CameraSessionHasSuppTest from './camera/CameraSessionHasSupp.test';
 import CameraDeprecatedCaptureSessionTest from './camera/CameraDeprecatedCaptureSession.test';
 import getSupportedSceneModesTest from './camera/getSupportedSceneModes.test';
 import CameraSessionPreviewRotationTest from "./camera/CameraSessionPreviewRotation.test";
+import CameraDeviceTest from './camera/CameraDeviceTest.test';
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -44,4 +45,5 @@ export default function testsuite() {
   CameraSessionHasSuppTest();
   getSupportedSceneModesTest();
   CameraSessionPreviewRotationTest();
+  CameraDeviceTest();
 }
