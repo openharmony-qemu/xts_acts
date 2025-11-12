@@ -70,6 +70,8 @@ import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
 import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEnumGpsTimeTamp.test';
 import ImagePropertyKeySyncEnumSoftWare from './image/ImagePropertyKeySyncEnumSoftWare.test';
 import ImagePropertyKeySyncEnumStripOffsets from './image/ImagePropertyKeySyncEnumStripOffsets.test';
+import modifyImagePropertyTest from './image/ModifyImageProperty.test';
+import modifyImagePropertyTests from './image/ModifyImagePropertyKey.test';
 
 
 export default function testsuite() {
@@ -130,4 +132,6 @@ export default function testsuite() {
   ImagePropertyKeySyncEnumGPSTIMESTAMP();
   ImagePropertyKeySyncEnumStripOffsets();
   ImagePropertyKeySyncEnumSoftWare();
+  modifyImagePropertyTest();
+  modifyImagePropertyTests();
 }
