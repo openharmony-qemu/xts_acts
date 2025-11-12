@@ -177,7 +177,7 @@ export default class Utils {
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
         if (error.code === 17000002) {
           retry = true;
-          await Utils.sleep(2000);
+          await Utils.sleep(5000);
           retryTimes++;
           console.log('retryTimes = ' + retryTimes);
         }

@@ -126,24 +126,6 @@ struct webController {
               }
               break;
             }
-            case 'emitLoadUrlWithHeaderErrorCode01': {
-              try {
-                this.controller.loadUrl(null, [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(Number(error.code), 2025110602)
-              }
-              break;
-            }
-            case 'emitLoadUrlWithHeaderErrorCode02': {
-              try {
-                this.controller.loadUrl(undefined, [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(Number(error.code), 2025110603)
-              }
-              break;
-            }
 
           }
         })
