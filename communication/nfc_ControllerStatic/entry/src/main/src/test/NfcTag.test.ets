@@ -118,6 +118,10 @@ export default function nfcTagTest() {
       expect(tag.NfcForumType.NFC_FORUM_TYPE_3).assertEqual(3);
       console.info('[nfc_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_FORUM_TYPE_4 is ' + tag.NfcForumType.NFC_FORUM_TYPE_4);
       expect(tag.NfcForumType.NFC_FORUM_TYPE_4).assertEqual(4);
+      console.info('[nfc_test]29 RTD_TEXT Enumerated value pass:' + String(tag.RTD_TEXT) + '--' + String(0x54))
+      expect(String(tag.RTD_TEXT)).assertEqual(String(0x54));
+      console.info('[nfc_test]30 RTD_URI Enumerated value pass:' + String(tag.RTD_URI) + '--' + String(0x55))
+      expect(String(tag.RTD_URI)).assertEqual(String(0x55));
       console.info('[nfc_test]11 TYPE_UNKNOWN Enumerated value test pass:' + tag.MifareClassicType.TYPE_UNKNOWN);
       expect(tag.MifareClassicType.TYPE_UNKNOWN).assertEqual(0);
       console.info('[nfc_test]12 TYPE_CLASSIC Enumerated value test pass:' + tag.MifareClassicType.TYPE_CLASSIC);
