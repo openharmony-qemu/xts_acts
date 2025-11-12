@@ -73,15 +73,15 @@ export default function ArkListTest() {
     it('testListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testListAdd0001';
       try {
-        let list: List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person> =
-          new List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person>();
+        let list: List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Object> =
+          new List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Object>();
 
         list.add("zhang san");
         list.add(1);
-        const person: Person = {
+        let temp: Temp = {
           age: 10, name: "zhang"
         };
-        list.add(person);
+        list.add(temp);
         list.add(undefined);
         list.add(null);
         list.add(true);
