@@ -60,7 +60,7 @@ struct StepperExample2 {
             })
         }.itemStyle()
       }
-      .key("nextLabel1")
+      .key('nextLabel1')
       .attributeModifier(this.stepperItemModifier)
       .status(this.firstState)
     }

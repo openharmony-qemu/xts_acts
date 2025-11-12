@@ -123,6 +123,11 @@ export default function StepperJsunit11() {
       done()
     });
 
+    /*
+     * @tc.number       stepperTest_0500
+     * @tc.name         stepperTest_0500
+     * @tc.desc         stepperTest_0500
+     */
     it('stepperTest_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[stepperTest_0500] START');
       await sleep(1000);
@@ -137,6 +142,11 @@ export default function StepperJsunit11() {
       done()
     });
 
+    /*
+     * @tc.number       stepperTest_0300
+     * @tc.name         stepperTest_0300
+     * @tc.desc         stepperTest_0300
+     */
     it('stepperTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperTest_0300v START');
       let strJson: string = getInspectorByKey('stepper');
