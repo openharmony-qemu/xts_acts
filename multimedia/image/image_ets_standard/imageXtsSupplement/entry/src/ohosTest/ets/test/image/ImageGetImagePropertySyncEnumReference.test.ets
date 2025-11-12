@@ -56,14 +56,13 @@ async function getImagePropertySync7(done: Function, context : Context,testName:
     callback(propertyKeyName,undefined);
     done();
   } catch (err) {
-    // expect().assertFail();
     console.error(TAG, testName,'this is catch err', err.message, err.code);
     callback(undefined, err);
     done();
   }
 }
-export default function ImagePropertyKeySyncEnum7() {
-  describe('ImagePropertyKeySyncEnum7', ()=>{
+export default function ImageGetImagePropertySyncEnumReference() {
+  describe('ImageGetImagePropertySyncEnumReference', ()=>{
     beforeAll(async ()=>{
       console.info('beforeAll case');
     });

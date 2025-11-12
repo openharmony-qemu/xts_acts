@@ -19,7 +19,7 @@ import fileio from '@ohos.fileio'
 import { sleep, isEmpty } from '../common';
 import common from '@ohos.app.ability.common';
 
-const TAG = 'Image.ImagePropertyKeySyncEnum4A'
+const TAG = 'Image.ImageGetImagePropertySyncEnumSoftware'
 let fdNumber: number;
 async function getFd(fileName: string) {
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -61,8 +61,8 @@ async function getImagePropertySync(done: Function, context : Context,testName: 
 }
 
 
-export default function ImagePropertyKeySyncEnum4A() {
-  describe('ImagePropertyKeySyncEnum4A', ()=>{
+export default function ImageGetImagePropertySyncEnumSoftware() {
+  describe('ImageGetImagePropertySyncEnumSoftware', ()=>{
     beforeAll(async ()=>{
       console.info('beforeAll case');
     });
