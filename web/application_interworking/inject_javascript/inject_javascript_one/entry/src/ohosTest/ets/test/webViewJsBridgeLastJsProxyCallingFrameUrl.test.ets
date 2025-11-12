@@ -71,7 +71,7 @@ export default function webViewJsBridgeLastJsProxyCallingFrameUrl() {
       let emitKey = "emitJsBridgeGetLastJavascriptProxyCallingFrameUrl";
       Utils.emitEvent(emitKey, 172370)
       Utils.registerEvent("testJsBridgeGetLastJavascriptProxyCallingFrameUrl", "success", 172380, done);
-      Utils.waitAndClickComponent(driver, 'webViewJsBridgeLastJsProxyCallingFrameUrl');
+      await Utils.waitAndClickComponent(driver, 'webViewJsBridgeLastJsProxyCallingFrameUrl');
     })
   })
 }

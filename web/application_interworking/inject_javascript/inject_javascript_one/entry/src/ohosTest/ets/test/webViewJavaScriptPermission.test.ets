@@ -75,7 +75,7 @@ export default function ActsAceWebviewJavaScriptPermission() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, 'webviewJavaScriptPermissionButton');
+      await Utils.waitAndClickComponent(driver, 'webviewJavaScriptPermissionButton');
     })
   })
 }

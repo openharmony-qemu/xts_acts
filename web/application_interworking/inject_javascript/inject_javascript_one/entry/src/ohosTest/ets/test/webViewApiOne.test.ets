@@ -73,7 +73,7 @@ export default function webViewApiOne() {
         done, (backData: emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, 'webViewApiOneButton');
+      await Utils.waitAndClickComponent(driver, 'webViewApiOneButton');
     })
   })
 }

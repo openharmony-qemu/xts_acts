@@ -47,7 +47,7 @@ export default function webJsunit() {
     it('fileAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitFileAccessTrue", 160700);
       Utils.registerContainEvent("fileAccessTrue", "index", 160710, done);
-      Utils.waitAndClickComponent(driver, 'webcomponent');
+      await Utils.waitAndClickComponent(driver, 'webcomponent');
     })
 
     /*
@@ -58,7 +58,7 @@ export default function webJsunit() {
     it('onInactive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnInactive", 160700);
       Utils.registerEvent("onInactive", true, 160720, done);
-      Utils.waitAndClickComponent(driver, 'webcomponent');
+      await Utils.waitAndClickComponent(driver, 'webcomponent');
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_057
@@ -68,7 +68,7 @@ export default function webJsunit() {
     it('onActive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnActive", 160700);
       Utils.registerContainEvent("onActive", "index.html", 160730, done);
-      Utils.waitAndClickComponent(driver, 'webcomponent');
+      await Utils.waitAndClickComponent(driver, 'webcomponent');
     })
 
   })

@@ -64,7 +64,7 @@ export default function webTwoJsunit() {
     it('GetCertificate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetCertificate", 160830);
       Utils.registerEvent("GetCertificate", "getCertificate success: len = 0", 160840, done);
-      Utils.waitAndClickComponent(driver, 'webcomponenttwo');
+      await Utils.waitAndClickComponent(driver, 'webcomponenttwo');
     })
 
   })

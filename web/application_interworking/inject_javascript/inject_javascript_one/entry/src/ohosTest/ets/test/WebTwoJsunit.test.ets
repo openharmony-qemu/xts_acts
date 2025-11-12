@@ -64,7 +64,7 @@ export default function webTwoJsunit() {
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxyTwo", 172270)
       Utils.registerEvent("RegisterJavaScriptProxy", '\"okok\"', 172280, done);
-      Utils.waitAndClickComponent(driver, 'webcomponenttwo');
+      await Utils.waitAndClickComponent(driver, 'webcomponenttwo');
     })
   })
 }

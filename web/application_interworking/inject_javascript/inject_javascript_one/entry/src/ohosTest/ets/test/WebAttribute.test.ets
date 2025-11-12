@@ -67,7 +67,7 @@ export default function webAttribute() {
     it('testJavaScriptAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptAccess001", 172160)
       Utils.registerEvent("testJavaScriptAccess001", true, 172170, done);
-      Utils.waitAndClickComponent(driver, 'WebAttributeButton');
+      await Utils.waitAndClickComponent(driver, 'WebAttributeButton');
     })
   })
 }

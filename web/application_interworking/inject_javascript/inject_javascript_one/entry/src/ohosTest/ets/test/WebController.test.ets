@@ -68,7 +68,7 @@ export default function webController() {
     it('testRegisterJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRegisterJavaScriptProxy001", 172180)
       Utils.registerEvent("testRegisterJavaScriptProxy001", "backToEts", 172190, done);
-      Utils.waitAndClickComponent(driver, 'WebControllerButton');
+      await Utils.waitAndClickComponent(driver, 'WebControllerButton');
     })
 
     /*
@@ -82,7 +82,7 @@ export default function webController() {
     it('testDeleteJavaScriptRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeleteJavaScriptRegister001", 172180)
       Utils.registerEvent("testDeleteJavaScriptRegister001", true, 172200, done);
-      Utils.waitAndClickComponent(driver, 'WebControllerButton');
+      await Utils.waitAndClickComponent(driver, 'WebControllerButton');
     })
   })
 }

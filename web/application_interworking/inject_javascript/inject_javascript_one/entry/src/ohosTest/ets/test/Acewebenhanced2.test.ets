@@ -89,7 +89,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
@@ -106,7 +106,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
@@ -123,7 +123,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
+      await Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
   })

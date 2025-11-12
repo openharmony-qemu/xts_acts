@@ -74,7 +74,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       Utils.emitEvent('deleteWithoutRefresh', 172410)
-      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_withOutRefresh');
+      await Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_withOutRefresh');
       // setTimeout(() => {
       //   sendEventByKey('runJavaScript', 10, '');
       // }, 500)
@@ -96,7 +96,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       Utils.emitEvent('deleteWithRefresh', 172410)
-      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_withRefresh');
+      await Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_withRefresh');
       //setTimeout(() => {
        // sendEventByKey('runJavaScript', 10, '');
       //}, 1000)
@@ -117,7 +117,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_name_err');
+      await Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_name_err');
     });
 
 
@@ -135,7 +135,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_name_null');
+      await Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_name_null');
     });
   });
 }

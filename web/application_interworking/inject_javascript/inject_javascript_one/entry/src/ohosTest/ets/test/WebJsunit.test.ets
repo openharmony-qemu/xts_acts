@@ -46,7 +46,7 @@ export default function webJsunit() {
     it('registerJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxy", 172240)
       Utils.registerEvent("registerJavaScriptProxy", "backToEts", 172250, done);
-      Utils.waitAndClickComponent(driver, 'webcomponent');
+      await Utils.waitAndClickComponent(driver, 'webcomponent');
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_059
@@ -56,7 +56,7 @@ export default function webJsunit() {
     it('deleteJavaScriptRegister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDeleteJavaScriptRegister", 172240)
       Utils.registerEvent("deleteJavaScriptRegister", true, 172260, done);
-      Utils.waitAndClickComponent(driver, 'webcomponent');
+      await Utils.waitAndClickComponent(driver, 'webcomponent');
     })
   })
 }

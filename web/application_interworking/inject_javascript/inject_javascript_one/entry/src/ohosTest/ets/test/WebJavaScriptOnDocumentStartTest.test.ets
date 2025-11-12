@@ -68,7 +68,7 @@ export default function webJavaScriptOnDocumentStartTest() {
     it('testJavaScriptOnDocumentStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptOnDocumentStart001", 172210)
       Utils.registerEvent("testJavaScriptOnDocumentStart001", '"Red"', 172220, done);
-      Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
     })
 
     /*
@@ -82,7 +82,7 @@ export default function webJavaScriptOnDocumentStartTest() {
     it('testJavaScriptOnDocumentStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptOnDocumentStart002", 172210)
       Utils.registerEvent("testJavaScriptOnDocumentStart002", '"Red"', 172230, done);
-      Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
+      await Utils.waitAndClickComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
     })
 
   })

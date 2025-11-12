@@ -71,7 +71,7 @@ export default function webViewMetaViewportFalse() {
     it('testWebViewMetaViewportFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         Utils.emitEvent(emitKey, 172390)
         Utils.registerEvent("emitWebViewMetaViewportFalse", "false", 172400, done);
-        Utils.waitAndClickComponent(driver, 'webViewMetaViewportFalse');
+        await Utils.waitAndClickComponent(driver, 'webViewMetaViewportFalse');
     })
   })
 }

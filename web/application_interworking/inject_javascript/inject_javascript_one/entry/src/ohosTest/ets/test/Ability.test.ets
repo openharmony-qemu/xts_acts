@@ -71,7 +71,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '001');
+      await Utils.waitAndClickComponent(driver, '001');
     })
 
     /**
@@ -88,7 +88,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '002');
+      await Utils.waitAndClickComponent(driver, '002');
     })
 
     /**
@@ -105,7 +105,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '003');
+      await Utils.waitAndClickComponent(driver, '003');
     })
 
     /**
@@ -122,7 +122,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '004');
+      await Utils.waitAndClickComponent(driver, '004');
     })
 
     /**
@@ -139,7 +139,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '005');
+      await Utils.waitAndClickComponent(driver, '005');
     })
 
     /**
@@ -156,7 +156,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '006');
+      await Utils.waitAndClickComponent(driver, '006');
     })
 
     /**
@@ -173,7 +173,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '007');
+      await Utils.waitAndClickComponent(driver, '007');
     })
 
     /**
@@ -190,7 +190,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '008');
+      await Utils.waitAndClickComponent(driver, '008');
     })
 
     /**
@@ -207,7 +207,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '009');
+      await Utils.waitAndClickComponent(driver, '009');
     })
 
     /**
@@ -224,7 +224,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });
-      Utils.waitAndClickComponent(driver, '0010');
+      await Utils.waitAndClickComponent(driver, '0010');
     })
 
     /**
@@ -241,7 +241,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, '0011');
+      await Utils.waitAndClickComponent(driver, '0011');
     })
   })
 }

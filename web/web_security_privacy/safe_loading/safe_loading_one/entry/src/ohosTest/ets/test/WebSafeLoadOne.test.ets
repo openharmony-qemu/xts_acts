@@ -67,7 +67,7 @@ export default function WebSafeLoadOneTest() {
     it('SetHttpDnsSuccessAuto', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetHttpDnsSuccessAuto", 160790);
       Utils.registerEvent("SetHttpDnsSuccessAuto", "Example Domain", 160800, done);
-      Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
+      await Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_058                                                                                                                                             
@@ -77,7 +77,7 @@ export default function WebSafeLoadOneTest() {
     it('SetHttpDnsSuccessOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetHttpDnsSuccessOff", 160790);
       Utils.registerEvent("SetHttpDnsSuccessOff", "Example Domain", 160810, done);
-      Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
+      await Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
     })
     /* 
       *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_061                                                                                                                                                              
@@ -87,7 +87,7 @@ export default function WebSafeLoadOneTest() {
     it('GetCustomUserAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetCustomUserAgent", 160790);
       Utils.registerEvent("GetCustomUserAgent", "userAgent", 160820, done);
-      Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
+      await Utils.waitAndClickComponent(driver, 'webSafeLoadButton');
     })
   })
 }
