@@ -299,3 +299,5 @@ export const audioStreamBuilderSetCapturerFastStatusChangeCallback_002: () => nu
 export const audioStreamBuilderSetRendererFastStatusChangeCallback_001: () => number;
 export const audioStreamBuilderSetRendererFastStatusChangeCallback_002: () => number;
 export const isIntelligentNoiseReductionEnabledForCurrentDevice_001: () => number;
+export const audioSessionManagerAvailableDevices_001: () => number;
+export const bluetoothAndNearlinkPreferredRecordCategory_001: () => number;

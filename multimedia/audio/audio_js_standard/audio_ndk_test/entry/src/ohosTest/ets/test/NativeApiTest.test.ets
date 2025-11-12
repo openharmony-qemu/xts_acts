@@ -4413,5 +4413,35 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001
+     * @tc.name      : BluetoothAndNearlinkPreferredRecordCategory
+     * @tc.desc      : BluetoothAndNearlinkPreferredRecordCategory
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.bluetoothAndNearlinkPreferredRecordCategory_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
   })
 }
