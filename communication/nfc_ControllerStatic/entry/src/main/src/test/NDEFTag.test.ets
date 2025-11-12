@@ -490,8 +490,8 @@ export default function nfcNDEFTagTest() {
           }
         }
       } else {
-          hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-          expect().assertFail();
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
       }
       done();
     })
@@ -566,8 +566,8 @@ export default function nfcNDEFTagTest() {
           }
         }
       } else {
-          hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-          expect().assertFail();
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
       }
       done();
     })
@@ -775,8 +775,8 @@ export default function nfcNDEFTagTest() {
           }
         }
       } else {
-          hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-          expect().assertFail();
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
       }
       done();
     })
@@ -851,8 +851,8 @@ export default function nfcNDEFTagTest() {
           }
         }
       } else {
-          hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
-          expect().assertFail();
+        hilog.info(domain, tag1,'%{public}s','[NFC_test] ndefTag = null & = undefined:');
+        expect().assertFail();
       }
       done();
     })
