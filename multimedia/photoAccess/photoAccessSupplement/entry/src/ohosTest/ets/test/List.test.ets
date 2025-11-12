@@ -24,6 +24,8 @@ import MediaAssetManagerCancelRequestTest from './photoAccess/cancelRequest.test
 import MediaAssetDataHandlerOnDataPreparedTest from './photoAccess/onDataPrepared.test';
 import setTest from './photoAccess/PhotoAssetSet.test';
 import sendAbleSetTest from './photoAccess/SendAblePhotoAssetSet.test';
+import PhotoAccessMediaAlbumChangeRequestAddAssetsTest
+  from './photoAccess/PhotoAccessMediaAlbumChangeRequestAddAssetsTest.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -52,4 +54,5 @@ export default function testsuite() {
   MediaAssetDataHandlerOnDataPreparedTest();
   setTest();
   sendAbleSetTest();
+  PhotoAccessMediaAlbumChangeRequestAddAssetsTest();
 }
