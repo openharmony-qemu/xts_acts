@@ -13,8 +13,39 @@
  * limitations under the License.
  */
 
+
+import RelationStoreRdbStoreTest from "./RelationStoreApi.test";
+import RelationalStoreEnumTest from "./RelationStoreEnumApi.test";
 import RdbResultSetTest from "./RelationalStoreResultEts.test";
+import RelationStoreError00Test from "./RelationStoreError00Api.test";
+import RelationStoreError10Test from "./RelationStoreError10Api.test";
+import RelationStoreError11Test from "./RelationStoreError11Api.test";
+import RelationStoreError14Test from "./RelationStoreError14Api.test";
+import RelationStoreError12Test from "./RelationStoreError12Api.test";
+import RelationStoreError21Test from "./RelationStoreError21Api.test";
+import RelationStoreError24Test from "./RelationStoreError24Api.test";
+import RelationStoreError30Test from "./RelationStoreError30Api.test";
+import RelationStoreError32Test from "./RelationStoreError32Api.test";
+import RelationStoreError17Test from "./RelationStoreError17Api.test";
+import RelationStoreError33Test from './RelationStoreError33Api.test';
+import RelationStoreError801Test from "./RelationStoreError801Api.test";
+import RelationStoreError1001Test from "./RelationStoreError1001Api.test";
 
 export default function testsuite() {
+  RelationStoreRdbStoreTest();
+  RelationalStoreEnumTest();
   RdbResultSetTest();
+  RelationStoreError00Test();
+  RelationStoreError10Test();
+  RelationStoreError11Test();
+  RelationStoreError12Test();
+  RelationStoreError14Test();
+  RelationStoreError21Test();
+  RelationStoreError24Test();
+  RelationStoreError30Test();
+  RelationStoreError32Test();
+  RelationStoreError33Test();
+  RelationStoreError17Test();
+  RelationStoreError801Test();
+  RelationStoreError1001Test();
 }
