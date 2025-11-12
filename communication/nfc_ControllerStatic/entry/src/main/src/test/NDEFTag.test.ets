@@ -758,7 +758,7 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format finish ');
         }
         try {
-          ndefTag.format(ndefMessage, AsyncCallback);
+          ndefFormatable.format(ndefMessage, AsyncCallback);
         } catch (error: BusinessError) {
           if (error.code == 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2200 format error is ' + error.code + " - " + error);
@@ -834,7 +834,7 @@ export default function nfcNDEFTagTest() {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly finish ');
         }
         try {
-          ndefTag.formatReadOnly(ndefMessage, AsyncCallback);
+          ndefFormatable.formatReadOnly(ndefMessage, AsyncCallback);
         } catch (error: BusinessError) {
           if (error.code == 201) {
             hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_2400 formatReadOnly error is ' + error.code + " - " + error);
