@@ -23,6 +23,7 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function abilityTest() {
   const delegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -70,7 +71,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('001', 10, '');
+      Utils.waitAndClickComponent(driver, '001');
     })
 
     /**
@@ -87,7 +88,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('002', 10, '');
+      Utils.waitAndClickComponent(driver, '002');
     })
 
     /**
@@ -104,7 +105,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('003', 10, '');
+      Utils.waitAndClickComponent(driver, '003');
     })
 
     /**
@@ -121,7 +122,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('004', 10, '');
+      Utils.waitAndClickComponent(driver, '004');
     })
 
     /**
@@ -138,7 +139,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('005', 10, '');
+      Utils.waitAndClickComponent(driver, '005');
     })
 
     /**
@@ -155,7 +156,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('006', 10, '');
+      Utils.waitAndClickComponent(driver, '006');
     })
 
     /**
@@ -172,7 +173,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('007', 10, '');
+      Utils.waitAndClickComponent(driver, '007');
     })
 
     /**
@@ -189,7 +190,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('008', 10, '');
+      Utils.waitAndClickComponent(driver, '008');
     })
 
     /**
@@ -206,7 +207,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('009', 10, '');
+      Utils.waitAndClickComponent(driver, '009');
     })
 
     /**
@@ -223,7 +224,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });
-      sendEventByKey('0010', 10, '');
+      Utils.waitAndClickComponent(driver, '0010');
     })
 
     /**
@@ -240,7 +241,7 @@ export default function abilityTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('0011', 10, '');
+      Utils.waitAndClickComponent(driver, '0011');
     })
   })
 }

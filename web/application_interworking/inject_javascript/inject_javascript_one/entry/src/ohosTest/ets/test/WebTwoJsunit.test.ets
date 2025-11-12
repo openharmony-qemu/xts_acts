@@ -16,11 +16,13 @@
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
+import { Driver } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 let emitKey = "emitRegisterJavaScriptProxyTwo";
 
@@ -62,7 +64,7 @@ export default function webTwoJsunit() {
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxyTwo", 172270)
       Utils.registerEvent("RegisterJavaScriptProxy", '\"okok\"', 172280, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      Utils.waitAndClickComponent(driver, 'webcomponenttwo');
     })
   })
 }

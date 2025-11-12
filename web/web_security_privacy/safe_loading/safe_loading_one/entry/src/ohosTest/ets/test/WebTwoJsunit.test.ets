@@ -17,10 +17,12 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
+import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 let emitKey = "";
 
 export default function webTwoJsunit() {
@@ -41,7 +43,7 @@ export default function webTwoJsunit() {
       } catch (err) {
         console.error("push webTwo page error: " + err);
       }
-      await waitForComponent("webcomponent");
+      await waitForComponent("webcomponenttwo");
       done()
     });
     beforeEach(async (done: Function) => {
@@ -62,7 +64,7 @@ export default function webTwoJsunit() {
     it('GetCertificate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetCertificate", 160830);
       Utils.registerEvent("GetCertificate", "getCertificate success: len = 0", 160840, done);
-      sendEventByKey('webcomponenttwo', 10, '');
+      Utils.waitAndClickComponent(driver, 'webcomponenttwo');
     })
 
   })

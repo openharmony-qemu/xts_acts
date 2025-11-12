@@ -17,12 +17,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
+import { Driver } from '@ohos.UiTest';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 let emitKey = "";
 
@@ -72,7 +74,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       Utils.emitEvent('deleteWithoutRefresh', 172410)
-      sendEventByKey('deleteJavaScriptRegister_withOutRefresh', 10, '');
+      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_withOutRefresh');
       // setTimeout(() => {
       //   sendEventByKey('runJavaScript', 10, '');
       // }, 500)
@@ -94,7 +96,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
       Utils.emitEvent('deleteWithRefresh', 172410)
-      sendEventByKey('deleteJavaScriptRegister_withRefresh', 10, '');
+      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_withRefresh');
       //setTimeout(() => {
        // sendEventByKey('runJavaScript', 10, '');
       //}, 1000)
@@ -115,7 +117,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('deleteJavaScriptRegister_name_err', 10, '');
+      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_name_err');
     });
 
 
@@ -133,7 +135,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('deleteJavaScriptRegister_name_null', 10, '');
+      Utils.waitAndClickComponent(driver, 'deleteJavaScriptRegister_name_null');
     });
   });
 }

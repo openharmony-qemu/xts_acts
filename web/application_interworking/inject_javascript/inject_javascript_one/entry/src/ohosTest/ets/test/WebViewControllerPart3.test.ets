@@ -15,11 +15,13 @@
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
+import { Driver } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webViewControllerPart3Test() {
 
@@ -65,7 +67,7 @@ export default function webViewControllerPart3Test() {
     it('testJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("javaScriptProxy", 172310)
       Utils.registerEvent("testJavaScriptProxy001", true, 172320, done);
-      sendEventByKey('WebViewControllerTestButton', 10, '');
+      Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
     /*
@@ -79,7 +81,7 @@ export default function webViewControllerPart3Test() {
     it('testRegisterJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRegisterJavaScriptProxy001", 172310)
       Utils.registerEvent("testRegisterJavaScriptProxy001", "backToEts", 172330, done);
-      sendEventByKey('WebViewControllerTestButton', 10, '');
+      Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
     /*
@@ -93,7 +95,7 @@ export default function webViewControllerPart3Test() {
     it('testDeleteJavaScriptRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeleteJavaScriptRegister001", 172310)
       Utils.registerEvent("testDeleteJavaScriptRegister001", true, 172340, done);
-      sendEventByKey('WebViewControllerTestButton', 10, '');
+      Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
   })
 }

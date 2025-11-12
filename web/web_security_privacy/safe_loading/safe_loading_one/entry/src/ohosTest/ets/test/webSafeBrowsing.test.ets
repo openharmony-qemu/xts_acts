@@ -65,7 +65,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitEnableSafeBrowsingTrue"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testEnableSafeBrowsingTrue", true, 160750, done);
-      sendEventByKey('webSafeBrowsing', 10, '');
+      Utils.waitAndClickComponent(driver, 'webSafeBrowsing');
     })
 
     /*
@@ -80,7 +80,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitEnableSafeBrowsingFalse"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testEnableSafeBrowsingFalse", true, 160760, done);
-      sendEventByKey('webSafeBrowsing', 10, '');
+      Utils.waitAndClickComponent(driver, 'webSafeBrowsing');
     })
 
     /*
@@ -95,7 +95,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitIsSafeBrowsingEnabledTrue"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testIsSafeBrowsingEnabledTrue", true, 160770, done);
-      sendEventByKey('webSafeBrowsing', 10, '');
+      Utils.waitAndClickComponent(driver, 'webSafeBrowsing');
     })
 
     /*
@@ -110,7 +110,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitIsSafeBrowsingEnabledFalse"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testIsSafeBrowsingEnabledFalse", true, 160780, done);
-      sendEventByKey('webSafeBrowsing', 10, '');
+      Utils.waitAndClickComponent(driver, 'webSafeBrowsing');
     })
 
   })

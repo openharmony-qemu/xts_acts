@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
@@ -68,6 +69,38 @@ export default function webController() {
     it('testStop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testStop001", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerEvent("testStop001", true, 142026, done);
+      Utils.waitAndClickComponent(driver, "WebControllerButton");
+    })
+    /**
+    * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0100
+    * @tc.name   testLoadUrlWithHeaderErrorCode01
+    * @tc.desc   test loadUrl with header null
+    * @tc.size   MediumTest
+    * @tc.type   Function
+    * @tc.level  Level 2
+    */
+    it('testLoadUrlWithHeaderErrorCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("emitLoadUrlWithHeaderErrorCode01", EVENT_ID_SET_EIMIT_KEY)
+      Utils.registerBaseEvent("testLoadUrlWithHeaderErrorCode01", 401, 2025110602,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.waitAndClickComponent(driver, "WebControllerButton");
+    })
+    /**
+     * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0200
+     * @tc.name   testLoadUrlWithHeaderErrorCode02
+     * @tc.desc   test loadUrl with header undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('testLoadUrlWithHeaderErrorCode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("emitLoadUrlWithHeaderErrorCode02", EVENT_ID_SET_EIMIT_KEY)
+      Utils.registerBaseEvent("testLoadUrlWithHeaderErrorCode02", 401, 2025110603,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
 

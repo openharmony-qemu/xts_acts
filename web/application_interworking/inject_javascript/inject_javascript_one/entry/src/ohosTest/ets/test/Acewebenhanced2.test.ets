@@ -24,6 +24,7 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 
 export default function AceWeb() {
@@ -88,7 +89,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
@@ -105,7 +106,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
     /**
@@ -122,7 +123,7 @@ export default function AceWeb() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('registerJavaScriptProxyAsyncMethodListButton', 10, '');
+      Utils.waitAndClickComponent(driver, 'registerJavaScriptProxyAsyncMethodListButton');
     })
 
   })
