@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -49,11 +49,8 @@ export default function SearchKeyboardAppearanceTest() {
         console.info("get SearchKeyboardAppearanceTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SearchKeyboardAppearanceTest pages.name:" + JSON.stringify(pages.name));
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SearchKeyboardAppearanceTest page error:" + err);
@@ -62,7 +59,8 @@ export default function SearchKeyboardAppearanceTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchKeyboardAppearanceTest_static_0010
      * @tc.name     SearchKeyboardAppearanceTest_static_0010
      * @tc.desc     SearchKeyboardAppearanceTest_static_0010
@@ -80,7 +78,8 @@ it('SearchKeyboardAppearanceTest_static_0010', Level.LEVEL2, async (done: () => 
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchKeyboardAppearanceTest_static_0020
      * @tc.name     SearchKeyboardAppearanceTest_static_0020
      * @tc.desc     SearchKeyboardAppearanceTest_static_0020
@@ -98,7 +97,8 @@ it('SearchKeyboardAppearanceTest_static_0020', Level.LEVEL2, async (done: () => 
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchKeyboardAppearanceTest_static_0030
      * @tc.name     SearchKeyboardAppearanceTest_static_0030
      * @tc.desc     SearchKeyboardAppearanceTest_static_0030
@@ -116,7 +116,8 @@ it('SearchKeyboardAppearanceTest_static_0030', Level.LEVEL2, async (done: () => 
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchKeyboardAppearanceTest_static_0040
      * @tc.name     SearchKeyboardAppearanceTest_static_0040
      * @tc.desc     SearchKeyboardAppearanceTest_static_0040
@@ -134,7 +135,8 @@ it('SearchKeyboardAppearanceTest_static_0040', Level.LEVEL2, async (done: () => 
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchKeyboardAppearanceTest_static_0050
      * @tc.name     SearchKeyboardAppearanceTest_static_0050
      * @tc.desc     SearchKeyboardAppearanceTest_static_0050
@@ -152,7 +154,8 @@ it('SearchKeyboardAppearanceTest_static_0050', Level.LEVEL2, async (done: () => 
     });
 
     
-    /*
+    
+/*
      * @tc.number   SearchKeyboardAppearanceTest_static_0060
      * @tc.name     SearchKeyboardAppearanceTest_static_0060
      * @tc.desc     SearchKeyboardAppearanceTest_static_0060

@@ -12,54 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  TextPickerResult,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, BackgroundEffectOptions, TextPickerResult} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct ShowTextPickerDialog2 {
+  private select: undefined|int|Array<int> = 0
+  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4', 'banana5')
   @State v: string = '';
-  private select: undefined | int | Array<int> = 0 as undefined | int | Array<int>;
-  private fruits: Array<string> = new Array<string>('apple1', 'orange2', 'peach3', 'grape4', 'banana5');
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('ShowTextPickerDialog_Effect001')
         .id('ShowTextPickerDialog_Effect001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showTextPickerDialog({
             range: this.fruits,
             selected: this.select,
             value: this.v,
             defaultPickerItemHeight: 40,
-            onAccept: (value: TextPickerResult): void => {
+            onAccept: (value: TextPickerResult):void => {
               // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
               this.select = value.index
               console.log(this.select + '')
@@ -73,24 +50,24 @@ struct ShowTextPickerDialog2 {
               brightness: 2,
               color: Color.Pink,
               adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
               blurOptions: {
-                grayscale: [20, 20]
+                grayscale: [20,20]
               }
             } as BackgroundEffectOptions
           })
         })
       Button('ShowTextPickerDialog_Effect002')
         .id('ShowTextPickerDialog_Effect002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showTextPickerDialog({
             range: this.fruits,
             selected: this.select,
             value: this.v,
             defaultPickerItemHeight: 40,
-            onAccept: (value: TextPickerResult): void => {
+            onAccept: (value: TextPickerResult):void => {
               // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
               this.select = value.index
               console.log(this.select + '')
@@ -98,18 +75,28 @@ struct ShowTextPickerDialog2 {
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
+            // backgroundEffect: {
+            //   // radius: undefined,
+            //   saturation: undefined,
+            //   brightness: undefined,
+            //   color: undefined,
+            //   adaptiveColor: undefined,
+            //   policy:undefined,
+            //   inactiveColor:undefined,
+            //   blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('ShowTextPickerDialog_Effect003')
         .id('ShowTextPickerDialog_Effect003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showTextPickerDialog({
             range: this.fruits,
             selected: this.select,
             value: this.v,
             defaultPickerItemHeight: 40,
-            onAccept: (value: TextPickerResult): void => {
+            onAccept: (value: TextPickerResult):void => {
               // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
               this.select = value.index
               console.log(this.select + '')
@@ -117,12 +104,22 @@ struct ShowTextPickerDialog2 {
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
+            // backgroundEffect: {
+            //   radius: null,
+            //   saturation: null,
+            //   brightness: null,
+            //   color: null,
+            //   adaptiveColor: null,
+            //   policy:null,
+            //   inactiveColor:null,
+            //   blurOptions: null,
+            // } as BackgroundEffectOptions
           })
         })
     }
     .height('100%')
     .width('100%')
     .backgroundImage($r('app.media.icon'))
-    .backgroundImageSize({ width: '100%', height: '100%' } as SizeOptions)
+    .backgroundImageSize({ width: '100%', height: '100%' }  as SizeOptions)
   }
 }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { WaterFlowDataSource } from './WaterFlowSectionDemo/WaterFlowDataSource'
+import { WaterFlowDataSource } from './WaterFlowDataSource'
 import { Entry, Component, Scroller, Column, ClickEvent, WaterFlow, LazyForEach, FlowItem, Text, ColumnOptions, Button } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -23,7 +23,7 @@ struct WaterFlowScroll {
   @State maxSize: number = 180
   @State num: number = 0
   @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
-  dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
+  dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   scroller: Scroller = new Scroller()
   private itemWidthArray: number[] = new Array<number>()
   private itemHeightArray: number[] = new Array<number>()
@@ -33,13 +33,13 @@ struct WaterFlowScroll {
   @State onScrollStartText: string = 'onScrollStart'
   @State onScrollStopText: string = 'onScrollStop'
 
-  
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
-  
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize())
@@ -63,15 +63,15 @@ struct WaterFlowScroll {
             }
           }
           .width('100%')
-          .height(this.itemHeightArray[item.toInt() % 100])
-          .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: int) => String(item))
+          .height(this.itemHeightArray[(item as int) % 100])
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item: number) => String(item))
       }
       .columnsTemplate('repeat(auto-fill,80)')
       .columnsGap(10)
       .rowsGap(5)
       .height('60%')
-      .onScrollIndex((first: int,last: int) => {
+      .onScrollIndex((first: int, last: int) => {
         this.onScrollIndexText = 'onScrollIndex:succ'
         console.info('onScrollIndex first:' + first.toString() + ' last:' + last.toString())
       })
@@ -96,7 +96,7 @@ struct WaterFlowScroll {
         .id('flow_scrollBy')
         .onClick((event: ClickEvent) => {
           this.scroller.scrollBy(0, 200)
-          this.num = Math.round(this.scroller.currentOffset()!.yOffset)
+          this.num = Math.round(this.scroller.currentOffset()?.yOffset!)
         })
 
     }

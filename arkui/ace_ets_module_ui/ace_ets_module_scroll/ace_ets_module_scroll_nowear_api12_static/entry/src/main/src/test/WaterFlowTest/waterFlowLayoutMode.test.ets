@@ -41,10 +41,8 @@ export default function waterFlowLayoutMode() {
         console.info("get waterFlowLayoutMode state pages:" + JSON.stringify(pages));
         if (!("waterFlowLayoutMode" == pages.name)) {
           console.info("get waterFlowLayoutMode pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlowLayoutMode page error:" + err);
@@ -61,19 +59,20 @@ export default function waterFlowLayoutMode() {
      * @tc.number   waterFlowLayoutMode_static_001
      * @tc.name     waterFlowLayoutMode_static_001
      * @tc.desc     waterFlowLayoutMode_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlowLayoutMode_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlowLayoutMode_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlowLayoutMode_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('layout_scroll'));
-      await (btn?.click() as Promise<void>);
+      console.info("[waterFlowLayoutMode_static_001] component btn is: " + btn);
+      btn?.click();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('layoutMode_yOffset');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[waterFlowLayoutMode_static_001] component obj is: " + JSON.stringify(obj));
+      console.info("[waterFlowLayoutMode_static_001] component strJson is: " + strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('yOffset: 100');
       console.info('[waterFlowLayoutMode_static_001] END');
       done();
@@ -85,18 +84,18 @@ it('waterFlowLayoutMode_static_001', Level.LEVEL0, async (done: () => void): Pro
      * @tc.number   waterFlowLayoutMode_static_002
      * @tc.name     waterFlowLayoutMode_static_002
      * @tc.desc     waterFlowLayoutMode_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlowLayoutMode_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlowLayoutMode_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlowLayoutMode_static_002] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('layoutMode_2'));
-      await (btn?.click() as Promise<void>);
+      btn?.click();
       await CommonFunc.sleep(1000);
 
       let btnScroll = await driver.findComponent(ON.id('layout_scroll'));
-      await (btnScroll?.click() as Promise<void>);
+      btnScroll?.click();
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('layoutMode_yOffset');

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,69 +18,69 @@ import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
+import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import common from "@ohos.app.ability.common";
 import { UIContext } from '@ohos.arkui.UIContext';
 
-export default class EntryAbility extends UIAbility {
-  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    AppStorage.setOrCreate<Want>('abilityWant', want);
-  }
-
-  onDestroy(): Promise<void> | undefined {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    return undefined;
+class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-    AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
-    AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);
-    windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError|null, data) => {
-      if (err?.code) {
-        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-        return;
-      }
-      let windowClass: window.Window | undefined = undefined;
-      windowStage.getMainWindow((err: BusinessError | null, data) => {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
+    try {
+      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
+        hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
+        MyCallback.runCasesOfCallback();
         if (err?.code) {
-          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent error');
           return;
         }
-        windowClass = data;
-        hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
-        try {
-          let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
-          let wRect: window.Rect | undefined = properties?.windowRect;
-          AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
-          AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
-          hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
-        } catch (exception) {
-          hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
-        }
-        
-        if (windowClass !== null) {
-          AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
-        }
-      })
-      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
-    });
+        let windowClass: window.Window | undefined = undefined;
+        windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
+          let errCode: number = err!.code;
+          if (errCode) {
+            console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+            return;
+          }
+          windowClass = data;
+          hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+          try {
+            let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
+            let wRect: window.Rect | undefined = properties?.windowRect;
+            AppStorage.setOrCreate<number>('winLeft', wRect?.left ?? 0);
+            AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
+            hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
+          } catch (exception) {
+            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+          }
+          // Obtain a UIContext instance.
+          if (windowClass !== null) {
+            AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
+          }
+        })
+        hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
+      });
+    } catch (e: Error) {
+      hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
+    }
   }
 
-  onWindowStageDestroy(): void {
-    
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+  onDestroy(): Promise<void>|undefined {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    return undefined
   }
 
-  onForeground(): void {
-    
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+  onWindowStageDestroy() {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onWindowStageDestroy');
   }
 
-  onBackground(): void {
-    
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
+  onForeground() {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onForeground');
+  }
+
+  onBackground() {
+    hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onBackground');
   }
 }

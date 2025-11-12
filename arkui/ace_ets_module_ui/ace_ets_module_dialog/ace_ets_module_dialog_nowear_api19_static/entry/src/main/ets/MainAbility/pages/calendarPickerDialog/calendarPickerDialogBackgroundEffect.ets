@@ -13,45 +13,20 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  CalendarPickerDialog,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  DialogAlignment,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, DialogAlignment, BackgroundEffectOptions, CalendarPickerDialog} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct calendarPickerDialog2 {
   private selectedDate: Date = new Date('2025-04-23')
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 }  as ColumnOptions){
       Button('CalendarPickerDialog_Effect001')
         .id('CalendarPickerDialog_Effect001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           CalendarPickerDialog.show({
             selected: this.selectedDate,
             backgroundEffect: {
@@ -60,26 +35,46 @@ struct calendarPickerDialog2 {
               brightness: 2,
               color: Color.Pink,
               adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
               blurOptions: {
-                grayscale: [20, 20]
+                grayscale: [20,20]
               }
             } as BackgroundEffectOptions
           })
         })
       Button('CalendarPickerDialog_Effect002')
         .id('CalendarPickerDialog_Effect002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           CalendarPickerDialog.show({
             selected: this.selectedDate,
+            // backgroundEffect: {
+              // radius: undefined,
+              // saturation: undefined,
+              // brightness: undefined,
+              // color: undefined,
+              // adaptiveColor: undefined,
+              // policy:undefined,
+              // inactiveColor:undefined,
+              // blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('CalendarPickerDialog_Effect003')
         .id('CalendarPickerDialog_Effect003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           CalendarPickerDialog.show({
             selected: this.selectedDate,
+            // backgroundEffect: {
+              // radius: null,
+              // saturation: null,
+              // brightness: null,
+              // color: null,
+              // adaptiveColor: null,
+              // policy:null,
+              // inactiveColor:null,
+              // blurOptions: null,
+            // } as BackgroundEffectOptions
           })
         })
     }

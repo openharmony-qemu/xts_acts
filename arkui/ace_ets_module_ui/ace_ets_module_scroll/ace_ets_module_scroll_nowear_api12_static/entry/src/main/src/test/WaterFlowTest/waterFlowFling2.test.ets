@@ -40,10 +40,8 @@ export default function waterFlowFling2() {
         console.info("get waterFlowFling2 state pages:" + JSON.stringify(pages));
         if (!("waterFlowFling2" == pages.name)) {
           console.info("get waterFlowFling2 pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlowFling2 page error:" + err);
@@ -60,9 +58,9 @@ export default function waterFlowFling2() {
      * @tc.number   waterFlowFling2_static_0100
      * @tc.name     waterFlowFling2_static_0100
      * @tc.desc     waterFlowFling2_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlowFling2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlowFling2_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlowFling2_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

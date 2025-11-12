@@ -42,7 +42,7 @@ struct WaterFlowSectionDemo25 {
   @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   @State columns: string = '1fr'
   scroller: Scroller = new Scroller()
-  dataCount: number = 7
+  dataCount: int = 7
   dataSource: WaterFlowDataSource = new WaterFlowDataSource(this.dataCount)
   @State sections: WaterFlowSections = new WaterFlowSections()
 
@@ -52,14 +52,14 @@ struct WaterFlowSectionDemo25 {
     columnsGap: 20,
     rowsGap: -10,
     margin: 0,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 80.0
     }
   } as SectionOptions
   lastSection: SectionOptions = {
     itemsCount: 3,
     crossCount: 1,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 100.0
     }
   } as SectionOptions
@@ -69,7 +69,7 @@ struct WaterFlowSectionDemo25 {
     let count = 0
     while (count < this.dataCount) {
       sectionOptions.push(this.twoColumnSection)
-      this.lastSection.itemsCount = Double.toInt(this.dataCount - this.twoColumnSection.itemsCount)
+      this.lastSection.itemsCount = this.dataCount - this.twoColumnSection.itemsCount
       sectionOptions.push(this.lastSection)
       break;
     }
@@ -86,8 +86,8 @@ struct WaterFlowSectionDemo25 {
           .key(`WaterFlowSectionDemo25_${item}`)
           .width('100%')
           .height(100)
-          .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: int) => String(item))
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item: number) => String(item))
       }
       .columnsTemplate('1fr')
       .columnsGap(10)

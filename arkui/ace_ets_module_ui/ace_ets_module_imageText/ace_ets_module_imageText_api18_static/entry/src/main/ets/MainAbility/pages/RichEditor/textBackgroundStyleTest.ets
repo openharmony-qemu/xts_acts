@@ -32,15 +32,6 @@ struct textBackgroundStyleTest {
   @State richEditorTextStyle5:RichEditorTextStyle ={textBackgroundStyle:{color:'#e0dbeb',radius:'-1vp'}} as RichEditorTextStyle
   @State richEditorTextStyle6:RichEditorTextStyle ={textBackgroundStyle:{color:$r('app.color.red'), radius:undefined}} as RichEditorTextStyle
 
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ImageSpanVisibility', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
 
   build() {
     Column() {
@@ -112,15 +103,15 @@ struct textBackgroundStyleTest {
         this.controller.getSpans({
           start: -1,
           end: -1
-        })?.forEach(item => {
-          if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
-          } else {
-            if(typeof((item as RichEditorTextSpanResult).symbolSpanStyle) != 'undefined') {
-            }else {
-              AppStorage.setOrCreate('RichEditorTextBackgroundStyleColor',(item as RichEditorTextSpanResult).textStyle.textBackgroundStyle?.color)
-              AppStorage.setOrCreate('RichEditorTextBackgroundStyleRadius',(item as RichEditorTextSpanResult).textStyle.textBackgroundStyle?.radius)
-            }
-          }
+        })!.forEach(item => {
+          // if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
+          // } else {
+          //   if(typeof((item as RichEditorTextSpanResult).symbolSpanStyle) != 'undefined') {
+          //   }else {
+          //     AppStorage.setOrCreate('RichEditorTextBackgroundStyleColor',(item as RichEditorTextSpanResult).textStyle.textBackgroundStyle?.color)
+          //     AppStorage.setOrCreate('RichEditorTextBackgroundStyleRadius',(item as RichEditorTextSpanResult).textStyle.textBackgroundStyle?.radius)
+          //   }
+          // }
         })
       }).fontSize(10).height('5%').id('getSpans')
     }

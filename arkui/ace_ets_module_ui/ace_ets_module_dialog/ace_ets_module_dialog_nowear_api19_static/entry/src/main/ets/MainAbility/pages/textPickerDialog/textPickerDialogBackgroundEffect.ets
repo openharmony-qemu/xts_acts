@@ -13,48 +13,25 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  TextPickerResult,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, BackgroundEffectOptions, TextPickerResult} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct textPickerDialog2 {
+  private select: undefined|int|Array<int> = 0
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
   @State v: string = '';
   uiContext: UIContext = this.getUIContext();
-  private select: undefined | int | Array<int> = 0 as undefined | int | Array<int>;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('TextPickerDialog_Effect001')
         .id('TextPickerDialog_Effect001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTextPickerDialog({
             // 建议使用 this.getUIContext().showTextPickerDialog()接口
             range: this.fruits,
@@ -75,17 +52,17 @@ struct textPickerDialog2 {
               brightness: 2,
               color: Color.Pink,
               adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
               blurOptions: {
-                grayscale: [20, 20]
+                grayscale: [20,20]
               }
             } as BackgroundEffectOptions
           })
         })
       Button('TextPickerDialog_Effect002')
         .id('TextPickerDialog_Effect002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTextPickerDialog({
             // 建议使用 this.getUIContext().showTextPickerDialog()接口
             range: this.fruits,
@@ -100,12 +77,21 @@ struct textPickerDialog2 {
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
-
+            // backgroundEffect: {
+            //   // radius: undefined,
+            //   saturation: undefined,
+            //   brightness: undefined,
+            //   color: undefined,
+            //   adaptiveColor: undefined,
+            //   policy:undefined,
+            //   inactiveColor:undefined,
+            //   blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('TextPickerDialog_Effect003')
         .id('TextPickerDialog_Effect003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTextPickerDialog({
             // 建议使用 this.getUIContext().showTextPickerDialog()接口
             range: this.fruits,
@@ -120,7 +106,16 @@ struct textPickerDialog2 {
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
-
+            // backgroundEffect: {
+            //   radius: null,
+            //   saturation: null,
+            //   brightness: null,
+            //   color: null,
+            //   adaptiveColor: null,
+            //   policy:null,
+            //   inactiveColor:null,
+            //   blurOptions: null,
+            // } as BackgroundEffectOptions
           })
         })
     }

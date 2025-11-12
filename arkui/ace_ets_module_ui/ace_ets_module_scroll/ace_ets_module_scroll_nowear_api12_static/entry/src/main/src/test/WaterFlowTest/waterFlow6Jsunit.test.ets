@@ -35,15 +35,13 @@ export default function waterFlow6Jsunit() {
       }
       try {
        const routerScroll = AppStorage.get<Router>("router") as Router
-        routerScroll.clear();
+        // routerScroll.clear();
         let pages = routerScroll.getState();
         console.info("get waterFlow6Jsunit state pages:" + JSON.stringify(pages));
         if (!("waterFlow6" == pages.name)) {
           console.info("get waterFlow6Jsunit pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlow6Jsunit page error:" + err);
@@ -60,9 +58,9 @@ export default function waterFlow6Jsunit() {
      * @tc.number   waterFlow6Jsunit_static_001
      * @tc.name     waterFlow6Jsunit_static_001
      * @tc.desc     waterFlow6Jsunit_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlow6Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlow6Jsunit_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlow6Jsunit_static_001] START');
       let strJson = inspector.getInspectorByKey('waterFlow_onReachText');
       let obj = JSON.parseJsonElement(strJson);
@@ -100,11 +98,15 @@ it('waterFlow6Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promis
       console.info("[waterFlow6Jsunit_static_001] component obj3 is: " + JSON.stringify(obj3));
       console.info("[waterFlow6Jsunit_static_001] content3: " + JSON.stringify(obj3.getElement('$attrs').getString('content')));
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('onScrollFrameBegin: success');
-
+      // console.info("[waterFlow6Jsunit_static_001] component obj3 end ");
       let btn = await driver.findComponent(ON.id('waterFlow_sctm'));
+      // console.info("[waterFlow6Jsunit_static_001] get btn ");
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(3000);
+      // console.info("[waterFlow6Jsunit_static_001] btn.click ");
+      await CommonFunc.sleep(1000);
+      // console.info("[waterFlow6Jsunit_static_001] sleep ");
       let strJson4 = inspector.getInspectorByKey('waterFlow_onReachText');
+      // console.info("[waterFlow6Jsunit_static_001] strJson4 : " + strJson4);
       let obj4 = JSON.parseJsonElement(strJson4);
       console.info("[waterFlow6Jsunit_static_001] component obj4 is: " + JSON.stringify(obj4));
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('onReachText: onReachEnd:succ');

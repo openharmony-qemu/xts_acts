@@ -40,10 +40,8 @@ export default function waterFlow4Jsunit() {
         console.info("get waterFlow4Jsunit state pages:" + JSON.stringify(pages));
         if (!("waterFlow4" == pages.name)) {
           console.info("get waterFlow4Jsunit pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlow4Jsunit page error:" + err);
@@ -60,9 +58,9 @@ export default function waterFlow4Jsunit() {
      * @tc.number   waterFlow4Jsunit_static_001
      * @tc.name     waterFlow4Jsunit_static_001
      * @tc.desc     waterFlow4Jsunit_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlow4Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlow4Jsunit_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlow4Jsunit_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

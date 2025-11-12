@@ -21,6 +21,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 
+
 export default function waterFlow5Jsunit() {
   describe('waterFlow5Jsunit', () => {
     beforeAll(() => {
@@ -40,10 +41,8 @@ export default function waterFlow5Jsunit() {
         console.info("get waterFlow5Jsunit state pages:" + JSON.stringify(pages));
         if (!("waterFlow5" == pages.name)) {
           console.info("get waterFlow5Jsunit pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlow5Jsunit page error:" + err);
@@ -60,9 +59,9 @@ export default function waterFlow5Jsunit() {
      * @tc.number   waterFlow5Jsunit_static_001
      * @tc.name     waterFlow5Jsunit_static_001
      * @tc.desc     waterFlow5Jsunit_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlow5Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlow5Jsunit_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlow5Jsunit_static_001] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('flowItem_hei');
@@ -71,7 +70,6 @@ it('waterFlow5Jsunit_static_001', Level.LEVEL0, async (done: () => void): Promis
       console.info("[waterFlow5Jsunit_static_001] content: " + JSON.stringify(obj.getElement('$attrs').getString('height')));
 	    let heightStr:string = obj.getElement('$attrs').getString('height').slice(0,6)
       console.info("[waterFlow5Jsunit_static_001] heightStr: " + heightStr);
-      const uiContext = new UIContext();
       expect(Math.abs(Math.round(Number(heightStr)) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
       console.info('[waterFlow5Jsunit_static_001] END');
       done();

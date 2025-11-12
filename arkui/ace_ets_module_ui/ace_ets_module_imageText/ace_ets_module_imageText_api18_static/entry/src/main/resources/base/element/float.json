@@ -1,8 +1,12 @@
 {
   "float": [
     {
-      "name": "page_text_font_size",
-      "value": "50fp"
+      "name": "maxFontScale",
+      "value": "3.5"
+    },
+    {
+      "name": "minFontScale",
+      "value": "0.6"
     }
   ]
 }

@@ -40,10 +40,8 @@ export default function onScrollIndexFlow3() {
         console.info("get onScrollIndexFlow3 state pages:" + JSON.stringify(pages));
         if (!("onScrollIndexFlow3" == pages.name)) {
           console.info("get onScrollIndexFlow3 pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push onScrollIndexFlow3 page error:" + err);
@@ -60,9 +58,9 @@ export default function onScrollIndexFlow3() {
      * @tc.number   onScrollIndexFlow3_static_0100
      * @tc.name     onScrollIndexFlow3_static_0100
      * @tc.desc     onScrollIndexFlow3_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('onScrollIndexFlow3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onScrollIndexFlow3_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[onScrollIndexFlow3_static_0100] START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('onScrollIndex_scroller'));

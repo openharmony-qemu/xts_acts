@@ -52,10 +52,8 @@ export default function WaterFlowScrollEdgeCallbackJsunit() {
         console.info('get WaterFlowScrollEdgeCallback state pages:' + JSON.stringify(pages));
         if (!('WaterFlowScrollEdgeCallback' == pages.name)) {
           console.info('get WaterFlowScrollEdgeCallback state pages.name:' + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error('push WaterFlowScrollEdgeCallback page error:' + JSON.stringify(err));
@@ -72,9 +70,9 @@ export default function WaterFlowScrollEdgeCallbackJsunit() {
      * @tc.number   WaterFlowScrollEdgeCallbackTest_static_0100
      * @tc.name     WaterFlowScrollEdgeCallbackTest_static_0100
      * @tc.desc     WaterFlowScrollEdgeCallbackTest_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowScrollEdgeCallbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowScrollEdgeCallbackTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowScrollEdgeCallbackTest_static_0100 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('WaterFlowScrollEdgeCallback01'));

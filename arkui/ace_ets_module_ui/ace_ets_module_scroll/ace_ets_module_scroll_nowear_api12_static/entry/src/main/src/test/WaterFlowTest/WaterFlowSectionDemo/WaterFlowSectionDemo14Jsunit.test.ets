@@ -40,9 +40,8 @@ export default function WaterFlowSectionDemo14Jsunit() {
         console.info("get WaterFlowSectionDemo14Jsunit state pages:" + JSON.stringify(pages));
         if (!("WaterFlowSectionDemo14" == pages.name)) {
           console.info("get WaterFlowSectionDemo14Jsunit state pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
-          
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push WaterFlowSectionDemo14Jsunit page error:" + err);
@@ -54,9 +53,9 @@ export default function WaterFlowSectionDemo14Jsunit() {
      * @tc.number   WaterFlowSectionDemo14Jsunit_static_0100
      * @tc.name     WaterFlowSectionDemo14Jsunit_static_0100
      * @tc.desc     WaterFlowSectionDemo14Jsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowSectionDemo14Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowSectionDemo14Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowSectionDemo14Jsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let str0 = CommonFunc.getComponentRect('WaterFlowSectionDemo14_0');
@@ -64,7 +63,7 @@ it('WaterFlowSectionDemo14Jsunit_static_0100', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(2000);
       console.log('WaterFlowSectionDemo14Jsunit_1111',str0.right,str1.left)
       console.log('WaterFlowSectionDemo14Jsunit_2222',str1.left - str0.right)
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(str1.left - str0.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
       console.info('WaterFlowSectionDemo14Jsunit_static_0100 END')
       done();

@@ -20,7 +20,6 @@ import observer from '@ohos.arkui.observer';
 import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
 export default function WaterFlowSectionDemo17Jsunit() {
   describe('WaterFlowSectionDemo17Jsunit', () => {
     beforeAll(() => {
@@ -40,9 +39,8 @@ export default function WaterFlowSectionDemo17Jsunit() {
         console.info("get WaterFlowSectionDemo17Jsunit state pages:" + JSON.stringify(pages));
         if (!("WaterFlowSectionDemo17" == pages.name)) {
           console.info("get WaterFlowSectionDemo17Jsunit state pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
-          
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push WaterFlowSectionDemo17Jsunit page error:" + err);
@@ -54,9 +52,9 @@ export default function WaterFlowSectionDemo17Jsunit() {
      * @tc.number   WaterFlowSectionDemo17Jsunit_static_0100
      * @tc.name     WaterFlowSectionDemo17Jsunit_static_0100
      * @tc.desc     WaterFlowSectionDemo17Jsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowSectionDemo17Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowSectionDemo17Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowSectionDemo17Jsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let str0 = CommonFunc.getComponentRect('WaterFlowSectionDemo17_0');
@@ -64,7 +62,7 @@ it('WaterFlowSectionDemo17Jsunit_static_0100', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(2000);
       console.log('WaterFlowSectionDemo17Jsunit_1111',str0.right,str1.left)
       console.log('WaterFlowSectionDemo17Jsunit_2222',str1.left - str0.right)
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(str1.left - str0.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       console.info('WaterFlowSectionDemo17Jsunit_static_0100 END')
       done();

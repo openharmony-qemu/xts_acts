@@ -67,32 +67,34 @@ export default function ContentTypeTest1() {
     });
     
     
-    /*
+    
+    
+/*
      * @tc.number   ContentTypeTest1_static_0010
      * @tc.name     ContentTypeTest1_static_0010
      * @tc.desc     ContentTypeTest1_static_0010
      * @tc.level    Level.LEVEL2
      */
-it('ContentTypeTest1_static_0010', Level.LEVEL2, async (done: ()=>void) => {
-      console.info('ContentTypeTest1_0010 START');
+it('ContentTypeTest1_static_0010', Level.LEVEL2, async (done: ()=>void) => {      console.info('ContentTypeTest1_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_PASSPORT_NUMBER');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ContentTypeTest1_0070] component obj is: " + JSON.stringify(obj.getElement('$attrs')));
+      console.info("[ContentTypeTest1_0070] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('contentType')));
       expect(obj.getElement('$attrs').getString('contentType')).assertEqual('TextContentType.PASSPORT_NUMBER');
       console.info('[ContentTypeTest1_0010] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   ContentTypeTest1_static_0020
      * @tc.name     ContentTypeTest1_static_0020
      * @tc.desc     ContentTypeTest1_static_0020
      * @tc.level    Level.LEVEL2
      */
-it('ContentTypeTest1_static_0020', Level.LEVEL2, async (done: ()=>void) => {
-      console.info('ContentTypeTest1_0020 START');
+it('ContentTypeTest1_static_0020', Level.LEVEL2, async (done: ()=>void) => {      console.info('ContentTypeTest1_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_VALIDITY');
       let obj = JSON.parseJsonElement(strJson);
@@ -103,14 +105,15 @@ it('ContentTypeTest1_static_0020', Level.LEVEL2, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   ContentTypeTest1_static_0030
      * @tc.name     ContentTypeTest1_static_0030
      * @tc.desc     ContentTypeTest1_static_0030
      * @tc.level    Level.LEVEL2
      */
-it('ContentTypeTest1_static_0030', Level.LEVEL2, async (done: ()=>void) => {
-      console.info('ContentTypeTest1_0030 START');
+it('ContentTypeTest1_static_0030', Level.LEVEL2, async (done: ()=>void) => {      console.info('ContentTypeTest1_0030 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_ISSUE_AT');
       let obj = JSON.parseJsonElement(strJson);
@@ -121,14 +124,15 @@ it('ContentTypeTest1_static_0030', Level.LEVEL2, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   ContentTypeTest1_static_0040
      * @tc.name     ContentTypeTest1_static_0040
      * @tc.desc     ContentTypeTest1_static_0040
      * @tc.level    Level.LEVEL2
      */
-it('ContentTypeTest1_static_0040', Level.LEVEL2, async (done: ()=>void) => {
-      console.info('ContentTypeTest1_0040 START');
+it('ContentTypeTest1_static_0040', Level.LEVEL2, async (done: ()=>void) => {      console.info('ContentTypeTest1_0040 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_ORGANIZATION');
       let obj = JSON.parseJsonElement(strJson);
@@ -139,14 +143,15 @@ it('ContentTypeTest1_static_0040', Level.LEVEL2, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   ContentTypeTest1_static_0050
      * @tc.name     ContentTypeTest1_static_0050
      * @tc.desc     ContentTypeTest1_static_0050
      * @tc.level    Level.LEVEL2
      */
-it('ContentTypeTest1_static_0050', Level.LEVEL2, async (done: ()=>void) => {
-      console.info('ContentTypeTest1_0050 START');
+it('ContentTypeTest1_static_0050', Level.LEVEL2, async (done: ()=>void) => {      console.info('ContentTypeTest1_0050 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_TAX_ID');
       let obj = JSON.parseJsonElement(strJson);
@@ -157,14 +162,15 @@ it('ContentTypeTest1_static_0050', Level.LEVEL2, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   ContentTypeTest1_static_0060
      * @tc.name     ContentTypeTest1_static_0060
      * @tc.desc     ContentTypeTest1_static_0060
      * @tc.level    Level.LEVEL2
      */
-it('ContentTypeTest1_static_0060', Level.LEVEL2, async (done: ()=>void) => {
-      console.info('ContentTypeTest1_0060 START');
+it('ContentTypeTest1_static_0060', Level.LEVEL2, async (done: ()=>void) => {      console.info('ContentTypeTest1_0060 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_ADDRESS_CITY_AND_STATE');
       let obj = JSON.parseJsonElement(strJson);
@@ -175,14 +181,15 @@ it('ContentTypeTest1_static_0060', Level.LEVEL2, async (done: ()=>void) => {
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   ContentTypeTest1_static_0070
      * @tc.name     ContentTypeTest1_static_0070
      * @tc.desc     ContentTypeTest1_static_0070
      * @tc.level    Level.LEVEL2
      */
-it('ContentTypeTest1_static_0070', Level.LEVEL2, async (done: ()=>void) => {
-      console.info('ContentTypeTest1_0070 START');
+it('ContentTypeTest1_static_0070', Level.LEVEL2, async (done: ()=>void) => {      console.info('ContentTypeTest1_0070 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ContentType_DEFAULT');
       let obj = JSON.parseJsonElement(strJson);

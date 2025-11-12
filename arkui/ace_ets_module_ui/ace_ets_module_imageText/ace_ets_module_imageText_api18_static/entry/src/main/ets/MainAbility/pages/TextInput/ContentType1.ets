@@ -22,8 +22,7 @@ import {
   ContentType
 } from '@ohos.arkui.component'
 import {
-  State,
-  
+  State
 } from '@ohos.arkui.stateManagement'
 @Entry
 @Component

@@ -32,7 +32,7 @@ export default function waterFlowView() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/waterFlowView',
       }
-      
+      // let result;
       try {
         const routerScroll = AppStorage.get<Router>("router") as Router
         routerScroll.clear();
@@ -40,10 +40,8 @@ export default function waterFlowView() {
         console.info("get WaterFlowView state pages: " + JSON.stringify(pages));
         if (!("waterFlowView" == pages.name)) {
           console.info("get WaterFlowView state pages.name: " + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await Utils.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push WaterFlowView page error: " + err);
@@ -55,15 +53,13 @@ export default function waterFlowView() {
      * @tc.number   waterFlowViewJsunit_static_0100
      * @tc.name     waterFlowViewJsunit_static_0100
      * @tc.desc     waterFlowViewJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0100] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[RectJsunit_0100] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-
-      
       expect(true).assertEqual(true);
       done();
     });
@@ -73,7 +69,7 @@ it('waterFlowViewJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0200
      * @tc.name     waterFlowViewJsunit_static_0200
      * @tc.desc     waterFlowViewJsunit_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0200] START');
@@ -91,7 +87,7 @@ it('waterFlowViewJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0300
      * @tc.name     waterFlowViewJsunit_static_0300
      * @tc.desc     waterFlowViewJsunit_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0300] START');
@@ -99,7 +95,7 @@ it('waterFlowViewJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let obj = JSON.parseJsonElement(strJson);
       console.info("[waterFlowViewJsunit_static_0300] obj is: " + JSON.stringify(obj.getElement('$attrs')));
 
-      expect(obj.getElement('$attrs').getString('enableScrollInteraction')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('enableScrollInteraction')).assertEqual(true);
       console.info('[waterFlowViewJsunit_static_0300] END');
       done();
     });
@@ -109,7 +105,7 @@ it('waterFlowViewJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0400
      * @tc.name     waterFlowViewJsunit_static_0400
      * @tc.desc     waterFlowViewJsunit_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0400] START');
@@ -127,7 +123,7 @@ it('waterFlowViewJsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0500
      * @tc.name     waterFlowViewJsunit_static_0500
      * @tc.desc     waterFlowViewJsunit_static_0500
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0500] START');
@@ -147,7 +143,7 @@ it('waterFlowViewJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0600
      * @tc.name     waterFlowViewJsunit_static_0600
      * @tc.desc     waterFlowViewJsunit_static_0600
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0600] START');
@@ -165,7 +161,7 @@ it('waterFlowViewJsunit_static_0600', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0700
      * @tc.name     waterFlowViewJsunit_static_0700
      * @tc.desc     waterFlowViewJsunit_static_0700
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0700] START');
@@ -183,7 +179,7 @@ it('waterFlowViewJsunit_static_0700', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0800
      * @tc.name     waterFlowViewJsunit_static_0800
      * @tc.desc     waterFlowViewJsunit_static_0800
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0800] START');
@@ -201,7 +197,7 @@ it('waterFlowViewJsunit_static_0800', Level.LEVEL0, async (done: () => void): Pr
      * @tc.number   waterFlowViewJsunit_static_0900
      * @tc.name     waterFlowViewJsunit_static_0900
      * @tc.desc     waterFlowViewJsunit_static_0900
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('waterFlowViewJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_static_0900] START');

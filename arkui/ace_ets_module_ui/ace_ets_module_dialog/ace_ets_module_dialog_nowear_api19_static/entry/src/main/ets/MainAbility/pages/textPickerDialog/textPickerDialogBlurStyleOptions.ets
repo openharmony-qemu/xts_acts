@@ -13,48 +13,25 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  TextPickerResult,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, BackgroundEffectOptions, TextPickerResult} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct textPickerDialog1 {
+  private select: undefined|int|Array<int> = 0
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
   @State v: string = '';
   uiContext: UIContext = this.getUIContext();
-  private select: undefined | int | Array<int> = 0 as undefined | int | Array<int>;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 }  as ColumnOptions){
       Button('TextPickerDialog_Options001')
         .id('TextPickerDialog_Options001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTextPickerDialog({
             // 建议使用 this.getUIContext().showTextPickerDialog()接口
             range: this.fruits,
@@ -70,20 +47,20 @@ struct textPickerDialog1 {
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
             backgroundBlurStyleOptions: {
-              policy: BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
-              adaptiveColor: AdaptiveColor.AVERAGE,
-              scale: 0,
-              colorMode: ThemeColorMode.LIGHT,
-              inactiveColor: Color.Pink,
-              blurOptions: {
-                grayscale: [20, 100]
+              policy:BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
+              adaptiveColor:AdaptiveColor.AVERAGE,
+              scale:0,
+              colorMode:ThemeColorMode.LIGHT,
+              inactiveColor:Color.Pink,
+              blurOptions:{
+                grayscale:[20,100]
               }
             } as BackgroundBlurStyleOptions
           })
         })
       Button('TextPickerDialog_Options002')
         .id('TextPickerDialog_Options002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTextPickerDialog({
             // 建议使用 this.getUIContext().showTextPickerDialog()接口
             range: this.fruits,
@@ -99,18 +76,18 @@ struct textPickerDialog1 {
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
             backgroundBlurStyleOptions: {
-              policy: undefined,
-              adaptiveColor: undefined,
-              scale: undefined,
-              colorMode: undefined,
-              inactiveColor: undefined,
-              blurOptions: undefined,
+              policy:undefined,
+              adaptiveColor:undefined,
+              scale:undefined,
+              colorMode:undefined,
+              inactiveColor:undefined,
+              blurOptions:undefined,
             } as BackgroundBlurStyleOptions
           })
         })
       Button('TextPickerDialog_Options003')
         .id('TextPickerDialog_Options003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTextPickerDialog({
             // 建议使用 this.getUIContext().showTextPickerDialog()接口
             range: this.fruits,
@@ -125,7 +102,14 @@ struct textPickerDialog1 {
               this.v = value.value as string
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },
-
+            // backgroundBlurStyleOptions: {
+            //   policy:null,
+            //   adaptiveColor:null,
+            //   scale:null,
+            //   colorMode:null,
+            //   inactiveColor:null,
+            //   blurOptions:null,
+            // } as BackgroundBlurStyleOptions
           })
         })
     }

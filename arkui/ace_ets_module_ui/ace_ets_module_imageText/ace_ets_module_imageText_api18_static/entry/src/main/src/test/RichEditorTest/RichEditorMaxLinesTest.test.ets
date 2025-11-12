@@ -73,14 +73,15 @@ export default function RichEditorMaxLinesTest() {
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   RichEditorMaxLinesTest_static_0001
      * @tc.name     RichEditorMaxLinesTest_static_0001
      * @tc.desc     RichEditorMaxLinesTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('RichEditorMaxLinesTest_static_0001', Level.LEVEL1, async (done: () => void) => {
-      let driver = Driver.create();
+it('RichEditorMaxLinesTest_static_0001', Level.LEVEL1, async (done: () => void) => {      let driver = Driver.create();
       console.info('RichEditorMaxLinesTest0001 START');
       let strJson: string = inspector.getInspectorByKey('RichEditorMaxLines');
       let obj = JSON.parseJsonElement(strJson);
@@ -91,19 +92,20 @@ it('RichEditorMaxLinesTest_static_0001', Level.LEVEL1, async (done: () => void) 
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   RichEditorMaxLinesTest_static_0002
      * @tc.name     RichEditorMaxLinesTest_static_0002
      * @tc.desc     RichEditorMaxLinesTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('RichEditorMaxLinesTest_static_0002', Level.LEVEL1, async (done: () => void) => {
-      let driver = Driver.create();
+it('RichEditorMaxLinesTest_static_0002', Level.LEVEL1, async (done: () => void) => {      let driver = Driver.create();
       console.info('RichEditorMaxLinesTest0002 START');
       await CommonFunc.sleep(1000);
-      let setMaxLength = await (driver?.findComponent(ON.id('setMaxLine1')) as Promise<Component|null>)
+      let set:Component = await driver.findComponent(ON.id('setMaxLine1')) as Component
       await CommonFunc.sleep(500);
-      await (setMaxLength?.click() as Promise<void>)
+      await set.click()
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('RichEditorMaxLines');
       let obj = JSON.parseJsonElement(strJson);
@@ -114,19 +116,20 @@ it('RichEditorMaxLinesTest_static_0002', Level.LEVEL1, async (done: () => void) 
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   RichEditorMaxLinesTest_static_0003
      * @tc.name     RichEditorMaxLinesTest_static_0003
      * @tc.desc     RichEditorMaxLinesTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('RichEditorMaxLinesTest_static_0003', Level.LEVEL1, async (done: () => void) => {
-      let driver = Driver.create();
+it('RichEditorMaxLinesTest_static_0003', Level.LEVEL1, async (done: () => void) => {      let driver = Driver.create();
       console.info(' RichEditorMaxLinesTest0003 START');
       await CommonFunc.sleep(1000);
-      let setMaxLength = await driver.findComponent(ON.id('setMaxLine2'))
+      let set:Component = await driver.findComponent(ON.id('setMaxLine2')) as Component
       await CommonFunc.sleep(500);
-      await (setMaxLength?.click() as Promise<void>)
+      await set.click()
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('RichEditorMaxLines');
       let obj = JSON.parseJsonElement(strJson);
@@ -137,19 +140,20 @@ it('RichEditorMaxLinesTest_static_0003', Level.LEVEL1, async (done: () => void) 
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   RichEditorMaxLinesTest_static_0004
      * @tc.name     RichEditorMaxLinesTest_static_0004
      * @tc.desc     RichEditorMaxLinesTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('RichEditorMaxLinesTest_static_0004', Level.LEVEL1, async (done: () => void) => {
-      let driver = Driver.create();
+it('RichEditorMaxLinesTest_static_0004', Level.LEVEL1, async (done: () => void) => {      let driver = Driver.create();
       console.info(' RichEditorMaxLinesTest0004 START');
       await CommonFunc.sleep(1000);
-      let setMaxLength = await (driver?.findComponent(ON.id('setMaxLine3')) as Promise<Component|null>)
+      let set:Component = await driver.findComponent(ON.id('setMaxLine3')) as Component
       await CommonFunc.sleep(500);
-      await (setMaxLength?.click() as Promise<void>)
+      await set.click()
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('RichEditorMaxLines');
       let obj = JSON.parseJsonElement(strJson);

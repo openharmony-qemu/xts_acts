@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,9 +31,9 @@ struct TextAreaInputTestExample {
           .width('90%')
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-          .onDragStart((event: DragEvent, extraParams?: string):(() => void) => {
-            this.text = 'Text--onDragStart'
-          })
+          // .onDragStart((event: DragEvent, extraParams?: string):(() => void) => {
+          //   this.text = 'Text--onDragStart'
+          // })
           .onDragEnd((event: DragEvent, extraParams?: string):void =>{
             this.text = 'Text--onDragEnd'
           })

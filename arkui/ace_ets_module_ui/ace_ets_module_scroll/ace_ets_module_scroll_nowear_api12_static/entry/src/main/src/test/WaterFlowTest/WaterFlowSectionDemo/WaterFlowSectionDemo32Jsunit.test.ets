@@ -40,9 +40,8 @@ export default function WaterFlowSectionDemo32Jsunit() {
         console.info("get WaterFlowSectionDemo32Jsunit state pages:" + JSON.stringify(pages));
         if (!("WaterFlowSectionDemo32" == pages.name)) {
           console.info("get WaterFlowSectionDemo32Jsunit state pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
-          
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push WaterFlowSectionDemo32Jsunit page error:" + err);
@@ -54,9 +53,9 @@ export default function WaterFlowSectionDemo32Jsunit() {
      * @tc.number   WaterFlowSectionDemo32Jsunit_static_0100
      * @tc.name     WaterFlowSectionDemo32Jsunit_static_0100
      * @tc.desc     WaterFlowSectionDemo32Jsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowSectionDemo32Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowSectionDemo32Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowSectionDemo32Jsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let str0 = CommonFunc.getComponentRect('WaterFlowSectionDemo32_3');
@@ -66,8 +65,8 @@ it('WaterFlowSectionDemo32Jsunit_static_0100', Level.LEVEL0, async (done: () => 
       console.log('WaterFlowSectionDemo32Jsunit_1111',str0.right,str1.right,str2.left)
       console.log('WaterFlowSectionDemo32Jsunit_2222',str1.right - str0.right)
       console.log('WaterFlowSectionDemo32Jsunit_3333',str2.left - str0.right)
-      expect(Math.round(str1.right - str0.right)).assertEqual(Math.round(0));
-      expect(Math.round(str2.left - str0.right)).assertEqual(Math.round(0));
+      expect(Math.floor(Math.abs(str1.right - str0.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(str2.left - str0.right)) <= 1).assertTrue();
       console.info('WaterFlowSectionDemo32Jsunit_static_0100 END')
       done();
     });

@@ -45,12 +45,10 @@ export default function setWaterFlowEvent() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get setWaterFlowEvent state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("setWaterFlowEvent" == pages.name)) {
           console.info("get setWaterFlowEvent pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push setWaterFlowEvent page error:" + err);

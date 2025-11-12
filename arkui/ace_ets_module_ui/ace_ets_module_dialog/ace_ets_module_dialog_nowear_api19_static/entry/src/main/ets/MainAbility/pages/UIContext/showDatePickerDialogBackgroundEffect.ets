@@ -12,43 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, BackgroundEffectOptions} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ShowDatePickerDialog2 {
   private selectedDate: Date = new Date('2025-04-23')
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('ShowDatePickerDialog_Effect001')
         .id('ShowDatePickerDialog_Effect001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showDatePickerDialog({
             start: new Date('2000-1-1'),
@@ -60,40 +37,58 @@ struct ShowDatePickerDialog2 {
               brightness: 2,
               color: Color.Pink,
               adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
               blurOptions: {
-                grayscale: [20, 20]
+                grayscale: [20,20]
               }
             } as BackgroundEffectOptions
           })
         })
       Button('ShowDatePickerDialog_Effect002')
         .id('ShowDatePickerDialog_Effect002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
-
+            // backgroundEffect: {
+            //   // radius: undefined,
+            //   saturation: undefined,
+            //   brightness: undefined,
+            //   color: undefined,
+            //   adaptiveColor: undefined,
+            //   policy:undefined,
+            //   inactiveColor:undefined,
+            //   blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('ShowDatePickerDialog_Effect003')
         .id('ShowDatePickerDialog_Effect003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
-
+            // backgroundEffect: {
+            //   radius: null,
+            //   saturation: null,
+            //   brightness: null,
+            //   color: null,
+            //   adaptiveColor: null,
+            //   policy:null,
+            //   inactiveColor:null,
+            //   blurOptions: null,
+            // } as BackgroundEffectOptions
           })
         })
     }
     .height('100%')
     .width('100%')
     .backgroundImage($r('app.media.icon'))
-    .backgroundImageSize({ width: '100%', height: '100%' } as SizeOptions)
+    .backgroundImageSize({ width: '100%', height: '100%' }  as SizeOptions)
   }
 }

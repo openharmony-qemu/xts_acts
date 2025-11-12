@@ -12,45 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, BackgroundEffectOptions} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct datePickerDialog1 {
   private selectedDate: Date = new Date('2025-04-23')
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('DatePickerDialog_Options001')
         .id('DatePickerDialog_Options001')
-        .onClick((e: ClickEvent) => {
-          let uiContext: UIContext = this.getUIContext();
-          uiContext.showDatePickerDialog({
+        .onClick((e:ClickEvent) => {
+          this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
@@ -58,22 +33,21 @@ struct datePickerDialog1 {
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
             backgroundBlurStyleOptions: {
-              policy: BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
-              adaptiveColor: AdaptiveColor.AVERAGE,
-              scale: 0,
-              colorMode: ThemeColorMode.LIGHT,
-              inactiveColor: Color.Pink,
-              blurOptions: {
-                grayscale: [20, 100]
+              policy:BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
+              adaptiveColor:AdaptiveColor.AVERAGE,
+              scale:0,
+              colorMode:ThemeColorMode.LIGHT,
+              inactiveColor:Color.Pink,
+              blurOptions:{
+                grayscale:[20,100]
               }
-            } as BackgroundBlurStyleOptions
+            } as  BackgroundBlurStyleOptions
           })
         })
       Button('DatePickerDialog_Options002')
         .id('DatePickerDialog_Options002')
-        .onClick((e: ClickEvent) => {
-          let uiContext: UIContext = this.getUIContext();
-          uiContext.showDatePickerDialog({
+        .onClick((e:ClickEvent) => {
+          this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
@@ -81,27 +55,33 @@ struct datePickerDialog1 {
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
             backgroundBlurStyleOptions: {
-              policy: undefined,
-              adaptiveColor: undefined,
-              scale: undefined,
-              colorMode: undefined,
-              inactiveColor: undefined,
-              blurOptions: undefined,
-            } as BackgroundBlurStyleOptions
+              policy:undefined,
+              adaptiveColor:undefined,
+              scale:undefined,
+              colorMode:undefined,
+              inactiveColor:undefined,
+              blurOptions:undefined,
+            }  as  BackgroundBlurStyleOptions
           })
         })
       Button('DatePickerDialog_Options003')
         .id('DatePickerDialog_Options003')
-        .onClick((e: ClickEvent) => {
-          let uiContext: UIContext = this.getUIContext();
-          uiContext.showDatePickerDialog({
+        .onClick((e:ClickEvent) => {
+          this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
             showTime: true,
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-
+            // backgroundBlurStyleOptions: {
+            //   policy:null,
+            //   adaptiveColor:null,
+            //   scale:null,
+            //   colorMode:null,
+            //   inactiveColor:null,
+            //   blurOptions:null,
+            // }  as  BackgroundBlurStyleOptions
           })
         })
     }

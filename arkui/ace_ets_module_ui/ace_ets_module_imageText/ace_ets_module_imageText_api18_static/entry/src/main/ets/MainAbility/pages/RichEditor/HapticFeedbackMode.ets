@@ -16,7 +16,6 @@ import { Entry, Component, Column, Builder, RichEditorController, RichEditorOpti
   Text, RichEditor, Button, Row, Color, ImageFit, ImageSpanAlignment, TextAlign,
   ClickEvent,RichEditorSpanType,RichEditorResponseType,HapticFeedbackMode,
   CopyOptions,$r
-
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { Callback } from '../../common/MessageManager'
@@ -40,11 +39,11 @@ struct HapticFeedbackMode1 {
       RichEditor(this.optionsR)
         .id('HapticFeedbackMode.ENABLED')
         .onReady((): void => {
-          this.controllerR.addTextSpan('测试文本', {
-            style: {
-              fontSize: '15vp'
-            }
-          });
+          // this.controllerR.addTextSpan('测试文本', {
+          //   style: {
+          //     fontSize: '15vp'
+          //   }
+          // });
 
         })
         .bindSelectionMenu(RichEditorSpanType.DEFAULT, this.panel, RichEditorResponseType.DEFAULT, {
@@ -112,11 +111,11 @@ struct HapticFeedbackMode1 {
       RichEditor(this.optionsR3)
         .id('HapticFeedbackMode.AUTO')
         .onReady((): void => {
-          this.controllerR3.addTextSpan('测试文本', {
-            style: {
-              fontSize: '15vp'
-            }
-          });
+          // this.controllerR3.addTextSpan('测试文本', {
+          //   style: {
+          //     fontSize: '15vp'
+          //   }
+          // });
           this.controllerR3.addImageSpan($r("app.media.icon"),
             {
               imageStyle:

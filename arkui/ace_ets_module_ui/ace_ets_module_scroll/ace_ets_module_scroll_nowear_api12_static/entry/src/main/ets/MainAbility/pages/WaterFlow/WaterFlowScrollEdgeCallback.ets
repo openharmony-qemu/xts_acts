@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter'
-import { WaterFlowDataSource } from './WaterFlowSectionDemo/WaterFlowDataSource'
+import { WaterFlowDataSource } from './WaterFlowDataSource'
 import { Entry, Component, Scroller, Column, ClickEvent, WaterFlow, LazyForEach, FlowItem, Text, Scroll, ColumnOptions,
   Button, EdgeEffect, BarState, Edge, Padding } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -25,20 +25,20 @@ struct WaterFlowScrollEdgeCallback {
   @State maxSize: number = 180
   @State clickFlag: number = 0
   @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
-  dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
+  dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   private itemWidthArray: number[] = new Array<number>()
   private itemHeightArray: number[] = new Array<number>()
   @State numbers: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
   scroller: Scroller = new Scroller()
   @State text1:string = ''
 
-  
+  // 计算FlowItem宽/高
   getSize(){
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
-  
+  // 设置FlowItem宽/高数组
   setItemSizeArray(){
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize())
@@ -58,7 +58,7 @@ struct WaterFlowScrollEdgeCallback {
         Text(this.text1).id('WaterFlowTextByScrollEdge01')
         Button('点我滚动')
           .id('WaterFlowScrollEdgeCallback01')
-          .onClick((e: ClickEvent) => { 
+          .onClick((e: ClickEvent) => { // 这里
             this.scroller.scrollEdge(Edge.Bottom, { velocity: 0 })
             this.text1 = 'ScrollEdgeSuccess'
           })
@@ -71,9 +71,9 @@ struct WaterFlowScrollEdgeCallback {
               }
             }
             .width('100%')
-            .height(this.itemHeightArray[item.toInt() % 100])
-            .backgroundColor(this.colors[item.toInt() % 5])
-          }, (item: number, index: int) => String(item))
+            .height(this.itemHeightArray[(item as int) % 100])
+            .backgroundColor(this.colors[(item as int) % 5])
+          }, (item: number) => String(item))
         }
         .columnsTemplate('1fr')
         .columnsGap(10)

@@ -15,10 +15,8 @@
 
 import actionSheetBackgroundEffectTest from './actionSheetTest/actionSheetBackgroundEffect.test'
 import actionSheetBlurStyleOptionsTest from './actionSheetTest/actionSheetBlurStyleOptions.test'
-import calendarPickerDialogBackgroundEffectTest
-  from './calendarPickerDialogTest/calendarPickerDialogBackgroundEffect.test'
-import calendarPickerDialogBlurStyleOptionsTest
-  from './calendarPickerDialogTest/calendarPickerDialogBlurStyleOptions.test'
+import calendarPickerDialogBackgroundEffectTest from './calendarPickerDialogTest/calendarPickerDialogBackgroundEffect.test'
+import calendarPickerDialogBlurStyleOptionsTest from './calendarPickerDialogTest/calendarPickerDialogBlurStyleOptions.test'
 import datePickerDialogBackgroundEffectTest from './datePickerDialogTest/datePickerDialogBackgroundEffect.test'
 import datePickerDialogBlurStyleOptionsTest from './datePickerDialogTest/datePickerDialogBlurStyleOptions.test'
 import showActionSheetBackgroundEffectTest from './UIContextTest/showActionSheetBackgroundEffect.test'

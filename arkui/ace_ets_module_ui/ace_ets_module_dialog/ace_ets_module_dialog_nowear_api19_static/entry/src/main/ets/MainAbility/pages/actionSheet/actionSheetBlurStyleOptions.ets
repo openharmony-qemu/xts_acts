@@ -12,45 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  CalendarPickerDialog,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  DialogAlignment,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, $r,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions,
+  BlurStyleActivePolicy, AdaptiveColor, ThemeColorMode, Color, DialogAlignment, BackgroundEffectOptions,
+  CalendarPickerDialog} from '@ohos.arkui.component'
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ActionSheet1 {
   uiContext: UIContext = this.getUIContext()
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('ActionSheet_Options001')
         .id('ActionSheet_Options001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showActionSheet({
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
@@ -89,20 +65,20 @@ struct ActionSheet1 {
               }
             ],
             backgroundBlurStyleOptions: {
-              policy: BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
-              adaptiveColor: AdaptiveColor.AVERAGE,
-              scale: 0,
-              colorMode: ThemeColorMode.LIGHT,
-              inactiveColor: Color.Pink,
-              blurOptions: {
-                grayscale: [20, 100]
+              policy:BlurStyleActivePolicy.FOLLOWS_WINDOW_ACTIVE_STATE,
+              adaptiveColor:AdaptiveColor.AVERAGE,
+              scale:0,
+              colorMode:ThemeColorMode.LIGHT,
+              inactiveColor:Color.Pink,
+              blurOptions:{
+                grayscale:[20,100]
               }
             } as BackgroundBlurStyleOptions
           })
         })
       Button('ActionSheet_Options002')
         .id('ActionSheet_Options002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showActionSheet({
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
@@ -141,18 +117,18 @@ struct ActionSheet1 {
               }
             ],
             backgroundBlurStyleOptions: {
-              policy: undefined,
-              adaptiveColor: undefined,
-              scale: undefined,
-              colorMode: undefined,
-              inactiveColor: undefined,
-              blurOptions: undefined,
+              policy:undefined,
+              adaptiveColor:undefined,
+              scale:undefined,
+              colorMode:undefined,
+              inactiveColor:undefined,
+              blurOptions:undefined,
             } as BackgroundBlurStyleOptions
           })
         })
       Button('ActionSheet_Options003')
         .id('ActionSheet_Options003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showActionSheet({
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
@@ -190,6 +166,14 @@ struct ActionSheet1 {
                 }
               }
             ],
+            // backgroundBlurStyleOptions: {
+            //   policy:null,
+            //   adaptiveColor:null,
+            //   scale:null,
+            //   colorMode:null,
+            //   inactiveColor:null,
+            //   blurOptions:null,
+            // } as BackgroundBlurStyleOptions
           })
         })
     }
