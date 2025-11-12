@@ -15,9 +15,19 @@
 import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
 import GetNodeByIdNullTest from './ContextTest/GetNodeByIdNullTest.test';
 import UIContextUndefinedTest from './ContextTest/UIContextUndefinedTest.test';
+import UIContextOnIdle from './OnIdle/UIContextOnIdle.test';
+import GetWindowWidthAndHeight from './window/GetWindowWidthAndHeight.test';
+import PixelUnitsConversion from './xts/PixelUnitsConversion.test';
+import UIContextWithoutWindowTest from './ContextTest/UIContextWithoutWindow.test';
+import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
 
 export default function testsuite() {
   CacheMaxCountForHSPTest();
   GetNodeByIdNullTest();
   UIContextUndefinedTest();
+  UIContextOnIdle();
+  GetWindowWidthAndHeight();
+  PixelUnitsConversion();
+  UIContextWithoutWindowTest();
+  UIContextGetOpacityTest();
 }

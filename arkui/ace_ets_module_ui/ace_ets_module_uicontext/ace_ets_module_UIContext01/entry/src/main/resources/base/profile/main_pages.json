@@ -3,6 +3,11 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPTest",
     "MainAbility/pages/Context/GetNodeByIdNullTest",
-    "MainAbility/pages/Context/UIContextUndefinedTest"
+    "MainAbility/pages/Context/UIContextUndefinedTest",
+    "MainAbility/pages/OnIdle/onIdleTest",
+    "MainAbility/pages/window/GetWindowWidthAndHeight",
+    "MainAbility/pages/xts/PixelUnitsConversion",
+    "MainAbility/pages/Context/UIContextWithoutWindowTest",
+    "MainAbility/pages/Context/UIContextGetOpacityTest"
   ]
 }
