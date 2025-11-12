@@ -13,7 +13,19 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  UiComponent,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  BY,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { router } from '@kit.ArkUI';
 import Utils from '../../MainAbility/common/Utils';
@@ -50,7 +62,7 @@ export default function datePickerOnChangeModifierTest() {
       console.info('datePickerOnChangeModifier beforeEach end');
       done();
     });
-  
+
     /* *
     * @tc.number: DatePicker_OnChange_Modifier_001
     * @tc.name  : DatePicker_OnChange_Modifier_001
@@ -60,61 +72,63 @@ export default function datePickerOnChangeModifierTest() {
     * @tc.size
     */
     it('DatePicker_OnChange_Modifier_001', Level.LEVEL1, async (done: Function) => {
-        console.info('DatePicker_OnChange_Modifier_001 START');
-        let driver = Driver.create();
-        let switchButton = await driver.findComponent(ON.id('LunarBtn'));
-        await switchButton.click();
-        await Utils.sleep(1000);
-        let switchButton1 = await driver.findComponent(ON.id('LunarBtn'));
-        await switchButton1.click();
-        await Utils.sleep(1000);
-        let datePicker = Utils.getComponentRect('DatePicker');
-        let top = datePicker.top
-        let bottom = datePicker.bottom
-        let right = datePicker.right
-        let middle = (bottom-top) / 2 + top
-        let left =datePicker.left
-        await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
+      console.info('DatePicker_OnChange_Modifier_001 START');
+      let driver = Driver.create();
+      let switchButton = await driver.findComponent(ON.id('LunarBtn'));
+      await switchButton.click();
+      await Utils.sleep(1000);
+      let switchButton1 = await driver.findComponent(ON.id('LunarBtn'));
+      await switchButton1.click();
+      await Utils.sleep(1000);
+      let datePicker = Utils.getComponentRect('DatePicker');
+      let top = datePicker.top
+      let bottom = datePicker.bottom
+      let right = datePicker.right
+      let middle = (bottom - top) / 2 + top
+      let left = datePicker.left
+      await driver.swipe(Math.round(globalThis.winLeft + (right - left) / 2 + left),
+        Math.round(globalThis.winTop + middle), Math.round(globalThis.winLeft + (right - left) / 2 + left),
         Math.round(0));
-        await Utils.sleep(5000);
-        let strJsonNew:string = getInspectorByKey('onChangeOff');
-        console.info("DatePicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
-          .$attrs));
-        expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');
-        console.info('DatePicker_OnChange_Modifier_001 END');
-        done();
-      });
-  
-      /* *
-      * @tc.number: DatePicker_OnChange_Modifier_002
-      * @tc.name  : DatePicker_OnChange_Modifier_002
-      * @tc.desc  : To test the OnChange
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
-      it('DatePicker_OnChange_Modifier_002', Level.LEVEL1, async (done: Function) => {
-        console.info('DatePicker_OnChange_Modifier_002 START');
-        let driver = Driver.create();
-        let switchButton = await driver.findComponent(ON.id('LunarBtn'));
-        await switchButton.click();
-        await Utils.sleep(1000);
-        let datePicker = Utils.getComponentRect('DatePicker');
-        let top = datePicker.top
-        let bottom = datePicker.bottom
-        let right = datePicker.right
-        let middle = (bottom-top) / 2 + top
-        let left =datePicker.left
-        await driver.swipe(Math.round((right-left)/2+left), Math.round(middle), Math.round((right-left)/2+left),
-          Math.round(0));
-        await Utils.sleep(5000);
-        let strJsonNew:string = getInspectorByKey('onDateChangeOff');
-        console.info("DatePicker_OnChange_Modifier_002 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
-          .$attrs));
-        expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');
-        console.info('DatePicker_OnChange_Modifier_002 END');
-        done();
-      });
+      await Utils.sleep(5000);
+      let strJsonNew: string = getInspectorByKey('onChangeOff');
+      console.info("DatePicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
+        .$attrs));
+      expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');
+      console.info('DatePicker_OnChange_Modifier_001 END');
+      done();
+    });
+
+    /* *
+    * @tc.number: DatePicker_OnChange_Modifier_002
+    * @tc.name  : DatePicker_OnChange_Modifier_002
+    * @tc.desc  : To test the OnChange
+    * @tc.level : Level 3
+    * @tc.type
+    * @tc.size
+    */
+    it('DatePicker_OnChange_Modifier_002', Level.LEVEL1, async (done: Function) => {
+      console.info('DatePicker_OnChange_Modifier_002 START');
+      let driver = Driver.create();
+      let switchButton = await driver.findComponent(ON.id('LunarBtn'));
+      await switchButton.click();
+      await Utils.sleep(1000);
+      let datePicker = Utils.getComponentRect('DatePicker');
+      let top = datePicker.top
+      let bottom = datePicker.bottom
+      let right = datePicker.right
+      let middle = (bottom - top) / 2 + top
+      let left = datePicker.left
+      await driver.swipe(Math.round((right - left) / 2 + left), Math.round(middle),
+        Math.round((right - left) / 2 + left),
+        Math.round(0));
+      await Utils.sleep(5000);
+      let strJsonNew: string = getInspectorByKey('onDateChangeOff');
+      console.info("DatePicker_OnChange_Modifier_002 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
+        .$attrs));
+      expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');
+      console.info('DatePicker_OnChange_Modifier_002 END');
+      done();
+    });
   })
 }
 

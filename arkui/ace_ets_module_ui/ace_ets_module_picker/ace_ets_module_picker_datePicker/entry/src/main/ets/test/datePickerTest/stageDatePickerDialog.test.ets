@@ -53,6 +53,14 @@ export default function stageDatePickerDialog() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.number: testDatePickerDialog001
+     * @tc.name  : testDatePickerDialog001
+     * @tc.desc  : To test the eventData
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('testDatePickerDialog001', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog001 START');
       setTimeout(() => {
@@ -81,6 +89,14 @@ export default function stageDatePickerDialog() {
       }, 500)
     });
 
+    /**
+     * @tc.number: testDatePickerDialog002
+     * @tc.name  : testDatePickerDialog002
+     * @tc.desc  : To test the eventData
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('testDatePickerDialog002', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog002 START');
       setTimeout(() => {
@@ -108,6 +124,15 @@ export default function stageDatePickerDialog() {
         done();
       }, 500)
     });
+
+    /**
+     * @tc.number: testDatePickerDialog002
+     * @tc.name  : testDatePickerDialog002
+     * @tc.desc  : To test the eventData
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('testDatePickerDialog003', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog003 START');
       setTimeout(() => {
@@ -126,7 +151,8 @@ export default function stageDatePickerDialog() {
           } catch (err) {
             console.info("testDatePickerDialog003 on events_emitter err : " + JSON.stringify(err));
           }
-          console.info("testDatePickerDialog003 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
+          console.info("testDatePickerDialog003 click result is: " +
+          JSON.stringify(sendEventByKey('showDialogText', 10, "")));
           console.info('testDatePickerDialog003 END ');
         } catch (err) {
           expect().assertFail()

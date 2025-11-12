@@ -45,7 +45,7 @@ export default function DatePickerCanLoopTest() {
     /**
      * @tc.number: DatePickerCanLoopTest_0100
      * @tc.name  : DatePickerCanLoopTest_0100
-     * @tc.desc  : To test the canLoop true 
+     * @tc.desc  : To test the canLoop true
      * @tc.level : Level 0
      * @tc.type
      * @tc.size
@@ -69,7 +69,7 @@ export default function DatePickerCanLoopTest() {
     /**
      * @tc.number: DatePickerCanLoopTest_0200
      * @tc.name  : DatePickerCanLoopTest_0200
-     * @tc.desc  : To test the canLoop false 
+     * @tc.desc  : To test the canLoop false
      * @tc.level : Level 0
      * @tc.type
      * @tc.size
@@ -93,7 +93,7 @@ export default function DatePickerCanLoopTest() {
     /**
      * @tc.number: DatePickerCanLoopTest_0300
      * @tc.name  : DatePickerCanLoopTest_0300
-     * @tc.desc  : To test the canLoop null 
+     * @tc.desc  : To test the canLoop null
      * @tc.level : Level 0
      * @tc.type
      * @tc.size
@@ -117,7 +117,7 @@ export default function DatePickerCanLoopTest() {
     /**
      * @tc.number: DatePickerCanLoopTest_0400
      * @tc.name  : DatePickerCanLoopTest_0400
-     * @tc.desc  : To test the canLoop undefined 
+     * @tc.desc  : To test the canLoop undefined
      * @tc.level : Level 0
      * @tc.type
      * @tc.size

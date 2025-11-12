@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import Utils from '../Utils';
+import Utils from '../../MainAbility/common/Utils';
 
 export default function datePickerJsunit() {
   describe('datePickerJsunit', () => {
@@ -44,6 +44,14 @@ export default function datePickerJsunit() {
       console.info("datePicker after each called");
     });
 
+    /**
+     * @tc.number: datePickerTest_0100
+     * @tc.name  : datePickerTest_0100
+     * @tc.desc  : To test the datePicker type
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('datePickerTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerText_0100 START');
       let strJson = getInspectorByKey('datePicker');
@@ -55,6 +63,14 @@ export default function datePickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.number: datePickerTest_0300
+     * @tc.name  : datePickerTest_0300
+     * @tc.desc  : To test the datePicker useMilitaryTime
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('datePickerTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerTest_0300 START');
       try {
@@ -85,7 +101,7 @@ export default function datePickerJsunit() {
       } catch (err) {
         console.info("datePickerTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("datePickerTest_0300 click result is: " + JSON.stringify(sendEventByKey('datePicker',10,"")));
+      console.info("datePickerTest_0300 click result is: " + JSON.stringify(sendEventByKey('datePicker', 10, "")));
       await Utils.sleep(2000);
       console.info('datePickerTest_0300 END');
       done();

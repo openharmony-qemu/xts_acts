@@ -14,12 +14,26 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  UiComponent,
+  UiDriver,
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  BY,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
-import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
+import { MessageManager, Callback } from '../../MainAbility/utils/MessageManager';
+
 const waitUiReadyMs = 1000;
 
-export default function  datePickerUIJsunit() {
+export default function datePickerUIJsunit() {
   describe('datePickerUIJsunit', () => {
     beforeEach(async (done: Function) => {
       console.info("datePickerUIJsunit beforeEach start");
@@ -36,41 +50,62 @@ export default function  datePickerUIJsunit() {
           console.info("push datePickerUIJsunit success " + JSON.stringify(result));
         }
       } catch (err) {
-          console.error("push datePickerUIJsunit page error:" + err);
-	        expect().assertFail();
+        console.error("push datePickerUIJsunit page error:" + err);
+        expect().assertFail();
       }
       done();
     });
 
+    /**
+     * @tc.number: datePickerUIJsunit_0100
+     * @tc.name  : datePickerUIJsunit_0100
+     * @tc.desc  : To test the datePicker lunar
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('datePickerUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
-       console.info('datePickerUIJsunit_0100 START');
-       await CommonFunc.sleep(1000);
-       // get the datePicker component and test attribute to confirm
-       let strJson = getInspectorByKey('datePickerUI');
-       let obj: Record<string, ESObject> = JSON.parse(strJson);
-        console.info("obj is: " + JSON.stringify(obj));
-       console.info("datePickerUIJsunit_0100 component obj is: " + obj.$attrs.options + "---" + obj.$attrs.startDate);
-       console.info("datePickerUIJsunit_0100 component obj is: " + obj.$attrs.start + "--" + obj.$attrs.end + "--" + obj.$attrs.selected);
-       expect(obj.$attrs.lunar).assertEqual('false');
-       done();
+      console.info('datePickerUIJsunit_0100 START');
+      await CommonFunc.sleep(1000);
+      // get the datePicker component and test attribute to confirm
+      let strJson = getInspectorByKey('datePickerUI');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info("obj is: " + JSON.stringify(obj));
+      console.info("datePickerUIJsunit_0100 component obj is: " + obj.$attrs.options + "---" + obj.$attrs.startDate);
+      console.info("datePickerUIJsunit_0100 component obj is: " + obj.$attrs.start + "--" + obj.$attrs.end + "--" +
+      obj.$attrs.selected);
+      expect(obj.$attrs.lunar).assertEqual('false');
+      done();
     });
 
-   it('datePickerUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
+    /**
+     * @tc.number: datePickerUIJsunit_0200
+     * @tc.name  : datePickerUIJsunit_0200
+     * @tc.desc  : To test the datePicker lunar
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
+    it('datePickerUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerUIJsunit_0200 START');
       // modify the type attribute normal value of datePicker dynamically
-      globalThis.value.message.notify({name:'isLunar',value:true})
+      globalThis.value.message.notify({
+        name: 'isLunar', value: true
+      })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = getInspectorByKey('datePickerUI');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[datePickerUIJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.lunar).assertEqual('true');
-      globalThis.value.message.notify({name:'isLunar',value:false})
+      globalThis.value.message.notify({
+        name: 'isLunar', value: false
+      })
       await CommonFunc.sleep(2000);
-       let strJson2 = getInspectorByKey('datePickerUI');
+      let strJson2 = getInspectorByKey('datePickerUI');
       let obj2: Record<string, ESObject> = JSON.parse(strJson2);
       console.info("[datePickerUIJsunit_0200] component obj2 is: " + JSON.stringify(obj2));
-      expect(obj2.$attrs.lunar).assertEqual('false'); 
+      expect(obj2.$attrs.lunar).assertEqual('false');
       done();
     });
 

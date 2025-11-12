@@ -14,14 +14,14 @@
  */
 
 import router from '@ohos.router';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import Utils from '../../MainAbility/common/Utils'
 
 export default function datePickerLunarJsunit() {
-  describe('datePickerLunarTest', () =>{
-    beforeEach(async (done:Function) => {
+  describe('datePickerLunarTest', () => {
+    beforeEach(async (done: Function) => {
       console.info("flex beforeEach start");
-      let options:router.RouterOptions = {
+      let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePicker/datePickerNew',
       }
       try {
@@ -40,17 +40,20 @@ export default function datePickerLunarJsunit() {
       done()
     });
 
-    afterEach(async () =>{
+    afterEach(async () => {
       await Utils.sleep(1000);
       console.info("datePickerLunar after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_001
-     * @tc.name         testdatePickerLunar001
-     * @tc.desic         acedatePickerLunarEtsTest001
+    /**
+     * @tc.number: SUB_ACE_BASIC_ETS_API_001
+     * @tc.name  : SUB_ACE_BASIC_ETS_API_001
+     * @tc.desc  : Tests the property of the datePicker,get the lunar of the datePicker
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
      */
-    it('testdatePickerLunar001', Level.LEVEL1, async (done:Function) => {
+    it('testdatePickerLunar001', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerLunar testdatePickerLunar001 START');
       await Utils.sleep(2000);
       let strJson: string = getInspectorByKey('DatePicker');

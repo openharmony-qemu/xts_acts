@@ -38,11 +38,20 @@ export default function ActsDatePickerTest() {
       }
       done()
     });
+
+    /**
+     * @tc.number: Stage_DatePicker_Test_0010
+     * @tc.name  : Stage_DatePicker_Test_0010
+     * @tc.desc  : Tests the property of the Dialog,get the event of the Dialog
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('Stage_DatePicker_Test_0010', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_DatePicker_Test_0010 START');
-      try{
+      try {
         let strJson = getInspectorByKey('Stage_DatePicker_Test_0010');
-        console.info('Stage_DatePicker_Test_0010 START  :'+ JSON.stringify(strJson));
+        console.info('Stage_DatePicker_Test_0010 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("Stage_DatePicker_Test_0010 obj is: " + JSON.stringify(obj));
         let onDateChange: undefined = obj.$attrs.onDateChange
@@ -53,14 +62,15 @@ export default function ActsDatePickerTest() {
           },
           onDateChange: (value: Date) => {
             console.info("DatePickerDialog:onChange()" + value.toString())
-          }}
+          }
+        }
         console.info("Stage_DatePicker_Test_0010 InsertValue is: " + JSON.stringify(DatePickerDialog))
         expect(typeof DatePickerDialog.onDateAccept).assertEqual("function")
         expect(typeof DatePickerDialog.onDateChange).assertEqual("function")
         console.info('Stage_DatePicker_Test_0010 END ');
-      } catch(err) {
+      } catch (err) {
         expect().assertFail()
-        console.info('Stage_DatePicker_Test_0010 ERR  '+ JSON.stringify(err));
+        console.info('Stage_DatePicker_Test_0010 ERR  ' + JSON.stringify(err));
       }
       done();
     });
