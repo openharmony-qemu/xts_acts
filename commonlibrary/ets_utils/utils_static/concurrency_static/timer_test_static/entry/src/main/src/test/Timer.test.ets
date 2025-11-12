@@ -497,7 +497,7 @@ export default function TimerTest1() {
     it('TimerTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG: string = "TimerTest017";
       console.info(`${TAG} test start`);
-      const a: number = 0;
+      const a: int = 0;
       try {
         const timer = setInterval("delay：-1", 110); // -1 cppcrash
         await Utils.msSleep(100);
