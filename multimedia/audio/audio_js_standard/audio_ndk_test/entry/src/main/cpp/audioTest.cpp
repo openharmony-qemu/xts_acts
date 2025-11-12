@@ -7765,14 +7765,16 @@ static void CurrentInputDeviceChangedCallback(OH_AudioDeviceDescriptorArray *dev
 }
 
 static napi_value IsIntelligentNoiseReductionEnabledForCurrentDevice_001(napi_env env, napi_callback_info info)
-{    
+{
     napi_value result;
     OH_AudioStreamManager *streamManager;
     bool isIntelligentNoise = false;
     for (auto source : VALID_OH_SOURCE_TYPES) {
-        isIntelligentNoise = OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice(streamManager, source);
+        isIntelligentNoise = OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice(
+            streamManager, source);
         if (isIntelligentNoise != false && isIntelligentNoise != true) {
-            LOG("OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice FAIL, isIntelligentNoise is: %{public}d", isIntelligentNoise);
+            LOG("OH_AudioStreamManager_IsIntelligentNoiseReductionEnabledForCurrentDevice FAIL, isIntelligentNoise is:
+                 %{public}d", isIntelligentNoise);
             napi_create_int32(env, TEST_FAIL, &result);
             return result;
         }
@@ -7783,7 +7785,7 @@ static napi_value IsIntelligentNoiseReductionEnabledForCurrentDevice_001(napi_en
 }
 
 static napi_value AudioSessionManagerAvailableDevices_001(napi_env env, napi_callback_info info)
-{   
+{
     napi_value res;
     OH_AudioSessionManager* audioSessionManager;
     OH_AudioCommon_Result result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
@@ -7792,105 +7794,189 @@ static napi_value AudioSessionManagerAvailableDevices_001(napi_env env, napi_cal
         LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
         return res;
     }
-
     OH_AudioDevice_Usage deviceUsage = AUDIO_DEVICE_USAGE_MEDIA_OUTPUT;
     OH_AudioDeviceDescriptorArray *array;
-    result = OH_AudioSessionManager_GetAvailableDevices(audioSessionManager,deviceUsage, &array);
-    LOG("OH_AudioSessionManager_GetAvailableDevices, result is: %{public}d", result);
+    OH_AudioDeviceDescriptor *audioDeviceDescriptor = nullptr;
+    result = OH_AudioSessionManager_GetAvailableDevices(audioSessionManager, deviceUsage, &array);
     if (result != AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("OH_AudioSessionManager_GetAvailableDevices fail, result is: %{public}d", result);
         return res;
     }
-
-    result = OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback(audioSessionManager, deviceUsage, AvailableDeviceChangedCallback);
-    LOG("OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback, result is: %{public}d", result);
+    result = OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback(
+        audioSessionManager, deviceUsage, AvailableDeviceChangedCallback);
     if (result != AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("OH_AudioSessionManager_RegisterAvailableDevicesChangeCallback fail, result is: %{public}d", result);
         return res;
     }
-
-    result = OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback(audioSessionManager, AvailableDeviceChangedCallback);
-    LOG("OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback, result is: %{public}d", result);
+    result = OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback(
+        audioSessionManager, AvailableDeviceChangedCallback);
     if (result != AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("OH_AudioSessionManager_UnregisterAvailableDevicesChangeCallback fail, result is: %{public}d", result);
         return res;
     }
-
-    result = OH_AudioSessionManager_SelectMediaInputDevice(audioSessionManager, nullptr);
-    LOG("OH_AudioSessionManager_SelectMediaInputDevice, result is: %{public}d", result);
-    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("OH_AudioSessionManager_SelectMediaInputDevice fail, result is: %{public}d", result);
-        return res;
-    }
-    
-    OH_AudioDeviceDescriptor *audioDeviceDescriptor = nullptr;
-    result = OH_AudioSessionManager_GetSelectedMediaInputDevice(audioSessionManager, &audioDeviceDescriptor);
-    LOG("OH_AudioSessionManager_SelectMediaInputDevice, result is: %{public}d", result);
-    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("OH_AudioSessionManager_SelectMediaInputDevice fail, result is: %{public}d", result);
-        return res;
-    }
-
-    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory category = PREFERRED_NONE;
-    result = OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory(audioSessionManager, category);
-    LOG("OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory, result is: %{public}d", result);
-    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory fail, result is: %{public}d", result);
-        return res;
-    }
-
-    result = OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory(audioSessionManager, &category);
-    LOG("OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory, result is: %{public}d", result);
-    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory fail, result is: %{public}d", result);
-        return res;
-    }
-
-    result = OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback(audioSessionManager, CurrentInputDeviceChangedCallback);
-    LOG("OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback, result is: %{public}d", result);
-    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback fail, result is: %{public}d", result);
-        return res;
-    }
-
-    result = OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback(audioSessionManager, CurrentInputDeviceChangedCallback);
-    LOG("OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback, result is: %{public}d", result);
-    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
-        napi_create_int32(env, TEST_FAIL, &res);
-        LOG("OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback fail, result is: %{public}d", result);
-        return res;
-    }
-
     result = OH_AudioSessionManager_ReleaseDevice(audioSessionManager, audioDeviceDescriptor);
-    LOG("OH_AudioSessionManager_ReleaseDevice, result is: %{public}d", result);
     if (result != AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("OH_AudioSessionManager_ReleaseDevice fail, result is: %{public}d", result);
         return res;
     }
-
     result = OH_AudioSessionManager_ReleaseDevices(audioSessionManager, array);
-    LOG("OH_AudioSessionManager_ReleaseDevices, result is: %{public}d", result);
     if (result != AUDIOCOMMON_RESULT_SUCCESS) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("OH_AudioSessionManager_ReleaseDevices fail, result is: %{public}d", result);
         return res;
     }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
 
+static napi_value AudioSessionManagerAvailableDevices_002(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        return res;
+    }
+    OH_AudioDevice_Usage deviceUsage = AUDIO_DEVICE_USAGE_MEDIA_OUTPUT;
+    OH_AudioDeviceDescriptorArray *array;
+    result = OH_AudioSessionManager_GetAvailableDevices(audioSessionManager, deviceUsage, &array);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_GetAvailableDevices fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_SelectMediaInputDevice(audioSessionManager, nullptr);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_SelectMediaInputDevice fail, result is: %{public}d", result);
+        return res;
+    }
+    OH_AudioDeviceDescriptor *audioDeviceDescriptor = nullptr;
+    result = OH_AudioSessionManager_GetSelectedMediaInputDevice(audioSessionManager, &audioDeviceDescriptor);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_SelectMediaInputDevice fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_ReleaseDevice(audioSessionManager, audioDeviceDescriptor);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_ReleaseDevice fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_ReleaseDevices(audioSessionManager, array);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_ReleaseDevices fail, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioSessionManagerAvailableDevices_003(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        return res;
+    }
+    OH_AudioDevice_Usage deviceUsage = AUDIO_DEVICE_USAGE_MEDIA_OUTPUT;
+    OH_AudioDeviceDescriptorArray *array;
+    result = OH_AudioSessionManager_GetAvailableDevices(audioSessionManager, deviceUsage, &array);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_GetAvailableDevices fail, result is: %{public}d", result);
+        return res;
+    }
+    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory category = PREFERRED_NONE;
+    result = OH_AudioSessionManager_SetBluetoothAndNearlinkPreferredRecordCategory(audioSessionManager, category);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("SetBluetoothAndNearlinkPreferredRecordCategory fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_GetBluetoothAndNearlinkPreferredRecordCategory(audioSessionManager, &category);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("GetBluetoothAndNearlinkPreferredRecordCategory fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_ReleaseDevice(audioSessionManager, audioDeviceDescriptor);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_ReleaseDevice fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_ReleaseDevices(audioSessionManager, array);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_ReleaseDevices fail, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value AudioSessionManagerAvailableDevices_004(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        return res;
+    }
+    OH_AudioDevice_Usage deviceUsage = AUDIO_DEVICE_USAGE_MEDIA_OUTPUT;
+    OH_AudioDeviceDescriptorArray *array;
+    result = OH_AudioSessionManager_GetAvailableDevices(audioSessionManager, deviceUsage, &array);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_GetAvailableDevices fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback(
+        audioSessionManager, CurrentInputDeviceChangedCallback);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_RegisterCurrentInputDeviceChangeCallback fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback(
+        audioSessionManager, CurrentInputDeviceChangedCallback);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_UnregisterCurrentInputDeviceChangeCallback fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_ReleaseDevice(audioSessionManager, audioDeviceDescriptor);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_ReleaseDevice fail, result is: %{public}d", result);
+        return res;
+    }
+    result = OH_AudioSessionManager_ReleaseDevices(audioSessionManager, array);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("OH_AudioSessionManager_ReleaseDevices fail, result is: %{public}d", result);
+        return res;
+    }
     napi_create_int32(env, TEST_PASS, &res);
     return res;
 }
 
 static napi_value BluetoothAndNearlinkPreferredRecordCategory_001(napi_env env, napi_callback_info info)
-{   
+{
     napi_value res;
     
     OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory p_none = PREFERRED_NONE;
@@ -7918,7 +8004,7 @@ static napi_value BluetoothAndNearlinkPreferredRecordCategory_001(napi_env env, 
     if (p_higt_quality != 3) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("PREFERRED_HIGH_QUALITY fail, result is: %{public}d", p_higt_quality);
-        return res;        
+        return res;
     }
 
     OH_AudioStream_Result format = AUDIOSTREAM_ERROR_UNSUPPORTED_FORMAT;
@@ -8381,9 +8467,15 @@ napi_property_descriptor desc2[] = {
     {"AudioCapturerSetWillMuteWhenInterrupted", nullptr,
         AudioCapturerSetWillMuteWhenInterrupted, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"isIntelligentNoiseReductionEnabledForCurrentDevice_001", nullptr,
-        IsIntelligentNoiseReductionEnabledForCurrentDevice_001, nullptr, nullptr, nullptr, napi_default, nullptr},        
+        IsIntelligentNoiseReductionEnabledForCurrentDevice_001, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioSessionManagerAvailableDevices_001", nullptr,
         AudioSessionManagerAvailableDevices_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerAvailableDevices_002", nullptr,
+        AudioSessionManagerAvailableDevices_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerAvailableDevices_003", nullptr,
+        AudioSessionManagerAvailableDevices_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerAvailableDevices_004", nullptr,
+        AudioSessionManagerAvailableDevices_004, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"bluetoothAndNearlinkPreferredRecordCategory_001", nullptr,
         BluetoothAndNearlinkPreferredRecordCategory_001, nullptr, nullptr, nullptr, napi_default, nullptr},
 };

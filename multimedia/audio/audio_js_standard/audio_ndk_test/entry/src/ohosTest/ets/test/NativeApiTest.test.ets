@@ -4428,6 +4428,48 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_002();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_003();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_003 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004
+     * @tc.name      : audioSessionManagerAvailableDevices
+     * @tc.desc      : audioSessionManagerAvailableDevices
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerAvailableDevices_004();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_AVAILABLEDEVICES_004 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001
