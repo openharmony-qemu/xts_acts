@@ -15,7 +15,7 @@
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
@@ -43,7 +43,7 @@ export default function webController() {
       } catch (err) {
         console.error('push webController page error: ' + err);
       }
-      await waitForComponent("WebControllerButton");
+      await driver.waitForComponent(ON.id("WebControllerButton"), 10000);
       done()
     });
 

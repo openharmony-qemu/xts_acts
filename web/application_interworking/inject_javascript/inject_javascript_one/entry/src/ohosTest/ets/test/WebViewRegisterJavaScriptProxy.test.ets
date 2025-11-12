@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
@@ -46,7 +46,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await waitForComponent("testWebView_registerJavaScriptProxy_0013");
+      await driver.waitForComponent(ON.id("testWebView_registerJavaScriptProxy_0013"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {

@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -47,7 +47,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await waitForComponent("deleteJavaScriptRegister_withOutRefresh");
+      await driver.waitForComponent(ON.id("deleteJavaScriptRegister_withOutRefresh"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {

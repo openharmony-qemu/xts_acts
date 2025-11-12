@@ -16,7 +16,7 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
@@ -46,7 +46,7 @@ export default function ActsAceWebviewJavaScriptPermission() {
       } catch (err) {
         console.error('push webViewJavaScriptPermission page error:' + err);
       }
-      await waitForComponent("webviewJavaScriptPermissionButton");
+      await driver.waitForComponent(ON.id("webviewJavaScriptPermissionButton"), 10000);
       done()
     });
 

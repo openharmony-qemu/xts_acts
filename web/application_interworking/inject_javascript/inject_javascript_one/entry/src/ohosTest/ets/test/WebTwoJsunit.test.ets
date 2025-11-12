@@ -16,7 +16,7 @@
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
@@ -44,7 +44,7 @@ export default function webTwoJsunit() {
       } catch (err) {
         console.error('push webTwo page error: ' + err);
       }
-      await waitForComponent("webcomponenttwo");
+      await driver.waitForComponent(ON.id("webcomponenttwo"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {

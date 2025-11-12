@@ -45,7 +45,7 @@ export default function WebSafeLoadOneTest() {
         } catch (err) {
           console.error("push webSafeLoadOne page error:" + err);
         }
-        await waitForComponent("webSafeLoadButton");
+        await driver.waitForComponent(ON.id("webSafeLoadButton"), 10000);
         done()
       });
 

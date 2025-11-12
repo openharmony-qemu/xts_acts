@@ -15,7 +15,7 @@
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
@@ -43,7 +43,7 @@ export default function webAttribute() {
       } catch (err) {
         console.error('push webAttribute page error: ' + err);
       }
-      await waitForComponent("WebAttributeButton");
+      await driver.waitForComponent(ON.id("WebAttributeButton"), 10000);
       done()
     });
 

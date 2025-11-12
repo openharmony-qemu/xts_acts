@@ -14,7 +14,7 @@
  */
 import { beforeAll,afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
@@ -25,7 +25,7 @@ const driver = Driver.create();
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
     beforeAll(async (done: Function) => {
-      await waitForComponent("webcomponent");
+      await driver.waitForComponent(ON.id("webcomponent"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {

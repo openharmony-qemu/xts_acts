@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
-import { Driver } from '@ohos.UiTest'
+import { Driver, ON } from '@ohos.UiTest'
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
@@ -44,7 +44,7 @@ export default function abilityTest() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await waitForComponent("001");
+      await driver.waitForComponent(ON.id("001"), 10000);
       done()
     })
 
