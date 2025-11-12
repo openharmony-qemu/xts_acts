@@ -61,8 +61,8 @@ async function getImagePropertySync(done: Function, context : Context,testName: 
 }
 
 
-export default function ImagePropertyKeySyncEnum1A() {
-  describe('ImagePropertyKeySyncEnum1A', ()=>{
+export default function ImagePropertyKeySyncEnumGPS() {
+  describe('ImagePropertyKeySyncEnumGPS', ()=>{
     beforeAll(async ()=>{
       console.info('beforeAll case');
     });

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import ImagePropertyKeyTest from './image/ImagePropertyKeyEnum.test.ets';
+import ImagePropertyKeyTest from './image/ImagePropertyKeyEnum.test';
 import ImageCreateImageSourceBufTest from './image/ImageCreateImageSourceBuf.test';
 import ImageCreateIncrementalSourceTest from './image/ImageCreateIncrementalSource.test';
 import ImageCreatePixelMapTest from './image/ImageCreatePixelMap.test';
@@ -45,25 +45,34 @@ import ImageSourceGetDelayTimeListSupp from "./image/ImageSourceGetDelayTimeList
 import getImagePropertySyncTest from "./image/ImageSourceGetImagePropertySync.test";
 import PictureGetTypeTestSupp from './Picture/PictureGetType.test';
 import ImagePropertyOptionTest from "./image/ImagePropertyOption.test";
-import ImagePropertyKeySyncEnum1 from "./image/ImageGetImagePropertySyncEnum1.test";
-import ImagePropertyKeySyncEnum2 from "./image/ImageGetImagePropertySyncEnum2.test";
-import ImagePropertyKeySyncEnum3 from "./image/ImageGetImagePropertySyncEnum3.test";
-import ImagePropertyKeySyncEnum4 from "./image/ImageGetImagePropertySyncEnum4.test";
-import ImagePropertyKeySyncEnum5 from "./image/ImageGetImagePropertySyncEnum5.test";
-import ImagePropertyKeySyncEnum6 from "./image/ImageGetImagePropertySyncEnum6.test";
-import ImagePropertyKeySyncEnum7 from "./image/ImageGetImagePropertySyncEnum7.test";
-import ImagePropertyKeySyncEnum8 from "./image/ImageGetImagePropertySyncEnum8.test";
-import ImagePropertyKeySyncEnum9 from "./image/ImageGetImagePropertySyncEnum9.test";
-import ImagePropertyKeySyncEnum10 from "./image/ImageGetImagePropertySyncEnum10.test";
-import ImagePropertyKeySyncEnum11 from "./image/ImageGetImagePropertySyncEnum11.test";
-import ImagePropertyKeySyncEnum12 from "./image/ImageGetImagePropertySyncEnum12.test";
 import ImageEnumSupp from "./image/ImageEnum.test";
-import ImagePropertyKeySyncEnum1A from "./image/ImageGetImagePropertySyncEnum1A.test";
-import ImagePropertyKeySyncEnum2A from "./image/ImageGetImagePropertySyncEnum2A.test";
-import ImagePropertyKeySyncEnum3A from "./image/ImageGetImagePropertySyncEnum3A.test";
-import ImagePropertyKeySyncEnum4A from "./image/ImageGetImagePropertySyncEnum4A.test";
 import PictureSetMetadataTestSupp from './Picture/PictureSetGetMetadata.test';
+import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
+import ImageCreatePixelMapFromSurface from './image/ImageCreatePixelMapFromSurface.test';
+import ImageGetImagePropertySyncEnumFlash from './image/ImageGetImagePropertySyncEnumFlash.test';
+import ImageGetImagePropertySyncEnumFlashEmpty from './image/ImageGetImagePropertySyncEnumFlashEmpty.test';
+import ImageGetImagePropertySyncEnumFrontCamera from './image/ImageGetImagePropertySyncEnumFrontCamera.test';
+import ImagePropertyKeySyncEnumGPS from './image/ImageGetImagePropertySyncEnumGPS.test';
+import ImageGetImagePropertySyncEnumGPSStatus from './image/ImageGetImagePropertySyncEnumGPSStatus.test';
+import ImageGetImagePropertySyncEnumGPSStatusEmpty from './image/ImageGetImagePropertySyncEnumGPSStatusEmpty.test';
+import ImageGetImagePropertySyncEnumISO from './image/ImageGetImagePropertySyncEnumISO.test';
+import ImageGetImagePropertySyncEnumLength from './image/ImageGetImagePropertySyncEnumLength.test';
+import ImageGetImagePropertySyncEnumLightSource from './image/ImageGetImagePropertySyncEnumLightSource.test';
+import ImageGetImagePropertySyncEnumReference from './image/ImageGetImagePropertySyncEnumReference.test';
+import ImageGetImagePropertySyncEnumScenePointer from './image/ImageGetImagePropertySyncEnumScenePointer.test';
+import ImageGetImagePropertySyncEnumSensitiveType from './image/ImageGetImagePropertySyncEnumSensitiveType.test';
+import ImageGetImagePropertySyncEnumSensitiveTypeEmpty from './image/ImageGetImagePropertySyncEnumSensitiveTypeEmpty.test';
+import ImageGetImagePropertySyncEnumSoftware from './image/ImageGetImagePropertySyncEnumSoftware.test';
+import ImageGetImagePropertySyncEnumStripOffset from './image/ImageGetImagePropertySyncEnumStripOffset.test';
+import ImageGetImagePropertySyncSUBFILE from './image/ImageGetImagePropertySyncSUBFILE.test';
+import ImagePropertyKeySyncEnumJpgEmpty from './image/ImagePropertyKeySyncEnumJpgEmpty.test';
+import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
+import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEnumGpsTimeTamp.test';
+import ImagePropertyKeySyncEnumSoftWare from './image/ImagePropertyKeySyncEnumSoftWare.test';
+import ImagePropertyKeySyncEnumStripOffsets from './image/ImagePropertyKeySyncEnumStripOffsets.test';
 import modifyImagePropertyTest from './image/ModifyImageProperty.test';
+import modifyImagePropertyTests from './image/ModifyImageProperty1.test';
+
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -98,23 +107,31 @@ export default function testsuite() {
   getImagePropertySyncTest();
   PictureGetTypeTestSupp();
   ImagePropertyOptionTest();
-  ImagePropertyKeySyncEnum1();
-  ImagePropertyKeySyncEnum2();
-  ImagePropertyKeySyncEnum3();
-  ImagePropertyKeySyncEnum4();
-  ImagePropertyKeySyncEnum5();
-  ImagePropertyKeySyncEnum6();
-  ImagePropertyKeySyncEnum7();
-  ImagePropertyKeySyncEnum8();
-  ImagePropertyKeySyncEnum9();
-  ImagePropertyKeySyncEnum10();
-  ImagePropertyKeySyncEnum11();
-  ImagePropertyKeySyncEnum12();
+  ImageGetImagePropertySyncEnumFlash();
+  ImageGetImagePropertySyncEnumFlashEmpty();
+  ImageGetImagePropertySyncEnumFrontCamera();
+  ImagePropertyKeySyncEnumGPS();
+  ImageGetImagePropertySyncEnumGPSStatus();
+  ImageGetImagePropertySyncEnumGPSStatusEmpty();
+  ImageGetImagePropertySyncEnumISO();
+  ImageGetImagePropertySyncEnumLength();
+  ImageGetImagePropertySyncEnumLightSource();
+  ImageGetImagePropertySyncEnumReference();
+  ImageGetImagePropertySyncEnumScenePointer();
+  ImageGetImagePropertySyncEnumSensitiveType();
   ImageEnumSupp();
   PictureSetMetadataTestSupp();
-  ImagePropertyKeySyncEnum2A();
-  ImagePropertyKeySyncEnum1A();
-  ImagePropertyKeySyncEnum3A();
-  ImagePropertyKeySyncEnum4A();
-  modifyImagePropertyTest()
+  ImageCreateIncrementalSourceSupp();
+  ImageCreatePixelMapFromSurface();
+  ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
+  ImageGetImagePropertySyncEnumSoftware();
+  ImageGetImagePropertySyncEnumStripOffset();
+  ImageGetImagePropertySyncSUBFILE();
+  ImageCreatePixelMapSync();
+  ImagePropertyKeySyncEnumJpgEmpty();
+  ImagePropertyKeySyncEnumGPSTIMESTAMP();
+  ImagePropertyKeySyncEnumStripOffsets();
+  ImagePropertyKeySyncEnumSoftWare();
+  modifyImagePropertyTest();
+  modifyImagePropertyTests();
 }

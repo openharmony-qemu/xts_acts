@@ -61,8 +61,8 @@ async function getImagePropertySync5(done: Function, context : Context,testName:
   }
 }
 
-export default function ImagePropertyKeySyncEnum5() {
-  describe('ImagePropertyKeySyncEnum5', () => {
+export default function ImageGetImagePropertySyncEnumSensitiveType() {
+  describe('ImageGetImagePropertySyncEnumSensitiveType', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
     });

@@ -59,8 +59,8 @@ async function getImagePropertySync(done: Function, context : Context,testName: 
     done();
   }
 }
-export default function ImagePropertyKeySyncEnum2A() {
-  describe('ImagePropertyKeySyncEnum2A', ()=>{
+export default function ImageGetImagePropertySyncEnumScenePointer() {
+  describe('ImageGetImagePropertySyncEnumScenePointer', ()=>{
     beforeAll(async ()=>{
       console.info('beforeAll case');
     });

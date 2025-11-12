@@ -19,7 +19,7 @@ import fileio from '@ohos.fileio'
 import { sleep, isEmpty } from '../common';
 import common from '@ohos.app.ability.common';
 
-const TAG = 'Image.ImagePropertyKeySyncEnum2'
+const TAG = 'Image.ImagePropertyKeySyncEnum3'
 let fdNumber: number;
 async function getFd(fileName: string) {
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -43,7 +43,7 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
   return imageSourceApi;
 }
 
-async function getImagePropertySync2(done: Function, context : Context,testName: string, path: string, propertyKey: image.PropertyKey, callback: (data?: string, error?: BusinessError) => void) {
+async function getImagePropertySync3(done: Function, context : Context,testName: string, path: string, propertyKey: image.PropertyKey, callback: (data?: string, error?: BusinessError) => void) {
   console.info(TAG, testName + '- start');
   try {
     const imageSourceApi = await getImageSource(path);
@@ -60,9 +60,8 @@ async function getImagePropertySync2(done: Function, context : Context,testName:
     done();
   }
 }
-
-export default function ImagePropertyKeySyncEnum2() {
-  describe('ImagePropertyKeySyncEnum2', () => {
+export default function ImageGetImagePropertySyncEnumISO() {
+  describe('ImageGetImagePropertySyncEnumISO', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
     });
@@ -79,19 +78,19 @@ export default function ImagePropertyKeySyncEnum2() {
     });
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_016
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_016
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_031
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_031
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_016', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_031', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_016', 'test_exif_v2.jpg', image.PropertyKey.FRONT_CAMERA,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_031', 'test_exif_v2.jpg', image.PropertyKey.ISO_SPEED,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('3')
+            expect(data).assertEqual('1')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -101,19 +100,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_017
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_017
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_032
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_032
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_017', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_032', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_017', 'test_exif_v2.jpg', image.PropertyKey.GPS_DEST_DISTANCE_REF,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_032', 'test_exif_v2.jpg', image.PropertyKey.LIGHT_SOURCE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('N')
+            expect(data).assertEqual('Daylight')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -123,19 +122,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_018
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_018
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_033
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_033
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_018', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_033', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_018', 'test_exif_v2.jpg', image.PropertyKey.IMAGE_LENGTH,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_033', 'test_exif_v2.jpg', image.PropertyKey.FOCUS_MODE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('0')
+            expect(data).assertEqual('7')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -145,19 +144,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_019
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_019
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_034
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_034
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_019', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_034', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_019', 'test_exif_v2.jpg', image.PropertyKey.BURST_NUMBER,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_034', 'test_exif_v2.jpg', image.PropertyKey.YCBCR_POSITIONING,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('2')
+            expect(data).assertEqual('Centered')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -167,19 +166,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_020
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_020
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_035
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_035
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_020', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_035', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_020', 'test_exif_v2.jpg', image.PropertyKey.YCBCR_SUB_SAMPLING,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_035', 'test_exif_v2.jpg', image.PropertyKey.FACE_VERSION,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('3, 2')
+            expect(data).assertEqual('1')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -189,19 +188,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_021
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_021
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_036
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_036
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_021', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_036', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_021', 'test_exif_v2.jpg', image.PropertyKey.GPS_DEST_BEARING,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_036', 'test_exif_v2.jpg', image.PropertyKey.GPS_PROCESSING_METHOD,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('2.0')
+            expect(data).assertEqual('CELLID')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -211,19 +210,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_022
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_022
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_037
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_037
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_022', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_037', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_022', 'test_exif_v2.jpg', image.PropertyKey.DEFAULT_CROP_SIZE,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_037', 'test_exif_v2.jpg', image.PropertyKey.DNG_VERSION,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('153, 841')
+            expect(data).assertEqual('2, 2, 3, 1')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -233,19 +232,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_023
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_023
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_038
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_038
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_023', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_038', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_023', 'test_exif_v2.jpg', image.PropertyKey.EXPOSURE_TIME,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_038', 'test_exif_v2.jpg', image.PropertyKey.GPS_AREA_INFORMATION,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('1/34 sec.')
+            expect(data).assertEqual('arexxx')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -255,19 +254,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_024
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_024
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_039
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_039
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_024', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_039', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_024', 'test_exif_v2.jpg', image.PropertyKey.LENS_SERIAL_NUMBER,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_039', 'test_exif_v2.jpg', image.PropertyKey.LENS_MODEL,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('qxhc')
+            expect(data).assertEqual('txaw')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -277,19 +276,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_025
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_025
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_040
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_040
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_025', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_040', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_025', 'test_exif_v2.jpg', image.PropertyKey.XMAGE_MODE,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_040', 'test_exif_v2.jpg', image.PropertyKey.LENS_SPECIFICATION,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('default_exif_value')
+            expect(data).assertEqual('0.8, 2.5, 1.5, 0.5')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -299,19 +298,42 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_026
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_026
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_041
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_041
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_026', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_041', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_026', 'test_exif_v2.jpg', image.PropertyKey.XMAGE_BOTTOM,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_041', 'test_exif_v2.jpg', image.PropertyKey.GPS_DATE_STAMP,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('default_exif_value')
+            expect(data).assertEqual('2025:01:11')
+          }
+          if (error != undefined) {
+            expect().assertFail();
+          }
+          done();
+        })
+    })
+
+
+    /**
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_042
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_042
+     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_042', Level.LEVEL1, async (done:Function)=> {
+      let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_042', 'test_exif_v2.jpg', image.PropertyKey.FACE_RECT,
+        (data?: string, error?: BusinessError) => {
+          if (data != undefined) {
+            expect(data).assertEqual('1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -321,19 +343,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_027
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_027
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_043
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_043
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_027', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_043', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_027', 'test_exif_v2.jpg', image.PropertyKey.FOCAL_PLANE_RESOLUTION_UNIT,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_043', 'test_exif_v2.jpg', image.PropertyKey.COMPONENTS_CONFIGURATION,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('Inch')
+            expect(data).assertEqual('Y R G B')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -343,19 +365,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_028
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_028
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_044
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_044
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_028', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_044', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_028', 'test_exif_v2.jpg', image.PropertyKey.SUBSEC_TIME_DIGITIZED,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_044', 'test_exif_v2.jpg', image.PropertyKey.COLOR_SPACE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('427000')
+            expect(data).assertEqual('sRGB')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -365,19 +387,19 @@ export default function ImagePropertyKeySyncEnum2() {
     })
 
     /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_029
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_029
+     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_045
+     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_045
      * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_029', Level.LEVEL1, async (done:Function)=> {
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_045', Level.LEVEL1, async (done:Function)=> {
       let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_029', 'test_exif_v2.jpg', image.PropertyKey.PHOTO_MODE,
+      getImagePropertySync3(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_045', 'test_exif_v2.jpg', image.PropertyKey.DATE_TIME,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
-            expect(data).assertEqual('252')
+            expect(data).assertEqual('2024:12:31')
           }
           if (error != undefined) {
             expect().assertFail();
@@ -386,27 +408,6 @@ export default function ImagePropertyKeySyncEnum2() {
         })
     })
 
-    /**
-     * @tc.number    : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_030
-     * @tc.name      : SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_030
-     * @tc.desc      : PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_030', Level.LEVEL1, async (done:Function)=> {
-      let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      getImagePropertySync2(done, Context,'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_030', 'test_exif_v2.jpg', image.PropertyKey.ISO_SPEED_LATITUDE_YYY,
-        (data?: string, error?: BusinessError) => {
-          if (data != undefined) {
-            expect(data).assertEqual('1456')
-          }
-          if (error != undefined) {
-            expect().assertFail();
-          }
-          done();
-        })
-    })
 
   });
 }

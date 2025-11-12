@@ -41,27 +41,6 @@ async function modifyImagePropertyTestOne(done: Function, testName: string, path
   }
 }
 
-async function modifyImagePropertyTestOnes(done: Function, testName: string, pathUri: string,
-  key: image.PropertyKey, value: string, callback: (err: string) => void) {
-  try {
-    let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let path = `file://${testContext.filesDir}/${pathUri}`;
-    let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
-    let imageSource: image.ImageSource = image.createImageSource(file.fd);
-    console.info(TAG, testName, ' createImageSource success ')
-    await imageSource.modifyImageProperty(key, value);
-    console.info(TAG, testName, ' modifyImageProperty success ');
-    let data = imageSource.getImagePropertySync(key);
-    callback(data);
-    done();
-  } catch (error) {
-    console.error(TAG, testName, ` modifyImageProperty failed; error: `, JSON.stringify(error),
-      error.code);
-    expect().assertFail();
-    done();
-  }
-}
-
 export default function modifyImagePropertyTest() {
   describe('modifyImagePropertyTest', () => {
     beforeAll(async () => {
