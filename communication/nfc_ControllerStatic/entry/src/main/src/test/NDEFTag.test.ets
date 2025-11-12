@@ -149,7 +149,7 @@ export default function nfcNDEFTagTest() {
     
     /**
      * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_0200
-     * @tc.name makeTRecords
+     * @tc.name makeTextRecord
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
@@ -160,7 +160,7 @@ export default function nfcNDEFTagTest() {
         try {
           let ndefMessage: tag.NdefMessage = tag.ndef.createNdefMessageByData(rawData);
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0200 ndefMessage: ' + ndefMessage);
-          let makeTRecords: tag.NdefMessage = tag.ndef.makeTRecords("test112HW", "test");
+          let makeTRecords: tag.NdefMessage = tag.ndef.makeTextRecord("test112HW", "test");
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0200 makeTRecords: ' + makeTRecords);
         } catch (error: BusinessError) {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_0200 error is ' + error + " - " + error.code);
