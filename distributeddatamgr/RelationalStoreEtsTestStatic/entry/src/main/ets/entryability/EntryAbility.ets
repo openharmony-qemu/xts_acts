@@ -30,6 +30,7 @@ class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
+    AppStorage.setOrCreate<common.UIAbilityContext>('abilityContextMainAbility2', this.context);
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
       windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
