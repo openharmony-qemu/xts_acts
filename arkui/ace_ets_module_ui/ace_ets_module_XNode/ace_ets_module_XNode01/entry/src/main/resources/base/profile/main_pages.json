@@ -1,6 +1,11 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-        "MainAbility/pages/ComponentContent/ComponentInheritFreezeOptionsTest"
+        "MainAbility/pages/ComponentContent/ComponentInheritFreezeOptionsTest",
+        "MainAbility/pages/Invalidate/InvalidateAttributesTest",
+        "MainAbility/pages/LocalStorage/BuilderNodeOneTest",
+        "MainAbility/pages/LocalStorage/BuilderNodeTwoTest",
+        "MainAbility/pages/LocalStorage/BuilderNodeThreeTest",
+        "MainAbility/pages/UIAppearance/DarkModeTest"
     ]
 }

@@ -13,7 +13,17 @@
  * limitations under the License.
  */
 import ComponentInheritFreezeOptionsTest from './ComponentContentTest/ComponentInheritFreezeOptionsTest.test';
+import InvalidateAttributesTest from './InvalidateTest/InvalidateAttributesTest.test';
+import BuilderNodeOneTest from './LocalStorageTest/BuilderNodeOneTest.test';
+import BuilderNodeTwoTest from './LocalStorageTest/BuilderNodeTwoTest.test';
+import BuilderNodeThreeTest from './LocalStorageTest/BuilderNodeThreeTest.test';
+import DarkModeTest from './UIAppearance/DarkModeTest.test';
 
 export default function testsuite() {
   ComponentInheritFreezeOptionsTest();
+  InvalidateAttributesTest();
+  BuilderNodeOneTest();
+  BuilderNodeTwoTest();
+  BuilderNodeThreeTest();
+  DarkModeTest();
 }
