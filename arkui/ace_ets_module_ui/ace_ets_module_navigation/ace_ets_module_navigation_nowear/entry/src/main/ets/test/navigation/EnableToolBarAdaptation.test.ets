@@ -142,6 +142,8 @@ export default function EnableToolBarAdaptation() {
       await driver.delayMs(500);
 
       await driver.assertComponentExist(ON.type('ToolBar'));
+      let toolBar1: Component | null = await driver.findComponent(ON.type('ToolBar'));
+      expect(toolBar1 !== null).assertTrue();
       console.info('[EnableToolBarAdaptation_0300] navDestination ToolBar exist');
 
       await driver.delayMs(500);
