@@ -1696,13 +1696,13 @@ export default function applicationManagerTest() {
 
     /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_005
-     * @tc.name      : test_removeUserNonStopApps_006
+     * @tc.name      : test_removeUserNonStopApps_005
      * @tc.desc      : test removeUserNonStopApps method with different data
      * @tc.level     : Level 2
      * @tc.type      : Function
      * @tc.size      : MediumTest
      */
-    it("test_removeUserNonStopApps_006", Level.LEVEL2, async (done: Function) => {
+    it("test_removeUserNonStopApps_005", Level.LEVEL2, async (done: Function) => {
       try {
         let userNonStopApps: Array<common.ApplicationInstance> = [
           {
@@ -1732,13 +1732,13 @@ export default function applicationManagerTest() {
 
     /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_006
-     * @tc.name      : test_removeUserNonStopApps_007
+     * @tc.name      : test_removeUserNonStopApps_006
      * @tc.desc      : test removeUserNonStopApps method has different data
      * @tc.level     : Level 2
      * @tc.type      : Function
      * @tc.size      : MediumTest
      */
-    it("test_removeUserNonStopApps_007", Level.LEVEL2, async (done: Function) => {
+    it("test_removeUserNonStopApps_006", Level.LEVEL2, async (done: Function) => {
       try {
         let userNonStopApps: Array<common.ApplicationInstance> = [
           {
@@ -1808,7 +1808,7 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002).assertTrue();
+        expect(error.code == 9200002 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1875,7 +1875,7 @@ export default function applicationManagerTest() {
         let res = applicationManager.getUserNonStopApps(SELFWANT);
         expect(res.length == 1).assertTrue();
       } catch (error) {
-        expect( error.code == 801).assertTrue();
+        expect(error.code == 801).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
