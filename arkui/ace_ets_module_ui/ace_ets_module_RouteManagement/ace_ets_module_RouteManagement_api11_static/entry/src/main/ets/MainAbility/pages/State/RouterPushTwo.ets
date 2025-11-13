@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
@@ -39,14 +39,16 @@ struct RouterPushTwo {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
   }
 
+  @State params: string = ''
+  @State routerUI: Router|undefined = undefined
+
   onPageShow() {
-    let uiContext: UIContext = this.getUIContext?.() as UIContext
+    this.params = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams())).getString("view")
+    let uiContext: UIContext = this.getUIContext()
     let routerUI: Router = uiContext.getRouter();
     this.routerUI = routerUI
   }
 
-  @State params: string = this.getUIContext().getRouter().getParams() ? (this.getUIContext().getRouter().getParams() as RouterParams).view : ""
-  @State routerUI: Router|undefined = undefined
 
   build() {
     Scroll() {

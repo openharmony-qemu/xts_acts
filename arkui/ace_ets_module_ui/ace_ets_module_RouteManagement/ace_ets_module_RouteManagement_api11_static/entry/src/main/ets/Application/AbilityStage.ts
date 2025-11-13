@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import AbilityStage from "@ohos.app.ability.AbilityStage";
 import common from "@ohos.app.ability.common";
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -24,4 +23,3 @@ export default class MyAbilityStage extends AbilityStage {
     AppStorage.setOrCreate<common.AbilityStageContext>('stageContext', this.context);
   }
 }
-

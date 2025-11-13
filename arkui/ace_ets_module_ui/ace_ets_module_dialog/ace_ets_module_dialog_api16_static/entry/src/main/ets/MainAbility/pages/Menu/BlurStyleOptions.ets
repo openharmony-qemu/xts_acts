@@ -4,14 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import router from '@ohos.router';
 import {
   Entry,
@@ -22,12 +23,12 @@ import {
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
   Link,
-  PropRef,
+  Prop,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -109,7 +110,7 @@ struct backgroundBlurStyleOptions_scaleTest {
           } as MenuOptions
         )
         .id('MenuStyleOptions_btn1')
-    
+
       Button('bindMenu2').fontColor(Color.Black)
         .bindMenu([
           {
@@ -130,7 +131,7 @@ struct backgroundBlurStyleOptions_scaleTest {
           } as MenuOptions
         )
         .id('MenuStyleOptions_btn2')
-     
+
       Button('bindMenu3').fontColor(Color.Black)
         .bindMenu([
           {
@@ -147,7 +148,7 @@ struct backgroundBlurStyleOptions_scaleTest {
           } as MenuElement,
         ],
           {
-            backgroundBlurStyleOptions: undefined
+            // backgroundBlurStyleOptions: null
           } as MenuOptions
         )
         .id('MenuStyleOptions_btn3')

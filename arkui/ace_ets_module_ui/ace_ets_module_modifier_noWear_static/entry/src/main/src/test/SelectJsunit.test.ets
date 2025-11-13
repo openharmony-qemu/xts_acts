@@ -13,9 +13,21 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix,
+  Rect
+} from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,7 +38,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from './Util.test';
-import Utils  from "../../ets/MainAbility/common/Utils";
+import Utils from "../../ets/MainAbility/common/Utils";
 import accessibility from '@ohos.accessibility';
 import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
@@ -60,31 +72,31 @@ export default function selectJsunit() {
       }
     })
 
-    
+
     /*
      * @tc.number   ArkUI_Stage_Select_Layout_static_0100
      * @tc.name     ArkUI_Stage_Select_Layout_static_0100
      * @tc.desc     ArkUI_Stage_Select_Layout_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_Layout_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_Layout_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_Layout_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_Layout_0100: arrowPosition=" + objNew.getElement('$attrs').getString('arrowPosition'))
+      console.info("ArkUI_Stage_Select_Layout_0100: arrowPosition=" +
+      objNew.getElement('$attrs').getString('arrowPosition'))
       expect(objNew.getElement('$attrs').getString('arrowPosition') == 'ArrowPosition.END').assertTrue();
       done();
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0100
      * @tc.name     ArkUI_Stage_Select_Space_static_0100
      * @tc.desc     ArkUI_Stage_Select_Space_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_Space_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_Space_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_Space_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
@@ -94,14 +106,13 @@ it('ArkUI_Stage_Select_Space_static_0100', Level.LEVEL0, async (done: () => void
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_selected_static_0100
      * @tc.name     ArkUI_Stage_Select_selected_static_0100
      * @tc.desc     ArkUI_Stage_Select_selected_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_selected_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_selected_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_selected_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
@@ -111,14 +122,13 @@ it('ArkUI_Stage_Select_selected_static_0100', Level.LEVEL0, async (done: () => v
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_value_static_0100
      * @tc.name     ArkUI_Stage_Select_value_static_0100
      * @tc.desc     ArkUI_Stage_Select_value_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_value_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_value_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_value_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
@@ -128,31 +138,32 @@ it('ArkUI_Stage_Select_value_static_0100', Level.LEVEL0, async (done: () => void
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_font_static_0100
      * @tc.name     ArkUI_Stage_Select_font_static_0100
      * @tc.desc     ArkUI_Stage_Select_font_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_font_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_font_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_font_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_font_0100: space=" + objNew.getElement('$attrs').getElement('font').getString('size'));
+      console.info("ArkUI_Stage_Select_font_0100: getElement=" +
+      JSON.parseJsonElement(JSON.stringify(objNew.getElement('$attrs').getElement('font'))));
+      console.info("ArkUI_Stage_Select_font_0100: space=" +
+      objNew.getElement('$attrs').getElement('font').getString('size'));
       expect(objNew.getElement('$attrs').getElement('font').getString('size')).assertEqual('30.00fp');
       done();
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_fontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_fontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_fontColor_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_fontColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_fontColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_fontColor_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
@@ -162,114 +173,120 @@ it('ArkUI_Stage_Select_fontColor_static_0100', Level.LEVEL0, async (done: () => 
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_selectedOptionFont_static_0100
      * @tc.name     ArkUI_Stage_Select_selectedOptionFont_static_0100
      * @tc.desc     ArkUI_Stage_Select_selectedOptionFont_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_selectedOptionFont_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_selectedOptionFont_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_selectedOptionFont_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_selectedOptionFont_0100: space=" + objNew.getElement('$attrs').getElement('selectedOptionFont').getString('size'));
+      console.info("ArkUI_Stage_Select_selectedOptionFont_0100: selectedOptionFont=" +
+      objNew.getElement('$attrs').getElement('selectedOptionFont'));
+
+      console.info("ArkUI_Stage_Select_selectedOptionFont_0100: space=" +
+      objNew.getElement('$attrs').getElement('selectedOptionFont').getString('size'));
       expect(objNew.getElement('$attrs').getElement('selectedOptionFont').getString('size')).assertEqual('40.00fp');
       done();
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_selectedOptionFontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_selectedOptionFontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_selectedOptionFontColor_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_selectedOptionFontColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Stage_Select_selectedOptionFontColor_0100 start");
-      let strJson = inspector.getInspectorByKey('selectTest');
-      let objNew = JSON.parseJsonElement(strJson);
-      expect(objNew.getElement('$attrs').getString('selectedOptionFontColor')).assertEqual('#FF000000');
-      done();
-    });
+    it('ArkUI_Stage_Select_selectedOptionFontColor_static_0100', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info("ArkUI_Stage_Select_selectedOptionFontColor_0100 start");
+        let strJson = inspector.getInspectorByKey('selectTest');
+        let objNew = JSON.parseJsonElement(strJson);
+        expect(objNew.getElement('$attrs').getString('selectedOptionFontColor')).assertEqual('#FF000000');
+        done();
+      });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_menuAlign_static_0100
      * @tc.name     ArkUI_Stage_Select_menuAlign_static_0100
      * @tc.desc     ArkUI_Stage_Select_menuAlign_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_menuAlign_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_menuAlign_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_menuAlign_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      expect(objNew.getElement('$attrs').getElement('menuAlign').getString('alignType')).assertEqual('MenuAlignType.Start');
+      expect(objNew.getElement('$attrs').getElement('menuAlign').getString('alignType'))
+        .assertEqual('MenuAlignType.Start');
       done();
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_selectedOptionBgColor_static_0100
      * @tc.name     ArkUI_Stage_Select_selectedOptionBgColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_selectedOptionBgColor_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_selectedOptionBgColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("ArkUI_Stage_Select_selectedOptionBgColor_0100 start");
-      let strJson = inspector.getInspectorByKey('selectTest');
-      let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_selectedOptionBgColor_0100: selectedOptionBgColor=" + objNew.getElement('$attrs').getString('selectedOptionBgColor'));
-      expect(objNew.getElement('$attrs').getString('selectedOptionBgColor')).assertEqual('#FFCCCCCC');
-      done();
-    });
+    it('ArkUI_Stage_Select_selectedOptionBgColor_static_0100', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info("ArkUI_Stage_Select_selectedOptionBgColor_0100 start");
+        let strJson = inspector.getInspectorByKey('selectTest');
+        let objNew = JSON.parseJsonElement(strJson);
+        console.info("ArkUI_Stage_Select_selectedOptionBgColor_0100: selectedOptionBgColor=" +
+        objNew.getElement('$attrs').getString('selectedOptionBgColor'));
+        expect(objNew.getElement('$attrs').getString('selectedOptionBgColor')).assertEqual('#FFCCCCCC');
+        done();
+      });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_optionBgColor_static_0100
      * @tc.name     ArkUI_Stage_Select_optionBgColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionBgColor_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_optionBgColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_optionBgColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_optionBgColor_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_optionBgColor_0100: optionBgColor=" + objNew.getElement('$attrs').getString('optionBgColor'));
+      console.info("ArkUI_Stage_Select_optionBgColor_0100: optionBgColor=" +
+      objNew.getElement('$attrs').getString('optionBgColor'));
       expect(objNew.getElement('$attrs').getString('optionBgColor')).assertEqual('#FFFFFFFF');
       done();
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_optionFont_static_0100
      * @tc.name     ArkUI_Stage_Select_optionFont_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionFont_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_optionFont_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_optionFont_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_optionFont_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
-      console.info("ArkUI_Stage_Select_optionFont_0100: optionFont=" + objNew.getElement('$attrs').getElement('optionFont').getString('size'));
+      console.info("ArkUI_Stage_Select_optionFont_0100: optionFont=" +
+      objNew.getElement('$attrs').getElement('optionFont'));
+
+      console.info("ArkUI_Stage_Select_optionFont_0100: optionFont=" +
+      objNew.getElement('$attrs').getElement('optionFont').getString('size'));
       expect(objNew.getElement('$attrs').getElement('optionFont').getString('size')).assertEqual('30.00fp');
       done();
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_optionWidth_static_0100
      * @tc.name     ArkUI_Stage_Select_optionWidth_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionWidth_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_optionWidth_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_optionWidth_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_optionWidth_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
@@ -279,14 +296,13 @@ it('ArkUI_Stage_Select_optionWidth_static_0100', Level.LEVEL0, async (done: () =
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_optionHeight_static_0100
      * @tc.name     ArkUI_Stage_Select_optionHeight_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionHeight_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_optionHeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_optionHeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_optionHeight_0100 start");
       let strJson = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJson);
@@ -296,14 +312,13 @@ it('ArkUI_Stage_Select_optionHeight_static_0100', Level.LEVEL0, async (done: () 
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_optionFontColor_static_0100
      * @tc.name     ArkUI_Stage_Select_optionFontColor_static_0100
      * @tc.desc     ArkUI_Stage_Select_optionFontColor_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_optionFontColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_optionFontColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Stage_Select_optionFontColor_0100 start");
       let strJsonNew = inspector.getInspectorByKey('selectTest');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -314,14 +329,13 @@ it('ArkUI_Stage_Select_optionFontColor_static_0100', Level.LEVEL0, async (done: 
     });
 
 
-    // modifier接口未交付 注释导致断言失败
     /*
      * @tc.number   ArkUI_Stage_Select_change_static_0101
      * @tc.name     ArkUI_Stage_Select_change_static_0101
      * @tc.desc     ArkUI_Stage_Select_change_static_0101
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_Select_change_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_Select_change_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_Select_change_0101 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('changeButton'));

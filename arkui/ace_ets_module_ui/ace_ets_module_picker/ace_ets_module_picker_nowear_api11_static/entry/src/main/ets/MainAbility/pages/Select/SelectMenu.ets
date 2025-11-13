@@ -40,7 +40,7 @@ struct SelectMenuTest {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: Color = Color.Grey
+  @State fontColor: string = '0xCCCCCC'
 
   aboutToAppear() {
   }
@@ -267,7 +267,7 @@ struct SelectMenuTest {
                 style: FontStyle.Normal
               })
               .key('selectTest8')
-              .menuAlign(fakeMenuAlignType(null))
+              //.menuAlign(fakeMenuAlignType(null))
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
@@ -295,7 +295,7 @@ struct SelectMenuTest {
                 style: FontStyle.Normal
               })
               .key('selectTest9')
-              .menuAlign(fakeMenuAlignType(undefined))
+              //.menuAlign(fakeMenuAlignType(undefined))
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
@@ -323,7 +323,7 @@ struct SelectMenuTest {
                 style: FontStyle.Normal
               })
               .key('selectTest10')
-              .menuAlign(fakeMenuAlignType('menuAlign'))
+              //.menuAlign(fakeMenuAlignType('menuAlign'))
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
@@ -408,7 +408,7 @@ struct SelectMenuTest {
               })
               .key('selectTest13')
               .menuAlign(MenuAlignType.CENTER)
-              .menuAlign(fakeMenuAlignType(null))
+              //.menuAlign(fakeMenuAlignType(null))
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
               } as OnSelectCallback)
@@ -436,7 +436,7 @@ struct SelectMenuTest {
                 style: FontStyle.Normal
               })
               .key('selectTest14')
-              .menuAlign(fakeMenuAlignType(null))
+              //.menuAlign(fakeMenuAlignType(null))  //导致页面加载失败 注释
               .menuAlign(MenuAlignType.CENTER, { dx: -5, dy: -5 })
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)

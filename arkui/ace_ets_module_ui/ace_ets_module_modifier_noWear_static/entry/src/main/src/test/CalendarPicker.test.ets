@@ -13,9 +13,21 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix,
+  Rect
+} from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,7 +38,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from './Util.test';
-import Utils  from "../../ets/MainAbility/common/Utils";
+import Utils from "../../ets/MainAbility/common/Utils";
 import accessibility from '@ohos.accessibility';
 import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
@@ -59,43 +71,52 @@ export default function calendarPickerJsunit() {
       }
     });
 
-    // modifier接口未交付 注释导致3用例断言失败
+
     /*
      * @tc.number   ArkUI_Stage_CalendarPicker_static_0100
      * @tc.name     ArkUI_Stage_CalendarPicker_static_0100
      * @tc.desc     ArkUI_Stage_CalendarPicker_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_CalendarPicker_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_CalendarPicker_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_CalendarPicker_0100] START');
       let strJson = inspector.getInspectorByKey('CalendarPickerKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_0100] obj is: " + JSON.stringify(obj.getElement('$attrs')));
 
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString('alignType')).assertEqual("CalendarAlign.END");
-      expect(obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dx')).assertEqual("10.00vp");
-      expect(obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dy')).assertEqual("15.00vp");
+      expect(obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dx'))
+        .assertEqual("10.00vp");
+      expect(obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dy'))
+        .assertEqual("15.00vp");
       console.info('[ArkUI_Stage_CalendarPicker_0100] END');
       done();
     });
+
+
     /*
      * @tc.number   ArkUI_Stage_CalendarPicker_attributeModifier_static_0101
      * @tc.name     ArkUI_Stage_CalendarPicker_attributeModifier_static_0101
      * @tc.desc     ArkUI_Stage_CalendarPicker_attributeModifier_static_0101
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_CalendarPicker_attributeModifier_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      // console.info('[ArkUI_Stage_CalendarPicker_attributeModifier_0101] START');
-      let strJson = inspector.getInspectorByKey('CalendarPickerKey1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_CalendarPicker_attributeModifier_0101] obj is: " + JSON.stringify(obj.getElement('$attrs')));
+    it('ArkUI_Stage_CalendarPicker_attributeModifier_static_0101', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info('[ArkUI_Stage_CalendarPicker_attributeModifier_0101] START');
+        let strJson = inspector.getInspectorByKey('CalendarPickerKey1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[ArkUI_Stage_CalendarPicker_attributeModifier_0101] obj is: " +
+        JSON.stringify(obj.getElement('$attrs')));
 
-      expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual("#FF182431");
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual("8.00fp");
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual("FontWeight.Lighter");
-      console.info('[ArkUI_Stage_CalendarPicker_attributeModifier_0101] END');
-      done();
-    });
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual("#FF182431");
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size'))
+          .assertEqual("8.00fp");
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight'))
+          .assertEqual("FontWeight.Lighter");
+        console.info('[ArkUI_Stage_CalendarPicker_attributeModifier_0101] END');
+        done();
+      });
+
 
     /*
      * @tc.number   ArkUI_Stage_CalendarPicker_attributeModifier_static_0102
@@ -103,22 +124,24 @@ it('ArkUI_Stage_CalendarPicker_attributeModifier_static_0101', Level.LEVEL0, asy
      * @tc.desc     ArkUI_Stage_CalendarPicker_attributeModifier_static_0102
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_CalendarPicker_attributeModifier_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ArkUI_Stage_CalendarPicker_attributeModifier_0102 START');
-      let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(2000)
+    it('ArkUI_Stage_CalendarPicker_attributeModifier_static_0102', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.info('ArkUI_Stage_CalendarPicker_attributeModifier_0102 START');
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.id('changeButton'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('CalendarPickerKey1'); //测试组件的key名称
-      let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("ArkUI_Stage_CalendarPicker_attributeModifier_0102 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
+        let strJsonNew = inspector.getInspectorByKey('CalendarPickerKey1'); //测试组件的key名称
+        let objNew = JSON.parseJsonElement(strJsonNew);
+        console.info("ArkUI_Stage_CalendarPicker_attributeModifier_0102 component  is: " +
+        JSON.stringify(objNew.getElement('$attrs')));
 
-      let edgeAlign = objNew.getElement('$attrs').getElement('edgeAlign');
-      expect(edgeAlign.getString('alignType')).assertEqual("CalendarAlign.START");
+        let edgeAlign = objNew.getElement('$attrs').getElement('edgeAlign');
+        expect(edgeAlign.getString('alignType')).assertEqual("CalendarAlign.START");
 
-      console.info('ArkUI_Stage_CalendarPicker_attributeModifier_0102 END');
-      done();
-    });
+        console.info('ArkUI_Stage_CalendarPicker_attributeModifier_0102 END');
+        done();
+      });
   })
 }

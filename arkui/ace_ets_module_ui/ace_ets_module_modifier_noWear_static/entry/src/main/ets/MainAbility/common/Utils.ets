@@ -18,9 +18,8 @@ import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import systemDateTime from '@ohos.systemDateTime';
 import { sendTouchEvent } from "@ohos.arkui.Test";
-
+import systemDateTime from '@ohos.systemDateTime';
 export default class Utils {
   static rect_left: number;
   static rect_top: number;

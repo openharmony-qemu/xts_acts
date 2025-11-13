@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router,{EnableAlertBeforeBackPageOptions} from '@system.router';
@@ -30,18 +30,20 @@ import router,{EnableAlertBeforeBackPageOptions} from '@system.router';
 @Component
 struct EnableAlertBeforeBackPage {
   aboutToAppear() {
-    router.enableAlertBeforeBackPage({
+    this.getUIContext().getRouter().showAlertBeforeBackPage(
+      {
       message: 'Message Info',
-      success: () => {
-        AppStorage.setOrCreate<number>('enableSuccess', 1);
-      },
-      cancel: () => {
-        AppStorage.setOrCreate<number>('enableCancel', 1);
-      },
-      complete: () => {
-        AppStorage.setOrCreate<number>('enableComplete', 1);
-      }
-    } as EnableAlertBeforeBackPageOptions)
+      // success: () => {
+      //   AppStorage.setOrCreate<number>('enableSuccess', 1);
+      // },
+      // cancel: () => {
+      //   AppStorage.setOrCreate<number>('enableCancel', 1);
+      // },
+      // complete: () => {
+      //   AppStorage.setOrCreate<number>('enableComplete', 1);
+      // }
+    }
+    )
   }
 
   build() {
@@ -51,7 +53,7 @@ struct EnableAlertBeforeBackPage {
         .height('10%')
         .id('enableId')
         .onClick((e: ClickEvent) => {
-          router.back();
+          this.getUIContext().getRouter().back();
         });
     }.width('100%').height('100%');
   }

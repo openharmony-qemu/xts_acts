@@ -41,7 +41,7 @@ import {
   TextInputController,
   MenuAlignType
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
@@ -74,7 +74,7 @@ struct Index {
           { value: 'fff' },
           { value: 'ggg' }
         ])
-          .key("ArkUX_Select_Visual_0040")
+          .key("ArkUX_Select_Visual_0040")//.menuAlign(null)
           .backgroundColor(Color.Blue)
           .value('TTTT')
           .optionBgColor(Color.Blue)

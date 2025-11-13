@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   Entry,
   Column,
@@ -27,6 +27,8 @@ import {
   OnSelectCallback
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import  emitter  from '@ohos.events.emitter';
+
 
 @Entry
 @Component
@@ -38,32 +40,32 @@ struct select1 {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: Color = Color.Grey
+  @State fontColor: int = 0xCCCCCC as int
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    console.info("select page state change called:" + JSON.stringify(eventData));
+    if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['value'] != null) {
+        this.value = data['value'] as string;
+      }
+      if (data['font'] != null) {
+        this.font = data['font'] as Font;
+      }
+      if (data['fontColor'] != null) {
+        this.fontColor = data['fontColor'] as int;
+      }
+    }
+  };
+
+  onPageShow() {
+    console.info('select page show called');
+    let stateChangeEvent: emitter.InnerEvent = {
+      eventId: 191,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
+  }
 
   build() {
     Column() {

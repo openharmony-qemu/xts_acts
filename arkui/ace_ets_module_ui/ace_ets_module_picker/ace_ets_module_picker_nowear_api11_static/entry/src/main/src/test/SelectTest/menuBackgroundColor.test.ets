@@ -64,20 +64,21 @@ export default function menuBackgroundColor() {
         console.info("get menuBackgroundColor state pages:" + JSON.stringify(pages));
         if (!("menuBackgroundColor" == pages.name)) {
           console.info("get menuBackgroundColor pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push menuBackgroundColor page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push menuBackgroundColor page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
     
-    /*
+    
+/*
      * @tc.number   menuBackgroundColor_static_0100
      * @tc.name     menuBackgroundColor_static_0100
      * @tc.desc     menuBackgroundColor_static_0100

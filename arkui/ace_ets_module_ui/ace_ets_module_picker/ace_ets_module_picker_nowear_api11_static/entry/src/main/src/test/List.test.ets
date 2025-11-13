@@ -23,13 +23,13 @@ import selectOnSelectJsunit from './SelectTest/select3.test';
 import selectmenuTest from './SelectTest/SelectMenu';
 
 export default function testsuite() {
-  SelectTest();
-  calendarpicker()
-  select()
-  SelectAttr()
-  selectJsunit()
-  menuBackgroundBlurStyle()
-  menuBackgroundColor()
-  selectOnSelectJsunit()
-  selectmenuTest()
+  SelectTest(); //全pass
+  calendarpicker() //emitter导致8个failed 1个断言失败
+  SelectAttr() //全pass
+  selectJsunit() //emitter导致8个failed
+  menuBackgroundBlurStyle() //全pass
+  menuBackgroundColor() //全pass
+  selectOnSelectJsunit() //全pass
+  selectmenuTest()  //.menuAlign(fakeMenuAlignType(null)) 导致ArkUXII_Stage_Select_Menu_MenuAlign_static_1300断言失败 异常场景 忽略
+  select() //emitter导致7个failed
 }

@@ -55,15 +55,15 @@ export default function SelectAttr() {
         console.info("get SelectAttr state pages:" + JSON.stringify(pages));
         if (!("SelectAttr" == pages.name)) {
           console.info("get SelectAttr pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push SelectAttr page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SelectAttr page error: " + err);
       }
-      
+      // done()
     });
 
     afterEach(async (): Promise<void> => {
@@ -97,8 +97,8 @@ it('SelectAttr_static_001', Level.LEVEL1, async (done: () => void): Promise<void
       let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await Utils.sleep(1000);
       console.info("[SelectAttr_static_001] obj2 is: " + JSON.stringify(obj2));
-      expect(obj2.getArray("$children")[1].getArray("$children")[0].getElement('$attrs').getDouble("width"))
-        .assertEqual(obj1.getElement('$attrs').getDouble("width"));
+      expect(obj2.getArray("$children")[1].getArray("$children")[0].getElement('$attrs').getString("width"))
+        .assertEqual(obj1.getElement('$attrs').getString("width"));
 
       console.info('[SelectAttr_static_001] END');
       done();

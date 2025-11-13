@@ -12,35 +12,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,Stack,ColumnOptions,Position,RowSplit,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,Stack,ColumnOptions, RowSplitAttribute,Position,RowSplit,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-// import { RowSplitModifier } from "@ohos.arkui.modifier";
-//
-// class CustomModifier extends RowSplitModifier {
-//   applyNormalAttribute(instance: RowSplitAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.resizeable(true)
-//   }
-// }
+import { RowSplitModifier } from "@ohos.arkui.modifier";
+
+class CustomModifier extends RowSplitModifier {
+  applyNormalAttribute(instance: RowSplitAttribute): void {
+    // super.applyNormalAttribute(instance);
+  }
+
+  onChange1() {
+    this.resizeable(true)
+  }
+}
 
 @Entry
 @Component
 struct RowSplitExample {
   private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7)
-  // @State customModifier: RowSplitModifier = new CustomModifier()
-  //   .resizeable(false)
+  @State customModifier: RowSplitModifier = new CustomModifier()
+    .resizeable(false)
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-        // (this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       RowSplit() {
@@ -50,7 +50,7 @@ struct RowSplitExample {
         Text('4').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
         Text('5').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
-      // .attributeModifier(this.customModifier as CustomModifier)
+      .attributeModifier(this.customModifier as CustomModifier)
       .key('rowSplit')
     }
     .margin({ top: 5 } as Margin)

@@ -22,17 +22,17 @@ import {
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
   Link,
-  PropRef,
+  Prop,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage,Link } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode,FrameNode } from '@ohos.arkui.node';
 import { ImmersiveMode } from '@ohos.promptAction';
@@ -45,7 +45,7 @@ let promptAction = new PromptAction()
 
 @CustomDialog
 struct CustomDialogExampleA {
-  // @Link inputValue: string=''
+  @Link inputValue: string=''
   controller?: CustomDialogController
   cancel: () => void = () => {}
   confirm: () => void = () => {}
@@ -76,7 +76,7 @@ struct CustomDialogUserA {
   @State inputValue: string = 'CustomDialog生命周期'
   dialogController: CustomDialogController | null = new CustomDialogController({
     builder: CustomDialogExampleA({
-      // inputValue: $inputValue
+      inputValue: this.inputValue
     }),
     autoCancel: true,
     alignment: DialogAlignment.Center,

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import {
@@ -34,6 +34,12 @@ import {
   Callback
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+import  emitter  from '@ohos.events.emitter';
+
+interface EventDataContent {
+  textStyle?: PickerTextStyle;
+  edgeAlign?: CalendarAlign;
+}
 
 @Entry
 @Component
@@ -47,31 +53,32 @@ struct CalendarPickerExample {
   } as PickerTextStyle
   private selectedDate: Date = new Date('2026-02-11')
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    console.info("select page state change called:" + JSON.stringify(eventData));
+    if (eventData != null) {
+
+      const data = eventData.data as Record<String,undefined|null|Object>
+
+      if (data['textStyle'] != null) {
+        this.textStyle = data['textStyle'] as PickerTextStyle
+      }
+      if (data['edgeAlign'] != null) {
+        this.edgeAlign = data['edgeAlign'] as CalendarAlign;
+        console.info("eventData.data.edgeAlign:" + this.edgeAlign);
+      }
+    }
+  }
+
+  aboutToAppear() {
+    let stateChangeEvent: emitter.InnerEvent = {
+      eventId: 185,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
+
+    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
+    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
+  }
 
   build() {
     Column() {

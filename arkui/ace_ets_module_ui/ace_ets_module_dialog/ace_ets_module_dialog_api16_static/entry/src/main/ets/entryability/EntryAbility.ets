@@ -28,9 +28,9 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void>|undefined {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    return undefined;
+    return undefined
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -45,7 +45,6 @@ export default class EntryAbility extends UIAbility {
       }
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError | null, data) => {
-        // let errCode: number = err?.code as number;
         if (err?.code) {
           console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
           return;

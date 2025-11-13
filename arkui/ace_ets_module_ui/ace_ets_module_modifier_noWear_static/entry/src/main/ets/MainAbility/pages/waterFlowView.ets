@@ -66,40 +66,40 @@ import {
 } from '@ohos.arkui.stateManagement';
 import { WaterFlowModifier } from "@ohos.arkui.modifier";
 
-// class CustomModifier extends WaterFlowModifier {
-//   applyNormalAttribute(instance: WaterFlowAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//   onChange1() {
-//     this.columnsGap(2)
-//   }
-// }
+class CustomModifier extends WaterFlowModifier {
+  applyNormalAttribute(instance: WaterFlowAttribute): void {
+    // super.applyNormalAttribute(instance);
+  }
+  onChange1() {
+    this.columnsGap(2)
+  }
+}
 
 @Entry
 @Component
 export struct WaterFlowView {
 
-  // @State customModifier: WaterFlowModifier = new CustomModifier()
-  //   .nestedScroll({ scrollForward: NestedScrollMode.SELF_ONLY, scrollBackward: NestedScrollMode.SELF_FIRST })
-  //   .friction(1)
-  //   .enableScrollInteraction(true)
-  //   .columnsTemplate('1fr 1fr 1fr 1fr')
-  //   .itemConstraintSize({ minWidth: 1, maxWidth: 10, minHeight: 1, maxHeight: 10 })
-  //   .columnsGap(1)
-  //   .rowsTemplate('1fr 1fr 1fr 1fr')
-  //   .rowsGap(1)
-  //   .layoutDirection(FlexDirection.Column)
+  @State customModifier: WaterFlowModifier = new CustomModifier()
+    .nestedScroll({ scrollForward: NestedScrollMode.SELF_ONLY, scrollBackward: NestedScrollMode.SELF_FIRST })
+    .friction(1)
+    .enableScrollInteraction(true)
+    .columnsTemplate('1fr 1fr 1fr 1fr')
+    .itemConstraintSize({ minWidth: 1, maxWidth: 10, minHeight: 1, maxHeight: 10 })
+    .columnsGap(1)
+    .rowsTemplate('1fr 1fr 1fr 1fr')
+    .rowsGap(1)
+    .layoutDirection(FlexDirection.Column)
 
   scroller: Scroller = new Scroller()
 
   build() {
     Column() {
       Button("change value").onClick((e:ClickEvent) => {
-        //(this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       WaterFlow() {
-        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
           FlowItem() {
             Column() {
               Text('N' + item).fontSize(12)
@@ -108,10 +108,10 @@ export struct WaterFlowView {
             .width('100%')
             .height('10')
             .backgroundColor('#FF00FF00')
-        }, (item: int, index: int) => item.toString())
+        }, (item: int) => item.toString())
       }
       .key('WaterFlowKey1')
-      //.attributeModifier(this.customModifier  as CustomModifier)
+      .attributeModifier(this.customModifier  as CustomModifier)
     }
   }
 }
