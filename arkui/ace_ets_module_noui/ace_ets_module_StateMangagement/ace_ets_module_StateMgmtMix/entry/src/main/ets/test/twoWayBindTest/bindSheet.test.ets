@@ -41,7 +41,7 @@ export default function bindSheetTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0250
+     * @tc.number    bindSheetTest_0100
      * @tc.name      bindSheetTest_0100
      * @tc.desc      api
      * @tc.level:    Level 1
@@ -66,7 +66,7 @@ export default function bindSheetTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0250
+     * @tc.number    bindSheetTest_0200
      * @tc.name      bindSheetTest_0200
      * @tc.desc      api
      * @tc.level:    Level 1

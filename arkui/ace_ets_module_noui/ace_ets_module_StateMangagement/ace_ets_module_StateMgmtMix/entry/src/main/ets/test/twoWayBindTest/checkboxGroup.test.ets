@@ -41,7 +41,7 @@ export default function checkboxGroupTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0020
+     * @tc.number    checkboxGroupTest_0100
      * @tc.name      checkboxGroupTest_0100
      * @tc.desc      api
      * @tc.level:    Level 1
@@ -70,7 +70,7 @@ export default function checkboxGroupTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0020
+     * @tc.number    checkboxGroupTest_0200
      * @tc.name      checkboxGroupTest_0200
      * @tc.desc      api
      * @tc.level:    Level 1
