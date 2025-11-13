@@ -329,7 +329,7 @@ export default function Sim4Public() {
           console.info(`${caseName} test end`);
           done();
         } else {
-          console.info(`${caseName} failed);
+          console.info(`${caseName} failed`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
