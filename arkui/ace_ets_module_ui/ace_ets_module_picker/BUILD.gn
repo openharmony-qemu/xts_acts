@@ -37,6 +37,8 @@ group("ActsAceEtsModulePickerTest") {
       "ace_ets_module_picker_api16:ActsAceEtsModulePickerApi16Test",
       "ace_ets_module_picker_api18:ActsAceEtsModulePickerApi18Test",
       "ace_ets_module_picker_api20:ActsAceEtsModulePickerApi20Test",
+      "ace_ets_module_picker_calendarPicker:ActsAceEtsModulePickerCalendarPickerTest",
+      "ace_ets_module_picker_calendarPickerDialog:ActsAceEtsModulePickerCalendarPickerDialogTest",
       "ace_ets_module_picker_datePicker:ActsAceEtsModulePickerDatePickerTest",
       "ace_ets_module_picker_timePicker:ActsAceEtsModulePickerTimePickerTest",
       "ace_ets_module_picker_textPicker:ActsAceEtsModulePickerTextPickerTest",
