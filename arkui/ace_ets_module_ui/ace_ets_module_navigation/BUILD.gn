@@ -44,6 +44,7 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_navigation_api20:ActsAceEtsModuleNavigationApi20Test",
       "ace_ets_module_navigation_api21:ActsAceEtsModuleNavigationApi21Test",
       "ace_ets_module_navigation_api22:ActsAceEtsModuleNavigationApi22Test",
+      "ace_ets_module_navigation_nowear:ActsAceEtsModuleNavigationNoWearTest",
     ]
   }
 }
