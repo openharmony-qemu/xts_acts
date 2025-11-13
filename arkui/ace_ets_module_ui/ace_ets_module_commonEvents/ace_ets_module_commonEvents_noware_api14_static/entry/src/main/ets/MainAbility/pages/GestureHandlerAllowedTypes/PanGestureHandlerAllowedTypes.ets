@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
+ **     http://www.apache.org/licenses/LICENSE-2.0
+ **
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,54 +13,44 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   $r,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   ColumnOptions,
-  Text,
+  Component,
   DragEvent,
-  Image,
-  Button,
-  GestureModifier,
-  UIGestureEvent,
-  SourceTool,
+  Entry,
   GestureEvent,
-  ClickEvent,
+  GestureModifier,
+  HorizontalAlign,
+  Image,
   Margin,
   Padding,
-  Color,
-  HorizontalAlign,PanGestureHandler
+  SourceTool,
+  Text,
+  UIGestureEvent,
 } from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  Prop,
-} from '@ohos.arkui.stateManagement';
-import { Callback } from '@ohos.base';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
+import { Callback, Message } from '../../common/MessageManager';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 class PanGestureHandlerAllowedTypesModifier implements GestureModifier {
-  toolTypes:Array<SourceTool> = [];
-  listener: Callback<string> = (data: string) => {};
-  constructor(types: Array<SourceTool>, callback: Callback<string>) {
+  toolTypes: Array<SourceTool | undefined | null> = [];
+
+  constructor(types: Array<SourceTool | undefined | null>, callback: Callback<string>) {
     this.toolTypes = types;
     this.listener = callback;
   }
 
+  listener: Callback<string> = (data: Message<string>) => {
+  };
+
   applyGesture(event: UIGestureEvent): void {
-    event.addGesture(
-      new PanGestureHandler({ fingers: 1 })
-        .allowedTypes(this.toolTypes)
-        .onActionStart((event: GestureEvent) => {
-          this.listener('allowed types success');
-        })
-        .onActionUpdate((event: GestureEvent) => {
-          this.listener('allowed types success');
-        })
-    )
+
+
   }
 }
 
@@ -68,13 +58,18 @@ class PanGestureHandlerAllowedTypesModifier implements GestureModifier {
 @Component
 struct PanGestureHandlerAllowedTypes {
   @State result: string = 'allowed types default';
-  private callback: Callback<string> = (data: string) => {
-    this.result = data;
-  }
   @State modifier: PanGestureHandlerAllowedTypesModifier = new PanGestureHandlerAllowedTypesModifier([], this.callback);
+
   build() {
-    Column({space: 10} as ColumnOptions) {
-      Text('Pan').fontSize(20).width(240).height(80).margin({left:0,top:0} as Margin).padding({left:0,top:0} as Padding).backgroundColor(Color.Yellow).key('PanGestureHandlerAllowedTypes_Text')
+    Column({ space: 10 } as ColumnOptions) {
+      Text('Pan')
+        .fontSize(20)
+        .width(240)
+        .height(80)
+        .margin({ left: 0, top: 0 } as Margin)
+        .padding({ left: 0, top: 0 } as Padding)
+        .backgroundColor(Color.Yellow)
+        .key('PanGestureHandlerAllowedTypes_Text')
         .gestureModifier(this.modifier)
 
       Text(this.result).key('PanGestureHandlerAllowedTypes_result')
@@ -90,11 +85,19 @@ struct PanGestureHandlerAllowedTypes {
           this.modifier = new PanGestureHandlerAllowedTypesModifier([SourceTool.Finger], this.callback);
         })
       Button('Invalid').id('Invalid_type')
-          .onClick((e: ClickEvent) => {
-            this.result = 'allowed types default';
-            console.log('---------' + this.result)
-            // this.modifier = new PanGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
-          })
-    }.alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('PanGestureHandlerAllowedTypes_Father')
+        .onClick((e: ClickEvent) => {
+          this.result = 'allowed types default';
+          this.modifier = new PanGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
+        })
+    }
+    .alignItems(HorizontalAlign.Start)
+    .width('100%')
+    .height('100%')
+    .backgroundColor('#ffbebaba')
+    .key('PanGestureHandlerAllowedTypes_Father')
+  }
+
+  private callback: Callback<string> = (data: Message<string>) => {
+    this.result = data.value;
   }
 }

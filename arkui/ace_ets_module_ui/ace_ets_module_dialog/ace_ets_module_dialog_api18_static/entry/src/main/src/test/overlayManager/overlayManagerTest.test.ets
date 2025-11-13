@@ -36,7 +36,7 @@ export default function overlayManagerTest() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     })
 
@@ -55,7 +55,7 @@ export default function overlayManagerTest() {
           // let result = await overlayManagerTest.pushUrl(options);
           overlayManagerTest.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push overlayManagerTest success: ");
+          // console.info("push overlayManagerTest success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -67,7 +67,7 @@ export default function overlayManagerTest() {
 
 
     afterEach(async () => {
-      if (AppStorage.get<number>('myTop') != undefined || AppStorage.get<number>('myBottom') != undefined) {
+      if (AppStorage.get('myTop') != undefined || AppStorage.get('myBottom') != undefined) {
         AppStorage.delete('myTop')
         AppStorage.delete('myBottom')
       }
@@ -76,7 +76,8 @@ export default function overlayManagerTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   overlayManagerTest_static_0100
      * @tc.name     overlayManagerTest_static_0100
      * @tc.desc     overlayManagerTest_static_0100
@@ -91,12 +92,12 @@ it('overlayManagerTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level
       await CommonFunc.sleep(500);
       let button4 = await driver.findComponent(ON.id('myTop'));
       await ( button4?.click() as Promise<void>);
-      // await CommonFunc.sleep(500);
+      await CommonFunc.sleep(500);
       let button5 = await driver.findComponent(ON.id('myBottom'));
       await ( button5?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('myTop')
-      let bottom = AppStorage.get<number>('myBottom')
+      let top = AppStorage.get('myTop')
+      let bottom = AppStorage.get('myBottom')
 
       expect(top).assertEqual(-100000)
       expect(bottom).assertEqual(-100000)
@@ -107,11 +108,11 @@ it('overlayManagerTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level
       await ( button2?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       await ( button4?.click() as Promise<void>);
-      // await CommonFunc.sleep(500);
+      await CommonFunc.sleep(500);
       await ( button5?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      top = AppStorage.get<number>('myTop')
-      bottom = AppStorage.get<number>('myBottom')
+      top = AppStorage.get('myTop')
+      bottom = AppStorage.get('myBottom')
 
       expect(top).assertEqual(0)
       expect(bottom).assertEqual(-100000)
@@ -123,11 +124,11 @@ it('overlayManagerTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level
       await CommonFunc.sleep(500);
 
       await ( button4?.click() as Promise<void>);
-      // await CommonFunc.sleep(500);
+      await CommonFunc.sleep(500);
       await ( button5?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      top = AppStorage.get<number>('myTop')
-      bottom = AppStorage.get<number>('myBottom')
+      top = AppStorage.get('myTop')
+      bottom = AppStorage.get('myBottom')
 
       expect(top).assertEqual(0.111)
       expect(bottom).assertEqual(-100000)
@@ -138,11 +139,11 @@ it('overlayManagerTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       await ( button4?.click() as Promise<void>);
-      // await CommonFunc.sleep(500);
+      await CommonFunc.sleep(500);
       await ( button5?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      top = AppStorage.get<number>('myTop')
-      bottom = AppStorage.get<number>('myBottom')
+      top = AppStorage.get('myTop')
+      bottom = AppStorage.get('myBottom')
 
       expect(top).assertEqual(100000)
       expect(bottom).assertEqual(-100000)

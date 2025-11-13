@@ -39,7 +39,7 @@ import {
 import {
   State,
   Link,
-  Prop,AppStorage
+  PropRef,AppStorage
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -134,7 +134,7 @@ struct showDialogLevelOrder {
         .onClick(() : void => {
           let showDialogOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (showDialogOrder !== undefined) {
-            AppStorage.setOrCreate<number>('showDialogOrder', showDialogOrder.getOrder())
+            AppStorage.setOrCreate<double>('showDialogOrder', showDialogOrder.getOrder())
           }
         })
     }

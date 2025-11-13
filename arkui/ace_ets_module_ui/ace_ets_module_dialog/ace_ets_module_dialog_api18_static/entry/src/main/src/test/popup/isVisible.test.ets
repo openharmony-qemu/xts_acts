@@ -37,7 +37,7 @@ export default function isVisible() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     })
 
@@ -56,7 +56,7 @@ export default function isVisible() {
           // let result = await isVisible.pushUrl(options);
           isVisible.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push isVisible success: ");
+          // console.info("push isVisible success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -68,7 +68,7 @@ export default function isVisible() {
 
 
     afterEach(async () => {
-      if (AppStorage.get<Boolean>('isVisible') != undefined) {
+      if (AppStorage.get('isVisible') != undefined) {
         AppStorage.delete('isVisible')
       }
       await CommonFunc.sleep(1000);
@@ -76,7 +76,8 @@ export default function isVisible() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   isVisible_static_0100
      * @tc.name     isVisible_static_0100
      * @tc.desc     isVisible_static_0100
@@ -89,12 +90,12 @@ it('isVisible_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
       let button = await driver.findComponent(ON.id('popup'));
       await ( button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let isVisible:boolean =  AppStorage.get<Boolean>('isVisible')!
+      let isVisible:boolean|undefined =  AppStorage.get('isVisible')
       console.log(isVisible + 'event.isVisible')
       expect(isVisible).assertTrue()
       await ( button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      isVisible =  AppStorage.get<Boolean>('isVisible')!
+      isVisible =  AppStorage.get('isVisible')
       expect(isVisible).assertFalse()
       console.info('isVisible_static_0100 END');
       done();

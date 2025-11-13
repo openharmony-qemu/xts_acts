@@ -35,7 +35,7 @@ export default function alertDialogLevelOrder() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     })
 
@@ -54,7 +54,7 @@ export default function alertDialogLevelOrder() {
           // let result = await alertDialogLevelOrder.pushUrl(options);
           alertDialogLevelOrder.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push alertDialogLevelOrder success: ");
+          // console.info("push alertDialogLevelOrder success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -66,7 +66,7 @@ export default function alertDialogLevelOrder() {
 
 
     afterEach(async () => {
-      if (AppStorage.get<number>('alertDialogOrder') != undefined) {
+      if (AppStorage.get('alertDialogOrder') != undefined) {
         AppStorage.delete('alertDialogOrder')
       }
       await CommonFunc.sleep(1000);
@@ -74,7 +74,8 @@ export default function alertDialogLevelOrder() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   alertDialogLevelOrder_static_0100
      * @tc.name     alertDialogLevelOrder_static_0100
      * @tc.desc     alertDialogLevelOrder_static_0100
@@ -90,7 +91,7 @@ it('alertDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Le
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('alertDialogOrder')
+      let top = AppStorage.get('alertDialogOrder')
       expect(top).assertEqual(100)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.text('button'));
@@ -101,7 +102,8 @@ it('alertDialogLevelOrder_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Le
     });
 
     
-    /*
+    
+/*
      * @tc.number   alertDialogLevelOrder_static_0200
      * @tc.name     alertDialogLevelOrder_static_0200
      * @tc.desc     alertDialogLevelOrder_static_0200
@@ -117,7 +119,7 @@ it('alertDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Le
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('alertDialogOrder')
+      let top = AppStorage.get('alertDialogOrder')
       expect(top).assertEqual(100000)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.text('button'));
@@ -128,7 +130,8 @@ it('alertDialogLevelOrder_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Le
     });
 
     
-    /*
+    
+/*
      * @tc.number   alertDialogLevelOrder_static_0300
      * @tc.name     alertDialogLevelOrder_static_0300
      * @tc.desc     alertDialogLevelOrder_static_0300
@@ -144,7 +147,7 @@ it('alertDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Le
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('alertDialogOrder')
+      let top = AppStorage.get('alertDialogOrder')
       expect(top).assertEqual(-100000)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.text('button'));
@@ -154,7 +157,8 @@ it('alertDialogLevelOrder_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Le
       done();
     });
     
-    /*
+    
+/*
      * @tc.number   alertDialogLevelOrder_static_0400
      * @tc.name     alertDialogLevelOrder_static_0400
      * @tc.desc     alertDialogLevelOrder_static_0400
@@ -170,7 +174,7 @@ it('alertDialogLevelOrder_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Le
       let button1 = await driver.findComponent(ON.id('myOrder'));
       await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      let top = AppStorage.get<number>('alertDialogOrder')
+      let top = AppStorage.get('alertDialogOrder')
       expect(top).assertEqual(0)
       await CommonFunc.sleep(500);
       let button2 = await driver.findComponent(ON.text('button'));

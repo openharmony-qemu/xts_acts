@@ -17,10 +17,9 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
-import promptAction from '@ohos.promptAction';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import common from '@ohos.app.ability.common';
+import common from "@ohos.app.ability.common";
 import { UIContext } from '@ohos.arkui.UIContext';
 
 export default class EntryAbility extends UIAbility {
@@ -29,9 +28,9 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
-  onDestroy(): Promise<void>|undefined {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    return undefined
+    return undefined;
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -39,7 +38,7 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
     AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);
-    windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError | null, data) => {
+    windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError|null, data) => {
       if (err?.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
