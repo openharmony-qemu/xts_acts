@@ -46,6 +46,22 @@ let mPreferences: dataPreferences.Preferences;
 let context: common.UIAbilityContext;
 const TAG = '[PREFERENCES_CALLBACK_JSUNIT_TEST]'
 
+class User {
+  name: string = '';
+  age: int;
+  salary: double
+};
+
+class Company {
+  cName: string = '';
+  enName: string = '';
+  year: int;
+  money: BigInt = 0n;
+  isActive: boolean = false;
+  groups: string[] = [];
+  users: User[] = [];
+}
+
 export default function preferenceTest() {
   describe('preferenceTest', (): void =>  {
     beforeAll (() => {
@@ -1140,6 +1156,110 @@ export default function preferenceTest() {
         done();
       } catch(err : BusinessError) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesMxaKeyLengthPromiseTest0001 :" + err.code + err.message );
+        expect().assertFail();
+        done();
+      }
+    })
+
+    const userArrVar: User[] = [];
+    userArrVar.push({ name: 'zhangSan', age: 18, salary: 3000.5 });
+    userArrVar.push({ name: 'lisi', age: 20, salary: 5000.4 });
+    const moneyNum = BigInt("-12345678912345678912345678971234567123456");
+    let company: Company = {
+      cName: '我的公司',
+      enName: 'myCompany',
+      year: 1998,
+      groups: ['dp1', 'dp2'],
+      users: userArrVar,
+      isActive: true,
+      money: moneyNum
+    };
+
+    /**
+     * @generated.time 2025-11-13 14:49:48
+     * @tc.name   testPreferencesObjectPromiseTestGet
+     * @tc.number SUB_DistributedData_Preference_SDK_ObjectGet_basis_EtsApiTest_3300
+     * @tc.desc   MxaKeyLength promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesObjectPromiseTestGet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        mPreferences.flushSync();
+
+        await mPreferences.put("object_key", company);
+        let compJson = await mPreferences.get("object_key", {});
+        let compJsonElement = JSON.parseJsonElement(compJson.toString());
+        expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
+        expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
+        expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
+        expect(true).assertEqual(compJsonElement.getElement("isActive").asBoolean());
+
+        let groups = compJsonElement.getArray("groups");
+        expect("dp1").assertEqual(groups[0].asString());
+        expect("dp2").assertEqual(groups[1].asString());
+        let users = compJsonElement.getArray("users");
+        expect(18).assertEqual(users[0].getElement("age").asInteger());
+        expect("zhangSan").assertEqual(users[0].getElement("name").asString());
+        expect(3000.5).assertEqual(users[0].getElement("salary").asDouble());
+        expect(20).assertEqual(users[1].getElement("age").asInteger());
+        expect("lisi").assertEqual(users[1].getElement("name").asString());
+        expect(5000.4).assertEqual(users[1].getElement("salary").asDouble());
+        done();
+      } catch(err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGet :" + err.code + err.message );
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @generated.time 2025-11-13 14:49:48
+     * @tc.name   testPreferencesObjectPromiseTestGetAll
+     * @tc.number SUB_DistributedData_Preference_SDK_ObjectGetAll_basis_EtsApiTest_3400
+     * @tc.desc   MxaKeyLength promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesObjectPromiseTestGetAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        mPreferences.flushSync();
+
+        await mPreferences.put("object_key", company);
+        await mPreferences.put("string_key", 'test_string');
+        await mPreferences.put("double_key", 3.14);
+
+        mPreferences.getAll((err: BusinessError | null, value: Object | undefined) => {
+          let obj = value as Record<string, object>;
+          expect("test_string").assertEqual(obj.get("string_key"));
+          expect(3.14).assertEqual(obj.get("double_key"));
+          let allJson = obj.get("object_key");
+          let compJsonElement = JSON.parseJsonElement(allJson?.toString() as string);
+
+          expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
+          expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
+          expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
+          expect(true).assertEqual(compJsonElement.getElement("isActive").asBoolean());
+
+          let groups = compJsonElement.getArray("groups");
+          expect("dp1").assertEqual(groups[0].asString());
+          expect("dp2").assertEqual(groups[1].asString());
+          let users = compJsonElement.getArray("users");
+          expect(18).assertEqual(users[0].getElement("age").asInteger());
+          expect("zhangSan").assertEqual(users[0].getElement("name").asString());
+          expect(3000.5).assertEqual(users[0].getElement("salary").asDouble());
+          expect(20).assertEqual(users[1].getElement("age").asInteger());
+          expect("lisi").assertEqual(users[1].getElement("name").asString());
+          expect(5000.4).assertEqual(users[1].getElement("salary").asDouble());
+          done();
+        })
+        done();
+      } catch(err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesObjectPromiseTestGetAll :" + err.code + err.message );
         expect().assertFail();
         done();
       }
