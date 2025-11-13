@@ -39,7 +39,7 @@ void AddRelationalStoreTest(std::vector<napi_property_descriptor>& descData)
     descData.push_back(
         {"getDestroyOneSuccess", nullptr, GetDestroyOneSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
-        {"OHRdbExecuteByTrxIdTest", nullptr, OHRdbExecuteByTrxIdTest, nullptr, nullptr, nullptr, napi_default, nullptr});
+        {"OHRdbExecuteByTrxId", nullptr, OHRdbExecuteByTrxId, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 napi_value GetURISuccess(napi_env env, napi_callback_info info)
@@ -145,7 +145,7 @@ static void InitRdbConfigV2(OH_Rdb_ConfigV2 *configV2)
     OH_Rdb_SetDbType(configV2, RDB_SQLITE);
 }
 
-napi_value OHRdbExecuteByTrxIdTest(napi_env env, napi_callback_info info)
+napi_value OHRdbExecuteByTrxId(napi_env env, napi_callback_info info)
 {
     int errCode = OH_Rdb_ErrCode::RDB_OK;
     OH_Rdb_ConfigV2 *config = OH_Rdb_CreateConfig();

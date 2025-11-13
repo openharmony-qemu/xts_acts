@@ -2264,7 +2264,7 @@ export default function ActsRelationalStoreTest() {
       async (done: Function) => {
         try {
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100 start====");
-          let result: number = testNapi.OHRdbExecuteByTrxIdTest();
+          let result: number = testNapi.OHRdbExecuteByTrxId();
           console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100 result====", result);
           expect([RDB_OK, RDB_E_NOT_SUPPORTED]).assertContain(result);
           done();
