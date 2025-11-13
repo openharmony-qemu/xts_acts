@@ -153,6 +153,7 @@ export struct DisplayDevice {
       .justifyContent(FlexAlign.SpaceEvenly)
       .width('100%')
       .margin({ top: 70 })
+      .margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('50%')
