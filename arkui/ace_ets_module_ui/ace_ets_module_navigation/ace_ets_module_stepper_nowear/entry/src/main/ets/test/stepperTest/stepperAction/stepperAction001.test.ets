@@ -58,6 +58,7 @@ export default function stepperAction001() {
       await driver.assertComponentExist(ON.text('Page One'));
       await driver.delayMs(1000);
       let button: Component = await driver.findComponent(ON.text('Next1'));
+      expect(button !== null).assertTrue();
       await button.click();
       await driver.delayMs(1000);
       await driver.assertComponentExist(ON.text('Page Two'));

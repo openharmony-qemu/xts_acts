@@ -57,6 +57,7 @@ export default function stepperInterface005() {
       await driver.delayMs(1000);
       await driver.assertComponentExist(ON.text('0'));
       let button: Component = await driver.findComponent(ON.text('Next'));
+      expect(button !== null).assertTrue();
       await button.click();
       await driver.delayMs(1000);
       await driver.assertComponentExist(ON.text('1'));
