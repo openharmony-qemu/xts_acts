@@ -315,7 +315,7 @@ export default function SimManagerTest() {
      */
     it('Telephony_Sim_getSimAccountInfo_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let promise = sim.getSimAccountInfo(0);
-      promise.then((data: IccAccountInfo) => {
+      promise.then((data: sim.IccAccountInfo) => {
         console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getSimAccountInfo_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
@@ -356,7 +356,7 @@ export default function SimManagerTest() {
      */
     it('Telephony_Sim_getActiveSimAccountInfoList_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let promise = sim.getActiveSimAccountInfoList();
-      promise.then((data: Array<IccAccountInfo>) => {
+      promise.then((data: Array<sim.IccAccountInfo>) => {
         console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
