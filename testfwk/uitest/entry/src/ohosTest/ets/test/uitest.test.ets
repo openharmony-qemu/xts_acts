@@ -65,6 +65,10 @@ async function getInputMethodPermission() {
     await TextInput.click()
     await driver.delayMs(1000)
     let permissionBtn1 = await driver.findComponent(ON.text('同意'))
+    if (permissionBtn1 == null) {
+        let scroll = await driver.findComponent(ON.type('Scroll'))
+        permissionBtn1 = await scroll.scrollSearch(ON.text('同意'))
+    }
     if (permissionBtn1 != null) {
         await permissionBtn1.click()
         await driver.delayMs(1000)
@@ -3075,9 +3079,6 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs)
             let isActive = await window.isActive()
             expect(isActive == true).assertTrue()
-            let uitestWindow = await driver.findWindow({active: false})
-            let isActive1 = await uitestWindow.isActive()
-            expect(isActive1).assertFalse();
             await stopApplication('com.uitestScene.acts')
         })
 
@@ -3693,6 +3694,10 @@ export default function UiTest() {
             let enable = await button.isEnabled()
             expect(enable == true).assertTrue()
             let button1 = await driver.findComponent(ON.text('enableFalse').enabled(false))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button1 = await scroll.scrollSearch(ON.text('enableFalse').enabled(false))
+            }
             let enable1 = await button1.isEnabled()
             expect(enable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
@@ -3733,6 +3738,10 @@ export default function UiTest() {
             let selected = await button.isSelected()
             expect(selected == false).assertTrue()
             let button1 = await driver.findComponent(ON.id('enableFalse').selected(true))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(ON.type('Scroll'))
+                button1 = await scroll.scrollSearch(ON.id('enableFalse').selected(true))
+            }
             let selected1 = await button1.isSelected()
             expect(selected1).assertTrue()
             await stopApplication('com.uitestScene.acts')
@@ -4692,6 +4701,10 @@ export default function UiTest() {
             let enable = await button.isEnabled()
             expect(enable == true).assertTrue()
             let button1 = await driver.findComponent(BY.text('enableFalse').enabled(false))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(BY.type('Scroll'))
+                button1 = await scroll.scrollSearch(BY.text('enableFalse').enabled(false))
+            }
             let enable1 = await button1.isEnabled()
             expect(enable1 == false).assertTrue()
             await stopApplication('com.uitestScene.acts')
@@ -4732,6 +4745,10 @@ export default function UiTest() {
             let selected = await button.isSelected()
             expect(selected == false).assertTrue()
             let button1 = await driver.findComponent(BY.key('enableFalse').selected(true))
+            if (button1 == null) {
+                let scroll = await driver.findComponent(BY.type('Scroll'))
+                button1 = await scroll.scrollSearch(BY.key('enableFalse').selected(true))
+            }
             let selected1 = await button1.isSelected()
             expect(selected1).assertTrue()
             await stopApplication('com.uitestScene.acts')

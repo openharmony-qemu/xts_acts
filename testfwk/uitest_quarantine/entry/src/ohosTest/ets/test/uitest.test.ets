@@ -250,6 +250,25 @@ export default function UiTest() {
 	  await driver.mouseDrag(point1, point2)
     })
 
+    /**
+     * @tc.number uiTest_11007
+     * @tc.name testWindowAttr
+     * @tc.desc find window by WindowFilter and get it's active status.
+     */
+    it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,active:true,title:''})
+      await window.focus()
+      await driver.delayMs(waitUiReadyMs)
+      let isActive = await window.isActive()
+      expect(isActive == true).assertTrue()
+      let uitestWindow = await driver.findWindow({active: false})
+      let isActive1 = await uitestWindow.isActive()
+      expect(isActive1).assertFalse();
+      await stopApplication('com.uitestScene.acts')
+    })
+
   })
 
   describe('UiTest_API10', () =>  {

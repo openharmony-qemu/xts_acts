@@ -116,7 +116,7 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_create_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_create_32400007 end`);
     })
 
@@ -148,7 +148,7 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_run_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_run_32400007 end`);
     })
 
@@ -452,7 +452,7 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_getMeasureResult_32400007 end`);
     })
 
@@ -617,7 +617,7 @@ export default function perfTestErrorTest() {
         console.log(`${TestTag}, test_PerfTest_destroy_32400007 error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(NotSupportErrorCode);
       }
-      await sleep(3000);
+      await sleep(6000);
       console.log(`${TestTag}, test_PerfTest_destroy_32400007 end`);
     })
 
