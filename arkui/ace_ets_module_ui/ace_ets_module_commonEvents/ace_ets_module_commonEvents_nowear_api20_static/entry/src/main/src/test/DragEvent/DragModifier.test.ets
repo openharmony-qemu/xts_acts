@@ -62,7 +62,7 @@ export default function ModifierTest() {
     });
 
     
-    
+
     /*
      * @tc.number   ModifierTest_static_0010
      * @tc.name     ModifierTest_static_0010

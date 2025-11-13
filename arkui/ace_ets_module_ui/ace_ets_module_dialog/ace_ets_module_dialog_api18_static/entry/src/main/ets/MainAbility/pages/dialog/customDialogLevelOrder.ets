@@ -39,7 +39,7 @@ import {
 import {
   State,
   Link,
-  Prop,AppStorage
+  PropRef,AppStorage
 } from '@ohos.arkui.stateManagement';
 
 @CustomDialog
@@ -57,7 +57,7 @@ struct CustomDialogExample {
         .onClick(() : void => {
           let customOrder = this.getUIContext().getPromptAction().getTopOrder()
           if (customOrder !== undefined) {
-            AppStorage.setOrCreate<number>('customLevel', customOrder.getOrder())
+            AppStorage.setOrCreate<double>('customLevel', customOrder.getOrder())
             console.error('topOrder: ' + customOrder.getOrder());
           }
         })

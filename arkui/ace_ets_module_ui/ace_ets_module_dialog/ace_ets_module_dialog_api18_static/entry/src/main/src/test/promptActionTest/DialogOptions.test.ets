@@ -38,7 +38,7 @@ export default function DialogOptions() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     })
 
@@ -49,7 +49,7 @@ export default function DialogOptions() {
       }
       try {
         const DialogOptions = AppStorage.get<Router>("router") as Router
-        // DialogOptions.clear();
+        DialogOptions.clear();
         let pages:router.RouterState = DialogOptions.getState();
         console.info("get DialogOptions state pages: " + JSON.stringify(pages));
         if (!("DialogOptions" == pages.name)) {
@@ -57,7 +57,7 @@ export default function DialogOptions() {
           // let result = await DialogOptions.pushUrl(options);
           DialogOptions.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push DialogOptions success: ");
+          // console.info("push DialogOptions success: " + JSON.stringify(result));
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -70,7 +70,8 @@ export default function DialogOptions() {
 
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0100
      * @tc.name     DialogOptions_static_0100
      * @tc.desc     DialogOptions_static_0100
@@ -88,20 +89,20 @@ it('DialogOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundColor:string = column.getString('backgroundColor')
-
+     
       let borderStyle:string = column.getString('borderStyle')
       let backgroundBlurStyle:string|undefined =  column.getElement('backgroundBlurStyle')?.getString('value')
       console.info('[DialogOptions_static_0100] column $attrs'+ JSON.stringify(column))
-
+      
       console.info('[DialogOptions_static_0100] borderStyle'+ borderStyle)
       expect(borderStyle).assertEqual('BorderStyle.Solid')
       console.info('[DialogOptions_static_0100] backgroundBlurStyle'+ backgroundBlurStyle)
-
+      
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       console.info('[DialogOptions_static_0100] uniRenderFlag'+ uniRenderFlag)
       if (uniRenderFlag == 'false') {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE');
-
+    
       } else {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.Thin');
       }
@@ -114,7 +115,8 @@ it('DialogOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0200
      * @tc.name     DialogOptions_static_0200
      * @tc.desc     DialogOptions_static_0200
@@ -135,9 +137,7 @@ it('DialogOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       let topLeft:string = column.getElement('borderRadius').getString('topLeft')
       let topRight:string = column.getElement('borderRadius').getString('topRight')
       let bottomLeft:string = column.getElement('borderRadius').getString('bottomLeft')
-      console.info('[DialogOptions_static_0200] borderWidth'+ JSON.stringifyJsonElement(column.getElement('borderWidth')))
       let borderWidth:string = column.getString('borderWidth')
-      console.info('[DialogOptions_static_0200] borderColor'+ JSON.stringifyJsonElement(column.getElement('borderColor')))
       let borderColor:string = column.getString('borderColor')
       let borderStyle:string = column.getString('borderStyle')
       let width:string|undefined = column.getElement('size')?.getString('width')
@@ -173,18 +173,19 @@ it('DialogOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       console.info('[DialogOptions_static_0200] shadow'+ shadow)
       expect(shadow).assertEqual('ShadowStyle.OuterDefaultXS')
       console.info('[DialogOptions_static_0200] backgroundBlurStyle'+ backgroundBlurStyle)
-
+      
       expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE')
 
       let button1 = await driver.findComponent(ON.text('确认'));
-      await (button1?.click() as Promise<void>);
+      await ( button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       console.info('DialogOptions_static_0200 END');
       done();
     });
     
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0300
      * @tc.name     DialogOptions_static_0300
      * @tc.desc     DialogOptions_static_0300
@@ -199,13 +200,10 @@ it('DialogOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      console.info('DialogOptions_static_0300 ----' + JSON.stringifyJsonElement(obj));
 
-      console.info('DialogOptions_static_0300 ----' + JSON.stringify(obj.getArray('$children')[1]));
-      console.info('DialogOptions_static_0300 1111----' + JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0]));
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
 
-      // let backgroundColor:string|undefined = column.getString('backgroundColor')
+      let backgroundColor:string|undefined = column.getString('backgroundColor')
       let borderStyle:string|undefined = column.getString('borderStyle')
       let width:string|undefined = column.getElement('size')?.getString('width')
       let height:string|undefined = column.getElement('size')?.getString('height')
@@ -236,7 +234,8 @@ it('DialogOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0400
      * @tc.name     DialogOptions_static_0400
      * @tc.desc     DialogOptions_static_0400
@@ -269,7 +268,7 @@ it('DialogOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       console.info('[DialogOptions_static_0400] backgroundBlurStyle'+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       console.info('[DialogOptions_static_0400] uniRenderFlag'+ uniRenderFlag)
-
+      
       if (uniRenderFlag == 'false') {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE');
       } else {
@@ -283,9 +282,10 @@ it('DialogOptions_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       done();
     });
 
-
     
-    /*
+    
+    
+/*
      * @tc.number   DialogOptions_static_0500
      * @tc.name     DialogOptions_static_0500
      * @tc.desc     DialogOptions_static_0500
@@ -309,7 +309,7 @@ it('DialogOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       let offsetY:string|undefined = column.getElement('shadow')?.getString('offsetY')
       let fill:string|undefined = column.getElement('shadow')?.getString('fill')
       let backgroundBlurStyle:string|undefined =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_0500] radius '+ radius)
       console.info('[DialogOptions_static_0500] type '+ type)
       console.info('[DialogOptions_static_0500] color '+ color)
@@ -340,7 +340,8 @@ it('DialogOptions_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0600
      * @tc.name     DialogOptions_static_0600
      * @tc.desc     DialogOptions_static_0600
@@ -358,7 +359,7 @@ it('DialogOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string|undefined=  column.getElement('backgroundBlurStyle')?.getString('value')
 
-
+      
       console.info('[DialogOptions_static_0600] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string|undefined = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
@@ -376,7 +377,8 @@ it('DialogOptions_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
 
      
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0700
      * @tc.name     DialogOptions_static_0700
      * @tc.desc     DialogOptions_static_0700
@@ -394,7 +396,7 @@ it('DialogOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string|undefined  =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_0700] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
@@ -410,7 +412,8 @@ it('DialogOptions_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       done();
     });
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0800
      * @tc.name     DialogOptions_static_0800
      * @tc.desc     DialogOptions_static_0800
@@ -428,7 +431,7 @@ it('DialogOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string|undefined  =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_0800] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
@@ -436,7 +439,7 @@ it('DialogOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       } else {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.BACKGROUND_ULTRA_THICK')
       }
-
+      
 
       let button1 = await driver.findComponent(ON.text('确认'));
       await ( button1?.click() as Promise<void>);
@@ -446,7 +449,8 @@ it('DialogOptions_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_0900
      * @tc.name     DialogOptions_static_0900
      * @tc.desc     DialogOptions_static_0900
@@ -464,7 +468,7 @@ it('DialogOptions_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string|undefined  =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_0900] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
@@ -481,7 +485,8 @@ it('DialogOptions_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_1000
      * @tc.name     DialogOptions_static_1000
      * @tc.desc     DialogOptions_static_1000
@@ -499,7 +504,7 @@ it('DialogOptions_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string|undefined  =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_1000] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
@@ -507,7 +512,7 @@ it('DialogOptions_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       } else {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_THIN')
       }
-
+      
 
       let button1 = await driver.findComponent(ON.text('确认'));
       await ( button1?.click() as Promise<void>);
@@ -516,7 +521,8 @@ it('DialogOptions_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       done();
     });
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_1100
      * @tc.name     DialogOptions_static_1100
      * @tc.desc     DialogOptions_static_1100
@@ -534,7 +540,7 @@ it('DialogOptions_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string|undefined  =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_1100] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
@@ -542,7 +548,7 @@ it('DialogOptions_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
       } else {
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_REGULAR')
       }
-
+      
 
       let button1 = await driver.findComponent(ON.text('确认'));
       await ( button1?.click() as Promise<void>);
@@ -552,7 +558,8 @@ it('DialogOptions_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_1200
      * @tc.name     DialogOptions_static_1200
      * @tc.desc     DialogOptions_static_1200
@@ -570,7 +577,7 @@ it('DialogOptions_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string |undefined =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_1200] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
@@ -586,7 +593,8 @@ it('DialogOptions_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
     });
 
     
-    /*
+    
+/*
      * @tc.number   DialogOptions_static_1300
      * @tc.name     DialogOptions_static_1300
      * @tc.desc     DialogOptions_static_1300
@@ -604,7 +612,7 @@ it('DialogOptions_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVE
 
       let column= obj.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')
       let backgroundBlurStyle:string|undefined  =  column.getElement('backgroundBlurStyle')?.getString('value')
-
+      
       console.info('[DialogOptions_static_1300] backgroundBlurStyle '+ backgroundBlurStyle)
       let uniRenderFlag: string = obj.getArray('$children')[1].getElement('$attrs').getString('uniRender');
       if (uniRenderFlag == 'false') {
