@@ -53,7 +53,7 @@ function fnThree(val: Any, callback: (err: Error | null, ...value: FixedArray<An
 }
 
 function fnFour(val: Any, callback: (err: Error | null, ...value: FixedArray<Any>) => void) {
-  if (typeof val === 'number') {
+  if (typeof val === 'int') {
     callback(null, val);
   } else {
     callback(new Error('type err'));
