@@ -46,10 +46,11 @@ import {
   PhotoSource,RecentPhotoInfo
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
-import fs from '@ohos.file.fs';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
+const supportedDeviceForScreenShot = ['phone', 'tablet'];
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -158,18 +159,6 @@ async function testCompleteButton(driver: Driver, options: router.RouterOptions,
   router.back();
 }
 
-async function isSupportHdrFn(){
-  return await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean)=>{
-    if(res){
-      console.info("file exists");
-      return true;
-    } else {
-      console.info("file not exists");
-      return false;
-    }
-  });
-}
-
 export default function TextPicker() {
   describe('testPicker', () => {
     const isExecutePicker = canIUse('SystemCapability.FileManagement.PhotoAccessHelper.Core');
@@ -186,14 +175,14 @@ export default function TextPicker() {
       }
       await CommonFunc.sleep(1000);
       if (!isExecuteTestCase) {
-        const isSupportHdr = await isSupportHdrFn();
-        console.log(`isSupportHdr = ${isSupportHdr}`);
-        if(isSupportHdr){
-          try {
+        try {
+          let deviceTypeInfo: string = deviceInfo.deviceType;
+          console.log(`deviceTypeInfo = ${deviceTypeInfo}`);
+          if(supportedDeviceForScreenShot.indexOf(deviceTypeInfo) !==-1){
             driver.triggerCombineKeys(17, 18);
-          } catch (error) {
-            console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
           }
+        } catch (error) {
+          console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
         }
       }
       done();
