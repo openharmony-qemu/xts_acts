@@ -27,6 +27,7 @@ export default function windowMaximizeTest() {
     let windowStage: ohosWindow.WindowStage;
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -41,6 +42,11 @@ export default function windowMaximizeTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -190,7 +196,7 @@ export default function windowMaximizeTest() {
         windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).then(() => {
           const immersiveModeEnabledState = windowClass.getImmersiveModeEnabledState();
           console.info(`${message} Succeeded in maximizing the window, immersiveModeEnabledState is：${immersiveModeEnabledState}`);
-          if(isPCStatus == ''|| isAutoWindow =='false'){
+          if(isFreeWindowMode == false){
             expect(immersiveModeEnabledState).assertTrue();
             done();
           }else{
@@ -344,7 +350,7 @@ export default function windowMaximizeTest() {
         windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).then(() => {
           const immersiveModeEnabledState = windowClass.getImmersiveModeEnabledState();
           console.info(`${message} Succeeded in maximizing the window, immersiveModeEnabledState is：${immersiveModeEnabledState}`);
-          if(isPCStatus == ''|| isAutoWindow =='false'){
+          if(isFreeWindowMode == false){
             expect(immersiveModeEnabledState).assertTrue();
             done();
           }else{
@@ -1275,7 +1281,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         await subWindowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
         let windowStatusType = subWindowClass.getWindowStatus();
         console.info(caseName+ ' subWindowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
-        if(isPCStatus == ''|| isAutoWindow =='false'){
+        if(isFreeWindowMode == false){
           expect(windowStatusType).assertEqual(window.WindowStatusType.FLOATING)
           await subWindowClass.destroyWindow()
           done()
@@ -1325,7 +1331,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
         let windowStatusType = subWindowClass.getWindowStatus();
         console.info(caseName+ ' subWindowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
-        if(isPCStatus == ''|| isAutoWindow =='false'){
+        if(isFreeWindowMode == false){
           expect(windowStatusType).assertEqual(window.WindowStatusType.FLOATING)
           await subWindowClass.destroyWindow()
           done()
@@ -1375,7 +1381,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         await subWindowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
         let windowStatusType = subWindowClass.getWindowStatus();
         console.info(caseName+ ' subWindowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
-        if(isPCStatus == ''|| isAutoWindow =='false'){
+        if(isFreeWindowMode == false){
           expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
           await subWindowClass.destroyWindow()
           done()

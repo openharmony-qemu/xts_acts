@@ -127,6 +127,7 @@ export default function windowAutoSaveTest() {
     let isPCStatus: string = '';
     let mainWindowClass:ohosWindow.Window;
     let isAutoWindow:string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
@@ -143,6 +144,10 @@ export default function windowAutoSaveTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
