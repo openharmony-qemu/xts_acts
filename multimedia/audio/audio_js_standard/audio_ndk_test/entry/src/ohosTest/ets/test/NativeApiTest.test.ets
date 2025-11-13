@@ -4470,7 +4470,6 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
-
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_SESSIONMANAGER_BLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_001
      * @tc.name      : BluetoothAndNearlinkPreferredRecordCategory
