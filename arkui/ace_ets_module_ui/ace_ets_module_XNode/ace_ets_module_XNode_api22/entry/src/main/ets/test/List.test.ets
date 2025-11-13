@@ -13,25 +13,35 @@
  * limitations under the License.
  */
 import FlushStateNodeTest from './ReactiveBuilderNodeTest/FlushStateNodeTest.test'
-import InheritFreezeOptionsNodeTest from './ReactiveBuilderNodeTest/InheritFreezeOptionsNodeTest.test'
+import FrameNodeNullTest from './ReactiveBuilderNodeTest/FrameNodeNullTest.test'
+import InheritFreezeOptionsNodeFalseTest from './ReactiveBuilderNodeTest/InheritFreezeOptionsNodeFalseTest.test'
+import InheritFreezeOptionsNodeTrueTest from './ReactiveBuilderNodeTest/InheritFreezeOptionsNodeTrueTest.test'
 import IsDisposedNodeTest from './ReactiveBuilderNodeTest/IsDisposedNodeTest.test'
 import postInputEventTest from './ReactiveBuilderNodeTest/postInputEventTest.test'
 import postTouchEventTest from './ReactiveBuilderNodeTest/postTouchEventTest.test'
+import ReuseRecycleNodeTest from './ReactiveBuilderNodeTest/ReuseRecycleNodeTest.test'
 import UpdateConfigurationNodeTest from './ReactiveBuilderNodeTest/UpdateConfigurationNodeTest.test'
 import FlushStateContentTest from './ReactiveComponentContentTest/FlushStateContentTest.test'
-import InheritFreezeOptionsContentTest from './ReactiveComponentContentTest/InheritFreezeOptionsContentTest.test'
+import InheritFreezeOptionsContentFalseTest from './ReactiveComponentContentTest/InheritFreezeOptionsContentFalseTest.test'
+import InheritFreezeOptionsContentTrueTest from './ReactiveComponentContentTest/InheritFreezeOptionsContentTrueTest.test'
 import IsDisposedContentTest from './ReactiveComponentContentTest/IsDisposedContentTest.test'
+import ReuseRecycleContentTest from './ReactiveComponentContentTest/ReuseRecycleContentTest.test'
 import UpdateConfigurationContentTest from './ReactiveComponentContentTest/UpdateConfigurationContentTest.test'
 
 export default function testsuite() {
   FlushStateNodeTest();
-  InheritFreezeOptionsNodeTest();
+  FrameNodeNullTest();
+  InheritFreezeOptionsNodeFalseTest();
+  InheritFreezeOptionsNodeTrueTest();
   IsDisposedNodeTest();
   postInputEventTest();
   postTouchEventTest();
+  ReuseRecycleNodeTest();
   UpdateConfigurationNodeTest();
   FlushStateContentTest();
-  InheritFreezeOptionsContentTest();
+  InheritFreezeOptionsContentFalseTest();
+  InheritFreezeOptionsContentTrueTest();
   IsDisposedContentTest();
+  ReuseRecycleContentTest();
   UpdateConfigurationContentTest();
 }
