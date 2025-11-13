@@ -109,8 +109,8 @@ export default function booleanTest() {
       const TAG = "testBooleanConstructor0005";
       try {
         let bfalse = new Boolean(false);
-        expect(typeof bfalse).assertEqual("object");
-        expect(String(Boolean(bfalse))).assertEqual("true");
+        expect(typeof bfalse).assertEqual("boolean");
+        expect(String(Boolean(bfalse))).assertEqual("false");
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -207,7 +207,7 @@ export default function booleanTest() {
     it('testNewBoolean0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testNewBoolean0010";
       try {
-        let bObject = new Boolean({});
+        let bObject = new Boolean({} as object);
         let result = Boolean(bObject);
         expect(String(result)).assertEqual('true');
       } catch (err) {
@@ -402,7 +402,7 @@ export default function booleanTest() {
     it('textBoolean.prototype.toString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'textBoolean.prototype.toString0010';
       try {
-        const result = new Boolean({});
+        const result = new Boolean({} as object);
         expect(result.toString()).assertEqual('true');
       } catch (err) {
         err = err as BusinessError;
