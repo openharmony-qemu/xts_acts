@@ -381,7 +381,6 @@ describe('ActsNetworkSearchTest',  () => {
      * @tc.desc    Test isRadioOn api by callback.
      */
     it('Telephony_NetworkSearch_isRadioOn_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
-        let CaseName = "Telephony_NetworkSearch_isNrSupported_Promise_0400 ";
         radio.isRadioOn(0, (err,data) => {
             if (err) {
                 console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
