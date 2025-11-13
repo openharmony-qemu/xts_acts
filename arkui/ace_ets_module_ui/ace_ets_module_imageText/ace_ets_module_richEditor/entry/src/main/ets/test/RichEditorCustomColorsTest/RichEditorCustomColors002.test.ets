@@ -68,6 +68,12 @@ export default function RichEditorCustomColors002() {
       let pointCenter = await rich.getBoundsCenter();
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('rich_struct');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0026] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+      expect(obj.$type).assertEqual('RichEditor');
       done();
     });
   })

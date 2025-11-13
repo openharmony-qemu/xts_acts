@@ -23,7 +23,7 @@ export default function BarStateModifierTest() {
     beforeEach(async (done: Function) => {
       console.info("BarStateModifierTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/barStateModifier',
+        url: 'MainAbility/pages/RichEditorApi13/barStateModifier',
       }
       try {
         router.clear();

@@ -22,7 +22,7 @@ export default function RichEditorOnWillChangeTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorOnWillChangeTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/onWillChange',
+        url: 'MainAbility/pages/RichEditorApi14/onWillChange',
       }
       try {
         router.clear();

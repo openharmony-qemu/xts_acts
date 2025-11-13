@@ -23,7 +23,7 @@ export default function RichEditorOnHoverTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorOnHoverTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/onHover',
+        url: 'MainAbility/pages/RichEditorApi14/onHover',
       }
       try {
         router.clear();

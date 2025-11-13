@@ -23,7 +23,7 @@ export default function RichEditorTextStyle() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorTextStyle beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorTextStyle',
+        url: 'MainAbility/pages/RichEditorApi16/RichEditorTextStyle',
       }
       try {
         router.clear();

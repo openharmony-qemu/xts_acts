@@ -146,6 +146,39 @@ import RichEditorCustomSpan014 from './RichEditorCustomSpanTest/RichEditorCustom
 import RichEditorCustomSpan015 from './RichEditorCustomSpanTest/RichEditorCustomSpan015.test'
 import RichEditorFromStyledStringTest from "./RichEditor/RichEditorFromStyledString.test";
 
+import RichEditorApi from './RichEditorApi11Test/RichEditorApi.test';
+import SXrenderingStrategyJsunit from './RichEditorApi11Test/SXrenderingStrategyJsunit.test';
+import SXsymbolSpanStyleJsunit from './RichEditorApi11Test/SXsymbolSpanStyleJsunit.test';
+import SXsymbolStyleJsunit from './RichEditorApi11Test/SXsymbolStyleJsunit.test';
+import SXvalueResourceJsunit from './RichEditorApi11Test/SXvalueResourceJsunit.test'
+import richEditorApi21 from './RichEditorApi11Test/richEditorApi/richEditorApi2.test'
+import richEditorApi31 from './RichEditorApi11Test/richEditorApi/richEditorApi3.test'
+import RichEditorTest11 from './RichEditorApi11Test/RichEditor/RichEditor.test';
+import richEditorApi4 from './RichEditorApi11Test/richEditorApi/richEditorApi4.test';
+import richEditorApi5 from './RichEditorApi11Test/richEditorApi/richEditorApi5.test';
+import richEditorApi61 from './RichEditorApi11Test/richEditorApi/richEditorApi6.test';
+import richEditorApi71 from './RichEditorApi11Test/richEditorApi/richEditorApi7.test';
+import richEditorApi81 from './RichEditorApi11Test/richEditorApi/richEditorApi8.test';
+import ActsRichEditorTest from './RichEditorApi11Test/RichEditor/Richeditor01.test';
+import richEditorTest from './RichEditorApi11Test/RichEditorJsunit.test';
+import RichEditorReturnValuesTest from './RichEditorApi11Test/RichEditorReturnValues.test';
+
+import RichEditorMenuType from './RichEditorApi13Test/RichEditorMenuType.test';
+import RichEditorStyledStringTest from './RichEditorApi13Test/RichEditorStyledStringTest.test';
+import BarStateTest from './RichEditorApi13Test/barState.test';
+import BarStateModifierTest from './RichEditorApi13Test/barStateModifier.test';
+
+import RichEditorOnHoverTest from './RichEditorApi14Test/onHover.test';
+import getRectsForRangeTest from './RichEditorApi14Test/getRectsForRange.test'
+import RichEditorOnWillChangeTest from './RichEditorApi14Test/onWillChange.test';
+import RichEditorOnDoubleClickTest from './RichEditorApi14Test/onDoubleClickOnHover.test';
+
+import RichEditorKeyboardAppearanceTest from './RichEditorApi15Test/RichEditorKeyboardAppearance.test';
+import RichEditorStopBackPressTest from './RichEditorApi15Test/RichEditorStopBackPress.test';
+import SelectionMenuOptions from './RichEditorApi15Test/SelectionMenuOptions.test';
+
+import RichEditorTextStyle from './RichEditorApi16Test/RichEditorTextStyle.test';
+
 
 export default function testsuite() {
   PresetTest();
@@ -280,4 +313,37 @@ export default function testsuite() {
   RichEditorCustomSpan014();
   RichEditorCustomSpan015();
   RichEditorFromStyledStringTest();
+
+  ActsRichEditorTest();   // api11
+  SXrenderingStrategyJsunit();
+  SXsymbolSpanStyleJsunit();
+  SXsymbolStyleJsunit();
+  SXvalueResourceJsunit();
+  richEditorApi4();
+  richEditorApi5();
+  richEditorApi61();
+  richEditorApi71();
+  richEditorApi81();
+  RichEditorApi();
+  richEditorApi21();
+  richEditorApi31();
+  RichEditorTest11();
+  richEditorTest();
+  RichEditorReturnValuesTest();
+
+  RichEditorMenuType();   // api13
+  RichEditorStyledStringTest();
+  BarStateTest();
+  BarStateModifierTest();
+
+  RichEditorOnHoverTest();   // api14
+  getRectsForRangeTest();
+  RichEditorOnWillChangeTest();
+  RichEditorOnDoubleClickTest();
+
+  RichEditorKeyboardAppearanceTest();  // api15
+  RichEditorStopBackPressTest();
+  SelectionMenuOptions();
+
+  RichEditorTextStyle();  // api16
 }

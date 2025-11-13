@@ -19,18 +19,10 @@ import ImageTextTest from './textTest/ImageText.test';
 import TextAreaCallbackTest from './TextAreaTest/TextAreaCallback.test';
 import TextAreaSelectTest from './TextAreaTest/TextAreaSelect.test';
 import Image_QRCode_Api from './textTest/Image_QRCode_Api.test';
-import RichEditorApi from './RichEditorTest/RichEditorApi.test';
 import APIgetUIFontConfigJsunit from './fontTest/APIgetUIFontConfigJsunit.test';
 import APITextBackgroundStyleJsunit from './ContainerSpanTest/APITextBackgroundStyleJsunit.test'
-import SXrenderingStrategyJsunit from './RichEditorTest/SXrenderingStrategyJsunit.test';
-import SXsymbolSpanStyleJsunit from './RichEditorTest/SXsymbolSpanStyleJsunit.test';
-import SXsymbolStyleJsunit from './RichEditorTest/SXsymbolStyleJsunit.test';
-import SXvalueResourceJsunit from './RichEditorTest/SXvalueResourceJsunit.test'
 import SXSymbolGlyphSINGLE01Jsunit from './SymbolGlyphTest/SXSymbolGlyphSINGLE01Jsunit.test'
 import textDataDataDetectorConfig from './textTest/textDataDataDetectorConfig.test'
-import richEditorApi2 from './RichEditorTest/richEditorApi/richEditorApi2.test'
-import richEditorApi3 from './RichEditorTest/richEditorApi/richEditorApi3.test'
-import RichEditorTest from './RichEditorTest/RichEditor/RichEditor.test';
 import spanApi1 from './spanTest/spanApi/spanApi1.test';
 import symbolGlyphApi1 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi1.test'
 import symbolGlyphApi2 from './SymbolGlyphTest/symbolGlyphApi/symbolGlyphApi2.test'
@@ -48,11 +40,6 @@ import UIfont from './fontTest/UIfont/UIfont.test';
 import TextfieldMultiTest from './textTest/TextfieldMulti.test';
 import TextfieldOtherTest from './textTest/TextfieldOther.test';
 import TextfieldSingleTest from './textTest/TextfieldSingle.test';
-import richEditorApi4 from './RichEditorTest/richEditorApi/richEditorApi4.test';
-import richEditorApi5 from './RichEditorTest/richEditorApi/richEditorApi5.test';
-import richEditorApi6 from './RichEditorTest/richEditorApi/richEditorApi6.test';
-import richEditorApi7 from './RichEditorTest/richEditorApi/richEditorApi7.test';
-import richEditorApi8 from './RichEditorTest/richEditorApi/richEditorApi8.test';
 import search from './SearchTest/SearchTest.test';
 import CurveTest from './textTest/CurveJsunit.test';
 import backgroundAndSizeSettingJsunit from './textTest/BackgroundAndSizeSettingJsunit.test';
@@ -95,13 +82,11 @@ import textAreaOnCutJsunit from './TextAreaTest/textArea.test';
 import textInputOnEditChangeJsunit from './TextInputTest/textInput.test';
 import text3Jsunit from './textTest/Text3Jsunit.test';
 import span3Jsunit from './spanTest/Span3Jsunit.test';
-import ActsRichEditorTest from './RichEditorTest/RichEditor/Richeditor01.test';
 import textAreaJsunit3 from './TextAreaTest/TextAreaJsunit3.test';
 import textInputJsunit3 from './TextInputTest/TextInputJsunit3.test';
 import textObscuredTest from './textTest/textObscuredTest.test';
 import textSpanFontTest from './textTest/textSpanFont.test';
 import textAreaOnCaretAndKeyboardTest from './TextAreaTest/textAreaOnCaretAndKeyboard.test';
-import richEditorTest from './RichEditorTest/RichEditorJsunit.test';
 import textTextCaseTest from './textTest/textTextCase.test';
 import textTextDecorationTest from './textTest/textTextDecoration.test';
 import searchTest from './SearchTest/SearchJsunit1.test';
@@ -115,38 +100,23 @@ import ContainerSpanModifierTest from './ContainerSpanTest/ContainerSpanModifier
 import SearchModifierTest from "./SearchTest/SearchModifier.test";
 import SymbolGlyphFontWeightTest from "./SymbolGlyphTest/fontWeight.test";
 import SpanTextShadowTest from './textTest/SpanTextShadowTest.test';
-import RichEditorReturnValuesTest from './RichEditorTest/RichEditorReturnValues.test';
 
 
 export default function testsuite() {
-  ActsRichEditorTest();
   textAreaInputTest()
   stageFontTest();
   stageMediaquery();
-  richEditorApi4();
-  richEditorApi5();
-  richEditorApi6();
-  richEditorApi7();
-  richEditorApi8();
   search();
   textStyleJsunit();
   marqueeJsunit();
   ImageTextTest();
   TextAreaCallbackTest();
   Image_QRCode_Api();
-  RichEditorApi();
   APIgetUIFontConfigJsunit();
   TextAreaSelectTest();
   APITextBackgroundStyleJsunit();
-  SXrenderingStrategyJsunit();
-  SXsymbolSpanStyleJsunit();
-  SXsymbolStyleJsunit();
-  SXvalueResourceJsunit();
   SXSymbolGlyphSINGLE01Jsunit();
   textDataDataDetectorConfig()
-  richEditorApi2()
-  richEditorApi3()
-  RichEditorTest()
   spanApi1()
   symbolGlyphApi1()
   symbolGlyphApi2()
@@ -207,7 +177,6 @@ export default function testsuite() {
   textSpanFontTest();
   textArea_bottom();
   textAreaOnCaretAndKeyboardTest();
-  richEditorTest();
   textTextCaseTest();
   textTextDecorationTest();
   searchTest();
@@ -222,5 +191,4 @@ export default function testsuite() {
   SearchModifierTest();
   SymbolGlyphFontWeightTest();
   SpanTextShadowTest();
-  RichEditorReturnValuesTest();
 }

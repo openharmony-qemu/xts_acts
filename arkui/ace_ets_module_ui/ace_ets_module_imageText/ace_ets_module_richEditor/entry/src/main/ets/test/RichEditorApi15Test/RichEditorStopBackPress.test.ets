@@ -22,7 +22,7 @@ export default function RichEditorStopBackPressTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorStopBackPressTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorStopBackPress',
+        url: 'MainAbility/pages/RichEditorApi15/RichEditorStopBackPress',
       }
       try {
         router.clear();

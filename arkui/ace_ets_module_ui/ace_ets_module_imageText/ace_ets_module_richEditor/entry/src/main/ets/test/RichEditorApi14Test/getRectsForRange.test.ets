@@ -23,7 +23,7 @@ export default function getRectsForRangeTest() {
     beforeEach(async (done: Function) => {
       console.info("getRectsForRangeTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/RichEditor/getRectsForRange",
+        url: "MainAbility/pages/RichEditorApi14/getRectsForRange",
       }
       try {
         router.clear();

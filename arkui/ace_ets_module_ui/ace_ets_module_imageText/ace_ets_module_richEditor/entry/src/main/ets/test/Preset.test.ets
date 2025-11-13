@@ -55,9 +55,9 @@ export default function PresetTest() {
       if (globalThis.winLeft == 0) {
         console.info('PresetTest PresetTest0001 START');
         await CommonFunc.sleep(1000);
-        let textArea1 = await driver.findComponent(ON.id('textArea1'));
+        let textArea1 = await driver.findComponent(ON.id('textArea1_preset'));
         await CommonFunc.sleep(500);
-        let textArea2 = await driver.findComponent(ON.id('textArea2'));
+        let textArea2 = await driver.findComponent(ON.id('textArea2_preset'));
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
@@ -109,7 +109,7 @@ export default function PresetTest() {
         console.info('PresetTest0001 2 Button success');
       }else {
         //切换HAD 输入法
-        let textArea2 = await driver.findComponent(ON.id('textArea2'));
+        let textArea2 = await driver.findComponent(ON.id('textArea2_preset'));
         await CommonFunc.sleep(500);
         await textArea2.inputText('aaa');
         await CommonFunc.sleep(500);
@@ -120,7 +120,12 @@ export default function PresetTest() {
         }
       }
       
-      expect("").assertEqual("");
+      let strJson = getInspectorByKey('textArea1_preset');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0026] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+      expect(obj.$type).assertEqual('TextArea');
       console.info("[PresetTest0001] end");
 
     });

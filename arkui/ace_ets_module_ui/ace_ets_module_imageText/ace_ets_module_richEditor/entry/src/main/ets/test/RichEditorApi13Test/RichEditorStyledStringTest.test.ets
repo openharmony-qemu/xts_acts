@@ -23,7 +23,7 @@ export default function RichEditorStyledStringTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorStyledStringTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorStyledStringTest',
+        url: 'MainAbility/pages/RichEditorApi13/RichEditorStyledStringTest',
       }
       try {
         router.clear();

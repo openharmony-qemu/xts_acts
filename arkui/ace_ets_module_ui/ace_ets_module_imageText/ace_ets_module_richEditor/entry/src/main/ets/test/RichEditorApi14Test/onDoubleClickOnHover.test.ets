@@ -23,7 +23,7 @@ export default function RichEditorOnDoubleClickTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorOnDoubleClickTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/onDoubleClickOnHover',
+        url: 'MainAbility/pages/RichEditorApi14/onDoubleClickOnHover',
       }
       try {
         router.clear();

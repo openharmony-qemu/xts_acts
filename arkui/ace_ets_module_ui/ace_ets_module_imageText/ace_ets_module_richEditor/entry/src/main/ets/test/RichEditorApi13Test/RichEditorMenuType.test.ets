@@ -24,7 +24,7 @@ export default function RichEditorMenuType() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorMenuType beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorMenuType',
+        url: 'MainAbility/pages/RichEditorApi13/RichEditorMenuType',
       }
       try {
         router.clear();

@@ -22,7 +22,7 @@ export default function RichEditorKeyboardAppearanceTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorKeyboardAppearanceTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorKeyboardAppearance',
+        url: 'MainAbility/pages/RichEditorApi15/RichEditorKeyboardAppearance',
       }
       try {
         router.clear();
