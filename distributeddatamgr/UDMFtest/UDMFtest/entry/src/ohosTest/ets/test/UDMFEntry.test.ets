@@ -2783,7 +2783,8 @@ export default function UDMFEntryTest() {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200 start')
       let record = new unifiedDataChannel.UnifiedRecord();
       let types = record.getTypes();
-      expect(types.length).assertEqual(0);
+      expect(types.length).assertEqual(1);
+      expect(types[0]).assertEqual('')
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200 end')
     })
 
