@@ -1,3 +1,4 @@
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -31,8 +32,8 @@ import {
   Row,
   Button,
   ClickEvent,
-  Week,ForEach,
-  FontWeight,RowOptions,Position,HorizontalAlign,wrapBuilder,
+  Week,ForEach,applyStyles,CommonMethod,
+  FontWeight,RowOptions,Position,HorizontalAlign,wrapBuilder,CustomBuilderT,
   Axis,AlertDialogParamWithButtons,DialogAlignment,DialogButtonStyle,DialogAlignment,
   Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
@@ -41,7 +42,7 @@ import {
 import {
   State,
   Link,
-  PropRef,AppStorage,StorageLink
+  Prop,AppStorage,StorageLink
 } from '@ohos.arkui.stateManagement';
 class Params {
   public text: string = ''
@@ -73,8 +74,13 @@ class SetParam {
   public func?: () => void
 }
 
-// @Extend(Text)
-// function componentTextStyle() {.fontSize(15).backgroundColor(Color.Orange).margin(3).padding(3).borderWidth(1.0)}
+
+function componentTextStyle(instance: CommonMethod) {
+
+  instance.backgroundColor(Color.Orange)
+  instance.margin(3)
+  instance.padding(3)
+  instance.borderWidth(1.0)}
 
 @Component
 export struct MyComponent {
@@ -82,11 +88,11 @@ export struct MyComponent {
   func: () => void = () => {
   }
 
-  // @Styles
-  // pressedStyle() {.backgroundColor(0x238E23)}
-  //
-  // @Styles
-  // normalStyles() {.backgroundColor(0x0000ff)}
+
+  pressedStyle(instance: CommonMethod) {instance.backgroundColor(0x238E23)}
+
+
+  normalStyles(instance: CommonMethod) {instance.backgroundColor(0x0000ff)}
 
   build() {
     Text(this.title)
@@ -96,7 +102,8 @@ export struct MyComponent {
       .fontColor(0xffffff)
       .padding(5)
       .onClick(this.func)
-      // .stateStyles({ pressed: this.pressedStyle, normal: this.normalStyles })
+      .applyStyles(this.pressedStyle)
+      .applyStyles(this.normalStyles)
   }
 }
 
@@ -113,15 +120,15 @@ struct overlayManagerTest {
   private setLevelOrder: SetParam[] = [
     {
       title: '-100001', func: () => {
-      // let componentContent : ComponentContent<Params>= new ComponentContent<Params>(this.ctx, wrapBuilder<Params>(builderText), new Params('-100001', { x: 100, y: 10 } as Position)
-      // )
-      // this.contentArray.push(componentContent)
-      // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(-100001))
-      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
+      let componentContent : ComponentContent<Params>= new ComponentContent<Params>(this.ctx, wrapBuilder<CustomBuilderT<Params>>(builderText), new Params('-100001', { x: 100, y: 10 } as Position)
+      )
+      this.contentArray.push(componentContent)
+      this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(-100001))
+      let topOrder: LevelOrder = this.promptAction.getTopOrder()!;
       if (topOrder !== undefined) {
         console.error('[addComponent] topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder()!;
       if (bottomOrder !== undefined) {
         console.error('[addComponent] bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -129,17 +136,17 @@ struct overlayManagerTest {
     } as SetParam,
     {
       title: '100001', func: () => {
-      // let componentContent : ComponentContent= new ComponentContent<Params>(
-      //   this.ctx, wrapBuilder<Params>(builderText),
-      //   new Params('100001', { x: 100, y: 15 } as Position)
-      // )
-      // this.contentArray.push(componentContent)
-      // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100001))
-      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
+      let componentContent : ComponentContent<Params>= new ComponentContent<Params>(
+        this.ctx, wrapBuilder<CustomBuilderT<Params>>(builderText),
+        new Params('100001', { x: 100, y: 15 } as Position)
+      )
+      this.contentArray.push(componentContent)
+      this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(100001))
+      let topOrder: LevelOrder = this.promptAction.getTopOrder()!;
       if (topOrder !== undefined) {
         console.error('topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder()!;
       if (bottomOrder !== undefined) {
         console.error('bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -147,17 +154,17 @@ struct overlayManagerTest {
     } as SetParam,
     {
       title: 'undefined', func: () => {
-      // let componentContent : ComponentContent= new ComponentContent<Params>(
-      //   this.ctx, wrapBuilder<Params>(builderText),
-      //   new Params('undefined', { x: 100, y: 20 } as Position)
-      // )
-      // this.contentArray.push(componentContent)
-      // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(0))
-      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
+      let componentContent : ComponentContent<Params>= new ComponentContent<Params>(
+        this.ctx, wrapBuilder<CustomBuilderT<Params>>(builderText),
+        new Params('undefined', { x: 100, y: 20 } as Position)
+      )
+      this.contentArray.push(componentContent)
+      this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(0))
+      let topOrder: LevelOrder = this.promptAction.getTopOrder()!;
       if (topOrder !== undefined) {
         console.error('topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder()!;
       if (bottomOrder !== undefined) {
         console.error('bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -165,17 +172,17 @@ struct overlayManagerTest {
     } as SetParam,
     {
       title: '0.111', func: () => {
-      // let componentContent : ComponentContent= new ComponentContent<Params>(
-      //   this.ctx, wrapBuilder<Params>(builderText),
-      //   new Params('0.111', { x: 100, y: 25 } as Position)
-      // )
-      // this.contentArray.push(componentContent)
-      // this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(0.111))
-      let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
+      let componentContent : ComponentContent<Params>= new ComponentContent<Params>(
+        this.ctx, wrapBuilder<CustomBuilderT<Params>>(builderText),
+        new Params('0.111', { x: 100, y: 25 } as Position)
+      )
+      this.contentArray.push(componentContent)
+      this.overlayNode.addComponentContentWithOrder(componentContent, LevelOrder.clamp(0.111))
+      let topOrder: LevelOrder = this.promptAction.getTopOrder()!;
       if (topOrder !== undefined) {
         console.error('topOrder: ' + topOrder.getOrder());
       }
-      let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
+      let bottomOrder: LevelOrder = this.promptAction.getBottomOrder()!;
       if (bottomOrder !== undefined) {
         console.error('bottomOrder: ' + bottomOrder.getOrder());
       }
@@ -192,34 +199,37 @@ struct overlayManagerTest {
       }, (item: SetParam) => item.title as String )
       Text(`Top` + this.top)
         .id('myTop')
-        //.componentTextStyle()
+        .fontSize(15)
+        .applyStyles(componentTextStyle)
         .onClick(() : void => {
-          let topOrder: LevelOrder | undefined = this.promptAction.getTopOrder();
+          let topOrder: LevelOrder = this.promptAction.getTopOrder()!;
           if (topOrder !== undefined) {
-            AppStorage.setOrCreate<double>('myTop', topOrder.getOrder());
-            this.top = AppStorage.get<double>('myTop') as number
+            AppStorage.setOrCreate<number>('myTop', topOrder.getOrder());
+            this.top = AppStorage.get<number>('myTop') as number
             console.error('[test] topOrder: ' + topOrder.getOrder());
           }
         })
       Text(`Bottom` + this.bottom)
         .id('myBottom')
-        //.componentTextStyle()
+        .fontSize(15)
+        .applyStyles(componentTextStyle)
         .onClick(() : void => {
-          let bottomOrder: LevelOrder | undefined = this.promptAction.getBottomOrder();
+          let bottomOrder: LevelOrder = this.promptAction.getBottomOrder()!;
           if (bottomOrder !== undefined) {
-            AppStorage.setOrCreate<double>('myBottom', bottomOrder.getOrder());
-            this.bottom = AppStorage.get<double>('myBottom') as number
+            AppStorage.setOrCreate<number>('myBottom', bottomOrder.getOrder());
+            this.bottom = AppStorage.get<number>('myBottom') as number
             console.error('[test] bottomOrder: ' + bottomOrder.getOrder());
           }
         })
 
       Text(`Remove`)
         .id('remove')
-        //.componentTextStyle()
+        .fontSize(15)
+        .applyStyles(componentTextStyle)
         .onClick(() : void => {
           if (this.arrayIndex >= 0 && this.arrayIndex < this.contentArray.length) {
-            // let componentContent = this.contentArray.splice(this.contentArray.length - 1, 1)
-            // this.overlayNode.removeComponentContent(componentContent.pop())
+            let componentContent = this.contentArray.splice(this.contentArray.length - 1, 1)
+            this.overlayNode.removeComponentContent(componentContent.pop() as ComponentContent<Params>)
           } else {
             console.info('arrayIndex有误')
           }

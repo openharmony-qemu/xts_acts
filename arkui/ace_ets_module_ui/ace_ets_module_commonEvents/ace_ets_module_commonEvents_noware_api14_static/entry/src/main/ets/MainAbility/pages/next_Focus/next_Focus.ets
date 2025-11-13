@@ -4,41 +4,46 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import { LengthMetrics } from '@kit.ArkUI';
 import {
+  Entry,
+  Component,
   $r,
-  Button,
-  ClickEvent,
-  Color,
   Column,
   ColumnOptions,
-  Component,
+  Text,
   DragEvent,
-  Entry,
-  Flex,
-  FlexSpaceOptions,
-  FlexWrap,
-  GestureEvent,
-  GestureModifier,
-  HorizontalAlign,
   Image,
-  LengthMetrics,
+  Button,
+  GestureModifier,
+  UIGestureEvent,
+  SourceTool,
+  GestureEvent,
+  ClickEvent,
   Margin,
   Padding,
-  SourceTool,
-  Text,
-  UIGestureEvent,
+  Color,
+  HorizontalAlign,
+  LengthMetrics,
+  FlexWrap,
+  Flex,
+  FlexSpaceOptions,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -50,10 +55,7 @@ struct FlexExample2 {
     Column() {
       Column({ space: 5 } as ColumnOptions) {
         Text('Wrap').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({
-          wrap: FlexWrap.Wrap,
-          space: { main: LengthMetrics.px(50), cross: LengthMetrics.px(50) } as FlexSpaceOptions
-        }) {
+        Flex({ wrap: FlexWrap.Wrap, space: { main: LengthMetrics.px(50), cross: LengthMetrics.px(50) } as FlexSpaceOptions }) {
           Button('a1')
             .id('a1')
             .nextFocus({ up: 'a2' });

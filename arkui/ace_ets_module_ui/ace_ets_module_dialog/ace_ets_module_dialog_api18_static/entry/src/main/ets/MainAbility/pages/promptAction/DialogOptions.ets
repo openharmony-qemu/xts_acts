@@ -12,8 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { promptAction } from '@kit.ArkUI';
-// import { BusinessError } from '@kit.BasicServicesKit';
+
 import { LevelOrder } from '@ohos.promptAction'
 import { BusinessError } from '@ohos.base'
 import { UIContext } from '@ohos.arkui.UIContext'
@@ -43,7 +42,7 @@ import {
 import {
   State,
   Link,
-  PropRef,AppStorage
+  Prop,AppStorage
 } from '@ohos.arkui.stateManagement';
 let promptAction = new PromptAction()
 
@@ -58,7 +57,7 @@ struct DialogOptions0 {
       Text('弹窗')
       Button('确认').onClick(() : void => {
         try {
-          promptAction.closeCustomDialog(this.customDialogComponentId)
+          this.getUIContext().getPromptAction().closeCustomDialog(this.customDialogComponentId)
         } catch (error) {
           let message = (error as BusinessError).message;
           let code = (error as BusinessError).code;
@@ -75,7 +74,7 @@ struct DialogOptions0 {
           .id('click1')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -101,7 +100,7 @@ struct DialogOptions0 {
           .id('click2')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -140,7 +139,7 @@ struct DialogOptions0 {
           .id('click13')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -168,7 +167,7 @@ struct DialogOptions0 {
           .id('click3')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -203,17 +202,17 @@ struct DialogOptions0 {
           .id('click4')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
-              backgroundColor: undefined,
-              cornerRadius: undefined,
-              borderWidth: undefined,
-              borderColor: undefined,
-              borderStyle: undefined,
-              width: undefined,
-              height: undefined,
+              // backgroundColor: null,
+              // cornerRadius: null,
+              // borderWidth: null,
+              // borderColor: null,
+              // borderStyle: null,
+              // width: null,
+              // height: null,
               shadow: ShadowStyle.OUTER_FLOATING_SM,
               backgroundBlurStyle:BlurStyle.Thick,
               onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
@@ -239,7 +238,7 @@ struct DialogOptions0 {
           .id('click5')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -274,7 +273,7 @@ struct DialogOptions0 {
           .id('click6')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -303,7 +302,7 @@ struct DialogOptions0 {
           .id('click7')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -329,7 +328,7 @@ struct DialogOptions0 {
           .id('click8')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -358,7 +357,7 @@ struct DialogOptions0 {
           .id('click9')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -384,7 +383,7 @@ struct DialogOptions0 {
           .id('click10')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -413,7 +412,7 @@ struct DialogOptions0 {
           .id('click11')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
@@ -439,7 +438,7 @@ struct DialogOptions0 {
           .id('click12')
           .height('8%')
           .onClick(() : void => {
-            promptAction.openCustomDialog({
+            this.getUIContext().getPromptAction().openCustomDialog({
               builder: () => {
                 this.customDialogComponent()
               },
