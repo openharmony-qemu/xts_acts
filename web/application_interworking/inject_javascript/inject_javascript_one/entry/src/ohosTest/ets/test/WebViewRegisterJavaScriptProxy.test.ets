@@ -73,7 +73,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0013');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0013', 10, '');
     });
 
     /**
@@ -90,7 +90,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0014');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0014', 10, '');
     });
 
     /**
@@ -107,7 +107,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0015');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0015', 10, '');
     });
 
     /**
@@ -124,7 +124,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0016');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0016', 10, '');
     });
 
     /**
@@ -141,7 +141,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0017');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0017', 10, '');
     });
 
     /**
@@ -158,7 +158,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0018');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0018', 10, '');
     });
 
     /**
@@ -175,7 +175,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0019');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0019', 10, '');
     });
 
     /**
@@ -192,7 +192,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0020');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0020', 10, '');
     });
 
 
@@ -210,7 +210,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0021');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0021', 10, '');
     });
 
     /**
@@ -227,7 +227,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0022');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0022', 10, '');
     });
 
     /**
@@ -244,7 +244,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0023');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0023', 10, '');
     });
 
     /**
@@ -261,7 +261,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0024');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0024', 10, '');
     });
 
     /**
@@ -278,7 +278,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0025');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0025', 10, '');
     });
 
     /**
@@ -295,7 +295,7 @@ export default function ActsAceRegisterJavaScriptProxy() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      await Utils.waitAndClickComponent(driver, 'testWebView_registerJavaScriptProxy_0026');
+      sendEventByKey('testWebView_registerJavaScriptProxy_0026', 10, '');
     });
   });
 }
