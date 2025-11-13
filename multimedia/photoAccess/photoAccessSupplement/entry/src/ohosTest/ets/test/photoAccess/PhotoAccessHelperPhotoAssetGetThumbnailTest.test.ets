@@ -133,12 +133,10 @@ export default function sendableGetThumbnailTest() {
         let asset: sendablePhotoAccessHelper.PhotoAsset = await getSendableFileAsset(testContext, testName, ops);
         let thumb = await asset.getThumbnail(size);
         console.info(TAG,testName,'getThumbnail',thumb);
-        // expect(thumb).not().assertUndefined();
         expect().assertFail();
         done();
       } catch (error) {
         console.error(TAG, `${testName} failed; error: ${error?.code}, ${error?.message}`);
-        // expect().assertFail();
         expect(error.code).assertEqual('13900020')
         done();
       }

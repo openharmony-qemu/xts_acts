@@ -56,5 +56,5 @@ export default function testsuite() {
   setTest();
   sendAbleSetTest();
   PhotoAccessMediaAlbumChangeRequestAddAssetsTest();
-  sendableGetThumbnailTest()
+  sendableGetThumbnailTest();
 }

@@ -214,6 +214,7 @@ export async function getSendableFileAsset(context: common.UIAbilityContext, tes
     resolve(asset);
   });
 }
+
 export { COMMON_WAIT_DURATION,
   cameraPosition,
   cameraType,
