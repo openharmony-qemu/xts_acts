@@ -615,7 +615,7 @@ export default function nfcMifareClassicTagTest() {
     })
 
     /**
-     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_1500
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1500
      * @tc.name getSectorCount
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
