@@ -37,6 +37,7 @@ export default function ActsNotificationRequestTest() {
         notification.requestEnableNotification(async (err) => {
           log(`come in requestEnableNotification`);
           if (err.code) {
+            except(err.code!=0).assertTrue()
             exit(`requestEnableNotification err: ${err.code}`);
             return;
           }
@@ -54,6 +55,7 @@ export default function ActsNotificationRequestTest() {
           await sleep(1500);
           await button.click();
         } else {
+          except(false).assertTrue()
           exit('null button');
         }
       };
