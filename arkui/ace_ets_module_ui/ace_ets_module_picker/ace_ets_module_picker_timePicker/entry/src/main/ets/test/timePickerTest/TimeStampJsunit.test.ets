@@ -44,6 +44,14 @@ export default function timeStampJsunit() {
       console.info("timeStamp after each called");
     });
 
+    /**
+     * @tc.number: timeStampTest_0100
+     * @tc.name  : timeStampTest_0100
+     * @tc.desc  : To test the timePicker eventData
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('timeStampTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('timeStampTest_0100 START');
       await Utils.sleep(1500);
