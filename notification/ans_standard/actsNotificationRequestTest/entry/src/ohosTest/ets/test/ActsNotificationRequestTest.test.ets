@@ -37,7 +37,7 @@ export default function ActsNotificationRequestTest() {
         notification.requestEnableNotification(async (err) => {
           log(`come in requestEnableNotification`);
           if (err.code) {
-            except(err.code!=0).assertTrue()
+            except(false).assertTrue()
             exit(`requestEnableNotification err: ${err.code}`);
             return;
           }
