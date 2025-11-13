@@ -12,26 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import APIsetOnclickTest from './frameNodeTest/APIsetOnclickTest.test';
-import APIsetOnTouchTest from './frameNodeTest/APIsetOnTouchTest.test';
-import frameNodeTest from './frameNodeTest/frameNodeTest.test';
-import frameNodeTest1 from './frameNodeTest/frameNodeTest1.test';
-import nodeContainerTest from './frameNodeTest/nodeContainerTest.test';
-import frameNodeGetInterfaceTest from './frameNodeTest/frameNodeTestGetInterface.test';
-import APIsetOnFocusTest from './frameNodeTest/APIsetOnFocusTest.test';
-import APIsetOnHoverTest from './frameNodeTest/APIsetOnHoverTest.test';
-import nodeList from './frameNodeTest/nodeList.test';
-import nodeListItemGroup from './frameNodeTest/nodeListItemGroup.test';
+import gestureEventTest from './FrameNodeTest/gestureEventTest.test';
+import upDownTreeEventTest from './FrameNodeTest/upDownTreeEvent.test';
+import frameNodeIsVisibleTest from './FrameNodeTest/frameNodeIsVisible.test';
 
 export default function testsuite() {
-  APIsetOnclickTest();
-  APIsetOnTouchTest();
-  frameNodeTest()
-  frameNodeTest1()
-  nodeContainerTest()
-  frameNodeGetInterfaceTest()
-  APIsetOnFocusTest()
-  APIsetOnHoverTest()
-  nodeList()
-  nodeListItemGroup()
+  frameNodeIsVisibleTest();
+  upDownTreeEventTest();
+  gestureEventTest();
 }
