@@ -25,7 +25,7 @@ export default function telSyncTest() {
      * @tc.name    Call interface hasCallSync
      * @tc.desc    Function test
      */
-    it('SUB_Telephony_call_hasCallSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_Telephony_call_hasCallSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_Telephony_call_hasCallSync_0100';
       let simState: sim.SimState = await sim.getSimStateSync(0);
       if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
@@ -50,7 +50,7 @@ export default function telSyncTest() {
      * @tc.name    Call interface getCallStateSync
      * @tc.desc    Function test
      */
-    it('SUB_Telephony_call_getCallStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_Telephony_call_getCallStateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'SUB_Telephony_call_getCallStateSync_0100';
       let simState: sim.SimState = await sim.getSimStateSync(0);
       if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
@@ -126,22 +126,22 @@ export default function telSyncTest() {
       } else {
         let slotId = 0;
         let res = radio.getSignalInformationSync(slotId)
-        radio.isRadioOn((err, data) => {
+        radio.isRadioOn((err) => {
           if (err) {
             try {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 111  " +
-              ${JSON.stringify(err)});
+                res);
               expect(res.length).assertEqual(0);
               done();
             } catch (err) {
-              console.info("SUB_Telephony_radio_getSignalInformationSync_0100 err " + ${JSON.stringify(err)});
+              console.info("SUB_Telephony_radio_getSignalInformationSync_0100 err " + JSON.stringify(err));
               expect(true).assertFalse();
               done();
             }
           } else {
             try {
               console.info("SUB_Telephony_radio_getSignalInformationSync_0100 " +
-              radio.getSignalInformationSync(slotId));
+                res);
               expect(res.length >= 0).assertTrue();
               done();
             } catch (err) {
@@ -191,6 +191,42 @@ export default function telSyncTest() {
             }
           }
         });
+      }
+    });
+
+    /*
+* @tc.number  SUB_Telephony_radio_getRadioTechSync_0100
+* @tc.name    Radio interface getRadioTechSync
+* @tc.desc    Function test
+*/
+    it('SUB_Telephony_radio_getRadioTechSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      try {
+        let slotId = 0;
+        console.info("SUB_Telephony_radio_getRadioTechSync_0100 " + radio.getRadioTechSync(slotId));
+        expect(radio.getRadioTechSync(slotId).psRadioTech >= -1).assertTrue();
+        done();
+      } catch (err) {
+        console.info("SUB_Telephony_radio_getRadioTechSync_0100 err " + JSON.stringify(err));
+        expect(err != "").assertTrue();
+        done();
+      }
+    });
+
+    /*
+* @tc.number  SUB_Telephony_radio_getRadioTechSync_0200
+* @tc.name    Radio interface getRadioTechSync
+* @tc.desc    Function test
+*/
+    it('SUB_Telephony_radio_getRadioTechSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      try {
+        let slotId = 0;
+        console.info("SUB_Telephony_radio_getRadioTechSync_0200 " + radio.getRadioTechSync(slotId));
+        expect(radio.getRadioTechSync(slotId).csRadioTech >= -1).assertTrue();
+        done();
+      } catch (err) {
+        console.info("SUB_Telephony_radio_getRadioTechSync_0200 err " + JSON.stringify(err));
+        expect(err != "").assertTrue();
+        done();
       }
     });
 
