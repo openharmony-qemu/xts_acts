@@ -167,7 +167,7 @@ export default function audioNDK() {
     })
 
     /* *
-        * @tc.number    : SUB_MULTIMEDIA_AUDIO_NDK_CAPTURER_START_0100
+        * @tc.number    : SUB_MULTIMEDIA_AUDIO_CREATE_ENGINE_0100
         * @tc.name      : start audioCapturer
         * @tc.desc      : test OH_AudioCapturer_Start
         * @tc.size      : MediumTest
