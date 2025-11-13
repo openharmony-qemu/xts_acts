@@ -939,7 +939,7 @@ export default function ArrayToLocaleStringTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x48.toChar(), 0x69.toChar()]
         const result = toLocaleString(arr);
-        const expected: string = '"H","i"';
+        const expected: string = 'H,i';
         expect(result).assertEqual(expected);
         console.info(`${caseName}, test end`);
         Done();
@@ -960,7 +960,7 @@ export default function ArrayToLocaleStringTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x41.toChar(), 0x42.toChar(), 0x43.toChar()]
         const result = toLocaleString(arr);
-        const expected: string = '"A","B","C"';
+        const expected: string = 'A,B,C';
         expect(result).assertEqual(expected);
         console.info(`${caseName}, test end`);
         Done();
@@ -1002,7 +1002,7 @@ export default function ArrayToLocaleStringTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x31.toChar(), 0x32.toChar(), 0x33.toChar()]
         const result = toLocaleString(arr);
-        const expected: string = '"1","2","3"';
+        const expected: string = '1,2,3';
         expect(result).assertEqual(expected);
         console.info(`${caseName}, test end`);
         Done();
@@ -1023,7 +1023,7 @@ export default function ArrayToLocaleStringTest() {
         console.info(`${caseName}, test start`);
         const arr: FixedArray<char> = [0x21.toChar(), 0x3F.toChar(), 0x40.toChar()]
         const result = toLocaleString(arr);
-        const expected: string = '"!","?","@"';
+        const expected: string = '!,?,@';
         expect(result).assertEqual(expected);
         console.info(`${caseName}, test end`);
         Done();
