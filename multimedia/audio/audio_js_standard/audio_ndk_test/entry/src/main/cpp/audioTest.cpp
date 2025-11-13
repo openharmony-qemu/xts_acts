@@ -36,7 +36,7 @@
 #include <set>
 #include <algorithm>
 #include <random>
-#include <ohaudio/native_audio_suite_engine.h>
+#include <ohaudiosuite/native_audio_suite_engine.h>
 
 #include "AudioResourceManagerTest.h"
 
