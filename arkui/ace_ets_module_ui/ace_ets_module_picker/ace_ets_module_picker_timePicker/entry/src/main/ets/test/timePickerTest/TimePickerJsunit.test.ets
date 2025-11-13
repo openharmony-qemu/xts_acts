@@ -147,6 +147,14 @@ export default function TimePickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.number: TimePickerJsunit_0300
+     * @tc.name  : TimePickerJsunit_0300
+     * @tc.desc  : Tests the property of the picker component
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('TimePickerJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify 24-hour function of TimePicker component
       console.info('[TimePickerJsunit_0300] START');
