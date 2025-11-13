@@ -285,7 +285,7 @@ struct cameraFormat {
               }.size({ width: '100%', height: '30%' }).justifyContent(FlexAlign.SpaceEvenly)
             }.size({ width: '100%', height: '20%' })
           }
-        }.height('80%').width('100%')
+        }.height('75%').width('100%')
       }.scrollBarColor(Color.White) // 滚动条颜色
       .scrollBarWidth(10)
 

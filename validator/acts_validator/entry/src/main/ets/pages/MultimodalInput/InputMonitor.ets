@@ -141,7 +141,7 @@ struct InputMonitor {
         btnTwo: $btnTwo,
         btnThree: $btnThree,
         btnFour: $btnFour,
-      })
+      }).margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

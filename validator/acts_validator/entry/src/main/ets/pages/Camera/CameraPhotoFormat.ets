@@ -395,7 +395,7 @@ struct cameraOrientation {
       .height('80%')
       .scrollBarColor(Color.White) // 滚动条颜色
       .scrollBarWidth(10)
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Camera/Camera_index',

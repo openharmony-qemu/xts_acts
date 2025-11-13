@@ -122,7 +122,7 @@ struct ScreenShot {
           Text(`返回值：${this.resMessage}`)
         }.height('80%')
         .width('100%')
-
+        .margin({ bottom: '-10vp' })
         CustomContainer({
           title: this.name,
           Url: 'pages/Screen/Screen_index',
