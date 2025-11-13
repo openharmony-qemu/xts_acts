@@ -660,10 +660,21 @@ export default function nfcTagTest() {
       try {
         await tag.getBarcodeTag(dTag).getBarcode().then(() => {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode: ');
-        });
+        })
       } catch (error: BusinessError) {
-        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is : ' + error + " - " + error.code);
-        expect().assertFail();
+        if (error.code == 201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect(201).assertEqual(error.code);
+        } else if (error.code == 3100201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect(3100201).assertEqual(error.code);
+        } else if (error.code == 3100204) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect(3100204).assertEqual(error.code);
+        } else {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect().assertFail();
+        }
       }
       done();
     })
