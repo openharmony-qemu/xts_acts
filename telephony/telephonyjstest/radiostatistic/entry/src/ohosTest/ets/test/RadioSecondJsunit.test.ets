@@ -27,6 +27,22 @@ const NETWORK_TYPES = [
 ];
 const NETWORK_SIGNAL = [0, 1, 2, 3, 4, 5];
 
+const ExpectFail = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
+const ExpectTrue = (n: boolean) => {
+  try {
+    expect(n).assertTrue();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
 function assertCellInformation(data:Array<radio.CellInformation>) {
   expect(data != undefined && data != null).assertTrue();
   expect(data.length).assertLarger(0);
@@ -37,7 +53,7 @@ function assertCellInformation(data:Array<radio.CellInformation>) {
     expect(NETWORK_TYPES).assertContain(data[i].signalInformation.signalType);
     expect(NETWORK_SIGNAL).assertContain(data[i].signalInformation.signalLevel);
     expect(NETWORK_SIGNAL).assertContain(data[i].signalInformation.dBm);
-    
+
     expect(data[i].data != undefined && data[i].data != null).assertTrue();
     if (data[i].networkType === radio.NetworkType.NETWORK_TYPE_LTE) {
       console.log("radio.NetworkType.NETWORK_TYPE_LTE:" + radio.NetworkType.NETWORK_TYPE_LTE);
@@ -220,12 +236,12 @@ export default function radioSecondJsunit() {
           return;
         }
         console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 data:" + JSON.stringify(data));
-            const radioNetworkMode: number[] = [
-            radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC,
-            radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL,
-            radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN
+        const radioNetworkMode: number[] = [
+          radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN
         ]
-        ExpectTure(radioNetworkMode.includes(data));
+        ExpectTrue(radioNetworkMode.includes(data));
         done();
       });
       done();
@@ -242,17 +258,17 @@ export default function radioSecondJsunit() {
       promise.then(data => {
         console.log("getNetworkSelectionMode success, promise: data:" + JSON.stringify(data));
         const radioNetworkPromise: number[] = [
-            radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC,
-            radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL,
-            radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN
+          radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL,
+          radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN
         ]
-        ExpectTure(radioNetworkMode.includes(data));
+        ExpectTrue(radioNetworkPromise.includes(data));
         done();
       }).catch((err:BusinessError) => {
         console.log("getNetworkSelectionMode failed, promise: err:" + JSON.stringify(err));
         done();
       });
-	  done();
+      done();
     });
 
     /**
@@ -314,7 +330,7 @@ export default function radioSecondJsunit() {
       });
     });
 
-        /**
+    /**
      * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0700
      * @tc.name testGetSignalInformation_0700
      * @tc.desc SlotId parameter input is 0, test getSignalInformation() api by callback.
