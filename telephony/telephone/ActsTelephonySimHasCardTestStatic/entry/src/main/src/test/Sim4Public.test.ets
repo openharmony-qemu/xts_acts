@@ -286,7 +286,7 @@ export default function Sim4Public() {
         console.info(`${caseName} test end`);
         done();
       }).catch((err) =>{
-        if (err && err?.code === 8300001){
+        if (err && (err as BusinessError)?.code === 8300001){
           console.info(`${caseName} successfully: Parameter error and return 8300001`);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
@@ -361,12 +361,12 @@ export default function Sim4Public() {
           done();
         }
         sim.getSimLabel(1).then((data: sim.SimLabel | undefined) => {
-          if (data?.index <= 2 && data?.simType == sim.SimType.PSIM) {
+          if (data?.index as int <= 2 && data?.simType == sim.SimType.PSIM) {
             console.info(`${caseName} sim card is PSIM,data -> ${JSON.stringify(data)}`);
             ExpectTrue(true);
             console.info(`${caseName} 01 test end`);
             done();
-          } else if (data?.index <= 2 && data?.simType == sim.SimType.ESIM){
+          } else if (data?.index as int <= 2 && data?.simType == sim.SimType.ESIM){
             console.info(`${caseName} sim card is ESIM,data -> ${JSON.stringify(data)}`);
             ExpectTrue(true);
             console.info(`${caseName} 02 test end`);
@@ -413,7 +413,7 @@ export default function Sim4Public() {
         console.info(`${caseName} test end`);
         done();
       }).catch((err) =>{
-        if (err && err?.code === 8300001){
+        if (err && (err as BusinessError)?.code === 8300001){
           console.info(`${caseName} successfully: Parameter error and return 8300001`);
           ExpectTrue(true);
           console.info(`${caseName} test end`);
