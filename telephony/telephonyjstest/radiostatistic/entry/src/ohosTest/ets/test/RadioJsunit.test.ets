@@ -67,13 +67,7 @@ export default function radioJsunit() {
       let CaseName = "Telephony_NetworkSearch_isNrSupported_Promise_0400 ";
       try {
         let result = radio.isNrSupported();
-        if (result) {
-            expect(result == true).assertTrue();
-            console.info('${CaseName} success, has NR ->${JSON.stringify(result)}');
-        } else {
-            expect(result == false).assertTrue();
-            console.info('${CaseName} success, dose not has NR ->${JSON.stringify(result)}');
-        }
+        console.info("Result: " + result);
         let result0 = radio.isNrSupported(SLOT_0);
         console.info("Result0: " + result0);
         console.info(CaseName + "is complete!");
@@ -102,7 +96,13 @@ export default function radioJsunit() {
             console.info('${CaseName} success, dose not has NR ->${JSON.stringify(result)}');
         }
         let result0 = radio.isNRSupported(SLOT_0);
-        console.info("Result0: " + result0);
+        if (result0) {
+            expect(result0 == true).assertTrue();
+            console.info('${CaseName} success, has NR ->${JSON.stringify(result0)}');
+        } else {
+            expect(result0 == false).assertTrue();
+            console.info('${CaseName} success, dose not has NR ->${JSON.stringify(result0)}');
+        }
         console.info(CaseName + "is complete!");
         done();
       } catch (err) {
