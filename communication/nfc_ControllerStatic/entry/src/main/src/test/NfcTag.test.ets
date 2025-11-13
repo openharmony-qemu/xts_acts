@@ -637,6 +637,37 @@ export default function nfcTagTest() {
       done();
     })
 
+    /**
+       * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1500
+       * @tc.name Test getBarcode
+       * @tc.desc This interface getBarcode
+       * @tc.size since 16
+       * @tc.type Function
+       * @tc.level Level 0
+       */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let dTag: tag.TagInfo = {
+        "uid": [0x01, 0x02, 0x03, 0x04],
+        "technology": [10],
+        "extrasData": [
+          {
+            "AppData": "A0C0", "ProtocolInfo": "131F",
+          }
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      try {
+        await tag.getBarcodeTag(dTag).getBarcode().then(() => {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode: ');
+        });
+      } catch (error: BusinessError) {
+        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is : ' + error + " - " + error.code);
+        expect().assertFail();
+      }
+      done();
+    })
+
     console.info("*************[nfc_test] start nfc js unit test end*************");
   })
 }
