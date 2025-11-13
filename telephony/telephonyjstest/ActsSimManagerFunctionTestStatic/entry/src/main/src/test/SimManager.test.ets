@@ -223,11 +223,11 @@ export default function SimManagerTest() {
     it('Telephony_Sim_isSimActive_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_isSimActive_Promise_0700';
       let promise = sim.isSimActive(SLOTID_INVALID);
-      promise.then(data => {
+      promise.then((data: string | undefined) => {
         console.info(CASE_NAME + `isSimActive success, promise: data->` + data);
         expect(data).assertFalse();
         done();
-      }).catch(err => {
+      }).catch((err: Error) => {
         console.info(CASE_NAME + "isSimActive promise err info :" + err);
         done();
       });
@@ -315,14 +315,14 @@ export default function SimManagerTest() {
      */
     it('Telephony_Sim_getSimAccountInfo_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let promise = sim.getSimAccountInfo(0);
-      promise.then(data => {
+      promise.then((data: string | undefined) => {
         console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getSimAccountInfo_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           expect(data).assertTrue();
           done();
         });
-      }).catch(err => {
+      }).catch((err: Error) => {
         console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + err);
         expect(true).assertTrue();
         done();
@@ -356,14 +356,14 @@ export default function SimManagerTest() {
      */
     it('Telephony_Sim_getActiveSimAccountInfoList_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let promise = sim.getActiveSimAccountInfoList();
-      promise.then(data => {
+      promise.then((data: string | undefined) => {
         console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           expect(data).assertTrue();
           done();
         });
-      }).catch(err => {
+      }).catch((err: Error) => {
         console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + err);
         expect(true).assertTrue();
         done();
