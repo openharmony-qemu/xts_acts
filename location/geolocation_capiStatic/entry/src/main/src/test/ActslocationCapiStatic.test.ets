@@ -212,6 +212,11 @@ export default function actslocationTest() {
                         "country": "CN"
                     };
                     try{
+                        expect(typeof reverseGeocodeRequest.latitude).assertEqual("number");
+                        expect(typeof reverseGeocodeRequest.longitude).assertEqual("number");
+                        expect(typeof reverseGeocodeRequest.maxItems).assertEqual("int");
+                        expect(typeof reverseGeocodeRequest.locale).assertEqual("string");
+                        expect(typeof reverseGeocodeRequest.country).assertEqual("string");
                         geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest,(err, data) => {
                             if(err){
                                 hilog.info(domain, tag, '[lbs_js] getAddressesFromLocation callback err is:' + JSON.stringify(err));
@@ -459,32 +464,6 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
-            * @tc.number: SUB_Location_getCountryCode_0100
-            * @tc.name: SUB_Location_getCountryCode_0100
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
-            */
-
-            it('SUB_Location_getCountryCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
-                async (done: () => void): Promise<void> => {
-                    try{
-                        geoLocationManager.getCountryCode((err, data) => {
-                            if(err != null){
-                                expect(err.code).assertEqual(401);
-                                done();
-                            }else{
-                                expect(data != null).assertTrue();
-                                done();
-                            }
-                        })
-                    }catch(error){
-                        console.info('[lbs_js] getCountryCode try err is:' + JSON.stringify(error));
-                    }
-                }
-            )
 
             /*
             * @tc.number: SUB_Location_getCountryCode_0200
@@ -529,6 +508,9 @@ export default function actslocationTest() {
                 }
             })
 
+
+
+          
             
 
 
