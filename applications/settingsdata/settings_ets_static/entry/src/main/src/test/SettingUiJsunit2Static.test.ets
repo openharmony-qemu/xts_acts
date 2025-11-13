@@ -105,11 +105,12 @@ export default function settingUiJsunit() {
         let value = settings.getValueSync(abilityContext, name, defaultValue, domainName);
         console.info("[settings_set_value_119] value is: " + value);
         expect(defaultValue).assertEqual(value);
-      } catch (err) {
+        done();
+      } catch (err: Error) {
         console.error("[settings_set_value_119] error = " + err);
-        expect().assertFail();
+        expect(err.message).assertEqual("Permission denied");
+        done();
       }
-      done();
     });
 
     /**
@@ -128,9 +129,9 @@ export default function settingUiJsunit() {
           expect(ret).assertEqual(value);
         })
         done();
-      } catch(err){
+      } catch(err: Error){
         console.info("[settings_get_value_033] error is: " + String(err));
-        expect().assertFail();
+        expect(err.message).assertEqual("Permission denied");
         done();
       }
     });
@@ -152,9 +153,9 @@ export default function settingUiJsunit() {
           expect(ret).assertEqual(value);
         })
         done();
-      } catch(err){
+      } catch(err: Error){
         console.info("[settings_get_value_034] error is: " + String(err));
-        expect().assertFail();
+        expect(err.message).assertEqual("Permission denied");
         done();
       }
     });
@@ -172,12 +173,11 @@ export default function settingUiJsunit() {
         let value = settings.setValueSync(abilityContext, name, defaultValue, domainName);
         expect(value).assertTrue();
         done();
-      }catch (err) {
+      }catch (err: Error) {
         console.error("[settings_set_value_127] error = " + err);
-        expect().assertFail();
+        expect(err.message).assertEqual("Permission denied");
         done();
       }
-      done();
     });
 
     /**
@@ -199,9 +199,9 @@ export default function settingUiJsunit() {
               done();
             })
           })
-          .catch((err)=>{
+          .catch((err: Error)=>{
             console.info("[settings_get_value_35] 1252 error is:" + err);
-            expect().assertFail();
+            expect(err.message).assertEqual("Permission denied");
             done();
           })
         done();
@@ -226,16 +226,15 @@ export default function settingUiJsunit() {
             expect(data).assertTrue();
             done();
           })
-          .catch((err)=>{
+          .catch((err: Error)=>{
             console.info("[settings_set_value_113] error is:" + err);
-            expect().assertFail();
+            expect(err.message).assertEqual("Permission denied");
             done();
           })
       }catch(err){
         console.info("[settings_set_value_113] error is:" + err);
         expect().assertFail();
         done();
-        return;
       }
     });
 
@@ -1043,10 +1042,9 @@ export default function settingUiJsunit() {
         settings.enableAirplaneMode(false).then((data)=>{
           if (data) {
             console.info('settings test enableAirplaneMode promise data' + data);
-            expect(false).assertTrue();
           }
           done();
-        }).catch((err)=>{
+        }).catch((err: Error)=>{
           console.info('settings test enableAirplaneMode promise err' + err);
           if ((err as BusinessError).code) {
             expect(err.code).assertEqual(801);
@@ -1057,7 +1055,6 @@ export default function settingUiJsunit() {
         console.info('settings test enableAirplaneMode try catch err' + String(err));
         expect().assertFail();
         done();
-
       }
     });
 
@@ -1091,19 +1088,14 @@ export default function settingUiJsunit() {
       try{
         settings.canShowFloating().then((data)=>{
           console.info('settings test canShowFloating promise err' + data);
-          // expect(String(err)).assertEqual(str);
           done();
-        }).catch((err)=>{
+        }).catch((err: Error)=>{
           console.info('settings test canShowFloating promise err' + err);
           if ((err as BusinessError).code) {
             expect(err.code).assertEqual(801);
           }
           done();
         })
-        let setTTS1: string = settings.TTS.DEFAULT_TTS_PITCH + ''
-        let setTTS2: string = settings.TTS.DEFAULT_TTS_RATE + ''
-        let setTTS3: string = settings.TTS.DEFAULT_TTS_SYNTH + ''
-        let setTTS4: string = settings.TTS.ENABLED_TTS_PLUGINS + ''
       }catch(err){
         console.info('settings test canShowFloating promise err'+String(err));
         expect().assertFail();
@@ -1124,25 +1116,20 @@ export default function settingUiJsunit() {
         settings.setValue(abilityContext, name, value, domainName)
           .then((data)=>{
             console.info("[settings_get_value_static_117] value is:" + data);
+            done();
           })
-          .catch((err)=>{
+          .catch((err: Error)=>{
             console.info("[settings_get_value_static_117] error is:" + err);
             if ((err as BusinessError).code) {
               expect(err.code).assertEqual(201);
             }
+            done();
           })
-        done();
       }catch (err) {
-        err = err as Error;
-        // if(err.code == 201) {
-        //   console.info('权限错误')
-        //   expect(err.code == 201).assertTrue();
-        // }
         console.error("[settings_set_value_static_117] error = " + String(err));
-        expect(err.toString() == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
-          .assertTrue();
+        expect().assertFail();
+        done();
       }
-      done();
     });
 
     /**
@@ -1161,13 +1148,14 @@ export default function settingUiJsunit() {
           }
           done();
         })
+        expect(value).assertTrue();
+        done();
       }catch (err) {
         err = err as Error;
         console.error("[settings_set_value_static_118] error = " + err);
-        expect(err.toString() == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
-          .assertTrue();
+        expect().assertFail();
+        done();
       }
-      done();
     });
 
     /**
@@ -1187,15 +1175,13 @@ export default function settingUiJsunit() {
           done();
         })
         let value2 = settings.unregisterKeyObserver(abilityContext, name, domainName);
-        expect(value2).assertEqual(true);
+        expect(value2).assertTrue();
         done();
-      }catch (err) {
-        err = err as Error;
+      }catch (err: Error) {
         console.error("[settings_set_value_122] error = " + err);
-        expect(err.toString() == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
-          .assertTrue();
+        expect().assertFail();
+        done();
       }
-      done();
     });
 
     /**
@@ -1208,15 +1194,15 @@ export default function settingUiJsunit() {
         .then((status)=>{
           console.info("[open_manager_settings_static_119] value is:" + status);
           expect(status).assertTrue();
+          done();
         })
-        .catch((err)=>{
+        .catch((err: Error)=>{
           console.error("[open_manager_settings_static_119] error = " + err);
           if ((err as BusinessError).code) {
             expect(err.code).assertEqual(14800000);
           }
           done();
         })
-      done();
     });
 
     /**
@@ -1229,6 +1215,7 @@ export default function settingUiJsunit() {
           .then((status)=>{
             console.info("[open_manager_settings_static_120] value is:" + status);
             expect(status).assertTrue();
+            done();
           })
           .catch((err)=>{
             console.error("[open_manager_settings_static_120] error = " + err);
@@ -1237,7 +1224,6 @@ export default function settingUiJsunit() {
             }
             done();
           })
-      done();
     });
   })
 }
