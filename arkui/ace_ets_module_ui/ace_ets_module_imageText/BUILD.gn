@@ -52,6 +52,7 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_nowear_api16:ActsAceEtsModuleImageTextNowearApi16Test",
       "ace_ets_module_imageText_nowear_api18:ActsAceEtsModuleImageTextNowearApi18Test",
       "ace_ets_module_imageText_nowear_api20:ActsAceEtsModuleImageTextNowearApi20Test",
+      "ace_ets_module_richEditor:ActsAceEtsModuleRichEditorTest",
     ]
   }
 }
