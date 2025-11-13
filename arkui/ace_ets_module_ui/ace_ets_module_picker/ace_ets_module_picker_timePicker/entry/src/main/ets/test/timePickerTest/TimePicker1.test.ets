@@ -14,10 +14,8 @@
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
-import Utils from './Utils';
+import Utils from '../../MainAbility/common/Common';
 import router from '@ohos.router';
-import CommonFunc from "../../MainAbility/common/Common";
-
 
 interface FontStyleCls {
   size: Length,
@@ -42,7 +40,7 @@ export default function TimePicker1Test() {
         if (!("TimePicker1" == pages.name)) {
           console.info("get TimePicker state pages.name: " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           console.info("push TimePicker page result: " + JSON.stringify(result));
         }
       } catch (err) {
