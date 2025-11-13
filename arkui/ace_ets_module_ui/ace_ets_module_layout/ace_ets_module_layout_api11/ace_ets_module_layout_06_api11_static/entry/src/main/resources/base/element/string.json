@@ -9,6 +9,14 @@
       "value": "entry_MainAbility"
     },
     {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
       "name": "description_mainability",
       "value": "ETS_Empty Ability"
     },

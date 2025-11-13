@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -80,7 +80,7 @@ struct ListItem_SizeChange {
         .width(this.testWidth)
         .height(this.testHeight)
         .key('ListItemTest1')
-        .backgroundColor(0xF5DEB3)
+        .backgroundColor(Color.Yellow)
 
         ListItem() {
           Text('2')
@@ -91,7 +91,7 @@ struct ListItem_SizeChange {
         .width(300)
         .height(100)
         .key('ListItemTest2')
-        .backgroundColor(0xD2B48C)
+        .backgroundColor(Color.Blue)
 
         ListItem() {
           Text('3')
@@ -102,7 +102,7 @@ struct ListItem_SizeChange {
         .width(300)
         .height(100)
         .key('ListItemTest3')
-        .backgroundColor(0xffa500)
+        .backgroundColor(Color.Yellow)
 
         ListItem() {
           Text('4')
@@ -113,17 +113,17 @@ struct ListItem_SizeChange {
         .width(300)
         .height(100)
         .key('ListItemTest4')
-        .backgroundColor(0xFFFFFF)
+        .backgroundColor(Color.Blue)
       }
       .height(500)
       .width(350)
       .key('ListItemSizeChange1')
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor('#AFEEEE')
       .scrollBar(BarState.On)
       .onScrollIndex((firstIndex: int, lastIndex: int):void => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
       })
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC)
+    }.width('100%').height('100%').backgroundColor('#DCDCDC')
   }
 }

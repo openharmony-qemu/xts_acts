@@ -49,7 +49,6 @@ export default function List_aspectRatio_all() {
   describe('List_aspectRatio_all', () => {
     beforeAll(() => {
       console.info("List_aspectRatio_all beforeAll start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,7 +65,7 @@ export default function List_aspectRatio_all() {
         console.info("get List_aspectRatio_all state pages:" + JSON.stringify(pages));
         if (!("List_aspectRatio_all" == pages.name)) {
           console.info("get List_aspectRatio_all pages.name:" + JSON.stringify(pages.name));
-           routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -85,6 +84,7 @@ export default function List_aspectRatio_all() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_all_static_0100
@@ -111,6 +111,7 @@ it('SUB_ACE_List_aspectRatio_all_static_0100', Level.LEVEL0, async (done: () => 
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_all_static_0200
      * @tc.name     SUB_ACE_List_aspectRatio_all_static_0200
@@ -136,6 +137,7 @@ it('SUB_ACE_List_aspectRatio_all_static_0200', Level.LEVEL0, async (done: () => 
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_all_static_0300
      * @tc.name     SUB_ACE_List_aspectRatio_all_static_0300
@@ -160,6 +162,7 @@ it('SUB_ACE_List_aspectRatio_all_static_0300', Level.LEVEL0, async (done: () => 
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_all_static_0400

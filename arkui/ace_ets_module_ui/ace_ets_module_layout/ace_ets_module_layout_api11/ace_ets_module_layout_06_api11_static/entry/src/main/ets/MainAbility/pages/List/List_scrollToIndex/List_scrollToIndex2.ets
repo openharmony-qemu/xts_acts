@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -157,7 +157,7 @@ struct List_scrollToIndex2 {
         }
       }
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
-        ForEach(this.arr, (item: number, index?: int) => {
+        ForEach(this.arr, (item: number, index?: number) => {
           ListItem() {
             Text('ListItem' + item)
               .width('90%')
@@ -166,7 +166,7 @@ struct List_scrollToIndex2 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.id('List_scrollToIndex2_ListItem' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }
       .id('List_scrollToIndex2_List')
       .width('80%')

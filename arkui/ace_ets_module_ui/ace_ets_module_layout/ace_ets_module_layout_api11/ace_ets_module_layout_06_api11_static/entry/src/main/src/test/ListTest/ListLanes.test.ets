@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Dimension } from '@ohos.arkui.component'
+import { Axis } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../ets/MainAbility/common/Rect';
@@ -69,6 +69,7 @@ export default function ListLanes() {
     
     
 
+
 /*
      * @tc.number   ListLanes_static_001
      * @tc.name     ListLanes_static_001
@@ -79,7 +80,7 @@ it('ListLanes_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
 
       console.info('[ListLanes_static_001] START');
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name:'listGutter', value: '-1vp' });
+      AppStorage.get<MessageManager<string | number | Axis>>('messageManager')?.notify({ name:'listGutter', value: '-1vp' });
       await CommonFunc.sleep(200);
 
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
@@ -95,6 +96,7 @@ it('ListLanes_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
     
     
 
+
 /*
      * @tc.number   ListLanes_static_002
      * @tc.name     ListLanes_static_002
@@ -105,7 +107,7 @@ it('ListLanes_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
 
       console.info('[ListLanes_002] START');
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name:'listGutter', value: '10%' });
+      AppStorage.get<MessageManager<string | number | Axis>>('messageManager')?.notify({ name:'listGutter', value: '10%' });
       await CommonFunc.sleep(200);
 
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
@@ -121,6 +123,7 @@ it('ListLanes_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
     
     
 
+
 /*
      * @tc.number   ListLanes_static_007
      * @tc.name     ListLanes_static_007
@@ -131,8 +134,8 @@ it('ListLanes_static_007', Level.LEVEL0, async (done: () => void): Promise<void>
 
       console.info('[ListLanes_007] START');
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name:'listGutter', value: '10px' });
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name:'listSpace', value: '10px' });
+      AppStorage.get<MessageManager<string | number | Axis>>('messageManager')?.notify({ name:'listGutter', value: '10px' });
+      AppStorage.get<MessageManager<string | number | Axis>>('messageManager')?.notify({ name:'listSpace', value: '10px' });
       await CommonFunc.sleep(200);
 
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
@@ -150,6 +153,7 @@ it('ListLanes_static_007', Level.LEVEL0, async (done: () => void): Promise<void>
     
     
 
+
 /*
      * @tc.number   ListLanes_static_008
      * @tc.name     ListLanes_static_008
@@ -160,8 +164,8 @@ it('ListLanes_static_008', Level.LEVEL0, async (done: () => void): Promise<void>
 
       console.info('[ListLanes_008] START');
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name:'listGutter', value: '10vp' });
-      AppStorage.get<MessageManager<number>>('messageManager') ?.notify({ name:'initialIndex', value: 8 });
+      AppStorage.get<MessageManager<string | number | Axis>>('messageManager')?.notify({ name:'listGutter', value: '10vp' });
+      AppStorage.get<MessageManager<string | number | Axis>>('messageManager') ?.notify({ name:'initialIndex', value: 8 });
       await CommonFunc.sleep(200);
 
       let ListItem0 = CommonFunc.getComponentRect('ListItem0');
@@ -176,6 +180,7 @@ it('ListLanes_static_008', Level.LEVEL0, async (done: () => void): Promise<void>
     
     
     
+
 
 /*
      * @tc.number   ListLanes_static_009
@@ -201,6 +206,7 @@ it('ListLanes_static_009', Level.LEVEL0, async (done: () => void): Promise<void>
     
     
     
+
 
 /*
      * @tc.number   ListLanes_static_010

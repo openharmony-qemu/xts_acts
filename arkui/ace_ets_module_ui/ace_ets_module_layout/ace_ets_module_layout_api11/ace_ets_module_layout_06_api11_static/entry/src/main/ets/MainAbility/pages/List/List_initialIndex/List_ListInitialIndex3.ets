@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,13 +40,13 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Component
 struct List_ListInitialIndex3 {
   @State arr: String[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-  @State testInitialIndex: number = -1;
-  @State testLanes: number = 1;
+  @State testInitialIndex: int = -1;
+  @State testLanes: int = 1;
 
   build() {
     Scroll(){
       Column({ space: 30 } as ColumnOptions) {
-        List({ space: 20, initialIndex: Double.toInt(this.testInitialIndex) }) {
+        List({ space: 20, initialIndex: this.testInitialIndex }) {
           ForEach(this.arr, (item: string) => {
             ListItem() {
               Text('' + item)
@@ -55,7 +55,7 @@ struct List_ListInitialIndex3 {
             .width(100)
             .height(100)
             .key('List_ListInitialIndex3_' + item)
-          }, (item: string,index:int) => item)
+          }, (item:string) => item)
         }
         .cachedCount(0)
         .width('80%')
@@ -63,7 +63,7 @@ struct List_ListInitialIndex3 {
         .listDirection(Axis.Vertical)
         .edgeEffect(EdgeEffect.Spring)
         .scrollBar(BarState.On)
-        .lanes(Double.toInt(this.testLanes))
+        .lanes(this.testLanes)
         .backgroundColor(0xAFEEEE)
         .key('List_ListInitialIndex3_Container01')
       }

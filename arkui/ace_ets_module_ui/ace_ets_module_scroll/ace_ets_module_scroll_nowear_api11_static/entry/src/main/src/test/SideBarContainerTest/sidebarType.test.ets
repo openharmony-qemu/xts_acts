@@ -18,6 +18,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function sidebarTypeTest() {
   describe('sidebarTypeTest', () => {
@@ -40,9 +41,10 @@ export default function sidebarTypeTest() {
         console.info("get sidebarType state success " + JSON.stringify(pages));
         if (!("sidebarType" == pages.name)) {
           console.info("get sidebarType state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          
+          await CommonFunc.sleep(2000);
+          // console.info("push sidebarType page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push sidebarType page error: " + err);
@@ -53,9 +55,9 @@ export default function sidebarTypeTest() {
      * @tc.number   ArkUX_SideBarContainer_static_1000
      * @tc.name     ArkUX_SideBarContainer_static_1000
      * @tc.desc     ArkUX_SideBarContainer_static_1000
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ArkUX_SideBarContainer_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('ArkUX_SideBarContainer_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('ArkUX_SideBarContainer_static_1000 START');
       setTimeout(() => {
         try {
@@ -78,9 +80,9 @@ it('ArkUX_SideBarContainer_static_1000', Level.LEVEL0, async (done: () => void):
      * @tc.number   ArkUX_SideBarContainer_static_1100
      * @tc.name     ArkUX_SideBarContainer_static_1100
      * @tc.desc     ArkUX_SideBarContainer_static_1100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ArkUX_SideBarContainer_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('ArkUX_SideBarContainer_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('ArkUX_SideBarContainer_static_1100 START');
       setTimeout(() => {
         try {
@@ -104,9 +106,9 @@ it('ArkUX_SideBarContainer_static_1100', Level.LEVEL0, async (done: () => void):
      * @tc.number   ArkUX_SideBarContainer_static_1200
      * @tc.name     ArkUX_SideBarContainer_static_1200
      * @tc.desc     ArkUX_SideBarContainer_static_1200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ArkUX_SideBarContainer_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('ArkUX_SideBarContainer_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('ArkUX_SideBarContainer_static_1200 START');
       setTimeout(() => {
         try {
@@ -129,9 +131,9 @@ it('ArkUX_SideBarContainer_static_1200', Level.LEVEL0, async (done: () => void):
      * @tc.number   ArkUX_SideBarContainer_static_1300
      * @tc.name     ArkUX_SideBarContainer_static_1300
      * @tc.desc     ArkUX_SideBarContainer_static_1300
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ArkUX_SideBarContainer_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('ArkUX_SideBarContainer_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('ArkUX_SideBarContainer_static_1300 START');
       setTimeout(() => {
         try {
@@ -154,9 +156,9 @@ it('ArkUX_SideBarContainer_static_1300', Level.LEVEL0, async (done: () => void):
      * @tc.number   ArkUX_SideBarContainer_static_1400
      * @tc.name     ArkUX_SideBarContainer_static_1400
      * @tc.desc     ArkUX_SideBarContainer_static_1400
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ArkUX_SideBarContainer_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('ArkUX_SideBarContainer_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('ArkUX_SideBarContainer_static_1400 START');
       setTimeout(() => {
         try {

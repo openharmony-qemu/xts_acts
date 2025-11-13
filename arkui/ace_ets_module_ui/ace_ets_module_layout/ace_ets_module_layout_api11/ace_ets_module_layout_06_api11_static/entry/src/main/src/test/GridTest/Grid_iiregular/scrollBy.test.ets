@@ -39,7 +39,6 @@ export default function scrollByJsunit() {
   describe('scrollByJsunit', () => {
     beforeAll(() => {
       console.info("scrollByJsunit beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,7 +50,7 @@ export default function scrollByJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get scrollByJsunit state pages: " + JSON.stringify(pages));
         if (!("scrollBy" == pages.name)) {
@@ -69,7 +68,7 @@ export default function scrollByJsunit() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("scrollBy after each called");
     });
 
@@ -77,6 +76,7 @@ export default function scrollByJsunit() {
 
     
     
+
 
 /*
      * @tc.number   scrollByJsunit_static_0001
@@ -93,6 +93,7 @@ it('scrollByJsunit_static_0001', Level.LEVEL0, async (done: () => void): Promise
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
+      console.info('[scrollByJsunit_0000] scrollButton = ' + ON.id('scrollButton'));
       let btn = await driver.findComponent(ON.id('scrollButton'));
       console.info('[scrollByJsunit_0000] scrollButton');
       await btn!.click();
@@ -122,6 +123,7 @@ it('scrollByJsunit_static_0001', Level.LEVEL0, async (done: () => void): Promise
     
     
 
+
 /*
      * @tc.number   scrollByJsunit_static_0002
      * @tc.name     scrollByJsunit_static_0002
@@ -137,6 +139,7 @@ it('scrollByJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promise
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
+      console.info('[scrollByJsunit_0000] scrollButton = ' + ON.id('scrollButton'));
       let btn = await driver.findComponent(ON.id('scrollButton'));
       await btn!.click();
       await CommonFunc.sleep(100);
@@ -162,6 +165,7 @@ it('scrollByJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promise
 
     
     
+
 
 /*
      * @tc.number   scrollByJsunit_static_0003
@@ -194,9 +198,10 @@ it('scrollByJsunit_static_0003', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollByJsunit_0003] END');
       done();
     });
-    
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollByJsunit_static_0004
@@ -207,7 +212,6 @@ it('scrollByJsunit_static_0003', Level.LEVEL0, async (done: () => void): Promise
 it('scrollByJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[scrollByJsunit_0004] START');
       await CommonFunc.sleep(1000);
-      let context = AppStorage.get<UIContext>("context")
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'distance', value: UIContext.getFocusedUIContext()!.px2vp(150)
       })
@@ -230,9 +234,10 @@ it('scrollByJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollByJsunit_0004] END');
       done();
     });
-    
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollByJsunit_static_0005
@@ -268,10 +273,11 @@ it('scrollByJsunit_static_0005', Level.LEVEL0, async (done: () => void): Promise
     });
 
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollByJsunit_static_0006
@@ -305,10 +311,11 @@ it('scrollByJsunit_static_0006', Level.LEVEL0, async (done: () => void): Promise
       done();
     });
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollByJsunit_static_0007
@@ -342,9 +349,10 @@ it('scrollByJsunit_static_0007', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollByJsunit_0070] END');
       done();
     });
-    
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollByJsunit_static_0008
@@ -381,9 +389,10 @@ it('scrollByJsunit_static_0008', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollByJsunit_0080] END');
       done();
     });
-    
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollByJsunit_static_0009
@@ -394,8 +403,8 @@ it('scrollByJsunit_static_0008', Level.LEVEL0, async (done: () => void): Promise
 it('scrollByJsunit_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[scrollByJsunit_0090] START');
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<undefined>>('messageManager')?.notify({
-        name: 'distance', value: undefined
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+        name: 'distance', value: 'undefined'
       })
 
       let driver = Driver.create();

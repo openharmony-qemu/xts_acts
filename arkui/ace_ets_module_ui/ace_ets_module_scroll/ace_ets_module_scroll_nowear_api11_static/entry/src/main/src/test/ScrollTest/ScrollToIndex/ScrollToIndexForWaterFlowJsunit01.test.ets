@@ -46,16 +46,15 @@ export default function ScrollToIndexForWaterFlowJsunit01() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get ScrollToIndexForWaterFlowJsunit01 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
-          console.info("get ScrollToIndexForWaterFlowJsunit01 pages.name:" + '');
-          
-          routerInstance.pushUrl(options);
+        console.info("get ScrollToIndexForWaterFlow01 state pages:" + JSON.stringify(pages));
+        if (!("ScrollToIndexForWaterFlow01" == pages.name)) {
+          console.info("get ScrollToIndexForWaterFlow01 pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push ScrollToIndexForWaterFlowJsunit01 page error:" + err);
+        console.error("push ScrollToIndexForWaterFlow01 page error:" + err);
+        expect().assertFail();
       }
       console.info("ScrollToIndexForWaterFlowJsunit01 beforeEach end");
     });
@@ -65,9 +64,9 @@ export default function ScrollToIndexForWaterFlowJsunit01() {
      * @tc.number   ScrollToIndexForWaterFlow01_static_0100
      * @tc.name     ScrollToIndexForWaterFlow01_static_0100
      * @tc.desc     ScrollToIndexForWaterFlow01_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ScrollToIndexForWaterFlow01_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollToIndexForWaterFlow01_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ApiCommponentAdd02Jsunit_static_0900] START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -87,9 +86,9 @@ it('ScrollToIndexForWaterFlow01_static_0100', Level.LEVEL0, async (done: () => v
      * @tc.number   ScrollToIndexForWaterFlow01_static_0200
      * @tc.name     ScrollToIndexForWaterFlow01_static_0200
      * @tc.desc     ScrollToIndexForWaterFlow01_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ScrollToIndexForWaterFlow01_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollToIndexForWaterFlow01_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForWaterFlow01_static_0200] START');
       let driver = Driver.create();
       await driver.delayMs(1000);
@@ -116,9 +115,9 @@ it('ScrollToIndexForWaterFlow01_static_0200', Level.LEVEL0, async (done: () => v
      * @tc.number   ScrollToIndexForWaterFlow01_static_0300
      * @tc.name     ScrollToIndexForWaterFlow01_static_0300
      * @tc.desc     ScrollToIndexForWaterFlow01_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ScrollToIndexForWaterFlow01_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollToIndexForWaterFlow01_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForWaterFlow01_static_0300] START');
       let driver = Driver.create();
 

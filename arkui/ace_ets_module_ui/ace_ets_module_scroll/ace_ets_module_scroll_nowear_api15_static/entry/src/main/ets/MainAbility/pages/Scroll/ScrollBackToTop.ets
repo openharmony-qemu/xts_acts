@@ -34,7 +34,7 @@ struct ScrollExampleA {
   @State isBackToTop: boolean|undefined|null = false
   @State scrollCount: number = 0;
   @State scrollOffset: number = 0;
-  private currentIndex: number = 0;
+  private currentIndex: int = 0;
 
   build() {
     Column() {
@@ -43,20 +43,20 @@ struct ScrollExampleA {
         if (this.currentIndex !== 0) {
           this.scrollCount ++;
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        switch (String(this.isBackToTop)) {
+          case 'false':
+            this.isBackToTop = undefined
+            break;
+          case "undefined":
+            this.isBackToTop = null
+            break;
+          case "null":
+            this.isBackToTop = true
+            break;
+          case "true":
+            this.isBackToTop = false
+            break;
+        }
         if (this.isBackToTop === false) {
           this.isBackToTop = undefined;
         } else if (this.isBackToTop === undefined) {
@@ -79,7 +79,7 @@ struct ScrollExampleA {
           ForEach(this.arr, (item: number, index: int) => {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)
-              .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+              .textAlign(TextAlign.Center).borderRadius(10)//.backgroundColor(0xFFFFFF)
               .onAppear(() => {
                 this.currentIndex = index;
               })
@@ -91,7 +91,7 @@ struct ScrollExampleA {
       .scrollBar(BarState.Off)
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
-      .onWillScroll((xOffset: Double, yOffset: Double, scrollState: ScrollState, scrollSource: ScrollSource):undefined|OffsetResult => {  
+      .onWillScroll((xOffset: Double, yOffset: Double, scrollState: ScrollState, scrollSource: ScrollSource):undefined|OffsetResult => {  //(xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource):void | OffsetResult => {
         this.message='onWillScroll'
         this.message3 = 'NotBackToTop';
       })
@@ -100,7 +100,7 @@ struct ScrollExampleA {
       })
       .onDidScroll((offset: number):void => {
         this.scrollOffset = offset;
-        
+        // 判断是否滚动到顶部以及回滚次数是否达标
         if (this.scrollCount === 3) {
           this.message4 = 'DidAbnormal';
         }
@@ -113,7 +113,7 @@ struct ScrollExampleA {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    // .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 {
   "module": {
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
-    "deviceTypes": [],
+    "deviceTypes": ["default"],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",

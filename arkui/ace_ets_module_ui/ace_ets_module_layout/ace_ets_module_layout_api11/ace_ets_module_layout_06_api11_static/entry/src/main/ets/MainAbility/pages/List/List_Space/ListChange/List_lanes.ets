@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,17 +43,17 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct List_lanes {
-  @State addLanes: LengthConstrain = {
+  @State addLanes: LengthConstrain | int = {
     minLength:0,
     maxLength:10
   } as LengthConstrain;
-  messageManager: MessageManager<LengthConstrain> = new MessageManager<LengthConstrain>();
+  messageManager: MessageManager<LengthConstrain | int> = new MessageManager<LengthConstrain | int>();
   private content: string = "List_lanes Page";
 
   onPageShow() {
     console.info('List_lanes page show called');
-      AppStorage.setOrCreate<MessageManager<LengthConstrain>>("messageManager", this.messageManager);
-    let callback: Callback<LengthConstrain> = (message: Message<LengthConstrain>) => {
+      AppStorage.setOrCreate<MessageManager<LengthConstrain | int>>("messageManager", this.messageManager);
+    let callback: Callback<LengthConstrain | int> = (message: Message<LengthConstrain | int>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'addLanes') {
         this.addLanes = message.value;

@@ -49,7 +49,6 @@ export default function ListItemGroup_aspectRatio_all() {
   describe('ListItemGroup_aspectRatio_all', () => {
     beforeAll(() => {
       console.info("ListItemGroup_aspectRatio_all beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -61,7 +60,7 @@ export default function ListItemGroup_aspectRatio_all() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListItemGroup_aspectRatio_all state pages:" + JSON.stringify(pages));
         if (!("ListItemGroup_aspectRatio_all" == pages.name)) {
@@ -77,7 +76,7 @@ export default function ListItemGroup_aspectRatio_all() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("ListItemGroup_aspectRatio_all after each called");
     });
 
@@ -85,6 +84,7 @@ export default function ListItemGroup_aspectRatio_all() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_all_static_0100
@@ -111,6 +111,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_all_static_0100', Level.LEVEL0, async (don
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_all_static_0200
      * @tc.name     SUB_ACE_ListItemGroup_aspectRatio_all_static_0200
@@ -136,6 +137,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_all_static_0200', Level.LEVEL0, async (don
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_all_static_0300
      * @tc.name     SUB_ACE_ListItemGroup_aspectRatio_all_static_0300
@@ -160,6 +162,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_all_static_0300', Level.LEVEL0, async (don
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_all_static_0400

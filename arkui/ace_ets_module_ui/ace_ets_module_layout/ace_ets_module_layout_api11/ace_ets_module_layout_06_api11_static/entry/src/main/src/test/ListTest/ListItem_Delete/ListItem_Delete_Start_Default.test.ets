@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,7 +56,7 @@ export default function ListItem_Delete_Start_Default() {
         if (!("ListItem_Delete_Start_Default" == pages.name)) {
           console.info("get ListItem_Delete_Start_Default pages.name:" + JSON.stringify(pages.name));
            routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push ListItem_Delete_Start_Default page error:" + err);
@@ -64,14 +64,16 @@ export default function ListItem_Delete_Start_Default() {
       console.info("ListItem_Delete_Start_Default beforeEach end");
     });
     afterEach(async () => {
+      await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       console.log('button click')
       let btn = await driver.findComponent(ON.id('ListItem_Delete_Start_Default_button1'));
       await btn!.click();
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(1000);
       console.info("ListItem_Delete_Start_Default after each called");
     });
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_Start_Default_static_002
@@ -100,7 +102,7 @@ it('SUB_ACE_ListItem_Delete_Start_Default_static_002', Level.LEVEL0, async (done
         (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt()
       );
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_Start_Default_text_01');
 
@@ -121,6 +123,7 @@ it('SUB_ACE_ListItem_Delete_Start_Default_static_002', Level.LEVEL0, async (done
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_Start_Default_static_003
      * @tc.name     SUB_ACE_ListItem_Delete_Start_Default_static_003
@@ -132,11 +135,11 @@ it('SUB_ACE_ListItem_Delete_Start_Default_static_003', Level.LEVEL0, async (done
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       console.log('button click')
       let btn = await driver.findComponent(ON.id('ListItem_Delete_Start_Default_button1'));
       await btn!.click();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
 
       let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_00');
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_01');
@@ -156,7 +159,7 @@ it('SUB_ACE_ListItem_Delete_Start_Default_static_003', Level.LEVEL0, async (done
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt()
       );
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_Start_Default_text_01');
 

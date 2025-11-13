@@ -38,7 +38,6 @@ export default function ListLanes04() {
   describe('ListLanes04', () => {
     beforeAll(() => {
       console.info("ListLanes04 beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -68,6 +67,7 @@ export default function ListLanes04() {
     
     
 
+
 /*
      * @tc.number   ListLanes04_static_001
      * @tc.name     ListLanes04_static_001
@@ -92,6 +92,7 @@ it('ListLanes04_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
 
+
 /*
      * @tc.number   ListLanes04_static_002
      * @tc.name     ListLanes04_static_002
@@ -115,6 +116,7 @@ it('ListLanes04_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
     
+
 
 /*
      * @tc.number   ListLanes04_static_003

@@ -23,9 +23,16 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility } from '../Util.test';
+
+interface DataObj {
+  data1: string,
+  data2: DataObj1
+}
+interface DataObj1 {
+  data3: Array<number>
+}
 
 export default function ApiCommponentAdd02Jsunit() {
   describe('ApiCommponentAdd02Jsunit', () => {
@@ -39,9 +46,6 @@ export default function ApiCommponentAdd02Jsunit() {
 
     beforeEach(async (): Promise<void> => {
       console.info("ApiCommponentAdd02Jsunit beforeEach start");
-      let options: router.RouterOptions = {
-        url: "MainAbility/pages/Scroll/loadingprogrees_add02",
-      }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
@@ -49,9 +53,23 @@ export default function ApiCommponentAdd02Jsunit() {
         console.info("get ApiCommponentAdd02Jsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ApiCommponentAdd02Jsunit pages.name:" + '');
-          
-          routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          routerInstance.pushUrl({
+            url: 'MainAbility/pages/Scroll/loadingprogrees_add02',
+            params: {
+              data1: 'message',
+              data2: {
+                data3: [123, 456, 789]
+              }
+            } as DataObj
+          }).then(() => {
+              // success
+            })
+            .catch((err: Error) => {
+              console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
+            })
           await CommonFunc.sleep(2000);
+          console.info("push circle page success ");
         }
       } catch (err) {
         console.error("push ApiCommponentAdd02Jsunit page error:" + err);
@@ -63,23 +81,29 @@ export default function ApiCommponentAdd02Jsunit() {
      * @tc.number   ApiCommponentAdd02Jsunit_static_0900
      * @tc.name     ApiCommponentAdd02Jsunit_static_0900
      * @tc.desc     ApiCommponentAdd02Jsunit_static_0900
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ApiCommponentAdd02Jsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('ApiCommponentAdd02Jsunit_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('ApiCommponentAdd02Jsunit_static_0900 START');
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.clear();
       routerInstance.pushUrl({
         url: 'MainAbility/pages/Scroll/waterflow_add',
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as DataObj
       }).then(() => {
-        
+        // success
       }).catch((err: BusinessError):void => {
         console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
       })
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('waterflowAdd');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ApiCommponentAdd02Jsunit_static_0900'] component obj is: " + obj.getElement('$attrs').getString('enableScrollInteraction'));
+      console.info("[ApiCommponentAdd02Jsunit_static_0900'] component obj is: " + obj.getElement('$attrs').getBoolean('enableScrollInteraction'));
       expect(obj.getElement('$attrs').getBoolean('enableScrollInteraction')).assertTrue();
       done();
     });

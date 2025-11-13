@@ -22,6 +22,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -48,7 +49,8 @@ import {
   Axis,
   animateTo,
   SwipeEdgeEffect,
-  SwipeActionState
+  SwipeActionState,
+  TransitionEffect
 } from '@ohos.arkui.component'
 import{
   State,
@@ -82,7 +84,7 @@ struct ListItemExample20 {
   build() {
     Column() {
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text("item" + item)
               .width('50%')
@@ -92,6 +94,7 @@ struct ListItemExample20 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }
+          // .transition(TransitionEffect.OPACITY.opacity(0))
 /*          .transition({ type: TransitionType.Delete, opacity: 0 })*/
           .swipeAction({
             start: {
@@ -119,7 +122,7 @@ struct ListItemExample20 {
 
           })
           .key('lSwipe20Action' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }.listDirection(Axis.Horizontal).height('60%')
 
       Text(this.enterEndDeleteAreaString).fontSize(20)

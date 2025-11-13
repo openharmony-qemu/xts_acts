@@ -22,6 +22,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -74,7 +75,7 @@ struct ListFrictionPage {
   build() {
     Column() {
       List({ initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index?: int) => {
+        ForEach(this.arr, (item: number) => {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -89,7 +90,7 @@ struct ListFrictionPage {
       .key('list_friction_default')
 
       List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index?: int) => {
+        ForEach(this.arr, (item: number) => {
           ListItem() {
             Text('' + item)
               .width('100%')

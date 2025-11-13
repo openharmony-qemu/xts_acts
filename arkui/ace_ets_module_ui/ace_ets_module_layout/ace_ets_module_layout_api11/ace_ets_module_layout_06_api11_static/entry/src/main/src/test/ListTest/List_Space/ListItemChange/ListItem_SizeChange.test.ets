@@ -39,7 +39,6 @@ export default function listItem_SizeChange() {
   describe('ListItem_SizeChangeTest', () => {
     beforeAll(() => {
       console.log("ListItem_SizeChangeTest beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -58,6 +57,7 @@ export default function listItem_SizeChange() {
         if (!("ListItem_SizeChange" == pages.name)) {
           console.info("get ListItem_SizeChange state pages.name:" + JSON.stringify(pages.name));
            routerInstance.pushUrl(options);
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push ListItem_SizeChange page error:" + JSON.stringify(err));
@@ -73,6 +73,7 @@ export default function listItem_SizeChange() {
     
     
     
+
 
 /*
      * @tc.number   testListItemSizeChangeHeight120Width300_static
@@ -115,15 +116,15 @@ it('testListItemSizeChangeHeight120Width300_static', Level.LEVEL0, async (done: 
 	  expect(Math.abs(Math.round(locationText3.bottom - locationText3.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationText4.right - locationText4.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationText4.bottom - locationText4.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-	  
+
 	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	 
+
 	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
-	  
+
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
       (Math.round((AppStorage.get<number>('winTop')) as number+(bottom-top)/2 + top)).toInt(),
@@ -138,6 +139,7 @@ it('testListItemSizeChangeHeight120Width300_static', Level.LEVEL0, async (done: 
     
     
     
+
 
 /*
      * @tc.number   testListItemSizeChangeHeight160Width300_static
@@ -183,26 +185,34 @@ it('testListItemSizeChangeHeight160Width300_static', Level.LEVEL0, async (done: 
 
 	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+  console.log('locationText4.top = ' + locationText4.top + ', locationText3.bottom = ' + locationText3.bottom)
 	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+  console.log('locationList.bottom = ' + locationList.bottom + ', locationText4.bottom = ' + locationText4.bottom)
+  console.log('Math.round(locationList.bottom - locationText4.bottom) = ' + Math.round(locationText4.bottom - locationList.bottom))
+  console.log('Math.round(UIContext.getFocusedUIContext()!.vp2px(20)) = ' + Math.round(UIContext.getFocusedUIContext()!.vp2px(20)))
 	  expect(Math.abs(Math.round(locationText4.bottom - locationList.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 
 	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
+  console.log('locationText4Again.bottom =')
+
+    driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number+(bottom-top)/2 + top)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest4');
+      console.log('locationText4Again.bottom = ' + locationText4Again.bottom + ', locationList.bottom = ' + locationList.bottom)
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight160Width300 END');
       done();
     });
 
+
     
     
-    
+
 
 /*
      * @tc.number   testListItemSizeChangeHeight100Width100_static
@@ -231,7 +241,7 @@ it('testListItemSizeChangeHeight100Width100_static', Level.LEVEL0, async (done: 
       let top:number = locationList.top;
       let right:number = locationList.right;
       let bottom:number = locationList.bottom;
-     
+
       expect(Math.abs(Math.round(locationText1.left - locationText2.left)) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText2.left - locationText3.left)) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText3.left - locationText4.left)) <= 1).assertTrue();
@@ -259,15 +269,17 @@ it('testListItemSizeChangeHeight100Width100_static', Level.LEVEL0, async (done: 
         (Math.round((AppStorage.get<number>('winTop')) as number+(bottom-top)/2 + top)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
+    // await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4.top - locationText4Again.top)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight100Width100 END');
       done();
     });
 
-    
-    
-    
+
+
+
+
 
 /*
      * @tc.number   testListItemSizeChangeHeight100Width380_static
@@ -329,9 +341,10 @@ it('testListItemSizeChangeHeight100Width380_static', Level.LEVEL0, async (done: 
       done();
     });
 
-    
-    
-    
+
+
+
+
 
 /*
      * @tc.number   testListItemSizeChangeHeight160Width380_static
@@ -385,9 +398,9 @@ it('testListItemSizeChangeHeight160Width380_static', Level.LEVEL0, async (done: 
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number+(bottom-top)/2 + top)).toInt(),
-        (Math.round( (AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight160Width380 END');

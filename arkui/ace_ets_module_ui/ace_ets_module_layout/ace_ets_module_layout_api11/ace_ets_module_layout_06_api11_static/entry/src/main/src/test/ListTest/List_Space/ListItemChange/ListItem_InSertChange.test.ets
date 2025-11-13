@@ -39,7 +39,6 @@ export default function listItem_InSertChange() {
   describe('ListItem_InSertChangeTest', () => {
     beforeAll(() => {
       console.log("ListItem_InSertChangeTest beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -73,6 +72,7 @@ export default function listItem_InSertChange() {
     
     
     
+
 
 /*
      * @tc.number   testListItemInSertChangeFiftyPercent_static
@@ -141,6 +141,7 @@ it('testListItemInSertChangeFiftyPercent_static', Level.LEVEL0, async (done: () 
     
     
     
+
 
 /*
      * @tc.number   testListItemInSertChangeOneHundredAndTenPercent_static

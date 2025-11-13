@@ -49,7 +49,6 @@ export default function List_aspectRatio_width() {
   describe('List_aspectRatio_width', () => {
     beforeAll(() => {
       console.info("List_aspectRatio_width beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -87,6 +86,7 @@ export default function List_aspectRatio_width() {
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_width_static_0100
      * @tc.name     SUB_ACE_List_aspectRatio_width_static_0100
@@ -95,8 +95,8 @@ export default function List_aspectRatio_width() {
      */
 it('SUB_ACE_List_aspectRatio_width_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0100] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: 0
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: '0'
       });
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
@@ -114,6 +114,7 @@ it('SUB_ACE_List_aspectRatio_width_static_0100', Level.LEVEL0, async (done: () =
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_width_static_0200
      * @tc.name     SUB_ACE_List_aspectRatio_width_static_0200
@@ -122,10 +123,10 @@ it('SUB_ACE_List_aspectRatio_width_static_0100', Level.LEVEL0, async (done: () =
      */
 it('SUB_ACE_List_aspectRatio_width_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0200] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: 0.5
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: '0.5'
       })
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
       console.info('[SUB_ACE_List_aspectRatio_width_0200]' + Math.round(List01.bottom - List01.top));
 
@@ -140,6 +141,7 @@ it('SUB_ACE_List_aspectRatio_width_static_0200', Level.LEVEL0, async (done: () =
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_width_static_0300
      * @tc.name     SUB_ACE_List_aspectRatio_width_static_0300
@@ -148,8 +150,8 @@ it('SUB_ACE_List_aspectRatio_width_static_0200', Level.LEVEL0, async (done: () =
      */
 it('SUB_ACE_List_aspectRatio_width_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0300] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: 2
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: '2'
       });
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');
@@ -166,6 +168,7 @@ it('SUB_ACE_List_aspectRatio_width_static_0300', Level.LEVEL0, async (done: () =
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_width_static_0400
      * @tc.name     SUB_ACE_List_aspectRatio_width_static_0400
@@ -174,8 +177,8 @@ it('SUB_ACE_List_aspectRatio_width_static_0300', Level.LEVEL0, async (done: () =
      */
 it('SUB_ACE_List_aspectRatio_width_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_aspectRatio_width_0400] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'aspectRatio1', value: -1
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
+        name: 'aspectRatio1', value: '-1'
       });
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_width_01');

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,6 @@ export default function ListItem_Delete_End_Resource() {
   describe('ListItem_Delete_End_Resource', () => {
     beforeAll(() => {
       console.log("ListItem_Delete_End_Resource beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -77,6 +76,7 @@ export default function ListItem_Delete_End_Resource() {
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_End_Resource_static_0100
      * @tc.name     SUB_ACE_ListItem_Delete_End_Resource_static_0100
@@ -106,7 +106,7 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0100', Level.LEVEL0, async (done
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(5))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_End_Resource_text_01');
 
@@ -126,6 +126,7 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0100', Level.LEVEL0, async (done
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_End_Resource_static_0200
@@ -162,7 +163,7 @@ it('SUB_ACE_ListItem_Delete_End_Resource_static_0200', Level.LEVEL0, async (done
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(30))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_End_Resource_text_01');
 

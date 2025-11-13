@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,6 @@ export default function list_SpaceChangeTest() {
   describe('list_SpaceChangeTest', () => {
     beforeAll(() => {
       console.log("list_SpaceChangeTest beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -81,6 +80,7 @@ export default function list_SpaceChangeTest() {
     
     
     
+
 
 /*
      * @tc.number   testListSpaceChangeUnfill_static
@@ -146,8 +146,6 @@ it('testListSpaceChangeUnfill_static', Level.LEVEL0, async (done: () => void): P
       expect(Math.floor(Math.abs((listContainer.bottom - fourthListItem.bottom) - (listHeight - 2 * listItemHeight - 2 * listItemHeight2 - UIContext.getFocusedUIContext()!.vp2px(60)))) <= 1).assertTrue();
 
       console.info('[testListSpaceChangeUnfill] END');
-
-      
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'Space', value: 0
       });
@@ -157,6 +155,7 @@ it('testListSpaceChangeUnfill_static', Level.LEVEL0, async (done: () => void): P
     
     
     
+
 
 /*
      * @tc.number   testListSpaceChangeFill_static
@@ -237,6 +236,7 @@ it('testListSpaceChangeFill_static', Level.LEVEL0, async (done: () => void): Pro
     
     
     
+
 
 /*
      * @tc.number   testListSpaceChangeOverflow_static

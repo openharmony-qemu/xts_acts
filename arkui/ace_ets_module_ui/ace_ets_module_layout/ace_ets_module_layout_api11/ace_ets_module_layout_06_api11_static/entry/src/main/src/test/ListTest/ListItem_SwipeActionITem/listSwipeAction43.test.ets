@@ -39,6 +39,10 @@ export default function listSwipeAction43Jsunit() {
   describe('listSwipeAction43Test', () => {
     beforeAll(async (): Promise<void> => {
       console.info("listSwipeAction43Test beforeEach start");
+      await UtilsTest.msSleep(1000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
+      await UtilsTest.msSleep(1000)
+
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListItem_SwipeActionItem/listTest43"
       }
@@ -48,7 +52,7 @@ export default function listSwipeAction43Jsunit() {
         let pages:router.RouterState = routerInstance.getState();
         console.info("listSwipeAction43Test  success pages " + JSON.stringify(pages));
         routerInstance.pushUrl(options)
-        await CommonFunc.sleep(3000);
+        await CommonFunc.sleep(1000);
       } catch (err) {
         console.error("push listTest15 page error: " + err);
       }
@@ -63,7 +67,7 @@ export default function listSwipeAction43Jsunit() {
       let buttonReset = await driverReset.findComponent(ON.id('btreset43'));
       await driverReset.delayMs(300);
       buttonReset!.click();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       done();
 
     });
@@ -71,6 +75,7 @@ export default function listSwipeAction43Jsunit() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430
@@ -103,14 +108,14 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left +  UIContext.getFocusedUIContext()!.vp2px(150))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       
       let driver2 = Driver.create();
       await CommonFunc.sleep(500);
       let button2 = await driver2.findComponent(ON.id('bt43'));
       await CommonFunc.sleep(300);
       button2!.click();
-      await CommonFunc.sleep(1500);
+      await CommonFunc.sleep(1000);
 
       
       let textSwipeState = inspector.getInspectorByKey('swipe43Finish');

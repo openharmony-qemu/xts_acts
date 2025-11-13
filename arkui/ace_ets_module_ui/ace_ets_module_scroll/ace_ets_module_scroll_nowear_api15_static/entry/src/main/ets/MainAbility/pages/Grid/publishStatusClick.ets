@@ -14,22 +14,20 @@
  */
 
 import commonEventManager from '@ohos.commonEventManager';
-
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { Column, Component, Button, ClickEvent} from '@ohos.arkui.component'
-
 import {BusinessError} from '@ohos.base'
 @Component
 export struct StatusClickComponent {
   public isLandScape: boolean = false;
 
-  
-  
-  
-  
-  
-  
+  // private changeOrientation(isLandscape: boolean) {
+  //   let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  //   window.getLastWindow(context).then((lastWindow) => {
+  //     lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+  //   });
+  // }
 
   build() {
     Column() {

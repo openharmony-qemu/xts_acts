@@ -12,23 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { BusinessError } from '@ohos.base';
+// import screen from '@ohos.screen';
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 export default class CommonFunc {
-  public static FONT_FAMILY = 'Verdana';
   static rect_left: number;
   static rect_top: number;
   static rect_right: number;
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static async sleep(time: int) : Promise<int>  {
+  static async sleep(time:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
+        console.info(`sleep ${time} over...`)
         resolve(0)
       }, time)
     })
@@ -78,20 +77,5 @@ export default class CommonFunc {
     }
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 }

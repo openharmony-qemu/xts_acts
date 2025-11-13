@@ -15,7 +15,7 @@
 
 import { LengthMetrics } from '@ohos.arkui.node'
 import { WaterFlowDataSource } from './WaterFlowDataSource'
-import { Entry, Text, TextAttribute, Column, Component, Button,ColumnOptions, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
+import { Entry, Text, TextAttribute, Column, Component, Button,ColumnOptions, ButtonAttribute, ClickEvent,Image,ImageFit, Scroller,
   Scroll,FontWeight,TextArea,CopyOptions,WaterFlow,
   ForEach,
   Search,
@@ -33,19 +33,19 @@ import {
 struct WaterFlowEdge {
   @State minSize: number = 80
   @State maxSize: number = 180
-  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[];
+  @State colors: Int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as Int[];
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   scroller: Scroller = new Scroller()
   private itemWidthArray: number[] = [] as number[];
   private itemHeightArray: number[] = [] as number[];
 
-  
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
-  
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize())
@@ -67,8 +67,8 @@ struct WaterFlowEdge {
             }
           }
           .width('100%')
-          .height(this.itemHeightArray[item.toInt() % 100])
-          .backgroundColor(this.colors[item.toInt() % 5])
+          .height(this.itemHeightArray[(item as int) % 100])
+          .backgroundColor(this.colors[(item as int) % 5] as Int)
         }, (item:number) => item.toString())
       }
       .id('flow_fadingEdge')

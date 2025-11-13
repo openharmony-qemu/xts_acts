@@ -27,11 +27,10 @@ struct ListExampleA {
   @State message3:string=''
   @State message4:string=''
   @State buttonNumber: number = 0;
-  
   @State isBackToTop: boolean|undefined = false
   @State scrollCount: number = 0;
   @State scrollOffset: number = 0;
-  private currentIndex: number = 0;
+  private currentIndex: int = 0;
   build() {
     Column() {
       StatusClickComponent()
@@ -42,11 +41,6 @@ struct ListExampleA {
 
         if (this.isBackToTop == false) {
           this.isBackToTop = undefined
-        }
-        else if (this.isBackToTop == undefined) {
-          
-        
-        
         } else if (this.isBackToTop == true) {
           this.isBackToTop = false
         }

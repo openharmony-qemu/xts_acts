@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,6 @@ export default function List_scrollToIndex3() {
   describe('List_scrollToIndex3', () => {
     beforeAll(() => {
       console.info("List_scrollToIndex3 beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -65,7 +64,7 @@ export default function List_scrollToIndex3() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.back()
+      // routerInstance.back()
       console.info("List_scrollToIndex3 after each called");
     });
 
@@ -73,6 +72,7 @@ export default function List_scrollToIndex3() {
     
     
     
+
 
 /*
      * @tc.number   List_scrollToIndex3_static_0100
@@ -98,6 +98,7 @@ it('List_scrollToIndex3_static_0100', Level.LEVEL0, async (done: () => void): Pr
     
     
     
+
 
 /*
      * @tc.number   List_scrollToIndex3_static_0200

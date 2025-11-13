@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -134,7 +135,7 @@ struct List_scrollToIndex3 {
       }
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
         ListItemGroup() {
-          ForEach(this.arr2, (item: number, index?: int) => {
+          ForEach(this.arr2, (item: number) => {
             ListItem() {
               Text('ListItemGroup' + item)
                 .width('90%')
@@ -143,11 +144,11 @@ struct List_scrollToIndex3 {
                 .borderRadius(10)
                 .backgroundColor(Color.Orange)
             }
-          }, (item: number,index:int) => item.toString())
+          }, (item: number) => item.toString())
         }.visibility(this.visibe)
         .id('List_scrollToIndex3_ListItemGroup')
 
-        ForEach(this.arr, (item: number, index?: int) => {
+        ForEach(this.arr, (item: number) => {
           ListItem() {
             Text('ListItem' + item)
               .width('90%')
@@ -156,7 +157,7 @@ struct List_scrollToIndex3 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.id('List_scrollToIndex3_ListItem' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
 
       }
       .id('List_scrollToIndex3_List')

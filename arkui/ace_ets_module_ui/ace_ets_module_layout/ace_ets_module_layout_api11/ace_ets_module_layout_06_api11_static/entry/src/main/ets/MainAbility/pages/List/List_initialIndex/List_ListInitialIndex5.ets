@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,12 +40,12 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Component
 struct List_ListInitialIndex5 {
   @State arr: String[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-  @State testInitialIndex: number = 12;
-  @State testLanes: number = 2;
+  @State testInitialIndex: int = 12;
+  @State testLanes: int = 2;
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
-      List({ space: '10%', initialIndex: Double.toInt(this.testInitialIndex) }) {
+      List({ space: '10%', initialIndex: this.testInitialIndex }) {
         ForEach(this.arr, (item: string) => {
           ListItem() {
             Text('' + item)
@@ -54,7 +54,7 @@ struct List_ListInitialIndex5 {
           .width('60%')
           .height('12%')
           .key('List_ListInitialIndex5_' + item)
-        }, (item: string,index:int) => item)
+        }, (item:string) => item)
       }
       .cachedCount(0)
       .width('90%')
@@ -62,7 +62,7 @@ struct List_ListInitialIndex5 {
       .listDirection(Axis.Vertical)
       .edgeEffect(EdgeEffect.Spring)
       .scrollBar(BarState.On)
-      .lanes(Double.toInt(this.testLanes))
+      .lanes(this.testLanes)
       .backgroundColor(0xAFEEEE)
       .key('List_ListInitialIndex5_Container01')
     }

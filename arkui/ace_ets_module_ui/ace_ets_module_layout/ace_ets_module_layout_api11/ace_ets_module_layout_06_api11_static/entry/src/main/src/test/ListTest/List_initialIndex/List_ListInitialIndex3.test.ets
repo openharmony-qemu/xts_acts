@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,6 +82,7 @@ export default function list_ListInitialIndex3Test() {
     
     
 
+
 /*
      * @tc.number   testListInitialIndexToNegativeWithOneLane_static
      * @tc.name     testListInitialIndexToNegativeWithOneLane_static
@@ -153,14 +154,15 @@ it('testListInitialIndexToNegativeWithOneLane_static', Level.LEVEL0, async (done
       expect(Math.round(twelfthListItem.right - twelfthListItem.left)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(0));
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(0));
 
-      let driver = Driver.create();
-      driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
+      let driver = Driver.create()
+
+  driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + fourthListItem.bottom)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + firstListItem.left + (firstListItem.right - firstListItem.left) / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + firstListItem.bottom)).toInt());
       await CommonFunc.sleep(2000);
 
-      let scrollColumn = await driver!.findComponent(ON.id('Scroll'));
+      let scrollColumn = await driver!.findComponent(ON.type('Scroll'));
       let button = await scrollColumn!.scrollSearch(ON.id('List_ListInitialIndex3_6'));
       fifthListItem = CommonFunc.getComponentRect('List_ListInitialIndex3_5');
       sixthListItem = CommonFunc.getComponentRect('List_ListInitialIndex3_6');

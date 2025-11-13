@@ -38,6 +38,10 @@ export default function listSwipeAction41Jsunit() {
   describe('listSwipeAction41Test', () => {
     beforeAll(async (): Promise<void> => {
       console.info("listSwipeAction41Test beforeEach start");
+      await UtilsTest.msSleep(1000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
+      await UtilsTest.msSleep(1000)
+
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListItem_SwipeActionItem/listTest41"
       }
@@ -47,7 +51,7 @@ export default function listSwipeAction41Jsunit() {
         let pages: router.RouterState = routerInstance.getState();
         console.info("listSwipeAction41Test  success pages " + JSON.stringify(pages));
         routerInstance.pushUrl(options)
-        await CommonFunc.sleep(4000);
+        await CommonFunc.sleep(1000);
       } catch (err) {
         console.error("push listTest41 page error: " + err);
       }
@@ -70,6 +74,7 @@ export default function listSwipeAction41Jsunit() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410
@@ -104,14 +109,13 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(100))).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       
       let textSwipeOffset = inspector.getInspectorByKey('swipe41Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410 json is ' +
       JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content'));
       let Swipe41Action_swipe: RectValue = CommonFunc.getComponentRect('lSwipe41Row');
       let swipe_height = Swipe41Action_swipe.bottom - Swipe41Action_swipe.top;
-      let context = AppStorage.get<UIContext>("context")
       console.info('41 0410 json' + Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_height)));
       
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset)
@@ -125,11 +129,11 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()
       );
-      await CommonFunc.sleep(4000);
+      await CommonFunc.sleep(1000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset41'));
       await driver.delayMs(300);
       buttonReset2!.click();
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(1000);
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
@@ -137,7 +141,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe41Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410 json is ' +
       JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content'));
@@ -156,7 +160,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0410', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(2))).toInt()
       );
-      await CommonFunc.sleep(4000);
+      await CommonFunc.sleep(1000);
       done();
 
     });

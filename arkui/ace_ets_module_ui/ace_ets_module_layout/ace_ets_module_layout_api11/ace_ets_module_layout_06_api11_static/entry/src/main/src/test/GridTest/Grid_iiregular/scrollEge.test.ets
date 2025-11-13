@@ -60,7 +60,7 @@ export default function scrollByJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get scrollEgeJsunit state pages: " + JSON.stringify(pages));
         if (!("scrollEge" == pages.name)) {
@@ -78,7 +78,7 @@ export default function scrollByJsunit() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("List_scrollToIndex1 after each called");
     });
 
@@ -87,6 +87,7 @@ export default function scrollByJsunit() {
 
     
     
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0001
@@ -118,11 +119,12 @@ it('scrollEgeJsunit_static_0001', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    
 
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0002
@@ -155,11 +157,12 @@ it('scrollEgeJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promis
     });
 
 
-    
 
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0003
@@ -190,10 +193,11 @@ it('scrollEgeJsunit_static_0003', Level.LEVEL0, async (done: () => void): Promis
     });
 
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0004
@@ -223,10 +227,11 @@ it('scrollEgeJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0005
@@ -256,10 +261,11 @@ it('scrollEgeJsunit_static_0005', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0006
@@ -290,11 +296,12 @@ it('scrollEgeJsunit_static_0006', Level.LEVEL0, async (done: () => void): Promis
     });
 
 
-    
 
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0007
@@ -326,6 +333,7 @@ it('scrollEgeJsunit_static_0007', Level.LEVEL0, async (done: () => void): Promis
 
     
     
+
 
 /*
      * @tc.number   scrollEgeJsunit_static_0008

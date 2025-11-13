@@ -43,15 +43,15 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollBy {
-  @State numberData: String[] = ['0', '1', '2', '3', '4'];
+  @State Number1: string[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
-  @State distance: number = 0;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @State distance: number | string = 0.0;
+  messageManager: MessageManager<number | string> = new MessageManager<number | string>();
 
   onPageShow() {
     console.info('List_lanes page show called');
-     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<number | string>>("messageManager",  this.messageManager);
+    let callback: Callback<number | string> = (message: Message<number | string>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'distance') {
         this.distance = message.value;
@@ -63,8 +63,8 @@ struct scrollBy {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
-        ForEach(this.numberData, (item: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (item: string) => {
+          ForEach(this.Number1, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -75,7 +75,7 @@ struct scrollBy {
                 .key('content' + day + item)
             }
           }, (day: string) => day)
-        }, (item: string,index:int) => item)
+        }, (item: string) => item)
       }
       .columnsTemplate('1fr')
       .columnsGap(10)
@@ -93,6 +93,7 @@ struct scrollBy {
       .width('90%')
       .backgroundColor(0xFAEEE0)
       .height(70)
+
 
       Button('scroll 0')
         .height('5%')

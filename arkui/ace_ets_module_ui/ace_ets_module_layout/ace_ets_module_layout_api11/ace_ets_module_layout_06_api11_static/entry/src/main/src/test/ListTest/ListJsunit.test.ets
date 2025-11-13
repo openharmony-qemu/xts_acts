@@ -49,7 +49,6 @@ export default function ListJsunit() {
   describe('ListJsunit', () => {
     beforeAll(() => {
       console.info("ListJsunit beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -61,7 +60,7 @@ export default function ListJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get ListJsunit state pages: " + JSON.stringify(pages));
         if (!("ListPage" == pages.name)) {
@@ -77,6 +76,7 @@ export default function ListJsunit() {
 
     
     
+
 
 /*
      * @tc.number   ListJsunit_static_0100
@@ -110,9 +110,9 @@ it('ListJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info("[ListJsunit_static_0100] edgeEffect: " + JSON.stringify(obj.getElement('$attrs').getString('edgeEffect')));
       console.info("[ListJsunit_static_0100] lanes: " + JSON.stringify(obj.getElement('$attrs').getString('lanes')));
       console.info("[ListJsunit_static_0100] chainAnimation: " +
-      JSON.stringify(obj.getElement('$attrs').getString('chainAnimation')));
+      JSON.stringify(obj.getElement('$attrs').getBoolean('chainAnimation')));
       console.info("[ListJsunit_static_0100] multiSelectable: " +
-      JSON.stringify(obj.getElement('$attrs').getString('multiSelectable')));
+      JSON.stringify(obj.getElement('$attrs').getBoolean('multiSelectable')));
       console.info("[ListJsunit_static_0100] alignListItem: " +
       JSON.stringify(obj.getElement('$attrs').getString('alignListItem')));
       console.info("[ListJsunit_static_0100] sticky: " + JSON.stringify(obj.getElement('$attrs').getString('sticky')));
@@ -129,8 +129,8 @@ it('ListJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(obj.getElement('$attrs').getString('cachedCount')).assertEqual('1');
       expect(obj.getElement('$attrs').getString('edgeEffect')).assertEqual('EdgeEffect.Spring');
       expect(obj.getElement('$attrs').getString('lanes')).assertEqual('1');
-      expect(obj.getElement('$attrs').getString('chainAnimation')).assertEqual(false);
-      expect(obj.getElement('$attrs').getString('multiSelectable')).assertEqual(false);
+      expect(obj.getElement('$attrs').getBoolean('chainAnimation')).assertEqual(false);
+      expect(obj.getElement('$attrs').getBoolean('multiSelectable')).assertEqual(false);
       expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
       expect(obj.getElement('$attrs').getString('alignListItem')).assertEqual('ListItemAlign.End');
       console.info('[ListJsunit_static_0100] END');
@@ -139,6 +139,7 @@ it('ListJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
+
 
 /*
      * @tc.number   ListJsunit_static_0200
@@ -246,6 +247,7 @@ it('ListJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
 
+
 /*
      * @tc.number   ListJsunit_static_0300
      * @tc.name     ListJsunit_static_0300
@@ -257,7 +259,7 @@ it('ListJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[ListJsunit_0300] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name: 'space', value: 25 })
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({ name: 'initialIndex', value: 1 })
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({ name: 'initialIndex', value: 1 })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<Axis>>('messageManager')?.notify({ name: 'listDirection', value: Axis.Horizontal })
       await CommonFunc.sleep(200);
@@ -271,13 +273,13 @@ it('ListJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<BarState>>('messageManager')?.notify({ name: 'scrollBar', value: BarState.On })
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<number>>('messageManager') ?.notify({ name: 'cachedCount', value: 2 })
+      AppStorage.get<MessageManager<int>>('messageManager') ?.notify({ name: 'cachedCount', value: 2 })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<EdgeEffect>>('messageManager')?.notify({ name: 'edgeEffect', value: EdgeEffect.Fade })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<boolean>>('messageManager')?.notify({ name: 'chainAnimation', value: true })
       await CommonFunc.sleep(200);
-      AppStorage.get<MessageManager<number>>('messageManager') ?.notify({ name: 'lanes', value: 5 })
+      AppStorage.get<MessageManager<int>>('messageManager') ?.notify({ name: 'lanes', value: 5 })
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<boolean>>('messageManager')?.notify({ name: 'multiSelectable', value: true })
       await CommonFunc.sleep(200);
@@ -309,9 +311,9 @@ it('ListJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info("[ListJsunit_0300] edgeEffect: " + JSON.stringify(obj.getElement('$attrs').getString('edgeEffect')));
       console.info("[ListJsunit_0300] lanes: " + JSON.stringify(obj.getElement('$attrs').getString('lanes')));
       console.info("[ListJsunit_0300] chainAnimation: " +
-      JSON.stringify(obj.getElement('$attrs').getString('chainAnimation')));
+      JSON.stringify(obj.getElement('$attrs').getBoolean('chainAnimation')));
       console.info("[ListJsunit_0300] multiSelectable: " +
-      JSON.stringify(obj.getElement('$attrs').getString('multiSelectable')));
+      JSON.stringify(obj.getElement('$attrs').getBoolean('multiSelectable')));
       console.info("[ListJsunit_0300] alignListItem: " +
       JSON.stringify(obj.getElement('$attrs').getString('alignListItem')));
       console.info("[ListJsunit_0300] sticky: " + JSON.stringify(obj.getElement('$attrs').getString('sticky')));
@@ -327,8 +329,8 @@ it('ListJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(obj.getElement('$attrs').getString('cachedCount')).assertEqual('2');
       expect(obj.getElement('$attrs').getString('edgeEffect')).assertEqual('EdgeEffect.Fade');
       expect(obj.getElement('$attrs').getString('lanes')).assertEqual('5');
-      expect(obj.getElement('$attrs').getString('chainAnimation')).assertEqual(true);
-      expect(obj.getElement('$attrs').getString('multiSelectable')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('chainAnimation')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('multiSelectable')).assertEqual(true);
       expect(obj.getElement('$attrs').getString('alignListItem')).assertEqual('ListItemAlign.Start');
       expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
       console.info('[ListJsunit_0300] END');
@@ -337,6 +339,7 @@ it('ListJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
+
 
 /*
      * @tc.number   ListJsunit_static_0400
@@ -396,9 +399,9 @@ it('ListJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info("[ListJsunit_0400] edgeEffect: " + JSON.stringify(obj.getElement('$attrs').getString('edgeEffect')));
       console.info("[ListJsunit_0400] lanes: " + JSON.stringify(obj.getElement('$attrs').getString('lanes')));
       console.info("[ListJsunit_0400] chainAnimation: " +
-      JSON.stringify(obj.getElement('$attrs').getString('chainAnimation')));
+      JSON.stringify(obj.getElement('$attrs').getBoolean('chainAnimation')));
       console.info("[ListJsunit_0400] multiSelectable: " +
-      JSON.stringify(obj.getElement('$attrs').getString('multiSelectable')));
+      JSON.stringify(obj.getElement('$attrs').getBoolean('multiSelectable')));
       console.info("[ListJsunit_0400] alignListItem: " +
       JSON.stringify(obj.getElement('$attrs').getString('alignListItem')));
       console.info("[ListJsunit_0400] sticky: " + JSON.stringify(obj.getElement('$attrs').getString('sticky')));
@@ -414,8 +417,8 @@ it('ListJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(obj.getElement('$attrs').getString('cachedCount')).assertEqual('1');
       expect(obj.getElement('$attrs').getString('edgeEffect')).assertEqual('EdgeEffect.Spring');
       expect(obj.getElement('$attrs').getString('lanes')).assertEqual('5');
-      expect(obj.getElement('$attrs').getString('chainAnimation')).assertEqual(true);
-      expect(obj.getElement('$attrs').getString('multiSelectable')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('chainAnimation')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('multiSelectable')).assertEqual(true);
       expect(obj.getElement('$attrs').getString('alignListItem')).assertEqual('ListItemAlign.Start');
       expect(obj.getElement('$attrs').getString('sticky')).assertEqual('StickyStyle.None');
       console.info('[ListJsunit_0400] END');
@@ -424,6 +427,7 @@ it('ListJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
+
 
 /*
      * @tc.number   ListJsunit_static_0500
@@ -453,6 +457,7 @@ it('ListJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
 
+
 /*
      * @tc.number   ListJsunit_static_0600
      * @tc.name     ListJsunit_static_0600
@@ -474,6 +479,7 @@ it('ListJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
+
 
 /*
      * @tc.number   ListJsunit_static_0700

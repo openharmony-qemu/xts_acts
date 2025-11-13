@@ -40,7 +40,7 @@ export default function waterFlowFad() {
     beforeEach(async (): Promise<void> => {
       console.info("waterFlowFad beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/WaterFlow/waterFlowFad",
+        url: "MainAbility/pages/WaterFlow/WaterFlow_attribute/waterFlowFad",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -49,11 +49,8 @@ export default function waterFlowFad() {
         console.info("get MarqueeDynamicSyncSceneTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get MarqueeDynamicSyncSceneTest pages.name:" + JSON.stringify(pages.name));
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push MarqueeDynamicSyncSceneTest page error:" + err);
@@ -75,13 +72,12 @@ export default function waterFlowFad() {
 it('waterFlowFad_static_0100', Level.LEVEL1, async (done:()=>void):Promise<void> => {
       console.info('[waterFlowFad_static_0100] START');
       await CommonFunc.sleep(1000);
-      let strJson =inspector.getInspectorByKey('flow_fadingEdge');
-      console.info("[waterFlowFad_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[waterFlowFad_static_0100] fadingEdge: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fadingEdge')));
-      console.info("[waterFlowFad_static_0100] FadingEdgeOptions: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('FadingEdgeOptions')));
+      let strJson = inspector.getInspectorByKey('flow_fadingEdge');
+      console.info("[waterFlowFad_static_0100] component obj is: " + strJson);
+      console.info("[waterFlowFad_static_0100] fadingEdge: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('fadingEdge')));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('WaterFlow');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fadingEdge')).assertEqual(true);
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('WaterFlow');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('fadingEdge')).assertEqual(true);
       console.info('[waterFlowFad_static_0100] END');
       done();
     });

@@ -49,7 +49,6 @@ export default function ListLanes03() {
   describe('ListLanes03', () => {
     beforeAll(() => {
       console.info("ListLanes03 beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -79,6 +78,7 @@ export default function ListLanes03() {
     
     
 
+
 /*
      * @tc.number   ListLanes03_static_001
      * @tc.name     ListLanes03_static_001
@@ -103,6 +103,7 @@ it('ListLanes03_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
 
+
 /*
      * @tc.number   ListLanes03_static_002
      * @tc.name     ListLanes03_static_002
@@ -117,8 +118,8 @@ it('ListLanes03_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
       let ListItem0 = CommonFunc.getComponentRect('ListLanes32_0');
       let ListItem1 = CommonFunc.getComponentRect('ListLanes32_1');
       await CommonFunc.sleep(1000);
-      let context = AppStorage.get<UIContext>("context") as UIContext
-      expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(context!.fp2px(10))) <= 1).assertTrue();
+  let context = AppStorage.get<UIContext>("context")
+  expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(context!.fp2px(10))) <= 1).assertTrue();
       console.info('[ListLanes03_002] END');
       done();
     });
@@ -126,6 +127,7 @@ it('ListLanes03_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
     
+
 
 /*
      * @tc.number   ListLanes03_static_003
@@ -141,7 +143,7 @@ it('ListLanes03_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
       let ListItem0 = CommonFunc.getComponentRect('ListLanes33_0');
       let ListItem1 = CommonFunc.getComponentRect('ListLanes33_1');
       await CommonFunc.sleep(1000);
-      let context = AppStorage!.get<UIContext>("context") as UIContext
+      let context = AppStorage.get<UIContext>("context")
       expect(Math.abs(Math.round(ListItem1.left - ListItem0.right) - Math.round(context!.lpx2px(10))) <= 1).assertTrue();
 
       console.info('[ListLanes03_003] END');
@@ -151,6 +153,7 @@ it('ListLanes03_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
     
+
 
 /*
      * @tc.number   ListLanes03_static_004

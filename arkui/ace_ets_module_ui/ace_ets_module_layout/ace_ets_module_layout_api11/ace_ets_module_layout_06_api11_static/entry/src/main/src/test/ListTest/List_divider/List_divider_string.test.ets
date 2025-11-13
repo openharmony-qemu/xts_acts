@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,7 +77,7 @@ export default function List_divider_string() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.back()
+      // routerInstance.back()
       console.info("List_divider_string after each called");
     });
 
@@ -85,6 +85,7 @@ export default function List_divider_string() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_divider_string_static_0100
@@ -115,6 +116,7 @@ it('SUB_ACE_List_divider_string_static_0100', Level.LEVEL0, async (done: () => v
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_divider_string_static_0200
      * @tc.name     SUB_ACE_List_divider_string_static_0200
@@ -144,6 +146,7 @@ it('SUB_ACE_List_divider_string_static_0200', Level.LEVEL0, async (done: () => v
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_divider_string_static_0300
      * @tc.name     SUB_ACE_List_divider_string_static_0300
@@ -172,6 +175,7 @@ it('SUB_ACE_List_divider_string_static_0300', Level.LEVEL0, async (done: () => v
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_divider_string_static_0400
      * @tc.name     SUB_ACE_List_divider_string_static_0400
@@ -183,7 +187,7 @@ it('SUB_ACE_List_divider_string_static_0400', Level.LEVEL0, async (done: () => v
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'strokeWidth', value: '10px'
       });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'lanes', value: 2
       });
       await CommonFunc.sleep(1000);
@@ -202,6 +206,7 @@ it('SUB_ACE_List_divider_string_static_0400', Level.LEVEL0, async (done: () => v
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_divider_string_static_0500

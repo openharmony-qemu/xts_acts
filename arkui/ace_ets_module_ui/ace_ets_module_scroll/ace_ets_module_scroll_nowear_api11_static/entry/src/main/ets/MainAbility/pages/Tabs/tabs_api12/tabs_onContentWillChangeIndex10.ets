@@ -26,7 +26,7 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -38,8 +38,8 @@ struct TabsExampleApi12I10 {
   @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
 
-  @Builder tabBuilder(title: string,targetIndex: int) {
-    Column(){
+  @Builder tabBuilder(title: string,targetIndex: number) {
+    Column() {
       Text(title).fontColor(this.currentIndex === targetIndex ? '#1698CE' : '#6B6B6B')
     }.width('100%')
     .height(50)
@@ -47,43 +47,42 @@ struct TabsExampleApi12I10 {
   }
   build() {
     Column() {
-      Text(this.currentIndex + "").key("currentIndex10x")
+      Text(this.currentIndex + "").key('currentIndex10x')
 
       Tabs({ barPosition: BarPosition.End, controller: this.controller, index: this.currentIndex }) {
         TabContent() {
           Column(){
             Text('首页的内容')
           }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center).key("content1x4")
-        }
-        
+        }.tabBar(() => { this.tabBuilder('首页',0) })
 
         TabContent() {
           Column(){
             Text('发现的内容')
           }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center).key("content2x4")
         }
-        
+        .tabBar(() => { this.tabBuilder('发现',1) })
 
         TabContent() {
           Column(){
             Text('推荐的内容')
           }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center).key("content3x4")
         }
-        
+        .tabBar(() => { this.tabBuilder('推荐',2) })
 
         TabContent() {
           Column(){
             Text('我的内容')
           }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content4x4")
         }
-        
+        .tabBar(() => { this.tabBuilder('我的',3) })
 
         TabContent() {
           Column(){
             Text('党史1949')
           }.width('100%').height('100%').backgroundColor('#E67C92').justifyContent(FlexAlign.Center).key("content5x4")
         }
-        
+        .tabBar(() => { this.tabBuilder('党史1949',3) })
       }
       .vertical(false)
       .barMode(BarMode.Fixed)
@@ -97,13 +96,13 @@ struct TabsExampleApi12I10 {
       .height('60%')
       .backgroundColor('#F1F3F5')
       .scrollable(true)
-      
-      
-      
-      
-      
-      
-      
+      .onContentWillChange((currentIndex, comingIndex): boolean => {
+        this.currentIndex = currentIndex
+        if (comingIndex == 3) {
+           return false
+        }
+        return true
+      })
 
       Button('动态修改index').width('50%')
         .onClick((e: ClickEvent)=>{

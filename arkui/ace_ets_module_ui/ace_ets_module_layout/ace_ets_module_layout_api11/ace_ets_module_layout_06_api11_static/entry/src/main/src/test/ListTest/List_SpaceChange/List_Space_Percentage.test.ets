@@ -38,7 +38,6 @@ export default function List_Space_Percentage() {
   describe('List_Space_Percentage', () => {
     beforeAll(() => {
       console.log("List_Space_Percentage beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,8 +65,6 @@ export default function List_Space_Percentage() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      
-      
       routerInstance.back()
       console.info("List_Space_Percentage after each called");
     });
@@ -76,6 +73,7 @@ export default function List_Space_Percentage() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_Space_Percentage_static_0100
@@ -119,6 +117,7 @@ it('SUB_ACE_List_Space_Percentage_static_0100', Level.LEVEL0, async (done: () =>
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_Space_Percentage_static_0200
      * @tc.name     SUB_ACE_List_Space_Percentage_static_0200
@@ -151,6 +150,7 @@ it('SUB_ACE_List_Space_Percentage_static_0200', Level.LEVEL0, async (done: () =>
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_Space_Percentage_static_0300

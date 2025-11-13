@@ -62,7 +62,7 @@ export default function ListOffSet01Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListOffSet01Jsunit state pages:" + JSON.stringify(pages));
         if (!("ListOffSet01" == pages.name)) {
@@ -79,6 +79,7 @@ export default function ListOffSet01Jsunit() {
     
     
     
+
 
 /*
      * @tc.number   ListOffSet01Jsunit_static_0010
@@ -107,6 +108,7 @@ it('ListOffSet01Jsunit_static_0010', Level.LEVEL0, async (done: () => void): Pro
     
     
 
+
 /*
      * @tc.number   ListOffSet01Jsunit_static_0020
      * @tc.name     ListOffSet01Jsunit_static_0020
@@ -133,6 +135,7 @@ it('ListOffSet01Jsunit_static_0020', Level.LEVEL0, async (done: () => void): Pro
     
     
     
+
 
 /*
      * @tc.number   ListOffSet01Jsunit_static_0030
@@ -171,6 +174,7 @@ it('ListOffSet01Jsunit_static_0030', Level.LEVEL0, async (done: () => void): Pro
     
     
 
+
 /*
      * @tc.number   ListOffSet01Jsunit_static_0040
      * @tc.name     ListOffSet01Jsunit_static_0040
@@ -199,6 +203,7 @@ it('ListOffSet01Jsunit_static_0040', Level.LEVEL0, async (done: () => void): Pro
     
     
 
+
 /*
      * @tc.number   ListOffSet01Jsunit_static_0050
      * @tc.name     ListOffSet01Jsunit_static_0050
@@ -226,6 +231,7 @@ it('ListOffSet01Jsunit_static_0050', Level.LEVEL0, async (done: () => void): Pro
     
     
     
+
 
 /*
      * @tc.number   ListOffSet01Jsunit_static_0060
@@ -261,6 +267,7 @@ it('ListOffSet01Jsunit_static_0060', Level.LEVEL0, async (done: () => void): Pro
     
     
 
+
 /*
      * @tc.number   ListOffSet01Jsunit_static_0070
      * @tc.name     ListOffSet01Jsunit_static_0070
@@ -294,6 +301,7 @@ it('ListOffSet01Jsunit_static_0070', Level.LEVEL0, async (done: () => void): Pro
     
     
     
+
 
 /*
      * @tc.number   ListOffSet01Jsunit_static_0080

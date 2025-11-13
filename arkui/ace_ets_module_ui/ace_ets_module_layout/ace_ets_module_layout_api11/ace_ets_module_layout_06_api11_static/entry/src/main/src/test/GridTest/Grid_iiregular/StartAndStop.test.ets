@@ -36,7 +36,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function StartAndStop() {
   describe('StartAndStop', () => {
     beforeAll(() => {
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -55,7 +54,6 @@ export default function StartAndStop() {
           console.info("get StartAndStop pages.name:" + JSON.stringify(pages.name));
            routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push StartAndStop page error:" + err);
@@ -77,6 +75,7 @@ export default function StartAndStop() {
 
     
     
+
 
 /*
      * @tc.number   StartAndStop_static_0300

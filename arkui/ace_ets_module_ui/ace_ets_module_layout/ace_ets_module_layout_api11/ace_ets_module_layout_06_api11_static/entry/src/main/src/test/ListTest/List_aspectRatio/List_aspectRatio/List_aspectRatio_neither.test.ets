@@ -49,7 +49,6 @@ export default function List_aspectRatio_neither() {
   describe('List_aspectRatio_neither', () => {
     beforeAll(() => {
       console.info("List_aspectRatio_neither beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -86,6 +85,7 @@ export default function List_aspectRatio_neither() {
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_neither_static_0100
      * @tc.name     SUB_ACE_List_aspectRatio_neither_static_0100
@@ -115,6 +115,7 @@ it('SUB_ACE_List_aspectRatio_neither_static_0100', Level.LEVEL0, async (done: ()
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_neither_static_0200
@@ -146,6 +147,7 @@ it('SUB_ACE_List_aspectRatio_neither_static_0200', Level.LEVEL0, async (done: ()
     
     
 
+
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_neither_static_0300
      * @tc.name     SUB_ACE_List_aspectRatio_neither_static_0300
@@ -175,6 +177,7 @@ it('SUB_ACE_List_aspectRatio_neither_static_0300', Level.LEVEL0, async (done: ()
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_List_aspectRatio_neither_static_0400

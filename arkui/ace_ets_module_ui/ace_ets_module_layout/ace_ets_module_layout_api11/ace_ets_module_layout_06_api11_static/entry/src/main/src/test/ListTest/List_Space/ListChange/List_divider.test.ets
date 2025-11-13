@@ -38,7 +38,6 @@ export default function List_divider() {
   describe('List_divider', () => {
     beforeAll(() => {
       console.log("List_divider beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -73,6 +72,7 @@ export default function List_divider() {
     
     
     
+
 
 /*
      * @tc.number   testListDividerStrokeWidthToTen_static
@@ -134,6 +134,7 @@ it('testListDividerStrokeWidthToTen_static', Level.LEVEL0, async (done: () => vo
     
     
     
+
 
 /*
      * @tc.number   testListDividerStrokeWidthToForty_static

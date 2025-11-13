@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,6 +81,7 @@ export default function list_ListInitialIndex5Test() {
     
     
     
+
 
 /*
      * @tc.number   testListInitialIndexToTwelveWithTwoLane_static
@@ -173,8 +174,8 @@ it('testListInitialIndexToTwelveWithTwoLane_static', Level.LEVEL0, async (done: 
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + listContainer.left + listContainer_width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.bottom - listContainer_height / 6)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + listContainer.left + listContainer_width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.bottom - listContainer_height / 6)).toInt());
-
+        (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.top + listContainer_height / 6)).toInt());
+  await CommonFunc.sleep(2000);
       ninthListItem = CommonFunc.getComponentRect('List_ListInitialIndex5_9');
       tenthListItem = CommonFunc.getComponentRect('List_ListInitialIndex5_10');
       eleventhListItem = CommonFunc.getComponentRect('List_ListInitialIndex5_11');
