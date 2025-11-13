@@ -32,7 +32,7 @@ import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function LangTest() {
@@ -55,9 +55,13 @@ export default function LangTest() {
       console.info("afterAll case");
     });
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   lang_test_static_8900
      * @tc.number lang_test_static_8900
-     * @tc.name lang_test_static_8900
-     * @tc.desc test isRTL interface with en-US param
+     * @tc.desc   test isRTL interface with en-US param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('lang_test_static_8900', Level.LEVEL2, (): void => {
       hilog.info(domain, tag, '%{public}s', 'i18n_test_static_8900 start');
@@ -67,9 +71,13 @@ export default function LangTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_9000
      * @tc.number i18n_test_9000
-     * @tc.name i18n_test_9000
-     * @tc.desc test isRTL interface with ar param
+     * @tc.desc   test isRTL interface with ar param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_test_9000', Level.LEVEL2, (): void => {
       hilog.info(domain, tag, '%{public}s', 'i18n_test_9000 start');
@@ -80,12 +88,13 @@ export default function LangTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_EntityRecognizer_static_0100
-     * @tc.name     : SUB_GLOBAL_I18N_EntityRecognizer_static_0100
-     * @tc.desc     : findEntityInfo - Identifying Entity Information in Text
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_0100
+     * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_0100
+     * @tc.desc   findEntityInfo - Identifying Entity Information in Text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_I18N_EntityRecognizer_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
@@ -99,11 +108,15 @@ export default function LangTest() {
       expect(result[0].end == 19).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0100
-    * @tc.name    transfer_test_static_0100
-    * @tc.desc    check the transfer result, transfer from lower to upper
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_static_0100
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0100
+     * @tc.desc   check the transfer result, transfer from lower to upper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transfer_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let date = 'hello';
       let value = date.toLocaleUpperCase('zh-CN');
@@ -111,11 +124,15 @@ export default function LangTest() {
       expect(value).assertEqual('HELLO');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0200
-    * @tc.name    transfer_test_static_0200
-    * @tc.desc    check the transfer result, transfer from upper to lower
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_static_0200
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0200
+     * @tc.desc   check the transfer result, transfer from upper to lower
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transfer_test_static_0200', Level.LEVEL0, async (): Promise<void> => {
       let date = 'WORLD';
       let value = date.toLocaleLowerCase('zh-CN');
@@ -123,11 +140,15 @@ export default function LangTest() {
       expect(value).assertEqual('world');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0300
-    * @tc.name    transfer_test_static_0300
-    * @tc.desc    check the transfer result,transfer to upper
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_static_0300
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0300
+     * @tc.desc   check the transfer result,transfer to upper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transfer_test_static_0300', Level.LEVEL0, async (): Promise<void> => {
       let date = 'My name is Jack.';
       let value = date.toLocaleUpperCase('en-US');
@@ -135,11 +156,15 @@ export default function LangTest() {
       expect(value).assertEqual('MY NAME IS JACK.');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_static_0400
-    * @tc.name    transfer_test_static_0400
-    * @tc.desc    check the transfer result, transfer to lower
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_static_0400
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_static_0400
+     * @tc.desc   check the transfer result, transfer to lower
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transfer_test_static_0400', Level.LEVEL0, async (): Promise<void> => {
       let date = 'The sky is in BLUE-STYLE!';
       let value = date.toLocaleLowerCase('en-US');

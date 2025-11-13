@@ -68,10 +68,14 @@ export default function NoPermissionCanIUseTest() {
         })
 
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerNoPerCanIUse_0100
-     * @tc.name       : testDeviceManagerNoPerCanIUsek001
-     * @tc.desc       : verify DeviceManagerCanIUse any device
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testDeviceManagerNoPerCanIUsek001
+     * @tc.number SUB_Driver_Ext_DeviceManagerNoPerCanIUse_0100
+     * @tc.desc   verify DeviceManagerCanIUse any device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDeviceManagerNoPerCanIUsek001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
         console.info(TAG, '----------------------testDeviceManagerNoPerCanIUsek001---------------------------');

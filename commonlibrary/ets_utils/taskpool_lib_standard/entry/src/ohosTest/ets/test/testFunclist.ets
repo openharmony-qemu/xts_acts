@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { taskpool, collections} from '@kit.ArkTS'
+import { taskpool, collections, TreeSet} from '@kit.ArkTS'
 import { BusinessError } from '@ohos.base'
-import { StrCat, A, B, printStrArgs, printArgs, multiplyFunc, getLongString } from './exportFunclist'
+import { StrCat, A, B, printStrArgs, printArgs, multiplyFunc, getLongString, asyncSleep } from './exportFunclist'
 import HashMap from '@ohos.util.HashMap';
 import { errorManager } from '@kit.AbilityKit';
 import { SendableClass, SimpleSendable, SendableClassTest } from './sendable';
@@ -388,6 +388,12 @@ export function SetTestFunc(set: collections.Set<number>) {
   return set;
 }
 
+export function TreeSetTestFunc(treeSet: TreeSet<number>): TreeSet<number> {
+  "use concurrent"
+  treeSet.add(4);
+  return treeSet;
+}
+
 export function MapTestFunc(map: collections.Map<number, number>) {
   "use concurrent"
   map.set(5,6);
@@ -508,4 +514,24 @@ export async function promiseNumber(num: number): Promise<void> {
     }, 200);
   })
   return p;
+}
+
+@Concurrent
+export function getCreateTaskId():number {
+  let task = new taskpool.Task(printArgs, 10);
+  return task.taskId;
+}
+
+@Concurrent
+export async function taskSendManyFunc(time: number, value: number) {
+  for (let i = 0; i< value; i++) {
+    await asyncSleep(time);
+    taskpool.Task.sendData(value);
+  }
+}
+
+@Concurrent
+export async function taskErrFunc(time:number) {
+  await asyncSleep(time);
+  throw new Error("taskErrFunc error");
 }

@@ -71,7 +71,7 @@ export default function WebsocketServerTest() {
           done();
           console.info(`${caseName} test end`);
         }else{
-          console.info(`${caseName} --> ${wss}`);
+          console.info(`${caseName} --> ${JSON.stringify(wss)}`);
           ExpectTrue(wss != null,`${caseName}`);
           done();
           console.info(`${caseName} test end`);
@@ -140,7 +140,7 @@ export default function WebsocketServerTest() {
           console.info(`${caseName} --> ${server}`);
           let serverConfig: webSocket.WebSocketServerConfig ={
             serverIP: "0.0.0.0",
-            serverPort: 8088,
+            serverPort: 8087,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
@@ -193,7 +193,7 @@ export default function WebsocketServerTest() {
           console.info(`${caseName} --> ${server}`);
           let serverConfig: webSocket.WebSocketServerConfig ={
             serverIP: "0.0.0.0",
-            serverPort: 8088,
+            serverPort: 8087,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
             protocol: "my-protocol",
@@ -251,7 +251,7 @@ export default function WebsocketServerTest() {
           }
           let serverConfig: webSocket.WebSocketServerConfig ={
             serverIP: "0.0.0.0",
-            serverPort: 8088,
+            serverPort: 8087,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
             protocol: "my-protocol",
@@ -310,7 +310,7 @@ export default function WebsocketServerTest() {
           }
           let serverConfig: webSocket.WebSocketServerConfig ={
             serverIP: undefined,
-            serverPort: 8088,
+            serverPort: 8087,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
             protocol: "my-protocol",
@@ -321,6 +321,7 @@ export default function WebsocketServerTest() {
               console.log(`${caseName} webSocketServer start success`)
               ExpectTrue(true, `${caseName} webSocketServer start success`);
               done()
+              server.stop()
               console.info(`${caseName} test end`);
             }else {
               expectFail(`${caseName} webSocketServer start fail`)
@@ -368,7 +369,7 @@ export default function WebsocketServerTest() {
           }
           let serverConfig: webSocket.WebSocketServerConfig ={
             serverIP: "0.0.0.0",
-            serverPort: 8088,
+            serverPort: 8087,
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
             protocol: "my-protocol",
@@ -380,6 +381,7 @@ export default function WebsocketServerTest() {
               console.log(`${caseName} webSocketServer start success`)
               expectFail(`${caseName} webSocketServer start success`);
               done()
+              server.stop()
               console.info(`${caseName} test end`);
             }else {
               expectFail(`${caseName} webSocketServer start fail`)
@@ -433,6 +435,7 @@ export default function WebsocketServerTest() {
               console.log(`${caseName} webSocketServer start success`)
               expectFail(`${caseName} webSocketServer start`);
               done()
+              server.stop()
               console.info(`${caseName} test end`);
             }else {
               expectFail(`${caseName} webSocketServer start fail`)
@@ -453,6 +456,7 @@ export default function WebsocketServerTest() {
         console.info(`${caseName} test end`);
       }
     });
+
     /* *
      * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0700
      * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0700
@@ -461,7 +465,6 @@ export default function WebsocketServerTest() {
      * @tc.type  : Function
      * @tc.level : level 3
      */
-
     it('testNetworkMgrWebSocketWebSocketServerStart0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart0700';
       console.info(`${caseName} test start`);
@@ -485,6 +488,7 @@ export default function WebsocketServerTest() {
               console.log(`${caseName} webSocketServer start success`)
               expectFail(`${caseName} webSocketServer start`);
               done()
+              server.stop()
               console.info(`${caseName} test end`);
             }else {
               expectFail(`${caseName} webSocketServer start fail`)
@@ -505,6 +509,7 @@ export default function WebsocketServerTest() {
         console.info(`${caseName} test end`);
       }
     });
+
     /* *
      * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart_0800
      * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart0800
@@ -536,6 +541,7 @@ export default function WebsocketServerTest() {
               console.log(`${caseName} webSocketServer start success`)
               expectFail(`${caseName} webSocketServer start`);
               done()
+              server.stop()
               console.info(`${caseName} test end`);
             }else {
               expectFail(`${caseName} webSocketServer start fail`)
@@ -615,23 +621,126 @@ export default function WebsocketServerTest() {
               console.info(`${caseName} test end`);
             }
           })
-          await sleep(100)
-          let connections = server.listAllConnections()
-          console.info(`${caseName} connections-->+ ${JSON.stringify(connections[0])}`);
-          if (connections.length != 0) {
-            console.info(`${connections}`)
-            ExpectTrue(true, `${caseName}--> ${connections[0]}`)
+          await sleep(1000)
+          let connections = await server.listAllConnections()
+          console.info(`${caseName} connections1-->+ ${JSON.stringify(connections)}`);
+          if (connections) {
+            console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
+            console.info(`${caseName} connections.length-->+ ${JSON.stringify(connections.length)}`);
+            ExpectTrue(connections.length > 0, `${caseName}--> ${connections[0]}`)
             done()
+            server.stop()
             console.info(`${caseName} test end1`)
           }else{
             expectFail(`${caseName}`)
             done()
+            server.stop()
             console.info(`${caseName} test end2`)
           }
         }
       }catch (error){
         console.info(`${caseName} error--${error}`)
         expectFail(`${caseName}`)
+        done()
+        console.info(`${caseName} test end3`)
+      }
+    })
+
+    /* *
+     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerListAllConnections_0200
+     * @tc.name  : testNetworkMgrWebSocketWebSocketServerListAllConnections0200
+     * @tc.desc  : WebSocketServer list all connections(null array)
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testNetworkMgrWebSocketWebSocketServerListAllConnections0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketWebSocketServerListAllConnections0200';
+      console.info(`${caseName} test start`)
+      try {
+        let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
+        if(!server) {
+          console.info(`${caseName} Server is nullptr`);
+          ExpectTrue(true,`${caseName}`);
+          done();
+          console.info(`${caseName} test end`);
+        }else {
+          let serverConfig: webSocket.WebSocketServerConfig ={
+            serverIP: "0.0.0.0",
+            serverPort: 8089,
+            maxConcurrentClientsNumber: 10,
+            maxConnectionsForOneClient: 4,
+          }
+          await server.start(serverConfig).then((value: boolean)=>{
+            if (value) {
+              console.info(`${caseName} server start`)
+            }else {
+              console.info(`${caseName} server start fail`)
+              expectFail(`${caseName} server start fail`)
+              done()
+              console.info(`${caseName} test end`)
+            }
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} catch error ${JSON.stringify(err)}`);
+            expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+            done();
+            console.info(`${caseName} test end`);
+          })
+          let callback = (connection: webSocket.WebSocketConnection) => {
+            console.info(`${caseName} connections-->+ ${JSON.stringify(connection)}`);
+          }
+          await server.on('connect',callback)
+          await sleep(500)
+          let client: webSocket.WebSocket = webSocket.createWebSocket()
+          console.info(`${caseName}client-- >${client}`)
+          client.connect('ws://127.0.0.1:8089', (err: BusinessError, value: boolean) => {
+            if (value) {
+              console.info(`${caseName} test connect success and value is ${value}`);
+            } else {
+              console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+              expectFail(`${caseName}`)
+              done()
+              console.info(`${caseName} test end`);
+            }
+          })
+          await sleep(500)
+          let connections = await server.listAllConnections()
+          if(!connections){
+            expectFail(`${caseName}`)
+            done()
+            console.info(`${caseName} test end2`)
+          }else{
+            console.info(`${caseName} connections1-->+ ${JSON.stringify(connections[0])}`)
+            await server.close(connections[0]).then((success: boolean) => {
+              if(!success){
+                expectFail(`${caseName} server close fail`)
+                done()
+                server.stop()
+                console.info(`${caseName} test end`)
+              }
+            })
+            await sleep(200)
+            connections = await server.listAllConnections()
+            if(connections){
+              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
+              console.info(`${caseName} connections.length-->+ ${JSON.stringify(connections.length)}`)
+              ExpectTrue(connections.length == 0, `${caseName}--> ${connections}`)
+              done()
+              server.stop()
+              console.info(`${caseName} test end`)
+            }else{
+              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections)}`)
+              expectFail(`${caseName}--> ${JSON.stringify(connections)}`)
+              done()
+              server.stop()
+              console.info(`${caseName} test end1`)
+            }
+          }
+        }
+      }catch (error){
+        console.info(`${caseName} error--${error}`)
+        expectFail(`${caseName}`)
+        done()
         console.info(`${caseName} test end3`)
       }
     })
@@ -691,27 +800,34 @@ export default function WebsocketServerTest() {
             });
 
           })
-          await sleep(20)
+          await sleep(500)
           let connections = await server.listAllConnections()
-          server.send("hello client", connections[0]).then((success: boolean)=>{
-            if (success){
-              console.info(`${caseName} send success`)
-              ExpectTrue(success, `${caseName} send success`)
-              done()
+          if(!connections || connections.length == 0){
+            console.info(`${caseName} get connections fail`)
+            expectFail(`${caseName}`)
+            done()
+            console.info(`${caseName} test end`)
+          }else{
+            server.send("hello client", connections[0]).then((success: boolean)=>{
+              if (success){
+                console.info(`${caseName} send success`)
+                ExpectTrue(success, `${caseName} send success`)
+                done()
+                console.info(`${caseName} test end`);
+              }else{
+                console.info(`${caseName} send fail`);
+                expectFail(`${caseName} send fail`)
+                done()
+                console.info(`${caseName} test end`);
+              }
+            }).catch((error: BusinessError) => {
+              console.info(`${caseName} test send fail ${JSON.stringify(error)}`);
+              expectFail(`${caseName} test send fail`);
+              server.stop()
+              done();
               console.info(`${caseName} test end`);
-            }else{
-              console.info(`${caseName} send fail`);
-              expectFail(`${caseName} send fail`)
-              done()
-              console.info(`${caseName} test end`);
-            }
-          }).catch((error: BusinessError) => {
-            console.info(`${caseName} test send fail ${JSON.stringify(error)}`);
-            expectFail(`${caseName} test send fail`);
-            server.stop()
-            done();
-            console.info(`${caseName} test end`);
-          })
+            })
+          }
         }
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
@@ -853,23 +969,30 @@ export default function WebsocketServerTest() {
               console.info(`${caseName} test end test end`);
             }
           });
-          await sleep(20)
+          await sleep(500)
           let connections = await server.listAllConnections()
-          console.info(`${caseName} connections-->+ ${JSON.stringify(connections[0])}`)
-          server.close(connections[0]).then((success: boolean) => {
-            if (success) {
-              ExpectTrue(true, `${caseName} server close success`)
-              console.info(`${caseName} server close success`)
-              done()
-              server.stop()
-              console.info(`${caseName} test end`);
-            } else{
-              expectFail(`${caseName} server close fail`)
-              done()
-              server.stop()
-              console.info(`${caseName} test end`);
-            }
-          })
+          if(!connections || connections.length == 0){
+            console.info(`${caseName} get connections fail`)
+            expectFail(`${caseName}`)
+            done()
+            console.info(`${caseName} test end`)
+          }else{
+            console.info(`${caseName} connections1-->+ ${JSON.stringify(connections[0])}`)
+            server.close(connections[0]).then((success: boolean) => {
+              if (success) {
+                ExpectTrue(true, `${caseName} server close success`)
+                console.info(`${caseName} server close success`)
+                done()
+                server.stop()
+                console.info(`${caseName} test end`);
+              } else{
+                expectFail(`${caseName} server close fail`)
+                done()
+                server.stop()
+                console.info(`${caseName} test end`);
+              }
+            })
+          }  
         }
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
@@ -1338,13 +1461,13 @@ export default function WebsocketServerTest() {
     });
 
     /* *
-  * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffMsg_0100
-  * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffMsg0100
-  * @tc.desc  : UnSubscript to websocket server message received event
-  * @tc.size  : MediumTest
-  * @tc.type  : Function
-  * @tc.level : level 3
-  */
+    * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerOffMsg_0100
+    * @tc.name  : testNetworkMgrWebSocketWebSocketServerOffMsg0100
+    * @tc.desc  : UnSubscript to websocket server message received event
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : level 3
+    */
     it('testNetworkMgrWebSocketWebSocketServerOffMsg0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffMsg0100';
       console.info(`${caseName} test start`);
@@ -1614,7 +1737,6 @@ export default function WebsocketServerTest() {
      * @tc.type  : Function
      * @tc.level : level 3
      */
-
     it('testNetworkMgrWebSocketWebSocketServerOffErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffErr0100';
       console.info(`${caseName} test start`);
@@ -1815,7 +1937,6 @@ export default function WebsocketServerTest() {
               done();
               console.info(`${caseName} test end`);
             }
-
           })
           await sleep(100)
           ExpectTrue(true)
@@ -1901,7 +2022,6 @@ export default function WebsocketServerTest() {
               done();
               console.info(`${caseName} test end`);
             }
-
           })
           await sleep(100)
           ExpectTrue(true)
@@ -1987,7 +2107,6 @@ export default function WebsocketServerTest() {
               done();
               console.info(`${caseName} test end`);
             }
-
           })
           await sleep(100)
           ExpectTrue(true)

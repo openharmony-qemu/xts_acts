@@ -13,10 +13,15 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200040;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webviewNetworkProxy() {
@@ -34,12 +39,13 @@ export default function webviewNetworkProxy() {
         if (!('webviewNetworkProxy' == pages.name)) {
           console.info('get webviewNetworkProxy state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info('push webviewNetworkProxy page success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push webviewNetworkProxy page error: ' + err);
       }
+      await driver.waitForComponent(ON.id("networkProxyButton"), 10000);
+      console.log("waitForComponent networkProxyButton");
       done()
     });
 
@@ -49,9 +55,40 @@ export default function webviewNetworkProxy() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info('webviewNetworkProxy beforeEach start');
       done();
+    })
+    /**
+    * @tc.number SUB_WEB_NETWORKPROXY_GETPROXYRULES_EMPTY_0100
+    * @tc.name   testGetProxyRulesEmpty
+    * @tc.desc   test getProxyRules empty
+    * @tc.size   MediumTest
+    * @tc.type   Function
+    * @tc.level  Level 0
+    */
+    it('testGetProxyRulesEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitGetProxyRulesEmpty', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testGetProxyRulesEmpty", true, 2025102101,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
+    })
+    /**
+     * @tc.number SUB_WEB_NETWORKPROXY_GETBYPASSRULES_EMPTY_0100
+     * @tc.name   testGetBypassRulesEmpty
+     * @tc.desc   test getBypassRules empty
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testGetBypassRulesEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitGetBypassRulesEmpty', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testGetBypassRulesEmpty", true, 2025102102,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
 
 
@@ -64,10 +101,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 0
     */
     it('testNetworkProxySchemeFilterMatchAllSchemes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent('testNetworkProxySchemeFilterMatchAllSchemes', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testNetworkProxySchemeFilterMatchAllSchemes', true, 202502181, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testNetworkProxySchemeFilterMatchAllSchemes', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testNetworkProxySchemeFilterMatchAllSchemes', true, 200050, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0200
@@ -78,10 +114,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testNetworkProxySchemeFilterMatchHttp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testNetworkProxySchemeFilterMatchHttp', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testNetworkProxySchemeFilterMatchHttp', true, 202502182, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testNetworkProxySchemeFilterMatchHttp', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testNetworkProxySchemeFilterMatchHttp', true, 200060, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0300
@@ -92,10 +127,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testNetworkProxySchemeFilterMatchHttps', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testNetworkProxySchemeFilterMatchHttps', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testNetworkProxySchemeFilterMatchHttps', true, 202502183, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testNetworkProxySchemeFilterMatchHttps', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testNetworkProxySchemeFilterMatchHttps', true, 200070, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0400
@@ -106,10 +140,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testInsertProxyRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testInsertProxyRule', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testInsertProxyRule', true, 202502184, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testInsertProxyRule', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testInsertProxyRule', true, 200080, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0500
@@ -120,10 +153,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testInsertDirectRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testInsertDirectRule', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testInsertDirectRule', true, 202502185, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testInsertDirectRule', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testInsertDirectRule', true, 200090, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0600
@@ -134,10 +166,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testInsertBypassRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testInsertBypassRule', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testInsertBypassRule', true, 202502186, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testInsertBypassRule', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testInsertBypassRule', true, 200100, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0700
@@ -148,10 +179,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testBypassHostnamesWithoutPeriod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testBypassHostnamesWithoutPeriod', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testBypassHostnamesWithoutPeriod', true, 202502187, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testBypassHostnamesWithoutPeriod', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testBypassHostnamesWithoutPeriod', true, 200110, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0800
@@ -162,10 +192,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testClearImplicitRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testClearImplicitRules', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testClearImplicitRules', true, 202502188, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testClearImplicitRules', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testClearImplicitRules', true, 200120, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_0900
@@ -176,10 +205,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testEnableReverseBypass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testEnableReverseBypass', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testEnableReverseBypass', true, 202502189, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testEnableReverseBypass', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testEnableReverseBypass', true, 200130, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_1000
@@ -190,10 +218,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testGetBypassRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testGetBypassRules', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testGetBypassRules', true, 202502190, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testGetBypassRules', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testGetBypassRules', true, 200140, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_1100
@@ -204,10 +231,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testGetProxyRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testGetProxyRules', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testGetProxyRules', true, 202502191, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testGetProxyRules', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testGetProxyRules', true, 200150, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_1200
@@ -218,10 +244,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testIsReverseBypassEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testIsReverseBypassEnabled', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testIsReverseBypassEnabled', false, 202502192, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testIsReverseBypassEnabled', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testIsReverseBypassEnabled', false, 200160, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_1300
@@ -232,10 +257,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testGetSchemeFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testGetSchemeFilter', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testGetSchemeFilter', true, 202502193, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testGetSchemeFilter', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testGetSchemeFilter', true, 200170, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_1300
@@ -246,10 +270,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testProxyGetUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testProxyGetUrl', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testProxyGetUrl', true, 202502194, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testProxyGetUrl', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testProxyGetUrl', true, 200180, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_1500
@@ -260,10 +283,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testApplyProxyOverride', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testApplyProxyOverride', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testApplyProxyOverride', true, 202502195, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testApplyProxyOverride', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testApplyProxyOverride', true, 200190, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
     /*
     * @tc.number     : SUB_WEB_NETWORKPROXY_1600
@@ -274,11 +296,9 @@ export default function webviewNetworkProxy() {
     * @tc.level      : Level 1
     */
     it('testRemoveProxyOverride', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent('testRemoveProxyOverride', 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testRemoveProxyOverride', true, 202502196, done);
-      sendEventByKey('networkProxyButton', 10, '');
+      Utils.emitEvent('testRemoveProxyOverride', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent('testRemoveProxyOverride', true, 200200, done);
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
-
   })
 }

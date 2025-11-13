@@ -24,7 +24,7 @@ import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtBleTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let g_context: common.UIAbilityContext;
 
@@ -65,13 +65,14 @@ export default function bluetoothAccessTest() {
             }
         })
 
-        /*
-         * @tc.number: constantTest
-         * @tc.name: constantTest
-         * @tc.desc: Test constantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   constantTest
+         * @tc.number constantTest
+         * @tc.desc   Test constantTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("constantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -107,13 +108,14 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: bluetoothOnOffStateTest
-         * @tc.name: bluetoothOnOffStateTest
-         * @tc.desc: Test bluetoothOnOffStateTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   bluetoothOnOffStateTest
+         * @tc.number bluetoothOnOffStateTest
+         * @tc.desc   Test bluetoothOnOffStateTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("bluetoothOnOffStateTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -175,13 +177,14 @@ export default function bluetoothAccessTest() {
             done();
         })
 
-        /*
-         * @tc.number: accessConstantTest
-         * @tc.name: accessConstantTest
-         * @tc.desc: Test accessConstantTest API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   accessConstantTest
+         * @tc.number accessConstantTest
+         * @tc.desc   Test accessConstantTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("accessConstantTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -210,6 +213,84 @@ export default function bluetoothAccessTest() {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "accessConstant get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   stateChangeTest
+         * @tc.number stateChangeTest
+         * @tc.desc   Test stateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("stateChangeTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: access.BluetoothState) => void = (changeInfo: access.BluetoothState) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo stateChange:" + changeInfo);
+            }
+            try{
+                access.on('stateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "stateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                access.off('stateChange');
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "stateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   stateChangeTest2
+         * @tc.number stateChangeTest2
+         * @tc.desc   Test stateChangeTest API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("stateChangeTest2", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let onReceiveEvent:(changeInfo: access.BluetoothState) => void = (changeInfo: access.BluetoothState) => {
+                hilog.info(domain, tag, "onReceiveEvent changeInfo stateChange:" + changeInfo);
+            }
+            try{
+                access.on('stateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "stateChange on get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            await Utils.msSleep(1000);
+            try{
+                access.off('stateChange', onReceiveEvent);
+            }catch(err: BusinessError){
+                hilog.info(domain, tag, "stateChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })

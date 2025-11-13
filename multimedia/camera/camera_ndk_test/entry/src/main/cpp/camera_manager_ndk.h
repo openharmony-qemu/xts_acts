@@ -50,7 +50,10 @@
 #define SET_CAMERA_FRONT_FOR_SECURE_PHOTO 5
 #define BACK_CAMERA 0
 #define FRONT_CAMERA 1
-
+#define TORCH_MODE_OFF 3
+#define TORCH_MODE_ON 4
+#define TORCH_MODE_AUTO 5
+#define SMOOTH_ZOOM_MODE_NORMAL 2
 typedef enum CameraCallbackCode {
     CameraInput_Status = 1,
     Preview_OnFrameStart = 2,
@@ -79,7 +82,19 @@ typedef enum UseCaseCode {
     PARAMETER2_ERROR = 2,
     PARAMETER3_ERROR = 3,
     PARAMETER4_ERROR = 4,
+    PARAMETER5_ERROR = 5,
 } UseCaseCode;
+
+typedef enum ImageRotation {
+    IMAGE_0 = 0,
+    ROTATION_0 = 1,
+    ROTATION_90 = 2,
+    ROTATION_180 = 3,
+    ROTATION_270 = 4,
+    IMAGE_90 = 90,
+    IMAGE_180 = 180,
+    IMAGE_270 = 270,
+} ImageRotation;
 
 class NDKCamera {
 public:
@@ -119,6 +134,7 @@ public:
     bool isNormalVideo_;
     bool isSecurePhoto_;
     bool isMovingPhotoSupported_;
+    bool isPhotoQualityPrioritizationSupported_;
     OH_PhotoNative *photoNative_;
     OH_ImageNative *mainImage_;
     bool isTorchSupported_;
@@ -294,6 +310,9 @@ public:
     Camera_ErrorCode CanAddVideoOutput(int useCaseCode);
     Camera_ErrorCode AddSecureOutput(int useCaseCode);
     Camera_ErrorCode OpenSecureCamera(int useCaseCode);
+    Camera_ErrorCode IsPhysicalCameraOrientationVariable(bool* isVariable);
+    Camera_ErrorCode GetPhysicalCameraOrientation(uint32_t* orientation);
+    Camera_ErrorCode UsePhysicalCameraOrientation(bool isUsed);
 
     Camera_ErrorCode CreatePreviewOutputUsedInPreconfig(int useCaseCode);
     Camera_ErrorCode CreatePhotoOutputUsedInPreconfig(char *photoSurfaceId, int useCaseCode);
@@ -315,6 +334,8 @@ public:
     Camera_ErrorCode UnregisterPhotoAssetAvailableCallback(int useCaseCode);
     Camera_ErrorCode IsMovingPhotoSupported(int useCaseCode);
     Camera_ErrorCode EnableMovingPhoto(int useCaseCode, bool enable);
+    Camera_ErrorCode IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality);
+    Camera_ErrorCode SetPhotoQualityPrioritization(int useCaseCode, int quality);
     Camera_ErrorCode GetMainImage(int useCaseCode);
     Camera_ErrorCode PhotoNativeRelease(int useCaseCode);
     Camera_ErrorCode CreatePhotoOutputWithoutSurface(int useCaseCode);

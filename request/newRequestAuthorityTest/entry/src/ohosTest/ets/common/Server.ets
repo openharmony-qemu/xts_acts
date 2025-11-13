@@ -107,6 +107,9 @@ let on_message_callback = (value: SocketInfo) => {
         } else if (contentInfo.includes('SUB_REQUEST_Agent_contentType_0200') && contentInfo.includes('Content-Type: txt')) {
           console.info(TAG + `====>contentInfo: SUB_REQUEST_Agent_contentType_0200`)
           messageView = 'HTTP/1.1 200 OK\r\ncontent-length:18\r\nsuccess:contentTypeTest0200\r\n\r\nupload successful!'
+        } else if (contentInfo.includes('SUB_Request_Download_on_faultOccur_1000')) {
+          console.info(TAG + `====>contentInfo: SUB_Request_Download_on_faultOccur_1000`)
+          messageView = 'HTTP/1.1 302 Bad Request\r\ncontent-length:14\r\n\r\nupload failed!'
         } else {
           console.info(TAG + `====>contentInfo: all`);
           messageView = 'HTTP/1.1 200 OK\r\ncontent-length:18\r\n\r\nupload successful!'

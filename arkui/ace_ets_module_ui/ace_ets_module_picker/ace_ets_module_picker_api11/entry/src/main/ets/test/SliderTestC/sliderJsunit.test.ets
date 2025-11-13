@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -551,6 +551,62 @@ export default function sliderJsunitSliderTest() {
                 expect(obj.$attrs.constructor.max).assertEqual("1000.000000")
                 expect(obj.$attrs.constructor.step).assertEqual("1.000000")
                 console.info("[sliderJsunitSliderTest_0900] END")
+                done()
+            }
+        )
+        /**
+         * @tc.number    sliderJsunitSliderTest_1000
+         * @tc.name      sliderJsunitSliderTest_1000
+         * @tc.desc      api
+         * @tc.level:    Level 0
+         * @tc.type :
+         * @tc.size :
+         */
+        it(
+            "sliderJsunitSliderTest_1000",
+            Level.LEVEL0,
+            async (done: Function) => {
+                console.info("sliderJsunitSliderTest_1000 START")
+                // modify the Color attribute illegal value of slider dynamically
+                let colorGradient = new LinearGradient([{ color: "#ff0a0a0a", offset: 0 }, { color: "#FFFF0000", offset: 1 }])
+                globalThis.value.message.notify({
+                    name: "blockColor",
+                    value: colorGradient,
+                })
+                await CommonFunc.sleep(200)
+                globalThis.value.message.notify({
+                    name: "trackColor",
+                    value: "#ACE",
+                })
+                await CommonFunc.sleep(200)
+                globalThis.value.message.notify({
+                    name: "selectedColor",
+                    value: "#ACE",
+                })
+                await CommonFunc.sleep(200)
+                globalThis.value.message.notify({
+                    name: "trackThickness",
+                    value: "-px",
+                })
+                await CommonFunc.sleep(200)
+                // get the slider component attribute
+                let strJson = getInspectorByKey("sliderA")
+                let obj: ESObject = JSON.parse(strJson)
+                console.info(
+                    "sliderJsunitSliderTest_1000 component obj is: " +
+                        obj.$attrs.linerGradientBlockColor +
+                        "---" +
+                        obj.$attrs.trackColor +
+                        "--" +
+                        obj.$attrs.selectedColor +
+                        "---" +
+                        obj.$attrs.trackThickness
+                )
+                expect(JSON.parse(obj.$attrs.linerGradientBlockColor)[0].color).assertEqual("#FF0A0A0A")
+                expect(JSON.parse(obj.$attrs.linerGradientBlockColor)[1].color).assertEqual("#FFFF0000")
+                expect(obj.$attrs.trackColor).assertEqual("#FFAACCEE")
+                expect(obj.$attrs.trackThickness).assertEqual("4.00vp")
+                expect(obj.$attrs.selectedColor).assertEqual("#FFAACCEE")
                 done()
             }
         )

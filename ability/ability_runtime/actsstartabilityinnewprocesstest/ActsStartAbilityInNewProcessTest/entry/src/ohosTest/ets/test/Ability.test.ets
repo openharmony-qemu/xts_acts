@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -127,24 +127,6 @@ export default function abilityTest() {
           }
           console.log(`${tag} startAbility succeed`);
         });
-        await sleep(2000);
-        if (obj.flag) {
-          console.log(`${tag} no need to click button`);
-          return;
-        }
-        try {
-          let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-          if (allowed) {
-            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-            if (buttons && buttons.length > 0) {
-              buttons[buttons.length - 1].click();
-            }
-          }
-        } catch (err) {
-          let code = (err as BusinessError).code;
-          let message = (err as BusinessError).message;
-          console.log(`${tag} click button failed, code is ${code}, message is ${message}`);
-        }
       } catch (err) {
         let code = (err as BusinessError).code;
         let message = (err as BusinessError).message;
@@ -190,7 +172,7 @@ export default function abilityTest() {
         await abilityDelegator.executeShellCommand(forcestop).catch((err:BusinessError) => {
           console.log(`${tag} executeShellCommand failed.`);
         })
-        await sleep(1000);
+        await sleep(300);
       } catch (err) {
         console.info(`${tag} err: ${JSON.stringify(err)}`);
       }
@@ -415,7 +397,7 @@ export default function abilityTest() {
           commonEvent.publish(SHOW_ABILITY_EVENT, (err)=>{
             console.log(`${tag} publish SHOW_ABILITY_EVENT err: ${JSON.stringify(err)}`);
           });
-        }, 5000)
+        }, 3000)
       } else {
         expect(true).assertTrue();
         done();
@@ -446,7 +428,7 @@ export default function abilityTest() {
           commonEvent.publish(HIDE_ABILITY_EVENT, (err)=>{
             console.log(`${tag} publish HIDE_ABILITY_EVENT err: ${JSON.stringify(err)}`);
           });
-        }, 5000)
+        }, 3000)
       } else {
         expect(true).assertTrue();
         done();

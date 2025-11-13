@@ -80,13 +80,13 @@ export default function abilityTest() {
     console.info(TAG + "*************JS Test Begin*************");
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   ReadonlyErrCode001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0100
-     * @tc.name testReadOnly0100
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info(TAG + "************* ReadonlyErrCode001 start *************");
@@ -189,13 +189,13 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   ReadonlyErrCode002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0200
-     * @tc.name ReadonlyErrCode002
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info(TAG + "************* ReadonlyErrCode002 start *************");
@@ -288,13 +288,13 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   ReadonlyErrCode003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0300
-     * @tc.name ReadonlyErrCode003
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info(TAG + "************* ReadonlyErrCode003 start *************");
@@ -477,13 +477,13 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   ReadonlyErrCode004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0400
-     * @tc.name ReadonlyErrCode004
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info(TAG + "************* ReadonlyErrCode002 start *************");
@@ -607,13 +607,13 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   ReadonlyErrCode005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0500
-     * @tc.name ReadonlyErrCode005
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info(TAG + "************* ReadonlyErrCode002 start *************");
@@ -724,13 +724,13 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   ReadonlyErrCode006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0600
-     * @tc.name ReadonlyErrCode006
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info(TAG + "************* ReadonlyErrCode002 start *************");
@@ -815,13 +815,13 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   ReadonlyErrCode007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0700
-     * @tc.name ReadonlyErrCode007
-     * @tc.desc 1. set isReadOnly as true
-     *          2. open read-only database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   1. set isReadOnly as true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ReadonlyErrCode007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info(TAG + "************* ReadonlyErrCode002 start *************");

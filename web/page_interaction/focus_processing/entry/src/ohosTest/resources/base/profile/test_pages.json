@@ -5,7 +5,9 @@
     "testability/pages/webController",
 	"testability/pages/blurMode",
     "testability/pages/WebGestureFocusMode",
-    "testability/pages/WebGestureTapAndLongPress"
+    "testability/pages/WebGestureTapAndLongPress",
+    "testability/pages/WebForceEnableZoom",
+	"testability/pages/WebSetSoftKeyboardBehaviorMode"
   ]
 }
 

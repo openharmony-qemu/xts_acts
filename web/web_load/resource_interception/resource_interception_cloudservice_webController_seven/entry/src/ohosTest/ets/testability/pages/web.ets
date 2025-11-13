@@ -18,6 +18,7 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 
+const EVENT_ID_SET_EMIT_KEY = 201850;
 let loadedUrl: string;
 
 @Entry
@@ -58,13 +59,19 @@ struct Index {
   @State isProgressFinish: boolean = false;
   @State isHttpErrorReceive: boolean = false;
   @State isLargeThan: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,6 +80,7 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -100,95 +108,102 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webcomponentIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webcomponentIsPageEnd', 1, 1000);
           console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitImageAccessFalse": {
               this.imageAccess = false;
-              await Utils.sleep(1000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              setTimeout(() => {
-                this.controller.runJavaScript({
-                  script: "getImgResult()", callback: (res) => {
-                    console.info("getImgResult==>" + res);
-                    Utils.emitEvent(res, 148);
-                  }
-                });
-              }, 3000);
+              await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              this.controller.runJavaScript({
+                script: "getImgResult()", callback: (res) => {
+                  console.info("getImgResult==>" + res);
+                  Utils.emitEvent(res, 201860);
+                }
+              });
               break;
             }
             case "emitImageAccessTrue": {
               this.imageAccess = true;
-              await Utils.sleep(1000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              setTimeout(() => {
-                this.controller.runJavaScript({
-                  script: "getImgResult()", callback: (res) => {
-                    console.info("getImgResult==>" + res);
-                    Utils.emitEvent(res, 150);
-                  }
-                });
-              }, 3000);
+              await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              this.controller.runJavaScript({
+                script: "getImgResult()", callback: (res) => {
+                  console.info("getImgResult==>" + res);
+                  Utils.emitEvent(res, 201870);
+                }
+              });
               break;
             }
             case "emitOnlineImageAccessFalse": {
               this.onlineImageAccess = false;
-              await Utils.sleep(1000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/onlineImageAccess.html" });
-              setTimeout(() => {
-                this.controller.runJavaScript({
-                  script: "getImageLoadResult()", callback: (res) => {
-                    console.info("getImageLoadResult==>" + res);
-                    Utils.emitEvent(res, 156);
-                  }
-                })
-              }, 3000);
+              await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              this.controller.runJavaScript({
+                script: "getImageLoadResult()", callback: (res) => {
+                  console.info("getImageLoadResult==>" + res);
+                  Utils.emitEvent(res, 201880);
+                }
+              })
               break;
             }
             case "emitOnlineImageAccessTrue": {
               this.onlineImageAccess = true;
-              await Utils.sleep(1000);
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/onlineImageAccess.html" });
-              setTimeout(() => {
-                this.controller.runJavaScript({
-                  script: "getImageLoadResult()", callback: (res) => {
-                    console.info("getImageLoadResult==>" + res)
-                    Utils.emitEvent(res, 158);
-                  }
-                })
-              }, 3000);
+              await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              this.controller.runJavaScript({
+                script: "getImageLoadResult()", callback: (res) => {
+                  console.info("getImageLoadResult==>" + res)
+                  Utils.emitEvent(res, 201890);
+                }
+              })
               break;
             }
             case "emitCacheModeOnly": {
               this.cacheError = true;
               this.cacheMode = CacheMode.Only;
-              await Utils.sleep(2000);
-              this.controller.loadUrl({ url: "https://www.openharmony.cn/mainPlay" });
+              this.controller.loadUrl({ url: "https://www.openharmony.cn" });
               break;
             }
             case "emitCacheModeDefault": {
               this.cacheMode = CacheMode.Default;
-              await Utils.sleep(2000);
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              setTimeout(() => {
-                this.controller.runJavaScript({
-                  script: "gettitle()", callback: (res) => {
-                    Utils.emitEvent(res, 184);
-                  }
-                });
-              }, 3000);
+              await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              this.controller.runJavaScript({
+                script: "gettitle()", callback: (res) => {
+                  Utils.emitEvent(res, 201910);
+                }
+              });
               break;
             }
             case "emitMixedModeNone": {
               this.mixedSwitch = true;
               this.mixedMode = MixedMode.None;
-              await Utils.sleep(2000);
               this.controller.loadUrl({ url: "https://mixed-script.badssl.com/" });
               break;
             }
             case "emitMixedModeAll": {
               this.mixedAllSwitch = true;
               this.mixedMode = MixedMode.All;
-              await Utils.sleep(2000);
               this.controller.loadUrl({ url: "https://mixed-script.badssl.com/" });
               break;
             }
@@ -271,6 +286,7 @@ struct Index {
         .onPageEnd((event) => {
           this.pageEnd = event.url;
           console.log("onPageEnd==>");
+          this.isPageEnd = 1;
           if (this.enterPageEnd) {
             this.enterPageEnd = false;
           }
@@ -281,10 +297,10 @@ struct Index {
           let msg = event.message.getMessage();
           console.log("html==>" + msg);
           if (this.mixedSwitch) {
-            Utils.emitEvent(msg, 186);
+            Utils.emitEvent(msg.includes('insecure') ? true : false, 201920);
             this.mixedSwitch = false;
           } else if (this.mixedAllSwitch) {
-            Utils.emitEvent(level, 188);
+            Utils.emitEvent(level, 201930);
             this.mixedAllSwitch = false;
           }
           return false;
@@ -301,7 +317,7 @@ struct Index {
           this.errorReceive = event.request.getRequestUrl();
           console.log("onErrorReceive==>");
           if (this.cacheError) {
-            Utils.emitEvent("cacheError", 182);
+            Utils.emitEvent("cacheError", 201900);
             this.cacheError = false;
           }
         })

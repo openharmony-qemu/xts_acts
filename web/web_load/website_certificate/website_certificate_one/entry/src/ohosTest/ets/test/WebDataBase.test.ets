@@ -17,6 +17,10 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202620;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -34,13 +38,14 @@ export default function webDataBase() {
         console.info("get webDataBase state success " + JSON.stringify(pages));
         if (!("webDataBase" == pages.name)) {
           console.info("get webDataBase state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webDataBase page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push webDataBase page success");
         }
       } catch (err) {
         console.error("push webDataBase page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebDataBaseButton"), 10000);
+      console.log("waitForComponent WebDataBaseButton");
       done()
     });
 
@@ -50,7 +55,6 @@ export default function webDataBase() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("webDataBase beforeEach start");
       done();
     })
@@ -64,10 +68,13 @@ export default function webDataBase() {
     * @tc.level      : Level 1
     */
     it('testSaveHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testSaveHttpAuthCredentials001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSaveHttpAuthCredentials001", true, 30040, done);
-      sendEventByKey('WebDataBaseButton', 10, '');
+      Utils.emitEvent("testSaveHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testSaveHttpAuthCredentials001", true, 202630, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebDataBaseButton");
+      if (await Utils.waitForExist(() => isReturn, 'testSaveHttpAuthCredentials001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -79,10 +86,13 @@ export default function webDataBase() {
     * @tc.level      : Level 1
     */
     it('testGetHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testGetHttpAuthCredentials001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testGetHttpAuthCredentials001", "StrOmgGol", 30045, done);
-      sendEventByKey('WebDataBaseButton', 10, '');
+      Utils.emitEvent("testGetHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testGetHttpAuthCredentials001", "StrOmgGol", 202640, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebDataBaseButton");
+      if (await Utils.waitForExist(() => isReturn, 'testGetHttpAuthCredentials001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -94,10 +104,13 @@ export default function webDataBase() {
     * @tc.level      : Level 1
     */
     it('testExistHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testExistHttpAuthCredentials001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testExistHttpAuthCredentials001", true, 30046, done);
-      sendEventByKey('WebDataBaseButton', 10, '');
+      Utils.emitEvent("testExistHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testExistHttpAuthCredentials001", true, 202650, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebDataBaseButton");
+      if (await Utils.waitForExist(() => isReturn, 'testExistHttpAuthCredentials001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -109,11 +122,13 @@ export default function webDataBase() {
     * @tc.level      : Level 1
     */
     it('testDeleteHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDeleteHttpAuthCredentials001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDeleteHttpAuthCredentials001", false, 30050, done);
-      sendEventByKey('WebDataBaseButton', 10, '');
+      Utils.emitEvent("testDeleteHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testDeleteHttpAuthCredentials001", false, 202660, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "WebDataBaseButton");
+      if (await Utils.waitForExist(() => isReturn, 'testDeleteHttpAuthCredentials001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
   })
 }

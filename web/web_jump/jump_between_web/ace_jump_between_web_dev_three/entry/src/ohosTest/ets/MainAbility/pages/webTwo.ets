@@ -19,6 +19,8 @@ import prompt from '@system.prompt';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@ohos.UiTest';
+const EVENT_ID_SET_SUITE_KEY = 133850;
 
 @Extend(Button)
 function bu() {
@@ -37,7 +39,6 @@ export struct NewWebViewComp {
   dialogController: CustomDialogController;
   url?: string;
   @State text: string = '日志在这里显示'
-  @State javaScriptAccess: boolean = true;
   @State multitAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
@@ -80,14 +81,37 @@ struct indexTwo {
   @State removeDesc: string = "console.info('webgame removeDesc'); y=document.getElementsBytagName('div')[0]; y.parentNode.removeChild(y)";
   @State setJavaScriptOpenWindowFlagInZoom: boolean = true;
   @State setMultiWindowFlag: boolean = true;
-  @State javaScriptAccess: boolean = true;
   @State multitAccess: boolean = true;
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   dialogController: CustomDialogController | null = null;
   popController: web_webview.WebviewController | null = null;
   @State allowWindow: boolean = true;
-  @State str: string = "emitAllowWindowOpenMethod";
+  @State str: string = "";
   @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+
+
+  onPageShow() {
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: EVENT_ID_SET_SUITE_KEY,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null) {
+      if (eventData.data?.ACTION != null) {
+        this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
+      }
+    }
+  }
+
 
   build() {
     Column() {
@@ -103,7 +127,6 @@ struct indexTwo {
               this.controller.runJavaScript('openwindowAll()');
               break;
             }
-
             default:
               console.info("can not match case");
           }
@@ -143,7 +166,11 @@ struct indexTwo {
 
           event.handler.setWebController(this.popController);
           console.info('zfh window onWindowNew start3');
-          Utils.emitEvent('openwindow', 133860);
+          console.info('zfh window ts onWindowNew isAlert: ' + event.isAlert + ', isUserTrigger: ' + event.isUserTrigger + ', targetUrl: ' + event.targetUrl);
+          console.log('pbb'+'isAlert'+event.isAlert+'isUserTrigger'+event.isUserTrigger+'targetUrl'+event.targetUrl)
+          Utils.emitEvent('isAlert'+event.isAlert+'isUserTrigger'+event.isUserTrigger+'targetUrl'+event.targetUrl, 20251125);
+
+
         })
         .onWindowExit(() => {
           console.info('closewindow');

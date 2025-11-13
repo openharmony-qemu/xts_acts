@@ -18,9 +18,6 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -43,9 +40,9 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
-
+    return undefined;
   }
 
   onWindowStageDestroy() {

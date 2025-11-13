@@ -138,7 +138,7 @@ struct patternLock {
           .fontColor(Color.Red)
 
         PatternLock(this.patternLockController)
-          .sideLength(100)
+          .sideLength('50%')
           .circleRadius(9)
           .pathStrokeWidth(18)
           .regularColor('#ff182431')
@@ -217,6 +217,7 @@ struct patternLock {
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
+      .margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

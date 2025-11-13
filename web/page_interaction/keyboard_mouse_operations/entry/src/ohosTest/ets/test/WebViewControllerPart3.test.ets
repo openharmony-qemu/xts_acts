@@ -17,8 +17,13 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 175301;
+const driver = Driver.create();
 
 export default function webViewControllerPart3Test() {
 
@@ -35,7 +40,7 @@ export default function webViewControllerPart3Test() {
         if (!("WebViewControllerPart3" == pages.name)) {
           console.info("get WebViewControllerPart3 state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("WebViewControllerTestButton"), 10000);
           console.info("push WebViewControllerPart3 page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -50,7 +55,6 @@ export default function webViewControllerPart3Test() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebViewControllerPart3 beforeEach start");
       done();
     })
@@ -61,10 +65,9 @@ export default function webViewControllerPart3Test() {
      *tc.desic Gets the type of HitTest
      */
     it('getHitTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitGetHitTest", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("getHitTest", "7", 118, done);
-      sendEventByKey('WebViewControllerTestButton', 10, '');
+      Utils.emitEvent("emitGetHitTest", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("getHitTest", "7", 175310, done);
+      Utils.waitAndClickComponent(driver, "WebViewControllerTestButton");
     })
 
   })

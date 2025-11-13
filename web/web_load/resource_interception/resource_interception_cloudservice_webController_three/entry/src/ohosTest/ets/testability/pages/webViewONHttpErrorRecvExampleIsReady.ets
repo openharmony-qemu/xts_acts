@@ -14,12 +14,10 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
+
+const EVENT_ID_SET_EMIT_KEY = 202340;
 
 @Entry
 @Component
@@ -45,13 +43,18 @@ struct webViewONHttpErrorRecvExampleIsReady {
   @State databaseAccess: boolean = true;
   @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State title: string = "";
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -60,6 +63,7 @@ struct webViewONHttpErrorRecvExampleIsReady {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -67,8 +71,10 @@ struct webViewONHttpErrorRecvExampleIsReady {
   build() {
     Column() {
       Row() {
-        Button("onHttpErrorTest").key('webViewONHttpErrorRecvExampleIsReady').onClick(() => {
-          console.info("key==>" + this.str)
+        Button("onHttpErrorTest").key('webViewONHttpErrorRecvExampleIsReady').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webViewONHttpErrorRecvExampleIsReadyIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnHttpErrorRecvExampleIsReadyFalse": {
               try {
@@ -78,7 +84,7 @@ struct webViewONHttpErrorRecvExampleIsReady {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.title, 394)
+                Utils.emitEvent(this.title, 202350)
               })
               break;
             }

@@ -25,7 +25,7 @@ struct Index {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   @State isSuccess: Boolean = false;
   hitTestValue: HitTestValue = new HitTestValue();
-  @State str: string = "emitUserAgent"
+  @State str: string = 'emitUserAgent'
   webConTextMenuResult: WebContextMenuResult = new WebContextMenuResult();
   controllerWeb: WebController = new WebController();
   fileSelector: FileSelectorResult = new FileSelectorResult();
@@ -39,10 +39,10 @@ struct Index {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack = (eventData) => {
-    console.info("web page valueChangeCallBack");
+  private valueChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
       }
@@ -53,11 +53,11 @@ struct Index {
       Utils.emitEvent(res, 102);
     },
     toString: (str) => {
-      console.info("ets toString:" + String(str));
+      console.info('ets toString:' + String(str));
     },
     register: (res) => {
       Utils.emitEvent(res, 86);
-      return "web222"
+      return 'web222'
     }
   }
 
@@ -74,19 +74,19 @@ struct Index {
     Column() {
       Web({ src: 'www.baidu.com', controller: this.controller })
         .onContextMenuShow((event) => {
-          console.info("x coord = " + event.param.x());
-          console.info("x coord = " + event.param.y());
-          console.info("link url = " + event.param.getLinkUrl());
-          console.info("source url = " + event.param.getSourceUrl());
-          console.info("source url = " + event.param.getUnfilteredLinkUrl());
-          console.info("source url = " + event.param.existsImageContents());
-          console.info("" + event.result.copyImage());
-          console.info("" + event.result.closeContextMenu());
+          console.info('x coord = ' + event.param.x());
+          console.info('x coord = ' + event.param.y());
+          console.info('link url = ' + event.param.getLinkUrl());
+          console.info('source url = ' + event.param.getSourceUrl());
+          console.info('source url = ' + event.param.getUnfilteredLinkUrl());
+          console.info('source url = ' + event.param.existsImageContents());
+          console.info('' + event.result.copyImage());
+          console.info('' + event.result.closeContextMenu());
           this.isSuccess = true;
           Utils.emitEvent(this.isSuccess, 1101)
           return true;
         }).onWindowNew((event) => {
-        console.log("onWindowNew...");
+        console.log('onWindowNew...');
         let popController: web_webview.WebviewController = new web_webview.WebviewController();
         event.handler.setWebController(popController);
         this.isSuccess = true;
@@ -94,7 +94,7 @@ struct Index {
       }).onShowFileSelector((event) => {
         AlertDialog.show({
           title: event.fileSelector.getTitle(),
-          message: 'isCapture:' + event.fileSelector.isCapture() + " mode:" + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
+          message: 'isCapture:' + event.fileSelector.isCapture() + ' mode:' + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
           confirm: {
             value: 'upload',
             action: () => {
@@ -123,7 +123,7 @@ struct Index {
           secondaryButton: {
             value: 'ok',
             action: () => {
-              event.result.handlePromptConfirm("已經確認")
+              event.result.handlePromptConfirm('已經確認')
             }
           },
           cancel: () => {
@@ -138,7 +138,7 @@ struct Index {
         .onShowFileSelector((event) => {
           AlertDialog.show({
             title: event.fileSelector.getTitle(),
-            message: 'isCapture:' + event.fileSelector.isCapture() + " mode:" + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
+            message: 'isCapture:' + event.fileSelector.isCapture() + ' mode:' + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
             confirm: {
               value: 'upload',
               action: () => {
@@ -150,10 +150,10 @@ struct Index {
             },
             cancel: () => {
               let fileList: Array<string> = []
-              console.info("this is Capture " + event.fileSelector.isCapture());
-              console.info("this is getTitle" + event.fileSelector.getTitle());
-              console.info("this is getMode" + event.fileSelector.getMode());
-              console.info("this is getAcceptType" + event.fileSelector.getAcceptType().length);
+              console.info('this is Capture ' + event.fileSelector.isCapture());
+              console.info('this is getTitle' + event.fileSelector.getTitle());
+              console.info('this is getMode' + event.fileSelector.getMode());
+              console.info('this is getAcceptType' + event.fileSelector.getAcceptType().length);
             }
           })
           return true;
@@ -161,17 +161,17 @@ struct Index {
 
 
       Row() {
-        Button("webTest").key('web2').onClick(async () => {
-          console.info("key==>" + this.str);
+        Button('webTest').key('web2').onClick(async () => {
+          console.info('key==>' + this.str);
           switch (this.str) {
           // add
-            case "emitHitTestValue":
+            case 'emitHitTestValue':
               let hitValue = this.controller.getHitTestValue();
-              console.info("hitType: " + hitValue.getType());
-              console.info("extra: " + hitValue.getExtra());
+              console.info('hitType: ' + hitValue.getType());
+              console.info('extra: ' + hitValue.getExtra());
               Utils.emitEvent(hitValue.getType(), 1103);
             default:
-              console.info("can not match case")
+              console.info('can not match case')
           }
 
         })

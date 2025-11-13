@@ -397,6 +397,16 @@
             "FormAbility"
           ]
         }
+      },
+      {
+        "name": "ohos.permission.UPDATE_CONFIGURATION",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
       }
     ],
     "extensionAbilities": [

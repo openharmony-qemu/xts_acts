@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
@@ -40,9 +41,9 @@ class EntryAbility2 extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
-
+    return undefined;
   }
 
   onWindowStageDestroy() {

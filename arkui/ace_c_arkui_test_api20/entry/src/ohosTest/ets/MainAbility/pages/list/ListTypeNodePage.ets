@@ -92,6 +92,17 @@ struct ListTypeNodePage {
         }
       }).id('ListTypeNodePage_Btn')
 
+      Button('undefined').onClick(() => {
+        const attrs1 = typeNode.getAttribute(undefined, 'List');
+        AppStorage.SetOrCreate('ListTypeNodeUn', attrs1);
+
+        const attrs2 = typeNode.getAttribute(undefined, 'ListItemGroup');
+        AppStorage.SetOrCreate('ListItemGroupTypeNodeUn', attrs2);
+
+        const attrs3 = typeNode.getAttribute(undefined, 'ListItem');
+        AppStorage.SetOrCreate('ListItemTypeNodeUn', attrs3);
+      }).id('ListTypeNodePage_undefined')
+
       NodeContainer(this.myNodeController)
     }
     .width('100%')

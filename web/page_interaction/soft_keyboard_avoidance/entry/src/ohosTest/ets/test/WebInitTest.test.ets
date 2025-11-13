@@ -16,8 +16,15 @@
 import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 180001;
+let driver = Driver.create();
+let emitKey = ""
+let tcName = ""
 
 export default function webInitTest() {
 
@@ -29,13 +36,11 @@ export default function webInitTest() {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebInitTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebInitTest afterEach end");
+      try {
+        await driver.waitForComponent(ON.id("WebInitTestButton"), 10000);
+      } catch (err) {
+        console.error("push webViewScrollable page error: " + err);
+      }
       done();
     })
 
@@ -48,10 +53,14 @@ export default function webInitTest() {
      *@tc.level Level 0
      */
     it('testWebViewAvoidArea05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitWebViewAvoidArea05", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent('testWebViewAvoidArea05', 'success', 6205, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      emitKey = 'emitWebViewAvoidArea05';
+      tcName = 'testWebViewAvoidArea05'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 'success', 180010, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebInitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

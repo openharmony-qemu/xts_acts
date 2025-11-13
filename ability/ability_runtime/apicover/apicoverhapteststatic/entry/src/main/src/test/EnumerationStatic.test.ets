@@ -19,13 +19,13 @@ import abilityConstant from '@ohos.app.ability.AbilityConstant';
 import wantConstant from "@ohos.app.ability.wantConstant";
 import wantAgent from '@ohos.app.ability.wantAgent';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function EnumerationStaticTest() {
   describe('EnumerationStaticTest', () => {
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0100
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0100
      * @tc.size:   MediumTest
@@ -38,7 +38,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0200
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0200
      * @tc.size:   MediumTest
@@ -51,7 +51,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0400
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0400
      * @tc.size:   MediumTest
@@ -63,7 +63,7 @@ export default function EnumerationStaticTest() {
       expect('2').assertEqual(abilityConstant.LastExitReason.NORMAL + '');
       done();
     })
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0500
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0500
      * @tc.size:   MediumTest
@@ -76,7 +76,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0600
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0600
      * @tc.size:   MediumTest
@@ -89,7 +89,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0700
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0700
      * @tc.size:   MediumTest
@@ -102,7 +102,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0800
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0800
      * @tc.size:   MediumTest
@@ -115,7 +115,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_0900
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_0900
      * @tc.size:   MediumTest
@@ -128,7 +128,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1000
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1000
      * @tc.size:   MediumTest
@@ -141,7 +141,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1100
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1100
      * @tc.size:   MediumTest
@@ -154,7 +154,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1200
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1200
      * @tc.size:   MediumTest
@@ -167,7 +167,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1300
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1300
      * @tc.size:   MediumTest
@@ -180,7 +180,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1400
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1400
      * @tc.size:   MediumTest
@@ -193,7 +193,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1500
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1500
      * @tc.size:   MediumTest
@@ -206,7 +206,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1600
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1600
      * @tc.size:   MediumTest
@@ -219,7 +219,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1700
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1700
      * @tc.size:   MediumTest
@@ -232,7 +232,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1800
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1800
      * @tc.size:   MediumTest
@@ -245,7 +245,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_1900
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_1900
      * @tc.size:   MediumTest
@@ -258,7 +258,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2000
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2000
      * @tc.size:   MediumTest
@@ -271,7 +271,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2100
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2100
      * @tc.size:   MediumTest
@@ -284,7 +284,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2200
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2200
      * @tc.size:   MediumTest
@@ -297,7 +297,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2300
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2300
      * @tc.size:   MediumTest
@@ -310,7 +310,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2400
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2400
      * @tc.size:   MediumTest
@@ -323,7 +323,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2500
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2500
      * @tc.size:   MediumTest
@@ -336,7 +336,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2600
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2600
      * @tc.size:   MediumTest
@@ -349,7 +349,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2700
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2700
      * @tc.size:   MediumTest
@@ -362,7 +362,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2800
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2800
      * @tc.size:   MediumTest
@@ -375,7 +375,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_2900
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_2900
      * @tc.size:   MediumTest
@@ -388,7 +388,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3000
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3000
      * @tc.size:   MediumTest
@@ -401,7 +401,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3100
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3100
      * @tc.size:   MediumTest
@@ -414,7 +414,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3200
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3200
      * @tc.size:   MediumTest
@@ -427,7 +427,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3300
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3300
      * @tc.size:   MediumTest
@@ -440,7 +440,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3400
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3400
      * @tc.size:   MediumTest
@@ -453,7 +453,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3500
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3500
      * @tc.size:   MediumTest
@@ -466,7 +466,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3600
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3600
      * @tc.size:   MediumTest
@@ -479,7 +479,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3700
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3700
      * @tc.size:   MediumTest
@@ -492,7 +492,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3800
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3800
      * @tc.size:   MediumTest
@@ -505,7 +505,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_3900
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_3900
      * @tc.size:   MediumTest
@@ -518,7 +518,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_4000
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_4000
      * @tc.size:   MediumTest
@@ -531,7 +531,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_4100
      * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_4100
      * @tc.size:   MediumTest
@@ -544,7 +544,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0100
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0100
      * @tc.size:   MediumTest
@@ -557,7 +557,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0200
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0200
      * @tc.size:   MediumTest
@@ -570,7 +570,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0300
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0300
      * @tc.size:   MediumTest
@@ -583,7 +583,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0400
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0400
      * @tc.size:   MediumTest
@@ -596,7 +596,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0500
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0500
      * @tc.size:   MediumTest
@@ -609,7 +609,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0600
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0600
      * @tc.size:   MediumTest
@@ -623,7 +623,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0700
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0700
      * @tc.size:   MediumTest
@@ -637,7 +637,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0800
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0800
      * @tc.size:   MediumTest
@@ -650,7 +650,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0900
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0900
      * @tc.size:   MediumTest
@@ -663,7 +663,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1000
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1000
      * @tc.size:   MediumTest
@@ -676,7 +676,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1100
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1100
      * @tc.size:   MediumTest
@@ -689,7 +689,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1200
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1200
      * @tc.size:   MediumTest
@@ -704,7 +704,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1300
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1300
      * @tc.size:   MediumTest
@@ -717,7 +717,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1400
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1400
      * @tc.size:   MediumTest
@@ -730,7 +730,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1500
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1500
      * @tc.size:   MediumTest
@@ -743,7 +743,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1600
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1600
      * @tc.size:   MediumTest
@@ -756,7 +756,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1700
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1700
      * @tc.size:   MediumTest
@@ -769,7 +769,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1800
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1800
      * @tc.size:   MediumTest
@@ -782,7 +782,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_1900
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_1900
      * @tc.size:   MediumTest
@@ -795,7 +795,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2000
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2000
      * @tc.size:   MediumTest
@@ -808,7 +808,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2100
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2100
      * @tc.size:   MediumTest
@@ -821,7 +821,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2200
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2200
      * @tc.size:   MediumTest
@@ -834,7 +834,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2300
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2300
      * @tc.size:   MediumTest
@@ -847,7 +847,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2400
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2400
      * @tc.size:   MediumTest
@@ -860,7 +860,20 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2800
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2800
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Flags.FLAG_ABILITY_ON_COLLABORATE.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect(String(0x00002000)).assertEqual(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '');
+      done();
+    })
+
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0100
      * @tc.size:   MediumTest
@@ -873,7 +886,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0200
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0200
      * @tc.size:   MediumTest
@@ -886,7 +899,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0300
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0300
      * @tc.size:   MediumTest
@@ -899,7 +912,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0400
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0400
      * @tc.size:   MediumTest
@@ -912,7 +925,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0500
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0500
      * @tc.size:   MediumTest
@@ -925,7 +938,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0600
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0600
      * @tc.size:   MediumTest
@@ -938,7 +951,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0700
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0700
      * @tc.size:   MediumTest
@@ -951,7 +964,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0800
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0800
      * @tc.size:   MediumTest
@@ -964,7 +977,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_0900
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_0900
      * @tc.size:   MediumTest
@@ -977,7 +990,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_1000
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_1000
      * @tc.size:   MediumTest
@@ -990,7 +1003,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_1100
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_1100
      * @tc.size:   MediumTest
@@ -1003,7 +1016,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_1200
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_1200
      * @tc.size:   MediumTest
@@ -1016,7 +1029,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_1300
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_1300
      * @tc.size:   MediumTest
@@ -1029,7 +1042,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_1400
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_1400
      * @tc.size:   MediumTest
@@ -1042,7 +1055,7 @@ export default function EnumerationStaticTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number  SUB_Ability_AbilityBase_WantAgent_Static_1500
      * @tc.name    SUB_Ability_AbilityBase_WantAgent_Static_1500
      * @tc.size:   MediumTest

@@ -20,13 +20,14 @@ export default function userauthTest_Nopermission_API12() {
     describe('userauthTest_Nopermission_API12', function () {
 
         /**
-        * @tc.number    : SUB_Security_IAM_Func_API12_0110
-        * @tc.name      : unapplied permission call GetEnrolledState
-        * @tc.desc      : Unapplied permission call GetEnrolledState
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 1
-        */
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   SUB_Security_IAM_Func_API12_0110
+         * @tc.number SUB_Security_IAM_Func_API12_0110
+         * @tc.desc   Unapplied permission call GetEnrolledState
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_Security_IAM_Func_API12_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('testFace SUB_Security_IAM_Func_API12_0110 start');
             let authType = 1
@@ -35,6 +36,27 @@ export default function userauthTest_Nopermission_API12() {
             } catch (e) {
                 console.log("SUB_Security_IAM_Func_API12_0110 fail " + 'authType:' + authType + 'e.code:' + e.code);
                 expect(e.code).assertEqual(201);
+            }
+            done();
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   SUB_Security_IAM_UserAuth_FUNC_0140
+         * @tc.number SUB_Security_IAM_UserAuth_FUNC_0140
+         * @tc.desc   getAuthLockState Nopermission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_Security_IAM_UserAuth_FUNC_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            console.info('testFace SUB_Security_IAM_UserAuth_FUNC_0140 start');
+            let authType = 1
+            try {
+                await userAuthNorth.getAuthLockState(authType);
+            } catch (error) {
+                console.error(`SUB_Security_IAM_UserAuth_FUNC_0140 fail code is ${error.code}`);
+                expect(error.code).assertEqual(201);
             }
             done();
         })

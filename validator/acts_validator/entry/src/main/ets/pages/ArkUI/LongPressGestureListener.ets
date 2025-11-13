@@ -49,7 +49,8 @@ struct LongPressGestureExample {
       Image($r('app.media.ic_public_pass'))
         .width('20vp')
         .height('20vp')
-    }.width('30%')
+    }
+    .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -58,7 +59,7 @@ struct LongPressGestureExample {
         params: {
           result: 'true ', title: this.name,
         }
-      })
+      });
       promptAction.showToast({
         message: '通过', duration: 1000
       });
@@ -110,7 +111,7 @@ struct LongPressGestureExample {
             .margin({ left: '20vp' })
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
+        .size({ width: '10%', height: '10%' })
         .onClick(() => {
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
@@ -122,6 +123,7 @@ struct LongPressGestureExample {
           .fontColor(Color.White)
           .fontSize('18fp')
           .margin({ left: '-20vp' })
+
         Text('hello')
           .fontColor(Color.White)
           .visibility(Visibility.Hidden)
@@ -133,7 +135,11 @@ struct LongPressGestureExample {
 
       Column() {
         Column() {
-          Text('LongPress onAction:' + this.count).fontSize(28)
+          Text('LongPress onAction:' + this.count)
+            .fontSize('5%')
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
             .gesture(
               LongPressGesture({
                 fingers: 1,
@@ -156,26 +162,34 @@ struct LongPressGestureExample {
                 })
             )
         }
-        .height(200)
-        .width(300)
-        .padding(20)
+        .height('30%')
+        .width('80%')
+        .padding('5%')
         .border({ width: 3 })
-        .margin(30)
+        .margin('5%')
 
-        Button('点击添加监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.addGlobalGestureListener(GestureListenerType.LONG_PRESS,
-            { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, longPressGesture);
-          console.info('aaa --- 添加监听')
-        })
+        Button('点击添加监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.addGlobalGestureListener(GestureListenerType.LONG_PRESS,
+              { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, longPressGesture);
+            console.info('aaa --- 添加监听')
+          })
 
-        Button('点击移除监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.removeGlobalGestureListener(GestureListenerType.LONG_PRESS, longPressGesture);
-          console.info('aaa --- 移除监听')
-        })
+        Button('点击移除监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.removeGlobalGestureListener(GestureListenerType.LONG_PRESS, longPressGesture);
+            console.info('aaa --- 移除监听')
+          })
       }
-      .height('80%')
+      .height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 

@@ -17,6 +17,8 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 
+const EVENT_ID_SET_EMIT_KEY = 200960;
+
 class testObj {
   constructor() {
   }
@@ -39,19 +41,20 @@ struct WebViewControllerPostUrlTest {
   @State str: string = ""
   @State javaScriptAccess: boolean = true;
   @State testObjTest: testObj = new testObj();
-  @State pageEnd: string = "";
   @State switchCase: number = 0;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -60,6 +63,7 @@ struct WebViewControllerPostUrlTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -68,16 +72,18 @@ struct WebViewControllerPostUrlTest {
     Column() {
       Row() {
         Button("WebViewControllerPostUrlTest click").key('WebViewControllerPostUrlTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'WebViewControllerPostUrlTestButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebViewControllerPostUrlTestButtonIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testWebViewControllerPostUrl001": {
               try {
-                this.pageEnd = 'not page end'
                 this.switchCase = 1
+                this.isPageEnd = -1;
                 let postData = this.testObjTest.test("Name=test&Password=test");
                 this.controller.postUrl('www.example.com', postData);
-                await Utils.sleep(6000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -86,11 +92,10 @@ struct WebViewControllerPostUrlTest {
 
             case "testWebViewControllerPostUrl002": {
               try {
-                this.pageEnd = 'not page end'
                 this.switchCase = 2
+                this.isPageEnd = -1;
                 let postData = this.testObjTest.test("Name=test&Password=test");
                 this.controller.postUrl('resource://rawfile/second.html', postData);
-                await Utils.sleep(6000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -99,12 +104,11 @@ struct WebViewControllerPostUrlTest {
 
             case "testWebViewControllerPostUrl003": {
               try {
-                this.pageEnd = 'not page end'
                 this.switchCase = 3
+                this.isPageEnd = -1;
                 let sandboxPath = Utils.copyRawFileToSandbox('index.html')
                 let postData = this.testObjTest.test("Name=test&Password=test");
                 this.controller.postUrl(sandboxPath, postData);
-                await Utils.sleep(6000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -113,11 +117,10 @@ struct WebViewControllerPostUrlTest {
 
             case "testWebViewControllerPostUrl004": {
               try {
-                this.pageEnd = 'not page end'
                 this.switchCase = 4
+                this.isPageEnd = -1;
                 let postData = this.testObjTest.test("");
                 this.controller.postUrl('www.example.com', postData);
-                await Utils.sleep(6000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -126,11 +129,10 @@ struct WebViewControllerPostUrlTest {
 
             case "testWebViewControllerPostUrl005": {
               try {
-                this.pageEnd = 'not page end'
                 this.switchCase = 5
+                this.isPageEnd = -1;
                 let postData = this.testObjTest.test("");
                 this.controller.postUrl('resource://rawfile/second.html', postData);
-                await Utils.sleep(6000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -139,12 +141,11 @@ struct WebViewControllerPostUrlTest {
 
             case "testWebViewControllerPostUrl006": {
               try {
-                this.pageEnd = 'not page end'
                 this.switchCase = 6
+                this.isPageEnd = -1;
                 let sandboxPath = Utils.copyRawFileToSandbox('index.html')
                 let postData = this.testObjTest.test("Name=test&Password=test");
                 this.controller.postUrl(sandboxPath, postData);
-                await Utils.sleep(6000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -159,27 +160,26 @@ struct WebViewControllerPostUrlTest {
         .javaScriptAccess(this.javaScriptAccess)
         .onPageEnd((event) => {
           if (event) {
-            this.pageEnd = event.url
+            this.isPageEnd = 1;
             if (this.switchCase == 1) {
-              Utils.emitEvent(this.pageEnd, 4001);
+              Utils.emitEvent(event.url, 200970);
             }
             else if (this.switchCase == 2) {
-              Utils.emitEvent(this.pageEnd, 4002);
+              Utils.emitEvent(event.url, 200980);
             }
             else if (this.switchCase == 3) {
-              Utils.emitEvent(this.pageEnd, 4003);
+              Utils.emitEvent(event.url, 200990);
             }
             else if (this.switchCase == 4) {
-              Utils.emitEvent(this.pageEnd, 4004);
+              Utils.emitEvent(event.url, 201000);
             }
             else if (this.switchCase == 5) {
-              Utils.emitEvent(this.pageEnd, 4005);
+              Utils.emitEvent(event.url, 201010);
             }
             else if (this.switchCase == 6) {
-              Utils.emitEvent(this.pageEnd, 4006);
+              Utils.emitEvent(event.url, 201020);
             }
             console.log("onPageEnd==> event.url:" + event.url)
-            console.log("onPageEnd==> this.pageEnd:" + this.pageEnd)
           }
         })
     }

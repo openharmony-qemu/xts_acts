@@ -18,11 +18,19 @@ import FormExtensionAbility from '@ohos.app.form.FormExtensionAbility';
 import formInfo from '@ohos.app.form.formInfo';
 import formProvider from '@ohos.app.form.formProvider';
 import Want from '@ohos.app.ability.Want';
+import { Configuration } from '@ohos.app.ability.Configuration';
 
 export default class EntryFormAbility extends FormExtensionAbility {
 
   onAddForm(want: Want) {
     console.log('===>  onAddForm')
+    try {
+      this.context.startAbility({
+        bundleName: 'com.example.menuprovider',
+        abilityName: 'EntryAbility'
+      });
+    } catch (e) {
+    };
     return formBindingData.createFormBindingData({
     });
   }
@@ -57,5 +65,9 @@ export default class EntryFormAbility extends FormExtensionAbility {
     return formInfo.FormState.READY;
   }
   onStop() {
+  }
+
+  onConfigurationUpdate(newConfig: Configuration) {
+
   }
 };

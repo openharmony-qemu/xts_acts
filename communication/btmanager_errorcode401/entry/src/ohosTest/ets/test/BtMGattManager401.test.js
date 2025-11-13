@@ -107,12 +107,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0200
-         * @tc.name testSetBLEMtuSize
-         * @tc.desc Test api 401 - Invalid null parameters.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 1
+         * @tc.desc   Test api 401 - Invalid null parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -126,12 +127,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0300
-         * @tc.name testSetBLEMtuSize
-         * @tc.desc Test api 401 -error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test api 401 -error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_MTUSIZE_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -145,12 +147,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0100
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - Invalid null parameters.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - Invalid null parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -175,12 +178,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0200
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - Invalid null parameters.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - Invalid null parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -201,12 +205,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0300
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - null serviceUuid.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null serviceUuid.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -242,12 +247,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0400
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if serviceUuid type is error.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if serviceUuid type is error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -283,12 +289,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0500
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - null characteristicUuid.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null characteristicUuid.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -323,12 +330,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0600
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if characteristicUuid is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if characteristicUuid is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -364,12 +372,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0700
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - null characteristicValue.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null characteristicValue.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -401,12 +410,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0800
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if characteristicValue is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if characteristicValue is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -439,12 +449,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0900
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - null descriptors.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null descriptors.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let arrayBufferCCC = new ArrayBuffer(8);
@@ -470,12 +481,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1000
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if descriptors type is error.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if descriptors type is error.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let arrayBufferCCC = new ArrayBuffer(8);
@@ -502,12 +514,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1100
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if serviceUuid of descriptors is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if serviceUuid of descriptors is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -543,12 +556,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1200
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if serviceUuid of descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if serviceUuid of descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -584,12 +598,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1300
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if descriptorUuid of descriptors is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if descriptorUuid of descriptors is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -624,12 +639,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1400
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if descriptorUuid of descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if descriptorUuid of descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -665,12 +681,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1500
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if descriptorValue of descriptors is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if descriptorValue of descriptors is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -705,12 +722,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1600
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - if descriptorValue of descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - if descriptorValue of descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let descriptors = [];
@@ -743,12 +761,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1700
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 -null api by callback.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -null api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {      
             try {
@@ -764,12 +783,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1800
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 -null readCharacteristicValue by callback.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -null readCharacteristicValue by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READCHARACTERISTIC_ERROR_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {      
             try {
@@ -795,12 +815,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0100
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - null descriptor.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null descriptor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -824,12 +845,13 @@ export default function btManagerMError401Test() {
         })
         
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0200
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - descriptor is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptor is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -856,12 +878,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0300
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - serviceUuid of descriptor is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - serviceUuid of descriptor is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -895,12 +918,13 @@ export default function btManagerMError401Test() {
         })
         
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0400
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - serviceUuid of descriptor is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - serviceUuid of descriptor is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -934,12 +958,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0500
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - characteristicUuid of descriptor is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicUuid of descriptor is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -972,12 +997,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0600
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - characteristicUuid of descriptor is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicUuid of descriptor is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -1011,12 +1037,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0700
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - descriptorUuid of descriptor is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorUuid of descriptor is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -1049,12 +1076,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0800
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - descriptorUuid of descriptor is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorUuid of descriptor is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -1088,12 +1116,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0900
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - descriptorValue of descriptor is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorValue of descriptor is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -1123,12 +1152,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1000
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 - descriptorValue of descriptor is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorValue of descriptor is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -1162,12 +1192,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1100
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 -null readDescriptorValue by callback.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -null readDescriptorValue by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {   
             try {                                                                 
@@ -1183,12 +1214,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1200
-         * @tc.name testReadDescriptorValue
-         * @tc.desc Test 401 -null readDescriptorValue by callback.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -null readDescriptorValue by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_READDESCRIPTOR_ERROR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {   
             try {
@@ -1214,12 +1246,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0100
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 - api of null parameter.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - api of null parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1233,12 +1266,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0200
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -  api of error parameter.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -  api of error parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1252,12 +1286,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0300
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -null serviceUuid.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -null serviceUuid.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1285,12 +1320,13 @@ export default function btManagerMError401Test() {
         })
         
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0400
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -serviceUuid is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -serviceUuid is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1318,12 +1354,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0500
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 - null characteristicUuid.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null characteristicUuid.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1350,12 +1387,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0600
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 - characteristicUuid is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicUuid is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1383,12 +1421,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0700
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 - null characteristicValue.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null characteristicValue.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1413,12 +1452,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0800
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 - characteristicValue is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicValue is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1443,12 +1483,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0900
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 - null descriptors.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - null descriptors.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1468,12 +1509,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1000
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1493,12 +1535,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1100
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -null serviceUuid of descriptors.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -null serviceUuid of descriptors.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1526,12 +1569,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1200
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -serviceUuid of descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -serviceUuid of descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1559,12 +1603,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1300
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -characteristicUuid of descriptors is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -characteristicUuid of descriptors is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1591,12 +1636,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1400
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -characteristicUuid of descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -characteristicUuid of descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1624,12 +1670,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1500
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -descriptorUuid of descriptors is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -descriptorUuid of descriptors is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1657,12 +1704,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1600
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -descriptorUuid of descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -descriptorUuid of descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1690,12 +1738,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1700
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -descriptorValue of descriptors is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -descriptorValue of descriptors is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1723,12 +1772,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1800
-         * @tc.name testWriteCharacteristicValue
-         * @tc.desc Test 401 -descriptorValue of descriptors is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -descriptorValue of descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITECHARACTERISTIC_ERROR_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1753,12 +1803,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0100
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 - api is null parameter.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - api is null parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1772,12 +1823,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0200
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 -  api is error parameter.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -  api is error parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -1791,12 +1843,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0300
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 -  null serviceUuid.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -  null serviceUuid.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1816,12 +1869,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0400
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 - serviceUuid is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - serviceUuid is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1841,12 +1895,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0500
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 -  characteristicUuid is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 -  characteristicUuid is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1865,12 +1920,13 @@ export default function btManagerMError401Test() {
         })
     
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0600
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 - characteristicUuid is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicUuid is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1890,12 +1946,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0700
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 - descriptorUuid is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorUuid is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1914,12 +1971,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0800
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 - descriptorUuid is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorUuid is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1939,12 +1997,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0900
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 - descriptorValue is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorValue is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1961,12 +2020,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_1000
-         * @tc.name testWriteDescriptorValue
-         * @tc.desc Test 401 - descriptorValue is error type.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptorValue is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_WRITEDESCRIPTOR_ERROR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  function () {
             try {
@@ -1983,12 +2043,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0100
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - parameter of api is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - parameter of api is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2002,12 +2063,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0200
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - first parameter of api is error type .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - first parameter of api is error type .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2021,12 +2083,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0300
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - second parameter of api is null .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - second parameter of api is null .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2055,12 +2118,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0400
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - serviceUuid is null .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - serviceUuid is null .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2089,12 +2153,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0500
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - serviceUuid is error type .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - serviceUuid is error type .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2123,12 +2188,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0600
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - characteristicUuid is null .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicUuid is null .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2156,12 +2222,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0700
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - characteristicUuid is error type .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicUuid is error type .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2190,12 +2257,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0800
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - characteristicValue is null .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicValue is null .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2223,12 +2291,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0900
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - characteristicValue is error type .
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - characteristicValue is error type .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2254,12 +2323,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1000
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - descriptors is null.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptors is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2279,12 +2349,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1100
-         * @tc.name testSetNotifyCharacteristicChanged
-         * @tc.desc Test 401 - descriptors is error type.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test 401 - descriptors is error type.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_SETNOTIFYCHARACTERISTIC_ERROR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
@@ -2304,12 +2375,13 @@ export default function btManagerMError401Test() {
         })
         
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0100
-         * @tc.name testCreateGattClientDevice
-         * @tc.desc Test createGattClientDevice 401.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.desc   Test createGattClientDevice 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -2326,12 +2398,13 @@ export default function btManagerMError401Test() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0200
-         * @tc.name testCreateGattClientDevice
-         * @tc.desc Test createGattClientDevice 401.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 3
+         * @tc.desc   Test createGattClientDevice 401.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_COMMUNICATION_BTMANAGER_CREATEGATTCLIDEV_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {

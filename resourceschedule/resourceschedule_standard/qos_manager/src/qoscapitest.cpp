@@ -261,7 +261,7 @@ HWTEST_F(QoSTestSuite, GewuSubmitRequestTest, Function | MediumTest | Level1)
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
 
         requestResult = OH_QoS_GewuSubmitRequest(0, "", cb, fakeContext);
-        EXPECT_EQ(requestResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL);
+        EXPECT_EQ(requestResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
 
@@ -293,7 +293,7 @@ HWTEST_F(QoSTestSuite, GewuAbortRequestTest, Function | MediumTest | Level1)
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
 
         error = OH_QoS_GewuAbortRequest(0, 0);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL);
+        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
 
@@ -322,7 +322,7 @@ HWTEST_F(QoSTestSuite, GewuDestroySessionTest, Function | MediumTest | Level1)
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
 
         error = OH_QoS_GewuDestroySession(0);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL);
+        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
 

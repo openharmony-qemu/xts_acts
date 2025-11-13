@@ -59,9 +59,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0100
      * @tc.number SUB_Misc_inputMethod_attach_Async_0100
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=true
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0100';
@@ -93,9 +97,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0200
      * @tc.number SUB_Misc_inputMethod_attach_Async_0200
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=false
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0200', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0200';
@@ -127,9 +135,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0300
      * @tc.number SUB_Misc_inputMethod_attach_Async_0300
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=0
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0300', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0300';
@@ -163,9 +175,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Async_0400
      * @tc.number SUB_Misc_inputMethod_attach_Async_0400
-     * @tc.name Call the attach interface in Async mode. Optional input parameter showkeyboard=1
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Async_0400', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Async_0400';
@@ -199,9 +215,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0100
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0100
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=true
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0100';
@@ -224,9 +244,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0200
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0200
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=false
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0200', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0200';
@@ -250,9 +274,13 @@ export default function inputMethodTest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0300
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0300
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=0
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0300', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0300';
@@ -277,9 +305,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0400
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0400
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard=1
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0400', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0400';
@@ -304,9 +336,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0500
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0500
-     * @tc.name Call the attach interface in Promise mode. Optional input parameter showkeyboard='aa'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0500', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0500';
@@ -331,9 +367,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_0700
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0700
-     * @tc.name Call the attach interface in Promise mode. Optional input parameters showkeyboard=true, attribute='aa'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_attach_Promise_0700', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_0700';
@@ -353,9 +393,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_attach_Promise_1000
      * @tc.number SUB_Misc_inputMethod_attach_Promise_1000
-     * @tc.name Call the attach interface in Promise mode and pass in an invalid input parameter
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Misc_inputMethod_attach_Promise_1000', Level.LEVEL0, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_attach_Promise_1000';
@@ -374,6 +418,144 @@ export default function inputMethodTest() {
         expectFalse();
         done();
         return;
+      }
+    });
+
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputMethod_test_stopInputSession_0011
+     * @tc.number inputMethod_test_stopInputSession_0011
+     * @tc.desc   Stop input().interfaces.Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('inputMethod_test_stopInputSession_0011', Level.LEVEL3, async (done: Function) => {
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputMethod_test_stopInputSession_0011 attach success");
+      console.info("====>inputMethod_test_stopInputSession_0011 result:" + JSON.stringify(inputMethodCtrl));
+      inputMethodCtrl.stopInputSession((err, res) => {
+        try {
+          if (err) {
+            console.error(`====>Failed to stopInput: rrCode:${err.code}, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`====>inputMethod_test_stopInputSession_0011 stopInput result: ${res}`);
+            expect(res).assertTrue();
+            done();
+          }
+        } catch (err) {
+          console.info(`====>inputMethod_test_stopInputSession_0011 stopInput throw err errCode:${err.code}, errMessage is ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    });
+
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputMethod_test_stopInputSession_0021
+     * @tc.number inputMethod_test_stopInputSession_0021
+     * @tc.desc   Stop input().interfaces.Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('inputMethod_test_stopInputSession_0021', Level.LEVEL3, async (done: Function) => {
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputMethod_test_stopInputSession_0021 attach success");
+      try {
+        let res = await inputMethodCtrl.stopInputSession()
+        console.info(`====>inputMethod_test_stopInputSession_0021 stopInput result: ${res}`);
+        expect(res).assertTrue();
+        await inputMethod.getController().detach();
+        done();
+      } catch (err) {
+        console.info(`====>inputMethod_test_stopInputSession_0021 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethoh_test_0051
+     * @tc.number inputmethoh_test_0051
+     * @tc.desc   Stop input().interfaces.Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('inputmethoh_test_0051', Level.LEVEL3, async (done: Function) => {
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputmethoh_test_0051 attach success");
+      console.info("====>inputmethoh_test_0051 result:" + JSON.stringify(inputMethodCtrl));
+      inputMethodCtrl.stopInput((err, res) => {
+        try {
+          if (err) {
+            console.error(`====>Failed to stopInput: rrCode:${err.code}, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`====>inputmethoh_test_0051 stopInput result: ${res}`);
+            expect(res).assertTrue();
+            done();
+          }
+        } catch (err) {
+          console.info(`====>inputmethoh_test_0051 stopInput throw err errCode:${err.code}, errMessage is ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    });
+
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethoh_test_0061
+     * @tc.number inputmethoh_test_0061
+     * @tc.desc   Stop input().interfaces.Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('inputmethoh_test_0061', Level.LEVEL3, async (done: Function) => {
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputmethoh_test_0061 attach success");
+      try {
+        let res = await inputMethodCtrl.stopInput()
+        console.info(`====>inputmethoh_test_0061 stopInput result: ${res}`);
+        expect(res).assertTrue();
+        await inputMethod.getController().detach();
+        done();
+      } catch (err) {
+        console.info(`====>inputmethoh_test_0061 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
       }
     });
 

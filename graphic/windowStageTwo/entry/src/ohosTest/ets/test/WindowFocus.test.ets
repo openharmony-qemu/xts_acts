@@ -396,15 +396,17 @@ export default function windowFocusTest() {
       }
     })
 
+
+
     /**
      * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0100
      * @tc.name      : test_ISWINDOWHIGHLIGHTED_0100
      * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0100
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('test_ISWINDOWHIGHLIGHTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_ISWINDOWHIGHLIGHTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0100';
       console.log(caseName + 'begin');
       let windowClass = await windowStage.createSubWindow('test_ISWINDOWHIGHLIGHTED_0100');
@@ -522,7 +524,51 @@ export default function windowFocusTest() {
         }
       }
     });
-
+   /**
+     * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0500
+     * @tc.name      : test_ISWINDOWHIGHLIGHTED_0500
+     * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0500
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('test_ISWINDOWHIGHLIGHTED_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0500';
+      console.log(caseName + 'begin');
+      let highlightChange:boolean = false;
+      let windowClass1 = await windowStage.createSubWindow('test_ISWINDOWHIGHLIGHTED_0500');
+      try{
+        windowClass1.on('windowHighlightChange', (data: boolean) => {
+          console.info(caseName+` Window highlight Change: ${data}`);
+          highlightChange = data;
+        });
+        await windowClass1.setUIContent('testability/pages/First/index1');
+        await windowClass1.showWindow();
+        await sleep(300);
+        let res = windowClass1.isWindowHighlighted();
+        expect(res).assertEqual(true)
+        console.log(`${caseName} res:`+res+',highlightChange:'+highlightChange);
+        expect(highlightChange).assertEqual(true);
+        await windowClass1.minimize();
+        await sleep(300);
+        let res2 = windowClass1.isWindowHighlighted();
+        console.log(`${caseName} res2:`+res2+',highlightChange:'+highlightChange);
+        expect(res2).assertEqual(false)
+        expect(highlightChange).assertEqual(false);
+        windowClass1.off('windowHighlightChange')
+        await windowClass1.destroyWindow();
+        done();
+      } catch(err) {
+        console.log(`${caseName}  fail1:`+err.code);
+        await windowClass1.destroyWindow();
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0100
      * @tc.name      : test_mainWindow_on_noInteractionDetected
@@ -572,10 +618,10 @@ export default function windowFocusTest() {
      * @tc.desc      : test_mainWindow_off_noInteractionDetected
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
 
-    it("test_mainWindow_off_noInteractionDetected", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("test_mainWindow_off_noInteractionDetected", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_mainWindow_off_noInteractionDetected";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();
@@ -1646,6 +1692,78 @@ export default function windowFocusTest() {
         done()
       }
     });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_ACTIVE_ORDER_0100
+     * @tc.name      : testWindowHighlightChange_Order_0100
+     * @tc.desc      : 焦点切换激活态通知保序
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testWindowHighlightChange_Order_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testWindowHighlightChange_Order_0100 ';
+      console.log(caseName + 'begin');
+      let a = 0;
+      let subWindowClass: undefined | window.Window;
+      let subWindowClass2: undefined | window.Window;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testWindowHighlightChange_Order_0100_1');
+        console.error(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        await sleep(300);
+        console.info(`${caseName} subWindowClass1 show`);
+        let callback1 = (res: Boolean) => {
+          console.info(`${caseName} callback1 res: ${res}`);
+          if(res == false){
+            a = a+1;
+            console.info(`${caseName} callback1 a : ${a}`);
+          }
+        }
+        subWindowClass.on('windowHighlightChange', callback1);
+        subWindowClass2 = await windowStage.createSubWindow('testWindowHighlightChange_Order_0100_2');
+        let callback2 = async (res: Boolean) => {
+          console.info(`${caseName} callback2 res: ${res}`);
+          if(res == true){
+            a = a-1;
+            console.info(`${caseName} callback2 a : ${a}`);
+          }
+
+        }
+        subWindowClass2.on('windowHighlightChange', callback2);
+        await subWindowClass2.setUIContent('testability/pages/First/index2');
+        await subWindowClass2.showWindow()
+        await sleep(300);
+        console.info(`${caseName} subWindowClass2 show`);
+        console.info(`${caseName} a (1) : ${a}`);
+        expect(a).assertEqual(0);
+        await subWindowClass.raiseToAppTop();
+        console.info(`${caseName} subWindowClass1 show`);
+        await sleep(300);
+
+        await subWindowClass2.raiseToAppTop();
+        console.info(`${caseName} subWindowClass2 show`);
+        await sleep(300);
+
+        console.info(`${caseName} a (2) : ${a}`);
+        expect(a).assertEqual(0);
+        await subWindowClass?.destroyWindow();
+        await subWindowClass2?.destroyWindow();
+        done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await subWindowClass?.destroyWindow();
+        await subWindowClass2?.destroyWindow();
+        if (e.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
 
   })
 }

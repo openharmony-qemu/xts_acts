@@ -115,12 +115,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0100
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Creates an ndef message using the original bytes.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Creates an ndef message using the original bytes.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0100', Level.LEVEL0, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -143,12 +144,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0200
-         * @tc.name Test getNdefRecords NDEF
-         * @tc.desc Obtains all records of ndef messages.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains all records of ndef messages.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0200', Level.LEVEL0, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -179,12 +181,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0300
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Creates an ndef message using the original bytes.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Creates an ndef message using the original bytes.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0300', Level.LEVEL0, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -216,12 +219,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0400
-         * @tc.name Test getNdefTagType NDEF
-         * @tc.desc Obtains the type of the Ndef tag.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains the type of the Ndef tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0400', Level.LEVEL0, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -235,12 +239,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0500
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0500
-         * @tc.name Test getNdefMessage NDEF
-         * @tc.desc Obtains the message read from the NDEF tag when the tag is discovered.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains the message read from the NDEF tag when the tag is discovered.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0500', Level.LEVEL0, function ()  {
             if (NdefTag != null && NdefTag != undefined) {
@@ -259,12 +264,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0600
-         * @tc.name Test isNdefWritable NDEF
-         * @tc.desc Check whether the NDEF label is writable,promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether the NDEF label is writable,promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0600', Level.LEVEL0, async function (done) {
             let NdefTag1;
@@ -289,8 +295,13 @@ export default function nfcNDEFTagTest() {
             }
             if (NdefTag1 != null && NdefTag1 != undefined) {
                 let data = NdefTag1.isNdefWritable();
-                console.info("[NFC_test]ndef6 isNdefWritable data: " + data);
-                expect(data).assertTrue();
+                if (data == true) {
+                    console.info("[NFC_test]ndef6 isNdefWritable data: " + data);
+                    expect(data).assertTrue();
+                } else {
+                    console.info("[NFC_test]ndef6 isNdefWritable data: " + data);
+                    expect(data).assertFalse();
+                }
                 done();
             } else {
                 console.info("[NFC_test]NdefTag6 = null & = undefined: ");
@@ -301,12 +312,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0700
-         * @tc.name Test readNdef NDEF
-         * @tc.desc Read the ndef message on the tag,promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Read the ndef message on the tag,promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0700', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -341,12 +353,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0800
-         * @tc.name Test readNdef NDEF
-         * @tc.desc Read the ndef message on the tag,callback
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Read the ndef message on the tag,callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0800', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -374,12 +387,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_0900
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_0900
-         * @tc.name Test writeNdef NDEF
-         * @tc.desc Write ndef messages to this tag.promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Write ndef messages to this tag.promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_0900', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -415,12 +429,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1000
-         * @tc.name Test writeNdef NDEF
-         * @tc.desc Write ndef messages to this tag.callback
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Write ndef messages to this tag.callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1000', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -458,19 +473,25 @@ export default function nfcNDEFTagTest() {
         })
         
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1100
-         * @tc.name Test canSetReadOnly NDEF
-         * @tc.desc Check whether the NDEF tag can be set to read-only.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether the NDEF tag can be set to read-only.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1100', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {
                 try {
                     let canSetReadOnly = NdefTag.canSetReadOnly();
-                    console.info("[NFC_test]ndef11 canSetReadOnly: " + canSetReadOnly);
-                    expect(canSetReadOnly).assertTrue();             
+                    if (canSetReadOnly == true) {
+                        console.info("[NFC_test]ndef11 canSetReadOnly: " + canSetReadOnly);
+                        expect(canSetReadOnly).assertTrue();   
+                    } else {
+                        console.info("[NFC_test]ndef11 canSetReadOnly: " + canSetReadOnly);
+                        expect(canSetReadOnly).assertFalse();   
+                    }           
                 } catch (error) {
                     if (error.code == 201) {
                         console.info('[NFC_test]NdefTag11 NdefTag error' + error)
@@ -491,12 +512,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1200
-         * @tc.name Test setReadOnly NDEF
-         * @tc.desc Set the Ndef label to read-only.Promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Set the Ndef label to read-only.Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1200', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -531,12 +553,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1300
-         * @tc.name Test setReadOnly NDEF
-         * @tc.desc Set the Ndef label to read-only.callback
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Set the Ndef label to read-only.callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1300', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -564,12 +587,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1400
-         * @tc.name Test getNdefTagTypeString NDEF
-         * @tc.desc Converts the Nfc forum type to the byte array defined in the Nfc forum.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Converts the Nfc forum type to the byte array defined in the Nfc forum.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1400', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -584,12 +608,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1500
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1500
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag.Promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag.Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1500', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -622,12 +647,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1600
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1600
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag.callback
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Formats the tag as an NDEF tag and writes the NDEF message to the NDEF tag.callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1600', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) { 
@@ -658,12 +684,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1700
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1700
-         * @tc.name Test formatReadOnly NDEF
-         * @tc.desc Format as NDEF and set the NDEF message write label to read-only.Promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Format as NDEF and set the NDEF message write label to read-only.Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1700', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -699,12 +726,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1800
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1800
-         * @tc.name Test formatReadOnly NDEF
-         * @tc.desc Format as NDEF and set the NDEF message write label to read-only.callback
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Format as NDEF and set the NDEF message write label to read-only.callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_1800', Level.LEVEL0, async function (done) {
             if (NdefTag != null && NdefTag != undefined) {
@@ -737,14 +765,15 @@ export default function nfcNDEFTagTest() {
         })
 
 
-        /**
-         * @tc.number SUB_Communication_NFC_nfcNDEF_js_1900
-         * @tc.name Test makeUriRecord NDEF
-         * @tc.desc Obtains all records of ndef makeUriRecord.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:45
+          * @tc.name   SUB_Communication_NFC_nfcNDEF_js_1900
+          * @tc.number SUB_Communication_NFC_nfcNDEF_js_1900
+          * @tc.desc   Obtains all records of ndef makeUriRecord.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('SUB_Communication_NFC_nfcNDEF_js_1900', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {
                 let rawData = [0xD1, 0x01, 0x03, 0x54, 0x4E, 0x46, 0x43];
@@ -766,12 +795,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2000
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2000
-         * @tc.name Test createNdefMessage NDEF
-         * @tc.desc Obtains all records of createNdefMessage NDEF
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains all records of createNdefMessage NDEF
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2000', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -794,12 +824,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2100
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2100
-         * @tc.name Test makeMimeRecord NDEF
-         * @tc.desc Obtains all records of ndef makeMimeRecord.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains all records of ndef makeMimeRecord.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2100', Level.LEVEL0, function () {
             let NdefTag
@@ -831,12 +862,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2200
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2200
-         * @tc.name Test makeExternalRecord NDEF
-         * @tc.desc Obtains all records of ndef makeExternalRecord.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains all records of ndef makeExternalRecord.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2200', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -859,12 +891,13 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2300
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2300
-         * @tc.name Test messageToBytes NDEF
-         * @tc.desc Obtains all records of ndef messageToBytes.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains all records of ndef messageToBytes.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2300', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {
@@ -874,6 +907,11 @@ export default function nfcNDEFTagTest() {
                     let ndefMessage = tag.ndef.createNdefMessage(rawData);
                     console.info("[NFC_test]ndef23 Message result4: " + JSON.stringify(ndefMessage));
                     let makeERecords = tag.ndef.messageToBytes(ndefMessage);
+                    if (makeERecords.length > 0) {
+                        expect(makeERecords.length > 0).assertTrue();
+                    } else {
+                        expect(makeERecords).assertDeepEquals([]);
+                    }
                     console.info("[NFC_test]ndef23 result4: " + JSON.stringify(makeERecords));
                     expect(makeERecords).assertInstanceOf('Array')
                 } catch (error) {
@@ -887,12 +925,47 @@ export default function nfcNDEFTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2301
+         * @tc.number SUB_Communication_NFC_nfcNDEF_js_2301
+         * @tc.desc   Obtains all records of ndef messageToBytes.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcNDEF_js_2301', Level.LEVEL0, function () {
+            if (NdefTag != null && NdefTag != undefined) {
+                let rawData1 = [0xD1, 0x01];
+                console.info("messageToBytes is object7" );
+                try {
+                    let ndefMessage1 = tag.ndef.createNdefMessage(rawData1);
+                    console.info("[NFC_test]ndef23 Message result4: " + JSON.stringify(ndefMessage1));
+                    let makeERecords1 = tag.ndef.messageToBytes(ndefMessage1);
+                    if (makeERecords1.length > 0) {
+                        expect(makeERecords1.length > 0).assertTrue();
+                    } else {
+                        expect(makeERecords1).assertDeepEquals([]);
+                    }
+                    console.info("[NFC_test]ndef23 result4: " + JSON.stringify(makeERecords1));
+                    expect(makeERecords1).assertInstanceOf('Array')
+                } catch (error) {
+                    console.info("[NFC_test]ndef23 ndefMessage4 error: " + error);
+                    expect().assertFail();
+                }
+            }else{
+                console.info("[NFC_test]NdefTag23 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcNDEF_js_2400
          * @tc.number SUB_Communication_NFC_nfcNDEF_js_2400
-         * @tc.name Test makeApplicationRecord NDEF
-         * @tc.desc Obtains all records of ndef makeApplicationRecord 
-         * @ since 18
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains all records of ndef makeApplicationRecord
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2400', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {

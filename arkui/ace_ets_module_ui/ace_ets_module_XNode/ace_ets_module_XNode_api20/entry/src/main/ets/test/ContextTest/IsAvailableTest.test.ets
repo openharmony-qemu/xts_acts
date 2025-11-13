@@ -61,21 +61,13 @@ export default function IsAvailableTest() {
       let button = await driver.findComponent(ON.id('btn_isAvailable'));
       await button.click();
       await CommonFunc.sleep(1000);
+      expect(AppStorage.get('isAvailable1')).assertEqual(true);
+      expect(AppStorage.get('isAvailable2')).assertEqual(false);
+      AppStorage.delete('isAvailable1')
+      AppStorage.delete('isAvailable1')
 
-      let strJson1: string = getInspectorByKey('isAvailable1_id');
-      let obj1: Record<string, ESObject> = JSON.parse(strJson1);
-      console.info("[IsAvailableTest_0100] component obj1 is: " + JSON.stringify(obj1));
-      console.info("[IsAvailableTest_0100] content obj1 is: " + JSON.stringify(obj1.$attrs.content));
-
-      let strJson2: string = getInspectorByKey('isAvailable2_id');
-      let obj2: Record<string, ESObject> = JSON.parse(strJson2);
-      console.info("[IsAvailableTest_0100] component obj2 is: " + JSON.stringify(obj2));
-      console.info("[IsAvailableTest_0100] content obj2 is: " + JSON.stringify(obj2.$attrs.content));
-      expect(obj1.$attrs.content).assertEqual('true');
-      expect(obj2.$attrs.content).assertEqual('false');
       console.info('[IsAvailableTest_0100] END');
       done();
     });
-
   })
 }

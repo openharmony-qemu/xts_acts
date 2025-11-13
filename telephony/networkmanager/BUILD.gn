@@ -16,6 +16,7 @@ group("networkmanager") {
   deps = [
     "connection:connection",
     "data:data",
+    "eap:eap",
     "ethernet:ethernet",
     "fetch:fetch",
     "http:http",

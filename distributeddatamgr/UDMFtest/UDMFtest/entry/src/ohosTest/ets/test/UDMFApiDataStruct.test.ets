@@ -23,12 +23,13 @@ let TAG = "[ttt]"
 export default function UDMFApiDataStructTest() {
   describe('UDMFApiDataStructTest', () => {
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0100
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100
-     * @tc.desc      : Verify the properties of the PlainText type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100
+     * @tc.desc   Verify the properties of the PlainText type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0100 start');
@@ -82,12 +83,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0200
-     * @tc.desc      : Verify the properties of the Hyperlink type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0200
+     * @tc.desc   Verify the properties of the Hyperlink type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0200 start');
@@ -140,12 +142,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0300
-     * @tc.desc      : Verify the properties of the HTML type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0300
+     * @tc.desc   Verify the properties of the HTML type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0300 start');
@@ -198,12 +201,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0400
-     * @tc.desc      : Verify the properties of the OpenHarmonyAppItem type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0400
+     * @tc.desc   Verify the properties of the OpenHarmonyAppItem type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async() => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0400 start');
@@ -266,12 +270,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0500 start');
@@ -316,12 +321,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0600 start');
@@ -368,12 +374,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0700 start');
@@ -422,12 +429,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800 start');
@@ -477,12 +485,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0800 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest0900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900 start');
@@ -536,12 +545,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_0900 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1000
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000 start');
@@ -596,12 +606,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1000 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1100
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100 start');
@@ -650,12 +661,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1100 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200 start');
@@ -699,12 +711,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1200 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1300
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1300
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1300 start');
@@ -756,12 +769,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1400
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1400
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1400 start');
@@ -809,12 +823,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1500 start');
@@ -864,12 +879,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600 start');
@@ -918,12 +934,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1600 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700 start');
@@ -975,12 +992,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1700 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800 start');
@@ -1032,12 +1050,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1800 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest1900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900 start');
@@ -1090,12 +1109,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_1900 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2000
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2000
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2000
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2000 start');
@@ -1149,12 +1169,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100 start');
@@ -1209,12 +1230,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2100 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200 start');
@@ -1271,12 +1293,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2200 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2300
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2300
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2300 start');
@@ -1322,12 +1345,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2400
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2400
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2400 start');
@@ -1380,12 +1404,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2500 start');
@@ -1446,12 +1471,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600 start');
@@ -1512,12 +1538,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2700 start');
@@ -1578,12 +1605,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2800 start');
@@ -1644,12 +1672,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900 start');
@@ -1709,13 +1738,14 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2900 end");
     });
 
-     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3000
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3000
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3000
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3000 start');
@@ -1776,12 +1806,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3100
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3100
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3100
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3100 start');
@@ -1842,12 +1873,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3200
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3200
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3200 start');
@@ -1908,12 +1940,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3300
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3300
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3300 start');
@@ -1974,12 +2007,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400 start');
@@ -2025,12 +2059,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3400 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500 start');
@@ -2076,12 +2111,13 @@ export default function UDMFApiDataStructTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3500 end");
     });
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3600 start');
@@ -2129,12 +2165,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3700 start');
@@ -2181,12 +2218,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3800 start');
@@ -2233,12 +2271,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest3900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_3900 start');
@@ -2293,12 +2332,13 @@ export default function UDMFApiDataStructTest() {
     });
     
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4000 start');
@@ -2355,12 +2395,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4100 start');
@@ -2411,12 +2452,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4200 start');
@@ -2467,12 +2509,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4300 start');
@@ -2523,12 +2566,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4400 start');
@@ -2580,12 +2624,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4500 start');
@@ -2638,12 +2683,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4600 start');
@@ -2698,12 +2744,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4700 start');
@@ -2758,12 +2805,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4800 start');
@@ -2819,12 +2867,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_4900 start');
@@ -2880,12 +2929,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5000 start');
@@ -2941,12 +2991,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5100 start');
@@ -3002,12 +3053,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5200 start');
@@ -3062,12 +3114,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5300 start');
@@ -3122,12 +3175,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5400 start');
@@ -3182,12 +3236,13 @@ export default function UDMFApiDataStructTest() {
     });
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5500 start');
@@ -3243,12 +3298,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5600 start');
@@ -3304,12 +3360,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5700 start');
@@ -3364,12 +3421,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5800 start');
@@ -3424,12 +3482,13 @@ export default function UDMFApiDataStructTest() {
 
 
     /**
-     * @tc.name      : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_5900 start');

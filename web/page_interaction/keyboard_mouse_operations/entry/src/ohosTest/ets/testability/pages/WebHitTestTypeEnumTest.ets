@@ -17,22 +17,26 @@ import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 
+const EVENT_ID_SET_SUITE_KEY = 175001;
+
 @Entry
 @Component
 struct WebHitTestTypeEnumTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -41,6 +45,7 @@ struct WebHitTestTypeEnumTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -50,11 +55,13 @@ struct WebHitTestTypeEnumTest {
       Column() {
         Button('WebHitTestTypeEnumTestButton').key('WebHitTestTypeEnumTestButton')
           .onClick(async () => {
+            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             console.info("key==>" + this.str)
             switch (this.str) {
               case "testWebHitTestTypeEnum001": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.EditText, 70143)
+                  Utils.emitEvent(webView.WebHitTestType.EditText, 175010)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -62,7 +69,7 @@ struct WebHitTestTypeEnumTest {
               }
               case "testWebHitTestTypeEnum002": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Email, 70144)
+                  Utils.emitEvent(webView.WebHitTestType.Email, 175020)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -70,7 +77,7 @@ struct WebHitTestTypeEnumTest {
               }
               case "testWebHitTestTypeEnum003": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.HttpAnchor, 70145)
+                  Utils.emitEvent(webView.WebHitTestType.HttpAnchor, 175030)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -78,7 +85,7 @@ struct WebHitTestTypeEnumTest {
               }
               case "testWebHitTestTypeEnum004": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.HttpAnchorImg, 70146)
+                  Utils.emitEvent(webView.WebHitTestType.HttpAnchorImg, 175040)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -86,7 +93,7 @@ struct WebHitTestTypeEnumTest {
               }
               case "testWebHitTestTypeEnum005": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Img, 70147)
+                  Utils.emitEvent(webView.WebHitTestType.Img, 175050)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -94,7 +101,7 @@ struct WebHitTestTypeEnumTest {
               }
               case "testWebHitTestTypeEnum006": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Map, 70148)
+                  Utils.emitEvent(webView.WebHitTestType.Map, 175060)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -102,7 +109,7 @@ struct WebHitTestTypeEnumTest {
               }
               case "testWebHitTestTypeEnum007": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Phone, 70149)
+                  Utils.emitEvent(webView.WebHitTestType.Phone, 175070)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -110,7 +117,7 @@ struct WebHitTestTypeEnumTest {
               }
               case "testWebHitTestTypeEnum008": {
                 try {
-                  Utils.emitEvent(webView.WebHitTestType.Unknown, 70150)
+                  Utils.emitEvent(webView.WebHitTestType.Unknown, 175080)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
@@ -120,12 +127,16 @@ struct WebHitTestTypeEnumTest {
           })
 
         Web({ src: $rawfile('hitType.html'), controller: this.controller })
-          .javaScriptAccess(true)
+          .key('WebHitTestTypeEnumTestWebView')
           .javaScriptAccess(true)
           .horizontalScrollBarAccess(true)
           .verticalScrollBarAccess(true)
           .geolocationAccess(true)
           .databaseAccess(true)
+          .onPageEnd((event) => {
+            console.log('onPageEnd url:' + event.url);
+            this.isPageEnd = 1;
+          })
       }
       .width('100%')
     }

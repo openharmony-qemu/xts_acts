@@ -334,5 +334,66 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       }
     });
 
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_0100
+     * @tc.name      : testGetAllMainWindowInfo_0100
+     * @tc.desc      : ±±ÏògetAllMainWindowInfo²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testGetAllMainWindowInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetAllMainWindowInfo_0100 ';
+      console.log(caseName + 'begin');
+      try {
+        await window.getAllMainWindowInfo();
+        console.info(`${caseName} Succeeded in getAllMainWindowInfo.`);
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
+        if (isPCStatus == '') {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+        done()
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0100
+     * @tc.name      : testGetMainWindowSnapshot_0100
+     * @tc.desc      : ±±ÏògetMainWindowSnapshot²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testGetMainWindowSnapshot_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetMainWindowSnapshot_0100 ';
+      console.log(caseName + 'begin');
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        let windowIdArray = [windowId];
+        let configs: window.WindowSnapshotConfiguration = {
+          useCache: false
+        }
+        await window.getMainWindowSnapshot(windowIdArray,configs)
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
+        if (isPCStatus == '') {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+        done()
+      }
+    });
+
+
   })
 }

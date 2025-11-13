@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import cameraObj from 'libentry.so'
 import image from '@ohos.multimedia.image';
-import { Camera_PreconfigType, Camera_SceneMode, Camera_MediaType, Parameter_Setting } from './Constants';
+import { Camera_PreconfigType, Camera_SceneMode, Camera_MediaType, Parameter_Setting, Camera_SmoothZoomMode } from './Constants';
 import account from '@ohos.account.osAccount';
 import MediaUtils from './MediaUtils';
 import media from '@ohos.multimedia.media';
@@ -27,7 +27,9 @@ import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 const TAG = "CAMERA_LOGTAG_JS ";
 const CAMERA_OK = 0;
 const CAMERA_INVALID_ARGUMENT = 7400101;
+const CAMERA_OPERATION_NOT_ALLOWED = 7400102;
 const CAMERA_SESSION_NOT_CONFIG = 7400103;
+const CAMERA_SERVICE_FATAL_ERROR = 7400201;
 const COLOR_SPACE_NOT_SUPPORTED = 3;
 let receiver: image.ImageReceiver;
 let mPhotoSurface: string;
@@ -576,6 +578,17 @@ function isMovingPhotoSupported() {
   }
   console.info(TAG+ "IsMovingPhotoSupported: " + ret.isMovingPhotoSupported);
   return ret.isMovingPhotoSupported;
+}
+
+function isPhotoQualityPrioritizationSupported(qualityPrioritization : number) {
+  let ret = cameraObj.oHPhotoOutputIsPhotoQualityPrioritizationSupported(Parameter_Setting.ALL_PARAMETER_OK,
+    qualityPrioritization);
+  if (ret.errorCode != 0) {
+    console.error(TAG + "isPhotoQualityPrioritizationSupported FAILED");
+    expect().assertFail();
+  }
+  console.info(TAG+ "isPhotoQualityPrioritizationSupported: " + ret.isPhotoQualityPrioritizationSupported);
+  return ret.isPhotoQualityPrioritizationSupported;
 }
 
 function releaseCamera() {
@@ -1145,6 +1158,250 @@ export default function PhotoTest() {
       } else {
         console.error(TAG+ "MovingPhoto is not supported.");
       }
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0100
+     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0100
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0100', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization = 0;
+      let ret = cameraObj.oHPhotoOutputIsPhotoQualityPrioritizationSupported(Parameter_Setting.ALL_PARAMETER_OK,
+        photoQualityPrioritization);
+      if (ret.isPhotoQualityPrioritizationSupported) {
+        expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(true);
+      } else {
+        expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(false);
+      }
+      console.info(TAG+"isPhotoQualityPrioritizationSupported: "+ret.isPhotoQualityPrioritizationSupported);
+      console.info(TAG+"testOHPhotoOutputIsPhotoQualityPrioritizationSupported0100:"+ret.errorCode);
+      expect(ret.errorCode).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0200
+     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0200
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0200', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization = 1;
+      let ret = cameraObj.oHPhotoOutputIsPhotoQualityPrioritizationSupported(Parameter_Setting.ALL_PARAMETER_OK,
+        photoQualityPrioritization);
+      if (ret.isPhotoQualityPrioritizationSupported) {
+        expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(true);
+      } else {
+        expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(false);
+      }
+      console.info(TAG+"isPhotoQualityPrioritizationSupported: "+ret.isPhotoQualityPrioritizationSupported);
+      console.info(TAG+"testOHPhotoOutputIsPhotoQualityPrioritizationSupported0200:"+ret.errorCode);
+      expect(ret.errorCode).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0300
+     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0300
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when the first parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0300', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization = 0;
+      let ret = cameraObj.oHPhotoOutputIsPhotoQualityPrioritizationSupported(Parameter_Setting.FIRST_PARAMETER_ERROR,
+        photoQualityPrioritization);
+      expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(false);
+      console.info(TAG+"isPhotoQualityPrioritizationSupported: "+ret.isPhotoQualityPrioritizationSupported);
+      console.info(TAG+"testOHPhotoOutputIsPhotoQualityPrioritizationSupported0300:"+ret.errorCode);
+      expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0400
+     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0400
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when the second parameter is invalid.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0400', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization = -1;
+      let ret = cameraObj.oHPhotoOutputIsPhotoQualityPrioritizationSupported(Parameter_Setting.SECOND_PARAMETER_ERROR,
+        photoQualityPrioritization);
+      expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(false);
+      console.info(TAG+"isPhotoQualityPrioritizationSupported: "+ret.isPhotoQualityPrioritizationSupported);
+      console.info(TAG+"testOHPhotoOutputIsPhotoQualityPrioritizationSupported0400:"+ret.errorCode);
+      expect(ret.errorCode).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0500
+     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0500
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in abnormal condition, the third parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0500', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization = 0;
+      let ret = cameraObj.oHPhotoOutputIsPhotoQualityPrioritizationSupported(Parameter_Setting.THIRD_PARAMETER_ERROR,
+        photoQualityPrioritization);
+      expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(false);
+      console.info(TAG+"isPhotoQualityPrioritizationSupported: "+ret.isPhotoQualityPrioritizationSupported);
+      console.info(TAG+"testOHPhotoOutputIsPhotoQualityPrioritizationSupported0500:"+ret.errorCode);
+      expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0600
+     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0600
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when session is not config.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0600', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      createPhotoOutput();
+      let photoQualityPrioritization = 0;
+      let ret = cameraObj.oHPhotoOutputIsPhotoQualityPrioritizationSupported(Parameter_Setting.ALL_PARAMETER_OK,
+        photoQualityPrioritization);
+      expect(ret.isPhotoQualityPrioritizationSupported).assertEqual(false);
+      console.info(TAG+"isPhotoQualityPrioritizationSupported: "+ret.isPhotoQualityPrioritizationSupported);
+      console.info(TAG+"testOHPhotoOutputIsPhotoQualityPrioritizationSupported0600:"+ret.errorCode);
+      expect(ret.errorCode).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0100
+     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0100
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputSetPhotoQualityPrioritization0100', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization = 0;
+      if (isPhotoQualityPrioritizationSupported(photoQualityPrioritization)) {
+        let ret = cameraObj.oHPhotoOutputSetPhotoQualityPrioritization(Parameter_Setting.ALL_PARAMETER_OK,
+          photoQualityPrioritization);
+        console.info(TAG+ "testOHPhotoOutputSetPhotoQualityPrioritization0100 ret: " + ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+ "photoQualityPrioritization is not supported.");
+      }
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0200
+     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0200
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputSetPhotoQualityPrioritization0200', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization: number = 1;
+      if (isPhotoQualityPrioritizationSupported(photoQualityPrioritization)) {
+        let ret = cameraObj.oHPhotoOutputSetPhotoQualityPrioritization(Parameter_Setting.ALL_PARAMETER_OK,
+          photoQualityPrioritization);
+        console.info(TAG+ "testOHPhotoOutputSetPhotoQualityPrioritization0200 ret: " + ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+ "photoQualityPrioritization is not supported.");
+      }
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0300
+     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0300
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization when the first parameter is null.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputSetPhotoQualityPrioritization0300', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization: number = 0;
+      let ret = cameraObj.oHPhotoOutputSetPhotoQualityPrioritization(Parameter_Setting.FIRST_PARAMETER_ERROR,
+        photoQualityPrioritization);
+      console.info(TAG+ "testOHPhotoOutputSetPhotoQualityPrioritization0300 ret: " + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0400
+     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0400
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization when the second parameter is invalid.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputSetPhotoQualityPrioritization0400', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      sessionFlow();
+      createPhotoOutput();
+      addPhotoOutput();
+      let photoQualityPrioritization: number = -1;
+      let ret = cameraObj.oHPhotoOutputSetPhotoQualityPrioritization(Parameter_Setting.SECOND_PARAMETER_ERROR,
+        photoQualityPrioritization);
+      console.info(TAG+ "testOHPhotoOutputSetPhotoQualityPrioritization0400 ret: " + ret);
+      expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0500
+     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0500
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization when session is not commit.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHPhotoOutputSetPhotoQualityPrioritization0500', Level.LEVEL0, () => {
+      createPreviewOutput();
+      createCameraInput();
+      createPhotoOutput();
+      let photoQualityPrioritization: number = 0;
+      let ret = cameraObj.oHPhotoOutputSetPhotoQualityPrioritization(Parameter_Setting.ALL_PARAMETER_OK,
+        photoQualityPrioritization);
+      console.info(TAG+ "testOHPhotoOutputSetPhotoQualityPrioritization0500 ret: " + ret);
+      expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
     })
     /**
      * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeGetMain0200
@@ -2202,6 +2459,21 @@ export default function PhotoTest() {
       let ret = cameraObj.oHCaptureSessionSetSmoothZoom(Parameter_Setting.FIRST_PARAMETER_ERROR);
       console.info(TAG+"testOHCaptureSessionSetSmoothZoom0200:"+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0300
+     * @tc.name       : testOHCaptureSessionSetSmoothZoom0300
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CaptureSession_SetSmoothZoom in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCaptureSessionSetSmoothZoom0300', Level.LEVEL0, () => {
+      captureSessionstart();
+      sessionStart();
+      let ret = cameraObj.oHCaptureSessionSetSmoothZoom(Camera_SmoothZoomMode.SMOOTH_ZOOM_MODE_NORMAL)
+      console.info(TAG+"testOHCaptureSessionSetSmoothZoom0300:"+ret);
+      expect(ret).assertEqual(CAMERA_OK);
     })
     /**
      * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0100

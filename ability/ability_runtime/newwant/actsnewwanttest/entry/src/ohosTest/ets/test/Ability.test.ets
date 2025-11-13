@@ -49,7 +49,7 @@ export default function abilityTest() {
     let id:number | undefined = undefined;
 
     beforeEach(async (done:Function) => {
-      setTimeout(() => { done(); }, 3000)
+      setTimeout(() => { done(); }, 100)
     })
 
     beforeAll(async (done:Function) => {
@@ -63,7 +63,7 @@ export default function abilityTest() {
         setTimeout(() => {
             console.log(TAG1 + "beforeAll end");
             done();
-        }, 1000);
+        }, 100);
     })
         
     afterAll(async (done:Function) => {
@@ -72,7 +72,7 @@ export default function abilityTest() {
         setTimeout(() => {
             console.log(TAG1 + "afterAll end");
             done();
-        }, 1000);
+        }, 100);
     })
 
     /**
@@ -141,15 +141,6 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0100 - startAbility start standard: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-      await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
@@ -219,15 +210,6 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0200 - startAbility start singleton: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
@@ -303,15 +285,6 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0300 - startAbility start standard: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
@@ -388,15 +361,6 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0400 - startAbility start singleton: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
@@ -473,15 +437,6 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0500 - startAbility start HapB: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**

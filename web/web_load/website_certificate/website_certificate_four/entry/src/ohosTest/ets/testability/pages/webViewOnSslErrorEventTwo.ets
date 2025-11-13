@@ -14,12 +14,11 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
-import business_error, { BusinessError } from '@ohos.base';
-import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 import { URL } from '../../test/Config.test';
+import Utils from '../../test/Utils';
 
+const EVENT_ID_SET_EMIT_KEY = 202490;
 
 @Entry
 @Component
@@ -32,14 +31,14 @@ struct webViewOnSslErrorEventTwo {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 126,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(126)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -48,7 +47,7 @@ struct webViewOnSslErrorEventTwo {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.isReceive = 0;
+        this.isReceive = 1;
       }
     }
   }
@@ -57,8 +56,8 @@ struct webViewOnSslErrorEventTwo {
     Column() {
       Row() {
         Button('webViewOnSslErrorEvent').key('onSslErrorEventCertChainDataButton').onClick(async () => {
-          await waitForExist(()=>this.isReceive, this.str, 0);
-          await waitForExist(()=>this.isPageEnd, this.str, 0);
+          await Utils.waitForExist(()=>this.isReceive, 'onSslErrorEventCertChainDataButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'onSslErrorEventCertChainDataButtonIsPageEnd', 1, 1000);
           console.info('key==>' + this.str);
           this.isReceive = -1;
           this.isCertChainData = -1;
@@ -68,12 +67,8 @@ struct webViewOnSslErrorEventTwo {
               this.controller.clearSslCache();
               this.isPageEnd = -1;
               this.controller.loadUrl(URL);
-              await waitForExist(()=>this.isPageEnd, this.str, 0);
-              let check = (v1: number, v2: number): boolean => {
-                return v1 == v2 ? true:false;
-              }
-              await waitForAssert(()=>this.isCertChainData, check, 1, 2025071601, this.str);
-              console.log(this.str + ' isCertChainData==>' + this.isCertChainData);
+              await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 3000);
+              Utils.emitEvent(this.isCertChainData, 202500);
               break;
             }
             case 'emitOnSslErrorEventCertChainData0200': {
@@ -81,12 +76,8 @@ struct webViewOnSslErrorEventTwo {
               this.controller.clearSslCache();
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('iframe.html'));
-              await waitForExist(()=>this.isPageEnd, this.str, 0);
-              let check = (v1: number, v2: number): boolean => {
-                return v1 == v2 ? true:false;
-              }
-              await waitForAssert(()=>this.isCertChainData, check, 1, 2025071602, this.str);
-              console.log(this.str + ' isCertChainData==>' + this.isCertChainData);
+              await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 3000);
+              Utils.emitEvent(this.isCertChainData, 202510);
               break;
             }
           }
@@ -96,7 +87,7 @@ struct webViewOnSslErrorEventTwo {
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .onPageEnd((event) => {
           console.log('onPageEnd url==>' + event.url);
-          this.isPageEnd = 0;
+          this.isPageEnd = 1;
         })
         .onSslErrorEvent((event: SslErrorEvent) => {
           console.log('onSslErrorEvent url==>' + event.url);

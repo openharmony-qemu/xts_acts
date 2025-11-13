@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import wifiManager from '@ohos.wifiManager';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testWifiNoPermissionTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function wifiManagerTest() {
@@ -26,13 +26,14 @@ export default function wifiManagerTest() {
     describe("wifiManagerTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        /*
-         * @tc.number: enableWifiErrCode201Test
-         * @tc.name: enableWifiErrCode201Test
-         * @tc.desc: Test enableWifiErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   enableWifiErrCode201Test
+         * @tc.number enableWifiErrCode201Test
+         * @tc.desc   Test enableWifiErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("enableWifiErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -51,13 +52,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: disableWifiErrCode201Test
-         * @tc.name: disableWifiErrCode201Test
-         * @tc.desc: Test disableWifiErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   disableWifiErrCode201Test
+         * @tc.number disableWifiErrCode201Test
+         * @tc.desc   Test disableWifiErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("disableWifiErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -76,13 +78,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: isConnectedErrCode201Test
-         * @tc.name: isConnectedErrCode201Test
-         * @tc.desc: Test isConnectedErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   isConnectedErrCode201Test
+         * @tc.number isConnectedErrCode201Test
+         * @tc.desc   Test isConnectedErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("isConnectedErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -102,13 +105,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: getIpInfoErrCode201Test
-         * @tc.name: getIpInfoErrCode201Test
-         * @tc.desc: Test getIpInfoErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getIpInfoErrCode201Test
+         * @tc.number getIpInfoErrCode201Test
+         * @tc.desc   Test getIpInfoErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getIpInfoErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -128,13 +132,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: getScanInfoListErrCode201Test
-         * @tc.name: getScanInfoListErrCode201Test
-         * @tc.desc: Test getScanInfoListErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getScanInfoListErrCode201Test
+         * @tc.number getScanInfoListErrCode201Test
+         * @tc.desc   Test getScanInfoListErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getScanInfoListErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -154,13 +159,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: isMeteredHotspotErrCode201Test
-         * @tc.name: isMeteredHotspotErrCode201Test
-         * @tc.desc: Test isMeteredHotspotErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   isMeteredHotspotErrCode201Test
+         * @tc.number isMeteredHotspotErrCode201Test
+         * @tc.desc   Test isMeteredHotspotErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("isMeteredHotspotErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -180,13 +186,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: getIpv6InfoErrCode201Test
-         * @tc.name: getIpv6InfoErrCode201Test
-         * @tc.desc: Test getIpv6InfoErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getIpv6InfoErrCode201Test
+         * @tc.number getIpv6InfoErrCode201Test
+         * @tc.desc   Test getIpv6InfoErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getIpv6InfoErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -206,13 +213,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: getSignalLevelErrCode201Test
-         * @tc.name: getSignalLevelErrCode201Test
-         * @tc.desc: Test getSignalLevelErrCode201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getSignalLevelErrCode201Test
+         * @tc.number getSignalLevelErrCode201Test
+         * @tc.desc   Test getSignalLevelErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getSignalLevelErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -231,13 +239,14 @@ export default function wifiManagerTest() {
             }
             done();
         })
-        /*
-         * @tc.number: getLinkedInfoPromise201Test
-         * @tc.name: getLinkedInfoPromise201Test
-         * @tc.desc: Test getLinkedInfoPromise201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getLinkedInfoPromise201Test
+         * @tc.number getLinkedInfoPromise201Test
+         * @tc.desc   Test getLinkedInfoPromise201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoPromise201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -256,13 +265,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoCallback201Test
-         * @tc.name: getLinkedInfoCallback201Test
-         * @tc.desc: Test getLinkedInfoCallback201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getLinkedInfoCallback201Test
+         * @tc.number getLinkedInfoCallback201Test
+         * @tc.desc   Test getLinkedInfoCallback201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoCallback201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo| undefined) => {
@@ -290,13 +300,14 @@ export default function wifiManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoSync201Test
-         * @tc.name: getLinkedInfoSync201Test
-         * @tc.desc: Test getLinkedInfoSync201Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getLinkedInfoSync201Test
+         * @tc.number getLinkedInfoSync201Test
+         * @tc.desc   Test getLinkedInfoSync201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoSync201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {

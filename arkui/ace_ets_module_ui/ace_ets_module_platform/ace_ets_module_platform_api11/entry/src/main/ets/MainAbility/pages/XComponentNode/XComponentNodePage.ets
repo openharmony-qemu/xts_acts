@@ -30,7 +30,8 @@ class XComponentNodeController extends NodeController {
 
   changeRenderType(renderType: NodeRenderType): void {
     if (this.xComponentNode) {
-      this.xComponentNode.changeRenderType(renderType);
+      let ret = this.xComponentNode.changeRenderType(renderType);
+      AppStorage.setOrCreate('XComponentNodePage_changeRenderType', ret);
     }
   }
 }
@@ -50,6 +51,7 @@ class MyXComponentNode extends XComponentNode {
 @Entry
 @Component
 struct XComponentNodePage {
+  private myNodeController: XComponentNodeController = new XComponentNodeController()
   @State flag:boolean = true
 
   build() {
@@ -59,8 +61,18 @@ struct XComponentNodePage {
           this.flag = !this.flag
         })
 
+      Button('changeRenderType:DISPLAY').id('changeRenderType_display')
+        .onClick(() => {
+          this.myNodeController.changeRenderType(NodeRenderType.RENDER_TYPE_DISPLAY)
+        })
+
+      Button('changeRenderType:TEXTURE').id('changeRenderType_texture')
+        .onClick(() => {
+          this.myNodeController.changeRenderType(NodeRenderType.RENDER_TYPE_TEXTURE)
+        })
+
       if(this.flag) {
-        NodeContainer(new XComponentNodeController())
+        NodeContainer(this.myNodeController)
       }
     }
     .height('100%')

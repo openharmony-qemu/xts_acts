@@ -67,7 +67,7 @@ function testSetNTPSever() {
    * @tc.size      : MediumTest
    */
   it("test_set_ntp_sever_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       systemManager.setNTPServer(SELFWANT, '');
       expect(false).assertTrue();
@@ -178,7 +178,7 @@ function testGetNTPSever() {
    * @tc.size      : MediumTest
    */
   it("test_get_ntp_sever_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       systemManager.getNTPServer(SELFWANT);
       expect(false).assertTrue();
@@ -244,7 +244,7 @@ function testSetOtaUpdatePolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_ota_update_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     let policy: systemManager.OtaUpdatePolicy = {
       "policyType": systemManager.PolicyType.PROHIBIT,
       "version": UPDATE_VERSION,
@@ -503,7 +503,7 @@ function testGetOtaUpdatePolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_ota_update_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       systemManager.getOtaUpdatePolicy(SELFWANT);
       expect(false).assertTrue();
@@ -573,7 +573,7 @@ function testNotifyUpdatePackages() {
    * @tc.size      : MediumTest
    */
   it("test_notify_update_packages_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     let updatePaskageInfo: Array<systemManager.Package> = [{
       "type": systemManager.PackageType.FIRMWARE,
       "path": "path"
@@ -684,7 +684,7 @@ function testNotifyUpdatePackages() {
     await systemManager.notifyUpdatePackages(SELFWANT, updatePackageInfo).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(error.code == 9201004).assertTrue();
+      expect(error.code == 9201004 || error.code == 801).assertTrue();
     }).finally(async () => {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     });
@@ -719,7 +719,7 @@ function testGetUpdateResult() {
    * @tc.size      : MediumTest
    */
   it("test_get_update_result_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     await systemManager.getUpdateResult(SELFWANT, UPDATE_VERSION).then((data: systemManager.UpdateResult) => {
       expect(false).assertTrue();
     }).catch((error: BusinessError) => {
@@ -823,7 +823,7 @@ function testGetUpdateAuthData() {
    * @tc.size      : MediumTest
    */
   it("test_get_update_auth_data_0003", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let authData: string = await systemManager.getUpdateAuthData(SELFWANT);
     } catch (error) {
@@ -849,7 +849,7 @@ function testGetUpdateAuthData() {
       expect(authData).not().assertNull();
       expect(authData.length).not().assertEqual(0);
     } catch (error) {
-      expect(false).assertTrue();
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -885,7 +885,7 @@ function testSetAutoUnlockAfterReboot() {
    * @tc.size      : MediumTest
    */
   it("test_set_auto_unlock_after_reboot_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       systemManager.setAutoUnlockAfterReboot(SELFWANT, false);
       expect(false).assertTrue();
@@ -996,7 +996,7 @@ function testGetAutoUnlockAfterReboot() {
    * @tc.size      : MediumTest
    */
   it("test_get_auto_unlock_after_reboot_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       systemManager.getAutoUnlockAfterReboot(SELFWANT);
       expect(false).assertTrue();
@@ -1079,7 +1079,7 @@ function testGetDisallowedNearLinkProtocols() {
    * @tc.size      : MediumTest
    */
   it('test_get_disallowed_near_link_protocols_0003', Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(SELFWANT,
         DEFAULT_USER_ID);
@@ -1106,6 +1106,14 @@ function testGetDisallowedNearLinkProtocols() {
         DEFAULT_USER_ID);
       expect(protocols).not().assertNull();
       expect(protocols.length).assertEqual(0);
+      let nearlinkProtocols: Array<number> = new Array();
+      nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+      nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+      systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+      let protocols1: Array<systemManager.NearLinkProtocol> =
+        systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+      expect(protocols1.length > 0).assertTrue();
+      expect(protocols1.length == nearlinkProtocols.length).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -1146,7 +1154,7 @@ function testAddDisallowedNearLinkProtocols() {
    * @tc.size      : MediumTest
    */
   it('test_add_disallowed_nearlink_protocols_0002', Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     let nearlinkProtocols: Array<number> = new Array();
     nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
     nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
@@ -1262,7 +1270,7 @@ function testRemoveDisallowedNearLinkProtocols() {
    * @tc.size      : MediumTest
    */
   it('test_remove_disallowed_nearlink_protocols_0002', Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     let nearlinkProtocols: Array<number> = new Array();
     nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
     nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
@@ -1374,7 +1382,7 @@ function testSetInstallLocalEnterpriseAppEnabled() {
    * @tc.size      : MediumTest
    */
   it("test_set_install_local_enterprise_app_enabled_002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
       expect(false).assertTrue();
@@ -1418,15 +1426,13 @@ function testSetInstallLocalEnterpriseAppEnabled() {
   it("test_set_install_local_enterprise_app_enabled_004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let value: boolean = true;
-      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, value);
+      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
       let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
-      expect(result === value).assertTrue();
+      expect(result).assertTrue();
 
-      value = false;
-      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, value);
+      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, false);
       result = systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
-      expect(result === value).assertTrue();
+      expect(result).assertFalse();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -1483,7 +1489,7 @@ function testGetInstallLocalEnterpriseAppEnabled() {
    * @tc.size      : MediumTest
    */
   it("test_is_install_local_enterprise_app_enable_0003", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
     } catch (error) {

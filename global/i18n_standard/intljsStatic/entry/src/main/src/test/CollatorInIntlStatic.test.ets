@@ -32,7 +32,7 @@ import i18n from '@ohos.i18n'
 import deviceInfo from '@ohos.deviceInfo'
 import intl from '@ohos.intl'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function CollatorInIntlTest() {
@@ -52,10 +52,14 @@ export default function CollatorInIntlTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3500
-     * @tc.name    collator_test_static_3500
-     * @tc.desc    compare two different strings
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3500
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3500
+     * @tc.desc   compare two different strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collator_test_static_3500', Level.LEVEL0, async (): Promise<void> => {
       let coll = new Intl.Collator();
@@ -63,11 +67,15 @@ export default function CollatorInIntlTest() {
       console.log('collator_test_static_3500 ' + value);
       expect(value).assertEqual(-1);
     })
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3510
-     * @tc.name    collator_test_static_3510
-     * @tc.desc    compare the same strings
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3510
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3510
+     * @tc.desc   compare the same strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3510', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator();
       let value = coll.compare('a', 'a');
@@ -75,11 +83,15 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(0);
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3520
-     * @tc.name    collator_test_static_3520
-     * @tc.desc    compare two different strings and return positive value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3520
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3520
+     * @tc.desc   compare two different strings and return positive value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3520', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator();
       let value = coll.compare('b', 'a');
@@ -87,11 +99,15 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(1);
     })
 
-    /* *
-   * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3600
-   * @tc.name    collator_test_static_3600
-   * @tc.desc    compare two different strings with zh locale
-  */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3600
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3600
+     * @tc.desc   compare two different strings with zh locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3600', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh');
       let value = coll.compare('a', 'b');
@@ -99,11 +115,15 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(-1);
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3620
-     * @tc.name    collator_test_static_3620
-     * @tc.desc    compare two different strings with zh locale and undefined options
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3620
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3620
+     * @tc.desc   compare two different strings with zh locale and undefined options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3620', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh', undefined);
       let value = coll.compare('a', 'b');
@@ -111,11 +131,15 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(-1);
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3640
-     * @tc.name    collator_test_static_3640
-     * @tc.desc    compare two different strings with zh locale and null options
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3640
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3640
+     * @tc.desc   compare two different strings with zh locale and null options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3640', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh', {});
       let value = coll.compare('a', 'b');
@@ -123,11 +147,15 @@ export default function CollatorInIntlTest() {
       expect(value).assertEqual(-1);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3700
-    * @tc.name    collator_test_static_3700
-    * @tc.desc    compare two different strings with zh locale and eor collation
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3700
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3700
+     * @tc.desc   compare two different strings with zh locale and eor collation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3700', Level.LEVEL2, async (): Promise<void> => {
       let coll = new intl.Collator('zh', {'collation': 'eor'});
       let value = coll.compare('a', 'b');
@@ -136,11 +164,15 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().collation).assertEqual('eor');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3800
-    * @tc.name    collator_test_static_3800
-    * @tc.desc    compare two different strings with zh locale and base sensitivity
-   */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3800
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3800
+     * @tc.desc   compare two different strings with zh locale and base sensitivity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3800', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh', {'sensitivity': 'base'});
       let value = coll.compare('a', 'b');
@@ -149,11 +181,15 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().sensitivity).assertEqual('base');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_3900
-     * @tc.name    collator_test_static_3900
-     * @tc.desc    compare two different strings with zh locale and upper caseFirst
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_3900
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_3900
+     * @tc.desc   compare two different strings with zh locale and upper caseFirst
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_3900', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh', {'caseFirst': 'upper'});
       let value = coll.compare('a', 'b');
@@ -162,11 +198,15 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().caseFirst).assertEqual('upper');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_4000
-     * @tc.name    collator_test_static_4000
-     * @tc.desc    compare two different strings with zh locale and true numeric
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_4000
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_4000
+     * @tc.desc   compare two different strings with zh locale and true numeric
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_4000', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh', {'numeric': true});
       let value = coll.compare('a', 'b');
@@ -175,11 +215,15 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().numeric).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_4100
-    * @tc.name    collator_test_static_4100
-    * @tc.desc    compare two different strings with zh locale and true ignorePunctuation
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_4100
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_4100
+     * @tc.desc   compare two different strings with zh locale and true ignorePunctuation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_4100', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh', {'ignorePunctuation': true});
       let value = coll.compare('a', 'b');
@@ -188,17 +232,38 @@ export default function CollatorInIntlTest() {
       expect(coll.resolvedOptions().ignorePunctuation).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_COLLATOR_static_4200
-    * @tc.name    collator_test_static_4200
-    * @tc.desc        * @tc.name    collator_test_static_4200
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_4200
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_static_4200
+     * @tc.desc   * @tc.name    collator_test_static_4200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('collator_test_static_4200', Level.LEVEL2, async (): Promise<void> => {
       let coll = new Intl.Collator('zh', {'usage': 'sort'});
       let value = coll.compare('a', 'b');
       console.log('collator_test_static_4200 ' + value);
       expect(value).assertEqual(-1);
       expect(coll.resolvedOptions().usage).assertEqual('sort');
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   collator_test_static_4300
+     * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_4300
+     * @tc.desc   check the compare result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('collator_test_static_4300', Level.LEVEL2, async (): Promise<void> => {
+      let coll = new intl.Collator('zh', {'localeMatcher': 'lookup'});
+      let value = coll.compare('a', 'b');
+      console.log('collator_test_static_4300 ' + value);
+      expect(value).assertEqual(-1);
+      expect(coll.resolvedOptions().localeMatcher).assertEqual('lookup');
     })
 
     console.log('*************end CollatorInIntlTest*************');

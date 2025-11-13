@@ -37,12 +37,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0300
-     * @tc.name   : testPreferencesCallbackWithError001
-     * @tc.desc   : Clear、Put、Has、Delete、Get、Flush String callback interface test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesCallbackWithError001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0300
+     * @tc.desc   Clear、Put、Has、Delete、Get、Flush String callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testPreferencesCallbackWithError001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testPreferencesCallbackWithError001 begin.");
@@ -85,12 +86,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_4000
-     * @tc.name   : testMpreferencesGet0003
-     * @tc.desc   : mPreference.get callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesGet0003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_4000
+     * @tc.desc   mPreference.get callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesGet0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesGet0003 begin.");
@@ -109,12 +111,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3900
-     * @tc.name   : testMpreferencesGet0001
-     * @tc.desc   : mPreference.get callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesGet0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_3900
+     * @tc.desc   mPreference.get callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesGet0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesGet0001 begin.");
@@ -138,12 +141,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_4100
-     * @tc.name   : testMpreferencesGet0002
-     * @tc.desc   : mPreference.get callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesGet0002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_4100
+     * @tc.desc   mPreference.get callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesGet0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("testMpreferencesGet0002 begin.");
@@ -167,12 +171,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1600
-     * @tc.name   : testMpreferencesGetALL001
-     * @tc.desc   : mPreference.getAll callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesGetALL001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1600
+     * @tc.desc   mPreference.getAll callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesGetALL001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesGetALL001 begin.");
@@ -193,12 +198,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1800
-     * @tc.name   : testMpreferencesHas0001
-     * @tc.desc   : mPreference.has callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesHas0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1800
+     * @tc.desc   mPreference.has callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesHas0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesHas0001 begin.");
@@ -218,12 +224,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1900
-     * @tc.name   : testMpreferencesHas0002
-     * @tc.desc   : mPreference.has callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesHas0002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_1900
+     * @tc.desc   mPreference.has callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesHas0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesHas0002 begin.");
@@ -244,13 +251,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3900
-
-     * @tc.name   : testMpreferencesPut0001
-     * @tc.desc   : mPreference.put callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesPut0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3900
+     * @tc.desc   mPreference.put callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesPut0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesPut0001 begin.");
@@ -270,12 +277,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3700
-     * @tc.name   : testMpreferencesPut0002
-     * @tc.desc   : mPreference.put callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesPut0002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3700
+     * @tc.desc   mPreference.put callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesPut0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesPut0002 begin.");
@@ -299,13 +307,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3600
-
-     * @tc.name   : testMpreferencesPut0003
-     * @tc.desc   : mPreference.put callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesPut0003
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3600
+     * @tc.desc   mPreference.put callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesPut0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesPut0003 begin.");
@@ -329,12 +337,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3400
-     * @tc.name   : testMpreferencesPut0004
-     * @tc.desc   : mPreference.put callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesPut0004
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3400
+     * @tc.desc   mPreference.put callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesPut0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesPut0004 begin.");
@@ -359,12 +368,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3800
-     * @tc.name   : testMpreferencesPut0005
-     * @tc.desc   : mPreference.put callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesPut0005
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_3800
+     * @tc.desc   mPreference.put callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesPut0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesPut0005 begin.");
@@ -389,12 +399,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2100
-     * @tc.name   : testMpreferencesDelete0001
-     * @tc.desc   : mPreference.delete callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesDelete0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2100
+     * @tc.desc   mPreference.delete callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesDelete0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesDelete0001 begin.");
@@ -414,12 +425,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2300
-     * @tc.name   : testMpreferencesDelete0002
-     * @tc.desc   : mPreference.delete callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesDelete0002
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_2300
+     * @tc.desc   mPreference.delete callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesDelete0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesDelete0002 begin.");
@@ -442,12 +454,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_ClearJSAPITest_0400
-     * @tc.name   : testMpreferencesClear0001
-     * @tc.desc   : mPreference.clear callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesClear0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_ClearJSAPITest_0400
+     * @tc.desc   mPreference.clear callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesClear0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesClear0001 begin.");
@@ -469,12 +482,13 @@ export default function preferencesCallbackWithErrorTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributedData_CrossPlatform_SDK_Preferences_FlushJSAPITest_0300
-     * @tc.name   : testMpreferencesFlush0001
-     * @tc.desc   : mPreference.flush callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testMpreferencesFlush0001
+     * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_FlushJSAPITest_0300
+     * @tc.desc   mPreference.flush callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testMpreferencesFlush0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log("testMpreferencesFlush0001 begin.");

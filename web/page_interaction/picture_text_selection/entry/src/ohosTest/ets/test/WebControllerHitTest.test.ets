@@ -156,6 +156,26 @@ export default function webControllerHitTest() {
     })
 
     /*
+    * @tc.number      : SUB_WEB_WEBCONTROLLER_GETHITTEST_0600
+    * @tc.name        : testGetHitTest006
+    * @tc.desc        : test getHitTest return webView.HitTestType.Map
+    * @tc.size        : MediumTest
+    * @tc.type        : Function
+    * @tc.level       : Level 1
+    */
+    it('testGetHitTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = 'emitGetHitTest006';
+      tcName = 'testGetHitTest006'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, HitTestType.Map, 20251210, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebControllerHitTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
+    })
+
+
+    /*
     * @tc.number      : SUB_WEB_WEBCONTROLLER_GETHITTEST_0700
     * @tc.name        : testGetHitTest007
     * @tc.desc        : test getHitTest return webView.WebHitTestType.Phone

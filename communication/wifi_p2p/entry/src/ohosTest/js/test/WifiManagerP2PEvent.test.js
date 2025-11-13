@@ -65,12 +65,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0008
-        * @tc.name testp2pStateChange
-        * @tc.desc Test p2pStateChange callback
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0008
+         * @tc.number SUB_Communication_WiFi_Event_Test_0008
+         * @tc.desc   Test p2pStateChange callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let p2pState = "p2pStateChange";
@@ -91,12 +93,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0009
-        * @tc.name testp2pConnectionChange
-        * @tc.desc Test p2pConnectionChange callback
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0009
+         * @tc.number SUB_Communication_WiFi_Event_Test_0009
+         * @tc.desc   Test p2pConnectionChange callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let p2pConnectionState = "p2pConnectionChange";
@@ -140,12 +144,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0012
-        * @tc.name testp2pDeviceChange
-        * @tc.desc Test p2pDeviceChange callback
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0012
+         * @tc.number SUB_Communication_WiFi_Event_Test_0012
+         * @tc.desc   Test p2pDeviceChange callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let p2pDeviceState = "p2pDeviceChange";
@@ -166,12 +172,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0010
-        * @tc.name testp2pPeerDeviceChange
-        * @tc.desc Test p2pPeerDeviceChange callback
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0010
+         * @tc.number SUB_Communication_WiFi_Event_Test_0010
+         * @tc.desc   Test p2pPeerDeviceChange callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let p2pPeerDeviceState = "p2pPeerDeviceChange";
@@ -194,12 +202,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0013
-        * @tc.name testp2pPersistentGroupChange
-        * @tc.desc Test p2pPersistentGroupChange callback
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0013
+         * @tc.number SUB_Communication_WiFi_Event_Test_0013
+         * @tc.desc   Test p2pPersistentGroupChange callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let p2pGroupState = "p2pPersistentGroupChange";
             let p2pPersistentGroupChangeCallback = () => {
@@ -237,13 +247,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0007
-        * @tc.name testP2pGroup
-        * @tc.desc Test createGroup and getCurrentGroup promise and removeGroup
-        * @tc.type Function
-        * @tc.level Level 2
-        * @tc.size: Mediumtest
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0007
+         * @tc.number SUB_Communication_WiFi_Event_Test_0007
+         * @tc.desc   Test createGroup and getCurrentGroup promise and removeGroup
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiP2PConfig = {
                 deviceAddress: "00:11:22:33:44:55",
@@ -294,13 +305,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0006
-        * @tc.name testGetCurrentGroup
-        * @tc.desc Test getCurrentGroup callback
-        * @tc.type Function
-        * @tc.level Level 2
-        * @tc.size: Mediumtest
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0006
+         * @tc.number SUB_Communication_WiFi_Event_Test_0006
+         * @tc.desc   Test getCurrentGroup callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 function functionGetCurrentGroup() {
@@ -333,13 +345,14 @@ export default function actsWifiManagerEventTest() {
             })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0005
-        * @tc.name testDiscoverDevices
-        * @tc.desc Test startDiscoverDevices and stopDiscoverDevices
-        * @tc.type Function
-        * @tc.level Level 2
-        * @tc.size: Mediumtest
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0005
+         * @tc.number SUB_Communication_WiFi_Event_Test_0005
+         * @tc.desc   Test startDiscoverDevices and stopDiscoverDevices
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 wifiMg.startDiscoverDevices();
@@ -368,12 +381,14 @@ export default function actsWifiManagerEventTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_Event_Test_0011
-        * @tc.name testpp2pDiscoveryChange
-        * @tc.desc Test p2pDiscoveryChange callback
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_Event_Test_0011
+         * @tc.number SUB_Communication_WiFi_Event_Test_0011
+         * @tc.desc   Test p2pDiscoveryChange callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_Event_Test_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let p2pPeerDeviceState = "p2pDiscoveryChange";

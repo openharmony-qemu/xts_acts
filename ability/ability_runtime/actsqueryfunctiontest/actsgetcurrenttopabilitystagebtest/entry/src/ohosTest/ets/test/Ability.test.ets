@@ -63,10 +63,10 @@ export default function abilityTest() {
                         console.debug("====>thisTopAbility====>"+JSON.stringify(data.lastRequestWant))
                         console.debug("====>start startAbility====>");
                         expect(data.lastRequestWant.abilityName).assertEqual('Ability1')
-                        commonEvent.unsubscribe(Subscriber, () => {
+                        commonEvent.unsubscribe(Subscriber, async () => {
                             console.debug("ACTS_GetCurrentTopAbility_0200====>UnSubscribe CallBack====>");
-                            globalThis.ability2Context.terminateSelf();
-                            globalThis.ability3Context.terminateSelf();
+                            await globalThis.ability2Context.terminateSelf();
+                            await globalThis.ability3Context.terminateSelf();
                             done();
                         })
                     })}
@@ -103,10 +103,10 @@ export default function abilityTest() {
                             console.debug("====>thisTopAbility====>"+JSON.stringify(data.lastRequestWant))
                             console.debug("====>start startAbility====>");
                             expect(data.lastRequestWant.abilityName).assertEqual('Ability1')
-                            commonEvent.unsubscribe(Subscriber, () => {
+                            commonEvent.unsubscribe(Subscriber, async () => {
                                 console.debug("ACTS_GetCurrentTopAbility_0500====>UnSubscribe CallBack====>");
-                                globalThis.ability2Context.terminateSelf();
-                                globalThis.ability3Context.terminateSelf();
+                                await globalThis.ability2Context.terminateSelf();
+                                await globalThis.ability3Context.terminateSelf();
                                 done();
                             })
                         })

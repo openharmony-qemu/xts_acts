@@ -48,7 +48,7 @@ export default function abilityToolFinishTest() {
       setTimeout(() => {
         console.log("AbilityToolFinishTest afterEach end");
         done();
-      }, 1000)
+      }, 300)
     })
 
     /**

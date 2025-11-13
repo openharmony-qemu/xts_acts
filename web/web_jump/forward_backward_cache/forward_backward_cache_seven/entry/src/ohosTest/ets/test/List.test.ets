@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,9 +15,11 @@
 
 import webViewOnWindowNewJsunit from './WebViewOnWindowNewJsunit.test'
 import webViewWebStorageJsunit from './WebViewWebStorageJsunit.test'
+import WebViewGetOriginsJsunit from './WebViewGetOriginsJsunit.test'
 export default function testsuite() {
 
        webViewWebStorageJsunit()
        webViewOnWindowNewJsunit()
+       WebViewGetOriginsJsunit()
 
 }

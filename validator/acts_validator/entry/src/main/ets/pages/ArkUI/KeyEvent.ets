@@ -24,7 +24,7 @@ struct keyEventExample {
   @State text: string = ''
   @State axisValue: string = ''
   @State name: string = 'keyEvent';
-  @State Vue: boolean = false;
+  @State keyEventVue: boolean = false;
   @State intervalNum: number = 0;
   @State hoverMoveText: string = '';
   @State StepTips: string = '操作步骤：使用键盘分别点击CapsLock、NumLock键' + '\n' + '预期结果：指示灯亮起，结果为True'
@@ -52,19 +52,20 @@ struct keyEventExample {
 
     this.intervalNum = setInterval(() => {
       if (this.dragSuccess) {
-        this.Vue = true
+        this.keyEventVue = true
       }
     }, 500)
   }
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.keyEventVue == false) {
+      Button({ stateEffect: this.keyEventVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -73,11 +74,13 @@ struct keyEventExample {
 
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.keyEventVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -101,6 +104,7 @@ struct keyEventExample {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -174,6 +178,7 @@ struct keyEventExample {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

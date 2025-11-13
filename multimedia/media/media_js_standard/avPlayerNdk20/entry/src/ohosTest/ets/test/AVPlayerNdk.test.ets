@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -489,7 +489,8 @@ export default function AVPlayerNdkTest() {
      * @tc.type       : Function
      * @tc.level      : Level 1
      */
-    it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>SUB_MULTIMEIDA_OH_OH_AVPlayer_SetMediaKeySystemInfoCallback0100 start====");
@@ -612,5 +613,161 @@ export default function AVPlayerNdkTest() {
           done()
         }
       })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0100
+     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0100
+     * @tc.desc       : test OH_AVPlayer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('SUB_MULTIMEIDA_AVPlaybackSpeed0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlaybackSpeed0100 start====");
+          let result: number = avplayer.AVPlaybackSpeed0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlaybackSpeed0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0101
+     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0101
+     * @tc.desc       : test OH_AVPlayer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('SUB_MULTIMEIDA_AVPlaybackSpeed0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlaybackSpeed0101 start====");
+          let result: number = avplayer.AVPlaybackSpeed0101();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlaybackSpeed0101 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0102
+     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0102
+     * @tc.desc       : test OH_AVPlayer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('SUB_MULTIMEIDA_AVPlaybackSpeed0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlaybackSpeed0102 start====");
+          let result: number = avplayer.AVPlaybackSpeed0102();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlaybackSpeed0102 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPlaybackSpeed0103
+     * @tc.name       : SUB_MULTIMEIDA_AVPlaybackSpeed0103
+     * @tc.desc       : test OH_AVPlayer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('SUB_MULTIMEIDA_AVPlaybackSpeed0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlaybackSpeed0103 start====");
+          let result: number = avplayer.AVPlaybackSpeed0103();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlaybackSpeed0103 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPlayerBufferingType0100
+     * @tc.name       : SUB_MULTIMEIDA_AVPlayerBufferingType0100
+     * @tc.desc       : test OH_AVPlayer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('SUB_MULTIMEIDA_AVPlayerBufferingType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlayerBufferingType0100 start====");
+          let result: number = avplayer.AVPlayerBufferingType0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlayerBufferingType0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPlayerBufferingType0101
+     * @tc.name       : SUB_MULTIMEIDA_AVPlayerBufferingType0101
+     * @tc.desc       : test OH_AVPlayer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('SUB_MULTIMEIDA_AVPlayerBufferingType0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlayerBufferingType0101 start====");
+          let result: number = avplayer.AVPlayerBufferingType0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlayerBufferingType0101 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPlayerBufferingType0102
+     * @tc.name       : SUB_MULTIMEIDA_AVPlayerBufferingType0102
+     * @tc.desc       : test OH_AVPlayer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('SUB_MULTIMEIDA_AVPlayerBufferingType0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_AVPlayerBufferingType0102 start====");
+          let result: number = avplayer.AVPlayerBufferingType0100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVPlayerBufferingType0102 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+
   })
 }

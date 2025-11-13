@@ -38,6 +38,8 @@ export default class MainAbility extends Ability {
     // Main window is created, set main page for this ability
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     globalThis.windowStage = windowStage;
+    AppStorage.setOrCreate('context',this.context);
+    AppStorage.setOrCreate('windowStage',windowStage);
     windowStage.setUIContent(this.context, 'MainAbility/pages/XTSIndex', null);
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {

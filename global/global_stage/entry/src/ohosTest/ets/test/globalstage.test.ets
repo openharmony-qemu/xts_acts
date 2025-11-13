@@ -19,6 +19,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError } from '@ohos.base';
 import sendableResourceManager from '@ohos.sendableResourceManager';
 import { GlobalContext } from '../test/global';
+import application from '@ohos.app.ability.application';
 
 export default function globalStageTest() {
   describe("globalStageTest", () => {
@@ -42,12 +43,13 @@ export default function globalStageTest() {
     });
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGSYNC_STAGE_0100
-     * @tc.name      : getStringSync with resource object and format value
-     * @tc.desc      : getStringSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETSTRINGSYNC_STAGE_0100
+     * @tc.desc   getStringSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getStringSync_stagetest_0100', Level.LEVEL2, async (done: Function) => {
       let mgr: resourceManager.ResourceManager = res;
@@ -69,12 +71,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGSYNC_STAGE_0200
-     * @tc.name      : getStringSync with resource object
-     * @tc.desc      : getStringSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_stagetest_0200
+     * @tc.number SUB_GLOBAL_GETSTRINGSYNC_STAGE_0200
+     * @tc.desc   getStringSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStringSync_stagetest_0200', Level.LEVEL0, async (done: Function) => {
       let mgr: resourceManager.ResourceManager = res;
@@ -96,12 +99,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGBYNAME_STAGE_0100
-     * @tc.name      : getStringByNameSync with resource name
-     * @tc.desc      : getStringByNameSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByNameSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETSTRINGBYNAME_STAGE_0100
+     * @tc.desc   getStringByNameSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStringByNameSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: string = res.getStringByNameSync('app_name');
@@ -111,12 +115,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGBYNAME_STAGE_0200
-     * @tc.name      : getStringByNameSync with resource name and format value
-     * @tc.desc      : getStringByNameSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByNameSync_stagetest_0200
+     * @tc.number SUB_GLOBAL_GETSTRINGBYNAME_STAGE_0200
+     * @tc.desc   getStringByNameSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getStringByNameSync_stagetest_0200', Level.LEVEL2, async (done: Function) => {
       let value: string = res.getStringByNameSync('app_name', 100);
@@ -126,12 +131,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGVALUE_STAGE_0100
-     * @tc.name      : getStringValue with resource name in callback mode
-     * @tc.desc      : getStringValue
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETSTRINGVALUE_STAGE_0100
+     * @tc.desc   getStringValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getStringValue_stage_test_0100', Level.LEVEL2, async (done: Function) => {
       res.getStringValue({
@@ -147,12 +153,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGVALUE_STAGE_0200
-     * @tc.name      : getStringValue with resource name in promise mode
-     * @tc.desc      : getStringValue
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_stage_test_0200
+     * @tc.number SUB_GLOBAL_GETSTRINGVALUE_STAGE_0200
+     * @tc.desc   getStringValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getStringValue_stage_test_0200', Level.LEVEL2, async (done: Function) => {
       res.getStringValue({
@@ -168,12 +175,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGARRAYVALUE_STAGE_0100
-     * @tc.name      : getStringArrayValue with resource name in callback mode
-     * @tc.desc      : getStringArrayValue
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETSTRINGARRAYVALUE_STAGE_0100
+     * @tc.desc   getStringArrayValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getStringArrayValue_stage_test_0100', Level.LEVEL2, async (done: Function) => {
       res.getStringArrayValue({
@@ -192,12 +200,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGARRAYVALUE_STAGE_0200
-     * @tc.name      : getStringArrayValue with resource name in promise mode
-     * @tc.desc      : getStringArrayValue
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0200
+     * @tc.number SUB_GLOBAL_GETSTRINGARRAYVALUE_STAGE_0200
+     * @tc.desc   getStringArrayValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getStringArrayValue_stage_test_0200', Level.LEVEL2, async (done: Function) => {
       res.getStringArrayValue({
@@ -216,12 +225,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENT_STAGE_0100
-     * @tc.name      : getMediaContent with resource name in callback mode
-     * @tc.desc      : getMediaContent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENT_STAGE_0100
+     * @tc.desc   getMediaContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContent_stage_test_0100', Level.LEVEL0, async (done: Function) => {
       res.getMediaContent({
@@ -236,12 +246,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENT_STAGE_0200
-     * @tc.name      : getMediaContent with resource name in promise mode
-     * @tc.desc      : getMediaContent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0200
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENT_STAGE_0200
+     * @tc.desc   getMediaContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContent_stage_test_0200', Level.LEVEL0, async (done: Function) => {
       res.getMediaContent({
@@ -256,12 +267,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENT_STAGE_0300
-     * @tc.name      : getMediaContent with resource name and density in callback mode
-     * @tc.desc      : getMediaContent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0300
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENT_STAGE_0300
+     * @tc.desc   getMediaContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaContent_stage_test_0300', Level.LEVEL2, async (done: Function) => {
       res.getMediaContent({
@@ -276,12 +288,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENT_STAGE_0400
-     * @tc.name      : getMediaContent with resource name and density in promise mode
-     * @tc.desc      : getMediaContent
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0400
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENT_STAGE_0400
+     * @tc.desc   getMediaContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaContent_stage_test_0400', Level.LEVEL2, async (done: Function) => {
       res.getMediaContent({
@@ -296,12 +309,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0100
-     * @tc.name      : getMediaContentBase64 with resource name in callback mode
-     * @tc.desc      : getMediaContentBase64
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0100
+     * @tc.desc   getMediaContentBase64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentBase64_stage_test_0100', Level.LEVEL0, async (done: Function) => {
       res.getMediaContentBase64({
@@ -316,12 +330,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0200
-     * @tc.name      : getMediaContentBase64 with resource name in promise mode
-     * @tc.desc      : getMediaContentBase64
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0200
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0200
+     * @tc.desc   getMediaContentBase64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentBase64_stage_test_0200', Level.LEVEL0, async (done: Function) => {
       res.getMediaContentBase64({
@@ -336,12 +351,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0300
-     * @tc.name      : getMediaContentBase64 with resource name and density in callback mode
-     * @tc.desc      : getMediaContentBase64
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0300
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0300
+     * @tc.desc   getMediaContentBase64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentBase64_stage_test_0300', Level.LEVEL0, async (done: Function) => {
       res.getMediaContentBase64({
@@ -356,12 +372,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0400
-     * @tc.name      : getMediaContentBase64 with resource name and density in promise mode
-     * @tc.desc      : getMediaContentBase64
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0400
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTBASE64_STAGE_0400
+     * @tc.desc   getMediaContentBase64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentBase64_stage_test_0400', Level.LEVEL0, async (done: Function) => {
       res.getMediaContentBase64({
@@ -376,12 +393,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETPLURALSTRINGVALUE_STAGE_0100
-     * @tc.name      : getPluralStringValue with resource name in callback mode
-     * @tc.desc      : getPluralStringValue
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETPLURALSTRINGVALUE_STAGE_0100
+     * @tc.desc   getPluralStringValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPluralStringValue_stage_test_0100', Level.LEVEL0, async (done: Function) => {
       res.getPluralStringValue({
@@ -397,12 +415,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETPLURALSTRINGVALUE_STAGE_0200
-     * @tc.name      : getPluralStringValue with resource name in promise mode
-     * @tc.desc      : getPluralStringValue
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0200
+     * @tc.number SUB_GLOBAL_GETPLURALSTRINGVALUE_STAGE_0200
+     * @tc.desc   getPluralStringValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPluralStringValue_stage_test_0200', Level.LEVEL0, async (done: Function) => {
       res.getPluralStringValue({
@@ -418,12 +437,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETBOOLEAN_STAGE_0100
-     * @tc.name      : getBoolean with resource name
-     * @tc.desc      : getBoolean
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETBOOLEAN_STAGE_0100
+     * @tc.desc   getBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBoolean_stage_test_0100', Level.LEVEL0, async (done: Function) => {
       let value: boolean = res.getBoolean({
@@ -437,12 +457,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETNUMBER_STAGE_0100
-     * @tc.name      : getNumber with resource name
-     * @tc.desc      : getNumber
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumber_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETNUMBER_STAGE_0100
+     * @tc.desc   getNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNumber_stage_test_0100', Level.LEVEL0, async (done: Function) => {
       let value: number = res.getNumber({
@@ -456,12 +477,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETDRAWABLEDESCRIPTOR_STAGE_0100
-     * @tc.name      : getDrawableDescriptor with resource name
-     * @tc.desc      : getDrawableDescriptor
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0100
+     * @tc.number SUB_GLOBAL_GETDRAWABLEDESCRIPTOR_STAGE_0100
+     * @tc.desc   getDrawableDescriptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDrawableDescriptor_stage_test_0100', Level.LEVEL0, async (done: Function) => {
       let out = true;
@@ -478,11 +500,15 @@ export default function globalStageTest() {
       done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_GETCOLOR_STAGE_JS_0100
-    * @tc.name    test getColor method with resource param in callback mode
-    * @tc.desc    get the color in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0100
+     * @tc.number SUB_GLOBAL_GETCOLOR_STAGE_JS_0100
+     * @tc.desc   get the color in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColor_test_0100', Level.LEVEL0, async (done: Function) => {
       res.getColor({
         bundleName: "ohos.acts.globalstage",
@@ -496,11 +522,15 @@ export default function globalStageTest() {
       })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_GETCOLOR_STAGE_JS_0200
-    * @tc.name    test getColor method with resource param in promise mode
-    * @tc.desc    get the color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0200
+     * @tc.number SUB_GLOBAL_GETCOLOR_STAGE_JS_0200
+     * @tc.desc   get the color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColor_test_0200', Level.LEVEL0, async (done: Function) => {
       res.getColor({
         bundleName: "ohos.acts.globalstage",
@@ -514,11 +544,15 @@ export default function globalStageTest() {
       })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_GETCOLORSYNC_STAGE_JS_0100
-    * @tc.name    test getColorSync method with resource param in promise mode
-    * @tc.desc    get the sync color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorSync_test_0100
+     * @tc.number SUB_GLOBAL_GETCOLORSYNC_STAGE_JS_0100
+     * @tc.desc   get the sync color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorSync_test_0100', Level.LEVEL0, async (done: Function) => {
       let value: number = res.getColorSync({
         bundleName: "ohos.acts.globalstage",
@@ -532,12 +566,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETRAWFDSYNC_STAGE_0100
-     * @tc.name      : getRawFdSync with path
-     * @tc.desc      : getRawFdSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFdSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETRAWFDSYNC_STAGE_0100
+     * @tc.desc   getRawFdSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getRawFdSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: resourceManager.RawFileDescriptor = res.getRawFdSync('rawfiletest.xml');
@@ -549,28 +584,30 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETRAWFILELISTSYNC_STAGE_0100
-     * @tc.name      : getRawFileListSync with path
-     * @tc.desc      : getRawFileListSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileListSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETRAWFILELISTSYNC_STAGE_0100
+     * @tc.desc   getRawFileListSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getRawFileListSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: Array<string> = res.getRawFileListSync('');
       console.log('getRawFileListSync_stagetest_0100 1' + value);
       console.log('getRawFileListSync_stagetest_0100 1' + value.length);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETRAWFILECONTENTSYNC_STAGE_0100
-     * @tc.name      : getRawFileContentSync with path
-     * @tc.desc      : getRawFileContentSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileContentSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETRAWFILECONTENTSYNC_STAGE_0100
+     * @tc.desc   getRawFileContentSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getRawFileContentSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: Uint8Array =
@@ -581,12 +618,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTSYNC_STAGE_0100
-     * @tc.name      : getMediaContentSync with res id
-     * @tc.desc      : getMediaContentSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTSYNC_STAGE_0100
+     * @tc.desc   getMediaContentSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: Uint8Array = res.getMediaContentSync($r('app.media.icon').id);
@@ -596,12 +634,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTSYNC_STAGE_0200
-     * @tc.name      : getMediaContentSync with resource object
-     * @tc.desc      : getMediaContentSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_stagetest_0200
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTSYNC_STAGE_0200
+     * @tc.desc   getMediaContentSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentSync_stagetest_0200', Level.LEVEL0, async (done: Function) => {
       let value: Uint8Array = res.getMediaContentSync({
@@ -615,12 +654,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTBASE64SYNC_STAGE_0100
-     * @tc.name      : getMediaContentBase64Sync with res id
-     * @tc.desc      : getMediaContentBase64Sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTBASE64SYNC_STAGE_0100
+     * @tc.desc   getMediaContentBase64Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentBase64Sync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: string = res.getMediaContentBase64Sync($r('app.media.icon').id);
@@ -630,12 +670,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIACONTENTBASE64SYNC_STAGE_0200
-     * @tc.name      : getMediaContentBase64Sync with resource object
-     * @tc.desc      : getMediaContentBase64Sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_stagetest_0200
+     * @tc.number SUB_GLOBAL_GETMEDIACONTENTBASE64SYNC_STAGE_0200
+     * @tc.desc   getMediaContentBase64Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaContentBase64Sync_stagetest_0200', Level.LEVEL0, async (done: Function) => {
       let value: string = res.getMediaContentBase64Sync({
@@ -649,12 +690,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETPLURALSTRINGVALUESYNC_STAGE_0100
-     * @tc.name      : getPluralStringValueSync with res id
-     * @tc.desc      : getPluralStringValueSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETPLURALSTRINGVALUESYNC_STAGE_0100
+     * @tc.desc   getPluralStringValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPluralStringValueSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: string = res.getPluralStringValueSync($r('app.plural.plural_name').id, 0);
@@ -664,12 +706,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETPLURALSTRINGVALUESYNC_STAGE_0200
-     * @tc.name      : getPluralStringValueSync with resource object
-     * @tc.desc      : getPluralStringValueSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_stagetest_0200
+     * @tc.number SUB_GLOBAL_GETPLURALSTRINGVALUESYNC_STAGE_0200
+     * @tc.desc   getPluralStringValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPluralStringValueSync_stagetest_0200', Level.LEVEL0, async (done: Function) => {
       let value: string = res.getPluralStringValueSync({
@@ -683,28 +726,29 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGARRAYVALUESYNC_STAGE_0100
-     * @tc.name      : getStringArrayValueSync with res id
-     * @tc.desc      : getStringArrayValueSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETSTRINGARRAYVALUESYNC_STAGE_0100
+     * @tc.desc   getStringArrayValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStringArrayValueSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
-      let value: Array<string> =
-      res.getStringArrayValueSync($r('app.strarray.sizeList').id);
+      let value: Array<string> = res.getStringArrayValueSync($r('app.strarray.sizeList').id);
       console.log('getStringArrayValueSync_stagetest_0100 1' + value);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGARRAYVALUESYNC_STAGE_0200
-     * @tc.name      : getStringArrayValueSync with resource object
-     * @tc.desc      : getStringArrayValueSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_stagetest_0200
+     * @tc.number SUB_GLOBAL_GETSTRINGARRAYVALUESYNC_STAGE_0200
+     * @tc.desc   getStringArrayValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStringArrayValueSync_stagetest_0200', Level.LEVEL0, async (done: Function) => {
       let value: Array<string> = res.getStringArrayValueSync({
@@ -713,17 +757,18 @@ export default function globalStageTest() {
         id: $r('app.strarray.sizeList').id
       });
       console.log('getStringArrayValueSync_stagetest_0200 1' + value);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETPLURALSTRINGBYNAMESYNC_STAGE_0100
-     * @tc.name      : getPluralStringByNameSync with resource name
-     * @tc.desc      : getPluralStringByNameSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByNameSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETPLURALSTRINGBYNAMESYNC_STAGE_0100
+     * @tc.desc   getPluralStringByNameSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPluralStringByNameSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: string = res.getPluralStringByNameSync('plural_name', 2);
@@ -733,12 +778,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIABYNAMESYNC_STAGE_0100
-     * @tc.name      : getMediaByNameSync with resource name
-     * @tc.desc      : getMediaByNameSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByNameSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETMEDIABYNAMESYNC_STAGE_0100
+     * @tc.desc   getMediaByNameSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaByNameSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: Uint8Array = res.getMediaByNameSync('icon');
@@ -748,12 +794,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETMEDIABASE64BYNAMESYNC_STAGE_0100
-     * @tc.name      : getMediaBase64ByNameSync with resource name
-     * @tc.desc      : getMediaBase64ByNameSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByNameSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETMEDIABASE64BYNAMESYNC_STAGE_0100
+     * @tc.desc   getMediaBase64ByNameSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getMediaBase64ByNameSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: string = res.getMediaBase64ByNameSync('icon');
@@ -763,27 +810,29 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETSTRINGARRAYBYNAMESYNC_STAGE_0100
-     * @tc.name      : getStringArrayByNameSync with resource name
-     * @tc.desc      : getStringArrayByNameSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByNameSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETSTRINGARRAYBYNAMESYNC_STAGE_0100
+     * @tc.desc   getStringArrayByNameSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStringArrayByNameSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: Array<string> = res.getStringArrayByNameSync('sizeList');
       console.log('getStringArrayByNameSync_stagetest_0100 1' + value);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETCONFIGURATIONSYNC_STAGE_0100
-     * @tc.name      : getConfigurationSync
-     * @tc.desc      : getConfigurationSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getConfigurationSync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETCONFIGURATIONSYNC_STAGE_0100
+     * @tc.desc   getConfigurationSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getConfigurationSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: resourceManager.Configuration = res.getConfigurationSync();
@@ -794,12 +843,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GETDEVICECAPABILITYSYNC_STAGE_0100
-     * @tc.name      : getDeviceCapabilitySync
-     * @tc.desc      : getDeviceCapabilitySync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapabilitySync_stagetest_0100
+     * @tc.number SUB_GLOBAL_GETDEVICECAPABILITYSYNC_STAGE_0100
+     * @tc.desc   getDeviceCapabilitySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDeviceCapabilitySync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: resourceManager.DeviceCapability = res.getDeviceCapabilitySync();
@@ -810,27 +860,30 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GetLocales_0010
-     * @tc.name      : getLocales without parameter
-     * @tc.desc      : getLocales
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GetLocales_0010
+     * @tc.number SUB_GLOBAL_GetLocales_0010
+     * @tc.desc   getLocales
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_GetLocales_0010', Level.LEVEL2, async (done: Function) => {
-      let value: string = res.getLocales().toString();
+      let value: Array<string> = res.getLocales();
       console.log('SUB_GLOBAL_GetLocales_0010' + value);
-      expect(value == 'en-US,zh-CN').assertTrue();
+      expect(value.length).assertLarger(0);
+      expect(value.toString() == 'en-US,zh-CN').assertTrue();
       done();
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0010
-     * @tc.name      : getSymbol resource not found by resid
-     * @tc.desc      : getSymbol
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GetSymbol_0010
+     * @tc.number SUB_GLOBAL_getSymbol_0010
+     * @tc.desc   getSymbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_GLOBAL_GetSymbol_0010', Level.LEVEL3, async (done: Function) => {
       let value: number = res.getSymbol($r('app.symbol.symbolTest1').id);
@@ -840,12 +893,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0130
-     * @tc.name      : getSymbolByName normal name
-     * @tc.desc      : getSymbolByName
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GetSymbol_0130
+     * @tc.number SUB_GLOBAL_getSymbol_0130
+     * @tc.desc   getSymbolByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_GetSymbol_0130', Level.LEVEL0, async (done: Function) => {
       let value: number = res.getSymbolByName('symbolTest1');
@@ -854,18 +908,45 @@ export default function globalStageTest() {
       done();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GOLBAL_REMSGR_isRawDir_0010
+     * @tc.number SUB_GOLBAL_REMSGR_isRawDir_0010
+     * @tc.desc   SUB_GOLBAL_REMSGR_isRawDir_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_GOLBAL_REMSGR_isRawDir_0010', Level.LEVEL0, async () => {
       let value: boolean = res.isRawDir('rawfiletest.xml');
       console.log('SUB_GOLBAL_REMSGR_isRawDir_0010_value' + value);
       expect(value == false).assertTrue();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GOLBAL_REMSGR_getOverrideConfiguration_0010
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideConfiguration_0010
+     * @tc.desc   SUB_GOLBAL_REMSGR_getOverrideConfiguration_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_GOLBAL_REMSGR_getOverrideConfiguration_0010', Level.LEVEL0, async () => {
       let value: resourceManager.Configuration = res.getOverrideConfiguration();
       console.log('SUB_GOLBAL_REMSGR_getOverrideConfiguration_0010_value' + value.mnc);
       expect(value.mnc == 0).assertTrue();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GOLBAL_REMSGR_getOverrideResourceManager_0010
+     * @tc.number SUB_GOLBAL_REMSGR_getOverrideResourceManager_0010
+     * @tc.desc   SUB_GOLBAL_REMSGR_getOverrideResourceManager_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_GOLBAL_REMSGR_getOverrideResourceManager_0010', Level.LEVEL0, async () => {
       let completeOverrideConfiguration: resourceManager.Configuration = {
         mcc: 460,
@@ -883,6 +964,15 @@ export default function globalStageTest() {
       expect(value.getOverrideConfiguration().mcc == 460).assertTrue();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GOLBAL_REMSGR_updateOverrideConfiguration_0010
+     * @tc.number SUB_GOLBAL_REMSGR_updateOverrideConfiguration_0010
+     * @tc.desc   SUB_GOLBAL_REMSGR_updateOverrideConfiguration_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_GOLBAL_REMSGR_updateOverrideConfiguration_0010', Level.LEVEL0, async () => {
       let completeOverrideConfiguration: resourceManager.Configuration = {
         mcc: 461,
@@ -904,6 +994,15 @@ export default function globalStageTest() {
       expect(value.getOverrideConfiguration().mcc == 461).assertTrue();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GOLBAL_REMSGR_resourceToSendableResource_0010
+     * @tc.number SUB_GOLBAL_REMSGR_resourceToSendableResource_0010
+     * @tc.desc   SUB_GOLBAL_REMSGR_resourceToSendableResource_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_GOLBAL_REMSGR_resourceToSendableResource_0010', Level.LEVEL0, async () => {
       let resource: resourceManager.Resource = {
         bundleName: 'com.example.myapplication',
@@ -921,6 +1020,15 @@ export default function globalStageTest() {
       expect(value.type == 10001).assertTrue();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GOLBAL_REMSGR_sendableResourceToResource_0010
+     * @tc.number SUB_GOLBAL_REMSGR_sendableResourceToResource_0010
+     * @tc.desc   SUB_GOLBAL_REMSGR_sendableResourceToResource_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_GOLBAL_REMSGR_sendableResourceToResource_0010', Level.LEVEL0, async () => {
       let resource: resourceManager.Resource = {
         bundleName: 'com.example.myapplication',
@@ -937,12 +1045,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0100
-     * @tc.name      : resourceManager_test_getStringSync_0010
-     * @tc.desc      : %2$d(The second parameter is an integer)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0010
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0100
+     * @tc.desc   %2$d(The second parameter is an integer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0010', Level.LEVEL2, () => {
       let resMgr = res;
@@ -963,12 +1072,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0200
-     * @tc.name      : resourceManager_test_getStringSync_0020
-     * @tc.desc      : %2$d(The second parameter is an integer in scientific notation)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0020
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0200
+     * @tc.desc   %2$d(The second parameter is an integer in scientific notation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0020', Level.LEVEL2, () => {
       let resMgr = res;
@@ -989,12 +1099,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0300
-     * @tc.name      : resourceManager_test_getStringSync_0030
-     * @tc.desc      : %2$d(The second parameter is a decimal)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0030
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0300
+     * @tc.desc   %2$d(The second parameter is a decimal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0030', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1015,12 +1126,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0400
-     * @tc.name      : resourceManager_test_getStringSync_0040
-     * @tc.desc      : %2$d(The second parameter is a decimal number in scientific notation)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0040
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0400
+     * @tc.desc   %2$d(The second parameter is a decimal number in scientific notation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0040', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1041,12 +1153,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0500
-     * @tc.name      : resourceManager_test_getStringSync_0050
-     * @tc.desc      : %3$s(The third parameter is a Chinese string)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0050
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0500
+     * @tc.desc   %3$s(The third parameter is a Chinese string)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0050', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1067,12 +1180,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0600
-     * @tc.name      : resourceManager_test_getStringSync_0060
-     * @tc.desc      : %3$s(The third parameter is an English string)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0060
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0600
+     * @tc.desc   %3$s(The third parameter is an English string)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0060', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1093,12 +1207,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0700
-     * @tc.name      : resourceManager_test_getStringSync_0070
-     * @tc.desc      : %4$f(The fourth parameter is an integer)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0070
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0700
+     * @tc.desc   %4$f(The fourth parameter is an integer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0070', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1119,12 +1234,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0800
-     * @tc.name      : resourceManager_test_getStringSync_0080
-     * @tc.desc      : %4$f(The fourth parameter is an integer in scientific notation)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0080
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0800
+     * @tc.desc   %4$f(The fourth parameter is an integer in scientific notation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0080', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1146,12 +1262,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_0900
-     * @tc.name      : resourceManager_test_getStringSync_0090
-     * @tc.desc      : %4$f(The fourth parameter is a decimal)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0090
+     * @tc.number SUB_GLOBAL_FormatStringIndex_0900
+     * @tc.desc   %4$f(The fourth parameter is a decimal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0090', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1173,12 +1290,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1000
-     * @tc.name      : resourceManager_test_getStringSync_0100
-     * @tc.desc      : %4$f(The fourth parameter is a decimal number in scientific notation)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0100
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1000
+     * @tc.desc   %4$f(The fourth parameter is a decimal number in scientific notation)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0100', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1200,12 +1318,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1100
-     * @tc.name      : resourceManager_test_getStringSync_0110
-     * @tc.desc      : %%d
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0110
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1100
+     * @tc.desc   %%d
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0110', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1226,12 +1345,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1200
-     * @tc.name      : resourceManager_test_getStringSync_0120
-     * @tc.desc      : %%%s
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0120
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1200
+     * @tc.desc   %%%s
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0120', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1253,12 +1373,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1300
-     * @tc.name      : resourceManager_test_getStringSync_0130
-     * @tc.desc      : %%%%f
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0130
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1300
+     * @tc.desc   %%%%f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0130', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1279,12 +1400,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1400
-     * @tc.name      : resourceManager_test_getStringSync_0140
-     * @tc.desc      : %2$d %3$s %4$f(The second parameter is integer, the third is Chinese, the fourth is decimal)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0140
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1400
+     * @tc.desc   %2$d %3$s %4$f(The second parameter is integer, the third is Chinese, the fourth is decimal)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0140', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1306,13 +1428,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1500
-     * @tc.name      : resourceManager_test_getStringSync_0150
-     * @tc.desc      : %2$d %3$s %4$f(The second parameter is integer in scientific notation,
-     * the third is English, the fourth is decimal in scientific notation)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0150
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1500
+     * @tc.desc   %2$d %3$s %4$f(The second parameter is integer in scientific notation,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0150', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1335,12 +1457,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1600
-     * @tc.name      : resourceManager_test_getStringSync_0160
-     * @tc.desc      : %2$d %3$s %4$f %%d(The parameter is null)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0160
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1600
+     * @tc.desc   %2$d %3$s %4$f %%d(The parameter is null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0160', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1361,12 +1484,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1700
-     * @tc.name      : resourceManager_test_getStringSync_0170
-     * @tc.desc      : %d %1$d(The parameter is null)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0170
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1700
+     * @tc.desc   %d %1$d(The parameter is null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0170', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1387,12 +1511,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1800
-     * @tc.name      : resourceManager_test_getStringSync_0180
-     * @tc.desc      : %2$d %3$s %4$f(There are more parameters than placeholder indexes)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0180
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1800
+     * @tc.desc   %2$d %3$s %4$f(There are more parameters than placeholder indexes)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0180', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1416,12 +1541,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_1900
-     * @tc.name      : resourceManager_test_getStringSync_0190
-     * @tc.desc      : %d %1$d(Inconsistent placeholder styles)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0190
+     * @tc.number SUB_GLOBAL_FormatStringIndex_1900
+     * @tc.desc   %d %1$d(Inconsistent placeholder styles)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0190', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1442,12 +1568,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2000
-     * @tc.name      : resourceManager_test_getStringSync_0200
-     * @tc.desc      : %%%d %1$d(Inconsistent placeholder styles)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0200
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2000
+     * @tc.desc   %%%d %1$d(Inconsistent placeholder styles)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0200', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1468,12 +1595,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2100
-     * @tc.name      : resourceManager_test_getStringSync_0210
-     * @tc.desc      : %d %d %s %s %f %f(Arguments and placeholder match and equal in number)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0210
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2100
+     * @tc.desc   %d %d %s %s %f %f(Arguments and placeholder match and equal in number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0210', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1496,12 +1624,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2200
-     * @tc.name      : resourceManager_test_getStringSync_0220
-     * @tc.desc      : %d %d %s %s %f %f(The parameters is more than required)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0220
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2200
+     * @tc.desc   %d %d %s %s %f %f(The parameters is more than required)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getStringSync_0220', Level.LEVEL2, () => {
       let resMgr = res;
@@ -1525,12 +1654,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2300
-     * @tc.name      : resourceManager_test_getStringSync_0230
-     * @tc.desc      : %2$d %3$s %4$f(Get failed because of parameters is less than required)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0230
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2300
+     * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_0230', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1543,12 +1673,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2400
-     * @tc.name      : resourceManager_test_getStringSync_0240
-     * @tc.desc      : %2$d %3$s %4$f(Get failed because of parameters is less than required)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0240
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2400
+     * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_0240', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1566,12 +1697,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2500
-     * @tc.name      : resourceManager_test_getStringByNameSync_0250
-     * @tc.desc      : %2$d %3$s %4$f(Get failed because of parameters is less than required)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringByNameSync_0250
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2500
+     * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringByNameSync_0250', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1584,12 +1716,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2600
-     * @tc.name      : resourceManager_test_getStringSync_0260
-     * @tc.desc      : The wrong parameter type
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0260
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2600
+     * @tc.desc   The wrong parameter type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_0260', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1602,12 +1735,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2700
-     * @tc.name      : resourceManager_test_getStringSync_0270
-     * @tc.desc      : %2$d %3$s %4$f(Get failed because of parameters is less than required)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0270
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2700
+     * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_0270', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1625,12 +1759,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2800
-     * @tc.name      : resourceManager_test_getStringByNameSync_0280
-     * @tc.desc      : Parameter out of index
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringByNameSync_0280
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2800
+     * @tc.desc   Parameter out of index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringByNameSync_0280', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1643,12 +1778,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_2900
-     * @tc.name      : resourceManager_test_getStringSync_0290
-     * @tc.desc      : Parameters less than required
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0290
+     * @tc.number SUB_GLOBAL_FormatStringIndex_2900
+     * @tc.desc   Parameters less than required
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_0290', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1661,12 +1797,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_3000
-     * @tc.name      : resourceManager_test_getStringSync_0300
-     * @tc.desc      : %2$d %3$s %4$f(Get failed because of parameters is less than required)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringSync_0300
+     * @tc.number SUB_GLOBAL_FormatStringIndex_3000
+     * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringSync_0300', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1684,12 +1821,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_FormatStringIndex_3100
-     * @tc.name      : resourceManager_test_getStringByNameSync_0310
-     * @tc.desc      : %2$d %3$s %4$f(Get failed because of parameters is less than required)
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getStringByNameSync_0310
+     * @tc.number SUB_GLOBAL_FormatStringIndex_3100
+     * @tc.desc   %2$d %3$s %4$f(Get failed because of parameters is less than required)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getStringByNameSync_0310', Level.LEVEL3, () => {
       let resMgr = res;
@@ -1702,12 +1840,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0020
-     * @tc.name      : resourceManager_test_getSymbol_0020
-     * @tc.desc      : getSymbol resource by reference
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0020
+     * @tc.number SUB_GLOBAL_getSymbol_0020
+     * @tc.desc   getSymbol resource by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0020', Level.LEVEL2, () => {
       let value = res.getSymbol($r('app.symbol.symbolTestReference').id);
@@ -1716,12 +1855,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0040
-     * @tc.name      : resourceManager_test_getSymbol_0040
-     * @tc.desc      : getSymbol resource resId invalid
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0040
+     * @tc.number SUB_GLOBAL_getSymbol_0040
+     * @tc.desc   getSymbol resource resId invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getSymbol_0040', Level.LEVEL3, () => {
       try {
@@ -1735,12 +1875,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0050
-     * @tc.name      : resourceManager_test_getSymbol_0050
-     * @tc.desc      : getSymbol resource resId invalid
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0050
+     * @tc.number SUB_GLOBAL_getSymbol_0050
+     * @tc.desc   getSymbol resource resId invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getSymbol_0050', Level.LEVEL3, () => {
       try {
@@ -1754,12 +1895,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0060
-     * @tc.name      : resourceManager_test_getSymbol_0060
-     * @tc.desc      : getSymbol resource resource re-ref too much by resId
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0060
+     * @tc.number SUB_GLOBAL_getSymbol_0060
+     * @tc.desc   getSymbol resource resource re-ref too much by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getSymbol_0060', Level.LEVEL3, () => {
       try {
@@ -1773,12 +1915,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0070
-     * @tc.name      : resourceManager_test_getSymbol_0070
-     * @tc.desc      : getSymbol normal resource object
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0070
+     * @tc.number SUB_GLOBAL_getSymbol_0070
+     * @tc.desc   getSymbol normal resource object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0070', Level.LEVEL2, () => {
       let resource: resourceManager.Resource = {
@@ -1792,12 +1935,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0080
-     * @tc.name      : resourceManager_test_getSymbol_0080
-     * @tc.desc      : getSymbol normal reference resource
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0080
+     * @tc.number SUB_GLOBAL_getSymbol_0080
+     * @tc.desc   getSymbol normal reference resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0080', Level.LEVEL2, () => {
       let resource: resourceManager.Resource = {
@@ -1811,12 +1955,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0100
-     * @tc.name      : resourceManager_test_getSymbol_0100
-     * @tc.desc      : getSymbol resId invalid by resource object
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0100
+     * @tc.number SUB_GLOBAL_getSymbol_0100
+     * @tc.desc   getSymbol resId invalid by resource object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0100', Level.LEVEL2, () => {
       let resource: resourceManager.Resource = {
@@ -1835,12 +1980,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0110
-     * @tc.name      : resourceManager_test_getSymbol_0110
-     * @tc.desc      : getSymbol resource not found by resource object
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0110
+     * @tc.number SUB_GLOBAL_getSymbol_0110
+     * @tc.desc   getSymbol resource not found by resource object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getSymbol_0110', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -1859,12 +2005,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0120
-     * @tc.name      : resourceManager_test_getSymbol_0120
-     * @tc.desc      : getSymbol resource re-ref too much by resource object
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0120
+     * @tc.number SUB_GLOBAL_getSymbol_0120
+     * @tc.desc   getSymbol resource re-ref too much by resource object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getSymbol_0120', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -1883,12 +2030,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0140
-     * @tc.name      : resourceManager_test_getSymbol_0140
-     * @tc.desc      : getSymbolByName reference resource
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0140
+     * @tc.number SUB_GLOBAL_getSymbol_0140
+     * @tc.desc   getSymbolByName reference resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0140', Level.LEVEL2, () => {
       let value = res.getSymbolByName('symbolTestReference');
@@ -1897,12 +2045,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0160
-     * @tc.name      : resourceManager_test_getSymbol_0160
-     * @tc.desc      : getSymbolByName resName invalid
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0160
+     * @tc.number SUB_GLOBAL_getSymbol_0160
+     * @tc.desc   getSymbolByName resName invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getSymbol_0160', Level.LEVEL3, () => {
       try {
@@ -1916,12 +2065,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0180
-     * @tc.name      : resourceManager_test_getSymbol_0180
-     * @tc.desc      : getSymbolByName resource re-ref too much
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0180
+     * @tc.number SUB_GLOBAL_getSymbol_0180
+     * @tc.desc   getSymbolByName resource re-ref too much
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getSymbol_0180', Level.LEVEL3, () => {
       try {
@@ -1935,12 +2085,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0190
-     * @tc.name      : resourceManager_test_getSymbol_0190
-     * @tc.desc      : getSymbol normal resource by resId in Chinese
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0190
+     * @tc.number SUB_GLOBAL_getSymbol_0190
+     * @tc.desc   getSymbol normal resource by resId in Chinese
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0190', Level.LEVEL2, () => {
       let value = res.getSymbol($r('app.symbol.symbolTest2').id);
@@ -1949,12 +2100,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0200
-     * @tc.name      : resourceManager_test_getSymbol_0200
-     * @tc.desc      : getSymbol normal resource by resId in Chinese
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0200
+     * @tc.number SUB_GLOBAL_getSymbol_0200
+     * @tc.desc   getSymbol normal resource by resId in Chinese
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0200', Level.LEVEL2, () => {
       let resource: resourceManager.Resource = {
@@ -1968,12 +2120,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_getSymbol_0210
-     * @tc.name      : resourceManager_test_getSymbol_0210
-     * @tc.desc      : getSymbolByName normal name ZH
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getSymbol_0210
+     * @tc.number SUB_GLOBAL_getSymbol_0210
+     * @tc.desc   getSymbolByName normal name ZH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getSymbol_0210', Level.LEVEL2, () => {
       let value = res.getSymbolByName('symbolTest2');
@@ -1982,12 +2135,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_getDrawable_1400
-     * @tc.name      : resourceManager_test_getDrawable_1400
-     * @tc.desc      : getDrawableDescriptor with resource Object not exist resource id
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDrawable_1400
+     * @tc.number SUB_GLOBAL_I18N_getDrawable_1400
+     * @tc.desc   getDrawableDescriptor with resource Object not exist resource id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDrawable_1400', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -2006,12 +2160,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_getDrawable_0900
-     * @tc.name      : resourceManager_test_getDrawable_0900
-     * @tc.desc      : getDrawableDescriptorByName with not exist pic name
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDrawable_0900
+     * @tc.number SUB_GLOBAL_I18N_getDrawable_0900
+     * @tc.desc   getDrawableDescriptorByName with not exist pic name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDrawable_0900', Level.LEVEL3, () => {
       try {
@@ -2025,12 +2180,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0020
-     * @tc.name      : resourceManager_test_getRawFdSync_0020
-     * @tc.desc      : getRawFdSync with subdirectory non-empty file
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFdSync_0020
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0020
+     * @tc.desc   getRawFdSync with subdirectory non-empty file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFdSync_0020', Level.LEVEL2, () => {
       let value = res.getRawFdSync('A/test.txt');
@@ -2042,12 +2198,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0030
-     * @tc.name      : resourceManager_test_getRawFdSync_0030
-     * @tc.desc      : getRawFdSync with subdirectory empty file
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFdSync_0030
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0030
+     * @tc.desc   getRawFdSync with subdirectory empty file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFdSync_0030', Level.LEVEL2, () => {
       let value = res.getRawFdSync('A/none.xml');
@@ -2059,12 +2216,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0050
-     * @tc.name      : resourceManager_test_getRawFdSync_0050
-     * @tc.desc      : getRawFdSync with error path
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFdSync_0050
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0050
+     * @tc.desc   getRawFdSync with error path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getRawFdSync_0050', Level.LEVEL3, () => {
       try {
@@ -2078,12 +2236,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0170
-     * @tc.name      : resourceManager_test_getRawFileContentSync_0170
-     * @tc.desc      : getRawFileContentSync with subdirectory empty file
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFileContentSync_0170
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0170
+     * @tc.desc   getRawFileContentSync with subdirectory empty file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFileContentSync_0170', Level.LEVEL2, () => {
       let value = res.getRawFileContentSync('A/none.xml');
@@ -2092,12 +2251,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0160
-     * @tc.name      : resourceManager_test_getRawFileContentSync_0160
-     * @tc.desc      : getRawFileContentSync with subdirectory non-empty file
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFileContentSync_0160
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0160
+     * @tc.desc   getRawFileContentSync with subdirectory non-empty file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFileContentSync_0160', Level.LEVEL2, () => {
       let value = res.getRawFileContentSync('A/test.txt');
@@ -2106,12 +2266,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0190
-     * @tc.name      : resourceManager_test_getRawFileContentSync_0190
-     * @tc.desc      : getRawFileContentSync with error path
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFileContentSync_0190
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0190
+     * @tc.desc   getRawFileContentSync with error path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getRawFileContentSync_0190', Level.LEVEL3, () => {
       try {
@@ -2125,12 +2286,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0120
-     * @tc.name      : resourceManager_test_getRawFileListSync_0120
-     * @tc.desc      : getRawFileListSync with subdirectory
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFileListSync_0120
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0120
+     * @tc.desc   getRawFileListSync with subdirectory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getRawFileListSync_0120', Level.LEVEL2, () => {
       let value = res.getRawFileListSync('A');
@@ -2139,12 +2301,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0140
-     * @tc.name      : resourceManager_test_getRawFileListSync_0140
-     * @tc.desc      : getRawFileListSync with error path
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getRawFileListSync_0140
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0140
+     * @tc.desc   getRawFileListSync with error path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getRawFileListSync_0140', Level.LEVEL3, () => {
       try {
@@ -2158,12 +2321,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_I18N_RawFileSync_0100
-     * @tc.name      : resourceManager_test_closeRawFdSync_0100
-     * @tc.desc      : closeRawFdSync with error path
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_closeRawFdSync_0100
+     * @tc.number SUB_GLOBAL_I18N_RawFileSync_0100
+     * @tc.desc   closeRawFdSync with error path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_closeRawFdSync_0100', Level.LEVEL3, () => {
       try {
@@ -2177,12 +2341,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_0300
-     * @tc.name      : getStringArrayValue_stage_test_0300
-     * @tc.desc      : errcode 9001001 in callback mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0300
+     * @tc.number getStringArrayValue_stage_test_0300
+     * @tc.desc   errcode 9001001 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2197,12 +2362,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_0400
-     * @tc.name      : getStringArrayValue_stage_test_0400
-     * @tc.desc      : errcode 9001002 in callback mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0400
+     * @tc.number getStringArrayValue_stage_test_0400
+     * @tc.desc   errcode 9001002 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_0400', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2217,12 +2383,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_0500
-     * @tc.name      : getStringArrayValue_stage_test_0500
-     * @tc.desc      : errcode 9001006 in callback mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0500
+     * @tc.number getStringArrayValue_stage_test_0500
+     * @tc.desc   errcode 9001006 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2237,12 +2404,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_0600
-     * @tc.name      : getStringArrayValue_stage_test_0600
-     * @tc.desc      : errcode 401 in callback mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0600
+     * @tc.number getStringArrayValue_stage_test_0600
+     * @tc.desc   errcode 401 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_0600', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2257,12 +2425,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_0700
-     * @tc.name      : getStringArrayValue_stage_test_0700
-     * @tc.desc      : errcode 9001001 in promise mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0700
+     * @tc.number getStringArrayValue_stage_test_0700
+     * @tc.desc   errcode 9001001 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_0700', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2278,12 +2447,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_0800
-     * @tc.name      : getStringArrayValue_stage_test_0800
-     * @tc.desc      : errcode 9001002 in promise mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0800
+     * @tc.number getStringArrayValue_stage_test_0800
+     * @tc.desc   errcode 9001002 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_0800', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2299,12 +2469,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_0900
-     * @tc.name      : getStringArrayValue_stage_test_0900
-     * @tc.desc      : errcode 9001006 in promise mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_0900
+     * @tc.number getStringArrayValue_stage_test_0900
+     * @tc.desc   errcode 9001006 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_0900', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2320,12 +2491,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValue_stage_test_1000
-     * @tc.name      : getStringArrayValue_stage_test_1000
-     * @tc.desc      : errcode 401 in promise mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_1000
+     * @tc.number getStringArrayValue_stage_test_1000
+     * @tc.desc   errcode 401 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_1000', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue({
@@ -2341,12 +2513,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContent_stage_test_0500
-     * @tc.name      : getMediaContent_stage_test_0500
-     * @tc.desc      : errcode 9001001 in callback mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0500
+     * @tc.number getMediaContent_stage_test_0500
+     * @tc.desc   errcode 9001001 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2361,12 +2534,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContent_stage_test_0600
-     * @tc.name      : getMediaContent_stage_test_0600
-     * @tc.desc      : errcode 9001002 in callback mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0600
+     * @tc.number getMediaContent_stage_test_0600
+     * @tc.desc   errcode 9001002 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_0600', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2381,12 +2555,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContent_stage_test_0700
-     * @tc.name      : getMediaContent_stage_test_0700
-     * @tc.desc      : errcode 401 in callback mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0700
+     * @tc.number getMediaContent_stage_test_0700
+     * @tc.desc   errcode 401 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_0700', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2401,12 +2576,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContent_stage_test_0800
-     * @tc.name      : getMediaContent_stage_test_0800
-     * @tc.desc      : errcode 9001001 in callback mode with density
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0800
+     * @tc.number getMediaContent_stage_test_0800
+     * @tc.desc   errcode 9001001 in callback mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_0800', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2421,12 +2597,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContent_stage_test_0900
-     * @tc.name      : getMediaContent_stage_test_0900
-     * @tc.desc      : errcode 9001002 in callback mode with density
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_0900
+     * @tc.number getMediaContent_stage_test_0900
+     * @tc.desc   errcode 9001002 in callback mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_0900', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2441,12 +2618,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContent_stage_test_1000
-     * @tc.name      : getMediaContent_stage_test_1000
-     * @tc.desc      : errcode 401 in callback mode with density
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1000
+     * @tc.number getMediaContent_stage_test_1000
+     * @tc.desc   errcode 401 in callback mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1000', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2461,12 +2639,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContent_stage_test_1100
-     * @tc.name      : getMediaContent_stage_test_1100
-     * @tc.desc      : errcode 9001001 in promise mode
-     * @tc.size      : Medium Test
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1100
+     * @tc.number getMediaContent_stage_test_1100
+     * @tc.desc   errcode 9001001 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1100', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2482,12 +2661,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1200
-     * @tc.name     : getMediaContent_stage_test_1200
-     * @tc.desc     : errcode 9001002 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1200
+     * @tc.number getMediaContent_stage_test_1200
+     * @tc.desc   errcode 9001002 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1200', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2503,12 +2683,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1300
-     * @tc.name     : getMediaContent_stage_test_1300
-     * @tc.desc     : errcode 401 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1300
+     * @tc.number getMediaContent_stage_test_1300
+     * @tc.desc   errcode 401 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1300', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2524,12 +2705,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1400
-     * @tc.name     : getMediaContent_stage_test_1400
-     * @tc.desc     : errcode 9001001 in promise mode with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1400
+     * @tc.number getMediaContent_stage_test_1400
+     * @tc.desc   errcode 9001001 in promise mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1400', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2545,12 +2727,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1500
-     * @tc.name     : getMediaContent_stage_test_1500
-     * @tc.desc     : errcode 9001002 in promise mode with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1500
+     * @tc.number getMediaContent_stage_test_1500
+     * @tc.desc   errcode 9001002 in promise mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1500', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2566,12 +2749,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1600
-     * @tc.name     : getMediaContent_stage_test_1600
-     * @tc.desc     : errcode 401 in promise mode with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1600
+     * @tc.number getMediaContent_stage_test_1600
+     * @tc.desc   errcode 401 in promise mode with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1600', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent({
@@ -2588,12 +2772,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getStringValue_stage_test_0300
-     * @tc.name     : getStringValue_stage_test_0300
-     * @tc.desc     : errcode 401 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_stage_test_0300
+     * @tc.number getStringValue_stage_test_0300
+     * @tc.desc   errcode 401 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringValue_stage_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getStringValue({
@@ -2609,12 +2794,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_stage_test_1100
-     * @tc.name     : getStringArrayValue_stage_test_1100
-     * @tc.desc     : errcode 9001001 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_1100
+     * @tc.number getStringArrayValue_stage_test_1100
+     * @tc.desc   errcode 9001001 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_1100', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue(0x01234567, (err: BusinessError) => {
@@ -2625,12 +2811,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_stage_test_1200
-     * @tc.name     : getStringArrayValue_stage_test_1200
-     * @tc.desc     : errcode 9001002 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_1200
+     * @tc.number getStringArrayValue_stage_test_1200
+     * @tc.desc   errcode 9001002 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_1200', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue($r('app.string.module_test_desc').id, (err: BusinessError) => {
@@ -2641,12 +2828,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_stage_test_1300
-     * @tc.name     : getStringArrayValue_stage_test_1300
-     * @tc.desc     : errcode 9001006 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_1300
+     * @tc.number getStringArrayValue_stage_test_1300
+     * @tc.desc   errcode 9001006 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_1300', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue($r('app.strarray.sizeListThree').id, (err: BusinessError) => {
@@ -2657,12 +2845,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_stage_test_1400
-     * @tc.name     : getStringArrayValue_stage_test_1400
-     * @tc.desc     : errcode 9001001 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_1400
+     * @tc.number getStringArrayValue_stage_test_1400
+     * @tc.desc   errcode 9001001 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_1400', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue(0x01234567).then(() => {
@@ -2674,12 +2863,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_stage_test_1500
-     * @tc.name     : getStringArrayValue_stage_test_1500
-     * @tc.desc     : errcode 9001002 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_1500
+     * @tc.number getStringArrayValue_stage_test_1500
+     * @tc.desc   errcode 9001002 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_1500', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue($r('app.string.module_test_desc').id).then(() => {
@@ -2691,12 +2881,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayValue_stage_test_1600
-     * @tc.name     : getStringArrayValue_stage_test_1600
-     * @tc.desc     : errcode 9001006 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_stage_test_1600
+     * @tc.number getStringArrayValue_stage_test_1600
+     * @tc.desc   errcode 9001006 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValue_stage_test_1600', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayValue($r('app.strarray.sizeListThree').id).then(() => {
@@ -2708,12 +2899,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1700
-     * @tc.name     : getMediaContent_stage_test_1700
-     * @tc.desc     : errcode 9001001 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1700
+     * @tc.number getMediaContent_stage_test_1700
+     * @tc.desc   errcode 9001001 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1700', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent(0x01234567, (err: BusinessError) => {
@@ -2724,12 +2916,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1800
-     * @tc.name     : getMediaContent_stage_test_1800
-     * @tc.desc     : errcode 9001002 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1800
+     * @tc.number getMediaContent_stage_test_1800
+     * @tc.desc   errcode 9001002 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1800', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent($r('app.string.module_test_desc').id, (err: BusinessError) => {
@@ -2740,12 +2933,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_1900
-     * @tc.name     : getMediaContent_stage_test_1900
-     * @tc.desc     : errcode 9001001 in callback mode with density by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_1900
+     * @tc.number getMediaContent_stage_test_1900
+     * @tc.desc   errcode 9001001 in callback mode with density by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_1900', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent(0x01234567, 0, (err: BusinessError) => {
@@ -2756,12 +2950,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_2000
-     * @tc.name     : getMediaContent_stage_test_2000
-     * @tc.desc     : errcode 9001002 in callback mode with density by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_2000
+     * @tc.number getMediaContent_stage_test_2000
+     * @tc.desc   errcode 9001002 in callback mode with density by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_2000', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent($r('app.string.module_test_desc').id, 0, (err: BusinessError) => {
@@ -2772,12 +2967,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_2100
-     * @tc.name     : getMediaContent_stage_test_2100
-     * @tc.desc     : errcode 9001001 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_2100
+     * @tc.number getMediaContent_stage_test_2100
+     * @tc.desc   errcode 9001001 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_2100', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent(0x01234567).then(() => {
@@ -2789,12 +2985,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_2200
-     * @tc.name     : getMediaContent_stage_test_2200
-     * @tc.desc     : errcode 9001002 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_2200
+     * @tc.number getMediaContent_stage_test_2200
+     * @tc.desc   errcode 9001002 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_2200', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent($r('app.string.module_test_desc').id).then(() => {
@@ -2806,12 +3003,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_2300
-     * @tc.name     : getMediaContent_stage_test_2300
-     * @tc.desc     : errcode 9001001 in promise mode with density by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_2300
+     * @tc.number getMediaContent_stage_test_2300
+     * @tc.desc   errcode 9001001 in promise mode with density by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_2300', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent(0x01234567, 0).then(() => {
@@ -2823,12 +3021,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContent_stage_test_2400
-     * @tc.name     : getMediaContent_stage_test_2400
-     * @tc.desc     : errcode 9001002 in promise mode with density by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_stage_test_2400
+     * @tc.number getMediaContent_stage_test_2400
+     * @tc.desc   errcode 9001002 in promise mode with density by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContent_stage_test_2400', Level.LEVEL3, async (done: Function) => {
       res.getMediaContent($r('app.string.module_test_desc').id, 0).then(() => {
@@ -2840,12 +3039,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_0500
-     * @tc.name     : getMediaContentBase64_stage_test_0500
-     * @tc.desc     : errcode 9001001 in callback mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0500
+     * @tc.number getMediaContentBase64_stage_test_0500
+     * @tc.desc   errcode 9001001 in callback mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -2860,12 +3060,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_0600
-     * @tc.name     : getMediaContentBase64_stage_test_0600
-     * @tc.desc     : errcode 9001002 in callback mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0600
+     * @tc.number getMediaContentBase64_stage_test_0600
+     * @tc.desc   errcode 9001002 in callback mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_0600', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -2880,12 +3081,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_0700
-     * @tc.name     : getMediaContentBase64_stage_test_0700
-     * @tc.desc     : errcode 401 in callback mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0700
+     * @tc.number getMediaContentBase64_stage_test_0700
+     * @tc.desc   errcode 401 in callback mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_0700', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -2900,12 +3102,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_0800
-     * @tc.name     : getMediaContentBase64_stage_test_0800
-     * @tc.desc     : errcode 9001001 in callback mode with density by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0800
+     * @tc.number getMediaContentBase64_stage_test_0800
+     * @tc.desc   errcode 9001001 in callback mode with density by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_0800', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -2920,12 +3123,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_0900
-     * @tc.name     : getMediaContentBase64_stage_test_0900
-     * @tc.desc     : errcode 9001002 in callback mode with density by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_0900
+     * @tc.number getMediaContentBase64_stage_test_0900
+     * @tc.desc   errcode 9001002 in callback mode with density by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_0900', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -2940,12 +3144,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1000
-     * @tc.name     : getMediaContentBase64_stage_test_1000
-     * @tc.desc     : errcode 401 in callback mode with density by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1000
+     * @tc.number getMediaContentBase64_stage_test_1000
+     * @tc.desc   errcode 401 in callback mode with density by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1000', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -2960,12 +3165,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1100
-     * @tc.name     : getMediaContentBase64_stage_test_1100
-     * @tc.desc     : errcode 9001001 in promise mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1100
+     * @tc.number getMediaContentBase64_stage_test_1100
+     * @tc.desc   errcode 9001001 in promise mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1100', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -2981,12 +3187,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1200
-     * @tc.name     : getMediaContentBase64_stage_test_1200
-     * @tc.desc     : errcode 9001002 in promise mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1200
+     * @tc.number getMediaContentBase64_stage_test_1200
+     * @tc.desc   errcode 9001002 in promise mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1200', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -3002,12 +3209,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1300
-     * @tc.name     : getMediaContentBase64_stage_test_1300
-     * @tc.desc     : errcode 401 in promise mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1300
+     * @tc.number getMediaContentBase64_stage_test_1300
+     * @tc.desc   errcode 401 in promise mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1300', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -3023,12 +3231,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1400
-     * @tc.name     : getMediaContentBase64_stage_test_1400
-     * @tc.desc     : errcode 9001001 in promise mode by resObject with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1400
+     * @tc.number getMediaContentBase64_stage_test_1400
+     * @tc.desc   errcode 9001001 in promise mode by resObject with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1400', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -3045,12 +3254,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1500
-     * @tc.name     : getMediaContentBase64_stage_test_1500
-     * @tc.desc     : errcode 9001002 in promise mode by resObject with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1500
+     * @tc.number getMediaContentBase64_stage_test_1500
+     * @tc.desc   errcode 9001002 in promise mode by resObject with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1500', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -3066,12 +3276,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1600
-     * @tc.name     : getMediaContentBase64_stage_test_1600
-     * @tc.desc     : errcode 401 in promise mode by resObject with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1600
+     * @tc.number getMediaContentBase64_stage_test_1600
+     * @tc.desc   errcode 401 in promise mode by resObject with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1600', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64({
@@ -3088,12 +3299,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1700
-     * @tc.name     : getMediaContentBase64_stage_test_1700
-     * @tc.desc     : errcode 9001001 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1700
+     * @tc.number getMediaContentBase64_stage_test_1700
+     * @tc.desc   errcode 9001001 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1700', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64(0x01234567, (err: BusinessError) => {
@@ -3104,12 +3316,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1800
-     * @tc.name     : getMediaContentBase64_stage_test_1800
-     * @tc.desc     : errcode 9001002 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1800
+     * @tc.number getMediaContentBase64_stage_test_1800
+     * @tc.desc   errcode 9001002 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1800', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64($r('app.string.test_stringTwo').id, (err: BusinessError) => {
@@ -3120,12 +3333,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_1900
-     * @tc.name     : getMediaContentBase64_stage_test_1900
-     * @tc.desc     : errcode 9001001 in callback mode with density by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_1900
+     * @tc.number getMediaContentBase64_stage_test_1900
+     * @tc.desc   errcode 9001001 in callback mode with density by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_1900', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64(0x01234567, 0, (err: BusinessError) => {
@@ -3137,12 +3351,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_2000
-     * @tc.name     : getMediaContentBase64_stage_test_2000
-     * @tc.desc     : errcode 9001002 in callback mode with density by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_2000
+     * @tc.number getMediaContentBase64_stage_test_2000
+     * @tc.desc   errcode 9001002 in callback mode with density by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_2000', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64($r('app.string.test_stringTwo').id, 0, (err: BusinessError) => {
@@ -3153,12 +3368,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_2100
-     * @tc.name     : getMediaContentBase64_stage_test_2100
-     * @tc.desc     : errcode 9001001 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_2100
+     * @tc.number getMediaContentBase64_stage_test_2100
+     * @tc.desc   errcode 9001001 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_2100', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64(0x01234567).then(() => {
@@ -3170,12 +3386,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_2200
-     * @tc.name     : getMediaContentBase64_stage_test_2200
-     * @tc.desc     : errcode 9001002 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_2200
+     * @tc.number getMediaContentBase64_stage_test_2200
+     * @tc.desc   errcode 9001002 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_2200', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64($r('app.string.test_stringTwo').id).then(() => {
@@ -3188,12 +3405,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_2300
-     * @tc.name     : getMediaContentBase64_stage_test_2300
-     * @tc.desc     : errcode 9001001 in promise mode by resId with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_2300
+     * @tc.number getMediaContentBase64_stage_test_2300
+     * @tc.desc   errcode 9001001 in promise mode by resId with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_2300', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64(0x01234567, 0).then(() => {
@@ -3206,12 +3424,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getMediaContentBase64_stage_test_2400
-     * @tc.name     : getMediaContentBase64_stage_test_2400
-     * @tc.desc     : errcode 9001002 in promise mode by resId with density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_stage_test_2400
+     * @tc.number getMediaContentBase64_stage_test_2400
+     * @tc.desc   errcode 9001002 in promise mode by resId with density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64_stage_test_2400', Level.LEVEL3, async (done: Function) => {
       res.getMediaContentBase64($r('app.string.test_stringTwo').id, 0).then(() => {
@@ -3223,15 +3442,16 @@ export default function globalStageTest() {
     })
 
 
-    /**
-     * @tc.number   : getPluralStringValue_stage_test_0300
-     * @tc.name     : getPluralStringValue_stage_test_0300
-     * @tc.desc     : errcode 9001001 in callback mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0300
+     * @tc.number getPluralStringValue_stage_test_0300
+     * @tc.desc   getPluralStringValue_stage_test_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getPluralStringValue_stage_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
         bundleName: "ohos.acts.globalstage",
@@ -3245,15 +3465,16 @@ export default function globalStageTest() {
     })
 
 
-    /**
-     * @tc.number   : getPluralStringValue_stage_test_0400
-     * @tc.name     : getPluralStringValue_stage_test_0400
-     * @tc.desc     : errcode 9001002 in callback mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0400
+     * @tc.number getPluralStringValue_stage_test_0400
+     * @tc.desc   getPluralStringValue_stage_test_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getPluralStringValue_stage_test_0400', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
         bundleName: "ohos.acts.globalstage",
@@ -3268,12 +3489,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_0500
-     * @tc.name     : getPluralStringValue_stage_test_0500
-     * @tc.desc     : errcode 9001006 in callback mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0500
+     * @tc.number getPluralStringValue_stage_test_0500
+     * @tc.desc   errcode 9001006 in callback mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
@@ -3288,12 +3510,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_0600
-     * @tc.name     : getPluralStringValue_stage_test_0600
-     * @tc.desc     : errcode 401 in callback mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0600
+     * @tc.number getPluralStringValue_stage_test_0600
+     * @tc.desc   errcode 401 in callback mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_0600', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
@@ -3309,12 +3532,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_0700
-     * @tc.name     : getPluralStringValue_stage_test_0700
-     * @tc.desc     : errcode 9001001 in promise mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0700
+     * @tc.number getPluralStringValue_stage_test_0700
+     * @tc.desc   errcode 9001001 in promise mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_0700', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
@@ -3330,12 +3554,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_0800
-     * @tc.name     : getPluralStringValue_stage_test_0800
-     * @tc.desc     : errcode 9001002 in promise mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0800
+     * @tc.number getPluralStringValue_stage_test_0800
+     * @tc.desc   errcode 9001002 in promise mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_0800', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
@@ -3351,12 +3576,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_0900
-     * @tc.name     : getPluralStringValue_stage_test_0900
-     * @tc.desc     : errcode 9001006 in promise mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_0900
+     * @tc.number getPluralStringValue_stage_test_0900
+     * @tc.desc   errcode 9001006 in promise mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_0900', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
@@ -3373,12 +3599,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_1000
-     * @tc.name     : getPluralStringValue_stage_test_1000
-     * @tc.desc     : errcode 401 in promise mode by resObject
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_1000
+     * @tc.number getPluralStringValue_stage_test_1000
+     * @tc.desc   errcode 401 in promise mode by resObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_1000', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue({
@@ -3394,12 +3621,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_1100
-     * @tc.name     : getPluralStringValue_stage_test_1100
-     * @tc.desc     : errcode 9001001 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_1100
+     * @tc.number getPluralStringValue_stage_test_1100
+     * @tc.desc   errcode 9001001 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_1100', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue(0x01234567, 2, (err: BusinessError) => {
@@ -3410,12 +3638,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_1200
-     * @tc.name     : getPluralStringValue_stage_test_1200
-     * @tc.desc     : errcode 9001001 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_1200
+     * @tc.number getPluralStringValue_stage_test_1200
+     * @tc.desc   errcode 9001001 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_1200', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue($r('app.media.icon').id, 2, (err: BusinessError) => {
@@ -3426,12 +3655,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_1300
-     * @tc.name     : getPluralStringValue_stage_test_1300
-     * @tc.desc     : errcode 9001006 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_1300
+     * @tc.number getPluralStringValue_stage_test_1300
+     * @tc.desc   errcode 9001006 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_1300', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue($r('app.plural.plural_name_loop').id, 2, (err: BusinessError) => {
@@ -3442,12 +3672,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_1400
-     * @tc.name     : getPluralStringValue_stage_test_1400
-     * @tc.desc     : errcode 9001001 in callback mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_1400
+     * @tc.number getPluralStringValue_stage_test_1400
+     * @tc.desc   errcode 9001001 in callback mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_1400', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue(0x01234567, 2).then(() => {
@@ -3460,12 +3691,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_1500
-     * @tc.name     : getPluralStringValue_stage_test_1500
-     * @tc.desc     : errcode 9001002 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_1500
+     * @tc.number getPluralStringValue_stage_test_1500
+     * @tc.desc   errcode 9001002 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_1500', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue($r('app.media.icon').id, 2).then(() => {
@@ -3478,12 +3710,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getPluralStringValue_stage_test_1600
-     * @tc.name     : getPluralStringValue_stage_test_1600
-     * @tc.desc     : errcode 9001006 in promise mode by resId
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_stage_test_1600
+     * @tc.number getPluralStringValue_stage_test_1600
+     * @tc.desc   errcode 9001006 in promise mode by resId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValue_stage_test_1600', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringValue($r('app.plural.plural_name_loop').id, 2).then(() => {
@@ -3495,12 +3728,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringByName_stage_test_0100
-     * @tc.name     : getStringByName_stage_test_0100
-     * @tc.desc     : errcode 9001003 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByName_stage_test_0100
+     * @tc.number getStringByName_stage_test_0100
+     * @tc.desc   errcode 9001003 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getStringByName('', (err: BusinessError) => {
@@ -3511,12 +3745,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringByName_stage_test_0200
-     * @tc.name     : getStringByName_stage_test_0200
-     * @tc.desc     : errcode 9001006 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByName_stage_test_0200
+     * @tc.number getStringByName_stage_test_0200
+     * @tc.desc   errcode 9001006 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getStringByName('test_stringLoopA', (err: BusinessError) => {
@@ -3528,12 +3763,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getStringByName_stage_test_0300
-     * @tc.name     : getStringByName_stage_test_0300
-     * @tc.desc     : errcode 9001003 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByName_stage_test_0300
+     * @tc.number getStringByName_stage_test_0300
+     * @tc.desc   errcode 9001003 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getStringByName('').then(() => {
@@ -3545,12 +3781,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringByName_stage_test_0400
-     * @tc.name     : getStringByName_stage_test_0400
-     * @tc.desc     : errcode 9001006 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByName_stage_test_0400
+     * @tc.number getStringByName_stage_test_0400
+     * @tc.desc   errcode 9001006 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByName_stage_test_0400', Level.LEVEL3, async (done: Function) => {
       res.getStringByName('test_stringLoopA').then(() => {
@@ -3562,12 +3799,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayByName_stage_test_0100
-     * @tc.name     : getStringArrayByName_stage_test_0100
-     * @tc.desc     : errcode 9001003 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByName_stage_test_0100
+     * @tc.number getStringArrayByName_stage_test_0100
+     * @tc.desc   errcode 9001003 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayByName('', (err: BusinessError) => {
@@ -3578,12 +3816,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayByName_stage_test_0200
-     * @tc.name     : getStringArrayByName_stage_test_0200
-     * @tc.desc     : errcode 9001006 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByName_stage_test_0200
+     * @tc.number getStringArrayByName_stage_test_0200
+     * @tc.desc   errcode 9001006 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayByName('sizeListThree', (err: BusinessError) => {
@@ -3594,12 +3833,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayByName_stage_test_0300
-     * @tc.name     : getStringArrayByName_stage_test_0300
-     * @tc.desc     : errcode 9001003 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByName_stage_test_0300
+     * @tc.number getStringArrayByName_stage_test_0300
+     * @tc.desc   errcode 9001003 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayByName('').then(() => {
@@ -3611,12 +3851,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringArrayByName_stage_test_0400
-     * @tc.name     : getStringArrayByName_stage_test_0400
-     * @tc.desc     : errcode 9001006 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByName_stage_test_0400
+     * @tc.number getStringArrayByName_stage_test_0400
+     * @tc.desc   errcode 9001006 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayByName_stage_test_0400', Level.LEVEL3, async (done: Function) => {
       res.getStringArrayByName('sizeListThree').then(() => {
@@ -3628,12 +3869,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_test_0300
-     * @tc.name     : getMediaByName_test_0300
-     * @tc.desc     : errcode 9001003 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_0300
+     * @tc.number getMediaByName_test_0300
+     * @tc.desc   errcode 9001003 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaByName_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getMediaByName('', (err: BusinessError) => {
@@ -3644,12 +3886,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_test_0400
-     * @tc.name     : getMediaByName_test_0400
-     * @tc.desc     : errcode 9001003 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_0400
+     * @tc.number getMediaByName_test_0400
+     * @tc.desc   errcode 9001003 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaByName_test_0400', Level.LEVEL3, async (done: Function) => {
       res.getMediaByName('', 0, (err: BusinessError) => {
@@ -3660,12 +3903,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_test_0500
-     * @tc.name     : getMediaByName_test_0500
-     * @tc.desc     : errcode 9001003 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_0500
+     * @tc.number getMediaByName_test_0500
+     * @tc.desc   errcode 9001003 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaByName_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getMediaByName('').then(() => {
@@ -3677,12 +3921,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaByName_test_0600
-     * @tc.name     : getMediaByName_test_0600
-     * @tc.desc     : errcode 9001003 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_0600
+     * @tc.number getMediaByName_test_0600
+     * @tc.desc   errcode 9001003 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaByName_test_0600', Level.LEVEL3, async (done: Function) => {
       res.getMediaByName('', 0).then(() => {
@@ -3694,12 +3939,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_test_0300
-     * @tc.name     : getMediaBase64ByName_test_0300
-     * @tc.desc     : errcode 9001003 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_0300
+     * @tc.number getMediaBase64ByName_test_0300
+     * @tc.desc   errcode 9001003 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getMediaBase64ByName('', (err: BusinessError) => {
@@ -3710,12 +3956,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_test_0400
-     * @tc.name     : getMediaBase64ByName_test_0400
-     * @tc.desc     : errcode 9001003 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_0400
+     * @tc.number getMediaBase64ByName_test_0400
+     * @tc.desc   errcode 9001003 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_0400', Level.LEVEL3, async (done: Function) => {
       res.getMediaBase64ByName('', 0, (err: BusinessError) => {
@@ -3726,12 +3973,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_test_0500
-     * @tc.name     : getMediaBase64ByName_test_0500
-     * @tc.desc     : errcode 9001003 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_0500
+     * @tc.number getMediaBase64ByName_test_0500
+     * @tc.desc   errcode 9001003 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_0500', Level.LEVEL3, async (done: Function) => {
       res.getMediaBase64ByName('').then(() => {
@@ -3743,12 +3991,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaBase64ByName_test_0600
-     * @tc.name     : getMediaBase64ByName_test_0600
-     * @tc.desc     : errcode 9001003 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_0600
+     * @tc.number getMediaBase64ByName_test_0600
+     * @tc.desc   errcode 9001003 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaBase64ByName_test_0600', Level.LEVEL3, async (done: Function) => {
       res.getMediaBase64ByName('', 0).then(() => {
@@ -3760,12 +4009,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_test_0100
-     * @tc.name     : getPluralStringByName_test_0100
-     * @tc.desc     : errcode 9001003 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByName_test_0100
+     * @tc.number getPluralStringByName_test_0100
+     * @tc.desc   errcode 9001003 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringByName_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringByName('', 0, (err: BusinessError) => {
@@ -3776,12 +4026,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_test_0200
-     * @tc.name     : getPluralStringByName_test_0200
-     * @tc.desc     : errcode 9001006 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByName_test_0200
+     * @tc.number getPluralStringByName_test_0200
+     * @tc.desc   errcode 9001006 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringByName_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringByName('plural_name_loop', 0, (err: BusinessError) => {
@@ -3792,12 +4043,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_test_0300
-     * @tc.name     : getPluralStringByName_test_0300
-     * @tc.desc     : errcode 9001003 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByName_test_0300
+     * @tc.number getPluralStringByName_test_0300
+     * @tc.desc   errcode 9001003 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringByName_test_0300', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringByName('', 0).then(() => {
@@ -3809,12 +4061,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getPluralStringByName_test_0400
-     * @tc.name     : getPluralStringByName_test_0400
-     * @tc.desc     : errcode 9001006 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByName_test_0400
+     * @tc.number getPluralStringByName_test_0400
+     * @tc.desc   errcode 9001006 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringByName_test_0400', Level.LEVEL3, async (done: Function) => {
       res.getPluralStringByName('plural_name_loop', 0).then(() => {
@@ -3826,12 +4079,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0100
-     * @tc.name     : getStringSync_test_0100
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0100
+     * @tc.number getStringSync_test_0100
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0100', Level.LEVEL3, () => {
       try {
@@ -3843,12 +4097,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0200
-     * @tc.name     : getStringSync_test_0200
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0200
+     * @tc.number getStringSync_test_0200
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0200', Level.LEVEL3, () => {
       try {
@@ -3860,12 +4115,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0300
-     * @tc.name     : getStringSync_test_0300
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0300
+     * @tc.number getStringSync_test_0300
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0300', Level.LEVEL3, () => {
       try {
@@ -3877,12 +4133,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0400
-     * @tc.name     : getStringSync_test_0400
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0400
+     * @tc.number getStringSync_test_0400
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0400', Level.LEVEL3, () => {
       try {
@@ -3894,12 +4151,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0500
-     * @tc.name     : getStringSync_test_0500
-     * @tc.desc     : errcode 9001007
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0500
+     * @tc.number getStringSync_test_0500
+     * @tc.desc   errcode 9001007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0500', Level.LEVEL3, () => {
       try {
@@ -3911,12 +4169,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0600
-     * @tc.name     : getStringSync_test_0600
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0600
+     * @tc.number getStringSync_test_0600
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0600', Level.LEVEL3, () => {
       try {
@@ -3928,12 +4187,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0700
-     * @tc.name     : getStringSync_test_0700
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0700
+     * @tc.number getStringSync_test_0700
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0700', Level.LEVEL3, () => {
       try {
@@ -3945,12 +4205,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0800
-     * @tc.name     : getStringSync_test_0800
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0800
+     * @tc.number getStringSync_test_0800
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0800', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -3967,12 +4228,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_0900
-     * @tc.name     : getStringSync_test_0900
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_0900
+     * @tc.number getStringSync_test_0900
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_0900', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -3989,12 +4251,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_1000
-     * @tc.name     : getStringSync_test_1000
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_1000
+     * @tc.number getStringSync_test_1000
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_1000', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4011,12 +4274,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_1100
-     * @tc.name     : getStringSync_test_1100
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_1100
+     * @tc.number getStringSync_test_1100
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_1100', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4033,12 +4297,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_1200
-     * @tc.name     : getStringSync_test_1200
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_1200
+     * @tc.number getStringSync_test_1200
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_1200', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4055,12 +4320,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_1300
-     * @tc.name     : getStringSync_test_1300
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_1300
+     * @tc.number getStringSync_test_1300
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_1300', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4077,12 +4343,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringByNameSync_test_0100
-     * @tc.name     : getStringByNameSync_test_0100
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByNameSync_test_0100
+     * @tc.number getStringByNameSync_test_0100
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByNameSync_test_0100', Level.LEVEL3, () => {
       try {
@@ -4094,12 +4361,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringByNameSync_test_0300
-     * @tc.name     : getStringByNameSync_test_0300
-     * @tc.desc     : errcode 9001003
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByNameSync_test_0300
+     * @tc.number getStringByNameSync_test_0300
+     * @tc.desc   errcode 9001003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByNameSync_test_0300', Level.LEVEL3, () => {
       try {
@@ -4111,12 +4379,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringByNameSync_test_0400
-     * @tc.name     : getStringByNameSync_test_0400
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByNameSync_test_0400
+     * @tc.number getStringByNameSync_test_0400
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringByNameSync_test_0400', Level.LEVEL3, () => {
       try {
@@ -4128,12 +4397,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getBoolean_test_0100
-     * @tc.name     : getBoolean_test_0100
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_test_0100
+     * @tc.number getBoolean_test_0100
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBoolean_test_0100', Level.LEVEL3, () => {
       try {
@@ -4145,12 +4415,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getBoolean_test_0200
-     * @tc.name     : getBoolean_test_0200
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_test_0200
+     * @tc.number getBoolean_test_0200
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBoolean_test_0200', Level.LEVEL3, () => {
       try {
@@ -4163,12 +4434,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getBoolean_test_0300
-     * @tc.name     : getBoolean_test_0300
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_test_0300
+     * @tc.number getBoolean_test_0300
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBoolean_test_0300', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4185,12 +4457,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getBoolean_test_0400
-     * @tc.name     : getBoolean_test_0400
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_test_0400
+     * @tc.number getBoolean_test_0400
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBoolean_test_0400', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4208,12 +4481,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getBoolean_test_0500
-     * @tc.name     : getBoolean_test_0500
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_test_0500
+     * @tc.number getBoolean_test_0500
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBoolean_test_0500', Level.LEVEL3, () => {
       try {
@@ -4225,12 +4499,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getBoolean_test_0600
-     * @tc.name     : getBoolean_test_0600
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_test_0600
+     * @tc.number getBoolean_test_0600
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBoolean_test_0600', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4247,12 +4522,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getBooleanByName_test_0100
-     * @tc.name     : getBooleanByName_test_0100
-     * @tc.desc     : errcode 9001003
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBooleanByName_test_0100
+     * @tc.number getBooleanByName_test_0100
+     * @tc.desc   errcode 9001003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBooleanByName_test_0100', Level.LEVEL3, () => {
       try {
@@ -4264,12 +4540,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getBooleanByName_test_0200
-     * @tc.name     : getBooleanByName_test_0200
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBooleanByName_test_0200
+     * @tc.number getBooleanByName_test_0200
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBooleanByName_test_0200', Level.LEVEL3, () => {
       try {
@@ -4281,12 +4558,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumber_test_0100
-     * @tc.name     : getNumber_test_0100
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumber_test_0100
+     * @tc.number getNumber_test_0100
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumber_test_0100', Level.LEVEL3, () => {
       try {
@@ -4298,12 +4576,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumber_test_0200
-     * @tc.name     : getNumber_test_0200
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumber_test_0200
+     * @tc.number getNumber_test_0200
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumber_test_0200', Level.LEVEL3, () => {
       try {
@@ -4315,12 +4594,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumber_test_0300
-     * @tc.name     : getNumber_test_0300
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumber_test_0300
+     * @tc.number getNumber_test_0300
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumber_test_0300', Level.LEVEL3, () => {
       try {
@@ -4332,12 +4612,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumber_test_0400
-     * @tc.name     : getNumber_test_0400
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumber_test_0400
+     * @tc.number getNumber_test_0400
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumber_test_0400', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4354,12 +4635,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumber_test_0500
-     * @tc.name     : getNumber_test_0500
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumber_test_0500
+     * @tc.number getNumber_test_0500
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumber_test_0500', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4376,12 +4658,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumber_test_0600
-     * @tc.name     : getNumber_test_0600
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumber_test_0600
+     * @tc.number getNumber_test_0600
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumber_test_0600', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4398,12 +4681,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumberByName_test_0100
-     * @tc.name     : getNumberByName_test_0100
-     * @tc.desc     : errcode 9001003
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumberByName_test_0100
+     * @tc.number getNumberByName_test_0100
+     * @tc.desc   errcode 9001003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumberByName_test_0100', Level.LEVEL3, () => {
       try {
@@ -4415,12 +4699,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getNumberByName_test_0200
-     * @tc.name     : getNumberByName_test_0200
-     * @tc.desc     : errcode 9001006
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getNumberByName_test_0200
+     * @tc.number getNumberByName_test_0200
+     * @tc.desc   errcode 9001006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getNumberByName_test_0200', Level.LEVEL3, () => {
       try {
@@ -4432,12 +4717,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getRawFileContent_test_0100
-     * @tc.name     : getRawFileContent_test_0100
-     * @tc.desc     : errcode 9001005 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileContent_test_0100
+     * @tc.number getRawFileContent_test_0100
+     * @tc.desc   errcode 9001005 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileContent_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getRawFileContent('plural_name_loop', (err: BusinessError) => {
@@ -4448,12 +4734,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getRawFileContent_test_0200
-     * @tc.name     : getRawFileContent_test_0200
-     * @tc.desc     : errcode 9001005 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileContent_test_0200
+     * @tc.number getRawFileContent_test_0200
+     * @tc.desc   errcode 9001005 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileContent_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getRawFileContent('plural_name_loop').then(() => {
@@ -4465,12 +4752,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getRawFd_test_0100
-     * @tc.name     : getRawFd_test_0100
-     * @tc.desc     : errcode 9001005 in callback mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFd_test_0100
+     * @tc.number getRawFd_test_0100
+     * @tc.desc   errcode 9001005 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFd_test_0100', Level.LEVEL3, async (done: Function) => {
       res.getRawFd('plural_name_loop', (err: BusinessError) => {
@@ -4481,12 +4769,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getRawFd_test_0200
-     * @tc.name     : getRawFd_test_0200
-     * @tc.desc     : errcode 9001005 in promise mode
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFd_test_0200
+     * @tc.number getRawFd_test_0200
+     * @tc.desc   errcode 9001005 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFd_test_0200', Level.LEVEL3, async (done: Function) => {
       res.getRawFd('plural_name_loop').then(() => {
@@ -4498,12 +4787,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0200
-     * @tc.name     : getDrawableDescriptor_stage_test_0200
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0200
+     * @tc.number getDrawableDescriptor_stage_test_0200
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0200', Level.LEVEL3, () => {
       try {
@@ -4515,12 +4805,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0300
-     * @tc.name     : getDrawableDescriptor_stage_test_0300
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0300
+     * @tc.number getDrawableDescriptor_stage_test_0300
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0300', Level.LEVEL3, () => {
       try {
@@ -4532,12 +4823,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0400
-     * @tc.name     : getDrawableDescriptor_stage_test_0400
-     * @tc.desc     : errcode 9001001 debsity?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0400
+     * @tc.number getDrawableDescriptor_stage_test_0400
+     * @tc.desc   errcode 9001001 debsity?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0400', Level.LEVEL3, () => {
       try {
@@ -4549,12 +4841,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0500
-     * @tc.name     : getDrawableDescriptor_stage_test_0500
-     * @tc.desc     : errcode 9001002 density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0500
+     * @tc.number getDrawableDescriptor_stage_test_0500
+     * @tc.desc   errcode 9001002 density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0500', Level.LEVEL3, () => {
       try {
@@ -4566,12 +4859,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0600
-     * @tc.name     : getDrawableDescriptor_stage_test_0600
-     * @tc.desc     : errcode 9001001 density? type?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0600
+     * @tc.number getDrawableDescriptor_stage_test_0600
+     * @tc.desc   errcode 9001001 density? type?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0600', Level.LEVEL3, () => {
       try {
@@ -4583,12 +4877,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0700
-     * @tc.name     : getDrawableDescriptor_stage_test_0700
-     * @tc.desc     : errcode 9001002 density? type?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0700
+     * @tc.number getDrawableDescriptor_stage_test_0700
+     * @tc.desc   errcode 9001002 density? type?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0700', Level.LEVEL3, () => {
       try {
@@ -4600,12 +4895,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0800
-     * @tc.name     : getDrawableDescriptor_stage_test_0800
-     * @tc.desc     : errcode 9001001 Resource
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0800
+     * @tc.number getDrawableDescriptor_stage_test_0800
+     * @tc.desc   errcode 9001001 Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0800', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4622,12 +4918,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_0900
-     * @tc.name     : getDrawableDescriptor_stage_test_0900
-     * @tc.desc     : errcode 9001002 Resource
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_0900
+     * @tc.number getDrawableDescriptor_stage_test_0900
+     * @tc.desc   errcode 9001002 Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_0900', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4645,12 +4942,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_1000
-     * @tc.name     : getDrawableDescriptor_stage_test_1000
-     * @tc.desc     : errcode 9001001 Resource density?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_1000
+     * @tc.number getDrawableDescriptor_stage_test_1000
+     * @tc.desc   errcode 9001001 Resource density?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_1000', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4667,12 +4965,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_1100
-     * @tc.name     : getDrawableDescriptor_stage_test_1100
-     * @tc.desc     : errcode 9001002 Resource  debsity?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_1100
+     * @tc.number getDrawableDescriptor_stage_test_1100
+     * @tc.desc   errcode 9001002 Resource  debsity?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_1100', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4690,12 +4989,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_1200
-     * @tc.name     : getDrawableDescriptor_stage_test_1200
-     * @tc.desc     : errcode 9001001 Resource debsity? type?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_1200
+     * @tc.number getDrawableDescriptor_stage_test_1200
+     * @tc.desc   errcode 9001001 Resource debsity? type?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_1200', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4712,12 +5012,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptor_stage_test_1300
-     * @tc.name     : getDrawableDescriptor_stage_test_1300
-     * @tc.desc     : errcode 9001002 Resource
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_stage_test_1300
+     * @tc.number getDrawableDescriptor_stage_test_1300
+     * @tc.desc   errcode 9001002 Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_stage_test_1300', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4734,12 +5035,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptorByName_test_0100
-     * @tc.name     : getDrawableDescriptorByName_test_0100
-     * @tc.desc     : errcode 9001003 debsity? type?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptorByName_test_0100
+     * @tc.number getDrawableDescriptorByName_test_0100
+     * @tc.desc   errcode 9001003 debsity? type?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptorByName_test_0100', Level.LEVEL3, () => {
       try {
@@ -4751,12 +5053,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getDrawableDescriptorByName_test_0200
-     * @tc.name     : getDrawableDescriptorByName_test_0200
-     * @tc.desc     : errcode 9001003 debsity?
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptorByName_test_0200
+     * @tc.number getDrawableDescriptorByName_test_0200
+     * @tc.desc   errcode 9001003 debsity?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptorByName_test_0200', Level.LEVEL3, () => {
       try {
@@ -4768,12 +5071,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getRawFdSync_test_0100
-     * @tc.name     : getRawFdSync_test_0100
-     * @tc.desc     : errcode 9001005
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFdSync_test_0100
+     * @tc.number getRawFdSync_test_0100
+     * @tc.desc   errcode 9001005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFdSync_test_0100', Level.LEVEL3, () => {
       try {
@@ -4785,12 +5089,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : closeRawFdSync_test_0100
-     * @tc.name     : closeRawFdSync_test_0100
-     * @tc.desc     : errcode 9001005
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   closeRawFdSync_test_0100
+     * @tc.number closeRawFdSync_test_0100
+     * @tc.desc   errcode 9001005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('closeRawFdSync_test_0100', Level.LEVEL3, () => {
       try {
@@ -4802,12 +5107,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getRawFileListSync_test_0100
-     * @tc.name     : getRawFileListSync_test_0100
-     * @tc.desc     : errcode 9001005
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileListSync_test_0100
+     * @tc.number getRawFileListSync_test_0100
+     * @tc.desc   errcode 9001005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileListSync_test_0100', Level.LEVEL3, () => {
       try {
@@ -4819,12 +5125,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getRawFileContentSync_test_0100
-     * @tc.name     : getRawFileContentSync_test_0100
-     * @tc.desc     : errcode 9001005
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileContentSync_test_0100
+     * @tc.number getRawFileContentSync_test_0100
+     * @tc.desc   errcode 9001005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileContentSync_test_0100', Level.LEVEL3, () => {
       try {
@@ -4836,12 +5143,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentSync_test_0100
-     * @tc.name     : getMediaContentSync_test_0100
-     * @tc.desc     : errcode 9001001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_test_0100
+     * @tc.number getMediaContentSync_test_0100
+     * @tc.desc   errcode 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentSync_test_0100', Level.LEVEL3, () => {
       try {
@@ -4853,12 +5161,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentSync_test_0200
-     * @tc.name     : getMediaContentSync_test_0200
-     * @tc.desc     : errcode 9001002
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_test_0200
+     * @tc.number getMediaContentSync_test_0200
+     * @tc.desc   errcode 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentSync_test_0200', Level.LEVEL3, () => {
       try {
@@ -4870,12 +5179,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentSync_test_0300
-     * @tc.name     : getMediaContentSync_test_0300
-     * @tc.desc     : errcode 9001001 Resource density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_test_0300
+     * @tc.number getMediaContentSync_test_0300
+     * @tc.desc   errcode 9001001 Resource density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentSync_test_0300', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4892,12 +5202,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getMediaContentSync_test_0400
-     * @tc.name     : getMediaContentSync_test_0400
-     * @tc.desc     : errcode 9001002 Resource density
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_test_0400
+     * @tc.number getMediaContentSync_test_0400
+     * @tc.desc   errcode 9001002 Resource density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentSync_test_0400', Level.LEVEL3, () => {
       let resource: resourceManager.Resource = {
@@ -4915,12 +5226,13 @@ export default function globalStageTest() {
 
 
     /**
-     * @tc.number    : getMediaContentSync_test_0500
-     * @tc.name      : getMediaContentSync_test_0500
-     * @tc.desc      : getMediaContentSync with res id density
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_test_0500
+     * @tc.number getMediaContentSync_test_0500
+     * @tc.desc   getMediaContentSync with res id density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaContentSync_test_0500', Level.LEVEL2, () => {
       let value: Uint8Array = res.getMediaContentSync($r('app.media.icon').id, 0);
@@ -4929,12 +5241,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContentSync_test_0600
-     * @tc.name      : getMediaContentSync_test_0600
-     * @tc.desc      : getMediaContentSync with resource object density
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentSync_test_0600
+     * @tc.number getMediaContentSync_test_0600
+     * @tc.desc   getMediaContentSync with resource object density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaContentSync_test_0600', Level.LEVEL2, () => {
       let value: Uint8Array = res.getMediaContentSync({
@@ -4947,12 +5260,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContentBase64Sync_test_0100
-     * @tc.name      : getMediaContentBase64Sync_test_0100
-     * @tc.desc      : getMediaContentBase64Sync with res id density
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_test_0100
+     * @tc.number getMediaContentBase64Sync_test_0100
+     * @tc.desc   getMediaContentBase64Sync with res id density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaContentBase64Sync_test_0100', Level.LEVEL2, () => {
       let value: string = res.getMediaContentBase64Sync($r('app.media.icon').id, 0);
@@ -4961,12 +5275,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContentBase64Sync_test_0200
-     * @tc.name      : getMediaContentBase64Sync_test_0200
-     * @tc.desc      : getMediaContentBase64Sync with resource object density
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_test_0200
+     * @tc.number getMediaContentBase64Sync_test_0200
+     * @tc.desc   getMediaContentBase64Sync with resource object density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaContentBase64Sync_test_0200', Level.LEVEL2, () => {
       let value: string = res.getMediaContentBase64Sync({
@@ -4979,12 +5294,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContentBase64Sync_test_0300
-     * @tc.name      : getMediaContentBase64Sync_test_0300
-     * @tc.desc      : error code 9001001 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_test_0300
+     * @tc.number getMediaContentBase64Sync_test_0300
+     * @tc.desc   error code 9001001 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64Sync_test_0300', Level.LEVEL3, () => {
       try{
@@ -4996,12 +5312,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContentBase64Sync_test_0400
-     * @tc.name      : getMediaContentBase64Sync_test_0400
-     * @tc.desc      : error code 9001001 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_test_0400
+     * @tc.number getMediaContentBase64Sync_test_0400
+     * @tc.desc   error code 9001001 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64Sync_test_0400', Level.LEVEL3, () => {
       try{
@@ -5017,12 +5334,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContentBase64Sync_test_0500
-     * @tc.name      : getMediaContentBase64Sync_test_0500
-     * @tc.desc      : error code 9001002 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_test_0500
+     * @tc.number getMediaContentBase64Sync_test_0500
+     * @tc.desc   error code 9001002 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64Sync_test_0500', Level.LEVEL3, () => {
       try{
@@ -5034,12 +5352,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaContentBase64Sync_test_0600
-     * @tc.name      : getMediaContentBase64Sync_test_0600
-     * @tc.desc      : error code 9001002 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64Sync_test_0600
+     * @tc.number getMediaContentBase64Sync_test_0600
+     * @tc.desc   error code 9001002 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaContentBase64Sync_test_0600', Level.LEVEL3, () => {
       try{
@@ -5055,12 +5374,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringValueSync_test_0100
-     * @tc.name      : getPluralStringValueSync_test_0100
-     * @tc.desc      : error code 9001001 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_test_0100
+     * @tc.number getPluralStringValueSync_test_0100
+     * @tc.desc   error code 9001001 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValueSync_test_0100', Level.LEVEL3, () => {
       try{
@@ -5072,12 +5392,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringValueSync_test_0200
-     * @tc.name      : getPluralStringValueSync_test_0200
-     * @tc.desc      : error code 9001001 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_test_0200
+     * @tc.number getPluralStringValueSync_test_0200
+     * @tc.desc   error code 9001001 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValueSync_test_0200', Level.LEVEL3, () => {
       try{
@@ -5093,12 +5414,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringValueSync_test_0300
-     * @tc.name      : getPluralStringValueSync_test_0300
-     * @tc.desc      : error code 9001002 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_test_0300
+     * @tc.number getPluralStringValueSync_test_0300
+     * @tc.desc   error code 9001002 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValueSync_test_0300', Level.LEVEL3, () => {
       try{
@@ -5110,12 +5432,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringValueSync_test_0400
-     * @tc.name      : getPluralStringValueSync_test_0400
-     * @tc.desc      : error code 9001002 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_test_0400
+     * @tc.number getPluralStringValueSync_test_0400
+     * @tc.desc   error code 9001002 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValueSync_test_0400', Level.LEVEL3, () => {
       try{
@@ -5131,12 +5454,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringValueSync_test_0500
-     * @tc.name      : getPluralStringValueSync_test_0500
-     * @tc.desc      : error code 9001006 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_test_0500
+     * @tc.number getPluralStringValueSync_test_0500
+     * @tc.desc   error code 9001006 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValueSync_test_0500', Level.LEVEL3, () => {
       try{
@@ -5148,12 +5472,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringValueSync_test_0600
-     * @tc.name      : getPluralStringValueSync_test_0600
-     * @tc.desc      : error code 9001006 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValueSync_test_0600
+     * @tc.number getPluralStringValueSync_test_0600
+     * @tc.desc   error code 9001006 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringValueSync_test_0600', Level.LEVEL3, () => {
       try{
@@ -5169,12 +5494,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValueSync_test_0100
-     * @tc.name      : getStringArrayValueSync_test_0100
-     * @tc.desc      : error code 9001001 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_test_0100
+     * @tc.number getStringArrayValueSync_test_0100
+     * @tc.desc   error code 9001001 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValueSync_test_0100', Level.LEVEL3, () => {
       try{
@@ -5186,12 +5512,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValueSync_test_0200
-     * @tc.name      : getStringArrayValueSync_test_0200
-     * @tc.desc      : error code 9001001 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_test_0200
+     * @tc.number getStringArrayValueSync_test_0200
+     * @tc.desc   error code 9001001 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValueSync_test_0200', Level.LEVEL3, () => {
       try{
@@ -5207,12 +5534,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValueSync_test_0300
-     * @tc.name      : getStringArrayValueSync_test_0300
-     * @tc.desc      : error code 9001002 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_test_0300
+     * @tc.number getStringArrayValueSync_test_0300
+     * @tc.desc   error code 9001002 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValueSync_test_0300', Level.LEVEL3, () => {
       try{
@@ -5224,12 +5552,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValueSync_test_0400
-     * @tc.name      : getStringArrayValueSync_test_0400
-     * @tc.desc      : error code 9001002 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_test_0400
+     * @tc.number getStringArrayValueSync_test_0400
+     * @tc.desc   error code 9001002 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValueSync_test_0400', Level.LEVEL3, () => {
       try{
@@ -5245,12 +5574,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValueSync_test_0500
-     * @tc.name      : getStringArrayValueSync_test_0500
-     * @tc.desc      : error code 9001006 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_test_0500
+     * @tc.number getStringArrayValueSync_test_0500
+     * @tc.desc   error code 9001006 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValueSync_test_0500', Level.LEVEL3, () => {
       try{
@@ -5262,12 +5592,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayValueSync_test_0600
-     * @tc.name      : getStringArrayValueSync_test_0600
-     * @tc.desc      : error code 9001006 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValueSync_test_0600
+     * @tc.number getStringArrayValueSync_test_0600
+     * @tc.desc   error code 9001006 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayValueSync_test_0600', Level.LEVEL3, () => {
       try{
@@ -5283,12 +5614,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringByNameSync_test_0100
-     * @tc.name      : getPluralStringByNameSync_test_0100
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByNameSync_test_0100
+     * @tc.number getPluralStringByNameSync_test_0100
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringByNameSync_test_0100', Level.LEVEL3, () => {
       try{
@@ -5300,12 +5632,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getPluralStringByNameSync_test_0200
-     * @tc.name      : getPluralStringByNameSync_test_0200
-     * @tc.desc      : error code 9001006 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByNameSync_test_0200
+     * @tc.number getPluralStringByNameSync_test_0200
+     * @tc.desc   error code 9001006 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getPluralStringByNameSync_test_0200', Level.LEVEL3, () => {
       try{
@@ -5317,12 +5650,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaByNameSync_test_0100
-     * @tc.name      : getMediaByNameSync_test_0100
-     * @tc.desc      : with density by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByNameSync_test_0100
+     * @tc.number getMediaByNameSync_test_0100
+     * @tc.desc   with density by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaByNameSync_test_0100', Level.LEVEL2, () => {
       let value: Uint8Array = res.getMediaByNameSync('icon', 0);
@@ -5331,12 +5665,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaByNameSync_test_0200
-     * @tc.name      : getMediaByNameSync_test_0200
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByNameSync_test_0200
+     * @tc.number getMediaByNameSync_test_0200
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaByNameSync_test_0200', Level.LEVEL3, () => {
       try{
@@ -5348,12 +5683,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaBase64ByNameSync_test_0100
-     * @tc.name      : getMediaBase64ByNameSync_test_0100
-     * @tc.desc      : with density by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByNameSync_test_0100
+     * @tc.number getMediaBase64ByNameSync_test_0100
+     * @tc.desc   with density by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getMediaBase64ByNameSync_test_0100', Level.LEVEL2, () => {
       let value: string = res.getMediaBase64ByNameSync('icon', 0);
@@ -5362,12 +5698,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getMediaBase64ByNameSync_test_0200
-     * @tc.name      : getMediaBase64ByNameSync_test_0200
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByNameSync_test_0200
+     * @tc.number getMediaBase64ByNameSync_test_0200
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getMediaBase64ByNameSync_test_0200', Level.LEVEL3, () => {
       try{
@@ -5379,12 +5716,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayByNameSync_test_0100
-     * @tc.name      : getStringArrayByNameSync_test_0100
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByNameSync_test_0100
+     * @tc.number getStringArrayByNameSync_test_0100
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayByNameSync_test_0100', Level.LEVEL3, () => {
       try{
@@ -5396,12 +5734,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : getStringArrayByNameSync_test_0200
-     * @tc.name      : getStringArrayByNameSync_test_0200
-     * @tc.desc      : error code 9001006 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByNameSync_test_0200
+     * @tc.number getStringArrayByNameSync_test_0200
+     * @tc.desc   error code 9001006 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringArrayByNameSync_test_0200', Level.LEVEL3, () => {
       try{
@@ -5413,12 +5752,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_GetLocales_0020
-     * @tc.name      : getLocales with parameter false
-     * @tc.desc      : getLocales
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GetLocales_0020
+     * @tc.number SUB_GLOBAL_GetLocales_0020
+     * @tc.desc   getLocales
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_GetLocales_0020', Level.LEVEL2, () => {
       let value: string = res.getLocales(false).toString();
@@ -5427,12 +5767,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : getStringSync_test_1400
-     * @tc.name     : getStringSync_test_1400
-     * @tc.desc     : errcode 9001007 with array
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_1400
+     * @tc.number getStringSync_test_1400
+     * @tc.desc   errcode 9001007 with array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getStringSync_test_1400', Level.LEVEL3, () => {
       try {
@@ -5444,12 +5785,13 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   : isRawDir_test_0100
-     * @tc.name     : isRawDir_test_0100
-     * @tc.desc     : errcode 9001005
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   isRawDir_test_0100
+     * @tc.number isRawDir_test_0100
+     * @tc.desc   errcode 9001005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('isRawDir_test_0100', Level.LEVEL3, () => {
       try {
@@ -5459,6 +5801,94 @@ export default function globalStageTest() {
         expect(err.code).assertEqual('9001005');
       }
     })
+
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GetLocales_0030
+     * @tc.number SUB_GLOBAL_GetLocales_0030
+     * @tc.desc   getLocales
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_GetLocales_0030', Level.LEVEL2, async (done: Function) => {
+      application.createModuleContext(resContext, "library").then((data: Context) => {
+        console.log('SUB_GLOBAL_GetLocales_0030' + data.resourceManager.getLocales());
+        expect(data.resourceManager.getLocales().length).assertEqual(0);
+        done();
+      }).catch((e: Error) => {
+        console.log('SUB_GLOBAL_GetLocales_0030' + e.message);
+        expect().assertFail();
+        done();
+      })
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   isRawDir_test_0200
+     * @tc.number isRawDir_test_0200
+     * @tc.desc   isRawDir return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('isRawDir_test_0200', Level.LEVEL3, () => {
+      let result = res.isRawDir('A');
+      expect(result).assertTrue();
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GETBOOLEAN_STAGE_0200
+     * @tc.number SUB_GLOBAL_GETBOOLEAN_STAGE_0200
+     * @tc.desc   getBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_GETBOOLEAN_STAGE_0200', Level.LEVEL2, async (done: Function) => {
+      let value: boolean = res.getBoolean({
+        bundleName: "ohos.acts.globalstage",
+        moduleName: "entry_test",
+        id: $r('app.boolean.boolean_2').id
+      });
+      console.log('SUB_GLOBAL_GETBOOLEAN_STAGE_0200 ' + value);
+      expect(value).assertFalse();
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GETBOOLEAN_STAGE_0300
+     * @tc.number SUB_GLOBAL_GETBOOLEAN_STAGE_0300
+     * @tc.desc   getBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_GETBOOLEAN_STAGE_0300', Level.LEVEL2, async (done: Function) => {
+      let value: boolean = res.getBoolean($r('app.boolean.boolean_2').id);
+      console.log('SUB_GLOBAL_GETBOOLEAN_STAGE_0300 ' + value);
+      expect(value).assertFalse();
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   SUB_GLOBAL_GETBOOLEAN_STAGE_0400
+     * @tc.number SUB_GLOBAL_GETBOOLEAN_STAGE_0400
+     * @tc.desc   getBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GLOBAL_GETBOOLEAN_STAGE_0400', Level.LEVEL2, async (done: Function) => {
+      let value: boolean = res.getBooleanByName('boolean_2');
+      console.log('SUB_GLOBAL_GETBOOLEAN_STAGE_0400 ' + value);
+      expect(value).assertFalse();
+      done();
+    })
+
     console.log('*************end globalStageTest*************');
   })
 }

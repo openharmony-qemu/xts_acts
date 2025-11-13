@@ -15,6 +15,7 @@
 
 import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
+import { Driver } from '@ohos.UiTest';
 
 export default function scrollOnScrollStopTest() {
 
@@ -35,7 +36,15 @@ export default function scrollOnScrollStopTest() {
     * @tc.level      : Level 1
     */
     it('testScrollOnScrollStop001', Level.LEVEL1, async (done: Function) => {
-      await Utils.flingComponent('scrollCalled', false, true);
+      let driver = Driver.create();
+      let rect = Utils.getComponentRect("scrollCalled");
+      let height = rect.bottom - rect.top;
+      console.info("testScrollOnScrollStop001 height is" + height);
+      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
+      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
+      let y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
+      console.info("testScrollOnScrollStop001  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
+      await driver.swipe(centerX, y2, centerX, y1);
       await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('scrollCalled').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
@@ -50,7 +59,15 @@ export default function scrollOnScrollStopTest() {
      * @tc.level      : Level 1
      */
     it('testScrollOnScrollStop002', Level.LEVEL1, async (done: Function) => {
-      await Utils.flingComponent('scrollNotCalled', true, true);
+      let driver = Driver.create();
+      let rect = Utils.getComponentRect("scrollNotCalled");
+      let width = rect.right - rect.left;
+      console.info("testScrollOnScrollStop002 width is" + width);
+      let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
+      let x1 = Math.round(globalThis.winLeft + rect.left + width*0.2);
+      let x2 = Math.round(globalThis.winLeft + rect.right - width*0.2);
+      console.info("testScrollOnScrollStop002  x1= " +  x1  + ", x2 = " + x2  + ", centerY = " + centerY);
+      await driver.swipe(x2, centerY, x1, centerY);
       await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('scrollNotCalled').$attrs.backgroundColor).assertEqual('#FFFF0000')
       done()

@@ -15,9 +15,10 @@
 
 import { webview } from '@kit.ArkWeb';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { URL } from '../../test/Config';
-import { LocalContext } from '../../test/GloablConfig';
 import Utils from '../../test/Util';
+import events_emitter from '@ohos.events.emitter';
+import JSON from '@ohos.util.json';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -28,17 +29,50 @@ struct WebComponent {
   delegate1: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   delegate2: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   delegate3: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
+  @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State flag1:number = -1;
+  @State flag2:number = -1;
+  @State flag3:number = -1;
+
+  onPageShow(): void{
+    let valueChangeEvent: events_emitter.InnerEvent = {
+      eventId: 131370,
+      priority: events_emitter.EventPriority.LOW
+    };
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(131370);
+  }
+
+  public valueChangeCallBack = (eventData: events_emitter.EventData) => {
+    console.info('web page valueChangeCallBack');
+    if (eventData.data != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      if (eventData.data.ACTION != null) {
+        this.emitKey = eventData.data.ACTION;
+        this.isReceive = 0;
+      }
+    }
+  }
 
 
   build(){
     Column() {
       Button('GetPercentComplete')
         .key('001')
-        .onClick(() => {
+        .onClick(async () => {
+          console.info('key==>' + this.emitKey)
+          await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+          await waitForExist(() => this.isReceive, this.emitKey, 0);
+          this.isReceive = -1;
           try {
             this.delegate1.onBeforeDownload(async (webDownloadItem: webview.WebDownloadItem) => {
-              console.log('will start a download.');
-              LocalContext.context.eventHub.emit('DownloadGetPercentComplete101', webDownloadItem.getPercentComplete())
+              console.log('will start a download1.');
+              this.flag1 = webDownloadItem.getPercentComplete()
             })
 
             this.controller1.setDownloadDelegate(this.delegate1);
@@ -48,8 +82,8 @@ struct WebComponent {
 
           try {
             this.delegate2.onBeforeDownload(async (webDownloadItem: webview.WebDownloadItem) => {
-              console.log('will start a download.');
-              LocalContext.context.eventHub.emit('DownloadGetPercentComplete102', webDownloadItem.getPercentComplete())
+              console.log('will start a download2.');
+              this.flag2 = webDownloadItem.getPercentComplete()
             })
             this.controller2.setDownloadDelegate(this.delegate2);
           } catch (error) {
@@ -58,17 +92,13 @@ struct WebComponent {
 
           try {
             this.delegate3.onBeforeDownload(async (webDownloadItem: webview.WebDownloadItem) => {
-              console.log('will start a download.');
-              LocalContext.context.eventHub.emit('DownloadGetPercentComplete103', webDownloadItem.getPercentComplete())
+              console.log('will start a download3.');
+              this.flag3 = webDownloadItem.getPercentComplete()
             })
             this.controller3.setDownloadDelegate(this.delegate3);
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
-        })
-      Button('startDownload')
-        .key('002')
-        .onClick(async () => {
           try {
             // 三个并行下载任务
             this.controller1.startDownload('https://' +
@@ -80,10 +110,32 @@ struct WebComponent {
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
+          try {
+            await waitForExist(() => this.flag1, this.emitKey + ' flag1', 0);
+            await waitForExist(() => this.flag2, this.emitKey + ' flag2', 0);
+            await waitForExist(() => this.flag3, this.emitKey + ' flag3', 0);
+            if(this.flag1 == 0 && this.flag2 == 0 && this.flag3 == 0) {
+              Utils.emitEvent(0, 131430)
+            }
+          } catch (error) {
+            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+          }
         })
       Web({ src: 'www.example.com', controller: this.controller1 })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
       Web({ src: 'www.example.com', controller: this.controller2 })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
       Web({ src: 'www.example.com', controller: this.controller3 })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

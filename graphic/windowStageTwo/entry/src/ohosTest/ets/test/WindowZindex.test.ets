@@ -71,9 +71,9 @@ export default function windowZindexTest() {
      * @tc.desc      : test_raiseToAppTop_mainWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('test_raiseToAppTop_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_raiseToAppTop_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_raiseToAppTop_mainWindow';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -112,9 +112,9 @@ export default function windowZindexTest() {
      * @tc.desc      : test_raiseToAppTop_subWindowDestroy
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('test_raiseToAppTop_subWindowDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_raiseToAppTop_subWindowDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_raiseToAppTop_subWindowDestroy';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -249,9 +249,9 @@ export default function windowZindexTest() {
      * @tc.desc      : test_setRaiseByClickEnabled_mainWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('test_setRaiseByClickEnabled_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_setRaiseByClickEnabled_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setRaiseByClickEnabled_mainWindow';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1198,9 +1198,9 @@ export default function windowZindexTest() {
      * @tc.desc      : test_SetWindowDelayRaiseOnDrag_true
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
-    it('test_SetWindowDelayRaiseOnDrag_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_SetWindowDelayRaiseOnDrag_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowDelayRaiseOnDrag_true';
       console.log(caseName + 'begin');
       let windowClass = windowStage.getMainWindowSync();
@@ -1225,9 +1225,9 @@ export default function windowZindexTest() {
      * @tc.desc      : test_SetWindowDelayRaiseOnDrag_false
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
-    it('test_SetWindowDelayRaiseOnDrag_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_SetWindowDelayRaiseOnDrag_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowDelayRaiseOnDrag_false';
       console.log(caseName + 'begin');
       let windowClass = windowStage.getMainWindowSync();
@@ -1266,12 +1266,13 @@ export default function windowZindexTest() {
         await windowClass1.setSubWindowZLevel(10);
         minWidth = Number(windowClass1.getWindowLimits().minWidth);
         minHeight = Number(windowClass1.getWindowLimits().minHeight);
+        console.info(`${caseName} minWidth:`+ minWidth+',minHeight:'+minHeight);
         await windowClass1.setUIContent('testability/pages/First/index3');
         console.info(`${caseName} Succeeded in loading the system sub window content.`);
         await windowClass1.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
-        await windowClass1.resizeAsync(minWidth+20, minHeight+20);
-        await windowClass1.moveWindowTo(50, 50);
+        await windowClass1.resizeAsync(minWidth+40, minHeight+40);
+        await windowClass1.moveWindowTo(50, 100);
 
         let windowClass2 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_2');
         await windowClass2.setSubWindowZLevel(10);
@@ -1281,8 +1282,8 @@ export default function windowZindexTest() {
         console.info(`${caseName} Succeeded in loading the system sub window content.`);
         await windowClass2.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
-        await windowClass2.resizeAsync(minWidth+20, minHeight+20);
-        await windowClass2.moveWindowTo(150, 150);
+        await windowClass2.resizeAsync(minWidth+40, minHeight+40);
+        await windowClass2.moveWindowTo(150, 180);
 
         let windowClass3 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_3');
         await windowClass3.setSubWindowZLevel(11);
@@ -1292,14 +1293,16 @@ export default function windowZindexTest() {
         console.info(`${caseName} Succeeded in loading the system sub window content.`);
         await windowClass3.showWindow();
         console.info(`${caseName} Succeeded in showing the system sub window.`);
-        await windowClass3.resizeAsync(minWidth+20, minHeight+20);
-        await windowClass3.moveWindowTo(250, 250);
+        await windowClass3.resizeAsync(minWidth+40, minHeight+40);
+        await windowClass3.moveWindowTo(250, 260);
 
         let window1 = await window.getLastWindow(context);
         let windowZLevel = window1.getSubWindowZLevel()
+        console.info(`${caseName} window1 windowZLevel :`+ windowZLevel);
         expect(windowZLevel).assertEqual(11);
         await windowClass1.setRaiseByClickEnabled(true);
         let subWinId = await driver.findComponent(ON.id('SubWinTestId'));
+        console.info(`${caseName} window1 subWinId :`+ JSON.stringify(subWinId));
         await subWinId.click();
         let window2 = await window.getLastWindow(context);
         let windowZLevel2 = window2.getSubWindowZLevel()
@@ -1715,9 +1718,9 @@ export default function windowZindexTest() {
      * @tc.desc      :
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetResizeByDragEnabledFalse_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetResizeByDragEnabledFalse_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0100';
       let windowClass = windowStage.getMainWindowSync()
       if (isPCStatus != '') {

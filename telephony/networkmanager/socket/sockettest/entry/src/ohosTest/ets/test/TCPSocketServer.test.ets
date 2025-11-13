@@ -106,6 +106,9 @@ export default function TCPSocketServerTest() {
         let listenAddress: socket.NetAddress = {
           address: '127.0.0.1'
         };
+        tcpServer.on('error',(err:BusinessError) => {
+          console.error("on error,err:" + JSON.stringify(err));
+        });
         tcpServer.listen(listenAddress, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -114,6 +117,9 @@ export default function TCPSocketServerTest() {
             expectSuccess();
             console.info(`${caseName} success`);
           }
+          tcpServer.off('error',(err:BusinessError) => {
+            console.error("off error,err:" + JSON.stringify(err));
+          });
           console.info(`${caseName} test end`);
           done();
         });

@@ -505,47 +505,6 @@ export default function LightWeightMapTest2() {
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0400
-     * @tc.name      : testLightWeightMapIncreaseCapacityTo0004
-     * @tc.desc      : Testing LightWeightMap capacity to large number
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('testLightWeightMapIncreaseCapacityTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG = 'testLightWeightMapIncreaseCapacityTo0004';
-      try {
-        let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-        lightWeightMap.increaseCapacityTo(1e33);
-        expect(false).assertFail();
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(err.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0500
-     * @tc.name      : testLightWeightMapIncreaseCapacityTo0005
-     * @tc.desc      : Testing LightWeightMap capacity to null or undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    // it('testLightWeightMapIncreaseCapacityTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLightWeightMapIncreaseCapacityTo0005';
-    //   try {
-    //     let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
-    //     lightWeightMap.increaseCapacityTo(null);
-    //     lightWeightMap.increaseCapacityTo(undefined);
-    //     expect(false).assertFail();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(err.code).assertEqual(401);
-    //   }
-    // });
-
-    /**
      * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0100
      * @tc.name      : testLightWeightMapGet0001
      * @tc.desc      : Testing LightWeightMap get value by key

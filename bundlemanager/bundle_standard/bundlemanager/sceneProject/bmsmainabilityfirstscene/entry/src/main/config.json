@@ -25,12 +25,12 @@
           }
         ],
         "icon": "$media:icon",
-        "name": "com.example.bmsmainabilityfirstscene.MainAbility",
+        "name": ".MainAbility",
         "description": "$string:mainability_description",
         "label": "$string:app_name",
         "type": "page",
         "launchType": "standard",
-        "srcPath": "default",
+        "srcPath": "MainAbility",
         "srcLanguage": "js"
       }
     ],
@@ -49,7 +49,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.bmsmainabilityfirstscene.MainAbility",
+        "name": ".MainAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": true

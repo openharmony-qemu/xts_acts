@@ -72,7 +72,7 @@ struct webMessageExt {
   build() {
     Column() {
       Row() {
-        Button('webMessageExt click').key('WebMessageExtButton').onClick(async () => {
+        Button('WebMessageExtErrorCode click').key('WebMessageExtErrorCodeButton').onClick(async () => {
           await waitForExist(()=>this.isPageEnd, 'WebMessageExtButtonIsPageEnd', 0);
           await waitForExist(()=>this.isReceive, 'WebMessageExtButtonIsReceive', 0);
           console.info("key==>" + this.str);

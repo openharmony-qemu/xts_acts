@@ -139,6 +139,42 @@ static napi_value OhVPrintTest(napi_env env, napi_callback_info info)
     return res;
 }
 
+static napi_value OhSetLogLevelTest1(napi_env env, napi_callback_info info)
+{
+    napi_value res = nullptr;
+    LogType type = LOG_APP;
+    LogLevel level = LOG_INFO;
+    OH_LOG_SetLogLevel(LOG_WARN, UNSET_LOGLEVEL);
+    int retLen = OH_LOG_Print(type, level, 0x3200, "testTag", "string for hilog SetLogLevel  test");
+    bool ret = (retLen > 0) ? true : false;
+    napi_get_boolean(env, ret, &res);
+    return res;
+}
+
+static napi_value OhSetLogLevelTest2(napi_env env, napi_callback_info info)
+{
+    napi_value res = nullptr;
+    LogType type = LOG_APP;
+    LogLevel level = LOG_ERROR;
+    OH_LOG_SetLogLevel(LOG_WARN, PREFER_CLOSE_LOG);
+    int retLen = OH_LOG_Print(type, level, 0x3200, "testTag", "string for hilog SetLogLevel  test");
+    bool ret = (retLen > 0) ? true : false;
+    napi_get_boolean(env, ret, &res);
+    return res;
+}
+
+static napi_value OhSetLogLevelTest3(napi_env env, napi_callback_info info)
+{
+    napi_value res = nullptr;
+    LogType type = LOG_APP;
+    LogLevel level = LOG_INFO;
+    OH_LOG_SetLogLevel(LOG_WARN, PREFER_OPEN_LOG);
+    int retLen = OH_LOG_Print(type, level, 0x3200, "testTag", "string for hilog SetLogLevel  test");
+    bool ret = (retLen > 0) ? true : false;
+    napi_get_boolean(env, ret, &res);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -151,11 +187,15 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getMsg", nullptr, GetMsg,
             nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ohPrintMsgTest", nullptr, OhPrintMsgTest,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "ohPrintMsgByLenTest", nullptr, OhPrintMsgByLenTest,
-            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ohPrintMsgTest", nullptr, OhPrintMsgTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ohPrintMsgByLenTest", nullptr, OhPrintMsgByLenTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ohVPrintTest", nullptr, OhVPrintTest,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ohSetLogLevelTest1", nullptr, OhSetLogLevelTest1,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ohSetLogLevelTest2", nullptr, OhSetLogLevelTest2,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ohSetLogLevelTest3", nullptr, OhSetLogLevelTest3,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

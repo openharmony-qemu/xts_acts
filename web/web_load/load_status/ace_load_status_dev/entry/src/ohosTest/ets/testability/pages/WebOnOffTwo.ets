@@ -137,6 +137,10 @@ struct WebComponent {
             console.log("NEU controller is attached");
             this.controller1.loadUrl('https://webkit.org/demos/sticky-notes/index.html')
           }
+
+          if (this.controller1.getAttachState() == webview.ControllerAttachState.UNATTACHED) {
+            console.log('NEU controller is UNATTACHED');
+          }
         })
 
       }.width('100%').height('5%').justifyContent(FlexAlign.SpaceAround)

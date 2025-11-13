@@ -67,7 +67,7 @@ function testSetSimDisabled() {
    * @tc.size      : MediumTest
    */
   it("test_set_sim_disabled_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       telephonyManager.setSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
@@ -133,6 +133,8 @@ function testSetSimDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       telephonyManager.setSimDisabled(SELFWANT, 0);
+      let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 0);
+      expect(result == true).assertTrue();
       let info: string = systemParameterEnhance.getSync(PARAM_DISABLE_SLOT0, "");
       expect(info == "true").assertTrue();
       telephonyManager.setSimEnabled(SELFWANT, 0);
@@ -196,7 +198,7 @@ function testSetSimEnabled() {
    * @tc.size      : MediumTest
    */
   it("test_set_sim_enabled_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       telephonyManager.setSimEnabled(SELFWANT, 0);
       expect(false).assertTrue();
@@ -323,7 +325,7 @@ function testIsSimDisabled() {
    * @tc.size      : MediumTest
    */
   it("test_is_sim_disabled_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       telephonyManager.isSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
@@ -389,7 +391,7 @@ function testIsSimDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 0);
-      expect(result !== undefined).assertTrue();
+      expect(result == false).assertTrue();
     } catch (error) {
       expect(error.code == 9200007 || error.code == 801).assertTrue();
     } finally {
@@ -410,7 +412,7 @@ function testIsSimDisabled() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result: boolean = telephonyManager.isSimDisabled(SELFWANT, 1);
-      expect(result !== undefined).assertTrue();
+      expect(result == false).assertTrue();
     } catch (error) {
       expect(error.code == 9200007 || error.code == 801).assertTrue();
     } finally {
@@ -449,7 +451,7 @@ function testAddOutgoingCallPolicyNumbers() {
    * @tc.size      : MediumTest
    */
   it("test_add_outgoing_call_policy_numbers_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
@@ -652,7 +654,7 @@ function testGetOutgoingCallPolicyNumbers() {
    * @tc.size      : MediumTest
    */
   it("test_get_outgoing_call_policy_numbers_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let numbers: Array<string> = 
         telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
@@ -698,9 +700,8 @@ function testGetOutgoingCallPolicyNumbers() {
   it("test_get_outgoing_call_policy_numbers_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let numbers: Array<string> = 
-        telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
-      expect(numbers.length >= 0).assertTrue();
+      let res: Array<string> = telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(res.length == 0).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -739,7 +740,7 @@ function testRemoveOutgoingCallPolicyNumbers() {
    * @tc.size      : MediumTest
    */
   it("test_remove_outgoing_call_policy_numbers_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
@@ -852,8 +853,13 @@ function testRemoveOutgoingCallPolicyNumbers() {
   it("test_remove_outgoing_call_policy_numbers_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
+      let emptyRes: Array<string> =
+        telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(emptyRes.length == 0).assertTrue();
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
+      let res: Array<string> = telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(res.length > 0).assertTrue();
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
     } catch (error) {
       expect(error.code == 801).assertTrue();
@@ -915,7 +921,7 @@ function testAddIncomingCallPolicyNumbers() {
    * @tc.size      : MediumTest
    */
   it("test_add_incoming_call_policy_numbers_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
@@ -1118,7 +1124,7 @@ function testGetIncomingCallPolicyNumbers() {
    * @tc.size      : MediumTest
    */
   it("test_get_incoming_call_policy_numbers_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let numbers: Array<string> = 
         telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
@@ -1166,7 +1172,7 @@ function testGetIncomingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = 
         telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
-      expect(numbers.length >= 0).assertTrue();
+      expect(numbers.length == 0).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
@@ -1205,7 +1211,7 @@ function testRemoveIncomingCallPolicyNumbers() {
    * @tc.size      : MediumTest
    */
   it("test_remove_incoming_call_policy_numbers_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
@@ -1318,8 +1324,13 @@ function testRemoveIncomingCallPolicyNumbers() {
   it("test_remove_incoming_call_policy_numbers_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
+      let emptyRes: Array<string> =
+        telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(emptyRes.length == 0).assertTrue();
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
+      let res: Array<string> = telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
+      expect(res.length > 0).assertTrue();
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
     } catch (error) {
       expect(error.code == 801).assertTrue();

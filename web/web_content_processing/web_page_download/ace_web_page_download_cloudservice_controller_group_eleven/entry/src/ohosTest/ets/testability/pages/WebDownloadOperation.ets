@@ -17,6 +17,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from '../../test/Util';
 import events_emitter from '@ohos.events.emitter';
 import { JSON } from '@kit.ArkTS';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -30,13 +31,19 @@ struct WebComponent {
   @State str: string = '';
   @State src: string | Resource = 'www.example.com';
   @State num: number = 0
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow(): void{
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 131100,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(131100);
   }
 
   public valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -45,6 +52,7 @@ struct WebComponent {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -52,936 +60,995 @@ struct WebComponent {
   build(){
     Column() {
 
-      Button('配置下载回调信息')
-        .key('config')
-        .onClick((event: ClickEvent) => {
-          switch (this.str) {
-            case 'SUB_ACE_WEB_cancel_0100':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+      Button('web click')
+        .key('subAceWebButton')
+        .onClick(async () => {
+        console.info('key==>' + this.str)
+        await waitForExist(() => this.isPageEnd, this.str, 0);
+        await waitForExist(() => this.isReceive, this.str, 0);
+        this.isReceive = -1;
+        switch (this.str) {
+          case 'SUB_ACE_WEB_cancel_0100': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.IN_PROGRESS);
+              this.download.pause();
+              console.log(this.str + '暂停下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.PAUSED);
+              this.download.cancel();
+              console.log(this.str + '取消下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+              console.log(this.str + '查看下载状态')
+              if (this.download.getState() == webview.WebDownloadState.CANCELED) {
+                Utils.emitEvent(this.download.getState(), 131110)
               }
-              break;
-            case 'SUB_ACE_WEB_cancel_0200':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0300':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0400':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/stora' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0200':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0300':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0400':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0500':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0600':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0100':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0200':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0300':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0400':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0500':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2he/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1000':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  Utils.emitEvent(webDownloadItem.getLastErrorCode(), 465)
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1001':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-                Utils.emitEvent(true, 466)
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1002':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                  if (webDownloadItem.getPercentComplete() == 100) {
-                    Utils.emitEvent(100, 467)
-                  }
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-                Utils.emitEvent(true, 466)
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1003':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                  if (webDownloadItem.getPercentComplete() >= 2) {
-                    this.num = 2
-                  }
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_onDownloadFinish_1000':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                  if (webDownloadItem.getPercentComplete() >= 2) {
-                    this.num = 2
-                  }
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_onDownloadFinish_1002':
-              try {
-                this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('will start a download.');
-                  webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
-                  this.download = webDownloadItem
-                })
-                this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download update percent complete: ' + webDownloadItem.getPercentComplete());
-                  if (webDownloadItem.getPercentComplete() >= 2) {
-                    this.num = 2
-                  }
-                })
-                this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download failed guid: ' + webDownloadItem.getGuid());
-                  console.log('download error code: ' + webDownloadItem.getLastErrorCode());
-                  this.failedData = webDownloadItem.serialize();
-                })
-                this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
-                  console.log('download finish guid: ' + webDownloadItem.getGuid());
-                })
-                this.controller.setDownloadDelegate(this.delegate);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
           }
-        })
-
-      Button('开始下载')
-        .key('start')
-        .onClick((event: ClickEvent) => {
-          switch (this.str) {
-            case 'SUB_ACE_WEB_cancel_0100':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0300':
-              try {
-                this.controller.startDownload('https:' +
-                  '//www.example.com');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0400':
-              try {
-                this.controller.startDownload('https:' +
-                  '//www.example.com');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0200':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0300':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0400':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0500':
-              try {
-                this.controller.startDownload('https:' +
-                  '//www.example.com');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0600':
-              try {
-                this.controller.startDownload('https:' +
-                  '//shows.youtube.com');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0200':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0300':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0400':
-              try {
-                this.controller.startDownload('https:' +
-                  '//www.example.com');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0500':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1000':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.c.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1001':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1002':
-              try {
-                this.controller.startDownload('https:' +
-                  '//www.example.com');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1003':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_onDownloadFinish_1002':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_onDownloadFinish_1000':
-              try {
-                this.controller.startDownload('https:' +
-                  '//dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_240902_x64_01.exe');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
+          case 'SUB_ACE_WEB_cancel_0200': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.'+webDownloadItem.getSuggestedFileName());
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.download.cancel();
+              console.log(this.str + '取消下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              console.log(this.str + '查看下载状态')
+              Utils.emitEvent(this.download.getState(), 131120)
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
           }
-        })
-
-      Button('暂停下载')
-        .key('pause11')
-        .onClick((event: ClickEvent) => {
-          switch (this.str) {
-            case 'SUB_ACE_WEB_cancel_0100':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0100':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 454)
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0200':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 455)
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0300':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 456)
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0400':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 456)
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0500':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 458)
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0600':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 459)
-              }
-              break;
-            case 'SUB_ACE_WEB_onDownloadFinish_1000':
-              try {
-                this.download.pause();
-                console.log('暂停下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
+          case 'SUB_ACE_WEB_cancel_0300': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.IN_PROGRESS);
+              this.download.cancel();
+              console.log(this.str + '取消下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+              console.log(this.str + '查看下载状态')
+              Utils.emitEvent(this.download.getState(), 131130)
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
           }
-        })
-
-      Button('取消下载')
-        .key('cancel11')
-        .onClick((event: ClickEvent) => {
-          switch (this.str) {
-            case 'SUB_ACE_WEB_cancel_0100':
-              try {
-                this.download.cancel();
-                console.log('取消下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0200':
-              try {
-                this.download.cancel();
-                console.log('取消下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0300':
-              try {
-                this.download.cancel();
-                console.log('取消下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0400':
-              try {
-                this.download.cancel();
-                console.log('取消下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0300':
-              try {
-                this.download.cancel();
-                console.log('取消下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0300':
-              try {
-                this.download.cancel();
-                console.log('取消下载')
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
+          case 'SUB_ACE_WEB_cancel_0400': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/stora' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https:' +
+                '//www.example.com');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.INTERRUPTED);
+              this.download.cancel();
+              console.log(this.str + '取消下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.INTERRUPTED);
+              console.log(this.str + '查看下载状态')
+              Utils.emitEvent(this.download.getState(), 131140)
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
           }
-        })
-
-      Button('恢复下载')
-        .key('resume11')
-        .onClick((event: ClickEvent) => {
-          switch (this.str) {
-            case 'SUB_ACE_WEB_pause_0400':
-              try {
-                this.download.resume();
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0100':
-              try {
-                this.download.resume();
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 460)
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0200':
-              try {
-                this.download.resume();
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 461)
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0300':
-              try {
-                this.download.resume();
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 462)
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0400':
-              try {
-                this.download.resume();
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 463)
-              }
-              break;
-            case 'SUB_ACE_WEB_resume_0500':
-              try {
-                this.download.resume();
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 464)
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1003':
-              try {
-                this.download.resume();
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code + error.message, 464)
-              }
-              break;
-
+          case 'SUB_ACE_WEB_pause_0100': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.download.pause();
+              console.log(this.str + '暂停下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131150)
+            }
+            break;
           }
-        })
-
-      Button('查看下载状态')
-        .key('state11')
-        .onClick(() => {
-          switch (this.str) {
-            case 'SUB_ACE_WEB_cancel_0100':
-              try {
-                console.log('查看下载状态0100')
-                let status = this.download.getState();
-                if (JSON.stringify(status) == '4') {
-                  Utils.emitEvent(JSON.stringify(status), 450)
-                  this.download.cancel()
+          case 'SUB_ACE_WEB_pause_0200': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              this.download.pause();
+              console.log(this.str + '暂停下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131160)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_pause_0300': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.download.cancel();
+              console.log(this.str + '取消下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.download.pause();
+              console.log(this.str + '暂停下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131170)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_pause_0400': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.IN_PROGRESS);
+              this.download.pause();
+              console.log(this.str + '暂停下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.PAUSED);
+              this.download.resume();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.IN_PROGRESS);
+              console.log(this.str + '查看下载状态')
+              let flag = this.download.getState();
+              this.download.cancel()
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+              Utils.emitEvent(flag, 131190)
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_pause_0500': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https:' +
+                '//www.example.com');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.COMPLETED);
+              this.download.pause();
+              console.log(this.str + '暂停下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131200)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_pause_0600': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              webview.WebviewController.setConnectionTimeout(5);
+              console.log(this.str + 'setConnectionTimeout: 5s');
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https:' +
+                '//shows.youtube.com');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.download.pause();
+              console.log(this.str + '暂停下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131210)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_resume_0100': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.download.resume();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131220)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_resume_0200': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.IN_PROGRESS);
+              this.download.resume();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131230)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_resume_0300': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed(async (webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.IN_PROGRESS);
+              this.download.cancel();
+              console.log(this.str + '取消下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              this.download.resume();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131240)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_resume_0400': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https:' +
+                '//www.example.com');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.COMPLETED);
+              this.download.resume();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              Utils.emitEvent(error.code + error.message, 131250)
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_resume_0500': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2he/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log(this.str + 'download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.IN_PROGRESS);
+              this.download.resume();
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              this.download.cancel();
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+              Utils.emitEvent(error.code + error.message, 131260)
+            }
+            break;
+          }
+          case 'SUB_ACE_onDownloadUpdated_1000': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                Utils.emitEvent(webDownloadItem.getLastErrorCode(), 131270)
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https:' +
+                '//dldir1.qq.c.15_240902_x64_01.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
+          }
+          case 'SUB_ACE_onDownloadUpdated_1001': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated(async (webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log('download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                this.download.cancel();
+                await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+                Utils.emitEvent(true, 131280)
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log('download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log('download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
+          }
+          case 'SUB_ACE_onDownloadUpdated_1002': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                if (webDownloadItem.getPercentComplete() == 100) {
+                  Utils.emitEvent(100, 131290)
                 }
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0200':
-              try {
-                console.log('查看下载状态0200')
-                let status = this.download.getState();
-                Utils.emitEvent(JSON.stringify(status), 451)
-                this.download.cancel()
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0300':
-              try {
-                console.log('查看下载状态0300')
-                let status = this.download.getState();
-                Utils.emitEvent(JSON.stringify(status), 452)
-                this.download.cancel()
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_cancel_0400':
-              try {
-                let status = this.download.getState();
-                Utils.emitEvent(JSON.stringify(status), 453)
-                this.download.cancel()
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_pause_0400':
-              try {
-                let status = this.download.getState();
-                Utils.emitEvent(JSON.stringify(status), 457)
-                this.download.cancel()
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_onDownloadUpdated_1003':
-              try {
-                let status = this.download.getState();
-                Utils.emitEvent(this.num, 468)
-                this.download.cancel()
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_onDownloadFinish_1000':
-              try {
-                let status = this.download.getState();
-                Utils.emitEvent(JSON.stringify(status), 469)
-                this.download.cancel()
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
-            case 'SUB_ACE_WEB_onDownloadFinish_1002':
-              try {
-                let status = this.download.getState();
-                Utils.emitEvent(JSON.stringify(status), 470)
-                this.download.cancel()
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https:' +
+                '//www.example.com');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
           }
-        })
-
-      Button('setConnectionTimeout')
-        .id('setConnectionTimeout')
-        .onClick(() => {
-          switch (this.str) {
-            case 'SUB_ACE_WEB_pause_0600':
-              try {
-                webview.WebviewController.setConnectionTimeout(5);
-                console.log('setConnectionTimeout: 5s');
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-              }
-              break;
+          case 'SUB_ACE_onDownloadUpdated_1003': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated(async (webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log('download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                if (webDownloadItem.getPercentComplete() >= 2) {
+                  this.download.cancel();
+                  await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+                  Utils.emitEvent(2, 131320)
+                }
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log('download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log('download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
           }
-        })
-
-      Web({ src: this.src, controller: this.controller })
+          case 'SUB_ACE_onDownloadUpdated_1004': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated(async (webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+                console.log('download update state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                if (webDownloadItem.getPercentComplete() >= 2) {
+                  this.download.cancel();
+                  await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.CANCELED);
+                  Utils.emitEvent(2, 131340)
+                }
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log('download failed state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                console.log('download finish state: ' + webDownloadItem.getState());
+                this.download = webDownloadItem
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://consumer.huawei.com/content/dam/' +
+                'huawei-cbg-site/cn/mkt/mobileservices/2022/download/' +
+                'PC107f1b3947c942ffaa14334a879065d8.2107261020.exe');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_onDownloadFinish_1000': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                Utils.emitEvent(webDownloadItem.getState(), 131350)
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https:' +
+                '//www.example.com');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
+          }
+          case 'SUB_ACE_WEB_onDownloadFinish_1002': {
+            try {
+              this.download = new webview.WebDownloadItem();
+              this.delegate.onBeforeDownload((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'will start a download.');
+                webDownloadItem.start('/data/storage/el2/base/cache/web/' + webDownloadItem.getSuggestedFileName());
+                this.download = webDownloadItem
+              })
+              this.delegate.onDownloadUpdated((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download update percent complete: ' + webDownloadItem.getPercentComplete());
+              })
+              this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download failed guid: ' + webDownloadItem.getGuid());
+                console.log(this.str + 'download error code: ' + webDownloadItem.getLastErrorCode());
+                this.failedData = webDownloadItem.serialize();
+              })
+              this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
+                console.log(this.str + 'download finish guid: ' + webDownloadItem.getGuid());
+                Utils.emitEvent(webDownloadItem.getState(), 131360)
+              })
+              this.controller.setDownloadDelegate(this.delegate);
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            try {
+              await waitForExist(() => this.download.getState(), this.str, webview.WebDownloadState.UNKNOWN);
+              this.controller.startDownload('https://' +
+                'mirrors.tuna.tsinghua.edu.cn/nodejs-release/index.json');
+              console.log(this.str + '开始下载')
+            } catch (error) {
+              console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            }
+            break;
+          }
+        }
+      })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(true)
         .geolocationAccess(true)
+        .onPageEnd((event) => {
+          console.log(this.str + 'web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
+        })
     }
   }
 }

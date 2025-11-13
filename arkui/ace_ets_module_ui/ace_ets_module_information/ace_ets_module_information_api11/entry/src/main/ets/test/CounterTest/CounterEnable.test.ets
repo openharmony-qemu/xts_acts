@@ -22,7 +22,9 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function CounterEnableTest() {
 
   const SUITE: string = 'CounterEnable'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
+
+
   describe('CounterEnableTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {

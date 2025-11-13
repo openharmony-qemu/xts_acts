@@ -18,7 +18,8 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import image from '@ohos.multimedia.image';
-import business_error from '@ohos.base'
+
+const EVENT_ID_SET_EMIT_KEY = 200820;
 
 @Entry
 @Component
@@ -38,21 +39,22 @@ struct webViewControllerPart2 {
   @State uri: string = "file://docs/storage/Users/currentUser/Documents/1.json";
   @State FileSelectorParamGetIsCapture: boolean = true
   @State FileSelectorResultHandleFileList: Array<String> = []
-  @State enterPageEnd: boolean = false
   @State numberOfMatches: number = 0
   @State searchNext: boolean = false
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -61,6 +63,7 @@ struct webViewControllerPart2 {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -81,15 +84,19 @@ struct webViewControllerPart2 {
     Column() {
       Row() {
         Button("WebViewControllerPart2 click").key('WebViewControllerPart2Button').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'WebViewControllerPart2ButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebViewControllerPart2ButtonIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testRefresh001": {
               try {
+                this.isPageEnd = -1;
                 this.controller.refresh()
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
                 let title = this.controller.getTitle()
-                Utils.emitEvent(title, 37001)
+                Utils.emitEvent(title, 200830)
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -98,15 +105,16 @@ struct webViewControllerPart2 {
 
             case "testLoadData001": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadData(
                   "<html><head><title>LoadData</title></head>" +
                     "<body bgcolor=\"white\">Source:<pre>source</pre></body></html>",
                   "text/html",
                   "UTF-8"
                 );
-                await Utils.sleep(3000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
                 let title = this.controller.getTitle();
-                Utils.emitEvent(title, 37002)
+                Utils.emitEvent(title, 200840)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -115,10 +123,11 @@ struct webViewControllerPart2 {
 
             case "testLoadUrl001": {
               try {
-                this.controller.loadUrl("www.OpenHarmony.cn")
-                await Utils.sleep(6000);
+                this.isPageEnd = -1;
+                this.controller.loadUrl('www' + '.example.' + 'com');
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 let title = this.controller.getTitle();
-                Utils.emitEvent(title, 37003)
+                Utils.emitEvent(title, 200850)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -127,10 +136,11 @@ struct webViewControllerPart2 {
 
             case "testLoadUrl002": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl("resource://rawfile/second.html");
-                await Utils.sleep(3000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 let title = this.controller.getTitle();
-                Utils.emitEvent(title, 37004)
+                Utils.emitEvent(title, 200860)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -139,10 +149,11 @@ struct webViewControllerPart2 {
 
             case "testLoadUrl003": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('second.html'));
-                await Utils.sleep(3000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 let title = this.controller.getTitle();
-                Utils.emitEvent(title, 77000)
+                Utils.emitEvent(title, 200870)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -151,11 +162,12 @@ struct webViewControllerPart2 {
 
             case "testLoadUrl004": {
               try {
+                this.isPageEnd = -1;
                 let sandboxPath = Utils.copyRawFileToSandbox('second.html')
                 this.controller.loadUrl(`file://${sandboxPath}`);
-                await Utils.sleep(3000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                 let title = this.controller.getTitle();
-                Utils.emitEvent(title, 77002)
+                Utils.emitEvent(title, 200880)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -164,7 +176,8 @@ struct webViewControllerPart2 {
 
             case "testGetUserAgent001": {
               try {
-                Utils.emitEvent(this.controller.getUserAgent().indexOf('OpenHarmony') >= 0, 37009)
+                console.log('getUserAgent: ' + this.controller.getUserAgent())
+                Utils.emitEvent(this.controller.getUserAgent().indexOf('OpenHarmony') >= 0, 200890)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -174,7 +187,7 @@ struct webViewControllerPart2 {
             case "testGetWebId001": {
               try {
                 let webId = this.controller.getWebId()
-                Utils.emitEvent(webId > 0, 37010)
+                Utils.emitEvent(webId > 0, 200900)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -183,23 +196,24 @@ struct webViewControllerPart2 {
 
             case "testGetTitle001": {
               try {
-                let getTitle = this.controller.getTitle()
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('index.html'));
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                let getTitle = this.controller.getTitle();
                 console.log('getTitle===>'+getTitle)
-                Utils.emitEvent(getTitle, 37011)
+                Utils.emitEvent(getTitle, 200910)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
 
-
             case "testStop001": {
               try {
-                this.controller.loadUrl("http://appgallery.huawei.com/")
+                this.controller.loadUrl('www' + '.example.' + 'com')
                 this.controller.stop()
-                await Utils.sleep(2000);
-                let title = this.controller.getTitle()
-                Utils.emitEvent(title, 37017)
+                let title = this.controller.getTitle();
+                Utils.emitEvent(title, 200920)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -208,7 +222,7 @@ struct webViewControllerPart2 {
 
             case "testGetCustomUserAgent001": {
               try {
-                Utils.emitEvent(this.controller.getCustomUserAgent().indexOf('OpenHarmony') >= 0, 37018)
+                Utils.emitEvent(this.controller.getCustomUserAgent().indexOf('OpenHarmony') >= 0, 200930)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
@@ -219,7 +233,7 @@ struct webViewControllerPart2 {
               try {
                 let setUA = "userAgent"
                 this.controller.setCustomUserAgent(setUA)
-                Utils.emitEvent(this.controller.getCustomUserAgent(), 37019);
+                Utils.emitEvent(this.controller.getCustomUserAgent(), 200940);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
@@ -229,7 +243,7 @@ struct webViewControllerPart2 {
             case "testProtectedResourceType001": {
               try {
                 console.log('testProtectedResourceType001 :'+ProtectedResourceType.SENSOR)
-                Utils.emitEvent(ProtectedResourceType.SENSOR, 37020);
+                Utils.emitEvent(ProtectedResourceType.SENSOR, 200950);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
@@ -266,7 +280,7 @@ struct webViewControllerPart2 {
         })
         .onPageEnd((event) => {
           if (event) {
-            this.enterPageEnd = true
+            this.isPageEnd = 1
           }
         })
         .onShowFileSelector((event) => {

@@ -360,6 +360,51 @@ export default function graphicTextEnum() {
         expect().assertFail();
       }
     })
+    /**
+     * @tc.number    testTextFontWidth
+     * @tc.name      testTextFontWidth
+     * @tc.desc      To test the enum value of testTextFontWidth.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level3
+     */
+    it('testTextFontWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+      let msg = "testTextFontWidth"
+      console.info(msg + 'begin');
+      try {
+        expect(1).assertEqual(text.FontWidth.ULTRA_CONDENSED);
+        expect(2).assertEqual(text.FontWidth.EXTRA_CONDENSED);
+        expect(3).assertEqual(text.FontWidth.CONDENSED);
+        expect(4).assertEqual(text.FontWidth.SEMI_CONDENSED);
+        expect(5).assertEqual(text.FontWidth.NORMAL);
+        expect(6).assertEqual(text.FontWidth.SEMI_EXPANDED);
+        expect(7).assertEqual(text.FontWidth.EXPANDED);
+        expect(8).assertEqual(text.FontWidth.EXTRA_EXPANDED);
+        expect(9).assertEqual(text.FontWidth.ULTRA_EXPANDED);
+      } catch (err) {
+        console.info(msg + 'test enum value of testTextFontWidth error ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    testLineHeightStyle
+     * @tc.name      testLineHeightStyle
+     * @tc.desc      To test the enum value of testLineHeightStyle.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level1
+     */
+    it('testLineHeightStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+      let msg = "testLineHeightStyle"
+      console.info(msg + 'begin');
+      try {
+        expect(0).assertEqual(text.LineHeightStyle.FONT_SIZE);
+        expect(1).assertEqual(text.LineHeightStyle.FONT_HEIGHT);
+      } catch (err) {
+        console.info(msg + 'test enum value of testLineHeightStyle error ' + JSON.stringify(err));
+        expect().assertFail();
+      }
+    })
 
   })
 }

@@ -82,9 +82,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_hostDeathRecipient_0200
-         * @tc.name: Reset host ability and requestForm.
-         * @tc.desc: The provider's onDestroy event will be triggered.
+         * @tc.name   FMS_hostDeathRecipient_0200
+         * @tc.number FMS_hostDeathRecipient_0200
+         * @tc.desc   The provider's onDestroy event will be triggered.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_hostDeathRecipient_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void) => {
             tcNumber = `FMS_hostDeathRecipient_0200`;

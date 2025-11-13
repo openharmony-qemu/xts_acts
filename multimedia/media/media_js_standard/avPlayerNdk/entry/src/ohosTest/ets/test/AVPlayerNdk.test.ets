@@ -1999,5 +1999,159 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0100
+     * @tc.name       : testOhAvPlayerSetLoudness001
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(2.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0200
+     * @tc.name       : testOhAvPlayerSetLoudness002
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(25.0);
+      expect(result).assertEqual(-1);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0300
+     * @tc.name       : testOhAvPlayerSetLoudness003
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(-90.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0400
+     * @tc.name       : testOhAvPlayerSetLoudness004
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(24.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0500
+     * @tc.name       : testOhAvPlayerSetLoudness005
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(0.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0600
+     * @tc.name       : testOhAvPlayerSetLoudness006
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(-40.4);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0700
+     * @tc.name       : testOhAvPlayerSetLoudness007
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(10.8);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0800
+     * @tc.name       : testOhAvPlayerSetLoudness008
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(24.1);
+      expect(result).assertEqual(-1);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0900
+     * @tc.name       : testOhAvPlayerSetLoudness009
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(-90.1);
+      expect(result).assertEqual(-1);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_1000
+     * @tc.name       : testOhAvPlayerSetLoudness010
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(-100.4);
+      expect(result).assertEqual(-1);
+      done();
+    });
+
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_1100
+     * @tc.name       : testOhAvPlayerSetLoudness011
+     * @tc.desc       : test OH_AVPlayer_SetLoudnessGain
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testOhAvPlayerSetLoudness011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain(60.2);
+      expect(result).assertEqual(-1);
+      done();
+    });
   })
 }

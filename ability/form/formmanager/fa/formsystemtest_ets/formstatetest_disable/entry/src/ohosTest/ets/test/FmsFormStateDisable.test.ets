@@ -103,10 +103,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0200
-         * @tc.name: The form user does not have permission.
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0200
+         * @tc.number FMS_disableFormsUpdate_0200
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_0200 start`);
@@ -151,10 +153,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0300
-         * @tc.name: The length of the formId list is 0 (no formId)
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0300
+         * @tc.number FMS_disableFormsUpdate_0300
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_0300 start`);
@@ -203,10 +207,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0400
-         * @tc.name: formID id is error(formID < 0)
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0400
+         * @tc.number FMS_disableFormsUpdate_0400
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_0400 start`);
@@ -250,10 +256,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0500
-         * @tc.name: formID id is error(formID == 0)
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0500
+         * @tc.number FMS_disableFormsUpdate_0500
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_0500 start`);
@@ -297,10 +305,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0600
-         * @tc.name: formID id is error because formId is not self
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0600
+         * @tc.number FMS_disableFormsUpdate_0600
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_disableFormsUpdate_0600 start`);
@@ -379,10 +389,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0700
-         * @tc.name: formID id is error because formId is not exist
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0700
+         * @tc.number FMS_disableFormsUpdate_0700
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_disableFormsUpdate_0700 start`);
@@ -464,10 +476,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0800
-         * @tc.name: The form user has form permission.
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0800
+         * @tc.number FMS_disableFormsUpdate_0800
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0800`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_0800 start`);
@@ -514,10 +528,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_0900
-         * @tc.name: There are correct and wrong formId in the form ID parameter list.
-         * @tc.desc: 1.The form user calls the disable update interface.
-         *           2.Verify the result of the disable update interface.
+         * @tc.name   FMS_disableFormsUpdate_0900
+         * @tc.number FMS_disableFormsUpdate_0900
+         * @tc.desc   1.The form user calls the disable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_0900`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_0900 start`);
@@ -602,11 +618,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_1000
-         * @tc.name: Set next refresh time is invalid when disable form. (cache data < 1k)
-         * @tc.desc: 1.The form user calls the visible notification interface.
-         *           2.Call the disableFormsUpdate interface.
-         *           3.Call the setFormNextRefreshTime interface and verify the form can not refresh.
+         * @tc.name   FMS_disableFormsUpdate_1000
+         * @tc.number FMS_disableFormsUpdate_1000
+         * @tc.desc   1.The form user calls the visible notification interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_1000`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_1000 start`);
@@ -719,11 +736,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_disableFormsUpdate_1100
-         * @tc.name: Set next refresh time is invalid when disable form. (cache data > 1k)
-         * @tc.desc: 1.The form user calls the visible notification interface.
-         *           2.Call the disableFormsUpdate interface.
-         *           3.Call the setFormNextRefreshTime interface and verify the form can not refresh.
+         * @tc.name   FMS_disableFormsUpdate_1100
+         * @tc.number FMS_disableFormsUpdate_1100
+         * @tc.desc   1.The form user calls the visible notification interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_disableFormsUpdate_1100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_disableFormsUpdate_1100 start`);

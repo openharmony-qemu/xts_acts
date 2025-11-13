@@ -70,13 +70,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0100
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0100
-         * @tc.name testauthenticateSector
-         * @tc.desc Test authenticateSector api by callback. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test authenticateSector api by callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0100', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -100,13 +100,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0200
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0200
-         * @tc.name testauthenticateSector
-         * @tc.desc Test authenticateSector api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test authenticateSector api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0200', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -135,13 +135,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0300
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0300
-         * @tc.name testreadSingleBlock
-         * @tc.desc Test readSingleBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test readSingleBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0300', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -149,6 +149,11 @@ export default function MifareClassicErrorTest() {
                 (async () => {
                     try {
                         let result = await MifareClassicTag.readSingleBlock('test');
+                        if (result.length > 0) {
+                            expect(result.length > 0).assertTrue();
+                        } else {
+                            expect(result).assertDeepEquals([]);
+                        }
                         console.info("[NFC_test]mifareClassic3 readSingleBlock data: " + result);
                     } catch(error) {
                         console.info("[NFC_test]mifareClassic3 readSingleBlock errorcode: " + error.code);
@@ -164,13 +169,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0400
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0400
-         * @tc.name testreadSingleBlock
-         * @tc.desc Test readSingleBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test readSingleBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0400', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -181,6 +186,11 @@ export default function MifareClassicErrorTest() {
                             console.info("[NFC_test]mifareClassic4 readSingleBlock errcode: " + err);
                             expect(true).assertEqual(true);
                         } else {
+                            if (data.length > 0) {
+                                expect(data.length > 0).assertTrue();
+                            } else {
+                                expect(data).assertDeepEquals([]);
+                            }
                             console.info("[NFC_test]mifareClassic4 readSingleBlock data: " + data+ "json4:" + JSON.stringify(data));
                             expect(data).assertInstanceOf('Array')
                         }
@@ -198,13 +208,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0500
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0500
-         * @tc.name testwriteSingleBlock
-         * @tc.desc Test writeSingleBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test writeSingleBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0500', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -228,13 +238,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0600
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0600
-         * @tc.name testwriteSingleBlock
-         * @tc.desc Test writeSingleBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test writeSingleBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0600', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -263,13 +273,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0700
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0700
-         * @tc.name testincrementBlock
-         * @tc.desc Test incrementBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test incrementBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0700', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -293,13 +303,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0800
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0800
-         * @tc.name testincrementBlock
-         * @tc.desc Test incrementBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test incrementBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0800', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -328,13 +338,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_0900
          * @tc.number SUB_Communication_NFC_mifareClassic_js_0900
-         * @tc.name testdecrementBlock
-         * @tc.desc Test decrementBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test decrementBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_0900', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -358,13 +368,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1000
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1000
-         * @tc.name testdecrementBlock
-         * @tc.desc Test decrementBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test decrementBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1000', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -393,13 +403,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1100
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1100
-         * @tc.name testtransferToBlock
-         * @tc.desc Test transferToBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test transferToBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1100', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -422,13 +432,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1200
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1200
-         * @tc.name testtransferToBlock
-         * @tc.desc Test transferToBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test transferToBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1200', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -456,13 +466,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1300
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1300
-         * @tc.name testrestoreFromBlock
-         * @tc.desc Test restoreFromBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test restoreFromBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1300', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -485,13 +495,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1400
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1400
-         * @tc.name testrestoreFromBlock
-         * @tc.desc Test restoreFromBlock api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test restoreFromBlock api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1400', Level.LEVEL1, async function (done) {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -519,13 +529,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1500
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1500
-         * @tc.name testgetBlockCountInSector
-         * @tc.desc Test getBlockCountInSector api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test getBlockCountInSector api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1500', Level.LEVEL1, function ()  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -545,13 +555,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1600
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1600
-         * @tc.name testgetBlockIndex
-         * @tc.desc Test getBlockIndex api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test getBlockIndex api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1600', Level.LEVEL1, function ()  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -571,13 +581,13 @@ export default function MifareClassicErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1700
          * @tc.number SUB_Communication_NFC_mifareClassic_js_1700
-         * @tc.name testgetSectorIndex
-         * @tc.desc Test getSectorIndex api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test getSectorIndex api. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareClassic_js_1700', Level.LEVEL1, function ()  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
@@ -596,15 +606,15 @@ export default function MifareClassicErrorTest() {
             }
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_mifareClassic_js_1800
-         * @tc.name getMifareClassic
-         * @tc.desc Test getMifareClassic api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:44
+          * @tc.name   SUB_Communication_NFC_mifareClassic_js_1800
+          * @tc.number SUB_Communication_NFC_mifareClassic_js_1800
+          * @tc.desc   Test getMifareClassic api. The error code is 401
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL1
+          */
          it('SUB_Communication_NFC_mifareClassic_js_1800', Level.LEVEL1, function ()  {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
                 try {

@@ -14,13 +14,16 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Util';
-import events_emitter from '@ohos.events.emitter';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { webview } from '@kit.ArkWeb';
+import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
-let emitKey = ''
+const driver = Driver.create();
 
 export default function webDownloadOperation() {
   describe('webDownloadOperation', () => {
@@ -29,20 +32,18 @@ export default function webDownloadOperation() {
         url: 'testability/pages/WebDownloadOperation',
       }
       try {
-        await Utils.sleep(500)
         router.clear();
         let pages = router.getState();
-        console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
+        console.info('get webDownloadOperation state success ' + JSON.stringify(pages));
         if (!('webDownloadOperation' == pages.name)) {
           console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(800);
           console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push index page error: ' + err);
       }
-      await Utils.sleep(500)
+      await waitForComponents("subAceWebButton");
       done()
     });
 
@@ -52,28 +53,10 @@ export default function webDownloadOperation() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(300);
       done();
     });
 
-    afterEach(async () => {
-      await Utils.sleep(600);
-      console.info('web afterEach start:' + emitKey);
-      try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          }
-        }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info('start send emitKey');
-        events_emitter.emit(backEvent, backData);
-      } catch (err) {
-        console.info('emit emitKey  err: ' + JSON.stringify(err));
-      }
+    afterEach(() => {
     })
 
     afterAll(() => {
@@ -88,22 +71,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_cancel_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_cancel_0100', '4', 450, done,
+      Utils.emitEvent('SUB_ACE_WEB_cancel_0100', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_cancel_0100", webview.WebDownloadState.CANCELED, 131110, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      Utils.emitEvent('SUB_ACE_WEB_cancel_0100', 10)
-      await Utils.sleep(1000);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('pause11', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('cancel11', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -115,18 +88,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_cancel_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_cancel_0200', '4', 451, done,
+      Utils.emitEvent('SUB_ACE_WEB_cancel_0200', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_cancel_0200", webview.WebDownloadState.UNKNOWN, 131120, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      Utils.emitEvent('SUB_ACE_WEB_cancel_0200', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('cancel11', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -138,20 +105,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_cancel_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_cancel_0300', '4', 452, done,
+      Utils.emitEvent('SUB_ACE_WEB_cancel_0300', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_cancel_0300", webview.WebDownloadState.CANCELED, 131130, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      Utils.emitEvent('SUB_ACE_WEB_cancel_0300', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('cancel11', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -163,20 +122,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_cancel_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_cancel_0400', '4', 453, done,
+      Utils.emitEvent('SUB_ACE_WEB_cancel_0400', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_cancel_0400", webview.WebDownloadState.INTERRUPTED, 131140, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      Utils.emitEvent('SUB_ACE_WEB_cancel_0400', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('cancel11', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -188,15 +139,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_pause_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_pause_0100', '17100019The download task is not started yet.', 454, done,
+      Utils.emitEvent('SUB_ACE_WEB_pause_0100', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_pause_0100", '17100019The download task is not started yet.', 131150, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_pause_0100', 10)
-      await Utils.sleep(200);
-      sendEventByKey('pause11', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -208,15 +156,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_pause_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_pause_0200', '17100019The download task is not started yet.', 455, done,
+      Utils.emitEvent('SUB_ACE_WEB_pause_0200', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_pause_0200", '17100019The download task is not started yet.', 131160, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_pause_0200', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('pause11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
 
@@ -229,17 +174,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_pause_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_pause_0300', '17100019The download task is not started yet.', 456, done,
+      Utils.emitEvent('SUB_ACE_WEB_pause_0300', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_pause_0300", '17100019The download task is not started yet.', 131170, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_pause_0300', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('cancel11', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('pause11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -251,21 +191,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_pause_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_pause_0400', '4', 457, done,
+      Utils.emitEvent('SUB_ACE_WEB_pause_0400', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_pause_0400", webview.WebDownloadState.IN_PROGRESS, 131190, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_pause_0400', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('pause11', 10, '');
-      await Utils.sleep(500);
-      sendEventByKey('resume11', 10, '');
-      await Utils.sleep(500);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -277,17 +208,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_pause_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_pause_0500', '17100019The download task is not started yet.', 458, done,
+      Utils.emitEvent('SUB_ACE_WEB_pause_0500', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_pause_0500", '17100019The download task is not started yet.', 131200, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_pause_0500', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('pause11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -299,19 +225,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_pause_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_pause_0600', '17100019The download task is not started yet.', 459, done,
+      Utils.emitEvent('SUB_ACE_WEB_pause_0600', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_pause_0600", '17100019The download task is not started yet.', 131210, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_pause_0600', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('setConnectionTimeout', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('pause11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -323,15 +242,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_resume_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_resume_0100', '17100016The download task is not paused.', 460, done,
+      Utils.emitEvent('SUB_ACE_WEB_resume_0100', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_resume_0100", '17100016The download task is not paused.', 131220, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_resume_0100', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('resume11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -343,17 +259,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_resume_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_resume_0200', '17100016The download task is not paused.', 461, done,
+      Utils.emitEvent('SUB_ACE_WEB_resume_0200', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_resume_0200", '17100016The download task is not paused.', 131230, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_resume_0200', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('resume11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -365,19 +276,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_resume_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_resume_0300', '17100016The download task is not paused.', 462, done,
+      Utils.emitEvent('SUB_ACE_WEB_resume_0300', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_resume_0300", '17100016The download task is not paused.', 131240, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_resume_0300', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('cancel11', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('resume11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -389,17 +293,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_resume_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_resume_0400', '17100016The download task is not paused.', 463, done,
+      Utils.emitEvent('SUB_ACE_WEB_resume_0400', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_resume_0400", '17100016The download task is not paused.', 131250, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_resume_0400', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('resume11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -411,17 +310,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_resume_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_resume_0500', '17100016The download task is not paused.', 464, done,
+      Utils.emitEvent('SUB_ACE_WEB_resume_0500', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_resume_0500", '17100016The download task is not paused.', 131260, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_resume_0500', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('resume11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
 
@@ -434,15 +328,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_onDownloadUpdated_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_onDownloadUpdated_1000', 22, 465, done,
+      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1000', 131100)
+      Utils.registerBaseEvent("SUB_ACE_onDownloadUpdated_1000", 22, 131270, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1000', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -454,15 +345,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_onDownloadUpdated_1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_onDownloadUpdated_1001', true, 466, done,
+      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1001', 131100)
+      Utils.registerBaseEvent("SUB_ACE_onDownloadUpdated_1001", true, 131280, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1001', 10)
-      await Utils.sleep(1000);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('start', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -474,15 +362,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_onDownloadUpdated_1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_onDownloadUpdated_1002', 100, 467, done,
+      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1002', 131100)
+      Utils.registerBaseEvent("SUB_ACE_onDownloadUpdated_1002", 100, 131290, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1002', 10)
-      await Utils.sleep(1000);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('start', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -494,19 +379,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_onDownloadUpdated_1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_onDownloadUpdated_1003', 2, 468, done,
+      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1003', 131100)
+      Utils.registerBaseEvent("SUB_ACE_onDownloadUpdated_1003", 2, 131320, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1003', 10)
-      await Utils.sleep(1000);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(10000);
-      sendEventByKey('resume11', 10, '');
-      await Utils.sleep(1000);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -518,19 +396,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_onDownloadUpdated_1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_onDownloadUpdated_1004', 2, 468, done,
+      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1004', 131100)
+      Utils.registerBaseEvent("SUB_ACE_onDownloadUpdated_1004", 2, 131340, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_onDownloadUpdated_1003', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(6000);
-      sendEventByKey('resume11', 10, '');
-      await Utils.sleep(300);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
 
@@ -543,17 +414,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_onDownloadFinish_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_onDownloadFinish_1000', '4', 469, done,
+      Utils.emitEvent('SUB_ACE_WEB_onDownloadFinish_1000', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_onDownloadFinish_1000", webview.WebDownloadState.COMPLETED, 131350, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_onDownloadFinish_1000', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(4000);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
     /**
@@ -565,19 +431,12 @@ export default function webDownloadOperation() {
      * @tc.level Level 2
      */
     it("SUB_ACE_WEB_onDownloadFinish_1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('SUB_ACE_WEB_onDownloadFinish_1002', '4', 470, done,
+      Utils.emitEvent('SUB_ACE_WEB_onDownloadFinish_1002', 131100)
+      Utils.registerBaseEvent("SUB_ACE_WEB_onDownloadFinish_1002", webview.WebDownloadState.COMPLETED, 131360, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.emitEvent('SUB_ACE_WEB_onDownloadFinish_1002', 10)
-      await Utils.sleep(200);
-      sendEventByKey('config', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('start', 10, '');
-      await Utils.sleep(4000);
-      sendEventByKey('pause11', 10, '');
-      await Utils.sleep(200);
-      sendEventByKey('state11', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');;
     })
 
   })

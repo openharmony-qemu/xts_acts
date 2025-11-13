@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -150,7 +150,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
           } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0100 callBackSeq = ' + data.data);
@@ -214,7 +214,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0200 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -282,7 +282,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0300 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -341,7 +341,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0400 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -400,7 +400,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             });
             console.log('ACTS_AbilityMultiInstance_Single_0600 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -459,7 +459,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0700 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -518,7 +518,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0800 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -578,7 +578,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0900 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -637,7 +637,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1000 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -697,7 +697,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1100 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -756,7 +756,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1200 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -814,7 +814,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1300 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -873,7 +873,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             });
             console.log('ACTS_AbilityMultiInstance_Single_1400 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -931,7 +931,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1500 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -984,7 +984,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
             commonEvent.unsubscribe(subscriber, () => {
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1600 finish');
           } else if (data.event == "MultiInstanceStartNext") {
@@ -1037,7 +1037,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
-              }, UNSUBSCRIBE_TIMEOUT)
+              }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1700 finish');
           } else if (data.event == "MultiInstanceStartNext") {

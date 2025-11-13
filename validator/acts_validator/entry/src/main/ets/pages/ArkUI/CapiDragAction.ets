@@ -39,7 +39,7 @@ struct CapiKeyEvent {
     '2.观察角标数量\n' +
     '预期结果：\n' + '1.图片可以正常浮起拖动\n' +
     '2.角标数与本接口内部传的recordCount参数相同，此用例设置的100，所以应显示100的角标\n'
-  @State Vue: boolean = false;
+  @State CapiDragActionVue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -50,12 +50,13 @@ struct CapiKeyEvent {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.CapiDragActionVue == false) {
+      Button({ stateEffect: this.CapiDragActionVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -64,11 +65,13 @@ struct CapiKeyEvent {
 
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.CapiDragActionVue }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -92,6 +95,7 @@ struct CapiKeyEvent {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -115,7 +119,7 @@ struct CapiKeyEvent {
   onPageShow() {
     this.intervalNum = setInterval(() => {
       if (this.text1 === '0' && this.text2 === '0') {
-        this.Vue = true;
+        this.CapiDragActionVue = true;
       }
     }, 500)
   }
@@ -169,6 +173,8 @@ struct CapiKeyEvent {
           })
             .onAppear(() => {
               nativeDragAction.nativeDragAction("dragStart", this.getUIContext());
+              this.text1 = '0';
+              this.text2 = '0';
             })
             .width(`${this.width1}`)
             .height(700)
@@ -187,6 +193,7 @@ struct CapiKeyEvent {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

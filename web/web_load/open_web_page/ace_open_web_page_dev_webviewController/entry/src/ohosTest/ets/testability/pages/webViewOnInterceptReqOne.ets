@@ -14,11 +14,10 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+
+const EVENT_ID_SET_EMIT_KEY = 200460;
 
 @Entry
 @Component
@@ -26,7 +25,7 @@ struct webViewOnInterceptReqOne {
   controller: web_webview.WebviewController = new web_webview.WebviewController()
   responseweb: WebResourceResponse = new WebResourceResponse()
   heads: Header[] = new Array()
-  @State str: string = "emitOnInterceptRequest";
+  @State str: string = "";
   @State webdata: string = "<!DOCTYPE html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -37,13 +36,19 @@ struct webViewOnInterceptReqOne {
     "</body>\n" +
     "</html>"
   @State title: string = "test";
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +57,7 @@ struct webViewOnInterceptReqOne {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -59,25 +65,28 @@ struct webViewOnInterceptReqOne {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webViewOnInterceptReqOne').onClick(() => {
-          console.info("key==>" + this.str)
+        Button("web click").key('webViewOnInterceptReqOne').onClick(async () => {
+          await Utils.waitForExist(()=>this.isPageEnd, 'webViewOnFirstContIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'webViewOnFirstContIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnInterceptRequest": {
               try {
-                this.controller.loadUrl($rawfile('indexCopy.html'))
-                this.title = this.controller.getTitle();
-                console.log("title of this page: " + this.title);
-                this.controller.runJavaScript("getTitle()", (error, result) => {
-                  this.title = JSON.parse(result)
-                  console.log(`The getTitle() return value is: ${result}`);
-                })
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('indexCopy.html'));
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                const title = this.controller.getTitle();
+                console.log('getTitle ======= ' + title);
+                if (title.includes("indexCopy")) {
+                  Utils.emitEvent('success', 200470)
+                } else {
+                  Utils.emitEvent('fail', 200470)
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent('fail', 200470)
               }
-              if ((this.title).includes("indexCopy")) {
-                this.title = 'success'
-              }
-              Utils.emitEvent(this.title, 306)
               break;
             }
           }
@@ -102,10 +111,14 @@ struct webViewOnInterceptReqOne {
           this.responseweb.setResponseMimeType('text/html')
           this.responseweb.setResponseCode(200)
           this.responseweb.setReasonMessage('OK')
-          return this.responseweb
+          return this.responseweb;
           console.log("this.responseweb: " + this.responseweb);
           this.title = this.controller.getTitle();
           console.log("title of this page: " + this.title);
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

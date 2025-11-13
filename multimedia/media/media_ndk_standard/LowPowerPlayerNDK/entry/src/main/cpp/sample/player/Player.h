@@ -125,6 +125,7 @@ public:
     void StartRelease();
     int64_t GetDurationTime();
     int64_t GetProgressTime();
+    int32_t GetCapability();
 
 private:
     void VideoDecInputThread();

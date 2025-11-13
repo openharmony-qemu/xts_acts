@@ -263,5 +263,110 @@ export default function StartSpecifiedProcessTest() {
         done()
       }
     })
+
+    /**
+     * @tc.number     SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
+     * @tc.name       SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
+     * @tc.desc       The testcase is for testing exitMasterProcessRole falied and errcode is 16000118.
+     * @tc.level      Level 3
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     */
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500';
+      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500====>");
+      try {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [Constant.event_200]
+        }
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo)
+          .then((subscriber) => {
+            commonEventManager.subscribe(subscriber, (err, commonEventData) => {
+              if (err) {
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
+              if (commonEventData.code === 801) {
+              } else {
+                expect(16000118).assertEqual(commonEventData.code);
+              }
+              commonEventManager.unsubscribe(subscriber, (err, data) => {
+                done();
+              });
+            })
+          })
+        let want : Want = {
+          bundleName: 'com.example.actsspecifiedprocess',
+          moduleName: 'entry_test',
+          abilityName: 'EntryAbility2',
+          parameters:
+          {
+            isHead: false,
+            isPromote: false,
+            isDemote: false,
+            isExit: true,
+          }
+        };
+        await startAbility(want);
+        await sleep(2000);
+      }catch(err){
+        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.number     SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
+     * @tc.name       SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
+     * @tc.desc       The testcase is for testing exitMasterProcessRole falied and errcode is 16000119.
+     * @tc.level      Level 3
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     */
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600', Level.LEVEL0, async (done: Function) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600';
+      console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600====>");
+      try {
+        let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: [Constant.event_400]
+        }
+        await commonEventManager.createSubscriber(commonEventSubscribeInfo)
+          .then((subscriber) => {
+            commonEventManager.subscribe(subscriber, (err, commonEventData) => {
+              if (err) {
+                console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+              }
+              console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> ACTS_startAbility  subcribed success 400=====> data: ${JSON.stringify(commonEventData)}`);
+              if (commonEventData.code === 801) {
+              } else {
+                expect(16000119).assertEqual(commonEventData.code);
+              }
+              commonEventManager.unsubscribe(subscriber, (err, data) => {
+                done();
+              });
+            })
+          })
+        let want : Want = {
+          bundleName: 'com.example.actsspecifiedprocess',
+          moduleName: 'entry_test',
+          abilityName: 'EntryAbility2',
+          parameters:
+          {
+            isHead: false,
+            isPromote: false,
+            isDemote: false,
+            isExit: false,
+            isOnNewProcessRequest: true,
+          }
+        };
+        await startAbility(want);
+        await sleep(2000);
+      }catch(err){
+        console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
+        expect().assertFail()
+        done()
+      }
+    })
   })
 }

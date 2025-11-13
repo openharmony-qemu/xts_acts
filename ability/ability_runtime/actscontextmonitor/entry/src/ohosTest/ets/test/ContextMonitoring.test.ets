@@ -524,7 +524,7 @@ export default function contextMonitoringTest() {
               done();
             }, 1000);
           }
-          let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+          let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
             hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success with status: ${data.event}`)
             if (data.event == 'ACTS_TEST_START') {
               setTimeout(() => {
@@ -572,13 +572,14 @@ export default function contextMonitoringTest() {
             }
             if (data.event == 'ACTS_TEST_DESTROY') {
               globalThis.stageContext02.eventHub.off('event01');
-              globalThis.stageContext02.terminateSelf()
-
-              globalThis.stageContext03.eventHub.off('event01');
-              globalThis.stageContext03.terminateSelf()
+              await globalThis.stageContext02.terminateSelf();
               setTimeout(() => {
-                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
-              }, 500);
+                globalThis.stageContext03.eventHub.off('event01');
+                globalThis.stageContext03.terminateSelf();
+                setTimeout(() => {
+                  commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+                }, 500);
+              }, 1000)
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);

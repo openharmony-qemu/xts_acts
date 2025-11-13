@@ -29,9 +29,12 @@ export const requestFormFuzzTest = (describeName:string, filterParameter:number)
     for (let i = 0; i < length; ++i) {
       const tcNumber = `0${(i + 1) * 100}`;
       /**
-       * @tc.name fuzzTest
+       * @tc.name   ${callbackName}_${tcNumber}
        * @tc.number FMS_fuzzTest_requestform_0100 ~ FMS_fuzzTest_requestform_0800
-       * @tc.desc Check whether the requestForm interface can pass the fuzzy test (by AsyncCallback)
+       * @tc.desc   Check whether the requestForm interface can pass the fuzzy test (by AsyncCallback)
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it(`${callbackName}_${tcNumber}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         const dataType:string = DATA_TYPE_LIST[i];
@@ -57,9 +60,12 @@ export const requestFormFuzzTest = (describeName:string, filterParameter:number)
       let tcNumber: string | number = (i + 1 + length) * 100;
       tcNumber = tcNumber < 1000 ? `0${tcNumber}` : tcNumber;
       /**
-       * @tc.name fuzzTest
+       * @tc.name   ${promiseName}_${tcNumber}
        * @tc.number FMS_fuzzTest_requestform_0900 ~ FMS_fuzzTest_requestform_1600
-       * @tc.desc Check whether the requestForm interface can pass the fuzzy test (by Promise)
+       * @tc.desc   Check whether the requestForm interface can pass the fuzzy test (by Promise)
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it(`${promiseName}_${tcNumber}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         const dataType:string = DATA_TYPE_LIST[i];

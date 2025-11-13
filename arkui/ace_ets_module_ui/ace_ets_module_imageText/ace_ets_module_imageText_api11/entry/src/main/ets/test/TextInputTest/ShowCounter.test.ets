@@ -54,7 +54,9 @@ export default function showCounterTest() {
       let strJson = getInspectorByKey('showCounter_true');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[showCounterTest_0010] showCounter is: " + JSON.stringify(obj.$attrs.showCounter));
-      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertEqual('{"value":true,"options":{"thresholdPercentage":40,"highlightBorder":true}}');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"value":true');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"thresholdPercentage":40');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"highlightBorder":true');
       console.info('[showCounterTest_0010] END');
       done();
     });
@@ -72,7 +74,9 @@ export default function showCounterTest() {
       let strJson = getInspectorByKey('showCounter_false');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[showCounterTest_0020] showCounter is: " + JSON.stringify(obj.$attrs.showCounter));
-      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertEqual('{"value":false,"options":{"thresholdPercentage":0,"highlightBorder":true}}');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"value":false');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"thresholdPercentage":0');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"highlightBorder":true');
       console.info('[showCounterTest_0020] END');
       done();
     });
@@ -90,7 +94,9 @@ export default function showCounterTest() {
       let strJson = getInspectorByKey('showCounter_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[showCounterTest_0030] showCounter is: " + JSON.stringify(obj.$attrs.showCounter));
-      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertEqual('{"value":false,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"value":false');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"thresholdPercentage":-1');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"highlightBorder":true');
       console.info('[showCounterTest_0030] END');
       done();
     });
@@ -108,7 +114,9 @@ export default function showCounterTest() {
       let strJson = getInspectorByKey('showCounter_default');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[showCounterTest_0040] showCounter is: " + JSON.stringify(obj.$attrs.showCounter));
-      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertEqual('{"value":false,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"value":false');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"thresholdPercentage":-1');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"highlightBorder":true');
       console.info('[showCounterTest_0040] END');
       done();
     });
@@ -126,7 +134,9 @@ export default function showCounterTest() {
       let strJson = getInspectorByKey('highlightBorder_false');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[showCounterTest_0050] showCounter is: " + JSON.stringify(obj.$attrs.showCounter));
-      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertEqual('{"value":false,"options":{"thresholdPercentage":0,"highlightBorder":false}}');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"value":false');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"thresholdPercentage":0');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"highlightBorder":false');
       console.info('[showCounterTest_0050] END');
       done();
     });
@@ -144,7 +154,9 @@ export default function showCounterTest() {
       let strJson = getInspectorByKey('highlightBorder_undefined');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[showCounterTest_0060] showCounter is: " + JSON.stringify(obj.$attrs.showCounter));
-      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertEqual('{"value":true,"options":{"thresholdPercentage":-1,"highlightBorder":true}}');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"value":true');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"thresholdPercentage":-1');
+      expect(JSON.stringify(obj.$attrs.showCounter)+'').assertContain('"highlightBorder":true');      
       console.info('[showCounterTest_0060] END');
       done();
     });

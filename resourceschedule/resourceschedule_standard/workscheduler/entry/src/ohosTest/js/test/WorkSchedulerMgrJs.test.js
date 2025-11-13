@@ -2119,5 +2119,53 @@ export default function WorkSchedulerMgrApiTest() {
                 console.info("testStartWorkFun054----------------error: " + error.code);
             }
         })
+
+        /*
+         * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0155
+         * @tc.name:testStartWorkFun015
+         * @tc.desc:test workScheduler workInfo earliestStartTime.
+         * @tc.level:Level 3
+         * @tc.type:Function
+         * @tc.size:MediumTest
+         */
+        it("testStartWorkFun055", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkFun055---------------------------');
+            workScheduler.stopAndClearWorks();
+            let workInfo = {
+                workId: 15,
+                bundleName: "ohos.acts.resourceschedule.workscheduler.js.function",
+                abilityName: "com.mytest.abilityName",
+                networkType: 0,
+                isCharging: false,
+                batteryLevel: 50,
+                batteryStatus: 1,
+                storageRequest: 1,
+                isRepeat: false,
+                isPersisted: false,
+                isDeepIdle: false,
+                parameters: {
+                    mykey0: 1,
+                    mykey1: "string value",
+                    mykey2: true,
+                    mykey3: 1.5
+                },
+                earliestStartTime: 50
+            }
+            try{
+                workScheduler.startWork(workInfo);
+                workScheduler.getWorkStatus(15).then((res) => {
+                    console.info('testStartWorkFun055 getWorkStatus callback success, data is:' + 
+                    JSON.stringify(res));
+                    expect(res.earliestStartTime).assertEqual(50);
+                    done();
+                }).catch((error) => {
+                    console.info('testStartWorkFun055 getWorkStatuspromise fail because:' + error.code);
+                    done();
+                })
+            
+            }catch(error){
+                console.info("testStartWorkFun055----------------error: " + error.code);
+            }
+        })
     })
 }

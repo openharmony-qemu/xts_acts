@@ -21,7 +21,7 @@ import connectionErrorTest from './ConnectionErrorCode.test';
 import MulticastconnectionPromiseTest from './ConnectionPromise.test';
 import MulticastconnectionCallbackTest from './ConnectionCallback.test';
 import ConnectionHandleTest from './ConnectionHandle.test'
-
+import ConnectionAppProxyTest from './ConnectionAppProxy.test'
 
 export default function testsuite() {
     if (sim.getMaxSimCount()>1){
@@ -31,6 +31,7 @@ export default function testsuite() {
         MulticastconnectionCallbackTest();
         ConnectionHandleTest();
         connectionErrorTest();
+        ConnectionAppProxyTest();
     }
     else{
         EmptyTest();

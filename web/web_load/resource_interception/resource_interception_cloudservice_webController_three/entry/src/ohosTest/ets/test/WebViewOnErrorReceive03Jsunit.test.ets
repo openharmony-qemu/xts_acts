@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect , TestType, Size, Level } from "@ohos/hypium";
-import events_emitter from '@ohos.events.emitter';
+import { describe, beforeEach, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webViewOnErrorReceive03Jsunit() {
@@ -25,7 +26,7 @@ export default function webViewOnErrorReceive03Jsunit() {
         beforeEach(async  (done: Function) => {
             config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
                 console.info(`enable success`);
-                }).catch((err: object) => {
+            }).catch((err: object) => {
                 console.error(`failed to enable, ${err}`);
             })
             let options: router.RouterOptions = {
@@ -37,19 +38,17 @@ export default function webViewOnErrorReceive03Jsunit() {
                 console.info("get onErrorReceive03 state success " + JSON.stringify(pages));
                 if (!("onErrorReceive03" == pages.name)) {
                     console.info("get onErrorReceive03 state success " + JSON.stringify(pages.name));
-                    let result = await router.push(options);
-                    await Utils.sleep(2000);
-                    console.info("push onErrorReceive03 page success " + JSON.stringify(result));
+                    await router.push(options);
+                    console.info("push onErrorReceive03 page success");
                 }
             } catch (err) {
                 console.error("push onErrorReceive03 page error: " + err);
             }
-            await Utils.sleep(2000);
+            await driver.waitForComponent(ON.id("onErrorReceive03"), 10000);
+            console.log("waitForComponent onErrorReceive03");
             done()
         })
-        afterEach(async  (done: Function) => {
-            done();
-        })
+
         /*
         *tc.number SUB_ACE_BASIC_ETS_API_ONERRORRECEIVE_0300
         *tc.name testOnErrorReceive03
@@ -62,22 +61,25 @@ export default function webViewOnErrorReceive03Jsunit() {
             let isMainFrame = true;
             let isRedirect = false;
             let isRequestGesture = false;
-            Utils.registerEvent("testOnErrorReceive03", errorIfo, 7122, done);
-            Utils.registerEvent("testOnErrorReceive03", errorCode, 7124, done);
-            Utils.registerEvent("testOnErrorReceive03", url, 7126, done);
-            Utils.registerEvent("testOnErrorReceive03", isMainFrame, 7128, done);
-            Utils.registerEvent("testOnErrorReceive03", isRedirect, 7130, done);
-            Utils.registerEvent("testOnErrorReceive03", isRequestGesture, 7132, done);
-            
+            Utils.registerEvent("testOnErrorReceive03", errorIfo, 202000, null);
+            Utils.registerEvent("testOnErrorReceive03", errorCode, 202010, null);
+            Utils.registerEvent("testOnErrorReceive03", url, 202020, null);
+            Utils.registerEvent("testOnErrorReceive03", isMainFrame, 202030, null);
+            Utils.registerEvent("testOnErrorReceive03", isRedirect, 202040, null);
+            Utils.registerEvent("testOnErrorReceive03", isRequestGesture, 202050, null);
+
             let a:Header[] =[
-                {"headerKey":"Accept","headerValue":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"},
-                {"headerKey":"Accept-Encoding","headerValue":"gzip, deflate, br"},
+                {"headerKey":"Accept","headerValue":"text/html,application/xhtml+xml,application/xml;q=0.9,image/heif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"},
+                {"headerKey":"Accept-Encoding","headerValue":"gzip, deflate, br, zstd"},
                 {"headerKey":"Accept-Language","headerValue":"zh-CN,zh;q=0.9"},
                 {"headerKey":"Sec-Fetch-Dest","headerValue":"document"},
-                {"headerKey":"Sec-Fetch-Mode","headerValue":"navigate"},{"headerKey":"Sec-Fetch-Site","headerValue":"none"},{"headerKey":"Sec-Fetch-User","headerValue":"?1"},{"headerKey":"Upgrade-Insecure-Requests","headerValue":"1"},{"headerKey":"User-Agent","headerValue":"Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27"}]
-            Utils.registerEvent("testOnErrorReceive03", JSON.stringify(a), 7134, done);
-            
-            sendEventByKey('onErrorReceive03', 10, '');
+                {"headerKey":"Sec-Fetch-Mode","headerValue":"navigate"},
+                {"headerKey":"Sec-Fetch-Site","headerValue":"none"},
+                {"headerKey":"Sec-Fetch-User","headerValue":"?1"},
+                {"headerKey":"Upgrade-Insecure-Requests","headerValue":"1"},
+                {"headerKey":"User-Agent","headerValue":"Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27"}]
+            Utils.registerEvent("testOnErrorReceive03", JSON.stringify(a), 202060, done);
+            await Utils.waitAndClickComponent(driver, "onErrorReceive03");
         })
     })
 }

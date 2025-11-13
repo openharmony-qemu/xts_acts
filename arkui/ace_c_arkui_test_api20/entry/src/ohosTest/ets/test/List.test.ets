@@ -33,6 +33,19 @@ import WaterFlowTypeNodeTest from './waterFlow/WaterFlowTypeNodeTest.test'
 import WaterFlowCNodeTest from './waterFlow/WaterFlowCNodeTest.test'
 import BindControllerTest from './BindController/BindController.test'
 import scrollScrollBarMarginTest from './scroll/ScrollScrollBarMarginTest.test'
+import RowTypeNodeTest from './row/RowTypeNodeTest.test'
+import RowCNodeTest from './row/RowCNodeTest.test'
+import ColumnTypeNodeTest from './Column/ColumnTypeNodeTest.test'
+import ColumnCNodeTest from './Column/ColumnCNodeTest.test'
+import FlexTypeNodeTest from './Flex/FlexTypeNodeTest.test'
+import FlexCNodeTest from './Flex/FlexCNodeTest.test'
+import StackTypeNodeTest from './Stack/StackTypeNodeTest.test'
+import StackCNodeTest from './Stack/StackCNodeTest.test'
+import RelativeContainerTypeNodeTest from './RelativeContainer/RelativeContainerTypeNodeTest.test'
+import RelativeContainerCNodeTest from './RelativeContainer/RelativeContainerCNodeTest.test'
+import CapiPostAsyncUITask from './capi/CapiPostAsyncUITask.test'
+import CapiPostUITask from './capi/CapiPostUITask.test'
+import CapiPostUITaskAndWait from './capi/CapiPostUITaskAndWait.test'
 
 export default function testsuite() {
   PostOnIdleTest();
@@ -56,4 +69,17 @@ export default function testsuite() {
   WaterFlowCNodeTest();
   BindControllerTest();
   scrollScrollBarMarginTest();
+  RowTypeNodeTest();
+  RowCNodeTest();
+  ColumnTypeNodeTest();
+  ColumnCNodeTest();
+  FlexTypeNodeTest();
+  FlexCNodeTest();
+  StackTypeNodeTest();
+  StackCNodeTest();
+  RelativeContainerTypeNodeTest();
+  RelativeContainerCNodeTest();
+  CapiPostAsyncUITask();
+  CapiPostUITask();
+  CapiPostUITaskAndWait();
 }

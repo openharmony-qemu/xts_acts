@@ -16,7 +16,10 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
-import emitter from '@ohos.events.emitter';
+import { waitForComponent,waitAndClickComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+import { accessibility, config } from '@kit.AccessibilityKit';
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = "emitSupportCssDisplayChange0100"
 
@@ -29,44 +32,27 @@ export default function webViewSupportCssDisplayChange() {
         }
         
         try {
-            await Utils.sleep(1000)
             router.clear();
             let pages = router.getState();
             console.info("get webViewSupportCssDisplayChange state success " + JSON.stringify(pages));
             if (!("SupportCssDisplayChange" == pages.name)) {
                 console.info("get webViewSupportCssDisplayChange state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
-                await Utils.sleep(1000);
                 console.info("push emitSupportCssDisplayChange0100 page success " + JSON.stringify(result));
             }
         } catch (err) {
             console.error("push webViewSupportCssDisplayChange page error:" + err);
         }
+        await waitForComponent("WebSupportCssDisplayChangeButton");
         done()
     });
     
     beforeEach(async (done: Function) => {
-        await Utils.sleep(1000);
       done();
     })
-    
+
     afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
+        console.info("emit emitKey error:" );
       done();
     })
 
@@ -79,10 +65,9 @@ export default function webViewSupportCssDisplayChange() {
     * @tc.level      : Level 0
     */
     it('emitSupportCssDisplayChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSupportCssDisplayChange0100", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("emitSupportCssDisplayChange0100", 'Hidden', 20250611, done);
-      sendEventByKey('WebSupportCssDisplayChangeButton', 10, '');
+      Utils.emitEvent("emitSupportCssDisplayChange0100", 153940)
+      Utils.registerEvent("emitSupportCssDisplayChange0100", 'Hidden', 153950, done);
+      await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
     })
 
     /*
@@ -94,10 +79,9 @@ export default function webViewSupportCssDisplayChange() {
     * @tc.level      : Level 0
     */
     it('emitSupportCssDisplayChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSupportCssDisplayChange0200", 10)
-      await Utils.sleep(1000);
-      Utils.registerEvent("emitSupportCssDisplayChange0200", 'visible', 20250612, done);
-      sendEventByKey('WebSupportCssDisplayChangeButton', 10, '');
+      Utils.emitEvent("emitSupportCssDisplayChange0200", 153940)
+      Utils.registerEvent("emitSupportCssDisplayChange0200", 'visible', 153960, done);
+      await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
     })
 
   })

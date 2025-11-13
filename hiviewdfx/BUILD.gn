@@ -15,10 +15,13 @@ group("hiviewdfxtestacts") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "hiappeventtest/hiappevent:ActsPerformanceAnalysis20Test",
       "abilityconstanttest:ActsAbilityConstantTest",
       "apprecoverytest:ActsAppRecoveryTest",
+      "apprecoveryteststatic:ActsAppRecoveryStaticTest",
       "bytracetest:ActsBytraceJsTest",
       "errormangertest/errormangertest:ActsErrormangerTest",
+      "faultlogtest/faultloggerndktest:ActsFaultExTest",
       "hiappeventtest/hiappeventapmtest:ActsHiAppEventJsTest",
       "hiappeventtest/hiappeventcpptest:ActsHiAppEventCPPTest",
       "hiappeventtest/hiappeventjstest:ActsHiAppeventTest",
@@ -48,6 +51,7 @@ group("hiviewdfxtestacts") {
       "hitracemetertest:ActsHitraceMeterTest",
       "hitracendktest:ActsHitraceNdkTest",
       "hitracemeterteststatic:ActsHitraceMeterStaticTest",
+      "hitracetestnewtest:ActsHiTraceNewTest",
       "hiview/faultlogger/faultloggerjs:faultloggerjs_test",
     ]
   }

@@ -16,13 +16,32 @@
 import hilog from '@ohos.hilog';
 import formBindingData from '@ohos.app.form.formBindingData';
 import FormExtensionAbility from '@ohos.app.form.FormExtensionAbility';
+import formInfo from '@ohos.app.form.formInfo';
 import Want from '@ohos.app.ability.Want';
 import { Configuration } from '@ohos.app.ability.Configuration';
 import CommonEventManager from '@ohos.commonEventManager';
 
-
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag EntryFormAbility';
+
+function onAcquireFormStateCallback(want: Want): formInfo.FormState {
+  try {
+    let options: CommonEventManager.CommonEventPublishData = {
+      code: 0,			 // Result code of the common event.
+      data: 'onAcquireFormState is called',// Result data of the common event.
+      isOrdered: true	 // The common event is an ordered one.
+    }
+    hilog.info(DOMAIN, TAG, 'OnAcquireFormState callback success');
+    CommonEventManager.publish('XTS_FormExtensionAbilityOnAcquireFormStateTest_commonEvent', options, () => {
+      hilog.info(DOMAIN, TAG, 'OnAcquireFormStateTest001 commonEvent publish');
+    })
+    hilog.info(DOMAIN, TAG, 'OnAcquireFormState register success');;
+    return formInfo.FormState.READY;
+  } catch (error) {
+    hilog.error(DOMAIN, TAG, `OnAcquireFormState catch error: ${error}`);
+    return formInfo.FormState.UNKNOWN;
+  }
+}
 
 export default class EntryFormAbility extends FormExtensionAbility {
 
@@ -40,6 +59,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
     } catch (error) {
       hilog.error(DOMAIN, TAG, 'OnStop catch error');
     }
+
+    this.onAcquireFormState = onAcquireFormStateCallback;
   }
 
   onAddForm(want: Want) : formBindingData.FormBindingData {
@@ -52,10 +73,6 @@ export default class EntryFormAbility extends FormExtensionAbility {
     hilog.info(DOMAIN, TAG, 'onCastToNormalForm testing');
   }
 
-  onUpdateForm(formId: string) {
-    hilog.info(DOMAIN, TAG, 'onUpdateForm testing');
-  }
-
   onFormEvent(formId: string, message: string) {
     hilog.info(DOMAIN, TAG, 'onFormEvent testing');
   }
@@ -66,5 +83,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
   onConfigurationUpdate(newConfig: Configuration) {
     hilog.info(DOMAIN, TAG, 'onConfigurationUpdate testing');
+    CommonEventManager.publish('XTS_FormExtensionAbilityOnConfigurationUpdate_commonEvent', () => {
+      hilog.info(DOMAIN, TAG, 'OnConfigurationUpdateStaticTest001 commonEvent publish');
+    });
   }
 }

@@ -81,12 +81,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_convertToText_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_convertToText_Callback_ErrTest_0100
-     * @tc.name PasteBoardErrTest01
-     * @tc.desc Test pasteBoard convertToText Callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard convertToText Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_convertToText_Callback_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_convertToText_Callback_ErrTest_0100 start ************')
@@ -102,12 +103,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_addEntry_ErrTest_0100
      * @tc.number SUB_Pasteboard_addEntry_ErrTest_0100
-     * @tc.name PasteBoardErrTest02
-     * @tc.desc Test pasteBoard addEntry
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard addEntry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_addEntry_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_addEntry_ErrTest_0100 start ************')
@@ -125,12 +127,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getValidTypes_ErrTest_0100
      * @tc.number SUB_Pasteboard_getValidTypes_ErrTest_0100
-     * @tc.name PasteBoardErrTest03
-     * @tc.desc Test pasteBoard getValidTypes
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getValidTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getValidTypes_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_getValidTypes_ErrTest_0100 start ************')
@@ -140,6 +143,7 @@ export default function PasteboardErrTest() {
       record.addEntry(pasteboard.MIMETYPE_TEXT_HTML, html);
       try {
         let types: string[] = record.getValidTypes(null);
+        expect(types.length).assertEqual(0);
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `Failed to getValidTypes. Cause: ${err.message + err.code}`);
@@ -149,12 +153,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getData_ErrTest_0100
      * @tc.number SUB_Pasteboard_getData_ErrTest_0100
-     * @tc.name PasteBoardErrTest04
-     * @tc.desc Test pasteBoard getData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getData_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_getData_ErrTest_0100 start ************')
@@ -171,12 +176,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getRecordAt_ErrTest_0100
      * @tc.number SUB_Pasteboard_getRecordAt_ErrTest_0100
-     * @tc.name PasteBoardErrTest05
-     * @tc.desc Test pasteBoard getRecordAt
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getRecordAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getRecordAt_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_getRecordAt_ErrTest_0100 start ************')
@@ -192,12 +198,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getRecord_ErrTest_0100
      * @tc.number SUB_Pasteboard_getRecord_ErrTest_0100
-     * @tc.name PasteBoardErrTest06
-     * @tc.desc Test pasteBoard getRecord
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getRecord
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getRecord_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_getRecord_ErrTest_0100 start ************')
@@ -213,18 +220,20 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_hasMimeType_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasMimeType_ErrTest_0100
-     * @tc.name PasteBoardErrTest07
-     * @tc.desc Test pasteBoard hasMimeType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard hasMimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_hasMimeType_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_hasMimeType_ErrTest_0100 start ************')
       let pasteData: pasteboard.PasteData = pasteboard.createPlainTextData('hello');
       try {
         let hasType: boolean = pasteData.hasMimeType(null);
+        expect(hasType).assertFalse();
         expect().assertFail();
       } catch (err) {
         console.error(TAG + `Failed to hasMimeType. Cause: ${err.message + err.code}`);
@@ -234,12 +243,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_removeRecordAt_ErrTest_0100
      * @tc.number SUB_Pasteboard_removeRecordAt_ErrTest_0100
-     * @tc.name PasteBoardErrTest08
-     * @tc.desc Test pasteBoard removeRecordAt
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard removeRecordAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_removeRecordAt_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_hasMimeType_ErrTest_0100 start ************')
@@ -255,12 +265,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_on_ErrTest_0100
      * @tc.number SUB_Pasteboard_on_ErrTest_0100
-     * @tc.name PasteBoardErrTest09
-     * @tc.desc Test pasteBoard on
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_on_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_on_ErrTest_0100 start ************')
@@ -279,12 +290,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_off_ErrTest_0100
      * @tc.number SUB_Pasteboard_off_ErrTest_0100
-     * @tc.name PasteBoardErrTest10
-     * @tc.desc Test pasteBoard off
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_off_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_on_ErrTest_0100 start ************')
@@ -303,12 +315,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_isRemoteData_ErrTest_0100
      * @tc.number SUB_Pasteboard_isRemoteData_ErrTest_0100
-     * @tc.name PasteBoardErrTest11
-     * @tc.desc Test pasteBoard isRemoteData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard isRemoteData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_isRemoteData_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_isRemoteData_ErrTest_0100 start ************')
@@ -325,12 +338,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getDataSource_ErrTest_0100
      * @tc.number SUB_Pasteboard_getDataSource_ErrTest_0100
-     * @tc.name PasteBoardErrTest12
-     * @tc.desc Test pasteBoard getDataSource
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getDataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getDataSource_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_getDataSource_ErrTest_0100 start ************')
@@ -349,12 +363,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_hasDataType_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasDataType_ErrTest_0100
-     * @tc.name PasteBoardErrTest13
-     * @tc.desc Test pasteBoard hasDataType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard hasDataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_hasDataType_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_hasDataType_ErrTest_0100 start ************')
@@ -372,12 +387,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_hasDataType_ErrTest_0200
      * @tc.number SUB_Pasteboard_hasDataType_ErrTest_0200
-     * @tc.name PasteBoardErrTest14
-     * @tc.desc Test pasteBoard hasDataType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard hasDataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_hasDataType_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_hasDataType_ErrTest_0200 start ************')
@@ -393,12 +409,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_clear_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_clear_Callback_ErrTest_0100
-     * @tc.name PasteBoardErrTest15
-     * @tc.desc Test pasteBoard clear
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_clear_Callback_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_clear_Callback_ErrTest_0100 start ************')
@@ -414,12 +431,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_clearData_Callback_ErrTest_0200
      * @tc.number SUB_Pasteboard_clearData_Callback_ErrTest_0200
-     * @tc.name PasteBoardErrTest16
-     * @tc.desc Test pasteBoard clearData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard clearData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_clearData_Callback_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_clearData_Callback_ErrTest_0200 start ************')
@@ -435,12 +453,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_clearDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_clearDataSync_ErrTest_0100
-     * @tc.name PasteBoardErrTest17
-     * @tc.desc Test pasteBoard clearDataSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard clearDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_clearDataSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_clearDataSync_ErrTest_0100 start ************')
@@ -460,12 +479,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getPasteData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_getPasteData_Callback_ErrTest_0100
-     * @tc.name PasteBoardErrTest18
-     * @tc.desc Test pasteBoard getPasteData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getPasteData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getPasteData_Callback_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_getPasteData_Callback_ErrTest_0100 start ************')
@@ -481,12 +501,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_getData_Callback_ErrTest_0100
-     * @tc.name PasteBoardErrTest19
-     * @tc.desc Test pasteBoard getData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getData_Callback_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_getData_Callback_ErrTest_0100 start ************')
@@ -502,12 +523,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_getDataSync_ErrTest_0100
-     * @tc.name PasteBoardErrTest20
-     * @tc.desc Test pasteBoard getDataSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getDataSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_getDataSync_ErrTest_0100 start ************')
@@ -526,12 +548,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_hasPasteData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasPasteData_Callback_ErrTest_0100
-     * @tc.name PasteBoardErrTest21
-     * @tc.desc Test pasteBoard hasPasteData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard hasPasteData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_hasPasteData_Callback_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_hasPasteData_Callback_ErrTest_0100 start ************')
@@ -547,12 +570,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_hasData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasData_Callback_ErrTest_0100
-     * @tc.name PasteBoardErrTest22
-     * @tc.desc Test pasteBoard hasData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard hasData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_hasData_Callback_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_hasData_Callback_ErrTest_0100 start ************')
@@ -568,12 +592,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_hasDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasDataSync_ErrTest_0100
-     * @tc.name PasteBoardErrTest23
-     * @tc.desc Test pasteBoard hasDataSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard hasDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_hasDataSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_hasDataSync_ErrTest_0100 start ************')
@@ -594,12 +619,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_setPasteData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_setPasteData_Callback_ErrTest_0100
-     * @tc.name PasteBoardErrTest24
-     * @tc.desc Test pasteBoard setPasteData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard setPasteData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_setPasteData_Callback_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_setPasteData_Callback_ErrTest_0100 start ************')
@@ -615,12 +641,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_setDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_setDataSync_ErrTest_0100
-     * @tc.name PasteBoardErrTest25
-     * @tc.desc Test pasteBoard setDataSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard setDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_setDataSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_setDataSync_ErrTest_0100 start ************')
@@ -640,12 +667,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100
-     * @tc.name PasteBoardErrTest26
-     * @tc.desc Test pasteBoard getUnifiedDataSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getUnifiedDataSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100 start ************')
@@ -675,12 +703,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getDataWithProgress_ErrTest_0100
      * @tc.number SUB_Pasteboard_getDataWithProgress_ErrTest_0100
-     * @tc.name PasteBoardErrTest27
-     * @tc.desc Test pasteBoard getDataWithProgress
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getDataWithProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getDataWithProgress_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_getDataWithProgress_ErrTest_0100 start ************')
@@ -696,12 +725,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_getDataWithProgress_ErrTest_0200
      * @tc.number SUB_Pasteboard_getDataWithProgress_ErrTest_0200
-     * @tc.name PasteBoardErrTest28
-     * @tc.desc Test pasteBoard getDataWithProgress
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test pasteBoard getDataWithProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_getDataWithProgress_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_getDataWithProgress_ErrTest_0200 start ************')
@@ -724,12 +754,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @tc.number    : SUB_Pasteboard_createData_ErrTest_0100
-     * @tc.name      : SUB_Pasteboard_createData_ErrTest_0100
-     * @tc.desc      : Test pasteBoard createData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_createData_ErrTest_0100
+     * @tc.number SUB_Pasteboard_createData_ErrTest_0100
+     * @tc.desc   Test pasteBoard createData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_createData_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_createData_ErrTest_0100 start ************')
@@ -745,12 +776,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @tc.number    : SUB_Pasteboard_setPasteData_ErrTest_0100
-     * @tc.name      : SUB_Pasteboard_setPasteData_ErrTest_0100
-     * @tc.desc      : Test pasteBoard setPasteData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_setPasteData_ErrTest_0100
+     * @tc.number SUB_Pasteboard_setPasteData_ErrTest_0100
+     * @tc.desc   Test pasteBoard setPasteData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_setPasteData_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_setPasteData_ErrTest_0100 start ************')
@@ -773,12 +805,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @tc.number    : SUB_Pasteboard_setData_ErrTest_0100
-     * @tc.name      : SUB_Pasteboard_setData_ErrTest_0100
-     * @tc.desc      : Test pasteBoard setData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_setData_ErrTest_0100
+     * @tc.number SUB_Pasteboard_setData_ErrTest_0100
+     * @tc.desc   Test pasteBoard setData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_setData_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_setData_ErrTest_0100 start ************')
@@ -794,12 +827,13 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @tc.number    : SUB_Pasteboard_PasteDataRecord_0100
-     * @tc.name      : SUB_Pasteboard_PasteDataRecord_0100
-     * @tc.desc      : Test pasteBoard PasteDataRecord data
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_Pasteboard_PasteDataRecord_0100
+     * @tc.number SUB_Pasteboard_PasteDataRecord_0100
+     * @tc.desc   Test pasteBoard PasteDataRecord data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Pasteboard_PasteDataRecord_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_PasteDataRecord_0100 start ************')

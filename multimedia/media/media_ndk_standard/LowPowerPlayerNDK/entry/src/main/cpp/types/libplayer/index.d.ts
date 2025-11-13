@@ -132,6 +132,8 @@ export const startRenderNative: () => number
 
 export const startAudioNative: () => number
 
+export const getCapability: () => number
+
 
 
 

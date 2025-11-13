@@ -768,152 +768,171 @@ void OnKeyEvent(OH_NativeXComponent* component, void* window)
 
 void XComponent::GetKeyEventAction001()
 {
-    OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventAction001");
+    g_result = OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventAction001 g_result: %{public}d, g_action: %{public}d",
+        g_result, g_action);
 }
 
 void XComponent::GetKeyEventAction002()
 {
-    OH_NativeXComponent_GetKeyEventAction(nullptr, &g_action);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventAction001");
+    g_result = OH_NativeXComponent_GetKeyEventAction(nullptr, &g_action);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventAction002 g_result: %{public}d, g_action: %{public}d",
+        g_result, g_action);
 }
 
 void XComponent::GetKeyEventActionEnum001()
 {
-    OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
+    g_result = OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
     if (g_action == OH_NATIVEXCOMPONENT_KEY_ACTION_DOWN) {
         g_action_result = 1;
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventAction001");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventActionEnum001 g_result: %{public}d, g_action: %{public}d, g_action_result: %{public}d",
+        g_result, g_action, g_action_result);
 }
 
 void XComponent::GetKeyEventActionEnum002()
 {
-    OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
+    g_result = OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
     if (g_action == OH_NATIVEXCOMPONENT_KEY_ACTION_UP) {
         g_action_result = 1;
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventAction001");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventActionEnum002 g_result: %{public}d, g_action: %{public}d, g_action_result: %{public}d",
+        g_result, g_action, g_action_result);
 }
 
 void XComponent::GetKeyEventActionEnum003()
 {
-    OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
+    g_result = OH_NativeXComponent_GetKeyEventAction(g_keyEvent, &g_action);
     if (g_action == OH_NATIVEXCOMPONENT_KEY_ACTION_UNKNOWN) {
         g_action_result = 1;
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventActionEnum003${public}%d", g_action);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventActionEnum003 g_result: %{public}d, g_action: %{public}d, g_action_result: %{public}d",
+        g_result, g_action, g_action_result);
 }
 
 void XComponent::GetKeyEventSourceType001()
 {
-    OH_NativeXComponent_GetKeyEventSourceType(g_keyEvent, &g_eventSourceType);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+    g_result = OH_NativeXComponent_GetKeyEventSourceType(g_keyEvent, &g_eventSourceType);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventSourceType001 g_result: %{public}d, g_eventSourceType: %{public}d",
+        g_result, g_eventSourceType);
 }
 
 void XComponent::GetKeyEventSourceType002()
 {
-    OH_NativeXComponent_GetKeyEventSourceType(nullptr, &g_eventSourceType);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+    g_result = OH_NativeXComponent_GetKeyEventSourceType(nullptr, &g_eventSourceType);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventSourceType002 g_result: %{public}d, g_eventSourceType: %{public}d",
+        g_result, g_eventSourceType);
 }
 
 void XComponent::GetKeyEventDeviceId001()
 {
-    OH_NativeXComponent_GetKeyEventDeviceId(g_keyEvent, &g_deviceId);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+    g_result = OH_NativeXComponent_GetKeyEventDeviceId(g_keyEvent, &g_deviceId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventDeviceId001 g_result: %{public}d, g_deviceId: %{public}d",
+        g_result, g_deviceId);
 }
 
 void XComponent::GetKeyEventDeviceId002()
 {
-    OH_NativeXComponent_GetKeyEventDeviceId(nullptr, &g_deviceId);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventSourceType001");
+    g_result = OH_NativeXComponent_GetKeyEventDeviceId(nullptr, &g_deviceId);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventDeviceId002 g_result: %{public}d, g_deviceId: %{public}d",
+        g_result, g_deviceId);
 }
 
 void XComponent::GetKeyEventTimestamp001()
 {
-    OH_NativeXComponent_GetKeyEventTimestamp(g_keyEvent, &g_timestamp);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventTimestamp001");
+    g_result = OH_NativeXComponent_GetKeyEventTimestamp(g_keyEvent, &g_timestamp);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventTimestamp001 g_result: %{public}d, g_timestamp: %{public}d",
+        g_result, g_timestamp);
 }
 
 void XComponent::GetKeyEventTimestamp002()
 {
-    OH_NativeXComponent_GetKeyEventTimestamp(nullptr, &g_deviceId);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventTimestamp002");
+    g_result = OH_NativeXComponent_GetKeyEventTimestamp(nullptr, &g_timestamp);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventTimestamp002 g_result: %{public}d, g_timestamp: %{public}d",
+        g_result, g_timestamp);
 }
 
 void XComponent::GetKeyEventModifierKeyStates001()
 {
     g_result = OH_NativeXComponent_GetKeyEventModifierKeyStates(g_keyEvent, &g_keys) ==
                ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventModifierKeyStates001");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventModifierKeyStates001 g_result: %{public}d, g_keys: %{public}d",
+        g_result, g_keys);
 }
 
 void XComponent::GetKeyEventModifierKeyStates002()
 {
     g_result = OH_NativeXComponent_GetKeyEventModifierKeyStates(nullptr, &g_keys) ==
                ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventModifierKeyStates002");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventModifierKeyStates002 g_result: %{public}d, g_keys: %{public}d",
+        g_result, g_keys);
 }
 
 void XComponent::GetKeyEventNumLockState001()
 {
     g_result = OH_NativeXComponent_GetKeyEventNumLockState(g_keyEvent, &g_isNumLockOn) ==
                ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventNumLockState001");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventNumLockState001 g_result: %{public}d, g_isNumLockOn: %{public}d",
+        g_result, g_isNumLockOn);
 }
 
 void XComponent::GetKeyEventNumLockState002()
 {
     g_result = OH_NativeXComponent_GetKeyEventNumLockState(nullptr, &g_isNumLockOn) ==
                ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventNumLockState002");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventNumLockState002 g_result: %{public}d, g_isNumLockOn: %{public}d",
+        g_result, g_isNumLockOn);
 }
 
 void XComponent::GetKeyEventCapsLockState001()
 {
     g_result = OH_NativeXComponent_GetKeyEventCapsLockState(g_keyEvent, &g_isCapsLockOn) ==
                ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventCapsLockState001");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventCapsLockState001 g_result: %{public}d, g_isCapsLockOn: %{public}d",
+        g_result, g_isCapsLockOn);
 }
 
 void XComponent::GetKeyEventCapsLockState002()
 {
     g_result = OH_NativeXComponent_GetKeyEventCapsLockState(nullptr, &g_isCapsLockOn) ==
                ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventCapsLockState002");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventCapsLockState002 g_result: %{public}d, g_isCapsLockOn: %{public}d",
+        g_result, g_isCapsLockOn);
 }
 
 void XComponent::GetKeyEventScrollLockState001()
 {
     g_result = OH_NativeXComponent_GetKeyEventScrollLockState(g_keyEvent, &g_isScrollLockOn) ==
                ARKUI_ERROR_CODE_NO_ERROR ? ARKUI_ERROR_CODE_NO_ERROR : ARKUI_ERROR_CODE_PARAM_INVALID;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventScrollLockState001");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventScrollLockState001 g_result: %{public}d, g_isScrollLockOn: %{public}d",
+        g_result, g_isScrollLockOn);
 }
 
 void XComponent::GetKeyEventScrollLockState002()
 {
     g_result = OH_NativeXComponent_GetKeyEventScrollLockState(nullptr, &g_isScrollLockOn) ==
                ARKUI_ERROR_CODE_PARAM_INVALID ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
-                 "KeyEventXComponent", "Choose Function GetKeyEventScrollLockState002");
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventXComponent",
+        "Choose Function GetKeyEventScrollLockState002 g_result: %{public}d, g_isScrollLockOn: %{public}d",
+        g_result, g_isScrollLockOn);
 }
 
 }

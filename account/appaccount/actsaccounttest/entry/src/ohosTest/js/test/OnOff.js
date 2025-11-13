@@ -541,10 +541,13 @@ export default function ActsAccountChangeOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountChangeOnOff_0800
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Receive account information after the app subscribes to itself and changes additional information
+        /**
+        * @tc.number   ActsAccountChangeOnOff_0800
+        * @tc.name     ActsAccountChangeOnOff_0800
+        * @tc.desc     Receive account information after the app subscribes to itself and changes additional information
+        * @tc.level    Level3
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsAccountChangeOnOff_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountChangeOnOff_0800 start====");
@@ -554,35 +557,35 @@ export default function ActsAccountChangeOnOff() {
             console.info("====>add account ActsAccountChangeOnOff_0800 start");
             await appAccountManager.addAccount("onoff_self");
             console.info("====>on ActsAccountChangeOnOff_0800 start");
-            function changeOnCallback(data){
-                console.info("====>receive change 0800 data:" + JSON.stringify(data));
-                console.info("====>data.length:" + data.length);
-                for (let i = 0, len = data.length; i < len; i++) {
-                    dataMap.set(data[i].name, data[i].owner)
-                }
-                expect(dataMap.has("onoff_self")).assertTrue();
-                if (dataMap.has("onoff_self")) {
-                    let data = dataMap.get("onoff_self");
-                    console.info("====>the account owner is: " + data);
-                    expect(data).assertEqual("com.example.actsaccounttest");
-                }
-                appAccountManager.off('change', function (){
-                    console.info("====>off ActsAccountChangeOnOff_0800 finish====");
-                    appAccountManager.deleteAccount("onoff_self", async (err)=>{
-                        console.info("====>delete account ActsAccountChangeOnOff_0800 err:" + JSON.stringify(err));
-                        try {
-                            expect(err).assertEqual(null);
-                        } catch (err) {
-                            console.info('====>Assert err: ' + JSON.stringify(err));
-                        }
-                        console.info("====>ActsAccountChangeOnOff_0800 end====");
-                        await sleep(500);
-                        done();
+            try{
+                appAccountManager.on('change', ["com.example.actsaccounttest"], (data) => {
+                    console.info("====>receive change 0800 data:" + JSON.stringify(data));
+                    console.info("====>data.length:" + data.length);
+                    expect(data.length > 0).assertTrue();
+                    for (let i = 0, len = data.length; i < len; i++) {
+                        dataMap.set(data[i].name, data[i].owner)
+                    }
+                    expect(dataMap.has("onoff_self")).assertTrue();
+                    if (dataMap.has("onoff_self")) {
+                        let data = dataMap.get("onoff_self");
+                        console.info("====>the account owner is: " + data);
+                        expect(data).assertEqual("com.example.actsaccounttest");
+                    }
+                    appAccountManager.off('change', function (){
+                        console.info("====>off ActsAccountChangeOnOff_0800 finish====");
+                        appAccountManager.deleteAccount("onoff_self", async (err)=>{
+                            console.info("====>delete account ActsAccountChangeOnOff_0800 err:" + JSON.stringify(err));
+                            try {
+                                expect(err).assertEqual(null);
+                            } catch (err) {
+                                console.info('====>Assert err: ' + JSON.stringify(err));
+                            }
+                            console.info("====>ActsAccountChangeOnOff_0800 end====");
+                            await sleep(500);
+                            done();
+                        });
                     });
                 });
-            }
-            try{
-                appAccountManager.on('change', ["com.example.actsaccounttest"], changeOnCallback);
             }
             catch(err){
                 console.error("====>on ActsAccountChangeOnOff_0800 err:" + JSON.stringify(err));

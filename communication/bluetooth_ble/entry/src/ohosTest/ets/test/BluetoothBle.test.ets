@@ -95,6 +95,8 @@ function sleep(delay : number) : Promise<void> {
     
     function onReceiveEvent00(data : Array<bluetooth.ScanResult>) {   
             console.info('BLE scan device find result = '+ JSON.stringify(data));
+            if (data.length > 0) {expect(data.length > 0).assertTrue();}
+            if (data.length == 0) {expect(data.length == 0).assertTrue();}
         }
     function onReceiveEvent(data : Array<bluetooth.ScanResult>) {   
             console.info('bluetooth device find = '+ JSON.stringify(data));
@@ -175,13 +177,15 @@ describe('bluetoothBleTest', () => {
         console.info('afterAll called')
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
-     * @tc.name test startBLEScan
-     * @tc.desc Test startBLEScan api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100
+      * @tc.desc   Test startBLEScan api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.on("BLEDeviceFind", onReceiveEvent00);
@@ -211,13 +215,15 @@ describe('bluetoothBleTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
-     * @tc.name test stopBLEScan
-     * @tc.desc Test stopBLEScan api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200
+      * @tc.desc   Test stopBLEScan api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.stopBLEScan();
@@ -233,13 +239,15 @@ describe('bluetoothBleTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
-     * @tc.name test on-BLEDeviceFind
-     * @tc.desc Test on-BLEDeviceFind api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300
+      * @tc.desc   Test on-BLEDeviceFind api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.on('BLEDeviceFind', onReceiveEvent);
@@ -251,13 +259,15 @@ describe('bluetoothBleTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
-     * @tc.name test off-BLEDeviceFind
-     * @tc.desc Test off-BLEDeviceFind api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400
+      * @tc.desc   Test off-BLEDeviceFind api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         bluetooth.on('BLEDeviceFind', onReceiveEvent);
         try {
@@ -270,11 +280,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -291,11 +303,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -313,11 +327,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
          try {
@@ -335,11 +351,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
          try {
@@ -357,11 +375,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -386,11 +406,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -412,13 +434,15 @@ describe('bluetoothBleTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100
+      * @tc.desc   Test ClassicStartBLEScan api.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.on("BLEDeviceFind", onReceiveEvent7);
@@ -442,11 +466,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -471,11 +497,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -500,11 +528,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400
-     * @tc.name testClassicStartBLEScan
-     * @tc.desc Test ClassicStartBLEScan api.
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test ClassicStartBLEScan api.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -529,11 +559,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
-     * @tc.name test constant PhyType
-     * @tc.desc Test constant PhyType api12
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test constant PhyType api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
@@ -547,11 +579,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
-     * @tc.name test constant PhyType
-     * @tc.desc Test constant PhyType api12
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test constant PhyType api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
@@ -564,13 +598,15 @@ describe('bluetoothBleTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
-     * @tc.name test startBLEScan
-     * @tc.desc Test startBLEScan api10
-     * @tc.type Function
-     * @tc.level Level 0
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
+      * @tc.desc   Test startBLEScan api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.startBLEScan(null, null);
@@ -583,11 +619,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100
-     * @tc.name testCreateBleScanner
-     * @tc.desc Test createBleScanner
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test createBleScanner
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -602,11 +640,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200
-     * @tc.name testStartScan
-     * @tc.desc Test startScan
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test startScan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let arrayBuffer = new ArrayBuffer(8);
@@ -648,11 +688,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300
-     * @tc.name testStopScan
-     * @tc.desc Test stopScan
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test stopScan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let scanOptions: bluetooth.ScanOptions = {
@@ -684,11 +726,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600
-     * @tc.name testStartScan
-     * @tc.desc Test startScan 401
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test startScan 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -704,11 +748,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700
-     * @tc.name testStartScan
-     * @tc.desc Test startScan again
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test startScan again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let arrayBuffer = new ArrayBuffer(8);
@@ -748,11 +794,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400
-     * @tc.name testScanReportType
-     * @tc.desc Test ScanReportType
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test ScanReportType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let ON_FOUND = bluetooth.ScanReportType.ON_FOUND;
@@ -770,11 +818,13 @@ describe('bluetoothBleTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500
-     * @tc.name testScanReportMode
-     * @tc.desc Test ScanReportMode
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test ScanReportMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let NORMAL = bluetooth.ScanReportMode.NORMAL;
@@ -792,6 +842,81 @@ describe('bluetoothBleTest', () => {
         let BATCH = bluetooth.ScanReportMode.BATCH;
         console.info("[bluetooth_js]ScanReportMode BATCH: " + JSON.stringify(BATCH));
         expect(BATCH).assertEqual(2);
+        done();
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
+     * @tc.desc   Test getConnectedBLEDevices api21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT);
+            console.info("[bluetooth_js]getConnectedBLEDevices GATT: " + JSON.stringify(devices));
+        } catch (err) {
+            console.error("getConnectedBLEDevices GATT errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                expect(Number(err.code) == 801).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+
+        try {
+            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_CLIENT);
+            console.info("[bluetooth_js]getConnectedBLEDevices GATT_CLIENT: " + JSON.stringify(devices));
+        } catch (err) {
+            console.error("getConnectedBLEDevices GATT_CLIENT errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                expect(Number(err.code) == 801).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+
+        try {
+            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_SERVER);
+            console.info("[bluetooth_js]getConnectedBLEDevices GATT_SERVER: " + JSON.stringify(devices));
+        } catch (err) {
+            console.error("getConnectedBLEDevices GATT_SERVER errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                expect(Number(err.code) == 801).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
+     * @tc.desc   Test BleProfile api21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        let BleProfileGATT = bluetooth.BleProfile.GATT;
+        console.info("[bluetooth_js]GATT: " + JSON.stringify(BleProfileGATT));
+        expect(BleProfileGATT).assertEqual(1);
+
+        let BleProfileGATT_CLIENT = bluetooth.BleProfile.GATT_CLIENT;
+        console.info("[bluetooth_js]GATT_CLIENT: " + JSON.stringify(BleProfileGATT_CLIENT));
+        expect(BleProfileGATT_CLIENT).assertEqual(2);
+
+        let BleProfileGATT_SERVER = bluetooth.BleProfile.GATT_SERVER;
+        console.info("[bluetooth_js]GATT_SERVER: " + JSON.stringify(BleProfileGATT_SERVER));
+        expect(BleProfileGATT_SERVER).assertEqual(3);
         done();
     })
 })

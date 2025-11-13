@@ -3324,13 +3324,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_8200
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : empty option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+    * @tc.number    ActsAccountOptionalParameter_8200
+    * @tc.name      ActsAccountOptionalParameter_8200
+    * @tc.desc      test selectAccountsByOptions promise empty option
+    * @tc.level     Level3
+    * @tc.size      MediumTest
+    * @tc.type      Function
     */
     it('ActsAccountOptionalParameter_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8200 start====");
@@ -3341,17 +3341,12 @@ export default function ActsAppAccountOptionalParameterTest() {
         console.info("====>ActsAccountOptionalParameter_8200 add_account_err:" + JSON.stringify(err));
         expect(err).assertEqual(null);
         try {
-          await appAccountManager.selectAccountsByOptions(options).then(async (accountArr) => {
-            console.info("====>selectAccountsByOptions successfully, accountArr: " + JSON.stringify(accountArr));
-            expect(accountArr.length).assertEqual(0)
-            await appAccountManager.removeAccount(name);
-            console.info("====>ActsAccountOptionalParameter_8200 success")
-            done()
-          }).catch(async (err: BusinessError) => {
-            console.info("====>selectAccountsByOptions failed, error: " + JSON.stringify(err));
-            await appAccountManager.removeAccount(name);
-            done()
-          });
+          let data = await appAccountManager.selectAccountsByOptions(options);
+          console.info("====>selectAccountsByOptions successfully, data: " + JSON.stringify(data));
+          expect(data.length).assertEqual(0)
+          await appAccountManager.removeAccount(name);
+          console.info("====>ActsAccountOptionalParameter_8200 success")
+          done();
         } catch (err) {
           console.info("====>selectAccountsByOptions exception: " + JSON.stringify(err));
           await appAccountManager.removeAccount(name);
@@ -3396,13 +3391,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_8400
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : with option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+    * @tc.number    ActsAccountOptionalParameter_8400
+    * @tc.name      ActsAccountOptionalParameter_8400
+    * @tc.desc      test selectAccountsByOptions promise with option
+    * @tc.level     Level3
+    * @tc.size      MediumTest
+    * @tc.type      Function
     */
     it('ActsAccountOptionalParameter_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8400 start====");
@@ -3417,17 +3412,12 @@ export default function ActsAppAccountOptionalParameterTest() {
         console.info("====>ActsAccountOptionalParameter_8400 add_account_err:" + JSON.stringify(err));
         expect(err).assertEqual(null);
         try {
-          await appAccountManager.selectAccountsByOptions(options).then(async (accountArr) => {
-            console.info("====>selectAccountsByOptions successfully, accountArr: " + JSON.stringify(accountArr));
-            expect(accountArr.length).assertEqual(0)
-            await appAccountManager.removeAccount(name);
-            console.info("====>ActsAccountOptionalParameter_8400 success")
-            done()
-          }).catch(async (err: BusinessError) => {
-            console.info("====>selectAccountsByOptions failed, error: " + JSON.stringify(err));
-            await appAccountManager.removeAccount(name);
-            done()
-          });
+          let data = await appAccountManager.selectAccountsByOptions(options);
+          console.info("====>selectAccountsByOptions successfully, data: " + JSON.stringify(data));
+          expect(data.length).assertEqual(0)
+          await appAccountManager.removeAccount(name);
+          console.info("====>ActsAccountOptionalParameter_8400 success")
+          done();
         } catch (err) {
           console.info("====>selectAccountsByOptions exception: " + JSON.stringify(err));
           await appAccountManager.removeAccount(name);

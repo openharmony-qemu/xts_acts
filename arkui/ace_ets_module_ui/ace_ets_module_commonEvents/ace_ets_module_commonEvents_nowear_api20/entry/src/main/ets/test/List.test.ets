@@ -16,17 +16,35 @@
 import DragModifier from './DragEvent/DragModifier.test';
 import normalDrag from './DragEvent/normalDrag.test';
 import dragSpringLoading from './DragEvent/dragSpringLoading.test';
-import FrameNodeTest from './frameNode/framenode.test';
 import enableInternalDropAnimation from './DragEvent/enableInternalDropAnimation.test';
+import FrameNodeTest from './frameNode/framenode.test';
 import isActive from './UIContext/isActive.test';
 import ToolBarItemTest from './toolbar/ToolBarItem.test';
+import ClickRecognizerTest from "./GestureRecognizer/ClickRecognizer.test";
+import DragRecognizerTest from "./GestureRecognizer/DragRecognizer.test";
+import IsvalidRecognizerTest from "./GestureRecognizer/IsvalidRecognizer.test";
+import LongPressRecognizerTest from "./GestureRecognizer/LongPressRecognizer.test";
+import PanRecognizerTest from "./GestureRecognizer/PanRecognizer.test";
+import PinchRecognizerTest from "./GestureRecognizer/PinchRecognizer.test";
+import rotationGestureTest from "./GestureRecognizer/RotationRecognizer.test";
+import SwipeRecognizerTest from "./GestureRecognizer/SwipeRecognizer.test";
+import TapRecognizerTest from "./GestureRecognizer/TapRecognizer.test";
 
 export default function testsuite() {
+  FrameNodeTest();
   DragModifier();
   normalDrag();
   dragSpringLoading();
-  FrameNodeTest();
   enableInternalDropAnimation();
   isActive();
   ToolBarItemTest();
+  SwipeRecognizerTest();
+  PanRecognizerTest();
+  DragRecognizerTest();
+  ClickRecognizerTest();
+  LongPressRecognizerTest();
+  PinchRecognizerTest();
+  rotationGestureTest();
+  TapRecognizerTest();
+  IsvalidRecognizerTest();
 }

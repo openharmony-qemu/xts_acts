@@ -233,5 +233,6 @@ struct DefaultPage {
         Shape().commonStyle()
       }
     }.width(this.parentWidth).height(this.parentHeight).backgroundColor(Color.Green)
+    .allowForceDark(true).allowForceDark(false)
   }
 }

@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, ResizeDirection } from '@ohos.UiTest'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation, ResizeDirection } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import { Utils, startAbility, stopApplication } from './Util.test';
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs : int = 1000;
 const DeviceErrorCode = 17000005;
@@ -292,7 +292,7 @@ export default function uitestUiWindowTest() {
           await window2.maximize();
           hilog.info(domain, tag, `testWindowMaximize_static maximize sccessful`);
         }
-      //  await driver.delayMs(1000);
+        //  await driver.delayMs(1000);
         let window3 = await driver.findWindow({bundleName:'com.uitestScene.acts'});
         hilog.info(domain, tag, `testWindowMaximize_static window3, ${ JSON.stringify(window3)} `);
         expect(window3 != null).assertTrue();

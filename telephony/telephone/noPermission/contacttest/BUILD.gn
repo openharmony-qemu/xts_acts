@@ -18,6 +18,7 @@ ohos_js_app_suite("ActsTelephonyContactNoPermissionTest") {
   testonly = true
   certificate_profile = "signature/openharmony_sx.p7b"
   hap_name = "ActsTelephonyContactNoPermissionTest"
-  part_name = "call_manager"
+  part_name = "sms_mms"
   subsystem_name = "telephony"
 }
+

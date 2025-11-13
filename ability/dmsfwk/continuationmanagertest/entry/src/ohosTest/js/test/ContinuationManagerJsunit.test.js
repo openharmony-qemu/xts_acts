@@ -805,6 +805,159 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation010 end----------------------");
         })
 
+
+        /*
+         * @tc.number  testRegisterContinuation011
+         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
+         * @tc.desc  Function test
+         * @tc.size  MediumTest
+         * @tc.type:  Function
+         * @tc.level  Level0
+         */
+        it('testRegisterContinuation011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.info("----------------------testRegisterContinuation011 start----------------------");
+            let token = -1;
+            try {
+                await continuationManager.registerContinuation()
+                    .then((data) => {
+                        console.log('testRegisterContinuation011 data is' + data);
+                        token = data;
+                        expect(typeof (data) == 'number').assertTrue();
+                    }).catch((err) => {
+                        console.log('testRegisterContinuation011 err code is' + err.code);
+                        expect().assertFail();
+                    });
+                try {
+                    await continuationManager.on("deviceSelected", token, (data) => {
+                        console.info('onDeviceSelected len: ' + data.length);
+                        expect(data.length == 0).assertTrue()
+                    });
+                } catch (error) {
+                    console.info("testRegisterContinuation011 continuationManager.on catch error is" + error);
+                    expect().assertFail();
+                }
+            } catch (error) {
+                console.info("testRegisterContinuation011 continuationManager.registerContinuation catch error is" + error);
+                expect().assertFail();
+            }
+            console.info("----------------------testRegisterContinuation011 end----------------------");
+            done();
+        })
+
+        /*
+         * @tc.number  testRegisterContinuation012
+         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
+         * @tc.desc  Function test
+         * @tc.size  MediumTest
+         * @tc.type:  Function
+         * @tc.level  Level0
+         */
+        it('testRegisterContinuation012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testRegisterContinuation012 start----------------------");
+            let token = -1;
+            try {
+                await continuationManager.registerContinuation()
+                    .then((data) => {
+                        console.log('testRegisterContinuation012 data is' + data);
+                        token = data;
+                        expect(typeof (data) == 'number').assertTrue();
+                    }).catch((err) => {
+                        console.log('testRegisterContinuation012 err code is' + err.code);
+                        expect().assertFail();
+                    });
+                try {
+                    await continuationManager.on("deviceSelected", token, (data) => {
+                        console.log('testRegisterContinuation012 onDeviceSelected len: ' + data.length);
+                        expect(data.length > 0).assertTrue()
+                    });
+                } catch (error) {
+                    console.log("testRegisterContinuation012 continuationManager.on catch error is" + error);
+                    expect().assertFail();
+                }
+            } catch (error) {
+                console.log("testRegisterContinuation012 continuationManager.registerContinuation catch error is" + error);
+                expect().assertFail();
+            }
+            console.log("----------------------testRegisterContinuation012 end----------------------");
+            done();
+        })
+
+        /*
+         * @tc.number  testRegisterContinuation013
+         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
+         * @tc.desc  Function test
+         * @tc.size  MediumTest
+         * @tc.type:  Function
+         * @tc.level  Level0
+         */
+        it('testRegisterContinuation013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testRegisterContinuation013 start----------------------");
+            let token = -1;
+            try {
+                await continuationManager.registerContinuation()
+                    .then((data) => {
+                        console.log('testRegisterContinuation013 data is' + data);
+                        token = data;
+                        expect(typeof (data) == 'number').assertTrue();
+                    }).catch((err) => {
+                        console.log('testRegisterContinuation013 err code is' + err.code);
+                        expect().assertFail();
+                    });
+                try {
+                    await continuationManager.on("deviceUnselected", token, (data) => {
+                        console.log('testRegisterContinuation013 onDeviceUnselected len: ' + data.length);
+                        expect(data.length == 0).assertTrue()
+                    });
+                } catch (error) {
+                    console.log("testRegisterContinuation013 continuationManager.on catch error is" + error);
+                    expect().assertFail();
+                }
+            } catch (error) {
+                console.log("testRegisterContinuation013 continuationManager.registerContinuation catch error is" + error);
+                expect().assertFail();
+            }
+            console.log("----------------------testRegisterContinuation013 end----------------------");
+            done();
+        })
+
+        /*
+         * @tc.number  testRegisterContinuation014
+         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
+         * @tc.desc  Function test
+         * @tc.size  MediumTest
+         * @tc.type:  Function
+         * @tc.level  Level0
+         */
+        it('testRegisterContinuation014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            console.log("----------------------testRegisterContinuation014 start----------------------");
+            let token = -1;
+            try {
+                await continuationManager.registerContinuation()
+                    .then((data) => {
+                        console.log('testRegisterContinuation014 data is' + data);
+                        token = data;
+                        expect(typeof (data) == 'number').assertTrue();
+                    }).catch((err) => {
+                        console.log('testRegisterContinuation014 err code is' + err.code);
+                        expect().assertFail();
+                    });
+                try {
+                    await continuationManager.on("deviceUnselected", token, (data) => {
+                        console.log('testRegisterContinuation014 onDeviceUnselected len: ' + data.length);
+                        expect(data.length > 0).assertTrue()
+                    });
+                } catch (error) {
+                    console.log("testRegisterContinuation014 continuationManager.on catch error is" + error);
+                    expect().assertFail();
+                }
+            } catch (error) {
+                console.log("testRegisterContinuation014 continuationManager.registerContinuation catch error is" + error);
+                expect().assertFail();
+            }
+            console.log("----------------------testRegisterContinuation014 end----------------------");
+            done();
+        })
+
         /*
          * @tc.number  testUnregister001
          * @tc.name  Continuation Manager-Modul bietet die Möglichkeit

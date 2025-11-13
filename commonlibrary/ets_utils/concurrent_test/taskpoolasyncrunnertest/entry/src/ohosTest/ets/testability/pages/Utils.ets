@@ -12,13 +12,13 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+
 import { worker } from '@kit.ArkTS';
 import { Driver } from '@kit.TestKit';
-
 import { testUISec, testUISec1 } from './MultipleTask';
 
 export class WorkThread {
-  workerStageModel = new worker.ThreadWorker('./workers/WorkerTaskGroup.ets');
+  public workerStageModel = new worker.ThreadWorker('./workers/WorkerTaskGroup.ets');
 }
 
 @Concurrent
@@ -45,7 +45,6 @@ export function testUI(): Promise<string> {
   })
 }
 
-
 export function testUI1(): Promise<string> {
   return new Promise(async (re, je) => {
     await testUISec1()
@@ -59,10 +58,6 @@ export class Contexts {
   static path: string
 }
 
-export class Drivers {
-  static drivers: Driver
-}
-
 export function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
     setTimeout(() => {
@@ -73,14 +68,4 @@ export function sleep(time: number): Promise<void> {
 
 export declare class ArkTools {
   static forceFullGC(): void;
-}
-
-export function promiseCase(): Promise<void> {
-  let p = new Promise<void>((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, 100)
-  }).then(undefined, (error: Error) => {
-  })
-  return p
 }

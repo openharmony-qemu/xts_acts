@@ -37,7 +37,7 @@ import { TextStyle, StyledString } from 'arkui.component.styledString'
 import { Color, FontStyle, FontWeight } from 'arkui.component.enums'
 
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function FivePointOne_resMgrStageTest() {
@@ -64,27 +64,28 @@ export default function FivePointOne_resMgrStageTest() {
     });
 
     /**
-     * @tc.number   : resourceManager_test_getIntPluralStringValueSync_static_0100
-     * @tc.name     : resourceManager_test_getIntPluralStringValueSync_static_0100
-     * @tc.desc     : getIntPluralStringValueSync with id
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_0100
+     * @tc.number resourceManager_test_getIntPluralStringValueSync_static_0100
+     * @tc.desc   getIntPluralStringValueSync with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getIntPluralStringValueSync(0x0100000f, 2, 2, 'test');
+      let value = res.getIntPluralStringValueSync(0x01000036, 2, 2, 'test');
       console.log('resourceManager_test_getIntPluralStringValueSync_static_0100:' + value);
       expect(value).assertEqual('2 apples');
     })
 
-
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_static_0310
-     * @tc.name     : resourceManager_test_getDoublePluralStringByNameSync_static_0100
-     * @tc.desc     : getDoublePluralStringByNameSync with name
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_0310
+     * @tc.desc   getDoublePluralStringByNameSync with name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let value = res.getDoublePluralStringByNameSync('p_str4', 2.1, 2, 'test');
@@ -93,12 +94,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_0970
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_static_0970
-     * @tc.desc      : error code 9001001 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_0970
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_0970
+     * @tc.desc   error code 9001001 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_0970', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -106,17 +108,18 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringValueSync_static_0970 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_0990
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_static_0990
-     * @tc.desc      : error code 9001001 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_0990
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_0990
+     * @tc.desc   error code 9001001 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_0990', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -124,17 +127,18 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_0990 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
- 
+       
     /**
-     * @tc.number   : resourceManager_test_getIntPluralStringByNameSync_static_0100
-     * @tc.name     : resourceManager_test_getIntPluralStringByNameSync_static_0100
-     * @tc.desc     : getIntPluralStringByNameSync with name
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_0100
+     * @tc.number resourceManager_test_getIntPluralStringByNameSync_static_0100
+     * @tc.desc   getIntPluralStringByNameSync with name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
       let value = res.getIntPluralStringByNameSync('p_str4', 2, 2, 'test');
@@ -143,12 +147,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
     
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1010
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_static_1010
-     * @tc.desc      : error code 9001002 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_1010
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1010
+     * @tc.desc   error code 9001002 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_1010', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -160,12 +165,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1030
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_static_1030
-     * @tc.desc      : error code 9001002 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_1030
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1030
+     * @tc.desc   error code 9001002 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_1030', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -177,12 +183,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1050
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_static_1050
-     * @tc.desc      : error code 9001006 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_1050
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1050
+     * @tc.desc   error code 9001006 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_1050', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -194,12 +201,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1070
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_static_1070
-     * @tc.desc      : error code 9001006 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_1070
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1070
+     * @tc.desc   error code 9001006 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_1070', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -211,12 +219,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1090
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_static_1090
-     * @tc.desc      : error code 9001007 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_static_1090
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1090
+     * @tc.desc   error code 9001007 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_1090', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -228,12 +237,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1110
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_static_1110
-     * @tc.desc      : error code 9001007 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_static_1110
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1110
+     * @tc.desc   error code 9001007 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_static_1110', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -245,12 +255,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1130
-     * @tc.name      : resourceManager_test_getIntPluralStringByNameSync_static_1130
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_1130
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1130
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_1130', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -258,17 +269,18 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringByNameSync_static_1130 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1140
-     * @tc.name      : resourceManager_test_getDoublePluralStringByNameSync_static_1140
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_1140
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1140
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_1140', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -276,17 +288,18 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringByNameSync_static_1140 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1150
-     * @tc.name      : resourceManager_test_getIntPluralStringByNameSync_static_1150
-     * @tc.desc      : error code 9001006 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_1150
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1150
+     * @tc.desc   error code 9001006 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_1150', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -298,12 +311,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1160
-     * @tc.name      : resourceManager_test_getDoublePluralStringByNameSync_static_1160
-     * @tc.desc      : error code 9001006 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_1160
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1160
+     * @tc.desc   error code 9001006 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_1160', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -316,12 +330,13 @@ export default function FivePointOne_resMgrStageTest() {
 
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1170
-     * @tc.name      : resourceManager_test_getIntPluralStringByNameSync_static_1170
-     * @tc.desc      : error code 9001008 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_static_1170
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1170
+     * @tc.desc   error code 9001008 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringByNameSync_static_1170', Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -333,12 +348,13 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_static_1180
-     * @tc.name      : resourceManager_test_getDoublePluralStringByNameSync_static_1180
-     * @tc.desc      : error code 9001008 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_static_1180
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_static_1180
+     * @tc.desc   error code 9001008 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_static_1180', Level.LEVEL3, async (): Promise<void> => {
       try {

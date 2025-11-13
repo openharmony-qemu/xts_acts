@@ -162,11 +162,12 @@ describe("SensorJsTest_sensor_64", function () {
             for (let i = 0; i < ret.length; i++) {
                 console.info(TAG + ' Succeeded in getting sensor: ' + JSON.stringify(ret[i]));
             }
+            expect(ret.length > 0).assertTrue();
             done();
         } catch (error) {
             console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
             let isIncluded = CODEARR.includes(error.code)
-            expect(isIncluded).assertTrue();
+            expect(false).assertTrue();
             done();
         }
     })

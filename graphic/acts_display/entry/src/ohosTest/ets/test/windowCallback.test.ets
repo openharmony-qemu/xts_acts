@@ -60,9 +60,9 @@ export default function windowCallbackTest() {
      * @tc.desc      : Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : Level0
      */
-    it('testGetCutoutInfo_Callbcak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testGetCutoutInfo_Callbcak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetCutoutInfo_Callbcak';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin context==' + JSON.stringify(context));
@@ -85,9 +85,9 @@ export default function windowCallbackTest() {
      * @tc.desc      : Test the enumeration value of Orientation
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : Level0
      */
-    it('testOrientation_Enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOrientation_Enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testOrientation_Enum';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

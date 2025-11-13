@@ -26,13 +26,14 @@ export default function screenLockJSUnit() {
             done();
         });
 
-        /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0001
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   SUB_MISC_THEME_screenLock_API_0001
+         * @tc.number SUB_MISC_THEME_screenLock_API_0001
+         * @tc.desc   Test ScreenLock API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MISC_THEME_screenLock_API_0001", Level.LEVEL0, async (done: Function) => {
             console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0001-------------------");
@@ -44,12 +45,14 @@ export default function screenLockJSUnit() {
                             expect().assertFail();
                             done();
                         }
+                        expect(data).assertEqual(false);
                         console.info("====>SUB_MISC_THEME_screenLock_API_0001 screen's status is " + data);
                         expect(data == result).assertTrue();
                         console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0001-------------------");
                         done();
                         
                     }catch(err){
+                        expect(data).assertEqual(true);
                         console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0001 throw_err = " + err);
                         done();
                     }
@@ -61,24 +64,27 @@ export default function screenLockJSUnit() {
             }            
         });
 
-        /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0002
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   SUB_MISC_THEME_screenLock_API_0002
+         * @tc.number SUB_MISC_THEME_screenLock_API_0002
+         * @tc.desc   Test ScreenLock API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MISC_THEME_screenLock_API_0002", Level.LEVEL2, async (done: Function) => {
             console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0002-------------------");
             try {
                 screenLock.isScreenLocked((err, data) => {
                     try{
+                        expect(data).assertEqual(false);
                         console.info("====>SUB_MISC_THEME_screenLock_API_0002 screen's status is " + data);
                         expect(data == result).assertTrue();
                         console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0002-------------------");
                         done();
                     }catch(err){
+                        expect(data).assertEqual(true);
                         console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0002 throw_err = " + err);
                         done();
                     }                    
@@ -90,13 +96,14 @@ export default function screenLockJSUnit() {
             }            
         });
 
-        /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0003
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   SUB_MISC_THEME_screenLock_API_0003
+         * @tc.number SUB_MISC_THEME_screenLock_API_0003
+         * @tc.desc   Test ScreenLock API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MISC_THEME_screenLock_API_0003", Level.LEVEL2, async (done: Function) => {
             console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0003-------------------");
@@ -108,6 +115,7 @@ export default function screenLockJSUnit() {
                         console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0003-------------------");
                         done();
                     }catch(err){
+                        expect(data).assertEqual(true);
                         console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0003 throw_err = " + err);
                         done();
                     }                    
@@ -119,13 +127,14 @@ export default function screenLockJSUnit() {
             }            
         });
 
-        /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0004
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   SUB_MISC_THEME_screenLock_API_0004
+         * @tc.number SUB_MISC_THEME_screenLock_API_0004
+         * @tc.desc   Test ScreenLock API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MISC_THEME_screenLock_API_0004", Level.LEVEL2, async (done: Function) => {
             console.info("------------------start SUB_MISC_THEME_screenLock_API_0004-------------------");
@@ -154,24 +163,27 @@ export default function screenLockJSUnit() {
             }
         });
 
-        /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0007
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   SUB_MISC_THEME_screenLock_API_0007
+         * @tc.number SUB_MISC_THEME_screenLock_API_0007
+         * @tc.desc   Test ScreenLock API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MISC_THEME_screenLock_API_0007", Level.LEVEL2, async (done: Function) => {
             console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0007-------------------");
             try {
                 screenLock.isScreenLocked((err, data) => {
                     try{
+                        expect(data).assertEqual(false);
                         console.info("====>SUB_MISC_THEME_screenLock_API_0007: isScreenLocked is successful, result is " + data);
                         expect(data == result).assertTrue();
                         console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0007-------------------");
                         done();
                     }catch(err){
+                        expect(data).assertEqual(true);
                         console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0007 throw_err = " + err);
                         done();
                     }

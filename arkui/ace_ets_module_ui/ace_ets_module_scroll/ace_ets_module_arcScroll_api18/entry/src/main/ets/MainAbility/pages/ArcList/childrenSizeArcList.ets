@@ -78,6 +78,7 @@ struct listChildrenSizeArcList {
           ForEach(this.numItems, (item: number, index: number) => {
             ArcListItem() {
               Button('' + item, { type: ButtonType.Capsule })
+                .id('arcList_size_' + item)
                 .width(this.listSize)
                 .height('100px')
                 .fontSize('40px')

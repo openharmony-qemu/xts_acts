@@ -1,0 +1,15 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/ReactiveBuilderNode/FlushStateNodeTest",
+        "MainAbility/pages/ReactiveBuilderNode/IsDisposedNodeTest",
+        "MainAbility/pages/ReactiveBuilderNode/UpdateConfigurationNodeTest",
+        "MainAbility/pages/ReactiveBuilderNode/postInputEventTest",
+        "MainAbility/pages/ReactiveBuilderNode/postTouchEventTest",
+        "MainAbility/pages/ReactiveBuilderNode/InheritFreezeOptionsNodeTest",
+        "MainAbility/pages/ReactiveComponentContent/FlushStateContentTest",
+        "MainAbility/pages/ReactiveComponentContent/InheritFreezeOptionsContentTest",
+        "MainAbility/pages/ReactiveComponentContent/IsDisposedContentTest",
+        "MainAbility/pages/ReactiveComponentContent/UpdateConfigurationContentTest"
+    ]
+}

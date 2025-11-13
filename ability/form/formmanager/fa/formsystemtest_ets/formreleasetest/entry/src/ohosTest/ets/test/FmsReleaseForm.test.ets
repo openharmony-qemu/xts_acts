@@ -87,10 +87,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_releaseForm_0200
-         * @tc.name: host does not have permission
-         * @tc.desc: 1.release the form that formID is 1
-         *           2.Verify the result is false
+         * @tc.name   FMS_releaseForm_0200
+         * @tc.number FMS_releaseForm_0200
+         * @tc.desc   1.release the form that formID is 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_releaseForm_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_releaseForm_0200 start`);
@@ -178,10 +180,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_releaseForm_0300
-         * @tc.name: formID id is error(formID < 0)
-         * @tc.desc: 1.release the form
-         *           2.Verify the result is false
+         * @tc.name   FMS_releaseForm_0300
+         * @tc.number FMS_releaseForm_0300
+         * @tc.desc   1.release the form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_releaseForm_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_releaseForm_0300 start`);
@@ -231,11 +235,13 @@ export default function test() {
 
 
         /**
-        * @tc.number: FMS_releaseForm_0400
-        * @tc.name: formID id is error(formID = 0)
-        * @tc.desc: 1.release the form
-        *           2.Verify the result is false
-        */
+         * @tc.name   FMS_releaseForm_0400
+         * @tc.number FMS_releaseForm_0400
+         * @tc.desc   1.release the form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_releaseForm_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_releaseForm_0400 start`);
 
@@ -285,12 +291,13 @@ export default function test() {
 
 
         /**
-        * @tc.number: FMS_releaseForm_0500
-        * @tc.name: formID id is error because formId is not self
-        * @tc.desc: 1.host A create a formA
-        *           2.host B release the formA
-        *           2.Verify the result is false
-        */
+         * @tc.name   FMS_releaseForm_0500
+         * @tc.number FMS_releaseForm_0500
+         * @tc.desc   1.host A create a formA
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_releaseForm_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_releaseForm_0500 start`);
             let formId: string = '';
@@ -375,12 +382,13 @@ export default function test() {
 
 
         /**
-        * @tc.number: FMS_releaseForm_0600
-        * @tc.name: Form ID error (FormID does not exist)
-        * @tc.desc: 1.host create one normal card
-        *           2.host delete the form
-        *           3.host release the form and verify the result is false
-        */
+         * @tc.name   FMS_releaseForm_0600
+         * @tc.number FMS_releaseForm_0600
+         * @tc.desc   1.host create one normal card
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_releaseForm_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_releaseForm_0600 start`);
             let formId: string = '';
@@ -470,11 +478,13 @@ export default function test() {
 
 
         /**
-        * @tc.number: FMS_releaseForm_1300
-        * @tc.name: single host continuously release forms
-        * @tc.desc: 1.There are 2 forms created by the single host
-        *           2.single host release 2 forms successfully
-        */
+         * @tc.name   FMS_releaseForm_1300
+         * @tc.number FMS_releaseForm_1300
+         * @tc.desc   1.There are 2 forms created by the single host
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_releaseForm_1300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_releaseForm_1300 start`);
 
@@ -633,11 +643,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_releaseForm_1400
-        * @tc.name: release temp form
-        * @tc.desc: 1.host create one temp form
-        *           2.release the form and judge the result is true
-        */
+         * @tc.name   FMS_releaseForm_1400
+         * @tc.number FMS_releaseForm_1400
+         * @tc.desc   1.host create one temp form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_releaseForm_1400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_releaseForm_1400 start`);
 

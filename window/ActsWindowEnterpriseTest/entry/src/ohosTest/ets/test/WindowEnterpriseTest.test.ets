@@ -208,7 +208,7 @@ export default function WindowEnterpriseTest() {
     });
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_GLOBAL_RECT_0200
+       * @tc.number    : SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0200
        * @tc.name      : testGetVisibleWindowInfo
        * @tc.desc      : 验证getVisibleWindowInfo接口可以正常获取到窗口的全局坐标
        * @tc.size      : MediumTest
@@ -275,6 +275,7 @@ export default function WindowEnterpriseTest() {
           }
         }
       });
+      
 
     })
 }

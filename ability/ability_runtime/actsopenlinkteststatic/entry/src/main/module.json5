@@ -43,7 +43,7 @@
               "entity.system.home"
             ],
             "actions": [
-               "ohos.want.action.home"
+               "action.system.home"
             ]
           }
         ]
@@ -75,6 +75,11 @@
             ]
           }
         ]
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
       }
     ]
   }

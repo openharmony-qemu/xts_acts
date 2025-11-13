@@ -13,13 +13,19 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import webView from '@ohos.web.webview';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest';
+import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const driver = Driver.create();
 
 export default function webViewControllerDownloadServerTest() {
   describe('WebViewControllerDownloadServerTest', () => {
@@ -34,12 +40,12 @@ export default function webViewControllerDownloadServerTest() {
         if (!("WebViewControllerDownloadServerTest" == pages.name)) {
           console.info("get WebViewControllerDownloadServerTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewControllerDownloadServerTest page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebViewControllerDownloadServerTest page error: " + err);
       }
+      await waitForComponents('WebViewControllerDownloadServerTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -48,14 +54,12 @@ export default function webViewControllerDownloadServerTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebViewControllerDownloadServerTest afterEach start");
-      await Utils.sleep(1000);
       console.info("WebViewControllerDownloadServerTest afterEach end");
       done();
     })
@@ -69,10 +73,12 @@ export default function webViewControllerDownloadServerTest() {
     * @tc.level       : Level 1
     */
     it('testDownloadServer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDownloadServer001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDownloadServer001", webView.WebDownloadErrorCode.SERVER_FAILED, 79000, done);
-      sendEventByKey('WebViewControllerDownloadServerTestButton', 10, '');
+      Utils.emitEvent("testDownloadServer001", 131890)
+      Utils.registerBaseEvent("testDownloadServer001", webView.WebDownloadErrorCode.SERVER_FAILED, 131900, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadServerTestButton');
     })
 
     /*
@@ -84,10 +90,12 @@ export default function webViewControllerDownloadServerTest() {
     * @tc.level       : Level 1
     */
     it('testDownloadServer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDownloadServer002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDownloadServer002", webView.WebDownloadErrorCode.SERVER_BAD_CONTENT, 79002, done);
-      sendEventByKey('WebViewControllerDownloadServerTestButton', 10, '');
+      Utils.emitEvent("testDownloadServer002", 131890)
+      Utils.registerBaseEvent("testDownloadServer002", webView.WebDownloadErrorCode.SERVER_BAD_CONTENT, 131910, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadServerTestButton');
     })
 
     /*
@@ -99,10 +107,12 @@ export default function webViewControllerDownloadServerTest() {
     * @tc.level       : Level 1
     */
     it('testDownloadServer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDownloadServer003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDownloadServer003", webView.WebDownloadErrorCode.SERVER_UNAUTHORIZED, 79004, done);
-      sendEventByKey('WebViewControllerDownloadServerTestButton', 10, '');
+      Utils.emitEvent("testDownloadServer003", 131890)
+      Utils.registerBaseEvent("testDownloadServer003", webView.WebDownloadErrorCode.SERVER_UNAUTHORIZED, 131920, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadServerTestButton');
     })
 
     /*
@@ -114,10 +124,12 @@ export default function webViewControllerDownloadServerTest() {
     * @tc.level       : Level 1
     */
     it('testDownloadServer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testDownloadServer004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testDownloadServer004", webView.WebDownloadErrorCode.SERVER_FORBIDDEN, 79006, done);
-      sendEventByKey('WebViewControllerDownloadServerTestButton', 10, '');
+      Utils.emitEvent("testDownloadServer004", 131890)
+      Utils.registerBaseEvent("testDownloadServer004", webView.WebDownloadErrorCode.SERVER_FORBIDDEN, 131930, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadServerTestButton');
     })
 
   })

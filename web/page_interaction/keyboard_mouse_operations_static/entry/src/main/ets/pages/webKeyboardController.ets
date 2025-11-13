@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-import { Text, Builder, WebKeyboardController, WebKeyboardOptions, WebKeyboardCallbackInfo, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
+import { Text, Builder, WebKeyboardController, WebKeyboardOptions, WebKeyboardCallbackInfo, WebLayoutMode, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import webView from '@ohos.web.webview'
 import { BusinessError } from '@ohos.base';
 import { Utils } from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
@@ -36,6 +37,12 @@ struct WebHitTestTypeEnumTest {
   customKeyboardBuilder() {
     // 这里实现自定义键盘组件，对接WebKeyboardController实现输入、删除、关闭等操作。
     Column() {
+      Button("完成")
+        .fontSize(20)
+        .onClick((): void => {
+          this.webKeyboardController.close();
+          this.rst = 'close succeed';
+        })
       // 插入字符。
       Button("insertText").onClick((): void => {
         this.webKeyboardController.insertText('InsertText');
@@ -50,6 +57,11 @@ struct WebHitTestTypeEnumTest {
       Button("deleteBackward").onClick((): void => {
         this.webKeyboardController.deleteBackward(1);
         this.rst = 'deleteBackward succeed';
+      })
+      // 插入功能按键。
+      Button("sendFunctionKey").onClick((): void => {
+        this.webKeyboardController.sendFunctionKey(6);
+        this.rst = 'sendFunctionKey succeed';
       })
 
       Button("blankA").onClick((): void => {
@@ -70,9 +82,7 @@ struct WebHitTestTypeEnumTest {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  onPageHide() {
-    events_emitter.off(10)
-  }
+
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     console.info('web page valueChangeCallBack');
@@ -92,6 +102,24 @@ struct WebHitTestTypeEnumTest {
         Button('WebwebKeyboardControllerButton').key('WebwebKeyboardControllerButton')
           .onClick((e: ClickEvent) => {
             console.info('key==>' + this.str)
+            switch (this.str) {
+              case 'testwebKeyboardController001': {
+                try {
+                  Utils.emitEvent(WebLayoutMode.NONE, 20250321)
+                } catch (error: BusinessError) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webHitTestTypeEnumTest' })
+                console.log('push URL success')
+              }
+
+            }
           })
 
         Web({ src: 'resource://rawfile/keyboard.html', controller: this.controller })

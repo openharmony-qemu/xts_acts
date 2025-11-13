@@ -227,6 +227,10 @@
         "description": "$string:form_description",
         "icon": "$media:icon",
         "label": "$string:entry_label",
+        "metadata": [{
+            "name": "ohos.extension.form",
+            "resource": "$profile:form_config"
+        }],
         "name": "Form1",
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "form",
@@ -462,6 +466,15 @@
         "name": "webNativeMessaging",
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "webNativeMessaging",
+        "visible": true
+    },
+    {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "notificationSubscriber",
+        "srcEntrance": "./ets/FormAbility/FormAbility.ts",
+        "type": "notificationSubscriber",
         "visible": true
     }
   ],

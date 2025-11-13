@@ -29,14 +29,10 @@ export default function actsStServiceAbilityTest() {
             done();
         })
         beforeEach(async (done) => {
-            setTimeout(function () {
-                done();
-            }, gSetTimeout);
+            done();
         })
         afterEach(async (done) => {
-            setTimeout(function () {
-                done();
-            }, gSetTimeout);
+            done();
         })
 
         /**

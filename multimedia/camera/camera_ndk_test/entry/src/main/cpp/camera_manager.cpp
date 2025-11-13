@@ -49,7 +49,8 @@ static OH_NativeBuffer_ColorSpace oHNativeBufferColorSpace[15]
 NDKCamera::NDKCamera(char* str)
     : cameras_(nullptr), cameraOutputCapability_(nullptr),
       isAddInput_(false), camera_(nullptr), sceneModes_(nullptr), sceneMode_(NORMAL_PHOTO),
-      secureSeqId_(0), canPreconfig_(false), sceneModesSize_(0), isMovingPhotoSupported_(false), photoNative_(nullptr),
+      secureSeqId_(0), canPreconfig_(false), sceneModesSize_(0), isMovingPhotoSupported_(false),
+      isPhotoQualityPrioritizationSupported_(false), photoNative_(nullptr),
       mainImage_(nullptr), isTorchSupportedByTorchMode_(false), torchMode_(ON), frameRatesSize_(0),
       videoFrameRatesSize_(0), colorSpacesSize_(0), colorSpace_(nullptr), activeColorSpace_(OH_COLORSPACE_P3_PQ_LIMIT),
       setcolorSpace_(OH_COLORSPACE_NONE),
@@ -1039,11 +1040,44 @@ Camera_ErrorCode NDKCamera::SessionGetPreviewRotation(int rotation)
     return ret;
 }
 
+Camera_ImageRotation GetCameraImageRotation(int rotation)
+{
+    Camera_ImageRotation testRotation = static_cast<Camera_ImageRotation>(-1);
+    switch (rotation) {
+        case IMAGE_0:
+            testRotation = IAMGE_ROTATION_0;
+            break;
+        case IMAGE_90:
+            testRotation = IAMGE_ROTATION_90;
+            break;
+        case IMAGE_180:
+            testRotation = IAMGE_ROTATION_180;
+            break;
+        case IMAGE_270:
+            testRotation = IAMGE_ROTATION_270;
+            break;
+        case ROTATION_0:
+            testRotation = CAMERA_IMAGE_ROTATION_0;
+            break;
+        case ROTATION_90:
+            testRotation = CAMERA_IMAGE_ROTATION_90;
+            break;
+        case ROTATION_180:
+            testRotation = CAMERA_IMAGE_ROTATION_180;
+            break;
+        case ROTATION_270:
+            testRotation = CAMERA_IMAGE_ROTATION_270;
+            break;
+        default: break;
+    }
+    return testRotation;
+}
+
 Camera_ErrorCode NDKCamera::SessionSetPreviewRotation(int rotation, bool isDisplayLocked)
 {
     LOG("SetPreviewRotation begin.");
 ////问题14
-    Camera_ImageRotation testRotation = static_cast<Camera_ImageRotation>(rotation);
+    Camera_ImageRotation testRotation = GetCameraImageRotation(rotation);
     Camera_ErrorCode ret = OH_PreviewOutput_SetPreviewRotation(previewOutput_, testRotation, isDisplayLocked);
     if (ret == CAMERA_OK) {
         LOG("SessionSetPreviewRotation success.");
@@ -2036,6 +2070,33 @@ Camera_ErrorCode NDKCamera::OpenSecureCamera(int useCaseCode)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::IsPhysicalCameraOrientationVariable(bool* isVariable)
+{
+    ret_ = OH_CameraInput_IsPhysicalCameraOrientationVariable(cameraInput_, isVariable);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_IsPhysicalCameraOrientationVariable failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetPhysicalCameraOrientation(uint32_t* orientation)
+{
+    ret_ = OH_CameraInput_GetPhysicalCameraOrientation(cameraInput_, orientation);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_GetPhysicalCameraOrientation failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::UsePhysicalCameraOrientation(bool isUsed)
+{
+    ret_ = OH_CameraInput_UsePhysicalCameraOrientation(cameraInput_, isUsed);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_UsePhysicalCameraOrientation failed.");
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::CreatePreviewOutputUsedInPreconfig(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {
@@ -2311,6 +2372,50 @@ Camera_ErrorCode NDKCamera::EnableMovingPhoto(int useCaseCode, bool enable)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality)
+{
+    Camera_PhotoQualityPrioritization qualityPrioritization = static_cast<Camera_PhotoQualityPrioritization>(quality);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput_, qualityPrioritization,
+            &isPhotoQualityPrioritizationSupported_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(nullptr, qualityPrioritization,
+            &isPhotoQualityPrioritizationSupported_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput_, qualityPrioritization,
+            &isPhotoQualityPrioritizationSupported_);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput_, qualityPrioritization, nullptr);
+    }
+
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_IsPhotoQualityPrioritizationSupported failed. %d", ret_);
+    } else {
+        if (isMovingPhotoSupported_ != true) {
+            LOG("PhotoQualityPrioritization is not supported.");
+        } else {
+            LOG("PhotoQualityPrioritization is supported.");
+        }
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetPhotoQualityPrioritization(int useCaseCode, int quality)
+{
+    Camera_PhotoQualityPrioritization qualityPrioritization = static_cast<Camera_PhotoQualityPrioritization>(quality);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_SetPhotoQualityPrioritization(photoOutput_, qualityPrioritization);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_SetPhotoQualityPrioritization(nullptr, qualityPrioritization);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_SetPhotoQualityPrioritization(photoOutput_, qualityPrioritization);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_PhotoOutput_SetPhotoQualityPrioritization failed. %d", ret_);
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::GetMainImage(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {
@@ -2392,6 +2497,12 @@ Camera_ErrorCode NDKCamera::TorchMode(int useCaseCode)
         torchMode_ = ON;
     } else if (useCaseCode == PARAMETER2_ERROR) {
         torchMode_ = AUTO;
+    } else if (useCaseCode == TORCH_MODE_OFF) {
+        torchMode_ = CAMERA_TORCH_MODE_OFF;
+    } else if (useCaseCode == TORCH_MODE_ON) {
+        torchMode_ = CAMERA_TORCH_MODE_ON;
+    } else if (useCaseCode == TORCH_MODE_AUTO) {
+        torchMode_ = CAMERA_TORCH_MODE_AUTO;
     }
     if (ret_ != CAMERA_OK) {
         LOG("OH_CameraManager_IsTorchSupported failed.");
@@ -2468,10 +2579,13 @@ Camera_ErrorCode NDKCamera::SetSmoothZoom(int useCaseCode)
 {
     float targetZoom = TARGET_ZOOM;
     Camera_SmoothZoomMode smoothZoomMode = NORMAL;
+    Camera_SmoothZoomMode cameraSmoothZoomMode = CAMERA_SMOOTH_ZOOM_MODE_NORMAL;
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_CaptureSession_SetSmoothZoom(captureSession_, targetZoom, smoothZoomMode);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_SetSmoothZoom(nullptr, targetZoom, smoothZoomMode);
+    } else if (useCaseCode == SMOOTH_ZOOM_MODE_NORMAL) {
+        ret_ = OH_CaptureSession_SetSmoothZoom(captureSession_, targetZoom, cameraSmoothZoomMode);
     }
     if (ret_ != CAMERA_OK) {
         LOG("OH_CaptureSession_SetSmoothZoom failed.");

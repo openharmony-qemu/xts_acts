@@ -1,9 +1,47 @@
 import CameraSessionFlashSuppTest from './camera/CameraSessionFlashSupp.test';
+import cameraSetFocusModeTest from './camera/CameraSetFocusModeTest.test';
+import cameraSessionIsFocusModeSupported from './camera/CameraIsFocusModeSupportedTest.test';
 import { CameraConcurrentTest } from './camera/CameraConcurrentInfosTest.test';
 import CameraVideoCodecTypeTest from './camera/CameraVideoCodecTypeTestSupp.test';
+import cameraSetFocusPointTest from './camera/CameraSetFocusPointTest.test';
+import CameraSessionCameraRotationSuppTest from './camera/CameraSessionCameraRotationSuppTest.test';
+import CameraVideoOutputSuppTest from './camera/CameraVideoOutputSuppTest.test';
+import CameraSessionZoomSuppTest from './camera/CameraSessionZoomSuppTest.test';
+import CameraVideoSessionOnOffTest from "./camera/CameraSmoothZoomInfoAvailableOnOFF.test";
+import cameraCaptureSessionGetExposureBiasRangeTest from './camera/CameraCaptureSessionGetExposureBiasRange.test';
+import cameraCaptureSessionTest from './camera/CameraCaptureSessionGetExposureMode.test';
+import CameraGetExposureBiasRange from './camera/CameraGetExposureBiasRange.test';
+import cameraGetExposureModeTest from './camera/CameraGetExposureModeTest.test';
+import cameraGetFocusModeTest from './camera/CameraGetFocusModeTest.test';
+import cameraGetSupportedFrameRateTest from './camera/CameraGetSupportedFrameRates.test';
+import cameraIsControlCenterSupported from './camera/CameraIsControlCenterSupported.test';
+import cameraIsExposureModeSupported from './camera/CameraIsExposureModeSupported.test';
+import CameraSessionHasSuppTest from './camera/CameraSessionHasSupp.test';
+import CameraDeprecatedCaptureSessionTest from './camera/CameraDeprecatedCaptureSession.test';
+import getSupportedSceneModesTest from './camera/getSupportedSceneModes.test';
+import CameraSessionPreviewRotationTest from "./camera/CameraSessionPreviewRotation.test";
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
+  cameraSetFocusModeTest();
   CameraConcurrentTest();
   CameraVideoCodecTypeTest();
+  cameraSetFocusPointTest();
+  cameraSessionIsFocusModeSupported();
+  CameraSessionCameraRotationSuppTest();
+  CameraVideoOutputSuppTest();
+  CameraSessionZoomSuppTest();
+  CameraVideoSessionOnOffTest();
+  CameraGetExposureBiasRange();
+  cameraGetSupportedFrameRateTest();
+  cameraGetFocusModeTest();
+  cameraIsExposureModeSupported();
+  cameraIsControlCenterSupported();
+  cameraGetExposureModeTest();
+  cameraCaptureSessionTest();
+  cameraCaptureSessionGetExposureBiasRangeTest();
+  CameraDeprecatedCaptureSessionTest();
+  CameraSessionHasSuppTest();
+  getSupportedSceneModesTest();
+  CameraSessionPreviewRotationTest();
 }

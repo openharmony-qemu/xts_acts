@@ -80,11 +80,15 @@ describe('LangTest', function () {
         + ' syslocale: ' + I18n.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CLOCK_0100
-    * @tc.name    test the is24HourClock interface
-    * @tc.desc    check the value of is24HourClock method
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_clock_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_CLOCK_0100
+     * @tc.desc   check the value of is24HourClock method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_clock_0100', Level.LEVEL2, function () {
         console.log('i18n_test_clock_0100 ' + 'start');
         let value = I18n.is24HourClock();
@@ -99,11 +103,15 @@ describe('LangTest', function () {
         }
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_CLOCK_0120
-    * @tc.name    test the set24HourClock interface
-    * @tc.desc    check the value of set24HourClock method
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_clock_0120
+     * @tc.number SUB_GLOBAL_I18N_JS_CLOCK_0120
+     * @tc.desc   check the value of set24HourClock method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_clock_0120', Level.LEVEL2, function () {
         console.log('i18n_test_clock_0120 ' + 'start');
         let value = I18n.is24HourClock();
@@ -126,11 +134,15 @@ describe('LangTest', function () {
         }
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0100
-    * @tc.name    test the getPreferredLanguageList interface with default value
-    * @tc.desc    check the value of getPreferredLanguageList method
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_preferredlanguage_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0100
+     * @tc.desc   check the value of getPreferredLanguageList method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_preferredlanguage_0100', Level.LEVEL0, function () {
         console.log('i18n_test_preferredlanguage_0100 ' + 'start');
         let value = I18n.getPreferredLanguageList();
@@ -138,11 +150,15 @@ describe('LangTest', function () {
         expect(value.length).assertLarger(0);
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0120
-    * @tc.name test the addPreferredLanguage interface
-    * @tc.desc check the value of addPreferredLanguage method
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_preferredlanguage_0120
+     * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0120
+     * @tc.desc   check the value of addPreferredLanguage method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_preferredlanguage_0120', Level.LEVEL2, function () {
         console.log('i18n_test_preferredlanguage_0120 ' + 'start');
         let list = I18n.getPreferredLanguageList();
@@ -161,11 +177,15 @@ describe('LangTest', function () {
         console.log('i18n_test_preferredlanguage_0120 ' + I18n.getPreferredLanguageList());
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0140
-    * @tc.name test the removePreferredLanguage interface
-    * @tc.desc check the value of removePreferredLanguage method
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_preferredlanguage_0140
+     * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_0140
+     * @tc.desc   check the value of removePreferredLanguage method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_preferredlanguage_0140', Level.LEVEL2, function () {
         console.log('i18n_test_preferredlanguage_0140 ' + 'start');
         let list = I18n.getPreferredLanguageList();
@@ -179,11 +199,15 @@ describe('LangTest', function () {
         console.log('i18n_test_preferredlanguage_0140 ' + I18n.getPreferredLanguageList());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_1000
-    * @tc.name    test the getFirstPreferredLanguage interface
-    * @tc.desc    check the value of getFirstPreferredLanguage method
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_preferredlanguage_1000
+     * @tc.number SUB_GLOBAL_I18N_JS_PREFERREDLANGUAGE_1000
+     * @tc.desc   check the value of getFirstPreferredLanguage method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_preferredlanguage_1000', Level.LEVEL2, function () {
         console.log('i18n_test_preferredlanguage_1000 ' + 'start');
         let value = I18n.getFirstPreferredLanguage();
@@ -199,11 +223,15 @@ describe('LangTest', function () {
         }
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_0100
-    * @tc.name    transfer from lower to upper
-    * @tc.desc    check the transfer result
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_0100
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0100
+     * @tc.desc   check the transfer result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transfer_test_0100', Level.LEVEL0, function () {
         let date = 'hello';
         let value = date.toLocaleUpperCase('zh-CN');
@@ -211,11 +239,15 @@ describe('LangTest', function () {
         expect(value).assertEqual('HELLO');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_0200
-    * @tc.name    transfer from upper to lower
-    * @tc.desc    check the transfer result
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_0200
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0200
+     * @tc.desc   check the transfer result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transfer_test_0200', Level.LEVEL0, function () {
         let date = 'WORLD';
         let value = date.toLocaleLowerCase('zh-CN');
@@ -223,11 +255,15 @@ describe('LangTest', function () {
         expect(value).assertEqual('world');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_0300
-    * @tc.name    transfer to upper
-    * @tc.desc    check the transfer result
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_0300
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0300
+     * @tc.desc   check the transfer result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transfer_test_0300', Level.LEVEL2, function () {
         let date = 'My name is Jack.';
         let value = date.toLocaleUpperCase('en-US');
@@ -235,11 +271,15 @@ describe('LangTest', function () {
         expect(value).assertEqual('MY NAME IS JACK.');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_TRANSFER_0400
-    * @tc.name    transfer to lower
-    * @tc.desc    check the transfer result
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   transfer_test_0400
+     * @tc.number SUB_GLOBAL_INTL_JS_TRANSFER_0400
+     * @tc.desc   check the transfer result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transfer_test_0400', Level.LEVEL2, function () {
         let date = 'The sky is in BLUE-STYLE!';
         let value = date.toLocaleLowerCase('en-US');

@@ -136,11 +136,16 @@ struct IndexPage {
     { title: 'fingerInfos', uri: 'pages/ArkUI/fingerInfos' },
     { title: 'bindPopupTest', uri: 'pages/ArkUI/bindPopupTest' },
     { title: 'AccessibilityHoverEvent', uri: 'pages/ArkUI/AccessibilityHoverEvent' },
-    { title: 'CapiDragAction', uri: 'pages/ArkUI/CapiDragAction' },
     { title: 'CapiDragEvent', uri: 'pages/ArkUI/CapiDragEvent' },
+    { title: 'CapiDragAction', uri: 'pages/ArkUI/CapiDragAction' },
     { title: 'SliderTest', uri: 'pages/ArkUI/SliderTest' },
     { title: 'ModalTransition', uri: 'pages/ArkUI/ModalTransition' },
     { title: 'BindContentCoverOption', uri: 'pages/ArkUI/BindContentCoverOption' },
+    { title: 'EnableShowHideWithContentCover', uri: 'pages/ArkUI/EnableShowHideWithContentCover' },
+    { title: 'ImageAnimationControllerPage', uri: 'pages/ArkUI/ImageAnimationControllerPage' },
+    { title: 'AnimatedDrawableDescriptorFrameDurations', uri: 'pages/ArkUI/AnimatedDrawableDescriptorFrameDurations' },
+    { title: 'GetDarkModeTest', uri: 'pages/ArkUI/GetDarkModeTest' },
+    { title: 'GetDarkModeTest', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
@@ -406,7 +411,7 @@ struct IndexPage {
       let str1: string[] = report.split(";");
       let title: string[] = [];
       let result: string[] = [];
-      for (let i = 0; i < Math.floor(str1.length / 2); i++) {
+      for (let i = 0; i < Math.floor(str1.length / 2) && i < result.length; i++) {
         title[i] = str1[i*2];
         result[i] = str1[i * 2+1];
       }

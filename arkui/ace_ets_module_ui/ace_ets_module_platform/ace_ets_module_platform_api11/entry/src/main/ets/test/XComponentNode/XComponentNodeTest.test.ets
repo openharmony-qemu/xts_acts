@@ -61,6 +61,9 @@ export default function XComponentNodeTest() {
       if (AppStorage.get('XComponentNodePage_onDestroy') != undefined) {
         AppStorage.delete('XComponentNodePage_onDestroy');
       }
+      if (AppStorage.get('XComponentNodePage_changeRenderType') != undefined) {
+        AppStorage.delete('XComponentNodePage_changeRenderType');
+      }
       await CommonFunc.sleep(500)
       console.info("XComponentNodeTest after each called");
       done()
@@ -81,6 +84,35 @@ export default function XComponentNodeTest() {
       expect(AppStorage.get('XComponentNodePage_onCreate')).assertEqual('onCreate succ');
   
       console.info('[XComponentNodeTest_0010] END');
+      done();
+    });
+
+        /**
+     * @tc.number XComponentNodeTest_0020
+     * @tc.name XComponentNodeTest_0020
+     * @tc.desc test XComponentNode changeRenderType
+     * @tc.level: Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('XComponentNodeTest_0020', Level.LEVEL2, async (done: Function) => {
+      console.info('XComponentNodeTest_0020 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+
+      let button = await driver.findComponent(ON.id('changeRenderType_display'));
+      await button.click();
+      console.info("[XComponentTypeNodeTest_0200] Click changeRenderType_display.");
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('XComponentNodePage_changeRenderType')).assertEqual(false);
+
+      button = await driver.findComponent(ON.id('changeRenderType_texture'));
+      await button.click();
+      console.info("[XComponentTypeNodeTest_0200] Click changeRenderType_texture.");
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('XComponentNodePage_changeRenderType')).assertEqual(true);
+  
+      console.info('[XComponentNodeTest_0020] END');
       done();
     });
   })

@@ -41,9 +41,9 @@ export default function ActsCellularDataAbnormalTest() {
     * @tc.desc  : verify that the isCellularDataEnabled takes effect
     * @tc.size  : MediumTest
     * @tc.type  : Function
-    * @tc.level : Level 0
+    * @tc.level : Level 1
     */
-    it("testTelephonyCellularDataisCellularDataEnabledAsync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+    it("testTelephonyCellularDataisCellularDataEnabledAsync_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataEnabledAsync_0100';
       console.info(`${caseName} test start `);
       try{
@@ -52,8 +52,8 @@ export default function ActsCellularDataAbnormalTest() {
             ExpectFail();
             console.info(`${caseName} get err is `+JSON.stringify(err));
           }else{
-            ExpectTrue(data);
             console.info(`${caseName} get success data is `+JSON.stringify(data));
+            ExpectTrue(data == true);
           }
           done();
           console.info(`${caseName}---End`);
@@ -73,13 +73,44 @@ export default function ActsCellularDataAbnormalTest() {
     * @tc.desc  : verify that the getCellularDataState takes effect
     * @tc.size  : MediumTest
     * @tc.type  : Function
-    * @tc.level : Level 0
+    * @tc.level : Level 1
     */
-    it("testTelephonyCellularDataGetCellularDataStateAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataGetCellularDataStateAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataStateAsync0100';
       console.info(`${caseName} test start `);
       try{
-        cellular.getCellularDataState((err, data) => {
+        cellular.getCellularDataState((err, dat:cellular.DataConnectState) => {
+          if (err) {
+            ExpectFail();
+            console.info(`${caseName} get err is `+JSON.stringify(err));
+          }else{
+            console.info(`${caseName} get success dat is `+JSON.stringify(dat));
+            ExpectTrue(dat == cellular.DataConnectState.DATA_STATE_CONNECTED);
+          }
+          done();
+          console.info(`${caseName}---End`);
+        })
+      }catch (err) {
+        console.info(`${caseName} catch err is :` +JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /*
+     * @tc.number: SUB_Telephony_CellularData_getCellularDataFlowType_Async_0100
+     * @tc.name  : testTelephonyCellularDataGetCellularDataFlowTypeAsync0100
+     * @tc.desc  : verify that the getCellularDataFlowType takes effect
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : Level 1
+     */
+    it("testTelephonyCellularDataGetCellularDataFlowTypeAsync0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyCellularDataGetCellularDataFlowTypeAsync0100';
+      console.info(`${caseName} test start `);
+      try{
+        cellular.getCellularDataFlowType((err, data) => {
           if (err) {
             ExpectFail();
             console.info(`${caseName} get err is `+JSON.stringify(err));
@@ -99,28 +130,29 @@ export default function ActsCellularDataAbnormalTest() {
     })
 
     /*
-     * @tc.number: SUB_Telephony_CellularData_getCellularDataFlowType_Async_0100
-     * @tc.name  : testTelephonyCellularDataGetCellularDataFlowTypeAsync0100
-     * @tc.desc  : verify that the getCellularDataFlowType takes effect
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
-     */
-    it("testTelephonyCellularDataGetCellularDataFlowTypeAsync0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyCellularDataGetCellularDataFlowTypeAsync0100';
+    * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0100
+    * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100
+    * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : Level 0
+    */
+    it("testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100';
       console.info(`${caseName} test start `);
       try{
-        cellular.getCellularDataFlowType((err, data) => {
-          if (err) {
+        cellular.isCellularDataRoamingEnabled(0,(err:BusinessError,contextData:boolean) => {
+          if(err){
+            console.info(`isCellularDataRoamingEnabled failed err is ${err.message}`);
             ExpectFail();
-            console.info(`${caseName} get err is `+JSON.stringify(err));
-          }else{
-            ExpectTrue(true);
-            console.info(`${caseName} get success data is `+JSON.stringify(data));
+            done();
           }
-          done();
-          console.info(`${caseName}---End`);
-        })
+          else{
+            console.info(`isCellularDataRoamingEnabled success contextData is ${contextData}`);
+            ExpectTrue(contextData == false);
+            done();
+          }
+        });
       }catch (err) {
         console.info(`${caseName} catch err is :` +JSON.stringify(err));
         ExpectFail();
@@ -160,14 +192,43 @@ export default function ActsCellularDataAbnormalTest() {
     })
 
     /*
+    * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0300
+    * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300
+    * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : Level 0
+    */
+    it("testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300';
+      console.info(`${caseName} test start `);
+      try{
+        cellular.isCellularDataRoamingEnabled(0).then((contextData:boolean) => {
+          console.info(`isCellularDataRoamingEnabled success contextData is ${contextData}`);
+          ExpectTrue(contextData == false);
+          done();
+        }).catch((err:BusinessError) => {
+          console.info(`isCellularDataRoamingEnabled failed err is ${err.message}`);
+          ExpectFail();
+          done();
+        })
+      }catch (err) {
+        console.info(`${caseName} catch err is :` +JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /*
      * @tc.number: SUB_Telephony_CellularData_getDefaultCellularDataSlotId_Async_0500
      * @tc.name  : testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500
      * @tc.desc  : verify that the getDefaultCellularDataSlotId takes effect
      * @tc.size  : MediumTest
      * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.level : Level 1
      */
-    it("testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetDefaultCellularDataSlotIdAsync0500';
       console.info(`${caseName} test start `);
       try{
@@ -196,17 +257,23 @@ export default function ActsCellularDataAbnormalTest() {
     * @tc.desc  : verify that the isCellularDataEnabled takes effect
     * @tc.size  : MediumTest
     * @tc.type  : Function
-    * @tc.level : Level 0
+    * @tc.level : Level 1
     */
-    it("testTelephonyCellularDataisCellularDataEnabledPromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataisCellularDataEnabledPromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataEnabledPromise_0100';
       console.info(`${caseName} test start `);
       try {
-        await cellular.isCellularDataEnabled();
-        console.log("Telephony_CellularData_isCellularDataEnabled_Promise_0100 finish");
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
+        cellular.isCellularDataEnabled().then((contextData: boolean) => {
+          console.info(`isCellularDataEnabled success,contextData is ${contextData}`);
+          ExpectTrue(contextData == true);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.info(`isCellularDataEnabled fail.err message is ${err.message}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
       } catch (err) {
         console.info(`${caseName} catch err is :` +JSON.stringify(err));
         ExpectFail();
@@ -221,17 +288,16 @@ export default function ActsCellularDataAbnormalTest() {
      * @tc.desc  : verify that the getCellularDataState takes effect
      * @tc.size  : MediumTest
      * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.level : Level 1
      */
-    it("testTelephonyCellularDataGetCellularDataStatePromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataGetCellularDataStatePromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataStatePromise_0100';
       console.info(`${caseName} test start `);
       try {
         await cellular.getCellularDataState().then((contextData: cellular.DataConnectState)=>{
-          console.log(caseName + "Telephony_CellularData_getCellularDataState_Promise_0100 finish");
-          ExpectTrue(true);
+          console.log(caseName + "Telephony_CellularData_getCellularDataState_Promise_0100 finish contextData: " + JSON.stringify(contextData));
+          ExpectTrue(contextData == cellular.DataConnectState.DATA_STATE_CONNECTED);
         });
-
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
@@ -248,9 +314,9 @@ export default function ActsCellularDataAbnormalTest() {
      * @tc.desc  : verify that the getCellularDataFlowType takes effect
      * @tc.size  : MediumTest
      * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.level : Level 1
      */
-    it("testTelephonyCellularDataGetCellularDataFlowTypePromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataGetCellularDataFlowTypePromise_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataFlowTypePromise_0100';
       console.info(`${caseName} test start `);
       try {
@@ -277,9 +343,9 @@ export default function ActsCellularDataAbnormalTest() {
      * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
      * @tc.size  : MediumTest
      * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.level : Level 1
      */
-    it("testTelephonyCellularDataisCellularDataRoamingEnabledPromise_0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataisCellularDataRoamingEnabledPromise_0200",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledPromise_0200';
       console.info(`${caseName} test start `);
       try {
@@ -302,9 +368,9 @@ export default function ActsCellularDataAbnormalTest() {
      * @tc.desc  : verify that the getDefaultCellularDataSlotId takes effect
      * @tc.size  : MediumTest
      * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.level : Level 1
      */
-    it("testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_0500",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataGetDefaultCellularDataSlotIdPromise_0500';
       console.info(`${caseName} test start `);
       try {
@@ -331,9 +397,9 @@ export default function ActsCellularDataAbnormalTest() {
      * @tc.desc  : verify that the getCellularDataState takes effect
      * @tc.size  : MediumTest
      * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.level : Level 1
      */
-    it("testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testTelephonyCellularDataGetDefaultCellularDataSlotIdSync_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyCellularDataisCellularDataEnabledAsync_0100';
       console.info(`${caseName} test start `);
       try{

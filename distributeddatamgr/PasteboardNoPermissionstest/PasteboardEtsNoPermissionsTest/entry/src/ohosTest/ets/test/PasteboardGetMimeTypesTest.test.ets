@@ -40,12 +40,13 @@ export default function PasteboardGetMimeTypesTest() {
     afterAll(() => {})
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100
-     * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_PLAIN type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100
+     * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_PLAIN type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0100 start-----")
@@ -68,12 +69,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200
-     * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_HTML type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200
+     * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_HTML type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0200 start-----")
@@ -96,12 +98,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300
-     * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_URI type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300
+     * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_URI type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0300 start-----")
@@ -124,12 +127,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400
-     * @tc.desc      : setData Verify the properties of the MIMETYPE_PIXELMAP type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400
+     * @tc.desc   setData Verify the properties of the MIMETYPE_PIXELMAP type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0400 start-----")
@@ -159,12 +163,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500
-     * @tc.desc      : setData Verify the properties of the MIMETYPE_TEXT_WANT type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500
+     * @tc.desc   setData Verify the properties of the MIMETYPE_TEXT_WANT type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0500 start-----")
@@ -187,12 +192,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600
-     * @tc.desc      : setData Verify the properties of the Customize type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600
+     * @tc.desc   setData Verify the properties of the Customize type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0600 start-----")
@@ -215,12 +221,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700
-     * @tc.desc      : setUnifiedData Verify the properties of the plainTextData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700
+     * @tc.desc   setUnifiedData Verify the properties of the plainTextData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0700 start-----")
@@ -251,12 +258,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800
-     * @tc.desc      : setUnifiedData Verify the properties of the hyperLinkData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800
+     * @tc.desc   setUnifiedData Verify the properties of the hyperLinkData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0800 start-----")
@@ -283,12 +291,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900
-     * @tc.desc      : setUnifiedData Verify the properties of the htmlData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900
+     * @tc.desc   setUnifiedData Verify the properties of the htmlData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_0900 start-----")
@@ -315,12 +324,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000
-     * @tc.desc      : setUnifiedData Verify the properties of the fileData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000
+     * @tc.desc   setUnifiedData Verify the properties of the fileData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1000 start-----")
@@ -350,12 +360,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100
-     * @tc.desc      : setUnifiedData Verify the properties of the pixelMapData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100
+     * @tc.desc   setUnifiedData Verify the properties of the pixelMapData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1100 start-----")
@@ -384,12 +395,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200
-     * @tc.desc      : setUnifiedData Verify the properties of the appItemData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200
+     * @tc.desc   setUnifiedData Verify the properties of the appItemData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1200 start-----")
@@ -426,12 +438,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300
-     * @tc.desc      : setUnifiedData Verify the properties of the imageData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300
+     * @tc.desc   setUnifiedData Verify the properties of the imageData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1300 start-----")
@@ -457,12 +470,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400
-     * @tc.desc      : setUnifiedData Verify the properties of the videoData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400
+     * @tc.desc   setUnifiedData Verify the properties of the videoData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1400 start-----")
@@ -488,12 +502,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500
-     * @tc.desc      : setUnifiedData Verify the properties of the audioData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500
+     * @tc.desc   setUnifiedData Verify the properties of the audioData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1500 start-----")
@@ -519,12 +534,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600
-     * @tc.desc      : setUnifiedData Verify the properties of the folderData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600
+     * @tc.desc   setUnifiedData Verify the properties of the folderData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1600 start-----")
@@ -550,12 +566,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700
-     * @tc.desc      : setUnifiedData Verify the properties of the sysFormData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700
+     * @tc.desc   setUnifiedData Verify the properties of the sysFormData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1700 start-----")
@@ -591,12 +608,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800
-     * @tc.desc      : setUnifiedData Verify the properties of the appRecordData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800
+     * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1800 start-----")
@@ -624,12 +642,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900
-     * @tc.desc      : setUnifiedData Verify the properties of the wantData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900
+     * @tc.desc   setUnifiedData Verify the properties of the wantData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_1900 start-----")
@@ -658,12 +677,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000
-     * @tc.desc      : setUnifiedData Verify the properties of the textData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000
+     * @tc.desc   setUnifiedData Verify the properties of the textData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2000 start-----")
@@ -692,12 +712,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100
-     * @tc.desc      : setUnifiedData Verify the properties of the arrayBufferData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100
+     * @tc.desc   setUnifiedData Verify the properties of the arrayBufferData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2100 start-----")
@@ -724,17 +745,19 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200
-     * @tc.desc      : setUnifiedData Verify the properties of the appRecordData type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200
+     * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200 start-----")
       await systemPasteboard.getMimeTypes().then((data: Array<String>) => {
-        expect(data[0]).assertEqual(undefined)
+        expect(data.length).assertEqual(0);
+        expect(data[0]).assertEqual(undefined);
         console.info(TAG + 'Succeeded in getting mimeTypes. mimeTypes: ' + JSON.stringify(data));
       }).catch((err:BusinessError) => {
         console.error(TAG + 'Failed to get mimeTypes. Cause:' + err.message);
@@ -743,13 +766,14 @@ export default function PasteboardGetMimeTypesTest() {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_getMimeTypes_2200 end-----")
     })
 	
-	/**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100
-     * @tc.desc      : setAppShareOptions Verify
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100
+     * @tc.desc   setAppShareOptions Verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_setAppShareOptions_0100 start-----")
@@ -765,12 +789,13 @@ export default function PasteboardGetMimeTypesTest() {
     })
 
     /**
-     * @tc.name      : test_SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100
-     * @tc.number    : SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100
-     * @tc.desc      : removeAppShareOptions Verify
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100
+     * @tc.desc   removeAppShareOptions Verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100 start-----")
@@ -784,6 +809,5 @@ export default function PasteboardGetMimeTypesTest() {
       }
       console.info(TAG + "-----SUB_Pasteboard_Local_SDK_SystemPasteboard_removeAppShareOptions_0100 end-----")
     })
-
   })
 }

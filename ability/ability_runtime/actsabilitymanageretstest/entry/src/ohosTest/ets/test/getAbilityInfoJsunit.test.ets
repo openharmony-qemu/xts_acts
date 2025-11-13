@@ -201,7 +201,6 @@ export default function getHapModuleInfoJsunit() {
   describe('getAbilityInfoTest', () => {
 
     let TAG1 = "SUB_AA_OpenHarmony == getAbilityInfoTest: ";
-    let sleepTimeOne = 1000;
     let id: number;
     beforeAll(async (done: Function) => {
       console.log(TAG1 + "beforeAll called");
@@ -211,19 +210,15 @@ export default function getHapModuleInfoJsunit() {
       })
       id = delayInfo.requestId;
       console.log(TAG1 + "requestId is : " + id);
-      setTimeout(() => {
-        console.log(TAG1 + "beforeAll end");
+      console.log(TAG1 + "beforeAll end");
         done();
-      }, sleepTimeOne)
     })
 
     afterAll(async (done: Function) => {
       console.log(TAG1 + "afterAll called");
       backgroundTaskManager.cancelSuspendDelay(id);
-      setTimeout(() => {
-        console.log(TAG1 + "afterAll end");
-        done();
-      }, sleepTimeOne)
+      console.log(TAG1 + "afterAll end");
+      done();
     })
 
     /**
@@ -234,7 +229,6 @@ export default function getHapModuleInfoJsunit() {
      */
     it('context_getAbilityInfo_test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[context_getAbilityInfo_test_0100] START');
-      await Utils.sleep(1000);
       let timeOldStamp = await Utils.getNowTime();
       let context = ability_featureAbility.getContext();
       await context.getAbilityInfo()
@@ -263,7 +257,6 @@ export default function getHapModuleInfoJsunit() {
       try {
         let context = ability_featureAbility.getContext();
         console.info('[context_getAbilityInfo_test_0200] START');
-        await Utils.sleep(1000);
         let timeOldStamp = await Utils.getNowTime();
         context.getAbilityInfo((error, data) => {
           let timeNewStamp = Utils.getNowTime();
@@ -289,7 +282,6 @@ export default function getHapModuleInfoJsunit() {
      */
     it('context_getAbilityInfo_test_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[context_getAbilityInfo_test_0400] START');
-      await Utils.sleep(1000);
       let timeOldStamp = await Utils.getNowTime();
       let context = ability_featureAbility.getContext();
       await context.getAbilityInfo()

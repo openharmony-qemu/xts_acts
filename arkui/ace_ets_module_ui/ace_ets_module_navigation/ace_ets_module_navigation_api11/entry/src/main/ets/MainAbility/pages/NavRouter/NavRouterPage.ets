@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- import {MessageManager,Callback} from '../../utils/MessageManager';
+import {MessageManager,Callback} from '../../utils/MessageManager';
 
 @Entry
 @Component
@@ -99,7 +99,7 @@ struct NavRouterPage {
         .navBarWidth('30%')
         .hideTitleBar(true)
         .hideToolBar(true)
-        .height('80%')
+        .height('60%')
       Text(this.stateChange).fontSize(20).margin(10).key('testT')
       Text(this.routerState).fontSize(20).margin(10).key('TestRouter')
       }

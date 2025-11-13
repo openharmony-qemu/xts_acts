@@ -16,6 +16,7 @@ import hilog from '@ohos.hilog';
 import { describe, beforeAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import bundleManager from '@ohos.bundle.bundleManager';
 import base from '@ohos.base'
+import { shortcutManager } from '@kit.AbilityKit';
 
 const TAG = '[Orientation]';
 const DOMAIN = 0x0000;
@@ -51,5 +52,34 @@ export default function abilityTest() {
       })
       hilog.info(DOMAIN, TAG, BUNDLE + '001 end');
     })
+
+
+     /*
+     * @tc.number      Sub_Bms_Framework_shortcutManager_100
+     * @tc.name        Sub_Bms_Framework_shortcutManager_100
+     * @tc.desc        test getAllShortcutInfoForSelf return value is []
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+      it('Sub_Bms_Framework_shortcutManager_100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+        console.info('Sub_Bms_Framework_shortcutManager_100 begin');
+        await shortcutManager.getAllShortcutInfoForSelf()
+           .then((data: shortcutManager.ShortcutInfo[]) => {
+              console.info('Sub_Bms_Framework_shortcutManager_100 shortcut data is' + JSON.stringify(data));
+              expect(data.length == 0).assertTrue();
+         }).catch((err: base.BusinessError) => {
+             console.error(`Sub_Bms_Framework_shortcutManager_100 errData is errCode:${err.code}  message:${err.message}`);
+             expect().assertFail()
+        });
+        console.info('Sub_Bms_Framework_shortcutManager_100 end');
+        done();
+      })
+
+     
+
+
+
+
   })
 }

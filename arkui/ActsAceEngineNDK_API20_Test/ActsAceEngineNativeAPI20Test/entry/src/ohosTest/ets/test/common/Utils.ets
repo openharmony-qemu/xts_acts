@@ -241,7 +241,9 @@ export default class Utils {
       url: `MainAbility/pages/${pageTag}`,
     }
     try {
-      await router.pushUrl(options, router.RouterMode.Standard);
+      let result = await router.pushUrl(options, router.RouterMode.Standard);
+      await Utils.sleep(1000);
+      console.info(`push ${pageTag} page success ` + JSON.stringify(result));
     } catch (err) {
       console.error(`push ${pageTag} page error: ` + err);
     }

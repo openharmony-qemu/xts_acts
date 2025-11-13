@@ -19,52 +19,27 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 
 let loadedUrl: string;
+const EVENT_ID_SET_EMIT_KEY = 200210;
 
 @Entry
 @Component
 struct Index {
   controller: WebController = new WebController();
-  @State str: string = "emitUserAgent";
-  @State loadedResource: string = "";
-  @State progress: string = "";
+  @State str: string = "";
   @State newUrl: string = "";
-  @State pageBegin: string = "";
-  @State pageEnd: string = "";
-  @State console: string = "";
-  @State confirm: string = "";
-  @State alert: string = "";
-  @State errorReceive: string = "";
-  @State httpErrorReceive: number = 0;
-  @State titleReceive: string = "";
-  @State isDownloadStart: boolean = false;
-  @State javaScriptAccess: boolean = true;
-  @State fileAccess: boolean = true;
-  @State domStorageAccess: boolean = false;
-  @State imageAccess: boolean = true;
-  @State geolocationAccess: boolean = true;
-  @State onlineImageAccess: boolean = true;
-  @State databaseAccess: boolean = true;
-  @State initialScale: number = 100;
-  @State enterPageEnd: boolean = false;
-  @State newScale: number = 0;
-  @State scaleChange: boolean = false;
-  @State geoShow: boolean = false;
-  @State mixedMode: MixedMode = MixedMode.All;
-  @State cacheMode: CacheMode = CacheMode.Default;
-  @State cacheError: boolean = false;
-  @State mixedSwitch: boolean = false;
-  @State mixedAllSwitch: boolean = false;
-  @State webVisibility: Visibility = Visibility.Visible;
-  @State isProgressFinish: boolean = false;
-  @State isHttpErrorReceive: boolean = false;
-  @State isLargeThan: boolean = false;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     };
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack);
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY);
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -73,19 +48,8 @@ struct Index {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: ESObject = {
-    test: (res: ESObject) => {
-      Utils.emitEvent(res, 102);
-    },
-    toString: (str: ESObject) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: ESObject) => {
-      Utils.emitEvent(res, 86);
-      return "web222";
     }
   }
 
@@ -100,42 +64,51 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
+          await Utils.waitForExist(()=>this.isPageEnd, 'webcomponentIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'webcomponentIsReceive', 1, 1000);
           console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitUserAgent": {
-              await Utils.sleep(18000);
               this.controller.runJavaScript({
                 script: "getUserAgent()", callback: (res) => {
-                  Utils.emitEvent(res, 100)
+                  Utils.emitEvent(res, 200220);
                 }
               });
               break;
             }
             case "emitOnUrlLoadIntercept": {
-              this.controller.loadUrl({ url: "https://gitee.com/" });
-              setTimeout(() => {
-                Utils.emitEvent(loadedUrl, 104);
-              }, 3000)
+              this.isPageEnd = -1;
+              this.controller.loadUrl({ url: "https://www.example.com/" });
+              let realVal = await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              if (realVal === 1) {
+                Utils.emitEvent(loadedUrl, 200230);
+              }
               break;
             }
             case "emitLoadUrl": {
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/index.html" });
-              await Utils.sleep(18000);
-              setTimeout(() => {
-                this.controller.runJavaScript({
-                  script: "getTitle()", callback: (res) => {
-                    console.info("getTitle1==>" + res);
-                    Utils.emitEvent(res, 110);
-                  }
-                })
-              }, 3000)
+              let realVal = await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              if (realVal !== 1) {
+                break;
+              }
+              this.controller.runJavaScript({
+                script: "getTitle()", callback: (res) => {
+                  console.info("getTitle1==>" + res);
+                  Utils.emitEvent(res, 200240);
+                }
+              })
               break;
             }
             case "emitOnRefreshAccessedHistory": {
+              this.isPageEnd = -1;
               this.controller.loadUrl({ url: "resource://rawfile/second.html" });
-              setTimeout(() => {
-                Utils.emitEvent(this.newUrl, 116);
-              }, 3000)
+              let realVal = await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+              if (realVal !== 1) {
+                break;
+              }
+              Utils.emitEvent(this.newUrl, 200250);
               break;
             }
             default:
@@ -144,159 +117,20 @@ struct Index {
         })
       }
 
-      TextInput({ placeholder: "inputs your words" })
-        .key('textInput')
-        .type(InputType.Normal)
-        .placeholderColor(Color.Blue)
-        .placeholderFont({ size: 20, weight: FontWeight.Normal, family: "sans-serif", style: FontStyle.Normal })
-        .enterKeyType(EnterKeyType.Next)
-        .caretColor(Color.Green)
-        .height(60)
-        .fontSize(30)
-        .fontWeight(FontWeight.Bold)
-        .fontFamily("cursive")
-        .fontStyle(FontStyle.Italic)
-        .fontColor(Color.Red)
-        .maxLength(20)
-        .border({ width: 1, color: 0x317AF7, radius: 10, style: BorderStyle.Solid })
-        .onClick(() => {
-          console.info("TextInput click")
-        })
       Web({ src: $rawfile('index.html'), controller: this.controller })
-        .visibility(this.webVisibility)
-        .javaScriptAccess(this.javaScriptAccess)
-        .fileAccess(this.fileAccess)
-        .imageAccess(this.imageAccess)
-        .domStorageAccess(this.domStorageAccess)
-        .geolocationAccess(this.geolocationAccess)
-        .onlineImageAccess(this.onlineImageAccess)
-        .databaseAccess(this.databaseAccess)
-        .cacheMode(this.cacheMode)
-        .initialScale(this.initialScale)
-        .mixedMode(this.mixedMode)
         .userAgent("Mozila/5.0 (Linux; Andriod 9; VRD-AL10; HMSCore 6.3.0.331) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.0.4.1 MobileSafari/537.36")
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
         .onUrlLoadIntercept((event) => {
           console.info("onUrlLoadIntercept==>" + event?.data);
           loadedUrl = String(event?.data);
           return false;
         })
-        .onRenderExited((event) => {
-          console.info("onRenderExited==>" + event?.renderExitReason);
-          Utils.emitEvent(event.renderExitReason, 106);
-        })
-        .onResourceLoad((event) => {
-          console.info("onResourceLoad==>" + event.url);
-          this.loadedResource = event.url;
-        })
-        .onProgressChange((event) => {
-          if (this.isProgressFinish) {
-            console.info("isProgressFinish==>");
-            if (this.progress == "100") {
-              Utils.emitEvent(this.progress, 114);
-              this.isProgressFinish = false;
-            }
-          }
-          this.progress = event.newProgress + "";
-        })
         .onRefreshAccessedHistory((event) => {
           console.info("onRefreshAccessedHistory==>");
           this.newUrl = event.url;
         })
-        .onFocus(() => {
-          Utils.emitEvent("requestFocus", 126);
-        })
-        .onPageBegin((event) => {
-          this.pageBegin = event.url;
-        })
         .onPageEnd((event) => {
-          this.pageEnd = event.url;
-          console.log("onPageEnd==>");
-          if (this.enterPageEnd) {
-            Utils.emitEvent(this.newScale, 97);
-            this.enterPageEnd = false;
-          }
-        })
-        .onConsole((event) => {
-          this.console = event.message.getMessage();
-          let level = event.message.getMessageLevel();
-          let msg = event.message.getMessage();
-          console.log("html==>" + msg);
-          if (this.mixedSwitch) {
-            Utils.emitEvent(msg, 186);
-            this.mixedSwitch = false;
-          } else if (this.mixedAllSwitch) {
-            Utils.emitEvent(level, 188);
-            this.mixedAllSwitch = false;
-          }
-          return false;
-        })
-        .onAlert((event) => {
-          this.alert = event.message;
-          return false;
-        })
-        .onConfirm((event) => {
-          this.confirm = event.message;
-          return false;
-        })
-        .onErrorReceive((event) => {
-          this.errorReceive = event.request.getRequestUrl();
-          console.log("onErrorReceive==>");
-          if (this.cacheError) {
-            Utils.emitEvent("cacheError", 182);
-            this.cacheError = false;
-          }
-        })
-        .onHttpErrorReceive((event) => {
-          if (this.isHttpErrorReceive) {
-            console.info("isHttpErrorReceive==>");
-            this.httpErrorReceive = event.response.getResponseCode();
-            if (this.httpErrorReceive > 400) {
-              this.isLargeThan = true;
-              Utils.emitEvent(this.isLargeThan, 66);
-            }
-            this.isLargeThan = false;
-            this.isHttpErrorReceive = false;
-          }
-        })
-        .onTitleReceive((event) => {
-          this.titleReceive = event.title;
-        })
-        .onDownloadStart((event) => {
-          if (this.isDownloadStart) {
-            console.info("isDownloadStart==>");
-            Utils.emitEvent(event.url, 68);
-            this.isDownloadStart = false;
-          }
-        })
-        .onScaleChange((event) => {
-          console.log("onScaleChange==>");
-          this.newScale = event.newScale;
-          if (this.scaleChange) {
-            Utils.emitEvent("onScaleChange", 98);
-            this.scaleChange = false;
-          }
-        })
-        .onPrompt((event) => {
-          event.result.handlePromptConfirm("onPrompt ok");
-          Utils.emitEvent(event.message, 178);
-          return true;
-        })
-        .onGeolocationShow(() => {
-          console.log("onGeolocationShow==>")
-          if (this.geoShow) {
-            Utils.emitEvent("onGeolocationShow", 99);
-            this.geoShow = false;
-          }
-        })
-        .onBlur(() => {
-          console.info("onBlur==>");
-          this.controller.requestFocus();
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

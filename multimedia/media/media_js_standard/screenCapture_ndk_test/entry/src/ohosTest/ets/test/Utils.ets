@@ -74,8 +74,30 @@ export default class Utils {
       return 0;
     }
   }
+  
   static async btnTextScreenCaptureCancel() {
     let button = await driver.waitForComponent(ON.text("不允许"), 1000)
+    if (button == null) {
+      return 1;
+    } else {
+      await button.click();
+      return 0;
+    }
+  }
+
+  
+  static async btnPickerTextScreenCapture() {
+    let button = await driver.waitForComponent(ON.text("开始共享"), 1000)
+    if (button == null) {
+      return 1;
+    } else {
+      await button.click();
+      return 0;
+    }
+  }
+  
+  static async btnPikerTextScreenCaptureCancel() {
+    let button = await driver.waitForComponent(ON.text("取消"), 1000)
     if (button == null) {
       return 1;
     } else {

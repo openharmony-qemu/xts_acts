@@ -14,8 +14,10 @@
  */
 import HiAppEventPamTest from './HiAppEventPam.test';
 import HiAppEventSetConfigTest from './HiAppEventConfig.test';
+import HiAppEventconfigEventPolicy from './HiAppEventconfigEventPolicy.test'
 
 export default function testsuite() {
   HiAppEventPamTest();
   HiAppEventSetConfigTest();
+  HiAppEventconfigEventPolicy();
 }

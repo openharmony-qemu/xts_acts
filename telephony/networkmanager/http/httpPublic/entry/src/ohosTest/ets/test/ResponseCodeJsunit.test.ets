@@ -498,6 +498,28 @@ export default function responseCodeJsunit() {
       }
     });
     /**
+     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_RANGE_NOT_SATISFIABLE_0100
+     * @tc.name: testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100
+     * @tc.desc: Test Test ResponseCode property.
+     * @tc.level: level1
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it("testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName:string = 'testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100';
+      console.info(`${caseName}---Start`);
+      try {
+        expectTrue(http.ResponseCode.RANGE_NOT_SATISFIABLE == 416);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.log("testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100 : error = " + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
      * @tc.number: SUB_NetworkMgr_Http_ResponseCode_INTERNAL_ERROR_0100
      * @tc.name: testNetworkMgrHttpResponseCodeINTERNALERROR0100
      * @tc.desc: Test Test ResponseCode property.

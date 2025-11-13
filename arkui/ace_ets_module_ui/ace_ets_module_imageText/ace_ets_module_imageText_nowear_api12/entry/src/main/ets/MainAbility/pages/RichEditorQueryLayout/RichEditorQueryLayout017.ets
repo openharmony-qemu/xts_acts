@@ -23,7 +23,7 @@ struct RichEditorQueryLayout017 {
   build() {
 
     Column() {
-
+      Text('style:' + this.style).id('style').height('5%').clip(true)
       Button('get spans').onClick(() => {
         this.style = '';
         this.controller.getSpans({
@@ -49,7 +49,7 @@ struct RichEditorQueryLayout017 {
             }
           }
         })
-      }).id('get_content')
+      }).id('get_content').height('5%')
 
       RichEditor({ controller: this.controller })
         .height(200)
@@ -69,9 +69,6 @@ struct RichEditorQueryLayout017 {
           })
         })
         .id('rich_struct')
-
-      Text('style:' + this.style).id('style')
-
     }
   }
 }

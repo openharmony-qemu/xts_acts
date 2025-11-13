@@ -13,12 +13,17 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+import events_emitter from '@ohos.events.emitter';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 export default function webMediaOption() {
   describe('WebMediaOptionTest', () => {
     beforeAll(async (done: Function) => {
@@ -32,12 +37,12 @@ export default function webMediaOption() {
         if (!("WebMediaOption" == pages.name)) {
           console.info("get WebMediaOption state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebMediaOption page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebMediaOption page error: " + err);
       }
+      await waitForComponents('webViewMediaOptionTestButton');
       done()
     });
     beforeEach(async (done: Function) => {
@@ -46,15 +51,12 @@ export default function webMediaOption() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
 
     afterEach(async (done: Function) => {
       console.info("WebMediaOptionTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebMediaOptionTest afterEach end");
       done();
     })
 
@@ -67,10 +69,12 @@ export default function webMediaOption() {
     * @tc.level       : Level 0
     */
     it('testMediaOptions001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitMediaOptions001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testMediaOptions001", false, 415, done);
-      sendEventByKey('webViewMediaOptionTestButton', 10, '');
+      Utils.emitEvent("emitMediaOptions001", 300600)
+      Utils.registerBaseEvent("testMediaOptions001", false, 300610, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'webViewMediaOptionTestButton')
     })
   })
 }

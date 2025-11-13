@@ -94,6 +94,11 @@ interface movingPhoto {
   isMovingPhotoSupported: boolean;
 }
 
+interface photoQualityPrioritizationInstance {
+  errorCode: number;
+  isPhotoQualityPrioritizationSupported: boolean;
+}
+
 interface isTorchSupported {
   errorCode: number;
   isTorchSupported: boolean;
@@ -163,6 +168,16 @@ interface videoProfile {
   width: number;
   min: number;
   max: number;
+}
+
+interface orientationVariable {
+  errorCode: number;
+  isVariable: boolean;
+}
+
+interface physicalCameraOrientation {
+  errorCode: number;
+  orientation: number;
 }
 
 export const initCamera: (surfaceId: string) => number;
@@ -315,6 +330,8 @@ export const sessionGetVideoRotation: (a: number) => number;
 
 export const sessionGetPreviewRotation: (a: number) => number;
 
+export const sessionGetImageRotation: (a: number) => number;
+
 export const sessionSetPreviewRotation: (a: number, b: boolean) => number;
 
 export const sessionGetFocusMode: () => number;
@@ -410,6 +427,10 @@ export const oHPhotoOutputUnregisterPhotoAssetAvailableCallback: (index:number) 
 export const oHPhotoOutputIsMovingPhotoSupported: (index:number) => movingPhoto;
 
 export const oHPhotoOutputEnableMovingPhoto: (index:number, enable:boolean) => number;
+
+export const oHPhotoOutputIsPhotoQualityPrioritizationSupported: (a:number, b:number) => photoQualityPrioritizationInstance;
+
+export const oHPhotoOutputSetPhotoQualityPrioritization: (a:number, b:number) => number;
 
 export const oHPhotoNativeGetMainImage: (index:number) => number;
 
@@ -510,6 +531,12 @@ export const oHCameraManagerGetCameraDevice: (index:number) => number;
 export const oHCameraManagerGetCameraConcurrentInfos: (index:number) => number;
  
 export const oHCameraInputOpenConcurrentCameras: (index:number) => number;
+
+export const oHCameraInputIsPhysicalCameraOrientationVariable: () => orientationVariable;
+
+export const oHCameraInputGetPhysicalCameraOrientation: () => physicalCameraOrientation;
+
+export const oHCameraInputUsePhysicalCameraOrientation: (isUsed:boolean) => number;
 
 export const sessionIsMacroSupported: (a: number) => MacroSupportedinfo;
 

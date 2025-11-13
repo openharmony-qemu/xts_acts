@@ -32,7 +32,7 @@ struct PatternLockL0_01 {
   @State Vue: boolean = false;
   @State passwords: Number[] = [];
   @State customModifier: PatternLockModifier = new PatternLockModifier()
-    .sideLength(100)
+    .sideLength('47.5%')
     .circleRadius(9)
     .pathStrokeWidth(18)
     .regularColor('#ff182431')
@@ -150,7 +150,7 @@ struct PatternLockL0_01 {
           Column({ space: 5 }) {
             Text("原生属性").fontColor(Color.Red)
             PatternLock(this.patternLockController)
-              .sideLength(100)
+              .sideLength('47.5%')
               .circleRadius(9)
               .pathStrokeWidth(18)
               .regularColor('#ff182431')
@@ -173,7 +173,8 @@ struct PatternLockL0_01 {
 
         Button('确认')
           .margin(10)
-          .height('10%')
+          .width('30%')
+          .height('6%')
           .onClick(() => {
             this.Vue = true;
           })
@@ -212,6 +213,7 @@ struct PatternLockL0_01 {
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
+      .margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

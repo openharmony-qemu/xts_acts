@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import usbMgr from '@ohos.usbManager';
 import { BusinessError } from '@ohos.base';
 
-const domain: number = 0x0000;
+const domain: int = 0x0000;
 const tag: string = 'testTag';
 const CAPACITY_NOT_SUPPORT_CODE: number = 801;
 const USB_REQUEST_DIR_TO_DEVICE_STR: string = '0';
@@ -32,14 +32,19 @@ export default function UsbManagerNormalHapTest() {
     })
 
     /**
-     * @tc.number    SUB_USB_HostManager_JS_Func_Static_0100
-     * @tc.name      getDevicesTest001
-     * @tc.desc      Test usb API getDevices functionality.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   getDevicesTest001
+     * @tc.number SUB_USB_HostManager_JS_Func_Static_0100
+     * @tc.desc   Test usb API getDevices functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getDevicesTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '----------------------getDevicesTest001---------------------------');
       try {
         const devices: usbMgr.USBDevice[] = usbMgr.getDevices();
+        hilog.info(domain, tag, JSON.stringify(devices));
         for (let i = 0; i < devices.length; i++) {
           const device: usbMgr.USBDevice = devices[i];
           hilog.info(domain, tag, "Device Information:");
@@ -130,9 +135,13 @@ export default function UsbManagerNormalHapTest() {
     })
 
     /**
-     * @tc.number    SUB_USB_HostManager_JS_Func_Static_0200
-     * @tc.name      usbEnumTest001
-     * @tc.desc      Test usb enumeration coverage.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   usbEnumTest001
+     * @tc.number SUB_USB_HostManager_JS_Func_Static_0200
+     * @tc.desc   Test usb enumeration coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("usbEnumTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '----------------------usbEnumTest001---------------------------');

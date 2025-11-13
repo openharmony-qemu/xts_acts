@@ -12,8 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import ActsGetMultiple from './Getmultiple.test.js'
 import ActsGetMultipleAccounts from './Getmultipleaccounts.test.js'
 
 export default function testsuite() {
+    ActsGetMultiple()
     ActsGetMultipleAccounts()
 }

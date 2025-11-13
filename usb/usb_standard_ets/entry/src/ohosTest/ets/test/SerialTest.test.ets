@@ -120,12 +120,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getPortList_Func_0100
-     * @tc.name     : testGetPortList001
-     * @tc.desc     : getportlist successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetPortList001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getPortList_Func_0100
+     * @tc.desc   getportlist successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetPortList001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -151,12 +152,35 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_hasSerialRight_Func_0100
-     * @tc.name     : testHasSerialRight001
-     * @tc.desc     : hasSerialRight successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetPortList002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getPortList_RetValue_0300
+     * @tc.desc   getportlist is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetPortList002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        console.info(TAG, 'testGetPortList002 start');
+        if (await checkDevice() === false) {
+          let res: serial.SerialPort[] = serial.getPortList();
+          console.info(TAG, 'testGetPortList002 portList: ', JSON.stringify(res));
+          expect(res.length).assertEqual(0);
+          done();
+        } else {
+          done();
+          return;
+        }
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testHasSerialRight001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_hasSerialRight_Func_0100
+     * @tc.desc   hasSerialRight successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHasSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -176,12 +200,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_hasSerialRight_ErrCode_0100
-     * @tc.name     : testHasSerialRight002
-     * @tc.desc     : invalidInput hasSerialRight failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testHasSerialRight002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_hasSerialRight_ErrCode_0100
+     * @tc.desc   invalidInput hasSerialRight failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHasSerialRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -193,7 +218,7 @@ export default function SerialTest() {
         let invalidInput: number = -1;
         let hasRight: boolean = serial.hasSerialRight(invalidInput);
         console.info(TAG, 'testHasSerialRight002 hasRight: ', hasRight);
-        expect().assertFail();
+        expect(hasRight).assertFalse();
       } catch (error) {
         expect(error.code).assertEqual(401);
         console.error(TAG, 'testHasSerialRight002 catch err code: ', error.code, ', message: ', error.message);
@@ -202,12 +227,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_hasSerialRight_ErrCode_0200
-     * @tc.name     : testHasSerialRight003
-     * @tc.desc     : invalidPort hasSerialRight failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testHasSerialRight003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_hasSerialRight_ErrCode_0200
+     * @tc.desc   invalidPort hasSerialRight failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHasSerialRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -228,12 +254,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_requestSerialRight_Func_0100
-     * @tc.name     : testRequestSerialRight001
-     * @tc.desc     : requestSerialRight successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRequestSerialRight001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_requestSerialRight_Func_0100
+     * @tc.desc   requestSerialRight successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRequestSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -264,12 +291,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_requestSerialRight_ErrCode_0100
-     * @tc.name     : testRequestSerialRight002
-     * @tc.desc     : invalidInput requestSerialRight failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRequestSerialRight002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_requestSerialRight_ErrCode_0100
+     * @tc.desc   invalidInput requestSerialRight failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRequestSerialRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try{
@@ -284,7 +312,7 @@ export default function SerialTest() {
         try {
           let hasRight: boolean = await futureRes;
           console.info(TAG, 'getPermission isAgree: ', hasRight);
-          expect().assertFail();
+          expect(hasRight).assertFalse();
         } catch (err) {
           console.error(TAG, 'getPermission catch err name: ', err.name, ', message: ', err.message);
           expect().assertFail();
@@ -297,12 +325,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_requestSerialRight_ErrCode_0200
-     * @tc.name     : testRequestSerialRight003
-     * @tc.desc     : not exist portId requestSerialRight failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRequestSerialRight003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_requestSerialRight_ErrCode_0200
+     * @tc.desc   not exist portId requestSerialRight failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRequestSerialRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -322,12 +351,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_open_Func_0100
-     * @tc.name     : testOpen001
-     * @tc.desc     : open successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpen001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_open_Func_0100
+     * @tc.desc   open successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -347,12 +377,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_open_ErrCode_0100
-     * @tc.name     : testOpen002
-     * @tc.desc     : invalidPort open failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpen002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_open_ErrCode_0100
+     * @tc.desc   invalidPort open failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOpen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -372,12 +403,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_open_ErrCode_0200
-     * @tc.name     : testOpen003
-     * @tc.desc     : Repeated open.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpen003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_open_ErrCode_0200
+     * @tc.desc   Repeated open.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOpen003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -398,12 +430,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_open_ErrCode_0300
-     * @tc.name     : testOpen004
-     * @tc.desc     : not exist port to open.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpen004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_open_ErrCode_0300
+     * @tc.desc   not exist port to open.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOpen004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -423,12 +456,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_addSerialRight_ErrCode_0100
-     * @tc.name     : testAddSerialRight001
-     * @tc.desc     : not system app.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testAddSerialRight001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_addSerialRight_ErrCode_0100
+     * @tc.desc   not system app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAddSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -453,12 +487,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_Func_0100
-     * @tc.name     : testSetAttribute001
-     * @tc.desc     : setAttribute successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testSetAttribute001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_Func_0100
+     * @tc.desc   setAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetAttribute001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -485,12 +520,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0100
-     * @tc.name     : testSetAttribute002
-     * @tc.desc     : not openPortId to setAttribute.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testSetAttribute002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0100
+     * @tc.desc   not openPortId to setAttribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAttribute002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -515,12 +551,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0200
-     * @tc.name     : testSetAttribute003
-     * @tc.desc     : invalid PortId to setAttribute.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testSetAttribute003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0200
+     * @tc.desc   invalid PortId to setAttribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAttribute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -545,13 +582,14 @@ export default function SerialTest() {
       }
     })
 
-        /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0300
-     * @tc.name     : testSetAttribute004
-     * @tc.desc     : not exist PortId to setAttribute.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+    /**
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testSetAttribute004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_setAttribute_ErrCode_0300
+     * @tc.desc   not exist PortId to setAttribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAttribute004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -577,12 +615,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0100
-     * @tc.name     : testGetAttribute001
-     * @tc.desc     : getAttribute successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetAttribute001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0100
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -609,12 +648,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0100
-     * @tc.name     : testGetAttribute002
-     * @tc.desc     : not openPortId to getAttribute.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetAttribute002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0100
+     * @tc.desc   not openPortId to getAttribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetAttribute002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -633,12 +673,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0200
-     * @tc.name     : testGetAttribute003
-     * @tc.desc     : invalid openPortId to getAttribute.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetAttribute003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0200
+     * @tc.desc   invalid openPortId to getAttribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetAttribute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -658,12 +699,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0300
-     * @tc.name     : testGetAttribute004
-     * @tc.desc     : not exist portId to getAttribute.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetAttribute004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_ErrCode_0300
+     * @tc.desc   not exist portId to getAttribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetAttribute004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -683,12 +725,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_close_Func_0100
-     * @tc.name     : testClose001
-     * @tc.desc     : close port successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testClose001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_close_Func_0100
+     * @tc.desc   close port successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -715,12 +758,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_close_ErrCode_0100
-     * @tc.name     : testClose002
-     * @tc.desc     : Repeated close.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testClose002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_close_ErrCode_0100
+     * @tc.desc   Repeated close.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClose002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -741,12 +785,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_close_ErrCode_0200
-     * @tc.name     : testClose003
-     * @tc.desc     : invalid Port to close.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testClose003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_close_ErrCode_0200
+     * @tc.desc   invalid Port to close.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClose003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -768,12 +813,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_close_ErrCode_0300
-     * @tc.name     : testClose004
-     * @tc.desc     : not exist Port to close.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testClose004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_close_ErrCode_0300
+     * @tc.desc   not exist Port to close.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testClose004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -795,12 +841,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_ErrCode_0100
-     * @tc.name     : testRead001
-     * @tc.desc     : read timeout.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRead001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0100
+     * @tc.desc   read timeout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -823,12 +870,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0100
-     * @tc.name     : testReadSync001
-     * @tc.desc     : read timeout.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testReadSync001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0100
+     * @tc.desc   read timeout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -849,12 +897,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_Func_0100
-     * @tc.name     : testWriteSync001
-     * @tc.desc     : writeSync successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWriteSync001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_Func_0100
+     * @tc.desc   writeSync successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -876,12 +925,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
-     * @tc.name     : testWriteSync002
-     * @tc.desc     : not openPortId to writeSync.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWriteSync002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0100
+     * @tc.desc   not openPortId to writeSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWriteSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -901,12 +951,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0200
-     * @tc.name     : testWriteSync003
-     * @tc.desc     : invalidPortId to writeSync.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWriteSync003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0200
+     * @tc.desc   invalidPortId to writeSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWriteSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -927,12 +978,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0300
-     * @tc.name     : testWriteSync004
-     * @tc.desc     : not exist PortId to writeSync.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWriteSync004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_writeSync_ErrCode_0300
+     * @tc.desc   not exist PortId to writeSync.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWriteSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -953,12 +1005,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_Func_0100
-     * @tc.name     : testWrite001
-     * @tc.desc     : write successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWrite001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_write_Func_0100
+     * @tc.desc   write successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, 'testWrite001 start');
@@ -981,12 +1034,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_ErrCode_0100
-     * @tc.name     : testWrite002
-     * @tc.desc     : invalid PortId to write.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWrite002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_write_ErrCode_0100
+     * @tc.desc   invalid PortId to write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWrite002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try{
@@ -1009,12 +1063,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_ErrCode_0200
-     * @tc.name     : testWrite003
-     * @tc.desc     : not openPortId to write.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWrite003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_write_ErrCode_0200
+     * @tc.desc   not openPortId to write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWrite003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try{
@@ -1034,12 +1089,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_write_ErrCode_0300
-     * @tc.name     : testWrite004
-     * @tc.desc     : not exist PortId to write.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testWrite004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_write_ErrCode_0300
+     * @tc.desc   not exist PortId to write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWrite004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try{
@@ -1060,12 +1116,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_Func_0100
-     * @tc.name     : testReadSync002
-     * @tc.desc     : readsync successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testReadSync002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_Func_0100
+     * @tc.desc   readsync successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testReadSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -1089,12 +1146,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0200
-     * @tc.name     : testReadSync003
-     * @tc.desc     : port not open.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testReadSync003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0200
+     * @tc.desc   port not open.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await sleep(1000);
@@ -1115,12 +1173,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0300
-     * @tc.name     : testReadSync004
-     * @tc.desc     : invalidport to open.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testReadSync004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0300
+     * @tc.desc   invalidport to open.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1141,12 +1200,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0400
-     * @tc.name     : testReadSync005
-     * @tc.desc     : invalidport to open.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testReadSync005
+     * @tc.number SUB_USB_HostMgr_Serial_JS_readSync_ErrCode_0400
+     * @tc.desc   invalidport to open.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadSync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1167,12 +1227,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_Func_0100
-     * @tc.name     : testRead002
-     * @tc.desc     : read successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRead002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_read_Func_0100
+     * @tc.desc   read successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, 'testRead002 start');
@@ -1197,12 +1258,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_ErrCode_0200
-     * @tc.name     : testRead003
-     * @tc.desc     : port not open.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRead003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0200
+     * @tc.desc   port not open.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await sleep(1000);
@@ -1223,12 +1285,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_ErrCode_0300
-     * @tc.name     : testRead004
-     * @tc.desc     : invalidPort to read.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRead004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0300
+     * @tc.desc   invalidPort to read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRead004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1251,12 +1314,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_read_ErrCode_0400
-     * @tc.name     : testRead005
-     * @tc.desc     : not exist to read.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRead005
+     * @tc.number SUB_USB_HostMgr_Serial_JS_read_ErrCode_0400
+     * @tc.desc   not exist to read.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRead005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1277,12 +1341,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_open_Func_0400
-     * @tc.name     : testOpen005
-     * @tc.desc     : open failed.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpen005
+     * @tc.number SUB_USB_HostMgr_Serial_JS_open_Func_0400
+     * @tc.desc   open failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOpen005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1302,12 +1367,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_cancelSerialRight_Func_0100
-     * @tc.name     : testCancelSerialRight001
-     * @tc.desc     : cancelSerialRight successfully.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCancelSerialRight001
+     * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_Func_0100
+     * @tc.desc   cancelSerialRight successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCancelSerialRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -1338,12 +1404,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0100
-     * @tc.name     : testCancelSerialRight002
-     * @tc.desc     : invalid portId to cancelSerialRight.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCancelSerialRight002
+     * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0100
+     * @tc.desc   invalid portId to cancelSerialRight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCancelSerialRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1363,12 +1430,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0200
-     * @tc.name     : testCancelSerialRight003
-     * @tc.desc     : not exist portId to cancelSerialRight.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCancelSerialRight003
+     * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0200
+     * @tc.desc   not exist portId to cancelSerialRight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCancelSerialRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -1388,12 +1456,13 @@ export default function SerialTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0300
-     * @tc.name     : testCancelSerialRight004
-     * @tc.desc     : no permission to cancelSerialRight.
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCancelSerialRight004
+     * @tc.number SUB_USB_HostMgr_Serial_JS_cancelSerialRight_ErrCode_0300
+     * @tc.desc   no permission to cancelSerialRight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCancelSerialRight004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

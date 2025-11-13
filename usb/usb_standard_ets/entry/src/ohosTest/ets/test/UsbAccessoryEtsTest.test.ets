@@ -58,6 +58,23 @@ async function driveFn() {
   }
 }
 
+async function driveFalse() {
+  console.info('**************driveFalse**************');
+  try {
+    let driver = await UiDriver.create();
+    console.info(TAG, ` come in driveFalse`);
+    console.info(TAG, `driver is ${JSON.stringify(driver)}`);
+    CheckEmptyUtils.sleep(1000);
+    let button = await driver.findComponent(BY.text('不允许'));
+    console.info(TAG, `button is ${JSON.stringify(button)}`);
+    CheckEmptyUtils.sleep(1000);
+    await button.click();
+  } catch (err) {
+    console.info(TAG, 'err is ' + err);
+    return
+  }
+}
+
 async function getAccPermission() {
   console.info('**************getAccPermission**************');
   try {
@@ -98,12 +115,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0100
-     * @tc.name       : testGetAccessoryList001
-     * @tc.desc       : verify getAccessoryList result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetAccessoryList001
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0100
+     * @tc.desc   verify getAccessoryList result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testGetAccessoryList001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, '----------------------testGetAccessoryList001---------------------------');
@@ -128,12 +146,34 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0200
-     * @tc.name       : testRequestAccessoryRight001
-     * @tc.desc       : verify requestAccessoryRight no param result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetAccessoryList002
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_RetValue_0400
+     * @tc.desc   verify getAccessoryList result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testGetAccessoryList002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info(TAG, '----------------------testGetAccessoryList002---------------------------');
+      if (!isDevAccessoryFunc) {
+        let res = usbMgr.getAccessoryList();
+        console.info(TAG, 'testGetAccessoryList002 ret : ', JSON.stringify(res));
+        expect(res.length).assertEqual(0);
+        return;
+      } else {
+        return;
+      }
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRequestAccessoryRight001
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0200
+     * @tc.desc   verify requestAccessoryRight no param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRequestAccessoryRight001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, '----------------------testRequestAccessoryRight001---------------------------');
@@ -153,12 +193,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0300
-     * @tc.name       : testRequestAccessoryRight002
-     * @tc.desc       : verify requestAccessoryRight result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRequestAccessoryRight002
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0300
+     * @tc.desc   verify requestAccessoryRight result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRequestAccessoryRight002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, '----------------------testRequestAccessoryRight002---------------------------');
@@ -182,12 +223,41 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0400
-     * @tc.name       : testHasAccessoryRight001
-     * @tc.desc       : erify hasAccessoryRight no param result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testRequestAccessoryRight003
+     * @tc.number SUB_USB_DeviceManager_ReValue_Accessory_0100
+     * @tc.desc   verify requestAccessoryRight result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRequestAccessoryRight003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG, '----------------------testRequestAccessoryRight003---------------------------');
+      try {
+        await usbMgr.requestAccessoryRight(accessInfo).then(data => {
+          console.info(TAG, 'testRequestAccessoryRight003 ret : ', JSON.stringify(data));
+          expect(data).assertFalse();
+        });
+        await driveFalse();
+        CheckEmptyUtils.sleep(1000);
+      } catch (err) {
+        console.info(TAG, 'testRequestAccessoryRight003 err : ', err);
+        if (!isDevAccessoryFunc) {
+          expect(err.code).assertEqual(401);
+        } else {
+          expect(err.code).assertEqual(14401001);
+        }
+      }
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testHasAccessoryRight001
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0400
+     * @tc.desc   erify hasAccessoryRight no param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testHasAccessoryRight001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, '----------------------testHasAccessoryRight001---------------------------');
@@ -206,12 +276,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0500
-     * @tc.name       : testHasAccessoryRight002
-     * @tc.desc       : verify hasAccessoryRight result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testHasAccessoryRight002
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0500
+     * @tc.desc   verify hasAccessoryRight result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testHasAccessoryRight002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, '----------------------testHasAccessoryRight002---------------------------');
@@ -230,12 +301,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0600
-     * @tc.name       : testHasAccessoryRight003
-     * @tc.desc       : verify hasAccessoryRight result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testHasAccessoryRight003
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0600
+     * @tc.desc   verify hasAccessoryRight result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testHasAccessoryRight003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, '----------------------testHasAccessoryRight003---------------------------');
@@ -261,12 +333,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0700
-     * @tc.name       : testCancelAccessoryRight001
-     * @tc.desc       : verify cancelAccessoryRight no param result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCancelAccessoryRight001
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0700
+     * @tc.desc   verify cancelAccessoryRight no param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCancelAccessoryRight001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, '----------------------testCancelAccessoryRight001---------------------------');
@@ -286,12 +359,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0800
-     * @tc.name       : testCancelAccessoryRight002
-     * @tc.desc       : verify cancelAccessoryRight result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCancelAccessoryRight002
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0800
+     * @tc.desc   verify cancelAccessoryRight result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCancelAccessoryRight002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, '----------------------testCancelAccessoryRight002---------------------------');
@@ -315,12 +389,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_0900
-     * @tc.name       : testOpenAccessory001
-     * @tc.desc       : verify openAccessory no param result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpenAccessory001
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_0900
+     * @tc.desc   verify openAccessory no param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testOpenAccessory001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, '----------------------testOpenAccessory001---------------------------');
@@ -339,12 +414,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_1000
-     * @tc.name       : testOpenAccessory002
-     * @tc.desc       : verify openAccessory result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpenAccessory002
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_1000
+     * @tc.desc   verify openAccessory result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testOpenAccessory002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, '----------------------testOpenAccessory002---------------------------');
@@ -374,12 +450,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_1100
-     * @tc.name       : testOpenAccessory003
-     * @tc.desc       : verify openAccessory reopen
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpenAccessory003
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_1100
+     * @tc.desc   verify openAccessory reopen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testOpenAccessory003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, '----------------------testOpenAccessory003---------------------------');
@@ -410,12 +487,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_1200
-     * @tc.name       : testOpenAccessory004
-     * @tc.desc       : verify openAccessory no permission
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testOpenAccessory004
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_1200
+     * @tc.desc   verify openAccessory no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testOpenAccessory004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, '----------------------testOpenAccessory004---------------------------');
@@ -433,12 +511,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_1300
-     * @tc.name       : testCloseAccessory001
-     * @tc.desc       : verify closeAccessory result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCloseAccessory001
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_1300
+     * @tc.desc   verify closeAccessory result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCloseAccessory001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(TAG, '----------------------testCloseAccessory001---------------------------');
@@ -466,12 +545,13 @@ export default function UsbAccessoryEtsTest() {
     })
 
     /**
-     * @tc.number     : SUB_USB_DeviceManager_JS_Accessory_1400
-     * @tc.name       : testCloseAccessory002
-     * @tc.desc       : verify openAccessory no param result
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testCloseAccessory002
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_1400
+     * @tc.desc   verify openAccessory no param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCloseAccessory002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, '----------------------testCloseAccessory002---------------------------');

@@ -66,7 +66,7 @@ export default function RichEditorOnWillChange001() {
       await CommonFunc.sleep(1000);
 
       let add_emoji = await driver.findComponent(ON.id('add_emoji'));
-      add_emoji.click();
+      await add_emoji.click();
       await CommonFunc.sleep(1000);
 
       let replacedSpans_callback = await driver.findComponent(ON.id('replacedSpans_callback'));

@@ -17,8 +17,8 @@ import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
-var abilityDelegator = undefined
-var abilityDelegatorArguments = undefined
+let abilityDelegator = undefined
+let abilityDelegatorArguments = undefined
 
 async function onAbilityCreateCallback() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
@@ -48,7 +48,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
         var cmd = 'aa start -d 0 -a com.arkui.ace.StateMangagement.api18.EntryAbility' + ' -b ' + abilityDelegatorArguments.bundleName
         var debug = abilityDelegatorArguments.parameters['-D']
-        if (debug == 'true')
+        if (debug === 'true')
         {
             cmd += ' -D'
         }

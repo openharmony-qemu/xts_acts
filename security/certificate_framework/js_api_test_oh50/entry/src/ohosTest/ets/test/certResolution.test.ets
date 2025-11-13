@@ -208,6 +208,7 @@ export default function certFrameworkCertResolutionTestUnit() {
             expect(ret).assertTrue();
           }
         });
+        taskpool.cancel(taskGroup);
       } catch (error) {
         console.error(`SUB_Security_Cert_Framework_CertResolution_Func_0000 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();

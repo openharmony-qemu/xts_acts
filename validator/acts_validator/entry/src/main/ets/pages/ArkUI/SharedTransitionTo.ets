@@ -152,6 +152,7 @@ struct SharedTransitionTo {
       .height('90%')
       .width('100%')
       .backgroundColor(Color.White)
+      .margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

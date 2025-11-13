@@ -18,13 +18,13 @@ import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-
+import { waitForExist } from '../../test/WaitTest.test';
 @Entry
 @Component
 struct webOnFirstCont {
   controller: WebController = new WebController();
   @State str: string = "emitOnfirstcontentfulpaintWebc";
-  @State firstId: number = 422;
+  @State firstId: number = 151600;
   @State firstcontentfulpaint: string = 'NoSrcTest';
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -34,15 +34,16 @@ struct webOnFirstCont {
   @State databaseAccess: boolean = true;
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
-
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 151590,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-
+  onPageHide() {
+    events_emitter.off(151590)
+  }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnFirstCont page valueChangeCallBack");
     if (eventData != null) {

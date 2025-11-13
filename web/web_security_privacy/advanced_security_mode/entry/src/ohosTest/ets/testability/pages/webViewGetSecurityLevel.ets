@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
 import {waitForExist} from '../../test/WaitTest';
+import { CommonConstants } from '../../test/Config';
 
 @Entry
 @Component
@@ -83,6 +84,51 @@ struct webViewGetSecurityLevel {
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }
                 break;
+              }
+              case 'testWebViewGetSecurityLevelSecure': {
+                  try {
+                    this.isPageEnd = -1;
+                    this.controller.loadUrl(CommonConstants.URL_HTTPS_EXAMPLE);
+                    await waitForExist(()=>this.isPageEnd, 'testWebViewGetSecurityLevelSecure_isPageEnd', 0, 1000);
+                    let securityLevel = this.controller.getSecurityLevel();
+                    console.log('securityLevel===>'+securityLevel)
+                    Utils.emitEvent(securityLevel, 25102202);
+                  } catch (error) {
+                    let e:business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                    Utils.emitEvent('fail', 25102202);
+                  }
+                  break;
+              }
+              case 'testWebViewGetSecurityLevelWarning': {
+                  try {
+                    this.isPageEnd = -1;
+                    this.controller.loadUrl(CommonConstants.URL_HTTP_EXAMPLE);
+                    await waitForExist(()=>this.isPageEnd, 'testWebViewGetSecurityLevelWarning_isPageEnd', 0, 1000);
+                    let securityLevel = this.controller.getSecurityLevel();
+                    console.log('securityLevel===>'+securityLevel)
+                    Utils.emitEvent(securityLevel, 25102203);
+                  } catch (error) {
+                    let e:business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                    Utils.emitEvent('fail', 25102203);
+                  }
+                  break;
+              }
+              case 'testWebViewGetSecurityLevelDangerous': {
+                  try {
+                    this.isPageEnd = -1;
+                    this.controller.loadUrl(CommonConstants.URL_HTTPS_EXPIREDBADSSL);
+                    await waitForExist(()=>this.isPageEnd, 'testWebViewGetSecurityLevelDangerous_isPageEnd', 0, 1000);
+                    let securityLevel = this.controller.getSecurityLevel();
+                    console.log('securityLevel===>'+securityLevel)
+                    Utils.emitEvent(securityLevel, 25102204);
+                  } catch (error) {
+                    let e:business_error.BusinessError = error as business_error.BusinessError;
+                    console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                    Utils.emitEvent('fail', 25102204);
+                  }
+                  break;
               }
             }
           })

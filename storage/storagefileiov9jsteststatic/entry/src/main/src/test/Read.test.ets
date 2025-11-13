@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -6,7 +21,7 @@ import fs from '@ohos.file.fs';
 import buffer from '@ohos.buffer';
 import { BusinessError } from '@ohos.base';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000 //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const FILE_CONTENT = 'hello world';
 
@@ -128,7 +143,7 @@ export default function fileIORead() {
         let res = await Utils.isIntNum(file.fd);
         expect(res).assertTrue();
         let readLen = fs.readSync(file.fd, new ArrayBuffer(4096), {
-          length: FILE_CONTENT.length + 1,
+          length: FILE_CONTENT.length.toLong() + 1,
         });
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_003 readLen: ' + readLen);
         expect(readLen == FILE_CONTENT.length).assertTrue();
@@ -253,7 +268,7 @@ export default function fileIORead() {
         let res = await Utils.isIntNum(file.fd);
         expect(res).assertTrue();
         let readLen = fs.readSync(file.fd, new ArrayBuffer(4096), {
-          offset: FILE_CONTENT.length + 1,
+          offset: FILE_CONTENT.length.toLong() + 1,
         });
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_007 readLen: ' + readLen);
         expect(readLen == 0).assertTrue();
@@ -285,7 +300,7 @@ export default function fileIORead() {
         expect(res).assertTrue();
         let readLen = fs.readSync(file.fd, new ArrayBuffer(4096), {
           offset: 1,
-          length: FILE_CONTENT.length - 1,
+          length: FILE_CONTENT.length.toLong() - 1,
         });
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_sync_static_008 readLen: ' + readLen);
         expect(readLen == FILE_CONTENT.length - 1).assertTrue();
@@ -439,10 +454,10 @@ export default function fileIORead() {
         let res = await Utils.isIntNum(file.fd);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_001 res: ' + res);
         expect(res).assertTrue();
-        fs.read(file.fd, new ArrayBuffer(16), (err: BusinessError | null, readLen1: number | undefined) => {
+        fs.read(file.fd, new ArrayBuffer(16), (err: BusinessError | null, readLen1: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_001 readLen1: ' + readLen1);
           //expect(readlen1 == FILE_CONTENT.length).assertTrue();
-          fs.read(file.fd, new ArrayBuffer(8), (err: BusinessError | null, readLen2: number | undefined) => {
+          fs.read(file.fd, new ArrayBuffer(8), (err: BusinessError | null, readLen2: long | undefined) => {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_001 readLen2: ' + readLen2);
             expect(readLen2 == 0).assertTrue();
             fs.closeSync(file);
@@ -504,7 +519,7 @@ export default function fileIORead() {
         let file = fs.openSync(fpath, fs.OpenMode.WRITE_ONLY);
         let res = await Utils.isIntNum(file.fd);
         expect(res).assertTrue();
-        fs.read(file.fd, new ArrayBuffer(4096), (err: BusinessError | null, readLen: number | undefined) => {
+        fs.read(file.fd, new ArrayBuffer(4096), (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_003 err111: ' + JSON.stringify(err));
           if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_003 readLen: ' + readLen);
@@ -576,7 +591,7 @@ export default function fileIORead() {
         expect(res).assertTrue();
         fs.read(file.fd, new ArrayBuffer(4096), {
           offset: 1,
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_005 readLen: ' + readLen);
           expect(readLen == FILE_CONTENT.length - 1).assertTrue();
           fs.closeSync(file);
@@ -645,7 +660,7 @@ export default function fileIORead() {
         let parlength = 3;
         fs.read(file.fd, new ArrayBuffer(4096), {
           length: parlength,
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_007 readLen: ' + readLen);
           expect(readLen == parlength).assertTrue();
           fs.closeSync(file);
@@ -678,7 +693,7 @@ export default function fileIORead() {
         let res = await Utils.isIntNum(file.fd);
         expect(res).assertTrue();
         let readLen = await fs.read(file.fd, new ArrayBuffer(4096), {
-          offset: FILE_CONTENT.length + 1,
+          offset: FILE_CONTENT.length.toLong() + 1,
         });
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_008 readLen: ' + readLen);
         expect(readLen == 0).assertTrue();
@@ -711,8 +726,8 @@ export default function fileIORead() {
         let res = await Utils.isIntNum(file.fd);
         expect(res).assertTrue();
         fs.read(file.fd, new ArrayBuffer(4096), {
-          offset: FILE_CONTENT.length + 1,
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+          offset: FILE_CONTENT.length.toLong() + 1,
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_009 readLen: ' + readLen);
           expect(readLen == 0).assertTrue();
           fs.closeSync(file);
@@ -746,7 +761,7 @@ export default function fileIORead() {
         expect(res).assertTrue();
         let readLen = await fs.read(file.fd, new ArrayBuffer(4096), {
           offset: 1,
-          length: FILE_CONTENT.length,
+          length: FILE_CONTENT.length.toLong(),
         });
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_010 readLen: ' + readLen);
         expect(readLen == FILE_CONTENT.length - 1).assertTrue();
@@ -780,8 +795,8 @@ export default function fileIORead() {
         expect(res).assertTrue();
         fs.read(file.fd, new ArrayBuffer(4096), {
           offset: 1,
-          length: FILE_CONTENT.length,
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+          length: FILE_CONTENT.length.toLong(),
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_011 readLen: ' + readLen);
           expect(readLen == FILE_CONTENT.length -1).assertTrue();
           fs.closeSync(file);
@@ -830,7 +845,7 @@ export default function fileIORead() {
     it('fileIO_test_read_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_013 start');
       try {
-        fs.read(-1, new ArrayBuffer(4096), (err: BusinessError | null, readLen: number | undefined) => {
+        fs.read(-1, new ArrayBuffer(4096), (err: BusinessError | null, readLen: long | undefined) => {
           if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_013 error : ' + JSON.stringify(err));
             expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
@@ -864,7 +879,7 @@ export default function fileIORead() {
         const invalidOffset = -1;
         fs.read(file.fd, new ArrayBuffer(4096), {
           offset: invalidOffset
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_014 readLen: ' + readLen);
           expect(readLen == 0).assertTrue();
           fs.closeSync(file);
@@ -899,7 +914,7 @@ export default function fileIORead() {
         const invalidLength = 4097;
         fs.read(file.fd, new ArrayBuffer(4096), {
           length: invalidLength
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_015 readLen: ' + readLen);
           //expect(false).assertTrue();
           fs.closeSync(file);
@@ -960,7 +975,7 @@ export default function fileIORead() {
         let res = await Utils.isIntNum(file.fd);
         expect(res).assertTrue();
         fs.read(file.fd, new ArrayBuffer(4096), {
-        }, (err: BusinessError | null, readLen: number | undefined) => {
+        }, (err: BusinessError | null, readLen: long | undefined) => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_read_async_static_017 readLen: ' + readLen);
           expect(readLen == FILE_CONTENT.length).assertTrue();
           fs.closeSync(file);

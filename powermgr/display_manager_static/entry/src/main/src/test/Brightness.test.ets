@@ -19,7 +19,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import brightness from '@ohos.brightness'
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'BrightnessStaticTest';
 
 export default function BrightnessTest() {
@@ -28,19 +28,20 @@ export default function BrightnessTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBrightnessTest_static_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0010
-     * @tc.name testBrightnessTest_static_0100
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it("testBrightnessTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("testBrightnessTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testBrightnessTest_static_0100';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let value = 200;
+          let value: int = 200;
           brightness.setValue(value);
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -50,19 +51,20 @@ export default function BrightnessTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBrightnessTest_static_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0020
-     * @tc.name testBrightnessTest_static_0200
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBrightnessTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testBrightnessTest_static_0200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let value = 30;
+          let value: int = 30;
           brightness.setValue(value, true);
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -72,19 +74,20 @@ export default function BrightnessTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBrightnessTest_static_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0030
-     * @tc.name testBrightnessTest_static_0300
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBrightnessTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testBrightnessTest_static_0300';
         hilog.info(domain, tag, `${TAG} start`);
         try {
-          let value = 255;
+          let value: int = 255;
           brightness.setValue(value, false);
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
@@ -93,5 +96,4 @@ export default function BrightnessTest() {
         }
       })
   })
-  hilog.info(domain, tag, '%{public}s', 'BrightnessTest end');
 }

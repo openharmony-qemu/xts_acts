@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { describe, it, expect, TestType, Size, Level } from "../../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -6,7 +21,7 @@ import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base'
 import { WriteOptions } from '@ohos.file.fs';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000 //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export const FILE_CONTENT = 'hello world';
@@ -320,7 +335,7 @@ export default function fileIORandomAccessFileWrite() {
         let file = fs.openSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         fs.createRandomAccessFile(file, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
           let length = 4096;
-          randomaccessfile?.write(new ArrayBuffer(length)).then((bytesWritten: number) => {
+          randomaccessfile?.write(new ArrayBuffer(length)).then((bytesWritten: long) => {
             expect(bytesWritten == length).assertTrue();
           }).catch((err: BusinessError): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'create randomAccessFile failed with error message: ' +  err.message + ", error code: " + err.code);
@@ -352,7 +367,7 @@ export default function fileIORandomAccessFileWrite() {
         let file = fs.openSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY);
         let randomaccessfile = await fs.createRandomAccessFile(file);
         let length = 20;
-        randomaccessfile.write(new ArrayBuffer(length), { offset: 1 }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        randomaccessfile.write(new ArrayBuffer(length), { offset: 1 }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == length).assertTrue();
           randomaccessfile.close();
           fs.closeSync(file.fd);
@@ -523,7 +538,7 @@ export default function fileIORandomAccessFileWrite() {
 
       try {
         let length = 4096;
-        randomaccessfile.write(new ArrayBuffer(length), { offset: length + 1 }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        randomaccessfile.write(new ArrayBuffer(length), { offset: length + 1 }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == length).assertTrue();
           randomaccessfile.close();
           fs.unlinkSync(fpath);
@@ -632,7 +647,7 @@ export default function fileIORandomAccessFileWrite() {
         let randomaccessfile = await fs.createRandomAccessFile(file);
         let length = 20;
         let initOffset = 1;
-        randomaccessfile.write(new ArrayBuffer(length), { offset: initOffset }, (err: BusinessError | null, bytesWritten: number | undefined) => {
+        randomaccessfile.write(new ArrayBuffer(length), { offset: initOffset }, (err: BusinessError | null, bytesWritten: long | undefined) => {
           expect(bytesWritten == length).assertTrue();
           hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_011 randomaccessfile.filePointer' + randomaccessfile.filePointer);
           if(bytesWritten){

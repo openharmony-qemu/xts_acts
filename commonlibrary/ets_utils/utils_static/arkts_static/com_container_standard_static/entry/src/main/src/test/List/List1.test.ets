@@ -617,7 +617,7 @@ export default function ArkListTest() {
         list.insert(10, 0);
         list.insert(8, 0);
         list.sort((first, second) => first - second);
-        list.getSubList(Math.floor(5), Math.floor(1));
+        list.getSubList(Math.floor(5) as int, Math.floor(1) as int);
         expect(false).assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.code}`);
@@ -647,7 +647,7 @@ export default function ArkListTest() {
         list.insert(10, 0);
         list.insert(8, 0);
         list.sort((first, second) => first - second);
-        list.getSubList(Math.floor(1), Math.floor(5));
+        list.getSubList(Math.floor(1) as int , Math.floor(5) as int);
         list.add(3);
         console.log(`${TAG} list: ${JSON.stringify(list)}`);
         expect(JSON.stringify(list)).assertEqual(`{"0":1,"1":2,"2":4,"3":8,"4":10,"5":3}`);
@@ -682,8 +682,8 @@ export default function ArkListTest() {
         list.add(true);
         list.add([0, 1, 2]);
 
-        list.forEach((value, index: number) => {
-          expect(String(list.set(Math.floor(index || 0), "li si") != undefined)).assertEqual('true');
+        list.forEach((value, index: int) => {
+          expect(String(list.set(Math.floor(index || 0) as int, "li si") != undefined)).assertEqual('true');
         })
         console.log(`${JSON.stringify(list)}`);
       } catch (err: BusinessError) {
@@ -718,8 +718,8 @@ export default function ArkListTest() {
         list.add([0, 1, 2]);
 
         let index = list.getIndexOf(param);
-        let setParam = list.set(Math.floor(index), "li si");
-        let removeParam = list.removeByIndex(Math.floor(index));
+        let setParam = list.set(Math.floor(index) as int, "li si");
+        let removeParam = list.removeByIndex(Math.floor(index) as int);
         expect(String(setParam == removeParam)).assertEqual('true');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -753,7 +753,7 @@ export default function ArkListTest() {
         list.add([0, 1, 2]);
 
         let index = list.getIndexOf(param);
-        let setParam = list.set(Math.floor(index), "li si");
+        let setParam = list.set(Math.floor(index) as int, "li si");
         expect(String(list.has(setParam))).assertEqual('true');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -785,7 +785,7 @@ export default function ArkListTest() {
         list.add([0, 1, 2]);
 
         list.forEach((value, index) => {
-          list.set(Math.floor(index || 0), new Temp1(index, "zhang " + index));
+          list.set(Math.floor(index || 0) as int, new Temp1(index, "zhang " + index));
         })
         let array = list.convertToArray();
         array.forEach((value) => {
@@ -949,7 +949,7 @@ export default function ArkListTest() {
         list.add("%");
         list.add(`"`);
         list.forEach((value, index) => {
-          expect(String(list.get(Math.floor(index || 0)))).assertEqual(String(value));
+          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
         });
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -988,7 +988,7 @@ export default function ArkListTest() {
         list.add(`"`);
         let index = 0;
         list.forEach((value) => {
-          expect(String(list.get(Math.floor(index || 0)))).assertEqual(String(value));
+          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
           index++;
         });
       } catch (err: BusinessError) {
@@ -1030,7 +1030,7 @@ export default function ArkListTest() {
         list.add(`"`);
         let index = 0;
         list.forEach((value) => {
-          expect(String(list.get(Math.floor(index || 0)))).assertEqual(String(value));
+          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
           index++;
         });
         expect(listNew.convertToArray().toString()).assertEqual("0");
@@ -1071,7 +1071,7 @@ export default function ArkListTest() {
         list.add(`"`);
         list.forEach((value, index, list: List<number | string | Array<number | string | boolean> | boolean |
         undefined | null | Object>) => {
-          expect(String(list.get(Math.floor(index || 0)))).assertEqual(String(value));
+          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
         });
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);

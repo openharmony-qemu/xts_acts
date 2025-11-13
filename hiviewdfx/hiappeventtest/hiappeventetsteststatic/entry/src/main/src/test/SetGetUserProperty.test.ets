@@ -16,7 +16,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from 
 import hilog from '@ohos.hilog'
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent'
 import { BusinessError } from '@ohos.base'
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'SetGetUserPropertyTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function SetGetUserPropertyTest() {

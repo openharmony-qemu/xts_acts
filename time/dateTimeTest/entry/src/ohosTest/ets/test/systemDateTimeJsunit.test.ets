@@ -22,12 +22,13 @@ export default function systemDateTimeJsunit() {
     console.info('====>---------------systemDateTimeTest start-----------------------');
 
     /**
-     * @tc.number    SUB_systemDateTime_getCurrentTime_JS_API_0001
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds that have elapsed since the Unix epoch.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0001
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0001
+     * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_systemDateTime_getCurrentTime_JS_API_0001", Level.LEVEL0, async (done: Function) => {
       console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0001 start----------------");
@@ -50,12 +51,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getCurrentTime_JS_API_0002
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds that have elapsed since the Unix epoch.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0002
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0002
+     * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getCurrentTime_JS_API_0002", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0002 start----------------");
@@ -72,12 +74,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getCurrentTime_JS_API_0003
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds that have elapsed since the Unix epoch.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0003
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0003
+     * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getCurrentTime_JS_API_0003", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getCurrentTime_JS_API_0003 start----------------");
@@ -94,12 +97,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getCurrentTime_JS_API_0004
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds that have elapsed since the Unix epoch.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getCurrentTime_JS_API_0004
+     * @tc.number SUB_systemDateTime_getCurrentTime_JS_API_0004
+     * @tc.desc   Obtains the number of milliseconds that have elapsed since the Unix epoch.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getCurrentTime_JS_API_0004", Level.LEVEL2, async (done: Function) => {
       console.info("====>----------SUB_systemDateTime_getCurrentTime_JS_API_0004 start----------------");
@@ -122,12 +126,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealActiveTime_JS_API_0001
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0001
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0001
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealActiveTime_JS_API_0001", Level.LEVEL2, async (done: Function) => {
       console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0001 start----------------");
@@ -150,12 +155,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealActiveTime_JS_API_0002
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0002
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0002
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealActiveTime_JS_API_0002", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0002 start----------------");
@@ -172,12 +178,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealActiveTime_JS_API_0003
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0003
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0003
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealActiveTime_JS_API_0003", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealActiveTime_JS_API_0003 start----------------");
@@ -194,12 +201,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealActiveTime_JS_API_0004
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealActiveTime_JS_API_0004
+     * @tc.number SUB_systemDateTime_getRealActiveTime_JS_API_0004
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealActiveTime_JS_API_0004", Level.LEVEL2, async (done: Function) => {
       console.info("====>----------SUB_systemDateTime_getRealActiveTime_JS_API_0004 start----------------");
@@ -222,12 +230,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealTime_JS_API_0001
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0001
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0001
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealTime_JS_API_0001", Level.LEVEL2, async (done: Function) => {
       console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0001 start----------------");
@@ -250,12 +259,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealTime_JS_API_0002
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0002
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0002
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealTime_JS_API_0002", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0002 start----------------");
@@ -272,12 +282,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealTime_JS_API_0003
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0003
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0003
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, not including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealTime_JS_API_0003", Level.LEVEL2, async (done: Function) => {
       console.info("====>-----SUB_systemDateTime_getRealTime_JS_API_0003 start----------------");
@@ -294,12 +305,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getRealTime_JS_API_0004
-     * @tc.name      Test systemTimeDate.getCurrentTime
-     * @tc.desc      Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getRealTime_JS_API_0004
+     * @tc.number SUB_systemDateTime_getRealTime_JS_API_0004
+     * @tc.desc   Obtains the number of milliseconds elapsed since the system was booted, including deep sleep time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_systemDateTime_getRealTime_JS_API_0004", Level.LEVEL2, async (done: Function) => {
       console.info("====>----------SUB_systemDateTime_getRealTime_JS_API_0004 start----------------");
@@ -322,12 +334,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getDate_JS_API_0100
-     * @tc.name      Test systemTimeDate.setDate true value
-     * @tc.desc      Test systemTimeDate_setDate API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getDate_JS_API_0100
+     * @tc.number SUB_systemDateTime_getDate_JS_API_0100
+     * @tc.desc   Test systemTimeDate_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_systemDateTime_getDate_JS_API_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_systemDateTime_getDate_JS_API_0100 start");
@@ -345,12 +358,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getDate_JS_API_0200
-     * @tc.name      Test systemTimeDate.setDate true value
-     * @tc.desc      Test systemTimeDate_setDate API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getDate_JS_API_0200
+     * @tc.number SUB_systemDateTime_getDate_JS_API_0200
+     * @tc.desc   Test systemTimeDate_setDate API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_systemDateTime_getDate_JS_API_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_systemDateTime_getDate_JS_API_0200 start");
@@ -374,12 +388,13 @@ export default function systemDateTimeJsunit() {
 
 
     /**
-     * @tc.number    SUB_systemDateTime_getTimezone_JS_API_0100
-     * @tc.name      Test systemTime.SUB_systemDateTime_getTimezone_JS_API_0100 true value
-     * @tc.desc      Test systemTimeDate_setTimezone API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getTimezone_JS_API_0100
+     * @tc.number SUB_systemDateTime_getTimezone_JS_API_0100
+     * @tc.desc   Test systemTimeDate_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_systemDateTime_getTimezone_JS_API_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_systemDateTime_getTimezone_JS_API_0100 start");
@@ -396,12 +411,13 @@ export default function systemDateTimeJsunit() {
     });
 
     /**
-     * @tc.number    SUB_systemDateTime_getTimezone_JS_API_0200
-     * @tc.name      Test systemTimeDate.setTimezone true value
-     * @tc.desc      Test systemTimeDate_setTimezone API functionality.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @generated.time 2025-11-09 20:57:55
+     * @tc.name   SUB_systemDateTime_getTimezone_JS_API_0200
+     * @tc.number SUB_systemDateTime_getTimezone_JS_API_0200
+     * @tc.desc   Test systemTimeDate_setTimezone API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_systemDateTime_getTimezone_JS_API_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_systemDateTime_getTimezone_JS_API_0200 start");

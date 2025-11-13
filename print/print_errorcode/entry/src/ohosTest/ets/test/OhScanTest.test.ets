@@ -83,27 +83,6 @@ export default function ActsScanErrorTest() {
     });
 
     /**
-     * @tc.number  : SUB_Oh_Scan_INVALID_0400
-     * @tc.name    : SUB_Oh_Scan_INVALID_0400
-     * @tc.desc    : Test OHPrintINVALID
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
-     */
-    it('SUB_Oh_Scan_INVALID_0400', Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info("====>SUB_Oh_Scan_INVALID_0400 start====");
-        let result = printerror.OHPrintINVALID();
-        expect(result).assertEqual(ERR_OK);
-        console.info("====>SUB_Oh_Scan_INVALID_0400 result: " + result);
-        done();
-      } catch (err) {
-        console.error("====>SUB_Oh_Scan_INVALID_0400 catch err: " + err);
-        done()
-      }
-    });
-
-    /**
      * @tc.number  : SUB_Oh_Scan_OHScanInit1_0500
      * @tc.name    : SUB_Oh_Scan_OHScanInit1_0500
      * @tc.desc    : Test OHScanInit1

@@ -18,7 +18,9 @@
   "buildOption": {
     "sourceOption": {
       "workers": [
-        "./src/ohosTest/ets/workers/worker.ts"
+        "./src/ohosTest/ets/workers/worker.ts",
+        "./src/ohosTest/ets/workers/worker1.ets",
+        "./src/ohosTest/ets/workers/worker2.ets"
       ]
     }
   },

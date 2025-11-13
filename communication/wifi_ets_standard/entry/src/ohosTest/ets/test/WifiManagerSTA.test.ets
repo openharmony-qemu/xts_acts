@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import wifiMg from '@ohos.wifiManager';
+import wifi from '@ohos.wifi';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 function sleep(delay:number): Promise<void> {
@@ -69,12 +70,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0036
-         * @tc.name testEnableWifi
-         * @tc.desc Test enableWifi Sync API functionality.
-         * @tc.size:LargeTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test enableWifi Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_Sta_0036', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done:Function) =>{
             try {
@@ -103,12 +105,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0034
-         * @tc.name testIsMeteredHotspot
-         * @tc.desc Test isMeteredHotspot Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test isMeteredHotspot Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -125,12 +128,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0035
-         * @tc.name testIsHotspotActive
-         * @tc.desc Test isHotspotActive Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 1
+         * @tc.desc   Test isHotspotActive Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_WiFi_XTS_Sta_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
             try {
@@ -149,12 +153,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0038
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0038
-         * @tc.name testGetDeviceMacAddress
-         * @tc.desc Test getDeviceMacAddress Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test getDeviceMacAddress Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_WiFi_XTS_Sta_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
             try {
@@ -174,12 +179,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0039
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0039
-         * @tc.name testGetMultiLinkedInfo
-         * @tc.desc Test getMultiLinkedInfo Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test getMultiLinkedInfo Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
            try {
@@ -198,12 +204,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0040
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0040
-         * @tc.name testGetLinkedInfoSync
-         * @tc.desc Test getLinkedInfoSync Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test getLinkedInfoSync Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
            try {
@@ -225,12 +232,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0041
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0041
-         * @tc.name testWifiLinkType
-         * @tc.desc Test WifiLinkType Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test WifiLinkType Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
            try {
@@ -261,12 +269,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0044
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0044
-         * @tc.name testConnectToNetwork
-         * @tc.desc Test connectToNetwork Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test connectToNetwork Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -280,12 +289,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0045
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0045
-         * @tc.name testRemoveDevice
-         * @tc.desc Test removeDevice Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test removeDevice Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -299,12 +309,13 @@ export default function wifiSta() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0046
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0046
-         * @tc.name SUB_Communication_WiFi_XTS_Sta_0046
-         * @tc.desc Test DisableWifi Sync API functionality.
-         * @tc.size:LARGETEST
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test DisableWifi Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_Sta_0046', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done:Function) =>{
             try {
@@ -330,6 +341,79 @@ export default function wifiSta() {
                 wifiMg.enableWifi();
                 await sleep(2000);
                 let state3 = wifiMg.isWifiActive();
+                console.info("isWifiActive result:" + state3);
+                expect(state3).assertTrue();
+                console.info("enableWifi success.");
+	        }catch(error){
+		        console.error("failed:" + JSON.stringify(error));
+                if (error.code == 801) {
+                    console.info('[wifi_js]api is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+	        }
+	        done();
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   SUB_Communication_WiFi_XTS_StartScan_0001
+         * @tc.number SUB_Communication_WiFi_XTS_StartScan_0001
+         * @tc.desc   Test startScan Sync API21 functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_WiFi_XTS_StartScan_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
+            try {
+                wifiMg.startScan();
+                console.info("wifi startScan success!");
+	        } catch(error) {
+		        console.error("wifi startScan get failed:" + JSON.stringify(error));
+                if (Number(error.code) == 801) {
+                    console.info('[wifi_js]api is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+	        }
+	        done();
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   Communication_WiFi_XTS_IsWifiActive_0001
+         * @tc.number Communication_WiFi_XTS_IsWifiActive_0001
+         * @tc.desc   Test isWifiActive Sync API functionality result
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('Communication_WiFi_XTS_IsWifiActive_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
+            try {
+		        let status = wifi.isWifiActive();
+                console.info("isWifiActive result:" + status);
+                if(!status) {
+                    console.info("wifi is close,enableWifi start.");
+                    wifiMg.enableWifi();
+                    await sleep(2000);
+                    let state1 = wifi.isWifiActive();
+                    console.info("isWifiActive result:" + state1);
+                    expect(state1).assertTrue();
+                    console.info("enableWifi success.");
+                }
+                console.info("wifi is open,disableWifi start.");
+                wifiMg.disableWifi();
+                await sleep(2000);
+                let state2 = wifi.isWifiActive();
+                console.info("isWifiActive result:" + state2);
+                expect(state2).assertFalse();
+                console.info("disableWifi success.");
+                console.info("wifi is close,enableWifi start.");
+                wifiMg.enableWifi();
+                await sleep(2000);
+                let state3 = wifi.isWifiActive();
                 console.info("isWifiActive result:" + state3);
                 expect(state3).assertTrue();
                 console.info("enableWifi success.");

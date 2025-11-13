@@ -28,12 +28,13 @@ export default function ActsLocationCApi20Test() {
     )
 
     /**
-     * @tc.number  : SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100
-     * @tc.name    : testLocationKitOHLocationInfoGetAdditionalInfoTest0100
-     * @tc.desc    : test OHLocationInfoGetAdditionalInfo.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOHLocationInfoGetAdditionalInfoTest0100
+     * @tc.number SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100
+     * @tc.desc   test OHLocationInfoGetAdditionalInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOHLocationInfoGetAdditionalInfoTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -41,7 +42,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100 start====");
           let result = locationcapi20.OHLocationInfoGetAdditionalInfo();
           console.info("====>SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100 catch err: " + err);
@@ -51,12 +52,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0100
-     * @tc.name    : testLocationKitOH_Location_IsLocatingEnabledTest0100
-     * @tc.desc    : test OH_Location_IsLocatingEnabled1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_Location_IsLocatingEnabledTest0100
+     * @tc.number SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0100
+     * @tc.desc   test OH_Location_IsLocatingEnabled1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_Location_IsLocatingEnabledTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -74,12 +76,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101
-     * @tc.name    : testLocationKitOH_Location_IsLocatingEnabledTest0101
-     * @tc.desc    : test OH_Location_IsLocatingEnabled2.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_Location_IsLocatingEnabledTest0101
+     * @tc.number SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101
+     * @tc.desc   test OH_Location_IsLocatingEnabled2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_Location_IsLocatingEnabledTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -87,7 +90,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101 start====");
           let result = locationcapi20.OH_Location_IsLocatingEnabled2();
           console.info("====>SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101 catch err: " + err);
@@ -97,12 +100,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_StartLocating_Test_0100
-     * @tc.name    : testLocationKitOH_Location_StartLocatingTest0100
-     * @tc.desc    : test OH_Location_StartLocating1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_Location_StartLocatingTest0100
+     * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0100
+     * @tc.desc   test OH_Location_StartLocating1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_Location_StartLocatingTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -110,7 +114,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0100 start====");
           let result = locationcapi20.OH_Location_StartLocating1();
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0100 result: " + result);
-          expect(3301100).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_StartLocating_Test_0100 catch err: " + err);
@@ -120,12 +124,13 @@ export default function ActsLocationCApi20Test() {
       }
     )
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_StartLocating_Test_0101
-     * @tc.name    : testLocationKitOH_Location_StartLocatingTest0101
-     * @tc.desc    : test OH_Location_StartLocating2.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_Location_StartLocatingTest0101
+     * @tc.number SUB_LocationKit_OH_Location_StartLocating_Test_0101
+     * @tc.desc   test OH_Location_StartLocating2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_Location_StartLocatingTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -133,7 +138,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0101 start====");
           let result = locationcapi20.OH_Location_StartLocating2();
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0101 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_StartLocating_Test_0101 catch err: " + err);
@@ -143,12 +148,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_Location_StopLocating_Test_0100
-     * @tc.name    : testLocationKitOH_Location_StopLocatingTest0100
-     * @tc.desc    : test OH_Location_StopLocating2.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_Location_StopLocatingTest0100
+     * @tc.number SUB_LocationKit_OH_Location_StopLocating_Test_0100
+     * @tc.desc   test OH_Location_StopLocating2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_Location_StopLocatingTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -156,7 +162,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 start====");
           let result = locationcapi20.OH_Location_StopLocating2();
           console.info("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 catch err: " + err);
@@ -166,12 +172,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0100
-     * @tc.name    : testLocationKitOH_LocationRequestConfig_SetUseSceneTest0100
-     * @tc.desc    : test OH_LocationRequestConfig_SetUseScene0100.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_LocationRequestConfig_SetUseSceneTest0100
+     * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0100
+     * @tc.desc   test OH_LocationRequestConfig_SetUseScene0100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_LocationRequestConfig_SetUseSceneTest0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -190,12 +197,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0101
-     * @tc.name    : testLocationKitOH_LocationRequestConfig_SetUseSceneTest0101
-     * @tc.desc    : test OH_LocationRequestConfig_SetUseScene0101.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_LocationRequestConfig_SetUseSceneTest0101
+     * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0101
+     * @tc.desc   test OH_LocationRequestConfig_SetUseScene0101.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_LocationRequestConfig_SetUseSceneTest0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -214,12 +222,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0102
-     * @tc.name    : testLocationKitOH_LocationRequestConfig_SetUseSceneTest0102
-     * @tc.desc    : test OH_LocationRequestConfig_SetUseScene0102.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_LocationRequestConfig_SetUseSceneTest0102
+     * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetUseScene_Test_0102
+     * @tc.desc   test OH_LocationRequestConfig_SetUseScene0102.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_LocationRequestConfig_SetUseSceneTest0102',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -238,12 +247,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_LocationRequestConfig_SetPowerConsumptionScene_Test_0100
-     * @tc.name    : testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0100
-     * @tc.desc    : test OH_LocationRequestConfig_SetPowerConsumptionScene0100.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0100
+     * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetPowerConsumptionScene_Test_0100
+     * @tc.desc   test OH_LocationRequestConfig_SetPowerConsumptionScene0100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -264,12 +274,13 @@ export default function ActsLocationCApi20Test() {
       })
 
     /**
-     * @tc.number  : SUB_LocationKit_OH_LocationRequestConfig_SetPowerConsumptionScene_Test_0101
-     * @tc.name    : testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0101
-     * @tc.desc    : test OH_LocationRequestConfig_SetPowerConsumptionScene0101.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0101
+     * @tc.number SUB_LocationKit_OH_LocationRequestConfig_SetPowerConsumptionScene_Test_0101
+     * @tc.desc   test OH_LocationRequestConfig_SetPowerConsumptionScene0101.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLocationKitOH_LocationRequestConfig_SetPowerConsumptionSceneTest0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

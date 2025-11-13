@@ -110,7 +110,7 @@ export default function RichEditorOnWillChange020() {
       expect(replaceCall).assertEqual('replacedSpans Callback:[]');
 
       let back = await driver.findComponent(ON.id('back'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
 
       await driver.triggerKey(KeyCode.KEYCODE_FORWARD_DEL);

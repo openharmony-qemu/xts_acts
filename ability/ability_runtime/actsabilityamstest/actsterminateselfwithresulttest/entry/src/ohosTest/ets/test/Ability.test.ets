@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 HiHope Open Source Organization
+ * Copyright (C) 2024-2025 HiHope Open Source Organization
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,6 @@ export default function abilityTest() {
       done();
     });
     beforeEach(async () => {
-      await sleep(1000);
       let cmdBeforeEach = 'aa start -d 0 -a TestAbility' + ' -b ' + 'com.example.actsterminateselfwithresulttest';
       await delegator.executeShellCommand(cmdBeforeEach);
       await sleep(1000);
@@ -129,16 +128,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -182,16 +171,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -258,16 +237,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -334,16 +303,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -410,16 +369,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -486,16 +435,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -562,16 +501,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -638,16 +567,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -725,16 +644,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -815,16 +724,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -891,16 +790,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -967,16 +856,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -1043,16 +922,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -1119,16 +988,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();
@@ -1199,16 +1058,6 @@ export default function abilityTest() {
             expect().assertFail();
             done();
           });
-          await sleep(1000);
-          let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-          hilog.info(0x0000, TAG, '%{public}s',
-            `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-          if (allowed) {
-            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-            if (buttons && buttons.length > 0) {
-              buttons[buttons.length - 1].click();
-            }
-          }
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
           expect().assertFail();
@@ -1272,16 +1121,6 @@ export default function abilityTest() {
             expect().assertFail();
             done();
           });
-          await sleep(1000);
-          let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-          hilog.info(0x0000, TAG, '%{public}s',
-            `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-          if (allowed) {
-            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-            if (buttons && buttons.length > 0) {
-              buttons[buttons.length - 1].click();
-            }
-          }
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
           expect().assertFail();
@@ -1326,16 +1165,6 @@ export default function abilityTest() {
           expect().assertFail();
           done();
         });
-        await sleep(1000);
-        let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-        hilog.info(0x0000, TAG, '%{public}s',
-          `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
-        if (allowed) {
-          let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-          if (buttons && buttons.length > 0) {
-            buttons[buttons.length - 1].click();
-          }
-        }
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
         expect().assertFail();

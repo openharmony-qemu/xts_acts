@@ -18,7 +18,7 @@ import { describe, beforeAll, it, expect, afterEach, beforeEach, Level } from '@
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import commonEvent from '@ohos.commonEventManager';
-import { Driver, MatchPattern, ON } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON, Component } from '@ohos.UiTest';
 
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG = 'AbilityRuntime';
@@ -44,7 +44,7 @@ async function clickMatchingButton(texts: Array<string>) {
 };
 
 async function handlePermissionPrompt() {
-  let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
+  let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 2000);
   hilog.info(0x0000, TAG, '%{public}s',
     `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
   if (allowed) {
@@ -123,6 +123,17 @@ export default function actsStartAppCloneAppTest() {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       await checkAppSelectorExist();
       console.info("isAppSelectorExist " + isAppSelectorExist);
+      
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (e) {
+        hilog.info(0x0000, TAG, 'advanced_dialog_button_0 not found: %{public}s', JSON.stringify(e));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
+
       done();
     })
 

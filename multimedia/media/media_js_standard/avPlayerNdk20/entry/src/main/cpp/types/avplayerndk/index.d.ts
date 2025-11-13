@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,3 +40,8 @@ export const OH_AVPlayer_SetDecryptionConfig0100: () => number;
 export const OH_AVPlayer_SetOnInfoCallback0100: () => number;
 export const OH_AVPlayer_SetOnErrorCallback0100: () => number;
 export const OH_AVPlayer_SetVolumeMode0100: () => number;
+export const AVPlaybackSpeed0100: () => number;
+export const AVPlaybackSpeed0101: () => number;
+export const AVPlaybackSpeed0102: () => number;
+export const AVPlaybackSpeed0103: () => number;
+export const AVPlayerBufferingType0100: () => number;

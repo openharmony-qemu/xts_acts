@@ -23,8 +23,8 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 
 
 
-export const LOG_TAG = '[PhotoAccessXts].';
-const TAG = "photoAccessXtsSupp.common";
+export const LOG_TAG = '[imageXtsSupp].';
+const TAG = "imageXtsSupp.common";
 
 const COMMON_WAIT_DURATION: number = 500;
 const cameraPosition = camera.CameraPosition;

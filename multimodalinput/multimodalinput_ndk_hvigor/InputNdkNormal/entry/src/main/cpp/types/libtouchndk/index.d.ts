@@ -19,3 +19,7 @@ export const InjectTouchEventGlobal2: () => number;
 export const InjectTouchEventGlobal3: () => number;
 export const AxisEventGlobal1: () => number;
 export const AxisEventGlobal2: () => number;
+export const GetKeyEventId1: () => number;
+export const AddKeyEventHook1: () => number;
+export const RemoveKeyEventHook1: () => number;
+export const DispatchToNextHandler1: () => number;

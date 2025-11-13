@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -101,6 +101,19 @@ export default function sliderTrackColorTest() {
     */
     it('testSliderTrackColor006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderTrackColor006()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_TRACKCOLOR_0700
+     * @tc.name testSliderTrackColor007
+     * @tc.desc testing trackColor for slider with zero value
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 1
+     */
+    it('testSliderTrackColor007', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testSliderTrackColor007()).assertEqual(0)
       done()
     })
   })

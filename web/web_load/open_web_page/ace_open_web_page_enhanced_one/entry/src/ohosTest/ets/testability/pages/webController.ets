@@ -14,61 +14,29 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
-import { JsProxyObject } from '../../test/Interfaces';
-import business_error, { BusinessError } from '@ohos.base';
+import { URL } from '../../test/Config.test'
+
+const EVENT_ID_SET_EMIT_KEY = 200660;
 
 @Entry
 @Component
 struct webController {
   controller: WebController = new WebController()
   @State str: string = "emitUserAgent"
-  @State loadedResource: string = ""
-  @State progress: string = ""
-  @State newUrl: string = ""
-  @State pageBegin: string = ""
-  @State pageEnd: string = ""
-  @State console: string = ""
-  @State confirm: string = ""
-  @State alert: string = ""
-  @State errorReceive: string = ""
-  @State httpErrorReceive: number = 0
-  @State titleReceive: string = ""
-  @State isDownloadStart: boolean = false
-  @State javaScriptAccess: boolean = true
-  @State fileAccess: boolean = true
-  @State domStorageAccess: boolean = false
-  @State imageAccess: boolean = true
-  @State geolocationAccess: boolean = true
-  @State onlineImageAccess: boolean = true
-  @State databaseAccess: boolean = true
-  @State initialScale: number = 100
-  @State enterPageEnd: boolean = false
-  @State newScale: number = 0
-  @State scaleChange: boolean = false
-  @State geoShow: boolean = false
-  @State mixedMode: MixedMode = MixedMode.All
-  @State cacheMode: CacheMode = CacheMode.Default
-  @State cacheError: boolean = false
-  @State mixedSwitch: boolean = false
-  @State mixedAllSwitch: boolean = false
-  @State webVisibility: Visibility = Visibility.Visible
-  @State isProgressFinish: boolean = false
-  @State isHttpErrorReceive: boolean = false
-  @State isLargeThan: boolean = false
-  @State registerJavaScriptProxyFlag: boolean = false
-  @State zoomAccess: boolean = false
-  @State requestFocus: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  startCaseNum: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -77,22 +45,8 @@ struct webController {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
-        this.titleReceive = '';
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      console.info("ets toString:" + String(res));
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      if (this.registerJavaScriptProxyFlag == true) {
-        Utils.emitEvent(String(res), 31008);
-      }
-      return "web222"
     }
   }
 
@@ -100,29 +54,33 @@ struct webController {
     Column() {
       Row() {
         Button("WebController click").key('WebControllerButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'WebControllerButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebControllerButtonIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testRefresh001": {
               try {
-                this.controller.loadUrl({ url: $rawfile('index.html') })
-                await Utils.sleep(4000);
+                this.isPageEnd = -1;
+                this.controller.loadUrl({ url: $rawfile('index.html') });
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                this.isReceive = -1;
                 this.controller.refresh();
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
                 this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 31006)
+                  Utils.emitEvent(res, 200670)
                 }
                 })
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 31006)
+                Utils.emitEvent(String(error.code), 200670)
               }
               break;
             }
-
-
             case "testLoadData001": {
               try {
+                this.isPageEnd = -1;
                 this.controller.loadData({
                   data: "<html>" +
                     "<head>" +
@@ -135,38 +93,36 @@ struct webController {
                   mimeType: "text/html",
                   encoding: "UTF-8"
                 })
-                await Utils.sleep(2000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
                 this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
-                  Utils.emitEvent(res, 31005)
+                  Utils.emitEvent(res, 200680)
                 } })
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 31005)
+                Utils.emitEvent(String(error.code), 200680)
               }
               break;
             }
 
             case "testLoadUrl001": {
               try {
+                this.startCaseNum = 1;
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: "resource://rawfile/webMessageExt.html" });
-                await Utils.sleep(2000);
-                if (this.pageEnd == "resource://rawfile/webMessageExt.html") {
-                  Utils.emitEvent(true, 31018)
-                  return;
-                }
-                Utils.emitEvent(false, 31018)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 31018)
+                Utils.emitEvent(String(error.code), 200690)
               }
               break;
             }
 
             case "testLoadUrl002": {
               try {
-                this.controller.loadUrl({ url: 'www.OpenHarmony.cn' });
-                await Utils.sleep(3000);
-                Utils.emitEvent(this.titleReceive, 76000)
+                this.startCaseNum = 2;
+                this.isPageEnd = -1;
+                this.controller.loadUrl({ url: URL });
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -175,9 +131,10 @@ struct webController {
 
             case "testLoadUrl003": {
               try {
+                this.startCaseNum = 3;
+                this.isPageEnd = -1;
                 this.controller.loadUrl({ url: $rawfile('second.html') });
-                await Utils.sleep(3000);
-                Utils.emitEvent(this.titleReceive, 76002)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -186,10 +143,11 @@ struct webController {
 
             case "testLoadUrl004": {
               try {
+                this.startCaseNum = 4;
+                this.isPageEnd = -1;
                 let sandboxPath = Utils.copyRawFileToSandbox('second.html')
                 this.controller.loadUrl({ url: `file://${sandboxPath}` });
-                await Utils.sleep(3000);
-                Utils.emitEvent(this.titleReceive, 76004)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -200,85 +158,45 @@ struct webController {
         })
       }
 
-      TextInput({ placeholder: "inputs your words" })
-        .key('textInput')
-        .type(InputType.Normal)
-        .placeholderColor(Color.Blue)
-        .placeholderFont({ size: 20, weight: FontWeight.Normal, family: "sans-serif", style: FontStyle.Normal })
-        .enterKeyType(EnterKeyType.Next)
-        .caretColor(Color.Green)
-        .height(60)
-        .fontSize(30)
-        .fontWeight(FontWeight.Bold)
-        .fontFamily("cursive")
-        .fontStyle(FontStyle.Italic)
-        .fontColor(Color.Red)
-        .maxLength(20)
-        .border({ width: 1, color: 0x317AF7, radius: 10, style: BorderStyle.Solid })
-        .onClick(() => {
-          console.info("TextInput click")
-        })
-
       Web({ src: $rawfile('webPart1index.html'), controller: this.controller })
-        .visibility(this.webVisibility)
-        .javaScriptAccess(this.javaScriptAccess)
-        .fileAccess(this.fileAccess)
-        .imageAccess(this.imageAccess)
-        .domStorageAccess(this.domStorageAccess)
-        .geolocationAccess(this.geolocationAccess)
-        .onlineImageAccess(this.onlineImageAccess)
-        .databaseAccess(this.databaseAccess)
-        .cacheMode(this.cacheMode)
-        .initialScale(this.initialScale)
-        .mixedMode(this.mixedMode)
-        .userAgent("Mozila/5.0 (Linux; Andriod 9; VRD-AL10; HMSCore 6.3.0.331) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.0.4.1 MobileSafari/537.36")
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
-        .onConsole((event) => {
-          if (event) {
-            this.console = event.message.getMessage()
-          }
-          return false
-        })
-        .onPageBegin((event) => {
-          if (event) {
-            this.pageBegin = event.url
-          }
-        })
+        .fileAccess(true)
         .onTitleReceive((event) => {
           if (event) {
-            console.log('onTitleReceive title:' + event.title)
-            this.titleReceive = event.title
+            console.log('onTitleReceive title:' + event.title);
+            switch (this.startCaseNum) {
+              case 2: {
+                Utils.emitEvent(event.title, 200700);
+                this.startCaseNum = -1;
+                break;
+              }
+              case 3: {
+                Utils.emitEvent(event.title, 200710);
+                this.startCaseNum = -1;
+                break;
+              }
+              case 4: {
+                Utils.emitEvent(event.title, 200720);
+                this.startCaseNum = -1;
+                break;
+              }
+              default :
+                break;
+            }
           }
         })
         .onPageEnd((event) => {
           if (event) {
-            this.pageEnd = event.url
-            console.log("onPageEnd==>")
+            this.isPageEnd = 1;
+            console.log("onPageEnd==> " + event.url);
+            if (this.startCaseNum === 1) {
+              if (event.url === "resource://rawfile/webMessageExt.html") {
+                Utils.emitEvent(true, 200690);
+              } else {
+                Utils.emitEvent(false, 200690);
+              }
+              this.startCaseNum = -1;
+            }
           }
-        })
-        .onRefreshAccessedHistory((event) => {
-          if (event) {
-            console.info("onRefreshAccessedHistory==>")
-            this.newUrl = event.url
-          }
-
-        })
-        .onResourceLoad((event) => {
-          console.info("onResourceLoad==>" + event.url)
-          this.loadedResource = event.url
-        })
-        .zoomAccess(this.zoomAccess)
-        .onBlur(() => {
-          console.info("onBlur==>")
-          this.controller.requestFocus()
-        })
-        .onFocus(() => {
-          this.requestFocus = true
         })
     }
   }

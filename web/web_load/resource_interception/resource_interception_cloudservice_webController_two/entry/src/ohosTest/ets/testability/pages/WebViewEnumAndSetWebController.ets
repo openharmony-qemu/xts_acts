@@ -16,7 +16,8 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest';
+
+const EVENT_ID_SET_EMIT_KEY = 202360;
 
 @CustomDialog
 struct NewWebViewComp {
@@ -59,6 +60,8 @@ struct WebViewEnumAndSetWebController {
   @State MediaType: Number = 0
   @State userAgentPC:string = "";
   @State precomposedResult:boolean =  false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
   handler: FullScreenExitHandler | null = null
   dialogController: CustomDialogController | null = null
   popController: webView.WebviewController | null = null;
@@ -66,14 +69,14 @@ struct WebViewEnumAndSetWebController {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -82,6 +85,7 @@ struct WebViewEnumAndSetWebController {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -90,7 +94,9 @@ struct WebViewEnumAndSetWebController {
     Column() {
       Row() {
         Button("web clicks").key('buttonEnumAndSetWebController').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'buttonEnumAndSetWebControllerIsReceive', 1, 1000);
           console.info("key==>" + this.str)
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnTouchIconUrlReceived": {
               this.controller.loadUrl("resource://rawfile/indexFour.html")
@@ -136,7 +142,7 @@ struct WebViewEnumAndSetWebController {
           console.log('onTouchIconUrlReceived:' + event.url)
           console.log('onTouchIconUrlReceived:' + event.precomposed)
           this.precomposedResult = event.precomposed
-          Utils.emitEvent(event.url + '', 1371)
+          Utils.emitEvent(event.url + '', 202370)
           setTimeout(() => {
             this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
           }, 2000)
@@ -165,11 +171,6 @@ struct WebViewEnumAndSetWebController {
           })
           this.dialogController.open()
           event.handler.setWebController(popController)
-          setTimeout(() => {
-            if (popController) {
-              Utils.emitEvent(true, 1311)
-            }
-          }, 3000)
         })
         .onWindowExit(() => {
           console.info("closeWindow")

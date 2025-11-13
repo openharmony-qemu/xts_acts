@@ -55,7 +55,7 @@ export default function ImageReceiverNDKTest() {
         }
 
         beforeAll(async() => {
-            await sleep(5000);
+            await sleep(1000);
             console.info('beforeAll case');
         });
         beforeEach(() => {
@@ -65,7 +65,7 @@ export default function ImageReceiverNDKTest() {
             console.info('afterEach case');
         });
         afterAll(async() => {
-            await sleep(5000);
+            await sleep(1000);
             console.info('afterAll case');
         });
 

@@ -26,7 +26,8 @@ struct isActive {
         .defaultFocus(true)
         .onClick(() => {
           this.getUIContext().getFocusController().activate(true, true);
-          this.setFocus = String(this.getUIContext().getFocusController().isActive())
+          let result = this.getUIContext().getFocusController().isActive()
+          AppStorage.setOrCreate('isActiveTestTrueResult', result);
         })
       Button(this.notSetFocus)
         .id("notSetFocus")
@@ -35,7 +36,8 @@ struct isActive {
         .defaultFocus(true)
         .onClick(() => {
           this.getUIContext().getFocusController().activate(false, true);
-          this.notSetFocus = String(this.getUIContext().getFocusController().isActive())
+          let result1 = this.getUIContext().getFocusController().isActive()
+          AppStorage.setOrCreate('isActiveTestFalseResult', result1);
         })
     }
     .width("100%")

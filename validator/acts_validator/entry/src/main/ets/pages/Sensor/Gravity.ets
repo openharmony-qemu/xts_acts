@@ -28,8 +28,8 @@ const TAG = '[Gravity]';
 struct Gravity {
   @State FillColor: string = '#FF000000';
   @State name: string = 'Gravity';
-  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有重力传感器' + '\n操作步骤：\n1.确定设备是否有重力传感器\n2.如果有该传感器，点击开启并快速移动设备，观察数值是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)'
-    + '\n预期结果：观察显示数值,跟随移动变化';
+  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有重力传感器' + '\n操作步骤：\n1.确定设备是否有重力传感器\n2.如果有该传感器，点击开启并快速移动设备，观察数值或触发次数是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)'
+    + '\n预期结果：观察显示数值或触发次数,跟随移动变化';
   @State Vue: boolean = false;
   @State isHave: boolean = true;
   @State sensorChange: boolean = false;
@@ -40,6 +40,7 @@ struct Gravity {
   @State nextY: string = '';
   @State nextZ: string = '';
   @State intervalNum: number = 0;
+  @State backCount: number = 0;
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name)
@@ -52,6 +53,7 @@ struct Gravity {
       Logger.info(TAG, 'enter')
       try {
         sensor.on(sensor.SensorId.GRAVITY, (data: sensor.GravityResponse) => {
+          this.backCount += 1;
           Logger.info(TAG, 'Succeeded in getting the GravityResponse: ' + data.x);
           Logger.info(TAG, 'Succeeded in getting the GravityResponse: ' + data.y);
           Logger.info(TAG, 'Succeeded in getting the GravityResponse: ' + data.z);
@@ -68,7 +70,8 @@ struct Gravity {
             Logger.info(TAG, 'Succeeded in setInterval the this.dataX: ' + this.nextX);
             Logger.info(TAG, 'Succeeded in setInterval the this.dataY: ' + this.nextY);
             Logger.info(TAG, 'Succeeded in setInterval the this.dataZ: ' + this.nextZ);
-            if (this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextZ !== this.dataZ) {
+            if ((this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextZ !== this.dataZ) ||
+              this.backCount > 0) {
               this.Vue = true;
             }
           }, 100)
@@ -131,6 +134,7 @@ struct Gravity {
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -144,7 +148,9 @@ struct Gravity {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -168,6 +174,7 @@ struct Gravity {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -234,6 +241,12 @@ struct Gravity {
           .textAlign(TextAlign.Start)
           .width('100%')
           .margin({ bottom: 24 })
+        Text('触发订阅的次数: ' + this.backCount)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ bottom: 24 })
       }
       .width('80%')
       .height('30%')
@@ -269,6 +282,7 @@ struct Gravity {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

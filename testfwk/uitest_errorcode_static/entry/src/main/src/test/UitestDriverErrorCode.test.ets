@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
+import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import  hilog  from '@ohos.hilog'
 import { Utils, startAbility, stopApplication } from './Util.test';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-const waitUiReadyMs : number = 1000;
+const waitUiReadyMs : int = 1000;
 const TestTag = 'UitestDriverErrorTest';
 const AsyncErrorCode = 17000002;
 const ParameterErrorCode = 17000007;
@@ -64,5 +64,77 @@ export default function uitestDriverErrorTest() {
       console.log(`${TestTag}, test_assertComponentExist_17000003_static end`);
     })
 
+    /*
+     * @tc.number: uitestDriverErrorTest_002
+     * @tc.name: test_driver_inputTextMode_801_static
+     * @tc.desc: inputText 801 test.
+     */
+    it('test_driver_inputTextMode_801_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_inputTextMode_801_static start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.inputText({x:100, y:100}, '123456', {
+          paste: false
+        });
+      }catch (e: BusinessError) {
+        hilog.info(domain, tag, `test_driver_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(CapabilityCode);
+      }
+      hilog.info(domain, tag, `test_driver_inputTextMode_801_static end`);
+    })
+
+    /*
+     * @tc.number: uitestDriverErrorTest_003
+     * @tc.name: test_driver_pressBackWithId_17000007_static
+     * @tc.desc: mouseDrag 17000007 test.
+     */
+    it("test_driver_pressBackWithId_17000007_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.pressBack(-1);
+        expect().assertFail();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 error is, ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_pressBackWithId_17000007 end`);
+    })
+
+    /*
+         * @tc.number: uitestDriverErrorTest_004
+         * @tc.name: test_driver_getDisplaySizeWithId_17000007_static
+         * @tc.desc: getDisplayRotation 17000007 test.
+         */
+    it("test_driver_getDisplaySizeWithId_17000007_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.getDisplaySize(-1);
+        expect().assertFail();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static error is, ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_getDisplaySizeWithId_17000007_static end`);
+    })
+
+    /*
+     * @tc.number: uitestDriverErrorTest_005
+     * @tc.name: test_driver_pressHome_static
+     * @tc.desc: pressHome 17000007 test.
+     */
+    it("test_driver_pressHome_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_driver_pressHome_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await driver.pressHome(-1);
+        expect().assertFail();
+      } catch (e: BusinessError) {
+        hilog.info(domain, tag, `test_driver_pressHome_static error is, ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(domain, tag, `test_driver_pressHome_static end`);
+    })
   })
 }

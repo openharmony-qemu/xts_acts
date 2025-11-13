@@ -17,8 +17,15 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 182001;
+let driver = Driver.create();
+let emitKey = ""
+let tcName = ""
 
 export default function webNestedScrollOptionsScrollBackwardTest() {
 
@@ -34,7 +41,7 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
         if (!("WebNestedScrollOptionsScrollBackwardTest" == pages.name)) {
           console.info("get WebNestedScrollOptionsScrollBackwardTest state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await driver.waitForComponent(ON.id("NestedScrollOptionsScrollBackwardTestButton"), 10000);
           console.info("push WebNestedScrollOptionsScrollBackwardTest page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -48,15 +55,7 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebNestedScrollOptionsScrollBackwardTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebNestedScrollOptionsScrollBackwardTest afterEach end");
       done();
     })
 
@@ -69,10 +68,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
     * @tc.level       : Level 1
     */
     it('testNestedScrollOptionsScrollBackward001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward001", true, 7001, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward001';
+      tcName = 'testNestedScrollOptionsScrollBackward001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182010, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -84,10 +87,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
     * @tc.level       : Level 1
     */
     it('testNestedScrollOptionsScrollBackward002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward002", true, 7002, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward002';
+      tcName = 'testNestedScrollOptionsScrollBackward002'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182020, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -99,10 +106,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward003", true, 7003, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward003';
+      tcName = 'testNestedScrollOptionsScrollBackward003'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182030, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -114,10 +125,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward004", true, 7004, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward004';
+      tcName = 'testNestedScrollOptionsScrollBackward004'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182040, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -129,10 +144,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward005", true, 7005, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward005';
+      tcName = 'testNestedScrollOptionsScrollBackward005'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182050, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -144,10 +163,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward006", true, 7006, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward006';
+      tcName = 'testNestedScrollOptionsScrollBackward006'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182060, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -159,10 +182,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward007", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward007", true, 7007, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward007';
+      tcName = 'testNestedScrollOptionsScrollBackward007'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182070, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -174,10 +201,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward008", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward008", true, 7008, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward008';
+      tcName = 'testNestedScrollOptionsScrollBackward008'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182080, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -189,10 +220,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward009", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward009", true, 7009, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward009';
+      tcName = 'testNestedScrollOptionsScrollBackward009'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182090, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -204,10 +239,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward010", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward010", true, 7010, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward010';
+      tcName = 'testNestedScrollOptionsScrollBackward010'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182100, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -219,10 +258,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward011", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward011", true, 7011, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward011';
+      tcName = 'testNestedScrollOptionsScrollBackward011'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182110, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -234,10 +277,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward012", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward012", true, 7012, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward012';
+      tcName = 'testNestedScrollOptionsScrollBackward012'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182120, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -249,10 +296,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward013", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward013", true, 7013, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward013';
+      tcName = 'testNestedScrollOptionsScrollBackward013'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182130, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -264,10 +315,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward014", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward014", true, 7014, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward014';
+      tcName = 'testNestedScrollOptionsScrollBackward014'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182140, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -279,10 +334,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward015", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward015", true, 7015, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward015';
+      tcName = 'testNestedScrollOptionsScrollBackward015'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182150, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -294,10 +353,14 @@ export default function webNestedScrollOptionsScrollBackwardTest() {
      * @tc.level       : Level 1
      */
     it('testNestedScrollOptionsScrollBackward016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testNestedScrollOptionsScrollBackward016", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackward016", true, 7016, done);
-      sendEventByKey('NestedScrollOptionsScrollBackwardTestButton', 10, '');
+      emitKey = 'testNestedScrollOptionsScrollBackward016';
+      tcName = 'testNestedScrollOptionsScrollBackward016'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 182160, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "NestedScrollOptionsScrollBackwardTestButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
   })

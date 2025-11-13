@@ -98,13 +98,17 @@ struct XComponentTypeNodePage {
         } else {
           console.info('ZRJ XComponent TypeNode is null')
         }
-      }).key('XComponentTypeNodePage_Btn_TS')
+      }).controlSize(ControlSize.SMALL).key('XComponentTypeNodePage_Btn_TS')
 
       Button('C侧修改xc组件属性').onClick(() => {
         nativeNode.crossLanguageSetXComponentAttribute('XComponentCrossLanguage_typeNode');
-      }).key('XComponentTypeNodePage_Btn_C')
+      }).controlSize(ControlSize.SMALL).key('XComponentTypeNodePage_Btn_C')
 
-      Text('TypeNode创建SURFACE类型的XC')
+      Button('undefined').onClick(() => {
+        const attrs = typeNode.getAttribute(undefined, 'XComponent');
+        AppStorage.SetOrCreate('XComponentTypeNodePage', attrs);
+      }).controlSize(ControlSize.SMALL).key('XComponentTypeNodePage_Btn_undefined')
+
       NodeContainer(this.myNodeController)
     }
     .padding({ left: 35, right: 35, top: 35 })

@@ -40,7 +40,7 @@ class Test {
   }
   onSaveData() {
     console.info('onSaveData');
-    return true;
+    return false;
   }
   onCompleteContinuation(result:string) {
     console.info('onCompleteContinuation:' + result);

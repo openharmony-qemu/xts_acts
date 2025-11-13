@@ -18,6 +18,8 @@ import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import cert from '@ohos.security.cert';
 
+const EVENT_ID_SET_EMIT_KEY = 202590;
+
 function Uint8ArrayToString(dataArray: Uint8Array) {
   let dataString = ''
   for (let i = 0; i < dataArray.length; i++) {
@@ -73,17 +75,19 @@ struct WebAttributeTest {
   @State title: string = ''
   @State onRequestSelectedCalled: boolean = false
   @State testConsole: boolean = false
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -98,6 +102,7 @@ struct WebAttributeTest {
           console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
         }
         this.errorReceive = ''
+        this.isReceive = 1;
       }
     }
   }
@@ -108,44 +113,52 @@ struct WebAttributeTest {
         Button("web click")
           .key('WebAttributeTestButton')
           .focusable(true)
-          .onFocus(() => {
-            console.log("onFocus==>")
-          })
-          .onBlur(() => {
-            console.log("onBlur==>")
-          })
           .onClick(async () => {
+            await Utils.waitForExist(()=>this.isReceive, 'WebAttributeTestButtonIsReceive', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, 'WebAttributeTestButtonIsPageEnd', 1, 1000);
             console.info("key==>" + this.str)
             switch (this.str) {
               case "emitGetCertificate001": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://expired.badssl.com')
-                  await Utils.sleep(6000)
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                   this.controller.getCertificate().then(x509CertArray => {
                     this.outputStr = ParseX509CertInfo(x509CertArray);
                     console.log("getCertificate result of this page: " + this.outputStr);
-                    Utils.emitEvent(this.outputStr, 60423)
+                    if (this.outputStr.includes('getCertificate success: len = 1')) {
+                      Utils.emitEvent(true, 202600);
+                    } else {
+                      Utils.emitEvent(false, 202600);
+                    }
                   })
                 } catch (error) {
                   this.outputStr = 'getCertificate failed: ' + error.code + ", errMsg: " + error.message;
+                  Utils.emitEvent(false, 202600);
                 }
                 break;
               }
               case "emitGetCertificate002": {
                 try {
+                  this.isPageEnd = -1;
                   this.controller.loadUrl('https://expired.badssl.com')
-                  await Utils.sleep(6000)
+                  await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
                   this.controller.getCertificate((error, x509CertArray) => {
                     if (error) {
                       this.outputStr = 'getCertificate failed: ' + error.code + ", errMsg: " + error.message;
                     } else {
                       this.outputStr = ParseX509CertInfo(x509CertArray);
                       console.log("getCertificate result of this page: " + this.outputStr);
-                      Utils.emitEvent(this.outputStr, 60424)
+                      if (this.outputStr.includes('getCertificate success: len = 1')) {
+                        Utils.emitEvent(true, 202610);
+                      } else {
+                        Utils.emitEvent(false, 202610);
+                      }
                     }
                   })
                 } catch (error) {
                   this.outputStr = 'getCertificate failed: ' + error.code + ", errMsg: " + error.message;
+                  Utils.emitEvent(false, 202610);
                 }
                 break;
               }
@@ -170,13 +183,6 @@ struct WebAttributeTest {
               console.info("onRenderExited==>" + event.renderExitReason)
 
             }
-          })
-          .onUrlLoadIntercept((event) => {
-            if (event) {
-              console.info("onUrlLoadIntercept==>" + event.data)
-              this.loadedUrl = String(event.data)
-            }
-            return false
           })
           .onRefreshAccessedHistory((event) => {
             console.info("onRefreshAccessedHistory==>")
@@ -263,6 +269,7 @@ struct WebAttributeTest {
               this.pageEnd = event.url
               console.log("onPageEnd==> event.url:" + event.url)
               console.log("onPageEnd==> this.pageEnd:" + this.pageEnd)
+              this.isPageEnd = 1;
             }
           })
           .onRequestSelected(() => {
@@ -279,60 +286,6 @@ struct WebAttributeTest {
               this.alert = event.message
             }
             return false
-          })
-          .onConfirm((event) => {
-            if (event) {
-              console.log("event.url:" + event.url)
-              console.log("event.message:" + event.message)
-              this.confirm = event.message;
-              if (this.handleCancel) {
-                event.result.handleCancel()
-              } else {
-                event.result.handleConfirm()
-              }
-            }
-            return true
-          })
-          .onPrompt((event) => {
-            if (event) {
-              console.log("event.url:" + event.url)
-              console.log("event.message:" + event.message)
-              console.log("event.value:" + event.value)
-              this.prompt = event.message;
-              event.result.handlePromptConfirm('handlePromptConfirm')
-            }
-            return true
-          })
-          .onSearchResultReceive(ret => {
-            if (ret) {
-              console.log("on search result receive:" + "[cur]" + ret.activeMatchOrdinal +
-                "[total]" + ret.numberOfMatches + "[isDone]" + ret.isDoneCounting);
-              this.searchResultCount = ret.numberOfMatches
-            }
-          })
-          .onInterceptKeyEvent((event) => {
-            console.log("onInterceptKeyEvent==>")
-            if (event) {
-              this.onInterceptKeyEventCode = event.keyCode
-            }
-            return false;
-          })
-          .onTouchIconUrlReceived((event) => {
-            if (event) {
-              console.log('onTouchIconUrlReceived:' + JSON.stringify(event))
-            }
-          })
-          .onFaviconReceived((event) => {
-            this.onFaviconReceivedCalled = true
-            if (event) {
-              console.log('onFaviconReceived' + JSON.stringify(event));
-            }
-          })
-          .onTitleReceive((event) => {
-            if (event) {
-              console.log('onTitleReceive title:' + event.title)
-              this.title = event.title
-            }
           })
           .onConsole((event) => {
             if (event) {

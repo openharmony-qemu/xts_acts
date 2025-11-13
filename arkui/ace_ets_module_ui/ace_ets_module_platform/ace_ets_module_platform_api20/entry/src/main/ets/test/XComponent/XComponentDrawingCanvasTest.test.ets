@@ -66,10 +66,10 @@ export default function XComponentDrawingCanvasTestTest() {
       console.info("[XComponentDrawingCanvasTest_0100] XComponent1_lock1 content is: " + obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('ok');
 
-      strJson = getInspectorByKey('XComponent1_lock2');
-      obj = JSON.parse(strJson);
-      console.info("[XComponentDrawingCanvasTest_0100] XComponent1_lock2 content is: " + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('ok');
+      console.info("[XComponentDrawingCanvasTest_0100] AppStorage.get('XComponentDrawingCanvasPage_mCanvas3'): "
+       + AppStorage.get('XComponentDrawingCanvasPage_mCanvas3'));
+      expect(AppStorage.get('XComponentDrawingCanvasPage_mCanvas3')).assertEqual(null);
+      AppStorage.delete('XComponentDrawingCanvasPage_mCanvas3')
 
       strJson = getInspectorByKey('XComponent1_lock3');
       obj = JSON.parse(strJson);
@@ -81,10 +81,10 @@ export default function XComponentDrawingCanvasTestTest() {
       console.info("[XComponentDrawingCanvasTest_0100] XComponent2_lock1 content is: " + obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('ok');
 
-      strJson = getInspectorByKey('XComponent2_lock2');
-      obj = JSON.parse(strJson);
-      console.info("[XComponentDrawingCanvasTest_0100] XComponent2_lock2 content is: " + obj.$attrs.content);
-      expect(obj.$attrs.content).assertEqual('ok');
+      console.info("[XComponentDrawingCanvasTest_0100] AppStorage.get('XComponentDrawingCanvasPage_mCanvas4'): "
+       + AppStorage.get('XComponentDrawingCanvasPage_mCanvas4'));
+      expect(AppStorage.get('XComponentDrawingCanvasPage_mCanvas4')).assertEqual(null);
+      AppStorage.delete('XComponentDrawingCanvasPage_mCanvas4')
 
       strJson = getInspectorByKey('XComponent2_lock3');
       obj = JSON.parse(strJson);

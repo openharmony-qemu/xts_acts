@@ -94,6 +94,87 @@ export default function KeyboardAvoidModeTest() {
       console.info('[KeyboardAvoidModeTest_0200] END');
       done();
     });
+
+    /**
+     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0300
+     * @tc.name      KeyboardAvoidModeTest_0300
+     * @tc.desc      set KeyboardAvoidMode RESIZE_WITH_CARET
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('KeyboardAvoidModeTest_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('KeyboardAvoidModeTest_0300 START');
+      globalThis.value.message.notify({
+        value:'NONE'
+      });
+	    let driver: Driver = Driver.create();
+	    await CommonFunc.sleep(1000);
+	    let button: Component = await driver.findComponent(ON.id('getKeyboardAvoidMode'));
+      await CommonFunc.sleep(1000);
+      await button.click()
+      await CommonFunc.sleep(2000);
+      let strJson = getInspectorByKey('Text');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[KeyboardAvoidModeTest_0300] component obj is: " + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertEqual('4');
+      console.info('[KeyboardAvoidModeTest_0300] END');
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0400
+     * @tc.name      KeyboardAvoidModeTest_0400
+     * @tc.desc      set KeyboardAvoidMode RESIZE_WITH_CARET
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('KeyboardAvoidModeTest_0400', Level.LEVEL2, async (done: Function) => {
+      console.info('KeyboardAvoidModeTest_0400 START');
+      globalThis.value.message.notify({
+        value:'OFFSET'
+      });
+	    let driver: Driver = Driver.create();
+	    await CommonFunc.sleep(1000);
+	    let button: Component = await driver.findComponent(ON.id('getKeyboardAvoidMode'));
+      await CommonFunc.sleep(1000);
+      await button.click()
+      await CommonFunc.sleep(2000);
+      let strJson = getInspectorByKey('Text');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[KeyboardAvoidModeTest_0400] component obj is: " + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertEqual('0');
+      console.info('[KeyboardAvoidModeTest_0400] END');
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0500
+     * @tc.name      KeyboardAvoidModeTest_0500
+     * @tc.desc      set KeyboardAvoidMode RESIZE_WITH_CARET
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('KeyboardAvoidModeTest_0500', Level.LEVEL2, async (done: Function) => {
+      console.info('KeyboardAvoidModeTest_0500 START');
+      globalThis.value.message.notify({
+        value:'RESIZE'
+      });
+	    let driver: Driver = Driver.create();
+	    await CommonFunc.sleep(1000);
+	    let button: Component = await driver.findComponent(ON.id('getKeyboardAvoidMode'));
+      await CommonFunc.sleep(1000);
+      await button.click()
+      await CommonFunc.sleep(2000);
+      let strJson = getInspectorByKey('Text');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[KeyboardAvoidModeTest_0500] component obj is: " + JSON.stringify(obj));
+      expect(obj.$attrs.content).assertEqual('1');
+      console.info('[KeyboardAvoidModeTest_0500] END');
+      done();
+    });
   })
 }
 

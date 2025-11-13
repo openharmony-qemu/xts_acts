@@ -39,7 +39,7 @@ class TestField {
 
   stringValue: string = 'test';
   booleanValue: boolean = true;
-  charValue: char = 5;
+  charValue: char = Int.toChar(5);
   byteValue: byte = 6;
   shortValue: short = 7;
   intValue: int = 8;

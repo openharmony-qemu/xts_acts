@@ -26,7 +26,7 @@ const unsubscribeCallback = (tcNumber: string) => {
 }
 let subscriberForm: CommonEventManager.CommonEventSubscriber;
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 export default function formLinkTest() {
@@ -34,9 +34,12 @@ export default function formLinkTest() {
         hilog.info(DOMAIN, TAG, 'formLinkTest describe start');
 
         /**
-         * @tc.number: FormLinkStaticTest001
-         * @tc.name: FormLinkStaticTest001
-         * @tc.desc: check FormLink
+         * @tc.name   FormLinkStaticTest001
+         * @tc.number FormLinkStaticTest001
+         * @tc.desc   check FormLink
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormLinkStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 start');
@@ -44,11 +47,11 @@ export default function formLinkTest() {
             let formLinkTest_Event: CommonEventManager.CommonEventSubscribeInfo = {
                 events: ["XTS_FormLinkTest_commonEvent"],
             };
-            let isChecked: boolean = false;
-            subscriberForm = CommonEventManager.createSubscriberSync(formLinkTest_Event);
-            let formLinkCallBack = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
-                isChecked = true;
-                hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 FormLinkCallBack' + JSON.stringify(data));
+            let isChecked: boolean = false;	
+            let subscriberForm: CommonEventManager.CommonEventSubscriber = CommonEventManager.createSubscriberSync(formLinkTest_Event);
+            let formLinkCallBack = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {	
+                isChecked = true;	
+                hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 FormLinkCallBack' + JSON.stringify(data));	
                 expect(data?.event).assertEqual("XTS_FormLinkTest_commonEvent");
                 CommonEventManager.unsubscribe(subscriberForm, () => unsubscribeCallback("FormLinkStaticTest001"));
             }
@@ -71,9 +74,12 @@ export default function formLinkTest() {
         })
 
         /**
-         * @tc.number: FormLinkOptionsStaticTest001
-         * @tc.name: FormLinkOptionsStaticTest001
-         * @tc.desc: check FormLinkOptions
+         * @tc.name   FormLinkOptionsStaticTest001
+         * @tc.number FormLinkOptionsStaticTest001
+         * @tc.desc   check FormLinkOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormLinkOptionsStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, 'FormLinkOptionsStaticTest001 start');

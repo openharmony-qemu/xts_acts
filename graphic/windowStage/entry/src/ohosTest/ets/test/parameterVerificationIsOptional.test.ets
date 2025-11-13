@@ -375,9 +375,9 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
      * @tc.desc      : Verify The optional parameter is undefined
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testWindowStage_loadContent_Test_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testWindowStage_loadContent_Test_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'windowStage_loadContent_Test_001';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1019,9 +1019,9 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
      * @tc.desc      : Get the UIContext instance.
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testGetUIContext_Instances', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testGetUIContext_Instances', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetUIContext_Instances';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

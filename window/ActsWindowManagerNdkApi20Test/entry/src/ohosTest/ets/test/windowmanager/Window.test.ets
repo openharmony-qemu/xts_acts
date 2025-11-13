@@ -15,8 +15,10 @@
 import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import windowndkapi20 from 'libwindowndkapi20.so';
 import Utils from "../common/Utils";
-import { ON } from "@kit.TestKit";
-import { floatingBall, window } from "@kit.ArkUI";
+import { Driver, ON } from "@kit.TestKit";
+import { display, floatingBall, window } from "@kit.ArkUI";
+import { BusinessError, settings } from "@kit.BasicServicesKit";
+import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from "@kit.AbilityKit";
 
 const CAN_NOT_BUILD_STAGE = -1;
 const OK = 0;
@@ -35,10 +37,58 @@ const WINDOW_MANAGER_WINDOW_TYPE_MAIN = 1;
 const WINDOW_MANAGER_WINDOW_TYPE_FLOAT = 8;
 const WINDOW_MANAGER_WINDOW_TYPE_DIALOG = 16;
 
+let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+
+function getPermision(){
+  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+  let permissions: Permissions[] =
+    ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+  atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError,data:PermissionRequestResult)=>{
+    if(err){
+      console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }else {
+      console.info('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
+    }
+  })
+}
+
+async function ClickButtonDriver(){
+  console.info(`come in permissionClick`);
+  let driver: Driver = Driver.create();
+  console.info(`come in Driver create`);
+  let buttonOne = await driver.findComponent(ON.text('允许'));
+  console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
+  if (buttonOne != undefined) {
+    await buttonOne.click();
+  }
+}
+
 export default function WindowTest() {
   describe('WindowTest', () => {
+    let context: common.UIAbilityContext;
+    let windowStage: window.WindowStage;
+    let isPCStatus: string = '';
+    let isAutoWindow: string = '';
     beforeAll(async (done: Function) => {
-      await Utils.pushPageNoClear("Window/Window", done)
+      context = AppStorage.get('context') as common.UIAbilityContext;
+      console.log('windowTest context: ' + JSON.stringify(context));
+      windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      //isAutoWindow == '' 非PAD设备
+      //isAutoWindow == 'true' PAD设备自由多窗模式
+      //isAutoWindow == 'false' PAD设备非自由多窗模式
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.USER_PROPERTY);
+      console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+      //isPCStatus == '' 非PC设备
+      //isPCStatus == '1' PC设备状态栏dock未融合
+      //isPCStatus == '0' PC设备状态栏dock融合
+      console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      await getPermision();
+      await sleep(300);
+      await ClickButtonDriver();
+      await sleep(200);
+      await Utils.pushPageNoClear("Window/Window", done);
     })
     /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_WINDOWMANAGER_GETWINDOWAVOIDAREA_0100
@@ -729,5 +779,249 @@ export default function WindowTest() {
         done()
       }
     })
+
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200
+     * @tc.name    : test_OH_WindowManager_GetAllMainWindowInfo_0200
+     * @tc.desc    : OH_WindowManager_GetAllMainWindowInfo测试返回值覆盖
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetAllMainWindowInfo_0200', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 windowId: ${windowId}`);
+          let displayId = display.getDefaultDisplaySync().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 displayId: ${displayId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId, displayId);
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 Result: ${Result}`);
+          expect(Result).assertEqual(OK);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0200
+     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0200
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0200', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200 windowId: ${windowId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0200();
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200 Result: ${Result}`);
+          expect(Result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0300
+     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0300
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0300', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300 windowId: ${windowId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0300(windowId);
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300 Result: ${Result}`);
+          expect(Result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0400
+     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0400
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0400', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400 windowId: ${windowId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0400(windowId);
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400 Result: ${Result}`);
+          expect(Result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0500
+     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0500
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0500', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500 windowId: ${windowId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0500();
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500 Result: ${Result}`);
+          expect(Result).assertEqual(OK);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0600
+     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0600
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0600', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600 windowId: ${windowId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0600(windowId);
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600 Result: ${Result}`);
+          expect(Result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0700
+     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0700
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0700', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700 windowId: ${windowId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0700(windowId);
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700 Result: ${Result}`);
+          expect(Result).assertEqual(OK);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0800
+     * @tc.desc    : test_OH_WindowManager_GetMainWindowSnapshot_0800
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0800', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isPCStatus != '') {
+        try {
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 start<====`);
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 windowId: ${windowId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0800(windowId);
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 Result: ${Result}`);
+          expect(Result).assertEqual(OK);
+          done()
+        } catch (err) {
+          console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 catch err: ` + err);
+          expect(false).assertEqual(err);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
   })
 }

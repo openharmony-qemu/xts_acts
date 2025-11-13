@@ -909,6 +909,81 @@ export default function audioManagerApi9() {
     })
 
     /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0400
+     * @tc.name      : OnRingModeChange - RINGER_MODE_NORMAL
+     * @tc.desc      : OnRingModeChange - RINGER_MODE_NORMAL
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
+        groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`)
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0500
+     * @tc.name      : OnRingModeChange - RINGER_MODE_SILENT
+     * @tc.desc      : OnRingModeChange - RINGER_MODE_SILENT
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
+        groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`)
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+        /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0600
+     * @tc.name      : OnRingModeChange - RINGER_MODE_VIBRATE
+     * @tc.desc      : OnRingModeChange - RINGER_MODE_VIBRATE
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`)
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0100
      * @tc.name      : setMicrophoneMute - true - Callback
      * @tc.desc      : Enable mic mute
@@ -959,6 +1034,71 @@ export default function audioManagerApi9() {
         await groupManager.setMicrophoneMute(true);
         let data = await groupManager.isMicrophoneMute();
         if (data == true) {
+          console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.log('err :' + err.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0300
+     * @tc.name      : setMicrophoneMute - false - Callback
+     * @tc.desc      : Enable mic mute
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audioManager.getVolumeManager();
+      let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+      groupManager.setMicrophoneMute(false, (err, data) => {
+        if (err) {
+          console.error(`audioManagerApi9Test: failed to setMicrophoneMute : Callback:  ${err.message}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          groupManager.isMicrophoneMute((err, data) => {
+            if (err) {
+              console.error(`audioManagerApi9Test: failed to isMicrophoneMute : Callback:  ${err.message}`);
+              expect(false).assertTrue();
+            } else {
+              if (data == false) {
+                console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: PASS:${data}`);
+                expect(true).assertTrue();
+              } else {
+                console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: FAIL: ${data}`);
+                expect(false).assertTrue();
+              }
+            }
+            done();
+          })
+        }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0400
+     * @tc.name      : setMicrophoneMute - false - Promise
+     * @tc.desc      : Enable mic mute
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        await groupManager.setMicrophoneMute(false);
+        let data = await groupManager.isMicrophoneMute();
+        if (data == false) {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1414,6 +1554,384 @@ export default function audioManagerApi9() {
             done();
           });
         }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
+     * @tc.name      : isCommunicationDeviceActive - SPEAKER - promise
+     * @tc.desc      : isCommunicationDeviceActive SPEAKER - promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+
+      let audioRendererInfo :audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+
+      let audioRendererOptions :audio.AudioRendererOptions= {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
+      let flag: boolean | null = null;
+      let AudioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
+            outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+      device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice) {
+        console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
+        done();
+        return;
+      }
+      try {
+        if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+          outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        } else {
+          console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
+          done();
+          return
+        }
+        await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
+                    Promise returned to indicate that the device is set to the active status.`);
+        });
+        await AudioRoutingManager.isCommunicationDeviceActive(audio.CommunicationDeviceType.SPEAKER).then((value) => {
+          if (flag == true && value == false) {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
+                        isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            expect(true).assertTrue();
+            done();
+          } else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
+                        isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
+            expect(false).assertTrue();
+          }
+        }).catch((err: BusinessError) => {
+          console.log('err :' + JSON.stringify(err.message));
+          expect(false).assertTrue();
+        });
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err.message));
+        expect(false).assertTrue();
+      }
+
+      await audioRender.stop().then(() => {
+        console.info(`Renderer stopped : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`Renderer stop:ERROR : ${err.message}`);
+      });
+
+      await audioRender.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400
+     * @tc.name      : isCommunicationDeviceActive - SPEAKER - callback
+     * @tc.desc      : isCommunicationDeviceActive SPEAKER - callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+
+      let audioRendererInfo :audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+
+      let audioRendererOptions :audio.AudioRendererOptions= {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
+      let flag: boolean | null = null;
+      let AudioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400
+            outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+      device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice) {
+        console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
+        done();
+        return;
+      }
+      try {
+        if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+          outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        } else {
+          console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
+          done();
+          return
+        }
+        await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400
+                    Promise returned to indicate that the device is set to the active status.`);
+        });
+        AudioRoutingManager.isCommunicationDeviceActive(2, (err, value) => {
+          if (err) {
+            console.error(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate: Error: ${err.message}`);
+            expect(false).assertTrue();
+          } else if (value == false && flag == true) {
+            console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
+            expect(true).assertTrue();
+          } else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400 ${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err.message));
+        expect(false).assertTrue();
+      }
+
+      await audioRender.stop().then(() => {
+        console.info(`Renderer stopped : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`Renderer stop:ERROR : ${err.message}`);
+      });
+
+      await audioRender.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0500
+     * @tc.name      : isCommunicationDeviceActiveSync - SPEAKER - prmiose
+     * @tc.desc      : isCommunicationDeviceActiveSync - SPEAKER - prmiose
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+
+      let audioRendererInfo :audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+
+      let audioRendererOptions :audio.AudioRendererOptions= {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
+      let flag: boolean | null = null;
+      let AudioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0500
+            outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+      device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice) {
+        console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
+        done();
+        return;
+      }
+      try {
+        if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+          outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        } else {
+          console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
+          done();
+          return
+        }
+        await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0500
+                    Promise returned to indicate that the device is set to the active status.`);
+        });
+        try {
+          let value: boolean = AudioRoutingManager.isCommunicationDeviceActiveSync(audio.CommunicationDeviceType.SPEAKER);
+          if (value == false) {
+            console.info(`Indicate that the active status of the device is obtained Successfully :${value}.`);
+            expect(true).assertTrue();
+            done();
+          } else {
+            console.info(`Indicate that the active status of the device is obtained FAILED :${value}.`);
+            expect(false).assertTrue();
+            done();
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`Failed to obtain the active status of the device ${error}.`);
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err.message));
+        expect(false).assertTrue();
+      }
+
+      await audioRender.stop().then(() => {
+        console.info(`Renderer stopped : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`Renderer stop:ERROR : ${err.message}`);
+      });
+
+      await audioRender.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0600
+     * @tc.name      : isCommunicationDeviceActiveSync speaker - prmiose
+     * @tc.desc      : isCommunicationDeviceActiveSync speaker - prmiose
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+
+      let audioRendererInfo :audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+
+      let audioRendererOptions :audio.AudioRendererOptions= {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
+      await audioRender.start().then(() =>{
+        console.info(`startAudioRenderer SUCCESS`);
+      }).catch(()=>{
+        console.info(`startAudioRenderer ERROR`);
+      });
+      let flag: boolean | null = null;
+      let AudioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0600
+            outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+      device.deviceType === audio.DeviceType.DISPLAY_PORT
+      );
+      if (detecteDevice) {
+        console.info(`${TagFrmwk}: this device has external device`)
+        expect(true).assertTrue();
+        done();
+        return;
+      }
+      try {
+        if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+          outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+          flag = true;
+        } else {
+          console.info(`this device has one outputdevice,not suit this case`);
+          expect(true).assertTrue();
+          done();
+          return
+        }
+        await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, true).then(() => {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0600
+                    Promise returned to indicate that the device is set to the active status.`);
+        });
+        try {
+          let value: boolean = AudioRoutingManager.isCommunicationDeviceActiveSync(audio.CommunicationDeviceType.SPEAKER);
+          if (value == true) {
+            console.info(`Indicate that the active status of the device is obtained Successfully :${value}.`);
+            expect(true).assertTrue();
+            done();
+          } else {
+            console.info(`Indicate that the active status of the device is obtained FAILED :${value}.`);
+            expect(false).assertTrue();
+            done();
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`Failed to obtain the active status of the device ${error}.`);
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err.message));
+        expect(false).assertTrue();
+      }
+
+      await audioRender.stop().then(() => {
+        console.info(`Renderer stopped : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`Renderer stop:ERROR : ${err.message}`);
+      });
+
+      await audioRender.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err:BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
       });
     })
 
@@ -2264,6 +2782,32 @@ export default function audioManagerApi9() {
       try {
         audioManager.on('audioSceneChange', (audioScene) => {
           console.info(`AudioSceneChange event: ${audioScene} `);
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_0200
+     * @tc.name      : OnAudioSceneChange - audioManager
+     * @tc.desc      : OnAudioSceneChange - audioManager
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        audioManager.on('audioSceneChange', (audioScene) => {
+          console.info(`AudioSceneChange event: ${audioScene} `);
+          if (audioScene == audio.AudioScene.AUDIO_SCENE_DEFAULT || audioScene == audio.AudioScene.AUDIO_SCENE_RINGING || audioScene == audio.AudioScene.AUDIO_SCENE_PHONE_CALL || audioScene == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
+           done();
+           return;
+          }
         });
         expect(true).assertTrue();
         done();

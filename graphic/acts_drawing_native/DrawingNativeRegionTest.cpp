@@ -710,6 +710,83 @@ HWTEST_F(DrawingNativeRegionTest, testRegionCopyMultipleCalls, Function | SmallT
     OH_Drawing_RegionDestroy(region1);
     OH_Drawing_RegionDestroy(region2);
 }
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0800
+ * @tc.name: testRegionEmptyNormal
+ * @tc.desc: test for testRegionEmptyNormal
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionEmptyNormal, Function | SmallTest | Level0) {
+    // 1. Create a region object by OH_Drawing_RegionCreate.
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    // 2. Create a region object by OH_Drawing_RectCreate.
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    // 3. Set the region1 as the rectangle.
+    OH_Drawing_RegionSetRect(region, rect);
+    // 4. Create another region object by OH_Drawing_RegionCreate.
+    OH_Drawing_ErrorCode code = OH_Drawing_RegionEmpty(region);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    // 5. Free memory.
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0801
+ * @tc.name: testRegionEmptyNull
+ * @tc.desc: test for testRegionEmptyNull
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionEmptyNull, Function | SmallTest | Level3) {
+    // 1. Create a region object by OH_Drawing_RegionCreate.
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    // 2. Create a region object by OH_Drawing_RectCreate.
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    // 3. Set the region1 as the rectangle.
+    OH_Drawing_RegionSetRect(region, rect);
+    // 4. Create another region object by OH_Drawing_RegionCreate.
+    OH_Drawing_ErrorCode code = OH_Drawing_RegionEmpty(nullptr);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    // 5. Free memory.
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0802
+ * @tc.name: testRegionEmptyCalls
+ * @tc.desc: test for testRegionEmptyCalls
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionEmptyCalls, Function | SmallTest | Level3) {
+    // 1. Create a region object by OH_Drawing_RegionCreate.
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    // 2. Create a region object by OH_Drawing_RectCreate.
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    // 3. Set the region1 as the rectangle.
+    OH_Drawing_RegionSetRect(region, rect);
+    // 4. Create another region object by OH_Drawing_RegionCreate.
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode code = OH_Drawing_RegionEmpty(region);
+        EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    }
+    // 5. Free memory.
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

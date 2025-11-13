@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 201070;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -32,30 +36,24 @@ export default function webOptions() {
         console.info("get WebOptions state success " + JSON.stringify(pages));
         if (!("WebOptions" == pages.name)) {
           console.info("get WebOptions state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push WebOptions page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          console.info("push WebOptions page success");
         }
       } catch (err) {
         console.error("push WebOptions page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebOptionsTestButton"), 10000);
+      console.log("waitForComponent WebOptionsTestButton");
       done()
     });
+
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebOptionsTest afterEach start");
-      await Utils.sleep(1000);
-      console.info("WebOptionsTest afterEach end");
       done();
     })
 
@@ -68,10 +66,13 @@ export default function webOptions() {
     * @tc.level       : Level 2
     */
     it('testWebOptionsSrc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebOptions001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebOptions001", 'index', 430, done);
-      sendEventByKey('WebOptionsTestButton', 10, '');
+      Utils.emitEvent("emitWebOptions001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebOptions001", "index", 201080, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebOptionsTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'WebOptionsTestButton' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -83,10 +84,13 @@ export default function webOptions() {
     * @tc.level       : Level 2
     */
     it('testWebOptionsSrc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebOptions002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebOptions002", 'second', 432, done);
-      sendEventByKey('WebOptionsTestButton', 10, '');
+      Utils.emitEvent("emitWebOptions002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebOptions002", "second", 201090, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebOptionsTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'WebOptionsTestButton' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -98,10 +102,13 @@ export default function webOptions() {
     * @tc.level       : Level 2
     */
     it('testWebOptionsSrc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("emitWebOptions003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebOptions003", 'OpenAtom OpenHarmony', 434, done);
-      sendEventByKey('WebOptionsTestButton', 10, '');
+      Utils.emitEvent("emitWebOptions003", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testWebOptions003", "Example Domain", 201100, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebOptionsTestButton");
+      if (await Utils.waitForExist(() => isReturn, 'WebOptionsTestButton' + '_returnCheck', true, 1000)) {
+        done();
+      }
     })
   })
 }

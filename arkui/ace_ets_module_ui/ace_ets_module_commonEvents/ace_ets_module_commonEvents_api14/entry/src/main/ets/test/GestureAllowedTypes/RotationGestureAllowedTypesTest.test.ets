@@ -75,10 +75,10 @@ export default function RotationGestureAllowedTypesTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left),y: Math.round(areaObj1.top) });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.right),y: Math.round(areaObj1.top) });
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right),y: Math.round(areaObj1.bottom) });
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left),y: Math.round(areaObj1.bottom) });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaHeight1*0.2),y: Math.round(areaObj1.top) });
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaHeight1*0.2) ,y: Math.round(areaObj1.bottom)});
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaHeight1*0.2) ,y: Math.round(areaObj1.bottom)});
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.right - areaHeight1*0.2),y: Math.round(areaObj1.top)});
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
 
@@ -123,7 +123,7 @@ export default function RotationGestureAllowedTypesTest() {
       let obj10: ESObject = JSON.parse(text10);
       console.log('RotationGestureAllowedTypesTest_0010 obj10 $attrs content',obj10.$attrs.content,obj10)
       expect(obj10.$attrs.content).assertEqual('allowed types success');
-      
+
       console.info('RotationGestureAllowedTypesTest_0010 END');
       done();
     });

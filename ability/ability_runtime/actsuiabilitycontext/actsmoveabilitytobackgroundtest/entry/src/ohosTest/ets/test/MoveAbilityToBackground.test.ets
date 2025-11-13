@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON, Component } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
@@ -24,13 +24,22 @@ export default function moveAbilityToBackgroundTest() {
   let driver = Driver.create();
   let mpEnable = '';
   describe('ActsMoveAbilityToBackgroundTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable', 'false');
       } catch(err) {
         console.error(`MoveAbilityToBackground Get system parameter error: ${JSON.stringify(err)}`);
       }
       console.log(`MoveAbilityToBackground Get system parameter mpEnable is ${mpEnable}`);
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (e) {
+        console.log('advanced_dialog_button_0 not found');
+      }
+      if (allowed) {
+        await allowed.click();
+      }
     });
     beforeEach(() => {
     });

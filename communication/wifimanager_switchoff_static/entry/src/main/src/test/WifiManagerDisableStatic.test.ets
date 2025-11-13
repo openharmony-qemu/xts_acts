@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import wifiManager from '@ohos.wifiManager';
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testWifiDisableTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function wifiDisableTest() {
@@ -32,13 +32,14 @@ export default function wifiDisableTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
-        /*
-         * @tc.number: isMeteredHotspotErrCode2501001Test
-         * @tc.name: isMeteredHotspotErrCode2501001Test
-         * @tc.desc: Test isMeteredHotspotErrCode2501001Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   isMeteredHotspotErrCode2501001Test
+         * @tc.number isMeteredHotspotErrCode2501001Test
+         * @tc.desc   Test isMeteredHotspotErrCode2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("isMeteredHotspotErrCode2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -58,13 +59,14 @@ export default function wifiDisableTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoPromise2501001Test
-         * @tc.name: getLinkedInfoPromise2501001Test
-         * @tc.desc: Test getLinkedInfoPromise2501001Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   getLinkedInfoPromise2501001Test
+         * @tc.number getLinkedInfoPromise2501001Test
+         * @tc.desc   Test getLinkedInfoPromise2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoPromise2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -83,13 +85,14 @@ export default function wifiDisableTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoCallback2501001Test
-         * @tc.name: getLinkedInfoCallback2501001Test
-         * @tc.desc: Test getLinkedInfoCallback2501001Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   getLinkedInfoCallback2501001Test
+         * @tc.number getLinkedInfoCallback2501001Test
+         * @tc.desc   Test getLinkedInfoCallback2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoCallback2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo| undefined) => {
@@ -117,13 +120,14 @@ export default function wifiDisableTest() {
             done();
         })
 
-        /*
-         * @tc.number: getLinkedInfoSync2501001Test
-         * @tc.name: getLinkedInfoSync2501001Test
-         * @tc.desc: Test getLinkedInfoSync2501001Test API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   getLinkedInfoSync2501001Test
+         * @tc.number getLinkedInfoSync2501001Test
+         * @tc.desc   Test getLinkedInfoSync2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoSync2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {

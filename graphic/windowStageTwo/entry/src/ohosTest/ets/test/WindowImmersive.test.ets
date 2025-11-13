@@ -479,10 +479,10 @@ export default function windowImmersiveTest() {
      * @tc.desc      : test_setImmersiveModeEnabledState_true
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
 
-    it("SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0100";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();
@@ -512,10 +512,10 @@ export default function windowImmersiveTest() {
      * @tc.desc      : test_setImmersiveModeEnabledState_false
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
 
-    it("SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "SUB_BASIC_WMS_SPCIAL_XTS_SET_IMMERSIVEMODE_ENABLEDATATE_0200";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();
@@ -565,9 +565,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeCutOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeCutOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeCutOut';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -591,9 +591,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeSystemGesture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeSystemGesture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemGesture';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -617,9 +617,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeKeyBoard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeKeyBoard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeKeyBoard';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -643,9 +643,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeNavigationIndicator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeNavigationIndicator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeNavigationIndicator';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -669,9 +669,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeSystemInLandScape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeSystemInLandScape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemInLandScape';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -698,9 +698,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeSystemInPortraitInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeSystemInPortraitInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemInPortraitInverted';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -727,9 +727,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeCutOutInPortraitInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeCutOutInPortraitInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeCutOutInPortraitInverted';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -756,9 +756,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeSystemInLandScapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeSystemInLandScapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeSystemInLandScapeInverted';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -785,9 +785,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidAreaTypeCutOutInLandScapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('testGetWindowAvoidAreaTypeCutOutInLandScapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetWindowAvoidAreaTypeCutOutInLandScapeInverted';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -815,9 +815,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetAvoidAreaTypeSystem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testGetAvoidAreaTypeSystem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeSystem';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -847,9 +847,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetAvoidAreaTypeCutOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testGetAvoidAreaTypeCutOut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeCutOut';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -879,9 +879,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetAvoidAreaTypeSystemGesture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testGetAvoidAreaTypeSystemGesture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeSystemGesture';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -911,9 +911,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetAvoidAreaTypeKeyBoard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testGetAvoidAreaTypeKeyBoard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeKeyBoard';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -943,9 +943,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetAvoidAreaTypeNavigationIndicator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testGetAvoidAreaTypeNavigationIndicator', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestGetAvoidAreaTypeNavigationIndicator';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -970,9 +970,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : listen system avoid area change
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testOnSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testOnSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestOnSystemAvoidAreaChange';
       try {
         if((avoidArea1.topRect.width != 0 && avoidArea1.topRect.height != 0) && (isPCStatus == ''|| isPCStatus == '1')){
@@ -1053,9 +1053,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : listen system avoid area change
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testOffRepeatSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testOffRepeatSystemAvoidAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestOffRepeatSystemAvoidAreaChange';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1169,9 +1169,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set window system bar isVisible
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowSystemBarEnableStatusInvisiblePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowSystemBarEnableStatusInvisiblePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableStatusInvisiblePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1201,9 +1201,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set window system bar isVisible
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowSystemBarEnableStatusVisiblePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowSystemBarEnableStatusVisiblePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableStatusVisiblePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1233,9 +1233,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set window system bar isVisible
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowSystemBarEnableInVisiblePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowSystemBarEnableInVisiblePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableInVisiblePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1265,9 +1265,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set window system bar isVisible
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testSetWindowSystemBarEnableStatusVisibleCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowSystemBarEnableStatusVisibleCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetWindowSystemBarEnableStatusVisibleCallback';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1333,9 +1333,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set system bar isVisible
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testSetSystemBarEnableStatusPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetSystemBarEnableStatusPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetSystemBarEnableStatusPromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1423,9 +1423,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set window system bar properties
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testSetSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'TestSetSystemBarPropertiesPromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1460,9 +1460,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set window system bar properties
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testSetWindowSystemBarPropertiesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testSetWindowSystemBarPropertiesCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName = 'TestSetWindowSystemBarPropertiesCallback';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1500,9 +1500,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set window system bar properties
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testSetWindowSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testSetWindowSystemBarPropertiesPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName = 'TestSetWindowSystemBarPropertiesPromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1666,9 +1666,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set layout full screen false
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetLayoutFullScreenFalseCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetLayoutFullScreenFalseCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenFalseCallback';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1698,9 +1698,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set layout full screen true
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetLayoutFullScreenTrueCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetLayoutFullScreenTrueCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenTrueCallback';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1730,9 +1730,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set layout full screen false
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetLayoutFullScreenFalsePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetLayoutFullScreenFalsePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenFalsePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1759,9 +1759,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set layout full screen true
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testSetLayoutFullScreenTruePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetLayoutFullScreenTruePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetLayoutFullScreenTruePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1820,9 +1820,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set full screen true
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetFullScreenTrueCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetFullScreenTrueCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetFullScreenTrueCallback';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1852,9 +1852,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set full screen false
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetFullScreenFalsePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetFullScreenFalsePromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetFullScreenFalseCallback';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1881,9 +1881,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : set full screen true
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : Level1
      */
-    it('testSetFullScreenTruePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetFullScreenTruePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'TestSetFullScreenTruePromise';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -1910,9 +1910,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : Test the function of setSpecificSystemBarEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetSpecificSystemBarStatus',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetSpecificSystemBarStatus',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetSpecificSystemBarStatus';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2203,9 +2203,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : test_setSpecificSystemBarEnabled_enableAnimation
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_setSpecificSystemBarEnabled_enableAnimation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_setSpecificSystemBarEnabled_enableAnimation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'test_setSpecificSystemBarEnabled_enableAnimation';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2696,12 +2696,12 @@ export default function windowImmersiveTest() {
      * @tc.desc      : 验证悬浮窗创建后默认为非沉浸式状态
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.level     : LEVEL0
      */
-    it('testIsImmersiveLayoutwithFloatWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithFloatWindowDefaultState';
+    it('testIsImmersiveLayoutwithFloatWindowDefaultState1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsImmersiveLayoutwithFloatWindowDefaultState1';
       let config: window.Configuration = {
-        name: "testIsImmersiveLayoutwithFloatWindowDefaultState",
+        name: "testIsImmersiveLayoutwithFloatWindowDefaultState1",
         windowType: window.WindowType.TYPE_FLOAT,
         ctx: context
       };
@@ -2739,9 +2739,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : 验证dialog窗创建后默认为非沉浸式状态
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.level     : LEVEL0
      */
-    it('testIsImmersiveLayoutwithDialogWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testIsImmersiveLayoutwithDialogWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDialogWindowDefaultState';
       let config: window.Configuration = {
         name: "testIsImmersiveLayoutwithDialogWindowDefaultState",
@@ -3172,9 +3172,9 @@ export default function windowImmersiveTest() {
      * @tc.desc      : 验证悬浮窗创建后默认为非沉浸式状态
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.level     : LEVEL0
      */
-    it('testIsImmersiveLayoutwithFloatWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testIsImmersiveLayoutwithFloatWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithFloatWindowDefaultState';
       let config: window.Configuration = {
         name: "testIsImmersiveLayoutwithFloatWindowDefaultState",

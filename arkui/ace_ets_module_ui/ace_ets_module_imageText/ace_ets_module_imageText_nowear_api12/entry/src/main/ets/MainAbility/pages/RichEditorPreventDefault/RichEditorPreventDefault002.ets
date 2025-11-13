@@ -23,7 +23,8 @@ struct RichEditorPreventDefault002 {
     Column() {
       Button('setSelect').onClick(() => {
         this.controller.setSelection(0, 2);
-      }).id('setSelect')
+      }).id('setSelect').height('5%')
+      Text('callNum:' + this.callNum).fontColor(Color.Black).id('callNum').height('5%').clip(true)
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)
@@ -69,10 +70,6 @@ struct RichEditorPreventDefault002 {
             })
         })
         .id('RichEditorPreventDefault002')
-
-      Column(){
-        Text('callNum:' + this.callNum).fontSize(20).fontColor(Color.Black).id('callNum')
-      }.margin({bottom: 10})
     }
   }
 }

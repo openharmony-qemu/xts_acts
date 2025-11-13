@@ -1,0 +1,12 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Text/textContentAlign",
+    "MainAbility/pages/ImageAttachment/ImageAttachment",
+    "MainAbility/pages/Text/textAreaInputTest",
+    "MainAbility/pages/RichEditor/ScrollBarColor",
+    "MainAbility/pages/ImageContentTransitionEffect/ImageContentTransitionEffect",
+    "MainAbility/pages/ImageAnalyzerController/ImageAnalyzerController",
+    "MainAbility/pages/ImageAnimationController/ImageAnimationController"
+  ]
+}

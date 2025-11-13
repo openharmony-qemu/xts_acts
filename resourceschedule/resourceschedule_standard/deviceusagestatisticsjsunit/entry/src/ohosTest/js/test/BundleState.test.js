@@ -235,6 +235,7 @@ describe('bundlestate_test', function() {
 			} else {
 				console.info('isIdleState_053 callback success result = ' + JSON.stringify(res));
 				expect(res).assertInstanceOf('Boolean');
+				expect(res == false).assertTrue();
 			};
 			done();
 		});

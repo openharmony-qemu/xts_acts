@@ -150,6 +150,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         console.info('isPipEnabled:' + enable);
         console.log('www data Succeeded in isPipEnabled ' + enable)
         expect(enable != null).assertTrue();
+        expect(enable == true || enable == false).assertTrue();
         done();
       } catch (error) {
         console.log('www data Succeeded in isPipEnabled ' + error)
@@ -673,9 +674,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
      * @tc.desc       : To test the function of testPiPEvent
      * @tc.size       : MediumTestTest
      * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.level      : Level0
      */
-    it('testPiPEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testPiPEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testPiPEvent"
       try {
         let event: pipWindow.PiPActionEventType = "playbackStateChanged";

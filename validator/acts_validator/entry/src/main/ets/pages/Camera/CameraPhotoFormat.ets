@@ -102,7 +102,7 @@ struct cameraOrientation {
   cameraListFn() {
     this.cameraList = []
     this.cameraListLength = CameraService.cameras.length
-    for (let index = 0; index < this.cameraListLength; index++) {
+    for (let index = 0; index < this.cameraListLength && index < 2; index++) {
       this.cameraList.push({ value: `Camera ${index}` })
     }
 
@@ -395,7 +395,7 @@ struct cameraOrientation {
       .height('80%')
       .scrollBarColor(Color.White) // 滚动条颜色
       .scrollBarWidth(10)
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Camera/Camera_index',

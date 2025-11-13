@@ -12,14 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import bundle from '@ohos.bundle.bundleManager';
 import Utils from './Util.test';
-import Want from '@ohos.app.ability.Want';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
@@ -48,13 +46,13 @@ export default function abilityDelegatorStage() {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
     })
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200
-     * @tc.desc:Using the on method set color mode and check the result
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200
+     * @tc.name SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200
+     * @tc.desc Using the on method set color mode and check the result
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -80,13 +78,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
-     * @tc.desc:Application call interface to set language
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.numberSUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
+     * @tc.name SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200
+     * @tc.desc Application call interface to set language
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetLanguage_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -112,13 +110,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200
-     * @tc.desc: Check if the application can be successfully set to the font
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200
+     * @tc.name  SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200
+     * @tc.desc  Check if the application can be successfully set to the font
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFontSize_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -127,7 +125,6 @@ export default function abilityDelegatorStage() {
       try {
         applicationContext.setFontSizeScale(-1);
         expect().assertFail()
-        done()
         done();
       } catch (error:BusinessError) {
         hilog.info(0x0000, 'testTag', '%{public}s','setFontSizeScale failed ' +  error?.message);
@@ -136,13 +133,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300
-     * @tc.desc: Check if the application can be successfully set to the font
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300
+     * @tc.name  SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300
+     * @tc.desc  Check if the application can be successfully set to the font
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetFont_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'applicationContextTag', '%{public}s',
@@ -159,13 +156,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100
-     * @tc.desc   : Test setSupportedProcessCache can not use in iphone.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : 1
+    /**
+     * @tc.number  SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100
+     * @tc.name    SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100
+     * @tc.desc    Test setSupportedProcessCache can not use in iphone.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   1
      */
     it('SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100`;
@@ -173,7 +170,7 @@ export default function abilityDelegatorStage() {
           let ApplicationContexts:common.ApplicationContext = testAbilityContext.getApplicationContext();
           ApplicationContexts?.setSupportedProcessCache(false)
           done();
-        }catch(e:Error){
+        }catch(e: BusinessError){
           if(JSON.stringify(e?.code) == '801'){
             done();
           }else{
@@ -183,13 +180,45 @@ export default function abilityDelegatorStage() {
         }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_ProcessCache_3100
-     * @tc.name: SUB_Ability_AbilityRuntime_ProcessCache_3100
-     * @tc.desc: Test killAllProcess in ApplicationContext with clearPageStack (promise)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3000
+     * @tc.name  SUB_Ability_AbilityRuntime_ProcessCache_3000
+     * @tc.desc  Test killAllProcess in ApplicationContext(AsyncCallback)
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
+     */
+    it('SUB_Ability_AbilityRuntime_ProcessCache_3000', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+        'SUB_Ability_AbilityRuntime_ProcessCache_3000 begin');
+      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
+      await Utils.msSleep(2000)
+      try {
+        testAbilityContext.startAbilityForResult({
+          bundleName: 'com.acts.abilitydelegatorrely.static',
+          abilityName: 'EntryAbility3',
+          action: 'killAllProcess-callback'
+        }, (err: BusinessError<void> | null, data:common.AbilityResult | undefined):void => {
+          hilog.info(0x0000, 'testTag EntryAbility', 'startAbility callback err ' + JSON.stringify(err?.code));
+          hilog.info(0x0000, 'testTag EntryAbility', 'startAbility callback success ' + JSON.stringify(data));
+          expect(data?.resultCode).assertEqual(-1);
+          done();
+        });
+      } catch (error) {
+        hilog.error(0x0000, 'testTag', '%{public}s',
+          'SUB_Ability_AbilityRuntime_ProcessCache_3000 failed ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3100
+     * @tc.name  SUB_Ability_AbilityRuntime_ProcessCache_3100
+     * @tc.desc  Test killAllProcess in ApplicationContext with clearPageStack (promise)
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_ProcessCache_3100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -215,13 +244,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_ProcessCache_3200
-     * @tc.name: SUB_Ability_AbilityRuntime_ProcessCache_3200
-     * @tc.desc: Test killAllProcess in ApplicationContext(promise)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3200
+     * @tc.name  SUB_Ability_AbilityRuntime_ProcessCache_3200
+     * @tc.desc  Test killAllProcess in ApplicationContext(promise)
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_ProcessCache_3200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -247,13 +276,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_clearUpApplicationData_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_clearUpApplicationData_0100
-     * @tc.desc:Unable to start specified PageAbility (AsyncCallback)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_clearUpApplicationData_0100
+     * @tc.name  SUB_Ability_AbilityRuntime_clearUpApplicationData_0100
+     * @tc.desc Unable to start specified PageAbility (AsyncCallback)
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -280,13 +309,13 @@ export default function abilityDelegatorStage() {
     });
 
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_clearUpApplicationData_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_clearUpApplicationData_0200
-     * @tc.desc:Unable to start specified PageAbility (AsyncCallback)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_clearUpApplicationData_0200
+     * @tc.name  SUB_Ability_AbilityRuntime_clearUpApplicationData_0200
+     * @tc.desc Unable to start specified PageAbility (AsyncCallback)
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_clearUpApplicationData_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -313,13 +342,13 @@ export default function abilityDelegatorStage() {
     });
 
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_restartApp_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_restartApp_0100
-     * @tc.desc:Unable to start specified PageAbility (AsyncCallback)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_restartApp_0100
+     * @tc.name  SUB_Ability_AbilityRuntime_restartApp_0100
+     * @tc.desc Unable to start specified PageAbility (AsyncCallback)
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_restartApp_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -327,11 +356,15 @@ export default function abilityDelegatorStage() {
       abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.applicationcontexttest.static')
       await Utils.msSleep(2000);
       let SubscribeCallBack = (err:BusinessError | null, data:CommonEventManager.CommonEventData | undefined):void => {
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+          'SUB_Ability_AbilityRuntime_restartApp_0100 data?.event' + data?.event);
         expect(data?.event).assertEqual('RELY_ABILITY_RESTART_SUCCESS');
         done();
       }
-      CommonEventManager.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
-        Subscriber = data;
+      CommonEventManager.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber |null) => {
+        Subscriber = data as CommonEventManager.CommonEventSubscriber;
+        hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+          'SUB_Ability_AbilityRuntime_restartApp_0100 createSubscriber');
         CommonEventManager.subscribe(Subscriber, SubscribeCallBack);
       })
       await Utils.msSleep(1000)
@@ -354,13 +387,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityRuntime_restartApp_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_restartApp_0300
-     * @tc.desc:Unable to start specified PageAbility (AsyncCallback)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_Ability_AbilityRuntime_restartApp_0300
+     * @tc.name  SUB_Ability_AbilityRuntime_restartApp_0300
+     * @tc.desc Unable to start specified PageAbility (AsyncCallback)
+     * @tc.level Level 3
+     * @tc.type Function
+     * @tc.size MediumTest
      */
     it('SUB_Ability_AbilityRuntime_restartApp_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s',

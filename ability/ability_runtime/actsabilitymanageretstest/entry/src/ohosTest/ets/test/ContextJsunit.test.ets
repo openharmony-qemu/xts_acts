@@ -21,7 +21,6 @@ import backgroundTaskManager from '@ohos.backgroundTaskManager';
 export default function ContextJsunit() {
   describe('faContextTest', () => {
     let TAG1 = "SUB_AA_OpenHarmony == faContextTest: ";
-    let sleepTimeOne = 1000;
     let id: number;
     beforeAll(async (done: Function) => {
       console.log(TAG1 + "beforeAll called");
@@ -31,19 +30,15 @@ export default function ContextJsunit() {
       })
       id = delayInfo.requestId;
       console.log(TAG1 + "requestId is : " + id);
-      setTimeout(() => {
-        console.log(TAG1 + "beforeAll end");
-        done();
-      }, sleepTimeOne);
+      console.log(TAG1 + "beforeAll end");
+      done();
     })
 
     afterAll(async (done: Function) => {
       console.log(TAG1 + "afterAll called");
       backgroundTaskManager.cancelSuspendDelay(id);
-      setTimeout(() => {
-        console.log(TAG1 + "afterAll end");
-        done();
-      }, sleepTimeOne);
+      console.log(TAG1 + "afterAll end");
+      done();
     })
     beforeEach(async (done: Function) => {
       console.info("context before each called");
@@ -51,7 +46,6 @@ export default function ContextJsunit() {
     })
 
     afterEach(async () => {
-      await Utils.sleep(2000);
       console.info("context after each called");
     })
 

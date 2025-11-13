@@ -44,7 +44,7 @@ export default function uiExtContentSessionTest() {
       setTimeout(()=>{
         hilog.info(0x0000, TAG, '%{public}s', 'afterEach done');
         done();
-      }, 1000)
+      }, 300)
     })
     afterAll(() => {
       hilog.info(0x0000, TAG, '%{public}s', 'afterAll');

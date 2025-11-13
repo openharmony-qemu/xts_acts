@@ -102,11 +102,22 @@ export default function deviceKvStorePromiseStageTest(){
         console.info('beforeAll can NOT getDeviceId, fail: ' + error);
         expect(null).assertFail();
       });
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
-      await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-      kvStore = null;
-      console.info('beforeAll end');
-      done();
+
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+        console.info('beforeAll closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+          console.info('beforeAll deleteKVStore success');
+          kvStore = null;
+          done();
+        }).catch((err) => {
+          console.info('beforeAll deleteKVStore err ' + err);
+          done();
+        });
+      }).catch((err) => {
+        console.info('beforeAll closeKVStore err ' + err);
+        done();
+      });
+
     })
 
     afterAll(async function (done) {
@@ -121,11 +132,12 @@ export default function deviceKvStorePromiseStageTest(){
       await kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
         kvStore = store;
         console.info('beforeEach getKVStore success');
+        done();
       }).catch((err) => {
         console.info('beforeEach getKVStore err ' + err);
+        done();
       });
-      console.info('beforeEach end');
-      done();
+
     })
 
     afterEach(async function (done) {
@@ -134,23 +146,27 @@ export default function deviceKvStorePromiseStageTest(){
         console.info('afterEach closeKVStore success');
         await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
           console.info('afterEach deleteKVStore success');
+          kvStore = null;
+          done();
         }).catch((err) => {
           console.info('afterEach deleteKVStore err ' + err);
+          done();
         });
       }).catch((err) => {
         console.info('afterEach closeKVStore err ' + err);
+        done();
       });
-      kvStore = null;
-      done();
+
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutString001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1250
-     * @tc.name [JS-API8]DeviceKvStore.Put(String)
-     * @tc.desc Test Js Api DeviceKvStore.Put(String) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutString001');
@@ -169,12 +185,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutString002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1260
-     * @tc.name [JS-API8]DeviceKvStore.Put(String)
-     * @tc.desc Test Js Api DeviceKvStore.Put(String) testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutString002');
@@ -194,12 +211,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutString003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1270
-     * @tc.name [JS-API8]DeviceKvStore.Put(String)
-     * @tc.desc Test Js Api DeviceKvStore.Put(String) testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutString003');
@@ -219,12 +237,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutString004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1280
-     * @tc.name [JS-API8]DeviceKvStore.Put(String)
-     * @tc.desc Test Js Api DeviceKvStore.Put(String) testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(String) testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutString004');
@@ -255,12 +274,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetString001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0740
-     * @tc.name [JS-API8]DeviceKvStore.Get(String)
-     * @tc.desc Test Js Api DeviceKvStore.Get(String) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(String) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetString001');
@@ -287,12 +307,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetString002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0750
-     * @tc.name [JS-API8]DeviceKvStore.Get(String)
-     * @tc.desc Test Js Api DeviceKvStore.Get(String) testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(String) testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetString002');
@@ -310,12 +331,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1170
-     * @tc.name [JS-API8]DeviceKvStore.Put(Int)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Int) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutInt001');
@@ -335,12 +357,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutInt002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1180
-     * @tc.name [JS-API8]DeviceKvStore.Put(Int)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Int) testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutInt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutInt002');
@@ -368,12 +391,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutInt003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1190
-     * @tc.name [JS-API8]DeviceKvStore.Put(Int)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Int) testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutInt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutInt003');
@@ -401,12 +425,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutInt004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1200
-     * @tc.name [JS-API8]DeviceKvStore.Put(Int)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Int) testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Int) testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutInt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutInt004');
@@ -434,12 +459,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0550
-     * @tc.name [JS-API8]DeviceKvStore.Get(Int)
-     * @tc.desc Test Js Api DeviceKvStore.Get(Int) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(Int) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetInt001');
@@ -466,12 +492,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1100
-     * @tc.name [JS-API8]DeviceKvStore.Put(Bool)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Bool) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Bool) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutBool001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutBool001');
@@ -491,12 +518,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0440
-     * @tc.name [JS-API8]DeviceKvStore.Get(Bool)
-     * @tc.desc Test Js Api DeviceKvStore.Get(Bool) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(Bool) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetBool001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetBool001');
@@ -524,12 +552,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1120
-     * @tc.name [JS-API8]DeviceKvStore.Put(Float)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Float) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Float) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutFloat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutFloat001');
@@ -537,24 +566,28 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
           console.info('testDeviceKvStorePutFloat001 put success');
           expect(data == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStorePutFloat001 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStorePutFloat001 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStorePutFloat001 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStorePutFloat001 put e ' + e);
+            expect(null).assertFail();
+            done();
+        }
+        
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0510
-     * @tc.name [JS-API8]DeviceKvStore.Get(Float)
-     * @tc.desc Test Js Api DeviceKvStore.Get(Float) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(Float) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetFloat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetFloat001');
@@ -566,28 +599,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.get(localDeviceId, KEY_TEST_FLOAT_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreGetFloat001 get success');
             expect(floatValue == data).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreGetFloat001 get fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreGetFloat001 get fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreGetFloat001 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreGetFloat001 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreGetFloat001 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreGetFloat001 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetFloat002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0520
-     * @tc.name [JS-API8]DeviceKvStore.Get(Float)
-     * @tc.desc Test Js Api DeviceKvStore.Get(Float) testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(Float) testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetFloat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetFloat002');
@@ -599,28 +636,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.get(localDeviceId, KEY_TEST_FLOAT_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreGetFloat002 get success');
             expect(floatValue == data).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreGetFloat002 get fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreGetFloat002 get fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreGetFloat002 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreGetFloat002 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreGetFloat002 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreGetFloat002 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetFloat003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0530
-     * @tc.name [JS-API8]DeviceKvStore.Get(Float)
-     * @tc.desc Test Js Api DeviceKvStore.Get(Float) testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(Float) testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetFloat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetFloat003');
@@ -632,28 +673,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.get(localDeviceId, KEY_TEST_FLOAT_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreGetFloat003 get success');
             expect(floatValue == data).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreGetFloat003 get fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreGetFloat003 get fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreGetFloat003 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreGetFloat003 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreGetFloat003 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreGetFloat003 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteString001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0310
-     * @tc.name [JS-API8]DeviceKvStore.DeleteString()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteString() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteString() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteString001');
@@ -665,28 +710,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreDeleteString001 delete success');
             expect(data == undefined).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreDeleteString001 delete fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreDeleteString001 delete fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteString001 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreDeleteString001 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteString001 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreDeleteString001 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteString002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0320
-     * @tc.name [JS-API8]DeviceKvStore.DeleteString()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteString() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteString() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteString002');
@@ -700,29 +749,33 @@ export default function deviceKvStorePromiseStageTest(){
           expect(data == undefined).assertTrue();
           await kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreDeleteString002 delete success');
-            expect(data == undefined).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreDeleteString002 delete fail ' + err);
+                    expect(data == undefined).assertTrue();
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreDeleteString002 delete fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteString002 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreDeleteString002 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteString002 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreDeleteString002 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteString003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0330
-     * @tc.name [JS-API8]DeviceKvStore.DeleteString()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteString() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteString() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteString003');
@@ -730,24 +783,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
           console.info('testDeviceKvStoreDeleteString003 delete success');
           expect(data == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteString003 delete fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreDeleteString003 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteString003 delete fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreDeleteString003 put e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteInt001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0280
-     * @tc.name [JS-API8]DeviceKvStore.DeleteInt()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteInt() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteInt() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteInt001');
@@ -758,28 +814,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.delete(KEY_TEST_INT_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreDeleteInt001 delete success');
             expect(data == undefined).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreDeleteInt001 delete fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreDeleteInt001 delete fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteInt001 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreDeleteInt001 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteInt001 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreDeleteInt001 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteFloat001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0250
-     * @tc.name [JS-API8]DeviceKvStore.DeleteFloat()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteFloat() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteFloat() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteFloat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteFloat001');
@@ -790,28 +850,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.delete(KEY_TEST_FLOAT_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreDeleteFloat001 delete success');
             expect(data == undefined).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreDeleteFloat001 delete fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreDeleteFloat001 delete fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteFloat001 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreDeleteFloat001 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteFloat001 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreDeleteFloat001 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteBool001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0220
-     * @tc.name [JS-API8]DeviceKvStore.DeleteBool()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteBool() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteBool() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteBool001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteBool001');
@@ -822,28 +886,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.delete(KEY_TEST_BOOLEAN_ELEMENT).then((data) => {
             console.info('testDeviceKvStoreDeleteBool001 delete success');
             expect(data == undefined).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreDeleteBool001 delete fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreDeleteBool001 delete fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteBool001 put fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        } catch (e) {
+            console.info('testDeviceKvStoreDeleteBool001 put e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteBool001 put fail ' + err);
-          expect(null).assertFail();
-        });
-      } catch (e) {
-        console.info('testDeviceKvStoreDeleteBool001 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOnChange001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0860
-     * @tc.name [JS-API8]DeviceKvStore.OnChange()
-     * @tc.desc Test Js Api DeviceKvStore.OnChange() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OnChange() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOnChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       try {
@@ -854,24 +922,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
           console.info('testDeviceKvStoreOnChange001 put success');
           expect(data == undefined).assertTrue();
-        }).catch((error) => {
-          console.info('testDeviceKvStoreOnChange001 put fail ' + error);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreOnChange001 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((error) => {
+                console.info('testDeviceKvStoreOnChange001 put fail ' + error);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreOnChange001 put e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOnChange002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0870
-     * @tc.name [JS-API8]DeviceKvStore.OnChange()
-     * @tc.desc Test Js Api DeviceKvStore.OnChange() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OnChange() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOnChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       try {
@@ -882,24 +953,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
           console.info('testDeviceKvStoreOnChange002 put success');
           expect(data == undefined).assertTrue();
-        }).catch((error) => {
-          console.info('testDeviceKvStoreOnChange002 put fail ' + error);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreOnChange002 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((error) => {
+                console.info('testDeviceKvStoreOnChange002 put fail ' + error);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreOnChange002 put e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOnChange003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0880
-     * @tc.name [JS-API8]DeviceKvStore.OnChange()
-     * @tc.desc Test Js Api DeviceKvStore.OnChange() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OnChange() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOnChange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       try {
@@ -910,24 +984,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
           console.info('testDeviceKvStoreOnChange003 put success');
           expect(data == undefined).assertTrue();
-        }).catch((error) => {
-          console.info('testDeviceKvStoreOnChange003 put fail ' + error);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreOnChange003 put e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((error) => {
+                console.info('testDeviceKvStoreOnChange003 put fail ' + error);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreOnChange003 put e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOnSyncComplete001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0920
-     * @tc.name [JS-API8]DeviceKvStore.OnSyncComplete()
-     * @tc.desc Test Js Api DeviceKvStore.OnSyncComplete() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOnSyncComplete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       try {
@@ -957,12 +1034,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOnSyncComplete002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0930
-     * @tc.name [JS-API8]DeviceKvStore.OnSyncComplete()
-     * @tc.desc Test Js Api DeviceKvStore.OnSyncComplete() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOnSyncComplete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       try {
@@ -992,12 +1070,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOnSyncComplete003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0940
-     * @tc.name [JS-API8]DeviceKvStore.OnSyncComplete()
-     * @tc.desc Test Js Api DeviceKvStore.OnSyncComplete() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OnSyncComplete() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOnSyncComplete003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       try {
@@ -1027,12 +1106,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffChange001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0780
-     * @tc.name [JS-API8]DeviceKvStore.OffChange()
-     * @tc.desc Test Js Api DeviceKvStore.OffChange() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffChange001');
@@ -1050,12 +1130,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffChange002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0790
-     * @tc.name [JS-API8]DeviceKvStore.OffChange()
-     * @tc.desc Test Js Api DeviceKvStore.OffChange() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffChange002');
@@ -1077,12 +1158,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffChange003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0800
-     * @tc.name [JS-API8]DeviceKvStore.OffChange()
-     * @tc.desc Test Js Api DeviceKvStore.OffChange() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffChange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffChange003');
@@ -1105,12 +1187,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffChange004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0810
-     * @tc.name [JS-API8]DeviceKvStore.OffChange()
-     * @tc.desc Test Js Api DeviceKvStore.OffChange() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffChange() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffChange004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffChange004');
@@ -1128,12 +1211,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffSyncComplete001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0820
-     * @tc.name [JS-API8]DeviceKvStore.OffSyncComplete()
-     * @tc.desc Test Js Api DeviceKvStore.OffSyncComplete() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffSyncComplete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffSyncComplete001');
@@ -1151,12 +1235,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffSyncComplete002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0830
-     * @tc.name [JS-API8]DeviceKvStore.OffSyncComplete()
-     * @tc.desc Test Js Api DeviceKvStore.OffSyncComplete() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffSyncComplete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffSyncComplete002');
@@ -1178,12 +1263,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffSyncComplete003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0840
-     * @tc.name [JS-API8]DeviceKvStore.OffSyncComplete()
-     * @tc.desc Test Js Api DeviceKvStore.OffSyncComplete() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffSyncComplete003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffSyncComplete003');
@@ -1206,12 +1292,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsOffSyncComplete004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0850
-     * @tc.name [JS-API8]DeviceKvStore.OffSyncComplete()
-     * @tc.desc Test Js Api DeviceKvStore.OffSyncComplete() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.OffSyncComplete() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsOffSyncComplete004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreOffSyncComplete004');
@@ -1229,12 +1316,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsSetSyncRange001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1450
-     * @tc.name [JS-API8]DeviceKvStore.SetSyncRange()
-     * @tc.desc Test Js Api DeviceKvStore.SetSyncRange() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsSetSyncRange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreSetSyncRange001');
@@ -1244,24 +1332,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.setSyncRange(localLabels, remoteSupportLabels).then((err) => {
           console.info('testDeviceKvStoreSetSyncRange001 setSyncRange success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteString003 delete fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreSetSyncRange001 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteString003 delete fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreSetSyncRange001 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsSetSyncRange002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1460
-     * @tc.name [JS-API8]DeviceKvStore.SetSyncRange()
-     * @tc.desc Test Js Api DeviceKvStore.SetSyncRange() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsSetSyncRange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreSetSyncRange002');
@@ -1271,24 +1362,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.setSyncRange(localLabels, remoteSupportLabels).then((err) => {
           console.info('testDeviceKvStoreSetSyncRange002 setSyncRange success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreSetSyncRange002 delete fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreSetSyncRange002 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreSetSyncRange002 delete fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreSetSyncRange002 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsSetSyncRange003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1470
-     * @tc.name [JS-API8]DeviceKvStore.SetSyncRange()
-     * @tc.desc Test Js Api DeviceKvStore.SetSyncRange() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.SetSyncRange() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsSetSyncRange003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreSetSyncRange003');
@@ -1298,24 +1392,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.setSyncRange(localLabels, remoteSupportLabels).then((err) => {
           console.info('testDeviceKvStoreSetSyncRange003 setSyncRange success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreSetSyncRange003 delete fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreSetSyncRange003 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreSetSyncRange003 delete fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreSetSyncRange003 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutBatch001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0980
-     * @tc.name [JS-API8]DeviceKvStore.Put(Batch)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Batch) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutBatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutBatch001');
@@ -1333,28 +1430,32 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStorePutBatch001 entrys[0].value.value: ' + entrys[0].value.value);
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value == 'batch_test_string_value').assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStorePutBatch001 getEntries fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStorePutBatch001 getEntries fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStorePutBatch001 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStorePutBatch001 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStorePutBatch001 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStorePutBatch001 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutBatch002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0990
-     * @tc.name [JS-API8]DeviceKvStore.Put(Batch)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Batch) testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutBatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutBatch002');
@@ -1379,28 +1480,32 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStorePutBatch002 getEntries success');
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value == 222).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStorePutBatch002 getEntries fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStorePutBatch002 getEntries fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStorePutBatch002 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStorePutBatch002 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStorePutBatch002 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStorePutBatch002 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutBatch003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1000
-     * @tc.name [JS-API8]DeviceKvStore.Put(Batch)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Batch) testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutBatch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutBatch003');
@@ -1425,28 +1530,32 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStorePutBatch003 getEntries success');
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value == 2.0).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStorePutBatch003 getEntries fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStorePutBatch003 getEntries fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStorePutBatch003 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStorePutBatch003 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStorePutBatch003 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStorePutBatch003 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutBatch004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1010
-     * @tc.name [JS-API8]DeviceKvStore.Put(Batch)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Batch) testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutBatch004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutBatch004');
@@ -1471,28 +1580,32 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStorePutBatch004 getEntries success');
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value == 2.00).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStorePutBatch004 getEntries fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStorePutBatch004 getEntries fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStorePutBatch004 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStorePutBatch004 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStorePutBatch004 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStorePutBatch004 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutBatch005
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1020
-     * @tc.name [JS-API8]DeviceKvStore.Put(Batch)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Batch) testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutBatch005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutBatch005');
@@ -1518,28 +1631,32 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStorePutBatch005 getEntries success');
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value == bo).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStorePutBatch005 getEntries fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStorePutBatch005 getEntries fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStorePutBatch005 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStorePutBatch005 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStorePutBatch005 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStorePutBatch005 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsPutBatch006
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1030
-     * @tc.name [JS-API8]DeviceKvStore.Put(Batch)
-     * @tc.desc Test Js Api DeviceKvStore.Put(Batch) testcase 006
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Put(Batch) testcase 006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsPutBatch006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorePutBatch006');
@@ -1565,28 +1682,32 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStorePutBatch006 getEntries success');
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStorePutBatch006 getEntries fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStorePutBatch006 getEntries fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStorePutBatch006 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStorePutBatch005 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStorePutBatch006 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStorePutBatch005 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteBatch001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0160
-     * @tc.name [JS-API8]DeviceKvStore.DeleteBatch()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteBatch() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteBatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteBatch001');
@@ -1612,28 +1733,32 @@ export default function deviceKvStorePromiseStageTest(){
           await kvStore.deleteBatch(keys).then((err) => {
             console.info('testDeviceKvStoreDeleteBatch001 deleteBatch success');
             expect(err == undefined).assertTrue();
-          }).catch((err) => {
-            console.info('testDeviceKvStoreDeleteBatch001 deleteBatch fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreDeleteBatch001 deleteBatch fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteBatch001 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreDeleteBatch001 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteBatch001 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreDeleteBatch001 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteBatch002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0170
-     * @tc.name [JS-API8]DeviceKvStore.DeleteBatch()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteBatch() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteBatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteBatch002');
@@ -1641,24 +1766,27 @@ export default function deviceKvStorePromiseStageTest(){
         let keys = ['batch_test_string_key1', 'batch_test_string_key2'];
         await kvStore.deleteBatch(keys).then((err) => {
           console.info('testDeviceKvStoreDeleteBatch002 deleteBatch success');
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteBatch002 deleteBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreDeleteBatch002 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteBatch002 deleteBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreDeleteBatch002 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsDeleteBatch003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0180
-     * @tc.name [JS-API8]DeviceKvStore.DeleteBatch()
-     * @tc.desc Test Js Api DeviceKvStore.DeleteBatch() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.DeleteBatch() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsDeleteBatch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreDeleteBatch003');
@@ -1682,28 +1810,32 @@ export default function deviceKvStorePromiseStageTest(){
           let keys = ['batch_test_string_key1', 'batch_test_string_keya'];
           await kvStore.deleteBatch(keys).then((err) => {
             console.info('testDeviceKvStoreDeleteBatch003 deleteBatch success');
-          }).catch((err) => {
-            console.info('testDeviceKvStoreDeleteBatch003 deleteBatch fail ' + err);
+                    done();
+                }).catch((err) => {
+                    console.info('testDeviceKvStoreDeleteBatch003 deleteBatch fail ' + err);
+                    expect(null).assertFail();
+                    done();
+                });
+            }).catch((err) => {
+                console.info('testDeviceKvStoreDeleteBatch003 putBatch fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreDeleteBatch003 e ' + e);
             expect(null).assertFail();
-          });
-        }).catch((err) => {
-          console.info('testDeviceKvStoreDeleteBatch003 putBatch fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreDeleteBatch003 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsstartTransaction001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1510
-     * @tc.name [JS-API8]DeviceKvStore.startTransaction()
-     * @tc.desc Test Js Api DeviceKvStore.startTransaction() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsstartTransaction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorestartTransaction001');
@@ -1754,12 +1886,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsstartTransaction002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1520
-     * @tc.name [JS-API8]DeviceKvStore.startTransaction()
-     * @tc.desc Test Js Api DeviceKvStore.startTransaction() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsstartTransaction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorestartTransaction002');
@@ -1810,12 +1943,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsstartTransaction003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1530
-     * @tc.name [JS-API8]DeviceKvStore.startTransaction()
-     * @tc.desc Test Js Api DeviceKvStore.startTransaction() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsstartTransaction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorestartTransaction002');
@@ -1833,12 +1967,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsstartTransaction004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1540
-     * @tc.name [JS-API8]DeviceKvStore.startTransaction()
-     * @tc.desc Test Js Api DeviceKvStore.startTransaction() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsstartTransaction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorestartTransaction004');
@@ -1856,12 +1991,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsstartTransaction005
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1550
-     * @tc.name [JS-API8]DeviceKvStore.startTransaction()
-     * @tc.desc Test Js Api DeviceKvStore.startTransaction() testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.startTransaction() testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsstartTransaction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStorestartTransaction005');
@@ -1879,12 +2015,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsCommit001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0100
-     * @tc.name [JS-API8]DeviceKvStore.Commit()
-     * @tc.desc Test Js Api DeviceKvStore.Commit() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Commit() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsCommit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreCommit001');
@@ -1902,12 +2039,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsCommit002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0110
-     * @tc.name [JS-API8]DeviceKvStore.Commit()
-     * @tc.desc Test Js Api DeviceKvStore.Commit() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Commit() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsCommit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreCommit002');
@@ -1925,12 +2063,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsCommit003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0120
-     * @tc.name [JS-API8]DeviceKvStore.Commit()
-     * @tc.desc Test Js Api DeviceKvStore.Commit() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Commit() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsCommit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreCommit003');
@@ -1948,12 +2087,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsRollback001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1390
-     * @tc.name [JS-API8]DeviceKvStore.Rollback()
-     * @tc.desc Test Js Api DeviceKvStore.Rollback() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Rollback() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsRollback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreRollback001');
@@ -1971,12 +2111,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsRollback002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1400
-     * @tc.name [JS-API8]DeviceKvStore.Rollback()
-     * @tc.desc Test Js Api DeviceKvStore.Rollback() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Rollback() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsRollback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreRollback002');
@@ -1994,12 +2135,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsRollback003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1410
-     * @tc.name [JS-API8]DeviceKvStore.Rollback()
-     * @tc.desc Test Js Api DeviceKvStore.Rollback() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Rollback() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsRollback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreRollback003');
@@ -2017,12 +2159,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsEnableSync001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0360
-     * @tc.name [JS-API8]DeviceKvStore.EnableSync()
-     * @tc.desc Test Js Api DeviceKvStore.EnableSync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsEnableSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreEnableSync001');
@@ -2030,24 +2173,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.enableSync(true).then((err) => {
           console.info('testDeviceKvStoreEnableSync001 enableSync success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreEnableSync001 enableSync fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreEnableSync001 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreEnableSync001 enableSync fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreEnableSync001 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsEnableSync002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0370
-     * @tc.name [JS-API8]DeviceKvStore.EnableSync()
-     * @tc.desc Test Js Api DeviceKvStore.EnableSync() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsEnableSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreEnableSync002');
@@ -2055,24 +2201,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.enableSync(false).then((err) => {
           console.info('testDeviceKvStoreEnableSync002 enableSync success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreEnableSync002 enableSync fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreEnableSync002 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreEnableSync002 enableSync fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreEnableSync002 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsEnableSync003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0380
-     * @tc.name [JS-API8]DeviceKvStore.EnableSync()
-     * @tc.desc Test Js Api DeviceKvStore.EnableSync() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsEnableSync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreEnableSync003');
@@ -2090,12 +2239,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsEnableSync004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0390
-     * @tc.name [JS-API8]DeviceKvStore.EnableSync()
-     * @tc.desc Test Js Api DeviceKvStore.EnableSync() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.EnableSync() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsEnableSync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreEnableSync004');
@@ -2113,12 +2263,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsRemoveDeviceData001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1310
-     * @tc.name [JS-API8]DeviceKvStore.RemoveDeviceData()
-     * @tc.desc Test Js Api DeviceKvStore.RemoveDeviceData() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsRemoveDeviceData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreRemoveDeviceData001');
@@ -2140,24 +2291,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.get(localDeviceId, KEY_TEST_STRING_ELEMENT).then((data) => {
           console.info('testDeviceKvStoreRemoveDeviceData001 get success data:' + data);
           expect(data == VALUE_TEST_STRING_ELEMENT).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreRemoveDeviceData001 get fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreRemoveDeviceData001 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreRemoveDeviceData001 get fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreRemoveDeviceData001 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsRemoveDeviceData002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1320
-     * @tc.name [JS-API8]DeviceKvStore.RemoveDeviceData()
-     * @tc.desc Test Js Api DeviceKvStore.RemoveDeviceData() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsRemoveDeviceData002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreRemoveDeviceData002');
@@ -2175,12 +2329,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsRemoveDeviceData003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1330
-     * @tc.name [JS-API8]DeviceKvStore.RemoveDeviceData()
-     * @tc.desc Test Js Api DeviceKvStore.RemoveDeviceData() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsRemoveDeviceData003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreRemoveDeviceData003');
@@ -2198,12 +2353,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsRemoveDeviceData004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_1340
-     * @tc.name [JS-API8]DeviceKvStore.RemoveDeviceData()
-     * @tc.desc Test Js Api DeviceKvStore.RemoveDeviceData() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.RemoveDeviceData() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsRemoveDeviceData004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreRemoveDeviceData004');
@@ -2221,12 +2377,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSet001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0580
-     * @tc.name [JS-API8]DeviceKvStore.getResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.getResultSet() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSet001');
@@ -2262,24 +2419,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.closeResultSet(resultSet).then((err) => {
           console.info('testDeviceKvStoreGetResultSet001 closeResultSet success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreGetResultSet001 closeResultSet fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreGetResultSet001 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreGetResultSet001 closeResultSet fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreGetResultSet001 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSet002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0590
-     * @tc.name [JS-API8]DeviceKvStore.getResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.getResultSet() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSet002');
@@ -2296,24 +2456,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.closeResultSet(resultSet).then((err) => {
           console.info('testDeviceKvStoreGetResultSet002 closeResultSet success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreGetResultSet002 closeResultSet fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreGetResultSet002 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreGetResultSet002 closeResultSet fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreGetResultSet002 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSet003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0600
-     * @tc.name [JS-API8]DeviceKvStore.getResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.getResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSet003');
@@ -2333,12 +2496,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSet004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0610
-     * @tc.name [JS-API8]DeviceKvStore.getResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.getResultSet() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSet004');
@@ -2358,12 +2522,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSet005
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0620
-     * @tc.name [JS-API8]DeviceKvStore.getResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.getResultSet() testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSet005');
@@ -2403,24 +2568,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.closeResultSet(resultSet).then((err) => {
           console.info('testDeviceKvStoreGetResultSet005 closeResultSet success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreGetResultSet005 closeResultSet fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreGetResultSet005 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreGetResultSet005 closeResultSet fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreGetResultSet005 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSet006
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0630
-     * @tc.name [JS-API8]DeviceKvStore.getResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.getResultSet() testcase 006
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.getResultSet() testcase 006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSet006');
@@ -2460,24 +2628,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.closeResultSet(resultSet).then((err) => {
           console.info('testDeviceKvStoreGetResultSet006 closeResultSet success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreGetResultSet006 closeResultSet fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreGetResultSet006 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreGetResultSet006 closeResultSet fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreGetResultSet006 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsCloseResultSet001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0020
-     * @tc.name [JS-API8]DeviceKvStore.CloseResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.CloseResultSet() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsCloseResultSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreCloseResultSet001');
@@ -2498,12 +2669,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsCloseResultSet002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0030
-     * @tc.name [JS-API8]DeviceKvStore.CloseResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.CloseResultSet() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsCloseResultSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreCloseResultSet002');
@@ -2520,24 +2692,27 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.closeResultSet(resultSet).then((err) => {
           console.info('testDeviceKvStoreCloseResultSet002 closeResultSet success');
           expect(err == undefined).assertTrue();
-        }).catch((err) => {
-          console.info('testDeviceKvStoreCloseResultSet002 closeResultSet fail ' + err);
-          expect(null).assertFail();
-        });
-      }catch(e) {
-        console.info('testDeviceKvStoreCloseResultSet002 e ' + e);
-        expect(null).assertFail();
-      }
-      done();
+                done();
+            }).catch((err) => {
+                console.info('testDeviceKvStoreCloseResultSet002 closeResultSet fail ' + err);
+                expect(null).assertFail();
+                done();
+            });
+        }catch(e) {
+            console.info('testDeviceKvStoreCloseResultSet002 e ' + e);
+            expect(null).assertFail();
+            done();
+        }
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsCloseResultSet003
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0040
-     * @tc.name [JS-API8]DeviceKvStore.CloseResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.CloseResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsCloseResultSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreCloseResultSet003');
@@ -2558,12 +2733,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsCloseResultSet004
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0050
-     * @tc.name [JS-API8]DeviceKvStore.CloseResultSet()
-     * @tc.desc Test Js Api DeviceKvStore.CloseResultSet() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.CloseResultSet() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsCloseResultSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreCloseResultSet004');
@@ -2586,12 +2762,13 @@ export default function deviceKvStorePromiseStageTest(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSize001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0700
-     * @tc.name [JS-API8]DeviceKvStore.Get(ResultSize)
-     * @tc.desc Test Js Api DeviceKvStore.Get(ResultSize) testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(ResultSize) testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSize001');
@@ -2621,24 +2798,28 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.getResultSize(query).then((resultSize) => {
           console.info('testDeviceKvStoreGetResultSize001 getResultSet success');
           expect(resultSize == 10).assertTrue();
+          done();
         }).catch((err) => {
           console.info('testDeviceKvStoreGetResultSize001 getResultSet fail ' + err);
           expect(null).assertFail();
+          done();
         });
       }catch(e) {
         console.info('testDeviceKvStoreGetResultSize001 e ' + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetResultSize002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0710
-     * @tc.name [JS-API8]DeviceKvStore.Get(ResultSize)
-     * @tc.desc Test Js Api DeviceKvStore.Get(ResultSize) testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.Get(ResultSize) testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetResultSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetResultSize001');
@@ -2667,24 +2848,28 @@ export default function deviceKvStorePromiseStageTest(){
         await kvStore.getResultSize(localDeviceId, query).then((resultSize) => {
           console.info('testDeviceKvStoreGetResultSize001 getResultSet success');
           expect(resultSize == 10).assertTrue();
+          done();
         }).catch((err) => {
           console.info('testDeviceKvStoreGetResultSize001 getResultSet fail ' + err);
           expect(null).assertFail();
+          done();
         });
       }catch(e) {
         console.info('testDeviceKvStoreGetResultSize001 e ' + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetEntries001
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0470
-     * @tc.name [JS-API8]DeviceKvStore.GetEntries()
-     * @tc.desc Test Js Api DeviceKvStore.GetEntries() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.GetEntries() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetEntries001');
@@ -2713,29 +2898,32 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStoreGetEntries001 getEntries success');
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+            done();
           }).catch((err) => {
             console.info('testDeviceKvStoreGetEntries001 getEntries fail ' + err);
             expect(null).assertFail();
+            done();
           });
         }).catch((err) => {
           console.info('testDeviceKvStoreGetEntries001 putBatch fail ' + err);
           expect(null).assertFail();
+          done();
         });
-        console.info('testDeviceKvStoreGetEntries001 success');
       }catch(e) {
         console.info('testDeviceKvStoreGetEntries001 e ' + e);
         expect(null).assertFail();
+        done();
       }
-      done();
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceKvStoreEtsGetEntries002
      * @tc.number SUB_DistributedData_KVStore_SDK_DeviceStoreEtsApiTest_0480
-     * @tc.name [JS-API8]DeviceKvStore.GetEntries()
-     * @tc.desc Test Js Api DeviceKvStore.GetEntries() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api DeviceKvStore.GetEntries() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceKvStoreEtsGetEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testDeviceKvStoreGetEntries002');
@@ -2764,20 +2952,23 @@ export default function deviceKvStorePromiseStageTest(){
             console.info('testDeviceKvStoreGetEntries002 getEntries success');
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+            done();
           }).catch((err) => {
             console.info('testDeviceKvStoreGetEntries002 getEntries fail ' + err);
             expect(null).assertFail();
+            done();
           });
         }).catch((err) => {
           console.info('testDeviceKvStoreGetEntries002 putBatch fail ' + err);
           expect(null).assertFail();
+          done();
         });
-        console.info('testDeviceKvStoreGetEntries002 success');
       }catch(e) {
         console.info('testDeviceKvStoreGetEntries002 e ' + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
   })
 }

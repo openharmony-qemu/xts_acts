@@ -21,7 +21,8 @@
         {
           "type": "ShellKit",
           "run-command": [
-              "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
+              "param set persist.sys.abilityms.support.ecologicalrulemgrservice false",
+              "power-shell timeout -o 86400000"
           ],
           "teardown-command": [
               "param set persist.sys.abilityms.support.ecologicalrulemgrservice true"

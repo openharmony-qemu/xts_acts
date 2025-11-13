@@ -15,11 +15,10 @@
 import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
-import { JsProxyObject } from '../../test/Interfaces';
-import business_error, { BusinessError } from '@ohos.base';
+import { JSON } from '@kit.ArkTS';
 
+const EVENT_ID_SET_EMIT_KEY = 200040;
 
-type OnProxyConfigChangeCallback = () => void
 @Entry
 @Component
 struct webviewNetworkProxy {
@@ -27,17 +26,19 @@ struct webviewNetworkProxy {
   @State str: string = '';
   @State proxyConfig: webview.ProxyConfig = new webview.ProxyConfig();
   @State callbackFlag: boolean = false;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -46,6 +47,7 @@ struct webviewNetworkProxy {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -54,20 +56,53 @@ struct webviewNetworkProxy {
     Column() {
       Row() {
         Button('webviewNetworkProxy click').key('networkProxyButton').onClick(async () => {
-          console.info('key==>' + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'networkProxyButtonIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'networkProxyButtonIsReceive', 1, 1000);
+          console.info('key==>' + this.str);
+          this.isReceive = -1;
           switch (this.str) {
+            case 'emitGetProxyRulesEmpty': {
+              try {
+                let proxyRules = this.proxyConfig.getProxyRules();
+                console.log('proxyRules==>' + proxyRules.length);
+                if (proxyRules.length == 0) {
+                  Utils.emitEvent(true, 2025102101);
+                } else {
+                  Utils.emitEvent(false, 2025102101);
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.message, 2025102101);
+              }
+              break;
+            }
+            case 'emitGetBypassRulesEmpty': {
+              try {
+                let bypassRules = this.proxyConfig.getBypassRules();
+                console.log('bypassRules==>' + bypassRules.length);
+                if (bypassRules.length == 0) {
+                  Utils.emitEvent(true, 2025102102);
+                } else {
+                  Utils.emitEvent(false, 2025102102);
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.message, 2025102102);
+              }
+              break;
+            }
             case 'testNetworkProxySchemeFilterMatchAllSchemes': {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn',
                   webview.ProxySchemeFilter.MATCH_ALL_SCHEMES);
-                await Utils.sleep(2000);
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
                   console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
                   console.log('Url: ' + proxyRules[i].getUrl());
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   if (schemeFilter === 0) {
-                    Utils.emitEvent(true, 202502181);
+                    Utils.emitEvent(true, 200050);
+                    break;
                   }
                 }
               } catch (error) {
@@ -79,14 +114,14 @@ struct webviewNetworkProxy {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn',
                   webview.ProxySchemeFilter.MATCH_HTTP);
-                await Utils.sleep(2000);
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
                   console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
                   console.log('Url: ' + proxyRules[i].getUrl());
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   if (schemeFilter === 1) {
-                    Utils.emitEvent(true, 202502182);
+                    Utils.emitEvent(true, 200060);
+                    break;
                   }
                 }
               } catch (error) {
@@ -98,14 +133,14 @@ struct webviewNetworkProxy {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn',
                   webview.ProxySchemeFilter.MATCH_HTTPS);
-                await Utils.sleep(2000);
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
                   console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
                   console.log('Url: ' + proxyRules[i].getUrl());
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   if (schemeFilter === 2) {
-                    Utils.emitEvent(true, 202502183);
+                    Utils.emitEvent(true, 200070);
+                    break;
                   }
                 }
               } catch (error) {
@@ -116,7 +151,6 @@ struct webviewNetworkProxy {
             case 'testInsertProxyRule': {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
-                await Utils.sleep(2000);
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
                   console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
@@ -124,7 +158,8 @@ struct webviewNetworkProxy {
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   let url = proxyRules[i].getUrl();
                   if (schemeFilter === 0 && url === 'algorithmmark.hwcloudtest.cn') {
-                    Utils.emitEvent(true, 202502184);
+                    Utils.emitEvent(true, 200080);
+                    break;
                   }
                 }
               } catch (error) {
@@ -135,13 +170,13 @@ struct webviewNetworkProxy {
             case 'testInsertDirectRule': {
               try {
                 this.proxyConfig.insertDirectRule(webview.ProxySchemeFilter.MATCH_ALL_SCHEMES);
-                await Utils.sleep(2000);
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
                   console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   if (schemeFilter === 0) {
-                    Utils.emitEvent(true, 202502185);
+                    Utils.emitEvent(true, 200090);
+                    break;
                   }
                 }
               } catch (error) {
@@ -152,12 +187,12 @@ struct webviewNetworkProxy {
             case 'testInsertBypassRule': {
               try {
                 this.proxyConfig.insertBypassRule('www.example.com');
-                await Utils.sleep(2000);
                 let bypassRules = this.proxyConfig.getBypassRules();
                 for (let i = 0; i < bypassRules.length; i++) {
-                  console.log('bypassRules: ' + bypassRules[i]);
+                  console.log('insert bypassRules: ' + bypassRules[i]);
                   if (bypassRules[i] === 'www.example.com') {
-                    Utils.emitEvent(true, 202502186);
+                    Utils.emitEvent(true, 200100);
+                    break;
                   }
                 }
               } catch (error) {
@@ -167,20 +202,15 @@ struct webviewNetworkProxy {
             }
             case 'testBypassHostnamesWithoutPeriod': {
               try {
-                this.callbackFlag = false;
                 this.proxyConfig.insertProxyRule('http://testnone');
-                await Utils.sleep(2000);
                 this.proxyConfig.bypassHostnamesWithoutPeriod();
-                await Utils.sleep(2000);
                 webview.ProxyController.applyProxyOverride(this.proxyConfig, () => {
                   console.log('applyProxyOverride callback');
-                  this.callbackFlag = true;
+                  Utils.emitEvent(true, 200110);
                 });
-                await Utils.sleep(2000);
-                this.controller.loadUrl('www.baidu.com');
-                await Utils.sleep(4000);
-                console.log('callbackFlag:' + this.callbackFlag);
-                Utils.emitEvent(this.callbackFlag, 202502187);
+                this.isPageEnd = -1;
+                this.controller.loadUrl('www.example.com');
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -188,20 +218,15 @@ struct webviewNetworkProxy {
             }
             case 'testClearImplicitRules': {
               try {
-                this.callbackFlag = false;
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
-                await Utils.sleep(2000);
                 this.proxyConfig.clearImplicitRules();
-                await Utils.sleep(2000);
                 webview.ProxyController.applyProxyOverride(this.proxyConfig, () => {
                   console.log('applyProxyOverride callback');
-                  this.callbackFlag = true;
+                  Utils.emitEvent(true, 200120);
                 });
-                await Utils.sleep(2000);
+                this.isPageEnd = -1;
                 this.controller.loadUrl('http://localhost:8080');
-                await Utils.sleep(4000);
-                console.log('callbackFlag:' + this.callbackFlag);
-                Utils.emitEvent(this.callbackFlag, 202502188);
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -210,12 +235,10 @@ struct webviewNetworkProxy {
             case 'testEnableReverseBypass': {
               try {
                 this.proxyConfig.insertBypassRule('www.example.com');
-                await Utils.sleep(2000);
                 this.proxyConfig.enableReverseBypass(true);
-                await Utils.sleep(2000);
                 let isReverseBypass = this.proxyConfig.isReverseBypassEnabled();
                 console.log('isReverseBypass:' + isReverseBypass);
-                Utils.emitEvent(isReverseBypass, 202502189);
+                Utils.emitEvent(isReverseBypass, 200130);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -223,13 +246,13 @@ struct webviewNetworkProxy {
             }
             case 'testGetBypassRules': {
               try {
-                this.proxyConfig.insertBypassRule('www.baidu.com');
-                await Utils.sleep(2000);
+                this.proxyConfig.insertBypassRule('testGetBypassRules');
                 let bypassRules = this.proxyConfig.getBypassRules();
                 for (let i = 0; i < bypassRules.length; i++) {
-                  console.log('bypassRules: ' + bypassRules[i]);
-                  if (bypassRules[i] === 'www.baidu.com') {
-                    Utils.emitEvent(true, 202502190);
+                  console.log('get bypassRules: ' + bypassRules[i]);
+                  if (bypassRules[i] === 'testGetBypassRules') {
+                    Utils.emitEvent(true, 200140);
+                    break;
                   }
                 }
               } catch (error) {
@@ -240,15 +263,15 @@ struct webviewNetworkProxy {
             case 'testGetProxyRules': {
               try {
                 this.proxyConfig.insertProxyRule('http://localhost');
-                await Utils.sleep(2000);
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
-                  console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
-                  console.log('Url: ' + proxyRules[i].getUrl());
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   let url = proxyRules[i].getUrl();
+                  console.log('testGetProxyRules SchemeFilter: ' + schemeFilter);
+                  console.log('testGetProxyRules Url: ' + url);
                   if (schemeFilter === 0 && url === 'http://localhost') {
-                    Utils.emitEvent(true, 202502191);
+                    Utils.emitEvent(true, 200150);
+                    break;
                   }
                 }
               } catch (error) {
@@ -258,13 +281,11 @@ struct webviewNetworkProxy {
             }
             case 'testIsReverseBypassEnabled': {
               try {
-                this.proxyConfig.insertBypassRule('www.baidu.com');
-                await Utils.sleep(2000);
+                this.proxyConfig.insertBypassRule('testIsReverseBypassEnabled');
                 this.proxyConfig.enableReverseBypass(false);
-                await Utils.sleep(2000);
                 let isReverseBypass = this.proxyConfig.isReverseBypassEnabled();
                 console.log('isReverseBypass:' + isReverseBypass);
-                Utils.emitEvent(isReverseBypass, 202502192);
+                Utils.emitEvent(isReverseBypass, 200160);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -273,14 +294,14 @@ struct webviewNetworkProxy {
             case 'testGetSchemeFilter': {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
-                await Utils.sleep(2000);
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
-                  console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
-                  console.log('Url: ' + proxyRules[i].getUrl());
+                  console.log('testGetSchemeFilter SchemeFilter: ' + proxyRules[i].getSchemeFilter());
+                  console.log('testGetSchemeFilter Url: ' + proxyRules[i].getUrl());
                   let schemeFilter = proxyRules[i].getSchemeFilter();
                   if (schemeFilter === 0) {
-                    Utils.emitEvent(true, 202502193);
+                    Utils.emitEvent(true, 200170);
+                    break;
                   }
                 }
               } catch (error) {
@@ -290,15 +311,15 @@ struct webviewNetworkProxy {
             }
             case 'testProxyGetUrl': {
               try {
-                this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
-                await Utils.sleep(2000);
+                this.proxyConfig.insertProxyRule('testProxyGetUrl.cn');
                 let proxyRules = this.proxyConfig.getProxyRules();
                 for (let i = 0; i < proxyRules.length; i++) {
                   console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
                   console.log('Url: ' + proxyRules[i].getUrl());
                   let url = proxyRules[i].getUrl();
-                  if (url === 'algorithmmark.hwcloudtest.cn') {
-                    Utils.emitEvent(true, 202502194);
+                  if (url === 'testProxyGetUrl.cn') {
+                    Utils.emitEvent(true, 200180);
+                    break;
                   }
                 }
               } catch (error) {
@@ -309,10 +330,9 @@ struct webviewNetworkProxy {
             case 'testApplyProxyOverride': {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
-                await Utils.sleep(2000);
                 webview.ProxyController.applyProxyOverride(this.proxyConfig, () => {
                   console.log('applyProxyOverride callback');
-                  Utils.emitEvent(true, 202502195);
+                  Utils.emitEvent(true, 200190);
                 });
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
@@ -322,26 +342,27 @@ struct webviewNetworkProxy {
             case 'testRemoveProxyOverride': {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
-                await Utils.sleep(2000);
                 webview.ProxyController.applyProxyOverride(this.proxyConfig, () => {
                   console.log('applyProxyOverride callback');
                 });
-                await Utils.sleep(2000);
                 webview.ProxyController.removeProxyOverride(() => {
                   console.log('removeProxyOverride callback');
-                  Utils.emitEvent(true, 202502196);
+                  Utils.emitEvent(true, 200200);
                 });
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
-
           }
         })
       }
 
       Web({ src: 'www.example.com', controller: this.controller })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
     }
   }
 }

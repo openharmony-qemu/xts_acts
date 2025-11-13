@@ -56,7 +56,7 @@ class MainAbility {
   }
   onStartContinuation() {
     console.log(TAG1 + 'onStartContinuation');
-    return true;
+    return false;
   }
   onSaveData() {
     console.log(TAG1 + 'onSaveData');

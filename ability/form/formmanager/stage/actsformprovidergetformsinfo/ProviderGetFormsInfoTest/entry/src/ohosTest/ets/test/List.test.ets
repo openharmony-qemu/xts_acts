@@ -12,14 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import getFormsInfoTest from './GetFormsInfoTest.test'
+import getFormsInfoTest from './GetFormsInfoTest.test';
 import formApiCoverTest from './FormApiCoverTest.test';
 import OverflowApiCoverTest from './OverflowApiCoverTest.test';
 import UpdateFormSizeTest from './UpdateFormSizeTest.test';
+import ReloadFormsTest from './ReloadFormsTest.test';
 
 export default function testsuite() {
   getFormsInfoTest();
   formApiCoverTest();
   OverflowApiCoverTest();
   UpdateFormSizeTest();
+  ReloadFormsTest();
 }

@@ -490,7 +490,7 @@ export default function ConnectionWithoutNetTest() {
       console.info(`${caseName} test start`);
       try {
         let isDefaultNet: boolean = connection.hasDefaultNetSync();
-        ExpectTrue(isDefaultNet != true);
+        ExpectTrue(isDefaultNet == false);
         console.info(`${caseName}---End`);
         done();
       } catch (err) {

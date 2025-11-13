@@ -29,6 +29,7 @@ group("ability_crossplatform_runtime") {
       "ActsCrossplatformPromiseTest:ActsCrossplatformPromiseTest",
       "ActsCrossplatformStartAbilityTest:ActsCrossplatformStartAbilityTest",
       "ActsLifeCycleEtsTest:ActsLifeCycleEtsTest",
+      "ActsLifeCycleEtsTestStatic:ActsLifeCycleEtsStaticTest",
       "ActsUiAbilityEtsTest:ActsUiAbilityEtsTest",
       "actscontexttest:ActsCrossplatformAbilityContextTest",
       "actscontextteststatic:ActsCrossplatformAbilityContextStaticTest",

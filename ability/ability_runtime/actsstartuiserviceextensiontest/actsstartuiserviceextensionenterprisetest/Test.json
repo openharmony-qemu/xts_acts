@@ -12,7 +12,7 @@
         {
             "test-file-name": [
                 "ActsStartUiServiceExtensionRely.hap",
-                "ActsStartUIServiceExtensionEnterpriseTest.hap"
+                "ActsStartUiServiceExtensionEnterpriseTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

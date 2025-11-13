@@ -31,7 +31,7 @@
       },
       "colorMode": "auto",
       "formVisibleNotify": true,
-      "isDefault": true,
+      "isDefault": false,
       "updateEnabled": true,
       "updateDuration":1,
       "defaultDimension": "2*2",

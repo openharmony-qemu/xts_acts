@@ -52,15 +52,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
       await data_relationalStore.deleteRdbStore(context, "TransactionTest.db");
     });
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0100
-     * @tc.desc RelationalStore InsertWithConflictResolution  with ON_CONFLICT_NONE test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0100
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0100
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0100 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -96,15 +97,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0200
-     * @tc.desc RelationalStore InsertWithConflictResolution  with ON_CONFLICT_ROLLBACK test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0200
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0200
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0200 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -140,15 +142,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0300
-     * @tc.desc RelationalStore InsertWithConflictResolution  with ON_CONFLICT_ROLLBACK test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0300
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0300
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0300 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -184,15 +187,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0400
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0400
-     * @tc.desc RelationalStore InsertWithConflictResolution  with ON_CONFLICT_FAIL test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0400
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0400
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0300 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -228,15 +232,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0500
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0500
-     * @tc.desc RelationalStore InsertWithConflictResolution  with ON_CONFLICT_IGNORE test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0500
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0500
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0500 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -272,15 +277,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0600
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0600
-     * @tc.desc RelationalStore InsertWithConflictResolution  with ON_CONFLICT_REPLACE test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0600
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0600
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0500 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -316,15 +322,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0700
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0700
-     * @tc.desc RelationalStore InsertWithConflictResolution  with SQLite: Abort due to constraint violation test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0700
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0700
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0700 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -366,15 +373,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0800
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0800
-     * @tc.desc InsertWithConflictResolution ON_CONFLICT_ABORT with SQLite: Abort due to constraint violation test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0800
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0800
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0800 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -415,15 +423,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction0900
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_0900
-     * @tc.desc InsertWithConflictResolution ON_CONFLICT_FAIL with SQLite: Abort due to constraint violation test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction0900
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction0900
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction0900 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -466,15 +475,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction1000
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_1000
-     * @tc.desc conflict insert with ON_CONFLICT_ROLLBACK
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction1000
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction1000
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction1000 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -508,15 +518,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction1100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_1100
-     * @tc.desc batch Insert With ConflictResolution with Invalid Args
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction1100
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction1100
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG +
         "************* testbatchInsertWithConflictResolutionInTransaction1100 start *************");
@@ -547,15 +558,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction1200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_1200
-     * @tc.desc conflict insert with ON_CONFLICT_ROLLBACK
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction1200
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction1200
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction1200 start *************");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -594,15 +606,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction1300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_1300
-     * @tc.desc conflict insert with ON_CONFLICT_ROLLBACK
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction1300
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction1300
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction1300 start *************");
       let transaction = await (rdbStore as data_relationalStore.RdbStore).createTransaction();
@@ -623,15 +636,16 @@ export default function relationalStoreBatchinsertTransactionTest() {
     })
 
 
-    /**
-     * @tc.name testbatchInsertWithConflictResolutionInTransaction1400
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertWithConflictResolutionTest_1400
-     * @tc.desc conflict insert with ON_CONFLICT_ROLLBACK
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testbatchInsertWithConflictResolutionInTransaction1400
+     * @tc.number testbatchInsertWithConflictResolutionInTransaction1400
+     * @tc.desc   testbatchInsertWithConflictResolutionInTransaction1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testbatchInsertWithConflictResolutionInTransaction1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testbatchInsertWithConflictResolutionInTransaction1400 start *************");
       let u8 = new Uint8Array([1, 2, 3]);

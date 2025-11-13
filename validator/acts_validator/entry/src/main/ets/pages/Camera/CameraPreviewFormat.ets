@@ -88,7 +88,7 @@ struct cameraFormat {
   cameraListFn() {
     this.cameraList = []
     this.cameraListLength = CameraService.cameras.length
-    for (let index = 0; index < this.cameraListLength; index++) {
+    for (let index = 0; index < this.cameraListLength && index < 2; index++) {
       this.cameraList.push({ value: `Camera ${index}` })
     }
     // 测试总次数 = 摄像头0的分辨率 + 摄像头1的分辨率 优先以RK为主
@@ -285,7 +285,7 @@ struct cameraFormat {
               }.size({ width: '100%', height: '30%' }).justifyContent(FlexAlign.SpaceEvenly)
             }.size({ width: '100%', height: '20%' })
           }
-        }.height('80%').width('100%')
+        }.height('75%').width('100%')
       }.scrollBarColor(Color.White) // 滚动条颜色
       .scrollBarWidth(10)
 

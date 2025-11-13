@@ -22,10 +22,8 @@
             "run-command": [
                 "power-shell wakeup",
                 "power-shell setmode 602",
-                "hilog -Q pidoff",
-                "hilog -Q domainoff",
-                "hilog -b D",
-                "setenforce 0"
+                "uinput -T -m 300 2000 280 200",
+                "power-shell timeout -o 86400000"
             ]
         }
     ]

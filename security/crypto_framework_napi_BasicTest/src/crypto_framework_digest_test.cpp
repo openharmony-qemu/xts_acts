@@ -68,6 +68,9 @@ MdSpec g_mdData[] = {
     {(uint8_t *)"SHA384", OH_CRYPTO_SHA384_DIGESTSIZE},
     {(uint8_t *)"SHA512", OH_CRYPTO_SHA512_DIGESTSIZE},
     {(uint8_t *)"SM3", OH_CRYPTO_SM3_DIGESTSIZE},
+    {(uint8_t *)"SHA3-256", OH_CRYPTO_SHA3_256_DIGESTSIZE},
+    {(uint8_t *)"SHA3-384", OH_CRYPTO_SHA3_384_DIGESTSIZE},
+    {(uint8_t *)"SHA3-512", OH_CRYPTO_SHA3_512_DIGESTSIZE},
 };
 
 class MD_TEST : public testing::TestWithParam<MdSpec> {

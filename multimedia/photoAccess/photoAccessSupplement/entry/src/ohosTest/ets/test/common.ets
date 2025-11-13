@@ -18,10 +18,9 @@ import { BusinessError } from "@kit.BasicServicesKit";
 import { Driver, MatchPattern, ON } from "@kit.TestKit";
 import { camera } from "@kit.CameraKit";
 import fs from '@ohos.file.fs';
-import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-
-
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
+import { expect } from '@ohos/hypium';
 
 export const LOG_TAG = '[PhotoAccessXts].';
 const TAG = "photoAccessXtsSupp.common";
@@ -37,6 +36,10 @@ const cameraFlashMode = camera.FlashMode;
 const cameraFocusMode = camera.FocusMode;
 const cameraPreconfigType = camera.PreconfigType;
 const cameraPreconfigRatio = camera.PreconfigRatio;
+const albumSubtype = photoAccessHelper.AlbumSubtype;
+const albumKeys = photoAccessHelper.AlbumKeys;
+const albumType = photoAccessHelper.AlbumType;
+const photoKeys = photoAccessHelper.PhotoKeys;
 
 export function isEmpty(data: ESObject) {
   console.info(TAG, 'isEmpty test.');
@@ -71,6 +74,33 @@ export function checkBackCamera() {
   }
 }
 
+export function genRandomStr(len: number): string {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let randomStr = '';
+  for (let i = 0; i < len; i++) {
+    randomStr += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return randomStr;
+}
+
+export async function createUserAlbum(context: common.UIAbilityContext, testName: string,
+  albumName: string): Promise<photoAccessHelper.Album> {
+  console.info(`${testName} createUserAlbum albumName: ${albumName}`);
+  let album: photoAccessHelper.Album | ESObject;
+  try {
+    const helper: ESObject = photoAccessHelper.getPhotoAccessHelper(context);
+    album = await helper.createAlbum(albumName);
+    console.info(`${testName} createUserAlbum suc`);
+  } catch (error) {
+    console.error(`Failed to createUserAlbum! error: ${error}`);
+    expect().assertFail();
+  }
+
+  return new Promise((resolve, reject) => {
+    resolve(album);
+  });
+}
+
 export function sleep(ms: number): Promise<string> {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -78,6 +108,18 @@ export function sleep(ms: number): Promise<string> {
     }, ms);
   });
 }
+
+export function fetchOption(testNum: string, key: string, value: string | number): photoAccessHelper.FetchOptions {
+  const predicates = new dataSharePredicates.DataSharePredicates();
+  predicates.equalTo(key, value);
+  const ops: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  console.info(`${testNum} queryOps: ${key} = ${value}`);
+  return ops;
+}
+
 
 export async function driveFn() {
   let dr = Driver.create();
@@ -90,16 +132,7 @@ export async function driveFn() {
     power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
   }
 }
-export function fetchOption(testName: string, key: string, value: string | number): photoAccessHelper.FetchOptions {
-  const predicates = new dataSharePredicates.DataSharePredicates();
-  predicates.equalTo(key, value);
-  const ops: photoAccessHelper.FetchOptions = {
-    fetchColumns: [],
-    predicates: predicates
-  };
-  console.info(`${testName} queryOps: ${key} = ${value}`);
-  return ops;
-}
+
 export function resourceName() {
   let timestamp = Date.now();
   let filename = `avRecorder_${timestamp}.mp4`;
@@ -138,8 +171,7 @@ export async function getPermission(name = 'ohos.acts.multimedia.photoAccess.sup
       "ohos.permission.MICROPHONE",
       'ohos.permission.MEDIA_LOCATION',
       'ohos.permission.READ_IMAGEVIDEO',
-      'ohos.permission.WRITE_IMAGEVIDEO',
-      'ohos.permission.SHORT_TERM_WRITE_IMAGEVIDEO'
+      'ohos.permission.WRITE_IMAGEVIDEO'
     ], (err: BusinessError, data: PermissionRequestResult) => {
       if (err) {
         console.error(TAG, `requestPermissionsFromUser fail, err->${JSON.stringify(err)}`);
@@ -172,4 +204,9 @@ export { COMMON_WAIT_DURATION,
   cameraFlashMode,
   cameraFocusMode,
   cameraPreconfigType,
-  cameraPreconfigRatio }
+  cameraPreconfigRatio,
+  albumKeys,
+  albumType,
+  albumSubtype,
+  photoKeys,
+}

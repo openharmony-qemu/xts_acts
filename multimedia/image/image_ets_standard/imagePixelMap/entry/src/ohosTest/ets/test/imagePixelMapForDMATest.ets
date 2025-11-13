@@ -20,6 +20,78 @@ import fs from '@ohos.file.fs';
 import common from '@ohos.app.ability.common';
 import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
+import taskpool from '@ohos.taskpool';
+
+class Logger {
+  testNum: string;
+
+  constructor(testNum: string) {
+    this.testNum = testNum;
+  }
+
+  log(msg: string) {
+    hilog.info(0x0000, "imagePixelMapForDMA", 'case: %{public}s msg:%{public}s', this.testNum, msg);
+  }
+}
+
+interface exceptDecodeOptions {
+  expectedWidth: number;
+  expectedHeight: number;
+  expectedPixelFormat: image.PixelMapFormat;
+}
+
+async function createPixelMapSyncDmaInTaskPool(
+  logger: Logger,
+  filePath: string,
+  decodingOptions: image.DecodingOptions,
+  allocatorType: image.AllocatorType,
+  expectedDecodeOpts: exceptDecodeOptions
+): Promise<boolean> {
+  logger.log("taskpool start");
+  try {
+    let task = new taskpool.Task(pixelTest, filePath, decodingOptions, allocatorType, expectedDecodeOpts);
+    let ret = (await taskpool.execute(task)) as boolean;
+    logger.log("taskpool ret: " + ret);
+    return ret;
+  } catch (error) {
+    logger.log('taskpool: taskpool execute error is ' + error);
+    return false;
+  }
+}
+
+@Concurrent
+async function pixelTest(
+  filePath: string,
+  decodingOptions: image.DecodingOptions,
+  allocatorType: image.AllocatorType,
+  expectedDecodeOpts: exceptDecodeOptions
+): Promise<boolean> {
+  console.info("asynchronous blocking start!");
+  // 模拟异步操作
+  return await new Promise<boolean>((resolve) => {
+    setTimeout(() => {
+      console.log('asynchronous blocking: filePath: ' + filePath);
+      console.log('asynchronous blocking: decodingOptions: ' + JSON.stringify(decodingOptions));
+      console.log('asynchronous blocking: allocatorType: ' + allocatorType);
+      console.log('asynchronous blocking: expectedDecodeOpts: ' + JSON.stringify(expectedDecodeOpts));
+
+      const src = image.createImageSource(filePath);
+      console.log("asynchronous blocking: createImageSource end!");
+      let pm: image.PixelMap = src.createPixelMapUsingAllocatorSync(decodingOptions, allocatorType);
+      console.log("asynchronous blocking: createPixelMapSync end!");
+      const imageInfo = pm.getImageInfoSync();
+      console.log("asynchronous blocking: getImageInfoSync end, Info is:" + JSON.stringify(imageInfo));
+      let ret = (imageInfo.size.width == expectedDecodeOpts.expectedWidth) &&
+                (imageInfo.size.height == expectedDecodeOpts.expectedHeight) &&
+                (imageInfo.pixelFormat == expectedDecodeOpts.expectedPixelFormat);
+      console.log("asynchronous blocking: ret is: " + ret);
+      pm.release();
+      src.release();
+      console.log('asynchronous blocking end!');
+      resolve(ret);
+    }, 15000);
+  });
+}
 
 export default function imagePixelmap() {
   let filesDir: string | undefined;
@@ -34,6 +106,7 @@ export default function imagePixelmap() {
   const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
   const BGRA_8888 = image.PixelMapFormat.BGRA_8888;
   const RGBA_F16 = image.PixelMapFormat.RGBA_F16;
+  const RGB_888 = image.PixelMapFormat.RGB_888;
   const NV21 = image.PixelMapFormat.NV21;
   const NV12 = image.PixelMapFormat.NV12;
   const RGBA_1010102 = image.PixelMapFormat.RGBA_1010102;
@@ -41,9 +114,13 @@ export default function imagePixelmap() {
   const YCRCB_P010 = image.PixelMapFormat.YCRCB_P010;
   const RANGE_SDR = image.DecodingDynamicRange.SDR;
   const RANGE_HDR = image.DecodingDynamicRange.HDR;
+  const CROP_FIRST = image.CropAndScaleStrategy.CROP_FIRST;
+  const SCALE_FIRST = image.CropAndScaleStrategy.SCALE_FIRST;
   const PARAMETER_ERROR = 401;
   const UNSUPPORTED_ALLOCATOR_TYPE = 7700201;
   const DECODE_FAILED = 7700301;
+  const IMAGE_TOO_LARGE = 7700103;
+  const FAILED_TO_ALLOCATE_MEMORY = 7700302;
   const test_DMA_HDR = "CUVAHdrMulti.jpg";
   const test_DMA_33_77 = "test_DMA_33_77.jpg";
   const test_DMA_55_77 = "test_DMA_55_77.jpg";
@@ -53,6 +130,10 @@ export default function imagePixelmap() {
   const test_DMA_2999_3742 = "test_DMA_2999_3742.jpg";
   const test_DMA_3072_4096 = "test_DMA_3072_4096.jpg";
   const test_DMA_3071_4095 = "test_DMA_3071_4095.jpg";
+  const TEST_DECODE_LARGE_IMAGE_JPEG = "big-30118x30118.jpg";
+  const TEST_DECODE_LARGE_IMAGE_HEIC = "big-30000x30000.heic";
+  const TEST_DECODE_LARGE_IMAGE_PNG  = "30009x30009_without_alpha.png";
+  const test_wbmp = 'test.wbmp';
 
   describe('imagePixelMapForDMA', () => {
     beforeAll(async () => {
@@ -70,16 +151,9 @@ export default function imagePixelmap() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
     });
 
-    class Logger {
-      testNum: string;
-
-      constructor(testNum: string) {
-        this.testNum = testNum;
-      }
-
-      log(msg: string) {
-        hilog.info(0x0000, "imagePixelmap", 'case: %{public}s msg:%{public}s', this.testNum, msg);
-      }
+    const getFilePath = (fileName: string): string => {
+      const filePath = filesDir + '/' + fileName;
+      return filePath;
     }
 
     const getBuffer = async (fileName: string) => {
@@ -179,8 +253,8 @@ export default function imagePixelmap() {
         logger.log("originImageInfo is:" + JSON.stringify(originImageInfo));
         logger.log("dstImageInfo is:" + JSON.stringify(dstImageInfo));
         ret = (dstImageInfo != undefined) &&
-          (dstImageInfo.size.height == originImageInfo.size.height) &&
-          (dstImageInfo.size.width == originImageInfo.size.width);
+              (dstImageInfo.size.height == originImageInfo.size.height) &&
+              (dstImageInfo.size.width  == originImageInfo.size.width)
         if (allocatorType != AUTO) {
           let fromatBytes = getPixelMapFormatBytes(originImageInfo.pixelFormat);
           ret = ret && (dstImageInfo.stride >= (originImageInfo.size.width * fromatBytes));
@@ -3544,6 +3618,3686 @@ export default function imagePixelmap() {
         expect(error.code == DECODE_FAILED).assertTrue();
         done();
       }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGBA_8888,
+     *                       cropAndScaleStrategy: CROP_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+        desiredPixelFormat: RGBA_8888,
+        cropAndScaleStrategy: CROP_FIRST
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGB_565,
+     *                       cropAndScaleStrategy: SCALE_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+        desiredPixelFormat: RGB_565,
+        cropAndScaleStrategy: SCALE_FIRST
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1124) && (imageInfo.size.height == 1400) && (imageInfo.pixelFormat == RGB_565);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: RGBA_8888
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: BGRA_8888
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == BGRA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV21
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: NV21
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV21);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: NV12
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV12);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096}
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 }
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 4096, height: 4096 },
+     *                       desiredPixelFormat: RGB_888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: RGB_888
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+        expect(error.code == DECODE_FAILED).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 30000, height: 30000 }
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = await imageSource.createPixelMapUsingAllocator();
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGB_565
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: RGB_565
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGB_565);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: RGBA_8888
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: BGRA_8888
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == BGRA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV21
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: NV21
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV21);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: NV12
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV12);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096}
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 }
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGBA_8888,
+     *                       cropAndScaleStrategy: CROP_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+          desiredPixelFormat: RGBA_8888,
+          cropAndScaleStrategy: CROP_FIRST
+        };
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 4096, height: 4096 },
+     *                       desiredPixelFormat: RGB_888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let decodingOptions: image.DecodingOptions = {
+            desiredSize: { width: 4096, height: 4096 },
+            desiredPixelFormat: RGB_888
+          };
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+          logger.log("createPixelMapUsingAllocator result is : " + (pixelMap == undefined));
+          expect(pixelMap == undefined).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+          expect(error.code == DECODE_FAILED).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let decodingOptions: image.DecodingOptions = {
+            desiredSize: { width: 30000, height: 30000 }
+          };
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+          expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let decodingOptions: image.DecodingOptions = {
+            desiredSize: { width: 4096, height: 4096 }
+          };
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions, SHARE_MEMORY);
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+          expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = await imageSource.createPixelMapUsingAllocator();
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+          expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGB_565,
+     *                       cropAndScaleStrategy: SCALE_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+          desiredPixelFormat: RGB_565,
+          cropAndScaleStrategy: SCALE_FIRST
+        };
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+          expect(error.code == FAILED_TO_ALLOCATE_MEMORY).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGBA_8888,
+     *                       cropAndScaleStrategy: CROP_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+        desiredPixelFormat: RGBA_8888,
+        cropAndScaleStrategy: CROP_FIRST
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGB_565,
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: RGB_565
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGB_565);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: RGBA_8888
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: BGRA_8888
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == BGRA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096}
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 }
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 4096, height: 4096 },
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: NV12
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 30000, height: 30000 }
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = await imageSource.createPixelMapUsingAllocator(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = await imageSource.createPixelMapUsingAllocator();
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocator error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGBA_8888,
+     *                       cropAndScaleStrategy: CROP_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+        desiredPixelFormat: RGBA_8888,
+        cropAndScaleStrategy: CROP_FIRST
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGB_565,
+     *                       cropAndScaleStrategy: SCALE_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
+        desiredPixelFormat: RGB_565,
+        cropAndScaleStrategy: SCALE_FIRST
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1124) && (imageInfo.size.height == 1400) && (imageInfo.pixelFormat == RGB_565);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: RGBA_8888
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: BGRA_8888
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == BGRA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV21
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: NV21
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV21);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: NV12
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV12);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096}
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 }
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 4096, height: 4096 },
+     *                       desiredPixelFormat: RGB_888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: RGB_888
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+        expect(error.code == DECODE_FAILED).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 30000, height: 30000 }
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_JPEG);
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = imageSource.createPixelMapUsingAllocatorSync();
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGB_565
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: RGB_565
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGB_565);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: RGBA_8888
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: BGRA_8888
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == BGRA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV21
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: NV21
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV21);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: NV12
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == NV12);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096}
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 }
+        };
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGBA_8888,
+     *                       cropAndScaleStrategy: CROP_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+          desiredPixelFormat: RGBA_8888,
+          cropAndScaleStrategy: CROP_FIRST
+        };
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+        if (pixelMap != undefined) {
+          let imageInfo = pixelMap.getImageInfoSync();
+          logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+          let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
+          expect(ret).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } else {
+          logger.log("pixelMap is undefined!");
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 4096, height: 4096 },
+     *                       desiredPixelFormat: RGB_888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let decodingOptions: image.DecodingOptions = {
+            desiredSize: { width: 4096, height: 4096 },
+            desiredPixelFormat: RGB_888
+          };
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
+          logger.log("createPixelMapUsingAllocator result is : " + (pixelMap == undefined));
+          expect(pixelMap == undefined).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+          expect(error.code == DECODE_FAILED).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let decodingOptions: image.DecodingOptions = {
+            desiredSize: { width: 30000, height: 30000 }
+          };
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+          expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let decodingOptions: image.DecodingOptions = {
+            desiredSize: { width: 4096, height: 4096 }
+          };
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions, SHARE_MEMORY);
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+          expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = imageSource.createPixelMapUsingAllocatorSync();
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+          expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGB_565,
+     *                       cropAndScaleStrategy: SCALE_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500");
+      if (!isSupportHEIFDecode) {
+        logger.log("device is not support heif decode");
+        done();
+        return;
+      } else {
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+          desiredPixelFormat: RGB_565,
+          cropAndScaleStrategy: SCALE_FIRST
+        };
+        try {
+          let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_HEIC);
+          let imageSource = image.createImageSource(buffer);
+          let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
+          expect(false).assertTrue();
+          await pixelMap?.release();
+          buffer = undefined;
+          done();
+        } catch (error) {
+          logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+          expect(error.code == FAILED_TO_ALLOCATE_MEMORY).assertTrue();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+     *                       desiredPixelFormat: RGBA_8888,
+     *                       cropAndScaleStrategy: CROP_FIRST
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
+        desiredPixelFormat: RGBA_8888,
+        cropAndScaleStrategy: CROP_FIRST
+      };
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGBA_8888
+      }
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, DMA, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGB_565,
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: RGB_565
+      };
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGB_565
+      }
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, DMA, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: RGBA_8888
+      };
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGBA_8888
+      }
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, DMA, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 },
+        desiredPixelFormat: BGRA_8888
+      };
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: BGRA_8888
+      }
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, SHARE_MEMORY, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4096, height: 4096}
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4096, height: 4096 }
+      };
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGBA_8888
+      }
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, AUTO, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 4096, height: 4096 },
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 4096, height: 4096 },
+          desiredPixelFormat: NV12
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions 
+     *                       desiredSize: { width: 30000, height: 30000 }
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200");
+      if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+        let decodingOptions: image.DecodingOptions = {
+          desiredSize: { width: 30000, height: 30000 }
+        };
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = imageSource.createPixelMapUsingAllocatorSync(decodingOptions);
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300");
+	  if (!isSupportHdr) {
+        logger.log("device is not support hdr");
+        done();
+        return;
+      }
+      try {
+        let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+        let imageSource = image.createImageSource(buffer);
+        let pixelMap = imageSource.createPixelMapUsingAllocatorSync();
+        expect(false).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } catch (error) {
+        logger.log("createPixelMapUsingAllocatorSync error is: " + JSON.stringify(error));
+        expect(error.code == IMAGE_TOO_LARGE).assertTrue();
+        done();
+      }
+    })
+
+        /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A350.ARW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_SONY_A350.ARW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1920) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-sony-arw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A900.ARW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_SONY_A900.ARW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1616) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-sony-arw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G9.CR2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_CANON_G9.CR2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-canon-cr2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G10.CR2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_CANON_G10.CR2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-canon-cr2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D90.NEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_D90.NEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4288) && (imageInfo.size.height == 2848) && (imageInfo.mimeType == "image/x-nikon-nef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D3300.NEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_D3300.NEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1620) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-nikon-nef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_COOLPIX_P340.NRW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4000) && (imageInfo.size.height == 3000) && (imageInfo.mimeType == "image/x-nikon-nrw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_P6000_GPS.NRW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4224) && (imageInfo.size.height == 3168) && (imageInfo.mimeType == "image/x-nikon-nrw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_OLYMPUS_E3.ORF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-olympus-orf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_OLYMPUS_E410.ORF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-olympus-orf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PENTAX_STAR_DL.PEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 3008) && (imageInfo.size.height == 2000) && (imageInfo.mimeType == "image/x-pentax-pef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PENTAX_STARISTD_SRGB.PEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 3008) && (imageInfo.size.height == 2008) && (imageInfo.mimeType == "image/x-pentax-pef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_FUJI_S6500FD.RAF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-fuji-raf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_FUJI_S9500_SRGB.RAF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-fuji-raf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_G1.RW2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PANASONIC_G1.RW2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1920) && (imageInfo.size.height == 1440) && (imageInfo.mimeType == "image/x-panasonic-rw2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PANASONIC_LX3.RW2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1920) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-panasonic-rw2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_SAMSUNG_EX2F.SRW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4000) && (imageInfo.size.height == 2248) && (imageInfo.mimeType == "image/x-samsung-srw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800
+     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9785.CR3
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800");
+      let buffer: ArrayBuffer | undefined = await getBuffer("023A9785.CR3");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1620) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-canon-cr3");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900
+     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9867.CR3
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900");
+      let buffer: ArrayBuffer | undefined = await getBuffer("023A9867.CR3");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1620) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-canon-cr3");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A350.ARW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_SONY_A350.ARW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1920) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-sony-arw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A900.ARW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_SONY_A900.ARW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1616) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-sony-arw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G9.CR2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_CANON_G9.CR2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-canon-cr2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G10.CR2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_CANON_G10.CR2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-canon-cr2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D90.NEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_D90.NEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4288) && (imageInfo.size.height == 2848) && (imageInfo.mimeType == "image/x-nikon-nef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D3300.NEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_D3300.NEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1620) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-nikon-nef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_COOLPIX_P340.NRW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4000) && (imageInfo.size.height == 3000) && (imageInfo.mimeType == "image/x-nikon-nrw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_NIKON_P6000_GPS.NRW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4224) && (imageInfo.size.height == 3168) && (imageInfo.mimeType == "image/x-nikon-nrw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_OLYMPUS_E3.ORF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-olympus-orf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_OLYMPUS_E410.ORF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-olympus-orf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PENTAX_STAR_DL.PEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 3008) && (imageInfo.size.height == 2000) && (imageInfo.mimeType == "image/x-pentax-pef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PENTAX_STARISTD_SRGB.PEF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 3008) && (imageInfo.size.height == 2008) && (imageInfo.mimeType == "image/x-pentax-pef");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_FUJI_S6500FD.RAF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-fuji-raf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_FUJI_S9500_SRGB.RAF");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1600) && (imageInfo.size.height == 1200) && (imageInfo.mimeType == "image/x-fuji-raf");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_G1.RW2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PANASONIC_G1.RW2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1920) && (imageInfo.size.height == 1440) && (imageInfo.mimeType == "image/x-panasonic-rw2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_PANASONIC_LX3.RW2");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1920) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-panasonic-rw2");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700
+     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700");
+      let buffer: ArrayBuffer | undefined = await getBuffer("RAW_SAMSUNG_EX2F.SRW");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 4000) && (imageInfo.size.height == 2248) && (imageInfo.mimeType == "image/x-samsung-srw");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800
+     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9785.CR3
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800");
+      let buffer: ArrayBuffer | undefined = await getBuffer("023A9785.CR3");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1620) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-canon-cr3");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900
+     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9867.CR3
+     *                 2.return imageInfo
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900");
+      let buffer: ArrayBuffer | undefined = await getBuffer("023A9867.CR3");
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      if (pixelMap != undefined) {
+        let imageInfo = pixelMap.getImageInfoSync();
+        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
+        let ret = (imageInfo.size.width == 1620) && (imageInfo.size.height == 1080) && (imageInfo.mimeType == "image/x-canon-cr3");
+        expect(ret).assertTrue();
+        await pixelMap?.release();
+        buffer = undefined;
+        done();
+      } else {
+        logger.log("pixelMap is undefined!");
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 99, height: 200},
+     *                       desiredPixelFormat: RGB_565
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 99, height: 200 },
+        desiredPixelFormat: RGB_565,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 512, height: 512},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 512, height: 512 },
+        desiredPixelFormat: BGRA_8888,
+        desiredDynamicRange: RANGE_HDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4001, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4001, height: 4096 },
+        desiredPixelFormat: NV21,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 99, height: 200},
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 99, height: 200 },
+        desiredPixelFormat: NV12,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 512, height: 512},
+     *                       desiredPixelFormat: YCBCR_P010
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 512, height: 512 },
+        desiredPixelFormat: YCBCR_P010,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 3072, height: 4096},
+     *                       desiredPixelFormat: YCRCB_P010
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 3072, height: 4096 },
+        desiredPixelFormat: YCRCB_P010,
+        desiredDynamicRange: RANGE_HDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 99, height: 200},
+     *                       desiredPixelFormat: RGB_565
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 99, height: 200 },
+        desiredPixelFormat: RGB_565,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 512, height: 512},
+     *                       desiredPixelFormat: BGRA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 512, height: 512 },
+        desiredPixelFormat: BGRA_8888,
+        desiredDynamicRange: RANGE_HDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 4001, height: 4096},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 4001, height: 4096 },
+        desiredPixelFormat: NV21,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 99, height: 200},
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 99, height: 200 },
+        desiredPixelFormat: NV12,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 512, height: 512},
+     *                       desiredPixelFormat: YCBCR_P010
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 512, height: 512 },
+        desiredPixelFormat: YCBCR_P010,
+        desiredDynamicRange: RANGE_SDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 3072, height: 4096},
+     *                       desiredPixelFormat: YCRCB_P010
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 3072, height: 4096 },
+        desiredPixelFormat: YCRCB_P010,
+        desiredDynamicRange: RANGE_HDR
+      };
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      logger.log("checkPixelmap result is: " + ret);
+      expect(ret).assertTrue();
+      await pixelMap?.release();
+      buffer = undefined;
+      done();
     })
   })
 }

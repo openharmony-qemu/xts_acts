@@ -262,6 +262,7 @@ struct Main {
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
       .align(Alignment.Bottom)
+      .margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

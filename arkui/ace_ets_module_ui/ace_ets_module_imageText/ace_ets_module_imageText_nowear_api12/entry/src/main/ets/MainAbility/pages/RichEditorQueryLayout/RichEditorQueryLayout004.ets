@@ -23,36 +23,7 @@ struct RichEditorQueryLayout004 {
   build() {
 
     Column() {
-
-      RichEditor({ controller: this.controller })
-        .height(200)
-        .borderWidth(1)
-        .borderColor(Color.Red)
-        .width('100%')
-        .onReady(() => {
-          this.controller.addImageSpan($r('app.media.app_icon'), {
-            imageStyle: {
-              size: ['60px', '60px'],
-              layoutStyle: {
-                borderRadius: {
-                  topLeft: '100px',
-                  topRight: '100%',
-                  bottomLeft: '100',
-                  bottomRight: $r('app.float.bottom')
-                },
-                margin: {
-                  left: '30px',
-                  top: '100%',
-                  right: '20',
-                  bottom: $r('app.float.bottom')
-                }
-              }
-            }
-          })
-        })
-        .id('rich_struct')
-
-      Text('style:' + this.style).id('style')
+      Text('style:' + this.style).id('style').height('5%').clip(true)
 
       Button('get spans').onClick(() => {
         this.content = '';
@@ -81,8 +52,34 @@ struct RichEditorQueryLayout004 {
             }
           }
         })
-      }).id('get_content')
-
+      }).id('get_content').height('5%')
+      RichEditor({ controller: this.controller })
+        .height(200)
+        .borderWidth(1)
+        .borderColor(Color.Red)
+        .width('100%')
+        .onReady(() => {
+          this.controller.addImageSpan($r('app.media.app_icon'), {
+            imageStyle: {
+              size: ['60px', '60px'],
+              layoutStyle: {
+                borderRadius: {
+                  topLeft: '100px',
+                  topRight: '100%',
+                  bottomLeft: '100',
+                  bottomRight: $r('app.float.bottom')
+                },
+                margin: {
+                  left: '30px',
+                  top: '100%',
+                  right: '20',
+                  bottom: $r('app.float.bottom')
+                }
+              }
+            }
+          })
+        })
+        .id('rich_struct')
     }
   }
 }

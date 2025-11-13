@@ -41,11 +41,9 @@ static const uint32_t CASE_INDEX_6 = 6;
 static const uint32_t CASE_INDEX_7 = 7;
 static const uint32_t CASE_INDEX_8 = 8;
 static const uint32_t CLOSE_STATUS_NORMAL = 1000;
-static int32_t g_httpErrorCode = -1;
-static int32_t g_respErrorCode = 0;
+static const uint32_t DEFAULT_HOST_LEN = 20;
 static int32_t g_sleepSecs = 1;
 static int32_t g_maxHeaderLen = 8192;
-static int32_t g_maxLoopNum = 256;
 static int32_t g_maxDataLength = (4 * 1024 * 1024);
 
 static std::string GetString(napi_env env, napi_callback_info info, uint32_t index)
@@ -297,11 +295,9 @@ static void ResponseCallback(struct Http_Response *response, uint32_t errCode)
         return;
     }
     if (ReadHttpReqCode(errCode) != 0) {
-        g_httpErrorCode = errCode;
         return;
     }
     if (ReadResponseCode(response->responseCode) != 0) {
-        g_respErrorCode = response->responseCode;
         return;
     }
 }
@@ -318,18 +314,15 @@ napi_value Http_RequestRequest(napi_env env, napi_callback_info info)
     } else if (index == CASE_INDEX_3) {
         returnValue = OH_Http_Request(request, ResponseCallback, handler);
         std::this_thread::sleep_for(std::chrono::seconds(g_sleepSecs));
-        returnValue = g_httpErrorCode;
     } else if (index == CASE_INDEX_4) {
         returnValue = OH_Http_Request(request, ResponseCallback, handler);
         std::this_thread::sleep_for(std::chrono::seconds(g_sleepSecs));
-        returnValue = g_httpErrorCode;
     } else if (index == CASE_INDEX_5) {
         Http_RequestOptions reqOptions;
         request->options = &reqOptions;
         reqOptions.method = NET_HTTP_METHOD_POST;
         returnValue = OH_Http_Request(request, ResponseCallback, handler);
         std::this_thread::sleep_for(std::chrono::seconds(g_sleepSecs));
-        returnValue = g_httpErrorCode;
     } else {
         returnValue = ReadResponseCode(index);
     }
@@ -426,12 +419,30 @@ static napi_value Web_Socket(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHQueryTraceRoute(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char pacUrl[1024] = {0};
+    size_t sizeT1;
+    napi_get_value_string_utf8(env, args[0], pacUrl, DEFAULT_HOST_LEN, &sizeT1);
+    NetConn_TraceRouteInfo traceRouteInfo[30] = {};
+    NetConn_TraceRouteOption traceoption = {30, NETCONN_PACKETS_ICMP};
+    int res = OH_NetConn_QueryTraceRoute(pacUrl, &traceoption, traceRouteInfo);
+    napi_value result = nullptr;
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         {"Http_RequestRequest", nullptr, Http_RequestRequest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Web_Socket", nullptr, Web_Socket, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHQueryTraceRoute", nullptr, OHQueryTraceRoute, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

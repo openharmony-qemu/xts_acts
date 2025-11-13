@@ -30,11 +30,14 @@ export default class MediaTestBase {
   SET_MIC_ENABLE_EVENT = 'setMicEnable';
   CREATE_EVENT = 'create';
   INIT_EVENT = 'init';
+  SET_PICKER_MODE = 'setPickerMode';
+  EXCLUDE_PICKER_WINDOWS = 'excludePickerWindows';
   INITWITHERROR_EVENT = 'init';
   STARTRECORDER_EVENT = 'start';
   SKIPPRIVACYMODE_EVENT = 'skipPrivacyMode';
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
+  PRESENTT_PICKER_EVENT = 'presentPicker';
   END_EVENT = 'end';
   FAIL_EVENT = 'fail';
   AV_CREATEAVPLAYER = 'createAVPlayer';
@@ -56,39 +59,61 @@ export default class MediaTestBase {
   };
   avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null = null;
   avPlayer: media.AVPlayer | null = null;
+  isSucceeded: boolean = true;
+  isOnStateChange: boolean = false;
 
-  setAVScreenCaptueCallback(avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null, done: Function) {
+  testBegin() {
+    this.isSucceeded = true;
+  }
+
+  isTestSucceeded(): boolean {
+    return this.isSucceeded;
+  }
+
+  testFail() {
+    this.isSucceeded = false;
+  }
+
+  setAVScreenCaptureCallback(avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null, done: Function) {
     // 状态机变化回调函数
-    avScreenCaptureRecorder?.on('stateChange', (state) => {
-      console.info('avScreenCapture stateChange to ' + state);
-      switch (state) {
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STARTED:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_CANCELED:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_USER:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_USER_SWITCHES:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_INTERRUPTED_BY_OTHER:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_CALL:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_UNAVAILABLE:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_MUTED_BY_USER:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_UNMUTED_BY_USER:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_ENTER_PRIVATE_SCENE:
-          break;
-        case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_EXIT_PRIVATE_SCENE:
-          break;
-        default:
-          console.error('invalid AVScreenCaptureStateCode: ' + state);
-          break;
-      }
-    })
+
+    try {
+      avScreenCaptureRecorder?.on('stateChange', (state) => {
+        console.info('avScreenCapture stateChange to ' + state);
+        switch (state) {
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STARTED:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_CANCELED:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_USER:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_USER_SWITCHES:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_INTERRUPTED_BY_OTHER:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_CALL:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_UNAVAILABLE:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_MUTED_BY_USER:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_MIC_UNMUTED_BY_USER:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_ENTER_PRIVATE_SCENE:
+            break;
+          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_EXIT_PRIVATE_SCENE:
+            break;
+          default:
+            console.error('invalid AVScreenCaptureStateCode: ' + state);
+            break;
+        }
+      })
+      this.isOnStateChange = true;
+    } catch (err) {
+      console.error('stateChange error:' + err.message);
+      this.isOnStateChange = false;
+      expect().assertFail()
+    }
 
     avScreenCaptureRecorder?.on('error', (err) => {
       console.error('avScreenCaptureRecorder error:' + err.message);
@@ -113,60 +138,103 @@ export default class MediaTestBase {
     switch (steps[0]) {
       case this.SETONCALLBACK_EVENT:
         steps.shift();
-        try {
-          await this.setAVScreenCaptueCallback(avScreenCaptureRecorder, done)
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        } catch (error) {
-          console.error('setAVScreenCaptueCallback failed and catch error is ' + error.message);
+        if (this.isTestSucceeded()) {
+          try {
+            await this.setAVScreenCaptureCallback(avScreenCaptureRecorder, done)
+          } catch (error) {
+            console.error('setAVScreenCaptureCallback failed and catch error is ' + error.message);
+            this.testFail();
+          }
         }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.CREATE_EVENT:
         steps.shift();
-        await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
-          if (captureRecorder != null) {
-            avScreenCaptureRecorder = captureRecorder;
-            this.avScreenCaptureRecorder = avScreenCaptureRecorder;
-            console.info('createAVScreenCaptureRecorder success');
-            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-          } else {
-            console.error('createAVScreenCaptureRecorder fail');
-            expect().assertFail()
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
-          expect().assertFail()
-        });
-
+        if (this.isTestSucceeded()) {
+          await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+            if (captureRecorder != null) {
+              avScreenCaptureRecorder = captureRecorder;
+              this.avScreenCaptureRecorder = avScreenCaptureRecorder;
+              console.info('createAVScreenCaptureRecorder success');
+            } else {
+              console.error('createAVScreenCaptureRecorder fail');
+              this.testFail();
+            }
+          }).catch((error: BusinessError) => {
+            console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+            this.testFail();
+          });
+        }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.INIT_EVENT:
         steps.shift();
-        await avScreenCaptureRecorder?.init(avConfig).then(() => {
-          console.info('avScreenCaptureRecorder init success');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: BusinessError) => {
-          console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
-          console.info('avScreenCaptureRecorder initwitherror failed, error code is:' + err.code);
-          expect(err.code).assertEqual(401);
-          if (avConfig.fd == -1) {
-            let mySteps = new Array(
-              this.END_EVENT);
-            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, mySteps, done);
-          } else {
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.init(avConfig).then(() => {
+            console.info('avScreenCaptureRecorder init success');
+          }).catch((err: BusinessError) => {
             console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
-            expect().assertFail()
+            console.info('avScreenCaptureRecorder initwitherror failed, error code is:' + err.code);
+            expect(err.code).assertEqual(401);
+            if (avConfig.fd == -1) {
+              let mySteps = new Array(
+                this.END_EVENT);
+            } else {
+              console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+              this.testFail();
+            }
+          });
+        }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.SET_PICKER_MODE:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          try {
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.WINDOW_ONLY);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_ONLY);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW);
+            console.info('avScreenCaptureRecorder setPickerMode success');
+          } catch (error) {
+            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
+            this.testFail();
           }
+        }
 
-        });
+        this.driveFnNoSleep(1)
+        setTimeout(() => {
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }, recorderTime);
+
+        break;
+      case this.EXCLUDE_PICKER_WINDOWS:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          const excludedWindowIds: number[] = [101, 102, 103];
+          await avScreenCaptureRecorder?.excludePickerWindows(excludedWindowIds).then(() => {
+            console.info('avScreenCaptureRecorder setPickerMode success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+
+        this.driveFnNoSleep(1)
+        setTimeout(() => {
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }, recorderTime);
 
         break;
       case this.STARTRECORDER_EVENT:
         steps.shift();
-        await avScreenCaptureRecorder?.startRecording().then(() => {
-          console.info('avScreenCaptureRecorder start success');
-        }).catch((err: BusinessError) => {
-          console.error('avScreenCaptureRecorder start failed, error: ' + err.message);
-          expect().assertFail()
-        })
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.startRecording().then(() => {
+            console.info('avScreenCaptureRecorder start success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder start failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
 
         this.driveFnNoSleep(1)
         setTimeout(() => {
@@ -176,16 +244,57 @@ export default class MediaTestBase {
         break;
       case this.SKIPPRIVACYMODE_EVENT:
         steps.shift();
-        let windowAllIds = [];
-        await avScreenCaptureRecorder?.skipPrivacyMode(windowAllIds).then(() => {
-          console.info('avScreenCaptureRecorder skipPrivacyMode success');
+        if (this.isTestSucceeded()) {
+          let windowAllIds = [];
+          await avScreenCaptureRecorder?.skipPrivacyMode(windowAllIds).then(() => {
+            console.info('avScreenCaptureRecorder skipPrivacyMode success');
+          }).catch(async (err: BusinessError) => {
+            console.error('avScreenCaptureRecorder skipPrivacyMode failed, error: ' + err.message);
+            let cansys = await this.isSupportSceneboard();
+            console.info('isSupportSceneboard result cansys', JSON.stringify(cansys));
+            if (!(cansys != 0 && err.code == 5400103)) {
+              //rk板或者其他没sceneboard的设备上，都会包5400103的错误码；
+              console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+              this.testFail();
+            }
+          });
+        }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.STOPRECORDER_EVENT:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.stopRecording().then(() => {
+            console.info('avScreenCaptureRecorder stop success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder stop failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.RELEASECORDER_EVENT:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.release().then(() => {
+            console.info('avScreenCaptureRecorder release success');
+            this.avScreenCaptureRecorder = null;
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder release failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        this.closeFd(this.outputFdObject.fd);
+        break;
+      case this.PRESENTT_PICKER_EVENT:
+        steps.shift();
+        await avScreenCaptureRecorder?.presentPicker().then(() => {
+          console.info('avScreenCaptureRecorder presentPicker success');
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch(async (err: BusinessError) => {
-          console.error('avScreenCaptureRecorder skipPrivacyMode failed, error: ' + err.message);
-          let cansys = await this.isSupportSceneboard();
-          console.info('isSupportSceneboard result cansys', JSON.stringify(cansys));
-          if (cansys != 0 && err.code == 5400103) {
-            //rk板或者其他没sceneboard的设备上，都会包5400103的错误码；
+        }).catch((err: BusinessError) => {
+          console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
+          if (err.code == 5400102) {
             this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
           } else {
             console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
@@ -194,40 +303,17 @@ export default class MediaTestBase {
         })
 
         break;
-      case this.STOPRECORDER_EVENT:
-        steps.shift();
-        await avScreenCaptureRecorder?.stopRecording().then(() => {
-          console.info('avScreenCaptureRecorder stop success');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: BusinessError) => {
-          console.error('avScreenCaptureRecorder stop failed, error: ' + err.message);
-          expect().assertFail()
-        })
-
-        break;
-      case this.RELEASECORDER_EVENT:
-        steps.shift();
-        await avScreenCaptureRecorder?.release().then(() => {
-          console.info('avScreenCaptureRecorder release success');
-          this.avScreenCaptureRecorder = null;
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: BusinessError) => {
-          console.error('avScreenCaptureRecorder release failed, error: ' + err.message);
-          expect().assertFail();
-        })
-
-        this.closeFd(this.outputFdObject.fd);
-
-        break;
       case this.SET_MIC_ENABLE_EVENT:
         steps.shift();
-        await avScreenCaptureRecorder?.setMicEnabled(true).then(() => {
-          console.info('avScreenCaptureRecorder setMicEnabled success');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: BusinessError) => {
-          console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
-          expect().assertFail()
-        })
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.setMicEnabled(true).then(() => {
+            console.info('avScreenCaptureRecorder setMicEnabled success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.AV_CREATEAVPLAYER:
         steps.shift();
@@ -266,26 +352,26 @@ export default class MediaTestBase {
         });
 
         break;
-        case this.INITWITHERROR_EVENT:
-          steps.shift();
-          await avScreenCaptureRecorder?.init(avConfig2).then(() => {
-            console.info('avScreenCaptureRecorder init success');
+      case this.INITWITHERROR_EVENT:
+        steps.shift();
+        await avScreenCaptureRecorder?.init(avConfig2).then(() => {
+          console.info('avScreenCaptureRecorder init success');
+          this.toNextStep2(avScreenCaptureRecorder, avConfig2, recorderTime, steps, done);
+        }).catch((err: BusinessError) => {
+          console.error('avScreenCaptureRecorder initwitherror failed, error: ' + err.message);
+          console.info('avScreenCaptureRecorder initwitherror failed, error code is:' + err.code)
+          expect(err.code).assertEqual(401)
+          if (avConfig2.fd == -1) {
+            let mySteps = new Array(
+              this.END_EVENT);
             this.toNextStep2(avScreenCaptureRecorder, avConfig2, recorderTime, steps, done);
-          }).catch((err: BusinessError) => {
-            console.error('avScreenCaptureRecorder initwitherror failed, error: ' + err.message);
-            console.info('avScreenCaptureRecorder initwitherror failed, error code is:' + err.code)
-            expect(err.code).assertEqual(401)
-            if (avConfig2.fd == -1) {
-              let mySteps = new Array(
-                this.END_EVENT);
-              this.toNextStep2(avScreenCaptureRecorder, avConfig2, recorderTime, steps, done);
-            } else {
-              console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
-              expect().assertFail()
-            }
-          });
-          done();
-          break;
+          } else {
+            console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+            expect().assertFail()
+          }
+        });
+        done();
+        break;
       case this.STARTRECORDER_EVENT:
         steps.shift();
         await avScreenCaptureRecorder?.startRecording().then(() => {
@@ -570,7 +656,7 @@ export default class MediaTestBase {
     };
 
     let audioRendererInfo: audio.AudioRendererInfo = {
-      content:audio.ContentType.CONTENT_TYPE_MUSIC,
+      content: audio.ContentType.CONTENT_TYPE_MUSIC,
       usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE,
       rendererFlags: 0
     };
@@ -637,7 +723,7 @@ export default class MediaTestBase {
       console.info(`${this.TAG}: renderInstant stop :ERROR : ${err.message}`);
     });
   }
-  
+
   async isSupportSceneboard() {
     let cmd = "aa dump -a|grep com.ohos.sceneboard"
     let result = await delegator.executeShellCommand(cmd);

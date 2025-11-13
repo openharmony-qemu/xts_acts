@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import batteryInfoTest from "./BatteryInfo.test";
+import BatteryInfoTest from "./BatteryInfo.test";
+import BatteryStatisticsTest from "./BatteryStatistics.test";
+
 export default function testsuite() {
-    batteryInfoTest();
+  BatteryInfoTest();
+  BatteryStatisticsTest();
 }

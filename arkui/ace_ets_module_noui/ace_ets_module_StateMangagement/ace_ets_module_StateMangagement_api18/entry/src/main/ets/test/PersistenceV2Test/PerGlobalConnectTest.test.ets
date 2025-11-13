@@ -16,7 +16,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import { MessageManager,Callback } from '../../MainAbility/common/MessageManager';
 export default function PerGlobalConnectTest() {
   describe('PerGlobalConnectTest', () => {
     beforeEach(async (done: Function) => {
@@ -66,6 +65,9 @@ export default function PerGlobalConnectTest() {
       let btn: Component = await driver.findComponent(ON.id("btnClear"));
       await btn.click();
       await CommonFunc.sleep(1000);
+      let res001 = AppStorage.get<undefined>('PersistenceV2globalConnect001');
+      console.info("[PerGlobalConnectTest_001] component res001 is: " + JSON.stringify(res001));
+      expect(res001).assertEqual(undefined);
       let btn1: Component = await driver.findComponent(ON.id("tvKeys"));
       await btn1.click();
       await CommonFunc.sleep(1000);
@@ -73,6 +75,7 @@ export default function PerGlobalConnectTest() {
       console.info("[PerGlobalConnectTest_001] component obj1 is: " + JSON.stringify(obj1));
       console.info("[PerGlobalConnectTest_001] obj1 content: " + JSON.stringify(obj1.$attrs.content));
       expect(obj1.$attrs.content).assertEqual('keys:');
+      console.info("[PerGlobalConnectTest_001] component appstorage.clear is: " + JSON.stringify(AppStorage.clear()));
       console.info('[PerGlobalConnectTest_001] END');
       done();
     });

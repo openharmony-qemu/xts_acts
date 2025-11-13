@@ -1747,6 +1747,8 @@ describe("VibratorJsTest_misc_7", function () {
                 console.info(TAG + " getVibratorInfoSync isHdHapticSupported:" + vibrators[0].isHdHapticSupported);
                 console.info(TAG + " getVibratorInfoSync isLocalVibrator:" + vibrators[0].isLocalVibrator);
                 const freshVibratorsData = vibrator.getVibratorInfoSync();
+                console.info(`====> VibratorJsTest110 success freshVibratorsData: ${JSON.stringify(freshVibratorsData)}`);
+                expect(freshVibratorsData.length > 0).assertTrue();
                 expect(freshVibratorsData[0].deviceId >= -1).assertEqual(true);
                 expect(vibrators[0].deviceId === freshVibratorsData[0].deviceId).assertEqual(true);
                 done();

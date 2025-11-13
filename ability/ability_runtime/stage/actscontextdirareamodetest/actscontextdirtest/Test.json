@@ -23,7 +23,8 @@
       "run-command": [
         "power-shell wakeup",
         "power-shell setmode 602",
-        "uinput -T -m 300 2700 280 200"
+        "uinput -T -m 300 2700 280 200",
+        "param set persist.usb.setting.gadget_conn_prompt false"
       ]
     }
   ]

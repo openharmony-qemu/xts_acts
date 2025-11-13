@@ -27,6 +27,8 @@
 #define OH_CRYPTO_GCM_TAG_LEN 16
 #define OH_CRYPTO_CCM_TAG_LEN 12
 
+#define OH_CRYPTO_CHACHA20_POLY1305_TAG_LEN 16
+
 typedef struct SymCipherSpec {
     uint8_t *algName;
     uint8_t *cipherAlgName;

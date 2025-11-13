@@ -274,7 +274,7 @@ struct VirtualScreen {
           .fontColor(Color.White)
       }
       .height('30%')
-
+      .margin({ bottom: '-10vp' })
       DisplayDevice({ isPass: $isPass })
 
       CustomContainer({

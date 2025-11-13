@@ -70,7 +70,7 @@ export default function RichEditor022() {
       await CommonFunc.sleep(1000);
 
       let back = await driver.findComponent(ON.id('set_select'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
 
       let point = await driver.findComponent(ON.id('get_position'));
@@ -83,19 +83,19 @@ export default function RichEditor022() {
 
       await CommonFunc.sleep(500);
 
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let endPosition = await text.getText();
 
       expect(parseInt(beginPosition)).assertLarger(parseInt(endPosition));
 
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
       //KEYCODE_FORWARD_DEL
       await driver.triggerKey(2071);
       await CommonFunc.sleep(500);
 
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let endPosition1 = await text.getText();
 

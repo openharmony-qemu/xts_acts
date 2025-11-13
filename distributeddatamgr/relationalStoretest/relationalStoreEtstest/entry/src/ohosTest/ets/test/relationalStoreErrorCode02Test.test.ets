@@ -62,12 +62,13 @@ export default function relationalStoreErrorCode02Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -86,12 +87,13 @@ export default function relationalStoreErrorCode02Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   relationalStoreTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('relationalStoreTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest001 start *************");
@@ -115,12 +117,13 @@ export default function relationalStoreErrorCode02Test() {
     })
 
     /**
-     * @tc.name the attach function
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbStoreAttach0001
      * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0010
-     * @tc.desc non encrypted database attach non encrypted database
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   non encrypted database attach non encrypted database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreAttach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreAttach0001 start *************");
