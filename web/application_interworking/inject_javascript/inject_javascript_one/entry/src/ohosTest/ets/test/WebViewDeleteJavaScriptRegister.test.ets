@@ -68,7 +68,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testWebView_deleteJavaScriptRegister_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('testWebView_deleteJavaScriptRegister_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0001", '"success"', 10072, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
@@ -88,7 +88,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testWebView_deleteJavaScriptRegister_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+    it('testWebView_deleteJavaScriptRegister_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerBaseEvent("testWebView_deleteJavaScriptRegister_0002",
         '"ReferenceError: testObjName is not defined"', 10073,
         done,
