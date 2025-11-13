@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import testNapi from 'librelationNdk.so'
 
 const RDB_OK = 0;
+const RDB_E_NOT_SUPPORTED = 801;
 const RDB_E_INVALID_ARGS = 14800001;
 const RDB_E_DATA_TYPE_NULL = 14800063;
 const RDB_E_TYPE_MISMATCH = 14800064;
@@ -2246,6 +2247,29 @@ export default function ActsRelationalStoreTest() {
           done();
         } catch (err) {
           console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedInt_10000 catch err: " +
+            err);
+        }
+      })
+    /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100
+     * @tc.desc   test OH_Value_GetUnlimitedInt Test Storage Data Is Empty Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100 start====");
+          let result: number = testNapi.OHRdbExecuteByTrxIdTest();
+          console.info("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100 result====", result);
+          expect([RDB_OK, RDB_E_NOT_SUPPORTED]).assertContain(result);
+          done();
+        } catch (err) {
+          console.error("====>SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100 catch err: " +
             err);
         }
       })
