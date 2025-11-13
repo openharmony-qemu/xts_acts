@@ -27,6 +27,7 @@ import sendAbleSetTest from './photoAccess/SendAblePhotoAssetSet.test';
 import PhotoAccessMediaAlbumChangeRequestAddAssetsTest
   from './photoAccess/PhotoAccessMediaAlbumChangeRequestAddAssetsTest.test';
 import sendableGetThumbnailTest from './photoAccess/PhotoAccessHelperPhotoAssetGetThumbnailTest.test';
+import PhotoAccessHelperOn_PhotoChangeTest from './photoAccess/PhotoAccessHelperOn_PhotoChangeTest.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -57,4 +58,5 @@ export default function testsuite() {
   sendAbleSetTest();
   PhotoAccessMediaAlbumChangeRequestAddAssetsTest();
   sendableGetThumbnailTest();
+  PhotoAccessHelperOn_PhotoChangeTest();
 }
