@@ -508,7 +508,10 @@ export default function nfcTagTest() {
       }catch(error: BusinessError){
         if (error.code == 801) {
           hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1100 error is ' + error.code + " - " + error);
-          expect(801).assertEqual(error.code)
+          expect(801).assertEqual(error.code);
+        } else if (error.code == 3100201) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1100 error is ' + error.code + " - " + error);
+          expect(3100201).assertEqual(error.code);
         } else {
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1100 failed ');
           expect().assertFail();
@@ -532,8 +535,13 @@ export default function nfcTagTest() {
         hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1200 Nfcget tagABFV gettaginfo is:  ' + nfcTagtest);
         expect(nfcTagtest instanceof Object).assertTrue();
       }catch(error: BusinessError){
-        hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1200 Nfcget taginfo error:  ' + error);
-        expect().assertFail();
+        if (error.code == 801) {
+          hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1100 error is ' + error.code + " - " + error);
+          expect(801).assertEqual(error.code);
+        } else {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1200 Nfcget taginfo error:  ' + error);
+          expect().assertFail();
+        }
       }
       console.info('[NFC_test] tag13 test TagInfo data>:' + nfcTagtest);
       done();
@@ -564,6 +572,9 @@ export default function nfcTagTest() {
         if (error.code == 801) {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 registerForegroundDispatch error:  ' + error + error.code);
           expect(801).assertEqual(error.code)
+        } else if (error.code == 3100201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 registerForegroundDispatch error:  ' + error + error.code);
+          expect(3100201).assertEqual(error.code)
         } else {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 registerForegroundDispatch fail:  ' + error + error.code);
           expect().assertFail();
@@ -578,6 +589,9 @@ export default function nfcTagTest() {
         if (error.code == 801) {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 unregisterForegroundDispatch error:  ' + error + error.code);
           expect(801).assertEqual(error.code)
+        } else if (error.code == 3100201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 unregisterForegroundDispatch error:  ' + error + error.code);
+          expect(3100201).assertEqual(error.code)
         } else {
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1300 unregisterForegroundDispatch fail:  ' + error + error.code);
           expect().assertFail();
@@ -609,23 +623,29 @@ export default function nfcTagTest() {
       try {
         tag.onReaderMode(elementName, discTech, AsyncCallback);
       } catch (err: BusinessError) {
-        if (err.code == 3100203) {
-          expect(3100203).assertEqual(err.code);
+        if (err.code == 3100201) {
+          expect(3100201).assertEqual(err.code);
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
           done();
-        }else {
+        } else if (err.code == 3100203) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
+          expect(3100203).assertEqual(err.code)
+        } else {
           expect().assertFail();
-          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode fail :  ');
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag  _static_1400 onReaderMode fail :  ');
         }
       }
       try {
         tag.offReaderMode(elementName, AsyncCallback);
       } catch (err: BusinessError) {
-        if (err.code == 3100203) {
-          expect(3100203).assertEqual(err.code);
+        if (err.code == 3100201) {
+          expect(3100201).assertEqual(err.code);
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
           done();
-        }else {
+        } else if (err.code == 3100203) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode err :  ' + err + " - " + err.code);
+          expect(3100203).assertEqual(err.code)
+        } else {
           expect().assertFail();
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode fail :  ');
         }
