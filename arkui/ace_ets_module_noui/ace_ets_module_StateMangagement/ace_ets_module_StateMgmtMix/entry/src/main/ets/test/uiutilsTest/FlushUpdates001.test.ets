@@ -22,7 +22,7 @@ export default function FlushUpdates001() {
     beforeEach(async (done: Function) => {
       console.info("FlushUpdates001 setup start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/UIUtils/FlushUpdates001",
+        url: "MainAbility/pages/uiutils/FlushUpdates001",
       }
       try {
         router.clear();

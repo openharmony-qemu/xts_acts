@@ -22,7 +22,7 @@ export default function FlushErrorCode() {
     beforeEach(async (done: Function) => {
       console.info("FlushErrorCode setup start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/UIUtils/FlushErrorCode",
+        url: "MainAbility/pages/uiutils/FlushErrorCode",
       }
       try {
         router.clear();

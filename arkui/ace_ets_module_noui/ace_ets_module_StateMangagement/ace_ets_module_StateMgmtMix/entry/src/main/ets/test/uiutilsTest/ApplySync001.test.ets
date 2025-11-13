@@ -22,7 +22,7 @@ export default function ApplySync001() {
     beforeEach(async (done: Function) => {
       console.info("ApplySync001 setup start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/UIUtils/ApplySync001",
+        url: "MainAbility/pages/uiutils/ApplySync001",
       }
       try {
         router.clear();
