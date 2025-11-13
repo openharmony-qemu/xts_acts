@@ -44,7 +44,7 @@ export default function APIaccessibilityTextHint() {
     });
 
     /**
-     * @tc.number    api
+     * @tc.number    APIaccessibilityTextHint_0100
      * @tc.name      APIaccessibilityTextHint_0100
      * @tc.desc      api
      * @tc.level:    Level 2

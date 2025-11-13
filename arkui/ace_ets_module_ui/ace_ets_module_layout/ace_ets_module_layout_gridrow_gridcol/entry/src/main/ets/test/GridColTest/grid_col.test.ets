@@ -44,7 +44,7 @@ export default function grid_colSpanJsunit() {
       console.info("grid_colSpan after each called");
     });
 
-    /*
+    /**
      * @tc.number       SUB_ACE_BASIC_ETS_API_0001
      * @tc.name         testgrid_colSpan0001
      * @tc.desic        acegrid_colSpanEtsTest0001

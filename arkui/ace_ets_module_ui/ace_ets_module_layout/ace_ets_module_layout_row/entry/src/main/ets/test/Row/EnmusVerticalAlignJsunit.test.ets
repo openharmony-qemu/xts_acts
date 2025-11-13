@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import Utils from '../Utils';
+import Utils from '../../MainAbility/common/Utils';
 
 export default function enumsVerticalAlignJsunit() {
   describe('enumsVerticalAlign', () => {
@@ -44,6 +44,14 @@ export default function enumsVerticalAlignJsunit() {
       console.info('[ afterEach ] ===================enumsFlexItemTest test after each called===================');
     });
 
+    /**
+     * @tc.number enumsVerticalAlignTest_0100
+     * @tc.name   enumsVerticalAlignTest_0100
+     * @tc.desc   test Row alignItems
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('enumsVerticalAlignTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('enumsVerticalAlignTest_0100 START');
       await Utils.sleep(1500);

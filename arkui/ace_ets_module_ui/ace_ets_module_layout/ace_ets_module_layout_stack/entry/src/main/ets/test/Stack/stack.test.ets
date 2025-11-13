@@ -44,7 +44,7 @@ export default function stackAlignContentJsunit() {
       console.info("stackAlignContent after each called");
     });
 
-    /*
+    /**
      * @tc.number       SUB_ACE_BASIC_ETS_API_0001
      * @tc.name         teststackAlignContent0001
      * @tc.desic         acestackAlignContentEtsTest0001
@@ -61,7 +61,7 @@ export default function stackAlignContentJsunit() {
 
     });
 
-    /*
+    /**
      * @tc.number       SUB_ACE_BASIC_ETS_API_0002
      * @tc.name         teststackAlignContent0002
      * @tc.desic         acestackAlignContentEtsTest0002

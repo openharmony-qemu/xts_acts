@@ -46,62 +46,6 @@
           }
         ]
       }
-    ],
-    "requestPermissions": [
-        {
-            "name": "ohos.permission.CAPTURE_SCREEN",
-            "reason": "$string:test",
-            "usedScene": {
-              "abilities": [
-                "FormAbility"
-              ]
-            }
-        },
-        {
-            "name": "ohos.permission.WRITE_MEDIA",
-            "reason": "$string:test",
-            "usedScene": {
-              "abilities": [
-                "FormAbility"
-              ]
-            }
-        },
-        {
-            "name": "ohos.permission.READ_MEDIA",
-            "reason": "$string:test",
-            "usedScene": {
-              "abilities": [
-                "FormAbility"
-              ]
-            }
-        },
-        {
-            "name": "ohos.permission.INTERNET",
-            "reason": "$string:test",
-            "usedScene": {
-              "abilities": [
-                "FormAbility"
-              ]
-            }
-        },
-        {
-            "name": "ohos.permission.MEDIA_LOCATION",
-            "reason": "$string:test",
-            "usedScene": {
-              "abilities": [
-                "FormAbility"
-              ]
-            }
-        },
-        {
-            "name": "ohos.permission.CAMERA",
-            "reason": "$string:test",
-            "usedScene": {
-              "abilities": [
-                "FormAbility"
-              ]
-            }
-        }
     ]
   }
 }

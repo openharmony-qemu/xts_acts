@@ -49,8 +49,8 @@ export default function Stack_AlignContent() {
      * @tc.name      testStackAlignContentNotConfig
      * @tc.desc      The stack component does not set alignContent
      */
-    it('testStackAlignContentCenter',  Level.LEVEL0, async  (done: Function)=> {
-      console.info('[testStackAlignContentCenter] START');
+    it('testStackAlignContentDefault',  Level.LEVEL0, async  (done: Function)=> {
+      console.info('[testStackAlignContentDefault] START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('Stack_AlignContent_01');
 
@@ -72,7 +72,7 @@ export default function Stack_AlignContent() {
       expect(Math.abs((Math.round(stack_alignContent_011.right - stack_alignContent_011.left)) - (Math.round(vp2px(300)))) <= 1).assertTrue();
       expect(Math.abs((Math.round(stack_alignContent_012.right - stack_alignContent_012.left)) - (Math.round(vp2px(200)))) <= 1).assertTrue();
       expect(Math.abs((Math.round(stack_alignContent_013.right - stack_alignContent_013.left)) - (Math.round(vp2px(100)))) <= 1).assertTrue();
-      console.info('[testStackAlignContentCenter] END');
+      console.info('[testStackAlignContentDefault] END');
       done();
     });
     /**

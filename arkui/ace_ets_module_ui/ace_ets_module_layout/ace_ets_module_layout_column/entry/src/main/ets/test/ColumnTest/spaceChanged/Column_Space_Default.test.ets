@@ -89,7 +89,7 @@ export default function Column_Space_Default() {
       console.info('[SUB_ACE_Column_Space_Default_TEST_0200] END');
     });
     /**
-     * @tc.number SUB_ACE_Column_Space_Default_TEST_0200
+     * @tc.number SUB_ACE_Column_Space_Default_TEST_0300
      * @tc.name testColumnSpace
      * @tc.desc The value of space is set to -10
      */

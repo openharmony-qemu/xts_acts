@@ -47,7 +47,7 @@ export default function GridRowBreakpoints_Value1() {
     });
 
     /**
-     * @tc.number SUB_ACE_GRIDROWBREAKPOTINS_0100
+     * @tc.number SUB_ACE_GridRowBreakpoints_0100
      * @tc.name testBreakpoints
      * @tc.desc The breakpoint range value monotonically increases
      */

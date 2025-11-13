@@ -210,12 +210,12 @@ export default function Row_flexBasis_Default() {
     });
 
     /**
-     * @tc.number SUB_ACE_flexBasis_Type_TEST_0400
+     * @tc.number SUB_ACE_flexBasis_Default_Type_TEST_0400
      * @tc.name testFlexBasis
      * @tc.desc row1、row2 and row3 do not set  flexBasis, the width of column1 is  the original width
      */
-    it('SUB_ACE_flexBasis_Type_TEST_0400',  Level.LEVEL0, async (done: Function) => {
-      console.info('[SUB_ACE_flexBasis_Type_TEST_0400] START');
+    it('SUB_ACE_flexBasis_Type_Default_TEST_0400',  Level.LEVEL0, async (done: Function) => {
+      console.info('[SUB_ACE_flexBasis_Default_Type_TEST_0400] START');
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
@@ -255,7 +255,7 @@ export default function Row_flexBasis_Default() {
         .assertTrue();
       expect(Math.abs((Math.round(Row_flexBasis_Default_023.right - Row_flexBasis_Default_023.left)) - (Math.round(vp2px(100)))) <= 1)
         .assertTrue();
-      console.info('[SUB_ACE_flexBasis_Type_TEST_0400] END');
+      console.info('[SUB_ACE_flexBasis_Default_Type_TEST_0400] END');
       done();
     });
   })

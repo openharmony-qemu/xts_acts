@@ -47,7 +47,7 @@ export default function Grid_Row_Breakpoints_Quantity() {
     });
 
     /**
-     * @tc.number SUB_ACE_GRIDROWBREAKPOTINS_0100
+     * @tc.number SUB_ACE_GridRowBreakpoints_Quantity_0100
      * @tc.name testBreakpoints
      * @tc.desc The number of breakpoint ranges cannot exceed the number of values that can be taken
      */

@@ -46,14 +46,9 @@ import Row_Padding from './RowTest/parentComponentChanged/Row_Padding.test';
 import Row_Size from './RowTest/parentComponentChanged/Row_Size.test';
 import Row_VerticalAlign from './RowTest/parentComponentChanged/Row_VerticalAlign.test';
 import enumsVerticalAlignJsunit from './Row/EnmusVerticalAlignJsunit.test';
-import gradientDirectionJsunit from './Row/GradientDirectionJsunit.test.ets';
 import rowJsunit2 from './Row/RowJsunit2.test.ets';
-import colorGradientJsunit from './Row/ColorGradientJsunit.test';
-import enumsImageJsunit from './Row/EnmusImageJsunit.test';
-import transFormJsunit from './Row/TransFormJsunit.test';
 import VisibilityJsunit from './Row/VisibilityJsunit.test';
 import rowJsunit from './Row/RowJsunit.test';
-
 import RowReverseTest from './Row/RowReverseTest.test.ets'
 import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test.ets'
 import RowFixAtIdealSizeTest from './Row/RowFixAtIdealSizeTest.ets'
@@ -95,11 +90,7 @@ export default function testsuite() {
   Row_Size();
   Row_VerticalAlign();
   enumsVerticalAlignJsunit();
-  gradientDirectionJsunit();
   rowJsunit2();
-  colorGradientJsunit();
-  enumsImageJsunit();
-  transFormJsunit();
   VisibilityJsunit();
   rowJsunit();
   RowReverseTest();

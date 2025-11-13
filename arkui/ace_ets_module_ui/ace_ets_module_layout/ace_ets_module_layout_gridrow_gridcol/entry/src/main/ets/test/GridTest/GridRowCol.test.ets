@@ -117,7 +117,7 @@ export default function GridRowCol() {
     });
 
     /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_011
+       * @tc.number: GridRowCol_004
        * @tc.name  : GridRowCol_004
        * @tc.desc  : set columnsTemplate to 'repeat(auto-fit,-1)'
        * @tc.level : Level 3
@@ -138,7 +138,7 @@ export default function GridRowCol() {
     });
 
    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_011
+      * @tc.number: GridRowCol_005
       * @tc.name  : GridRowCol_005
       * @tc.desc  : set columnsTemplate to '1fr 1fr 1fr'
       * @tc.level : Level 3

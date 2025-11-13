@@ -464,11 +464,11 @@ export default function stackSizeChange() {
 
     /**
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1300
-     * @tc.name testStackEqualAlignContentBottomStart
+     * @tc.name testStackEqualAlignContentStart
      * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'START'.
      */
-    it('testStackEqualAlignContentBottomStart',  Level.LEVEL0, async (done: Function) => {
-      console.info('new testStackEqualAlignContentBottomStart START');
+    it('testStackEqualAlignContentStart',  Level.LEVEL0, async (done: Function) => {
+      console.info('new testStackEqualAlignContentStart START');
       globalThis.value.message.notify({
         name: 'alignContent', value: Alignment.Start
       });
@@ -491,7 +491,7 @@ export default function stackSizeChange() {
         .assertTrue();
       expect(JSON.parse(strJson).$type).assertEqual('Stack')
       expect(JSON.parse(strJson).$attrs.alignContent).assertEqual('Alignment.Start')
-      console.info('new testStackEqualAlignContentBottomStart END');
+      console.info('new testStackEqualAlignContentStart END');
       done();
     });
 

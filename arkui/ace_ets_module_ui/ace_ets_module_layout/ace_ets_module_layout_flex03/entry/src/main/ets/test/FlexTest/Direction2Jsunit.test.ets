@@ -14,7 +14,7 @@
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import Utils from '../Utils';
+import Utils from '../../MainAbility/common/Utils';
 import events_emitter from '@ohos.events.emitter';
 
 export default function direction2Jsunit(){
@@ -44,6 +44,14 @@ export default function direction2Jsunit(){
       console.info("direction after each called");
     });
 
+    /**
+     * @tc.number direction2Test_0200
+     * @tc.name   direction2Test_0200
+     * @tc.desc   test Direction
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('direction2Test_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('direction2Test_0200 START');
       try {
@@ -70,6 +78,14 @@ export default function direction2Jsunit(){
       done();
     });
 
+    /**
+     * @tc.number direction2Test_0100
+     * @tc.name   direction2Test_0100
+     * @tc.desc   test Direction
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
    it('direction2Test_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('direction2Test_0100 START');
       let strJson = getInspectorByKey('direction_2');
@@ -80,6 +96,14 @@ export default function direction2Jsunit(){
       done();
     });
 
+    /**
+     * @tc.number direction2Test_0300
+     * @tc.name   direction2Test_0300
+     * @tc.desc   test Direction
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('direction2Test_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('direction2Test_0300 START');
       try {

@@ -186,7 +186,7 @@ export default function Grid_Row_Gutter() {
     });
 
     /**
-     * @tc.number SUB_ACE_Grid_Row_Gutter_TEST_0300
+     * @tc.number SUB_ACE_Grid_Row_Gutter_TEST_0400
      * @tc.name testGridColOffset
      * @tc.desc GridCol set offset to 0
      */

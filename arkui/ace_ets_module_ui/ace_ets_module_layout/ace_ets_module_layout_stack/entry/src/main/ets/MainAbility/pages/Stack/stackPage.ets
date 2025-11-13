@@ -31,7 +31,7 @@ struct StackAlignContent {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
 
-      Text("stack-AlignContent")
+      Text('stack-AlignContent')
         .width(100)
         .height(70)
         .fontSize(20)
@@ -43,7 +43,7 @@ struct StackAlignContent {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("alignContentText")
+        .key('alignContentText')
 
 
       Stack({ alignContent: Alignment.Bottom }) {
@@ -58,10 +58,10 @@ struct StackAlignContent {
           .height('60%')
           .backgroundColor(0xc1cbac)
           .align(Alignment.Top)
-      }.key("Stack")
+      }.key('Stack')
       .width('100%').height(150).margin({ top: 5 })
 
-    }.width("100%").height("100%")
+    }.width('100%').height('100%')
   }
 }
 

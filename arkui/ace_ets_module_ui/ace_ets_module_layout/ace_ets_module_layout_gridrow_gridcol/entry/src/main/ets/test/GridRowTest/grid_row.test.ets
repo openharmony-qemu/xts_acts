@@ -44,7 +44,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
       console.info("grid_rowOnBreakpointChange after each called");
     });
 
-    /*
+    /**
      * @tc.number    SUB_ACE_BASIC_ETS_API_001
      * @tc.name      testgrid_rowOnBreakpointChange001
      * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest001
@@ -61,7 +61,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
 
     });
 
-    /*
+    /**
      * @tc.number    SUB_ACE_BASIC_ETS_API_002
      * @tc.name      testgrid_rowOnBreakpointChange002
      * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest002
@@ -78,7 +78,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
 
     });
 
-    /*
+    /**
      * @tc.number    SUB_ACE_BASIC_ETS_API_003
      * @tc.name      testgrid_rowOnBreakpointChange003
      * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest003

@@ -20,7 +20,7 @@ import CommonFunc from "../../../MainAbility/common/Common";
 import { MessageManager, Callback } from '../../../MainAbility/common/MessageManager';
 
 export default function ColumnSetFlexShinkNone_SubChange() {
-  describe('ColumnSetFlexShinkTest', () => {
+  describe('ColumnSetFlexShinkNone_SubChange', () => {
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Column/subcomponentChanged/ColumnSetFlexShinkNone_SubChange',

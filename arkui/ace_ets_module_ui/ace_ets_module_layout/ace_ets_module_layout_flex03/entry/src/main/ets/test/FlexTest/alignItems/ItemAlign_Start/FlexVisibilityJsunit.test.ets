@@ -48,7 +48,7 @@ export default function flexVisibility_StartJsunit() {
     });
 
     /**
-     * @tc.number SUB_ACE_FLEXALIGNITEMS_START_1100
+     * @tc.number testFlexItemAlignStartSubSetVisibilityNone
      * @tc.name testFlexItemAlignStartSubSetVisibilityNone
      * @tc.desc aceFlexAlignItemTest
      */

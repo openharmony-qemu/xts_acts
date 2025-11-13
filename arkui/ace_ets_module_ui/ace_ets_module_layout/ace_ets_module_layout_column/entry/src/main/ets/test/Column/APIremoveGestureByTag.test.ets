@@ -44,7 +44,7 @@ export default function APIremoveGestureByTag() {
     });
 
     /**
-     * @tc.number    api
+     * @tc.number    APIremoveGestureByTag_0100
      * @tc.name      APIremoveGestureByTag_0100
      * @tc.desc      api
      * @tc.level:    Level 2

@@ -21,7 +21,7 @@ import GlobalContext from '../../../MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../MainAbility/common/MessageManager';
 
 export default function ColumnSetOffset_SubChange() {
-  describe('ColumnSetOffsetTest', () => {
+  describe('ColumnSetOffset_SubChange', () => {
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Column/subcomponentChanged/ColumnSetOffset_SubChange',

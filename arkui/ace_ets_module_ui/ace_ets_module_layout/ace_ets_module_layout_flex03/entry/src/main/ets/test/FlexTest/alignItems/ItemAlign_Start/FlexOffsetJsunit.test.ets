@@ -45,7 +45,7 @@ export default function flexOffset_StartJsunit() {
     });
 
     /**
-     * @tc.number SUB_ACE_FLEXALIGNITEMS_START_1100
+     * @tc.number testFlexItemAlignStartSetOffset
      * @tc.name testFlexItemAlignStartSetOffset
      * @tc.desc First subcomponent set offset attribute.
      */

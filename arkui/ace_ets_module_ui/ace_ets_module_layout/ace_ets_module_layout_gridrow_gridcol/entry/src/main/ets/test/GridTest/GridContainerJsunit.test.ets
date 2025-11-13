@@ -130,6 +130,8 @@ export default function gridContainerJsunit() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       console.log("gridContainer obj.$attrs.sizeType:" + JSON.stringify(obj.$attrs.sizeType)); //undefinde
+      expect(obj.$type).assertEqual('GridContainer');
+      expect(obj.$attrs.alignItems).assertEqual('HorizontalAlign.End');
       console.info('new GridContainer4  END');
       done();
     });

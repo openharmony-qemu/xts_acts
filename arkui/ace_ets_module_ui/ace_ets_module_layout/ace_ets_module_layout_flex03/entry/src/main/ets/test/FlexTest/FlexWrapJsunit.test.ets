@@ -15,7 +15,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import Utils from '../Utils';
+import Utils from '../../MainAbility/common/Utils';
 
 export default function flexWrapJsunit() {
   describe('flexWrapJsunit', () => {
@@ -44,6 +44,14 @@ export default function flexWrapJsunit() {
       console.info("flexWrap after each called");
     });
 
+    /**
+     * @tc.number flexWrap_0100
+     * @tc.name   flexWrap_0100
+     * @tc.desc   test flex width
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('flexWrap_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('flexWrap_0100 START');
       let strJson = getInspectorByKey('WrapReverse');
@@ -56,6 +64,14 @@ export default function flexWrapJsunit() {
       done();
     });
 
+    /**
+     * @tc.number flexWrap_0200
+     * @tc.name   flexWrap_0200
+     * @tc.desc   test flex height
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('flexWrap_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('flexWrap_0200 START');
       let strJson = getInspectorByKey('WrapReverse');
@@ -68,6 +84,14 @@ export default function flexWrapJsunit() {
       done();
     });
 
+    /**
+     * @tc.number flexWrap_0300
+     * @tc.name   flexWrap_0300
+     * @tc.desc   test flex width and height
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('flexWrap_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('flexWrap_0300 START');
       try {

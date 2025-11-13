@@ -21,7 +21,7 @@ import GlobalContext from '../../../MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../MainAbility/common/MessageManager';
 
 export default function ColumnSetDisplayPriority_SubChange() {
-  describe('ColumnSetDisplayPriorityTest', () => {
+  describe('ColumnSetDisplayPriority_SubChange', () => {
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Column/subcomponentChanged/ColumnSetDisplayPriority_SubChange',

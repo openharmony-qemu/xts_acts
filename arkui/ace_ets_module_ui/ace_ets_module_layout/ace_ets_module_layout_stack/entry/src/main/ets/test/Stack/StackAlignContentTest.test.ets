@@ -15,7 +15,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@system.router';
 import events_emitter from '@ohos.events.emitter'
-import Utils from '../Utils2';
+import Utils from '../../MainAbility/common/Utils';
 
 interface optionsObj {
   uri: string
