@@ -17,7 +17,7 @@ import notification from '@ohos.notification';
 
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY,MatchPattern,
   DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium';
 import { logGenerator, exitGenerator, sleep, exitSpecialGenerator } from '../common/utils';
 
 export default function ActsNotificationRequestTest() {
@@ -37,6 +37,7 @@ export default function ActsNotificationRequestTest() {
         notification.requestEnableNotification(async (err) => {
           log(`come in requestEnableNotification`);
           if (err.code) {
+            expect(false).assertTrue()
             exit(`requestEnableNotification err: ${err.code}`);
             return;
           }
@@ -54,6 +55,7 @@ export default function ActsNotificationRequestTest() {
           await sleep(1500);
           await button.click();
         } else {
+          expect(false).assertTrue()
           exit('null button');
         }
       };

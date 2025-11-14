@@ -15,7 +15,7 @@
 
 import { describe, it, expect, TestType, Size, Level, afterEach } from '../../../hypium/index';
 import hilog from '@ohos.hilog';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import formProvider from '@ohos.app.form.formProvider';
 import formBindingData from '@ohos.app.form.formBindingData';
 import formHost from '@ohos.app.form.formHost';
@@ -35,7 +35,7 @@ export default function formProviderTest() {
     let editAbilityName = 'EntryFormEditAbility'
     let moduleName = 'entry';
     let widgetName = 'widget';
-    let wantParams: Record<string, Object> = {
+    let wantParams: Record<string, RecordData> = {
       'ohos.extra.param.key.form_dimension': formInfo.FormDimension.Dimension_2_2,
       'ohos.extra.param.key.form_name': 'widget',
       'ohos.extra.param.key.module_name': 'entry',
@@ -619,7 +619,7 @@ export default function formProviderTest() {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest001 start');
 
       try {
-        let wantParams: Record<string, Object> = {
+        let wantParams: Record<string, RecordData> = {
           "ohos.extra.param.key.form_dimension": 2,
           "ohos.extra.param.key.form_name": "widget",
           "ohos.extra.param.key.module_name": "entry",
@@ -655,7 +655,7 @@ export default function formProviderTest() {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest002 start');
 
       try {
-        let wantParams: Record<string, Object> = {
+        let wantParams: Record<string, RecordData> = {
           "ohos.extra.param.key.form_dimension": 2,
           "ohos.extra.param.key.form_name": "widget",
           "ohos.extra.param.key.module_name": "entry",
@@ -697,7 +697,7 @@ export default function formProviderTest() {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest003 start');
 
       try {
-        let wantParams: Record<string, Object> = {
+        let wantParams: Record<string, RecordData> = {
           "ohos.extra.param.key.form_dimension": 2,
           "ohos.extra.param.key.form_name": "widget",
           "ohos.extra.param.key.module_name": "entry",
@@ -732,7 +732,7 @@ export default function formProviderTest() {
       hilog.info(DOMAIN, TAG, 'RequestPublishFormTest004 start');
 
       try {
-        let wantParams: Record<string, Object> = {
+        let wantParams: Record<string, RecordData> = {
           "ohos.extra.param.key.form_dimension": 2,
           "ohos.extra.param.key.form_name": "widget",
           "ohos.extra.param.key.module_name": "entry",

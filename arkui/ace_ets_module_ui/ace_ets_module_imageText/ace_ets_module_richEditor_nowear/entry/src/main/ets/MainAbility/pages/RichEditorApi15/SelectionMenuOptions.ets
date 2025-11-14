@@ -27,7 +27,6 @@ struct SelectionMenuOptionsDemo {
 
   build() {
     Column() {
-
       RichEditor(this.optionsR)
         .id('richEditor')
         .onReady(() => {

@@ -29,6 +29,12 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api20:ActsAceEtsModuleImageTextApi20Test",
       "ace_ets_module_imageText_api21:ActsAceEtsModuleImageTextApi21Test",
       "ace_ets_module_imageText_api22:ActsAceEtsModuleImageTextApi22Test",
+      "ace_ets_module_imageText_common:ActsAceEtsModuleImageTextCommonTest",
+      "ace_ets_module_imageText_display:ActsAceEtsModuleImageTextDisplayTest",
+      "ace_ets_module_imageText_edit:ActsAceEtsModuleImageTextEditTest",
+      "ace_ets_module_imageText_image:ActsAceEtsModuleImageTextImageTest",
+      "ace_ets_module_imageText_styledString:ActsAceEtsModuleImageTextStyledStringTest",
+      "ace_ets_module_imageText_text:ActsAceEtsModuleImageTextTextTest",
       "ace_ets_module_richEditor:ActsAceEtsModuleRichEditorTest",
     ]
   } else {
@@ -46,6 +52,10 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api20:ActsAceEtsModuleImageTextApi20Test",
       "ace_ets_module_imageText_api21:ActsAceEtsModuleImageTextApi21Test",
       "ace_ets_module_imageText_api22:ActsAceEtsModuleImageTextApi22Test",
+      "ace_ets_module_imageText_common:ActsAceEtsModuleImageTextCommonTest",
+      "ace_ets_module_imageText_display:ActsAceEtsModuleImageTextDisplayTest",
+      "ace_ets_module_imageText_edit:ActsAceEtsModuleImageTextEditTest",
+      "ace_ets_module_imageText_image:ActsAceEtsModuleImageTextImageTest",
       "ace_ets_module_imageText_nowear_api11:ActsAceEtsModuleImageTextNowearApi11Test",
       "ace_ets_module_imageText_nowear_api12:ActsAceEtsModuleImageTextNowearApi12Test",
       "ace_ets_module_imageText_nowear_api13:ActsAceEtsModuleImageTextNowearApi13Test",
@@ -53,8 +63,10 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_nowear_api16:ActsAceEtsModuleImageTextNowearApi16Test",
       "ace_ets_module_imageText_nowear_api18:ActsAceEtsModuleImageTextNowearApi18Test",
       "ace_ets_module_imageText_nowear_api20:ActsAceEtsModuleImageTextNowearApi20Test",
+      "ace_ets_module_imageText_styledString:ActsAceEtsModuleImageTextStyledStringTest",
+      "ace_ets_module_imageText_text:ActsAceEtsModuleImageTextTextTest",
       "ace_ets_module_richEditor:ActsAceEtsModuleRichEditorTest",
-      "ace_ets_module_richEditor_nowear:ActsAceEtsModuleRichEditorNowearTest"
+      "ace_ets_module_richEditor_nowear:ActsAceEtsModuleRichEditorNowearTest",
     ]
   }
 }

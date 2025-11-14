@@ -32,7 +32,7 @@ export default class TestAbility extends Ability {
             }
             console.info('Succeeded in loading the content. Data: ' + JSON.stringify(data))
         });
-
+        AppStorage.setOrCreate('windowStage',windowStage);
         globalThis.abilityContext = this.context;
     }
 

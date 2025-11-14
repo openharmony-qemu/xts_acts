@@ -18,15 +18,40 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from '@ohos.app.ability.contextConstant';
+import { CompletionHandlerForAbilityStartCallback, AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext;
+let g_code: number = 0;
+
+class AbilityStartCallbackExt implements common.AbilityStartCallback {
+  onError(code: int, name: string, message: string): void {
+    console.log(`startAbilityByType Error:` + "code:" + code + "name:" + name + "message:" + message);
+    g_code = code;
+  }
+
+  onResult?: (abilityResult: common.AbilityResult) => void = (parameter: common.AbilityResult) => {
+    console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
+  }
+
+  completionHandler?: CompletionHandlerForAbilityStartCallback = {
+    onRequestSuccess: (name: string): void => {
+      console.log(`CompletionHandlerForAbilityStartCallback onRequestSuccess:` + name);
+    },
+
+    onRequestFailure: (name: string, failureCode: AbilityStartFailureCode, failureMessage: string): void => {
+      console.log(`CompletionHandlerForAbilityStartCallback onRequestFailure:` + name);
+      console.log(`CompletionHandlerForAbilityStartCallback failureCode:` + failureCode + `failureMessage:` + failureMessage);
+    }
+  }
+
+}
 
 export default function UiAbilityContextStartAbilityStatic() {
   describe("ActsStartAbilityErrorTestStatic", (): void => {
@@ -55,7 +80,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         'type': 'FD',
         'value': -1
       }
-      let parameters: Record<String,Object> = {
+      let parameters: Record<String,RecordData> = {
         'keyFd': Fd
       }
       let want: Want = {
@@ -176,7 +201,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         'type': 'FD',
         'value': -1
       }
-      let parameters: Record<String,Object> = {
+      let parameters: Record<String,RecordData> = {
         'keyFd': Fd
       }
       let want: Want = {
@@ -257,7 +282,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         'type': 'FD',
         'value': -1
       }
-      let parameters: Record<String,Object> = {
+      let parameters: Record<String,RecordData> = {
         'keyFd': Fd
       }
       let want: Want = {
@@ -655,6 +680,73 @@ export default function UiAbilityContextStartAbilityStatic() {
         });
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /*
+     * @tc.number : ACTS_UIExtension_StartAbilityByTypeStatic001
+     * @tc.name   : ACTS_UIExtension_StartAbilityByTypeStatic001
+     * @tc.desc   : Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 3
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic001 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context.startAbilityByType("shareerror", wantParam, abilityStartCallback, ((err: BusinessError<void> | null): void => {
+          if (err != null && err?.code != 0) {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType001 err, err:" + JSON.stringify(err));
+            return;
+          } else {
+            hilog.info(0x0000, tag, TAG + "startAbilityByType001 success:");
+          }
+        }))
+        await Utils.msSleep(1000);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error: BusinessError) {
+        hilog.info(domain, tag, `startAbilityByType001 fail: ` + JSON.stringify(Error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /*
+     * @tc.number : ACTS_UIExtension_StartAbilityByTypeStatic002
+     * @tc.name   : ACTS_UIExtension_StartAbilityByTypeStatic002
+     * @tc.desc   : Call UIAbilityContext startAbilityByType failed.(callback), Expect: 16000050
+     * @tc.type   : Function
+     * @tc.size   : MediumTest
+     * @tc.level  : 3
+     */
+    it('ACTS_UIExtension_StartAbilityByTypeStatic002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG = 'ACTS_UIExtension_StartAbilityByTypeStatic002 == ';
+      hilog.info(0x0000, tag, TAG + "begin");
+      try {
+        let abilityStartCallback: AbilityStartCallbackExt = new AbilityStartCallbackExt();
+        let wantParam: Record<String,RecordData> = {
+          "sceneType": 1,
+          'time': '2023-10-23 20:45'
+        };
+        context.startAbilityByType("shareerror", wantParam, abilityStartCallback).then(() => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType002 success");
+        }).catch((error: BusinessError): void => {
+          hilog.info(0x0000, tag, TAG + "startAbilityByType002 fail, err:" + JSON.stringify(error));
+        })
+        await Utils.msSleep(1000);
+        expect(g_code).assertEqual(16000050);
+        done();
+      } catch (Error: BusinessError) {
+        hilog.info(domain, tag, `startAbilityByType002 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();
       }
