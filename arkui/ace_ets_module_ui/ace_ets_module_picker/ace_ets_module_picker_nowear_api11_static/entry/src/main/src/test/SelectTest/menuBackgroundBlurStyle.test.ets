@@ -64,20 +64,21 @@ export default function menuBackgroundBlurStyle() {
         console.info("get menuBackgroundBlurStyle state pages:" + JSON.stringify(pages));
         if (!("menuBackgroundBlurStyle" == pages.name)) {
           console.info("get menuBackgroundBlurStyle pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push menuBackgroundBlurStyle page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push menuBackgroundBlurStyle page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
     
-    /*
+    
+/*
      * @tc.number   menuBackgroundBlurStyle_static_0100
      * @tc.name     menuBackgroundBlurStyle_static_0100
      * @tc.desc     menuBackgroundBlurStyle_static_0100

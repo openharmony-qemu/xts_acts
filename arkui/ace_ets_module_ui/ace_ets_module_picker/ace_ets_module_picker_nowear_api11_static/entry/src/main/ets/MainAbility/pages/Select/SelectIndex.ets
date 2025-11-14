@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import { Hypium } from '../../../../../hypium/index';
@@ -36,6 +36,16 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import testsuite from '../../../../src/test/List.test';
 
+
+interface EventDataContent {
+  font?: Font;
+  fontColor?: int;
+  spaceValue?: number;
+  spaceValueString?: string;
+  arrowPosition?: ArrowPosition;
+  spaceValueResource?: Resource;
+}
+
 @Entry
 @Component
 struct SelectExample {
@@ -45,42 +55,42 @@ struct SelectExample {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: Color = Color.Grey
+  @State fontColor: int = 0xCCCCCC as int
   @State spaceValue: number = 8
   @State spaceValueString: string = '50.00vp'
   @State arrowPosition: ArrowPosition = ArrowPosition.END
   @State spaceValueResource: Resource = $r('app.string.Test_Values')
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  private stateChangCallBack: (eventData:emitter.EventData) => void  = (eventData: emitter.EventData) => {
+    console.info("selectTest stateChangCallBack before:" + JSON.stringify(eventData));
+    if (eventData != null) {
+
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['spaceValue'] != null) {
+        this.spaceValue = data['spaceValue'] as number ;
+        console.info("select page state change called after spaceValue:" + this.spaceValue);
+      }
+      if (data['arrowPosition'] != null) {
+        this.arrowPosition = data['arrowPosition'] as ArrowPosition ;
+        console.info("select page state change called after arrowPosition:" + this.arrowPosition);
+      }
+      if (data['spaceValueString'] != null) {
+        this.spaceValueString = data['spaceValueString'] as string;
+        console.info("select page state change called after spaceValueString:" + this.spaceValueString);
+      }
+      if (data['spaceValueResource'] != null) {
+        this.spaceValueResource = data['spaceValueResource'] as Resource;
+        console.info("select page state change called after spaceValueResource:" + this.spaceValueResource);
+      }
+    }
+  }
+  aboutToAppear() {
+    let stateChangeEvent: emitter.InnerEvent = {
+      eventId: 181,
+      priority: emitter.EventPriority.LOW
+    }
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
+  }
 
   build() {
     Column() {

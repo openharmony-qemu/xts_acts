@@ -13,10 +13,23 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
-import CommonFunc from '../../ets/MainAbility/common/Common';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix,
+  Rect
+} from '@ohos.UiTest';
+import CommonFunc, { RectValue } from '../../ets/MainAbility/common/Common';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -25,12 +38,11 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from './Util.test';
-import Utils  from "../../ets/MainAbility/common/Utils";
+import Utils from "../../ets/MainAbility/common/Utils";
 import accessibility from '@ohos.accessibility';
 import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-// import { vp2px } from '@ohos.arkui.component';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 export default function waterFlowNestedScrollJsunit() {
   describe('waterFlow_NestedScrollTest', () => {
@@ -61,30 +73,28 @@ export default function waterFlowNestedScrollJsunit() {
       }
     });
 
-    
-    // 此用例导致unknow 注释
+
     /*
      * @tc.number   ArkUI_Stage_waterFlowNestedScroll01_static
      * @tc.name     ArkUI_Stage_waterFlowNestedScroll01_static
      * @tc.desc     ArkUI_Stage_waterFlowNestedScroll01_static
      * @tc.level    Level.LEVEL0
      */
-it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] START');
       await Utils.sleep(2000)
-      let uiContext = AppStorage.get<UIContext>('uiContext')
-      let webRect = Utils.getComponentRect('ColumnSize');
+      let webRect: RectValue = CommonFunc.getComponentRect('ColumnSize');
       console.info(`ArkUI_Stage_waterFlowNestedScroll01 get webRect is:` + JSON.stringify(webRect));
-      let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
-      let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
-      let driver = Driver.create();
-      await driver.swipe(Math.round(x).toInt(), Math.round(y + uiContext!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - uiContext!.vp2px(60)).toInt());
+      // let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
+      // let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
+      // let driver = Driver.create();
+      // await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.getFocusedUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.getFocusedUIContext()!.vp2px(60)).toInt());
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] driver.swipe end');
       try {
-        let callBack:(backData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {
+        let callBack: (backData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {
           try {
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 get result is:` + JSON.stringify(backData));
-            expect((backData?.data as ESObject)?.getProperty('ACTION')).assertEqual(true)
+            expect(((backData.data) as Record<String, undefined | null | Object>)?.['ACTION']).assertEqual(true)
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 END`);
           } catch (err) {
             console.info(`ArkUI_Stage_waterFlowNestedScroll01 err:` + JSON.stringify(err));
@@ -99,7 +109,8 @@ it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () =
       } catch (err) {
         console.info(`ArkUI_Stage_waterFlowNestedScroll01 err:` + JSON.stringify(err));
       }
-      // console.info(`ArkUI_Stage_waterFlowNestedScroll01 sendre:` + JSON.stringify(sendEventByKey('waterflowNestedScrollOptionsScrollTestButton', 10, '')));
+      console.info(`ArkUI_Stage_waterFlowNestedScroll01 sendre:` +
+      JSON.stringify(inspector.sendEventByKey('waterflowNestedScrollOptionsScrollTestButton', 10, '')));
     });
   })
 }

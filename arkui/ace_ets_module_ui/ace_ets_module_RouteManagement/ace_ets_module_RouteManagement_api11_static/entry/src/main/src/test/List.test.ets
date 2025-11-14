@@ -13,7 +13,46 @@
  * limitations under the License.
  */
 
+import pushPageInit from './supplementRouterTest/pushPageInit.test'
+import router_back1 from './router10/router_back1.test'
+import router_push1 from './router10/router_push1.test'
+import Router1 from './Router/Router1.test'
+import Router2 from './Router/Router2.test'
+import Router3 from './Router/Router3.test'
+import Router4 from './Router/Router4.test'
 import stageRouterTest from './Router/stageRouter.test'
+
+import aboutToAppearRouterTest from './back_router/init_page.test';
+import aboutToAppearRouterTest2 from './back_router/init_page2.test';
+import goWithParams from './back_router/A_page.test'
+import RouterPushUrlJsunit from './State/RouterPushUrlJsunit.test';
+import RouterWithParamJsunit from './State/RouterWithParamJsunit.test';
+import RouterUrlErrorJsunit from './State/RouterUrlErrorJsunit.test';
+import routerReplaceJsunit from './Router/routerReplaceJsunit.test';
+
+import systemRouterJsunit from './Router/SystemRouterJsunit.test';
+import routerStandardJsunit from './ohosRouterTest/router.test';
+import OhosRouterJsunit from './Router/OhosRouterJsnuit.test';
+import RouterBackAlert from './back_router/RouterBackAlert.test';
+
 export default function testsuite() {
-  stageRouterTest();
+  pushPageInit();
+  router_back1();
+  router_push1();
+  Router1();
+  Router2();
+  Router3();
+  Router4();
+  aboutToAppearRouterTest();
+  aboutToAppearRouterTest2();
+  goWithParams();
+  RouterPushUrlJsunit(); // Failure: 4, Error: 1
+  RouterWithParamJsunit(); // failure:1,3,7
+  RouterUrlErrorJsunit();
+  stageRouterTest();// router调用函数问题:23
+  routerReplaceJsunit();// failure:1
+  systemRouterJsunit()
+  routerStandardJsunit()
+  OhosRouterJsunit();
+  RouterBackAlert();// error:2
 }

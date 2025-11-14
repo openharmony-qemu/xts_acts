@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SelectTest() {
   describe('SelectTest', () => {
     beforeAll(() => {
-
+      console.log('SelectTest start')
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -58,20 +58,21 @@ export default function SelectTest() {
         url: 'MainAbility/pages/Select/Select',
       };
       try {
-        const select = AppStorage.get<Router>("select") as Router
-        select.clear();
+        const select = AppStorage.get<Router>("router") as Router
+        // select.clear();
         let pages: router.RouterState = select.getState();
         console.info("get Select state success " + JSON.stringify(pages));
-        if (!("Select" == pages.name)) {
+        if (!("MainAbility/pages/Select/Select" == pages.name)) {
           console.info("get Select state success " + JSON.stringify(pages.name));
-          
+          // let result = await select.pushUrl(options);
           select.pushUrl(options);
-          
+          // console.info("push Select page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Select page error: " + err);
       }
     });
+
 
     
     /*
@@ -84,7 +85,7 @@ it('ArkUX_Select_Visual_static_0030', Level.LEVEL1, async (done: () => void): Pr
       console.info('ArkUX_Select_Visual_static_0030 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_static_0030');
+          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0030');
           console.info('ArkUX_Select_Visual_static_0030 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Select_Visual_static_0030 obj is: " + JSON.stringify(obj));
@@ -101,6 +102,7 @@ it('ArkUX_Select_Visual_static_0030', Level.LEVEL1, async (done: () => void): Pr
       }, 500);
     });
 
+
     
     /*
      * @tc.number   ArkUX_Select_Visual_static_0040
@@ -112,7 +114,7 @@ it('ArkUX_Select_Visual_static_0040', Level.LEVEL1, async (done: () => void): Pr
       console.info('ArkUX_Select_Visual_static_0040 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_static_0040');
+          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0040');
           console.info('ArkUX_Select_Visual_static_0040 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Select_Visual_static_0040 obj is: " + JSON.stringify(obj));
@@ -129,6 +131,7 @@ it('ArkUX_Select_Visual_static_0040', Level.LEVEL1, async (done: () => void): Pr
       }, 500);
     });
 
+
     
     /*
      * @tc.number   ArkUX_Select_Visual_static_0050
@@ -140,7 +143,7 @@ it('ArkUX_Select_Visual_static_0050', Level.LEVEL1, async (done: () => void): Pr
       console.info('ArkUX_Select_Visual_static_0050 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_static_0050');
+          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0050');
           console.info('ArkUX_Select_Visual_static_0050 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Select_Visual_static_0050 obj is: " + JSON.stringify(obj));
@@ -157,6 +160,7 @@ it('ArkUX_Select_Visual_static_0050', Level.LEVEL1, async (done: () => void): Pr
       }, 500);
     });
 
+
     
     /*
      * @tc.number   ArkUX_Select_Visual_static_0060
@@ -168,7 +172,7 @@ it('ArkUX_Select_Visual_static_0060', Level.LEVEL1, async (done: () => void): Pr
       console.info('ArkUX_Select_Visual_static_0060 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_static_0060');
+          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0060');
           console.info('ArkUX_Select_Visual_static_0060 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Select_Visual_static_0060 obj is: " + JSON.stringify(obj));
@@ -185,6 +189,7 @@ it('ArkUX_Select_Visual_static_0060', Level.LEVEL1, async (done: () => void): Pr
       }, 500);
     });
 
+
     
     /*
      * @tc.number   ArkUX_Select_Visual_static_0070
@@ -196,7 +201,7 @@ it('ArkUX_Select_Visual_static_0070', Level.LEVEL1, async (done: () => void): Pr
       console.info('ArkUX_Select_Visual_static_0070 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_static_0070');
+          let strJson = inspector.getInspectorByKey('ArkUX_Select_Visual_0070');
           console.info('ArkUX_Select_Visual_static_0070 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Select_Visual_static_0070 obj is: " + JSON.stringify(obj));

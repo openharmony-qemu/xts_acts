@@ -12,9 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,9 +37,10 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function blurStyleOptions() {
   describe('blurStyleOptions', () => {
@@ -46,136 +58,171 @@ export default function blurStyleOptions() {
       }
       try {
         const blurStyleOptions = AppStorage.get<Router>("router") as Router
-        blurStyleOptions.clear();
-        let pages:router.RouterState = blurStyleOptions.getState();
+        // blurStyleOptions.clear();
+        let pages: router.RouterState = blurStyleOptions.getState();
         console.info("get blurStyleOptions state pages: " + JSON.stringify(pages));
-        if (!("blurStyleOptions" == pages.name)) {
+        if (!("BlurStyleOptions" == pages.name)) {
           console.info("get blurStyleOptions state pages.name: " + JSON.stringify(pages.name));
-          // let result = await blurStyleOptions.pushUrl(options);
           blurStyleOptions.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push blurStyleOptions success: " + JSON.stringify(result));
         }
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
       } catch (err) {
         console.error("push blurStyleOptions page error: " + err);
-        expect().assertFail();
       }
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   MenuStyleOptionsTest_static_0101
      * @tc.name     MenuStyleOptionsTest_static_0101
      * @tc.desc     MenuStyleOptionsTest_static_0101
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('MenuStyleOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('MenuStyleOptionsTest_static_0101 START');
-      const SLEEP_TIME = 2000;
-      await CommonFunc.sleep(SLEEP_TIME);
-      inspector.sendEventByKey('MenuStyleOptions_btn1', 10, '');
-      await CommonFunc.sleep(SLEEP_TIME);
-      console.info('MenuStyleOptionsTest_static_0101 click after');
-      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(SLEEP_TIME);
-      let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree())).getArray('$children')[0].getString('length'));
-      let menu:Object = {} as Object;
-      if (tree && tree === '2') {
-        menu = obj.getArray('$children')[1].getArray('$children')[0];
-      } else {
-        menu = obj.getArray('$children')[0].getArray('$children')[0];
-      }
-      let uniRenderFlag: string = menu.getElement('$attrs').getString('uniRender');
-      console.info('[MenuStyleOptionsTest_static_0101] uniRenderFlag is: ' + uniRenderFlag);
-      if (uniRenderFlag === 'false') {
-        let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('scale'));
-        expect(text).assertEqual('1');
-      } else if (tree && tree === '2') {
-        let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('scale'));
-        expect(text).assertEqual('0.1');
-      } else {
-        let json = JSON.stringify(inspector.getInspectorTree())
-        let chunkSize = 2000;
-        for (let i = 0; i < json.length; i += chunkSize) {
-          console.info(json.slice(i, i + chunkSize));
+    it('MenuStyleOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('MenuStyleOptionsTest_static_0101 START');
+        const SLEEP_TIME = 2000;
+        await CommonFunc.sleep(SLEEP_TIME);
+        inspector.sendEventByKey('MenuStyleOptions_btn1', 10, '');
+        await CommonFunc.sleep(SLEEP_TIME);
+        console.info('MenuStyleOptionsTest_static_0101 click after');
+        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await CommonFunc.sleep(SLEEP_TIME);
+        let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')
+          .length);
+        let menu: Object = {} as Object;
+        if (tree && tree === '2') {
+          menu = obj.getArray('$children')[1].getArray('$children')[0];
+        } else {
+          menu = obj.getArray('$children')[0].getArray('$children')[0];
         }
-        let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[0].getArray('$children')[0].getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('policy'));
-        expect(JSON.parseJsonElement(text)).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-      }
-      inspector.sendEventByKey('MenuStyleOptions_btn1', 10, '');
-      console.info('MenuStyleOptionsTest_static_0101 END');
-      done();
-    });
+        let uniRenderFlag: string = menu.getElement('$attrs').getString('uniRender');
+        console.info('[MenuStyleOptionsTest_static_0101] uniRenderFlag is: ' + uniRenderFlag);
+        if (uniRenderFlag === 'false') {
+          let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[1]
+            .getArray('$children')[0]
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('scale'));
+          expect(text).assertEqual('1');
+        } else if (tree && tree === '2') {
+          let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[1]
+            .getArray('$children')[0]
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('scale'));
+          expect(text).assertEqual('0.1');
+        } else {
+          let json = JSON.stringify(inspector.getInspectorTree())
+          let chunkSize = 2000;
+          for (let i = 0; i < json.length; i += chunkSize) {
+            console.info(json.slice(i, i + chunkSize));
+          }
+          let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[0]
+            .getArray('$children')[0]
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getString('policy'));
+          expect(JSON.parseJsonElement(text)).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+        }
+        inspector.sendEventByKey('MenuStyleOptions_btn1', 10, '');
+        console.info('MenuStyleOptionsTest_static_0101 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   MenuStyleOptionsTest_static_0102
      * @tc.name     MenuStyleOptionsTest_static_0102
      * @tc.desc     MenuStyleOptionsTest_static_0102
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('MenuStyleOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('MenuStyleOptionsTest_static_0102 START');
-      const SLEEP_TIME = 2000;
-      await CommonFunc.sleep(SLEEP_TIME);
-      inspector.sendEventByKey('MenuStyleOptions_btn2', 10, '');
-      await CommonFunc.sleep(SLEEP_TIME);
-      console.info('MenuStyleOptionsTest_static_0102 click after');
-      let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree())).getArray('$children').length);
-      if (tree && tree === '2') {
-        let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('scale'));
-        expect(text).assertEqual('1');
-      } else {
-        let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[0].getArray('$children')[0].getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('scale'));
-        expect(text).assertEqual('1');
-      }
-      await CommonFunc.sleep(SLEEP_TIME);
-      inspector.sendEventByKey('MenuStyleOptions_btn2', 10, '');
-      await CommonFunc.sleep(SLEEP_TIME);
-      console.info('MenuStyleOptionsTest_static_0102 END');
-      done();
-    });
+    it('MenuStyleOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('MenuStyleOptionsTest_static_0102 START');
+        const SLEEP_TIME = 2000;
+        await CommonFunc.sleep(SLEEP_TIME);
+        inspector.sendEventByKey('MenuStyleOptions_btn2', 10, '');
+        await CommonFunc.sleep(SLEEP_TIME);
+        console.info('MenuStyleOptionsTest_static_0102 click after');
+        let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')
+          .length);
+        if (tree && tree === '2') {
+          let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[1]
+            .getArray('$children')[0]
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('scale'));
+          expect(text).assertEqual('1');
+        } else {
+          let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[0]
+            .getArray('$children')[0]
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('scale'));
+          expect(text).assertEqual('1');
+        }
+        await CommonFunc.sleep(SLEEP_TIME);
+        inspector.sendEventByKey('MenuStyleOptions_btn2', 10, '');
+        await CommonFunc.sleep(SLEEP_TIME);
+        console.info('MenuStyleOptionsTest_static_0102 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   MenuStyleOptionsTest_static_0103
      * @tc.name     MenuStyleOptionsTest_static_0103
      * @tc.desc     MenuStyleOptionsTest_static_0103
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-it('MenuStyleOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('MenuStyleOptionsTest_static_0103 START');
-      const SLEEP_TIME = 2000;
-      await CommonFunc.sleep(SLEEP_TIME);
-      inspector.sendEventByKey('MenuStyleOptions_btn3', 10, '');
-      await CommonFunc.sleep(SLEEP_TIME);
-      console.info('MenuStyleOptionsTest_static_0103 click after');
-      let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree())).getArray('$children').length);
-      if (tree && tree === '2') {
-        let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('scale'));
-        expect(text).assertEqual('1');
-      } else {
-        let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[0].getArray('$children')[0].getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('scale'));
-        expect(text).assertEqual('1');
-      }
-      await CommonFunc.sleep(SLEEP_TIME);
-      inspector.sendEventByKey('MenuStyleOptions_btn3', 10, '');
-      await CommonFunc.sleep(SLEEP_TIME);
-      console.info('MenuStyleOptionsTest_static_0103 END');
-      done();
-    });
+    it('MenuStyleOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info('MenuStyleOptionsTest_static_0103 START');
+        const SLEEP_TIME = 2000;
+        await CommonFunc.sleep(SLEEP_TIME);
+        inspector.sendEventByKey('MenuStyleOptions_btn3', 10, '');
+        await CommonFunc.sleep(SLEEP_TIME);
+        console.info('MenuStyleOptionsTest_static_0103 click after');
+        let tree = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray('$children')
+          .length);
+        if (tree && tree === '2') {
+          let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[1]
+            .getArray('$children')[0]
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('scale'));
+          expect(text).assertEqual('1');
+        } else {
+          let text = JSON.stringify(JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[0]
+            .getArray('$children')[0]
+            .getElement('$attrs')
+            .getElement('backgroundBlurStyle')
+            .getElement('options')
+            .getDouble('scale'));
+          expect(text).assertEqual('1');
+        }
+        await CommonFunc.sleep(SLEEP_TIME);
+        inspector.sendEventByKey('MenuStyleOptions_btn3', 10, '');
+        await CommonFunc.sleep(SLEEP_TIME);
+        console.info('MenuStyleOptionsTest_static_0103 END');
+        done();
+      });
   })
 }

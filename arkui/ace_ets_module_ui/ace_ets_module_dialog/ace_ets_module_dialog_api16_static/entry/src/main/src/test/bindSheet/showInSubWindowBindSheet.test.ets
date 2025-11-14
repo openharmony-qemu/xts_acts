@@ -12,9 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,11 +36,12 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
-import  window  from '@ohos.window';
+import window from '@ohos.window';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 
 export default function showInSubWindowBindSheet() {
@@ -50,17 +62,14 @@ export default function showInSubWindowBindSheet() {
       try {
         const showInSubWindowBindSheet = AppStorage.get<Router>("router") as Router
         showInSubWindowBindSheet.clear();
-        let pages:router.RouterState = showInSubWindowBindSheet.getState();
+        let pages: router.RouterState = showInSubWindowBindSheet.getState();
         console.info("get showInSubWindowBindSheet state pages: " + JSON.stringify(pages));
         if (!("showInSubWindowBindSheet" == pages.name)) {
           console.info("get showInSubWindowBindSheet state pages.name: " + JSON.stringify(pages.name));
-          // let result = await showInSubWindowBindSheet.pushUrl(options);
+
           showInSubWindowBindSheet.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push showInSubWindowBindSheet success: " + JSON.stringify(result));
         }
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
       } catch (err) {
         console.error("push showInSubWindowBindSheet page error: " + err);
         expect().assertFail();
@@ -68,261 +77,267 @@ export default function showInSubWindowBindSheet() {
     });
 
 
-
-    
-    
-/*
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0100
      * @tc.name     showInSubWindowBindSheet_static_0100
      * @tc.desc     showInSubWindowBindSheet_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0100 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0100] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(1)
-        let button1 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button1?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0100 END');
-      done();
-    });
+    it('showInSubWindowBindSheet_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0100 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0100] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(1)
+          let button1 = await driver.findComponent(ON.id('closeSheet'));
+          await (button1?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0100 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0200
      * @tc.name     showInSubWindowBindSheet_static_0200
      * @tc.desc     showInSubWindowBindSheet_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0200 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button0 = await driver.findComponent(ON.id('showInSubWindowTrue'));
-        await ( button0?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0200] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(0)
-        let button1 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button1?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0200 END');
-      done();
-    });
+    it('showInSubWindowBindSheet_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0200 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button0 = await driver.findComponent(ON.id('showInSubWindowTrue'));
+          await (button0?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0200] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(0)
+          let button1 = await driver.findComponent(ON.id('closeSheet'));
+          await (button1?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0200 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0300
      * @tc.name     showInSubWindowBindSheet_static_0300
      * @tc.desc     showInSubWindowBindSheet_static_0300
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0300 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button0 = await driver.findComponent(ON.id('showInSubWindowNull'));
-        await ( button0?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0300] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(1)
-        let button1 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button1?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0300 END');
-      done();
-    });
-    
-    
-/*
+    it('showInSubWindowBindSheet_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0300 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button0 = await driver.findComponent(ON.id('showInSubWindowNull'));
+          await (button0?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0300] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(1)
+          let button1 = await driver.findComponent(ON.id('closeSheet'));
+          await (button1?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0300 END');
+        done();
+      });
+
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0400
      * @tc.name     showInSubWindowBindSheet_static_0400
      * @tc.desc     showInSubWindowBindSheet_static_0400
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0400 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button0 = await driver.findComponent(ON.id('showInSubWindowUnd'));
-        await ( button0?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0400] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(1)
-        let button1 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button1?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0400 END');
-      done();
-    });
+    it('showInSubWindowBindSheet_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0400 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button0 = await driver.findComponent(ON.id('showInSubWindowUnd'));
+          await (button0?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0400] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(1)
+          let button1 = await driver.findComponent(ON.id('closeSheet'));
+          await (button1?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0400 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0500
      * @tc.name     showInSubWindowBindSheet_static_0500
      * @tc.desc     showInSubWindowBindSheet_static_0500
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0500 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button0 = await driver.findComponent(ON.id('popup'));
-        await ( button0?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button1 = await driver.findComponent(ON.id('showInSubWindowFalse'));
-        await ( button1?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0500] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(1)
-        let button2 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button2?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0500 END');
-      done();
-    });
+    it('showInSubWindowBindSheet_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0500 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button0 = await driver.findComponent(ON.id('popup'));
+          await (button0?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button1 = await driver.findComponent(ON.id('showInSubWindowFalse'));
+          await (button1?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0500] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(1)
+          let button2 = await driver.findComponent(ON.id('closeSheet'));
+          await (button2?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0500 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0600
      * @tc.name     showInSubWindowBindSheet_static_0600
      * @tc.desc     showInSubWindowBindSheet_static_0600
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0600 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button0 = await driver.findComponent(ON.id('popup'));
-        await ( button0?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button1 = await driver.findComponent(ON.id('showInSubWindowTrue'));
-        await ( button1?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0600] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(0)
-        let button2 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button2?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0600 END');
-      done();
-    });
+    it('showInSubWindowBindSheet_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0600 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button0 = await driver.findComponent(ON.id('popup'));
+          await (button0?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button1 = await driver.findComponent(ON.id('showInSubWindowTrue'));
+          await (button1?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0600] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(0)
+          let button2 = await driver.findComponent(ON.id('closeSheet'));
+          await (button2?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0600 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0700
      * @tc.name     showInSubWindowBindSheet_static_0700
      * @tc.desc     showInSubWindowBindSheet_static_0700
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0700 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button0 = await driver.findComponent(ON.id('popup'));
-        await ( button0?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button1 = await driver.findComponent(ON.id('showInSubWindowNull'));
-        await ( button1?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0700] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(1)
-        let button2 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button2?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0700 END');
-      done();
-    });
+    it('showInSubWindowBindSheet_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0700 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button0 = await driver.findComponent(ON.id('popup'));
+          await (button0?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button1 = await driver.findComponent(ON.id('showInSubWindowNull'));
+          await (button1?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0700] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(1)
+          let button2 = await driver.findComponent(ON.id('closeSheet'));
+          await (button2?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0700 END');
+        done();
+      });
 
-    
-    
-/*
+
+    /*
      * @tc.number   showInSubWindowBindSheet_static_0800
      * @tc.name     showInSubWindowBindSheet_static_0800
      * @tc.desc     showInSubWindowBindSheet_static_0800
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('showInSubWindowBindSheet_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('showInSubWindowBindSheet_static_0800 START');
-      if (AppStorage.get<number>("winLeft")! > 0) {
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let button0 = await driver.findComponent(ON.id('popup'));
-        await ( button0?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button1 = await driver.findComponent(ON.id('showInSubWindowUnd'));
-        await ( button1?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let button = await driver.findComponent(ON.id('openSheet'));
-        await ( button?.click()  as Promise<void> );
-        await CommonFunc.sleep(1000);
-        let windowClassFirst: window.Window | undefined = undefined;
-        windowClassFirst = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
-        let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
-        console.info("[showInSubWindowBindSheet_static_0800] title: " + JSON.stringify(propertiesFirst.type));
-        expect(propertiesFirst.type).assertEqual(1)
-        let button2 = await driver.findComponent(ON.id('closeSheet'));
-        await ( button2?.click()  as Promise<void> );
-      }
-      console.info('showInSubWindowBindSheet_static_0800 END');
-      done();
-    });
+    it('showInSubWindowBindSheet_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('showInSubWindowBindSheet_static_0800 START');
+        if (AppStorage.get<number>("winLeft")! > 0) {
+          let driver = Driver.create()
+          await CommonFunc.sleep(1000);
+          let button0 = await driver.findComponent(ON.id('popup'));
+          await (button0?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button1 = await driver.findComponent(ON.id('showInSubWindowUnd'));
+          await (button1?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let button = await driver.findComponent(ON.id('openSheet'));
+          await (button?.click() as Promise<void>);
+          await CommonFunc.sleep(1000);
+          let windowClassFirst: window.Window | undefined = undefined;
+          windowClassFirst =
+            await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
+          let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+          console.info("[showInSubWindowBindSheet_static_0800] title: " + JSON.stringify(propertiesFirst.type));
+          expect(propertiesFirst.type).assertEqual(1)
+          let button2 = await driver.findComponent(ON.id('closeSheet'));
+          await (button2?.click() as Promise<void>);
+        }
+        console.info('showInSubWindowBindSheet_static_0800 END');
+        done();
+      });
   })
 }

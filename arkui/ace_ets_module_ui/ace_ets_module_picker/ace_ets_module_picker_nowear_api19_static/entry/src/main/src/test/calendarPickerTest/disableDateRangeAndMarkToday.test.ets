@@ -12,9 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
@@ -30,7 +40,7 @@ import inspector from '@ohos.arkui.inspector';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function disableDateRangeAndMarkTodayTest() {
   describe('DisableDateRangeAndMarkToday', () => {
@@ -47,13 +57,15 @@ export default function disableDateRangeAndMarkTodayTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get DisableDateRangeAndMarkToday state pages:' + JSON.stringify(pages));
-        if (!('disableDateRangeAndMarkToday' == pages.name)) {
+        if (!('MainAbility/pages/calendarPicker/disableDateRangeAndMarkToday' == pages.name)) {
           console.info('get DisableDateRangeAndMarkToday pages.name:' + JSON.stringify(pages.name));
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push DisableDateRangeAndMarkToday page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push DisableDateRangeAndMarkToday page error:' + err);
@@ -62,14 +74,13 @@ export default function disableDateRangeAndMarkTodayTest() {
     });
 
 
-    
     /*
      * @tc.number   DisableDateRangeAndMarkToday_static_001
      * @tc.name     DisableDateRangeAndMarkToday_static_001
      * @tc.desc     DisableDateRangeAndMarkToday_static_001
      * @tc.level    Level.LEVEL1
      */
-it('DisableDateRangeAndMarkToday_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('DisableDateRangeAndMarkToday_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DisableDateRangeAndMarkToday_001] START');
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -83,23 +94,26 @@ it('DisableDateRangeAndMarkToday_static_001', Level.LEVEL1, async (done: () => v
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('calendarPicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[DisableDateRangeAndMarkToday_001] attrs:' + JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
-      expect(obj.getElement('$attrs').getString('disabledDateRange')).assertEqual('2025年1月9日星期四,2025年1月10日星期五');
+      console.info('[DisableDateRangeAndMarkToday_001] attrs:' +
+      JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
+      expect(obj.getElement('$attrs').getString('disabledDateRange'))
+        .assertEqual('2025年1月9日星期四,2025年1月10日星期五');
       await Utils.sleep(2000);
-      console.info('[DisableDateRangeAndMarkToday_001] markTodayAttrs2:' + JSON.stringify(obj.getElement('$attrs').getString('markToday')));
+      console.info('[DisableDateRangeAndMarkToday_001] markTodayAttrs2:' +
+      JSON.stringify(obj.getElement('$attrs').getString('markToday')));
       expect(obj.getElement('$attrs').getString('markToday')).assertEqual('true');
       console.info('[DisableDateRangeAndMarkToday_001] END');
       done();
     });
 
-    
+
     /*
      * @tc.number   DisableDateRangeAndMarkToday_static_002
      * @tc.name     DisableDateRangeAndMarkToday_static_002
      * @tc.desc     DisableDateRangeAndMarkToday_static_002
      * @tc.level    Level.LEVEL1
      */
-it('DisableDateRangeAndMarkToday_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('DisableDateRangeAndMarkToday_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DisableDateRangeAndMarkToday_002] START');
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -113,23 +127,25 @@ it('DisableDateRangeAndMarkToday_static_002', Level.LEVEL1, async (done: () => v
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('calendarPicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[DisableDateRangeAndMarkToday_002] attrs:' + JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
+      console.info('[DisableDateRangeAndMarkToday_002] attrs:' +
+      JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
       expect(obj.getElement('$attrs').getString('disabledDateRange')).assertNull;
       await Utils.sleep(2000);
-      console.info('[DisableDateRangeAndMarkToday_002] markTodayAttrs2:' + JSON.stringify(obj.getElement('$attrs').getString('markToday')));
+      console.info('[DisableDateRangeAndMarkToday_002] markTodayAttrs2:' +
+      JSON.stringify(obj.getElement('$attrs').getString('markToday')));
       expect(obj.getElement('$attrs').getString('markToday')).assertEqual('false');
       console.info('[DisableDateRangeAndMarkToday_002] END');
       done();
     });
 
-    
+
     /*
      * @tc.number   DisableDateRangeAndMarkToday_static_003
      * @tc.name     DisableDateRangeAndMarkToday_static_003
      * @tc.desc     DisableDateRangeAndMarkToday_static_003
      * @tc.level    Level.LEVEL1
      */
-it('DisableDateRangeAndMarkToday_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('DisableDateRangeAndMarkToday_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DisableDateRangeAndMarkToday_003] START');
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -143,23 +159,25 @@ it('DisableDateRangeAndMarkToday_static_003', Level.LEVEL1, async (done: () => v
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('calendarPicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[DisableDateRangeAndMarkToday_003] attrs:' + JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
+      console.info('[DisableDateRangeAndMarkToday_003] attrs:' +
+      JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
       expect(obj.getElement('$attrs').getString('disabledDateRange')).assertNull;
       await Utils.sleep(2000);
-      console.info('[DisableDateRangeAndMarkToday_003] markTodayAttrs2:' + JSON.stringify(obj.getElement('$attrs').getString('markToday')));
+      console.info('[DisableDateRangeAndMarkToday_003] markTodayAttrs2:' +
+      JSON.stringify(obj.getElement('$attrs').getString('markToday')));
       expect(obj.getElement('$attrs').getString('markToday')).assertEqual('false');
       console.info('[DisableDateRangeAndMarkToday_003] END');
       done();
     });
 
-    
+
     /*
      * @tc.number   DisableDateRangeAndMarkToday_static_004
      * @tc.name     DisableDateRangeAndMarkToday_static_004
      * @tc.desc     DisableDateRangeAndMarkToday_static_004
      * @tc.level    Level.LEVEL1
      */
-it('DisableDateRangeAndMarkToday_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('DisableDateRangeAndMarkToday_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[DisableDateRangeAndMarkToday_004] START');
       await Utils.sleep(2000);
       let driver = Driver.create();
@@ -173,10 +191,12 @@ it('DisableDateRangeAndMarkToday_static_004', Level.LEVEL1, async (done: () => v
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('calendarPicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[DisableDateRangeAndMarkToday_004] attrs:' + JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
+      console.info('[DisableDateRangeAndMarkToday_004] attrs:' +
+      JSON.stringify(obj.getElement('$attrs').getString('disabledDateRange')));
       expect(obj.getElement('$attrs').getString('disabledDateRange')).assertNull;
       await Utils.sleep(2000);
-      console.info('[DisableDateRangeAndMarkToday_004] markTodayAttrs2:' + JSON.stringify(obj.getElement('$attrs').getString('markToday')));
+      console.info('[DisableDateRangeAndMarkToday_004] markTodayAttrs2:' +
+      JSON.stringify(obj.getElement('$attrs').getString('markToday')));
       expect(obj.getElement('$attrs').getString('markToday')).assertEqual('false');
       console.info('[DisableDateRangeAndMarkToday_004] END');
       done();

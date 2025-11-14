@@ -12,37 +12,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import maxWidth from './PopupTest/Maxwidth.test'
-// import openPopup from './promptActionTest/openPopup.test'
+import maxWidth from './PopupTest/Maxwidth.test'
+import openPopup from './promptActionTest/openPopup.test'
 import updatePopup from './promptActionTest/updatePopup.test'
 import closePopup from './promptActionTest/closePopup.test'
-// import subwindowDialog from './promptActionTest/subwindowDialog.test'
-// import menuitemOnChangeModifierTest from './MenuTest/menuitemOnChangeModifierTest.test'
-// import menuFontsizeModifierTest from './MenuTest/menuFontsizeModifierTest.test'
+import subwindowDialog from './promptActionTest/subwindowDialog.test'
+import menuitemOnChangeModifierTest from './MenuTest/menuitemOnChangeModifierTest.test'
+import menuFontsizeModifierTest from './MenuTest/menuFontsizeModifierTest.test'
 import menuBindMenuModifierTest from './MenuTest/menuBindMenuModifierTest.test'
 import blurStyleOptions from './MenuTest/blurStyleOptions.test'
 import effectOptions from './MenuTest/effectOptions.test'
 import openDialogTransitionTest from './promptActionTest/openDialogTransition.test'
-// import ActionSheetLifeTest from './dialogLifeTest/ActionSheetLife.test'
-// import AlertDialogLifeTest from './dialogLifeTest/AlertDialogLife.test'
+import ActionSheetLifeTest from './dialogLifeTest/ActionSheetLife.test'
+import AlertDialogLifeTest from './dialogLifeTest/AlertDialogLife.test'
 import CustomDialogLifeTest from './dialogLifeTest/CustomDialogLife.test'
 import showInSubWindowBindSheet from './bindSheet/showInSubWindowBindSheet.test'
 import showToastOptions from './promptActionTest/showToastOptions.test'
 export default function testsuite() {
     blurStyleOptions();
     effectOptions();
-    // maxWidth();
-    // openPopup();
+    maxWidth();
+    openPopup();
     updatePopup();
     closePopup();
-    // subwindowDialog();
-    // menuitemOnChangeModifierTest();
-    // menuFontsizeModifierTest();
+    subwindowDialog();
+    menuitemOnChangeModifierTest();
+    menuFontsizeModifierTest();
     menuBindMenuModifierTest();
     openDialogTransitionTest();
-    // ActionSheetLifeTest();
-    // AlertDialogLifeTest();
+    ActionSheetLifeTest();
+    AlertDialogLifeTest();
     CustomDialogLifeTest();
-	showInSubWindowBindSheet()
+    showInSubWindowBindSheet()
     showToastOptions()
 }

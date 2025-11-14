@@ -22,12 +22,12 @@ import {
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,ShadowStyle,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
   Link,
-  PropRef,
+  Prop,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -41,7 +41,6 @@ import { Callback,BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
 import promptAction from '@ohos.promptAction';
 let router1 =new Router()
-let promptAction = new PromptAction()
 
 @Entry
 @Component
@@ -56,7 +55,7 @@ struct showToastOptions {
           .id('md')
           .type(ButtonType.Capsule)
           .onClick(():void => {
-            promptAction.openToast({
+            this.getUIContext().getPromptAction().openToast({
               message: 'Toast Massage',
               duration: 4000,
               backgroundColor: Color.Green,
@@ -75,7 +74,7 @@ struct showToastOptions {
           .type(ButtonType.Capsule)
           .onClick(():void => {
             try {
-              promptAction.closeToast(this.toastId);
+              this.getUIContext().getPromptAction().closeToast(this.toastId);
             } catch (error) {
               let message = (error as BusinessError).message;
               let code = (error as BusinessError).code;
@@ -232,7 +231,7 @@ struct showToastOptions {
               backgroundColor: Color.Green,
               textColor: Color.White,
               backgroundBlurStyle: BlurStyle.Thick,
-              shadow: undefined,
+              // shadow: null,
             });
           } catch (error) {
             let message = (error as BusinessError).message;

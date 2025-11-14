@@ -19,29 +19,67 @@ import {
   Column,
   Component,
   Button,
+  TransitionEdge,
   ClickEvent,
-  Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  Text,
+  FlexDirection,
+  ItemAlign,
+  Divider,
+  $r,
+  TransitionEffect,
+  $$,
+  MenuItem,
+  BlurStyleActivePolicy,
+  AdaptiveColor,
+  ThemeColorMode,
+  MenuElement,
+  Row,
+  AlertDialogParamWithButtons,
+  FlexOptions,
+  ColumnOptions,
+  RowOptions,
+  Flex,
+  Builder,
+  MenuItemOptions,
+  ResourceStr,
+  Menu,
+  BackgroundBlurStyleOptions,
+  BlurStyle,
+  Scroll,
+  FontWeight,
+  TextAlign,
+  ForEach,
+  ListItem,
+  LocalizedBorderRadiuses,
+  $$,
+  SheetOptions,
+  FlexAlign,
+  CustomDialogController,
+  TextInput,
+  CustomDialogControllerOptions,
+  ButtonType,
+  Scroller,
+  Color,
+  Rectangle,
+  ActionSheetOptions,
+  ControlSize,
+  DialogAlignment,
+  TextInputController,
+  Margin,
+  BorderRadiuses
 } from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,
-  Observed,
-  ObjectLink,
-} from '@ohos.arkui.stateManagement'
-import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UIContext';
+import { State, Link, Prop, Observed, ObjectLink, } from '@ohos.arkui.stateManagement'
+import { UIContext, Router, KeyboardAvoidMode, PromptAction } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-import { BuilderNode,FrameNode } from '@ohos.arkui.node';
+import { BuilderNode, FrameNode } from '@ohos.arkui.node';
 import { ImmersiveMode } from '@ohos.promptAction';
-import { LengthMetrics,ComponentContent } from '@ohos.arkui.node';
-import { Callback,BusinessError } from '@ohos.base';
+import { LengthMetrics, ComponentContent } from '@ohos.arkui.node';
+import { Callback, BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
 import promptAction from '@ohos.promptAction';
-let router1 =new Router()
+
+let router1 = new Router()
 let promptAction = new PromptAction()
 
 const TAG: string = 'OpenDialogTest';
@@ -53,52 +91,57 @@ struct Index {
   @State private isEnableTransition: boolean = false;
   @State private isEnableDialogTransition: boolean = false;
   @State private isEnableMaskTransition: boolean = false;
-  private onCancel:()=>void = () => {
+  private onCancel: () => void = () => {
     try {
-      promptAction.closeCustomDialog(this.customDialogComponentId);
-    } catch (error) {
-      let message = (error as BusinessError).message;
-      let code = (error as BusinessError).code;
+      this.getUIContext().getPromptAction().closeCustomDialog(this.customDialogComponentId);
+    } catch (error: Error) {
+      let message = error.message;
+      let code = error.code;
       console.error(TAG, `closeCustomDialog error code is ${code}, message is ${message}`);
     }
   };
-  private onConfirm: ()=>void = () => {
+  private onConfirm: () => void = () => {
     try {
-      promptAction.closeCustomDialog(this.customDialogComponentId);
-    } catch (error) {
-      let message = (error as BusinessError).message;
-      let code = (error as BusinessError).code;
+      this.getUIContext().getPromptAction().closeCustomDialog(this.customDialogComponentId);
+    } catch (error: Error) {
+      let message = error.message;
+      let code = error.code;
       console.error(TAG, `closeCustomDialog error code is ${code}, message is ${message}`);
     }
   };
-  // private openDialog:()=>void = () => {
-  //   promptAction.openCustomDialog({
-  //     builder: () => {
-  //       this.customDialogComponent()
-  //     },
-  //     transition: this.isEnableTransition ? TransitionEffect.move(TransitionEdge.TOP)
-  //       .animation({ duration: 3000 })
-  //       .combine(TransitionEffect.OPACITY) : undefined,
-  //     dialogTransition: this.isEnableDialogTransition ? TransitionEffect.rotate({
-  //       x: 0,
-  //       y: 0,
-  //       z: 1,
-  //       angle: 360
-  //     })
-  //       .animation({ duration: 3000 })
-  //       .combine(TransitionEffect.OPACITY)
-  //       .combine(TransitionEffect.getString('scale')({ x: 0, y: 1.2 })) : undefined,
-  //     maskTransition: this.isEnableMaskTransition ? TransitionEffect.move(TransitionEdge.TOP)
-  //       .animation({ duration: 3000 })
-  //       .combine(TransitionEffect.OPACITY)
-  //       .combine(TransitionEffect.getString('scale')({ x: 0, y: 1.2 })) : undefined
-  //   }).then((dialogId: number) => {
-  //     this.customDialogComponentId = dialogId;
-  //   })
-  //     .catch((error: BusinessError) => {
-  //       console.error(`openCustomDialog error code is ${error.code}, message is ${error.message}`);
-  //     })
-  // };
+  private openDialog: () => void = () => {
+    this.getUIContext()
+      .getPromptAction()
+      .openCustomDialog({
+      builder: () => {
+        this.customDialogComponent()
+      },
+        transition: this.isEnableTransition ? TransitionEffect.move(TransitionEdge.TOP)
+          .animation({ duration: 3000 })
+          .combine(TransitionEffect.OPACITY) : undefined,
+        dialogTransition: this.isEnableDialogTransition ? TransitionEffect.rotate({
+          x: 0,
+          y: 0,
+          z: 1,
+          angle: 360
+        })
+          .animation({ duration: 3000 })
+        .combine(TransitionEffect.OPACITY)
+        // .combine(TransitionEffect.scale({ x: 0, y: 1.2 }))
+          : undefined,
+        maskTransition: this.isEnableMaskTransition ? TransitionEffect.move(TransitionEdge.TOP)
+          .animation({ duration: 3000 })
+          .combine(TransitionEffect.OPACITY)
+        // .combine(TransitionEffect.scale({ x: 0, y: 1.2 }))
+          : undefined
+      } as promptAction.CustomDialogOptions)
+      .then((dialogId: int) => {
+        this.customDialogComponentId = dialogId;
+      })
+      .catch((error: Error) => {
+        console.error(`openCustomDialog error code is ${error.code}, message is ${error.message}`);
+      })
+  };
 
   @Builder
   customDialogComponent(): void {
@@ -109,12 +152,12 @@ struct Index {
       Row({ space: 50 } as RowOptions) {
         Button('确认')
           .id('Confirm')
-          .onClick(():void => {
+          .onClick((): void => {
             this.onConfirm();
           })
         Button('取消')
           .id('Cancel')
-          .onClick(():void => {
+          .onClick((): void => {
             this.onCancel();
           })
       }
@@ -132,28 +175,28 @@ struct Index {
       Button('OpenDialog')
         .width('50%')
         .id('OpenDialog')
-        .onClick(():void => {
-          // this.openDialog();
+        .onClick((): void => {
+          this.openDialog();
         })
 
       Button(this.isEnableTransition ? 'CloseTransition' : 'isEnableTransition')
         .width('50%')
         .id('EnableTransition')
-        .onClick(():void => {
+        .onClick((): void => {
           this.isEnableTransition = !this.isEnableTransition;
         })
 
       Button(this.isEnableDialogTransition ? 'CloseDialogTransition' : 'EnableDialogTransition')
         .width('50%')
         .id('EnableDialogTransition')
-        .onClick(():void => {
+        .onClick((): void => {
           this.isEnableDialogTransition = !this.isEnableDialogTransition;
         })
 
       Button(this.isEnableMaskTransition ? 'CloseMaskTransition' : 'EnableMaskTransition')
         .width('50%')
         .id('EnableMaskTransition')
-        .onClick(():void => {
+        .onClick((): void => {
           this.isEnableMaskTransition = !this.isEnableMaskTransition;
         })
     }

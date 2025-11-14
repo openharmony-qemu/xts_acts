@@ -12,9 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix,
+  Rect
+} from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,7 +37,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from './Util.test';
-import Utils  from "../../ets/MainAbility/common/Utils";
+import Utils from "../../ets/MainAbility/common/Utils";
 import accessibility from '@ohos.accessibility';
 import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
@@ -59,15 +71,14 @@ export default function waterFlowView() {
       }
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0200
      * @tc.name     waterFlowViewJsunit_static_0200
      * @tc.desc     waterFlowViewJsunit_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0200] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -77,15 +88,14 @@ it('waterFlowViewJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0300
      * @tc.name     waterFlowViewJsunit_static_0300
      * @tc.desc     waterFlowViewJsunit_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0300] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -95,15 +105,14 @@ it('waterFlowViewJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0400
      * @tc.name     waterFlowViewJsunit_static_0400
      * @tc.desc     waterFlowViewJsunit_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0400] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -113,15 +122,14 @@ it('waterFlowViewJsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0500
      * @tc.name     waterFlowViewJsunit_static_0500
      * @tc.desc     waterFlowViewJsunit_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0500] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -132,15 +140,14 @@ it('waterFlowViewJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0600
      * @tc.name     waterFlowViewJsunit_static_0600
      * @tc.desc     waterFlowViewJsunit_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0600] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -150,15 +157,14 @@ it('waterFlowViewJsunit_static_0600', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0700
      * @tc.name     waterFlowViewJsunit_static_0700
      * @tc.desc     waterFlowViewJsunit_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0700] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -168,15 +174,14 @@ it('waterFlowViewJsunit_static_0700', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0800
      * @tc.name     waterFlowViewJsunit_static_0800
      * @tc.desc     waterFlowViewJsunit_static_0800
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0800] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -186,33 +191,33 @@ it('waterFlowViewJsunit_static_0800', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-    
+
     /*
      * @tc.number   waterFlowViewJsunit_static_0900
      * @tc.name     waterFlowViewJsunit_static_0900
      * @tc.desc     waterFlowViewJsunit_static_0900
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[waterFlowViewJsunit_0900] START');
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[waterFlowViewJsunit_0900] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      console.info("[waterFlowViewJsunit_0900] ['layoutDirection']: " + JSON.stringify(obj.getElement('$attrs')['layoutDirection']));
+      console.info("[waterFlowViewJsunit_0900] ['layoutDirection']: " +
+      JSON.stringify(obj.getElement('$attrs')['layoutDirection']));
       expect(obj.getElement('$attrs').getString('layoutDirection')).assertEqual("FlexDirection.Column");
       console.info('[waterFlowViewJsunit_0900] END');
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   waterFlowViewJsunit_static_1000
      * @tc.name     waterFlowViewJsunit_static_1000
      * @tc.desc     waterFlowViewJsunit_static_1000
      * @tc.level    Level.LEVEL0
      */
-it('waterFlowViewJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('waterFlowViewJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('waterFlowViewJsunit_1000 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('changeButton'));

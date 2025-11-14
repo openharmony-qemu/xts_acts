@@ -12,42 +12,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,Stack,ColumnOptions,Position,EffectType, CalendarPickerAttribute, AttributeModifier,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-// import { CalendarPickerModifier } from "@ohos.arkui.modifier";
+import { CalendarPickerModifier } from "@ohos.arkui.modifier";
 
-// class CustomModifier extends CalendarPickerModifier {
-//   applyNormalAttribute(instance: CalendarPickerAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.edgeAlign(CalendarAlign.START,{dx: 10, dy: 10})
-//   }
-// }
+class CustomModifier extends CalendarPickerModifier {
+  applyNormalAttribute(instance: CalendarPickerAttribute): void {
+    // super.applyNormalAttribute(instance);
+  }
+
+  onChange1() {
+    console.log('----xxxx-----')
+    this.edgeAlign(CalendarAlign.START,{dx: 10, dy: 10})
+  }
+}
 
 @Entry
 @Component
 struct CalendarPickerExample {
-  // @State customModifier: CustomModifier = new CustomModifier()
-  //   .edgeAlign(CalendarAlign.END, { dx: 10, dy: 15 })
-  //   .textStyle({ color: '#FF182431', font: { size: 8, weight: FontWeight.Lighter } })
+  @State customModifier: CustomModifier = new CustomModifier()
+    .edgeAlign(CalendarAlign.END, { dx: 10, dy: 15 })
+    .textStyle({ color: '#FF182431', font: { size: 8, weight: FontWeight.Lighter } })
   private selectedDate: Date = new Date('2026-02-11')
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        // (this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       CalendarPicker({ selected: this.selectedDate })
         .key('CalendarPickerKey1')
-        // .attributeModifier(this.customModifier as CustomModifier)
+        .attributeModifier(this.customModifier as CustomModifier)
     }
     .width('100%')
     .height('100%')

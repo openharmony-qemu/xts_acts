@@ -22,12 +22,12 @@ import {
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,wrapBuilder,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
   Link,
-  PropRef,
+  Prop,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -40,7 +40,7 @@ import { LengthMetrics,ComponentContent } from '@ohos.arkui.node';
 import { Callback,BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
 import promptAction from '@ohos.promptAction';
-let router1 =new Router()
+let router1 = new Router()
 let promptAction = new PromptAction()
 
 class Params {
@@ -74,8 +74,8 @@ struct Index {
           const promptAction = context.getPromptAction();
           let uniqueId = this.getUniqueId();
           let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
-          let targetId = frameNode?.getFirstChild()?.getUniqueId()!;
-          promptAction.openPopup(contentNode, { id: targetId }, {
+          let targetId = frameNode?.getFirstChild()?.getUniqueId().toInt();
+          promptAction.openPopup(contentNode, { id: targetId! }, {
             radius: 16,
             enableArrow: true
           })

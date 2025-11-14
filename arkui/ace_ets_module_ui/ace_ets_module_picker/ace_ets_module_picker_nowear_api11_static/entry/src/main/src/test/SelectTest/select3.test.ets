@@ -47,10 +47,10 @@ export default function selectOnSelectJsunit() {
         console.info("get select state pages:" + JSON.stringify(pages));
         if (!("select3" == pages.name)) {
           console.info("get select pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push select page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push select page error: " + err);
@@ -61,6 +61,7 @@ export default function selectOnSelectJsunit() {
       await Utils.sleep(1000);
       console.info("selectOnSelect after each called");
     });
+
 
     
     /*
@@ -75,12 +76,13 @@ it('testselectOnSelect_static_0001', Level.LEVEL1, async () => {
       let strJson = inspector.getInspectorByKey('Select');
       console.info("[testselectOnSelect_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Select');
+      expect(obj.getElement('$type').asString()).assertEqual('Select');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected')).assertEqual("2");
       console.info("[testselectOnSelect_static_0001] selected value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected'));
 
     });
+
 
     
     /*
@@ -95,7 +97,7 @@ it('testselectOnSelect_static_0002', Level.LEVEL1, async () => {
       let strJson = inspector.getInspectorByKey('Select');
       console.info("[testselectOnSelect_static_0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Select');
+      expect(obj.getElement('$type').asString()).assertEqual('Select');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('value')).assertEqual("TTT");
       console.info("[testselectOnSelect_static_0002] height value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));

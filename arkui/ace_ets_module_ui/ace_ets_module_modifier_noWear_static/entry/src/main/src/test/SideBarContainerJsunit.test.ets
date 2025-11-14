@@ -12,9 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix,
+  Rect
+} from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,7 +37,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from './Util.test';
-import Utils  from "../../ets/MainAbility/common/Utils";
+import Utils from "../../ets/MainAbility/common/Utils";
 import accessibility from '@ohos.accessibility';
 import Utils from '../../ets/MainAbility/common/Utils'
 import events_emitter from '@ohos.events.emitter';
@@ -57,15 +69,14 @@ export default function sideBarContainerJsunit() {
       }
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   sideBarContainerTest_static_0002
      * @tc.name     sideBarContainerTest_static_0002
      * @tc.desc     sideBarContainerTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0002 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -79,15 +90,14 @@ it('sideBarContainerTest_static_0002', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   sideBarContainerTest_static_0003
      * @tc.name     sideBarContainerTest_static_0003
      * @tc.desc     sideBarContainerTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0003 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -97,15 +107,14 @@ it('sideBarContainerTest_static_0003', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   sideBarContainerTest_static_0004
      * @tc.name     sideBarContainerTest_static_0004
      * @tc.desc     sideBarContainerTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0004 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -115,15 +124,14 @@ it('sideBarContainerTest_static_0004', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   sideBarContainerTest_static_0005
      * @tc.name     sideBarContainerTest_static_0005
      * @tc.desc     sideBarContainerTest_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0005 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -133,15 +141,14 @@ it('sideBarContainerTest_static_0005', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   sideBarContainerTest_static_0006
      * @tc.name     sideBarContainerTest_static_0006
      * @tc.desc     sideBarContainerTest_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0006 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -151,14 +158,14 @@ it('sideBarContainerTest_static_0006', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
+
     /*
      * @tc.number   sideBarContainerTest_0007
      * @tc.name     sideBarContainerTest_0007
      * @tc.desc     sideBarContainerTest_0007
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_static_0007 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -168,15 +175,14 @@ it('sideBarContainerTest_0007', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   sideBarContainerTest_static_0008
      * @tc.name     sideBarContainerTest_static_0008
      * @tc.desc     sideBarContainerTest_static_0008
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0008 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -189,14 +195,14 @@ it('sideBarContainerTest_static_0008', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
+
     /*
      * @tc.number   sideBarContainerTest_static_0009
      * @tc.name     sideBarContainerTest_static_0009
      * @tc.desc     sideBarContainerTest_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0009 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -206,15 +212,14 @@ it('sideBarContainerTest_static_0009', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
-    // modifier接口未交付 注释导致断言失败
+
     /*
      * @tc.number   sideBarContainerTest_static_0010
      * @tc.name     sideBarContainerTest_static_0010
      * @tc.desc     sideBarContainerTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0010 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -224,14 +229,14 @@ it('sideBarContainerTest_static_0010', Level.LEVEL0, async (done: () => void): P
       done();
     });
 
-    
+
     /*
      * @tc.number   sideBarContainerTest_0011
      * @tc.name     sideBarContainerTest_0011
      * @tc.desc     sideBarContainerTest_0011
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_static_0011 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
@@ -241,14 +246,14 @@ it('sideBarContainerTest_0011', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-    
+
     /*
      * @tc.number   sideBarContainerTest_static_0012
      * @tc.name     sideBarContainerTest_static_0012
      * @tc.desc     sideBarContainerTest_static_0012
      * @tc.level    Level.LEVEL0
      */
-it('sideBarContainerTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sideBarContainerTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('sideBarContainerTest_0012 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('changeButton'));

@@ -68,11 +68,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../MainAbility/common/Utils'
 import { WaterFlowModifier } from "@ohos.arkui.modifier";
 import { BusinessError } from '@ohos.base';
-// class CustomModifier extends WaterFlowModifier {
-//   applyNormalAttribute(instance: WaterFlowAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-// }
+class CustomModifier extends WaterFlowModifier {
+  applyNormalAttribute(instance: WaterFlowAttribute): void {
+    // super.applyNormalAttribute(instance);
+  }
+}
 
 export class WaterFlowDataSource {
   dataArray: number[] = []
@@ -87,11 +87,11 @@ export class WaterFlowDataSource {
 struct WaterflowNestedScroll {
   dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   scroller: Scroller = new Scroller()
-  // @State customModifier: WaterFlowModifier = new CustomModifier()
-  //   .nestedScroll({
-  //     scrollForward: NestedScrollMode.PARALLEL,
-  //     scrollBackward: NestedScrollMode.PARALLEL,
-  //   })
+  @State customModifier: WaterFlowModifier = new CustomModifier()
+    .nestedScroll({
+      scrollForward: NestedScrollMode.PARALLEL,
+      scrollBackward: NestedScrollMode.PARALLEL,
+    })
   @State selfScrollTime: number = 0
   @State parentScrollTime: number = 0
 
@@ -99,31 +99,31 @@ struct WaterflowNestedScroll {
     Column() {
       Button("NestedScrollOptionsScroll click")
         .key('waterflowNestedScrollOptionsScrollTestButton')
-        // .onClick((e:ClickEvent) => {
-        //   console.info("WaterFlow NestedScrollOptionsScroll  onClick start ");
-        //   try {
-        //     try {
-        //       let backData: events_emitter.EventData = {
-        //         data: {
-        //           "ACTION": this.parentScrollTime > 0 && this.selfScrollTime > 0,
-        //           "parentScrollTime": this.parentScrollTime,
-        //           "selfScrollTime": this.selfScrollTime
-        //         }
-        //       }
-        //       let backEvent: events_emitter.InnerEvent = {
-        //         eventId: 77003,
-        //         priority: events_emitter.EventPriority.LOW
-        //       }
-        //       console.info("WaterFlow NestedScrollOptionsScroll start to emit action state");
-        //       events_emitter.emit(backEvent, backData);
-        //     } catch (err) {
-        //       console.info("WaterFlow NestedScrollOptionsScroll emit action state err: " + JSON.stringify(err));
-        //     }
-        //   } catch (error) {
-        //     console.error(`WaterFlow NestedScrollOptionsScroll ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
-        //   }
-        //   console.info("WaterFlow NestedScrollOptionsScroll  onClick end ");
-        // })
+        .onClick((e:ClickEvent) => {
+          console.info("WaterFlow NestedScrollOptionsScroll  onClick start ");
+          try {
+            try {
+              let backData: events_emitter.EventData = {
+                data: {
+                  "ACTION": this.parentScrollTime > 0 && this.selfScrollTime > 0,
+                  "parentScrollTime": this.parentScrollTime,
+                  "selfScrollTime": this.selfScrollTime
+                } as Record<String,undefined|null|Object>
+              }
+              let backEvent: events_emitter.InnerEvent = {
+                eventId: 77003,
+                priority: events_emitter.EventPriority.LOW
+              }
+              console.info("WaterFlow NestedScrollOptionsScroll start to emit action state");
+              events_emitter.emit(backEvent, backData);
+            } catch (err) {
+              console.info("WaterFlow NestedScrollOptionsScroll emit action state err: " + JSON.stringify(err));
+            }
+          } catch (error) {
+            console.error(`WaterFlow NestedScrollOptionsScroll ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+          }
+          console.info("WaterFlow NestedScrollOptionsScroll  onClick end ");
+        })
 
       Scroll(this.scroller) {
         Column() {
@@ -136,17 +136,17 @@ struct WaterflowNestedScroll {
                 }
               }
               .width('100%')
-            }, (item: double,index: int) => item.toString())
+            }, (item: double) => item.toString())
           }.columnsTemplate('1fr 1fr')
-          //.attributeModifier(this.customModifier as CustomModifier)
+          .attributeModifier(this.customModifier as CustomModifier)
           .height('90%')
-          // .onScroll((xOffset: number, yOffset: number):void => {
-          //   console.info("WebView onScroll x = " + xOffset)
-          //   console.info("WebView onScroll y = " + yOffset)
-          //   if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
-          //     this.selfScrollTime = Utils.getSystemTime()
-          //   }
-          // })
+          .onScrollIndex((xOffset: int, yOffset: int):void => {
+            console.info("WebView onScroll x = " + xOffset)
+            console.info("WebView onScroll y = " + yOffset)
+            if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
+              this.selfScrollTime = Utils.getSystemTime()
+            }
+          })
           Column().width('100%').height('20%').backgroundColor(Color.Red)
         }.width('100%')
       }.onDidScroll((xOffset: number, yOffset: number):void => {

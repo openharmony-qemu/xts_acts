@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router,{DisableAlertBeforeBackPageOptions} from '@system.router';
@@ -30,17 +30,19 @@ import router,{DisableAlertBeforeBackPageOptions} from '@system.router';
 @Component
 struct DisableAlertBeforeBackPage {
   aboutToAppear() {
-    router.disableAlertBeforeBackPage({
-      success: () => {
-        AppStorage.setOrCreate<number>('disableSuccess', 1);
-      },
-      cancel: () => {
-        console.log('AlertBefore fail')
-      },
-      complete: () => {
-        AppStorage.setOrCreate<number>('disableComplete', 1);
-      }
-    } as DisableAlertBeforeBackPageOptions)
+    this.getUIContext().getRouter().hideAlertBeforeBackPage(
+    //   {
+    //   success: () => {
+    //     AppStorage.setOrCreate<number>('disableSuccess', 1);
+    //   },
+    //   cancel: () => {
+    //     console.log('AlertBefore fail')
+    //   },
+    //   complete: () => {
+    //     AppStorage.setOrCreate<number>('disableComplete', 1);
+    //   }
+    // }
+    )
   }
 
   build() {
@@ -50,7 +52,7 @@ struct DisableAlertBeforeBackPage {
         .height('10%')
         .id('disableId')
         .onClick((e: ClickEvent) => {
-          // router.back({uri:'MainAbility/pages/back_router/RouterBackAlert', params: '123'});
+          this.getUIContext().getRouter().back({url:'MainAbility/pages/back_router/RouterBackAlert', params: '123'});
         });
     }.width('100%').height('100%')
   }

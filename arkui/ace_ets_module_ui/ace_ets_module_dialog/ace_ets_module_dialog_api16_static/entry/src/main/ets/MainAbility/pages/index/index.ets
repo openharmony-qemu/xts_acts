@@ -22,12 +22,12 @@ import {
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
   Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
+  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,BorderRadiuses
 } from '@ohos.arkui.component'
 import {
   State,
   Link,
-  PropRef,
+  Prop,
   Observed,
   ObjectLink,
 } from '@ohos.arkui.stateManagement'
@@ -35,27 +35,24 @@ import { UIContext, Router,KeyboardAvoidMode,PromptAction } from '@ohos.arkui.UI
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import { BuilderNode,FrameNode } from '@ohos.arkui.node';
-import { ImmersiveMode,LevelMode } from '@ohos.promptAction';
 import { LengthMetrics,ComponentContent } from '@ohos.arkui.node';
 import { Callback,BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
-import promptAction from '@ohos.promptAction';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Hypium } from '../../../../../hypium';
 import testsuite from '../../../../src/test/List.test'
-let router1 =new Router()
-let promptAction = new PromptAction()
 
 @Entry
 @Component
 struct Index {
 
   aboutToAppear(){
-    console.info('start run testcase!!!!')
-        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
-        console.info('start run testcase!!!')
-        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+    try {
+      let router1 = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router1);
+    } catch (error: Error) {
+      console.log('error ' + error);
+    }
   }
 
   build() {

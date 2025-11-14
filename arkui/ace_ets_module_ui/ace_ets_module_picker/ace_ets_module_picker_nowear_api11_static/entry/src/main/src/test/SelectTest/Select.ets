@@ -22,14 +22,14 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { $r } from '@ohos.arkui.component';
-import { ArrowPosition } from '@ohos.arkui.component';
+import { ArrowPosition, Resource } from '@ohos.arkui.component';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -55,41 +55,42 @@ export default function select() {
         console.info("get Select state pages:" + JSON.stringify(pages));
         if (!("SelectIndex" == pages.name)) {
           console.info("get Select pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push Select page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Select page error " + JSON.stringify(err));
       }
       await Utils.sleep(2000);
       console.info("select beforeEach start");
-      
+      // done();
     })
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // afterEach( async (done: () => void): Promise<void> => {
+    //   console.info("[selectTest_afterEach] start");
+    //   let spaceValueString = undefined;
+    //   try {
+    //     let eventData: events_emitter.EventData = {
+    //       data: {
+    //         "spaceValue": 8,
+    //         "arrowPosition": ArrowPosition.END,
+    //         "spaceValueString": spaceValueString
+    //       } as Record<string, undefined|null|Object>
+    //     }
+    //     let innerEvent: events_emitter.InnerEvent = {
+    //       eventId: 181,
+    //       priority: events_emitter.EventPriority.LOW
+    //     }
+    //     console.info("[selectTest_afterEach] start to publish emit");
+    //     events_emitter.emit(innerEvent, eventData);
+    //   } catch (err: Error) {
+    //     console.log("[selectTest_afterEach] change component data error: " + err.message);
+    //   }
+    //   done();
+    // })
+
 
     
     /*
@@ -108,6 +109,7 @@ it('ArkUI_Stage_Select_Layout_static_0100', Level.LEVEL1, async (done: () => voi
       done();
     });
 
+
     
     /*
      * @tc.number   ArkUI_Stage_Select_Layout_static_0200
@@ -120,8 +122,8 @@ it('ArkUI_Stage_Select_Layout_static_0200', Level.LEVEL1, async (done: () => voi
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "arrowPosition": ArrowPosition.START
-          } as Record<String, RecordData>
+            "arrowPosition": ArrowPosition.START as ArrowPosition
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -141,38 +143,41 @@ it('ArkUI_Stage_Select_Layout_static_0200', Level.LEVEL1, async (done: () => voi
       done();
     });
 
+
     
-     /*
+    // unKnow注释
+    /*
      * @tc.number   ArkUI_Stage_Select_Layout_static_0300
      * @tc.name     ArkUI_Stage_Select_Layout_static_0300
      * @tc.desc     ArkUI_Stage_Select_Layout_static_0300
      * @tc.level    Level.LEVEL1
      */
+it('ArkUI_Stage_Select_Layout_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_Stage_Select_Layout_static_0300 start");
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "arrowPosition": null
+          } as Record<String, undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 181,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("[ArkUI_Stage_Select_Layout_static_0300] start to publish emit");
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
+        console.log("[ArkUI_Stage_Select_Layout_static_0300] change component data error: " + err.message);
+      }
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('selectTest');
+      let objNew = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Select_Layout_static_0300] arrowPosition:" +
+      objNew.getElement('$attrs').getString('arrowPosition'));
+      expect(objNew.getElement('$attrs').getString('arrowPosition') == 'ArrowPosition.END').assertTrue();
+      done();
+    });
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     
     /*
@@ -186,8 +191,8 @@ it('ArkUI_Stage_Select_Layout_static_0400', Level.LEVEL1, async (done: () => voi
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "arrowPosition": -1
-          } as Record<String, RecordData>
+            "arrowPosition": -1 as ArrowPosition
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -207,6 +212,7 @@ it('ArkUI_Stage_Select_Layout_static_0400', Level.LEVEL1, async (done: () => voi
       done();
     });
 
+
     
     /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0100
@@ -223,6 +229,7 @@ it('ArkUI_Stage_Select_Space_static_0100', Level.LEVEL1, async (done: () => void
       done();
     });
 
+
     
     /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0200
@@ -236,7 +243,7 @@ it('ArkUI_Stage_Select_Space_static_0200', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValue": 20.00
-          } as Record<String, RecordData>
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -255,6 +262,7 @@ it('ArkUI_Stage_Select_Space_static_0200', Level.LEVEL1, async (done: () => void
       done();
     });
 
+
     
     /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0300
@@ -268,7 +276,7 @@ it('ArkUI_Stage_Select_Space_static_0300', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": '40.00vp'
-          } as Record<String, RecordData>
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -287,37 +295,39 @@ it('ArkUI_Stage_Select_Space_static_0300', Level.LEVEL1, async (done: () => void
       done();
     });
 
+
     
-     /*
+    /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0400
      * @tc.name     ArkUI_Stage_Select_Space_static_0400
      * @tc.desc     ArkUI_Stage_Select_Space_static_0400
      * @tc.level    Level.LEVEL1
      */
+it('ArkUI_Stage_Select_Space_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_Stage_Select_Space_static_0400 start");
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            "spaceValue": null
+          } as Record<String,undefined|null|Object>
+        }
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 181,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("[ArkUI_Stage_Select_Space_static_0400] start to publish emit");
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: Error) {
+        console.log("[ArkUI_Stage_Select_Space_static_0400] change component data error: " + err.message);
+      }
+      await Utils.sleep(2000);
+      let strJson = inspector.getInspectorByKey('selectTest');
+      let objNew = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Select_Space_static_0400] space:" + objNew.getElement('$attrs').getString("space"));
+      expect(objNew.getElement('$attrs').getString("space")).assertEqual('8.00vp');
+      done();
+    });
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     
     /*
@@ -332,7 +342,7 @@ it('ArkUI_Stage_Select_Space_static_0500', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValue": -1
-          } as Record<String, RecordData>
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -351,6 +361,7 @@ it('ArkUI_Stage_Select_Space_static_0500', Level.LEVEL1, async (done: () => void
       done();
     });
 
+
     
     /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0600
@@ -363,8 +374,8 @@ it('ArkUI_Stage_Select_Space_static_0600', Level.LEVEL1, async (done: () => void
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "spaceValueResource": $r('app.string.Test_Values')
-          } as Record<String, RecordData>
+            "spaceValueResource": $r('app.string.Test_Values') as Resource
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -383,6 +394,7 @@ it('ArkUI_Stage_Select_Space_static_0600', Level.LEVEL1, async (done: () => void
       done();
     });
 
+
     
     /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0700
@@ -396,7 +408,7 @@ it('ArkUI_Stage_Select_Space_static_0700', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00px"
-          } as Record<String, RecordData>
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -412,9 +424,10 @@ it('ArkUI_Stage_Select_Space_static_0700', Level.LEVEL1, async (done: () => void
       let objNew = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_Select_Space_static_0700] space:" + objNew.getElement('$attrs').getString("space"));
       expect(objNew.getElement('$attrs').getString("space")).assertEqual('40.00px');
-      
+      //expect(objNew.getElement('$attrs').space == expectString).assertTrue();
       done();
     });
+
 
     
     /*
@@ -429,7 +442,7 @@ it('ArkUI_Stage_Select_Space_static_0800', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00lpx"
-          } as Record<String, RecordData>
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -448,6 +461,7 @@ it('ArkUI_Stage_Select_Space_static_0800', Level.LEVEL1, async (done: () => void
       done();
     });
 
+
     
     /*
      * @tc.number   ArkUI_Stage_Select_Space_static_0900
@@ -461,7 +475,7 @@ it('ArkUI_Stage_Select_Space_static_0900', Level.LEVEL1, async (done: () => void
         let eventData: events_emitter.EventData = {
           data: {
             "spaceValueString": "40.00fp"
-          } as Record<String, RecordData>
+          } as Record<string, undefined | null | Object>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,

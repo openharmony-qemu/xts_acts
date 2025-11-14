@@ -12,9 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,9 +37,10 @@ import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function CustomDialogLifeTest() {
   describe('CustomDialogLifeTest', () => {
@@ -47,9 +59,9 @@ export default function CustomDialogLifeTest() {
       try {
         const CustomDialogLifeTest = AppStorage.get<Router>("router") as Router
         CustomDialogLifeTest.clear();
-        let pages:router.RouterState = CustomDialogLifeTest.getState();
+        let pages: router.RouterState = CustomDialogLifeTest.getState();
         console.info("get CustomDialogLifeTest state pages: " + JSON.stringify(pages));
-        if (!("CustomDialogLifeTest" == pages.name)) {
+        if (!("CustomDialogLife" == pages.name)) {
           console.info("get CustomDialogLifeTest state pages.name: " + JSON.stringify(pages.name));
           // let result = await CustomDialogLifeTest.pushUrl(options);
           CustomDialogLifeTest.pushUrl(options);
@@ -65,18 +77,16 @@ export default function CustomDialogLifeTest() {
     });
 
 
-
-    
-/*
+    /*
      * @tc.number   CustomDialogLife_static_0001
      * @tc.name     CustomDialogLife_static_0001
      * @tc.desc     CustomDialogLife_static_0001
      * @tc.level    Level.LEVEL2
      */
-it('CustomDialogLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('CustomDialogLife_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CustomDialogLife_static_0101 START');
       await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('CustomDialog',10,"")
+      inspector.sendEventByKey('CustomDialog', 10, "")
       await CommonFunc.sleep(1000);
       console.info('CustomDialogLife_static_0101 click after')
       let customDialogFlag1 = inspector.getInspectorByKey('customDialogFlag1');
@@ -85,7 +95,7 @@ it('CustomDialogLife_static_0001', Level.LEVEL2, async (done: () => void): Promi
       expect(JSON.parseJsonElement(customDialogFlag2).getElement('$attrs').getString('content')).assertEqual('true');
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.text('button'));
-      await ( button?.click()  as Promise<void> );
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let customDialogFlag3 = inspector.getInspectorByKey('customDialogFlag3');
       expect(JSON.parseJsonElement(customDialogFlag3).getElement('$attrs').getString('content')).assertEqual('true');

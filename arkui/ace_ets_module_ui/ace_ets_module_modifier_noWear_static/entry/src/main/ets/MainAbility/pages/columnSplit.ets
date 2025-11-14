@@ -51,37 +51,37 @@ import {
   TextInputController,
   TextAlign,
   AlphabetIndexer,
-  ColumnSplit
+  ColumnSplit, ColumnSplitAttribute
 } from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-//import { ColumnSplitModifier } from "@ohos.arkui.modifier";
+import { ColumnSplitModifier } from "@ohos.arkui.modifier";
 
-// class CustomModifier extends ColumnSplitModifier {
-//   applyNormalAttribute(instance: ColumnSplitAttribute): void {
-//     super.applyNormalAttribute?.(instance);
-//   }
-//
-//   onChange1() {
-//     this.resizeable(true)
-//   }
-// }
+class CustomModifier extends ColumnSplitModifier {
+  applyNormalAttribute(instance: ColumnSplitAttribute): void {
+    // super.applyNormalAttribute(instance);
+  }
+
+  onChange1() {
+    this.resizeable(true)
+  }
+}
 
 @Entry
 @Component
 struct ColumnSplitExample {
   private arr: int[] = [0, 1, 2, 3, 4, 5, 6, 7]
-  // @State customModifier: ColumnSplitModifier = new CustomModifier()
-  //   .divider({ startMargin: '10px', endMargin: '10px' })
-  //   .resizeable(false)
+  @State customModifier: ColumnSplitModifier = new CustomModifier()
+    .divider({ startMargin: '10px', endMargin: '10px' })
+    .resizeable(false)
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e:ClickEvent) => {
-        //(this.customModifier as CustomModifier).onChange1();
+        (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       ColumnSplit() {
@@ -91,7 +91,7 @@ struct ColumnSplitExample {
         Text('4').width('100%').height(50).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
         Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
-      //.attributeModifier(this.customModifier as CustomModifier)
+      .attributeModifier(this.customModifier as CustomModifier)
       .key('columnSplit')
     }
     .margin({ top: 5 } as Margin)

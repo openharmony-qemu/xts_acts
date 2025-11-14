@@ -14,7 +14,9 @@
  */
 
 
-
+import disableDateRangeAndMarkTodayTest from './calendarPickerTest/disableDateRangeAndMarkToday.test'
+import dialogDisableDateRangeAndMarkTodayTest from './calendarPickerDialogTest/dialogDisableDateRangeAndMarkToday.test'
 export default function testsuite() {
-
+  disableDateRangeAndMarkTodayTest(); //全pass
+  dialogDisableDateRangeAndMarkTodayTest(); // 找胡益锁wx1119949 The key '$attrs' was not found in the JSON object
 }
