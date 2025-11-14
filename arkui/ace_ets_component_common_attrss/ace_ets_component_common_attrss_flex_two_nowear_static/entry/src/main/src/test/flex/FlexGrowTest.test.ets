@@ -42,10 +42,10 @@ function expectForFlexGrow(space: number, countFlexGrow: number, realRect: numbe
   console.info('[' + data.caseTag + '] countFlexGrow : ' + countFlexGrow);
   console.info('[' + data.caseTag + '] realRect : ' + realRect);
   console.info('[' + data.caseTag + '] targetSize : ' + targetSize);
-  
+  //Verify based on different parent container spindle directions
   let ratio = countFlexGrow / (flexGrow + compareFlexGrow);
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
-  
+  // expect(Math.abs(Math.round(realRect) - Math.round(uiContext.vp2px((space * ratio) + targetSize))) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
 }
 
@@ -120,7 +120,7 @@ export default function flexGrowTest() {
 
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
-        
+        //Get standard component rect in order to judge the standard component size not be changed
         let standardRectBefore = Utils.getComponentRect(data.pageConfig.standardComponentKey);
         AppStorage.setOrCreate('_flexGrow', data.testValue.setValue.flexGrow)
         AppStorage.setOrCreate('_parentWidth', data.testValue.setValue.parentWidth)
@@ -129,41 +129,41 @@ export default function flexGrowTest() {
 
         await Utils.sleep(1000);
 
-        
+        //Get standard component rect in order to judge the standard component size not be changed
         let standardRectAfter = Utils.getComponentRect(data.pageConfig.standardComponentKey);
 
-        
+        //Get component rect in order to judge the flexGrow attribute take effect
         let rect = Utils.getComponentRect(data.pageConfig.componentKey);
 
-        
+        //Get compare component rect in order to judge the flexGrow attribute take effect
         let compareRect = Utils.getComponentRect(data.pageConfig.compareComponentKey);
 
-        
+        //Verify the flexGrow attribute is set success
         let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
         expect(Math.abs(Number(viewObj.getElement('$attrs').getDouble('flexGrow')) -
         data.testValue.expectValue.flexGrow) <= 1).assertTrue();
 
-        
+        //Abnormal case
         if (data.testValue.describe == 'SpaceNotEnough') {
           if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
             || data.pageConfig.containerView == 'FlexRowReverse') {
             console.info('[SpaceNotEnough1] rect.right - rect.left : ' + Math.round(rect.right - rect.left));
-            
-            
+            // console.info('[SpaceNotEnough1] vp2px(targetWidth) : ' + Math.round(uiContext.vp2px(targetWidth)));
+            // expect(Math.abs(Math.round(rect.right - rect.left) - Math.round(uiContext.vp2px(targetWidth))) <= 3).assertTrue();
           } else {
-            
-            
-            
+            // console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + Math.round(rect.bottom - rect.top));
+            // console.info('[SpaceNotEnough2] vp2px(targetHeight) : ' + Math.round(uiContext.vp2px(targetHeight)));
+            // expect(Math.abs(Math.round(rect.bottom - rect.top) - Math.round(uiContext.vp2px(targetHeight))) <= 3).assertTrue();
           }
         } else {
-          
+          //Verify the standard component not be changed
           console.info('[' + data.caseTag + '] check standard component rect not changed.');
           expect(Math.abs(standardRectBefore.left - standardRectAfter.left) <= 1).assertTrue();
           expect(Math.abs(standardRectBefore.top - standardRectAfter.top) <= 1).assertTrue();
           expect(Math.abs(standardRectBefore.bottom - standardRectAfter.bottom) <= 1).assertTrue();
           expect(Math.abs(standardRectBefore.right - standardRectAfter.right) <= 1).assertTrue();
 
-          
+          //Verify the target component and compare component, allocate remaining space in the correct proportion
           console.info('[' + data.caseTag + '] check the size of the component in the spindle ' +
             'direction has been changed by flexGrow ');
 

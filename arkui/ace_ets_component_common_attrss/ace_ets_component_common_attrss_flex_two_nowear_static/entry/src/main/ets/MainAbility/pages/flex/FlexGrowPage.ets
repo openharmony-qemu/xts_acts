@@ -116,7 +116,8 @@ import {
 import {
   State,
   Link,
-  StoragePropRef
+  Prop,
+  StorageProp
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { attrsManager } from '../../common/AttrsManager';
@@ -128,12 +129,12 @@ import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct FlexGrowPage {
-  @StoragePropRef("_flexGrow") _flexGrow: number = 2
+  @StorageProp("_flexGrow") _flexGrow: number = 2
   @State targetView: string = ''
   @State componentKey: string = ''
   @State containerView: string = ''
-  @StoragePropRef("_parentWidth") _parentWidth: number = 500
-  @StoragePropRef("_parentHeight") _parentHeight: number = 500
+  @StorageProp("_parentWidth") _parentWidth: number = 500
+  @StorageProp("_parentHeight") _parentHeight: number = 500
   @State compareWidth: number = 0
   @State compareHeight: number = 0
   @State standardWidth: number = 0
@@ -142,7 +143,7 @@ struct FlexGrowPage {
   @State standardComponentKey: string = ''
   @State targetWidth: number = 0
   @State targetHeight: number = 0
-  @StoragePropRef("_compareFlexGrow") _compareFlexGrow: number = 1
+  @StorageProp("_compareFlexGrow") _compareFlexGrow: number = 1
 
   onPageShow() {
     AppStorage.setOrCreate<number>('_flexGrow',  2)
@@ -162,7 +163,7 @@ struct FlexGrowPage {
       this.standardComponentKey = routerParamOptions.view.standardComponentKey
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
-    } catch (error) {
+    } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
   }
@@ -214,15 +215,15 @@ struct FlexGrowPage {
     else if (this.targetView == 'Navigation') {
       Navigation().applyStyles(this.commonStyle)
     } else if (this.targetView == 'NavRouter') {
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // NavRouter() {
+      //   Row() {
+      //     Image($r('app.media.icon'))
+      //   }
+      //
+      //   NavDestination() {
+      //     Text('NavDestination').fontSize(10)
+      //   }
+      // }.applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Progress') {
       Progress({ value: 50, type: ProgressType.Linear }).applyStyles(this.commonStyle)
@@ -320,10 +321,10 @@ struct FlexGrowPage {
       .applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Navigator') {
-      
-      
-      
-      
+      // Navigator({ target: 'MainAbility/pages/index/Index' }) {
+      //   Text('Navigator Go to index page')
+      //     .width('100%').textAlign(TextAlign.Center)
+      // }.applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
@@ -339,13 +340,13 @@ struct FlexGrowPage {
       Row().applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Panel') {
-      
-      
-      
-      
-      
-      
-      
+      // Panel(true) {
+      //   Column() {
+      //     Text('Panel')
+      //   }
+      // }
+      // .mode(PanelMode.Half)
+      // .applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {
@@ -484,7 +485,7 @@ struct FlexGrowPage {
         .height(this._parentHeight)
         .backgroundColor(Color.Green)
       } else {
-        
+        //For different parent Component
         if (this.containerView == 'Row') {
           Row() {
             Button('button1').width(this.standardWidth).height(this.standardHeight).key(this.standardComponentKey)

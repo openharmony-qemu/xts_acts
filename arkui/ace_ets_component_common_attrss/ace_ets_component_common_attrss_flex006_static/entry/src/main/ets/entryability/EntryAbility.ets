@@ -56,21 +56,20 @@ class EntryAbility extends UIAbility {
             hilog.error(0x0000, 'testTag',
               'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
-          
+
           if (windowClass !== null) {
             AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e) {
+    } catch (e: Error) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined;
   }
 
   onWindowStageDestroy() {

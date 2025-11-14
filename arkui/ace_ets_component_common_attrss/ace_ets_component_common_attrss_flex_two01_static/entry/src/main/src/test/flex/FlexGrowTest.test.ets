@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { UIContext }  from '@ohos.arkui.UIContext';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -26,56 +26,23 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { UtilsTest } from '../Util.test';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-
+import { AppStorage } from '@ohos.arkui.stateManagement';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+let testAbilityContext:common.UIAbilityContext;
 let flexGrow = 3;
 let compareFlexGrow = 1;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function expectForFlexGrow(space: number, countFlexGrow: number, realRect: number, targetSize: number,
-  data: BasePageConfig) {
+function expectForFlexGrow(space: number, countFlexGrow: number, realRect: number, targetSize: number, data: BasePageConfig) {
   console.info('[' + data.caseTag + '] call the expectForFlexGrow function.');
   console.info('[' + data.caseTag + '] space : ' + space);
   console.info('[' + data.caseTag + '] countFlexGrow : ' + countFlexGrow);
   console.info('[' + data.caseTag + '] realRect : ' + realRect);
   console.info('[' + data.caseTag + '] targetSize : ' + targetSize);
-  
+  //Verify based on different parent container spindle directions
   let ratio = countFlexGrow / (flexGrow + compareFlexGrow);
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
-  
+  // expect(Math.abs(Math.round(realRect) - Math.round(vp2px((space * ratio) + targetSize))) <= 2).assertTrue();
   console.info('[' + data.caseTag + '] (space * ratio) + targetSize : ' + ((space * ratio) + targetSize));
 }
 
@@ -94,10 +61,10 @@ export default function flexGrowTest() {
     'Badge',
     'Column',
     'Counter',
-    
+    //    'GridRow',
     'Grid',
     'List',
-    'Panel',
+    // 'Panel',
     'Refresh',
     'Scroll',
     'Stack',
@@ -164,78 +131,75 @@ export default function flexGrowTest() {
   describe('FlexGrowTest', () => {
     beforeAll(() => {
       console.info("FlexGrowTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.two01.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(async (): Promise<void> => {
-    })
+    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
+      //Get standard component rect in order to judge the standard component size not be changed
+      console.info('data.pageConfig.standardComponentKey : ' + data.pageConfig.standardComponentKey);
+      let standardRectBefore = Utils.getComponentRect(data.pageConfig.standardComponentKey);
+      AppStorage.setOrCreate('_flexGrow', data.testValue.setValue.flexGrow)
+      AppStorage.setOrCreate('_parentWidth', data.testValue.setValue.parentWidth)
+      AppStorage.setOrCreate('_parentHeight', data.testValue.setValue.parentHeight)
+      AppStorage.setOrCreate('_compareFlexGrow', data.testValue.setValue.compareFlexGrow)
+      await Utils.sleep(1000);
 
-    CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
-      async (data: BasePageConfig): Promise<void> => {
-        
-        let standardRectBefore = Utils.getComponentRect(data.pageConfig.standardComponentKey);
-        AttrsManager.change(data.caseTag, data.testValue.setValue);
-        await Utils.sleep(1000);
+      //Get standard component rect in order to judge the standard component size not be changed
+      let standardRectAfter = Utils.getComponentRect(data.pageConfig.standardComponentKey);
 
-        
-        let standardRectAfter = Utils.getComponentRect(data.pageConfig.standardComponentKey);
+      //Get component rect in order to judge the flexGrow attribute take effect
+      let rect = Utils.getComponentRect(data.pageConfig.componentKey);
 
-        
-        let rect = Utils.getComponentRect(data.pageConfig.componentKey);
+      //Get compare component rect in order to judge the flexGrow attribute take effect
+      let compareRect = Utils.getComponentRect(data.pageConfig.compareComponentKey);
 
-        
-        let compareRect = Utils.getComponentRect(data.pageConfig.compareComponentKey);
+      //Verify the flexGrow attribute is set success
+      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
+      expect(Math.abs(Number(viewObj.getElement('$attrs').getDouble('flexGrow')) - data.testValue.expectValue.flexGrow) <= 1).assertTrue();
 
-        
-        let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
-        expect(Math.abs(Number(viewObj.getElement('$attrs').getString('flexGrow')) -
-        data.testValue.expectValue.flexGrow) <= 1).assertTrue();
-
-        
-        if (data.testValue.describe == 'SpaceNotEnough') {
-          if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
-            || data.pageConfig.containerView == 'FlexRowReverse') {
-            console.info('[SpaceNotEnough1] rect.right - rect.left : ' + Math.round(rect.right - rect.left));
-            
-            
-          } else {
-            console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + Math.round(rect.bottom - rect.top));
-            
-            
-          }
+      //Abnormal case
+      if (data.testValue.describe == 'SpaceNotEnough') {
+        if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
+          || data.pageConfig.containerView == 'FlexRowReverse') {
+          console.info('[SpaceNotEnough1] rect.right - rect.left : ' + Math.round(rect.right - rect.left));
+          console.info('[SpaceNotEnough1] vp2px(targetWidth) : ' + Math.round(new UIContext().vp2px(targetWidth)));
+          expect(Math.abs(Math.round(rect.right - rect.left) - Math.round(new UIContext().vp2px(targetWidth))) <= 3).assertTrue();
         } else {
-          
-          console.info('[' + data.caseTag + '] check standard component rect not changed.');
-          expect(Math.abs(standardRectBefore.left - standardRectAfter.left) <= 1).assertTrue();
-          expect(Math.abs(standardRectBefore.top - standardRectAfter.top) <= 1).assertTrue();
-          expect(Math.abs(standardRectBefore.bottom - standardRectAfter.bottom) <= 1).assertTrue();
-          expect(Math.abs(standardRectBefore.right - standardRectAfter.right) <= 1).assertTrue();
-
-          
-          console.info('[' + data.caseTag + '] check the size of the component in the spindle ' +
-            'direction has been changed by flexGrow ');
-
-          if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
-            || data.pageConfig.containerView == 'FlexRowReverse') {
-
-            let widthSpace = parentWidth - standardWidth - compareWidth - targetWidth;
-            console.info('[' + data.caseTag + '] widthSpace : ' + widthSpace);
-
-            expectForFlexGrow(widthSpace, flexGrow, rect.right - rect.left, targetWidth, data);
-            expectForFlexGrow(widthSpace, compareFlexGrow, compareRect.right - compareRect.left, compareWidth, data);
-          } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn'
-            || data.pageConfig.containerView == 'FlexColumnReverse') {
-
-            let heightSpace = parentHeight - standardHeight - compareHeight - targetHeight;
-            console.info('[' + data.caseTag + '] heightSpace : ' + heightSpace);
-
-            expectForFlexGrow(heightSpace, flexGrow, rect.bottom - rect.top, targetHeight, data);
-            expectForFlexGrow(heightSpace, compareFlexGrow, compareRect.bottom - compareRect.top, compareHeight, data);
-          }
+          console.info('[SpaceNotEnough2] rect.bottom - rect.top : ' + Math.round(rect.bottom - rect.top));
+          console.info('[SpaceNotEnough2] vp2px(targetHeight) : ' + Math.round(new UIContext().vp2px(targetHeight)));
+          expect(Math.abs(Math.round(rect.bottom - rect.top) - Math.round(new UIContext().vp2px(targetHeight))) <= 3).assertTrue();
         }
-      })
+      } else {
+        //Verify the standard component not be changed
+        console.info('[' + data.caseTag + '] check standard component rect not changed.');
+        expect(Math.abs(standardRectBefore.left - standardRectAfter.left) <= 1).assertTrue();
+        expect(Math.abs(standardRectBefore.top - standardRectAfter.top) <= 1).assertTrue();
+        expect(Math.abs(standardRectBefore.bottom - standardRectAfter.bottom) <= 1).assertTrue();
+        expect(Math.abs(standardRectBefore.right - standardRectAfter.right) <= 1).assertTrue();
+
+        //Verify the target component and compare component, allocate remaining space in the correct proportion
+        console.info('[' + data.caseTag + '] check the size of the component in the spindle ' +
+          'direction has been changed by flexGrow ');
+
+        if (data.pageConfig.containerView == 'Row' || data.pageConfig.containerView == 'FlexRow'
+          || data.pageConfig.containerView == 'FlexRowReverse') {
+
+          let widthSpace = parentWidth - standardWidth - compareWidth - targetWidth;
+          console.info('[' + data.caseTag + '] widthSpace : ' + widthSpace);
+
+          expectForFlexGrow(widthSpace, flexGrow, rect.right - rect.left, targetWidth, data);
+          expectForFlexGrow(widthSpace, compareFlexGrow, compareRect.right - compareRect.left, compareWidth, data);
+        } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn'
+          || data.pageConfig.containerView == 'FlexColumnReverse') {
+
+          let heightSpace = parentHeight - standardHeight - compareHeight - targetHeight;
+          console.info('[' + data.caseTag + '] heightSpace : ' + heightSpace);
+
+          expectForFlexGrow(heightSpace, flexGrow, rect.bottom - rect.top, targetHeight, data);
+          expectForFlexGrow(heightSpace, compareFlexGrow, compareRect.bottom - compareRect.top, compareHeight, data);
+        }
+      }
+    })
   })
 }

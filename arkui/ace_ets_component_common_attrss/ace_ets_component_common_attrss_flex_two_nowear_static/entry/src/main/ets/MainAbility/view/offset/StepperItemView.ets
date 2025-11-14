@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,8 +55,8 @@ function itemTextStyle(this: TextAttribute): TextAttribute {
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: number = 0
+  @State currentIndex: number = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @Link _offset!: Position;
@@ -68,9 +68,9 @@ export struct StepperItemView {
 
   build() {
     Stepper({
-      index: this.currentIndex
+      index: this.currentIndex.toInt()
     }) {
-      
+      // First step page
       StepperItem() {
         Column() {
           Text('Page One')
@@ -87,7 +87,7 @@ export struct StepperItemView {
       .offset(this._offset)
       .key(this.componentKey)
 
-      
+      // Second step page
       StepperItem() {
         Column() {
           Text('Page Two')
@@ -111,7 +111,7 @@ export struct StepperItemView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: Int, index: Int) => {
+    .onChange((prevIndex: int, index: int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import FlexGrowTest from './flex/FlexGrowTest.test';
-
 export default function testsuite() {
   FlexGrowTest();
 }

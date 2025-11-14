@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -42,7 +42,7 @@ export struct NavRouterView {
   private componentKey: string = '';
 
   build() {
-    
+    // NavRouter() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)
@@ -65,10 +65,10 @@ export struct NavRouterView {
         }
       }.backgroundColor('#ccc')
       .title(`NavDestination`)
-    
-    
-    
-    
-    
+    // }.onStateChange((isActivated: boolean) => {
+    //   console.info('isActivated = ' + isActivated);
+    // })
+    // .offset(this._offset)
+    // .key(this.componentKey)
   }
 }
