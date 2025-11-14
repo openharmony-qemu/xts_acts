@@ -365,5 +365,51 @@ export default function UsbTransferTest() {
           done();
         }
       })
+
+    /**
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   test_usbControlTransfer002
+     * @tc.number SUB_USB_Host_JS_usbControlTransfer_Func_0200
+     * @tc.desc   usbControlTransfer data is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_usbControlTransfer002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'usb test_usbControlTransfer002 begin');
+        if (!isDeviceConnected) {
+          hilog.info(domain, tag, 'usb not connected');
+          expect(isDeviceConnected).assertFalse();
+          done();
+        } else {
+          let data = new Uint8Array(0);
+          let param: UsbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x00,
+            bRequest: 0x01,
+            wValue: 0x01,
+            wIndex: 0x0000,
+            wLength: 0x0000,
+            data: data,
+          };
+          try {
+            let devicesList: Array<UsbMgr.USBDevice> = UsbMgr.getDevices();
+            UsbMgr.requestRight(devicesList[0].name);
+            hilog.info(domain, tag, `usbControlTransfer name = ${devicesList[0].name}`);
+            let devicePipe: UsbMgr.USBDevicePipe = UsbMgr.connectDevice(devicesList[0]);
+            hilog.info(domain, tag, `usbControlTransfer device.name = ${devicesList[0].name}`);
+            let ret = await UsbMgr.usbControlTransfer(devicePipe, param);
+            hilog.info(domain, tag, `usbControlTransfer size= ${ret}`);
+            expect(ret == 0).assertEqual(true);
+            UsbMgr.closePipe(devicePipe);
+          } catch (error: BusinessError) {
+            hilog.info(0, 'testTag ui', `test_usbControlTransfer002 error `)
+            hilog.info(domain, tag, 'test_usbControlTransfer002 end');
+            let err: BusinessError = error as BusinessError;
+            hilog.info(domain, tag, `test_usbControlTransfer002 err.code= ${err.code}`);
+          }
+          done();
+        }
+      })
   })
 }
