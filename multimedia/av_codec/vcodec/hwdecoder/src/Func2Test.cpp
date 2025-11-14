@@ -975,4 +975,29 @@ HWTEST_F(HwdecFunc2NdkTest, VIDEO_DECODE_LOW_LATENCY_0009, TestSize.Level2)
         ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
     }
 }
+
+/**
+ * @tc.number    : VIDEO_HWDEC_PIXE_FORMAT_0030
+ * @tc.name      : h266 pixelformat query key
+ * @tc.desc      : function test
+ */
+HWTEST_F(HwdecFunc2NdkTest, VIDEO_HWDEC_PIXE_FORMAT_0030, TestSize.Level1)
+{
+    if (cap_vvc != nullptr && !access("/system/lib64/media/", 0)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->INP_DIR = INP_DIR_VVC_1080;
+        vDecSample->isGetVideoSupportedPixelFormats = true;
+        vDecSample->isGetFormatKey = true;
+        vDecSample->avcodecMimeType = OH_AVCODEC_MIMETYPE_VIDEO_VVC;
+        vDecSample->isEncoder = false;
+        ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVVC));
+        ASSERT_EQ(AV_ERR_OK, vDecSample->SetVideoDecoderCallback());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
+        ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
+        vDecSample->WaitForEOS();
+        ASSERT_LT(1, vDecSample->pixlFormatNum);
+        ASSERT_EQ(35, vDecSample->firstCallBackKey);
+        ASSERT_EQ(35, vDecSample->onStreamChangedKey);
+    }
+}
 } // namespace

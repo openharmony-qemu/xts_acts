@@ -45,13 +45,14 @@ export default function wallpaperAuthorityJSUnit() {
         })
         });
 
-        /*
-         * @tc.number    testGetColorsCallbackSystem101
-         * @tc.name      Test getColors() to obtains the wallpaper colors for the wallpaper of the specified type.
-         * @tc.desc      Function test
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testGetColorsCallbackSystem101
+         * @tc.number testGetColorsCallbackSystem101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetColorsCallbackSystem101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsCallbackSystem101 start-----------------');
@@ -78,14 +79,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testGetColorsCallbackSystem101 end-----------------');
         });
 
-        /*
-        * @tc.number  testGetColorsPromiseSystem101
-        * @tc.name    Test getColors() to obtains the wallpaper colors for the wallpaper of the specified type.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testGetColorsPromiseSystem101
+         * @tc.number testGetColorsPromiseSystem101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetColorsPromiseSystem101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsPromiseSystem101 start-----------------');
             await wallpaper.setWallpaper(imageSourceLockscreen, wallpaper.WallpaperType.WALLPAPER_SYSTEM);
@@ -105,13 +107,14 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testGetColorsPromiseSystem101 end-----------------');
         });
 
-        /*
-         * @tc.number  testGetColorsCallbackLock102
-         * @tc.name    Test getColors() to obtains the wallpaper colors for the wallpaper of the specified type.
-         * @tc.desc    Function test
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
-         * @tc.level   0
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testGetColorsCallbackLock102
+         * @tc.number testGetColorsCallbackLock102
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetColorsCallbackLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsCallbackLock102 start-----------------');
@@ -137,14 +140,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testGetColorsCallbackLock102 end-----------------');
         });
 
-        /*
-        * @tc.number  testGetColorsPromiseLock102
-        * @tc.name    Test getColors() to obtains the wallpaper colors for the wallpaper of the specified type.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testGetColorsPromiseLock102
+         * @tc.number testGetColorsPromiseLock102
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetColorsPromiseLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetColorsPromiseLock102 start-----------------');
             await wallpaper.setWallpaper(imageSourceLockscreen, wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN);
@@ -163,14 +167,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testGetColorsPromiseLock102 end-----------------');
         })
 
-        /*
-        * @tc.number  testResetCallbackSystem101
-        * @tc.name    Test reset() to removes a wallpaper of the specified type and reset the default one.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testResetCallbackSystem101
+         * @tc.number testResetCallbackSystem101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testResetCallbackSystem101', Level.LEVEL0, async (done: Function) => {
             console.info('--------------testResetCallbackSystem101 start-----------------');
             wallpaper.reset(WALLPAPER_SYSTEM, (err, data) => {
@@ -191,14 +196,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetCallbackSystem101 end-----------------');
         });
 
-        /*
-        * @tc.number  testResetPromiseSystem101
-        * @tc.name    Test reset() to removes a wallpaper of the specified type and reset the default one.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testResetPromiseSystem101
+         * @tc.number testResetPromiseSystem101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testResetPromiseSystem101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testResetPromiseSystem101 start-----------------');
             await wallpaper.reset(WALLPAPER_SYSTEM).then((data) => {
@@ -213,14 +219,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetPromiseSystem101 end-----------------');
         });
 
-        /*
-        * @tc.number  testResetCallbackLock102
-        * @tc.name    Test reset() to removes a wallpaper of the specified type and reset the default one.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testResetCallbackLock102
+         * @tc.number testResetCallbackLock102
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testResetCallbackLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testResetCallbackLock102 start-----------------');
             wallpaper.reset(WALLPAPER_LOCKSCREEN, (err, data) => {
@@ -241,14 +248,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetCallbackLock102 end-----------------');
         });
 
-        /*
-        * @tc.number  testResetPromiseLock102
-        * @tc.name    Test reset() to removes a wallpaper of the specified type and reset the default one.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testResetPromiseLock102
+         * @tc.number testResetPromiseLock102
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testResetPromiseLock102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testResetPromiseLock102 start-----------------');
             await wallpaper.reset(WALLPAPER_LOCKSCREEN).then((data) => {
@@ -263,15 +271,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testResetPromiseLock102 end-----------------');
         });
 
-        /*
-        * @tc.number  testSetWallpaperURLPromiseLock104
-        * @tc.name    Test setPixelMap() to sets a wallpaper of the specified type based on the uri path from a
-                    JPEG or PNG file or the pixel map of a PNG file.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testSetWallpaperURLPromiseLock104
+         * @tc.number testSetWallpaperURLPromiseLock104
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testSetWallpaperURLPromiseLock104', Level.LEVEL0, async (done: Function) => {
             console.info('--------------------testSetWallpaperURLPromiseLock104 start------------------' );
             await wallpaper.setWallpaper(imageSourceLockscreen, WALLPAPER_LOCKSCREEN).then((data) => {
@@ -286,15 +294,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLPromiseLock104 end------------------' );
         });
 
-        /*
-        * @tc.number  testSetWallpaperURLCallbackSystem103
-        * @tc.name    Test setWallpaper() to sets a wallpaper of the specified type based on the uri path from a
-                    JPEG or PNG file or the pixel map of a PNG file.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testSetWallpaperURLCallbackSystem103
+         * @tc.number testSetWallpaperURLCallbackSystem103
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetWallpaperURLCallbackSystem103', Level.LEVEL2, async (done: Function) => {
             console.info('--------------------testSetWallpaperURLCallbackSystem103 start------------------' );
             wallpaper.setWallpaper(imageSourceSystem, WALLPAPER_SYSTEM, (err, data) => {
@@ -315,15 +323,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLCallbackSystem103 end------------------' );
         });
 
-        /*
-        * @tc.number  testSetWallpaperURLPromiseSystem103
-        * @tc.name    Test setWallpaper() to sets a wallpaper of the specified type based on the uri path from a
-                    JPEG or PNG file or the pixel map of a PNG file.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testSetWallpaperURLPromiseSystem103
+         * @tc.number testSetWallpaperURLPromiseSystem103
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetWallpaperURLPromiseSystem103', Level.LEVEL2, async (done: Function) => {
             console.info('--------------------testSetWallpaperURLPromiseSystem103 start------------------' );
             await wallpaper.setWallpaper(imageSourceLockscreen, WALLPAPER_LOCKSCREEN).then((data) => {
@@ -338,15 +346,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLPromiseSystem103 end------------------' );
         });
 
-        /*
-        * @tc.number  testSetWallpaperURLCallbackLock104
-        * @tc.name    Test setWallpaper() to sets a wallpaper of the specified type based on the uri path from a
-                    JPEG or PNG file or the pixel map of a PNG file.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testSetWallpaperURLCallbackLock104
+         * @tc.number testSetWallpaperURLCallbackLock104
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSetWallpaperURLCallbackLock104', Level.LEVEL2, async (done: Function) => {
             console.info('--------------------testSetWallpaperURLCallbackLock104 start------------------' );
             wallpaper.setWallpaper(imageSourceSystem, WALLPAPER_LOCKSCREEN, (err, data) => {
@@ -367,15 +375,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------------testSetWallpaperURLCallbackLock104 end------------------' );
         });
 
-        /*
-        * @tc.number  testOnCallback101
-        * @tc.name    Test on_colorChange to registers a listener for wallpaper color changes to
-                    receive notifications about the changes.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testOnCallback101
+         * @tc.number testOnCallback101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testOnCallback101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testOnCallback101 start-----------------');
             let wallpaperPath = "/data/storage/el2/base/haps/wp.png";
@@ -404,15 +412,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testOnCallback101 end-----------------');
         });
 
-        /*
-        * @tc.number  testOffCallback101
-        * @tc.name    Test on_colorChange to registers a listener for wallpaper color changes to
-                    receive notifications about the changes.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testOffCallback101
+         * @tc.number testOffCallback101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testOffCallback101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testOffCallback101 start-----------------');
             let wallpaperPath = "/data/storage/el2/base/haps/wp.png";
@@ -444,14 +452,15 @@ export default function wallpaperAuthorityJSUnit() {
             await wallpaper.setWallpaper(wallpaperPath, wallpaper.WallpaperType.WALLPAPER_SYSTEM)
         });
 
-        /*
-        * @tc.number  testGetFileCallback101
-        * @tc.name    Obtains a file of the wallpaper of the specified type.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testGetFileCallback101
+         * @tc.number testGetFileCallback101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetFileCallback101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetFileCallback101 start-----------------');
             wallpaper.getFile(WALLPAPER_SYSTEM, (err, data) => {
@@ -472,14 +481,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testGetFileCallback101 end-----------------');
         });
 
-        /*
-        * @tc.number  testGetFilePromise101
-        * @tc.name    Obtains a file of the wallpaper of the specified type.
-        * @tc.desc    Function test
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testGetFilePromise101
+         * @tc.number testGetFilePromise101
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGetFilePromise101', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testGetFilePromise101 start-----------------');
             await wallpaper.setWallpaper(imageSourceLockscreen, wallpaper.WallpaperType.WALLPAPER_LOCKSCREEN);
@@ -495,15 +505,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testGetFilePromise101 end-----------------');
         });
 
-        /*
-        * @tc.number  testIsChangePermittedCallback102
-        * @tc.name  testIsChangePermittedCallback102
-        * @tc.desc    Test isChangePermitted() to checks whether to allow the application to change the
-                    wallpaper for the current user.
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   3
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testIsChangePermittedCallback102
+         * @tc.number testIsChangePermittedCallback102
+         * @tc.desc   Test isChangePermitted() to checks whether to allow the application to change the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testIsChangePermittedCallback102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testIsChangePermittedCallback102 start-----------------');
             wallpaper.isChangePermitted((err, data) => {
@@ -524,15 +534,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testIsChangePermittedCallback102 end-----------------');
         });
 
-        /*
-        * @tc.number  testIsChangePermittedPromise102
-        * @tc.name  testIsChangePermittedPromise102
-        * @tc.desc    Test isChangePermitted() to checks whether to allow the application to change the
-                    wallpaper for the current user.
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   3
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testIsChangePermittedPromise102
+         * @tc.number testIsChangePermittedPromise102
+         * @tc.desc   Test isChangePermitted() to checks whether to allow the application to change the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testIsChangePermittedPromise102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testIsChangePermittedPromise102 start-----------------');
             await wallpaper.isChangePermitted().then((data) => {
@@ -547,14 +557,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testIsChangePermittedPromise102 end-----------------');
         });
 
-        /*
-        * @tc.number  testIsOperationAllowedCallback102
-        * @tc.name  testIsOperationAllowedCallback102
-        * @tc.desc    Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   3
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testIsOperationAllowedCallback102
+         * @tc.number testIsOperationAllowedCallback102
+         * @tc.desc   Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testIsOperationAllowedCallback102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testIsOperationAllowedCallback102 start-----------------');
             wallpaper.isOperationAllowed((err, data) => {
@@ -575,14 +586,15 @@ export default function wallpaperAuthorityJSUnit() {
             console.info('--------------testIsOperationAllowedCallback102 end-----------------');
         });
 
-        /*
-        * @tc.number  testIsOperationAllowedPromise102
-        * @tc.name  testIsOperationAllowedPromise102
-        * @tc.desc    Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        * @tc.level   0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:55
+         * @tc.name   testIsOperationAllowedPromise102
+         * @tc.number testIsOperationAllowedPromise102
+         * @tc.desc   Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testIsOperationAllowedPromise102', Level.LEVEL2, async (done: Function) => {
             console.info('--------------testIsOperationAllowedPromise102 start-----------------');
             await wallpaper.isOperationAllowed().then((data) => {

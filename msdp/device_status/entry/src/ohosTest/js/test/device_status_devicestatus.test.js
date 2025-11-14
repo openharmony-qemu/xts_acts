@@ -45,13 +45,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info('msdp DeviceStatus test afterEach called')
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0100
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0100
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0100
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0100
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0100 enter`);
@@ -70,13 +71,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0100 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0200
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0200
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0200
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0200
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0200 enter`);
@@ -94,13 +96,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0200 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0300
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0300
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0300
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0300
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0300 enter`);
@@ -119,13 +122,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0300 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0400
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0400
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0400
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0400
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0400 enter`);
@@ -144,13 +148,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0400 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0500
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0500
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0500
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0500
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0500 enter`);
@@ -176,13 +181,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0500 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0600
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0600
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0600
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0600
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0600 enter`);
@@ -201,13 +207,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0600 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0700
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0700
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0700
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0700
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0700 enter`);
@@ -227,13 +234,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0700 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0800
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0800
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0800
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0800
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0800 enter`);
@@ -254,13 +262,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0800 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_0900
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_0900
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_0900
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_0900
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0900 enter`);
@@ -279,13 +288,14 @@ export default function DeviceStatusDeviceStatusTest() {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_0900 end`);
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_DeviceStatus_1000
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_DeviceStatus_1000
-     * @tc.desc       : DeviceStatus callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_DeviceStatus_1000
+     * @tc.number SUB_MSDP_DeviceStatus_API_DeviceStatus_1000
+     * @tc.desc   DeviceStatus callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_DeviceStatus_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_DeviceStatus_1000 enter`);

@@ -358,5 +358,74 @@ export default function effectKitBTest() {
         })
       })
     })
+    
+    /**
+     * @tc.number     createColorPicker_callback_0100
+     * @tc.name       createColorPicker_callback_0100
+     * @tc.desc       test createColorPicker callback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('createColorPicker_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const color = new ArrayBuffer(96);
+      let opts : image.InitializationOptions = {
+        editable: true,
+        pixelFormat: 3,
+        size: {
+          height: 4,
+          width: 6
+        }
+      }
+      image.createPixelMap(color, opts).then((pixelMap) => {
+        effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+          if (error) {
+            console.error('www data Failed to create color picker.');
+            expect().assertFail();
+            done();
+          } else {
+            console.info('www data Succeeded in creating color picker.');
+            let color = colorPicker.getLargestProportionColor();
+            console.info('www data get largest proportion color = ' + color);
+            expect(color == undefined).assertTrue();
+            done();
+          }
+        })
+      })
+    })
+    
+    /**
+     * @tc.number     createColorPicker_callback_0200
+     * @tc.name       createColorPicker_callback_0200
+     * @tc.desc       test createColorPicker callback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('createColorPicker_callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName = 'createColorPicker_callback_0200';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log("effectKitTest" + msgStr + 'begin');
+      let imageSource = image.createImageSource(testJpg.buffer);
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info('www data createPixelMap succeed');
+        effectKit.createColorPicker(pixelMap).then(colorPicker => {
+          let color = colorPicker.getLargestProportionColor();
+          console.info('www data get largest proportion color succeed ', JSON.stringify(colorPicker));
+          expect(color !== undefined).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('www data get largest proportion color error');
+          expect().assertFail();
+        })
+      }).catch((err: BusinessError) => {
+        console.error('www data createPixelMap error');
+        expect().assertFail();
+        done();
+      })
+
+
+    })
+
   })
 }

@@ -45,12 +45,13 @@ describe('ObjectStoreJsunitV9Ets', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name: V9testbindAssetCommunType0100
-     * @tc.desc: Test CommType Enum Value
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 0
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetCommunType0100
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0100
+     * @tc.desc   Test CommType Enum Value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('V9testbindAssetCommunType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.log(TAG + "************* V9testbindAssetCommunType0100 start *************");
@@ -64,12 +65,13 @@ describe('ObjectStoreJsunitV9Ets', function () {
     })
 
     /**
-     * @tc.name: V9testbindAssetCommunType0200
-     * @tc.desc: Test commonType.Asset,Assets
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetCommunType0200
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0200
+     * @tc.desc   Test commonType.Asset,Assets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetCommunType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* V9testbindAssetCommunType0200 start *************");
@@ -103,12 +105,13 @@ describe('ObjectStoreJsunitV9Ets', function () {
 
 
     /**
-     * @tc.name: V9testbindAssetCommunType0300
-     * @tc.desc: Test commonType.ValueType
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetCommunType0300
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0200
+     * @tc.desc   Test commonType.ValueType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetCommunType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* V9testbindAssetCommunType0300 start *************");
@@ -149,12 +152,13 @@ describe('ObjectStoreJsunitV9Ets', function () {
     })    
 
     /**
-     * @tc.name: V9testbindAssetCommunType0400
-     * @tc.desc: Test BindInfo
-     * @tc.type: Functiontion
-     * @tc.number: SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   V9testbindAssetCommunType0400
+     * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0400
+     * @tc.desc   Test BindInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('V9testbindAssetCommunType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* V9testbindAssetCommunType0400 start *************");

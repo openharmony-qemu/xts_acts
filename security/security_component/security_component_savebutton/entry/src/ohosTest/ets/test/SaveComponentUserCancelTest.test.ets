@@ -19,7 +19,6 @@ import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest'
 import Utils from './Utils';
 import window from '@ohos.window';
-import {ObjectUtils}  from './ObjectUtils';
 
 export default function saveComponentUserCancelTest() {
   describe("saveComponentUserCancelTest", ( ) => {
@@ -111,17 +110,41 @@ export default function saveComponentUserCancelTest() {
         console.info('====>[Test_Security_Button_SaveCancel_0100] button is:' + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
-        let allowBtn = await driver.findComponent(ON.text('取消'));
-        console.info('====>[Test_Security_Button_SaveCancel_0100] allowBtn is:' + JSON.stringify(allowBtn));
-        if(allowBtn !== null){
-          console.info('====>[Test_Security_Button_SaveCancel_0100] allowBtnClick START====');
-          await allowBtn.click();
+        let cancelBtn = await driver.findComponent(ON.text('取消'));
+        let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        console.info('====>[Test_Security_Button_SaveCancel_0100] cancelBtn is:' + JSON.stringify(cancelBtn));
+        console.info('====>[Test_Security_Button_SaveCancel_0100] titleTx is:' + JSON.stringify(titleTx));
+        if(cancelBtn !== null){
+          console.info('====>[Test_Security_Button_SaveCancel_0100] cancelBtnClick START====');
+          await cancelBtn.click();
+          console.info('====>[Test_Security_Button_SaveCancel_0100] reClick====');
+        }else if(titleTx !== null){
+          let start_x = 0;
+          let start_y = 0;
+          let end_x = 0;
+          let end_y = 0;
+          display.getAllDisplays((err, data) => {
+            console.info('====>[Test_Security_Button_SaveCancel_0100] the window data[0].width: ' + data[0].width);
+            console.info('====>[Test_Security_Button_SaveCancel_0100] the window data[0].height: ' + data[0].height);
+            start_x = end_x = Math.floor(data[0].width * (1/2));
+            start_y = Math.floor(data[0].height * (4/5));
+            end_y = Math.floor(data[0].height * (1/5));
+          });
+          for(let i = 0; i < 5; i++){
+            await driver.swipe(start_x, start_y, end_x, end_y);
+            await Utils.sleep(100);
+          }
+          let cancelBtn = await driver.findComponent(ON.text('取消'));
+          console.info('====>[Test_Security_Button_SaveCancel_0100] cancelBtn is:' + JSON.stringify(cancelBtn));
+          console.info('====>[Test_Security_Button_SaveCancel_0100] cancelBtnClick START====');
+          await cancelBtn.click();
           console.info('====>[Test_Security_Button_SaveCancel_0100] reClick====');
         }else{
           expect(false).assertTrue();
         }
       } catch (err) {
         console.info('====>[Test_Security_Button_SaveCancel_0100] clickSecComponent err : ' + JSON.stringify(err));
+        expect(false).assertTrue();
       }
       await Utils.sleep(500);
       done();
@@ -201,6 +224,7 @@ export default function saveComponentUserCancelTest() {
         }
       } catch (err) {
         console.info('====>[Test_Security_Button_SaveCancel_0200] clickSecComponent err : ' + JSON.stringify(err));
+        expect(false).assertTrue();
       }
       await Utils.sleep(500);
       done();
@@ -278,6 +302,7 @@ export default function saveComponentUserCancelTest() {
         }
       } catch (err) {
         console.info('====>[Test_Security_Button_SaveCancel_0300] clickSecComponent err : ' + JSON.stringify(err));
+        expect(false).assertTrue();
       }
       await Utils.sleep(500);
       done();

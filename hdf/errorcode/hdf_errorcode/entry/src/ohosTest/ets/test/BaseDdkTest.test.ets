@@ -48,12 +48,13 @@ export default function ActsBaseDDkTest() {
       console.log(TAG, '*************hid Unit HidEmitEventTest end*************');
     })
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
-     * @tc.desc    : Test DdkMapAshmemAshmemFd.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100
+     * @tc.desc   Test DdkMapAshmemAshmemFd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_DdkMapAshmemAshmemFd_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -69,12 +70,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemAddress_0200
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemAddress_0200
-     * @tc.desc    : Test DdkMapAshmemAddress.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemAddress_0200
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemAddress_0200
+     * @tc.desc   Test DdkMapAshmemAddress.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemAddress_0200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -90,12 +92,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemSize_0300
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemSize_0300
-     * @tc.desc    : Test DdkMapAshmemSize.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemSize_0300
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemSize_0300
+     * @tc.desc   Test DdkMapAshmemSize.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemSize_0300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -111,12 +114,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemOffset_0400
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemOffset_0400
-     * @tc.desc    : Test DdkMapAshmemOffset.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemOffset_0400
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemOffset_0400
+     * @tc.desc   Test DdkMapAshmemOffset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemOffset_0400', Level.LEVEL1, async (done: Function) => {
       try {
@@ -132,12 +136,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
-     * @tc.desc    : Test DdkMapAshmemBufferLength.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemBufferLength_0500
+     * @tc.desc   Test DdkMapAshmemBufferLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemBufferLength_0500', Level.LEVEL1, async (done: Function) => {
       try {
@@ -153,12 +158,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
-     * @tc.desc    : Test DdkMapAshmemTransferredLength.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600
+     * @tc.desc   Test DdkMapAshmemTransferredLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemTransferredLength_0600', Level.LEVEL1, async (done: Function) => {
       try {
@@ -174,12 +180,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemFailure_0700
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemFailure_0700
-     * @tc.desc    : Test DdkMapAshmemFailure.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemFailure_0700
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemFailure_0700
+     * @tc.desc   Test DdkMapAshmemFailure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemFailure_0700', Level.LEVEL1, async (done: Function) => {
       try {
@@ -195,12 +202,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
-     * @tc.desc    : Test DdkMapAshmemInvalidParameter.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800
+     * @tc.desc   Test DdkMapAshmemInvalidParameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemInvalidParameter_0800', Level.LEVEL1, async (done: Function) => {
       try {
@@ -216,12 +224,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
-     * @tc.desc    : Test DdkMapAshmemInvalidOperation.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900
+     * @tc.desc   Test DdkMapAshmemInvalidOperation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemInvalidOperation_0900', Level.LEVEL1, async (done: Function) => {
       try {
@@ -237,12 +246,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
-     * @tc.name    : SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
-     * @tc.desc    : Test DdkMapAshmemNullPTR.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
+     * @tc.number SUB_Driver_Ext_DdkMapAshmemNullPTR_1000
+     * @tc.desc   Test DdkMapAshmemNullPTR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkMapAshmemNullPTR_1000', Level.LEVEL1, async (done: Function) => {
       try {
@@ -258,12 +268,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkUnmapAshmemFailure_1100
-     * @tc.name    : SUB_Driver_Ext_DdkUnmapAshmemFailure_1100
-     * @tc.desc    : Test DdkUnmapAshmemFailure.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkUnmapAshmemFailure_1100
+     * @tc.number SUB_Driver_Ext_DdkUnmapAshmemFailure_1100
+     * @tc.desc   Test DdkUnmapAshmemFailure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkUnmapAshmemFailure_1100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -279,12 +290,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_DdkDestroyAshmemFailure_1200
-     * @tc.name    : SUB_Driver_Ext_DdkDestroyAshmemFailure_1200
-     * @tc.desc    : Test DdkDestroyAshmemFailure.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_DdkDestroyAshmemFailure_1200
+     * @tc.number SUB_Driver_Ext_DdkDestroyAshmemFailure_1200
+     * @tc.desc   Test DdkDestroyAshmemFailure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Driver_Ext_DdkDestroyAshmemFailure_1200', Level.LEVEL1, async (done: Function) => {
       try {
@@ -300,12 +312,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeTimeOut_1400
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeTimeOut_1400
-     * @tc.desc    : Test HidDdkErrCodeTimeOut.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeTimeOut_1400
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeTimeOut_1400
+     * @tc.desc   Test HidDdkErrCodeTimeOut.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeTimeOut_1400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -321,12 +334,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeInitError_1500
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeInitError_1500
-     * @tc.desc    : Test HidDdkErrCodeInitError.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeInitError_1500
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeInitError_1500
+     * @tc.desc   Test HidDdkErrCodeInitError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeInitError_1500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -342,12 +356,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeNotFound_1600
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeNotFound_1600
-     * @tc.desc    : Test HidDdkErrCodeNotFound.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeNotFound_1600
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeNotFound_1600
+     * @tc.desc   Test HidDdkErrCodeNotFound.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeNotFound_1600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -363,12 +378,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeIOError_1800
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeIOError_1800
-     * @tc.desc    : Test HidDdkErrCodeIOError.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeIOError_1800
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeIOError_1800
+     * @tc.desc   Test HidDdkErrCodeIOError.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeIOError_1800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -385,12 +401,13 @@ export default function ActsBaseDDkTest() {
 
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayHidRelAxes_2100
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayHidRelAxes_2100
-     * @tc.desc    : Test HidDdkErrCodeHidRelAxesArrayHidRelAxes.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayHidRelAxes_2100
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayHidRelAxes_2100
+     * @tc.desc   Test HidDdkErrCodeHidRelAxesArrayHidRelAxes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayHidRelAxes_2100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -406,12 +423,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayLength_2200
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayLength_2200
-     * @tc.desc    : Test HidDdkErrCodeHidRelAxesArrayLength.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayLength_2200
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayLength_2200
+     * @tc.desc   Test HidDdkErrCodeHidRelAxesArrayLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHidRelAxesArrayLength_2200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -427,12 +445,13 @@ export default function ActsBaseDDkTest() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidEmitEventInvalidParameter_2600
-     * @tc.name    : SUB_Driver_Ext_HidEmitEventInvalidParameter_2600
-     * @tc.desc    : Test HidEmitEventInvalidParameter.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidEmitEventInvalidParameter_2600
+     * @tc.number SUB_Driver_Ext_HidEmitEventInvalidParameter_2600
+     * @tc.desc   Test HidEmitEventInvalidParameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidEmitEventInvalidParameter_2600', Level.LEVEL0, async (done: Function) => {
       try {

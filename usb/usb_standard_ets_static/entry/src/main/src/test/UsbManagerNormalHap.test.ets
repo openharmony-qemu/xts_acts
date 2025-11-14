@@ -32,9 +32,13 @@ export default function UsbManagerNormalHapTest() {
     })
 
     /**
-     * @tc.number    SUB_USB_HostManager_JS_Func_Static_0100
-     * @tc.name      getDevicesTest001
-     * @tc.desc      Test usb API getDevices functionality.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   getDevicesTest001
+     * @tc.number SUB_USB_HostManager_JS_Func_Static_0100
+     * @tc.desc   Test usb API getDevices functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getDevicesTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '----------------------getDevicesTest001---------------------------');
@@ -131,9 +135,13 @@ export default function UsbManagerNormalHapTest() {
     })
 
     /**
-     * @tc.number    SUB_USB_HostManager_JS_Func_Static_0200
-     * @tc.name      usbEnumTest001
-     * @tc.desc      Test usb enumeration coverage.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   usbEnumTest001
+     * @tc.number SUB_USB_HostManager_JS_Func_Static_0200
+     * @tc.desc   Test usb enumeration coverage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("usbEnumTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '----------------------usbEnumTest001---------------------------');

@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-
-import { BusinessError } from '@kit.BasicServicesKit';
 import {
   ReactiveComponentContent,
   Binding,
@@ -73,58 +71,43 @@ class MyNodeController extends NodeController {
     return this.rootNode;
   }
 
-  dispose() {
+  isDisposed() {
     if (this.contentNode !== null) {
-      this.contentNode.dispose();
+
+      console.info('aboutToDisappear1:' + this.contentNode.isDisposed());
+      AppStorage.SetOrCreate('builderNodeIsDisposed1',this.contentNode.isDisposed());
     }
   }
 
-  // 检验当前Node是否已被释放
-  isDisposed(): string {
+  dispose() {
     if (this.contentNode !== null) {
-      if (this.contentNode.isDisposed()) {
-        return 'true';
-      } else {
-        return 'false';
-      }
+      this.contentNode.dispose();
+      AppStorage.SetOrCreate('builderNodeIsDisposed2',this.contentNode.isDisposed());
+      console.info('aboutToDisappear2:' + this.contentNode.isDisposed());
     }
-    return 'contentNode is null';
   }
 }
 
 @Entry
 @Component
 struct Index {
-  @State text: string = ''
   private myNodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Row() {
-      Column() {
-        NodeContainer(this.myNodeController)
-          .width('100%')
-          .height(100)
-          .backgroundColor('#FFF0F0F0')
-        Button('ReactiveComponentContent dispose').id('dispose')
-          .onClick(() => {
-            this.myNodeController.dispose();
-            this.text = '';
-          })
-          .width(200)
-          .height(50)
-        Button('ReactiveBuilderNode isDisposed').id('isDisposed')
-          .onClick(() => {
-            this.text = this.myNodeController.isDisposed();
-            console.info('isDisposed :' + this.text)
-          })
-          .width(200)
-          .height(50)
-        Text(this.text)
-          .id('isDisposedText')
-          .fontSize(25)
-      }
-      .width('100%')
-      .height('100%')
+    Column({ space: 4 }) {
+      NodeContainer(this.myNodeController).height('30%')
+      Button('ComponentContent dispose').height('10%')
+        .id('btn_ComponentContent_dispose')
+        .onClick(() => {
+          this.myNodeController.dispose();
+        })
+      Button('ComponentContent isDisposed').height('10%')
+        .id('btn_ComponentContent_isDisposed')
+        .onClick(() => {
+          this.myNodeController.isDisposed();
+        })
     }
+    .width('100%')
+    .height('100%')
   }
 }

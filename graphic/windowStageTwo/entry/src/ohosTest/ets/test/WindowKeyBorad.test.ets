@@ -28,6 +28,7 @@ export default function windowKeyBorad() {
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -44,9 +45,13 @@ export default function windowKeyBorad() {
       console.info('beforeAll isPCStatus: ' + isPCStatus);
       let mainWindow = windowStage.getMainWindowSync();
       await mainWindow.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      isFreeWindowMode = mainWindow.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       let driver: Driver = Driver.create();
       await sleep(1000);
-      if (isPCStatus==''||isAutoWindow == 'false') {
+      if (isFreeWindowMode==false) {
         let input = await driver.findComponent(ON.id('textInput'));
         console.info('beforeAll input: ' + JSON.stringify(input));
         await sleep(1000);
@@ -102,7 +107,7 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       let mainWindow = windowStage.getMainWindowSync();
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback  = async (keyboardInfo: window.KeyboardInfo) => {
@@ -173,7 +178,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -208,7 +213,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -239,7 +244,7 @@ export default function windowKeyBorad() {
       let mainWindow = windowStage.getMainWindowSync();
       console.info(`${caseName} Succeeded in getting the main window.`);
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = async (keyboardInfo: window.KeyboardInfo) => {
@@ -313,7 +318,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -348,7 +353,7 @@ export default function windowKeyBorad() {
       await subWindowClass.showWindow();
       await sleep(200);
       try {
-        if (isPCStatus != '' || isAutoWindow != '') {
+        if (isFreeWindowMode == true) {
           await subWindowClass.destroyWindow()
           done();
         }
@@ -381,7 +386,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = (keyboardInfo: window.KeyboardInfo) => {
@@ -451,7 +456,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = (keyboardInfo: window.KeyboardInfo) => {
@@ -524,7 +529,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = (keyboardInfo: window.KeyboardInfo) => {
@@ -595,7 +600,7 @@ export default function windowKeyBorad() {
       let timer1 = 0;
       let timer2 = 0;
       try {
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           done();
         } else {
           const callback1  = async (keyboardInfo: window.KeyboardInfo) => {

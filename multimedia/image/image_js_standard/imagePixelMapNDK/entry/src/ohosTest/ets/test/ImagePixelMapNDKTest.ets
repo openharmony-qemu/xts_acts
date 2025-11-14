@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import ndkTest from 'libentry.so'
+import pixelMapNdkTest from 'libPixelMapNdk.so';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -347,11 +348,14 @@ async function pixelMapErrTest(done: Function, testNum: string, pixelMapInterfac
 export default function ImagePixelMapNDKTest() {
     describe('ImagePixelMapNDKTest', () => {
         let globalpixelmap:image.PixelMap;
+        let filesDir: string|undefined;
         const RESULT_SUCCESS = 0;
         const BYTESNUMBER = 16;
+        const test_wbmp = 'test.wbmp';
 
         beforeAll(() => {
             console.info('beforeAll case');
+            filesDir = AppStorage.get('pathDir');
         });
         beforeEach(() => {
             console.info('beforeEach case');
@@ -987,5 +991,68 @@ export default function ImagePixelMapNDKTest() {
             await pixelMapErrTest(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPNDK_ERR_2400', 'crop', checkResult, 0, 1, true,
                 2);
         });
+
+        /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+         * @tc.desc      : 1.create pixelmap object by imageSource
+         *                 2.set DecodingOptions
+         *                       desiredSize: {width: 256, height: 256},
+         *                       desiredPixelFormat: RGBA_8888
+         * @tc.size      : MediumTest
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
+            let testNum = "SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100";
+            let expectInfo: pixelMapNdkTest.decodeOptions = {
+                width: 256,
+                height: 256,
+                pixelFormat: image.PixelMapFormat.RGBA_8888,
+                mimeType: "image/wbmp"
+            };
+            let filePath = filesDir + "/" + test_wbmp;
+            let imageInfo = pixelMapNdkTest.CreatePixelMapAndGetInfo(filePath, expectInfo);
+            if (typeof imageInfo == 'object') {
+                let ret = (imageInfo.width == 256) &&
+                        (imageInfo.height == 256) &&
+                        (imageInfo.pixelFormat == image.PixelMapFormat.RGBA_8888) &&
+                        (imageInfo.mimeType == expectInfo.mimeType);
+                console.log(testNum + ": CreatePixelMapAndGetInfo result = " + JSON.stringify(imageInfo));
+                console.log(testNum + ": expected result = " + JSON.stringify(imageInfo));
+                expect(ret).assertTrue();
+            } else {
+                console.log(testNum + ": CreatePixelMapAndGetInfo result is not object!");
+                expect(false).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+         * @tc.desc      : 1.create pixelmap object by imageSource
+         * @tc.size      : MediumTest
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200', Level.LEVEL0, async (done: Function) => {
+            let testNum = "SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200";
+            let filePath = filesDir + "/" + test_wbmp;
+            let imageInfo = pixelMapNdkTest.CreatePixelMapAndGetInfo(filePath);
+            if (typeof imageInfo == 'object') {
+                let ret = (imageInfo.width != undefined) &&
+                        (imageInfo.height != undefined) &&
+                        (imageInfo.pixelFormat != undefined) &&
+                        (imageInfo.mimeType == "image/wbmp");
+                console.log(testNum + ": CreatePixelMapAndGetInfo result = " + JSON.stringify(imageInfo));
+                console.log(testNum + ": expected result = " + JSON.stringify(imageInfo));
+                expect(ret).assertTrue();
+            } else {
+                console.log(testNum + ": CreatePixelMapAndGetInfo result is not object!");
+                expect(false).assertTrue();
+            }
+            done();
+        })
     })
 }

@@ -305,15 +305,17 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             expect(data.event).assertEqual("ACTS_StartAbility_0100_CommonEvent");
-            featureAbility.hasWindowFocus().then((data)=>{
-              try{expect(data).assertFalse()}catch{};
-              console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
-              commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-              done();
-            }).catch((err)=>{
-              console.info("====>ACTS_StartAbility_0100 hasWindowFocus fail :====>" + JSON.stringify(err));
-              expect(true).assertEqual(false);
-            })
+            setTimeout(()=>{
+                featureAbility.hasWindowFocus().then((data)=>{
+                    try{expect(data).assertFalse()}catch{};
+                    console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+                    commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
+                    done();
+                  }).catch((err)=>{
+                    console.info("====>ACTS_StartAbility_0100 hasWindowFocus fail :====>" + JSON.stringify(err));
+                    expect(true).assertEqual(false);
+                  })
+            }, 300)
         }
 
         commonEvent.createSubscriber(subscriberInfoActsStartAbility0100).then(async (data) => {
@@ -324,7 +326,9 @@ describe('ActsFeatureAbilityTest', function () {
 
         function UnSubscribeCallback() {
             console.info("====>UnSubscribe CallBack====>");
-            done();
+            setTimeout(()=>{
+                done();
+            }, 1000)
         }
 
         function timeout() {
@@ -394,14 +398,14 @@ describe('ActsFeatureAbilityTest', function () {
             clearTimeout(id);
             expect(promise).assertEqual(0);
             expect(data.event).assertEqual("ACTS_StartAbility_0201_CommonEvent");
-            featureAbility.hasWindowFocus(
-              (err, data) => {
-                console.info("hasWindowFocus asyncCallback code data: " + data);
-                try{expect(data).assertFalse()}catch{};
-                console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
-                commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
-              }
-          );
+            setTimeout(()=>{
+                featureAbility.hasWindowFocus((err, data) => {
+                    console.info("hasWindowFocus asyncCallback code data: " + data);
+                    try{expect(data).assertFalse()}catch{};
+                    console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+                    commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
+                });
+            }, 300)
         }
 
         await commonEvent.createSubscriber(subscriberInfoActsStartAbility0201).then(async (data) => {
@@ -412,7 +416,9 @@ describe('ActsFeatureAbilityTest', function () {
 
         function UnSubscribeCallback() {
             console.info("====>UnSubscribe CallBack====>");
-            done();
+            setTimeout(()=>{
+                done();
+            }, 1000)
         }
 
         function timeout() {

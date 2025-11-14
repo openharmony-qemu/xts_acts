@@ -81,10 +81,13 @@ export default function inputMethodTest() {
       }
     );
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0100
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0100
-     * @tc.name Call the changeSelection interface in Async mode, enter the parameter text='Input method keyboard
-     *             test hey hey', start=0, end=5
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0100';
@@ -115,10 +118,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0200
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0200
-     * @tc.name Call the changeSelection interface in Async mode, enter the parameter text='Input method keyboard
-     *             test hey hey', start=0, end=10
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0200', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0200';
@@ -149,10 +155,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0300
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0300
-     * @tc.name Call the changeSelection interface in Async mode, enter the parameter text='Input method keyboard
-     *             test hey hey', start=- 1, end=5
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0300', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0300';
@@ -183,10 +192,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0400
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0400
-     * @tc.name Call the changeSelection interface in Async mode, enter the parameter text='Input method keyboard
-     *             test hehe', start=8, end=2
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0400', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0400';
@@ -216,9 +228,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0500
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0500
-     * @tc.name Async mode calls changeSelection interface, input parameter text=123
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0500', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0500';
@@ -249,9 +265,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0600
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0600
-     * @tc.name Async mode calls changeSelection interface, input parameter text=''
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0600', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0600';
@@ -281,9 +301,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0700
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0700
-     * @tc.name Async mode calls changeSelection interface, input parameter start='0'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0700', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0700';
@@ -315,9 +339,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_0800
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_0800
-     * @tc.name Async mode calls changeSelection interface, input parameter end='5'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_0800', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_0800';
@@ -349,9 +377,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Async_1100
      * @tc.number SUB_Misc_inputMethod_changeSelection_Async_1100
-     * @tc.name The input method keyboard is not bound, and the changeSelection interface is called in Async mode
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Async_1100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Async_1100';
@@ -393,10 +425,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0100
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0100
-     * @tc.name Call changeSelection interface in Promise mode, enter the parameter text='Input method keyboard
-     *             test hey hey', start=0, end=5
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0100';
@@ -417,10 +452,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0200
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0200
-     * @tc.name Call changeSelection interface in Promise mode, enter the parameter text='Input method keyboard
-     *             test hey hey', start=0, end=10
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0200', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0200';
@@ -441,10 +479,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0300
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0300
-     * @tc.name Call changeSelection interface in Promise mode, enter text='Input method keyboard test hey hey',
-     *             start=- 1, end=5
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0300', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0300';
@@ -465,10 +506,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0400
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0400
-     * @tc.name Call changeSelection interface in Promise mode, enter the parameter text='Input method keyboard
-     *             test hey hey', start=8, end=2
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0400', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0400';
@@ -489,9 +533,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0500
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0500
-     * @tc.name Call changeSelection interface in Promise mode, input parameter text=123
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0500', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0500';
@@ -512,9 +560,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0600
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0600
-     * @tc.name Promise mode calls changeSelection interface, input parameter text=''
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0600', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0600';
@@ -534,9 +586,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0700
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0700
-     * @tc.name Promise mode calls changeSelection interface, input parameter start='0'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0700', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0700';
@@ -558,9 +614,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_0800
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_0800
-     * @tc.name Call changeSelection interface in Promise mode, input parameter end='5'
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_0800', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_0800';
@@ -582,9 +642,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_1100
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_1100
-     * @tc.name Do not bind the input method keyboard, and call the changeSelection interface in Promise mode
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_1100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_1100';
@@ -616,9 +680,13 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_changeSelection_Promise_1200
      * @tc.number SUB_Misc_inputMethod_changeSelection_Promise_1200
-     * @tc.name The Promise method calls the changeSelection interface, and an invalid input parameter is passed in
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_changeSelection_Promise_1200', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_changeSelection_Promise_1200';

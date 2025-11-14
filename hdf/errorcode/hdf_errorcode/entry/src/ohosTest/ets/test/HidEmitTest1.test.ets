@@ -51,12 +51,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYESC.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYESC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYESC_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -72,12 +73,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY0.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY0_0200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -93,12 +95,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY1_0300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -114,12 +117,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY2.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY2_0400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -135,12 +139,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY3.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY3_0500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -156,12 +161,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY4.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY4_0600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -177,12 +183,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY5.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY5_0700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -198,12 +205,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY6.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY6_0800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -219,12 +227,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY7.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY7.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY7_0900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -240,12 +249,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY8.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY8_1000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -261,12 +271,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEY9.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEY9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEY9_1100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -282,12 +293,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYGRAVE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYGRAVE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYGRAVE_1200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -303,12 +315,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYMINUS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYMINUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYMINUS_1300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -324,12 +337,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYEQUALS.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYEQUALS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYEQUALS_1400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -345,12 +359,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYBACKSPACE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYBACKSPACE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSPACE_1500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -366,12 +381,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYLRFTBACKET.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYLRFTBACKET.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLRFTBACKET_1600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -387,12 +403,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYRIGHTBACKET.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYRIGHTBACKET.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTBACKET_1700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -408,12 +425,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYENTER.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYENTER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYENTER_1800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -429,12 +447,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYLEFTSHIFT.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYLEFTSHIFT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYLEFTSHIFT_1900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -450,12 +469,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYBACKSLASH.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYBACKSLASH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYBACKSLASH_2000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -471,12 +491,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYSEMICOLON.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYSEMICOLON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSEMICOLON_2100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -492,12 +513,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYAPOSTROPHE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYAPOSTROPHE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYAPOSTROPHE_2200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -513,12 +535,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYSPACE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYSPACE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSPACE_2300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -534,12 +557,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYSLASH.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYSLASH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYSLASH_2400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -555,12 +579,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYCOMMA.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYCOMMA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYCOMMA_2500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -576,12 +601,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYPERIOD.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYPERIOD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYPERIOD_2600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -597,12 +623,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYRIGHTSHIFT.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYRIGHTSHIFT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYRIGHTSHIFT_2700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -618,12 +645,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD0.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD0_2800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -639,12 +667,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD1.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD1_2900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -660,12 +689,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD2.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD2_3000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -681,12 +711,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD3.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD3_3100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -702,12 +733,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD4.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD4_3200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -723,12 +755,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD5.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD5_3300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -744,12 +777,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD6.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD6_3400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -765,12 +799,13 @@ export default function ActsHidEmitCodeTest1() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500
-     * @tc.desc    : Test HidCreateDeviceKeyCodeKEYNUMPAD7.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYNUMPAD7.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYNUMPAD7_3500', Level.LEVEL0, async (done: Function) => {
       try {

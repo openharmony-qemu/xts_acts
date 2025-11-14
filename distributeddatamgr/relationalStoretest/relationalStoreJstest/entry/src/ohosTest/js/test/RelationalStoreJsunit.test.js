@@ -52,12 +52,13 @@ describe('relationalStoreTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name testRdbStore0001
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_0900
-     * @tc.desc RelationalStore store getRdbStore test
+     * @tc.desc   RelationalStore store getRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0001 start *************");
@@ -75,12 +76,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0002
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1000
-     * @tc.desc RelationalStore store getRdbStore and create table
+     * @tc.desc   RelationalStore store getRdbStore and create table
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0002 start *************");
@@ -100,12 +102,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0003
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1100
-     * @tc.desc RelationalStore store getRdbStore with wrong path
+     * @tc.desc   RelationalStore store getRdbStore with wrong path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0003 start *************");
@@ -131,12 +134,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0004
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1200
-     * @tc.desc RelationalStore store deleteRdbStore
+     * @tc.desc   RelationalStore store deleteRdbStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0004 start *************");
@@ -152,12 +156,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0005
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1300
-     * @tc.desc RelationalStore store deleteRdbStore
+     * @tc.desc   RelationalStore store deleteRdbStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStore0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG + "************* testRdbStore0005 start *************");
@@ -174,12 +179,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0006
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1400
-     * @tc.desc RelationalStore store getRdbStore test
+     * @tc.desc   RelationalStore store getRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0006 start *************");
@@ -203,12 +209,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0007
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1500
-     * @tc.desc RelationalStore store getRdbStore test
+     * @tc.desc   RelationalStore store getRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0007 start *************");
@@ -232,12 +239,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0008
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1600
-     * @tc.desc RelationalStore store deleteRdbStore test
+     * @tc.desc   RelationalStore store deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0008 start *************");
@@ -253,12 +261,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
-     * @tc.name testRdbStore0009
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRdbStore0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1700
-     * @tc.desc RelationalStore store deleteRdbStore test
+     * @tc.desc   RelationalStore store deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStore0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testRdbStore0009 start *************");
@@ -274,12 +283,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Version_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1800
-     * @tc.name SUB_DDM_RelationalStore_Version_0010
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Version_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Version_0010 start *************");
@@ -307,12 +317,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Version_0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_1900
-     * @tc.name SUB_DDM_RelationalStore_Version_0020
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Version_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Version_0020 start *************");
@@ -345,12 +356,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Different_Version_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2000
-     * @tc.name SUB_DDM_RelationalStore_Different_Version_0010
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Different_Version_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Different_Version_0010 start *************");
@@ -382,12 +394,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Different_Version_0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2100
-     * @tc.name SUB_DDM_RelationalStore_Different_Version_0020
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Different_Version_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Different_Version_0020 start *************");
@@ -419,12 +432,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Different_Version_0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2200
-     * @tc.name SUB_DDM_RelationalStore_Different_Version_0030
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Different_Version_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Different_Version_0030 start *************");
@@ -456,12 +470,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Different_Version_0040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2300
-     * @tc.name SUB_DDM_RelationalStore_Different_Version_0040
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Different_Version_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Different_Version_0040 start *************");
@@ -493,12 +508,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Different_Version_0050
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2400
-     * @tc.name SUB_DDM_RelationalStore_Different_Version_0050
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Different_Version_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Different_Version_0050 start *************");
@@ -530,12 +546,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Different_Version_0060
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2500
-     * @tc.name SUB_DDM_RelationalStore_Different_Version_0060
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Different_Version_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Different_Version_0060 start *************");
@@ -568,12 +585,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Different_Version_0070
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2600
-     * @tc.name SUB_DDM_RelationalStore_Different_Version_0070
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Different_Version_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Different_Version_0070 start *************");
@@ -606,12 +624,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Same_Version_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2700
-     * @tc.name SUB_DDM_RelationalStore_Same_Version_0010
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Same_Version_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Same_Version_0010 start *************");
@@ -640,12 +659,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Same_Version_0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2800
-     * @tc.name SUB_DDM_RelationalStore_Same_Version_0020
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Same_Version_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Same_Version_0020 start *************");
@@ -678,12 +698,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Same_Version_0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_2900
-     * @tc.name SUB_DDM_RelationalStore_Same_Version_0030
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Same_Version_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Same_Version_0030 start *************");
@@ -715,12 +736,13 @@ describe('relationalStoreTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_RelationalStore_Same_Version_0040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_TransactionJsAPITest_3000
-     * @tc.name SUB_DDM_RelationalStore_Same_Version_0040
-     * @tc.type Function
-     * @tc.level Level 2
-     * @tc.size MediumTest
-     * @tc.desc relational version
+     * @tc.desc   relational version
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RelationalStore_Same_Version_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* SUB_DDM_RelationalStore_Same_Version_0040 start *************");

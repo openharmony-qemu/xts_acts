@@ -31,7 +31,7 @@ let domain: int = 0x0000;
 let wantAgentData : Object = {}
 let count: int = 0;
 
-let parameters1 : Record<String, Object> = {
+let parameters1 : Record<String, RecordData> = {
   "mykey0": 2222,
   "mykey1": [1, 2, 3],
   "mykey2": "[1, 2, 3]",

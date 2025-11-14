@@ -113,12 +113,13 @@ describe('rdbStorePredicatesJoinTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name: testRdbJoin001
-     * @tc.number: SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0100
-     * @tc.desc: sql query inner join test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbJoin001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0100
+     * @tc.desc   sql query inner join test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbJoin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "testRdbJoin001 begin.");
@@ -139,12 +140,13 @@ describe('rdbStorePredicatesJoinTest', function () {
     })
 
     /**
-     * @tc.name: testRdbJoin002
-     * @tc.number: SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0200
-     * @tc.desc: sql query cross join test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbJoin002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0200
+     * @tc.desc   sql query cross join test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbJoin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "testRdbJoin002 begin.");
@@ -167,12 +169,13 @@ describe('rdbStorePredicatesJoinTest', function () {
     })
 
     /**
-     * @tc.name: testRdbJoin003
-     * @tc.number: SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0300
-     * @tc.desc: sql query left outer join test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbJoin003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBQueryJsAPITest_0300
+     * @tc.desc   sql query left outer join test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbJoin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "testRdbJoin003 begin.");

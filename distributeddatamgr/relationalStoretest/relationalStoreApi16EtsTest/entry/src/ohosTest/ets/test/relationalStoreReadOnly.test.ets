@@ -80,15 +80,16 @@ export default function rdbStoreReadOnlyEtsTest() {
     });
 
 
-    /**
-     * @tc.name readOnlyEtsTest0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyEtsAPI16Test_0100
-     * @tc.desc RelationalStore batch insert with conflict resolution by store
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   readOnlyEtsTest0100
+     * @tc.number readOnlyEtsTest0100
+     * @tc.desc   readOnlyEtsTest0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('readOnlyEtsTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* readOnlyEtsTest0100 start *************");
       const row: data_relationalStore.ValuesBucket = {
@@ -115,15 +116,16 @@ export default function rdbStoreReadOnlyEtsTest() {
     })
 
 
-    /**
-     * @tc.name readOnlyEtsTest0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyEtsAPI16Test_0200
-     * @tc.desc RelationalStore batch insert with conflict resolution by store
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   readOnlyEtsTest0200
+     * @tc.number readOnlyEtsTest0200
+     * @tc.desc   readOnlyEtsTest0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('readOnlyEtsTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* readOnlyEtsTest0200 start *************");
       const row: data_relationalStore.ValuesBucket = {
@@ -150,15 +152,16 @@ export default function rdbStoreReadOnlyEtsTest() {
     })
 
 
-    /**
-     * @tc.name readOnlyEtsTest0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyEtsAPI16Test_0300
-     * @tc.desc RelationalStore batch insert with conflict resolution by store
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   readOnlyEtsTest0300
+     * @tc.number readOnlyEtsTest0300
+     * @tc.desc   readOnlyEtsTest0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('readOnlyEtsTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* readOnlyEtsTest0300 start *************");
       const row: data_relationalStore.ValuesBucket = {
@@ -185,15 +188,16 @@ export default function rdbStoreReadOnlyEtsTest() {
     })
 
 
-    /**
-     * @tc.name readOnlyEtsTest0400
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyEtsAPI16Test_0400
-     * @tc.desc RelationalStore batch insert with conflict resolution by store
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   readOnlyEtsTest0400
+     * @tc.number readOnlyEtsTest0400
+     * @tc.desc   readOnlyEtsTest0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('readOnlyEtsTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* readOnlyEtsTest0400 start *************");
       const row: data_relationalStore.ValuesBucket = {
@@ -220,15 +224,16 @@ export default function rdbStoreReadOnlyEtsTest() {
     })
 
 
-    /**
-     * @tc.name readOnlyEtsTest0500
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyEtsAPI16Test_0500
-     * @tc.desc RelationalStore batch insert with conflict resolution by store
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   readOnlyEtsTest0500
+     * @tc.number readOnlyEtsTest0500
+     * @tc.desc   readOnlyEtsTest0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('readOnlyEtsTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* readOnlyEtsTest0500 start *************");
       const row: data_relationalStore.ValuesBucket = {
@@ -255,15 +260,16 @@ export default function rdbStoreReadOnlyEtsTest() {
     })
 
 
-    /**
-     * @tc.name readOnlyEtsTest0600
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyEtsAPI16Test_0600
-     * @tc.desc RelationalStore batch insert with conflict resolution by store
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   readOnlyEtsTest0600
+     * @tc.number readOnlyEtsTest0600
+     * @tc.desc   readOnlyEtsTest0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('readOnlyEtsTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* readOnlyEtsTest0600 start *************");
       const row: data_relationalStore.ValuesBucket = {

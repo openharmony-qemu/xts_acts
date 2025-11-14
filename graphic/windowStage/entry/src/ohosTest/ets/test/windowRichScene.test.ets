@@ -22,6 +22,8 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
   describe('window_richScene_test', () => {
     console.log('describe window_richScene_test start!!!')
     let isPCStatus: string = '';
+    let isAutoWindow: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       console.info('window_richScene_test beforeAll begin');
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -30,6 +32,13 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
       console.info('window_richScene_test beforeAll end');
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+      console.error(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0110

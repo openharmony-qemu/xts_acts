@@ -89,13 +89,14 @@ export default function userauthTest_API12() {
     })
 
     /**
-    * @tc.number     SUB_Security_IAM_Func_API12_Static_0100
-    * @tc.name       SUB_Security_IAM_Func_API12_Static_0100
-    * @tc.desc       GetEnrolledState parameter validity check
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    * @tc.level      Level 1
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_IAM_Func_API12_Static_0100
+     * @tc.number SUB_Security_IAM_Func_API12_Static_0100
+     * @tc.desc   GetEnrolledState parameter validity check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Security_IAM_Func_API12_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace SUB_Security_IAM_Func_API12_Static_0100 start');
       if (!checkSupportOrNot(userAuth.UserAuthType.FACE)){
@@ -131,13 +132,14 @@ export default function userauthTest_API12() {
       done();
     })
     /**
-    * @tc.number     SUB_Security_IAM_authWidget_API_Static_0120
-    * @tc.name       SUB_Security_IAM_authWidget_API_Static_0120
-    * @tc.desc       ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    * @tc.level      Level.LEVEL3
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_IAM_authWidget_API_Static_0120
+     * @tc.number SUB_Security_IAM_authWidget_API_Static_0120
+     * @tc.desc   ReuseUnlockResultDuration: 120000. ReuseUnlockResultMode: 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,"SUB_Security_IAM_authWidget_API_Static_0120 start");
       let reuseUnlockResult:userAuth.ReuseUnlockResult = {
@@ -160,13 +162,14 @@ export default function userauthTest_API12() {
     });
 
     /**
-    * @tc.number     SUB_Security_IAM_authWidget_API_Static_0140
-    * @tc.name       SUB_Security_IAM_authWidget_API_Static_0140
-    * @tc.desc       reuseUnlockResultMode Parameter transmission test.
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    * @tc.level      Level.LEVEL3
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_IAM_authWidget_API_Static_0140
+     * @tc.number SUB_Security_IAM_authWidget_API_Static_0140
+     * @tc.desc   reuseUnlockResultMode Parameter transmission test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,"SUB_Security_IAM_authWidget_API_Static_0140 start");
       let checkFace = checkSupportOrNot(userAuth.UserAuthType.FACE);
@@ -197,13 +200,14 @@ export default function userauthTest_API12() {
     });
 
     /**
-    * @tc.number     SUB_Security_IAM_authWidget_API_Static_0130
-    * @tc.name       SUB_Security_IAM_authWidget_API_Static_0130
-    * @tc.desc       reuseUnlockResultDuration Parameter transmission test.
-    * @tc.size       MediumTest
-    * @tc.type       Function
-    * @tc.level      Level.LEVEL3
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_IAM_authWidget_API_Static_0130
+     * @tc.number SUB_Security_IAM_authWidget_API_Static_0130
+     * @tc.desc   reuseUnlockResultDuration Parameter transmission test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Security_IAM_authWidget_API_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, "SUB_Security_IAM_authWidget_API_Static_0130 start");
       let reuseDuration1:int[] = [-1, 300001, 0];

@@ -22,6 +22,8 @@ import { waitForExist} from '../../test/WaitTest.test';
 import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { webview } from '@kit.ArkWeb';
 import { pasteboard } from '@kit.BasicServicesKit';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import testsuite from '../../test/List.test';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
 const EVENT_ID_SET_SUITE_KEY = 183120;
 let driver = Driver.create();
@@ -51,6 +53,13 @@ struct webViewController {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToAppear() {
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    console.info('start run testcase!!!')
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -117,7 +126,6 @@ struct webViewController {
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case "emitWebViewIsCapture01": {
-              if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
@@ -128,14 +136,10 @@ struct webViewController {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              } else {
-                Utils.emitEvent(false, 20251113)
-              }
-              break;
+                break;
             }
 
             case "emitWebViewIsCapture02": {
-              if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector03.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
@@ -146,13 +150,8 @@ struct webViewController {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/showFileSelector03.html")
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-              } else {
-                Utils.emitEvent(false, 20251114)
-              }
               break;
             }
-
-
           }
         })
       }

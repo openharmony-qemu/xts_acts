@@ -28,6 +28,8 @@ import { Driver, ON, On  } from '@ohos.UiTest';
 struct Index {
   @State message: string = 'Hello World';
   @State emitKey: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   aboutToAppear() {
     let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -55,6 +57,7 @@ struct Index {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.emitKey = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -65,8 +68,9 @@ struct Index {
         Button('web click')
           .key('WebViewActiveWebEngineVersionButton')
           .onClick(async () => {
-            console.info('key==>' + this.emitKey)
-            await Utils.sleep(3000);
+            await Utils.waitForExist(()=>this.isReceive, 'GeolocationPermissionsErrorCodeButtonIsReceive', 1, 1000);
+            console.info("key==>" + this.emitKey);
+            this.isReceive = -1;
             switch (this.emitKey) {
               case 'emitActiveWebEngineVersion001': {
                 try {
@@ -88,9 +92,12 @@ struct Index {
                   if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.M114);
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                    Utils.emitEvent(tmp_result, 20250904);
+                    if(tmp_result) {
+                      Utils.emitEvent(true, 20250904);
+                    }
+
                   } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M114, 20250904);
+                    Utils.emitEvent(true, 20250904);
                   }
 
                 } catch (error) {

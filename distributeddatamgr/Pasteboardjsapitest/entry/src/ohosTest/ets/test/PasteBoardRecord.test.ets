@@ -68,12 +68,13 @@ export default function pasteBoardRecordTest() {
       error = undefined;
     })
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1000
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create pixelMap data success
-     * @tc.size       MEDIUMTEST
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1000
+     * @tc.desc   Test pasteBoard create pixelMap data success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0100 start")
@@ -89,12 +90,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_2100
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create want data success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0200
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2100
+     * @tc.desc   Test pasteBoard create want data success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0200 start")
@@ -106,12 +108,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0200
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create arrayBuffer data success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0300
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0200
+     * @tc.desc   Test pasteBoard create arrayBuffer data success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0300 start")
@@ -123,12 +126,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1200
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create string data success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0400
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1200
+     * @tc.desc   Test pasteBoard create string data success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0400 start")
@@ -140,12 +144,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0300
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create arrayBuffer data success with 1024 bit mimeType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0500
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0300
+     * @tc.desc   Test pasteBoard create arrayBuffer data success with 1024 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0500 start")
@@ -158,12 +163,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1500
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create arrayBuffer data success with 512000 bit valueType<string>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0600
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1500
+     * @tc.desc   Test pasteBoard create arrayBuffer data success with 512000 bit valueType<string>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0600 start")
@@ -179,12 +185,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1700
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create uri data success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0700
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1700
+     * @tc.desc   Test pasteBoard create uri data success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0700 start")
@@ -196,12 +203,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0400
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create string data fail with 1025 bit mimeType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0800
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0400
+     * @tc.desc   Test pasteBoard create string data fail with 1025 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0800 start")
@@ -219,12 +227,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1400
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create string data fail,type of mimeType is number
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0900
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1400
+     * @tc.desc   Test pasteBoard create string data fail,type of mimeType is number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0900 start")
@@ -242,12 +251,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1300
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create string data fail,value of mimeType is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1300
+     * @tc.desc   Test pasteBoard create string data fail,value of mimeType is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000 start")
@@ -264,12 +274,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1600
-     * @tc.name       CreateData
-     * @tc.desc       Test pasteBoard create string data fail with one parameter
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1600
+     * @tc.desc   Test pasteBoard create string data fail with one parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1100 start")
@@ -287,12 +298,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0900
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create pixelMap record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0900
+     * @tc.desc   Test pasteBoard create pixelMap record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0100 start")
@@ -309,12 +321,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_2000
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create want record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0200
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2000
+     * @tc.desc   Test pasteBoard create want record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0200 start")
@@ -329,12 +342,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0100
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create arrayBuffer record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0300
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0100
+     * @tc.desc   Test pasteBoard create arrayBuffer record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0300 start")
@@ -349,12 +363,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1100
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create string record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0400
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1100
+     * @tc.desc   Test pasteBoard create string record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0400 start")
@@ -369,12 +384,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0700
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0500
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0700
+     * @tc.desc   Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0500 start")
@@ -389,12 +405,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1800
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create string record success with 512000 bit valueType<string>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0600
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1800
+     * @tc.desc   Test pasteBoard create string record success with 512000 bit valueType<string>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0600 start")
@@ -414,12 +431,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0800
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create string record fail with 1025 bit mimeType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0700
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0800
+     * @tc.desc   Test pasteBoard create string record fail with 1025 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0700 start")
@@ -437,12 +455,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0600
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create string record fail,type of mimeType is number
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0800
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0600
+     * @tc.desc   Test pasteBoard create string record fail,type of mimeType is number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0800 start")
@@ -460,12 +479,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_1900
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create string record fail with 512001 bit valueType<string>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0900
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1900
+     * @tc.desc   Test pasteBoard create string record fail with 512001 bit valueType<string>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0900 start")
@@ -486,12 +506,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_0500
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create string record fail,mimeType is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1000
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0500
+     * @tc.desc   Test pasteBoard create string record fail,mimeType is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1000 start")
@@ -508,12 +529,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataCreate_2200
-     * @tc.name       CreateRecord
-     * @tc.desc       Test pasteBoard create string record fail with one parameter
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2200
+     * @tc.desc   Test pasteBoard create string record fail with one parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1100 start")
@@ -531,12 +553,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2500
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add pixelMap record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2500
+     * @tc.desc   Test pasteBoard add pixelMap record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0100 start")
@@ -552,12 +575,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2900
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add want record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0200
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2900
+     * @tc.desc   Test pasteBoard add want record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0200 start")
@@ -571,12 +595,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2200
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add arrayBuffer record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0300
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2200
+     * @tc.desc   Test pasteBoard add arrayBuffer record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0300 start")
@@ -590,12 +615,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2600
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add string record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0400
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2600
+     * @tc.desc   Test pasteBoard add string record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0400 start")
@@ -609,12 +635,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2300
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add record success with 1024 bit mimeType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0500
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2300
+     * @tc.desc   Test pasteBoard add record success with 1024 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0500 start")
@@ -628,12 +655,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2000
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add 600th record success
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0600
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2000
+     * @tc.desc   Test pasteBoard add 600th record success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0600 start")
@@ -649,12 +677,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2800
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add record success with 512000 bit valueType<string>
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0700
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2800
+     * @tc.desc   Test pasteBoard add record success with 512000 bit valueType<string>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0700 start")
@@ -672,12 +701,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2400
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add record fail with 1025 bit mimeType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0800
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2400
+     * @tc.desc   Test pasteBoard add record fail with 1025 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0800 start")
@@ -698,12 +728,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1900
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add record fail,type of mimeType is number
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0900
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1900
+     * @tc.desc   Test pasteBoard add record fail,type of mimeType is number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0900 start")
@@ -722,12 +753,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2100
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add 613th record successful
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1100
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2100
+     * @tc.desc   Test pasteBoard add 613th record successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1100 start")
@@ -748,12 +780,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_2700
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add record fail,mimeType is null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1200
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2700
+     * @tc.desc   Test pasteBoard add record fail,mimeType is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1200 start")
@@ -771,12 +804,13 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_3000
-     * @tc.name       AddData
-     * @tc.desc       Test pasteBoard add 613th record successful
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_3000
+     * @tc.desc   Test pasteBoard add 613th record successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300 start")

@@ -68,12 +68,13 @@ export default function HidCanIUseTest() {
     })
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDCanIUse_0100
-     * @tc.name       : testHIDCanIUse0100
-     * @tc.desc       : OH_Hid_CanIUse testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testHIDCanIUse0100
+     * @tc.number SUB_Driver_Ext_HIDCanIUse_0100
+     * @tc.desc   OH_Hid_CanIUse testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHIDCanIUse0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let flag = canIUse("SystemCapability.Driver.HID.Extension");

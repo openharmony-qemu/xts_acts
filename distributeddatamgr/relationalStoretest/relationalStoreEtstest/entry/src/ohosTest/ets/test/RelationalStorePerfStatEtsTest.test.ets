@@ -69,9 +69,13 @@ export default function PerfStatEtsTest() {
 
 
     /**
-     * @tc.name testRdbStorePerfStat0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0100
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0001',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0001 start *************");
@@ -101,9 +105,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0200
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0002',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0002 start *************");
@@ -130,9 +138,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0300
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0003',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0003 start *************");
@@ -154,9 +166,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0400
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0004',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0004 start *************");
@@ -178,9 +194,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0500
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0005',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0005 start *************");
@@ -200,9 +220,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0600
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0006',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0006 start *************");
@@ -223,9 +247,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0007
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0700
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0007',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0007 start *************");
@@ -245,9 +273,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0008
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0800
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0008',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0008 start *************");
@@ -267,9 +299,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0009
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_0900
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0009',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0009 start *************");
@@ -290,9 +326,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0010
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1000
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0010',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0010 start *************");
@@ -322,9 +362,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0011
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1100
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0011',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0011 start *************");
@@ -357,9 +401,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0012
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1200
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0012',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0012 start *************");
@@ -392,9 +440,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0013
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1300
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0013',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0013 start *************");
@@ -427,9 +479,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0014
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1400
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0014',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0014 start *************");
@@ -461,9 +517,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0015
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1500
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0015',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0015 start *************");
@@ -491,10 +551,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0016
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1600
-     * @tc.desc 1. Register callback for perfStat
-
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0016',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0016 start *************");
@@ -534,9 +597,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0017
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1700
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0017',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0017 start *************");
@@ -565,9 +632,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0018
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1800
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0018',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0018 start *************");
@@ -605,9 +676,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0019
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_1900
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0019',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0019 start *************");
@@ -628,10 +703,13 @@ export default function PerfStatEtsTest() {
     })
 
     /**
-     * @tc.name testRdbStorePerfStat0020
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2000
-     * @tc.desc 1. Register callback for perfStat
-     *          2. Update data
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0020',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0020 start *************");
@@ -666,9 +744,13 @@ export default function PerfStatEtsTest() {
       console.log(TAG + "************* testRdbStorePerfStat0020 end *************");
     })
     /**
-     * @tc.name testRdbStorePerfStat0021
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2100
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0021',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0021 start *************");
@@ -688,9 +770,13 @@ export default function PerfStatEtsTest() {
       console.log(TAG + "************* testRdbStorePerfStat0021 end *************");
     })
     /**
-     * @tc.name testRdbStorePerfStat0022
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testRdbStorePerfStat0022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onPerfStatJsAPITest_2200
-     * @tc.desc 1. Register callback for perfStat
+     * @tc.desc   1. Register callback for perfStat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePerfStat0022',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.log(TAG + "************* testRdbStorePerfStat0022 start *************");

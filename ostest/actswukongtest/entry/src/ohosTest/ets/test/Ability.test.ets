@@ -44,9 +44,13 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: wukongtest_0010
-     * @tc.name: getAbilityLists callback API.
-     * @tc.desc: getAbilityLists callback API abilityType is spoken, stateType is install.
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   wukongtest_0010
+     * @tc.number wukongtest_0010
+     * @tc.desc   getAbilityLists callback API abilityType is spoken, stateType is install.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('wukongtest_0010', Level.LEVEL0, async  ()=>{
       cmd = "wukong exec -T 0.5 &";

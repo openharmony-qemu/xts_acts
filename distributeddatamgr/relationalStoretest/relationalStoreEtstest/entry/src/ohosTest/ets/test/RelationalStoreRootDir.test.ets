@@ -67,12 +67,13 @@ export default function rdbrootDirTest() {
       console.log(TAG + "*************Unit Test End*************");
     });
     /**
-     * @tc.name invalid rootDir path promise test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0100
-     * @tc.desc invalid rootDir path promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   invalid rootDir path promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest0100 start *************");
@@ -102,12 +103,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name invalid rootDir path callback test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0200
-     * @tc.desc invalid rootDir path callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   invalid rootDir path callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function)  => {
       console.log(TAG + "************* rdbrootDirTest0200 start *************");
@@ -138,12 +140,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name db not exist promise test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0300
-     * @tc.desc db not exist promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   db not exist promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest0300 start *************");
@@ -173,12 +176,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name db not exist callback test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0400
-     * @tc.desc db not exist callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   db not exist callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest0400 start *************");
@@ -209,12 +213,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name query promise test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0500
-     * @tc.desc query promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   query promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest0500 start *************");
@@ -252,12 +257,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name query callback test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0600
-     * @tc.desc query callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   query callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest0600 start *************");
@@ -296,12 +302,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name not write promise test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0700
-     * @tc.desc not write promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   not write promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest0700 start *************");
@@ -336,12 +343,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name not write callback test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0800
-     * @tc.desc not write callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   not write callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest0800 start *************");
@@ -376,12 +384,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name deleteRdb success promise test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0900
-     * @tc.desc deleteRdb success promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   deleteRdb success promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)  => {
       console.log(TAG + "************* rdbrootDirTest0900 start *************");
@@ -413,12 +422,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name deleteRdb success callback test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1000
-     * @tc.desc deleteRdb success callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   deleteRdb success callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)  => {
       console.log(TAG + "************* rdbrootDirTest1000 start *************");
@@ -450,12 +460,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name invalid rootDir deleteRdb promise test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1100
-     * @tc.desc invalid rootDir deleteRdb promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   invalid rootDir deleteRdb promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function)  => {
       console.log(TAG + "************* rdbrootDirTest1100 start *************");
@@ -485,12 +496,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name invalid rootDir deleteRdb callback test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1200
-     * @tc.desc invalid rootDir deleteRdb callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   invalid rootDir deleteRdb callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
       console.log(TAG + "************* rdbrootDirTest1200 start *************");
@@ -521,12 +533,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name db not exist deleteRdbStore promise test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1300
-     * @tc.desc db not exist deleteRdbStore promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   db not exist deleteRdbStore promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest1300 start *************");
@@ -555,12 +568,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name db not exist deleteRdbStore callback test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1400
-     * @tc.desc db not exist deleteRdbStore callback test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   db not exist deleteRdbStore callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>  {
       console.log(TAG + "************* rdbrootDirTest1400 start *************");
@@ -589,12 +603,13 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest1400 end *************");
     })
     /**
-     * @tc.name encrpy database invalid rootDir path test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1500
-     * @tc.desc encrpy database invalid rootDir path test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   encrpy database invalid rootDir path test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest1500 start *************");
@@ -627,12 +642,13 @@ export default function rdbrootDirTest() {
 
 
     /**
-     * @tc.name encrpy database db not exist test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1600
-     * @tc.desc encrpy database db not exist test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   encrpy database db not exist test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest1600 start *************");
@@ -664,12 +680,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name encrpy database rootDir query test success
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1700
-     * @tc.desc encrpy database rootDir query test success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   encrpy database rootDir query test success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest1700 start *************");
@@ -709,12 +726,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name encrpy database rootDir not write test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1800
-     * @tc.desc encrpy database rootDir not write test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   encrpy database rootDir not write test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest1800 start *************");
@@ -751,12 +769,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name rootDir is "/data/storage/el2/database/" customDir is "rdb/tester/test" query test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1900
-     * @tc.desc rootDir is "/data/storage/el2/database/" customDir is "rdb/tester/test" query test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   rootDir is "/data/storage/el2/database/" customDir is "rdb/tester/test" query test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest1900 start *************");
@@ -794,12 +813,13 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest1900 end *************");
     })
     /**
-     * @tc.name rootDir is "//data/storage/el2/database" query test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2000
-     * @tc.desc rootDir is "//data/storage/el2/database" query test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rootDir is "//data/storage/el2/database" query test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest2000 start *************");
@@ -836,12 +856,13 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest2000 end *************");
     })
     /**
-     * @tc.name invalid rootDir path "data/storage/el2/database"
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2100
-     * @tc.desc invalid rootDir path "data/storage/el2/database"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   invalid rootDir path "data/storage/el2/database"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('rdbrootDirTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest2100 start *************");
@@ -871,12 +892,13 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @tc.name rootDir is undefined query test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2200
-     * @tc.desc rootDir is undefined query test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rootDir is undefined query test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* rdbrootDirTest2200 start *************");
@@ -912,12 +934,13 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest2200 end *************");
     })
     /**
-     * @tc.name rootDir is undefined customDir is "data/storage/el2/database/rdb/" test
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   rdbrootDirTest2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2300
-     * @tc.desc rootDir is undefined customDir is "data/storage/el2/database/rdb/" test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   rootDir is undefined customDir is "data/storage/el2/database/rdb/" test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('rdbrootDirTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)  => {
       console.log(TAG + "************* rdbrootDirTest2300 start *************");

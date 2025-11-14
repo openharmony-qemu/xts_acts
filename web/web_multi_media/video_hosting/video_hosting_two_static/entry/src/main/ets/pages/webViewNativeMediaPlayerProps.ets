@@ -402,22 +402,22 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
     this.nativePlayer = nativePlayer;
   }
 
-  updateRect(x: double, y: double, width: double, height: double): void {
+  updateRect: webview.UpdateRectFn = (x: double, y: double, width: double, height: double): void => {
     this.web.nodeWidth = width.toInt();
     this.web.nodeHeight = height.toInt();
   }
 
-  play() {
+  play: webview.ZeroParamFn<void> = (): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.play');
     this.nativePlayer?.play();
   }
 
-  pause() {
+  pause: webview.ZeroParamFn<void> = (): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.pause');
     this.nativePlayer?.pause();
   }
 
-  seek(targetTime: double) {
+  seek: webview.OneParamFn<double> = (targetTime: double): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.seek(' + targetTime + ')');
     seekList.push(targetTime);
     console.log('[BrowserShell] ===gpz=== videoTime(' + videoTime + ')');
@@ -429,34 +429,34 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
 
   }
 
-  setVolume(volume: double) {
+  setVolume: webview.OneParamFn<double> = (volume: double): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.setVolume(' + volume + ')');
     this.web.nativeMediaPlayerHandlerImpl?.handleVolumeChanged(volume);
   }
 
-  setMuted(muted: boolean) {
+  setMuted: webview.OneParamFn<boolean> = (muted: boolean): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.setMuted(' + muted + ')');
   }
 
-  setPlaybackRate(playbackRate: double) {
+  setPlaybackRate: webview.OneParamFn<double> = (playbackRate: double): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.playbackRate(' + playbackRate + ')');
     rateList.push(playbackRate);
     handleRateList.push(playbackRate);
     this.nativePlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_75_X);
   }
 
-  release() {
+  release: webview.ZeroParamFn<void> = (): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.release');
     isRelease = true;
     this.nativePlayer?.release();
     this.web.showNativeMediaPlayer = false;
   }
 
-  enterFullscreen() {
+  enterFullscreen: webview.ZeroParamFn<void> = (): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.enterFullscreen');
   }
 
-  exitFullscreen() {
+  exitFullscreen: webview.ZeroParamFn<void> = (): void => {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.exitFullscreen');
   }
 }

@@ -67,15 +67,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0100
-     * @tc.desc RelationalStore normal batch insert with conflict resolution test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0100
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0100
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0100 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -109,15 +110,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0200
-     * @tc.desc RelationalStore normal batch insert with conflict resolution test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0200
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0200
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0200 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -151,15 +153,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0300
-     * @tc.desc RelationalStore normal batch insert with conflict resolution test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0300
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0300
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0300 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -193,16 +196,17 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
+
+
     /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0400
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0400
-     * @tc.desc RelationalStore normal batch insert with conflict resolution test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0400
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0400
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-
-
     it('testRdbStoreBatchInsertWithConflictResolution0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0400 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -236,15 +240,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0500
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0500
-     * @tc.desc RelationalStore normal batch insert with conflict resolution test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0500
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0500
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0500 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -278,15 +283,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0600
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0600
-     * @tc.desc RelationalStore normal batch insert with conflict resolution test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0600
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0600
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0600 start *************");
       let u8 = new Uint8Array([1, 2, 3])
@@ -320,15 +326,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0700
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0700
-     * @tc.desc RelationalStore batch insert with conflict resolution with invalid args
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0700
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0700
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0700 start *************");
       try {
@@ -354,15 +361,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0800
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0800
-     * @tc.desc RelationalStore batch insert with conflict resolution with invalid args
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0800
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0800
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution0800 start *************");
       try {
@@ -389,15 +397,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution0900
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_0900
-     * @tc.desc RelationalStore batch insert with conflict resolution with invalid args
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution0900
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution0900
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolution0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "********* testRdbStoreBatchInsertWithConflictResolution0900 start **********");
       try {
@@ -424,15 +433,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution1000
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_1000
-     * @tc.desc RelationalStore batch insert with conflict resolution with over limit rows
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution1000
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution1000
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbStoreBatchInsertWithConflictResolution1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "******* testRdbStoreBatchInsertWithConflictResolution1000 start *******");
       let u8 = new Uint8Array([1, 2, 3]);
@@ -464,17 +474,18 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
+
+
+
     /**
-     * @tc.name testRdbStoreBatchInsertWithConflictResolution1100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionEtsAPI16Test_1100
-     * @tc.desc RelationalStore batch insert with conflict resolution with over limit rows
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreBatchInsertWithConflictResolution1100
+     * @tc.number testRdbStoreBatchInsertWithConflictResolution1100
+     * @tc.desc   testRdbStoreBatchInsertWithConflictResolution1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-
-
-
     it('testRdbStoreBatchInsertWithConflictResolution1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolution1100 start *************");
       let transaction = await (rdbStore as relationalStore.RdbStore).createTransaction({
@@ -512,15 +523,16 @@ export default function relationalStoreBatchInsertTest() {
     })
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfo0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1200
-     * @tc.desc Get Insert SQL Info
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfo0100
+     * @tc.number testRdbGetInsertSqlInfo0100
+     * @tc.desc   testRdbGetInsertSqlInfo0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfo0100 start *************");
       const bucket: relationalStore.ValuesBucket = {
@@ -544,15 +556,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfoTabkleNameTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1300
-     * @tc.desc Get Insert SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfoTabkleNameTooLength0100
+     * @tc.number testRdbGetInsertSqlInfoTabkleNameTooLength0100
+     * @tc.desc   testRdbGetInsertSqlInfoTabkleNameTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfoTabkleNameTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfoTabkleNameTooLength0100 start *************");
       const bucket: relationalStore.ValuesBucket = {
@@ -579,15 +592,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfoBucketTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1400
-     * @tc.desc Get Insert SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfoBucketTooLength0100
+     * @tc.number testRdbGetInsertSqlInfoBucketTooLength0100
+     * @tc.desc   testRdbGetInsertSqlInfoBucketTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfoBucketTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfoBucketTooLength0100 start *************");
       try {
@@ -607,15 +621,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfoBucketColumTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1500
-     * @tc.desc Get Insert SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfoBucketColumTooLength0100
+     * @tc.number testRdbGetInsertSqlInfoBucketColumTooLength0100
+     * @tc.desc   testRdbGetInsertSqlInfoBucketColumTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfoBucketColumTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfoBucketColumTooLength0100 start *************");
       let tableName: string = "a".repeat(257);
@@ -643,15 +658,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfoTableNameIsEmpty0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1600
-     * @tc.desc Get Insert SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfoTableNameIsEmpty0100
+     * @tc.number testRdbGetInsertSqlInfoTableNameIsEmpty0100
+     * @tc.desc   testRdbGetInsertSqlInfoTableNameIsEmpty0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfoTableNameIsEmpty0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfoTableNameIsEmpty0100 start *************");
       const bucket: relationalStore.ValuesBucket = {
@@ -677,15 +693,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1700
-     * @tc.desc Get Insert SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100
+     * @tc.number testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100
+     * @tc.desc   testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100 start *************");
       const bucket: relationalStore.ValuesBucket = {
@@ -711,15 +728,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfoBucketIsNull0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1800
-     * @tc.desc Get Insert SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfoBucketIsNull0100
+     * @tc.number testRdbGetInsertSqlInfoBucketIsNull0100
+     * @tc.desc   testRdbGetInsertSqlInfoBucketIsNull0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfoBucketIsNull0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfoBucketIsNull0100 start *************");
       const bucket: relationalStore.ValuesBucket = {};
@@ -740,15 +758,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetInsertSqlInfoBucketIsAssets0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetInsertSqlInfoEtsAPI16Test_1900
-     * @tc.desc Get Insert SQL Info Bucket Is Assets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetInsertSqlInfoBucketIsAssets0100
+     * @tc.number testRdbGetInsertSqlInfoBucketIsAssets0100
+     * @tc.desc   testRdbGetInsertSqlInfoBucketIsAssets0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetInsertSqlInfoBucketIsAssets0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetInsertSqlInfoBucketIsAssets0100 start *************");
       const values: relationalStore.Assets = [
@@ -782,15 +801,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetUpdateSqlInfo0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetUpdateSqlInfoEtsAPI16Test_2000
-     * @tc.desc Get Update SQL Info
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetUpdateSqlInfo0100
+     * @tc.number testRdbGetUpdateSqlInfo0100
+     * @tc.desc   testRdbGetUpdateSqlInfo0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetUpdateSqlInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetUpdateSqlInfo0100 start *************");
       const bucket: relationalStore.ValuesBucket = {
@@ -815,15 +835,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetUpdateSqlInfoBucketIsNull0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetUpdateSqlInfoEtsAPI16Test_2100
-     * @tc.desc Get Update SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetUpdateSqlInfoBucketIsNull0100
+     * @tc.number testRdbGetUpdateSqlInfoBucketIsNull0100
+     * @tc.desc   testRdbGetUpdateSqlInfoBucketIsNull0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetUpdateSqlInfoBucketIsNull0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetUpdateSqlInfoBucketIsNull0100 start *************");
       const predicates = new relationalStore.RdbPredicates("users");
@@ -845,15 +866,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetUpdateSqlInfoBucketTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetUpdateSqlInfoEtsAPI16Test_2200
-     * @tc.desc Get Update SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetUpdateSqlInfoBucketTooLength0100
+     * @tc.number testRdbGetUpdateSqlInfoBucketTooLength0100
+     * @tc.desc   testRdbGetUpdateSqlInfoBucketTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetUpdateSqlInfoBucketTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetUpdateSqlInfoBucketTooLength0100 start *************");
       const predicates = new relationalStore.RdbPredicates("users");
@@ -874,15 +896,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetUpdateSqlInfoBucketCloumTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetUpdateSqlInfoEtsAPI16Test_2300
-     * @tc.desc Get Update SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetUpdateSqlInfoBucketCloumTooLength0100
+     * @tc.number testRdbGetUpdateSqlInfoBucketCloumTooLength0100
+     * @tc.desc   testRdbGetUpdateSqlInfoBucketCloumTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetUpdateSqlInfoBucketCloumTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetUpdateSqlInfoBucketCloumTooLength0100 start *************");
       const predicates = new relationalStore.RdbPredicates("users");
@@ -911,15 +934,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetUpdateSqlInfoTableTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetUpdateSqlInfoEtsAPI16Test_2400
-     * @tc.desc Get Update SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetUpdateSqlInfoTableTooLength0100
+     * @tc.number testRdbGetUpdateSqlInfoTableTooLength0100
+     * @tc.desc   testRdbGetUpdateSqlInfoTableTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetUpdateSqlInfoTableTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetUpdateSqlInfoTableTooLength0100 start *************");
       let tableName: string = "a".repeat(257);
@@ -950,15 +974,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetUpdateSqlInfoWhereClauseTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetUpdateSqlInfoEtsAPI16Test_2500
-     * @tc.desc Get Update SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetUpdateSqlInfoWhereClauseTooLength0100
+     * @tc.number testRdbGetUpdateSqlInfoWhereClauseTooLength0100
+     * @tc.desc   testRdbGetUpdateSqlInfoWhereClauseTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetUpdateSqlInfoWhereClauseTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetUpdateSqlInfoWhereClauseTooLength0100 start *************");
       let tableName: string = "";
@@ -990,15 +1015,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetUpdateSqlInfoEtsAPI16Test_2600
-     * @tc.desc Get Update SQL Info Bucket Is Null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100
+     * @tc.number testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100
+     * @tc.desc   testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100 start *************");
       const predicates = new relationalStore.RdbPredicates("tableName");
@@ -1026,15 +1052,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetDeleteSqlInfo0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetDeleteSqlInfoEtsAPI16Test_2700
-     * @tc.desc Get Delete SQL Info
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetDeleteSqlInfo0100
+     * @tc.number testRdbGetDeleteSqlInfo0100
+     * @tc.desc   testRdbGetDeleteSqlInfo0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetDeleteSqlInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetDeleteSqlInfo0100 start *************");
       try {
@@ -1052,15 +1079,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetDeleteSqlInfoTableNameTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetDeleteSqlInfoEtsAPI16Test_2800
-     * @tc.desc Get Delete SQL Info Table Name Must Be Not Empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetDeleteSqlInfoTableNameTooLength0100
+     * @tc.number testRdbGetDeleteSqlInfoTableNameTooLength0100
+     * @tc.desc   testRdbGetDeleteSqlInfoTableNameTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetDeleteSqlInfoTableNameTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetDeleteSqlInfoTableNameTooLength0100 start *************");
       try {
@@ -1078,15 +1106,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetDeleteSqlInfoTableNameTooLength0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetDeleteSqlInfoEtsAPI16Test_2900
-     * @tc.desc Get Delete SQL Info Table Name Must Be Not Empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetDeleteSqlInfoTableNameTooLength0200
+     * @tc.number testRdbGetDeleteSqlInfoTableNameTooLength0200
+     * @tc.desc   testRdbGetDeleteSqlInfoTableNameTooLength0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetDeleteSqlInfoTableNameTooLength0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetDeleteSqlInfoTableNameTooLength0200 start *************");
       try {
@@ -1108,15 +1137,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetQuerySqlInfo0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3000
-     * @tc.desc Get Query SQL Info
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetQuerySqlInfo0100
+     * @tc.number testRdbGetQuerySqlInfo0100
+     * @tc.desc   testRdbGetQuerySqlInfo0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetQuerySqlInfo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetQuerySqlInfo0100 start *************");
       try {
@@ -1133,15 +1163,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetQuerySqlInfoColumnsIsNullList0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3100
-     * @tc.desc Get Query SQL Info Columns Is Null List
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetQuerySqlInfoColumnsIsNullList0100
+     * @tc.number testRdbGetQuerySqlInfoColumnsIsNullList0100
+     * @tc.desc   testRdbGetQuerySqlInfoColumnsIsNullList0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetQuerySqlInfoColumnsIsNullList0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetQuerySqlInfoColumnsIsNullList0100 start *************");
       try {
@@ -1158,15 +1189,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetQuerySqlInfoByColumns0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3200
-     * @tc.desc Get Query SQL Info By Columns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetQuerySqlInfoByColumns0100
+     * @tc.number testRdbGetQuerySqlInfoByColumns0100
+     * @tc.desc   testRdbGetQuerySqlInfoByColumns0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetQuerySqlInfoByColumns0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetQuerySqlInfoByColumns0100 start *************");
       try {
@@ -1183,15 +1215,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetQuerySqlInfoTableNameTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3300
-     * @tc.desc Get Query SQL Info Table Name Must Be Not Empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetQuerySqlInfoTableNameTooLength0100
+     * @tc.number testRdbGetQuerySqlInfoTableNameTooLength0100
+     * @tc.desc   testRdbGetQuerySqlInfoTableNameTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetQuerySqlInfoTableNameTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetQuerySqlInfoTableNameTooLength0100 start *************");
       try {
@@ -1209,15 +1242,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetQuerySqlInfoWhereClauseTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3400
-     * @tc.desc Get Query SQL Info Table Name Must Be Not Empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetQuerySqlInfoWhereClauseTooLength0100
+     * @tc.number testRdbGetQuerySqlInfoWhereClauseTooLength0100
+     * @tc.desc   testRdbGetQuerySqlInfoWhereClauseTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetQuerySqlInfoWhereClauseTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetQuerySqlInfoWhereClauseTooLength0100 start *************");
       try {
@@ -1239,15 +1273,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetQuerySqlInfoTableNameTooLength0200
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3500
-     * @tc.desc Get Query SQL Info Table Name Must Be Not Empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetQuerySqlInfoTableNameTooLength0200
+     * @tc.number testRdbGetQuerySqlInfoTableNameTooLength0200
+     * @tc.desc   testRdbGetQuerySqlInfoTableNameTooLength0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetQuerySqlInfoTableNameTooLength0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetQuerySqlInfoTableNameTooLength0200 start *************");
       try {
@@ -1265,15 +1300,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbGetQuerySqlInfoColumnsTooLength0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3600
-     * @tc.desc Get Query SQL Info Table Name Must Be Not Empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbGetQuerySqlInfoColumnsTooLength0100
+     * @tc.number testRdbGetQuerySqlInfoColumnsTooLength0100
+     * @tc.desc   testRdbGetQuerySqlInfoColumnsTooLength0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbGetQuerySqlInfoColumnsTooLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbGetQuerySqlInfoColumnsTooLength0100 start *************");
       try {
@@ -1295,15 +1331,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbToSendableValues0100
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3700
-     * @tc.desc Test To Sendable Values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbToSendableValues0100
+     * @tc.number testRdbToSendableValues0100
+     * @tc.desc   testRdbToSendableValues0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbToSendableValues0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbToSendableValues0100 start *************");
       try {
@@ -1326,15 +1363,16 @@ export default function relationalStoreBatchInsertTest() {
     });
 
 
-    /**
-     * @tc.name testRdbToSendableValues0300
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetQuerySqlInfoEtsAPI16Test_3800
-     * @tc.desc Test To Sendable Values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbToSendableValues0300
+     * @tc.number testRdbToSendableValues0300
+     * @tc.desc   testRdbToSendableValues0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRdbToSendableValues0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbToSendableValues0300 start *************");
       try {
