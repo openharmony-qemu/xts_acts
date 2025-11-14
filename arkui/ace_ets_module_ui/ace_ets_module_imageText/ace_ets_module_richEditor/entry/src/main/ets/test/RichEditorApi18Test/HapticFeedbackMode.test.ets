@@ -47,12 +47,12 @@ export default function HapticFeedbackModeTest() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+    * @tc.number       HapticFeedbackModeTest0001
     * @tc.name         HapticFeedbackModeTest0001
-    * @tc.desic        Test HapticFeedbackMode: ENABLED
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        0
+    * @tc.desc        Test HapticFeedbackMode: ENABLED
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        0
     */
     it('HapticFeedbackModeTest0001', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
@@ -69,21 +69,28 @@ export default function HapticFeedbackModeTest() {
         await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
+        await CommonFunc.sleep(500);
+        let strJson = getInspectorByKey('HapticFeedbackMode.ENABLED');
+        await CommonFunc.sleep(200);
+        let obj: ESObject = JSON.parse(strJson);
+        console.info("[HapticFeedbackModeTest0001] component obj is: " + JSON.stringify(obj));
+        await CommonFunc.sleep(500);
+        expect(obj.$type).assertEqual('RichEditor');
         console.info("[HapticFeedbackModeTest0001] end");
         done();
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+    * @tc.number       HapticFeedbackModeTest0002
     * @tc.name         HapticFeedbackModeTest0002
-    * @tc.desic        Test HapticFeedbackMode: DISABLED
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        0
+    * @tc.desc        Test HapticFeedbackMode: DISABLED
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        0
     */
     it('HapticFeedbackModeTest0002', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
-        console.info('HapticFeedbackModeTest HapticFeedbackModeTest0002 START');
+        console.info('HapticFeedbackModeTest0002 START');
         await CommonFunc.sleep(1000);
         let update = await driver.findComponent(ON.id('update_Button'))
         await CommonFunc.sleep(500);
@@ -94,18 +101,24 @@ export default function HapticFeedbackModeTest() {
         await richEditor.longClick();
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
+        await CommonFunc.sleep(500);
+        let strJson = getInspectorByKey('HapticFeedbackMode.DISABLED');
+        await CommonFunc.sleep(200);
+        let obj: ESObject = JSON.parse(strJson);
+        console.info("[HapticFeedbackModeTest0002] component obj is: " + JSON.stringify(obj));
+        await CommonFunc.sleep(500);
+        expect(obj.$type).assertEqual('RichEditor');
         console.info("[HapticFeedbackModeTest0002] end");
         done();
     });
 
-
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+    * @tc.number       HapticFeedbackModeTest0003
     * @tc.name         HapticFeedbackModeTest0003
-    * @tc.desic        Test HapticFeedbackMode: AUTO
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        0
+    * @tc.desc        Test HapticFeedbackMode: AUTO
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        0
     */
     it('HapticFeedbackModeTest0003', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
@@ -122,6 +135,13 @@ export default function HapticFeedbackModeTest() {
         await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
+        await CommonFunc.sleep(500);
+        let strJson = getInspectorByKey('HapticFeedbackMode.AUTO');
+        await CommonFunc.sleep(200);
+        let obj: ESObject = JSON.parse(strJson);
+        console.info("[HapticFeedbackModeTest0003] component obj is: " + JSON.stringify(obj));
+        await CommonFunc.sleep(500);
+        expect(obj.$type).assertEqual('RichEditor');
         console.info("[HapticFeedbackModeTest0003] end");
         done();
     });

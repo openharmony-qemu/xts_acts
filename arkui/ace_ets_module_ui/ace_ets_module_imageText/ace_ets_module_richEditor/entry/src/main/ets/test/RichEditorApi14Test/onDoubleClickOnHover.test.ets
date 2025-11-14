@@ -43,7 +43,7 @@ export default function RichEditorOnDoubleClickTest() {
     });
 
      /**
-     * @tc.number    SUB_ACE_RichEditorOnHover_0010
+     * @tc.number    RichEditorOnDoubleClickTest_0010
      * @tc.name      RichEditorOnDoubleClickTest_0010
      * @tc.desc      test RichEditorImageSpanOptions onHover: true
      * @tc.level:    Level 0
@@ -68,7 +68,7 @@ export default function RichEditorOnDoubleClickTest() {
     });
 
      /**
-     * @tc.number    SUB_ACE_RichEditorOnHover_0020
+     * @tc.number    RichEditorOnDoubleClickTest_0020
      * @tc.name      RichEditorOnDoubleClickTest_0020
      * @tc.desc      test RichEditorImageSpanOptions onHover: false
      * @tc.level:    Level 0

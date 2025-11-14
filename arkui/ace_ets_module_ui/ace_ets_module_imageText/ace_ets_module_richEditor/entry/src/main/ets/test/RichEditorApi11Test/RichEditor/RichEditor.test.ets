@@ -22,7 +22,7 @@ export default function RichEditorTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/RichEditor/RichEditor/RichEditor",
+        url: "MainAbility/pages/RichEditorApi11/RichEditor/RichEditor",
       }
       try {
         router.clear();
@@ -42,11 +42,11 @@ export default function RichEditorTest() {
     });
 
     /* *
-       * @tc.number: SUB_ACE_ArkUI_RichEditorTest_001
-       * @tc.name  : RichEditorTest_001
-       * @tc.desc  : set TextAlign to Start
-       * @tc.level : Level 2
-       */
+    * @tc.number: SUB_ACE_ArkUI_RichEditorTest_001
+    * @tc.name  : RichEditorTest_001
+    * @tc.desc  : set TextAlign to Start
+    * @tc.level : Level 2
+    */
     it('RichEditorTest_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[RichEditorTest_001] START');
@@ -71,11 +71,11 @@ export default function RichEditorTest() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_ArkUI_RichEditorTest_002
-      * @tc.name  : RichEditorTest_002
-      * @tc.desc  : set TextAlign to End
-      * @tc.level : Level 2
-      */
+    * @tc.number: SUB_ACE_ArkUI_RichEditorTest_002
+    * @tc.name  : RichEditorTest_002
+    * @tc.desc  : set TextAlign to End
+    * @tc.level : Level 2
+    */
     it('RichEditorTest_002', Level.LEVEL2, async (done: Function) => {
 
       console.info('[RichEditorTest_002] START');

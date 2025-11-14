@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
+
 export default function SXsymbolSpanStyleJsunit() {
   describe('SXsymbolSpanStyleJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -39,7 +40,15 @@ export default function SXsymbolSpanStyleJsunit() {
       }
       done();
     });
-    
+
+    /*
+    * @tc.number  SXsymbolSpanStyleJsunit_0100
+    * @tc.name    SXsymbolSpanStyleJsunit_0100
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('SXsymbolSpanStyleJsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('SXsymbolSpanStyleJsunit_0100 START');
@@ -57,6 +66,5 @@ export default function SXsymbolSpanStyleJsunit() {
       console.info('SXsymbolSpanStyleJsunit_0100 END')
       done();
     });
-
   })
 }

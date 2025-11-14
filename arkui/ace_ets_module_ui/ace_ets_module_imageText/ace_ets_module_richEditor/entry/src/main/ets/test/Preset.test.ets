@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import CommonFunc from '../MainAbility/common/Common'
 
 export default function PresetTest() {
   describe('PresetTest', () => {
@@ -45,11 +45,14 @@ export default function PresetTest() {
       console.info("PresetTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         PresetTest0001
-     * @tc.desc         preset about xiaoyi dialog
-     */
+  /*
+    * @tc.number       PresetTest0001
+    * @tc.name         PresetTest0001
+    * @tc.desc         preset about xiaoyi dialog
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        0
+    */
     it('PresetTest0001',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       if (globalThis.winLeft == 0) {
@@ -123,7 +126,7 @@ export default function PresetTest() {
       let strJson = getInspectorByKey('textArea1_preset');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0026] component obj is: " + JSON.stringify(obj));
+      console.info("[PresetTest0001] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
       expect(obj.$type).assertEqual('TextArea');
       console.info("[PresetTest0001] end");

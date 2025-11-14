@@ -138,22 +138,20 @@ struct SelectionMenuOptionsDemo {
       }
 
     Button('update')
-        .id('update')
-        .onClick(() => {
-            this.controllerR.updateParagraphStyle({ start: -1, end: -1,
-                style: {
-                textAlign: TextAlign.Center,
-                }
-            })
-            this.controllerR3.updateParagraphStyle({ start: -1, end: -1,
-                style: {
-                textAlign: TextAlign.Center,
-                }
-            })
-        })
-        .width('45%')
-      
-
+      .id('update')
+      .onClick(() => {
+          this.controllerR.updateParagraphStyle({ start: -1, end: -1,
+              style: {
+              textAlign: TextAlign.Center,
+              }
+          })
+          this.controllerR3.updateParagraphStyle({ start: -1, end: -1,
+              style: {
+              textAlign: TextAlign.Center,
+              }
+          })
+      })
+      .width('45%')
     }
     .height('100%')
   }

@@ -47,162 +47,202 @@ export default function SelectionMenuOptions() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+    * @tc.number       SelectionMenuOptions0001
     * @tc.name         SelectionMenuOptions0001
-    * @tc.desic        Test Text by mouseClick
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
-     */
+    * @tc.desc        Test Text by mouseClick
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('SelectionMenuOptions0001', Level.LEVEL1, async (done: Function) => {
-        let driver = Driver.create();
-        console.info('SelectionMenuOptions SelectionMenuOptions0001 START');
-        await CommonFunc.sleep(1000);
-        let update = await driver.findComponent(ON.id('update'))
-        await CommonFunc.sleep(500);
-        await update.click();
-        await CommonFunc.sleep(500);
-        let richEditor = await driver.findComponent(ON.id('richEditor'))
-        await CommonFunc.sleep(500);
-        let point = await richEditor.getBoundsCenter();
-        await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('自定义菜单'));
-        console.info("[SelectionMenuOptions0001] end");
-        done();
+      let driver = Driver.create();
+      console.info('SelectionMenuOptions SelectionMenuOptions0001 START');
+      await CommonFunc.sleep(1000);
+      let update = await driver.findComponent(ON.id('update'))
+      await CommonFunc.sleep(500);
+      await update.click();
+      await CommonFunc.sleep(500);
+      let richEditor = await driver.findComponent(ON.id('richEditor'))
+      await CommonFunc.sleep(500);
+      let point = await richEditor.getBoundsCenter();
+      await CommonFunc.sleep(500);
+      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+      await CommonFunc.sleep(500);
+      await driver.assertComponentExist(ON.text('自定义菜单'));
+      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('richEditor');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SelectionMenuOptions0001] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
+      console.info("[SelectionMenuOptions0001] end");
+      done();
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+    * @tc.number       SelectionMenuOptions0002
     * @tc.name         SelectionMenuOptions0002
-    * @tc.desic        Test Text by longClick
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
-     */
+    * @tc.desc        Test Text by longClick
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('SelectionMenuOptions0002', Level.LEVEL1, async (done: Function) => {
-        let driver = Driver.create();
-        console.info('SelectionMenuOptions SelectionMenuOptions0002 START');
-        await CommonFunc.sleep(1000);
-        let update = await driver.findComponent(ON.id('update'))
-        await CommonFunc.sleep(500);
-        await update.click();
-        await CommonFunc.sleep(500);
-        let richEditor = await driver.findComponent(ON.id('richEditor'))
-        await CommonFunc.sleep(500);
-        await richEditor.longClick();
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('自定义菜单'));
-        console.info("[SelectionMenuOptions0002] end");
-        done();
+      let driver = Driver.create();
+      console.info('SelectionMenuOptions SelectionMenuOptions0002 START');
+      await CommonFunc.sleep(1000);
+      let update = await driver.findComponent(ON.id('update'))
+      await CommonFunc.sleep(500);
+      await update.click();
+      await CommonFunc.sleep(500);
+      let richEditor = await driver.findComponent(ON.id('richEditor'))
+      await CommonFunc.sleep(500);
+      await richEditor.longClick();
+      await CommonFunc.sleep(500);
+      await driver.assertComponentExist(ON.text('自定义菜单'));
+      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('richEditor');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SelectionMenuOptions0002] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
+      console.info("[SelectionMenuOptions0002] end");
+      done();
     });
 
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+    * @tc.number       SelectionMenuOptions0004
     * @tc.name         SelectionMenuOptions0004
-    * @tc.desic        Test image text by mouseClick
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
-     */
+    * @tc.desc        Test image text by mouseClick
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('SelectionMenuOptions0004', Level.LEVEL1, async (done: Function) => {
-        let driver = Driver.create();
-        console.info('SelectionMenuOptions SelectionMenuOptions0004 START');
-        await CommonFunc.sleep(1000);
-        let update = await driver.findComponent(ON.id('update'))
-        await CommonFunc.sleep(500);
-        await update.click();
-        await CommonFunc.sleep(500);
-        let image = await driver.findComponent(ON.id('image'))
-        await CommonFunc.sleep(500);
-        let point = await image.getBoundsCenter();
-        await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('自定义菜单'));
-        console.info("[SelectionMenuOptions0004] end");
-        done();
+      let driver = Driver.create();
+      console.info('SelectionMenuOptions SelectionMenuOptions0004 START');
+      await CommonFunc.sleep(1000);
+      let update = await driver.findComponent(ON.id('update'))
+      await CommonFunc.sleep(500);
+      await update.click();
+      await CommonFunc.sleep(500);
+      let image = await driver.findComponent(ON.id('image'))
+      await CommonFunc.sleep(500);
+      let point = await image.getBoundsCenter();
+      await CommonFunc.sleep(500);
+      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+      await CommonFunc.sleep(500);
+      await driver.assertComponentExist(ON.text('自定义菜单'));
+      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('image');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SelectionMenuOptions0004] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
+      console.info("[SelectionMenuOptions0004] end");
+      done();
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0005
+    * @tc.number       SelectionMenuOptions0005
     * @tc.name         SelectionMenuOptions0005
-    * @tc.desic        Test image text by longClick
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
-     */
+    * @tc.desc        Test image text by longClick
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('SelectionMenuOptions0005', Level.LEVEL1, async (done: Function) => {
-        let driver = Driver.create();
-        console.info('SelectionMenuOptions SelectionMenuOptions0005 START');
-        await CommonFunc.sleep(1000);
-        let update = await driver.findComponent(ON.id('update'))
-        await CommonFunc.sleep(500);
-        await update.click();
-        await CommonFunc.sleep(500);
-        let image = await driver.findComponent(ON.id('image'))
-        await CommonFunc.sleep(500);
-        await image.longClick();
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('自定义菜单'));
-        console.info("[SelectionMenuOptions0005] end");
-        done();
+      let driver = Driver.create();
+      console.info('SelectionMenuOptions0005 START');
+      await CommonFunc.sleep(1000);
+      let update = await driver.findComponent(ON.id('update'))
+      await CommonFunc.sleep(500);
+      await update.click();
+      await CommonFunc.sleep(500);
+      let image = await driver.findComponent(ON.id('image'))
+      await CommonFunc.sleep(500);
+      await image.longClick();
+      await CommonFunc.sleep(500);
+      await driver.assertComponentExist(ON.text('自定义菜单'));
+      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('image');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SelectionMenuOptions0005] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
+      console.info("[SelectionMenuOptions0005] end");
+      done();
     });
 
-
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0007
+    * @tc.number       SelectionMenuOptions0007
     * @tc.name         SelectionMenuOptions0007
-    * @tc.desic        Test mixed Text by mouseClick
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
-     */
+    * @tc.desc        Test mixed Text by mouseClick
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('SelectionMenuOptions0007', Level.LEVEL1, async (done: Function) => {
-        let driver = Driver.create();
-        console.info('SelectionMenuOptions SelectionMenuOptions0007 START');
-        await CommonFunc.sleep(1000);
-        let update = await driver.findComponent(ON.id('update'))
-        await CommonFunc.sleep(500);
-        await update.click();
-        await CommonFunc.sleep(500);
-        let mixed = await driver.findComponent(ON.id('mixed'))
-        await CommonFunc.sleep(500);
-        let point = await mixed.getBoundsCenter();
-        await CommonFunc.sleep(500);
-        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('自定义菜单'));
-        console.info("[SelectionMenuOptions0007] end");
-        done();
+      let driver = Driver.create();
+      console.info('SelectionMenuOptions SelectionMenuOptions0007 START');
+      await CommonFunc.sleep(1000);
+      let update = await driver.findComponent(ON.id('update'))
+      await CommonFunc.sleep(500);
+      await update.click();
+      await CommonFunc.sleep(500);
+      let mixed = await driver.findComponent(ON.id('mixed'))
+      await CommonFunc.sleep(500);
+      let point = await mixed.getBoundsCenter();
+      await CommonFunc.sleep(500);
+      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+      await CommonFunc.sleep(500);
+      await driver.assertComponentExist(ON.text('自定义菜单'));
+      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('image');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SelectionMenuOptions0007] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
+      console.info("[SelectionMenuOptions0007] end");
+      done();
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0008
+    * @tc.number       SelectionMenuOptions0008
     * @tc.name         SelectionMenuOptions0008
-    * @tc.desic        Test mixed Text by longClick
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
-     */
+    * @tc.desc        Test mixed Text by longClick
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
+    */
     it('SelectionMenuOptions0008', Level.LEVEL1, async (done: Function) => {
-        let driver = Driver.create();
-        console.info('SelectionMenuOptions SelectionMenuOptions0008 START');
-        await CommonFunc.sleep(1000);
-        let update = await driver.findComponent(ON.id('update'))
-        await CommonFunc.sleep(500);
-        await update.click();
-        await CommonFunc.sleep(500);
-        let mixed = await driver.findComponent(ON.id('mixed'))
-        await CommonFunc.sleep(500);
-        await mixed.longClick();
-        await CommonFunc.sleep(500);
-        await driver.assertComponentExist(ON.text('自定义菜单'));
-        console.info("[SelectionMenuOptions0008] end");
-        done();
+      let driver = Driver.create();
+      console.info('SelectionMenuOptions SelectionMenuOptions0008 START');
+      await CommonFunc.sleep(1000);
+      let update = await driver.findComponent(ON.id('update'))
+      await CommonFunc.sleep(500);
+      await update.click();
+      await CommonFunc.sleep(500);
+      let mixed = await driver.findComponent(ON.id('mixed'))
+      await CommonFunc.sleep(500);
+      await mixed.longClick();
+      await CommonFunc.sleep(500);
+      await driver.assertComponentExist(ON.text('自定义菜单'));
+      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('mixed');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SelectionMenuOptions0008] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
+      console.info("[SelectionMenuOptions0008] end");
+      done();
     });
-
   })
 }

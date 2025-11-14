@@ -40,6 +40,14 @@ export default function SXrenderingStrategyJsunit() {
       done();
     });
     
+    /*
+    * @tc.number  SXrenderingStrategyJsunit_0100
+    * @tc.name    SXrenderingStrategyJsunit_0100
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('SXrenderingStrategyJsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('SXrenderingStrategyJsunit_0100 START');
@@ -57,6 +65,5 @@ export default function SXrenderingStrategyJsunit() {
       console.info('SXrenderingStrategyJsunit_0100 END')
       done();
     });
-
   })
 }

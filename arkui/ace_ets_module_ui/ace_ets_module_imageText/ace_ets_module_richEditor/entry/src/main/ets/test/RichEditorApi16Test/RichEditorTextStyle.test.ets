@@ -47,10 +47,10 @@ export default function RichEditorTextStyle() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+    * @tc.number       RichEditorTextStyle0001
     * @tc.name         RichEditorTextStyle0001
-    * @tc.desic        The halfLeading variable is added to the RichEditorTextStyle 
-                           and RichEditorTextStyleResult objects of the RichEditor component.
+    * @tc.desc         The halfLeading variable is added to the RichEditorTextStyle 
+    *                      and RichEditorTextStyleResult objects of the RichEditor component.
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -77,10 +77,10 @@ export default function RichEditorTextStyle() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+    * @tc.number       RichEditorTextStyle0002
     * @tc.name         RichEditorTextStyle0002
-    * @tc.desic        The halfLeading variable is added to the RichEditorTextStyle 
-                           and RichEditorTextStyleResult objects of the RichEditor component.
+    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
+    *                     and RichEditorTextStyleResult objects of the RichEditor component.
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -107,10 +107,10 @@ export default function RichEditorTextStyle() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+    * @tc.number       RichEditorTextStyle0003
     * @tc.name         RichEditorTextStyle0003
-    * @tc.desic        The halfLeading variable is added to the RichEditorTextStyle 
-                           and RichEditorTextStyleResult objects of the RichEditor component.
+    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
+    *                      and RichEditorTextStyleResult objects of the RichEditor component.
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -138,10 +138,10 @@ export default function RichEditorTextStyle() {
 
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+    * @tc.number       RichEditorTextStyle0004
     * @tc.name         RichEditorTextStyle0004
-    * @tc.desic        The halfLeading variable is added to the RichEditorTextStyle 
-                           and RichEditorTextStyleResult objects of the RichEditor component.
+    * @tc.desc         The halfLeading variable is added to the RichEditorTextStyle 
+    *                      and RichEditorTextStyleResult objects of the RichEditor component.
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -161,7 +161,7 @@ export default function RichEditorTextStyle() {
         let strJson = getInspectorByKey('RichEditor_Text2');
         let obj: ESObject = JSON.parse(strJson);
         console.log('addOrDelText0001---obj.$attrs.content---' +
-         JSON.stringify(obj.$attrs.content));
+          JSON.stringify(obj.$attrs.content));
         expect('' + obj.$attrs.content).assertEqual("true");
         console.info("[RichEditorTextStyle0004] end");
         done();
@@ -170,8 +170,8 @@ export default function RichEditorTextStyle() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
     * @tc.name         RichEditorTextStyle0005
-    * @tc.desic        The halfLeading variable is added to the RichEditorTextStyle 
-                           and RichEditorTextStyleResult objects of the RichEditor component.
+    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
+    *                      and RichEditorTextStyleResult objects of the RichEditor component.
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -198,17 +198,17 @@ export default function RichEditorTextStyle() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0006
+    * @tc.number       RichEditorTextStyle0006
     * @tc.name         RichEditorTextStyle0006
-    * @tc.desic        The halfLeading variable is added to the RichEditorTextStyle 
-                           and RichEditorTextStyleResult objects of the RichEditor component.
+    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
+    *                      and RichEditorTextStyleResult objects of the RichEditor component.
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
      */
     it('RichEditorTextStyle0006', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
-        console.info('RichEditorTextStyle RichEditorTextStyle0006 START');
+        console.info('RichEditorTextStyle0006 START');
         await CommonFunc.sleep(1000);
         let update = await driver.findComponent(ON.id('updateSpanStyle3'))
         await CommonFunc.sleep(500);

@@ -39,7 +39,15 @@ export default function ActsRichEditorTest() {
       }
       done()
     });
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+
+    /*
+    * @tc.number  Stage_RichEditor_Test_0100
+    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.desc    Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0100', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0100 START');
       try {
@@ -57,7 +65,7 @@ export default function ActsRichEditorTest() {
             }
           }
         })
-		await CommonFunc.sleep(1500)
+		    await CommonFunc.sleep(1500)
         console.info('Stage_Font_0100 START  :' + JSON.stringify(res));
         expect(typeof (res)).assertEqual('number')
         expect(res).assertEqual(0)
@@ -69,6 +77,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0200
+    * @tc.name    Stage_RichEditor_Test_0200
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0200', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0200 START');
       try {
@@ -85,6 +101,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0300
+    * @tc.name    Stage_RichEditor_Test_0300
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0300', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0300 START');
       try {
@@ -101,6 +125,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0400
+    * @tc.name    Stage_RichEditor_Test_0400
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0400', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0400 START');
       try {
@@ -117,6 +149,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0500
+    * @tc.name    Stage_RichEditor_Test_0500
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0500', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0500 START');
       try {
@@ -140,6 +180,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0600
+    * @tc.name    Stage_RichEditor_Test_0600
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0600', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0600 START');
       try {
@@ -156,6 +204,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0700
+    * @tc.name    Stage_RichEditor_Test_0700
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0700', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0700 START');
       try {
@@ -172,6 +228,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0800
+    * @tc.name    Stage_RichEditor_Test_0800
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0800', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0800 START');
       try {
@@ -188,6 +252,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_0900
+    * @tc.name    Stage_RichEditor_Test_0900
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_0900', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_0900 START');
       try {
@@ -216,6 +288,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1000
+    * @tc.name    Stage_RichEditor_Test_1000
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1000', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1000 START');
       try {
@@ -239,6 +319,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1100
+    * @tc.name    Stage_RichEditor_Test_1100
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1100', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1100 START');
       try {
@@ -254,6 +342,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1200
+    * @tc.name    Stage_RichEditor_Test_1200
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1200', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1200 START');
       try {
@@ -272,6 +368,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1300
+    * @tc.name    Stage_RichEditor_Test_1300
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1300', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1300 START');
       try {
@@ -287,6 +391,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1400
+    * @tc.name    Stage_RichEditor_Test_1400
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1400', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1400 START');
       try {
@@ -301,6 +413,15 @@ export default function ActsRichEditorTest() {
       }
       done();
     });
+
+    /*
+    * @tc.number  Stage_RichEditor_Test_1500
+    * @tc.name    Stage_RichEditor_Test_1500
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1500', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1500 START');
       try {
@@ -318,6 +439,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1600
+    * @tc.name    Stage_RichEditor_Test_1600
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1600', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1600 START');
       try {
@@ -333,6 +462,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1700
+    * @tc.name    Stage_RichEditor_Test_1700
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1700', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1700 START');
       try {
@@ -348,6 +485,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1800
+    * @tc.name    Stage_RichEditor_Test_1800
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1800', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1800 START');
       try {
@@ -366,6 +511,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_1900
+    * @tc.name    Stage_RichEditor_Test_1900
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_1900', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_1900 START');
       try {
@@ -384,6 +537,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2000
+    * @tc.name    Stage_RichEditor_Test_2000
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2000', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2000 START');
       try {
@@ -402,6 +563,14 @@ export default function ActsRichEditorTest() {
       done();
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2100
+    * @tc.name    Stage_RichEditor_Test_2100
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2100', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2100 START');
       setTimeout(() => {
@@ -501,6 +670,14 @@ export default function ActsRichEditorTest() {
       }, 500)
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2200
+    * @tc.name    Stage_RichEditor_Test_2200
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2200', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2200 START');
       setTimeout(() => {
@@ -522,6 +699,14 @@ export default function ActsRichEditorTest() {
       }, 500)
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2300
+    * @tc.name    Stage_RichEditor_Test_2300
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2300', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2300 START');
       setTimeout(() => {
@@ -556,6 +741,14 @@ export default function ActsRichEditorTest() {
       }, 500)
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2400
+    * @tc.name    Stage_RichEditor_Test_2400
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2400', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2400 START');
       setTimeout(() => {
@@ -582,6 +775,14 @@ export default function ActsRichEditorTest() {
       }, 500)
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2500
+    * @tc.name    Stage_RichEditor_Test_2500
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2500', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2500 START');
       setTimeout(() => {
@@ -603,6 +804,14 @@ export default function ActsRichEditorTest() {
       }, 500)
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2600
+    * @tc.name    Stage_RichEditor_Test_2600
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2600', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2600 START');
       setTimeout(() => {
@@ -640,6 +849,14 @@ export default function ActsRichEditorTest() {
       }, 500)
     });
 
+    /*
+    * @tc.number  Stage_RichEditor_Test_2700
+    * @tc.name    Stage_RichEditor_Test_2700
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('Stage_RichEditor_Test_2700', Level.LEVEL1, async (done: Function) => {
       console.info('Stage_RichEditor_Test_2700 START');
       setTimeout(() => {
@@ -674,7 +891,5 @@ export default function ActsRichEditorTest() {
         done();
       }, 500)
     });
-
   })
 }
-

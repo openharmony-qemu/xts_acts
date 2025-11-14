@@ -47,7 +47,7 @@ export default function RichEditorMaxLinesTest() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+    * @tc.number       RichEditorMaxLinesTest0001
     * @tc.name         RichEditorMaxLinesTest0001
     * @tc.desic        The MaxLines  set -1
     * @tc.size         MediumTest
@@ -66,7 +66,7 @@ export default function RichEditorMaxLinesTest() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+    * @tc.number       RichEditorMaxLinesTest0002
     * @tc.name         RichEditorMaxLinesTest0002
     * @tc.desic        The MaxLines  set 2.5
     * @tc.size         MediumTest
@@ -90,7 +90,7 @@ export default function RichEditorMaxLinesTest() {
     });
 
     /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+   * @tc.number       RichEditorMaxLinesTest0003
    * @tc.name         RichEditorMaxLinesTest0003
    * @tc.desic        The MaxLines  set 6
    * @tc.size         MediumTest
@@ -114,7 +114,7 @@ export default function RichEditorMaxLinesTest() {
     });
 
     /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+   * @tc.number       RichEditorMaxLinesTest0004
    * @tc.name         RichEditorMaxLinesTest0004
    * @tc.desic        The MaxLines  set undefined
    * @tc.size         MediumTest

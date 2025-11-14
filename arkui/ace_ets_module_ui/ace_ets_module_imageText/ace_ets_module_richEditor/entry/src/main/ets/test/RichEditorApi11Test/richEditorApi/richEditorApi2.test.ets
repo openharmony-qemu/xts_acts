@@ -44,13 +44,14 @@ export default function richEditorApi21() {
       await CommonFunc.sleep(1000);
       console.info("richEditorApi21 after each called");
     });
+
     /**
      * @tc.number    SUB_ACE_RICHEDITOR_richEditorApi21_0100
      * @tc.name      testSpan
      * @tc.desc      set api
      * @tc.level     Level 2
      * @tc.type
-    * @tc.size
+     * @tc.size
      */
     it('richEditorApi21_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[richEditorApi21_0100] START');
@@ -73,6 +74,5 @@ export default function richEditorApi21() {
       console.info('[testRichEditor_0100] END');
       done();
     });
-
   })
 }

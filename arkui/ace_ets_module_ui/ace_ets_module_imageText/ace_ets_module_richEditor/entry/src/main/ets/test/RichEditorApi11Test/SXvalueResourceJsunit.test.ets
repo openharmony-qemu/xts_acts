@@ -41,6 +41,14 @@ export default function SXvalueResourceJsunit() {
       done();
     });
     
+    /*
+    * @tc.number  SXvalueResourceJsunit_0100
+    * @tc.name    SXvalueResourceJsunit_0100
+    * @tc.desc    test RichEditor
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   1
+    */
     it('SXvalueResourceJsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('SXvalueResourceJsunit_0100 START');
@@ -58,6 +66,5 @@ export default function SXvalueResourceJsunit() {
       console.info('SXvalueResourceJsunit_0100 END')
       done();
     });
-
   })
 }
