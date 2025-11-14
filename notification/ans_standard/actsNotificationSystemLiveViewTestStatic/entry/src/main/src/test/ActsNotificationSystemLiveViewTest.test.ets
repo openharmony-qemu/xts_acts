@@ -952,7 +952,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           console.log('Succeeded in creating pixelmap.');
         })
 
-        let parameters1: Record<String, Object> = {
+        let parameters1: Record<String, RecordData> = {
           "mykey0": 2222,
           "mykey1": [1, 2, 3],
           "mykey2": "[1, 2, 3]",
@@ -1087,7 +1087,7 @@ export default function ActsNotificationSystemLiveViewTest() {
 
         //wantAgent对象
         let wantAgent: Object = {};
-        let parameters1: Record<String, Object> = {
+        let parameters1: Record<String, RecordData> = {
           "mykey0": 2222,
           "mykey1": [1, 2, 3],
           "mykey2": "[1, 2, 3]",
@@ -1231,7 +1231,7 @@ export default function ActsNotificationSystemLiveViewTest() {
 
         //wantAgent对象
         let wantAgent: Object = {};
-        let parameters1: Record<String, Object> = {
+        let parameters1: Record<String, RecordData> = {
           "mykey0": 2222,
           "mykey1": [1, 2, 3],
           "mykey2": "[1, 2, 3]",
