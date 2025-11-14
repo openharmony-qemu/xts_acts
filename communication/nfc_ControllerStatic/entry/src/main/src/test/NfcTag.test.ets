@@ -118,6 +118,10 @@ export default function nfcTagTest() {
       expect(tag.NfcForumType.NFC_FORUM_TYPE_3).assertEqual(3);
       console.info('[nfc_test] SUB_COMMUNICATION_NFC_Tag_static_0100 NFC_FORUM_TYPE_4 is ' + tag.NfcForumType.NFC_FORUM_TYPE_4);
       expect(tag.NfcForumType.NFC_FORUM_TYPE_4).assertEqual(4);
+      console.info('[nfc_test]29 RTD_TEXT Enumerated value pass:' + String(tag.RTD_TEXT) + '--' + String(0x54))
+      expect(String(tag.RTD_TEXT)).assertEqual(String(0x54));
+      console.info('[nfc_test]30 RTD_URI Enumerated value pass:' + String(tag.RTD_URI) + '--' + String(0x55))
+      expect(String(tag.RTD_URI)).assertEqual(String(0x55));
       console.info('[nfc_test]11 TYPE_UNKNOWN Enumerated value test pass:' + tag.MifareClassicType.TYPE_UNKNOWN);
       expect(tag.MifareClassicType.TYPE_UNKNOWN).assertEqual(0);
       console.info('[nfc_test]12 TYPE_CLASSIC Enumerated value test pass:' + tag.MifareClassicType.TYPE_CLASSIC);
@@ -648,6 +652,48 @@ export default function nfcTagTest() {
         } else {
           expect().assertFail();
           hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 onReaderMode fail :  ');
+        }
+      }
+      done();
+    })
+
+    /**
+       * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1500
+       * @tc.name Test getBarcode
+       * @tc.desc This interface getBarcode
+       * @tc.size since 16
+       * @tc.type Function
+       * @tc.level Level 0
+       */
+    it('SUB_COMMUNICATION_NFC_Tag_static_1500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let dTag: tag.TagInfo = {
+        "uid": [0x01, 0x02, 0x03, 0x04],
+        "technology": [10],
+        "extrasData": [
+          {
+            "AppData": "A0C0", "ProtocolInfo": "131F",
+          }
+        ],
+        "tagRfDiscId": 1,
+        "remoteTagService": remoteTagService,
+      };
+      try {
+        await tag.getBarcodeTag(dTag).getBarcode().then(() => {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode: ');
+        })
+      } catch (error: BusinessError) {
+        if (error.code == 201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect(201).assertEqual(error.code);
+        } else if (error.code == 3100201) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect(3100201).assertEqual(error.code);
+        } else if (error.code == 3100204) {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect(3100204).assertEqual(error.code);
+        } else {
+          hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1500 getBarcode error is ' + error.code + " - " + error);
+          expect().assertFail();
         }
       }
       done();
