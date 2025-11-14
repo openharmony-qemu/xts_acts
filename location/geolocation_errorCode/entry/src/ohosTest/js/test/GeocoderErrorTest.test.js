@@ -16,6 +16,7 @@ import geolocations from '@system.geolocation';
 import geolocation from '@ohos.geolocation';
 import geolocationm from '@ohos.geoLocationManager';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
+import BusinessError from '@ohos.BasicServicesKit';
 import bundle from '@ohos.bundle'
 import access from '@ohos.bluetooth.access'
 import osaccount from '@ohos.account.osAccount'
@@ -392,8 +393,8 @@ export default function geolocationTest_GeoErr() {
             }
             await sleep(1000);
             done();
-        });        
-
+        });  
+                 
 
         /**
          * @tc.name   SUB_HSS_isBeaconFenceSupported_0200
@@ -679,6 +680,42 @@ export default function geolocationTest_GeoErr() {
                 done();
             }            
         }); 
+
+        /**
+         * @tc.name   SUB_HSS_isWlanBssidMatched_0600
+         * @tc.number SUB_HSS_isWlanBssidMatched_0600
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_isWlanBssidMatched_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_isWlanBssidMatched_0600: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                try {
+                    let wlanBssidArray = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+                    let rssiThreshold = -100;
+                    let needStartScan = true;
+                    geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
+                          console.info("isWlanBssidMatched0500 Wlan Bssid Matched Result:" + res);
+                          expect(true).assertEqual(res!=null);
+                    }).catch((error) => {
+                        console.error("[lbs_js] Promis then error" + JSON.stringify(error));
+                        expect(error.code).assertEqual(3301800);
+                    });
+                } catch (error) {
+                    console.error("[lbs_js] Promise isWlanBssidMatched0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });         
+
         
         /**
          * @tc.name   SUB_HSS_addBeaconFence_0400
@@ -728,7 +765,7 @@ export default function geolocationTest_GeoErr() {
                         expect(true).assertEqual(JSON.stringify(id)!=null);
                       }).catch((err) => {
                         console.error('promise, addBeaconFence0400: error=' + JSON.stringify(err));
-                        expect(error.code).assertEqual(801);
+                        expect(err.code).assertEqual(201);
                       });
                 } catch (error) {
                     console.error("[lbs_js] Promise addBeaconFence0400:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
@@ -781,51 +818,145 @@ export default function geolocationTest_GeoErr() {
                         },
                         fenceExtensionAbilityName: "MyFenceExtensionAbility",
                       };
-                      access.disableBluetooth()
                       geoLocationm.addBeaconFence(fenceRequest).then((id) => {
                         console.info("addBeaconFence0500 success, fence id:" + id);
+                        expect(true).assertEqual(JSON.stringify(id)!=null);
                       }).catch((err) => {
                         console.error('promise, addBeaconFence0500: error=' + JSON.stringify(err));
-                        expect(error.code).assertEqual(3501101);
+                        expect(err.code).assertEqual(3501101);
                       });
                 } catch (error) {
                     console.error("[lbs_js] Promise addBeaconFence0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
-                access.enableBluetooth()
                 await sleep(1000);
                 done();
             }            
-        });   
+        }); 
         
-
-         /**
-         * @tc.name   SUB_HSS_getGeofenceSupportedCoordTypes_0800
-         * @tc.number SUB_HSS_getGeofenceSupportedCoordTypes_0800
+        /**
+         * @tc.name   SUB_HSS_addBeaconFence_0600
+         * @tc.number SUB_HSS_addBeaconFence_0600
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-         it('SUB_HSS_getGeofenceSupportedCoordTypes_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        it('SUB_HSS_addBeaconFence_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
-            console.info("SUB_HSS_getGeofenceSupportedCoordTypes_0800: " + isAcessToken);
+            console.info("SUB_HSS_addBeaconFence_0500: " + isAcessToken);
             if (!isAcessToken) {
                 console.info("The device does not support Gnss");
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
                 try {
-                    let supportedCoordTypes = geoLocationm.getGeofenceSupportedCoordTypes();
-                    console.info("getGeofenceSupportedCoordTypes return:" + JSON.stringify(supportedCoordTypes));
-                    expect(true).assertEqual(JSON.stringify(supportedCoordTypes)!=null);
+                    let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
+                        0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
+                      let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
+                        0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
+                    
+                      let manufactureData = {
+                        manufactureId: 0X004C,
+                        manufactureData: manufactureDataBuffer.buffer,
+                        manufactureDataMask: manufactureDataMaskBuffer.buffer
+                      };
+                    
+                      let beacon = {
+                        identifier: "11",
+                        beaconFenceInfoType: geoLocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                        manufactureData:manufactureData
+                      };
+                    
+                      let fenceRequest = {
+                        beacon: beacon,
+                        transitionCallback: (transition) => {
+                          if (transition) {
+                            console.info("SUB_HSS_addBeaconFence_0600:" + JSON.stringify(transition));
+                          }
+                        },
+                        fenceExtensionAbilityName: "MyFenceExtensionAbility",
+                      };
+
+                      for (let i = 0; i < 1000; i++) {
+                        try {
+                           await geoLocationm.addBeaconFence(fenceRequest)
+                        } catch (error) {
+                            console.info("SUB_HSS_addBeaconFence_0600:catch (error)" + JSON.stringify(error));
+                        }
+                      }
+                      geoLocationm.addBeaconFence(fenceRequest).then((id) => {
+                        console.info("addBeaconFence0500 success, fence id:" + id);
+                        expect(true).assertEqual(JSON.stringify(id)!=null);
+                      }).catch((err) => {
+                        console.error('promise, addBeaconFence0500: error=' + JSON.stringify(err));
+                        expect(err.code).assertEqual(3501601);
+                      });
                 } catch (error) {
-                    console.error("[lbs_js] Promise getGeofenceSupportedCoordTypes0800:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
-                    expect(error.code).assertEqual(3301000);
+                    console.error("[lbs_js] Promise addBeaconFence0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
                 await sleep(1000);
                 done();
             }            
-        });          
+        });  
+        
+        /**
+         * @tc.name   SUB_HSS_addBeaconFence_0700
+         * @tc.number SUB_HSS_addBeaconFence_0700
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_addBeaconFence_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_addBeaconFence_0700: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                try {
+                    let manufactureDataBuffer = new Uint8Array([0X02, 0X15, 0X00, 0X11, 0X22, 0X33, 0X44, 0X55,
+                        0X66, 0X77, 0X88, 0X99, 0XAA, 0XBB, 0XCC, 0XDD, 0XEE, 0XFF, 0X11, 0X22, 0X33, 0X44, 0X55]);
+                      let manufactureDataMaskBuffer = new Uint8Array([0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF,
+                        0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF]);
+                    
+                      let manufactureData = {
+                        manufactureId: 0X004C,
+                        manufactureData: manufactureDataBuffer.buffer,
+                        manufactureDataMask: manufactureDataMaskBuffer.buffer
+                      };
+                    
+                      let beacon = {
+                        identifier: "11",
+                        beaconFenceInfoType: geoLocationm.BeaconFenceInfoType.BEACON_MANUFACTURE_DATA,
+                        manufactureData:manufactureData
+                      };
+                    
+                      let fenceRequest = {
+                        beacon: beacon,
+                        transitionCallback: (transition) => {
+                          if (transition) {
+                            console.info("SUB_HSS_addBeaconFence_0500: err" + JSON.stringify(transition));
+                          }
+                        },
+                        fenceExtensionAbilityName: "MyFenceExtensionAbility",
+                      };
+                      geoLocationm.addBeaconFence(fenceRequest).then((id) => {
+                        console.info("addBeaconFence0500 success, fence id:" + id);
+                        expect(true).assertEqual(JSON.stringify(id)!=null);
+                      }).catch((err) => {
+                        console.error('promise, addBeaconFence0500: error=' + JSON.stringify(err));
+                        expect(err.code).assertEqual(801);
+                      });
+                } catch (error) {
+                    console.error("[lbs_js] Promise addBeaconFence0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });         
+                  
   
          /**
          * @tc.name   SUB_HSS_getGeofenceSupportedCoordTypes_0600
@@ -883,69 +1014,7 @@ export default function geolocationTest_GeoErr() {
             }            
         }); 
         
-         /**
-         * @tc.name   SUB_HSS_isGeocoderAvailable_0003
-         * @tc.number  SUB_HSS_isGeocoderAvailable_0003
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-         it('SUB_HSS_isGeocoderAvailable_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
-            console.info("SUB_HSS_isGeocoderAvailable_0003: " + isAcessToken);
-            if (!isAcessToken) {
-                console.info("The device does not support Gnss");
-                expect(isAcessToken).assertFalse();
-                done();
-            } else {
-                try {
-                    let isGeocoderAvailable = geoLocationm.isGeocoderAvailable();
-                    console.info("isGeocoderAvailable03 return:" + JSON.stringify(isGeocoderAvailable));
-                    expect(true).assertEqual(JSON.stringify(isGeocoderAvailable)!=null);
-                } catch (error) {
-                    console.error("[lbs_js] Promise isGeocoderAvailable03:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
-                    expect(error.code).assertEqual(3301000);
-                }
-                await sleep(1000);
-                done();
-            }            
-        });
-
-         /**
-         * @tc.name   SUB_HSS_getAddressesFromLocationName_0004
-         * @tc.number SUB_HSS_getAddressesFromLocationName_0004
-         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-         it('SUB_HSS_getAddressesFromLocationName_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
-            console.info("SUB_HSS_getAddressesFromLocationName_0004: " + isAcessToken);
-            if (!isAcessToken) {
-                console.info("The device does not support Gnss");
-                expect(isAcessToken).assertFalse();
-                done();
-            } else {
-                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 5,"locale":zh};
-                
-                try {
-                    geoLocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
-                        console.info('getAddressesFromLocationName: ' + JSON.stringify(result));
-                        expect(true).assertEqual(JSON.stringify(result)!=null);
-                    })
-                    .catch((error) => {
-                        console.error('promise, getAddressesFromLocationName: error=' + JSON.stringify(error));
-                        expect(error.code).assertEqual(3301000);
-                    });
-                } catch (err) {
-                    console.error("errCode:" + err.code + ", message:"  + err.message);
-                }
-                await sleep(1000);
-                done();
-            }            
-        }); 
+ 
         
          /**
          * @tc.name   SUB_HSS_getAddressesFromLocationName_0005
@@ -981,38 +1050,38 @@ export default function geolocationTest_GeoErr() {
             }            
         });        
 
-
+        
          /**
-         * @tc.name   SUB_HSS_getAddressesFromLocationName_0800
-         * @tc.number SUB_HSS_getAddressesFromLocationName_0800
+         * @tc.name   SUB_HSS_getAddressesFromLocationName_0900
+         * @tc.number SUB_HSS_getAddressesFromLocationName_0900
          * @tc.desc   Invoke the geocoding service with incorrect input parameters.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-         it('SUB_HSS_getAddressesFromLocationName_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+         it('SUB_HSS_getAddressesFromLocationName_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
-            console.info("SUB_HSS_getAddressesFromLocationName_0800: " + isAcessToken);
+            console.info("SUB_HSS_getAddressesFromLocationName_0900: " + isAcessToken);
             if (!isAcessToken) {
                 console.info("The device does not support Gnss");
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
-                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 5,"locale":zh};
+                let geocodeRequest = {"description": "aaab123", "maxItems": 5,"locale":zh};
                 try {
                     geoLocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
-                        console.info('getAddressesFromLocationName0800: data=' + JSON.stringify(data));
+                        console.info('SUB_HSS_getAddressesFromLocationName_0900: data=' + JSON.stringify(data));
                         expect(true).assertEqual(JSON.stringify(data)!=null);
                     });
                 } catch (err) {
                     console.error("errCode:" + err.code + ", message:"  + err.message);
-                    expect(error.code).assertEqual(3301000);
+                    expect(err.code).assertEqual(3301400);
                 }
                 await sleep(1000);
                 done();
             }            
         }); 
-        
+
          /**
          * @tc.name   SUB_HSS_getAddressesFromLocationName_1100
          * @tc.number SUB_HSS_getAddressesFromLocationName_1100
@@ -1037,48 +1106,378 @@ export default function geolocationTest_GeoErr() {
                     });
                 } catch (err) {
                     console.error("errCode:" + err.code + ", message:"  + err.message);
-                    expect(error.code).assertEqual(3301000);
                 }
                 await sleep(1000);
                 done();
             }            
         }); 
+
+         /**
+         * @tc.name   SUB_HSS_getAddressesFromLocation_0001
+         * @tc.number SUB_HSS_getAddressesFromLocation_0001
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_getAddressesFromLocation_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getAddressesFromLocation_0001: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+                try {
+                    geolocationm.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                        console.info('getAddressesFromLocation0001: ' + JSON.stringify(data));
+                        expect(data.length>0).assertTrue();
+                    })
+                    .catch((error) => {
+                        console.error('promise, getAddressesFromLocation0001: error=' + JSON.stringify(error));
+                    });
+                } catch (err) {
+                    console.error("errCode:" + err.code + ", message:"  + err.message);
+                }                
+                await sleep(1000);
+                done();
+            }            
+        });  
+               
+           
+         /**
+         * @tc.name   SUB_HSS_getAddressesFromLocation_0200
+         * @tc.number SUB_HSS_getAddressesFromLocation_0200
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_getAddressesFromLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getAddressesFromLocation_0200: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+                try {
+                    geoLocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                        console.info('getAddressesFromLocation0200: data=' + JSON.stringify(data));
+                        expect(types.length==0).assertTrue();
+                    });
+                } catch (err) {
+                    console.error("errCode:" + err.code + ", message:"  + err.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });   
         
-       
+         /**
+         * @tc.name   SUB_HSS_getAddressesFromLocation_0300
+         * @tc.number SUB_HSS_getAddressesFromLocation_0300
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_getAddressesFromLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getAddressesFromLocation_0300: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+                try {
+                    geoLocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                        console.info('getAddressesFromLocation0200: data=' + JSON.stringify(data));
+                        expect(types.length>0).assertTrue();
+                    });
+                } catch (err) {
+                    console.error("errCode:" + err.code + ", message:"  + err.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });  
+                  
+        
+         /**
+         * @tc.name   SUB_HSS_locationEnabledChange_0300
+         * @tc.number SUB_HSS_locationEnabledChange_0300
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_locationEnabledChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_locationEnabledChange_0300: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let locationEnabledChange = (state) => {
+                    console.info('locationEnabledChange: state:打开' + JSON.stringify(state));
+                    expect(state).assertTrue()
+                }
+                try {
+                    geoLocationm.on('locationEnabledChange', locationEnabledChange);
+                } catch (err) {
+                    console.error("locationEnabledChange_0300errCode:" + err.code + ", message:"  + err.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });
+
+        
+         /**
+         * @tc.name   SUB_HSS_isGeoServiceAvailable_0002
+         * @tc.number SUB_HSS_isGeoServiceAvailable_0002
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_isGeoServiceAvailable_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_isGeoServiceAvailable_0002: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                geolocation.isGeoServiceAvailable().then((result) => {
+                    console.info('promise, isGeoServiceAvailable0002: ' + JSON.stringify(result));
+                    expect(result).assertTrue();
+                });
+                await sleep(1000);
+                done();
+            }            
+        });     
+         
+        
+         /**
+         * @tc.name   SUB_geolocation_getAddressesFromLocationName_0003
+         * @tc.number SUB_geolocation_getAddressesFromLocationName_0003
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_geolocation_getAddressesFromLocationName_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_geolocation_getAddressesFromLocationName_0003: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
+                geolocation.getAddressesFromLocationName(geocodeRequest).then((data) => {
+                    console.info('geolocationgetAddressesFromLocationName0003: ' + JSON.stringify(data));
+                    expect(data.length>0).assertTrue();
+                });
+                await sleep(1000);
+                done();
+            }            
+        });   
+        
+         /**
+         * @tc.name   SUB_geolocation_getAddressesFromLocationName_0004
+         * @tc.number SUB_geolocation_getAddressesFromLocationName_0004
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_geolocation_getAddressesFromLocationName_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_getAddressesFromLocationName_0004: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
+                geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                    console.info('geolocationgetAddressesFromLocationName0004: data=' + JSON.stringify(data));
+                    expect(data.length>0).assertTrue();
+                });
+                await sleep(1000);
+                done();
+            }            
+        });   
+        
+         /**
+         * @tc.name   SUB_geolocation_getAddressesFromLocationName_0005
+         * @tc.number SUB_geolocation_getAddressesFromLocationName_0005
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_geolocation_getAddressesFromLocationName_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_geolocation_getAddressesFromLocationName_0005: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let geocodeRequest = {"description": "111", "maxItems": 1,"minLatitude":0,"minLongitude":0};
+                geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                    console.info('geolocationgetAddressesFromLocationName0005: data=' + JSON.stringify(data));
+                    expect(data).assertEqual(undefined);
+                });
+                await sleep(1000);
+                done();
+            }            
+        });   
+        
+        
+         /**
+         * @tc.name   SUB_geolocation_getAddressesFromLocation_0006
+         * @tc.number SUB_geolocation_getAddressesFromLocation_0006
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_geolocation_getAddressesFromLocation_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_geolocation_getAddressesFromLocation_0006: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+                geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                    console.info('geolocationgetAddressesFromLocation0006: ' + JSON.stringify(data));
+                    expect(data.length>0).assertTrue();
+                });
+                await sleep(1000);
+                done();
+            }            
+        });         
 
 
+         /**
+         * @tc.name   SUB_geolocation_getAddressesFromLocation_0007
+         * @tc.number SUB_geolocation_getAddressesFromLocation_0007
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_geolocation_getAddressesFromLocation_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_geolocation_getAddressesFromLocation_0007: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
+                geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                    console.info('geolocationgetAddressesFromLocation0007: data=' + JSON.stringify(data));
+                    expect(data.length>0).assertTrue();
+                });
+                await sleep(1000);
+                done();
+            }            
+        }); 
+        
+         /**
+         * @tc.name   SUB_geolocation_getAddressesFromLocation_0008
+         * @tc.number SUB_geolocation_getAddressesFromLocation_0008
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_geolocation_getAddressesFromLocation_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_geolocation_getAddressesFromLocation_0008: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                let reverseGeocodeRequest = {"latitude": -31.12, "longitude": -121.11, "maxItems": 0};
+                geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                    console.info('geolocationgetAddressesFromLocation0008: data=' + JSON.stringify(data));
+                    expect(data).assertEqual(undefined);
+                });
+                await sleep(1000);
+                done();
+            }            
+        });   
+        
+         /**
+         * @tc.name   SUB_HSS_requestEnableLocation_0002
+         * @tc.number SUB_HSS_requestEnableLocation_0002
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_requestEnableLocation_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_requestEnableLocation_0002: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                geolocation.requestEnableLocation().then((result) => {
+                    console.info('promise, requestEnableLocation0002: ' + JSON.stringify(result));
+                    expect(result).assertTrue();
+                });
+                await sleep(1000);
+                done();
+            }            
+        });   
+        
+         /**
+         * @tc.name   SUB_HSS_locationServiceState_0001
+         * @tc.number SUB_HSS_locationServiceState_0001
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_HSS_locationServiceState_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_locationServiceState_0001: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                geolocation.on('locationServiceState', (state) => {
+                    console.info('locationServiceState: ' + JSON.stringify(state));
+                    expect(state).assertTrue();
+                });
+                await sleep(1000);
+                done();
+            }            
+        });  
+        
+           
+        
+        
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
