@@ -3522,7 +3522,7 @@ export default function RegExpTest002() {
      */
     it('testRegMatchAll0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "a\nb";
-      const regex: RegExp = new RegExp('^.', 'g');
+      const regex: RegExp = new RegExp('^.', 'gm');
       const result = Array.from(str.matchAll(regex));
       expect(result[0][0]).assertEqual("a");
       expect(result[1][0]).assertEqual("b");
@@ -3538,7 +3538,7 @@ export default function RegExpTest002() {
      */
     it('testRegMatchAll0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "a\nb";
-      const regex: RegExp = new RegExp('.$', 'g');
+      const regex: RegExp = new RegExp('.$', 'gm');
       const result = Array.from(str.matchAll(regex));
       expect(result[0][0]).assertEqual("a");
       expect(result[1][0]).assertEqual("b");

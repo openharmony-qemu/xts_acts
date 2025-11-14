@@ -1201,7 +1201,7 @@ export default function RegExpTest001() {
      * @tc.level Level 1
      */
     it('testRegTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const regex = new RegExp('(?:');
+      const regex = new RegExp('(?:)');
       const result = regex.test("anything");
       expect(result).assertEqual(true);
     });
@@ -2676,7 +2676,7 @@ export default function RegExpTest001() {
     it('testRegExec0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = new RegExp('(?=a)', 'g');
       const str = "aaa";
-      const results: number[] = [];
+      const results: int[] = [];
       let match: RegExpExecArray | null;
 
       while ((match = regex.exec(str)) !== null) {
@@ -3925,7 +3925,7 @@ export default function RegExpTest001() {
      * @tc.level Level 1
      */
     it('testRegExec0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const regex = new RegExp('((a)b?)?c/');
+      const regex = new RegExp('((a)b?)?c');
       const result = regex.exec("ac");
       expect(result?.[1]).assertEqual("a");
       expect(result?.[2]).assertEqual("a");
@@ -4281,7 +4281,7 @@ export default function RegExpTest001() {
      * @tc.level Level 1
      */
     it('testRegExec0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const regex = new RegExp('`(x|(?=y))`');
+      const regex = new RegExp('(x|(?=y))');
       const result = regex.exec("y");
       expect(result?.[0]).assertEqual("");
     });

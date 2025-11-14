@@ -927,7 +927,7 @@ export default function RegExpTest004() {
      */
     it('testRegSearch0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "𠮷";
-      const regex = new RegExp('\\uD842\\uDFB7', 'u');
+      const regex = new RegExp('\uD842\uDFB7', 'u');
       const result: number = str.search(regex);
       expect(result).assertEqual(0);
     });
