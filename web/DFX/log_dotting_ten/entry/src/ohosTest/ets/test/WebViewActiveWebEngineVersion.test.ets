@@ -37,7 +37,6 @@ export default function WebViewActiveWebEngineVersion() {
         if (!("WebViewActiveWebEngineVersion" == pages.name)) {
           console.info("get WebViewActiveWebEngineVersion state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebViewActiveWebEngineVersion page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -60,7 +59,6 @@ export default function WebViewActiveWebEngineVersion() {
 
     afterEach(async (done: Function) => {
       console.info("WebViewActiveWebEngineVersion afterEach start");
-      await Utils.sleep(2000);
       console.info("WebViewActiveWebEngineVersion afterEach end");
       done();
     })
