@@ -15,7 +15,7 @@
 
 import AttrsManager from '../../common/AttrsManager';
 import router from '@ohos.router'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, StorageProp, AppStorage } from '@ohos.arkui.stateManagement';
 import { RouterParams, AlignValue } from '../../common/Utils';
 import {
   Entry,
@@ -110,7 +110,6 @@ import {
   PolylineOptions,
   RectOptions,
   GridColColumnOption,
-  //AlignRuleParam,
   FlexWrap,
   GutterOption,
   BreakPoints,
@@ -118,81 +117,88 @@ import {
   NavPathStack,
   ImageFit,
   BreakpointsReference,
-  AlignRuleOption
+  CommonMethod,
+  applyStyles,
+  LineJoinStyle,AlignRuleOption
 } from '@ohos.arkui.component'
 
 @Entry
 @Component
 struct AlignSelfStretchNoSizePage {
-  @State _alignSelf: ItemAlign = ItemAlign.Auto;
-  @State _wrap: FlexWrap = FlexWrap.NoWrap;
-  @State _direction: FlexDirection = FlexDirection.Row;
-  @State containerView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.containerView ?? ''
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? ''
-  @State componentKey: string =
-    ((this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string) ?? ''
-  @State parentComponentKey: string =
-    ((this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey as string) ?? ''
-  @State referenceComponentKey: string =
-    (this.getUIContext().getRouter().getParams() as RouterParams).view.referenceComponentKey ?? ''
-  @State parentWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth
-  @State parentHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight
-  @State compareWidth: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareWidth
-  @State compareHeight: number = (this.getUIContext().getRouter().getParams() as RouterParams).view.compareHeight
+  @StorageProp('_alignSelf') _alignSelf: ItemAlign = ItemAlign.Auto;
+  @StorageProp('_wrap') _wrap: FlexWrap = FlexWrap.NoWrap;
+  @StorageProp('_direction') _direction: FlexDirection = FlexDirection.Row;
+  @State containerView: string =  ''
+  @State targetView: string = ''
+  @State componentKey: string = ''
+  @State parentComponentKey: string = ''
+  @State referenceComponentKey: string = ''
+  @State parentWidth: number = 400
+  @State parentHeight: number = 400
+  @State compareWidth: number = 0
+  @State compareHeight: number = 0
 
   onPageShow() {
     console.info('AlignSelfStretchNoSizePage page show called ')
-    AttrsManager.registerDataChange((value: AlignValue) => {
-      this._alignSelf = value.alignSelf
-      this._wrap = value.wrap
-      this._direction = value.direction
-    })
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    const value = routerParamOptions.view.testValue.setValue;
+    AppStorage.setOrCreate<ItemAlign>('_alignSelf', value.alignSelf)
+    AppStorage.setOrCreate<FlexWrap>('_wrap', value.wrap)
+    AppStorage.setOrCreate<FlexDirection>('_direction', value.direction)
+    this.containerView = routerParamOptions.view.containerView ?? ''
+    this.targetView = routerParamOptions.view.targetView ?? ''
+    this. componentKey = routerParamOptions.view.componentKey as string  ?? ''
+    this.parentComponentKey = routerParamOptions.view.parentComponentKey as string ?? ''
+    this.referenceComponentKey = routerParamOptions.view.referenceComponentKey ?? ''
+    this.parentWidth = routerParamOptions.view.parentWidth
+    this.parentHeight = routerParamOptions.view.parentHeight
+    this.compareWidth = routerParamOptions.view.compareWidth
+    this.compareHeight = routerParamOptions.view.compareHeight
   }
 
-  // @Styles
-  // commonStyle(){
-  //   .margin(0)
-  //   .alignSelf(this._alignSelf)
-  //   .key(this.componentKey)
-  // }
+  commonStyle(instance: CommonMethod){
+    instance.margin(0)
+    instance.alignSelf(this._alignSelf)
+    instance.key(this.componentKey)
+  }
 
   @Builder
   buildTargetView() {
     if (this.targetView == 'AlphabetIndexer') {
-      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 as int }) //.commonStyle()
+      AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Button') {
-      Button('button1') //.commonStyle()
+      Button('button1') .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Checkbox') {
-      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' }) //.commonStyle()
+      Checkbox({ name: 'checkbox1', group: 'checkboxGroup' }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'CheckboxGroup') {
-      CheckboxGroup({ group: 'checkboxGroup' }) //.commonStyle()
+      CheckboxGroup({ group: 'checkboxGroup' }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'DataPanel') {
-      DataPanel({ values: [25], max: 100, type: DataPanelType.Circle }) //.commonStyle()
+      DataPanel({ values: [25], max: 100, type: DataPanelType.Circle }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'DatePicker') {
       DatePicker({
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: new Date()
-      }) //.commonStyle()
+      }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Divider') {
-      Divider().strokeWidth(8).vertical(true) //.commonStyle()
+      Divider().strokeWidth(8).vertical(true) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Gauge') {
-      Gauge({ value: 75 }).colors([[Color.White, 1], [Color.Black, 1]]) //.commonStyle()
+      Gauge({ value: 75 }).colors([[Color.White, 1], [Color.Black, 1]]) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Image') {
-      Image($r('app.media.icon')) //.commonStyle()
+      Image($r('app.media.icon')) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'ImageAnimator') {
-      ImageAnimator().images([{ src: $r('app.media.icon') }]) //.commonStyle()
+      ImageAnimator().images([{ src: $r('app.media.icon') }]) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'LoadingProgress') {
-      LoadingProgress().color(Color.Blue) //.commonStyle()
+      LoadingProgress().color(Color.Blue) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Marquee') {
       Marquee({ start: true, step: 50, src: 'Running Marquee starts rolling' })
-        .fontWeight(700).fontColor(Color.White).fontSize(48) //.commonStyle()
+        .fontWeight(700).fontColor(Color.White).fontSize(48) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Menu') {
       Menu() {
         MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigation') {
-      Navigation(new NavPathStack()) //.commonStyle()
+      Navigation(new NavPathStack()) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'NavRouter') {
       // NavRouter() {
       //   Row() {
@@ -202,19 +208,19 @@ struct AlignSelfStretchNoSizePage {
       //   NavDestination() {
       //     Text('NavDestination').fontSize(10)
       //   }
-      // }//.commonStyle()
+      // }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Progress') {
-      Progress({ value: 50, type: ProgressType.Linear }) //.commonStyle()
+      Progress({ value: 50, type: ProgressType.Linear }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'QRCode') {
-      QRCode('QRCode').color(0xF7CE00) //.commonStyle()
+      QRCode('QRCode').color(0xF7CE00) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Radio') {
-      Radio({ value: 'Radio1', group: 'radioGroup' }) //.commonStyle()
+      Radio({ value: 'Radio1', group: 'radioGroup' }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Rating') {
-      Rating({ rating: 4 }).stars(5) //.commonStyle()
+      Rating({ rating: 4 }).stars(5) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'ScrollBar') {
       ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
         Text().width(20).height(20).borderRadius(10)
-      }.width(20) //.commonStyle()
+      }.width(20) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Stepper') {
       Stepper() {
         StepperItem() {
@@ -222,55 +228,55 @@ struct AlignSelfStretchNoSizePage {
             Text('Page One')
           }
         }
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Search') {
       Search({ placeholder: 'Type to search...' })
         .searchButton('SEARCH')
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Select') {
       Select([{ value: 'aaa', icon: '/common/public_icon.svg' },
-        { value: 'bbb', icon: '/common/public_icon.svg' }]) //.commonStyle()
+        { value: 'bbb', icon: '/common/public_icon.svg' }]) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Slider') {
       Slider({ value: 50, style: SliderStyle.OutSet, direction: Axis.Vertical })
         .blockColor('#191970')
         .trackColor('#ADD8E6')
         .selectedColor('#4169E1')
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Text') {
-      Text('text').fontColor(Color.White).fontSize(30) //.commonStyle()
+      Text('text').fontColor(Color.White).fontSize(30) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextArea') {
-      TextArea({ placeholder: 'TextArea', }) //.commonStyle()
+      TextArea({ placeholder: 'TextArea', }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextClock') {
-      TextClock({ timeZoneOffset: -8 }).format('hms') //.commonStyle()
+      TextClock({ timeZoneOffset: -8 }).format('hms') .applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextInput') {
-      TextInput({ placeholder: 'TextInput' }) //.commonStyle()
+      TextInput({ placeholder: 'TextInput' }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextPicker') {
-      TextPicker({ range: ['apple1', 'orange2', 'peach3'], selected: 1 }) //.commonStyle()
+      TextPicker({ range: ['apple1', 'orange2', 'peach3'], selected: 1 }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'TextTimer') {
-      TextTimer({ count: 30000 }) //.commonStyle()
+      TextTimer({ count: 30000 }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'TimePicker') {
-      TimePicker() //.commonStyle()
+      TimePicker() .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Toggle') {
-      Toggle({ type: ToggleType.Switch }) //.commonStyle()
+      Toggle({ type: ToggleType.Switch }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Badge') {
       Badge({
         value: '',
         style: { badgeSize: 6, badgeColor: Color.Red } as BadgeStyle
       } as BadgeParamWithString) {
         Button('BadgeContent')
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Column') {
       Column() {
         Text('Column')
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Counter') {
       Counter() {
         Text('1')
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Flex') {
       Flex() {
         Text('Flex')
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'GridRow') {
       GridRow({
         columns: 5,
@@ -291,7 +297,7 @@ struct AlignSelfStretchNoSizePage {
             Row().width('100%').height('20vp')
           }.borderColor(color).borderWidth(2)
         })
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Grid') {
       Grid() {
         ForEach(['0', '1', '2', '3', '4'], (d: string, i: int) => {
@@ -306,7 +312,7 @@ struct AlignSelfStretchNoSizePage {
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
 
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'List') {
       List({ space: 20, initialIndex: 0 }) {
         ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
@@ -319,12 +325,12 @@ struct AlignSelfStretchNoSizePage {
       }
       .listDirection(Axis.Vertical)
 
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Navigator') {
       // Navigator({ target: 'MainAbility/pages/index/Index' }) {
       //   Text('Navigator Go to index page')
       //     .width('100%').textAlign(TextAlign.Center)
-      // }//.commonStyle()
+      // }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'RelativeContainer') {
       RelativeContainer() {
         Row()
@@ -334,11 +340,11 @@ struct AlignSelfStretchNoSizePage {
             top: { anchor: '__container__', align: VerticalAlign.Top },
             left: { anchor: '__container__', align: HorizontalAlign.Start }
           } as AlignRuleOption)
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Row') {
       Row() {
         Text('Row')
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Panel') {
       // Panel(true) {
       //   Column() {
@@ -346,13 +352,13 @@ struct AlignSelfStretchNoSizePage {
       //   }
       // }
       // .mode(PanelMode.Half)
-      //.commonStyle()
+      //.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {
         Text('Refresh').fontSize(30)
       }
 
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Scroll') {
       Scroll() {
         Column() {
@@ -366,7 +372,7 @@ struct AlignSelfStretchNoSizePage {
       }
       .scrollBar(BarState.On)
 
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'SideBarContainer') {
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
@@ -382,11 +388,11 @@ struct AlignSelfStretchNoSizePage {
         Column() {
           Text('SideBarContainer content').fontSize(25)
         }
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Stack') {
       Stack() {
         Text('Stack').fontColor(Color.White)
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Swiper') {
       Swiper() {
         ForEach([1, 2, 3], (item: Int, index: int) => {
@@ -395,13 +401,13 @@ struct AlignSelfStretchNoSizePage {
       }
       .indicator(true)
 
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Tabs') {
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'WaterFlow') {
       WaterFlow() {
         ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: Int, index: int) => {
@@ -412,66 +418,66 @@ struct AlignSelfStretchNoSizePage {
             }
           }
         }, (item: Int, index: int) => String(item))
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Circle') {
-      Circle({ width: 150, height: 150 }) //.commonStyle()
+      Circle({ width: 150, height: 150 }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Ellipse') {
-      Ellipse({ width: 150, height: 80 }) //.commonStyle()
+      Ellipse({ width: 150, height: 80 }) .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Line') {
       Line()
         .startPoint([0, 0])
         .endPoint([50, 100])
         .stroke(Color.Black)
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Polyline') {
       Polyline({ width: 100, height: 100 } as PolylineOptions)
         .points([[0, 0], [20, 60], [100, 100]])
         .fillOpacity(0)
         .stroke(Color.Blue)
         .strokeWidth(3)
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Polygon') {
       Polygon()
         .points([[50, 0], [0, 50], [20, 100], [80, 100], [100, 50]])
         .fill(Color.Red)
         .fillOpacity(0.6)
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Path') {
       Path()
         .commands('M0 100 A30 20 20 0 0 200 100 Z')
         .fillOpacity(0)
         .stroke(Color.Black)
         .strokeWidth(3)
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Rect') {
       Rect({ width: '90%', height: 80 } as RectOptions)
         .radius(20)
         .fill(Color.Pink)
         .stroke(Color.Transparent)
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Shape') {
-      // Shape() {
-      //   Path().width(20).height(20).commands('M0 0 L400 0 L400 150 Z')
-      // }
-      // .viewPort({ x: -20, y: -5, width: 310, height: 90 })
-      // .fill(0x317AF7)
-      // .stroke(0xEE8443)
-      // .strokeWidth(10)
-      // .strokeLineJoin(LineJoinStyle.Miter)
-      // .strokeMiterLimit(5)
-      //.commonStyle()
+      Shape() {
+        Path().width(20).height(20).commands('M0 0 L400 0 L400 150 Z')
+      }
+      .viewPort({ x: -20, y: -5, width: 310, height: 90 })
+      .fill(0x317AF7)
+      .stroke(0xEE8443)
+      .strokeWidth(10)
+      .strokeLineJoin(LineJoinStyle.Miter)
+      .strokeMiterLimit(5)
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'ColumnSplit') {
       ColumnSplit() {
         Text('1').width('100%').height(20).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
 
-      //.commonStyle()
+      .applyStyles(this.commonStyle)
     } else if (this.targetView == 'RowSplit') {
       RowSplit() {
         Text('1').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-      } //.commonStyle()
+      } .applyStyles(this.commonStyle)
     } else if (this.targetView == 'Blank') {
-      Blank() //.commonStyle()
+      Blank() .applyStyles(this.commonStyle)
     }
   }
 

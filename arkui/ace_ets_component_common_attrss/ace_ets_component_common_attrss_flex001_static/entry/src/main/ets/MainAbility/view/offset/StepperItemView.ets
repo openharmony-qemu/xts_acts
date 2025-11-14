@@ -28,32 +28,35 @@ import {
   Position,
   TextAlign,
   Color,
-  ItemState
+  ItemState,
+  Margin,
+  ColumnAttribute,
+  TextAttribute
+
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
-// @Styles
-// function itemStyle() {
-//   .width(336)
-//   .height(621)
-//   .margin({ top: 48, left: 12 })
-//   .borderRadius(24)
-//   .backgroundColor('#FFFFFF')
-// }
-//
-// @Extend(Text)
-// function itemTextStyle() {
-//   .fontColor('#182431')
-//   .fontSize(36)
-//   .fontWeight(500)
-//   .opacity(0.4)
-//   .margin({ top: 82, bottom: 40 })
-// }
+function itemStyle(this: ColumnAttribute): ColumnAttribute {
+  this.width(336)
+  this.height(621)
+  this.margin({ top: 48, left: 12 } as Margin)
+  this.borderRadius(24)
+  this.backgroundColor('#FFFFFF')
+  return this;
+}
+function itemTextStyle(this: TextAttribute): TextAttribute {
+  this.fontColor('#182431')
+  this.fontSize(36)
+  this.fontWeight(500)
+  this.opacity(0.4)
+  this.margin({ top: 82, bottom: 40 } as Margin)
+  return this;
+}
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: int = 0
+  @State currentIndex: int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @Link _offset!: Position;
@@ -71,13 +74,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page One')
-          //.itemTextStyle()
+          .itemTextStyle()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        } //.itemStyle()
+        } .itemStyle()
       }
       .nextLabel('Next')
       .status(this.firstState)
@@ -88,13 +91,13 @@ export struct StepperItemView {
       StepperItem() {
         Column() {
           Text('Page Two')
-          //.itemTextStyle()
+          .itemTextStyle()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        } //.itemStyle()
+        } .itemStyle()
       }
       .nextLabel('Next')
       .prevLabel('Previous')
@@ -108,7 +111,7 @@ export struct StepperItemView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: Int, index: Int) => {
+    .onChange((prevIndex: int, index: int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

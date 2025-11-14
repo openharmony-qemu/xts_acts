@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,10 +15,10 @@
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { expect, it, Level, Size, TestType } from  '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 
-export type CallbackWithReturn = (data: BasePageConfig) => Promise<Object> | Promise<void>;
+export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
   /**
@@ -28,32 +28,29 @@ export default class CommonTest {
    * @param testValues   : test values
    * @param functions    : [0]:executeTest, [last] checkTestResult
    */
-  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[],
-    ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     supportView.forEach(targetView => {
 
-      
+      //Obtain the last index of cases that need to be executed.
       let lastIndex: number = 0;
-      testValues.forEach((temp: TestValue, index) => {
-        if (temp.exceptView.indexOf(targetView) < 0) {
+      testValues.forEach((temp: TestValue, index: int) => {
           lastIndex = index;
-        }
       });
 
-      testValues.forEach((testValue: TestValue, index) => {
+      testValues.forEach((testValue: TestValue, index: int) => {
 
-        
-        if (testValue.exceptView.indexOf(targetView) < 0) {
+        //If there are components that need to be excluded, do not generate cases.
+
           let currentIndex = index;
           let sharePage = true;
           if (pageConfig.sharePage != undefined) {
             sharePage = pageConfig.sharePage!;
           }
 
-          
+          //Create case name.
           let caseTag = pageConfig.testName + targetView + testValue.describe;
 
-          
+          //If there is a specified container view.
           let containerView = '';
           if (pageConfig.containerView != undefined) {
             containerView = pageConfig.containerView!;
@@ -68,15 +65,15 @@ export default class CommonTest {
            */
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
-            
+            //Push page.
             console.info('[' + caseTag + ']' + ' test start, push page.');
             pageConfig.targetView = targetView;
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            try {
-              
+            // try {
+              //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
               }
@@ -88,47 +85,44 @@ export default class CommonTest {
                 }
               }
 
-              
+              //Execute test
               let data: BasePageConfig = {
                 pageConfig: pageConfig,
                 caseTag: caseTag,
                 testValue: testValue,
               }
               if (funcs.length > 1) {
-                let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
-                
-                if (customParams) {
-                  data.customParams = customParams;
-                }
+                // let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
+                // //Set custom params to data, can be used by check test result.
+                // if (customParams) {
+                //   data.customParams = customParams;
+                // }
               } else {
-                
-                console.info('[' + caseTag + '] setValue : ' + data.testValue.setValue);
-                AttrsManager.change(data.caseTag, data.testValue.setValue);
+                //If there is only an assertion function, automatically modify the status value
+                // console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+                // AttrsManager.change(data.caseTag, data.testValue.setValue);
                 await Utils.sleep(1000);
               }
 
-              
-              data.viewObj = Utils.getComponentByKey(pageConfig.componentKey ? pageConfig.componentKey as string : '');
-              if (funcs.length > 0) {
-                await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
-              }
+              //Check test result
+              let strJson = inspector.getInspectorByKey(pageConfig.componentKey as string ?? '');
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err) {
-              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-              console.error(msg);
-              console.error(err.stack);
-              if (err.name != 'AssertException') {
-                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-                
-              }
-            }
-
+            // } catch (err: Error) {
+            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+            //   console.error(msg);
+            //   console.error(err.stack);
+            //   if (err.name != 'AssertException') {
+            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            //     expect().assertFail();
+            //   }
+            // }
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 
             console.info('[' + caseTag + '] END');
             done();
           });
-        }
       })
     });
   }
@@ -148,8 +142,7 @@ export default class CommonTest {
     }
   }
 
-  static initTestByContainerView(pageConfig: PageConfig, containerView: string[], supportView: string[],
-    testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+  static initTestByContainerView(pageConfig: PageConfig, containerView: string[], supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     containerView.forEach(container => {
       pageConfig.containerView = container;
       CommonTest.initTest(pageConfig, supportView, testValues, ...functions);

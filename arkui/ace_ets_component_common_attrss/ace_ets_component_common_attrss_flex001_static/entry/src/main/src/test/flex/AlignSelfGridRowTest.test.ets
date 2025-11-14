@@ -35,6 +35,7 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+const uiContext = AppStorage.get<UIContext>('uiContext')!;
 
 export default function alignSelfGridRowTest() {
 
@@ -125,8 +126,6 @@ export default function alignSelfGridRowTest() {
   describe('AlignSelfGridRowTest', () => {
     beforeAll(() => {
       console.info("AlignSelfGridRowTest beforeEach start");
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.001.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -135,12 +134,12 @@ export default function alignSelfGridRowTest() {
       //Get component rect and parent component rect
       let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
       let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
-
+      AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
       //Get viewObj in order to judge attribute is set success
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey as string);
 
       //Verify attribute
-      expect(data.viewObj!.getElement('$attrs').getElement('alignSelf')).assertEqual(data.testValue.expectValue.expectAlignSelf);
+      expect(data.viewObj!.getElement('$attrs').getString('alignSelf')).assertEqual(data.testValue.expectValue.expectAlignSelf);
 
       //When set different value, judge the alignment is correct
       if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
@@ -149,11 +148,13 @@ export default function alignSelfGridRowTest() {
         expect(rect.left).assertEqual(parentRect.left);
       } else if (data.testValue.describe == 'SetCenter') {
         //When alignSelf : ItemAlign.Center
-        let rectY = Utils.getRectVerticalCenterY(data.pageConfig.componentKey as RectValue);
+        const rect = Utils.getComponentRect(data.pageConfig.componentKey)
+        const parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey)
+        let rectY = Utils.getRectVerticalCenterY(rect);
         console.info('[' + data.caseTag + '] rectY : '
           + rectY);
 
-        let parentRectY = Utils.getRectVerticalCenterY(data.pageConfig.parentComponentKey as RectValue);
+        let parentRectY = Utils.getRectVerticalCenterY(parentRect);
         console.info('[' + data.caseTag + '] parentRectY : '
           + parentRectY);
 
@@ -164,8 +165,7 @@ export default function alignSelfGridRowTest() {
         expect(rect.left).assertEqual(parentRect.left);
       } else if (data.testValue.describe == 'SetStretch') {
         //When alignSelf : ItemAlign.Stretch
-        const uiContext = new UIContext();
-        expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
+        expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
       }
     })
   })

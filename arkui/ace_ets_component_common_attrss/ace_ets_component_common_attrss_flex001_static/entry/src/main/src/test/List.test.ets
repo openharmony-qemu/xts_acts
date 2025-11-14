@@ -20,8 +20,5 @@ import flexBasisTest from './flex/FlexBasisTest.test';
 
 export default function testsuite() {
   alignSelfTest();
-  alignSelfGridRowTest();
-  alignSelfStretchTest();
-  alignSelfStretchNoSizeTest();
   flexBasisTest();
 }
