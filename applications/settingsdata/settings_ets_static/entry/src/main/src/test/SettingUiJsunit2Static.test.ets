@@ -104,7 +104,7 @@ export default function settingUiJsunit() {
       try{
         let value = settings.getValueSync(abilityContext, name, defaultValue, domainName);
         console.info("[settings_set_value_119] value is: " + value);
-        expect(defaultValue).assertEqual(value);
+        expect().assertFail();
         done();
       } catch (err: Error) {
         console.error("[settings_set_value_119] error = " + err);
@@ -126,7 +126,7 @@ export default function settingUiJsunit() {
         settings.setValueSync(abilityContext, name, value);
         settings.getValue(abilityContext, name, (err, ret) => {
           console.info("[settings_get_value_033] value is: " + ret);
-          expect(ret).assertEqual(value);
+          expect().assertFail();
         })
         done();
       } catch(err: Error){
@@ -150,7 +150,7 @@ export default function settingUiJsunit() {
         settings.setValueSync(abilityContext, name, value);
         settings.getValue(abilityContext, name).then(ret =>{
           console.info("[settings_get_value_034] value is: " + ret);
-          expect(ret).assertEqual(value);
+          expect().assertFail();
         })
         done();
       } catch(err: Error){
@@ -171,7 +171,7 @@ export default function settingUiJsunit() {
       let domainName = settings.domainName.DEVICE_SHARED;
       try{
         let value = settings.setValueSync(abilityContext, name, defaultValue, domainName);
-        expect(value).assertTrue();
+        expect().assertFail();
         done();
       }catch (err: Error) {
         console.error("[settings_set_value_127] error = " + err);
@@ -195,7 +195,7 @@ export default function settingUiJsunit() {
             console.info("[settings_get_value_35] value is:" + data);
             settings.getValue(abilityContext, name, domainName).then(ret => {
               console.info("[settings_get_value_35] value is:" + ret);
-              expect(ret).assertEqual(value);
+              expect().assertFail();
               done();
             })
           })
@@ -223,7 +223,7 @@ export default function settingUiJsunit() {
       try{
         settings.setValue(abilityContext, name, value)
           .then((data)=>{
-            expect(data).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: Error)=>{
