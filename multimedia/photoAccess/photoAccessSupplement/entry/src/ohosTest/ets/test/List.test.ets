@@ -32,6 +32,8 @@ import photoAccessHelperGetObjectByPositionTest from './photoAccess/PhotoAccessH
 import PhotoAccessHelperAlbumAssetsTest from './photoAccess/PhotoAccessHelperAlbumAddRemoveAssets.test';
 import sendablePhotoAccessHelperGetObjectByPositionTest
   from './photoAccess/SendablePhotoAccessHelperGetObjectByPosition.test';
+import photoAccessHelperGetObjectByPositionTest from './photoAccess/PhotoAccessHelperGetObjectByPosition.test';
+import PhotoAccessHelperAlbumAssetsTest from './photoAccess/PhotoAccessHelperAlbumAddRemoveAssets.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -66,5 +68,8 @@ export default function testsuite() {
   photoAccessHelperGetObjectByPositionTest();
   PhotoAccessHelperAlbumAssetsTest();
   sendablePhotoAccessHelperGetObjectByPositionTest();
+
+  photoAccessHelperGetObjectByPositionTest();
+  PhotoAccessHelperAlbumAssetsTest();
 
 }
