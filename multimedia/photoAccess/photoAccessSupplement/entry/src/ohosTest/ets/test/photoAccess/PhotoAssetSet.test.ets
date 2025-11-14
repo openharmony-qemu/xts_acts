@@ -13,489 +13,652 @@
  * limitations under the License.
  */
 
-import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, Level } from "@ohos/hypium";
-import {
-  sleep,
-  getPermission,
-  driveFn,
-} from '../common'
-
+import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
+import { getPermission, driveFn, LOG_TAG, fetchAllOption, createUserAlbum, genRandomStr, fetchOption } from '../common';
 import common from '@ohos.app.ability.common';
+import { dataSharePredicates } from '@kit.ArkData';
 
-const TAG = "photoAssetSetSuppTest: ";
+const TAG = LOG_TAG + 'PhotoAssetsSetSupp';
 
-export default function setTest() {
-  describe('setTest', () => {
-    let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    const phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
 
+async function photoAccessHelperSetTest(done: Function, testName: string, member:string,value:string,newTitle:string|undefined|null,callback: (errCode?: number) => void) {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let fetchOption: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  try {
+    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+      await phAccessHelper.getAssets(fetchOption);
+    let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+    photoAsset.set(member, value);
+    let result = photoAsset.get(member)
+    console.info(TAG, testName, `photoAsset.title is: ${result},photoAsset set member and value success`);
+    expect(result).assertEqual(newTitle);
+  } catch (error) {
+    console.error(TAG, testName, `failed; error:${error.message},${error}and:${error.code}`);
+    callback(error.code);
+    done();
+  }
+}
+
+export default function PhotoAccessHelperSetTestSupp() {
+  describe('PhotoAccessHelperSetTestSupp', () => {
     beforeAll(async () => {
-      console.info('beforeAll case');
+      console.info(TAG, 'beforeAll case');
       await getPermission();
-      await sleep(1000);
       await driveFn();
     });
 
-    const photoAssetSetTest = async (done: Function, testName: string, member: string, value: string, callback: (err: number) => void) => {
-      console.info(TAG, testName);
-      try {
-        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        let fetchOption: photoAccessHelper.FetchOptions = {
-          fetchColumns: [],
-          predicates: predicates
-        };
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOption);
-        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        photoAsset.set(member, value);
-        let newTitle = photoAsset.get(member);
-        console.info(TAG,'photoAsset.set value: ' + value + 'get value: ' + newTitle);
-        expect(newTitle).assertEqual(value);
-        done();
-      } catch (err) {
-        console.error(TAG,testName,` release failed. error: `, JSON.stringify(err), err.code);
-        callback(err.code);
-        done();
-      }
-    }
+    beforeEach(() => {
+      console.info(TAG, 'beforeEach case.');
+    });
 
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0001
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0001
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0001', Level.LEVEL0, async (done: Function) => {
-      let member = '';
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0001',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
+    afterEach(() => {
+      console.info(TAG, 'afterEach case.');
+    });
+
+    afterAll(() => {
+      console.info(TAG, 'afterAll case.');
     });
 
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0002
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0002
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_001
+     * @tc.name      Photo_Assets_Set_001
+     * @tc.desc      Set value is undefined
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0002', Level.LEVEL0, async (done: Function) => {
-      let member = 'undefined' ;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0002',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_001';
+      let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
+      AppStorage.setOrCreate('key', undefined);
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, undefined, errCode => {
+        expect(errCode).assertEqual('13900020');
       })
-    });
+      done();
+    })
 
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0003
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0003
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_002
+     * @tc.name      Photo_Assets_Set_002
+     * @tc.desc      Set value is null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0003', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.URI;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0003',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_002';
+      let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
+      AppStorage.setOrCreate('key', null);
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value,null,  errCode => {
+        expect(errCode).assertEqual('13900020');
       })
-    });
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_003
+     * @tc.name      Photo_Assets_Set_003
+     * @tc.desc      Set value is ''
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_003';
+      let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertFalse();
+      })
+      done();
+    })
 
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0004
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0004
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_004
+     * @tc.name      Photo_Assets_Set_004
+     * @tc.desc      Set title length is 1,value is" "
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0004', Level.LEVEL0, async (done: Function) => {
-      let member = 'abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789' ;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0004',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_004';
+      let title: string = " ";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle','newTitle',  errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
+      done();
+    })
 
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0005
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0005
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_005
+     * @tc.name      Photo_Assets_Set_005
+     * @tc.desc      Set title value is "#"
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0005', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.PHOTO_TYPE ;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0005',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_005';
+      let title: string = "#";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle','newTitle',errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_006
+     * @tc.name      Photo_Assets_Set_006
+     * @tc.desc      Set title value is "< >"
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_006';
+      let title: string = "< >";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle', 'newTitle', errCode => {
+        console.info(TAG, testName,`errCode number`);
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_007
+     * @tc.name      Photo_Assets_Set_007
+     * @tc.desc      Set title value is 1
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_007';
+      let title: string = " ";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle', 'newTitle', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
 
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0006
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0006
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_008
+     * @tc.name      Photo_Assets_Set_008
+     * @tc.desc      Set title value length is 255
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0006', Level.LEVEL0, async (done: Function) => {
-      let member = '' ;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0006',member,'',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_008';
+      let title: string = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle', 'newTitle', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_009
+     * @tc.name      Photo_Assets_Set_009
+     * @tc.desc      Set title value length is 256
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_009';
+      let title: string = "0abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij";
+      await photoAccessHelperSetTest(done, testName, title, 'newTitle', 'newTitle', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_010
+     * @tc.name      Photo_Assets_Set_010
+     * @tc.desc      Set title is PhotoKeys.URI
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_010';
+      let title: string = photoAccessHelper.PhotoKeys.URI.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_011
+     * @tc.name      Photo_Assets_Set_011
+     * @tc.desc      Set title is PhotoKeys.PHOTO_TYPE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_011';
+      let title: string = photoAccessHelper.PhotoKeys.PHOTO_TYPE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_012
+     * @tc.name      Photo_Assets_Set_012
+     * @tc.desc      Set title is PhotoKeys.DISPLAY_NAME
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_012', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_012';
+      let title: string = photoAccessHelper.PhotoKeys.DISPLAY_NAME.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_013
+     * @tc.name      Photo_Assets_Set_013
+     * @tc.desc      Set title is PhotoKeys.SIZE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_013', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_013';
+      let title: string = photoAccessHelper.PhotoKeys.SIZE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_014
+     * @tc.name      Photo_Assets_Set_014
+     * @tc.desc      Set title is PhotoKeys.DATE_ADDED
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_014', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_014';
+      let title: string = photoAccessHelper.PhotoKeys.DATE_ADDED.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_015
+     * @tc.name      Photo_Assets_Set_015
+     * @tc.desc      Set title is PhotoKeys.DATE_MODIFIED
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_015', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_015';
+      let title: string = photoAccessHelper.PhotoKeys.DATE_MODIFIED.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_016
+     * @tc.name      Photo_Assets_Set_016
+     * @tc.desc      Set title is PhotoKeys.DURATION
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_016', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_016';
+      let title: string = photoAccessHelper.PhotoKeys.DURATION.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_017
+     * @tc.name      Photo_Assets_Set_017
+     * @tc.desc      Set title is PhotoKeys.WIDTH
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_017', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_017';
+      let title: string = photoAccessHelper.PhotoKeys.WIDTH.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_018
+     * @tc.name      Photo_Assets_Set_018
+     * @tc.desc      Set title is PhotoKeys.HEIGHT
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_018';
+      let title: string = photoAccessHelper.PhotoKeys.HEIGHT.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
 
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0007
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0007
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_019
+     * @tc.name      Photo_Assets_Set_019
+     * @tc.desc      Set title is PhotoKeys.ORIENTATION
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0007', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE ;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0007',member,'newTitle',(errCode) => {
-        expect().assertFail();
+    it('Photo_Assets_Set_019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_019';
+      let title: string = photoAccessHelper.PhotoKeys.ORIENTATION.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_020
+     * @tc.name      Photo_Assets_Set_020
+     * @tc.desc      Set title is PhotoKeys.FAVORITE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_020';
+      let title: string = photoAccessHelper.PhotoKeys.FAVORITE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_021
+     * @tc.name      Photo_Assets_Set_021
+     * @tc.desc      Set title is PhotoKeys.DATE_ADDED_MS
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_021', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_021';
+      let title: string = photoAccessHelper.PhotoKeys.DATE_ADDED_MS.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_022
+     * @tc.name      Photo_Assets_Set_022
+     * @tc.desc      Set title is PhotoKeys.DATE_MODIFIED_MS
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_022', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_022';
+      let title: string = photoAccessHelper.PhotoKeys.DATE_MODIFIED_MS.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_023
+     * @tc.name      Photo_Assets_Set_023
+     * @tc.desc      Set title is PhotoKeys.PHOTO_SUBTYPE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_023', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_023';
+      let title: string = photoAccessHelper.PhotoKeys.PHOTO_SUBTYPE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_024
+     * @tc.name      Photo_Assets_Set_024
+     * @tc.desc      Set title is PhotoKeys.DYNAMIC_RANGE_TYPE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_024', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_024';
+      let title: string = photoAccessHelper.PhotoKeys.DYNAMIC_RANGE_TYPE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
+    /**
+     * @tc.number    Photo_Assets_Set_025
+     * @tc.name      Photo_Assets_Set_025
+     * @tc.desc      Set title is PhotoKeys.COVER_POSITION
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('Photo_Assets_Set_025', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_025';
+      let title: string = photoAccessHelper.PhotoKeys.COVER_POSITION.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
+      })
+      done();
+    })
 
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0008
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0008
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_026
+     * @tc.name      Photo_Assets_Set_026
+     * @tc.desc      Set title is PhotoKeys.BURST_KEY
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0008', Level.LEVEL0, async (done: Function) => {
-      let member = 'null';
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0008',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_026', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_026';
+      let title: string = photoAccessHelper.PhotoKeys.BURST_KEY.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
-
+      done();
+    })
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0009
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0009
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_027
+     * @tc.name      Photo_Assets_Set_027
+     * @tc.desc      Set title is PhotoKeys.LCD_SIZE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0009', Level.LEVEL0, async (done: Function) => {
-      let member = '-1';
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0009',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_027', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_027';
+      let title: string = photoAccessHelper.PhotoKeys.LCD_SIZE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
-
+      done();
+    })
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0010
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0010
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_028
+     * @tc.name      Photo_Assets_Set_028
+     * @tc.desc      Set title is PhotoKeys.THM_SIZE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0010', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0010',member,'newTitle.txt',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_028', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_028';
+      let title: string = photoAccessHelper.PhotoKeys.THM_SIZE.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
-
+      done();
+    })
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0011
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0011
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_029
+     * @tc.name      Photo_Assets_Set_029
+     * @tc.desc      Set title is PhotoKeys.DETAIL_TIME
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0011', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0011',member,'newTitle.xlsx',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_029', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_029';
+      let title: string = photoAccessHelper.PhotoKeys.DETAIL_TIME.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
-
+      done();
+    })
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0012
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0012
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_030
+     * @tc.name      Photo_Assets_Set_030
+     * @tc.desc      Set title is PhotoKeys.DATE_TAKEN_MS
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0012', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0012',member,'newTitle.png',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_030', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_030';
+      let title: string = photoAccessHelper.PhotoKeys.DATE_TAKEN_MS.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
-
+      done();
+    })
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0013
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0013
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_031
+     * @tc.name      Photo_Assets_Set_031
+     * @tc.desc      Set title is PhotoKeys.POSITION
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0013', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0013',member,'abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789.png',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_031', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_031';
+      let title: string = photoAccessHelper.PhotoKeys.POSITION.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
-
+      done();
+    })
     /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0014
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0014
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
+     * @tc.number    Photo_Assets_Set_032
+     * @tc.name      Photo_Assets_Set_032
+     * @tc.desc      Set title is PhotoKeys.MEDIA_SUFFIX
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0014', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0014',member,'new.Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
+    it('Photo_Assets_Set_032', Level.LEVEL0, async (done: Function) => {
+      const testName = 'Photo_Assets_Set_032';
+      let title: string = photoAccessHelper.PhotoKeys.MEDIA_SUFFIX.toString();
+      console.info(TAG,testName,'get photoAccess title',title)
+      AppStorage.setOrCreate('key', '');
+      let value: string = AppStorage.get('key') as ESObject;
+      await photoAccessHelperSetTest(done, testName, title, value, '', errCode => {
+        expect(errCode).assertEqual('14000014');
       })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0015
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0015
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0015', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0015',member,'new\\Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0016
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0016
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0016', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0016',member,'new/Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0017
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0017
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0017', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0017',member,'new:Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0018
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0018
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0018', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0018',member,'new*Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0019
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0019
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0019', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0019',member,'new?Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0020
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0020
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0020', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0020',member,'new"Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0021
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0021
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0021', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0021',member,'new\'Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0022
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0022
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0022', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0022',member,'new<Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0023
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0023
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0023', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0023',member,'new>Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0024
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0024
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0024', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0024',member,'new|Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0025
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0025
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0025', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0025',member,'new{Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0026
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0026
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0026', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0026',member,'new}Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0027
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0027
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0027', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0027',member,'new[Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0028
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0028
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0028', Level.LEVEL0, async (done: Function) => {
-      let member = photoAccessHelper.PhotoKeys.TITLE;
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0028',member,'new]Title',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-    /**
-     * @tc.number       SUB_PHOTO_ASSET_HELPER_SET_0029
-     * @tc.name         SUB_PHOTO_ASSET_HELPER_SET_0029
-     * @tc.desc         set photo title success
-     * @tc.size         MEDIUM
-     * @tc.type         Function
-     * @tc.level        Level 0
-     */
-    it('SUB_PHOTO_ASSET_HELPER_SET_0029', Level.LEVEL0, async (done: Function) => {
-      let member = '汉字';
-      await photoAssetSetTest(done, 'SUB_PHOTO_ASSET_HELPER_SET_0029',member,'newTitle',(errCode) => {
-        expect(errCode == 14000014 ).assertTrue();
-      })
-    });
-
-
+      done();
+    })
   })
 }

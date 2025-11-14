@@ -55,17 +55,31 @@ async function requestImageDataPromiseTest(done: Function, testName: string, fet
     console.info(TAG, 'requestImageData successfully',requestId);
     expect().assertFail();
   } catch (error) {
-    console.error(TAG, testName,`failed; error: ${error}`);
-    callback(error.code)
+    console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+    callback(error.code);
   }
   done();
 }
-
+async function requestImageDataPromiseTest1(done: Function, testName: string, callback: () => void) {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+  const handler = new MediaDataHandler();
+  try {
+   callback();
+    expect().assertFail();
+  } catch (error) {
+    console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+  }
+  done();
+}
 let power: ESObject;
 
 export default function MediaAssetManagerRequestImageDataTest() {
   describe('MediaAssetManagerRequestImageDataTest', () => {
     let dr = Driver.create();
+    let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+    const fetchOptions = fetchAllOption();
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case');
       await getPermission();
@@ -83,6 +97,7 @@ export default function MediaAssetManagerRequestImageDataTest() {
 
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
+      AppStorage.delete('key');
     });
 
 
@@ -387,5 +402,250 @@ export default function MediaAssetManagerRequestImageDataTest() {
       }
       done();
     })
+
+
+
+
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_017
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_017
+     * @tc.desc      : requestImageDataPromiseTest requestOptions is ''
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_017', Level.LEVEL0, async (done: Function) => {
+    const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_017';
+    let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+    const handler = new MediaDataHandler();
+      AppStorage.setOrCreate('key', '');
+      let requestOptions: photoAccessHelper.RequestOptions  = AppStorage.get('key') as ESObject;
+    try{
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      console.info(TAG, testName,'photoAsset success',photoAsset);
+      let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, handler);
+      console.info(TAG, testName,'requestImageData successfully',requestId);
+    }catch (error) {
+      console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+      expect(error.code).assertEqual('401');
+    }
+    done();
+  })
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_018
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_018
+     * @tc.desc      : requestImageDataPromiseTest requestOptions is null
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_018', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_018';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      const handler = new MediaDataHandler();
+      try{
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, null, handler);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_019
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_019
+     * @tc.desc      : requestImageDataPromiseTest requestOptions is undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_019', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_019';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      const handler = new MediaDataHandler();
+      try{
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, undefined, handler);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_020
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_020
+     * @tc.desc      : requestImageDataPromiseTest Context is null
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_020';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      const handler = new MediaDataHandler();
+      try{
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(null, photoAsset, requestOptions, handler);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_021
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_021
+     * @tc.desc      : requestImageDataPromiseTest Context is undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_021', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_021';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      const handler = new MediaDataHandler();
+      try{
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(undefined, photoAsset, requestOptions, handler);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_022
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_022
+     * @tc.desc      : requestImageDataPromiseTest Context is ''
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_022', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_022';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      const handler = new MediaDataHandler();
+      try{
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+        AppStorage.setOrCreate('key', '');
+        let Context: Context = AppStorage.get('key') as ESObject;
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(Context, photoAsset, requestOptions, handler);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_023
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_023
+     * @tc.desc      : requestImageDataPromiseTest handler is ''
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_023', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_023';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      try{
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+        AppStorage.setOrCreate('key', '');
+        let handler: photoAccessHelper.MediaAssetDataHandler<ArrayBuffer> = AppStorage.get('key') as ESObject;
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, handler);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+        expect().assertFail();
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_024
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_024
+     * @tc.desc      : requestImageDataPromiseTest handler is null
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_024', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_024';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      try{
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, null);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+        expect().assertFail();
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+    /**
+     * @tc.number    : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_025
+     * @tc.name      : MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_025
+     * @tc.desc      : requestImageDataPromiseTest handler is undefined
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_025', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MEDIA_ASSET_MANAGER_CONSTRUCTOR_ERROR_025';
+      let fetchResult = await phAccessHelper.getAssets(fetchOptions);
+      try{
+        let requestOptions: photoAccessHelper.RequestOptions =
+          {
+            deliveryMode:photoAccessHelper.DeliveryMode.HIGH_QUALITY_MODE,
+          };
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        console.info(TAG, testName,'photoAsset success',photoAsset);
+        let requestId = await  photoAccessHelper.MediaAssetManager.requestImageData(testContext, photoAsset, requestOptions, undefined);
+        console.info(TAG, testName,'requestImageData successfully',requestId);
+        expect().assertFail();
+      }catch (error) {
+        console.error(TAG, testName,`failed; error:${error.code} ${error}`);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+
   })
 }
