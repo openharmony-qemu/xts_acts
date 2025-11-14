@@ -16,11 +16,12 @@
 import InterceptionTest from './Interception/InterceptionTest.test'
 import NavigationTest from './Navigation/NavigationTest.test'
 import EnableShowHideWithContentCoverPage from './Navigation/EnableShowHideWithContentCoverPage.test'
-import SplitPlaceholder from '.Navigation/SplitPlaceholder.test'
-import UIContextNavDestinationUpdate from '.UIContext/UIContextNavDestinationUpdate.test'
-import StepperModifierPage from '.Stepper/StepperModifierPage.test'
-import HomePage from '.Navigation/HomePage.test'
-import StepperModifierTest from '.Stepper/StepperModifierTest.test'
+import SplitPlaceholder from './Navigation/SplitPlaceholder.test'
+import UIContextNavDestinationUpdate from './UIContext/UIContextNavDestinationUpdate.test'
+import StepperModifierPage from './Stepper/StepperModifierPage.test'
+import HomePage from './Navigation/HomePage.test'
+import StepperModifierTest from './Stepper/StepperModifierTest.test'
+
 
 export default function testsuite() {
   InterceptionTest();

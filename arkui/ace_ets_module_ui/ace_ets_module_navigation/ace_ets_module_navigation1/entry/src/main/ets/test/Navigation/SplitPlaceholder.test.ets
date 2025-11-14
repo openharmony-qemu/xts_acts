@@ -67,6 +67,8 @@ export default function SplitPlaceholder() {
       console.log('SplitPlaceholder_0100]: ', obj1.$children[0].$children[3].$type)
 
       await driver.assertComponentExist(ON.type('SplitPlaceholderContentNode'));
+      let splitPlaceholderContentNode: Component | null = await driver.findComponent(ON.type('SplitPlaceholderContentNode'));
+      expect(splitPlaceholderContentNode !== null).assertTrue();
 
       console.info('[SplitPlaceholder_0100] END');
       done();

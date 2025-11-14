@@ -23,7 +23,7 @@ struct NavigationExample {
   @Builder
   pageMap(name:string){
     if(name == 'pageOne'){
-      PageOne()
+      PageOneInterception()
     }else{
       PageTwo()
     }
@@ -76,7 +76,7 @@ struct NavigationExample {
 }
 
 @Component
-struct PageOne {
+struct PageOneInterception {
   @Consume('pageInfos') pageInfos: NavPathStack;
   @State stacks: string[] = [];
 
