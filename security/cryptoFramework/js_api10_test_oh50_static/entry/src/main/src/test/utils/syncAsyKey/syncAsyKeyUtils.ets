@@ -1426,7 +1426,7 @@ function compareRsaPubKeyBySpec(rsaKeySpec: cryptoFramework.RSAPubKeySpec, n: bi
     console.error('type is string');
     return false;
   }
-  if (['bigint', 'int'].includes(typeof n) || ['bigint', 'int'].includes(typeof e)) {
+  if (typeof n === 'int' || typeof e === 'int') {
     console.error('type is number');
     return false;
   }
