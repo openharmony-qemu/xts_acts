@@ -67,7 +67,9 @@ async function getInputMethodPermission() {
     let permissionBtn1 = await driver.findComponent(ON.text('同意'))
     if (permissionBtn1 == null) {
         let scroll = await driver.findComponent(ON.type('Scroll'))
-        permissionBtn1 = await scroll.scrollSearch(ON.text('同意'))
+        if (scroll != null) {
+            permissionBtn1 = await scroll.scrollSearch(ON.text('同意'))
+        }
     }
     if (permissionBtn1 != null) {
         await permissionBtn1.click()
