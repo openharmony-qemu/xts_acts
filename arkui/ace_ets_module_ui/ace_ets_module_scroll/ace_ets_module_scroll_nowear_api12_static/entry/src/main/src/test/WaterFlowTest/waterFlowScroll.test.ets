@@ -41,10 +41,8 @@ export default function waterFlowScroll() {
         console.info("get waterFlowScroll state pages:" + JSON.stringify(pages));
         if (!("waterFlowScroll" == pages.name)) {
           console.info("get waterFlowScroll pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlowScroll page error:" + err);
@@ -61,9 +59,9 @@ export default function waterFlowScroll() {
      * @tc.number   waterFlowScroll_static_001
      * @tc.name     waterFlowScroll_static_001
      * @tc.desc     waterFlowScroll_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlowScroll_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlowScroll_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlowScroll_static_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

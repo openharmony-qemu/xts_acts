@@ -41,10 +41,8 @@ export default function WaterFlowFlingCallbackJsunit() {
         console.info('get WaterFlowFlingCallback state pages:' + JSON.stringify(pages));
         if (!('WaterFlowFlingCallback' == pages.name)) {
           console.info('get WaterFlowFlingCallback state pages.name:' + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error('push WaterFlowFlingCallback page error:' + JSON.stringify(err));
@@ -61,9 +59,9 @@ export default function WaterFlowFlingCallbackJsunit() {
      * @tc.number   WaterFlowFlingCallbackTest_static_0100
      * @tc.name     WaterFlowFlingCallbackTest_static_0100
      * @tc.desc     WaterFlowFlingCallbackTest_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowFlingCallbackTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowFlingCallbackTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowFlingCallbackTest_static_0100 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('btn_waterflow_fling_01'));
@@ -81,9 +79,9 @@ it('WaterFlowFlingCallbackTest_static_0100', Level.LEVEL0, async (done: () => vo
      * @tc.number   WaterFlowFlingCallbackTest_static_0200
      * @tc.name     WaterFlowFlingCallbackTest_static_0200
      * @tc.desc     WaterFlowFlingCallbackTest_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowFlingCallbackTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowFlingCallbackTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowFlingCallbackTest_static_0200 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('btn_waterflow_fling_02'));

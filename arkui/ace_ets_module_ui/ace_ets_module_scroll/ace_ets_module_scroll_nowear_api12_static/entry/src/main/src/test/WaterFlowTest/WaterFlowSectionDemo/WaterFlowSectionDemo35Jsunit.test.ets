@@ -41,9 +41,8 @@ export default function WaterFlowSectionDemo35Jsunit() {
         console.info("get WaterFlowSectionDemo35Jsunit state pages:" + JSON.stringify(pages));
         if (!("WaterFlowSectionDemo35" == pages.name)) {
           console.info("get WaterFlowSectionDemo35Jsunit state pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
-          
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push WaterFlowSectionDemo35Jsunit page error:" + err);
@@ -55,9 +54,9 @@ export default function WaterFlowSectionDemo35Jsunit() {
      * @tc.number   WaterFlowSectionDemo35Jsunit_static_0100
      * @tc.name     WaterFlowSectionDemo35Jsunit_static_0100
      * @tc.desc     WaterFlowSectionDemo35Jsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowSectionDemo35Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowSectionDemo35Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowSectionDemo35Jsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('WaterFlowSectionDemo35_text');

@@ -38,28 +38,33 @@ struct WordBreakTest {
     'golden hue that spreads like liquid amber across the vast expanse of the sky.' +
     'The once-blue heavens gradually transform, '
   @State wordBreakList: WordBreak[] = [WordBreak.NORMAL,WordBreak.BREAK_ALL,WordBreak.BREAK_WORD,WordBreak.HYPHENATION]
-  @State wordBreakIndex: number = 0
+  @State wordBreakIndex: Int = 0
   build() {
     Column() {
       Row(){
         Button('setWordBreak1').onClick((e:ClickEvent)=>{
+          console.log('onClick button 1')
           this.wordBreakIndex =1
         })
           .id('setWordBreak1')
           .width('33%')
         Button('setWordBreak2').onClick((e:ClickEvent)=>{
+          console.log('onClick button 2')
           this.wordBreakIndex =2
         })
           .id('setWordBreak2')
           .width('33%')
         Button('setWordBreak3').onClick((e:ClickEvent)=>{
+          console.log('onClick button 3')
           this.wordBreakIndex =3
         })
           .id('setWordBreak3')
           .width('33%')
       }.height('5%')
+      console.log('11111----TextArea')
+      console.log('11111----TextArea' + this.wordBreakList[this.wordBreakIndex])
       TextArea({text:this.text})
-        .wordBreak(this.wordBreakList[this.wordBreakIndex.toInt()])
+        .wordBreak(this.wordBreakList[this.wordBreakIndex])
         .clip(true)
         .id('wordBreakTest')
     }

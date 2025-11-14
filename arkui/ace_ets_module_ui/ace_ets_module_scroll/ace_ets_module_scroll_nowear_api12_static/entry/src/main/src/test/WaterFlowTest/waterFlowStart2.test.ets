@@ -39,10 +39,8 @@ export default function waterFlowStart2() {
         console.info("get waterFlowStart2 state pages:" + JSON.stringify(pages));
         if (!("waterFlowStart2" == pages.name)) {
           console.info("get waterFlowStart2 pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterFlowStart2 page error:" + err);
@@ -59,9 +57,9 @@ export default function waterFlowStart2() {
      * @tc.number   waterFlowStart2_static_0100
      * @tc.name     waterFlowStart2_static_0100
      * @tc.desc     waterFlowStart2_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('waterFlowStart2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('waterFlowStart2_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[waterFlowStart2_static_0100] START');
       let driver = Driver.create();
       let onReachStartText = await driver.findComponent(ON.id('onReachStart_wText_2'));

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,11 +51,8 @@ export default function RichEditorKeyboardAppearanceTest() {
         console.info("get RichEditorKeyboardAppearanceTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get RichEditorKeyboardAppearanceTest pages.name:" + JSON.stringify(pages.name));
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorKeyboardAppearanceTest page error:" + err);
@@ -65,7 +62,8 @@ export default function RichEditorKeyboardAppearanceTest() {
 
     
     
-    /*
+    
+/*
      * @tc.number   RichEditorKeyboardAppearanceTest_static_0010
      * @tc.name     RichEditorKeyboardAppearanceTest_static_0010
      * @tc.desc     RichEditorKeyboardAppearanceTest_static_0010
@@ -84,7 +82,8 @@ it('RichEditorKeyboardAppearanceTest_static_0010', Level.LEVEL2, async  (done: (
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorKeyboardAppearanceTest_static_0020
      * @tc.name     RichEditorKeyboardAppearanceTest_static_0020
      * @tc.desc     RichEditorKeyboardAppearanceTest_static_0020
@@ -102,7 +101,8 @@ it('RichEditorKeyboardAppearanceTest_static_0020', Level.LEVEL2, async  (done: (
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorKeyboardAppearanceTest_static_0030
      * @tc.name     RichEditorKeyboardAppearanceTest_static_0030
      * @tc.desc     RichEditorKeyboardAppearanceTest_static_0030
@@ -120,7 +120,8 @@ it('RichEditorKeyboardAppearanceTest_static_0030', Level.LEVEL2, async  (done: (
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorKeyboardAppearanceTest_static_0040
      * @tc.name     RichEditorKeyboardAppearanceTest_static_0040
      * @tc.desc     RichEditorKeyboardAppearanceTest_static_0040
@@ -138,7 +139,8 @@ it('RichEditorKeyboardAppearanceTest_static_0040', Level.LEVEL2, async  (done: (
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorKeyboardAppearanceTest_static_0050
      * @tc.name     RichEditorKeyboardAppearanceTest_static_0050
      * @tc.desc     RichEditorKeyboardAppearanceTest_static_0050
@@ -156,7 +158,8 @@ it('RichEditorKeyboardAppearanceTest_static_0050', Level.LEVEL2, async  (done: (
     });
 
     
-    /*
+    
+/*
      * @tc.number   RichEditorKeyboardAppearanceTest_static_0060
      * @tc.name     RichEditorKeyboardAppearanceTest_static_0060
      * @tc.desc     RichEditorKeyboardAppearanceTest_static_0060

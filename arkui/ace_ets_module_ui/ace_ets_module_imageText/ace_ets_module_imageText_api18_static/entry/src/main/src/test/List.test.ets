@@ -12,26 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import SearchGetTextTest from './SearchTest/SearchGetText.test';
 import textAreaInputTest from './TextTest/textAreaInputTest.test';
 import ContentTypeTest1 from './TextInputTest/ContentType1.test';
 import ContentTypeTest2 from './TextInputTest/ContentType2.test';
+import symbolGlyphFontScaleTest from './FontScaleTest/symbolGlyphFontScaleTest.test';
+import monitorInvisibleAreaTest from './ImageAnimator/monitorInvisibleArea.test';
+import textBackgroundStyleTest from './RichEditorTest/textBackgroundStyleTest.test';
+import SearchGetTextTest from './SearchTest/SearchGetText.test';
 import TextAreaGetTextTest from './TextAreaTest/TextAreaGetText.test';
 import TextInputGetTextTest from './TextInputTest/TextInputGetText.test';
+import ParagraphSpacingTest from './StyledStringTest/ParagraphSpacing.test';
+import HapticFeedbackModeTest from './RichEditorTest/HapticFeedbackMode.test';
+import RichEditorMaxLinesTest from './RichEditorTest/RichEditorMaxLinesTest.test';
 import WordBreakTest from './TextAreaTest/WordBreakTest.test';
-import HapticFeedbackModeTest from './RichEditorTest/HapticFeedbackMode.test'
-import RichEditorMaxLinesTest from './RichEditorTest/RichEditorMaxLinesTest.test'
-import textBackgroundStyleTest from './RichEditorTest/textBackgroundStyleTest.test'
+import ImageContentEmpty from './ImageContentTest/ImageContentEmpty.test';
+import ImageOnError from './ImageErrorTest/ImageOnError.test';
 
 export default function testsuite() {
-  SearchGetTextTest();
   textAreaInputTest();
-  TextAreaGetTextTest();
-  WordBreakTest();
   ContentTypeTest1();
   ContentTypeTest2();
+  symbolGlyphFontScaleTest();
+  monitorInvisibleAreaTest();
+  textBackgroundStyleTest();
+  SearchGetTextTest();
+  TextAreaGetTextTest();
   TextInputGetTextTest();
+  ParagraphSpacingTest();
   HapticFeedbackModeTest();
   RichEditorMaxLinesTest();
-  textBackgroundStyleTest();
+  WordBreakTest();
+  ImageContentEmpty();
+  ImageOnError();
 }

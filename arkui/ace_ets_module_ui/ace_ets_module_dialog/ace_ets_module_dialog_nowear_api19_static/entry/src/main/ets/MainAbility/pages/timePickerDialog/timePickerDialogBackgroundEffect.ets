@@ -13,47 +13,23 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode,
-  TimePickerFormat,
-  TimePickerResult
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, BackgroundEffectOptions, TimePickerResult, TimePickerFormat} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct timePickerDialog2 {
-  uiContext: UIContext = this.getUIContext();
   private selectTime: Date = new Date('2020-12-25T08:30:00')
-
+  uiContext: UIContext = this.getUIContext();
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('TimePickerDialog_Effect001')
         .id('TimePickerDialog_Effect001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTimePickerDialog({
             selected: this.selectTime,
             format: TimePickerFormat.HOUR_MINUTE,
@@ -62,7 +38,7 @@ struct timePickerDialog2 {
             onAccept: (value: TimePickerResult) => {
               // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectTime.setHours(value.hour, value.minute)
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
@@ -72,17 +48,17 @@ struct timePickerDialog2 {
               brightness: 2,
               color: Color.Pink,
               adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
               blurOptions: {
-                grayscale: [20, 20]
+                grayscale: [20,20]
               }
             } as BackgroundEffectOptions
           })
         })
       Button('TimePickerDialog_Effect002')
         .id('TimePickerDialog_Effect002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTimePickerDialog({
             selected: this.selectTime,
             format: TimePickerFormat.HOUR_MINUTE,
@@ -91,16 +67,25 @@ struct timePickerDialog2 {
             onAccept: (value: TimePickerResult) => {
               // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectTime.setHours(value.hour, value.minute)
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
-
+            // backgroundEffect: {
+            //   // radius: undefined,
+            //   saturation: undefined,
+            //   brightness: undefined,
+            //   color: undefined,
+            //   adaptiveColor: undefined,
+            //   policy:undefined,
+            //   inactiveColor:undefined,
+            //   blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('TimePickerDialog_Effect003')
         .id('TimePickerDialog_Effect003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showTimePickerDialog({
             selected: this.selectTime,
             format: TimePickerFormat.HOUR_MINUTE,
@@ -109,11 +94,20 @@ struct timePickerDialog2 {
             onAccept: (value: TimePickerResult) => {
               // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectTime.setHours(value.hour, value.minute)
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
-
+            // backgroundEffect: {
+            //   radius: null,
+            //   saturation: null,
+            //   brightness: null,
+            //   color: null,
+            //   adaptiveColor: null,
+            //   policy:null,
+            //   inactiveColor:null,
+            //   blurOptions: null,
+            // }  as BackgroundEffectOptions
           })
         })
     }

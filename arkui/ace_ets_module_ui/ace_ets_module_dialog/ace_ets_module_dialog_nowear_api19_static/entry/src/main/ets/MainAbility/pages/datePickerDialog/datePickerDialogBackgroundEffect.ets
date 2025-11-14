@@ -13,91 +13,83 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, BackgroundEffectOptions} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct datePickerDialog2 {
   private selectedDate: Date = new Date('2025-04-23')
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('DatePickerDialog_Effect001')
         .id('DatePickerDialog_Effect001')
-        .onClick((e: ClickEvent) => {
-          let uiContext: UIContext = this.getUIContext();
-          uiContext.showDatePickerDialog({
+        .onClick((e:ClickEvent) => {
+          this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
             showTime: true,
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-            backgroundEffect: {
-              radius: 40,
-              saturation: 25,
-              brightness: 2,
-              color: Color.Pink,
-              adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
-              blurOptions: {
-                grayscale: [20, 20]
-              }
-            }
+            // backgroundEffect: {
+            //   radius: 40.0,
+              // saturation: 25,
+              // brightness: 2,
+              // color: Color.Pink,
+              // adaptiveColor: AdaptiveColor.DEFAULT,
+              // policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              // inactiveColor:Color.Blue,
+              // blurOptions: {
+              //   grayscale: [20,20]
+              // }
+            // } as BackgroundEffectOptions
           })
         })
       Button('DatePickerDialog_Effect002')
         .id('DatePickerDialog_Effect002')
-        .onClick((e: ClickEvent) => {
-          let uiContext: UIContext = this.getUIContext();
-          uiContext.showDatePickerDialog({
+        .onClick((e:ClickEvent) => {
+          this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
             showTime: true,
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-
+            // backgroundEffect: {
+            //   radius: undefined,
+            //   saturation: undefined,
+            //   brightness: undefined,
+            //   color: undefined,
+            //   adaptiveColor: undefined,
+            //   policy:undefined,
+            //   inactiveColor:undefined,
+            //   blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('DatePickerDialog_Effect003')
         .id('DatePickerDialog_Effect003')
-        .onClick((e: ClickEvent) => {
-          let uiContext: UIContext = this.getUIContext();
-          uiContext.showDatePickerDialog({
+        .onClick((e:ClickEvent) => {
+          this.getUIContext().showDatePickerDialog({
             start: new Date('2000-1-1'),
             end: new Date('2100-12-31'),
             selected: this.selectedDate,
             showTime: true,
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-
+            // backgroundEffect: {
+            //   radius: null,
+            //   saturation: null,
+            //   brightness: null,
+            //   color: null,
+            //   adaptiveColor: null,
+            //   policy:null,
+            //   inactiveColor:null,
+            //   blurOptions: null,
+            // } as BackgroundEffectOptions
           })
         })
     }

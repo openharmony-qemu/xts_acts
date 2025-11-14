@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { Driver, ON, MouseButton } from '@ohos.UiTest';
+import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -26,9 +26,10 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function WordBreakTest() {
   describe('WordBreakTest', () => {
@@ -46,16 +47,13 @@ export default function WordBreakTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get WordBreakTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/TextArea/WordBreakTest" == pages.name)) {
           console.info("get WordBreakTest pages.name:" + JSON.stringify(pages.name));
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push WordBreakTest page error:" + err);
@@ -67,6 +65,7 @@ export default function WordBreakTest() {
       console.info("WordBreakTest after each called");
     });
 
+
     
     /*
      * @tc.number   WordBreakTest_static_0001
@@ -74,7 +73,7 @@ export default function WordBreakTest() {
      * @tc.desc     WordBreakTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-it('WordBreakTest_static_0001', Level.LEVEL1, async (done: ()=>void) => {
+it('WordBreakTest_static_0001', Level.LEVEL1, async (done: () => void) => {
       let driver = Driver.create();
       console.info('WordBreakTest0001 START');
       let strJson = inspector.getInspectorByKey('wordBreakTest');
@@ -84,6 +83,7 @@ it('WordBreakTest_static_0001', Level.LEVEL1, async (done: ()=>void) => {
       done();
     });
 
+
     
     /*
      * @tc.number   WordBreakTest_static_0002
@@ -91,20 +91,22 @@ it('WordBreakTest_static_0001', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     WordBreakTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-it('WordBreakTest_static_0002', Level.LEVEL1, async (done: ()=>void) => {
+it('WordBreakTest_static_0002', Level.LEVEL1, async (done: () => void) => {
       let driver = Driver.create();
       console.info('WordBreakTest0002 START');
       await CommonFunc.sleep(1000);
-      let setWordBreak = await driver.findComponent(ON.id('setWordBreak1'))
+      let set: Component = await driver.findComponent(ON.id('setWordBreak1')) as Component
       await CommonFunc.sleep(500);
-      await (setWordBreak?.click() as Promise<void>)
-      await CommonFunc.sleep(500);
+      await set.click()
+      await CommonFunc.sleep(4000);
       let strJson = inspector.getInspectorByKey('wordBreakTest');
       let obj = JSON.parseJsonElement(strJson);
+      console.log('22222----' + obj.getElement('$attrs').getString('wordBreak'))
       expect(obj.getElement('$attrs').getString('wordBreak')).assertEqual('break-all');
       console.info("[WordBreakTest0002] end");
       done();
     });
+
 
     
     /*
@@ -113,20 +115,22 @@ it('WordBreakTest_static_0002', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     WordBreakTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-it('WordBreakTest_static_0003', Level.LEVEL1, async (done: ()=>void) => {
+it('WordBreakTest_static_0003', Level.LEVEL1, async (done: () => void) => {
       let driver = Driver.create();
       console.info(' WordBreakTest0003 START');
       await CommonFunc.sleep(1000);
-      let setWordBreak = await driver.findComponent(ON.id('setWordBreak2'))
+      let set: Component = await driver.findComponent(ON.id('setWordBreak2')) as Component
       await CommonFunc.sleep(500);
-      await (setWordBreak?.click() as Promise<void>)
-      await CommonFunc.sleep(500);
+      await set.click()
+      await CommonFunc.sleep(4000);
       let strJson = inspector.getInspectorByKey('wordBreakTest');
       let obj = JSON.parseJsonElement(strJson);
+      console.log('22222----' + obj.getElement('$attrs').getString('wordBreak'))
       expect(obj.getElement('$attrs').getString('wordBreak')).assertEqual('break-word');
       console.info("[WordBreakTest0003] end");
       done();
     });
+
 
     
     /*
@@ -135,16 +139,17 @@ it('WordBreakTest_static_0003', Level.LEVEL1, async (done: ()=>void) => {
      * @tc.desc     WordBreakTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-it('WordBreakTest_static_0004', Level.LEVEL1, async (done: ()=>void) => {
+it('WordBreakTest_static_0004', Level.LEVEL1, async (done: () => void) => {
       let driver = Driver.create();
       console.info(' WordBreakTest0004 START');
       await CommonFunc.sleep(1000);
-      let setWordBreak = await driver.findComponent(ON.id('setWordBreak3'))
+      let set: Component = await driver.findComponent(ON.id('setWordBreak3')) as Component
       await CommonFunc.sleep(500);
-      await (setWordBreak?.click() as Promise<void>)
-      await CommonFunc.sleep(500);
+      await set.click()
+      await CommonFunc.sleep(4000);
       let strJson = inspector.getInspectorByKey('wordBreakTest');
       let obj = JSON.parseJsonElement(strJson);
+      console.log('22222----' + obj.getElement('$attrs').getString('wordBreak'))
       expect(obj.getElement('$attrs').getString('wordBreak')).assertEqual('hyphenation');
       console.info("[WordBreakTest0004] end");
       done();

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,7 +14,7 @@
  */
 import { describe, beforeEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector'
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 import hilog from '@ohos.hilog'
@@ -50,11 +50,8 @@ export default function ResourceDefaultTest() {
         console.info("get ResourceDefaultTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ResourceDefaultTest pages.name:" + JSON.stringify(pages.name));
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ResourceDefaultTest page error:" + err);
@@ -63,7 +60,8 @@ export default function ResourceDefaultTest() {
     });
     
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0010
      * @tc.name     ResourceDefaultTest_static_0010
      * @tc.desc     ResourceDefaultTest_static_0010
@@ -73,11 +71,11 @@ it('ResourceDefaultTest_static_0010', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_default_append_resource'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_resourceValue');
       let obj = JSON.parseJsonElement(strJson);
@@ -87,8 +85,9 @@ it('ResourceDefaultTest_static_0010', Level.LEVEL2, async (done: () => void): Pr
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   ResourceDefaultTest_static_0020
      * @tc.name     ResourceDefaultTest_static_0020
      * @tc.desc     ResourceDefaultTest_static_0020
@@ -98,11 +97,11 @@ it('ResourceDefaultTest_static_0020', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0020] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_colorFilter_append_str'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_resourceValue');
       let obj = JSON.parseJsonElement(strJson);
@@ -112,8 +111,9 @@ it('ResourceDefaultTest_static_0020', Level.LEVEL2, async (done: () => void): Pr
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   ResourceDefaultTest_static_0030
      * @tc.name     ResourceDefaultTest_static_0030
      * @tc.desc     ResourceDefaultTest_static_0030
@@ -123,11 +123,11 @@ it('ResourceDefaultTest_static_0030', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0030] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_default_append_resource'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_size');
       let obj = JSON.parseJsonElement(strJson);
@@ -138,7 +138,8 @@ it('ResourceDefaultTest_static_0030', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0040
      * @tc.name     ResourceDefaultTest_static_0040
      * @tc.desc     ResourceDefaultTest_static_0040
@@ -148,11 +149,11 @@ it('ResourceDefaultTest_static_0040', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0040] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_default_append_resource'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_verticalAlign');
       let obj = JSON.parseJsonElement(strJson);
@@ -163,7 +164,8 @@ it('ResourceDefaultTest_static_0040', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0050
      * @tc.name     ResourceDefaultTest_static_0050
      * @tc.desc     ResourceDefaultTest_static_0050
@@ -173,11 +175,11 @@ it('ResourceDefaultTest_static_0050', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0050] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_default_append_resource'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_objectFit');
       let obj = JSON.parseJsonElement(strJson);
@@ -188,7 +190,8 @@ it('ResourceDefaultTest_static_0050', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0060
      * @tc.name     ResourceDefaultTest_static_0060
      * @tc.desc     ResourceDefaultTest_static_0060
@@ -198,11 +201,11 @@ it('ResourceDefaultTest_static_0060', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0060] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_default_append_resource'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_layoutStyle');
       let obj = JSON.parseJsonElement(strJson);
@@ -213,7 +216,8 @@ it('ResourceDefaultTest_static_0060', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0070
      * @tc.name     ResourceDefaultTest_static_0070
      * @tc.desc     ResourceDefaultTest_static_0070
@@ -223,11 +227,11 @@ it('ResourceDefaultTest_static_0070', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0070] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_default_append_resource'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_default_append_resource')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);
@@ -238,7 +242,8 @@ it('ResourceDefaultTest_static_0070', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0080
      * @tc.name     ResourceDefaultTest_static_0080
      * @tc.desc     ResourceDefaultTest_static_0080
@@ -248,11 +253,11 @@ it('ResourceDefaultTest_static_0080', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0080] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_colorFilter_append_str'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_size');
       let obj = JSON.parseJsonElement(strJson);
@@ -263,7 +268,8 @@ it('ResourceDefaultTest_static_0080', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0090
      * @tc.name     ResourceDefaultTest_static_0090
      * @tc.desc     ResourceDefaultTest_static_0090
@@ -273,11 +279,11 @@ it('ResourceDefaultTest_static_0090', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0090] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_colorFilter_append_str'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_verticalAlign');
       let obj = JSON.parseJsonElement(strJson);
@@ -288,7 +294,8 @@ it('ResourceDefaultTest_static_0090', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0100
      * @tc.name     ResourceDefaultTest_static_0100
      * @tc.desc     ResourceDefaultTest_static_0100
@@ -298,11 +305,11 @@ it('ResourceDefaultTest_static_0100', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_colorFilter_append_str'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_objectFit');
       let obj = JSON.parseJsonElement(strJson);
@@ -313,7 +320,8 @@ it('ResourceDefaultTest_static_0100', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0110
      * @tc.name     ResourceDefaultTest_static_0110
      * @tc.desc     ResourceDefaultTest_static_0110
@@ -323,11 +331,11 @@ it('ResourceDefaultTest_static_0110', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0110] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_colorFilter_append_str'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_layoutStyle');
       let obj = JSON.parseJsonElement(strJson);
@@ -338,7 +346,8 @@ it('ResourceDefaultTest_static_0110', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/*
      * @tc.number   ResourceDefaultTest_static_0120
      * @tc.name     ResourceDefaultTest_static_0120
      * @tc.desc     ResourceDefaultTest_static_0120
@@ -348,11 +357,11 @@ it('ResourceDefaultTest_static_0120', Level.LEVEL2, async (done: () => void): Pr
       console.info('[ResourceDefaultTest_0120] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('set_colorFilter_append_str'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('set_colorFilter_append_str')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      let Button1 = await driver.findComponent(ON.id('get_default_styles'));
-      await (Button1?.click() as Promise<void>)
+      let Button1:Component = await driver.findComponent(ON.id('get_default_styles')) as Component;
+      await Button1.click()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('default_colorFilter');
       let obj = JSON.parseJsonElement(strJson);

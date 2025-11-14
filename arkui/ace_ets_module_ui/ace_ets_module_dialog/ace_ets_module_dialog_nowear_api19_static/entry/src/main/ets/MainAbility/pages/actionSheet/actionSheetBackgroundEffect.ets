@@ -13,45 +13,21 @@
  * limitations under the License.
  */
 
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  CalendarPickerDialog,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  DialogAlignment,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, $r,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions,
+  BlurStyleActivePolicy, AdaptiveColor, ThemeColorMode, Color, DialogAlignment, BackgroundEffectOptions,
+  CalendarPickerDialog} from '@ohos.arkui.component'
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ActionSheet2 {
   uiContext: UIContext = this.getUIContext()
-
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('ActionSheet_Effect001')
         .id('ActionSheet_Effect001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showActionSheet({
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
@@ -95,17 +71,17 @@ struct ActionSheet2 {
               brightness: 2,
               color: Color.Pink,
               adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
               blurOptions: {
-                grayscale: [20, 20]
+                grayscale: [20,20]
               }
             } as BackgroundEffectOptions
           })
         })
       Button('ActionSheet_Effect002')
         .id('ActionSheet_Effect002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showActionSheet({
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
@@ -143,11 +119,21 @@ struct ActionSheet2 {
                 }
               }
             ],
+            // backgroundEffect: {
+            //   radius: undefined,
+            //   saturation: undefined,
+            //   brightness: undefined,
+            //   color: undefined,
+            //   adaptiveColor: undefined,
+            //   policy:undefined,
+            //   inactiveColor:undefined,
+            //   blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('ActionSheet_Effect003')
         .id('ActionSheet_Effect003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           this.uiContext.showActionSheet({
             title: 'ActionSheet title',
             subtitle: 'ActionSheet subtitle',
@@ -185,6 +171,16 @@ struct ActionSheet2 {
                 }
               }
             ],
+            // backgroundEffect: {
+            //   radius: null,
+            //   saturation: null,
+            //   brightness: null,
+            //   color: null,
+            //   adaptiveColor: null,
+            //   policy:null,
+            //   inactiveColor:null,
+            //   blurOptions: null,
+            // } as BackgroundEffectOptions
           })
         })
     }

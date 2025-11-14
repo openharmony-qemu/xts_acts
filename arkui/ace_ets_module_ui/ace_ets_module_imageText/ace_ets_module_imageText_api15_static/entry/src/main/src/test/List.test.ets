@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,6 +15,9 @@
 
 import SearchKeyboardAppearanceTest from './Search/SearchKeyboardAppearance.test';
 import ResourceDefaultTest from './ImageAttachmentTest/ResourceDefault.test';
+import ObjectFitTest from './ImageAttachmentTest/ObjectFit.test';
+import PixelMapColorFilterTest from './ImageAttachmentTest/PixelMapColorFilter.test';
+import VerticalAlignTest from './ImageAttachmentTest/VerticalAlign.test';
 import textAreaInputTest from './TextTest/textAreaInputTest.test';
 import TextInputKeyboardAppearanceTest from './TextInputTest/TextInputKeyboardAppearance.test';
 import TextAreaKeyboardAppearanceTest from './TextAreaTest/TextAreaKeyboardAppearance.test';
@@ -22,9 +25,15 @@ import RichEditorKeyboardAppearanceTest from './RichEditorTest/RichEditorKeyboar
 import RichEditorStopBackPressTest from './RichEditorTest/RichEditorStopBackPress.test';
 import SelectionMenuOptions from './RichEditorTest/SelectionMenuOptions.test';
 export default function testsuite() {
-  SearchKeyboardAppearanceTest();
-  ResourceDefaultTest();
   textAreaInputTest();
+  TextInputKeyboardAppearanceTest();
+  TextAreaKeyboardAppearanceTest();
+  SearchKeyboardAppearanceTest();
+  ResourceDefaultTest(); //  Failure: 10, pass: 2
+  ObjectFitTest(); //  Failure: 15
+  PixelMapColorFilterTest(); //  Failure: 2
+  VerticalAlignTest(); //  Failure: 4
+  textAreaInputTest(); // error:1
   TextInputKeyboardAppearanceTest();
   TextAreaKeyboardAppearanceTest();
   RichEditorKeyboardAppearanceTest();

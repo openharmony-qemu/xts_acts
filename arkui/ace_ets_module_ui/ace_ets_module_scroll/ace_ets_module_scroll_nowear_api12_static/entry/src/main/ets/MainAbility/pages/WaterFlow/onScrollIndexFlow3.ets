@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { WaterFlowDataSource } from './WaterFlowSectionDemo/WaterFlowDataSource'
+import { WaterFlowDataSource } from './WaterFlowDataSource'
 import { Entry, Component, Column, Scroller, WaterFlowLayoutMode, Text, Button, WaterFlow, LazyForEach, FlowItem,
   ColumnOptions, Direction, BarState, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -26,19 +26,19 @@ struct onScrollIndexFlow3 {
   @State temp: number = 0;
   scroller: Scroller = new Scroller()
   @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
-  dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
+  dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   @State layoutMode1: WaterFlowLayoutMode = WaterFlowLayoutMode.ALWAYS_TOP_DOWN
   private itemWidthArray: number[] = new Array<number>()
   private itemHeightArray: number[] = new Array<number>()
   @State onScrollIndex:string = ''
 
-  
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
-  
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize())
@@ -57,9 +57,8 @@ struct onScrollIndexFlow3 {
           .id('onScrollIndex_flow')
         Button('scroll 200')
           .id('onScrollIndex_scroller')
-          .onClick((e: ClickEvent) => { 
-            const yOffset: number = this.scroller.currentOffset()!.yOffset;
-            const uiContext = new UIContext();
+          .onClick((e: ClickEvent) => { // 通过控制器滑动FlowItem
+            const yOffset: number = this.scroller.currentOffset()?.yOffset!;
             this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + UIContext.getFocusedUIContext()!.vp2px(200) })
           })
       }.height('20%')
@@ -72,9 +71,9 @@ struct onScrollIndexFlow3 {
             }
           }
           .width('100%')
-          .height(this.itemHeightArray[item.toInt() % 100])
-          .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: int) => String(item))
+          .height(this.itemHeightArray[(item as int) % 100])
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item: number) => String(item))
       }
       .rowsTemplate('1fr 1fr 1fr')
       .direction(Direction.Rtl)

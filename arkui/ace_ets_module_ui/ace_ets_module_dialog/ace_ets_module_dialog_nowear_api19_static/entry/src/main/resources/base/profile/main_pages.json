@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/datePickerDialog/datePickerDialogBackgroundEffect",
     "MainAbility/pages/UIContext/showDatePickerDialogBlurStyleOptions",
     "MainAbility/pages/UIContext/showTimePickerDialogBlurStyleOptions",
     "MainAbility/pages/UIContext/showActionSheetBackgroundEffect",

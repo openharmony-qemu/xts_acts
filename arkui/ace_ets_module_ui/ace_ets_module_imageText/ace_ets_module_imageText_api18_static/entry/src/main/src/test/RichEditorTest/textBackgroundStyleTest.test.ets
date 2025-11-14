@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
-import { Driver, ON, MouseButton } from '@ohos.UiTest';
+import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -27,9 +27,10 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function textBackgroundStyleTest() {
   describe('textBackgroundStyleTest', () => {
@@ -52,11 +53,11 @@ export default function textBackgroundStyleTest() {
         console.info("get textBackgroundStyleTest state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get textBackgroundStyleTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+
         }
       } catch (err) {
         console.error("push textBackgroundStyleTest page error:" + err);
@@ -69,6 +70,7 @@ export default function textBackgroundStyleTest() {
       console.info("textBackgroundStyleTest after each called");
     });
 
+
     
     /*
      * @tc.number   textBackgroundStyleTest_static_0001
@@ -80,9 +82,9 @@ it('textBackgroundStyleTest_static_0001', Level.LEVEL1, async (done: () => void)
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0001 START');
       await CommonFunc.sleep(1000);
-      let get = await driver.findComponent(ON.id('getSpans'))
+      let get: Component = await driver.findComponent(ON.id('getSpans')) as Component
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      await get.click();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual(undefined);
       expect(AppStorage.get('RichEditorTextBackgroundStyleRadius')).assertEqual(undefined);
@@ -91,6 +93,7 @@ it('textBackgroundStyleTest_static_0001', Level.LEVEL1, async (done: () => void)
       console.info("[textBackgroundStyleTest0001] end");
       done();
     });
+
 
     
     /*
@@ -103,21 +106,23 @@ it('textBackgroundStyleTest_static_0002', Level.LEVEL1, async (done: () => void)
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0002 START');
       await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('updateSpanStyle1'))
+      let set: Component = await driver.findComponent(ON.id('updateSpanStyle1')) as Component
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      await set.click();
       await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getSpans'))
+      let get: Component = await driver.findComponent(ON.id('getSpans')) as Component
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      await get.click();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual("#00000000");
-      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius')).assertEqual("radiusTopLeft: [NA]radiusTopRight: [NA]radiusBottomLeft: [NA]radiusBottomRight: [NA]");
+      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius'))
+        .assertEqual("radiusTopLeft: [NA]radiusTopRight: [NA]radiusBottomLeft: [NA]radiusBottomRight: [NA]");
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0002] end");
       done();
     });
+
 
     
     /*
@@ -130,21 +135,23 @@ it('textBackgroundStyleTest_static_0003', Level.LEVEL1, async (done: () => void)
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0003 START');
       await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('updateSpanStyle2'))
+      let set: Component = await driver.findComponent(ON.id('updateSpanStyle2')) as Component
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      await set.click();
       await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getSpans'))
+      let get: Component = await driver.findComponent(ON.id('getSpans')) as Component
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      await get.click();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual("#FFFF0000");
-      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius')).assertEqual("radiusTopLeft: [5.00vp]radiusTopRight: [5.00vp]radiusBottomLeft: [5.00vp]radiusBottomRight: [5.00vp]");
+      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius'))
+        .assertEqual("radiusTopLeft: [5.00vp]radiusTopRight: [5.00vp]radiusBottomLeft: [5.00vp]radiusBottomRight: [5.00vp]");
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0003] end");
       done();
     });
+
 
     
     /*
@@ -157,21 +164,23 @@ it('textBackgroundStyleTest_static_0004', Level.LEVEL1, async (done: () => void)
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0004 START');
       await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('updateSpanStyle3'))
+      let set: Component = await driver.findComponent(ON.id('updateSpanStyle3')) as Component
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      await set.click();
       await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getSpans'))
+      let get: Component = await driver.findComponent(ON.id('getSpans')) as Component
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      await get.click();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual("#00000000");
-      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius')).assertEqual("radiusTopLeft: [5.00vp]radiusTopRight: [5.00vp]radiusBottomLeft: [5.00vp]radiusBottomRight: [5.00vp]");
+      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius'))
+        .assertEqual("radiusTopLeft: [5.00vp]radiusTopRight: [5.00vp]radiusBottomLeft: [5.00vp]radiusBottomRight: [5.00vp]");
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0004] end");
       done();
     });
+
 
     
     /*
@@ -184,21 +193,23 @@ it('textBackgroundStyleTest_static_0005', Level.LEVEL1, async (done: () => void)
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0005 START');
       await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('updateSpanStyle4'))
+      let set: Component = await driver.findComponent(ON.id('updateSpanStyle4')) as Component
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      await set.click();
       await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getSpans'))
+      let get: Component = await driver.findComponent(ON.id('getSpans')) as Component
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      await get.click();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual("#FFFF0000");
-      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius')).assertEqual("radiusTopLeft: [10.00vp]radiusTopRight: [5.00vp]radiusBottomLeft: [20.00vp]radiusBottomRight: [15.00vp]");
+      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius'))
+        .assertEqual("radiusTopLeft: [10.00vp]radiusTopRight: [5.00vp]radiusBottomLeft: [20.00vp]radiusBottomRight: [15.00vp]");
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0005] end");
       done();
     });
+
 
     
     /*
@@ -211,16 +222,17 @@ it('textBackgroundStyleTest_static_0006', Level.LEVEL1, async (done: () => void)
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0006 START');
       await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('updateSpanStyle5'))
+      let set: Component = await driver.findComponent(ON.id('updateSpanStyle5')) as Component
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      await set.click();
       await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getSpans'))
+      let get: Component = await driver.findComponent(ON.id('getSpans')) as Component
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      await get.click();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual("#FFE0DBEB");
-      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius')).assertEqual("radiusTopLeft: [-1.00vp]radiusTopRight: [-1.00vp]radiusBottomLeft: [-1.00vp]radiusBottomRight: [-1.00vp]");
+      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius'))
+        .assertEqual("radiusTopLeft: [-1.00vp]radiusTopRight: [-1.00vp]radiusBottomLeft: [-1.00vp]radiusBottomRight: [-1.00vp]");
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0006] end");
@@ -239,16 +251,17 @@ it('textBackgroundStyleTest_static_0007', Level.LEVEL1, async (done: () => void)
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0007 START');
       await CommonFunc.sleep(1000);
-      let set = await driver.findComponent(ON.id('updateSpanStyle6'))
+      let set: Component = await driver.findComponent(ON.id('updateSpanStyle6')) as Component
       await CommonFunc.sleep(500);
-      await (set?.click() as Promise<void>);
+      await set.click();
       await CommonFunc.sleep(500);
-      let get = await driver.findComponent(ON.id('getSpans'))
+      let get: Component = await driver.findComponent(ON.id('getSpans')) as Component
       await CommonFunc.sleep(500);
-      await (get?.click() as Promise<void>);
+      await get.click();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual("#FFF04B3D");
-      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius')).assertEqual("radiusTopLeft: [NA]radiusTopRight: [NA]radiusBottomLeft: [NA]radiusBottomRight: [NA]");
+      expect(AppStorage.get('RichEditorTextBackgroundStyleRadius'))
+        .assertEqual("radiusTopLeft: [NA]radiusTopRight: [NA]radiusBottomLeft: [NA]radiusBottomRight: [NA]");
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0007] end");

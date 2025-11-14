@@ -40,9 +40,8 @@ export default function WaterFlowSectionDemo20Jsunit() {
         console.info("get WaterFlowSectionDemo20Jsunit state pages:" + JSON.stringify(pages));
         if (!("WaterFlowSectionDemo20" == pages.name)) {
           console.info("get WaterFlowSectionDemo20Jsunit state pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
-          
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push WaterFlowSectionDemo20Jsunit page error:" + err);
@@ -54,9 +53,9 @@ export default function WaterFlowSectionDemo20Jsunit() {
      * @tc.number   WaterFlowSectionDemo20Jsunit_static_0100
      * @tc.name     WaterFlowSectionDemo20Jsunit_static_0100
      * @tc.desc     WaterFlowSectionDemo20Jsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowSectionDemo20Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowSectionDemo20Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowSectionDemo20Jsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let str0 = CommonFunc.getComponentRect('WaterFlowSectionDemo20_0');

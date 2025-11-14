@@ -12,22 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Component, Driver, MouseButton, ON } from '@ohos.UiTest';
+import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
+import { UtilsTest } from '../Util.test';
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function calendarPickerDialogBackgroundEffectTest() {
@@ -38,279 +38,145 @@ export default function calendarPickerDialogBackgroundEffectTest() {
       await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("CalendarPickerDialogBackgroundEffectTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/calendarPickerDialog/calendarPickerDialogBackgroundEffect',
       }
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.clear();
-      let pages = routerInstance.getState();
-      console.info("get CalendarPickerDialogBackgroundEffectTest state pages: " + JSON.stringify(pages));
-      if (!("calendarPickerDialogBackgroundEffect" == pages.name)) {
-        console.info("get CalendarPickerDialogBackgroundEffectTest state pages.name: " + JSON.stringify(pages.name));
-
-        routerInstance.pushUrl(options);
-        await Utils.sleep(2000);
+      try {
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        // routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info("get CalendarPickerDialogBackgroundEffectTest state pages: " + JSON.stringify(pages));
+        if (!("calendarPickerDialogBackgroundEffect" == pages.name)) {
+          console.info("get CalendarPickerDialogBackgroundEffectTest state pages.name: " + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options);
+          await Utils.sleep(2000);
+        }
+      } catch (err) {
+        console.error("push CalendarPickerDialogBackgroundEffectTest page error: " + err);
       }
+
     });
 
-
+    
+    
+    
     /*
      * @tc.number   calendarPickerDialogBackgroundEffectTest_static_0100
      * @tc.name     calendarPickerDialogBackgroundEffectTest_static_0100
      * @tc.desc     calendarPickerDialogBackgroundEffectTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('calendarPickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let tagName = 'calendarPickerDialogBackgroundEffectTest_static_0100';
-        console.info('[' + tagName + '] START============================');
-        await Utils.sleep(1000);
-        let driver: Driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Effect001')) as Component;
-        await btn!.click();
-        await Utils.sleep(1000);
-        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await Utils.sleep(2000);
-        let dialog = obj.getArray('$children')[1]
-        let date = JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0])
-        let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
-        if (uniRenderFlag == 'false') {
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color')).assertEqual('#00000000');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getDouble('radius')).assertEqual(0);
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getDouble('saturation')).assertEqual(1);
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getDouble('brightness')).assertEqual(1);
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('inactiveColor')).assertEqual('#00000000');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('blurOption')).assertEqual('[0,0]');
-        } else {
-          console.info("[calendarPickerDialogBackgroundEffectTest_static_0100] $attrs.options is: " +
-          JSON.stringify(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')));
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('color')).assertEqual('#FFFFC0CB');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getDouble('radius')).assertEqual(40);
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getDouble('saturation')).assertEqual(25);
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getDouble('brightness')).assertEqual(2);
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('inactiveColor')).assertEqual('#FF0000FF');
-          expect(JSON.parseJsonElement(date)
-            .getElement('$attrs')
-            .getElement('backgroundEffect')
-            .getElement('options')
-            .getString('blurOption')).assertEqual('[20.000000,20.000000]');
-        }
-        let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-        await btn1!.click();
-        await Utils.sleep(1000);
-        console.info('[' + tagName + '] END ===========================');
-        done();
-      });
+it('calendarPickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let tagName = 'calendarPickerDialogBackgroundEffectTest_static_0100';
+      console.info('[' + tagName + '] START============================');
+      await Utils.sleep(1000);
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Effect001'));
+      await (btn?.click() as Promise<void>);
+      await Utils.sleep(1000);
+      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let dialog = obj.getArray('$children')[1]
+      let date = obj.getArray('$children')[1].getArray('$children')[0]
+      let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
+      if(uniRenderFlag == 'false' ){
+        console.info('[' + tagName + '] START2=22222222');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color')).assertEqual('#00000000');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('radius')).assertEqual(0);
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('saturation')).assertEqual(1);
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('brightness')).assertEqual(1);
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('blurOption')).assertEqual('[0,0]');
+      }else{
+        console.info("[calendarPickerDialogBackgroundEffectTest_static_0100] $attrs.options is: " + JSON.stringify(date.getElement('$attrs').getElement('backgroundEffect').getElement('options')));
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color')).assertEqual('#FFFFC0CB');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('radius')).assertEqual(40);
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('saturation')).assertEqual(25);
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('brightness')).assertEqual(2);
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('inactiveColor')).assertEqual('#FF0000FF');
+        expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('blurOption')).assertEqual('[20.000000,20.000000]');
+      }
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await Utils.sleep(1000);
+      console.info('[' + tagName + '] END ===========================');
+      done();
+    });
 
-
+    
+    
+    
     /*
      * @tc.number   calendarPickerDialogBackgroundEffectTest_static_0200
      * @tc.name     calendarPickerDialogBackgroundEffectTest_static_0200
      * @tc.desc     calendarPickerDialogBackgroundEffectTest_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('calendarPickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let tagName = 'calendarPickerDialogBackgroundEffectTest_static_0200';
-        console.info('[' + tagName + '] START============================');
-        await Utils.sleep(1000);
-        let driver: Driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Effect002')) as Component;
-        await btn!.click();
-        await Utils.sleep(1000);
-        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await Utils.sleep(2000);
-        let date = JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0])
-        console.info("[calendarPickerDialogBackgroundEffectTest_static_0200] $attrs.options is: " +
-        JSON.stringify(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')));
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('color')).assertEqual('#00000000');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getDouble('radius')).assertEqual(0);
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getDouble('saturation')).assertEqual(1);
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getDouble('brightness')).assertEqual(1);
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('inactiveColor')).assertEqual('#00000000');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('blurOption')).assertEqual('[0,0]');
-        let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-        await btn1!.click();
-        await Utils.sleep(1000);
-        console.info('[' + tagName + '] END ===========================');
-        done();
-      });
+it('calendarPickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let tagName = 'calendarPickerDialogBackgroundEffectTest_static_0200';
+      console.info('[' + tagName + '] START============================');
+      await Utils.sleep(1000);
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Effect002'));
+      await (btn?.click() as Promise<void>);
+      await Utils.sleep(1000);
+      console.info('[' + tagName + '] START===' + JSON.stringify(inspector.getInspectorTree()));
+      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let date = obj.getArray('$children')[1].getArray('$children')[0]
+      console.info("[calendarPickerDialogBackgroundEffectTest_static_0200] $attrs.options is: " + JSON.stringify(date.getElement('$attrs').getElement('backgroundEffect').getElement('options')));
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color')).assertEqual('#00000000');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('radius')).assertEqual(0);
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('saturation')).assertEqual(1);
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('brightness')).assertEqual(1);
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('blurOption')).assertEqual('[0,0]');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await Utils.sleep(1000);
+      console.info('[' + tagName + '] END ===========================');
+      done();
+    });
 
 
+
+    
     /*
      * @tc.number   calendarPickerDialogBackgroundEffectTest_static_0300
      * @tc.name     calendarPickerDialogBackgroundEffectTest_static_0300
      * @tc.desc     calendarPickerDialogBackgroundEffectTest_static_0300
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
-    it('calendarPickerDialogBackgroundEffectTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let tagName = 'calendarPickerDialogBackgroundEffectTest_static_0300';
-        console.info('[' + tagName + '] START============================');
-        await Utils.sleep(1000);
-        let driver: Driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Effect003')) as Component;
-        await btn.click();
-        await Utils.sleep(1000);
-        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-        await Utils.sleep(2000);
-        let date = JSON.stringify(obj.getArray('$children')[1].getArray('$children')[0])
-        console.info("[calendarPickerDialogBackgroundEffectTest_static_0300] $attrs.options is: " +
-        JSON.stringify(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')));
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('color')).assertEqual('#00000000');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getDouble('radius')).assertEqual(0);
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getDouble('saturation')).assertEqual(1);
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getDouble('brightness')).assertEqual(1);
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('inactiveColor')).assertEqual('#00000000');
-        expect(JSON.parseJsonElement(date)
-          .getElement('$attrs')
-          .getElement('backgroundEffect')
-          .getElement('options')
-          .getString('blurOption')).assertEqual('[0,0]');
-        let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-        await btn1!.click();
-        await Utils.sleep(1000);
-        console.info('[' + tagName + '] END ===========================');
-        done();
-      });
+it('calendarPickerDialogBackgroundEffectTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let tagName = 'calendarPickerDialogBackgroundEffectTest_static_0300';
+      console.info('[' + tagName + '] START============================');
+      await Utils.sleep(1000);
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Effect003'));
+      await (btn?.click() as Promise<void>);
+      await Utils.sleep(1000);
+      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      let date = obj.getArray('$children')[1].getArray('$children')[0]
+      console.info("[calendarPickerDialogBackgroundEffectTest_static_0300] $attrs.options is: " + JSON.stringify(date.getElement('$attrs').getElement('backgroundEffect').getElement('options')));
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('adaptiveColor')).assertEqual('AdaptiveColor.Default');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('color')).assertEqual('#00000000');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('radius')).assertEqual(0);
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('saturation')).assertEqual(1);
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getDouble('brightness')).assertEqual(1);
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
+      expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('blurOption')).assertEqual('[0,0]');
+      let btn1 = await driver.findComponent(ON.text('确定'));
+      await (btn1?.click() as Promise<void>);
+      await Utils.sleep(1000);
+      console.info('[' + tagName + '] END ===========================');
+      done();
+    });
   })
 }

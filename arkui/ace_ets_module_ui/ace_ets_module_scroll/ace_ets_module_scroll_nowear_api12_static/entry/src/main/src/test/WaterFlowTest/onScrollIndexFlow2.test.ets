@@ -40,10 +40,8 @@ export default function onScrollIndexFlow2() {
         console.info("get onScrollIndexFlow2 state pages:" + JSON.stringify(pages));
         if (!("onScrollIndexFlow2" == pages.name)) {
           console.info("get onScrollIndexFlow2 pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push onScrollIndexFlow2 page error:" + err);
@@ -60,9 +58,9 @@ export default function onScrollIndexFlow2() {
      * @tc.number   onScrollIndexFlow2_static_0100
      * @tc.name     onScrollIndexFlow2_static_0100
      * @tc.desc     onScrollIndexFlow2_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('onScrollIndexFlow2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onScrollIndexFlow2_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[onScrollIndexFlow2_static_0100] START');
       let waterRect = CommonFunc.getComponentRectOnScreen('water_onIndex');
       let driver = Driver.create();

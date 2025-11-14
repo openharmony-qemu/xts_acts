@@ -42,7 +42,7 @@ struct WaterFlowSectionDemo33 {
   @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   @State columns: string = '1fr'
   scroller: Scroller = new Scroller()
-  dataCount: number = 40
+  dataCount: int = 40
   dataSource: WaterFlowDataSource = new WaterFlowDataSource(this.dataCount)
   @State sections: WaterFlowSections = new WaterFlowSections()
   oneColumnSection: SectionOptions = {
@@ -50,7 +50,7 @@ struct WaterFlowSectionDemo33 {
     crossCount: 1,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 30.0
     }
   } as SectionOptions
@@ -59,7 +59,7 @@ struct WaterFlowSectionDemo33 {
     crossCount: 2,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 30.0
     }
   } as SectionOptions
@@ -68,7 +68,7 @@ struct WaterFlowSectionDemo33 {
     crossCount: 4,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 30.0
     }
   } as SectionOptions
@@ -77,14 +77,14 @@ struct WaterFlowSectionDemo33 {
     crossCount: 8,
     columnsGap: 0,
     rowsGap: 0,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 30.0
     }
   } as SectionOptions
   lastSection: SectionOptions = {
     itemsCount: 3,
     crossCount: 1,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 30.0
     }
   } as SectionOptions
@@ -97,9 +97,7 @@ struct WaterFlowSectionDemo33 {
       sectionOptions.push(this.twoColumnSection)
       sectionOptions.push(this.threeColumnSection)
       sectionOptions.push(this.fourColumnSection)
-      this.lastSection.itemsCount = Double.toInt(
-        this.dataCount -this.oneColumnSection.itemsCount - this.twoColumnSection.itemsCount - this.threeColumnSection.itemsCount - this.fourColumnSection.itemsCount
-      )
+      this.lastSection.itemsCount = this.dataCount -this.oneColumnSection.itemsCount - this.twoColumnSection.itemsCount - this.threeColumnSection.itemsCount - this.fourColumnSection.itemsCount
       sectionOptions.push(this.lastSection)
       break;
     }
@@ -117,8 +115,8 @@ struct WaterFlowSectionDemo33 {
           .key(`WaterFlowSectionDemo33_${item}`)
           .height(100)
           .width(100)
-          .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: int) => String(item))
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item: number) => String(item))
       }
       .columnsTemplate('1fr')
       .columnsGap(10)

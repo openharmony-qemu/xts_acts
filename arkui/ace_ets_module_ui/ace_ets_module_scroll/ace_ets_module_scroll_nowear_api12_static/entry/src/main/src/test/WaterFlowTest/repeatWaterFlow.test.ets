@@ -40,10 +40,8 @@ export default function repeatWaterFlow() {
         console.info("get repeatWaterFlow state pages:" + JSON.stringify(pages));
         if (!("repeatWaterFlow" == pages.name)) {
           console.info("get repeatWaterFlow pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push repeatWaterFlow page error:" + err);
@@ -60,9 +58,9 @@ export default function repeatWaterFlow() {
      * @tc.number   repeatWaterFlow_static_0100
      * @tc.name     repeatWaterFlow_static_0100
      * @tc.desc     repeatWaterFlow_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('repeatWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('repeatWaterFlow_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[repeatWaterFlow_static_0100] START');
       let strJson = inspector.getInspectorByKey('flowRepeat_event');
       let obj = JSON.parseJsonElement(strJson);
@@ -92,9 +90,9 @@ it('repeatWaterFlow_static_0100', Level.LEVEL0, async (done: () => void): Promis
      * @tc.number   repeatWaterFlow_static_0200
      * @tc.name     repeatWaterFlow_static_0200
      * @tc.desc     repeatWaterFlow_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('repeatWaterFlow_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('repeatWaterFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[repeatWaterFlow_static_0200] START');
       let waterFlowRect = CommonFunc.getComponentRectOnScreen('flowRepeat_event')
       let driver = Driver.create()

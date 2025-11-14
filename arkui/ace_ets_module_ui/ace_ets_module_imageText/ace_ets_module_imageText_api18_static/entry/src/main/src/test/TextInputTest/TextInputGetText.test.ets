@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON,Component } from '@ohos.UiTest';
 import { describe, beforeAll, it, expect, Level, beforeEach, afterEach } from "../../../../hypium/index"
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -67,168 +67,176 @@ export default function TextInputGetTextTest() {
     });
     
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0010
      * @tc.name     TextInputGetTextTest_static_0010
      * @tc.desc     TextInputGetTextTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('TextInputGetTextTest_0010 START');
+it('TextInputGetTextTest_static_0010', Level.LEVEL0, async (done: ()=>void) => {      console.info('TextInputGetTextTest_0010 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_getText_1'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_getText_1')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0010] getText1:" + JSON.stringify(AppStorage.get('getText_1')));
-      expect(AppStorage.get('getText_1')).assertEqual('cd');
+      console.info("[TextInputGetTextTest_0010] getText1:" + JSON.stringify(AppStorage.get<string>('getText_1')));
+      expect(AppStorage.get<string>('getText_1')).assertEqual('cd');
       AppStorage.delete('getText_1')
       console.info('[TextInputGetTextTest_0010] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0020
      * @tc.name     TextInputGetTextTest_static_0020
      * @tc.desc     TextInputGetTextTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0020', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('[TextInputGetTextTest_0020] START');
+it('TextInputGetTextTest_static_0020', Level.LEVEL0, async (done: ()=>void) => {      console.info('[TextInputGetTextTest_0020] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_getText_2'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_getText_2')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0010] getText2:" + JSON.stringify(AppStorage.get('getText_2')));
-      expect(AppStorage.get('getText_2')).assertEqual('bcdef');
+      console.info("[TextInputGetTextTest_0010] getText2:" + JSON.stringify(AppStorage.get<string>('getText_2')));
+      expect(AppStorage.get<string>('getText_2')).assertEqual('bcdef');
       AppStorage.delete('getText_2')
       console.info('[TextInputGetTextTest_0020] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0030
      * @tc.name     TextInputGetTextTest_static_0030
      * @tc.desc     TextInputGetTextTest_static_0030
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0030', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('[TextInputGetTextTest_0030] START');
+it('TextInputGetTextTest_static_0030', Level.LEVEL0, async (done: ()=>void) => {      console.info('[TextInputGetTextTest_0030] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_getText_3'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_getText_3')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0030] getText3:" + JSON.stringify(AppStorage.get('getText_3')));
-      expect(AppStorage.get('getText_3')).assertEqual('abc');
+      console.info("[TextInputGetTextTest_0030] getText3:" + JSON.stringify(AppStorage.get<string>('getText_3')));
+      expect(AppStorage.get<string>('getText_3')).assertEqual('abc');
       AppStorage.delete('getText_3')
       console.info('[TextInputGetTextTest_0030] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0040
      * @tc.name     TextInputGetTextTest_static_0040
      * @tc.desc     TextInputGetTextTest_static_0040
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0040', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('[TextInputGetTextTest_0040] START');
+it('TextInputGetTextTest_static_0040', Level.LEVEL0, async (done: ()=>void) => {      console.info('[TextInputGetTextTest_0040] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_getText_4'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_getText_4')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0040] getText4:" + JSON.stringify(AppStorage.get('getText_4')));
-      expect(AppStorage.get('getText_4')).assertEqual('abcdef');
+      console.info("[TextInputGetTextTest_0040] getText4:" + JSON.stringify(AppStorage.get<string>('getText_4')));
+      expect(AppStorage.get<string>('getText_4')).assertEqual('abcdef');
       AppStorage.delete('getText_4')
       console.info('[TextInputGetTextTest_0040] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0050
      * @tc.name     TextInputGetTextTest_static_0050
      * @tc.desc     TextInputGetTextTest_static_0050
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0050', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('[TextInputGetTextTest_0050] START');
+it('TextInputGetTextTest_static_0050', Level.LEVEL0, async (done: ()=>void) => {      console.info('[TextInputGetTextTest_0050] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_getText_5'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_getText_5')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0050] getText5:" + JSON.stringify(AppStorage.get('getText_5')));
-      expect(AppStorage.get('getText_5')).assertEqual('abcdef');
+      console.info("[TextInputGetTextTest_0050] getText5:" + JSON.stringify(AppStorage.get<string>('getText_5')));
+      expect(AppStorage.get<string>('getText_5')).assertEqual('abcdef');
       AppStorage.delete('getText_5')
       console.info('[TextInputGetTextTest_0050] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0060
      * @tc.name     TextInputGetTextTest_static_0060
      * @tc.desc     TextInputGetTextTest_static_0060
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0060', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('[TextInputGetTextTest_0060] START');
+it('TextInputGetTextTest_static_0060', Level.LEVEL0, async (done: ()=>void) => {      console.info('[TextInputGetTextTest_0060] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_getText_6'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_getText_6')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0060] getText6:" + JSON.stringify(AppStorage.get('getText_6')));
-      expect(AppStorage.get('getText_6')).assertEqual('abcdef');
+      console.info("[TextInputGetTextTest_0060] getText6:" + JSON.stringify(AppStorage.get<string>('getText_6')));
+      expect(AppStorage.get<string>('getText_6')).assertEqual('abcdef');
       AppStorage.delete('getText_6')
       console.info('[TextInputGetTextTest_0060] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0070
      * @tc.name     TextInputGetTextTest_static_0070
      * @tc.desc     TextInputGetTextTest_static_0070
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0070', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('[TextInputGetTextTest_0070] START');
+it('TextInputGetTextTest_static_0070', Level.LEVEL0, async (done: ()=>void) => {      console.info('[TextInputGetTextTest_0070] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_getText_7'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_getText_7')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0070] getText7:" + JSON.stringify(AppStorage.get('getText_7')));
-      expect(AppStorage.get('getText_7')).assertEqual('abcdef');
+      console.info("[TextInputGetTextTest_0070] getText7:" + JSON.stringify(AppStorage.get<string>('getText_7')));
+      expect(AppStorage.get<string>('getText_7')).assertEqual('abcdef');
       AppStorage.delete('getText_7')
       console.info('[TextInputGetTextTest_0070] END');
       done();
     });
 
     
-    /*
+    
+    
+/*
      * @tc.number   TextInputGetTextTest_static_0080
      * @tc.name     TextInputGetTextTest_static_0080
      * @tc.desc     TextInputGetTextTest_static_0080
      * @tc.level    Level.LEVEL0
      */
-it('TextInputGetTextTest_static_0080', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('[TextInputGetTextTest_0080] START');
+it('TextInputGetTextTest_static_0080', Level.LEVEL0, async (done: ()=>void) => {      console.info('[TextInputGetTextTest_0080] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('TextInput_clearPreViewText'));
-      await (Button?.click() as Promise<void>)
+      let Button:Component = await driver.findComponent(ON.id('TextInput_clearPreViewText')) as Component;
+      await Button.click()
       await CommonFunc.sleep(1000);
-      console.info("[TextInputGetTextTest_0080] TextInput:" + JSON.stringify(AppStorage.get('clearPreViewText_TextInput')));
-      expect(AppStorage.get('clearPreViewText_TextInput')).assertEqual('succ');
+      console.info("[TextInputGetTextTest_0080] TextInput:" + JSON.stringify(AppStorage.get<string>('clearPreViewText_TextInput')));
+      expect(AppStorage.get<string>('clearPreViewText_TextInput')).assertEqual('succ');
       AppStorage.delete('clearPreViewText_TextInput')
       console.info('[TextInputGetTextTest_0080] END');
       done();

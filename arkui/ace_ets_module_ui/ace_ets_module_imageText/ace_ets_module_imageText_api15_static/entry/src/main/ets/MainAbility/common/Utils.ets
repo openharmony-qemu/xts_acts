@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,8 +16,8 @@ import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject,TouchType } from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
-import { sendTouchEvent } from "@kit.ArkUI";
+import { State } from '@ohos.arkui.stateManagement'
+import { sendTouchEvent } from "@ohos.arkui.Test";
 
 export default class Utils {
   static rect_left: number;

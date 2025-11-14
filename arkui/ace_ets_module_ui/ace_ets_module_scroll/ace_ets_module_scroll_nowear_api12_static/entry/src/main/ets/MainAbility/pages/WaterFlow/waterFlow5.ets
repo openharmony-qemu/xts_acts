@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { WaterFlowDataSource } from './WaterFlowSectionDemo/WaterFlowDataSource'
+import { WaterFlowDataSource } from './WaterFlowDataSource'
 import { Entry, Component, Column, Scroller, SectionOptions, Text, Button, WaterFlow, LazyForEach, FlowItem, Reusable,
-  WaterFlowSections, Margin, ColumnOptions } from '@ohos.arkui.component'
+  WaterFlowSections, Margin, ColumnOptions, Color } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 
@@ -23,7 +23,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct ReusableFlowItemSec {
   @State item: number = 0
 
-  
+  // 从复用缓存中加入到组件树之前调用，可在此处更新组件的状态变量以展示正确的内容
   aboutToReuse(params: Record<string, number>) {
     this.item = params['item']!;
     console.info('Reuse item:' + this.item)
@@ -46,7 +46,7 @@ struct WaterFlowSecDemo {
   fontSize: number = 24
   colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   scroller: Scroller = new Scroller()
-  dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
+  dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   dataCount: int = this.dataSource.totalCount()
   private itemHeightArray: number[] = new Array<number>()
   @State hei:number = 0
@@ -55,18 +55,18 @@ struct WaterFlowSecDemo {
   twoColumnSection: SectionOptions = {
     itemsCount: 2,
     crossCount: 2,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 100.0
     }
   } as SectionOptions
 
-  
+  // 计算FlowItem高度
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
-  
+  // 设置FlowItem的高度数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemHeightArray.push(this.getSize())
@@ -75,7 +75,7 @@ struct WaterFlowSecDemo {
 
   aboutToAppear() {
     this.setItemSizeArray()
-    
+    // 初始化瀑布流分组信息
     let sectionOptions: SectionOptions[] = []
     let count = 0
     while (count < this.dataCount) {
@@ -90,15 +90,16 @@ struct WaterFlowSecDemo {
     Column({ space: 2 } as ColumnOptions) {
       WaterFlow({ scroller: this.scroller, sections: this.sections }) {
         LazyForEach(this.dataSource, (item: number) => {
+          console.info('FlowItem num :' + item)
           FlowItem() {
             ReusableFlowItemSec({ item: item })
           }
           .id('flowItem_hei')
           .width('100%')
-          .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: int) => String(item))
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item: number) => String(item))
       }
-      .columnsTemplate('1fr 1fr') 
+      .columnsTemplate('1fr 1fr') // 瀑布流使用sections参数时该属性无效
       .columnsGap(10)
       .rowsGap(5)
       .backgroundColor(0xFAEEE0)

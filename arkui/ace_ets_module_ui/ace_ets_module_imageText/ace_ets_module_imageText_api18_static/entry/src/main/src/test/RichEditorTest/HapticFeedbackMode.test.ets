@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
-import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
+import { Driver, ON, MouseButton, Point, Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -27,9 +27,10 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
 export default function HapticFeedbackModeTest() {
   describe('HapticFeedbackModeTest', () => {
@@ -52,11 +53,11 @@ export default function HapticFeedbackModeTest() {
         console.info("get ImageSpanVisibility state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ImageSpanVisibility pages.name:" + JSON.stringify(pages.name));
-          
-          
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+
         }
       } catch (err) {
         console.error("push ImageSpanVisibility page error:" + err);
@@ -69,6 +70,7 @@ export default function HapticFeedbackModeTest() {
       console.info("HapticFeedbackModeTest after each called");
     });
 
+
     
     /*
      * @tc.number   HapticFeedbackModeTest_static_0001
@@ -77,28 +79,28 @@ export default function HapticFeedbackModeTest() {
      * @tc.level    Level.LEVEL0
      */
 it('HapticFeedbackModeTest_static_0001', Level.LEVEL0, async (done: () => void) => {
-
-        try {
-          let driver = Driver.create();
-          console.info('[HapticFeedbackModeTest0001] START');
-          await CommonFunc.sleep(1000);
-          let update = await driver.findComponent(ON.id('update_Button'))
-          await CommonFunc.sleep(500);
-          await (update?.click() as Promise<void>);
-          await CommonFunc.sleep(500);
-          let richEditor = await driver.findComponent(ON.id('HapticFeedbackMode.ENABLED'))
-          await CommonFunc.sleep(500);
-          let point = await (richEditor?.getBoundsCenter() as Promise<Point>);
-          await CommonFunc.sleep(500);
-          await (driver?.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
-          await CommonFunc.sleep(500);
-          await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
-        } catch(ERROR) {
-          expect().assertFail();
-        }
+      try {
+        let driver = Driver.create();
+        console.info('[HapticFeedbackModeTest0001] START');
+        await CommonFunc.sleep(1000);
+        let update: Component = await driver.findComponent(ON.id('update_Button')) as Component
+        await CommonFunc.sleep(500);
+        await (update?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        let richEditor: Component = await driver.findComponent(ON.id('HapticFeedbackMode.ENABLED')) as Component
+        await CommonFunc.sleep(500);
+        let point = await (richEditor?.getBoundsCenter() as Promise<Point>);
+        await CommonFunc.sleep(500);
+        await (driver?.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
+        await CommonFunc.sleep(500);
+        await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
         console.info("[HapticFeedbackModeTest0001] end");
         done();
+      } catch (err) {
+        expect().assertFail();
+      }
     });
+
 
     
     /*
@@ -108,24 +110,24 @@ it('HapticFeedbackModeTest_static_0001', Level.LEVEL0, async (done: () => void) 
      * @tc.level    Level.LEVEL0
      */
 it('HapticFeedbackModeTest_static_0002', Level.LEVEL0, async (done: () => void) => {
-        try {
-          let driver = Driver.create();
-          console.info('HapticFeedbackModeTest HapticFeedbackModeTest0002 START');
-          await CommonFunc.sleep(1000);
-          let update = await driver.findComponent(ON.id('update_Button'))
-          await CommonFunc.sleep(500);
-          await (update?.click() as Promise<void>);
-          await CommonFunc.sleep(500);
-          let richEditor = await driver.findComponent(ON.id('HapticFeedbackMode.DISABLED'))
-          await CommonFunc.sleep(500);
-          await (richEditor?.longClick() as Promise<void>);
-          await CommonFunc.sleep(500);
-          await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
-        } catch(ERROR) {
-          expect().assertFail();
-        }
+      try {
+        let driver = Driver.create();
+        console.info('HapticFeedbackModeTest HapticFeedbackModeTest0002 START');
+        await CommonFunc.sleep(1000);
+        let update: Component = await driver.findComponent(ON.id('update_Button')) as Component
+        await CommonFunc.sleep(500);
+        await (update?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        let richEditor: Component = await driver.findComponent(ON.id('HapticFeedbackMode.DISABLED')) as Component
+        await CommonFunc.sleep(500);
+        await (richEditor?.longClick() as Promise<void>);
+        await CommonFunc.sleep(500);
+        await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
         console.info("[HapticFeedbackModeTest0002] end");
         done();
+      } catch (err) {
+        expect().assertFail();
+      }
     });
 
 
@@ -137,26 +139,26 @@ it('HapticFeedbackModeTest_static_0002', Level.LEVEL0, async (done: () => void) 
      * @tc.level    Level.LEVEL0
      */
 it('HapticFeedbackModeTest_static_0003', Level.LEVEL0, async (done: () => void) => {
-        try {
-          let driver = Driver.create();
-          console.info('[HapticFeedbackModeTest0003] START');
-          await CommonFunc.sleep(1000);
-          let update = await driver.findComponent(ON.id('update_Button'))
-          await CommonFunc.sleep(500);
-          await (update?.click() as Promise<void>);
-          await CommonFunc.sleep(500);
-          let image = await driver.findComponent(ON.id('HapticFeedbackMode.AUTO'))
-          await CommonFunc.sleep(500);
-          let point = await (image?.getBoundsCenter() as Promise<Point>);
-          await CommonFunc.sleep(500);
-          await (driver?.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT) as Promise<void>);
-          await CommonFunc.sleep(500);
-          await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
-        } catch(ERROR) {
-          expect().assertFail();
-        }
+      try {
+        let driver = Driver.create();
+        console.info('[HapticFeedbackModeTest0003] START');
+        await CommonFunc.sleep(1000);
+        let update: Component = await driver.findComponent(ON.id('update_Button')) as Component
+        await CommonFunc.sleep(500);
+        await (update?.click() as Promise<void>);
+        await CommonFunc.sleep(500);
+        let image: Component = await driver.findComponent(ON.id('HapticFeedbackMode.AUTO')) as Component
+        await CommonFunc.sleep(500);
+        let point = await image.getBoundsCenter();
+        await CommonFunc.sleep(500);
+        await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        await CommonFunc.sleep(500);
+        await driver.assertComponentExist(ON.text('HapticFeedbackMode'));
         console.info("[HapticFeedbackModeTest0003] end");
         done();
+      } catch (err) {
+        expect().assertFail();
+      }
     });
   })
 }

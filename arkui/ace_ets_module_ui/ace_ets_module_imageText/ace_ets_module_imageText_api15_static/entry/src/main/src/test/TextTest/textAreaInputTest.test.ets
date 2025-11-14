@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,13 +47,10 @@ export default function textAreaInputTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get textAreaInputTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/Text/textAreaInputTest" == pages.name)) {
           console.info("get textAreaInputTest pages.name:" + JSON.stringify(pages.name));
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textAreaInputTest page error:" + err);
@@ -67,7 +64,8 @@ export default function textAreaInputTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   textAreaInputTest_static_0001
      * @tc.name     textAreaInputTest_static_0001
      * @tc.desc     textAreaInputTest_static_0001
@@ -86,13 +84,13 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
         await CommonFunc.sleep(500);
         await driver.triggerKey(2070);
         await CommonFunc.sleep(500);
-        let button1 = await driver.findComponent(ON.text('下一步'));
-        await CommonFunc.sleep(500);
-        await (button1?.click() as Promise<void>);
-        await CommonFunc.sleep(500);
+        // let button1 = await driver.findComponent(ON.text('下一步'));
+        // await CommonFunc.sleep(500);
+        // await (button1?.click() as Promise<void>);
+        // await CommonFunc.sleep(500);
 
-        await (textArea1?.longClick() as Promise<void>);
-        await CommonFunc.sleep(500);
+        textArea1?.longClick();
+        await CommonFunc.sleep(2000);
         let button3 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
         await (button3?.click() as Promise<void>);
@@ -100,16 +98,16 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
         await CommonFunc.sleep(500);
 
         textArea1?.dragTo(textArea2!);
-        await CommonFunc.sleep(500);
+        await CommonFunc.sleep(2000);
         console.info('textAreaInputTest0001 dragTo success');
-        let button4 = await driver.findComponent(ON.text('取消'));
-        await CommonFunc.sleep(500);
-        await (button4?.click() as Promise<void>);
-        await CommonFunc.sleep(500);
+        // let button4 = await driver.findComponent(ON.text('取消'));
+        // await CommonFunc.sleep(500);
+        // await (button4?.click() as Promise<void>);
+        // await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 取消 success');
 
         await (textArea1?.longClick() as Promise<void>);
-        await CommonFunc.sleep(500);
+        await CommonFunc.sleep(2000);
         let button5 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
         await (button5?.click() as Promise<void>);
@@ -121,7 +119,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
         await CommonFunc.sleep(500);
         console.info('textAreaInputTest0001 2 复制 success');
         textArea1?.dragTo(textArea2!);
-        await CommonFunc.sleep(500);
+        await CommonFunc.sleep(2000);
         let Text7 = await driver.findComponent(ON.text('长按内容至浮起，可拖拽到底部小艺'));
         if(Text7){
           let button7 = await driver.findComponent(ON.type('Button'));

@@ -40,10 +40,8 @@ export default function onScrollIndexFlow1() {
         console.info("get onScrollIndexFlow1 state pages:" + JSON.stringify(pages));
         if (!("onScrollIndexFlow1" == pages.name)) {
           console.info("get onScrollIndexFlow1 pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push onScrollIndexFlow1 page error:" + err);
@@ -60,9 +58,9 @@ export default function onScrollIndexFlow1() {
      * @tc.number   onScrollIndexFlow1_static_0100
      * @tc.name     onScrollIndexFlow1_static_0100
      * @tc.desc     onScrollIndexFlow1_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('onScrollIndexFlow1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onScrollIndexFlow1_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[onScrollIndexFlow1_static_0100] START');
       let driver = Driver.create();
       let swiperScroll = CommonFunc.getComponentRectOnScreen('onScrollIndexFlow1');

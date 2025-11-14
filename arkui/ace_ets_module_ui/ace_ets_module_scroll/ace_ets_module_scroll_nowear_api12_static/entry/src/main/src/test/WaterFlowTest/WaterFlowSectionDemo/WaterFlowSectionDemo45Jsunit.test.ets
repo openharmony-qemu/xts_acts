@@ -40,9 +40,8 @@ export default function WaterFlowSectionDemo45Jsunit() {
         console.info("get WaterFlowSectionDemo45Jsunit state pages:" + JSON.stringify(pages));
         if (!("WaterFlowSectionDemo45" == pages.name)) {
           console.info("get WaterFlowSectionDemo45Jsunit state pages.name:" + JSON.stringify(pages.name));
-          
           routerScroll.pushUrl(options);
-          
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push WaterFlowSectionDemo45Jsunit page error:" + err);
@@ -54,9 +53,9 @@ export default function WaterFlowSectionDemo45Jsunit() {
      * @tc.number   WaterFlowSectionDemo45Jsunit_static_0100
      * @tc.name     WaterFlowSectionDemo45Jsunit_static_0100
      * @tc.desc     WaterFlowSectionDemo45Jsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('WaterFlowSectionDemo45Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('WaterFlowSectionDemo45Jsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('WaterFlowSectionDemo45Jsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let str2 = CommonFunc.getComponentRect('WaterFlowSectionDemo45_2');
@@ -70,7 +69,7 @@ it('WaterFlowSectionDemo45Jsunit_static_0100', Level.LEVEL0, async (done: () => 
       console.log('WaterFlowSectionDemo45Jsunit_left',str3.left - strColumn.left)
       console.log('WaterFlowSectionDemo45Jsunit_right',strColumn.right - str2.right)
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext();
+
       expect(Math.abs(Math.round(str2.top - strColumn.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Math.round(str5.top - str3.bottom) - Math.floor(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(Math.round(str3.left - strColumn.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();

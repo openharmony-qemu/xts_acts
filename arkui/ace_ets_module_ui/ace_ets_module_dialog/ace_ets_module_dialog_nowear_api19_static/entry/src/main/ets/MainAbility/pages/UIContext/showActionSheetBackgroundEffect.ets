@@ -12,42 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  $r,
-  AdaptiveColor,
-  BackgroundBlurStyleOptions,
-  BackgroundEffectOptions,
-  BlurStyleActivePolicy,
-  Button,
-  ButtonType,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
-  DialogAlignment,
-  Entry,
-  Flex,
-  FlexAlign,
-  FlexDirection,
-  FontWeight,
-  ItemAlign,
-  Margin,
-  Row,
-  SizeOptions,
-  Text,
-  ThemeColorMode
-} from '@ohos.arkui.component'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
+  Row, ClickEvent, Margin, ButtonType, ColumnOptions, SizeOptions, $r, BackgroundBlurStyleOptions, BlurStyleActivePolicy,
+  AdaptiveColor,ThemeColorMode, Color, DialogAlignment, BackgroundEffectOptions} from '@ohos.arkui.component'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ShowActionSheet2 {
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 10 } as ColumnOptions){
       Button('ShowActionSheet_Effect001')
         .id('ShowActionSheet_Effect001')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showActionSheet({
             title: 'ActionSheet title',
@@ -90,17 +67,17 @@ struct ShowActionSheet2 {
               brightness: 2,
               color: Color.Pink,
               adaptiveColor: AdaptiveColor.DEFAULT,
-              policy: BlurStyleActivePolicy.ALWAYS_ACTIVE,
-              inactiveColor: Color.Blue,
+              policy:BlurStyleActivePolicy.ALWAYS_ACTIVE,
+              inactiveColor:Color.Blue,
               blurOptions: {
-                grayscale: [20, 20]
+                grayscale: [20,20]
               }
             } as BackgroundEffectOptions
           })
         })
       Button('ShowActionSheet_Effect002')
         .id('ShowActionSheet_Effect002')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showActionSheet({
             title: 'ActionSheet title',
@@ -137,12 +114,21 @@ struct ShowActionSheet2 {
                 }
               }
             ],
-
+            // backgroundEffect: {
+            //   // radius: undefined,
+            //   saturation: undefined,
+            //   brightness: undefined,
+            //   color: undefined,
+            //   adaptiveColor: undefined,
+            //   policy:undefined,
+            //   inactiveColor:undefined,
+            //   blurOptions: undefined,
+            // } as BackgroundEffectOptions
           })
         })
       Button('ShowActionSheet_Effect003')
         .id('ShowActionSheet_Effect003')
-        .onClick((e: ClickEvent) => {
+        .onClick((e:ClickEvent) => {
           let uiContext: UIContext = this.getUIContext();
           uiContext.showActionSheet({
             title: 'ActionSheet title',
@@ -179,7 +165,16 @@ struct ShowActionSheet2 {
                 }
               }
             ],
-
+            // backgroundEffect: {
+            //   radius: null,
+            //   saturation: null,
+            //   brightness: null,
+            //   color: null,
+            //   adaptiveColor: null,
+            //   policy:null,
+            //   inactiveColor:null,
+            //   blurOptions: null,
+            // } as BackgroundEffectOptions
           })
         })
     }

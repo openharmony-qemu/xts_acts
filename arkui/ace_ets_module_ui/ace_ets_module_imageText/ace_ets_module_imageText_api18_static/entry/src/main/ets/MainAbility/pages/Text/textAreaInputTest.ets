@@ -22,10 +22,8 @@ import {
   CopyOptions,
   TextArea
 } from '@ohos.arkui.component'
-import {
-  State,
-  
-} from '@ohos.arkui.stateManagement'
+import { State, } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct TextAreaInputTestExample {
@@ -33,17 +31,17 @@ struct TextAreaInputTestExample {
 
   build() {
     Column({ space: 20 } as ColumnOptions) {
-      Column(){
+      Column() {
         Text('这是一段测试文本这是一段测试文本')
           .id('textArea1')
           .draggable(true)
           .width('90%')
           .margin(20)
           .copyOption(CopyOptions.LocalDevice)
-          .onDragStart((event: DragEvent, extraParams?: string):(() => void) => {
+          .onDragStart((event: DragEvent, extraParams?: string): (() => void) => {
             this.text = 'Text--onDragStart'
           })
-          .onDragEnd((event: DragEvent, extraParams?: string):void=>{
+          .onDragEnd((event: DragEvent, extraParams?: string): void => {
             this.text = 'Text--onDragEnd'
           })
 

@@ -12,9 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column,RichEditor,
+import { Entry, Component, Column,RichEditor, RichEditorTextSpanOptions,
   MutableStyledString,TextInputController,RichEditorController,RichEditorStyledStringController,RichEditorOptions,Row,Button,ClickEvent
-
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { Callback } from '../../common/MessageManager'
@@ -31,8 +30,8 @@ struct RichEditorMaxLinesTest {
     'it casts a warm,' +
     'golden hue that spreads like liquid amber across the vast expanse of the sky.' +
     'The once-blue heavens gradually transform, '
-  @State maxLineList: (int | undefined)[] = [-1, 2, 6, undefined]
-  @State maxLineIndex: number = 0
+  @State maxLineList: (Double | undefined)[] = [-1.0,2.5, 6.0, undefined]
+  @State maxLineIndex: Int = 0
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
   controller2: TextInputController = new TextInputController()
   controller3: RichEditorController = new RichEditorController()
@@ -40,15 +39,6 @@ struct RichEditorMaxLinesTest {
   controller: RichEditorController = new RichEditorController();
   option: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
 
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('ImageSpanVisibility', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
 
   build() {
     Column() {
@@ -77,11 +67,11 @@ struct RichEditorMaxLinesTest {
               {
                 fontColor: 'rgb(0,74,175)'
               }
-            })
+            } as RichEditorTextSpanOptions)
         })
         .margin(10)
         .width('95%')
-        .maxLines(this.maxLineList[this.maxLineIndex.toInt()])
+        .maxLines(this.maxLineList[this.maxLineIndex]!.toInt())
         .backgroundColor('rgb(240,250,255)')
         .id('RichEditorMaxLines')
     }

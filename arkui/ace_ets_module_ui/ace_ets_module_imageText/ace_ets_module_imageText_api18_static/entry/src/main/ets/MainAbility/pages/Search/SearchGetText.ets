@@ -53,9 +53,9 @@ struct SearchGetText {
           .width('50%')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            
-            
-            
+            let message = this.controller.getText({ start: 2, end: 4 })
+            AppStorage.setOrCreate('getText_1', message)
+            console.log('getText1: ' + message)
           })
       }
 
@@ -65,9 +65,9 @@ struct SearchGetText {
           .width('50%')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            
-            
-            
+            let message = this.controller.getText({ start: 1 })
+            AppStorage.setOrCreate('getText_2', message)
+            console.log('getText2:' + message)
           })
 
         Button('只设置end')
@@ -75,9 +75,9 @@ struct SearchGetText {
           .width('50%')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            
-            
-            
+            let message = this.controller.getText({ end: 3 })
+            AppStorage.setOrCreate('getText_3', message)
+            console.log('getText3:' + message)
           })
       }
 
@@ -87,9 +87,9 @@ struct SearchGetText {
           .width('50%')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            
-            
-            
+            let message = this.controller.getText({ start: undefined })
+            AppStorage.setOrCreate('getText_4', message)
+            console.log('getText4:' + message)
           })
 
         Button('end设置undefined')
@@ -97,9 +97,9 @@ struct SearchGetText {
           .width('50%')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            
-            
-            
+            let message = this.controller.getText({ end: undefined })
+            AppStorage.setOrCreate('getText_5', message)
+            console.log('getText5:' + message)
           })
       }
 
@@ -109,9 +109,9 @@ struct SearchGetText {
           .width('50%')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            
-            
-            
+            let message = this.controller.getText({ start: undefined, end: undefined })
+            AppStorage.setOrCreate('getText_6', message)
+            console.log('getText6:' + message)
           })
 
         Button('不设置TextRange')
@@ -119,9 +119,9 @@ struct SearchGetText {
           .width('50%')
           .height('5%')
           .onClick((e:ClickEvent) => {
-            
-            
-            
+            let message = this.controller.getText()
+            AppStorage.setOrCreate('getText_7', message)
+            console.log('getText7:' + message)
           })
       }
     }

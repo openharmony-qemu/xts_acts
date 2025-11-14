@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { WaterFlowDataSource } from './WaterFlowSectionDemo/WaterFlowDataSource'
+import { WaterFlowDataSource } from './WaterFlowDataSource'
 import { Entry, Component, Column, Scroller, SectionOptions, Text, Button, WaterFlow, LazyForEach, FlowItem, Reusable,
   WaterFlowSections, Margin, ColumnOptions, Row, ClickEvent, ScrollState, Edge, ScrollSource, OnScrollFrameBeginHandlerResult } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -22,7 +22,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct ReusableFlowItemEvent {
   @State item: number = 0
 
-  
+  // 从复用缓存中加入到组件树之前调用，可在此处更新组件的状态变量以展示正确的内容
   aboutToReuse(params: Record<string, number>) {
     this.item = params['item']!;
     console.info('Reuse item:' + this.item)
@@ -45,7 +45,7 @@ struct WaterFlowEventDemo {
   fontSize: number = 24
   colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
   scroller: Scroller = new Scroller()
-  dataSource: WaterFlowDataSource = new WaterFlowDataSource(0)
+  dataSource: WaterFlowDataSource = new WaterFlowDataSource()
   dataCount: int = this.dataSource.totalCount()
   private itemHeightArray: number[] = new Array<number>()
   @State onReachText:string = ''
@@ -61,32 +61,32 @@ struct WaterFlowEventDemo {
     columnsGap: '5vp',
     rowsGap: 10,
     margin: this.sectionMargin,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return this.itemHeightArray[index.toInt() % 100]
     }
-  } as SectionOptions
+  }
   twoColumnSection: SectionOptions = {
     itemsCount: 2,
     crossCount: 2,
-    onGetItemMainSizeByIndex: (index: int) => {
+    onGetItemMainSizeByIndex: (index: int): number => {
       return 100.0
     }
   } as SectionOptions
   lastSection: SectionOptions = {
     itemsCount: 20,
     crossCount: 2,
-    onGetItemMainSizeByIndex: (index: int) => {
-      return this.itemHeightArray[index.toInt() % 100]
+    onGetItemMainSizeByIndex: (index: int): number => {
+      return this.itemHeightArray[(index as int) % 100]
     }
   } as SectionOptions
 
-  
+  // 计算FlowItem高度
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize)
     return (ret > this.minSize ? ret : this.minSize)
   }
 
-  
+  // 设置FlowItem的高度数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemHeightArray.push(this.getSize())
@@ -95,13 +95,13 @@ struct WaterFlowEventDemo {
 
   aboutToAppear() {
     this.setItemSizeArray()
-    
+    // 初始化瀑布流分组信息
     let sectionOptions: SectionOptions[] = []
     let count = 0
     let oneOrTwo = 0
     while (count < this.dataCount) {
       if (this.dataCount - count < 20) {
-        this.lastSection.itemsCount = Double.toInt(this.dataCount - count)
+        this.lastSection.itemsCount = this.dataCount - count
         sectionOptions.push(this.lastSection)
         break;
       }
@@ -132,17 +132,16 @@ struct WaterFlowEventDemo {
 
       WaterFlow({ scroller: this.scroller, sections: this.sections }) {
         LazyForEach(this.dataSource, (item: number) => {
+          console.info('LazyForEach ' + item);
           FlowItem() {
             ReusableFlowItemEvent({ item: item })
           }
           .width('100%')
-          
-          
-          .backgroundColor(this.colors[item.toInt() % 5])
-        }, (item: number, index: int) => String(item))
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item: number) => String(item))
       }
       .id('water_event')
-      .columnsTemplate('1fr 1fr') 
+      .columnsTemplate('1fr 1fr') // 瀑布流使用sections参数时该属性无效
       .columnsGap(10)
       .rowsGap(5)
       .backgroundColor(0xFAEEE0)
@@ -160,7 +159,7 @@ struct WaterFlowEventDemo {
       })
       .onDidScroll((scrollOffset: number, scrollState: ScrollState): void => {
         this.onText = 'onDidScroll'
-        console.info(`onWillScroll scrollState = ${scrollState[scrollState]}, offset = ${scrollOffset}`)
+        console.info(`onDidScroll scrollState = ${scrollState[scrollState]}, offset = ${scrollOffset}`)
       })
       .onReachStart(() => {
         this.onReachText = 'onReachStart:succ'
@@ -181,7 +180,7 @@ struct WaterFlowEventDemo {
       .onScrollFrameBegin((offset: number, state: ScrollState): OnScrollFrameBeginHandlerResult => {
         this.onScrollFrameBeginText = 'success'
         console.info('waterFlow scrollFrameBegin offset: ' + offset + ' state: ' + state.toString())
-        return { offsetRemain: offset } as OnScrollFrameBeginHandlerResult
+        return { offsetRemain: offset }
       })
     }
   }
