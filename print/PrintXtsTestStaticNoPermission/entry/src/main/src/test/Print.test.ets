@@ -20,7 +20,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 
 
-const domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+const domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 const tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 class MyPrintDocumentAdapter implements print.PrintDocumentAdapter {
@@ -406,12 +406,11 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_1200 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_1200 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.on(type, callback);
+        print.onPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_1200 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -434,12 +433,11 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_1300 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_1300 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.off(type, callback);
+        print.offPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_1300 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -593,28 +591,28 @@ export default function printTest() {
           hilog.info(domain, tag, '%{public}s', 'enter print callback');
           if (printTask != undefined) {
             try {
-              printTask.on('block', () => {
+              printTask.onBlock(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on block');
               })
-              printTask.on('succeed', () => {
+              printTask.onSucceed(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on succeed');
               })
-              printTask.on('fail', () => {
+              printTask.onFail(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on fail');
               })
-              printTask.on('cancel', () => {
+              printTask.onCancel(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on cancel');
               })
-              printTask.off('block', () => {
+              printTask.offBlock(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off block');
               })
-              printTask.off('succeed', () => {
+              printTask.offSucceed(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off succeed');
               })
-              printTask.off('fail', () => {
+              printTask.offFail(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off fail');
               })
-              printTask.off('cancel', () => {
+              printTask.offCancel(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off cancel');
               })
             } catch(err) {
