@@ -476,6 +476,15 @@
         "srcEntrance": "./ets/FormAbility/FormAbility.ts",
         "type": "notificationSubscriber",
         "visible": true
+    },
+    {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "crypto",
+        "srcEntrance": "./ets/FormAbility/FormAbility.ts",
+        "type": "crypto",
+        "visible": true
     }
   ],
   "requestPermissions": [
