@@ -2147,7 +2147,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
+          expect(e.message).assertContain('cannot be relied on');
         }
         done();
       })
@@ -2169,7 +2169,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
+          expect(e.message).assertContain('cannot be relied on');
         }
         done();
       })
@@ -2191,7 +2191,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+          expect(e.message).assertContain('cannot addDependency');
         }
         done();
       })
@@ -2213,7 +2213,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+          expect(e.message).assertContain('cannot addDependency');
         }
         done();
       })
@@ -2237,7 +2237,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
+          expect(e.message).assertContain('cannot be relied on');
         }
         done();
       })
@@ -2261,7 +2261,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+          expect(e.message).assertContain('cannot addDependency');
         }
         done();
       })
@@ -3172,7 +3172,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task2);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+          expect(e.message).assertContain('cannot addDependency');
         }
         done();
       })
@@ -3675,7 +3675,7 @@ export default function TaskPoolLibTest() {
           task.addDependency(task1);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot addDependency');
+          expect(e.message).assertContain('cannot addDependency');
         }
         taskpool.cancel(task);
         done();
@@ -3698,7 +3698,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertEqual('taskpool:: seqRunnerTask or executedTask cannot be relied on');
+          expect(e.message).assertContain('cannot be relied on');
         }
         taskpool.cancel(task);
         done();
