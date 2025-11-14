@@ -52,7 +52,7 @@ namespace OHOS {
     {
         printf("------start ActsVulkanFastlinkedLibrary4Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/pipeline/fast-linked-library4.txt "
                 "--deqp-log-filename=ActsVulkanFastlinkedLibrary4Test.qpa");
         }

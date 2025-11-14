@@ -14855,5 +14855,85 @@ export default function audioRendererTest() {
       });
       done();
     })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_9900
+     * @tc.name      : AudioRenderer - appVolumeChange
+     * @tc.desc      : AudioRenderer - appVolumeChange
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_9900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
+        channels: audio.AudioChannel.CHANNEL_2, // 通道。
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC, // 音频流使用类型：音乐。根据业务场景配置，参考StreamUsage。
+        rendererFlags: 0, // 音频渲染器标志。
+        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer;
+      let audioManager = audio.getAudioManager();
+      let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      audio.createAudioRenderer(audioRendererOptions,(err, data) => {
+        if (err) {
+          console.error(`AudioRenderer Created: Error: ${err}`);
+          expect(true).assertFail();
+        } else {
+          console.info('AudioRenderer Created: SUCCESS');
+          audioRenderer = data;
+          audioRenderer.getRendererInfo((err: BusinessError, audioRendererInfo: audio.AudioRendererInfo) => {
+            if (err) {
+              console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            } else {
+              console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
+              expect(audioRendererInfo.volumeMode).assertEqual(1);
+              expect(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
+
+              let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
+                console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
+                console.info(`Volume level: ${volumeEvent.volume} `);
+                console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+              };
+              audioVolumeManager.on('appVolumeChange', appVolumeChangeCallback);
+              audioVolumeManager.setAppVolumePercentage(20).then(() => {
+                console.info(`set app volume success.`);
+              });
+              audioVolumeManager.off('appVolumeChange', appVolumeChangeCallback);
+            }
+          });
+          audioRenderer.getAudioTime((err: BusinessError, timestamp: number) => {
+            if (err) {
+              console.error(`Failed to get AudioTime. Code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            } else {
+              console.info(`Current timestamp: ${timestamp}`);
+              expect(timestamp).assertLargerOrEqual(0);
+            }
+          });
+          audioRenderer.release((err: BusinessError) => {
+            if (err) {
+              console.error('Renderer release failed');
+              expect(true).assertFalse();
+            } else {
+              console.info('Renderer released.');
+            }
+          });
+        }
+      });
+      done();
+    })
   })
 }

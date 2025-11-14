@@ -53,186 +53,254 @@ export default function NumberFormatInIntlTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
-    /* *
-    * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0100
-    * @tc.name    formatNumber_test_static_0100
-    * @tc.desc    check the number in zh
-   */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0100
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0100
+     * @tc.desc   check the number in zh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('formatNumber_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh');
       console.log('formatNumber_test_static_0100 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0120
-     * @tc.name    formatNumber_test_static_0120
-     * @tc.desc    check the number with default locale
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0120
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0120
+     * @tc.desc   check the number with default locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0120', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat();
       expect(numfmt !== null).assertTrue();
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0140
-     * @tc.name    formatNumber_test_static_0140
-     * @tc.desc    format the number in zh and undefined options
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0140
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0140
+     * @tc.desc   format the number in zh and undefined options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0140', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh', undefined);
       console.log('formatNumber_test_static_0140 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0160
-     * @tc.name    formatNumber_test_static_0160
-     * @tc.desc    format the number in zh and null options
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0160
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0160
+     * @tc.desc   format the number in zh and null options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0160', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh', {});
       console.log('formatNumber_test_static_0160 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0200
-     * @tc.name    formatNumber_test_static_0200
-     * @tc.desc    format the number in zh-u-nu-latn
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0200
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0200
+     * @tc.desc   format the number in zh-u-nu-latn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh-u-nu-latn');
       console.log('formatNumber_test_static_0200 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0300
-     * @tc.name    formatNumber_test_static_0300
-     * @tc.desc    format the number in zh-u-nu-arab
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0300
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0300
+     * @tc.desc   format the number in zh-u-nu-arab
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0300', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh-u-nu-arab');
       console.log('formatNumber_test_static_0300 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('١٢٣٬٤٥٦٫٧٨٩');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0400
-     * @tc.name    formatNumber_test_static_0400
-     * @tc.desc    format the number in en
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0400
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0400
+     * @tc.desc   format the number in en
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0400', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en');
       console.log('formatNumber_test_static_0400 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0500
-     * @tc.name    formatNumber_test_static_0500
-     * @tc.desc    format the number in en-u-nu-thai
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0500
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0500
+     * @tc.desc   format the number in en-u-nu-thai
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0500', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-u-nu-thai');
       console.log('formatNumber_test_static_0500 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('๑๒๓,๔๕๖.๗๘๙');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0600
-     * @tc.name    formatNumber_test_static_0600
-     * @tc.desc    format the number in en-GB
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0600
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0600
+     * @tc.desc   format the number in en-GB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0600', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-GB');
       console.log('formatNumber_test_static_0600 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0700
-     * @tc.name    formatNumber_test_static_0700
-     * @tc.desc    format the number in en-US
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0700
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0700
+     * @tc.desc   format the number in en-US
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0700', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-US');
       console.log('formatNumber_test_static_0700 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_0900
-     * @tc.name    formatNumber_test_static_0900
-     * @tc.desc    check the number in zh and en list
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_0900
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_0900
+     * @tc.desc   check the number in zh and en list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_0900', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat(['zh','en']);
       console.log('formatNumber_test_static_0900 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1000
-     * @tc.name    formatNumber_test_static_1000
-     * @tc.desc    check the number in en and zh list
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1000
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1000
+     * @tc.desc   check the number in en and zh list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1000', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat(['en','zh']);
       console.log('formatNumber_test_static_1000 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1100
-     * @tc.name    formatNumber_test_static_1100
-     * @tc.desc    check the number in en and aa list
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1100
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1100
+     * @tc.desc   check the number in en and aa list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1100', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat(['en','aa']);
       console.log('formatNumber_test_static_1100 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1200
-     * @tc.name    formatNumber_test_static_1200
-     * @tc.desc    check the number in aa and zh list
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1200
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1200
+     * @tc.desc   check the number in aa and zh list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1200', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat(['aa','zh']);
       console.log('formatNumber_test_static_1200 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123,456.789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1400
-     * @tc.name    formatNumber_test_static_1400
-     * @tc.desc    check the number in aa  bb and es list
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1400
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1400
+     * @tc.desc   check the number in aa  bb and es list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1400', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat(['aa','bb','es']);
       console.log('formatNumber_test_static_1400 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123.456,789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1500
-     * @tc.name    formatNumber_test_static_1500
-     * @tc.desc    check the number in aa it and bb list
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1500
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1500
+     * @tc.desc   check the number in aa it and bb list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1500', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat(['aa','it','bb']);
       console.log('formatNumber_test_static_1500 ' + numfmt.format(123456.789));
       expect(numfmt.format(123456.789)).assertEqual('123.456,789');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1600
-     * @tc.name    formatNumber_test_static_1600
-     * @tc.desc    check the number with scientific
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1600
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1600
+     * @tc.desc   check the number with scientific
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1600', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-GB', { style: 'decimal', notation: 'scientific' });
       console.log('formatNumber_test_static_1600 ' + numfmt.format(123456.789));
@@ -241,11 +309,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().notation).assertEqual('scientific');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1700
-     * @tc.name    formatNumber_test_static_1700
-     * @tc.desc    check the number with currency EUR
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1700
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1700
+     * @tc.desc   check the number with currency EUR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1700', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-GB', { style: 'currency', currency: 'EUR',
         currencyDisplay: 'name', currencySign: 'accounting', signDisplay: 'always' });
@@ -259,11 +331,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().signDisplay).assertEqual('always');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1800
-     * @tc.name    formatNumber_test_static_1800
-     * @tc.desc    check the number with currency USD
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1800
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1800
+     * @tc.desc   check the number with currency USD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1800', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-US', { style: 'currency', currency: 'USD',
         currencyDisplay: 'code', currencySign: 'accounting', signDisplay: 'always' });
@@ -272,11 +348,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.format(123456.789)).assertContain('123,456.79');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_1900
-     * @tc.name    formatNumber_test_static_1900
-     * @tc.desc    check the number with currency CNY
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_1900
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_1900
+     * @tc.desc   check the number with currency CNY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_1900', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh-CN', { style: 'currency', currency: 'CNY',
         currencyDisplay: 'symbol', currencySign: 'accounting', signDisplay: 'always' });
@@ -284,11 +364,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.format(123456.789)).assertEqual('+¥123,456.79');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2000
-     * @tc.name    formatNumber_test_static_2000
-     * @tc.desc    check the number with currency JPY
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2000
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2000
+     * @tc.desc   check the number with currency JPY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2000', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY',
         currencyDisplay: 'narrowSymbol', currencySign: 'accounting', signDisplay: 'always' });
@@ -296,11 +380,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.format(123456.789)).assertEqual('+￥123,457');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2100
-     * @tc.name    formatNumber_test_static_2100
-     * @tc.desc    check the number with signDisplay
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2100
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2100
+     * @tc.desc   check the number with signDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2100', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-GB', { style: 'currency', currency: 'EUR',
         currencyDisplay: 'name', currencySign: 'accounting', signDisplay: 'always',
@@ -317,11 +405,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().signDisplay).assertEqual('always');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2200
-     * @tc.name    formatNumber_test_static_2200
-     * @tc.desc    check the number with meter unit
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2200
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2200
+     * @tc.desc   check the number with meter unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2200', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh-CN', { style: 'unit', unit: 'meter',
         unitDisplay: 'long', maximumFractionDigits: 2, minimumIntegerDigits: 7 });
@@ -332,11 +424,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().unitDisplay).assertEqual('long');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2250
-     * @tc.name    formatNumber_test_static_2250
-     * @tc.desc    check the number with unitUsage
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2250
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2250
+     * @tc.desc   check the number with unitUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2250', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh-CN', { style: 'unit', unit: 'meter',
         unitDisplay: 'long', unitUsage: 'length-road' });
@@ -345,11 +441,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().unitUsage).assertEqual('length-road');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2260
-     * @tc.name    formatNumber_test_static_2260
-     * @tc.desc    format the number with narrow value in unitUsage param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2260
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2260
+     * @tc.desc   format the number with narrow value in unitUsage param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2260', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh-CN', { style: 'unit', unit: 'meter',
         unitDisplay: 'narrow', unitUsage: 'length-road' });
@@ -358,11 +458,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().unitUsage).assertEqual('length-road');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2270
-     * @tc.name    formatNumber_test_static_2270
-     * @tc.desc    format the number with short value in unitUsage param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2270
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2270
+     * @tc.desc   format the number with short value in unitUsage param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2270', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('zh-CN', { style: 'unit', unit: 'meter',
         unitDisplay: 'short', unitUsage: 'length-road' });
@@ -371,11 +475,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().unitUsage).assertEqual('length-road');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2280
-     * @tc.name    formatNumber_test_static_2280
-     * @tc.desc    format the number with narrow value in unitUsage param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2280
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2280
+     * @tc.desc   format the number with narrow value in unitUsage param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2280', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-US', { style: 'unit', unit: 'meter',
         unitDisplay: 'narrow', unitUsage: 'length-road' });
@@ -384,11 +492,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().unitUsage).assertEqual('length-road');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2290
-     * @tc.name    formatNumber_test_static_2290
-     * @tc.desc    format the number with short value in unitUsage param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2290
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2290
+     * @tc.desc   format the number with short value in unitUsage param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2290', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-US', { style: 'unit', unit: 'meter',
         unitDisplay: 'short', unitUsage: 'length-road' });
@@ -397,11 +509,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().unitUsage).assertEqual('length-road');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2300
-     * @tc.name    formatNumber_test_static_2300
-     * @tc.desc    format the number with percetn style
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2300
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2300
+     * @tc.desc   format the number with percetn style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2300', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('en-CN', { style: 'percent', maximumFractionDigits: 2,
         minimumIntegerDigits: 7 });
@@ -409,11 +525,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.format(123456.789)).assertEqual('12,345,678.9%');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2400
-     * @tc.name    formatNumber_test_static_2400
-     * @tc.desc    format the number with numberingSystem
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2400
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2400
+     * @tc.desc   format the number with numberingSystem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2400', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('ar-EG', { numberingSystem: 'arab' });
       console.log('formatNumber_test_static_2400 ' + numfmt.format(123456.789));
@@ -421,11 +541,15 @@ export default function NumberFormatInIntlTest() {
       expect(numfmt.resolvedOptions().numberingSystem).assertEqual('arab');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_INTL_JS_NUMBER_static_2500
-     * @tc.name    formatNumber_test_static_2500
-     * @tc.desc    format the number with style
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   formatNumber_test_static_2500
+     * @tc.number SUB_GLOBAL_INTL_JS_NUMBER_static_2500
+     * @tc.desc   format the number with style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('formatNumber_test_static_2500', Level.LEVEL2, async (): Promise<void> => {
       let numfmt = new intl.NumberFormat('ar', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 2,
         minimumIntegerDigits: 7, minimumSignificantDigits: 5, maximumSignificantDigits: 10, useGrouping: true  });

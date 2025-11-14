@@ -1856,7 +1856,7 @@ export default function CameraSessionFlashSuppTest() {
     /**
      * @tc.number    : SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0100
      * @tc.name      : SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0100
-     * @tc.desc      : PreviewOutput_setFrameRate
+     * @tc.desc      : test mPreviewOutput setFrameRate min > max
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
@@ -1870,12 +1870,25 @@ export default function CameraSessionFlashSuppTest() {
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
         try {
           console.info(TAG, testName, "Start setFrameRate", JSON.stringify(mPreviewOutput));
-          let result = mPreviewOutput.setFrameRate(11, 10);
-          console.info(TAG, testName, "Success setFrameRate", result);
-          expect().assertFail();
+          let supportedFrameRatesArray: Array<camera.FrameRateRange> = mPreviewOutput.getSupportedFrameRates();
+          if (supportedFrameRatesArray.length > 0) {
+            console.info(TAG, testName, "supportedFrameRatesArray", JSON.stringify(supportedFrameRatesArray));
+            let min: number = supportedFrameRatesArray[0]['min'];
+            let max: number = supportedFrameRatesArray[0]['max'];
+            mPreviewOutput.setFrameRate(min, max);
+            let res = mPreviewOutput.getActiveFrameRate();
+            expect(res.min).assertEqual(min);
+            expect(res.max).assertEqual(max);
+            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
+            mPreviewOutput.setFrameRate(max, min);
+            res = mPreviewOutput.getActiveFrameRate();
+            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
+            expect(res.min).assertEqual(min);
+            expect(res.max).assertEqual(max);
+          }
         } catch (error) {
           console.error(TAG, testName, 'Failed setFrameRate', JSON.stringify(error), error.code);
-          expect(error.code).assertEqual('7400101');
+          expect().assertFail();
         }
         await releasePhotoSession();
       }

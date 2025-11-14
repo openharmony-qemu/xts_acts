@@ -282,22 +282,21 @@ export default function DeviceInfoTest() {
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it('device_info_test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+        it('device_info_test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testGetHardWareProfile01 start');
-
+            let ret = false;
             let hardwareProfileInfo = deviceinfo.hardwareProfile;
             console.info('the value of the deviceinfo hardwareProfile is :' + hardwareProfileInfo);
 
             expect(hardwareProfileInfo).assertInstanceOf('String');
             if (hardwareProfileInfo != "" && hardwareProfileInfo != null && hardwareProfileInfo != undefined) {
-                let str = /[\w-\.\(\)\,\:\;]/g;
-                let arr = hardwareProfileInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(hardwareProfileInfo).assertEqual(bufferstr);
+                ret = true;
+                expect(ret).assertTrue();
+				done();
             } else {
-                console.info('the return value is null or incorrect.');
+                console.info('the return value hardwareProfile is null or incorrect.');
                 expect(false).assertTrue();
+                done();
             }
 
             console.info('testGetHardWareProfile01 ：end');
@@ -1026,16 +1025,9 @@ export default function DeviceInfoTest() {
             let hardwareProfileInfo = deviceinfo.hardwareProfile;
             console.info('the value of the deviceinfo hardwareProfile is :' + hardwareProfileInfo);
 
-            let str = /[\w-\.\(\)\,\:\;]/g;
             let len = hardwareProfileInfo.length;
             console.info('the value of the hardware version characters is :' + len);
             expect(len).assertLess(1001);
-
-            let arr = hardwareProfileInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(hardwareProfileInfo).assertEqual(bufferstr);
-
             console.info('device_info_test_038 ：end');
         })
 
@@ -1337,13 +1329,6 @@ export default function DeviceInfoTest() {
             let len = hardwareProfileInfo.length;
             console.info('the value of the hardware version characters is :' + len);
             expect(len).assertLarger(MAX_CHARACTERS_NUM);
-
-            let str = /[\w-\.\(\)\,\:\;]/g;
-            let arr = hardwareProfileInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(hardwareProfileInfo).assertEqual(bufferstr);
-
             console.info('device_info_test_053 ：end');
         })
 

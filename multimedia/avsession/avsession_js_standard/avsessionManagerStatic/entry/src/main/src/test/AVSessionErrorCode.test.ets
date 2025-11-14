@@ -330,8 +330,7 @@ export default function AVSessionErrorCode() {
                 wants: [
                     {
                         bundleName: 'com.example.myapplication.static',
-                        abilityName: 'EntryAbility',
-                        parameters: {"ohos.extra.param.key.appCloneIndex":0} as Record<String, Object>
+                        abilityName: 'EntryAbility'
                     }
                 ],
                 actionType: wantAgent.OperationType.START_ABILITIES,
@@ -368,8 +367,7 @@ export default function AVSessionErrorCode() {
                 wants: [
                     {
                         bundleName: 'com.example.myapplication.static',
-                        abilityName: 'EntryAbility',
-                        parameters: {"ohos.extra.param.key.appCloneIndex":0} as Record<String, Object>
+                        abilityName: 'EntryAbility'
                     }
                 ],
                 actionType: wantAgent.OperationType.START_ABILITIES,

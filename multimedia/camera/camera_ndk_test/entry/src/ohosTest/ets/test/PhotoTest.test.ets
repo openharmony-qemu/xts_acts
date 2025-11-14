@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import cameraObj from 'libentry.so'
 import image from '@ohos.multimedia.image';
-import { Camera_PreconfigType, Camera_SceneMode, Camera_MediaType, Parameter_Setting } from './Constants';
+import { Camera_PreconfigType, Camera_SceneMode, Camera_MediaType, Parameter_Setting, Camera_SmoothZoomMode } from './Constants';
 import account from '@ohos.account.osAccount';
 import MediaUtils from './MediaUtils';
 import media from '@ohos.multimedia.media';
@@ -2459,6 +2459,21 @@ export default function PhotoTest() {
       let ret = cameraObj.oHCaptureSessionSetSmoothZoom(Parameter_Setting.FIRST_PARAMETER_ERROR);
       console.info(TAG+"testOHCaptureSessionSetSmoothZoom0200:"+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0300
+     * @tc.name       : testOHCaptureSessionSetSmoothZoom0300
+     * @tc.size       : MediumTest
+     * @tc.desc       : Test OH_CaptureSession_SetSmoothZoom in normal condition.
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testOHCaptureSessionSetSmoothZoom0300', Level.LEVEL0, () => {
+      captureSessionstart();
+      sessionStart();
+      let ret = cameraObj.oHCaptureSessionSetSmoothZoom(Camera_SmoothZoomMode.SMOOTH_ZOOM_MODE_NORMAL)
+      console.info(TAG+"testOHCaptureSessionSetSmoothZoom0300:"+ret);
+      expect(ret).assertEqual(CAMERA_OK);
     })
     /**
      * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0100

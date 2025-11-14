@@ -791,6 +791,46 @@ export default function ActsDisplayNdkApi14Test() {
         done();
       }
     })
+    /**
+     * @tc.number : SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0200
+     * @tc.name   : testCaptureWithBlacklistNotFloatBall
+     * @tc.desc   : 截屏过滤窗口不为闪控球
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 2
+     */
+    it('testCaptureWithBlacklistNotFloatBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName = 'testCaptureWithBlacklistNotFloatBall';
+      let windowClass = windowStage.getMainWindowSync();
+      let windowId = windowClass.getWindowProperties().id;
+      console.info(caseName+ ' Succeeded in get window id:'+windowId);
+      let captureOption: screenshot.CaptureOption = {
+        "displayId": display.getDefaultDisplaySync().id,
+        "blackWindowIds":[windowId]
+      };
+      try {
+      let promise = screenshot.capture(captureOption);
+      promise.then(async (pixelMap: image.PixelMap) => {
+        console.info(caseName+' Succeeded in saving screenshot. Pixel bytes number: ' + pixelMap.getPixelBytesNumber());
+        expect(false).assertTrue();
+        pixelMap.release(); // PixelMap使用完后及时释放内存
+        done();
+      }).catch((err: BusinessError) => {
+        console.error(caseName+` Failed to save screenshot. Code: ${err.code}, message: ${err.message}`);
+        if(err.code == 801){
+          done();
+        }else{
+          expect(err.code).assertEqual(401);
+          expect(err.message!=null).assertTrue();
+          done();
+        }
+      });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
 
 
 

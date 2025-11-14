@@ -71,10 +71,10 @@ export default function RichEditor015() {
       await CommonFunc.sleep(1000);
 
       let back = await driver.findComponent(ON.id('back_emoji'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
       let point = await driver.findComponent(ON.id('get_position'));
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let text = await driver.findComponent(ON.id('position_text'));
       let beginPosition = await text.getText();
@@ -83,7 +83,7 @@ export default function RichEditor015() {
       await driver.triggerKey(2055);
       await CommonFunc.sleep(500);
 
-      point.click();
+      await point.click();
       await CommonFunc.sleep(1000);
       let endPosition = await text.getText();
 

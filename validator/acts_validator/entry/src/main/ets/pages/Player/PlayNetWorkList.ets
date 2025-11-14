@@ -248,6 +248,7 @@ struct PlayNetWorkList {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '30vp' })
         .width('40%')
         .height('30vp')
         .backgroundColor(Color.Grey)
@@ -269,6 +270,7 @@ struct PlayNetWorkList {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '30vp' })
         .width('40%')
         .height('30vp')
         .backgroundColor(Color.Grey)

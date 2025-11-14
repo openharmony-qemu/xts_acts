@@ -85,12 +85,13 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0021
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0021
-         * @tc.name testGetSignalLevel
-         * @tc.desc Test getSignalLevel API functionality..
-         * @tc.type Function
-         * @tc.size LargeTest
-         * @tc.level Level 3
+         * @tc.desc   Test getSignalLevel API functionality..
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try{
@@ -146,12 +147,13 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0017
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0017
-         * @tc.name testgetCountryCode
-         * @tc.desc Test getCountryCode API function.
-         * @tc.type Function
-         * @tc.size LargeTest
-         * @tc.level Level 3
+         * @tc.desc   Test getCountryCode API function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -192,12 +194,13 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0020
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0020
-         * @tc.name testFeatureSupported
-         * @tc.desc Test FeatureSupported API function.
-         * @tc.type Function
-         * @tc.size LargeTest
-         * @tc.level Level 3
+         * @tc.desc   Test FeatureSupported API function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -247,12 +250,13 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0004
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0004
-         * @tc.name testGetLinkedInfo
-         * @tc.desc Test Test getLinkedInfo and getIpInfo  information.
-         * @tc.type Function
-         * @tc.size LargeTest
-         * @tc.level Level 1
+         * @tc.desc   Test Test getLinkedInfo and getIpInfo  information.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let isConnectedResult = wifiMg.isConnected();
@@ -367,12 +371,13 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0034
-         * @tc.name testgetScanResultsSync
-         * @tc.desc Test getScanResults Sync API functionality.
-         * @tc.type Function
-         * @tc.size LargeTest
-         * @tc.level Level 0
+         * @tc.desc   Test getScanResults Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try
@@ -415,12 +420,13 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0035
-         * @tc.name testisBandTypeSupported
-         * @tc.desc Test isBandTypeSupported API functionality.
-         * @tc.type Function
-         * @tc.size LargeTest
-         * @tc.level Level 0
+         * @tc.desc   Test isBandTypeSupported API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
@@ -451,12 +457,13 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0036
-         * @tc.name testgetScanResults
-         * @tc.desc Test getScanResults promise and callback API functionality.
-         * @tc.type Function
-         * @tc.size LargeTest
-         * @tc.level Level 0
+         * @tc.desc   Test getScanResults promise and callback API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -501,14 +508,15 @@ export default function actsWifiManagerFunctionsTest() {
             done();
         })
 
-        /**
-        * @tc.number Communication_WiFi_XTS_Sta_0037
-        * @tc.name testgetIpv6Info
-        * @tc.desc Test getIpv6Info API functionality.
-        * @tc.type Function
-        * @tc.size LargeTest
-        * @tc.level Level 0
-        */
+         /**
+          * @generated.time 2025-11-09 20:49:44
+          * @tc.name   Communication_WiFi_XTS_Sta_0037
+          * @tc.number Communication_WiFi_XTS_Sta_0037
+          * @tc.desc   Test getIpv6Info API functionality.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('Communication_WiFi_XTS_Sta_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let ipv6InfoResult = wifiMg.getIpv6Info();
@@ -532,13 +540,14 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_Sta_0099
-        * @tc.name testWifiCategory
-        * @tc.desc Test enum WifiCategory API12.
-        * @tc.type Function
-        * @tc.size LargeTest
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   Communication_WiFi_XTS_Sta_0099
+         * @tc.number Communication_WiFi_XTS_Sta_0099
+         * @tc.desc   Test enum WifiCategory API12.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_Sta_0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
             try {
                 let WifiCategoryDefault = wifiMg.WifiCategory.DEFAULT;

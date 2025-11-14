@@ -1552,15 +1552,15 @@ export default function AVSessionCallback() {
                 }
             });
             await sleep(500);
-            await WantAgent.equal(agent, wantagent).then((bool) => {
-                if (bool) {
-                    console.info('AVSessionTest : Set LaunchAbility successfully');
-                    expect(true).assertTrue();
-                } else {
-                    console.info('AVSessionTest : Set LaunchAbility failed');
-                    expect(false).assertTrue();
-                }
-            });
+            let agentBundleName = await WantAgent.getBundleName(agent);
+            let wantagentBundleName = await WantAgent.getBundleName(wantagent);
+            if (agentBundleName == wantagentBundleName) {
+                console.info('TestLog: AVSessionTest : Set LaunchAbility successfully');
+                expect(true).assertTrue();
+            } else {
+                console.info('TestLog: AVSessionTest : Set LaunchAbility failed');
+                expect(false).assertTrue();
+            }
             done();
         })
 

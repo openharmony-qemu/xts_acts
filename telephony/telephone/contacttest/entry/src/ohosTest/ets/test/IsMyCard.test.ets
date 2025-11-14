@@ -97,6 +97,9 @@ async function deleteCard() {
   let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
   let DataSharePredicates:dataSharePredicates.DataSharePredicates = predicates.prefixKey('raw_contact_id');
   let del: number = await DAHelper.delete('datashare:///com.ohos.contactsdataability/profile/contact_data', DataSharePredicates);
+  let predicates1: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let DataSharePredicates1:dataSharePredicates.DataSharePredicates = predicates.prefixKey('id');
+  await DAHelper.delete('datashare:///com.ohos.contactsdataability/profile/raw_contact', DataSharePredicates1);
   return del
 }
 

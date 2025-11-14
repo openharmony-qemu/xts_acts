@@ -980,5 +980,25 @@ export default function nativeBufferTest() {
           done();
         }
       });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1200
+     * @tc.name       : testNativeBufferSetMetadataValueREGION
+     * @tc.desc       : test OH_REGION_OF_INTEREST_METADATA
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeBufferSetMetadataValueREGION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        if (deviceTypeInfo == "default") {
+          expect(0).assertEqual(0);
+          done();
+        } else {
+          let result: number = nativebuffer.oHNativeBufferSetMetadataValueREGION();
+          console.info("testNativeBufferSetMetadataValueREGION result: " + result)
+          expect(result).assertEqual(0);
+          done();
+        }
+      });
   });
 }

@@ -38,13 +38,15 @@ describe('userAuthTestExecute', function () {
     })
 
 
-     /**
-    * @tc.name      execute_authentication_promise_Type_is_null
-    * @tc.number    JSAPI_Function_Execute_2100
-    * @tc.size      MEDIUM
-    * @tc.type      FUNC
-    * @tc.level     Level0
-    */
+      /**
+       * @generated.time 2025-11-09 20:57:57
+       * @tc.name   JSAPI_Function_Nopermission_2100
+       * @tc.number JSAPI_Function_Execute_2100
+       * @tc.desc   JSAPI_Function_Nopermission_2100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('JSAPI_Function_Nopermission_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
         console.log("JSAPI_Function_Nopermission_2100 start");
         const auth = userAuth.getAuthenticator();
@@ -59,13 +61,15 @@ describe('userAuthTestExecute', function () {
         console.log("JSAPI_Function_Nopermission_2100 end");
     })
 
-      /**
-    * @tc.name      execute_authentication_callback_Type_is_null
-    * @tc.number    JSAPI_Function_Execute_1800
-    * @tc.size      MEDIUM
-    * @tc.type      FUNC
-    * @tc.level     Level2
-    */
+       /**
+        * @generated.time 2025-11-09 20:57:57
+        * @tc.name   JSAPI_Function_Nopermission_1800
+        * @tc.number JSAPI_Function_Execute_1800
+        * @tc.desc   JSAPI_Function_Nopermission_1800
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL2
+        */
        it('JSAPI_Function_Nopermission_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.log("JSAPI_Function_Nopermission_1800 start");
         const auth = userAuth.getAuthenticator();
@@ -77,13 +81,15 @@ describe('userAuthTestExecute', function () {
         console.log("JSAPI_Function_Nopermission_1800 end");
     })
 
-        /*
-        * @tc.number    : Security_IAM_Nopermission_API8_Func_0101
-        * @tc.name      : Kit interface get version
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Nopermission_API8_Func_0101
+         * @tc.number Security_IAM_Nopermission_API8_Func_0101
+         * @tc.desc   Security_IAM_Nopermission_API8_Func_0101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Security_IAM_Nopermission_API8_Func_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         try {
             let getversionresult = null;
@@ -99,13 +105,15 @@ describe('userAuthTestExecute', function () {
         }
     })
 
-            /*
-        * @tc.number    : Security_IAM_Nopermission_API8_Func_0112
-        * @tc.name      : Kit interface get AvailabeStatus
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Nopermission_API8_Func_0112
+         * @tc.number Security_IAM_Nopermission_API8_Func_0112
+         * @tc.desc   Security_IAM_Nopermission_API8_Func_0112
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Security_IAM_Nopermission_API8_Func_0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testFace Security_IAM_Nopermission_API8_Func_0112 start');
         let authType = [2, 4]
@@ -125,13 +133,15 @@ describe('userAuthTestExecute', function () {
         }
     })
 
-            /*
-        * @tc.number    : Security_IAM_Nopermission_API8_Func_0103
-        * @tc.name      : Kit interface auth & cancel auth
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Nopermission_API8_Func_0103
+         * @tc.number Security_IAM_Nopermission_API8_Func_0103
+         * @tc.desc   Security_IAM_Nopermission_API8_Func_0103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Security_IAM_Nopermission_API8_Func_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let contextID1 = null
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -171,13 +181,15 @@ describe('userAuthTestExecute', function () {
             }
         })
 
-        /*
-            * @tc.number    : Security_IAM_Nopermission_API9_Func_0104
-            * @tc.name      : getAvailableStatus invalid parameters
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Nopermission_API9_Func_0104
+         * @tc.number Security_IAM_Nopermission_API9_Func_0104
+         * @tc.desc   Security_IAM_Nopermission_API9_Func_0104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Security_IAM_Nopermission_API9_Func_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testFace Security_IAM_Nopermission_API9_Func_0104 start');
             let authType = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT];
@@ -195,12 +207,14 @@ describe('userAuthTestExecute', function () {
         })
 
 
-         /*
-         * @tc.number    : Security_IAM_Nopermission_API9_Func_0110
-         * @tc.name      : getAuthInstance faceType ATL4
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Nopermission_API9_Func_0110
+         * @tc.number Security_IAM_Nopermission_API9_Func_0110
+         * @tc.desc   Security_IAM_Nopermission_API9_Func_0110
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Security_IAM_Nopermission_API9_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -219,13 +233,15 @@ describe('userAuthTestExecute', function () {
             }
         })
 
-         /*
-        * @tc.number    : Security_IAM_Nopermission_API9_Func_0103
-        * @tc.name      : Kit interface auth 
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
-        */
+         /**
+          * @generated.time 2025-11-09 20:57:57
+          * @tc.name   Security_IAM_Nopermission_API9_Func_0103
+          * @tc.number Security_IAM_Nopermission_API9_Func_0103
+          * @tc.desc   Security_IAM_Nopermission_API9_Func_0103
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('Security_IAM_Nopermission_API9_Func_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
             let authType = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT];

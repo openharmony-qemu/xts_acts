@@ -557,5 +557,27 @@ export default function NetworkManagerVpnTest() {
       }
     })
 
+    /**
+     * @tc.number: SUB_NetworkManager_VPN_context_0100
+     * @tc.name: testNetworkManagerVPNContext0100
+     * @tc.desc: Function test
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
+     */
+    it('testNetworkManagerVPNContext0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNContext0100';
+      try {
+        let vpnExtensionAbility = new VpnExtensionAbility();
+        console.log(`${caseName} context ${JSON.stringify(vpnExtensionAbility.context)}`);
+        expect(vpnExtensionAbility.context == undefined).assertTrue();
+        done();
+      } catch (error) {
+        console.log(`${caseName} destroy error ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
   });
 }

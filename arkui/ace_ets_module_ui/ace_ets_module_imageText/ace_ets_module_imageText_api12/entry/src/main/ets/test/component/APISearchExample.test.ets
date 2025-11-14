@@ -92,8 +92,6 @@ export default function APISearchExample() {
       await CommonFunc.sleep(1000);
       await textComponent.clearText();
       await CommonFunc.sleep(2000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APISearchExample_Text02');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[APISearchExample_0200] component obj is: " + JSON.stringify(obj), obj.$attrs.content);

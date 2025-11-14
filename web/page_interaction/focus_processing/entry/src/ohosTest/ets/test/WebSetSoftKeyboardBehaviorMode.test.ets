@@ -67,7 +67,7 @@ export default function SetSoftKeyboardBehaviorModeTest() {
     * @tc.level      : Level 0
     */
     it('emitSetSoftKeyboardBehaviorMode01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
-      emitKey="emitSetSoftKeyboardBehaviorMode01";
+      emitKey="emitSetSoftKeyboardBehaviorMode02";
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent("emitSetSoftKeyboardBehaviorMode01", true, 20251115, () => { isReturn = true });

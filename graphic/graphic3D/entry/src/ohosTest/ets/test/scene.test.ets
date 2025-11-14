@@ -960,9 +960,9 @@ export default function sceneTest() {
           let scene = await Scene.load();
           let rf =  scene.getResourceFactory();
           await Scene.getDefaultRenderContext()?.loadPlugin("1450021d-c57f-d9ff-7770-c24fb3f3321c");
-          let effectParameters: EffectParameters = {effectId: "e68a7f45-2d21-4a0d-9aef-7d9c825d3f12"};
+          let effectParameters: EffectParameters = {effectId: "c1e7d5a4-9b62-4f80-8c3e-2adf6f471b57"};
           let cam = await rf.createCamera({ name: "Camera", path:"//Camera" }, { renderingPipeline: RenderingPipelineType.FORWARD });
-          expect(effectParameters.effectId).assertEqual("e68a7f45-2d21-4a0d-9aef-7d9c825d3f12");
+          expect(effectParameters.effectId).assertEqual("c1e7d5a4-9b62-4f80-8c3e-2adf6f471b57");
           let effect: Effect = await rf.createEffect(effectParameters);
           cam.effects.append(effect);
           console.info(msg + " create effect: ", JSON.stringify(effect));
@@ -970,7 +970,7 @@ export default function sceneTest() {
           console.info(msg + " create effect is not null ");
           expect(cam.effects.get(0)).assertEqual(effect);
           console.info(msg + " cam.effects: ", JSON.stringify(effect));
-          expect(effect.effectId).assertEqual("e68a7f45-2d21-4a0d-9aef-7d9c825d3f12");
+          expect(effect.effectId).assertEqual("c1e7d5a4-9b62-4f80-8c3e-2adf6f471b57");
           console.info(msg + " effect.enabled: ", JSON.stringify(effect.effectId));
           expect(effect.enabled).assertTrue();
           console.info(msg + " effect.enabled: ", JSON.stringify(effect.enabled));

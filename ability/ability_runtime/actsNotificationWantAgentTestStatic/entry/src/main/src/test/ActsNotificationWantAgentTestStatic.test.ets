@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeEach } from "../../.
 import hilog from '@ohos.hilog'
 import wantAgent from '@ohos.app.ability.wantAgent';
 import { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 
 let domain: int = 0x0000;
@@ -32,7 +32,7 @@ export default function ActsNotificationWantAgentStaticTest() {
     let WantAgent: _WantAgent = {}
     let wantAgentData1: _WantAgent = {}
     let wantAgentData2: _WantAgent = {}
-    let parameters: Record<string, Object> = {
+    let parameters: Record<String,RecordData> = {
       'myKey0': 2222,
       'myKey1': [1, 2, 3],
       'myKey2': "[1, 2, 3]",
@@ -41,10 +41,10 @@ export default function ActsNotificationWantAgentStaticTest() {
       'myKey5': ["ANS", "WANT", "AGENT"],
       'myKey6': true
     }
-    let Info: Record<string, Object> = {
+    let Info: Record<String,RecordData> = {
       'key': 'WantAgentInfo_test extraInfo'
     }
-    let Infos: Record<string, Object> = {
+    let Infos: Record<String,RecordData> = {
       'key': 'WantAgentInfo_test extraInfos'
     }
     let wantAgentFlags: Array<wantAgent.WantAgentFlags> = new Array<wantAgent.WantAgentFlags>();
@@ -531,6 +531,6 @@ export default function ActsNotificationWantAgentStaticTest() {
         }
       })
       hilog.info(domain, tag, 'Sub_Notification_Ans_WantAgent_Create_Static_5150 END')
-      })
+    })
   })
 }

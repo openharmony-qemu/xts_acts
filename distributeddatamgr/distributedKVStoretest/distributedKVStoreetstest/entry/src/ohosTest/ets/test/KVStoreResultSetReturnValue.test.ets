@@ -91,18 +91,22 @@ export default function KVStoreResultSetReturnValue(){
           await kvStore.getResultSet('batch_test_string_key').then((result) => {
             console.info(TAG +'beforeEach getResultSet success');
             resultSet = result;
+            done();
           }).catch((err: BusinessError) => {
             console.error(TAG +'beforeEach getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
           });
         } catch (e) {
           let error = e as BusinessError;
           console.error(TAG +`An unexpected error occurred.code is ${error.code},message is ${error.message} `);
+          done();
         }
       }).catch((err: BusinessError) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
 
-      done();
+
     });
     afterEach(async (done:Function) =>  {
       console.info(TAG + 'afterEach');
@@ -114,20 +118,21 @@ export default function KVStoreResultSetReturnValue(){
         });
       }
 
-      kvStore = null;
-      await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded closeKVStore');
-      }).catch((err: BusinessError) => {
-        console.error(TAG + `afterEach Failed closeKVStore.code is ${err.code},message is ${err.message}`);
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
+        console.info('afterEach closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('afterEach deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err) => {
+            console.info('afterEach deleteKVStore err ' + err);
+            done();
+        });
+      }).catch((err) => {
+          console.info('afterEach closeKVStore err ' + err);
+          done();
       });
 
-      await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded deleteKVStore');
-        done();
-      }).catch((err: BusinessError) => {
-        console.error(TAG + `afterEach Failed deleteKVStore .code is ${err.code},message is ${err.message}`);
-        done();
-      });
     });
 
     afterAll(async (done:Function) => {
@@ -138,12 +143,13 @@ export default function KVStoreResultSetReturnValue(){
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0100
-     * @tc.desc getResultSet getCount
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0100
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -160,12 +166,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0200
-     * @tc.desc getResultSet getPosition
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0200
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet getPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -189,12 +196,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0300
-     * @tc.desc getResultSet is not null , moveToFirst return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0300
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is not null , moveToFirst return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -211,12 +219,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0400
-     * @tc.desc getResultSet is null , moveToFirst return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0400
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is null , moveToFirst return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let resultSet1 : factory.KVStoreResultSet | null = null;
@@ -242,12 +251,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0500
-     * @tc.desc getResultSet is not null , moveToLast return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0500
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is not null , moveToLast return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -264,12 +274,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0600
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0600
-     * @tc.desc getResultSet is null , moveToLast return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0600
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is null , moveToLast return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let resultSet1 : factory.KVStoreResultSet | null = null;
@@ -295,12 +306,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0700
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0700
-     * @tc.desc getResultSet is not null , moveToNext return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0700
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is not null , moveToNext return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -317,12 +329,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0800
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0800
-     * @tc.desc getResultSet is null , moveToNext return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0800
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is null , moveToNext return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let resultSet1 : factory.KVStoreResultSet | null = null;
@@ -348,12 +361,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest0900
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_0900
-     * @tc.desc getResultSet is not null , moveToPrevious return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest0900
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is not null , moveToPrevious return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -372,12 +386,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1000
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1000
-     * @tc.desc getResultSet is null , moveToPrevious return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1000
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet is null , moveToPrevious return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let resultSet1 : factory.KVStoreResultSet | null = null;
@@ -403,12 +418,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1100
-     * @tc.desc getResultSet not Exceeded the maximum , move return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1100
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet not Exceeded the maximum , move return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -425,12 +441,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1200
-     * @tc.desc getResultSet Exceeded the maximum , move return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1200
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet Exceeded the maximum , move return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -447,12 +464,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1300
-     * @tc.desc getResultSet Parameter error , move return 401
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1300
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet Parameter error , move return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -468,12 +486,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1400
-     * @tc.desc getResultSet not Exceeded the maximum , moveToPosition return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1400
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet not Exceeded the maximum , moveToPosition return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -490,12 +509,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1500
-     * @tc.desc getResultSet Exceeded the maximum , moveToPosition return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1500
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet Exceeded the maximum , moveToPosition return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -512,12 +532,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1600
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1600
-     * @tc.desc getResultSet param error , moveToPosition return 401
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1600
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet param error , moveToPosition return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -533,12 +554,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1700
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1700
-     * @tc.desc getResultSet isFirst , is First return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1700
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isFirst , is First return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -557,12 +579,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1800
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1800
-     * @tc.desc getResultSet isFirst , is not First return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1800
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isFirst , is not First return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -579,12 +602,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest1900
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_1900
-     * @tc.desc getResultSet isLast , is Last return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest1900
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isLast , is Last return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -603,12 +627,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest2000
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2000
-     * @tc.desc getResultSet isLast , is not Last return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest2000
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isLast , is not Last return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -625,12 +650,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest2100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2100
-     * @tc.desc getResultSet isBeforeFirst , is BeforeFirst return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest2100
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isBeforeFirst , is BeforeFirst return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -647,12 +673,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest2200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2200
-     * @tc.desc getResultSet isBeforeFirst , is not BeforeFirst return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest2200
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isBeforeFirst , is not BeforeFirst return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -671,12 +698,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest2300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2300
-     * @tc.desc getResultSet isAfterLast , is  AfterLast return true
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest2300
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isAfterLast , is  AfterLast return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -699,12 +727,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest2400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2400
-     * @tc.desc getResultSet isAfterLast , is not AfterLast return false
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest2400
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet isAfterLast , is not AfterLast return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {
@@ -723,12 +752,13 @@ export default function KVStoreResultSetReturnValue(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   DisKVResultReturnValueTest2500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVResultReturnValueTest_2500
-     * @tc.desc getResultSet getEntry
-     * @tc.type FUNC
-     * @tc.name DisKVResultReturnValueTest2500
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   getResultSet getEntry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DisKVResultReturnValueTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       if (resultSet !== null) {

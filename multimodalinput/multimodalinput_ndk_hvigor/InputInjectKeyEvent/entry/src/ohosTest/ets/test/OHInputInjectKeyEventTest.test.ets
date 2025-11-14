@@ -20,12 +20,13 @@ export default function ActsInputInjectKeyEventTest() {
   describe('ActsInputInjectKeyEventTest', () => {
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0100
-     * @tc.name    : SUB_Input_Inject_key_event_0100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0100
+     * @tc.number SUB_Input_Inject_key_event_0100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -41,12 +42,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0200
-     * @tc.name    : SUB_Input_Inject_key_event_0200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0200
+     * @tc.number SUB_Input_Inject_key_event_0200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -62,12 +64,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0300
-     * @tc.name    : SUB_Input_Inject_key_event_0300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0300
+     * @tc.number SUB_Input_Inject_key_event_0300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -83,12 +86,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0400
-     * @tc.name    : SUB_Input_Inject_key_event_0400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0400
+     * @tc.number SUB_Input_Inject_key_event_0400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -104,12 +108,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0500
-     * @tc.name    : SUB_Input_Inject_key_event_0500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0500
+     * @tc.number SUB_Input_Inject_key_event_0500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -125,12 +130,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0600
-     * @tc.name    : SUB_Input_Inject_key_event_0600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0600
+     * @tc.number SUB_Input_Inject_key_event_0600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -146,12 +152,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0700
-     * @tc.name    : SUB_Input_Inject_key_event_0700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0700
+     * @tc.number SUB_Input_Inject_key_event_0700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -167,12 +174,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0800
-     * @tc.name    : SUB_Input_Inject_key_event_0800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0800
+     * @tc.number SUB_Input_Inject_key_event_0800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -188,12 +196,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_0900
-     * @tc.name    : SUB_Input_Inject_key_event_0900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_0900
+     * @tc.number SUB_Input_Inject_key_event_0900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -209,12 +218,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1000
-     * @tc.name    : SUB_Input_Inject_key_event_1000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1000
+     * @tc.number SUB_Input_Inject_key_event_1000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -230,12 +240,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1100
-     * @tc.name    : SUB_Input_Inject_key_event_1100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1100
+     * @tc.number SUB_Input_Inject_key_event_1100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -251,12 +262,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1200
-     * @tc.name    : SUB_Input_Inject_key_event_1200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1200
+     * @tc.number SUB_Input_Inject_key_event_1200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -272,12 +284,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1300
-     * @tc.name    : SUB_Input_Inject_key_event_1300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1300
+     * @tc.number SUB_Input_Inject_key_event_1300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -293,12 +306,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1400
-     * @tc.name    : SUB_Input_Inject_key_event_1400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1400
+     * @tc.number SUB_Input_Inject_key_event_1400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -314,12 +328,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1500
-     * @tc.name    : SUB_Input_Inject_key_event_1500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1500
+     * @tc.number SUB_Input_Inject_key_event_1500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -335,12 +350,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1600
-     * @tc.name    : SUB_Input_Inject_key_event_1600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1600
+     * @tc.number SUB_Input_Inject_key_event_1600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -356,12 +372,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1800
-     * @tc.name    : SUB_Input_Inject_key_event_1800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1800
+     * @tc.number SUB_Input_Inject_key_event_1800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -377,12 +394,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_1900
-     * @tc.name    : SUB_Input_Inject_key_event_1900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_1900
+     * @tc.number SUB_Input_Inject_key_event_1900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -398,12 +416,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2000
-     * @tc.name    : SUB_Input_Inject_key_event_2000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2000
+     * @tc.number SUB_Input_Inject_key_event_2000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -419,12 +438,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2100
-     * @tc.name    : SUB_Input_Inject_key_event_2100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2100
+     * @tc.number SUB_Input_Inject_key_event_2100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -440,12 +460,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2200
-     * @tc.name    : SUB_Input_Inject_key_event_2200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2200
+     * @tc.number SUB_Input_Inject_key_event_2200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -461,12 +482,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2300
-     * @tc.name    : SUB_Input_Inject_key_event_2300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2300
+     * @tc.number SUB_Input_Inject_key_event_2300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -482,12 +504,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2400
-     * @tc.name    : SUB_Input_Inject_key_event_2400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2400
+     * @tc.number SUB_Input_Inject_key_event_2400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -504,12 +527,13 @@ export default function ActsInputInjectKeyEventTest() {
 
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2500
-     * @tc.name    : SUB_Input_Inject_key_event_2500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2500
+     * @tc.number SUB_Input_Inject_key_event_2500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -525,12 +549,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2600
-     * @tc.name    : SUB_Input_Inject_key_event_2600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2600
+     * @tc.number SUB_Input_Inject_key_event_2600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -546,12 +571,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2700
-     * @tc.name    : SUB_Input_Inject_key_event_2700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2700
+     * @tc.number SUB_Input_Inject_key_event_2700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -567,12 +593,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2800
-     * @tc.name    : SUB_Input_Inject_key_event_2800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2800
+     * @tc.number SUB_Input_Inject_key_event_2800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -588,12 +615,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_2900
-     * @tc.name    : SUB_Input_Inject_key_event_2900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_2900
+     * @tc.number SUB_Input_Inject_key_event_2900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -609,12 +637,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3000
-     * @tc.name    : SUB_Input_Inject_key_event_3000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3000
+     * @tc.number SUB_Input_Inject_key_event_3000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -630,12 +659,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3100
-     * @tc.name    : SUB_Input_Inject_key_event_3100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3100
+     * @tc.number SUB_Input_Inject_key_event_3100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -651,12 +681,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3200
-     * @tc.name    : SUB_Input_Inject_key_event_3200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3200
+     * @tc.number SUB_Input_Inject_key_event_3200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -672,12 +703,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3300
-     * @tc.name    : SUB_Input_Inject_key_event_3300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3300
+     * @tc.number SUB_Input_Inject_key_event_3300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -693,12 +725,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3400
-     * @tc.name    : SUB_Input_Inject_key_event_3400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3400
+     * @tc.number SUB_Input_Inject_key_event_3400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -714,12 +747,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3500
-     * @tc.name    : SUB_Input_Inject_key_event_3500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3500
+     * @tc.number SUB_Input_Inject_key_event_3500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -735,12 +769,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3600
-     * @tc.name    : SUB_Input_Inject_key_event_3600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3600
+     * @tc.number SUB_Input_Inject_key_event_3600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -756,12 +791,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3700
-     * @tc.name    : SUB_Input_Inject_key_event_3700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3700
+     * @tc.number SUB_Input_Inject_key_event_3700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -777,12 +813,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3800
-     * @tc.name    : SUB_Input_Inject_key_event_3800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3800
+     * @tc.number SUB_Input_Inject_key_event_3800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -798,12 +835,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_3900
-     * @tc.name    : SUB_Input_Inject_key_event_3900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_3900
+     * @tc.number SUB_Input_Inject_key_event_3900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -819,12 +857,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4000
-     * @tc.name    : SUB_Input_Inject_key_event_4000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4000
+     * @tc.number SUB_Input_Inject_key_event_4000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -840,12 +879,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4100
-     * @tc.name    : SUB_Input_Inject_key_event_4100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4100
+     * @tc.number SUB_Input_Inject_key_event_4100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -861,12 +901,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4200
-     * @tc.name    : SUB_Input_Inject_key_event_4200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4200
+     * @tc.number SUB_Input_Inject_key_event_4200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -882,12 +923,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4300
-     * @tc.name    : SUB_Input_Inject_key_event_4300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4300
+     * @tc.number SUB_Input_Inject_key_event_4300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -904,12 +946,13 @@ export default function ActsInputInjectKeyEventTest() {
 
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4400
-     * @tc.name    : SUB_Input_Inject_key_event_4400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4400
+     * @tc.number SUB_Input_Inject_key_event_4400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -926,12 +969,13 @@ export default function ActsInputInjectKeyEventTest() {
 
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4500
-     * @tc.name    : SUB_Input_Inject_key_event_4500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4500
+     * @tc.number SUB_Input_Inject_key_event_4500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -947,12 +991,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4600
-     * @tc.name    : SUB_Input_Inject_key_event_4600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4600
+     * @tc.number SUB_Input_Inject_key_event_4600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -968,12 +1013,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4700
-     * @tc.name    : SUB_Input_Inject_key_event_4700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4700
+     * @tc.number SUB_Input_Inject_key_event_4700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -989,12 +1035,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4800
-     * @tc.name    : SUB_Input_Inject_key_event_4800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4800
+     * @tc.number SUB_Input_Inject_key_event_4800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1010,12 +1057,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_4900
-     * @tc.name    : SUB_Input_Inject_key_event_4900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_4900
+     * @tc.number SUB_Input_Inject_key_event_4900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1031,12 +1079,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5000
-     * @tc.name    : SUB_Input_Inject_key_event_5000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5000
+     * @tc.number SUB_Input_Inject_key_event_5000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1052,12 +1101,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5100
-     * @tc.name    : SUB_Input_Inject_key_event_5100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5100
+     * @tc.number SUB_Input_Inject_key_event_5100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1073,12 +1123,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5200
-     * @tc.name    : SUB_Input_Inject_key_event_5200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5200
+     * @tc.number SUB_Input_Inject_key_event_5200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1094,12 +1145,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5300
-     * @tc.name    : SUB_Input_Inject_key_event_5300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5300
+     * @tc.number SUB_Input_Inject_key_event_5300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1115,12 +1167,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5400
-     * @tc.name    : SUB_Input_Inject_key_event_5400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5400
+     * @tc.number SUB_Input_Inject_key_event_5400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1136,12 +1189,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5500
-     * @tc.name    : SUB_Input_Inject_key_event_5500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5500
+     * @tc.number SUB_Input_Inject_key_event_5500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1157,12 +1211,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5600
-     * @tc.name    : SUB_Input_Inject_key_event_5600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5600
+     * @tc.number SUB_Input_Inject_key_event_5600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1178,12 +1233,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5700
-     * @tc.name    : SUB_Input_Inject_key_event_5700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5700
+     * @tc.number SUB_Input_Inject_key_event_5700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1199,12 +1255,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5800
-     * @tc.name    : SUB_Input_Inject_key_event_5800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5800
+     * @tc.number SUB_Input_Inject_key_event_5800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1220,12 +1277,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_5900
-     * @tc.name    : SUB_Input_Inject_key_event_5900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_5900
+     * @tc.number SUB_Input_Inject_key_event_5900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1241,12 +1299,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6000
-     * @tc.name    : SUB_Input_Inject_key_event_6000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6000
+     * @tc.number SUB_Input_Inject_key_event_6000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1262,12 +1321,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6100
-     * @tc.name    : SUB_Input_Inject_key_event_6100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6100
+     * @tc.number SUB_Input_Inject_key_event_6100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1283,12 +1343,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6200
-     * @tc.name    : SUB_Input_Inject_key_event_6200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6200
+     * @tc.number SUB_Input_Inject_key_event_6200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1304,12 +1365,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6300
-     * @tc.name    : SUB_Input_Inject_key_event_6300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6300
+     * @tc.number SUB_Input_Inject_key_event_6300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1325,12 +1387,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6400
-     * @tc.name    : SUB_Input_Inject_key_event_6400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6400
+     * @tc.number SUB_Input_Inject_key_event_6400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1346,12 +1409,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6500
-     * @tc.name    : SUB_Input_Inject_key_event_6500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6500
+     * @tc.number SUB_Input_Inject_key_event_6500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1367,12 +1431,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6600
-     * @tc.name    : SUB_Input_Inject_key_event_6600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6600
+     * @tc.number SUB_Input_Inject_key_event_6600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1388,12 +1453,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6700
-     * @tc.name    : SUB_Input_Inject_key_event_6700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6700
+     * @tc.number SUB_Input_Inject_key_event_6700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1409,12 +1475,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6800
-     * @tc.name    : SUB_Input_Inject_key_event_6800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6800
+     * @tc.number SUB_Input_Inject_key_event_6800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1430,12 +1497,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_6900
-     * @tc.name    : SUB_Input_Inject_key_event_6900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_6900
+     * @tc.number SUB_Input_Inject_key_event_6900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1451,12 +1519,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7000
-     * @tc.name    : SUB_Input_Inject_key_event_7000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7000
+     * @tc.number SUB_Input_Inject_key_event_7000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1472,12 +1541,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7100
-     * @tc.name    : SUB_Input_Inject_key_event_7100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7100
+     * @tc.number SUB_Input_Inject_key_event_7100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1493,12 +1563,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7200
-     * @tc.name    : SUB_Input_Inject_key_event_7200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7200
+     * @tc.number SUB_Input_Inject_key_event_7200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1514,12 +1585,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7300
-     * @tc.name    : SUB_Input_Inject_key_event_7300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7300
+     * @tc.number SUB_Input_Inject_key_event_7300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1535,12 +1607,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7400
-     * @tc.name    : SUB_Input_Inject_key_event_7400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7400
+     * @tc.number SUB_Input_Inject_key_event_7400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1556,12 +1629,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7500
-     * @tc.name    : SUB_Input_Inject_key_event_7500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7500
+     * @tc.number SUB_Input_Inject_key_event_7500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1578,12 +1652,13 @@ export default function ActsInputInjectKeyEventTest() {
 
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7600
-     * @tc.name    : SUB_Input_Inject_key_event_7600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7600
+     * @tc.number SUB_Input_Inject_key_event_7600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1599,12 +1674,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7700
-     * @tc.name    : SUB_Input_Inject_key_event_7700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7700
+     * @tc.number SUB_Input_Inject_key_event_7700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1620,12 +1696,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7800
-     * @tc.name    : SUB_Input_Inject_key_event_7800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7800
+     * @tc.number SUB_Input_Inject_key_event_7800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1641,12 +1718,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_7900
-     * @tc.name    : SUB_Input_Inject_key_event_7900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_7900
+     * @tc.number SUB_Input_Inject_key_event_7900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1662,12 +1740,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8000
-     * @tc.name    : SUB_Input_Inject_key_event_8000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8000
+     * @tc.number SUB_Input_Inject_key_event_8000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1683,12 +1762,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8100
-     * @tc.name    : SUB_Input_Inject_key_event_8100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8100
+     * @tc.number SUB_Input_Inject_key_event_8100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1704,12 +1784,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8200
-     * @tc.name    : SUB_Input_Inject_key_event_8200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8200
+     * @tc.number SUB_Input_Inject_key_event_8200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1725,12 +1806,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8300
-     * @tc.name    : SUB_Input_Inject_key_event_8300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8300
+     * @tc.number SUB_Input_Inject_key_event_8300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1746,12 +1828,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8400
-     * @tc.name    : SUB_Input_Inject_key_event_8400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8400
+     * @tc.number SUB_Input_Inject_key_event_8400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1767,12 +1850,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8500
-     * @tc.name    : SUB_Input_Inject_key_event_8500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8500
+     * @tc.number SUB_Input_Inject_key_event_8500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1788,12 +1872,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8600
-     * @tc.name    : SUB_Input_Inject_key_event_8600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8600
+     * @tc.number SUB_Input_Inject_key_event_8600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1809,12 +1894,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8700
-     * @tc.name    : SUB_Input_Inject_key_event_8700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8700
+     * @tc.number SUB_Input_Inject_key_event_8700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1830,12 +1916,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8800
-     * @tc.name    : SUB_Input_Inject_key_event_8800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8800
+     * @tc.number SUB_Input_Inject_key_event_8800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1851,12 +1938,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_8900
-     * @tc.name    : SUB_Input_Inject_key_event_8900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_8900
+     * @tc.number SUB_Input_Inject_key_event_8900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1872,12 +1960,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_9000
-     * @tc.name    : SUB_Input_Inject_key_event_9000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_9000
+     * @tc.number SUB_Input_Inject_key_event_9000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1893,12 +1982,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_9100
-     * @tc.name    : SUB_Input_Inject_key_event_9100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_9100
+     * @tc.number SUB_Input_Inject_key_event_9100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1914,12 +2004,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_9200
-     * @tc.name    : SUB_Input_Inject_key_event_9200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_9200
+     * @tc.number SUB_Input_Inject_key_event_9200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1935,12 +2026,13 @@ export default function ActsInputInjectKeyEventTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_9300
-     * @tc.name    : SUB_Input_Inject_key_event_9300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_9300
+     * @tc.number SUB_Input_Inject_key_event_9300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -1957,12 +2049,13 @@ export default function ActsInputInjectKeyEventTest() {
 
 
     /**
-     * @tc.number  : SUB_Input_Inject_key_event_9400
-     * @tc.name    : SUB_Input_Inject_key_event_9400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_Input_Inject_key_event_9400
+     * @tc.number SUB_Input_Inject_key_event_9400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_key_event_9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

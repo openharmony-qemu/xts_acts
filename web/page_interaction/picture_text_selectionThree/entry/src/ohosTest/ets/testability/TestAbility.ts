@@ -36,7 +36,7 @@ export default class MainAbility extends Ability {
     console.log('[Demo] MainAbility onWindowStageCreate windowStage=' + windowStage);
     globalThis.windowStage = windowStage;
     globalThis.abilityContext = this.context;
-    windowStage.setUIContent(this.context, 'testability/pages/WebViewContextMenuMediaType', null);
+    windowStage.setUIContent(this.context, 'testability/pages/WebViewIsCapture', null);
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {
       let errCode: number = err.code;

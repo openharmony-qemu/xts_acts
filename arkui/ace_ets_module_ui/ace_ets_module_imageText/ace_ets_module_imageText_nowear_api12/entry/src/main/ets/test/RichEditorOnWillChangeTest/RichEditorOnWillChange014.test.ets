@@ -123,7 +123,7 @@ export default function RichEditorOnWillChange014() {
       await CommonFunc.sleep(500);
 
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
-      int_callback_status.click();
+      await int_callback_status.click();
       await CommonFunc.sleep(500);
 
       onDidBefore = await onDidChange_rangeBefore.getText();

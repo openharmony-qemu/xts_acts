@@ -321,8 +321,9 @@ function toNextStep(avPlayer: media.AVPlayer | undefined, config: PreDownConfig,
 }
 
 function getFd(path: string) {
-  mgr = globalThis.getContext()!!.resourceManager;
-  fileDescriptor = mgr.getRawFdSync(path);
+  mediaTestBase.getFileDescriptorFromFileDir(VIDEO_SOURCE, () => {}).then((res: media.AVFileDescriptor) => {
+    fileDescriptor = { fd: res!.fd } as resourceManager.RawFileDescriptor;
+  });
 }
 
 export default function PreDownLoadTest() {
@@ -347,7 +348,7 @@ export default function PreDownLoadTest() {
     afterEach(() => { })
     afterAll(() => {
       if (fileDescriptor) {
-        mgr.closeRawFdSync(VIDEO_SOURCE);
+        fs.closeSync(fileDescriptor!.fd);
       }
     })
 

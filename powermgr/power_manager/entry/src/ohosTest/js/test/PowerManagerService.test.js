@@ -41,12 +41,13 @@ export default function PowerManagerServiceTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0100
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0010
-     * @tc.name testPowerManagerServiceTest_0100
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0100';
@@ -63,12 +64,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0200
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0020
-     * @tc.name testPowerManagerServiceTest_0200
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0200';
@@ -85,12 +87,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0300
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0030
-     * @tc.name testPowerManagerServiceTest_0300
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0300';
@@ -105,12 +108,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0400
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0040
-     * @tc.name testPowerManagerServiceTest_0400
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0400';
@@ -127,12 +131,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0500
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0050
-     * @tc.name testPowerManagerServiceTest_0500
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0500';
@@ -146,12 +151,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0600
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0060
-     * @tc.name testPowerManagerServiceTest_0600
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0600';
@@ -165,12 +171,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0700
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0070
-     * @tc.name testPowerManagerServiceTest_0700
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0700';
@@ -184,12 +191,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0800
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0080
-     * @tc.name testPowerManagerServiceTest_0800
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0800';
@@ -203,12 +211,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_0900
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0090
-     * @tc.name testPowerManagerServiceTest_0900
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_0900';
@@ -222,12 +231,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_1000
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0100
-     * @tc.name testPowerManagerServiceTest_1000
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_1000';
@@ -241,12 +251,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_1100
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0110
-     * @tc.name testPowerManagerServiceTest_1100
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_1100';
@@ -260,12 +271,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_1200
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0120
-     * @tc.name testPowerManagerServiceTest_1200
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_1200';
@@ -283,12 +295,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_1300
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0130
-     * @tc.name testPowerManagerServiceTest_1300
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_1300';
@@ -310,12 +323,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_1400
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0140
-     * @tc.name testPowerManagerServiceTest_1400
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_1400';
@@ -329,12 +343,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerManagerServiceTest_1500
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0150
-     * @tc.name testPowerManagerServiceTest_1500
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerManagerServiceTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'PowerManagerServiceTest_1500';
@@ -348,12 +363,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerManagerServiceTest_1600
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0160
-     * @tc.name testPowerManagerServiceTest_1600
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPowerManagerServiceTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'testPowerManagerServiceTest_1600';
@@ -367,12 +383,13 @@ export default function PowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPowerManagerServiceTest_1700
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0170
-     * @tc.name testPowerManagerServiceTest_1700
-     * @tc.desc PowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   PowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPowerManagerServiceTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'testPowerManagerServiceTest_1700';

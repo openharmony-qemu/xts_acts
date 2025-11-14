@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import statistics from '@ohos.net.statistics';
+import wantAgent, { WantAgent } from '@ohos.app.ability.wantAgent';
 
 export default function requestConfigSavesTest() {
   describe('requestConfigSavesTest', () => {
@@ -2873,6 +2874,116 @@ export default function requestConfigSavesTest() {
         console.info("====>SUB_Request_Download_visibility_2100 deleteGroup success");
       } catch (err) {
         console.info("====>SUB_Request_Download_visibility_2100 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
+     * @tc.number: SUB_Request_Agent_NotificationrJumping_0800
+     * @tc.name: SUB_Request_Agent_NotificationrJumping_0800
+     * @tc.desc: wantAgent test.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it('SUB_Request_Agent_NotificationrJumping_0800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Agent_NotificationrJumping_0800 is starting-----------------------");
+      let wantAgentInfo: wantAgent.WantAgentInfo = {
+        wants: [
+          {
+            deviceId: '',
+            bundleName: 'com.acts.newRequestAuthority.test',
+            abilityName: 'TestAbility',
+            action: '',
+            entities: [],
+            uri: '',
+            parameters: {}
+          }
+        ],
+        actionType: wantAgent.OperationType.START_ABILITY,
+        requestCode: 0,
+        wantAgentFlags:[wantAgent.WantAgentFlags.CONSTANT_FLAG]
+      };
+      let notification: request.agent.Notification = {
+        wantAgent: await wantAgent.getWantAgent(wantAgentInfo)
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Agent_NotificationrJumping_0800.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0800 create success");
+        let completed = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed');
+            console.info("====>SUB_Request_Agent_NotificationrJumping_0800 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Agent_NotificationrJumping_0800 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', completed)
+        await task.start();
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0800 task.start");
+      } catch (err) {
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0800 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /*
+     * @tc.number: SUB_Request_Agent_NotificationrJumping_0900
+     * @tc.name: SUB_Request_Agent_NotificationrJumping_0900
+     * @tc.desc: wantAgent is undefined.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 3
+     */
+    it('SUB_Request_Agent_NotificationrJumping_0900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Agent_NotificationrJumping_0900 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        wantAgent: undefined
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Agent_NotificationrJumping_0900.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0900 create success");
+        let completed = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed');
+            console.info("====>SUB_Request_Agent_NotificationrJumping_0900 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Agent_NotificationrJumping_0900 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.on('completed', completed)
+        await task.start();
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0900 task.start");
+      } catch (err) {
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0900 create catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

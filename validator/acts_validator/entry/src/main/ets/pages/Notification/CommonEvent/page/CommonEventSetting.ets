@@ -48,6 +48,7 @@ struct CommonEventSetting {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '25vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -188,6 +189,7 @@ struct CommonEventSetting {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '25vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

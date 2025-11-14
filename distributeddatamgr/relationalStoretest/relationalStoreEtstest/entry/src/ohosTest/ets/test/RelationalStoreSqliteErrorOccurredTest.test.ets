@@ -72,9 +72,13 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbStoreOnsqliteErrorOccurred0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0100
-     * @tc.name testRdbStoreOnsqliteErrorOccurred0001
-     * @tc.desc 1.create db 2.close db 3.OnsqliteErrorOccurred
+     * @tc.desc   1.create db 2.close db 3.OnsqliteErrorOccurred
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreOnsqliteErrorOccurred0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0001 start *************");
@@ -95,9 +99,13 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbStoreOnsqliteErrorOccurred0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0200
-     * @tc.name testRdbStoreOnsqliteErrorOccurred0002
-     * @tc.desc 1.OnsqliteErrorOccurred 2.execute sql with SQLITE_ERROR
+     * @tc.desc   1.OnsqliteErrorOccurred 2.execute sql with SQLITE_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreOnsqliteErrorOccurred0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0002 start *************");
@@ -139,9 +147,13 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbStoreOnsqliteErrorOccurred0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0300
-     * @tc.name testRdbStoreOnsqliteErrorOccurred0003
-     * @tc.desc 1.Insert data
+     * @tc.desc   1.Insert data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreOnsqliteErrorOccurred0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0003 start *************");
@@ -188,9 +200,13 @@ export default function rdbStoreSqliteErrorOccurredTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbStoreOnsqliteErrorOccurred0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0500
-     * @tc.name testRdbStoreOnsqliteErrorOccurred0005
-     * @tc.desc 1.Insert data
+     * @tc.desc   1.Insert data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreOnsqliteErrorOccurred0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0005 start *************");
@@ -225,10 +241,14 @@ export default function rdbStoreSqliteErrorOccurredTest() {
       }
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0005 end *************");
     })
-	/**
+    /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   testRdbStoreOnsqliteErrorOccurred0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_onSqliteErrorOccurredJsAPITest_0600
-     * @tc.name testRdbStoreOnsqliteErrorOccurred0006
-     * @tc.desc 1.create db 2.close db 3.OffsqliteErrorOccurred
+     * @tc.desc   1.create db 2.close db 3.OffsqliteErrorOccurred
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreOnsqliteErrorOccurred0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreOnsqliteErrorOccurred0006 start *************");

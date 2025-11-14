@@ -149,12 +149,13 @@ export default function rdbStoreCorruptJSunitTest() {
         console.log(TAG + "*************JS Test Begin*************");
 
         /**
-         * @tc.name the rebuilt function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltTest001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0100
-         * @tc.desc rebuild the database while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rebuild the database while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* rebuiltTest001 start *************");
@@ -188,12 +189,13 @@ export default function rdbStoreCorruptJSunitTest() {
         })
 
         /**
-         * @tc.name the insert function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltInsertTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0200
-         * @tc.desc insert while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   insert while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltInsertTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* rebuiltInsertTest0001 start *************");
@@ -217,12 +219,13 @@ export default function rdbStoreCorruptJSunitTest() {
         })
 
         /**
-         * @tc.name the batchInsert function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltBatchInsertTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0300
-         * @tc.desc batchInsert while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   batchInsert while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltBatchInsertTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* rebuiltBatchInsertTest0001 start *************");
@@ -245,12 +248,13 @@ export default function rdbStoreCorruptJSunitTest() {
         })
 
         /**
-         * @tc.name the update function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltUpdateTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0400
-         * @tc.desc update while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   update while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltUpdateTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* rebuiltUpdateTest0001 start *************");
@@ -277,12 +281,13 @@ export default function rdbStoreCorruptJSunitTest() {
         })
 
         /**
-         * @tc.name the delete function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltDeleteTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0500
-         * @tc.desc delete while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   delete while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltDeleteTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* rebuiltDeleteTest0001 start *************");
@@ -302,12 +307,13 @@ export default function rdbStoreCorruptJSunitTest() {
         })
 
         /**
-         * @tc.name the execute function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltExecuteTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0600
-         * @tc.desc execute while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   execute while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltExecuteTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* rebuiltExecuteTest0001 start *************");
@@ -324,12 +330,13 @@ export default function rdbStoreCorruptJSunitTest() {
         })
 
         /**
-         * @tc.name the executeSql function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltExecuteSqlTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0700
-         * @tc.desc executeSql while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   executeSql while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltExecuteSqlTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "************* rebuiltExecuteSqlTest0001 start *************");
@@ -347,12 +354,13 @@ export default function rdbStoreCorruptJSunitTest() {
         })
 
         /**
-         * @tc.name the Repaired function
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   RepairedTest001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuildEtsAPITest_0100
-         * @tc.desc Repaired the database while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   Repaired the database while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('RepairedTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.log(TAG + "************* RepairedTest001 start *************");
@@ -367,12 +375,13 @@ export default function rdbStoreCorruptJSunitTest() {
             console.log(TAG + "************* RepairedTest001 end *************");
         })
         /**
-         * @tc.name rebuiltTest002
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   rebuiltTest002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_1000
-         * @tc.desc rebuild the database while corrupt
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   rebuild the database while corrupt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('rebuiltTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
             console.log(TAG + "************* rebuiltTest002 start *************");

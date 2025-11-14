@@ -16,7 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { webview } from '@kit.ArkWeb';
-
+import web_webview from '@ohos.web.webview';
 const EVENT_ID_SET_EMIT_KEY = 110650;
 
 class myInstance {
@@ -375,6 +375,20 @@ struct webViewContCreatePdfAndOthersError {
                 this.errorMsg = error.message;
                 Utils.emitEvent(this.errorCode, 111100)
                 Utils.emitEvent(this.errorMsg, 111110)
+              }
+              break;
+            }
+
+            case 'emitSetSiteIsolationModeErr': {
+              try {
+                web_webview.WebviewController.setSiteIsolationMode(web_webview.SiteIsolationMode.PARTIAL)
+                web_webview.WebviewController.setSiteIsolationMode(web_webview.SiteIsolationMode.STRICT);
+              } catch (error) {
+                console.error(`emitSetSiteIsolationModeErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+                Utils.emitEvent(this.errorCode, 20151203)
+                Utils.emitEvent(this.errorMsg, 20151204)
               }
               break;
             }

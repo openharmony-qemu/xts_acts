@@ -364,15 +364,15 @@ export default function SensorJsStaticTest() {
           sensorIndex: 0
         }
         try {
-          sensor.on('orientationChange', callback, {'interval': 100000000});
+          sensor.onOrientationChange(callback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off in--------------');
-            sensor.off('orientationChange', InfoParam);
+            sensor.offOrientationChange(InfoParam);
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_005 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `orientating_SensorJsTest_static_005 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -393,15 +393,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006--------------');
         await isAvailable(sensor.SensorId.ORIENTATION);
         try {
-          sensor.on('orientationChange', onSensorCallback, {'interval': 100000000});
+          sensor.onOrientationChange(onSensorCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006 off in--------------');
-            sensor.off('orientationChange');
+            sensor.offOrientationChange();
             hilog.info(0x0000, 'testTag', '---------orientating_SensorJsTest_static_006 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `orientating_SensorJsTest_static_006 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -422,7 +422,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------orientatingParamError_SensorJsTest_static_050--------------');
         await isAvailable(sensor.SensorId.ORIENTATION);
         try {
-          sensor.on('orientationChange', onSensorCallback, {'interval': -100000000});
+          sensor.onOrientationChange(onSensorCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -437,7 +437,7 @@ export default function SensorJsStaticTest() {
         }
       })
 
-     /**
+    /**
       * @tc.name   paramTest_SensorJsTest_static_073
       * @tc.desc   Verification results of the incorrect parameters of the test interface.
       * @tc.number SUB_SensorsSystem_static_JsTest_0730
@@ -464,7 +464,7 @@ export default function SensorJsStaticTest() {
           hilog.info(0x0000, 'testTag', `orientatingParamError_SensorJsTest_static_050 failed error.code: ${e.code} , error.message: ${e.message}`);
           expect(false).assertTrue();
           done();
-        }  
+        }
       })
 
     /**
@@ -488,7 +488,7 @@ export default function SensorJsStaticTest() {
             done();
           });
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', ' getRotationMatrix_SensorJsTest_static_001 fail, errCode:' + e.code);
           if (e.code == 401) {
             expect(e.code == 401).assertTrue();
@@ -515,7 +515,7 @@ export default function SensorJsStaticTest() {
           expect(promise != null).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', ' getRotationMatrix_SensorJsTest_static_001 fail, errCode:' + e.code);
           if (e.code == 401) {
             expect(e.code == 401).assertTrue();
@@ -525,7 +525,7 @@ export default function SensorJsStaticTest() {
           done();
         }
       })
-    
+
     /**
      * @tc.name   getOrientation_SensorJsTest_static_002
      * @tc.desc   Verification results of the incorrect parameters of the test interface.
@@ -611,7 +611,7 @@ export default function SensorJsStaticTest() {
           done();
         }
       })
-    
+
     /**
      * @tc.name    getSensorList_SensorJsTest_static_004
      * @tc.desc    Verification results of the incorrect parameters of the test interface.
@@ -644,16 +644,16 @@ export default function SensorJsStaticTest() {
         try {
           let data: Array<sensor.Sensor> = await sensor.getSensorList();
           hilog.info(0x0000, 'testTag', ' Succeeded in getting GetSensorList: ' + JSON.stringify(data));
-          expect(typeof(data[0].sensorName) == 'string').assertTrue();
-          expect(typeof(data[0].vendorName) == 'string').assertTrue();
-          expect(typeof(data[0].firmwareVersion) == 'string').assertTrue();
-          expect(typeof(data[0].hardwareVersion) == 'string').assertTrue();
-          expect(typeof(data[0].sensorId) == 'number').assertTrue();
-          expect(typeof(data[0].maxRange) == 'number').assertTrue();
-          expect(typeof(data[0].minSamplePeriod	) == 'number').assertTrue();
-          expect(typeof(data[0].maxSamplePeriod) == 'number').assertTrue();
-          expect(typeof(data[0].precision	) == 'number').assertTrue();
-          expect(typeof(data[0].power) == 'number').assertTrue();
+          expect(typeof (data[0].sensorName) == 'string').assertTrue();
+          expect(typeof (data[0].vendorName) == 'string').assertTrue();
+          expect(typeof (data[0].firmwareVersion) == 'string').assertTrue();
+          expect(typeof (data[0].hardwareVersion) == 'string').assertTrue();
+          expect(typeof (data[0].sensorId) == 'number').assertTrue();
+          expect(typeof (data[0].maxRange) == 'number').assertTrue();
+          expect(typeof (data[0].minSamplePeriod) == 'number').assertTrue();
+          expect(typeof (data[0].maxSamplePeriod) == 'number').assertTrue();
+          expect(typeof (data[0].precision) == 'number').assertTrue();
+          expect(typeof (data[0].power) == 'number').assertTrue();
           done();
         } catch (error) {
           hilog.info(0x0000, 'testTag', ' GetSensorList fail, errCode:' + error);
@@ -672,15 +672,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------hall_SensorJsTest_static_007--------------');
         await isAvailable(sensor.SensorId.HALL);
         try {
-          sensor.on('hallChange', onHallCallback, {'interval': 100000000});
+          sensor.onHallChange(onHallCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------hall_SensorJsTest_static_007 off in--------------');
-            sensor.off('hallChange');
+            sensor.offHallChange();
             hilog.info(0x0000, 'testTag', '---------hall_SensorJsTest_static_007 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `hall_SensorJsTest_static_007 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -701,15 +701,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientLight_SensorJsTest_static_008--------------');
         await isAvailable(sensor.SensorId.AMBIENT_LIGHT);
         try {
-          sensor.on('ambientLightChange', onAmbientLightCallback, {'interval': 100000000});
+          sensor.onAmbientLightChange(onAmbientLightCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------ambientLight_SensorJsTest_static_008 off in--------------');
-            sensor.off('ambientLightChange');
+            sensor.offAmbientLightChange();
             hilog.info(0x0000, 'testTag', '---------ambientLight_SensorJsTest_static_008 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientLight_SensorJsTest_static_008 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -730,15 +730,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------proximity_SensorJsTest_static_009--------------');
         await isAvailable(sensor.SensorId.PROXIMITY);
         try {
-          sensor.on('proximityChange', onProximityCallback, {'interval': 100000000});
+          sensor.onProximityChange(onProximityCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------proximity_SensorJsTest_static_009 off in--------------');
-            sensor.off('proximityChange');
+            sensor.offProximityChange();
             hilog.info(0x0000, 'testTag', '---------proximity_SensorJsTest_static_009 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `proximity_SensorJsTest_static_009 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -759,15 +759,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------wearDetection_SensorJsTest_static_010--------------');
         await isAvailable(sensor.SensorId.WEAR_DETECTION);
         try {
-          sensor.on('wearDetectionChange', onWearDetectionCallback, {'interval': 100000000});
+          sensor.onWearDetectionChange(onWearDetectionCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------wearDetection_SensorJsTest_static_010 off in--------------');
-            sensor.off('wearDetectionChange');
+            sensor.offWearDetectionChange();
             hilog.info(0x0000, 'testTag', '---------wearDetection_SensorJsTest_static_010 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `wearDetection_SensorJsTest_static_010 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -788,15 +788,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------significantMotion_SensorJsTest_static_011--------------');
         await isAvailable(sensor.SensorId.SIGNIFICANT_MOTION);
         try {
-          sensor.on('significantMotionChange', onSignificantMotionCallback, {'interval': 100000000});
+          sensor.onSignificantMotionChange(onSignificantMotionCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------significantMotion_SensorJsTest_static_011 off in--------------');
-            sensor.off('significantMotionChange');
+            sensor.offSignificantMotionChange();
             hilog.info(0x0000, 'testTag', '---------significantMotion_SensorJsTest_static_011 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `significantMotion_SensorJsTest_static_011 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -817,15 +817,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------rotationVector_SensorJsTest_static_012--------------');
         await isAvailable(sensor.SensorId.ROTATION_VECTOR);
         try {
-          sensor.on('rotationVectorChange', onRotationVectorCallback, {'interval': 100000000});
+          sensor.onRotationVectorChange(onRotationVectorCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------rotationVector_SensorJsTest_static_012 off in--------------');
-            sensor.off('rotationVectorChange');
+            sensor.offRotationVectorChange();
             hilog.info(0x0000, 'testTag', '---------rotationVector_SensorJsTest_static_012 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `rotationVector_SensorJsTest_static_012 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -846,16 +846,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerDetection_SensorJsTest_static_013--------------');
         await isAvailable(sensor.SensorId.PEDOMETER_DETECTION);
         try {
-          sensor.on('pedometerDetectionChange', onPedometerDetectionCallback, {'interval': 100000000});
+          sensor.onPedometerDetectionChange(onPedometerDetectionCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------pedometerDetection_SensorJsTest_static_013 off in--------------');
-            sensor.off('pedometerDetectionChange');
+            sensor.offPedometerDetectionChange();
             hilog.info(0x0000, 'testTag', '---------pedometerDetection_SensorJsTest_static_013 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerDetection_SensorJsTest_static_013 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -876,16 +876,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometer_SensorJsTest_static_014--------------');
         await isAvailable(sensor.SensorId.PEDOMETER);
         try {
-          sensor.on('pedometerChange', onPedometerCallback, {'interval': 100000000});
+          sensor.onPedometerChange(onPedometerCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------pedometer_SensorJsTest_static_014 off in--------------');
-            sensor.off('pedometerChange');
+            sensor.offPedometerChange();
             hilog.info(0x0000, 'testTag', '---------pedometer_SensorJsTest_static_014 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometer_SensorJsTest_static_014 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -906,15 +906,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibrated_SensorJsTest_static_015--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
         try {
-          sensor.on('magneticFieldUncalibratedChange', onMagneticFieldUncalibratedCallback, {'interval': 100000000});
+          sensor.onMagneticFieldUncalibratedChange(onMagneticFieldUncalibratedCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibrated_SensorJsTest_static_015 off in--------------');
-            sensor.off('magneticFieldUncalibratedChange');
+            sensor.offMagneticFieldUncalibratedChange();
             hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibrated_SensorJsTest_static_015 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldUncalibrated_SensorJsTest_static_015 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -935,15 +935,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticField_SensorJsTest_static_016--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD);
         try {
-          sensor.on('magneticFieldChange', onMagneticFieldCallback, {'interval': 100000000});
+          sensor.onMagneticFieldChange(onMagneticFieldCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------magneticField_SensorJsTest_static_016 off in--------------');
-            sensor.off('magneticFieldChange');
+            sensor.offMagneticFieldChange();
             hilog.info(0x0000, 'testTag', '---------magneticField_SensorJsTest_static_016 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticField_SensorJsTest_static_016 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -964,16 +964,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------linearAccelerometer_SensorJsTest_static_017--------------');
         await isAvailable(sensor.SensorId.LINEAR_ACCELEROMETER);
         try {
-          sensor.on('linearAccelerometerChange', onLinearAccelerometerCallback, {'interval': 100000000});
+          sensor.onLinearAccelerometerChange(onLinearAccelerometerCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------linearAccelerometer_SensorJsTest_static_017 off in--------------');
-            sensor.off('linearAccelerometerChange');
+            sensor.offLinearAccelerometerChange();
             hilog.info(0x0000, 'testTag', '---------linearAccelerometer_SensorJsTest_static_017 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `linearAccelerometer_SensorJsTest_static_017 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -994,15 +994,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------humidity_SensorJsTest_static_018--------------');
         await isAvailable(sensor.SensorId.HUMIDITY);
         try {
-          sensor.on('humidityChange', onHumidityCallback, {'interval': 100000000});
+          sensor.onHumidityChange(onHumidityCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------humidity_SensorJsTest_static_018 off in--------------');
-            sensor.off('humidityChange');
+            sensor.offHumidityChange();
             hilog.info(0x0000, 'testTag', '---------humidity_SensorJsTest_static_018 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `humidity_SensorJsTest_static_018 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1023,16 +1023,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019--------------');
         await isAvailable(sensor.SensorId.HEART_RATE);
         try {
-          sensor.on('heartRateChange', onHeartRateCallback, {'interval': 100000000});
+          sensor.onHeartRateChange(onHeartRateCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019 off in--------------');
-            sensor.off('heartRateChange');
+            sensor.offHeartRateChange();
             hilog.info(0x0000, 'testTag', '---------heartRate_SensorJsTest_static_019 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `heartRate_SensorJsTest_static_019 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1053,16 +1053,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibrated_SensorJsTest_static_020--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
         try {
-          sensor.on('gyroscopeUncalibratedChange', onGyroscopeUncalibratedCallback, {'interval': 100000000});
+          sensor.onGyroscopeUncalibratedChange(onGyroscopeUncalibratedCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibrated_SensorJsTest_static_020 off in--------------');
-            sensor.off('gyroscopeUncalibratedChange');
+            sensor.offGyroscopeUncalibratedChange();
             hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibrated_SensorJsTest_static_020 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeUncalibrated_SensorJsTest_static_020 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1083,16 +1083,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscope_SensorJsTest_static_021--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE);
         try {
-          sensor.on('gyroscopeChange', onGyroscopeCallback, {'interval': 100000000});
+          sensor.onGyroscopeChange(onGyroscopeCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------gyroscope_SensorJsTest_static_021 off in--------------');
-            sensor.off('gyroscopeChange');
+            sensor.offGyroscopeChange();
             hilog.info(0x0000, 'testTag', '---------gyroscope_SensorJsTest_static_021 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscope_SensorJsTest_static_021 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1113,15 +1113,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gravity_SensorJsTest_static_022--------------');
         await isAvailable(sensor.SensorId.GRAVITY);
         try {
-          sensor.on('gravityChange', onGravityCallback, {'interval': 100000000});
+          sensor.onGravityChange(onGravityCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------gravity_SensorJsTest_static_022 off in--------------');
-            sensor.off('gravityChange');
+            sensor.offGravityChange();
             hilog.info(0x0000, 'testTag', '---------gravity_SensorJsTest_static_022 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gravity_SensorJsTest_static_022 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1142,15 +1142,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------barometer_SensorJsTest_static_023--------------');
         await isAvailable(sensor.SensorId.BAROMETER);
         try {
-          sensor.on('barometerChange', onBarometerCallback, {'interval': 100000000});
+          sensor.onBarometerChange(onBarometerCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------barometer_SensorJsTest_static_023 off in--------------');
-            sensor.off('barometerChange');
+            sensor.offBarometerChange();
             hilog.info(0x0000, 'testTag', '---------barometer_SensorJsTest_static_023 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `barometer_SensorJsTest_static_023 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1171,15 +1171,15 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientTemperature_SensorJsTest_static_024--------------');
         await isAvailable(sensor.SensorId.AMBIENT_TEMPERATURE);
         try {
-          sensor.on('ambientTemperatureChange', onAmbientTemperatureCallback, {'interval': 100000000});
+          sensor.onAmbientTemperatureChange(onAmbientTemperatureCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------ambientTemperature_SensorJsTest_static_024 off in--------------');
-            sensor.off('ambientTemperatureChange');
+            sensor.offAmbientTemperatureChange();
             hilog.info(0x0000, 'testTag', '---------ambientTemperature_SensorJsTest_static_024 off end--------------');
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientTemperature_SensorJsTest_static_024 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1200,16 +1200,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerUncalibrated_SensorJsTest_static_025--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
         try {
-          sensor.on('accelerometerUncalibratedChange', onAccelerometerUncalibratedCallback, {'interval': 100000000});
+          sensor.onAccelerometerUncalibratedChange(onAccelerometerUncalibratedCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------accelerometerUncalibrated_SensorJsTest_static_025 off in--------------');
-            sensor.off('accelerometerUncalibratedChange');
+            sensor.offAccelerometerUncalibratedChange();
             hilog.info(0x0000, 'testTag', '---------accelerometerUncalibrated_SensorJsTest_static_025 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerUncalibrated_SensorJsTest_static_025 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1230,16 +1230,16 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometer_SensorJsTest_static_026--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER);
         try {
-          sensor.on('accelerometerChange', onAccelerometerCallback, {'interval': 100000000});
+          sensor.onAccelerometerChange(onAccelerometerCallback, { 'interval': 100000000 });
           setTimeout(() => {
             hilog.info(0x0000, 'testTag', '---------accelerometer_SensorJsTest_static_026 off in--------------');
-            sensor.off('accelerometerChange');
+            sensor.offAccelerometerChange();
             hilog.info(0x0000, 'testTag', '---------accelerometer_SensorJsTest_static_026 off end--------------');
             expect(false).assertTrue();
             done();
           }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometer_SensorJsTest_static_026 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1260,7 +1260,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------orientatingOnce_SensorJsTest_static_029--------------');
         await isAvailable(sensor.SensorId.ORIENTATION);
         try {
-          sensor.once('orientationChange', onSensorCallback);
+          sensor.onceOrientationChange(onSensorCallback);
           done();
         } catch (error) {
           let e: BusinessError = error as BusinessError;
@@ -1284,10 +1284,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------hallOnce_SensorJsTest_static_030--------------');
         await isAvailable(sensor.SensorId.HALL);
         try {
-          sensor.once('hallChange', onHallCallback);
+          sensor.onceHallChange(onHallCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;    
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `hallOnce_SensorJsTest_static_030 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1308,10 +1308,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientLightOnce_SensorJsTest_static_031--------------');
         await isAvailable(sensor.SensorId.AMBIENT_LIGHT);
         try {
-          sensor.once('ambientLightChange', onAmbientLightCallback);
+          sensor.onceAmbientLightChange(onAmbientLightCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientLightOnce_SensorJsTest_static_031 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1332,10 +1332,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------proximityOnce_SensorJsTest_static_032--------------');
         await isAvailable(sensor.SensorId.PROXIMITY);
         try {
-          sensor.once('proximityChange', onProximityCallback);
+          sensor.onceProximityChange(onProximityCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `proximityOnce_SensorJsTest_static_032 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1356,10 +1356,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------wearDetectionOnce_SensorJsTest_static_033--------------');
         await isAvailable(sensor.SensorId.WEAR_DETECTION);
         try {
-          sensor.once('wearDetectionChange', onWearDetectionCallback);
+          sensor.onceWearDetectionChange(onWearDetectionCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `wearDetectionOnce_SensorJsTest_static_033 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1380,10 +1380,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------significantMotionOnce_SensorJsTest_static_034--------------');
         await isAvailable(sensor.SensorId.SIGNIFICANT_MOTION);
         try {
-          sensor.once('significantMotionChange', onSignificantMotionCallback);
+          sensor.onceSignificantMotionChange(onSignificantMotionCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `significantMotionOnce_SensorJsTest_static_034 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1404,10 +1404,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------rotationVectorOnce_SensorJsTest_static_035--------------');
         await isAvailable(sensor.SensorId.ROTATION_VECTOR);
         try {
-          sensor.once('rotationVectorChange', onRotationVectorCallback);
+          sensor.onceRotationVectorChange(onRotationVectorCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `rotationVectorOnce_SensorJsTest_static_035 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1428,11 +1428,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerDetectionOnce_SensorJsTest_static_036--------------');
         await isAvailable(sensor.SensorId.PEDOMETER_DETECTION);
         try {
-          sensor.once('pedometerDetectionChange', onPedometerDetectionCallback);
+          sensor.oncePedometerDetectionChange(onPedometerDetectionCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerDetectionOnce_SensorJsTest_static_036 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1453,11 +1453,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerOnce_SensorJsTest_static_037--------------');
         await isAvailable(sensor.SensorId.PEDOMETER);
         try {
-          sensor.once('pedometerChange', onPedometerCallback);
+          sensor.oncePedometerChange(onPedometerCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerOnce_SensorJsTest_static_037 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1478,10 +1478,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibratedOnce_SensorJsTest_static_038--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
         try {
-          sensor.once('magneticFieldUncalibratedChange', onMagneticFieldUncalibratedCallback);
+          sensor.onceMagneticFieldUncalibratedChange(onMagneticFieldUncalibratedCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldUncalibratedOnce_SensorJsTest_static_038 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1502,10 +1502,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldOnce_SensorJsTest_static_039--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD);
         try {
-          sensor.once('magneticFieldChange', onMagneticFieldCallback);
+          sensor.onceMagneticFieldChange(onMagneticFieldCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldOnce_SensorJsTest_static_039 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1526,11 +1526,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------linearAccelerometerOnce_SensorJsTest_static_040--------------');
         await isAvailable(sensor.SensorId.LINEAR_ACCELEROMETER);
         try {
-          sensor.once('linearAccelerometerChange', onLinearAccelerometerCallback);
+          sensor.onceLinearAccelerometerChange(onLinearAccelerometerCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `linearAccelerometerOnce_SensorJsTest_static_040 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1551,10 +1551,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------humidityOnce_SensorJsTest_static_041--------------');
         await isAvailable(sensor.SensorId.HUMIDITY);
         try {
-          sensor.once('humidityChange', onHumidityCallback);
+          sensor.onceHumidityChange(onHumidityCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `humidityOnce_SensorJsTest_static_041 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1575,11 +1575,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------heartRateOnce_SensorJsTest_static_042--------------');
         await isAvailable(sensor.SensorId.HEART_RATE);
         try {
-          sensor.once('heartRateChange', onHeartRateCallback);
+          sensor.onceHeartRateChange(onHeartRateCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `heartRateOnce_SensorJsTest_static_042 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1600,11 +1600,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibratedOnce_SensorJsTest_static_043--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
         try {
-          sensor.once('gyroscopeUncalibratedChange', onGyroscopeUncalibratedCallback);
+          sensor.onceGyroscopeUncalibratedChange(onGyroscopeUncalibratedCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeUncalibratedOnce_SensorJsTest_static_043 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1625,11 +1625,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeOnce_SensorJsTest_static_044--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE);
         try {
-          sensor.once('gyroscopeChange', onGyroscopeCallback);
+          sensor.onceGyroscopeChange(onGyroscopeCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeOnce_SensorJsTest_static_044 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1650,10 +1650,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gravityOnce_SensorJsTest_static_045--------------');
         await isAvailable(sensor.SensorId.GRAVITY);
         try {
-          sensor.once('gravityChange', onGravityCallback);
+          sensor.onceGravityChange(onGravityCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gravityOnce_SensorJsTest_static_045 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1674,10 +1674,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------barometerOnce_SensorJsTest_static_046--------------');
         await isAvailable(sensor.SensorId.BAROMETER);
         try {
-          sensor.once('barometerChange', onBarometerCallback);
+          sensor.onceBarometerChange(onBarometerCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `barometerOnce_SensorJsTest_static_046 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1698,10 +1698,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientTemperatureOnce_SensorJsTest_static_047--------------');
         await isAvailable(sensor.SensorId.AMBIENT_TEMPERATURE);
         try {
-          sensor.once('ambientTemperatureChange', onAmbientTemperatureCallback);
+          sensor.onceAmbientTemperatureChange(onAmbientTemperatureCallback);
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientTemperatureOnce_SensorJsTest_static_047 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(false).assertTrue();
@@ -1722,11 +1722,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerUncalibratedOnce_SensorJsTest_static_048--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
         try {
-          sensor.once('accelerometerUncalibratedChange', onAccelerometerUncalibratedCallback);
+          sensor.onceAccelerometerUncalibratedChange(onAccelerometerUncalibratedCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerUncalibratedOnce_SensorJsTest_static_048 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1747,11 +1747,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerOnce_SensorJsTest_static_049--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER);
         try {
-          sensor.once('accelerometerChange', onAccelerometerCallback);
+          sensor.onceAccelerometerChange(onAccelerometerCallback);
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerOnce_SensorJsTest_static_049 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 201).assertTrue();
@@ -1772,7 +1772,7 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------hallParamError_SensorJsTest_static_051--------------');
         await isAvailable(sensor.SensorId.HALL);
         try {
-          sensor.on('hallChange', onHallCallback, {'interval': -100000000});
+          sensor.onHallChange(onHallCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
@@ -1798,11 +1798,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientLightParamError_SensorJsTest_static_052--------------');
         await isAvailable(sensor.SensorId.AMBIENT_LIGHT);
         try {
-          sensor.on('ambientLightChange', onAmbientLightCallback, {'interval': -100000000});
+          sensor.onAmbientLightChange(onAmbientLightCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientLightParamError_SensorJsTest_static_052 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -1824,11 +1824,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------proximityParamError_SensorJsTest_static_053--------------');
         await isAvailable(sensor.SensorId.PROXIMITY);
         try {
-          sensor.on('proximityChange', onProximityCallback, {'interval': -100000000});
+          sensor.onProximityChange(onProximityCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `proximityParamError_SensorJsTest_static_053 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -1850,11 +1850,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------wearDetectionParamError_SensorJsTest_static_054--------------');
         await isAvailable(sensor.SensorId.WEAR_DETECTION);
         try {
-          sensor.on('wearDetectionChange', onWearDetectionCallback, {'interval': -100000000});
+          sensor.onWearDetectionChange(onWearDetectionCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `wearDetectionParamError_SensorJsTest_static_054 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -1876,10 +1876,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------significantMotionParamError_SensorJsTest_static_055--------------');
         await isAvailable(sensor.SensorId.SIGNIFICANT_MOTION);
         try {
-          sensor.on('significantMotionChange', onSignificantMotionCallback, {'interval': -100000000});
+          sensor.onSignificantMotionChange(onSignificantMotionCallback, { 'interval': -100000000 });
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `significantMotionParamError_SensorJsTest_static_055 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -1901,11 +1901,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------rotationVectorParamError_SensorJsTest_static_056--------------');
         await isAvailable(sensor.SensorId.ROTATION_VECTOR);
         try {
-          sensor.on('rotationVectorChange', onRotationVectorCallback, {'interval': -100000000});
+          sensor.onRotationVectorChange(onRotationVectorCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `rotationVectorParamError_SensorJsTest_static_056 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -1927,11 +1927,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerDetectionParamError_SensorJsTest_static_057--------------');
         await isAvailable(sensor.SensorId.PEDOMETER_DETECTION);
         try {
-          sensor.on('pedometerDetectionChange', onPedometerDetectionCallback, {'interval': -100000000});
+          sensor.onPedometerDetectionChange(onPedometerDetectionCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerDetectionParamError_SensorJsTest_static_057 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -1953,11 +1953,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------pedometerParamError_SensorJsTest_static_058--------------');
         await isAvailable(sensor.SensorId.PEDOMETER);
         try {
-          sensor.on('pedometerChange', onPedometerCallback, {'interval': -100000000});
+          sensor.onPedometerChange(onPedometerCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerParamError_SensorJsTest_static_058 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -1979,11 +1979,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldUncalibratedParamError_SensorJsTest_static_059--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED);
         try {
-          sensor.on('magneticFieldUncalibratedChange', onMagneticFieldUncalibratedCallback, {'interval': -100000000});
+          sensor.onMagneticFieldUncalibratedChange(onMagneticFieldUncalibratedCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldUncalibratedParamError_SensorJsTest_static_059 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2005,11 +2005,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------magneticFieldParamError_SensorJsTest_static_060--------------');
         await isAvailable(sensor.SensorId.MAGNETIC_FIELD);
         try {
-          sensor.on('magneticFieldChange', onMagneticFieldCallback, {'interval': -100000000});
+          sensor.onMagneticFieldChange(onMagneticFieldCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldParamError_SensorJsTest_static_060 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2031,11 +2031,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------linearAccelerometerParamError_SensorJsTest_static_061--------------');
         await isAvailable(sensor.SensorId.LINEAR_ACCELEROMETER);
         try {
-          sensor.on('linearAccelerometerChange', onLinearAccelerometerCallback, {'interval': -100000000});
+          sensor.onLinearAccelerometerChange(onLinearAccelerometerCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `linearAccelerometerParamError_SensorJsTest_static_061 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2057,10 +2057,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------humidityParamError_SensorJsTest_static_062--------------');
         await isAvailable(sensor.SensorId.HUMIDITY);
         try {
-          sensor.on('humidityChange', onHumidityCallback, {'interval': -100000000});
+          sensor.onHumidityChange(onHumidityCallback, { 'interval': -100000000 });
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `humidityParamError_SensorJsTest_static_062 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2082,10 +2082,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------heartRateParamError_SensorJsTest_static_063--------------');
         await isAvailable(sensor.SensorId.HEART_RATE);
         try {
-          sensor.on('heartRateChange', onHeartRateCallback, {'interval': -100000000});
+          sensor.onHeartRateChange(onHeartRateCallback, { 'interval': -100000000 });
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `heartRateParamError_SensorJsTest_static_063 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2107,11 +2107,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeUncalibratedParamError_SensorJsTest_static_064--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE_UNCALIBRATED);
         try {
-          sensor.on('gyroscopeUncalibratedChange', onGyroscopeUncalibratedCallback, {'interval': -100000000});
+          sensor.onGyroscopeUncalibratedChange(onGyroscopeUncalibratedCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeUncalibratedParamError_SensorJsTest_static_064 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2133,11 +2133,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gyroscopeParamError_SensorJsTest_static_065--------------');
         await isAvailable(sensor.SensorId.GYROSCOPE);
         try {
-          sensor.on('gyroscopeChange', onGyroscopeCallback, {'interval': -100000000});
+          sensor.onGyroscopeChange(onGyroscopeCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeParamError_SensorJsTest_static_065 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2159,11 +2159,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------gravityParamError_SensorJsTest_static_066--------------');
         await isAvailable(sensor.SensorId.GRAVITY);
         try {
-          sensor.on('gravityChange', onGravityCallback, {'interval': -100000000});
+          sensor.onGravityChange(onGravityCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gravityParamError_SensorJsTest_static_066 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2185,11 +2185,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------barometerParamError_SensorJsTest_static_067--------------');
         await isAvailable(sensor.SensorId.BAROMETER);
         try {
-          sensor.on('barometerChange', onBarometerCallback, {'interval': -100000000});
+          sensor.onBarometerChange(onBarometerCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `barometerParamError_SensorJsTest_static_067 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2211,10 +2211,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------ambientTemperatureParamError_SensorJsTest_static_068--------------');
         await isAvailable(sensor.SensorId.AMBIENT_TEMPERATURE);
         try {
-          sensor.on('ambientTemperatureChange', onAmbientTemperatureCallback, {'interval': -100000000});
+          sensor.onAmbientTemperatureChange(onAmbientTemperatureCallback, { 'interval': -100000000 });
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientTemperatureParamError_SensorJsTest_static_068 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2236,11 +2236,11 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerUncalibratedParamError_SensorJsTest_static_069--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER_UNCALIBRATED);
         try {
-          sensor.on('accelerometerUncalibratedChange', onAccelerometerUncalibratedCallback, {'interval': -100000000});
+          sensor.onAccelerometerUncalibratedChange(onAccelerometerUncalibratedCallback, { 'interval': -100000000 });
           expect(false).assertTrue();
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerUncalibratedParamError_SensorJsTest_static_069 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2265,10 +2265,10 @@ export default function SensorJsStaticTest() {
         hilog.info(0x0000, 'testTag', '---------accelerometerParamError_SensorJsTest_static_070--------------');
         await isAvailable(sensor.SensorId.ACCELEROMETER);
         try {
-          sensor.on('accelerometerChange', onAccelerometerCallback, {'interval': -100000000});
+          sensor.onAccelerometerChange(onAccelerometerCallback, { 'interval': -100000000 });
           done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;  
+          let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerParamError_SensorJsTest_static_070 failed error.code: ${e.code} , error.message: ${e.message}`);
           if (Available) {
             expect(e.code == 14500101).assertTrue();
@@ -2280,5 +2280,1797 @@ export default function SensorJsStaticTest() {
         }
       })
 
+    /**
+     *
+     * @tc.number     GetSensorListSync_SensorJsTest_static_001
+     * @tc.name       GetSensorListSync_SensorJsTest_static_001
+     * @tc.desc       test getSensorListSync
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSensorListSync_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSensorListSync_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      try {
+        let ret = sensor.getSensorListSync();
+        for (let i = 0; i < ret.length; i++) {
+          hilog.info(domain, tag, TAG + " Succeeded in getting sensor: " + JSON.stringify(ret[i]));
+        }
+        expect(ret != null).assertTrue();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetSensorListSync_SensorJsTest_static_002
+     * @tc.name       GetSensorListSync_SensorJsTest_static_002
+     * @tc.desc       test getSensorListSync
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSensorListSync_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSensorListSync_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      try {
+        let sensors: sensor.Sensor[] = sensor.getSensorListSync();
+        if (sensors) {
+          hilog.info(domain, tag, TAG + 'getSensorListSync sensors: ' + sensors);
+          for (let i = 0; i < sensors.length; i++) {
+            hilog.info(domain, tag, TAG + ' sensorName: ' + sensors[i].sensorName);
+            hilog.info(domain, tag, TAG + ' vendorName: ' + sensors[i].vendorName);
+            hilog.info(domain, tag, TAG + ' firmwareVersion: ' + sensors[i].firmwareVersion);
+            hilog.info(domain, tag, TAG + ' hardwareVersion: ' + sensors[i].hardwareVersion);
+          }
+          expect(sensors != null).assertTrue();
+        } else {
+          expect(sensors == null).assertTrue();
+          hilog.info(domain, tag, TAG + 'getSensorListSync sensors is null');
+        }
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetSingleSensorSync_SensorJsTest_static_001
+     * @tc.name       GetSingleSensorSync_SensorJsTest_static_001
+     * @tc.desc       test getSensorListSync
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSingleSensorSync_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSingleSensorSync_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      await isAvailable(sensor.SensorId.ACCELEROMETER);
+      try {
+        let ret = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
+        hilog.info(domain, tag, TAG + " Succeeded in getting sensor: " + JSON.stringify(ret));
+        expect(ret != null).assertTrue();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        if (Available) {
+          expect(false).assertTrue();
+        } else {
+          expect(error.code == SENSOR_NO_SUPPORT_CODE).assertTrue();
+        }
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetSingleSensorSync_SensorJsTest_static_002
+     * @tc.name       GetSingleSensorSync_SensorJsTest_static_002
+     * @tc.desc       test getSingleSensorSync
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSingleSensorSync_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSingleSensorSync_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      await isAvailable(sensor.SensorId.ACCELEROMETER);
+      try {
+        let acclSensor: sensor.Sensor = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
+        if (acclSensor) {
+          hilog.info(domain, tag, TAG + 'getSingleSensorSync acclSensor: ' + acclSensor);
+          hilog.info(domain, tag, TAG + ' sensorName: ' + acclSensor.sensorName);
+          hilog.info(domain, tag, TAG + ' vendorName: ' + acclSensor.vendorName);
+          hilog.info(domain, tag, TAG + ' firmwareVersion: ' + acclSensor.firmwareVersion);
+          hilog.info(domain, tag, TAG + ' hardwareVersion: ' + acclSensor.hardwareVersion);
+          expect(acclSensor != null).assertTrue();
+        } else {
+          expect(acclSensor == null).assertTrue();
+          hilog.info(domain, tag, TAG + 'getSingleSensorSync acclSensor is null');
+        }
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        if (Available) {
+          expect(false).assertTrue();
+        } else {
+          expect(error.code == SENSOR_NO_SUPPORT_CODE).assertTrue();
+        }
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001
+     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc       test getGeomagneticInfo AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      try {
+        let num0: double = 80;
+        let num1: double = 0;
+        let num2: double = 0;
+        let locationOptions: sensor.LocationOptions = {
+          latitude: num0,
+          longitude: num1,
+          altitude: num2
+        };
+        let timeMillis: long = 1580486400000;
+        const EPS = 0.01;
+        const GEOMAGNETIC_COMPONENT_YEAR_RESULT = [
+          [6570.3935546875, -146.3289337158203, 54606.0078125, -1.2758207321166992, 83.13726043701172, 6572.02294921875, 55000.0703125],
+          [6554.17041015625, -87.19947052001953, 54649.078125, -0.7622424364089966, 83.16046905517578, 6554.75048828125, 55040.7734375],
+          [6537.99169921875, -28.231582641601562, 54692.02734375, -0.24740631878376007, 83.18303680419922, 6538.052734375, 55081.4296875],
+          [6521.81201171875, 30.73670768737793, 54734.97265625, 0.2700277864933014, 83.20502471923828, 6521.88427734375, 55122.15625],
+          [6505.6328125, 89.70511627197266, 54777.90625, 0.7899921536445618, 83.22642517089844, 6506.2509765625, 55162.9453125]
+        ];
+        sensor.getGeomagneticInfo(locationOptions, timeMillis, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ` getGeomagneticInfo error, ${error.code} , ${error.message}`);
+            expect(false).assertTrue();
+          } else {
+            hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+            if (data) {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data: ' + data);
+              hilog.info(domain, tag, TAG + ' x: ' + data.x);
+              hilog.info(domain, tag, TAG + ' y: ' + data.y);
+              hilog.info(domain, tag, TAG + ' z: ' + data.z);
+              hilog.info(domain, tag, TAG + ' geomagneticDip: ' + data.geomagneticDip);
+              hilog.info(domain, tag, TAG + ' deflectionAngle: ' + data.deflectionAngle);
+              hilog.info(domain, tag, TAG + ' levelIntensity: ' + data.levelIntensity);
+              hilog.info(domain, tag, TAG + ' totalIntensity: ' + data.totalIntensity);
+
+              expect(Math.abs(data.x - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][0]) < EPS).assertTrue();
+              expect(Math.abs(data.y - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][1]) < EPS).assertTrue();
+              expect(Math.abs(data.z - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][2]) < EPS).assertTrue();
+              expect(Math.abs(data.deflectionAngle - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][3]) < EPS).assertTrue();
+              expect(Math.abs(data.geomagneticDip - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][4]) < EPS).assertTrue();
+              expect(Math.abs(data.levelIntensity - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][5]) < EPS).assertTrue();
+              expect(Math.abs(data.totalIntensity - GEOMAGNETIC_COMPONENT_YEAR_RESULT[0][6]) < EPS).assertTrue();
+            } else {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
+            }
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002
+     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc       test getGeomagneticInfo AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      try {
+        let num0: double = Number.NEGATIVE_INFINITY;
+        let num1: double = 0;
+        let num2: double = 0;
+        let locationOptions: sensor.LocationOptions = {
+          latitude: num0,
+          longitude: num1,
+          altitude: num2
+        };
+        let timeMillis: long = 1580486400000;
+        let EPS = 0.01;
+        let geomagneticComponent: Array<double> = [
+          14425.57421875,
+          -4.4076765967073136e+35,
+          -52023.21484375,
+          -6.76254414480036e-30,
+          -90,
+          4.4076765967073136e+35,
+          Infinity
+        ];
+        sensor.getGeomagneticInfo(locationOptions, timeMillis, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ` getGeomagneticInfo error, ${error.code} , ${error.message}`);
+            expect(false).assertTrue();
+          } else {
+            hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+            if (data) {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data: ' + data);
+              hilog.info(domain, tag, TAG + ' x: ' + data.x);
+              hilog.info(domain, tag, TAG + ' y: ' + data.y);
+              hilog.info(domain, tag, TAG + ' z: ' + data.z);
+              hilog.info(domain, tag, TAG + ' geomagneticDip: ' + data.geomagneticDip);
+              hilog.info(domain, tag, TAG + ' deflectionAngle: ' + data.deflectionAngle);
+              hilog.info(domain, tag, TAG + ' levelIntensity: ' + data.levelIntensity);
+              hilog.info(domain, tag, TAG + ' totalIntensity: ' + data.totalIntensity);
+
+              expect(Math.abs(data.x - geomagneticComponent[0]) < EPS).assertTrue()
+              expect(Math.abs(data.y - geomagneticComponent[1]) < EPS).assertTrue()
+              expect(Math.abs(data.z - geomagneticComponent[2]) < EPS).assertTrue()
+              expect(Math.abs(data.geomagneticDip - geomagneticComponent[3]) < EPS).assertTrue()
+              expect(Math.abs(data.deflectionAngle - geomagneticComponent[4]) < EPS).assertTrue()
+              expect(Math.abs(data.levelIntensity - geomagneticComponent[5]) < EPS).assertTrue()
+              expect(data.totalIntensity).assertEqual(geomagneticComponent[6])
+
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo x: ' + (Math.abs(data.x - geomagneticComponent[0])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo y: ' + (Math.abs(data.y - geomagneticComponent[1])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + (Math.abs(data.z - geomagneticComponent[2])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo geomagneticDip: ' + (Math.abs(data.geomagneticDip - geomagneticComponent[3])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo deflectionAngle: ' + (Math.abs(data.deflectionAngle - geomagneticComponent[4])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo levelIntensity: ' + (Math.abs(data.levelIntensity - geomagneticComponent[5])));
+            } else {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
+            }
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------"); 
+    })
+
+    /**
+     *
+     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003
+     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003
+     * @tc.desc       test getGeomagneticInfo AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      try {
+        let num0: double = Number.MAX_VALUE;
+        let num1: double = 0;
+        let num2: double = 0;
+        let locationOptions: sensor.LocationOptions = {
+          latitude: num0,
+          longitude: num1,
+          altitude: num2
+        };
+        let timeMillis: long = 1580486400000;
+        let EPS = 0.01;
+        let geomagneticComponent: Array<double> = [1824.141845703125, 2.9950538714314696e+33, 56727.7734375, 1.0852099087396978e-27,
+          90, 2.9950538714314696e+33, Infinity]
+        sensor.getGeomagneticInfo(locationOptions, timeMillis, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ` getGeomagneticInfo error, ${error.code} , ${error.message}`);
+            expect(false).assertTrue();
+          } else {
+            hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+            if (data) {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data: ' + data);
+              hilog.info(domain, tag, TAG + ' x: ' + data.x);
+              hilog.info(domain, tag, TAG + ' y: ' + data.y);
+              hilog.info(domain, tag, TAG + ' z: ' + data.z);
+              hilog.info(domain, tag, TAG + ' geomagneticDip: ' + data.geomagneticDip);
+              hilog.info(domain, tag, TAG + ' deflectionAngle: ' + data.deflectionAngle);
+              hilog.info(domain, tag, TAG + ' levelIntensity: ' + data.levelIntensity);
+              hilog.info(domain, tag, TAG + ' totalIntensity: ' + data.totalIntensity);
+
+              expect(Math.abs(data.x - geomagneticComponent[0]) < EPS).assertTrue()
+              expect(Math.abs(data.y - geomagneticComponent[1]) < EPS).assertTrue()
+              expect(Math.abs(data.z - geomagneticComponent[2]) < EPS).assertTrue()
+              expect(Math.abs(data.geomagneticDip - geomagneticComponent[3]) < EPS).assertTrue()
+              expect(Math.abs(data.deflectionAngle - geomagneticComponent[4]) < EPS).assertTrue()
+              expect(Math.abs(data.levelIntensity - geomagneticComponent[5]) < EPS).assertTrue()
+              expect(data.totalIntensity).assertEqual(geomagneticComponent[6])
+
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo x: ' + (Math.abs(data.x - geomagneticComponent[0])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo y: ' + (Math.abs(data.y - geomagneticComponent[1])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + (Math.abs(data.z - geomagneticComponent[2])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo geomagneticDip: ' + (Math.abs(data.geomagneticDip - geomagneticComponent[3])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo deflectionAngle: ' + (Math.abs(data.deflectionAngle - geomagneticComponent[4])));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo levelIntensity: ' + (Math.abs(data.levelIntensity - geomagneticComponent[5])));
+            } else {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
+            }
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004
+     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004
+     * @tc.desc       test getGeomagneticInfo AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      try {
+        let num0: double = 0;
+        let num1: double = 0;
+        let num2: double = Number.NaN;
+        let locationOptions: sensor.LocationOptions = {
+          latitude: num0,
+          longitude: num1,
+          altitude: num2
+        };
+        let timeMillis: long = 1580486400000;
+        sensor.getGeomagneticInfo(locationOptions, timeMillis, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ` getGeomagneticInfo error, ${error.code} , ${error.message}`);
+            expect(false).assertTrue();
+          } else {
+            hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+            if (data) {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data: ' + data);
+              hilog.info(domain, tag, TAG + ' x: ' + data.x);
+              hilog.info(domain, tag, TAG + ' y: ' + data.y);
+              hilog.info(domain, tag, TAG + ' z: ' + data.z);
+              hilog.info(domain, tag, TAG + ' geomagneticDip: ' + data.geomagneticDip);
+              hilog.info(domain, tag, TAG + ' deflectionAngle: ' + data.deflectionAngle);
+              hilog.info(domain, tag, TAG + ' levelIntensity: ' + data.levelIntensity);
+              hilog.info(domain, tag, TAG + ' totalIntensity: ' + data.totalIntensity);
+
+              expect(Number.isNaN(data.levelIntensity) && Number.isNaN(data.totalIntensity)).assertTrue()
+
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo x: ' + Number.isNaN(data.levelIntensity));
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + Number.isNaN(data.totalIntensity));
+            } else {
+              hilog.info(domain, tag, TAG + ' getGeomagneticInfo data is null');
+            }
+          }
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, ' + error);
+        expect(true).assertFalse();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetGeomagneticInfo_Promise_SensorJsTest_static_001
+     * @tc.name       GetGeomagneticInfo_Promise_SensorJsTest_static_001
+     * @tc.desc       test getGeomagneticInfo Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetGeomagneticInfo_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetGeomagneticInfo_Promise_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0;
+      let num1: double = Number.NEGATIVE_INFINITY;
+      let num2: double = 0;
+      let locationOptions: sensor.LocationOptions = {
+        latitude: num0,
+        longitude: num1,
+        altitude: num2
+      };
+      let timeMillis: long = 1580486400000;
+      try {
+        await sensor.getGeomagneticInfo(locationOptions, timeMillis).then((data) => {
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+          expect(Number.isNaN(data.deflectionAngle) && Number.isNaN(data.geomagneticDip)).assertTrue()
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo x: ' + Number.isNaN(data.deflectionAngle));
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + Number.isNaN(data.geomagneticDip));
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(true).assertFalse();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetGeomagneticInfo_Promise_SensorJsTest_static_002
+     * @tc.name       GetGeomagneticInfo_Promise_SensorJsTest_static_002
+     * @tc.desc       test getGeomagneticInfo Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetGeomagneticInfo_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetGeomagneticInfo_Promise_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = Number.MAX_VALUE;
+      let num1: double = 0;
+      let num2: double = 0;
+      let locationOptions: sensor.LocationOptions = {
+        latitude: num0,
+        longitude: num1,
+        altitude: num2
+      };
+      let timeMillis: long = 1580486400000;
+      let geomagneticComponent: Array<double> = [1824.141845703125, 2.9950538714314696e+33, 56727.7734375, 1.0852099087396978e-27,
+        90, 2.9950538714314696e+33, Infinity]
+      try {
+        await sensor.getGeomagneticInfo(locationOptions, timeMillis).then((data) => {
+          expect(data.totalIntensity).assertEqual(geomagneticComponent[6])
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(true).assertFalse();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetGeomagneticInfo_Promise_SensorJsTest_static_003
+     * @tc.name       GetGeomagneticInfo_Promise_SensorJsTest_static_003
+     * @tc.desc       test getGeomagneticInfo Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetGeomagneticInfo_Promise_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetGeomagneticInfo_Promise_SensorJsTest_static_003";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0;
+      let num1: double = 0;
+      let num2: double = Number.NaN;
+      let locationOptions: sensor.LocationOptions = {
+        latitude: num0,
+        longitude: num1,
+        altitude: num2
+      };
+      let timeMillis: long = 1580486400000;
+      try {
+        await sensor.getGeomagneticInfo(locationOptions, timeMillis).then((data) => {
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
+          expect(Number.isNaN(data.levelIntensity) && Number.isNaN(data.totalIntensity)).assertTrue()
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo x: ' + Number.isNaN(data.levelIntensity));
+          hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + Number.isNaN(data.totalIntensity));
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(true).assertFalse();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetDeviceAltitude_Promise_SensorJsTest_static_001
+     * @tc.name       GetDeviceAltitude_Promise_SensorJsTest_static_001
+     * @tc.desc       test getDeviceAltitude Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetDeviceAltitude_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetDeviceAltitude_Promise_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      try {
+        await sensor.getDeviceAltitude(0, 100).then((data) => {
+          expect(data).assertEqual(getGeomagneticDipResult[2])
+          hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetDeviceAltitude_Promise_SensorJsTest_static_002
+     * @tc.name       GetDeviceAltitude_Promise_SensorJsTest_static_002
+     * @tc.desc       test getDeviceAltitude Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetDeviceAltitude_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetDeviceAltitude_Promise_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      try {
+        await sensor.getDeviceAltitude(5, 0).then((data) => {
+          expect(data).assertEqual(getGeomagneticDipResult[3])
+          hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001
+     * @tc.name       GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc       test getDeviceAltitude AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      try {
+        sensor.getDeviceAltitude(0, 100, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ` getDeviceAltitude error, ${error.code} , ${error.message}`);
+            expect(false).assertTrue();
+          } else {
+            expect(data).assertEqual(getGeomagneticDipResult[2])
+            hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
+          }
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002
+     * @tc.name       GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc       test getDeviceAltitude AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      try {
+        sensor.getDeviceAltitude(5, 0, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ` getDeviceAltitude error, ${error.code} , ${error.message}`);
+            expect(false).assertTrue();
+          } else {
+            expect(data).assertEqual(getGeomagneticDipResult[3])
+            hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
+          }
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetInclination_AsyncCallback_SensorJsTest_static_001
+     * @tc.name       GetInclination_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc       test getInclination AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetInclination_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetInclination_AsyncCallback_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 1;
+      let num1: double = 2;
+      let num2: double = 3;
+      let num3: double = 4;
+      let num4: double = 5;
+      let num5: double = 6;
+      let num6: double = 7;
+      let num7: double = 8;
+      let num8: double = 9;
+      let inclination: Array<double> = [num0, num1, num2, num3, num4, num5, num6, num7, num8];
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      try {
+        sensor.getInclination(inclination, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ` getInclination error, ${error.code} , ${error.message}`);
+            expect(false).assertTrue();
+          } else {
+            expect(data).assertEqual(getGeomagneticDipResult[0])
+            hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
+          }
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetInclination_AsyncCallback_SensorJsTest_static_002
+     * @tc.name       GetInclination_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc       test getInclination AsyncCallback:getDeviceAltitude failed, errCode: 401 ,msg:Get geomagnetic dip fail
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetInclination_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetInclination_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 1;
+      let num1: double = 2;
+      let num2: double = 3;
+      let num3: double = 4;
+      let inclination: Array<double> = [num0, num1, num2, num3];
+      sensor.getInclination(inclination, (error, data) => {
+        if (error) {
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+          hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        } else {
+          expect(false).assertTrue();
+          hilog.info(domain, tag, TAG + ' getDeviceAltitud fail');
+        }
+        done();
+      });
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetInclination_AsyncCallback_SensorJsTest_static_003
+     * @tc.name       GetInclination_AsyncCallback_SensorJsTest_static_003
+     * @tc.desc       test getInclination AsyncCallback getInclination error, 401
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetInclination_AsyncCallback_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetInclination_AsyncCallback_SensorJsTest_static_003";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = -1;
+      let inclination: Array<double> = [num0];
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      sensor.getInclination(inclination, (error, data) => {
+        if (error) {
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+          hilog.info(domain, tag, TAG + ` getInclination error, ${error.code}`);
+        } else {
+          expect(data).assertEqual(getGeomagneticDipResult[0])
+          hilog.info(domain, tag, TAG + ' getDeviceAltitud fail');
+        }
+        done();
+      });
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+
+    /**
+     *
+     * @tc.number     GetInclination_Promise_SensorJsTest_static_001
+     * @tc.name       GetInclination_Promise_SensorJsTest_static_001
+     * @tc.desc       test getInclination Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetInclination_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetInclination_Promise_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 1;
+      let num1: double = 2;
+      let num2: double = 3;
+      let num3: double = 4;
+      let num4: double = 5;
+      let num5: double = 6;
+      let num6: double = 7;
+      let num7: double = 8;
+      let num8: double = 9;
+      let inclination: Array<double> = [num0, num1, num2, num3, num4, num5, num6, num7, num8];
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      try {
+        await sensor.getInclination(inclination).then((data) => {
+          expect(data).assertEqual(getGeomagneticDipResult[0])
+          hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetInclination_Promise_SensorJsTest_static_002
+     * @tc.name       GetInclination_Promise_SensorJsTest_static_002
+     * @tc.desc       test getInclination Promise:getDeviceAltitude success, errCode: 401 ,msg:Get geomagnetic dip fail
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetInclination_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetInclination_Promise_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 1;
+      let num1: double = 2;
+      let num2: double = 3;
+      let num3: double = 4;
+      let inclination: Array<double> = [num0, num1, num2, num3];
+      try {
+        await sensor.getInclination(inclination).then((data) => {
+          hilog.info(domain, tag, TAG + ' getDeviceAltitude fail');
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("Get geomagnetic dip fail");
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetInclination_Promise_SensorJsTest_static_003
+     * @tc.name       GetInclination_Promise_SensorJsTest_static_003
+     * @tc.desc       test getInclination Promise: getDeviceAltitude success, errCode: 401 ,msg:Get geomagnetic dip fail
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetInclination_Promise_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetInclination_Promise_SensorJsTest_static_003";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = -1;
+      let inclination: Array<double> = [num0];
+      let getGeomagneticDipResult = [0.8760581016540527, 0.862170, -953042337792, 44330]
+      try {
+        await sensor.getInclination(inclination).then((data) => {
+          expect(data).assertEqual(getGeomagneticDipResult[0])
+          hilog.info(domain, tag, TAG + ' getDeviceAltitude fail');
+          done()
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("Get geomagnetic dip fail");
+        done()
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    })
+
+    /**
+     *
+     * @tc.number     GetAngleVariation_AsyncCallback_SensorJsTest_static_001
+     * @tc.name       GetAngleVariation_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc       test getAngleVariation AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetAngleVariation_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetAngleVariation_AsyncCallback_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 1;
+      let num1: double = 2;
+      let num2: double = 3;
+      let ANGLECHANGE_9_RESULT = [
+        [0.7853981852531433, NaN, -0.32175055146217346],  //123123123
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE
+        [0.0, -0.0, -0.0],                                //FLOAT.MINVALUE
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE+1
+      ];
+      let curRotation: Array<Double> = [num0, num1, num2, num0, num1, num2, num0, num1, num2];
+      let preRotation: Array<Double> = [num1, num1, num1, num1, num1, num1, num1, num1, num1];
+
+      sensor.getAngleVariation(curRotation, preRotation, (error, data) => {
+        if (error) {
+          hilog.info(domain, tag, TAG + ' getAngleVariation failed');
+          expect(false).assertTrue();
+          done();
+        } else if (data) {
+          // 确保 data 不为 null 或 undefined
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "getAngleVariation [" + i + "] = " + data[i]);
+          }
+
+          if (data.length > 0) {
+            expect(data[0]).assertEqual(ANGLECHANGE_9_RESULT[0][0]);
+            hilog.info(domain, tag, TAG + ' data[0] length: ' + data[0]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[0][0] length: ' + ANGLECHANGE_9_RESULT[0][0]);
+          }
+
+          if (data.length > 1) {
+            expect(Number.isNaN(data[1])).assertTrue();
+            hilog.info(domain, tag, TAG + ' data[1] length: ' + data[1]);
+          }
+
+          if (data.length > 2) {
+            expect(data[2]).assertEqual(ANGLECHANGE_9_RESULT[0][2]);
+            hilog.info(domain, tag, TAG + ' data[2] length: ' + data[2]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[0][2] length: ' + ANGLECHANGE_9_RESULT[0][2]);
+          }
+          done();
+        } else {
+          // 处理 data 为 null 或 undefined 的情况
+          hilog.info(domain, tag, TAG + ' data is null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+
+    /**
+     *
+     * @tc.number     GetAngleVariation_AsyncCallback_SensorJsTest_static_002
+     * @tc.name       GetAngleVariation_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc       test getAngleVariation AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetAngleVariation_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetAngleVariation_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num: double = 3.40282e+38;
+      let ANGLECHANGE_9_RESULT = [
+        [0.7853981852531433, NaN, -0.32175055146217346],  //123123123
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE
+        [0.0, -0.0, -0.0],                                //FLOAT.MINVALUE
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE+1
+      ];
+      let curRotation: Array<Double> = [num, num, num, num, num, num, num, num, num];
+      let preRotation: Array<Double> = [num, num, num, num, num, num, num, num, num];
+
+      sensor.getAngleVariation(curRotation, preRotation, (error, data) => {
+        if (error) {
+          hilog.info(domain, tag, TAG + ' getAngleVariation failed');
+          expect(false).assertTrue();
+          done();
+        } else if (data) {
+          // 确保 data 不为 null 或 undefined
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "getAngleVariation [" + i + "] = " + data[i]);
+          }
+
+          if (data.length > 0) {
+            expect(data[0]).assertEqual(ANGLECHANGE_9_RESULT[1][0]);
+            hilog.info(domain, tag, TAG + ' data[0] length: ' + data[0]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[1][0] length: ' + ANGLECHANGE_9_RESULT[1][0]);
+          }
+
+          if (data.length > 1) {
+            expect(Number.isNaN(data[1])).assertTrue();
+            hilog.info(domain, tag, TAG + ' data[1] length: ' + data[1]);
+          }
+
+          if (data.length > 2) {
+            expect(data[2]).assertEqual(ANGLECHANGE_9_RESULT[1][2]);
+            hilog.info(domain, tag, TAG + ' data[2] length: ' + data[2]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[1][2] length: ' + ANGLECHANGE_9_RESULT[1][2]);
+          }
+          done();
+        } else {
+          // 处理 data 为 null 或 undefined 的情况
+          hilog.info(domain, tag, TAG + ' data is null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+
+    /**
+     *
+     * @tc.number     GetAngleVariation_Promise_SensorJsTest_static_001
+     * @tc.name       GetAngleVariation_Promise_SensorJsTest_static_001
+     * @tc.desc       test getAngleVariation Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetAngleVariation_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetAngleVariation_Promise_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 1;
+      let num1: double = 2;
+      let num2: double = 3;
+      let ANGLECHANGE_9_RESULT = [
+        [0.7853981852531433, NaN, -0.32175055146217346],  //123123123
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE
+        [0.0, -0.0, -0.0],                                //FLOAT.MINVALUE
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE+1
+      ];
+      let curRotation: Array<double> = [num0, num1, num2, num0, num1, num2, num0, num1, num2];
+      let preRotation: Array<double> = [num1, num1, num1, num1, num1, num1, num1, num1, num1];
+
+      try {
+        let data: Array<double> = await sensor.getAngleVariation(curRotation, preRotation);
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "getAngleVariation [" + i + "] = " + data[i]);
+          }
+
+          if (data.length > 0) {
+            expect(data[0]).assertEqual(ANGLECHANGE_9_RESULT[0][0]);
+            hilog.info(domain, tag, TAG + ' data[0]: ' + data[0]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[0][0]: ' + ANGLECHANGE_9_RESULT[0][0]);
+          }
+
+          if (data.length > 1) {
+            expect(Number.isNaN(data[1])).assertTrue();
+            hilog.info(domain, tag, TAG + ' data[1]: ' + data[1]);
+          }
+
+          if (data.length > 2) {
+            expect(data[2]).assertEqual(ANGLECHANGE_9_RESULT[0][2]);
+            hilog.info(domain, tag, TAG + ' data[2]: ' + data[2]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[0][2]: ' + ANGLECHANGE_9_RESULT[0][2]);
+          }
+        } else {
+          hilog.info(domain, tag, TAG + ' getAngleVariation returned null or undefined');
+          expect(false).assertTrue();
+        }
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ' getAngleVariation failed, error: ' + error);
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetAngleVariation_Promise_SensorJsTest_static_002
+     * @tc.name       GetAngleVariation_Promise_SensorJsTest_static_002
+     * @tc.desc       test getAngleVariation Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetAngleVariation_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetAngleVariation_Promise_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num: double = 3.40282e+38;
+      let ANGLECHANGE_9_RESULT = [
+        [0.7853981852531433, NaN, -0.32175055146217346],  //123123123
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE
+        [0.0, -0.0, -0.0],                                //FLOAT.MINVALUE
+        [0.7853981852531433, NaN, -0.7853981852531433],   //FLOAT.MAXVALUE+1
+      ];
+      let curRotation: Array<double> = [num, num, num, num, num, num, num, num, num];
+      let preRotation: Array<double> = [num, num, num, num, num, num, num, num, num];
+
+      try {
+        let data: Array<double> = await sensor.getAngleVariation(curRotation, preRotation);
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "getAngleVariation [" + i + "] = " + data[i]);
+          }
+
+          if (data.length > 0) {
+            expect(data[0]).assertEqual(ANGLECHANGE_9_RESULT[1][0]);
+            hilog.info(domain, tag, TAG + ' data[0]: ' + data[0]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[1][0]: ' + ANGLECHANGE_9_RESULT[1][0]);
+          }
+
+          if (data.length > 1) {
+            expect(Number.isNaN(data[1])).assertTrue();
+            hilog.info(domain, tag, TAG + ' data[1]: ' + data[1]);
+          }
+
+          if (data.length > 2) {
+            expect(data[2]).assertEqual(ANGLECHANGE_9_RESULT[1][2]);
+            hilog.info(domain, tag, TAG + ' data[2]: ' + data[2]);
+            hilog.info(domain, tag, TAG + ' ANGLECHANGE_9_RESULT[1][2]: ' + ANGLECHANGE_9_RESULT[1][2]);
+          }
+        } else {
+          hilog.info(domain, tag, TAG + ' getAngleVariation returned null or undefined');
+          expect(false).assertTrue();
+        }
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ' getAngleVariation failed, error: ' + error);
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001
+     * @tc.name       TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc       test transformRotationMatrix AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+
+      // 使用 number 类型而不是 double
+      let num0: double = 1.5;
+
+      let transformCoordinateSystemResult = [
+        [1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000],
+        [340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000],
+        [Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity]
+      ];
+
+      let rotation: Array<double> = [num0, num0, num0, num0, num0, num0, num0, num0, num0];
+
+      sensor.transformRotationMatrix(rotation, { 'x': 1, 'y': 2 }, (error, data) => {
+        if (error) {
+          hilog.info(domain, tag, TAG + ' transformRotationMatrix failed, error: ' + error.code + ', ' + error.message);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' data: ' + JSON.stringify(data));
+          expect(JSON.stringify(data)).assertEqual(JSON.stringify(transformCoordinateSystemResult[0]));
+          done();
+        }
+      });
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     *  @tc.number     TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002
+     *  @tc.name       TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002
+     *  @tc.desc       test transformRotationMatrix AsyncCallback
+     *  @tc.size       MediumTest
+     *  @tc.type       Function
+     *  @tc.level      Level 0
+     * */
+    it("TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+
+      let num0: double = 3.40282e+38;
+
+      let transformCoordinateSystemResult = [
+        [1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000],
+        [340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000],
+        [Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity]
+      ];
+
+      let rotation: Array<double> = [num0, num0, num0, num0, num0, num0, num0, num0, num0];
+
+      sensor.transformRotationMatrix(rotation, { 'x': 1, 'y': 2 }, (error, data) => {
+        if (error) {
+          hilog.info(domain, tag, TAG + ' transformRotationMatrix failed, error: ' + error.code + ', ' + error.message);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' data: ' + JSON.stringify(data));
+          expect(JSON.stringify(data)).assertEqual(JSON.stringify(transformCoordinateSystemResult[1]));
+          done();
+        }
+      });
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     TransformRotationMatrix_Promise_SensorJsTest_static_001
+     * @tc.name       TransformRotationMatrix_Promise_SensorJsTest_static_001
+     * @tc.desc       test transformRotationMatrix Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("TransformRotationMatrix_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "TransformRotationMatrix_Promise_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+
+      let num0: double = 1.5;
+
+      let transformCoordinateSystemResult = [
+        [1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000],
+        [340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000],
+        [Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity]
+      ];
+
+      let rotation: Array<double> = [num0, num0, num0, num0, num0, num0, num0, num0, num0];
+
+      try {
+        let data: Array<double> = await sensor.transformRotationMatrix(rotation, { 'x': 1, 'y': 2 });
+
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "transformRotationMatrix [" + i + "] = " + data[i]);
+            expect(data[i]).assertEqual(transformCoordinateSystemResult[0][i]);
+          }
+
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' transformRotationMatrix returned null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' transformRotationMatrix failed, error: ' + error.code + ', ' + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     TransformRotationMatrix_Promise_SensorJsTest_static_002
+     * @tc.name       TransformRotationMatrix_Promise_SensorJsTest_static_002
+     * @tc.desc       test transformRotationMatrix Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("TransformRotationMatrix_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "TransformRotationMatrix_Promise_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+
+      let num0: double = 3.40282e+39;
+
+      let transformCoordinateSystemResult = [
+        [1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000, 1.500000],
+        [340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000,
+          340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000, 340282001837565600000000000000000000000.000000],
+        [Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity, Infinity, -Infinity, Infinity]
+      ];
+
+      let rotation: Array<double> = [num0, num0, num0, num0, num0, num0, num0, num0, num0];
+
+      try {
+        let data: Array<double> = await sensor.transformRotationMatrix(rotation, { 'x': 1, 'y': 3 });
+
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "transformRotationMatrix [" + i + "] = " + data[i]);
+            expect(data[i]).assertEqual(transformCoordinateSystemResult[2][i]);
+          }
+
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' transformRotationMatrix returned null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' transformRotationMatrix failed, error: ' + error.code + ', ' + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_001
+     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_001
+     * @tc.desc       test getQuaternion Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_Promise_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = -0.325;
+      let num1: double = -0.562;
+      let num2: double = -0.25;
+      let rotation: Array<Double> = [num0, num1, num2];
+      let result: number[][] = [
+        [0.7441122531890869, 0.5199999809265137, -0.335999995470047, -0.25099998712539673],
+        [0, 3.402820018375656e+38, 3.402820018375656e+38, 3.402820018375656e+38],
+        [1, 0, 0, 0],
+        [0.7183529734611511, -0.32499998807907104, -0.5619999766349792, -0.25],
+        [0, 0, 0, 0]
+      ];
+      try {
+        let data: Array<double> = await sensor.getQuaternion(rotation);
+
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+          // 使用临时变量存储预期结果，避免复杂的索引表达式
+          let expectedResult: number[] = result[3];
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "getQuaternion [" + i + "] = " + data[i]);
+            if (i < expectedResult.length) {
+              expect(data[i]).assertEqual(expectedResult[i]);
+            } else {
+              hilog.info(domain, tag, TAG + ' data index ' + i + ' out of expected result range');
+            }
+          }
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' getQuaternion returned null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_002
+     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_002
+     * @tc.desc       test getQuaternion Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_Promise_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0;
+      let rotation: Array<Double> = [num0, num0, num0];
+      let result: number[][] = [
+        [0.7441122531890869, 0.5199999809265137, -0.335999995470047, -0.25099998712539673],
+        [0, 3.402820018375656e+38, 3.402820018375656e+38, 3.402820018375656e+38],
+        [1, 0, 0, 0],
+        [0.7183529734611511, -0.32499998807907104, -0.5619999766349792, -0.25],
+        [0, 0, 0, 0]
+      ];
+      try {
+        let data: Array<double> = await sensor.getQuaternion(rotation);
+
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+          // 使用临时变量存储预期结果，避免复杂的索引表达式
+          let expectedResult: number[] = result[2];
+          for (let i = 0; i < data.length; i++) {
+            hilog.info(domain, tag, TAG + "getQuaternion [" + i + "] = " + data[i]);
+            if (i < expectedResult.length) {
+              expect(data[i]).assertEqual(expectedResult[i]);
+            } else {
+              hilog.info(domain, tag, TAG + ' data index ' + i + ' out of expected result range');
+            }
+          }
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' getQuaternion returned null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_003
+     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_003
+     * @tc.desc       test getQuaternion Promise：getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_Promise_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_Promise_SensorJsTest_static_003";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0.25;
+      let num1: double = 0.14;
+      let rotation: Array<Double> = [num0, num1];
+      const PARAMETER_ERROR_CODE = 401;
+      try {
+        let data: Array<double> = await sensor.getQuaternion(rotation);
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' getQuaternion returned null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(error.message).assertEqual("CreateQuaternion fail");
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_004
+     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_004
+     * @tc.desc       test getQuaternion Promise：getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_Promise_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_Promise_SensorJsTest_static_004";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0;
+      let rotation: Array<Double> = [num0, num0];
+      const PARAMETER_ERROR_CODE = 401;
+      try {
+        let data: Array<double> = await sensor.getQuaternion(rotation);
+        if (data) {
+          hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+          expect(false).assertTrue();
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' getQuaternion returned null or undefined');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
+        expect(error.message).assertEqual("CreateQuaternion fail");
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_001
+     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc       test getQuaternion AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = -0.325;
+      let num1: double = -0.562;
+      let num2: double = -0.25;
+      let rotation: Array<Double> = [num0, num1, num2];
+      let result: number[][] = [
+        [0.7441122531890869, 0.5199999809265137, -0.335999995470047, -0.25099998712539673],
+        [0, 3.402820018375656e+38, 3.402820018375656e+38, 3.402820018375656e+38],
+        [1, 0, 0, 0],
+        [0.7183529734611511, -0.32499998807907104, -0.5619999766349792, -0.25],
+        [0, 0, 0, 0]
+      ]
+      try {
+        sensor.getQuaternion(rotation, (error, data) => {
+          if (data) {
+            hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+            // 使用临时变量存储预期结果，避免复杂的索引表达式
+            let expectedResult: number[] = result[3];
+            for (let i = 0; i < data.length; i++) {
+              hilog.info(domain, tag, TAG + "getQuaternion [" + i + "] = " + data[i]);
+              if (i < expectedResult.length) {
+                expect(data[i]).assertEqual(expectedResult[i]);
+              } else {
+                hilog.info(domain, tag, TAG + ' data index ' + i + ' out of expected result range');
+              }
+            }
+            done();
+          } else {
+            hilog.info(domain, tag, TAG + ' getQuaternion returned null or undefined');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_002
+     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc       test getQuaternion AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0;
+      let rotation: Array<Double> = [num0, num0, num0];
+      let result: number[][] = [
+        [0.7441122531890869, 0.5199999809265137, -0.335999995470047, -0.25099998712539673],
+        [0, 3.402820018375656e+38, 3.402820018375656e+38, 3.402820018375656e+38],
+        [1, 0, 0, 0],
+        [0.7183529734611511, -0.32499998807907104, -0.5619999766349792, -0.25],
+        [0, 0, 0, 0]
+      ]
+      try {
+        sensor.getQuaternion(rotation, (error, data) => {
+          if (data) {
+            hilog.info(domain, tag, TAG + ' data length: ' + data.length);
+            // 使用临时变量存储预期结果，避免复杂的索引表达式
+            let expectedResult: number[] = result[2];
+            for (let i = 0; i < data.length; i++) {
+              hilog.info(domain, tag, TAG + "getQuaternion [" + i + "] = " + data[i]);
+              if (i < expectedResult.length) {
+                expect(data[i]).assertEqual(expectedResult[i]);
+              } else {
+                hilog.info(domain, tag, TAG + ' data index ' + i + ' out of expected result range');
+              }
+            }
+            done();
+          } else {
+            hilog.info(domain, tag, TAG + ' getQuaternion returned null or undefined');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_003
+     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_003
+     * @tc.desc       test getQuaternion AsyncCallback:getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_AsyncCallback_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0.25;
+      let num1: double = 0.14;
+      let rotation: Array<Double> = [num0, num1];
+      const PARAMETER_ERROR_CODE = 401;
+      sensor.getQuaternion(rotation, (error, data) => {
+        if (error) {
+          hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
+          expect(error.message).assertEqual("CreateQuaternion fail");
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' getQuaternion data: ' + JSON.stringify(data));
+          expect(false).assertTrue();
+          done();
+        }
+      });
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_004
+     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_004
+     * @tc.desc       test getQuaternion AsyncCallback:getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetQuaternion_AsyncCallback_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_004";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      let num0: double = 0;
+      let rotation: Array<Double> = [num0, num0];
+      const PARAMETER_ERROR_CODE = 401;
+      sensor.getQuaternion(rotation, (error, data) => {
+        if (error) {
+          hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
+          expect(error.message).assertEqual("CreateQuaternion fail");
+          done();
+        } else {
+          hilog.info(domain, tag, TAG + ' getQuaternion data: ' + JSON.stringify(data));
+          expect(false).assertTrue();
+          done();
+        }
+      });
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetSingleSensor_AsyncCallback_SensorJsTest_static_001
+     * @tc.name       GetSingleSensor_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc       test getSingleSensor AsyncCallback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSingleSensor_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSingleSensor_AsyncCallback_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      const SERVICE_EXCEPTION_CODE = 14500101
+      const SENSOR_NO_SUPPORT_CODE = 14500102
+      try {
+        sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ' getSingleSensor failed, error: ' + error.code + ', ' + error.message);
+            expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+          } else {
+            try {
+              hilog.info(domain, tag, TAG + ' getSingleSensor data: ' + JSON.stringify(data));
+              expect(typeof (data)).assertEqual("object");
+              done();
+            } catch (error) {
+              error = error as BusinessError;
+              console.info(TAG + ' catch error:' + error);
+              hilog.info(domain, tag, TAG + ' getSingleSensor catch errCode: ' + error.code + ' ,msg:' + error.message);
+              expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+              done();
+            }
+          }
+        });
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetSingleSensor_AsyncCallback_SensorJsTest_static_002
+     * @tc.name       GetSingleSensor_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc       test getSingleSensor AsyncCallback error: 14500102, The sensor is not supported by the device
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSingleSensor_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSingleSensor_AsyncCallback_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      const SERVICE_EXCEPTION_CODE = 14500101
+      const SENSOR_NO_SUPPORT_CODE = 14500102
+      try {
+        sensor.getSingleSensor(sensor.SensorId.WEAR_DETECTION, (error, data) => {
+          if (error) {
+            hilog.info(domain, tag, TAG + ' getSingleSensor failed, error: ' + error.code + ', ' + error.message);
+            expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+          } else {
+            try {
+              hilog.info(domain, tag, TAG + ' getSingleSensor data: ' + JSON.stringify(data));
+              expect(typeof (data)).assertEqual("object");
+              done();
+            } catch (error) {
+              error = error as BusinessError;
+              console.info(TAG + ' catch error:' + error);
+              hilog.info(domain, tag, TAG + ' getSingleSensor catch errCode: ' + error.code + ' ,msg:' + error.message);
+              expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+              done();
+            }
+          }
+        });
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetSingleSensor_Promise_SensorJsTest_static_001
+     * @tc.name       GetSingleSensor_Promise_SensorJsTest_static_001
+     * @tc.desc       test getSingleSensor Promise
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSingleSensor_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSingleSensor_Promise_SensorJsTest_static_001";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      const SENSOR_NO_SUPPORT_CODE = 14500102
+      try {
+        await sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER).then((data) => {
+          if (data) {
+            expect(typeof (data.sensorName)).assertEqual("string");
+            expect(typeof (data.vendorName)).assertEqual("string");
+            expect(typeof (data.firmwareVersion)).assertEqual("string");
+            expect(typeof (data.hardwareVersion)).assertEqual("string");
+            expect(typeof (data.sensorId)).assertEqual("number");
+            expect(typeof (data.maxRange)).assertEqual("number");
+            expect(typeof (data.minSamplePeriod)).assertEqual("number");
+            expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+            expect(typeof (data.precision)).assertEqual("number");
+            expect(typeof (data.power)).assertEqual("number");
+            hilog.info(domain, tag, TAG + ' getSingleSensor success: ');
+            done()
+          } else {
+            hilog.info(domain, tag, TAG + ' illegal parameter!');
+            done();
+          }
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
+
+    /**
+     *
+     * @tc.number     GetSingleSensor_Promise_SensorJsTest_static_002
+     * @tc.name       GetSingleSensor_Promise_SensorJsTest_static_002
+     * @tc.desc       test getSingleSensor errCode: 14500102 ,msg:The sensor is not supported by the device
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it("GetSingleSensor_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "GetSingleSensor_Promise_SensorJsTest_static_002";
+      hilog.info(domain, tag, TAG + "----------start----------");
+      const SENSOR_NO_SUPPORT_CODE = 14500102
+      try {
+        await sensor.getSingleSensor(sensor.SensorId.WEAR_DETECTION).then((data) => {
+          expect(typeof (data.sensorName)).assertEqual("string");
+          expect(typeof (data.vendorName)).assertEqual("string");
+          expect(typeof (data.firmwareVersion)).assertEqual("string");
+          expect(typeof (data.hardwareVersion)).assertEqual("string");
+          expect(typeof (data.sensorId)).assertEqual("number");
+          expect(typeof (data.maxRange)).assertEqual("number");
+          expect(typeof (data.minSamplePeriod)).assertEqual("number");
+          expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+          expect(typeof (data.precision)).assertEqual("number");
+          expect(typeof (data.power)).assertEqual("number");
+          done()
+        });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+        expect(error.message).assertEqual("The sensor is not supported by the device");
+        done();
+      }
+      hilog.info(domain, tag, TAG + "----------end----------");
+    });
   })
 }

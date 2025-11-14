@@ -1,0 +1,10 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/timePicker/stageTimePickerDialog",
+    "MainAbility/pages/timePicker/TimePicker",
+    "MainAbility/pages/timePicker/TimePicker1",
+    "MainAbility/pages/timePicker/TimePickerPage",
+    "MainAbility/pages/timePicker/timeStamp"
+  ]
+}

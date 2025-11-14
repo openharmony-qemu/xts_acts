@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the 'License');
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an 'AS IS' BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -30,11 +30,11 @@ struct cancelTouchDemo {
   @State stepTips: string = '操作步骤:\n' + '1.长按"Scroll Area -- 子组件"文本所在区域触发长按事件\n' +
     '2.搜索log"===fy==="\n' +
     '预期结果：\n' + '1.触发长按手势的过程中会同时打印有关父组件outer和子组件inner的Touch事件相关的log\n' +
-    '2.当log中出现"长按事件触发成功 子组件的touch事件已被阻止"以后,子组件inner的touch事件被取消,log中将只会打印有关父组件outer的log信息\n'
+    '2.当log中出现"长按事件触发成功 子组件的touch事件已被阻止"以后,子组件inner的touch事件被取消,log中将只会打印有关父组件outer的log信息\n';
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
   scroller: Scroller = new Scroller();
-  scroller2: Scroller = new Scroller()
+  scroller2: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   private childRecognizer: GestureRecognizer = new GestureRecognizer();
   private currentRecognizer: GestureRecognizer = new GestureRecognizer();
@@ -46,7 +46,8 @@ struct cancelTouchDemo {
       Image($r('app.media.ic_public_pass'))
         .width('20vp')
         .height('20vp')
-    }.width('30%')
+    }
+    .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -55,7 +56,7 @@ struct cancelTouchDemo {
         params: {
           result: 'true ', title: this.name,
         }
-      })
+      });
       promptAction.showToast({
         message: '通过', duration: 1000
       });
@@ -107,7 +108,7 @@ struct cancelTouchDemo {
             .margin({ left: '20vp' })
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
+        .size({ width: '10%', height: '10%' })
         .onClick(() => {
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
@@ -119,6 +120,7 @@ struct cancelTouchDemo {
           .fontColor(Color.White)
           .fontSize('18fp')
           .margin({ left: '-20vp' })
+
         Text('hello')
           .fontColor(Color.White)
           .visibility(Visibility.Hidden)
@@ -134,61 +136,65 @@ struct cancelTouchDemo {
             Column() {
               Text('Scroll Area -- 父组件')
                 .width('90%')
-                .height(150)
+                .fontColor(Color.Black)
                 .backgroundColor(0xFFFFFF)
                 .borderRadius(15)
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
-                .margin({ top: 10 })
+                .margin({ top: '5%' })
+
               Scroll(this.scroller2) {
                 Column() {
                   Text('Scroll Area -- 子组件')
                     .width('90%')
-                    .height(150)
+                    .fontColor(Color.Black)
                     .backgroundColor(0xFFFFFF)
                     .borderRadius(15)
                     .fontSize(16)
                     .textAlign(TextAlign.Center)
-                    .margin({ top: 10 })
+                    .margin({ top: '5%' })
+
                   Column() {
                     ForEach(this.arr, (item: number) => {
                       Text(item.toString())
                         .width('90%')
-                        .height(150)
+                        .fontColor(Color.Black)
                         .backgroundColor(0xFFFFFF)
                         .borderRadius(15)
                         .fontSize(16)
                         .textAlign(TextAlign.Center)
-                        .margin({ top: 10 })
+                        .margin({ top: '5%' })
                     }, (item: string) => item)
-                  }.width('100%')
+                  }
+                  .width('100%')
                 }
               }
               .id('inner')
               .width('100%')
-              .height(800)
+              .height('80%')
               .onTouch((event) => {
                 console.log('===fy=== inner onTouch, id is: ', event.target.id)
                 console.log('===fy=== inner onTouch, type is: ', event.type)
               })
-            }.width('100%')
+            }
+            .width('100%')
           }
           .id('outer')
-          .height(600)
+          .height('60%')
           .scrollable(ScrollDirection.Vertical)
           .scrollBar(BarState.On)
-          .scrollBarColor(Color.Gray) 
-          .scrollBarWidth(10) 
+          .scrollBarColor(Color.Gray)
+          .scrollBarWidth('5%')
           .edgeEffect(EdgeEffect.None)
           .shouldBuiltInRecognizerParallelWith((current: GestureRecognizer, others: Array<GestureRecognizer>) => {
             for (let i = 0; i < others.length; i++) {
               let target = others[i].getEventTargetInfo();
               if (target) {
                 if (target.getId() == 'inner' && others[i].isBuiltIn() &&
-                  others[i].getType() == GestureControl.GestureType.LONG_PRESS_GESTURE) { 
-                  this.currentRecognizer = current; 
-                  this.childRecognizer = others[i]; 
-                  return others[i]; 
+                  others[i].getType() == GestureControl.GestureType.LONG_PRESS_GESTURE) {
+                  this.currentRecognizer = current;
+                  this.childRecognizer = others[i];
+                  return others[i];
                 }
               }
             }
@@ -196,7 +202,7 @@ struct cancelTouchDemo {
           })
           .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
             others: Array<GestureRecognizer>,
-            touchRecognizers?: Array<TouchRecognizer>) => { 
+            touchRecognizers?: Array<TouchRecognizer>) => {
             if (current && touchRecognizers) {
               let target = current.getEventTargetInfo();
               if (target) {
@@ -224,17 +230,17 @@ struct cancelTouchDemo {
             console.log('===fy=== outer onTouch, id is: ', event.target.id)
             console.log('===fy=== outer onTouch, type is: ', event.type)
           })
-          .parallelGesture( 
+          .parallelGesture(
             LongPressGesture()
               .onAction((event: GestureEvent) => {
                 if (this.childRecognizer.getState() != GestureRecognizerState.SUCCESSFUL ||
-                  this.currentRecognizer.getState() != GestureRecognizerState.SUCCESSFUL) { 
+                  this.currentRecognizer.getState() != GestureRecognizerState.SUCCESSFUL) {
                   return;
                 }
                 let target = this.childRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
                 let currentTarget = this.currentRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
                 if (target instanceof ScrollableTargetInfo && currentTarget instanceof ScrollableTargetInfo) {
-                  if (target.isEnd()) { 
+                  if (target.isEnd()) {
                     if ((event.offsetY - this.lastOffset) < 0) {
                       this.childRecognizer.setEnabled(false)
                       if (currentTarget.isEnd()) {
@@ -267,7 +273,8 @@ struct cancelTouchDemo {
               })
           )
         }
-      }.height('80%')
+      }
+      .height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -301,8 +308,8 @@ struct cancelTouchDemo {
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
-
-    }.width('100%')
+    }
+    .width('100%')
     .height('100%')
     .backgroundColor('#F1F3F5')
   }

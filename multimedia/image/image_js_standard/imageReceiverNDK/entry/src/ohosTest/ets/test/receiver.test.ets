@@ -14,7 +14,6 @@
  */
 
 import cameraObj from '@ohos.multimedia.camera';
-import featureAbility from '@ohos.ability.featureAbility';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import {UiDriver, BY, UiComponent} from '@ohos.UiTest'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
@@ -27,10 +26,7 @@ import { PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { isSupportedCameras } from './common'
 
 const TAG = "ImageReceiverTest: ";
-const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 let testContext: common.UIAbilityContext;
-let atManager = abilityAccessCtrl.createAtManager();
-let button: UiComponent | null;
 
 let getPermission = async () => {
   console.info('getPermission start');
@@ -48,6 +44,56 @@ let getPermission = async () => {
   }
 }
 
+//是否可拍下一张回调函数
+let isCaptureReady: boolean = true;
+
+function captureReadyCallback() {
+  isCaptureReady = true;
+  console.info('isCaptureReady is true')
+}
+
+//监听是否可拍下一张
+export function onCaptureReady(photoOutput: cameraObj.PhotoOutput) {
+  photoOutput.on('captureReady', captureReadyCallback)
+}
+
+//取消监听是否可拍下一张
+export function offCaptureReady(photoOutput: cameraObj.PhotoOutput) {
+  photoOutput.off('captureReady', captureReadyCallback)
+}
+
+//相机拍照
+export async function cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number) {
+    let captureLocation: cameraObj.Location = {
+      latitude: 0,
+      longitude: 0,
+      altitude: 0
+    }
+    let photoCaptureSetting: cameraObj.PhotoCaptureSetting = {
+      quality: cameraObj.QualityLevel.QUALITY_LEVEL_LOW,
+      rotation: cameraObj.ImageRotation.ROTATION_0,
+      location: captureLocation,
+      mirror: false
+    }
+    console.info('captureNumber is ' + captureNumber);
+    //使用当前拍照设置进行拍照。
+    let iCapture = 0;
+    while (iCapture < captureNumber) {
+      if (isCaptureReady) {
+        iCapture++;
+        isCaptureReady = false;
+        console.info('iCapture is ' + iCapture);
+        await photoOutput.capture(photoCaptureSetting, (err: BusinessError) => {
+          if (err) {
+            console.error(`Failed to capture the photo ${err.message}`);
+            expect().assertFail()
+            return;
+          }
+        });
+      }
+      await sleep(2000)
+    }
+  }
 
 async function permissionClick() {
   console.info(`come in permissionClick`);
@@ -387,12 +433,6 @@ export default function ImageReceiverTest() {
                 done();
             }
             else {
-                let captureSetting: cameraObj.PhotoCaptureSetting = {
-                    quality: cameraObj.QualityLevel.QUALITY_LEVEL_LOW,
-                    rotation: cameraObj.ImageRotation.ROTATION_0,
-                    location: captureLocation,
-                    mirror: false
-                };
                 let mlg: ESObject = logger("SUB_MULTIMEDIA_IMAGE_RECEIVERNDK_NORMAL_0100");
                 getCameraManagerInstance();
                 getCameraSupportDevicesArray();
@@ -418,27 +458,16 @@ export default function ImageReceiverTest() {
                     mCameraSession.addOutput(mPhotoOutput);
                     await commitCameraSessionConfig();
                     await mCameraSession.start();
-                    mPhotoOutput.capture(captureSetting).then((result) => {
-                        console.info('capture success :' + result);
-                    }).catch((err: BusinessError) => {
-                        console.info('capture failed :' + err);
-                    });
-                    await waitUntilImageArrival();
-                    nextImage = ndkTest.JsReadNextImage(myReceiver);
-                    mlg.log("mTestImage 1 " + JSON.stringify(nextImage));
-                    let capacityAfterOn: number = ndkTest.JsImageReceiverOptionsGetCapacity(options);
-                    expect(capacityAfterOn == CAPACITY + 1).assertTrue();
-                    imageArrival = false;
-                    mPhotoOutput.capture(captureSetting).then((result) => {
-                        console.info('capture success :' + result);
-                    }).catch((err: BusinessError) => {
-                        console.info('capture failed: ' + err);
-                    });
-                    await waitUntilImageArrival();
-                    lastestImage = ndkTest.JsReadLatestImage(myReceiver);
-                    mlg.log("mTestImage 2 " + JSON.stringify(lastestImage));
+                    await sleep(2000);
+                    onCaptureReady(mPhotoOutput);
+                    await cameraCaptureRelyOnNum(mPhotoOutput, 2);
+                    offCaptureReady(mPhotoOutput);
                     let capacityAfterOff: number = ndkTest.JsImageReceiverOptionsGetCapacity(options);
                     expect(capacityAfterOff == CAPACITY + 2).assertTrue();
+                    nextImage = ndkTest.JsReadNextImage(myReceiver);
+                    mlg.log("read next image: " + JSON.stringify(nextImage));
+                    lastestImage = ndkTest.JsReadLatestImage(myReceiver);
+                    mlg.log("read lastest image: " + JSON.stringify(lastestImage));
                     await mCameraSession.stop();
                     await sleep(1000);
                     let onOFF: number = ndkTest.JsOff(myReceiver);

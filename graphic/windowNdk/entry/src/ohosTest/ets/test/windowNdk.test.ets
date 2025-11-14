@@ -37,6 +37,7 @@ export default function windowNdk() {
     let context : common.UIAbilityContext;
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(async() => {
       windowStage = AppStorage.get("windowStage") as window.WindowStage;
       console.log(`${Tag}:beforeAll start... `);
@@ -54,6 +55,10 @@ export default function windowNdk() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      isFreeWindowMode = WindowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     beforeEach(() => {
       console.log(`${Tag}:beforeEach start... `);

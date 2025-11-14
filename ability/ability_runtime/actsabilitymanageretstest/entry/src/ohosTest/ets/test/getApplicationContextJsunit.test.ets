@@ -21,7 +21,6 @@ import backgroundTaskManager from '@ohos.backgroundTaskManager';
 export default function getHapModuleInfoJsunit() {
   describe('getApplicationContextTest', () => {
     let TAG1 = "SUB_AA_OpenHarmony == getApplicationContextTest: ";
-    let sleepTimeOne = 1000;
     let id: number;
     beforeAll(async (done: Function) => {
       console.log(TAG1 + "beforeAll called");
@@ -31,19 +30,15 @@ export default function getHapModuleInfoJsunit() {
       })
       id = delayInfo.requestId;
       console.log(TAG1 + "requestId is : " + id);
-      setTimeout(() => {
-        console.log(TAG1 + "beforeAll end");
+      console.log(TAG1 + "beforeAll end");
         done();
-      }, sleepTimeOne);
     })
 
     afterAll(async (done: Function) => {
       console.log(TAG1 + "afterAll called");
       backgroundTaskManager.cancelSuspendDelay(id);
-      setTimeout(() => {
-        console.log(TAG1 + "afterAll end");
+      console.log(TAG1 + "afterAll end");
         done();
-      }, sleepTimeOne)
     })
 
     /**
@@ -55,7 +50,6 @@ export default function getHapModuleInfoJsunit() {
     it('context_getApplicationContext_test_0100', Level.LEVEL0, async (done: Function) => {
       try {
         console.info('[context_getApplicationContext_test_0100] START');
-        await Utils.sleep(1000);
         let timeOldStamp = Utils.getNowTime();
         let context = ability_featureAbility.getContext().getApplicationContext();
         let timeNewStamp = Utils.getNowTime();

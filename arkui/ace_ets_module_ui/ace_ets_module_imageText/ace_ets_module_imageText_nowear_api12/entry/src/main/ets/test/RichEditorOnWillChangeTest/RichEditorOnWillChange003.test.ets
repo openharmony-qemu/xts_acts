@@ -68,7 +68,7 @@ export default function RichEditorOnWillChange003() {
       await CommonFunc.sleep(500);
 
       let add_text = await driver.findComponent(ON.id('add_text'));
-      add_text.click();
+      await add_text.click();
       await CommonFunc.sleep(500);
       let onWillChange = await driver.findComponent(ON.id('onWillChange_callback'));
       let onWillText = await onWillChange.getText();

@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,63 +13,77 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, beforeAll , TestType, Size, Level } from "@ohos/hypium";
 import events_emitter from '@ohos.events.emitter';
-import router from '@ohos.router';
 import Utils from './Utils';
-import { waitForComponent } from './WaitTest.test';
+// import router from '@system.router';
+import router from '@ohos.router';
+import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+let emitKey = "";
 
-let emitKey = "emitAllowWindowOpenMethod";
+const EVENT_ID_SET_SUITE_KEY = 133850;
+const driver = Driver.create();
 
-export default function webTwoJsunit() {
-  describe('overviewTest', () => {
-    beforeAll(async (done: Function) => {
+export default function blurModeTest() {
+  describe('overviewTest',  () =>{
+    beforeAll(async  (done: Function) =>{
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/webTwo',
-      };
+        url: "MainAbility/pages/webTwo"
+      }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get webTwo state success " + JSON.stringify(pages));
         if (!("webTwo" == pages.name)) {
           console.info("get webTwo state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
+          let result = await router.push(options);
           console.info("push webTwo page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webTwo page error: " + err);
       }
-      await waitForComponent("webcomponentTwo");
-      done();
+      await driver.waitForComponent(ON.id("webcomponentTwo"),10000);
+      done()
     });
-
-    beforeEach(async (done: Function) => {
+    beforeEach(async  (done: Function) =>{
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info("web beforeEach start");
+      console.info("blurMode beforeEach start");
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("web afterEach start:" + emitKey);
-      done();
-    })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB02_DEV_THREE_API_001                                                                                                   
-     *tc.name AllowWindowOpenMethod                                                                                                                                                                                                                 
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.number     SUB_WEB_ONWINDOWNEW_0001
+     * @tc.name       emitAllowWindowOpenMethod
+     * @tc.desc       test onWindowNew
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
-    it('AllowWindowOpenMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitAllowWindowOpenMethod", 133850);
-      Utils.registerEvent("emitAllowWindowOpenMethod", "openwindow", 133860, done);
-      sendEventByKey('webcomponentTwo', 10, '');
+    it('emitAllowWindowOpenMethod',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+      emitKey="emitAllowWindowOpenMethod";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("emitAllowWindowOpenMethod", "isAlerttrueisUserTriggerfalsetargetUrlhttps://www.example.com/", 20251125, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentTwo",emitKey);
+      await Utils.waitForExist(() => isReturn, "emitAllowWindowOpenMethod" + '_returnCheck', true, 1000);
+      done();
     })
+
+
+
+
+
+
+
   })
 }
+
+

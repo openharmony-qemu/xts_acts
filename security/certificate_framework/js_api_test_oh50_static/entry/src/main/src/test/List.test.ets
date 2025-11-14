@@ -25,6 +25,13 @@ import certFrameworkParseP12CertTestUnit from './ParseP12Cert.test';
 import certFrameworkCertPkcs7ExtCMSFunctionTestUnit from './CertP7.test';
 import certFrameworkCertCsrTestUnit from './CertCsr.test';
 import certFrameworkCertResolutionTestUnit from './CertResolution.test';
+import certFrameworkRootCaCertTestUnit from './RootCaCert.test';
+import certFrameworkCreateP12CertTestUnit from './CreatePkcs12.test';
+import certFrameworkCertCmsTestUnit from './CertCms.test';
+import certFrameworkCertCheckCrlTestUnit from './CertLocalCRLVerification.test';
+import certFrameworkCertCheckOnlineCaTestUnit from './CertOnlineVerification.test';
+import certFrameworkCmsVerifyTestUnit from './CmsVerify.test';
+import certFrameworkCmsDecryptTestUnit from './CmsDecrypt.test';
 
 export default function testsuite() {
   certFrameworkSelectCertsJsAPIFunctionTestUnit();
@@ -40,4 +47,13 @@ export default function testsuite() {
   certFrameworkCertPkcs7ExtCMSFunctionTestUnit();
   certFrameworkCertCsrTestUnit();
   certFrameworkCertResolutionTestUnit();
+  /* The test suite can be executed only after the root certificate is preconfigured on the mobile phone */
+  certFrameworkRootCaCertTestUnit();
+  certFrameworkCreateP12CertTestUnit();
+  certFrameworkCertCmsTestUnit();
+  certFrameworkCertCheckCrlTestUnit();
+  /* Networking is required and latest system time */
+  certFrameworkCertCheckOnlineCaTestUnit();
+  certFrameworkCmsVerifyTestUnit();
+  certFrameworkCmsDecryptTestUnit();
 }

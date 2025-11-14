@@ -623,6 +623,7 @@ export default function abilityTest() {
     it('ACTS_TerminateSelfWithResult_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_TerminateSelfWithResult_0100";
       console.info(TAG + "====>start startAbilityForResult====>");
+      await sleep(2000);
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',
@@ -645,6 +646,7 @@ export default function abilityTest() {
     it('ACTS_TerminateSelfWithResult_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_TerminateSelfWithResult_0300";
       console.info(TAG + "====>start startAbilityForResult====>");
+      await sleep(2000)
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',

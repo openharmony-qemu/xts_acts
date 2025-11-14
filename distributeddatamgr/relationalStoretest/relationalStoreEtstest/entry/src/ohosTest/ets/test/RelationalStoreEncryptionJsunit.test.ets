@@ -98,12 +98,13 @@ export default function relationalStoreEncryptTest() {
         console.info(TAG + "*************Unit Test Begin*************")
 
         /**
-         * @tc.name RdbEncryptTest0010
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   RdbEncryptTest0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0100
-         * @tc.desc RelationalStore create encrypt db test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   RelationalStore create encrypt db test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('RdbEncryptTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
             console.info(TAG + "************* RdbEncryptTest_0010 start *************")
@@ -117,12 +118,13 @@ export default function relationalStoreEncryptTest() {
         })
 
         /**
-         * @tc.name RdbEncryptTest0020
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   RdbEncryptTest0020
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0200
-         * @tc.desc RelationalStore create unencrypted db test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   RelationalStore create unencrypted db test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('RdbEncryptTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
             console.info(TAG + "************* RdbEncryptTest_0020 start *************")
@@ -139,12 +141,13 @@ export default function relationalStoreEncryptTest() {
 
 
         /**
-         * @tc.name RdbEncryptTest0030
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   RdbEncryptTest0030
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0300
-         * @tc.desc RelationalStore Encrypt function test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   RelationalStore Encrypt function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('RdbEncryptTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
             console.info(TAG + "************* RdbEncryptTest_0030 start *************")
@@ -171,12 +174,13 @@ export default function relationalStoreEncryptTest() {
         })
 
         /**
-         * @tc.name RdbEncryptTest0040
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   RdbEncryptTest0040
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0400
-         * @tc.desc RelationalStore Encrypt function test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   RelationalStore Encrypt function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('RdbEncryptTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
             console.info(TAG + "************* RdbEncryptTest_0040 start *************")
@@ -194,12 +198,13 @@ export default function relationalStoreEncryptTest() {
         })
 
         /**
-         * @tc.name RdbEncryptTest0050
+         * @generated.time 2025-11-09 20:49:51
+         * @tc.name   RdbEncryptTest0050
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0500
-         * @tc.desc RelationalStore Encrypt function test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   RelationalStore Encrypt function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('RdbEncryptTest0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
             console.info(TAG + "************* RdbEncryptTest0050 start *************")

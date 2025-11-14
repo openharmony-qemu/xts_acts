@@ -1168,5 +1168,94 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
       done();
     });
 
+    /**
+     * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_4000
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_4000
+     * @tc.desc algorithm is RSA1024
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level3
+     */
+    it("SUB_Security_CryptoFramework_DataBlobToPem_Func_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let algName: string = "RSA1024";
+      let keyPair: cryptoFramework.KeyPair = {} as cryptoFramework.KeyPair;
+      try {
+        let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
+        keyPair = await generator.convertPemKey('', '');
+        expect(keyPair.priKey === undefined).assertTrue();
+        expect(keyPair.pubKey === undefined).assertTrue();
+      } catch (error) {
+        console.error(`${algName} “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_4100
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_4100
+     * @tc.desc algorithm is Ed25519
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level3
+     */
+    it("SUB_Security_CryptoFramework_DataBlobToPem_Func_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let algName: string = "RSA1024";
+      let pubKey: string = "-----BEGIN PUBLIC KEY-----\n" +
+        "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDi9zW7r2rXcswcK8KEkOAil2Fc\n" +
+        "D5y2f2SFcPj+WmxphLkICcpnMArvgin+LRZwjBjC5USmCCSjQMOmWKgKdiNT84S2\n" +
+        "fQ6nG3V/iafXse9R941kM3Rfed4XjckXlrFM28gkO4d2ItahZQwrQm199JQxDsXH\n" +
+        "cxbIBZqEMH02yW2SkwIDAQAB\n" +
+        "-----END PUBLIC KEY-----";
+      let keyPair: cryptoFramework.KeyPair = {} as cryptoFramework.KeyPair;
+      try {
+        let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
+        keyPair = await generator.convertPemKey(pubKey, '');
+        expect(keyPair.priKey === undefined).assertTrue();
+      } catch (error) {
+        console.error(`${algName} “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_DataBlobToPem_Func_4200
+     * @tc.name SUB_Security_CryptoFramework_DataBlobToPem_Func_4200
+     * @tc.desc algorithm is Ed25519
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level3
+     */
+    it("SUB_Security_CryptoFramework_DataBlobToPem_Func_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let algName: string = "RSA1024";
+      let priKey: string = "-----BEGIN PRIVATE KEY-----\n" +
+        "MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAOL3NbuvatdyzBwr\n" +
+        "woSQ4CKXYVwPnLZ/ZIVw+P5abGmEuQgJymcwCu+CKf4tFnCMGMLlRKYIJKNAw6ZY\n" +
+        "qAp2I1PzhLZ9DqcbdX+Jp9ex71H3jWQzdF953heNyReWsUzbyCQ7h3Yi1qFlDCtC\n" +
+        "bX30lDEOxcdzFsgFmoQwfTbJbZKTAgMBAAECgYAxSa4JjBaPowZgN8COOUfzOxyR\n" +
+        "eXJ2z0NtFxN7aPeSEph7/mRN9EjrqkCkSfZNip719APsamhKa44RWb9kRjN1ZwJp\n" +
+        "8tDa3RGsg8CW5kE3exwaw49j7kq8nce+Bs3YcDyPQd/j10H7wdvfc8/MmKSDyr0x\n" +
+        "jDBdBbE4oSmt3H6/wQJBAPMcY9smcSOdn+hj6ILsrB+WrRrkAw9VRDjcPxc/bZt9\n" +
+        "EgYBQ7DWz+za4qHleCj7U2Yho3ZkHsbYk3SEnx+i1H8CQQDu/7CBepmVw9fC/YTc\n" +
+        "jY2XJM1DQ4bonaOMGtNX8j7WAR12JrAWFey92Oekt8pbML7gmdiztKdozuvxURvw\n" +
+        "8KftAkEAjPcsS5mpxt4SJ90uqCP11kc3Tr1hrNVjPpkvGBrWQm+uML8w8exNGmj9\n" +
+        "OqTlHNZGUJU2xGJfmitgrRJtdhmjnwJBANKZ8VlHRYtZVgl3CNqoyboELfQ1zu2v\n" +
+        "62wMP2viBUjjFqkEkmoDy+fG+OiHJAOTQr/8EZ7ZdCPBItw00uBP0EkCQQDnLklt\n" +
+        "heeopxTC3VN1/Jt5xtMBTuXkpUHHoQPiA/utcQwYqlgOT6UTUVQO3/6yMiD4ogU2\n" +
+        "Xr+0Wzu8l10lvf6v\n" +
+        "-----END PRIVATE KEY-----";
+      let keyPair: cryptoFramework.KeyPair = {} as cryptoFramework.KeyPair;
+      try {
+        let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
+        keyPair = await generator.convertPemKey('', priKey);
+        expect(keyPair.pubKey === undefined).assertTrue();
+      } catch (error) {
+        console.error(`${algName} “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
   });
 }

@@ -238,6 +238,27 @@ describe('fileIO_fs_access', function () {
   });
 
   /**
+   * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_0800
+   * @tc.name test_FileIO_Access_Sync_008
+   * @tc.desc Test accessSync() interface.
+   * Test that the file is not exist, AccessFlagType.LOCAL
+   * @tc.size MediumTest
+   * @tc.type Function
+   * @tc.level Level 0
+   * @tc.require
+   */
+  it('test_FileIO_Access_Sync_008', Level.LEVEL0, async function () {
+    let fpath = await nextFileName('test_FileIO_Access_Sync_008');
+    try {
+      let ret = fileIO.accessSync(fpath, fileIO.AccessModeType.EXIST, fileIO.AccessFlagType.LOCAL);
+      expect(ret === false).assertTrue();
+    } catch (e) {
+      console.log('test_FileIO_Access_Sync_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
    * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_0000
    * @tc.name test_FileIO_Access_Async_000
    * @tc.desc Test access() interface. Promise.

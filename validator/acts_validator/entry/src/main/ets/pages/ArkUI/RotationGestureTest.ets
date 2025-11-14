@@ -42,11 +42,11 @@ struct RotationGuestureTest {
               .height('60%')
               .width('60%')
           }
-          .height('350vp')
-          .width('350vp')
-          .padding(20)
+          .height('35%')
+          .width('90%')
+          .padding('5%')
           .rotate({ x: 1, y: 1, z: 1, angle: this.X })
-          .margin(80)
+          .margin('5%')
           .gesture(
             RotationGesture()
               .onActionUpdate((event: GestureEvent) => {
@@ -56,9 +56,11 @@ struct RotationGuestureTest {
           )
 
           Text('旋转角度:' + this.X)
+            .fontColor(Color.Black)
         }
       }
-      .scrollBarWidth('6vp')
+      .height('100%')
+      .scrollBarWidth('3%')
       .scrollBarColor('#cccccc')
     }
     .height('80%')
@@ -73,9 +75,9 @@ struct RotationGuestureTest {
         Url: 'pages/ArkUI/ArkUI_index',
         StepTips: this.StepTips,
         content: this.specificNoParam,
-        X: $X,
+        X:$X,
         name: $name,
-        Vue: $Vue,
+        Vue:$Vue,
       })
     }
     .width('100%')

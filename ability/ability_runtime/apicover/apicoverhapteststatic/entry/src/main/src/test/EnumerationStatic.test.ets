@@ -545,6 +545,19 @@ export default function EnumerationStaticTest() {
     })
 
     /**
+     * @tc.number  SUB_Ability_AbilityBase_AbilityConstant_Static_4200
+     * @tc.name    SUB_Ability_AbilityBase_AbilityConstant_Static_4200
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test abilityConstant LaunchReason.PRELOAD.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('11').assertEqual(abilityConstant.LaunchReason.PRELOAD + '');
+      done();
+    })
+
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_0100
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_0100
      * @tc.size:   MediumTest
@@ -700,7 +713,7 @@ export default function EnumerationStaticTest() {
     it('SUB_Ability_AbilityBase_wantConstant_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_wantConstant_Static_0100 START');
       hilog.info(domain, tag, 'SUB_Ability_AbilityBase_wantConstant_Static_0100 FLAG_INSTALL_ON_DEMAND: ' + wantConstant.Flags.FLAG_INSTALL_ON_DEMAND);
-      expect(String(0x00000800)).assertEqual(wantConstant.Flags.FLAG_INSTALL_ON_DEMAND + '');
+      expect(String((0x00000800).toInt())).assertEqual(wantConstant.Flags.FLAG_INSTALL_ON_DEMAND + '');
       done();
     })
 
@@ -861,6 +874,45 @@ export default function EnumerationStaticTest() {
     })
 
     /**
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2500
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2500
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.DESTINATION_PLUGIN_ABILITY.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.params.pluginAbility').assertEqual(wantConstant.Params.DESTINATION_PLUGIN_ABILITY + '');
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2600
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2600
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.APP_LAUNCH_TRUSTLIST.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.params.appLaunchTrustList').assertEqual(wantConstant.Params.APP_LAUNCH_TRUSTLIST + '');
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2700
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2700
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.ATOMIC_SERVICE_SHARE_ROUTER.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.params.atomicservice.shareRouter').assertEqual(wantConstant.Params.ATOMIC_SERVICE_SHARE_ROUTER + '');
+      done();
+    })
+
+    /**
      * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2800
      * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2800
      * @tc.size:   MediumTest
@@ -869,7 +921,20 @@ export default function EnumerationStaticTest() {
      * @tc.level   3
      */
     it('SUB_Ability_AbilityBase_wantConstant_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      expect(String(0x00002000)).assertEqual(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '');
+      expect(String((0x00002000).toInt())).assertEqual(wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE + '');
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_Ability_AbilityBase_wantConstant_Static_2900
+     * @tc.name    SUB_Ability_AbilityBase_wantConstant_Static_2900
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.desc    Test wantConstant Params.ABILITY_UNIFIED_DATA_KEY.
+     * @tc.level   3
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('ohos.param.ability.udKey').assertEqual(wantConstant.Params.ABILITY_UNIFIED_DATA_KEY + '');
       done();
     })
 

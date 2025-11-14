@@ -40,12 +40,13 @@ export default function ThermalServiceTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   ThermalServiceTest_0100
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0010
-     * @tc.name testPowerManagerServiceTest_0100
-     * @tc.desc ThermalService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   ThermalService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ThermalServiceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'ThermalServiceTest_0100';
@@ -62,12 +63,13 @@ export default function ThermalServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   ThermalServiceTest_0200
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0020
-     * @tc.name testPowerManagerServiceTest_0200
-     * @tc.desc ThermalService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   ThermalService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ThermalServiceTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'ThermalServiceTest_0200';
@@ -84,12 +86,13 @@ export default function ThermalServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   ThermalServiceTest_0300
      * @tc.number SUB_PowerSystem_PowerManagerService_JSTest_0030
-     * @tc.name testPowerManagerServiceTest_0300
-     * @tc.desc ThermalService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   ThermalService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ThermalServiceTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'ThermalServiceTest_0300';

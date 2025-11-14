@@ -71,29 +71,29 @@ export default function SingleKvStoreReturnValueDisData(){
       await kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
+        done();
       }).catch((err) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
-      done();
+
     });
     afterEach(async (done) =>  {
       console.info(TAG + 'afterEach');
-
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(() => {
-        console.info(TAG + ' afterEach Succeeded closeKVStore');
-        kvStore = null;
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+        console.info('afterEach closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('afterEach deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err) => {
+            console.info('afterEach deleteKVStore err ' + err);
+            done();
+        });
       }).catch((err) => {
-        console.error(TAG + `afterEach Failed closeKVStore.code is ${err.code},message is ${err.message}`);
+          console.info('afterEach closeKVStore err ' + err);
+          done();
       });
-
-      await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded deleteKVStore');
-        done();
-      }).catch((err) => {
-        console.error(TAG + `afterEach Failed deleteKVStore .code is ${err.code},message is ${err.message}`);
-        done();
-      });
-
     });
 
     afterAll(async (done) => {
@@ -104,13 +104,13 @@ export default function SingleKvStoreReturnValueDisData(){
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0300
-     * @tc.name SUB_DDM_SKV_ReturnValue_0300
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 10
+     * @tc.desc   getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -149,13 +149,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0301
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0301
-     * @tc.name SUB_DDM_SKV_ReturnValue_0301
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 0
+     * @tc.desc   getEntries(keyPrefix: string, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -177,13 +177,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0400
-     * @tc.name SUB_DDM_SKV_ReturnValue_0400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string): Promise<Entry[]>
-     * Entry.length = 10
+     * @tc.desc   getEntries(keyPrefix: string): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -223,13 +223,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0401
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0401
-     * @tc.name SUB_DDM_SKV_ReturnValue_0401
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(keyPrefix: string): Promise<Entry[]>
-     * Entry.length = 0
+     * @tc.desc   getEntries(keyPrefix: string): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -255,13 +255,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0700
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0700
-     * @tc.name SUB_DDM_SKV_ReturnValue_0700
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 10
+     * @tc.desc   getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -302,13 +302,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0701
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0701
-     * @tc.name SUB_DDM_SKV_ReturnValue_0701
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
-     * Entry.length = 0
+     * @tc.desc   getEntries(query: Query, callback: AsyncCallback<Entry[]>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -333,13 +333,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0800
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0800
-     * @tc.name SUB_DDM_SKV_ReturnValue_0800
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query): Promise<Entry[]>
-     * Entry.length = 10
+     * @tc.desc   getEntries(query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -380,13 +380,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_0801
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_0801
-     * @tc.name SUB_DDM_SKV_ReturnValue_0801
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getEntries(query: Query): Promise<Entry[]>
-     * Entry.length = 0
+     * @tc.desc   getEntries(query: Query): Promise<Entry[]>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_0801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -413,12 +413,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1100
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1100
-     * @tc.name SUB_DDM_SKV_ReturnValue_1100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---true
+     * @tc.desc   get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -441,12 +442,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1101
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1101
-     * @tc.name SUB_DDM_SKV_ReturnValue_1101
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---false
+     * @tc.desc   get(key: string, callback: AsyncCallback<boolean | string | number | Uint8Array>): void---false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -469,12 +471,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1200
-     * @tc.name SUB_DDM_SKV_ReturnValue_1200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string): Promise<boolean | string | number | Uint8Array>---true
+     * @tc.desc   get(key: string): Promise<boolean | string | number | Uint8Array>---true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -500,12 +503,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1201
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1201
-     * @tc.name SUB_DDM_SKV_ReturnValue_1201
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc get(key: string): Promise<boolean | string | number | Uint8Array>---false
+     * @tc.desc   get(key: string): Promise<boolean | string | number | Uint8Array>---false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -532,12 +536,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1600
+     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_SKV_ReturnValue_1600
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1600
      * @tc.desc   getResultSize(query: Query, callback: AsyncCallback<number>): void---number = 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -564,12 +569,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1601
+     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_SKV_ReturnValue_1601
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1601
      * @tc.desc   getResultSize(query: Query, callback: AsyncCallback<number>): void---number = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -594,13 +600,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1800
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1800
-     * @tc.name SUB_DDM_SKV_ReturnValue_1800
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSize(query: Query): Promise<Entry[]>---number = 10
-     * Entry.length = 10
+     * @tc.desc   getResultSize(query: Query): Promise<Entry[]>---number = 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -628,13 +634,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_1801
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_1801
-     * @tc.name SUB_DDM_SKV_ReturnValue_1801
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSize(query: Query): Promise<Entry[]>---number = 0
-     * Entry.length = 10
+     * @tc.desc   getResultSize(query: Query): Promise<Entry[]>---number = 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_1801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -661,12 +667,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2000
+     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_SKV_ReturnValue_2000
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2000
      * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void---result != null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -699,12 +706,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2001
+     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DDM_SKV_ReturnValue_2001
-     * @tc.type   FUNC
-     * @tc.size   MediumTest
-     * @tc.level  Level 2
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2001
      * @tc.desc   getResultSet(keyPrefix: string, callback: AsyncCallback<KVStoreResultSet>): void---result == null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -732,13 +740,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2200
-     * @tc.name SUB_DDM_SKV_ReturnValue_2200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -769,13 +777,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2201
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2201
-     * @tc.name SUB_DDM_SKV_ReturnValue_2201
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -802,13 +810,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2400
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2400
-     * @tc.name SUB_DDM_SKV_ReturnValue_2400
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -840,13 +848,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2401
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2401
-     * @tc.name SUB_DDM_SKV_ReturnValue_2401
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -874,13 +882,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2600
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2600
-     * @tc.name SUB_DDM_SKV_ReturnValue_2600
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -910,13 +918,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_2601
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_2601
-     * @tc.name SUB_DDM_SKV_ReturnValue_2601
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getResultSet(query: Query): Promise<KVStoreResultSet>
-     * Entry.length = 10
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_2601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -947,12 +955,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0100
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0100
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S1
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -969,25 +978,25 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS1 = await kvManager.getKVStore(TEST_STORE_S1_ID, optionsS1);
 
-        kvStoreS1.getSecurityLevel((err, data) => {
+        await kvStoreS1.getSecurityLevel(async(err, data) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S1);
-        });
 
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, kvStoreS1).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S1');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, kvStoreS1).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S1');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(async() => {
+              console.info(TAG + '  Succeeded deleteKVStore S1');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0100 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S1');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0100 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -997,12 +1006,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0101
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0101
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0101
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S2
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -1019,26 +1029,25 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS2 = await kvManager.getKVStore(TEST_STORE_S2_ID, optionsS2);
 
-        kvStoreS2.getSecurityLevel((err, data) => {
+        await kvStoreS2.getSecurityLevel(async(err, data) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S2);
+
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID, kvStoreS2).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S2');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(async() => {
+              console.info(TAG + '  Succeeded deleteKVStore S2');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0101 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         });
-
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID, kvStoreS2).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S2');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S2');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0101 end--------- ');
-        done();
-
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
@@ -1047,12 +1056,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0102
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0102
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0102
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S3
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -1069,25 +1079,24 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS3 = await kvManager.getKVStore(TEST_STORE_S3_ID, optionsS3);
 
-        kvStoreS3.getSecurityLevel((err, data) => {
+        await kvStoreS3.getSecurityLevel(async(err, data) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S3);
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID, kvStoreS3).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S3');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S3');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0102 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         });
-
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID, kvStoreS3).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S3');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S3');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0102 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1097,12 +1106,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0103
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0103
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0103
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S4
+     * @tc.desc   getSecurityLevel(callback: AsyncCallback<SecurityLevel>): void---S4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -1119,25 +1129,25 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS4 = await kvManager.getKVStore(TEST_STORE_S4_ID, optionsS4);
 
-        kvStoreS4.getSecurityLevel((err, data) => {
+        await kvStoreS4.getSecurityLevel(async(err, data) => {
           console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S4);
-        });
 
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID, kvStoreS4).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S4');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID, kvStoreS4).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S4');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S4');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S4');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1148,12 +1158,13 @@ export default function SingleKvStoreReturnValueDisData(){
 
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0200
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0200
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S1
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -1170,27 +1181,28 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS1 = await kvManager.getKVStore(TEST_STORE_S1_ID, optionsS1);
 
-        await kvStoreS1.getSecurityLevel().then((data) => {
+        await kvStoreS1.getSecurityLevel().then(async(data) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S1);
+
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, kvStoreS1).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S1');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S1');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0200 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID, kvStoreS1).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S1');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S1');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0200 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1200,12 +1212,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0201
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0201
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0201
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S2
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -1222,27 +1235,28 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS2 = await kvManager.getKVStore(TEST_STORE_S2_ID, optionsS2);
 
-        await kvStoreS2.getSecurityLevel().then((data) => {
+        await kvStoreS2.getSecurityLevel().then(async(data) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S2);
+
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID, kvStoreS2).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S2');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S2');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0201 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID, kvStoreS2).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S2');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S2');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0201 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1252,12 +1266,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0202
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0202
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0202
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S3
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -1274,27 +1289,28 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS3 = await kvManager.getKVStore(TEST_STORE_S3_ID, optionsS3);
 
-        await kvStoreS3.getSecurityLevel().then((data) => {
+        await kvStoreS3.getSecurityLevel().then(async(data) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S3);
+
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID, kvStoreS3).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S3');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S3');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0202 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID, kvStoreS3).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S3');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S3');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0202 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1304,12 +1320,13 @@ export default function SingleKvStoreReturnValueDisData(){
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   SUB_DDM_SKV_ReturnValue_SL_0203
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvReturnValueDisDataTest_SL_0203
-     * @tc.name SUB_DDM_SKV_ReturnValue_SL_0203
-     * @tc.type FUNC
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     * @tc.desc getSecurityLevel(): Promise<SecurityLevel>---S4
+     * @tc.desc   getSecurityLevel(): Promise<SecurityLevel>---S4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_SKV_ReturnValue_SL_0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
       try {
@@ -1326,27 +1343,28 @@ export default function SingleKvStoreReturnValueDisData(){
 
         let kvStoreS4 = await kvManager.getKVStore(TEST_STORE_S4_ID, optionsS4);
 
-        await kvStoreS4.getSecurityLevel().then((data) => {
+        await kvStoreS4.getSecurityLevel().then(async(data) => {
           console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S4);
+
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID, kvStoreS4).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S4');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S4');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0203 end--------- ');
+              done();
+            }).catch((err) => {
+              console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err) => {
+            console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID, kvStoreS4).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S4');
-        }).catch((err) => {
-          console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S4');
-        }).catch((err) => {
-          console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0203 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
