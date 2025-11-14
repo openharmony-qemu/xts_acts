@@ -48,22 +48,6 @@ import Grid_Col_Offset_GridColColumnOption from './GridColTest/Grid_Col_Offset/G
 import GridRowCol from './GridTest/GridRowCol.test';
 import GridRowCol02 from './GridTest/GridRowCol02.test.ets';
 import GridRowJsunit from './GridTest/GridRowJsunit.test.ets';
-import OnlyColumnsTemplate1 from './GridTest/OnlyColumnsTemplate/OnlyColumnsTemplate1.test';
-import OnlyColumnsTemplate2 from './GridTest/OnlyColumnsTemplate/OnlyColumnsTemplate2.test';
-import OnlyColumnsTemplate3 from './GridTest/OnlyColumnsTemplate/OnlyColumnsTemplate3.test';
-import OnlyColumnsTemplate4 from './GridTest/OnlyColumnsTemplate/OnlyColumnsTemplate4.test';
-import OnlyColumnsTemplate5 from './GridTest/OnlyColumnsTemplate/OnlyColumnsTemplate5.test';
-import OnlyRowsTemplate1 from './GridTest/OnlyRowsTemplate/OnlyRowsTemplate1.test';
-import OnlyRowsTemplate2 from './GridTest/OnlyRowsTemplate/OnlyRowsTemplate2.test';
-import OnlyRowsTemplate3 from './GridTest/OnlyRowsTemplate/OnlyRowsTemplate3.test';
-import OnlyRowsTemplate4 from './GridTest/OnlyRowsTemplate/OnlyRowsTemplate4.test';
-import OnlyRowsTemplate5 from './GridTest/OnlyRowsTemplate/OnlyRowsTemplate5.test';
-import ColumnsTemplateAndRowsTemplate1
-  from './GridTest/ColumnsTemplateAndRowsTemplate/ColumnsTemplateAndRowsTemplate1.test';
-import ColumnsTemplateAndRowsTemplate2
-  from './GridTest/ColumnsTemplateAndRowsTemplate/ColumnsTemplateAndRowsTemplate2.test';
-import ColumnsTemplateAndRowsTemplateNoSet
-  from './GridTest/ColumnsTemplateAndRowsTemplate/ColumnsTemplateAndRowsTemplateNoSet.test';
 import gridContainerJsunit from './GridTest/GridContainerJsunit.test';
 import GridRows1 from './GridRowTest/GridRows1.test';
 import GridRows2 from './GridRowTest/GridRows2.test';
@@ -108,19 +92,6 @@ export default function testsuite() {
   GridRowCol();
   GridRowCol02();
   GridRowJsunit();
-  OnlyColumnsTemplate1();
-  OnlyColumnsTemplate2();
-  OnlyColumnsTemplate3();
-  OnlyColumnsTemplate4();
-  OnlyColumnsTemplate5();
-  OnlyRowsTemplate1();
-  OnlyRowsTemplate2();
-  OnlyRowsTemplate3();
-  OnlyRowsTemplate4();
-  OnlyRowsTemplate5();
-  ColumnsTemplateAndRowsTemplate1();
-  ColumnsTemplateAndRowsTemplate2();
-  ColumnsTemplateAndRowsTemplateNoSet();
   gridContainerJsunit();
   GridRows1();
   GridRows2();

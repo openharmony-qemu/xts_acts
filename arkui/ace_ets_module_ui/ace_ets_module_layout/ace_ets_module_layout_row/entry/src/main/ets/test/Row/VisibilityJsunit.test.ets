@@ -45,6 +45,14 @@ export default function visibilityJsunit() {
       console.info("visibility after each called");
     });
 
+    /**
+     * @tc.number testVisibility01
+     * @tc.name   testVisibility01
+     * @tc.desc   test Row Visibility
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('testVisibility01',  Level.LEVEL0, async (done: Function) => {
       console.info('[testVisibility01] START');
       await Utils.sleep(1000);
@@ -55,6 +63,14 @@ export default function visibilityJsunit() {
       done();
     });
 
+    /**
+     * @tc.number testVisibility02
+     * @tc.name   testVisibility02
+     * @tc.desc   test Row Visibility
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('testVisibility02',  Level.LEVEL0, async (done: Function) => {
       console.info('[testVisibility02] START');
       try {
@@ -80,6 +96,14 @@ export default function visibilityJsunit() {
       done();
     });
 
+    /**
+     * @tc.number testVisibility03
+     * @tc.name   testVisibility03
+     * @tc.desc   test Row Visibility
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('testVisibility03',  Level.LEVEL0, async (done: Function) => {
       console.info('[testVisibility03] START');
       try {

@@ -144,11 +144,11 @@ export default function stackAlignChange() {
 
     /**
      * @tc.number SUB_ACE_STACK_ALIGNCHANGED_0300
-     * @tc.name testStackAlignTopStartAlignmentEnd
+     * @tc.name testStackAlignTopStartAlignmentTopEnd
      * @tc.desc Parent component set align 'Alignment.TopStart' and alignContent 'Alignment.TopEnd'.
      */
-    it('testStackAlignTopStartAlignmentEnd',  Level.LEVEL0, async (done: Function) => {
-      console.info('new testStackAlignTopStartAlignmentEnd START');
+    it('testStackAlignTopStartAlignmentTopEnd',  Level.LEVEL0, async (done: Function) => {
+      console.info('new testStackAlignTopStartAlignmentTopEnd START');
       globalThis.value.message.notify({
         name: 'align', value: Alignment.TopStart
       });
@@ -186,7 +186,7 @@ export default function stackAlignChange() {
       expect(JSON.parse(strJson).$type).assertEqual('Stack')
       expect(JSON.parse(strJson).$attrs.align).assertEqual("Alignment.TopStart")
       expect(JSON.parse(strJson).$attrs.alignContent).assertEqual('Alignment.TopStart')
-      console.info('new testStackAlignTopStartAlignmentEnd END');
+      console.info('new testStackAlignTopStartAlignmentTopEnd END');
       done();
     });
 

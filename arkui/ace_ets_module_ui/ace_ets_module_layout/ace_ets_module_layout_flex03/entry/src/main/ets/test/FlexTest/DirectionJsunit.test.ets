@@ -44,6 +44,14 @@ export default function directionJsunit(){
       console.info("direction after each called");
     });
 
+    /**
+     * @tc.number directionTest_0100
+     * @tc.name   directionTest_0100
+     * @tc.desc   test flex Direction
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('directionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('directionTest_0100 START');
       let strJson = getInspectorByKey('direction');
@@ -54,6 +62,14 @@ export default function directionJsunit(){
       done();
     });
 
+    /**
+     * @tc.number directionTest_0200
+     * @tc.name   directionTest_0200
+     * @tc.desc   test flex Direction
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('directionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('directionTest_0200 START');
       try {
@@ -80,6 +96,14 @@ export default function directionJsunit(){
       done();
     });
 
+    /**
+     * @tc.number directionTest_0300
+     * @tc.name   directionTest_0300
+     * @tc.desc   test flex Direction
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level.LEVEL0
+     */
     it('directionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('directionTest_0300 START');
       try {

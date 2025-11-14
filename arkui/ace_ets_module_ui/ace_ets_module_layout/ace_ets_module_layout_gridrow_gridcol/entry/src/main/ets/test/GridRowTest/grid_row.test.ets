@@ -47,7 +47,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
     /**
      * @tc.number    SUB_ACE_BASIC_ETS_API_001
      * @tc.name      testgrid_rowOnBreakpointChange001
-     * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest001
+     * @tc.desc      acegrid_rowOnBreakpointChangeEtsTest001
      */
     it('testgrid_rowOnBreakpointChange001',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange001 START');
@@ -56,7 +56,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
       console.info("[testgrid_rowOnBreakpointChange001] component width strJson:" + strJson);
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('GridRow');
-      expect(JSON.parse(strJson).$attrs.width).assertEqual("100vp");
+      expect(JSON.parse(strJson).$attrs.width).assertEqual("100.00vp");
       console.info("[testgrid_rowOnBreakpointChange001] width value :" + JSON.parse(strJson).$attrs.width);
 
     });
@@ -64,7 +64,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
     /**
      * @tc.number    SUB_ACE_BASIC_ETS_API_002
      * @tc.name      testgrid_rowOnBreakpointChange002
-     * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest002
+     * @tc.desc      acegrid_rowOnBreakpointChangeEtsTest002
      */
     it('testgrid_rowOnBreakpointChange002',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange002 START');
@@ -73,7 +73,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
       console.info("[testgrid_rowOnBreakpointChange002] component height strJson:" + strJson);
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('GridRow');
-      expect(JSON.parse(strJson).$attrs.height).assertEqual("100vp");
+      expect(JSON.parse(strJson).$attrs.height).assertEqual("100.00vp");
       console.info("[testgrid_rowOnBreakpointChange002] height value :" + JSON.parse(strJson).$attrs.height);
 
     });
@@ -81,7 +81,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
     /**
      * @tc.number    SUB_ACE_BASIC_ETS_API_003
      * @tc.name      testgrid_rowOnBreakpointChange003
-     * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest003
+     * @tc.desc      acegrid_rowOnBreakpointChangeEtsTest003
      */
     it('testgrid_rowOnBreakpointChange003',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange003 START');
@@ -90,7 +90,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
       console.info("[testgrid_rowOnBreakpointChange003] component backgroundColor strJson:" + strJson);
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('GridRow');
-      expect(JSON.parse(strJson).$attrs.backgroundColor).assertEqual("0xFF0000");
+      expect(JSON.parse(strJson).$attrs.backgroundColor).assertEqual("0xFFFF0000");
       console.info("[testgrid_rowOnBreakpointChange003] backgroundColor value :" + JSON.parse(strJson)
         .$attrs
         .backgroundColor);

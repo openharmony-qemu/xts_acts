@@ -106,6 +106,10 @@ export default function Grid_Col_Span_Number() {
       let Grid_Col_Span_Number_05: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_05');
       let Grid_Col_Span_Number_06: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_06');
       let Grid_Col_Span_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Number_07');
+      let strJson = getInspectorByKey('Grid_Col_Span_Number_00');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SUB_ACE_Grid_Col_Span_Number_TEST_0200] obj.$attrs.span is: " + obj.$attrs.span);
+      expect(obj.$attrs.span).assertEqual("0");
 
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_0200] END');
       done();

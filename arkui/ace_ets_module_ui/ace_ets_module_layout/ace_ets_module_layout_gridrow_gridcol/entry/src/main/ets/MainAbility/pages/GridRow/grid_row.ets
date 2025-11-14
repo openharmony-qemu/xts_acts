@@ -51,7 +51,7 @@ struct Grid_rowOnBreakpointChange {
         .key("GridRow")
         .width(100)
         .height(100)
-        .backgroundColor(0xFF0000)
+        .backgroundColor(Color.Red)
         .onBreakpointChange((breakpoints: string) => {
           console.info("onBreakpointChange=" + breakpoints)
         })
