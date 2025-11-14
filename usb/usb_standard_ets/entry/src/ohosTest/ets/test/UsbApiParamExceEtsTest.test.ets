@@ -3210,5 +3210,49 @@ export default function UsbApiParamExceEtsTest() {
       }
       toClosePipe("testReleaseInterfaceParamEx014");
     })
+
+    /**
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbControlTransfer
+     * @tc.number SUB_USB_Host_JS_usbControlTransfer_ParamEx_0100
+     * @tc.desc   usbControlTransfer data is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testUsbControlTransfer", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(TAG, 'usb testUsbControlTransfer begin');
+        if (!isDeviceConnected) {
+          expect(isDeviceConnected).assertFalse();
+          done();
+        } else {
+          let data = new Uint8Array(0);
+          let param: usbMgr.USBDeviceRequestParams = {
+            bmRequestType: 0x00,
+            bRequest: 0x01,
+            wValue: 0x01,
+            wIndex: 0x0000,
+            wLength: 0x0000,
+            data: data,
+          };
+          try {
+            let devicesList: Array<usbMgr.USBDevice> = usbMgr.getDevices();
+            usbMgr.requestRight(devicesList[0].name);
+            console.info(TAG, `usbControlTransfer name = ${devicesList[0].name}`);
+            let devicePipe: usbMgr.USBDevicePipe = usbMgr.connectDevice(devicesList[0]);
+            console.info(TAG, `usbControlTransfer device.name = ${devicesList[0].name}`);
+            let ret = await usbMgr.usbControlTransfer(devicePipe, param);
+            console.info(TAG, `usbControlTransfer size= ${ret}`);
+            expect(ret == 0).assertEqual(true);
+            usbMgr.closePipe(devicePipe);
+          } catch (err) {
+            console.info(TAG, `testUsbControlTransfer error `);
+            console.info(TAG, `testUsbControlTransfer err.code= ${err.code}`);
+            console.info(TAG, 'testUsbControlTransfer end');
+          }
+          done();
+        }
+      })
   })
 }
