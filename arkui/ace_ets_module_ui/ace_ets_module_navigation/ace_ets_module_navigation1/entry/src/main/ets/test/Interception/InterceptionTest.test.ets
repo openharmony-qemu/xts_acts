@@ -23,7 +23,7 @@ export default function InterceptionTest() {
     beforeEach(async (done: Function) => {
       console.info("InterceptionTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/InterceptionTest/InterceptionTest',
+        url: 'MainAbility/pages/Interception/InterceptionTest',
       }
       try {
         router.clear();
