@@ -231,11 +231,11 @@ export default function radioSecondJsunit() {
       let slotId = 0;
       radio.getNetworkSelectionMode(slotId, (err, data) => {
         if (err) {
-          console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 err:" + JSON.stringify(err));
+          console.error("Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600 err:" + JSON.stringify(err));
           done();
           return;
         }
-        console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 data:" + JSON.stringify(data));
+        console.error("Telephony_NetworkSearch_getNetworkSelectionMode_Async_0600 data:" + JSON.stringify(data));
         const radioNetworkMode: number[] = [
           radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC,
           radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL,
@@ -248,8 +248,8 @@ export default function radioSecondJsunit() {
     });
 
     /**
-     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Async_0700
-     * @tc.name testGetNetworkSelectionMode_0700
+     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0600
+     * @tc.name testGetNetworkSelectionMode_0600
      * @tc.desc SlotId parameter input is 0, test getNetworkSelectionMode() api by promise.
      */
     it('Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
