@@ -155,21 +155,18 @@ struct WebIndex {
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State str:string = 'emitOnNativeEmbedMouseEvent001'
-  @State isComplete: number = -1;
   aboutToAppear() {
     // 配置Web开启调试模式
     webview.WebviewController.setWebDebuggingAccess(true);
   }
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 153530,
+      eventId: 10,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-  onPageHide() {
-    events_emitter.off(153530)
-  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -187,8 +184,6 @@ struct WebIndex {
         Button("WebOnNativeEmbedMouseEvent").id('WebOnNativeEmbedMouseButton').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(()=>this.isReceive, this.str, 0);
-          await waitForExist(() => this.isComplete, this.str, 0);
-          this.isReceive = -1;
           switch (this.str) {
             case "emitOnNativeEmbedMouseEvent001": {
               let value: string;
@@ -199,7 +194,7 @@ struct WebIndex {
                 let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
                 let driver: Driver = Driver.create();
                 await driver.mouseClick({x:downX, y:downY}, MouseButton.MOUSE_BUTTON_LEFT);
-                await Utils.sleep(2000);
+                await driver.delayMs(1000);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -221,10 +216,6 @@ struct WebIndex {
               .position(this.edges)
           }, (embedId: string) => embedId)
           Web({ src: $rawfile("test_web.html"), controller: this.browserTabController })
-            .onPageEnd((event) => {
-              console.log('web pageEnd==>' + event.url);
-              this.isComplete = 0;
-            })
             .enableNativeEmbedMode(true)
             .key('onNativeEmbedMouseEventButton')
             .onNativeEmbedLifecycleChange((embed) => {
@@ -308,7 +299,7 @@ struct WebIndex {
               })
             })
             .onNativeEmbedMouseEvent((mouse) => {
-              Utils.emitEvent(true, 153540);
+              Utils.emitEvent(true, 20250704);
               console.log("NativeEmbed onNativeEmbedMouseEvent" + JSON.stringify(mouse.mouseEvent));
               this.componentIdArr.forEach((componentId: string) => {
                 let nodeController = this.nodeControllerMap.get(componentId)

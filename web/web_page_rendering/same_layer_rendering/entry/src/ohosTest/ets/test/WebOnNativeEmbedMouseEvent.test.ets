@@ -18,7 +18,6 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
-const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webViewControllerPart2() {
@@ -36,11 +35,13 @@ export default function webViewControllerPart2() {
         if (!("WebOnNativeEmbedMouseEvent" == pages.name)) {
           console.info("get WebOnNativeEmbedMouseEvent state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
+          await Utils.sleep(2000);
           console.info("push WebOnNativeEmbedMouseEvent page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnNativeEmbedMouseEvent page error: " + err);
       }
+      let driver: Driver = Driver.create();
       await driver.waitForComponent(ON.id("WebOnNativeEmbedMouseButton"),10000);
       done()
     });
@@ -48,25 +49,26 @@ export default function webViewControllerPart2() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
+      await Utils.sleep(2000);
       console.info("WebOnNativeEmbedMouseEvent beforeEach start");
       done();
     })
 
-   /*
-    * @tc.number     : SUB_WEB_EMITONNATIVEEMBEDMOUSEEVENT_0100
-    * @tc.name       : emitOnNativeEmbedMouseEvent001
-    * @tc.desc       : emitOnNativeEmbedMouseEvent001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
-    it('emitOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)
-      Utils.registerEvent("emitOnNativeEmbedMouseEvent001", true, 153540, done);
-      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'emitOnNativeEmbedMouseEvent001');
+    /*
+     * @tc.number     : SUB_WEB_EMITONNATIVEEMBEDMOUSEEVENT_0100
+     * @tc.name       : testOnNativeEmbedMouseEvent001
+     * @tc.desc       : OnNativeEmbedMouseEvent
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 10)
+      Utils.registerEvent("testOnNativeEmbedMouseEvent001", true, 20250704, done);
+      sendEventByKey('WebOnNativeEmbedMouseButton', 10, '');
     })
   })
 }
