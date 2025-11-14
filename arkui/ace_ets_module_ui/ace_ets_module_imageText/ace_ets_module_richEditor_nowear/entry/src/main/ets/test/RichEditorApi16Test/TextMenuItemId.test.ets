@@ -56,7 +56,7 @@ export default function TextMenuItemId() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0001
      * @tc.name         TextMenuItemId0001
-     * @tc.desic        set TextMenuItem for text
+     * @tc.desc        set TextMenuItem for text
      */
     it('TextMenuItemId0001', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0001] start");
@@ -83,7 +83,7 @@ export default function TextMenuItemId() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0002
      * @tc.name         TextMenuItemId0002
-     * @tc.desic        set TextMenuItem for textArea
+     * @tc.desc        set TextMenuItem for textArea
      */
     it('TextMenuItemId0002', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0002] start");
@@ -110,7 +110,7 @@ export default function TextMenuItemId() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0003
      * @tc.name         TextMenuItemId0003
-     * @tc.desic        set TextMenuItem for textInput
+     * @tc.desc        set TextMenuItem for textInput
      */
     it('TextMenuItemId0003', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0003] start");
@@ -137,7 +137,7 @@ export default function TextMenuItemId() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0004
      * @tc.name         TextMenuItemId0004
-     * @tc.desic        set TextMenuItem for richEditor
+     * @tc.desc        set TextMenuItem for richEditor
      */
     it('TextMenuItemId0004', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0004] start");
@@ -164,7 +164,7 @@ export default function TextMenuItemId() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0005
      * @tc.name         TextMenuItemId0005
-     * @tc.desic        set TextMenuItem for search
+     * @tc.desc        set TextMenuItem for search
      */
     it('TextMenuItemId0005', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemId0005] start");

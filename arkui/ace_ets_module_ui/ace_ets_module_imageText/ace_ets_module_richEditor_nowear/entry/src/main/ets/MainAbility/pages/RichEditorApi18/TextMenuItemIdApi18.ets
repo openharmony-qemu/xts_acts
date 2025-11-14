@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct TextMenuItemIdExample {
+struct TextMenuItemIdApi18 {
   @State text: string = '测试文本测试文本测试文本'
   @State content: ResourceStr = ''
   @State textLabelInfo: ResourceStr | undefined = ''

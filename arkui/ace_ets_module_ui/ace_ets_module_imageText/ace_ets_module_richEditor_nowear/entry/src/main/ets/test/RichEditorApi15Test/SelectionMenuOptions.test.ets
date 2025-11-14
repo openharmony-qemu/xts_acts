@@ -49,10 +49,10 @@ export default function SelectionMenuOptions() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
     * @tc.name         SelectionMenuOptions0003
-    * @tc.desic        Test  Text by select
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    * @tc.desc        Test  Text by select
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
      */
     it('SelectionMenuOptions0003', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -69,6 +69,10 @@ export default function SelectionMenuOptions() {
         await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y)},{x:Math.round(point.x+vp2px(20)), y:Math.round(point.y)},600);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
+        await CommonFunc.sleep(500);
+        let strJson = getInspectorByKey('richEditor');
+        await CommonFunc.sleep(500);
+        expect(JSON.parse(strJson).$type).assertEqual("RichEditor");
         console.info("[SelectionMenuOptions0003] end");
         done();
     });
@@ -77,10 +81,10 @@ export default function SelectionMenuOptions() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
     * @tc.name         SelectionMenuOptions0006
-    * @tc.desic        Test image Text by select
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    * @tc.desc        Test image Text by select
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
      */
     it('SelectionMenuOptions0006', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -97,6 +101,10 @@ export default function SelectionMenuOptions() {
         await driver.mouseDrag({x:Math.round(point.x+vp2px(24)), y:Math.round(point.y)},{x:Math.round(point.x-vp2px(26)), y:Math.round(point.y)},600);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
+        await CommonFunc.sleep(500);
+        let strJson = getInspectorByKey('image');
+        await CommonFunc.sleep(500);
+        expect(JSON.parse(strJson).$type).assertEqual("RichEditor");
         console.info("[SelectionMenuOptions0006] end");
         done();
     });
@@ -105,10 +113,10 @@ export default function SelectionMenuOptions() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
     * @tc.name         SelectionMenuOptions0009
-    * @tc.desic        Test mixed Text by select
-	* @tc.size         MediumTest
-	* @tc.type         Function
-	* @tc.level        1
+    * @tc.desc        Test mixed Text by select
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
      */
     it('SelectionMenuOptions0009', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -125,6 +133,10 @@ export default function SelectionMenuOptions() {
         await driver.mouseDrag({x:Math.round(point.x-vp2px(20)), y:Math.round(point.y)},{x:Math.round(point.x+vp2px(50)), y:Math.round(point.y)},600);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('自定义菜单'));
+        await CommonFunc.sleep(500);
+        let strJson = getInspectorByKey('mixed');
+        await CommonFunc.sleep(500);
+        expect(JSON.parse(strJson).$type).assertEqual("RichEditor");
         console.info("[SelectionMenuOptions0009] end");
         done();
     });

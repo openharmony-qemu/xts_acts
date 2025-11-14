@@ -40,7 +40,7 @@ struct richEditorApi1 {
           }
           event.preventDefault()
         })
-        .key("RichEditor1")
+        .key('RichEditor1')
         .borderWidth(1)
         .width('100%')
         .height(200)

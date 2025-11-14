@@ -47,9 +47,9 @@ export default function RichEditorMaxLengthTest() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+    * @tc.number       RichEditorMaxLengthTest0001
     * @tc.name         RichEditorMaxLengthTest0001
-    * @tc.desic        The MaxLength  set -1
+    * @tc.desc        The MaxLength  set -1
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -73,9 +73,9 @@ export default function RichEditorMaxLengthTest() {
     });
 
     /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+    * @tc.number       RichEditorMaxLengthTest0002
     * @tc.name         RichEditorMaxLengthTest0002
-    * @tc.desic        The MaxLength  set 5
+    * @tc.desc        The MaxLength  set 5
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -103,12 +103,12 @@ export default function RichEditorMaxLengthTest() {
     });
 
     /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-   * @tc.name         RichEditorMaxLengthTest0003
-   * @tc.desic        The MaxLength  set undefined
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
+    * @tc.number       RichEditorMaxLengthTest0003
+    * @tc.name         RichEditorMaxLengthTest0003
+    * @tc.desc        The MaxLength  set undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
     */
     it('RichEditorMaxLengthTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -133,12 +133,12 @@ export default function RichEditorMaxLengthTest() {
     });
 
     /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-   * @tc.name         RichEditorMaxLengthTest0004
-   * @tc.desic        The MaxLength  set 7.2
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
+    * @tc.number       RichEditorMaxLengthTest0004
+    * @tc.name         RichEditorMaxLengthTest0004
+    * @tc.desc        The MaxLength  set 7.2
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
     */
     it('RichEditorMaxLengthTest0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

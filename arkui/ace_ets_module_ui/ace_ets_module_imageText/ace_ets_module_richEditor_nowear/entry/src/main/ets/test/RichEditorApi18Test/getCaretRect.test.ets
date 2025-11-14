@@ -43,9 +43,9 @@ export default function getCaretRect() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+     * @tc.number       getCaretRect0001
      * @tc.name         getCaretRect0001
-     * @tc.desic        Returns the position of the cursor relative to the RichEditor 
+     * @tc.desc        Returns the position of the cursor relative to the RichEditor 
                           component. If the cursor does not blink, undefined is returned.
      */
     it('getCaretRect0001', Level.LEVEL0, async (done: Function) => {
@@ -67,9 +67,9 @@ export default function getCaretRect() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+     * @tc.number       getCaretRect0002
      * @tc.name         getCaretRect0002
-     * @tc.desic        Returns the position of the cursor relative to the RichEditor 
+     * @tc.desc        Returns the position of the cursor relative to the RichEditor 
                           component. If the cursor does not blink, undefined is returned.
      */
     it('getCaretRect0002', Level.LEVEL0, async (done: Function) => {
@@ -93,7 +93,5 @@ export default function getCaretRect() {
       console.info("[getCaretRect0002] end");
       done();
     });
-
-    
   })
 }

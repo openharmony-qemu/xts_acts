@@ -54,7 +54,7 @@ export default function TextMenuItemIdApi18() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+     * @tc.number       TextMenuItemIdApi180001
      * @tc.name         TextMenuItemIdApi180001
      * @tc.desic        set TextMenuItem for text
      */
@@ -82,7 +82,7 @@ export default function TextMenuItemIdApi18() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
+     * @tc.number       TextMenuItemIdApi180002
      * @tc.name         TextMenuItemIdApi180002
      * @tc.desic        set TextMenuItem for textArea
      */
@@ -110,7 +110,7 @@ export default function TextMenuItemIdApi18() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+     * @tc.number       TextMenuItemIdApi180003
      * @tc.name         TextMenuItemIdApi180003
      * @tc.desic        set TextMenuItem for textInput
      */
@@ -138,7 +138,7 @@ export default function TextMenuItemIdApi18() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+     * @tc.number       TextMenuItemIdApi180004
      * @tc.name         TextMenuItemIdApi180004
      * @tc.desic        set TextMenuItem for richEditor
      */
@@ -166,7 +166,7 @@ export default function TextMenuItemIdApi18() {
     });
 
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
+     * @tc.number       TextMenuItemIdApi180005
      * @tc.name         TextMenuItemIdApi180005
      * @tc.desic        set TextMenuItem for search
      */

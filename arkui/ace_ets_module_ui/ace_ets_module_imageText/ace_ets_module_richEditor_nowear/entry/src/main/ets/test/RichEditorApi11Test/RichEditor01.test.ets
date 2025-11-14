@@ -43,8 +43,14 @@ export default function RichEditor01() {
       done();
     });
 
-
-    //onReady 事件测试
+    /*
+    * @tc.number  Stage_RichEditor_Test_0100
+    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.desc    test RichEditor onReady
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   0
+    */
     it('RichEditor01_001', Level.LEVEL0, async (done: Function) => {
 
       await CommonFunc.sleep(1000);
@@ -61,7 +67,14 @@ export default function RichEditor01() {
       done();
     });
 
-    //aboutToIMEInput 事件测试
+    /*
+    * @tc.number  Stage_RichEditor_Test_0100
+    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.desc    test RichEditor aboutToIMEInput
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   0
+    */
     it('RichEditor01_002', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_002] START');
@@ -83,7 +96,14 @@ export default function RichEditor01() {
       done();
     });
 
-    //onIMEInputComplete 事件测试
+    /*
+    * @tc.number  Stage_RichEditor_Test_0100
+    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.desc    test RichEditor onIMEInputComplete
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   0
+    */
     it('RichEditor01_003', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_003] START');
@@ -102,7 +122,14 @@ export default function RichEditor01() {
       done();
     });
 
-    //set setCaretOffset to 6
+    /*
+    * @tc.number  Stage_RichEditor_Test_0100
+    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.desc    test RichEditor: set setCaretOffset to 6
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   0
+    */
     it('RichEditor01_004', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_004] START');
@@ -121,7 +148,14 @@ export default function RichEditor01() {
       done();
     });
 
-    //set setCaretOffset to 100
+    /*
+    * @tc.number  Stage_RichEditor_Test_0100
+    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.desc    test RichEditor: set setCaretOffset to 100
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   0
+    */
     it('RichEditor01_005', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_005] START');
@@ -140,7 +174,14 @@ export default function RichEditor01() {
       done();
     });
 
-    //set setCaretOffset to 100
+    /*
+    * @tc.number  Stage_RichEditor_Test_0100
+    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.desc    test RichEditor: set setCaretOffset to 100
+    * @tc.size    MediumTest
+    * @tc.type    Function
+    * @tc.level   0
+    */
     it('RichEditor01_006', Level.LEVEL0, async (done: Function) => {
 
       console.info('[RichEditor01_006] START');
@@ -161,30 +202,5 @@ export default function RichEditor01() {
       console.info('[RichEditor01_006] END');
       done();
     });
-
-
-    //deleteSpans
-    // it('RichEditor01_007', Level.LEVEL0, async (done: Function) => {
-    //
-    //   console.info('[RichEditor01_007] START');
-    //   await CommonFunc.sleep(1000);
-    //   let driver = Driver.create();
-    //   let button = await driver.findComponent(ON.id('RichEditor01DelSpans'));
-    //   await button.click();
-    //   await CommonFunc.sleep(1000);
-    //   let button2 = await driver.findComponent(ON.id('RichEditor01GetSpans'));
-    //   await button2.click();
-    //   await CommonFunc.sleep(1000);
-    //
-    //   let strJson = getInspectorByKey('RichEditor01Text');
-    //   let obj: ESObject = JSON.parse(strJson);
-    //   console.info("[RichEditor01_007] component obj is: " + JSON.stringify(obj));
-    //   console.info("[obj.$attrs.content] : " + obj.$attrs.content);
-    //   await CommonFunc.sleep(1000);
-    //   expect(obj.$attrs.content).assertEqual('');
-    //
-    //   console.info('[RichEditor01_007] END');
-    //   done();
-    // });
   })
 }
