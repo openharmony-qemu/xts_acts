@@ -14,47 +14,47 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import CommonFunc from "../../../MainAbility/common/Common";
+import CommonFunc from "../../MainAbility/common/Common";
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 
-export default function richEditorApi1() {
-  describe('richEditorApi1', () => {
+export default function richEditorApi111() {
+  describe('richEditorApi111', () => {
     beforeEach(async (done: Function) => {
-      console.info("richEditorApi1 beforeEach start");
+      console.info("richEditorApi111 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/richEditorApi/richEditorApi1',
+        url: 'MainAbility/pages/richEditorApi11/richEditorApi111',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get richEditorApi1 state pages:" + JSON.stringify(pages));
-        if (!("richEditorApi1" == pages.name)) {
-          console.info("get richEditorApi1 pages.name:" + JSON.stringify(pages.name));
+        console.info("get richEditorApi111 state pages:" + JSON.stringify(pages));
+        if (!("richEditorApi111" == pages.name)) {
+          console.info("get richEditorApi111 pages.name:" + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info("push richEditorApi1 page result:" + JSON.stringify(result));
+          console.info("push richEditorApi111 page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push richEditorApi1 page error:" + err);
+        console.error("push richEditorApi111 page error:" + err);
       }
-      console.info("richEditorApi1 beforeEach end");
+      console.info("richEditorApi111 beforeEach end");
       done();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info("richEditorApi1 after each called");
+      console.info("richEditorApi111 after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_RICHEDITORAPI1_0100
+     * @tc.number    SUB_ACE_RICHEDITOR_richEditorApi111_0100
      * @tc.name      testRichEditor
      * @tc.desc      set api
      * @tc.level     Level 2
      * @tc.type
     * @tc.size
      */
-    it('richEditorApi1_0100', Level.LEVEL2, async (done: Function) => {
-      console.info('[richEditorApi1_0100] START');
+    it('richEditorApi111_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('[richEditorApi111_0100] START');
       await CommonFunc.sleep(2000);
 
       let driver = Driver.create();

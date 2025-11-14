@@ -76,7 +76,13 @@ export default function RichEditorCustomColors001() {
       //KEYCODE_DEL
       await driver.triggerKey(2055);
       await CommonFunc.sleep(500);
-
+      let strJson = getInspectorByKey('rich_struct');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_CUSTOMCOLORS_0023] component obj is: " +
+         JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
       done();
     });
   })

@@ -12,10 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import textAreaInputTest from './TextArea/textAreaInputTest.test';
+import PresetTest from './Preset.test';
 import RichEditorApi5 from './RichEditor/RichEditorApi5.test'
-import searchTest from './Search/searchTest.test'
-import styledStringChange from './Text/styledStringChange.test'
 import onSelectionChange1 from './RichEditorTest/onSelectionChange1.test'
 import onSelectionChange4 from './RichEditorTest/onSelectionChange4.test'
 import onSelectionChange5 from './RichEditorTest/onSelectionChange5.test'
@@ -35,10 +33,7 @@ import RichEditor6 from './RichEditorEnhance/RichEditor6.test'
 import RichEditor7 from './RichEditorEnhance/RichEditor7.test'
 import RichEditor11 from './RichEditorEnhance/RichEditor11.test'
 import onDidIMEInputTest from './RichEditor/onDidIMEInput.test';
-import editMeunOptionsTest from './Text/editMeunOptions.test'
 import RichEditorApi1 from './RichEditor/RichEditorApi1.test'
-import setTextSelection from './TextArea/setTextSelection.test'
-import TextDeleteDirectionTest from "./TextArea/TextDeleteDirectionTest.test";
 
 import RichEditor001 from './RichEditorEmojiTest/RichEditor001.test'
 import RichEditor002 from './RichEditorEmojiTest/RichEditor002.test'
@@ -268,8 +263,23 @@ import RichEditorGetNumber007 from './RichEditorGetNumberTest/RichEditorGetNumbe
 
 import RichEditorCustomSpan016 from './RichEditorCustomSpanTest/RichEditorCustomSpan016.test'
 import RichEditorCustomSpan017 from './RichEditorCustomSpanTest/RichEditorCustomSpan017.test'
+
+import RichEditor01 from './RichEditorApi11Test/RichEditor01.test.ets';
+import richEditorApi111 from './RichEditorApi11Test/richEditorApi111.test'
+import RichEditorApi222 from './RichEditorApi11Test/RichEditorApi222.test';
+
+import SelectionMenuOptions from './RichEditorApi15Test/SelectionMenuOptions.test';
+import TextMenuItemId from './RichEditorApi16Test/TextMenuItemId.test';
+
+import TextMenuItemIdApi18 from './RichEditorApi18Test/TextMenuItemIdApi18.test';
+import getCaretRect from './RichEditorApi18Test/getCaretRect.test';
+import RichEditorMaxLengthTest from './RichEditorApi18Test/RichEditorMaxLengthTest.test';
+
+import RichEditorTextVerticalAlignTest from './RichEditorApi20Test/RichEditorTextVerticalAlign.test';
+
+
 export default function testsuite() {
-  textAreaInputTest();
+  PresetTest();
   RichEditor3();
   RichEditor5();
   RichEditorApi5();
@@ -467,8 +477,6 @@ export default function testsuite() {
   RichEditorCustomSpan016();
   RichEditorCustomSpan017();
 
-  searchTest();
-  styledStringChange();
   onSelectionChange1();
   onSelectionChange4();
   onSelectionChange5();
@@ -486,8 +494,18 @@ export default function testsuite() {
   RichEditor7();
   RichEditor11();
   onDidIMEInputTest();
-  editMeunOptionsTest();
   RichEditorApi1();
-  setTextSelection();
-  TextDeleteDirectionTest();
+
+  RichEditor01();           // Api11
+  richEditorApi111()
+  RichEditorApi222();
+
+  SelectionMenuOptions();   // Api15  
+  TextMenuItemId();         // Api16
+
+  TextMenuItemIdApi18();    // Api18
+  getCaretRect();
+  RichEditorMaxLengthTest();
+
+  RichEditorTextVerticalAlignTest();  // Api20
 }

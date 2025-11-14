@@ -14,53 +14,58 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import CommonFunc from '../MainAbility/common/Common'
 
-export default function textAreaInputTest() {
-  describe('textAreaInputTest', () => {
+export default function PresetTest() {
+  describe('PresetTest', () => {
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TextArea/textAreaInputTest',
+        url: 'MainAbility/pages/Preset',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get textAreaInputTest state success " + JSON.stringify(pages));
-        if (!("textAreaInputTest" == pages.name)) {
-          console.info("get textAreaInputTest state success " + JSON.stringify(pages.name));
+        console.info("get PresetTest state success " + JSON.stringify(pages));
+        if (!("Preset" == pages.name)) {
+          console.info("get PresetTest state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info("push textAreaInputTest page success " + JSON.stringify(result));
+          console.info("push PresetTest page success " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push textAreaInputTest page error: " + err);
+        console.error("push PresetTest page error: " + err);
       }
     });
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info("textAreaInputTest after each called");
+      console.info("PresetTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         textAreaInputTest0001
-     * @tc.desic        textAreaInputTest0001
-     */
-    it('textAreaInputTest0001', Level.LEVEL0, async () => {
+  /*
+    * @tc.number       PresetTest0001
+    * @tc.name         PresetTest0001
+    * @tc.desc         preset about xiaoyi dialog
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        0
+    */
+    it('PresetTest0001',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       if (globalThis.winLeft == 0) {
-        console.info('textAreaInputTest textAreaInputTest0001 START');
+        console.info('PresetTest PresetTest0001 START');
         await CommonFunc.sleep(1000);
-        let textArea1 = await driver.findComponent(ON.id('textArea1'));
+        let textArea1 = await driver.findComponent(ON.id('textArea1_preset'));
         await CommonFunc.sleep(500);
-        let textArea2 = await driver.findComponent(ON.id('textArea2'));
+        let textArea2 = await driver.findComponent(ON.id('textArea2_preset'));
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
+        await driver.triggerKey(2070);
+        await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
         await button1?.click();
@@ -71,17 +76,17 @@ export default function textAreaInputTest() {
         let button3 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
         await button3?.click();
-        console.info('textAreaInputTest0001 全选 success');
+        console.info('PresetTest0001 全选 success');
         await CommonFunc.sleep(500);
 
         await textArea1.dragTo(textArea2);
         await CommonFunc.sleep(500);
-        console.info('textAreaInputTest0001 dragTo success');
+        console.info('PresetTest0001 dragTo success');
         let button4 = await driver.findComponent(ON.text('取消'));
         await CommonFunc.sleep(500);
         await button4?.click();
         await CommonFunc.sleep(500);
-        console.info('textAreaInputTest0001 取消 success');
+        console.info('PresetTest0001 取消 success');
 
         await textArea1.longClick();
         await CommonFunc.sleep(500);
@@ -89,12 +94,12 @@ export default function textAreaInputTest() {
         await CommonFunc.sleep(500);
         await button5?.click();
         await CommonFunc.sleep(500);
-        console.info('textAreaInputTest0001 2 全选 success');
+        console.info('PresetTest0001 2 全选 success');
         let button6 = await driver.findComponent(ON.text('复制'));
         await CommonFunc.sleep(500);
         await button6?.click();
         await CommonFunc.sleep(500);
-        console.info('textAreaInputTest0001 2 复制 success');
+        console.info('PresetTest0001 2 复制 success');
         await textArea1.dragTo(textArea2);
         await CommonFunc.sleep(500);
         let Text7 = await driver.findComponent(ON.text('长按内容至浮起，可拖拽到底部小艺'));
@@ -104,10 +109,10 @@ export default function textAreaInputTest() {
           await button7?.click();
         }
         await CommonFunc.sleep(500);
-        console.info('textAreaInputTest0001 2 Button success');
+        console.info('PresetTest0001 2 Button success');
       }else {
         //切换HAD 输入法
-        let textArea2 = await driver.findComponent(ON.id('textArea2'));
+        let textArea2 = await driver.findComponent(ON.id('textArea2_preset'));
         await CommonFunc.sleep(500);
         await textArea2.inputText('aaa');
         await CommonFunc.sleep(500);
@@ -118,8 +123,13 @@ export default function textAreaInputTest() {
         }
       }
       
-      expect("").assertEqual("");
-      console.info("[textAreaInputTest0001] end");
+      let strJson = getInspectorByKey('textArea1_preset');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[PresetTest0001] component obj is: " + JSON.stringify(obj));
+      await CommonFunc.sleep(1000);
+      expect(obj.$type).assertEqual('TextArea');
+      console.info("[PresetTest0001] end");
 
     });
 

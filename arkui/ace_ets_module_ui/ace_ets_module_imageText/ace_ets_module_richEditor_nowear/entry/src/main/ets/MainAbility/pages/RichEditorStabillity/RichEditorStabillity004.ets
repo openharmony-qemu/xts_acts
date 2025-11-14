@@ -21,26 +21,25 @@ struct RichEditorStabillity004 {
 
   build() {
     Column() {
-
-        RichEditor(this.options)
-          .onReady(() => {
-            for (let index = 0; index < 100; index++) {
-              this.controller.addTextSpan('test_abc123456789abc-hello-word',
+      RichEditor(this.options)
+        .onReady(() => {
+          for (let index = 0; index < 100; index++) {
+            this.controller.addTextSpan('test_abc123456789abc-hello-word',
+              {
+                style:
                 {
-                  style:
-                  {
-                    fontColor: Color.Orange,
-                    fontSize: 30
-                  }
-                })
-            }
-          })
-          .barState(BarState.Auto)
-          .borderWidth(1)
-          .borderColor(Color.Green)
-          .width('100%')
-          .height('30%')
-          .id('RichEditorStabillity004')
+                  fontColor: Color.Orange,
+                  fontSize: 30
+                }
+              })
+          }
+        })
+        .barState(BarState.Auto)
+        .borderWidth(1)
+        .borderColor(Color.Green)
+        .width('100%')
+        .height('30%')
+        .id('RichEditorStabillity004')
     }
   }
 }

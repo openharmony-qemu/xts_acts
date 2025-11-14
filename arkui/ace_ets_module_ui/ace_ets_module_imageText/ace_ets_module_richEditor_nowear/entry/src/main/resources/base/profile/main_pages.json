@@ -1,10 +1,8 @@
 {
   "src": [
   "MainAbility/pages/index/index",
-  "MainAbility/pages/TextArea/textAreaInputTest",
+  "MainAbility/pages/Preset",
   "MainAbility/pages/RichEditor/RichEditorApi5",
-  "MainAbility/pages/Search/searchTest",
-  "MainAbility/pages/Text/styledStringChange",
   "MainAbility/pages/RichEditor/onSelectionChange1",
   "MainAbility/pages/RichEditor/onSelectionChange4",
   "MainAbility/pages/RichEditor/onSelectionChange6",
@@ -23,12 +21,8 @@
   "MainAbility/pages/RichEditorEnhance/RichEditor6",
   "MainAbility/pages/RichEditorEnhance/RichEditor7",
   "MainAbility/pages/RichEditorEnhance/RichEditor11",
-  "MainAbility/pages/Text/editMeunOptions",
   "MainAbility/pages/RichEditor/RichEditorApi1",
   "MainAbility/pages/RichEditor/onDidIMEInput",
-  "MainAbility/pages/TextArea/setTextSelection",
-  "MainAbility/pages/TextArea/TextDeleteDirectionTest",
-
   "MainAbility/pages/RichEditorEmoji/RichEditor001",
   "MainAbility/pages/RichEditorEmoji/RichEditor002",
   "MainAbility/pages/RichEditorEmoji/RichEditor003",
@@ -53,7 +47,6 @@
   "MainAbility/pages/RichEditorEmoji/RichEditor022",
   "MainAbility/pages/RichEditorEmoji/RichEditor023",
   "MainAbility/pages/RichEditorEmoji/RichEditor024",
-
   "MainAbility/pages/RichEditorOnWillChange/RichEditorOnWillChange001",
   "MainAbility/pages/RichEditorOnWillChange/RichEditorOnWillChange002",
   "MainAbility/pages/RichEditorOnWillChange/RichEditorOnWillChange003",
@@ -253,6 +246,21 @@
   "MainAbility/pages/RichEditorGetNumber/RichEditorGetNumber003",
   "MainAbility/pages/RichEditorGetNumber/RichEditorGetNumber007",
   "MainAbility/pages/RichEditorCustomSpan/RichEditorCustomSpan016",
-  "MainAbility/pages/RichEditorCustomSpan/RichEditorCustomSpan017"
+  "MainAbility/pages/RichEditorCustomSpan/RichEditorCustomSpan017",
+
+  "MainAbility/pages/RichEditorApi11/RichEditor01",
+  "MainAbility/pages/RichEditorApi11/RichEditorApi2",
+  "MainAbility/pages/RichEditorApi11/richEditorApi111",
+  "MainAbility/pages/RichEditorApi11/RichTextPage",
+  "MainAbility/pages/RichEditorApi11/richText",
+
+  "MainAbility/pages/RichEditorApi15/SelectionMenuOptions",
+  "MainAbility/pages/RichEditorApi16/TextMenuItemId",
+
+  "MainAbility/pages/RichEditorApi18/TextMenuItemIdApi18",
+  "MainAbility/pages/RichEditorApi18/getCaretRect",
+  "MainAbility/pages/RichEditorApi18/RichEditorMaxLengthTest",
+  
+  "MainAbility/pages/RichEditorApi20/RichEditorTextVerticalAlign"
   ]
 }

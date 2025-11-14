@@ -75,9 +75,16 @@ export default function RichEditorStabillity004() {
       await CommonFunc.sleep(500);
       await driver.drag(pointCenter.x + 50, pointCenter.y + 650, pointCenter.x + 50, pointCenter.y + 50, 600);
       await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('RichEditorStabillity004');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_STABILLITY_0007] component obj is: " +
+         JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
       done();
     });
-
   })
 }
 

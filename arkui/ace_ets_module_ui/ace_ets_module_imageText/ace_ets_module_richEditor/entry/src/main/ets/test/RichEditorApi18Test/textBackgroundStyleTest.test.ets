@@ -49,7 +49,7 @@ export default function textBackgroundStyleTest() {
     /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
     * @tc.name         textBackgroundStyleTest0001
-    * @tc.desic        The TextBackgroundStyle  not set
+    * @tc.desc        The TextBackgroundStyle  not set
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -70,14 +70,14 @@ export default function textBackgroundStyleTest() {
       done();
     });
 
-    /*
+   /*
     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
     * @tc.name         textBackgroundStyleTest0002
-    * @tc.desic        The TextBackgroundStyle  color set undefined  radius not set
+    * @tc.desc        The TextBackgroundStyle  color set undefined  radius not set
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
-     */
+    */
     it('textBackgroundStyleTest0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle textBackgroundStyleTest0002 START');
@@ -99,12 +99,12 @@ export default function textBackgroundStyleTest() {
     });
 
     /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-   * @tc.name         textBackgroundStyleTest0003
-   * @tc.desic        The TextBackgroundStyle set Normal Value
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
+    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
+    * @tc.name         textBackgroundStyleTest0003
+    * @tc.desc        The TextBackgroundStyle set Normal Value
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
     */
     it('textBackgroundStyleTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -127,12 +127,12 @@ export default function textBackgroundStyleTest() {
     });
 
     /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-   * @tc.name         textBackgroundStyleTest0004
-   * @tc.desic        The TextBackgroundStyle  color not set and radius  set 5vp
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
+    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
+    * @tc.name         textBackgroundStyleTest0004
+    * @tc.desc        The TextBackgroundStyle  color not set and radius  set 5vp
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
     */
     it('textBackgroundStyleTest0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -157,7 +157,7 @@ export default function textBackgroundStyleTest() {
     /*
    * @tc.number       SUB_ACE_BASIC_ETS_API_0005
    * @tc.name         textBackgroundStyleTest0005
-   * @tc.desic        The TextBackgroundStyle  color set Color.Red and radius set {topLeft:10,topRight:5,bottomLeft:20,bottomRight:15}
+   * @tc.desc        The TextBackgroundStyle  color set Color.Red and radius set {topLeft:10,topRight:5,bottomLeft:20,bottomRight:15}
    * @tc.size         MediumTest
    * @tc.type         Function
    * @tc.level        1
@@ -185,7 +185,7 @@ export default function textBackgroundStyleTest() {
     /*
    * @tc.number       SUB_ACE_BASIC_ETS_API_0006
    * @tc.name         textBackgroundStyleTest0006
-   * @tc.desic        The TextBackgroundStyle  color set #e0dbeb  radius set -1vp
+   * @tc.desc        The TextBackgroundStyle  color set #e0dbeb  radius set -1vp
    * @tc.size         MediumTest
    * @tc.type         Function
    * @tc.level        1
@@ -214,7 +214,7 @@ export default function textBackgroundStyleTest() {
     /*
    * @tc.number       SUB_ACE_BASIC_ETS_API_0007
    * @tc.name         textBackgroundStyleTest0007
-   * @tc.desic        The TextBackgroundStyle  color set ResourceColor  radius set undefined
+   * @tc.desc        The TextBackgroundStyle  color set ResourceColor  radius set undefined
    * @tc.size         MediumTest
    * @tc.type         Function
    * @tc.level        1

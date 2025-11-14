@@ -80,6 +80,13 @@ export default function RichEditorQueryLayout001() {
       let get_content = await driver.findComponent(ON.id('get_content'));
       await get_content.click();
       await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('rich_struct');
+      await CommonFunc.sleep(200);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_QUERYLAYOUTPARAGRAPHSTYLE_0025] component obj is: " +
+         JSON.stringify(obj));
+      await CommonFunc.sleep(500);
+      expect(obj.$type).assertEqual('RichEditor');
       done();
     });
 

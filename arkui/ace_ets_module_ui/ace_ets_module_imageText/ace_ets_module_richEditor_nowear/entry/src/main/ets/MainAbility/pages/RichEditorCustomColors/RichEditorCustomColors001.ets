@@ -28,7 +28,6 @@ struct RichEditorCustomColor001 {
         Button('set select').onClick(() => {
           this.controller.setSelection(2, 4);
         }).id('set_select')
-
       }
       .borderWidth(1)
       .borderColor(Color.Red)

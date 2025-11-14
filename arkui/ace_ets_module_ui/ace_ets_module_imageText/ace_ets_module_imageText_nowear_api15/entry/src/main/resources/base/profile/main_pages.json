@@ -2,7 +2,6 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/Text/textAreaInputTest",
-    "MainAbility/pages/RichEditor/SelectionMenuOptions",
     "MainAbility/pages/Text/TextContentGetSelectionTest"
   ]
 }

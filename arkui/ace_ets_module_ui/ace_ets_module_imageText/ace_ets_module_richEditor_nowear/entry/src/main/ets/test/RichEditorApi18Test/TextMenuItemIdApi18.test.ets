@@ -21,17 +21,17 @@ import CommonFunc from '../../MainAbility/common/Common';
 let translateSupport: string = "1";
 let flag: boolean = true;
 
-export default function TextMenuItemId() {
-  describe('TextMenuItemId', () => {
+export default function TextMenuItemIdApi18() {
+  describe('TextMenuItemIdApi18', () => {
     beforeEach(async (done: Function) => {
-      console.info("TextMenuItemId beforeEach start");
+      console.info("TextMenuItemIdApi18 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/TextMenuItemId',
+        url: 'MainAbility/pages/RichEditorApi18/TextMenuItemIdApi18',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get TextMenuItemId state pages: " + JSON.stringify(pages));
+        console.info("get TextMenuItemIdApi18 state pages: " + JSON.stringify(pages));
         let result = await router.replaceUrl(options);
         await CommonFunc.sleep(1000);
         if(flag){
@@ -41,13 +41,13 @@ export default function TextMenuItemId() {
           console.info("get translateSupport after: " + translateSupport);
           flag = false
         }
-        if (!("TextMenuItemId" == pages.name)) {
-          console.info("get TextMenuItemId state pages.name: " + JSON.stringify(pages.name));
+        if (!("TextMenuItemIdApi18" == pages.name)) {
+          console.info("get TextMenuItemIdApi18 state pages.name: " + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          console.info("push TextMenuItemId success: " + JSON.stringify(result));
+          console.info("push TextMenuItemIdApi18 success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push TextMenuItemId page error: " + err);
+        console.error("push TextMenuItemIdApi18 page error: " + err);
         expect().assertFail();
       }
       done();
@@ -55,41 +55,42 @@ export default function TextMenuItemId() {
 
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         TextMenuItemId0001
+     * @tc.name         TextMenuItemIdApi180001
      * @tc.desic        set TextMenuItem for text
      */
-    it('TextMenuItemId0001', Level.LEVEL0, async (done: Function) => {
-      console.info("[TextMenuItemId0001] start");
+    it('TextMenuItemIdApi180001', Level.LEVEL0, async (done: Function) => {
+      console.info("[TextMenuItemIdApi180001] start");
       if(translateSupport === '1'){
         let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0001 START');
+        console.info('TextMenuItemIdApi180001 START');
         await CommonFunc.sleep(500);
         let text = await driver.findComponent(ON.id('text'));
-        await CommonFunc.sleep(500); 
+        await CommonFunc.sleep(500);
         let point = await text.getBoundsCenter();
         await CommonFunc.sleep(500);
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
+        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0001 translateSupport: ', translateSupport)
+        console.log('TextMenuItemIdApi180001 translateSupport: ', translateSupport)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
-      console.info("[TextMenuItemId0001] end");
+      console.info("[TextMenuItemIdApi180001] end");
       done();
     });
 
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         TextMenuItemId0002
+     * @tc.name         TextMenuItemIdApi180002
      * @tc.desic        set TextMenuItem for textArea
      */
-    it('TextMenuItemId0002', Level.LEVEL0, async (done: Function) => {
-      console.info("[TextMenuItemId0002] start");
+    it('TextMenuItemIdApi180002', Level.LEVEL0, async (done: Function) => {
+      console.info("[TextMenuItemIdApi180002] start");
       if(translateSupport === '1'){
         let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0002 START');
+        console.info('TextMenuItemIdApi180002 START');
         await CommonFunc.sleep(500);
         let textArea = await driver.findComponent(ON.id('textArea'));
         await CommonFunc.sleep(500);
@@ -98,25 +99,26 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
+        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0002', JSON.parse(strJson).$type)
+        console.log('TextMenuItemIdApi180002 translateSupport: ', translateSupport)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
-      console.info("[TextMenuItemId0002] end");
+      console.info("[TextMenuItemIdApi180002] end");
       done();
     });
 
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         TextMenuItemId0003
+     * @tc.name         TextMenuItemIdApi180003
      * @tc.desic        set TextMenuItem for textInput
      */
-    it('TextMenuItemId0003', Level.LEVEL0, async (done: Function) => {
-      console.info("[TextMenuItemId0003] start");
+    it('TextMenuItemIdApi180003', Level.LEVEL0, async (done: Function) => {
+      console.info("[TextMenuItemIdApi180003] start");
       if(translateSupport === '1'){
         let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0003 START');
+        console.info('TextMenuItemIdApi180003 START');
         await CommonFunc.sleep(500);
         let textInput = await driver.findComponent(ON.id('textInput'));
         await CommonFunc.sleep(500);
@@ -125,25 +127,26 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
+        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0003', JSON.parse(strJson).$type)
+        console.log('TextMenuItemIdApi180003translateSupport: ', translateSupport)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
-      console.info("[TextMenuItemId0003] end");
+      console.info("[TextMenuItemIdApi180003] end");
       done();
     });
 
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         TextMenuItemId0004
+     * @tc.name         TextMenuItemIdApi180004
      * @tc.desic        set TextMenuItem for richEditor
      */
-    it('TextMenuItemId0004', Level.LEVEL0, async (done: Function) => {
-      console.info("[TextMenuItemId0004] start");
+    it('TextMenuItemIdApi180004', Level.LEVEL0, async (done: Function) => {
+      console.info("[TextMenuItemIdApi180004] start");
       if(translateSupport === '1'){
         let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0004 START');
+        console.info('TextMenuItemIdApi18 TextMenuItemIdApi180004 START');
         await CommonFunc.sleep(500);
         let richEditor = await driver.findComponent(ON.id('richEditor'));
         await CommonFunc.sleep(500);
@@ -152,25 +155,26 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
+        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0004', JSON.parse(strJson).$type)
+        console.log('TextMenuItemIdApi180004translateSupport: ', translateSupport)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
-      console.info("[TextMenuItemId0004] end");
+      console.info("[TextMenuItemIdApi180004] end");
       done();
     });
 
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         TextMenuItemId0005
+     * @tc.name         TextMenuItemIdApi180005
      * @tc.desic        set TextMenuItem for search
      */
-    it('TextMenuItemId0005', Level.LEVEL0, async (done: Function) => {
-      console.info("[TextMenuItemId0005] start");
+    it('TextMenuItemIdApi180005', Level.LEVEL0, async (done: Function) => {
+      console.info("[TextMenuItemIdApi180005] start");
       if(translateSupport === '1'){
         let driver = Driver.create();
-        console.info('TextMenuItemId TextMenuItemId0005 START');
+        console.info('TextMenuItemIdApi18 TextMenuItemIdApi180005 START');
         await CommonFunc.sleep(500);
         let search = await driver.findComponent(ON.id('search'));
         await CommonFunc.sleep(500);
@@ -179,12 +183,13 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
+        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0005', JSON.parse(strJson).$type)
+        console.log('TextMenuItemIdApi180005translateSupport: ', translateSupport)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
-      console.info("[TextMenuItemId0005] end");
+      console.info("[TextMenuItemIdApi180005] end");
       done();
     });
   })

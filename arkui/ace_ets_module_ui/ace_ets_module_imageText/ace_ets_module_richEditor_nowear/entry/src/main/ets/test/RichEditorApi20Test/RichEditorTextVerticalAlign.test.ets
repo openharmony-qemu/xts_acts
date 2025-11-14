@@ -23,7 +23,7 @@ export default function RichEditorTextVerticalAlignTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorTextVerticalAlignTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorTextVerticalAlign',
+        url: 'MainAbility/pages/RichEditorApi20/RichEditorTextVerticalAlign',
       }
       try {
         router.clear();

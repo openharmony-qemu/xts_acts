@@ -23,7 +23,7 @@ export default function RichEditorMaxLengthTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorMaxLengthTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorMaxLengthTest',
+        url: 'MainAbility/pages/RichEditorApi18/RichEditorMaxLengthTest',
       }
       try {
         router.clear();

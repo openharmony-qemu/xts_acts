@@ -23,7 +23,7 @@ export default function SelectionMenuOptions() {
     beforeEach(async (done: Function) => {
       console.info("SelectionMenuOptions beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/SelectionMenuOptions',
+        url: 'MainAbility/pages/RichEditorApi15/SelectionMenuOptions',
       }
       try {
         router.clear();

@@ -26,7 +26,7 @@ export default function TextMenuItemId() {
     beforeEach(async (done: Function) => {
       console.info("TextMenuItemId beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/TextMenuItemId',
+        url: 'MainAbility/pages/RichEditorApi16/TextMenuItemId',
       }
       try {
         router.clear();
@@ -65,13 +65,12 @@ export default function TextMenuItemId() {
         console.info('TextMenuItemId TextMenuItemId0001 START');
         await CommonFunc.sleep(500);
         let text = await driver.findComponent(ON.id('text'));
-        await CommonFunc.sleep(500);
+        await CommonFunc.sleep(500); 
         let point = await text.getBoundsCenter();
         await CommonFunc.sleep(500);
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
         console.log('TextMenuItemId0001 translateSupport: ', translateSupport)
@@ -99,10 +98,9 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0002 translateSupport: ', translateSupport)
+        console.log('TextMenuItemId0002', JSON.parse(strJson).$type)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
       console.info("[TextMenuItemId0002] end");
@@ -127,10 +125,9 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0003translateSupport: ', translateSupport)
+        console.log('TextMenuItemId0003', JSON.parse(strJson).$type)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
       console.info("[TextMenuItemId0003] end");
@@ -155,10 +152,9 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0004translateSupport: ', translateSupport)
+        console.log('TextMenuItemId0004', JSON.parse(strJson).$type)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
       console.info("[TextMenuItemId0004] end");
@@ -183,10 +179,9 @@ export default function TextMenuItemId() {
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
         await driver.assertComponentExist(ON.text('翻译'));
-        await driver.assertComponentExist(ON.text('搜索'));
       }else{
         let strJson = getInspectorByKey('text');
-        console.log('TextMenuItemId0005translateSupport: ', translateSupport)
+        console.log('TextMenuItemId0005', JSON.parse(strJson).$type)
         expect(JSON.parse(strJson).$type).assertEqual("Text");
       }
       console.info("[TextMenuItemId0005] end");

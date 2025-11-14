@@ -49,7 +49,7 @@ export default function RichEditorMaxLinesTest() {
     /*
     * @tc.number       RichEditorMaxLinesTest0001
     * @tc.name         RichEditorMaxLinesTest0001
-    * @tc.desic        The MaxLines  set -1
+    * @tc.desc         The MaxLines  set -1
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -68,7 +68,7 @@ export default function RichEditorMaxLinesTest() {
     /*
     * @tc.number       RichEditorMaxLinesTest0002
     * @tc.name         RichEditorMaxLinesTest0002
-    * @tc.desic        The MaxLines  set 2.5
+    * @tc.desc         The MaxLines  set 2.5
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        1
@@ -90,12 +90,12 @@ export default function RichEditorMaxLinesTest() {
     });
 
     /*
-   * @tc.number       RichEditorMaxLinesTest0003
-   * @tc.name         RichEditorMaxLinesTest0003
-   * @tc.desic        The MaxLines  set 6
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
+    * @tc.number       RichEditorMaxLinesTest0003
+    * @tc.name         RichEditorMaxLinesTest0003
+    * @tc.desc         The MaxLines  set 6
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
     */
     it('RichEditorMaxLinesTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -114,12 +114,12 @@ export default function RichEditorMaxLinesTest() {
     });
 
     /*
-   * @tc.number       RichEditorMaxLinesTest0004
-   * @tc.name         RichEditorMaxLinesTest0004
-   * @tc.desic        The MaxLines  set undefined
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
+    * @tc.number       RichEditorMaxLinesTest0004
+    * @tc.name         RichEditorMaxLinesTest0004
+    * @tc.desc         The MaxLines  set undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        1
     */
     it('RichEditorMaxLinesTest0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
