@@ -177,7 +177,7 @@ HWTEST_F(SocperfTestSuite, Check, Function | MediumTest | Level1)
         }
     }
 }
- 
+
 /**
  * @tc.number CheckConfigBoost_001
  * @tc.name: CheckConfigResource001
