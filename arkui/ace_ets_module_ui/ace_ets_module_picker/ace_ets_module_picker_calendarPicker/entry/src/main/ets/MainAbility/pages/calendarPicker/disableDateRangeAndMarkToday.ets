@@ -40,7 +40,7 @@ struct CalendarPickerExample {
         Text('disableDateRange:' + JSON.stringify(this.disableDateRange))
         Text('startDate:' + JSON.stringify(this.startDate))
         Text('endDate:' + JSON.stringify(this.endDate))
-        
+
         Row({ space: 1 }) {
           Button('正常值 ').onClick(() => {
             this.disableDateRange = [{ start: new Date('2025-01-09'), end: new Date('2025-01-10') }]
