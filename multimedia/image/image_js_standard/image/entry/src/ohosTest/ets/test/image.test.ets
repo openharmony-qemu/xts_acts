@@ -4304,6 +4304,21 @@ export default function imageJsTest() {
                 'test.dng', 'image/x-adobe-dng', 'Callback');
         });
         /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100
+         * @tc.name      : imageSource-pixelmap-getImageInfo-promise-mimetype
+         * @tc.desc      : 1.create ImageSource,ImageInfo
+         *                 2.call getImageInfo
+         *                 3.call return imageinfo
+         *                 4.callback return undefined
+         * @tc.size      : MEDIUM
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100', Level.LEVEL0, async (done: Function) => {
+            await testPixelMapImageInfoMimetype(done, 'SUB_MULTIMEDIA_IMAGE_BYPIXELMAP_GETIMAGEINFO_MIMETYPE_PROMISE_WBMP_0100',
+                'test.wbmp', 'image/wbmp', 'PromiseNumber');
+        });
+        /**
          * @tc.number    : SUB_MULTIMEDIA_WRONGSUFFIXIMAGE_GETIMAGEINFO_MIMETYPE_PROMISE_0100
          * @tc.name      : wrongSuffixImage-imageSource-getImageInfo-promise-mimetype
          * @tc.desc      : 1.create ImageSource,ImageInfo
@@ -7491,6 +7506,8 @@ export default function imageJsTest() {
             const ret = (JSON.stringify(srcSupportedFormatsList) == JSON.stringify(dstSupportedFormatsList));
             console.log("compare result is: " + ret);
             expect(ret).assertTrue();
+            expect(srcSupportedFormatsList.includes('image/wbmp')).assertTrue();
+            expect(dstSupportedFormatsList.includes('image/wbmp')).assertTrue();
             done();
         })
     

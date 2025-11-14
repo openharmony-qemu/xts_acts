@@ -31,6 +31,8 @@ import PinchRecognizer from './GestureRecognizer/PinchRecognizer.test';
 import RotationRecognizer from './GestureRecognizer/RotationRecognizer.test';
 import SwipeRecognizer from './GestureRecognizer/SwipeRecognizer.test';
 import TapRecognizer from './GestureRecognizer/TapRecognizer.test';
+import onVisibleTest from "./onVisiable/onVisibleAreaApproximateChange.test";
+import RequestFocusTest from "./Focus/requestFocus.test";
 
 export default function testsuite() {
   onVisiable();
@@ -51,4 +53,6 @@ export default function testsuite() {
   RotationRecognizer();
   SwipeRecognizer();
   TapRecognizer();
+  onVisibleTest();
+  RequestFocusTest();
 }

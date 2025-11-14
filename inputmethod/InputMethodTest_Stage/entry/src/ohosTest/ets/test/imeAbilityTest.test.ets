@@ -60,14 +60,15 @@ export default function imeAbilityTest() {
 
     });
 
-    /*
-    * @tc.number  SUB_InputMethod_IMEAbility_0001
-    * @tc.name   SUB_InputMethod_IMEAbility_0001
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IMEAbility_0001
+     * @tc.number SUB_InputMethod_IMEAbility_0001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_InputMethod_IMEAbility_0001', Level.LEVEL0, async (done: Function) => {
       console.info('====>----------SUB_InputMethod_IMEAbility_0001 start-------------');
       let imExtAbilityProperty: inputMethod.InputMethodProperty = {
@@ -92,14 +93,15 @@ export default function imeAbilityTest() {
       }, 500);
     })
 
-    /*
-    * @tc.number  SUB_InputMethod_IMEAbility_0002
-    * @tc.name   SUB_InputMethod_IMEAbility_0002
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_InputMethod_IMEAbility_0002
+     * @tc.number SUB_InputMethod_IMEAbility_0002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_InputMethod_IMEAbility_0002', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------SUB_InputMethod_IMEAbility_0002 start-------------');
 

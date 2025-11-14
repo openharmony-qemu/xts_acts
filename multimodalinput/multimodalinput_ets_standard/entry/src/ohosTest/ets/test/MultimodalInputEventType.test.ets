@@ -26,15 +26,16 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function MultimodalInputEventTypeTest() {
   describe('MultimodalInputEventTypeTest', () => {
 
-    /**
-     * @tc.number    : MultimodalInput_KeyEventTypeTest_0010
-     * @tc.name      : MultimodalInput_KeyEventTypeTest0010
-     * @tc.desc      : .
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_KeyEventTypeTest_0010
+     * @tc.number MultimodalInput_KeyEventTypeTest_0010
+     * @tc.desc   MultimodalInput_KeyEventTypeTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_KeyEventTypeTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_KeyEventTypeTest_0010 enter`);
 
@@ -45,16 +46,17 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_KeyEventTypeTest_0010 exit`);
     })
 
+
+
     /**
-     * @tc.number    : MultimodalInput_KeyEventTypeTest_0020
-     * @tc.name      : MultimodalInput_KeyEventTypeTest0020
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_KeyEventTypeTest_0020
+     * @tc.number MultimodalInput_KeyEventTypeTest_0020
+     * @tc.desc   MultimodalInput_KeyEventTypeTest_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('MultimodalInput_KeyEventTypeTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_KeyEventTypeTest_0020 enter`);
 
@@ -69,15 +71,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_KeyEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_KeyEventTypeTest_0030
-     * @tc.name      : MultimodalInput_KeyEventTypeTest0030
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_KeyEventTypeTest_0030
+     * @tc.number MultimodalInput_KeyEventTypeTest_0030
+     * @tc.desc   MultimodalInput_KeyEventTypeTest_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_KeyEventTypeTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_KeyEventTypeTest_0030 enter`);
 
@@ -120,15 +123,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_KeyEventTypeTest_0030 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_0010
-     * @tc.name      : MultimodalInput_MouseEventTypeTest0010
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_0010
+     * @tc.number MultimodalInput_MouseEventTypeTest_0010
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0010 enter`);
 
@@ -143,15 +147,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0010 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_0020
-     * @tc.name      : MultimodalInput_MouseEventTypeTest0020
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_0020
+     * @tc.number MultimodalInput_MouseEventTypeTest_0020
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -160,15 +165,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_00201
-     * @tc.name      : MultimodalInput_MouseEventTypeTest00201
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_00201
+     * @tc.number MultimodalInput_MouseEventTypeTest_00201
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_00201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_00201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -177,15 +183,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_00202
-     * @tc.name      : MultimodalInput_MouseEventTypeTest00202
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_00202
+     * @tc.number MultimodalInput_MouseEventTypeTest_00202
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_00202
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_00202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -194,15 +201,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_00203
-     * @tc.name      : MultimodalInput_MouseEventTypeTest00203
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_00203
+     * @tc.number MultimodalInput_MouseEventTypeTest_00203
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_00203
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_00203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -211,15 +219,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_00204
-     * @tc.name      : MultimodalInput_MouseEventTypeTest00204
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_00204
+     * @tc.number MultimodalInput_MouseEventTypeTest_00204
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_00204
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_00204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -229,15 +238,16 @@ export default function MultimodalInputEventTypeTest() {
     })
 
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_00205
-     * @tc.name      : MultimodalInput_MouseEventTypeTest00205
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_00205
+     * @tc.number MultimodalInput_MouseEventTypeTest_00205
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_00205
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_00205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -246,15 +256,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_00206
-     * @tc.name      : MultimodalInput_MouseEventTypeTest00206
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_00206
+     * @tc.number MultimodalInput_MouseEventTypeTest_00206
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_00206
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_00206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -263,15 +274,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_00207
-     * @tc.name      : MultimodalInput_MouseEventTypeTest00207
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_00207
+     * @tc.number MultimodalInput_MouseEventTypeTest_00207
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_00207
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_00207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 enter` + mouseEvent.Button.LEFT + mouseEvent.Button.MIDDLE + mouseEvent.Button.RIGHT + mouseEvent.Button.SIDE + mouseEvent.Button.EXTRA + mouseEvent.Button.BACK + mouseEvent.Button.TASK);
 
@@ -281,15 +293,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_0030
-     * @tc.name      : MultimodalInput_MouseEventTypeTest0030
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_0030
+     * @tc.number MultimodalInput_MouseEventTypeTest_0030
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0030 enter`);
 
@@ -300,15 +313,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0030 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_0040
-     * @tc.name      : MultimodalInput_MouseEventTypeTest0040
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_0040
+     * @tc.number MultimodalInput_MouseEventTypeTest_0040
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0040 enter`);
 
@@ -321,15 +335,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0040 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_MouseEventTypeTest_0050
-     * @tc.name      : MultimodalInput_MouseEventTypeTest0050
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_MouseEventTypeTest_0050
+     * @tc.number MultimodalInput_MouseEventTypeTest_0050
+     * @tc.desc   MultimodalInput_MouseEventTypeTest_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_MouseEventTypeTest_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_MouseEventTypeTest_0050 enter`);
 
@@ -391,15 +406,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_MouseEventTypeTest_0050 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_TouchEventTypeTest_0010
-     * @tc.name      : MultimodalInput_TouchEventTypeTest0010
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_TouchEventTypeTest_0010
+     * @tc.number MultimodalInput_TouchEventTypeTest_0010
+     * @tc.desc   MultimodalInput_TouchEventTypeTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_TouchEventTypeTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_TouchEventTypeTest_0010 enter`);
 
@@ -411,15 +427,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_TouchEventTypeTest_0010 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_TouchEventTypeTest_0020
-     * @tc.name      : MultimodalInput_TouchEventTypeTest0020
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_TouchEventTypeTest_0020
+     * @tc.number MultimodalInput_TouchEventTypeTest_0020
+     * @tc.desc   MultimodalInput_TouchEventTypeTest_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_TouchEventTypeTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_TouchEventTypeTest_0020 enter`);
 
@@ -435,15 +452,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_TouchEventTypeTest_0020 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_TouchEventTypeTest_0030
-     * @tc.name      : MultimodalInput_TouchEventTypeTest0030
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_TouchEventTypeTest_0030
+     * @tc.number MultimodalInput_TouchEventTypeTest_0030
+     * @tc.desc   MultimodalInput_TouchEventTypeTest_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_TouchEventTypeTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_TouchEventTypeTest_0030 enter`);
 
@@ -454,15 +472,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_TouchEventTypeTest_0030 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_TouchEventTypeTest_0040
-     * @tc.name      : MultimodalInput_TouchEventTypeTest0040
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_TouchEventTypeTest_0040
+     * @tc.number MultimodalInput_TouchEventTypeTest_0040
+     * @tc.desc   MultimodalInput_TouchEventTypeTest_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_TouchEventTypeTest_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_TouchEventTypeTest_0040 enter`);
 
@@ -512,15 +531,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_TouchEventTypeTest_0040 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_TouchEventTypeTest_0050
-     * @tc.name      : MultimodalInput_TouchEventTypeTest0050
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_TouchEventTypeTest_0050
+     * @tc.number MultimodalInput_TouchEventTypeTest_0050
+     * @tc.desc   MultimodalInput_TouchEventTypeTest_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_TouchEventTypeTest_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info(`MultimodalInput_TouchEventTypeTest_0050 enter`);
 
@@ -563,15 +583,16 @@ export default function MultimodalInputEventTypeTest() {
       console.info(`MultimodalInput_TouchEventTypeTest_0050 exit`);
     })
 
-    /**
-     * @tc.number    : MultimodalInput_InputEventTypeTest_0010
-     * @tc.name      : MultimodalInput_InputEventTypeTest0010
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   MultimodalInput_InputEventTypeTest_0010
+     * @tc.number MultimodalInput_InputEventTypeTest_0010
+     * @tc.desc   MultimodalInput_InputEventTypeTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MultimodalInput_InputEventTypeTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
 
       console.info(`MultimodalInput_InputEventTypeTest_0010 enter`);

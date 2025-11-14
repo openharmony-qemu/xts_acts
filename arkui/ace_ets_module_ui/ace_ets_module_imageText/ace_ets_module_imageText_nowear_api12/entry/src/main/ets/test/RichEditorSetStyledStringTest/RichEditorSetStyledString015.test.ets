@@ -119,7 +119,9 @@ export default function RichEditorSetStyledString015() {
       expect(textStyleText).assertContain('"fontSize":50');
       expect(textStyleText).assertContain('"fontStyle":1');
       expect(textStyleText).assertContain('"fontWeight":13');
-      expect(textStyleText).assertContain('"decoration":{"type":1,"color":"#FF008000"}');
+      expect(textStyleText).assertContain('"type":1');
+      expect(textStyleText).assertContain('"color":"#FF008000"');
+      expect(textStyleText).assertContain('"thicknessScale":1');
       done();
     });
 
@@ -150,7 +152,9 @@ export default function RichEditorSetStyledString015() {
       expect(textStyleText).assertContain('"fontSize":50');
       expect(textStyleText).assertContain('"fontStyle":1');
       expect(textStyleText).assertContain('"fontWeight":13');
-      expect(textStyleText).assertContain('"decoration":{"type":1,"color":"#FF008000"}');
+      expect(textStyleText).assertContain('"type":1');
+      expect(textStyleText).assertContain('"color":"#FF008000"');
+      expect(textStyleText).assertContain('"thicknessScale":1');
       done();
     });
 

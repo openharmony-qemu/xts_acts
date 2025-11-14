@@ -59,12 +59,13 @@ export default function userauthTest_API9() {
     })
 
     /**
-     * @tc.number     Security_IAM_Func_Static_0102
-     * @tc.name       Security_IAM_Func_Static_0102
-     * @tc.desc       Abnormal testing
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_Func_Static_0102
+     * @tc.number Security_IAM_Func_Static_0102
+     * @tc.desc   Abnormal testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_IAM_Func_Static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_Func_Static_0102 start');
@@ -122,13 +123,14 @@ export default function userauthTest_API9() {
 
 
     /**
-        * @tc.number     Security_IAM_PIN_Kit_Func_Static_0104
-        * @tc.name       Security_IAM_PIN_Kit_Func_Static_0104
-        * @tc.desc       Enumeration testing
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level 0
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_PIN_Kit_Func_Static_0104
+     * @tc.number Security_IAM_PIN_Kit_Func_Static_0104
+     * @tc.desc   Enumeration testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_PIN_Kit_Func_Static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_PIN_Kit_Func_Static_0104 start');
       expect('10000').assertEqual(''+userAuth.AuthTrustLevel.ATL1);
@@ -142,13 +144,14 @@ export default function userauthTest_API9() {
 
 
     /**
-        * @tc.number     Security_IAM_PIN_Kit_Func_Static_0106
-        * @tc.name       Security_IAM_PIN_Kit_Func_Static_0106
-        * @tc.desc       Enumeration testing
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level 0
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_PIN_Kit_Func_Static_0106
+     * @tc.number Security_IAM_PIN_Kit_Func_Static_0106
+     * @tc.desc   Enumeration testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_PIN_Kit_Func_Static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_PIN_Kit_Func_Static_0106 start');
       expect('2').assertEqual(''+userAuth.UserAuthType.FACE);
@@ -158,13 +161,14 @@ export default function userauthTest_API9() {
     })
 
     /**
-        * @tc.number     Security_IAM_Func_Static_0107
-        * @tc.name       Security_IAM_Func_Static_0107
-        * @tc.desc       Enumeration testing
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level 0
-    */
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   Security_IAM_Func_Static_0107
+     * @tc.number Security_IAM_Func_Static_0107
+     * @tc.desc   Enumeration testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_Func_Static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format,'testFace Security_IAM_Func_Static_0107 start');
       expect('12500000').assertEqual(''+userAuth.UserAuthResultCode.SUCCESS);
@@ -183,7 +187,158 @@ export default function userauthTest_API9() {
       done();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_userIam_authWidget_Func_skip_Static_0190
+     * @tc.number SUB_Security_userIam_authWidget_Func_skip_Static_0190
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_userIam_authWidget_Func_skip_Static_0190', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_skip_Static_0190 start');
+      try {
+        //authParam
+        let authParam1:userAuth.AuthParam = {
+          challenge:new Uint8Array([49,49,49,49,49,49]),
+          authType:[userAuth.UserAuthType.PIN],
+          authTrustLevel:userAuth.AuthTrustLevel.ATL1,
+          skipLockedBiometricAuth:false,
+        };
+        let authParam2:userAuth.AuthParam = {
+          challenge:new Uint8Array([49,49,49,49,49,49]),
+          authType:[userAuth.UserAuthType.PIN],
+          authTrustLevel:userAuth.AuthTrustLevel.ATL1,
+          skipLockedBiometricAuth:true,
+        };
+        //widgetParam
+        let widgetParam: userAuth.WidgetParam = {
+          title:"title",
+        };
+        userAuth.getUserAuthInstance(authParam1,widgetParam);
+        userAuth.getUserAuthInstance(authParam2,widgetParam);
+      }
+      catch (err:BusinessError){
+        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_skip_Static_0190 fail CODE:" + err.code);
+        expect(null).assertFail();
+      }
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_skip_Static_0190 end');
+      done();
+    })
 
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0031
+     * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0031
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_userIam_authWidget_Func_Tip_Static_0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0031 start');
+      expect('1').assertEqual(''+userAuth.UserAuthTipCode.COMPARE_FAILURE);
+      expect('2').assertEqual(''+userAuth.UserAuthTipCode.TIMEOUT);
+      expect('3').assertEqual(''+userAuth.UserAuthTipCode.TEMPORARILY_LOCKED);
+      expect('4').assertEqual(''+userAuth.UserAuthTipCode.PERMANENTLY_LOCKED);
+      expect('5').assertEqual(''+userAuth.UserAuthTipCode.WIDGET_LOADED);
+      expect('6').assertEqual(''+userAuth.UserAuthTipCode.WIDGET_RELEASED);
+      expect('7').assertEqual(''+userAuth.UserAuthTipCode.COMPARE_FAILURE_WITH_FROZEN);
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0031 end');
+      done();
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_userIam_authWidget_Func_Tip_Static_0032
+     * @tc.number SUB_Security_userIam_authWidget_Func_Tip_Static_0032
+     * @tc.desc   authWidget
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_userIam_authWidget_Func_Tip_Static_0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0032 start');
+      //authParam
+      let authParam:userAuth.AuthParam = {
+        challenge:new Uint8Array([49,49,49,49,49,49]),
+        authType:[userAuth.UserAuthType.PIN],
+        authTrustLevel:userAuth.AuthTrustLevel.ATL1,
+      };
+      //widgetParam
+      let widgetParam: userAuth.WidgetParam = {
+        title:"title",
+      };
+      try {
+        let userAuthInstance = userAuth.getUserAuthInstance(authParam,widgetParam);
+        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 authTipInfo.tipType = " + authTipInfo.tipType);
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 authTipInfo.tipCode = " + authTipInfo.tipCode);
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 on with callback");
+        });
+        userAuthInstance.offAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 off with callback");
+        });
+        userAuthInstance.onAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{
+          hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032 on without callback");
+        });
+        userAuthInstance.offAuthTip();
+      }
+      catch (err:BusinessError){
+        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err.code "+err.code);
+        expect(null).assertFail();
+      }
+
+      try {
+        let userAuthInstance = userAuth.getUserAuthInstance(authParam,widgetParam);
+        userAuthInstance.offAuthTip((authTipInfo:userAuth.AuthTipInfo)=>{});
+        expect(null).assertFail();
+      }
+      catch (err:BusinessError) {
+        hilog.info(domain, tag, format,"SUB_Security_userIam_authWidget_Func_Tip_Static_0032  err1.code "+err.code);
+        expect(''+12500002).assertEqual(''+err.code);
+      }
+      hilog.info(domain, tag, format,'testFace SUB_Security_userIam_authWidget_Func_Tip_Static_0032 end');
+      done();
+    });
+
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_IAM_UserAuth_FUNC_Static_0110
+     * @tc.number SUB_Security_IAM_UserAuth_FUNC_Static_0110
+     * @tc.desc   getAuthLockState parameter validity check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_IAM_UserAuth_FUNC_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format,'testFace SUB_Security_IAM_UserAuth_FUNC_Static_0110 start');
+      let checkFace = checkSupportOrNot(userAuth.UserAuthType.FACE);
+      let checkPin = checkSupportOrNot(userAuth.UserAuthType.PIN);
+      let checkFingerprint = checkSupportOrNot(userAuth.UserAuthType.FINGERPRINT);
+      let authType:userAuth.UserAuthType[] = [userAuth.UserAuthType.FACE, userAuth.UserAuthType.FINGERPRINT, userAuth.UserAuthType.PIN];
+      if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
+        for (let idx0 = 0; idx0 < authType.length; idx0++) {
+          try {
+            hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 authType: ${authType[idx0]}`);
+            userAuth.getAuthLockState(authType[idx0]).then((AuthLockState:userAuth.AuthLockState) => {
+              hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.isLocked : ${AuthLockState.isLocked}`);
+              hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.remainingAuthAttempts : ${AuthLockState.remainingAuthAttempts}`);
+              hilog.info(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 AuthLockState.lockoutDuration : ${AuthLockState.lockoutDuration}`);
+            })
+            .catch ((err:BusinessError): void => {
+              hilog.error(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 fail1 code: ${err.code} authType: ${authType[idx0]}`);
+              expect(err.code).assertEqual(userAuth.UserAuthResultCode.NOT_ENROLLED);
+            }) 
+          } catch (error:BusinessError) {
+            hilog.error(domain, tag, format,`SUB_Security_IAM_UserAuth_FUNC_Static_0110 fail2 code: ${error.code} authType: ${authType[idx0]}`);
+            expect(error.code).assertEqual(userAuth.UserAuthResultCode.NOT_ENROLLED);
+          }
+        };
+      }
+      done();
+    })
 
   });
 };

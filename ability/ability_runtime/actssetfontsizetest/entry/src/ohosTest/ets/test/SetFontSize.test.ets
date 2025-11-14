@@ -96,7 +96,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set and show'));
+        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -162,10 +162,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set'));
+        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.findComponent(ON.id('show'));
+        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -231,10 +231,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set'));
+        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.findComponent(ON.id('show'));
+        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -300,10 +300,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set'));
+        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.findComponent(ON.id('show'));
+        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
         await button2.click();
         await sleep(4000);
       } catch (e) {
@@ -369,7 +369,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set and show'));
+        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -435,7 +435,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set and show'));
+        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -502,7 +502,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button: Component = await driver.findComponent(ON.id('set and show'));
+        let button: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
         await button.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -567,10 +567,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set'));
+        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.findComponent(ON.id('show'));
+        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -635,10 +635,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set'));
+        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.findComponent(ON.id('show'));
+        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -703,10 +703,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set'));
+        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.findComponent(ON.id('show'));
+        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -771,7 +771,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set and show'));
+        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -836,7 +836,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.findComponent(ON.id('set and show'));
+        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);

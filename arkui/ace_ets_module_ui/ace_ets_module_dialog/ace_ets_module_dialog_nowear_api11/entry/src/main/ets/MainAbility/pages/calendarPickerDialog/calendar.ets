@@ -108,7 +108,7 @@ struct CalendarComponentExample {
     weekWidth: 3,
     weekAndDayRowSpace: this.weekAndDayRowSpace
   };
-  private stateChangCallBack = (eventData:events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     if (eventData != null) {
       console.info("Calendar page state change called:" + JSON.stringify(eventData));
       if (eventData.data?.colSpace != null) {

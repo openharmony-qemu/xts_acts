@@ -16,8 +16,8 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest';
 import business_error, { BusinessError } from '@ohos.base';
+import { Driver, MouseButton, UiWindow, ON, On } from '@ohos.UiTest';
 
 class TestObj {
   constructor() {
@@ -190,7 +190,22 @@ struct WebViewEnumAndFontLibrary {
               Utils.emitEvent(this.ImageContent, 183260)
               break;
             }
+
+            case "emitWebContextMenuParamExistsImageTrueContents": {
+              this.isPageEnd = -1
+              this.controller.loadUrl("resource://rawfile/ParamExistsImageTrue.html")
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+              let button = await driver.findComponent(ON.id('webCenter'));
+              await button.longClick();
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.ImageContent, 20251017)
+              break;
+            }
+
             case "emitWebContextMenuParamGetMediaType": {
+              this.isPageEnd = -1
+              this.controller.loadUrl("resource://rawfile/indexJru.html")
+              await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -232,7 +247,6 @@ struct WebViewEnumAndFontLibrary {
             }
 
             case "emitWebContextMenuParamGetInputFieldType": {
-
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
@@ -240,11 +254,18 @@ struct WebViewEnumAndFontLibrary {
               break;
             }
             case "emitWebContextMenuParamIsEditable": {
-
               let button = await driver.findComponent(ON.id('webCenter'));
               await button.longClick();
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.isEditable, 183320)
+              break;
+            }
+            case "emitWebContextMenuParamIsEditableTrue": {
+              let buttonOne = await driver.findComponent(ON.text('87643'));
+              let point = await buttonOne.getBoundsCenter();
+              await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+              await Utils.waitForReleaseDriver(this.str, driver)
+              Utils.emitEvent(this.isEditable, 20251016)
               break;
             }
             case "emitWebContextMenuParamGetEditStateFlags": {
@@ -432,7 +453,7 @@ struct WebViewEnumAndFontLibrary {
         .fileAccess(true)
         .imageAccess(true)
         .domStorageAccess(false)
-        .onlineImageAccess(false)
+        .onlineImageAccess(true)
         .databaseAccess(this.databaseAccess)
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);

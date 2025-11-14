@@ -25,6 +25,7 @@ import resourceColorErrorCodeTest from './FrameNodeTest/resourceColorErrorCode.t
 import setCrossLanguageOptionsErrorCodeTest from './FrameNodeTest/setCrossLanguageOptionsErrorCode.test';
 import postFrameCallbackTest from './PostFrameTest/postFrameCallback.test';
 import FrameNodeMethodErrorCodeTest from './FrameNodeTest/FrameNodeMethodErrorCode.test';
+import IsFollowingSystemFontScaleTrueTest from './ContextTest/IsFollowingSystemFontScaleTrueTest.test';
 
 export default function testsuite() {
   frameNodeIsVisibleTest();
@@ -40,4 +41,5 @@ export default function testsuite() {
   setCrossLanguageOptionsErrorCodeTest();
   postFrameCallbackTest();
   FrameNodeMethodErrorCodeTest();
+  IsFollowingSystemFontScaleTrueTest();
 }

@@ -455,6 +455,11 @@ export default function openLinkTest() {
           done();
         }
         await sleep(500)
+        await context.getApplicationContext().getAllRunningInstanceKeys().then((data)=>{
+          expect(data.length).assertEqual(2)
+        }).catch(()=>{
+          try{expect().assertFail();}catch(e){}
+        })
         try {
           context.startAbilityForResult(want,options)
             .then((result: common.AbilityResult) => {

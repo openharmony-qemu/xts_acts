@@ -50,7 +50,10 @@
 #define SET_CAMERA_FRONT_FOR_SECURE_PHOTO 5
 #define BACK_CAMERA 0
 #define FRONT_CAMERA 1
-
+#define TORCH_MODE_OFF 3
+#define TORCH_MODE_ON 4
+#define TORCH_MODE_AUTO 5
+#define SMOOTH_ZOOM_MODE_NORMAL 2
 typedef enum CameraCallbackCode {
     CameraInput_Status = 1,
     Preview_OnFrameStart = 2,
@@ -79,7 +82,19 @@ typedef enum UseCaseCode {
     PARAMETER2_ERROR = 2,
     PARAMETER3_ERROR = 3,
     PARAMETER4_ERROR = 4,
+    PARAMETER5_ERROR = 5,
 } UseCaseCode;
+
+typedef enum ImageRotation {
+    IMAGE_0 = 0,
+    ROTATION_0 = 1,
+    ROTATION_90 = 2,
+    ROTATION_180 = 3,
+    ROTATION_270 = 4,
+    IMAGE_90 = 90,
+    IMAGE_180 = 180,
+    IMAGE_270 = 270,
+} ImageRotation;
 
 class NDKCamera {
 public:

@@ -17,8 +17,10 @@ import avSessionERRCode from './AVSessionERRCode.test'
 import avCastPickerHelper from './AVCastPickerHelper.test'
 import avSession from './AVsession.test'
 import avSessionDistributed from './AVSessionDistributed.test'
+import avSessionController from './AVsessionController.test'
 
 export default function testsuite() {
+  avSessionController()
   avSessionDistributed()
   avSession()
   voiceCall()

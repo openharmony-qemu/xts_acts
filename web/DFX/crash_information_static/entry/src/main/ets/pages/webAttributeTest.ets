@@ -84,11 +84,11 @@ struct webAttributeTest {
                 break;
               }
               case "emitRenderExitReasonProcessCrashed": {
-                console.log("RenderExitReason0", RenderExitReason.ProcessAbnormalTermination)
-                console.log("RenderExitReason1", RenderExitReason.ProcessWasKilled)
-                console.log("RenderExitReason2", RenderExitReason.ProcessCrashed)
-                console.log("RenderExitReason3", RenderExitReason.ProcessOom)
-                console.log("RenderExitReason4", RenderExitReason.ProcessExitUnknown)
+                console.log("RenderExitReason0", RenderExitReason.PROCESS_ABNORMAL_TERMINATION)
+                console.log("RenderExitReason1", RenderExitReason.PROCESS_WAS_KILLED)
+                console.log("RenderExitReason2", RenderExitReason.PROCESS_CRASHED)
+                console.log("RenderExitReason3", RenderExitReason.PROCESS_OOM)
+                console.log("RenderExitReason4", RenderExitReason.PROCESS_EXIT_UNKNOWN)
                 this.flag = true;
                 this.controller.loadUrl('chrome://crash/')
                 break;

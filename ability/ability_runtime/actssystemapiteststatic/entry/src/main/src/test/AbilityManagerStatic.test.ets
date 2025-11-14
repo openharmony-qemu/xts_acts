@@ -23,7 +23,7 @@ import Utils from './Util.test';
 import abilityManager from "@ohos.app.ability.abilityManager"
 import { ShellCmdResult } from "application.shellCmdResult"
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function abilityManagerStaticTest() {

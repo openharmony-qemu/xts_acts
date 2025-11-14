@@ -79,14 +79,11 @@ async function terminateAbility(caseName: string) {
   await sleep(1000)
 }
 
-async function assertMaximizeComponentExist(windowState: number, windowRect?: window.Rect,
-  windowClass?: window.Window) {
+async function assertMaximizeComponentExist(windowState: number,windowClass?: window.Window) {
   let driver = Driver.create()
   if (windowState == 2||windowState == 1) {
     await driver.mouseMoveTo({ x: 100, y: 0 })
-  } else {
-    await windowClass?.moveWindowToAsync(windowRect?.left, windowRect?.top)
-  }
+  } 
   let test = true
   await driver.assertComponentExist(ON.id('EnhanceMaximizeBtn')).then(() => {
     test = true
@@ -105,6 +102,7 @@ export default function windowPCTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let mainWindowClass:window.Window;
+    let isFreeWindowMode = false;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -120,6 +118,10 @@ export default function windowPCTest() {
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
       mainWindowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = mainWindowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     });
     beforeEach(() => {
     });
@@ -154,13 +156,13 @@ export default function windowPCTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testSetWindowTitleMoveEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowTitleMoveEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0100';
       let windowClass = windowStage.getMainWindowSync();
       let driver =  Driver.create()
       let windowPoint = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-      if(isPCStatus != ''|| isAutoWindow =='true'){
+      if(isFreeWindowMode == true){
         await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
         await sleep(1000)
       }
@@ -210,7 +212,7 @@ export default function windowPCTest() {
       let driver =  Driver.create()
       let windowPoint = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-      if(isPCStatus != ''|| isAutoWindow =='true'){
+      if(isFreeWindowMode == true){
         await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
         await sleep(1000)
       }
@@ -570,9 +572,9 @@ export default function windowPCTest() {
      * @tc.desc      : LeftTop为正整数，验证801
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const message = 'test_createSubWindowWithOptions_windowRect_801'
         let options: window.SubWindowOptions = {
@@ -906,9 +908,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testStartOptionsSupportWindowModes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testStartOptionsSupportWindowModes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0100';
       let options: StartOptions = {
         supportWindowModes: [
@@ -957,12 +959,14 @@ export default function windowPCTest() {
         // startAbility - SupportWindowMode.SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
+        windowClass?.moveWindowToAsync(mainWindowRect?.left, mainWindowRect?.top);
+        await sleep(1000);
         // 获取窗口状态 - 自由窗口
         let windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         // 判断是否存在最大化 - false
-        let test = await assertMaximizeComponentExist(windowStatus, mainWindowRect, windowClass);
+        let test = await assertMaximizeComponentExist(windowStatus, windowClass);
         await sleep(1000)
         console.info(`${message} EnhanceMaximizeBtn existence or not: ${test}, expect false`);
         expect(test).assertFalse()
@@ -1005,13 +1009,15 @@ export default function windowPCTest() {
         // startAbility - SupportWindowMode.FLOATING
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
+        windowClass?.moveWindowToAsync(mainWindowRect?.left, mainWindowRect?.top);
+        await sleep(1000);
         // 获取窗口状态 - 自由窗口
         let windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         // 判断是否存在最大化 - false
         let test =
-          await assertMaximizeComponentExist(windowStatus, mainWindowRect, windowClass)
+          await assertMaximizeComponentExist(windowStatus, windowClass)
         await sleep(1000)
         console.info(`${message} EnhanceMaximizeBtn existence or not: ${test}, expect false`);
         expect(test).assertFalse()
@@ -1054,13 +1060,15 @@ export default function windowPCTest() {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
+        windowClass?.moveWindowToAsync(mainWindowRect?.left, mainWindowRect?.top);
+        await sleep(1000);
         // 获取窗口状态 - 自由窗口
         let windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         // 判断是否存在最大化 - false
         let test =
-          await assertMaximizeComponentExist(windowStatus, mainWindowRect, windowClass)
+          await assertMaximizeComponentExist(windowStatus, windowClass)
         await sleep(1000)
         console.info(`${message} EnhanceMaximizeBtn existence or not: ${test}, expect false`);
         expect(test).assertFalse()
@@ -1104,13 +1112,15 @@ export default function windowPCTest() {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
+        windowClass?.moveWindowToAsync(mainWindowRect?.left, mainWindowRect?.top);
+        await sleep(1000);
         // 获取窗口状态 - 自由窗口
         let windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         // 判断是否存在最大化 - true
         let test =
-          await assertMaximizeComponentExist(windowStatus, mainWindowRect, windowClass)
+          await assertMaximizeComponentExist(windowStatus, windowClass)
         await sleep(1000)
         console.info(`${message} EnhanceMaximizeBtn existence or not: ${test}, expect true`);
         expect(test).assertTrue()
@@ -1138,9 +1148,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testStartOptionsSupportWindowModes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testStartOptionsSupportWindowModes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0600';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
       let driver = Driver.create()
@@ -1154,12 +1164,14 @@ export default function windowPCTest() {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
+        windowClass?.moveWindowToAsync(mainWindowRect?.left, mainWindowRect?.top);
+        await sleep(1000);
         // 获取窗口状态 - 全屏
         let windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 1`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
         // 判断是否存在最大化 - true
-        let test = await assertMaximizeComponentExist(windowStatus, mainWindowRect, windowClass)
+        let test = await assertMaximizeComponentExist(windowStatus, windowClass)
         await sleep(1000)
         console.info(`${message} EnhanceMaximizeBtn existence or not: ${test}, expect true`);
         expect(!test).assertTrue();
@@ -1194,13 +1206,15 @@ export default function windowPCTest() {
         // startAbility - SupportWindowMode.FLOATING & SPLIT
         let windowStageStart = await startAbility(message, context, options)
         let windowClass = windowStageStart.getMainWindowSync()
+        windowClass?.moveWindowToAsync(mainWindowRect?.left, mainWindowRect?.top);
+        await sleep(1000);
         // 获取窗口状态 - 自由窗口
         let windowStatus = windowClass.getWindowStatus()
         console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
         // 判断是否存在最大化 - true
         let test =
-          await assertMaximizeComponentExist(windowStatus, mainWindowRect, windowClass)
+          await assertMaximizeComponentExist(windowStatus, windowClass)
         await sleep(1000)
         console.info(`${message} EnhanceMaximizeBtn existence or not: ${test}, expect true`);
         expect(test).assertTrue()
@@ -1216,7 +1230,7 @@ export default function windowPCTest() {
         //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
         // 判断是否存在最大化 - true
         test =
-          await assertMaximizeComponentExist(windowStatus, mainWindowRect, windowClass)
+          await assertMaximizeComponentExist(windowStatus, windowClass)
         await sleep(1000)
         console.info(`${message} EnhanceMaximizeBtn existence or not: ${test}, expect true`);
         expect(test).assertTrue()
@@ -1243,9 +1257,9 @@ export default function windowPCTest() {
      * @tc.desc      : 传参三个元素
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_setSupportedWindowModes_threeElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_setSupportedWindowModes_threeElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const message = 'test_setSupportedWindowModes_threeElement'
         let windowStageStart = await startAbility(message, context)
@@ -1717,7 +1731,7 @@ export default function windowPCTest() {
      */
     it('test_on_windowWillClose_offWithoutOn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_windowWillClose_offWithoutOn'
-      if (isPCStatus == '' && isAutoWindow != 'true') {
+      if (isFreeWindowMode ==false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -2272,10 +2286,10 @@ export default function windowPCTest() {
      * @tc.desc       : 验证moveWindowToAsync参数MoveConfiguration
      * @tc.size       : MediumTestTest
      * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.level      : LEVEL0
      */
-    it('test_MoveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      if (isPCStatus == '' && isAutoWindow != 'true') {
+    it('test_MoveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      if (isFreeWindowMode == false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -2319,7 +2333,7 @@ export default function windowPCTest() {
      * @tc.level      : Level 3
      */
     it('test_on_subWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      if (isPCStatus == '' && isAutoWindow != 'true') {
+      if (isFreeWindowMode == false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -2391,7 +2405,7 @@ export default function windowPCTest() {
      * @tc.level      : Level 3
      */
     it('test_off_subWindowClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      if (isPCStatus == '' && isAutoWindow != 'true') {
+      if (isFreeWindowMode == false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -2461,9 +2475,9 @@ export default function windowPCTest() {
      * @tc.desc       : testgetParentWindow
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.level      : LEVEL0
      */
-    it('testgetParentWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testgetParentWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = "testgetParentWindow";
       let msgStr = 'jsunittest ' + message + ' ';
       console.log(msgStr + 'begin.');
@@ -2686,7 +2700,7 @@ export default function windowPCTest() {
       let caseName = "testOnwindowStatusDidChange_recover";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if (isPCStatus == '' && isAutoWindow != 'true') {
+      if (isFreeWindowMode == false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -2742,7 +2756,7 @@ export default function windowPCTest() {
       let caseName = "testOnwindowStatusDidChange_maxmize";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if (isPCStatus == '' && isAutoWindow != 'true') {
+      if (isFreeWindowMode == false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -2796,7 +2810,7 @@ export default function windowPCTest() {
       let caseName = "testOnwindowStatusDidChange_maxmize_EXIT_IMMERSIVE";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if (isPCStatus == '' && isAutoWindow != 'true') {
+      if (isFreeWindowMode == false) {
         expect(true).assertTrue();
         done();
       } else {
@@ -3006,17 +3020,17 @@ export default function windowPCTest() {
       let caseName = "testShiftAppWindowTouchEvent_1300002";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if(isPCStatus != '' || isAutoWindow =='true'){
+      if(isFreeWindowMode == true){
         let subWindowClass = await windowStage.createSubWindow('testShiftAppWindowTouchEvent_1300002');
         await sleep(200);
         // let windowLimits = subWindowClass.getWindowLimits();
         // console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        await subWindowClass.resize(500, 500);
+        await subWindowClass.resize(1000, 1000);
         await sleep(300);
         await subWindowClass.setUIContent("testability/pages/WindowTest/StartMoving2");
         await sleep(200);
         await subWindowClass.showWindow();
-        await sleep(200);
+        await sleep(1000);
         let subWindowId = subWindowClass.getWindowProperties().id;
         console.log(`${caseName} subWindowId: ${JSON.stringify(subWindowId)}`);
         AppStorage.setOrCreate('subWindowId2', subWindowId);
@@ -3072,16 +3086,16 @@ export default function windowPCTest() {
       let caseName = "testShiftAppWindowTouchEvent_1300016";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if(isPCStatus != '' || isAutoWindow =='true'){
+      if(isFreeWindowMode == true){
         let subWindowClass = await windowStage.createSubWindow('testShiftAppWindowTouchEvent_1300016');
         await sleep(200);
         let windowLimits = subWindowClass.getWindowLimits();
         console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        await subWindowClass.resize((windowLimits.minWidth as number) + 100, (windowLimits.minHeight as number) + 100);
+        await subWindowClass.resize((windowLimits.minWidth as number) + 500, (windowLimits.minHeight as number) + 500);
         await subWindowClass.setUIContent("testability/pages/WindowTest/StartMoving3");
         await sleep(200);
         await subWindowClass.showWindow();
-        await sleep(200);
+        await sleep(1000);
         let subWindowId = subWindowClass.getWindowProperties().id;
         console.error(`${caseName} subWindowId: ${JSON.stringify(subWindowId)}`);
         AppStorage.setOrCreate('subWindowId3', subWindowId);
@@ -3140,7 +3154,7 @@ export default function windowPCTest() {
       let caseName = "testShiftAppWindowTouchEvent_1300004";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
-      if(isPCStatus != '' || isAutoWindow =='true'){
+      if(isFreeWindowMode == true){
         let mainWindow = windowStage.getMainWindowSync();
         let mainWindowId = mainWindow.getWindowProperties().id;
         console.log(`${caseName} mainwindowId: ${JSON.stringify(mainWindowId)}`);
@@ -3155,7 +3169,7 @@ export default function windowPCTest() {
         await subWindowClass.setUIContent("testability/pages/WindowTest/StartMoving4");
         await sleep(200);
         await subWindowClass.showWindow();
-        await sleep(200);
+        await sleep(1000);
         let subWindowId = subWindowClass.getWindowProperties().id;
         console.log(`${caseName} subWindowId: ${JSON.stringify(subWindowId)}`);
         AppStorage.setOrCreate('subWindowId4', subWindowId);
@@ -3208,9 +3222,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of outlineEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testOutlineEnabled_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testOutlineEnabled_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_True';
       let windowClass:window.Window;
       let options: window.SubWindowOptions = {
@@ -3245,9 +3259,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of outlineEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testOutlineEnabled_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testOutlineEnabled_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_False';
       let windowClass:window.Window;
       let options: window.SubWindowOptions = {
@@ -3324,7 +3338,7 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithDefaultValue';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3365,7 +3379,7 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithNotDefaultValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithNotDefaultValue';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3414,7 +3428,7 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_EnableWithFloatValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_EnableWithFloatValue';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3463,7 +3477,7 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_NegativeValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_NegativeValueFail';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3508,7 +3522,7 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_ZeroValueFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_ZeroValueFail';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3553,7 +3567,7 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_SubWindowFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_SubWindowFail';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3603,7 +3617,7 @@ export default function windowPCTest() {
     it('testSetDragKeyFramePolicy_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_1300002';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3647,12 +3661,12 @@ export default function windowPCTest() {
      * @tc.desc       : Test the function when disable
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.level      : LEVEL0
      */
-    it('testSetDragKeyFramePolicy_Disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetDragKeyFramePolicy_Disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_Disable';
       console.log(message + ' begin.');
-      if (isPCStatus == '') {
+      if (isPCStatus != '') {
         console.info(`${message} not pc, skip`);
         expect(true).assertTrue();
         done();
@@ -3682,6 +3696,113 @@ export default function windowPCTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number    : testWindowStatusChange_0100
+     * @tc.name      : testWindowStatusChange_0100
+     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testWindowStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testWindowStatusChange_0100';
+      let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
+      let driver = Driver.create()
+      let options: StartOptions = {
+        supportWindowModes: [
+          bundleManager.SupportWindowMode.SPLIT,
+        ]
+      };
+      let windowStatusChange:window.WindowStatusType|undefined = undefined;
+      if (isPCStatus != '') {
+        // startAbility - SupportWindowMode.SPLIT
+        let windowStageStart = await startAbility(message, context, options)
+        let windowClass = windowStageStart.getMainWindowSync()
+        // 获取窗口状态 - 自由窗口
+        let windowStatus = windowClass.getWindowStatus()
+        console.info(`${message} windowStatus: ${windowStatus}, expect 4`);
+        expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+        windowClass.on('windowStatusChange', (WindowStatusType) => {
+            console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
+            windowStatusChange = WindowStatusType;
+        });
+        await sleep(1000)
+        // 模拟用户移动窗口到左边缘，触发分屏
+        let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+        await sleep(1000)
+        let titlePoint = await title.getBounds()
+        await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top  + 200, 200)
+        await sleep(1000)
+        // 获取窗口状态 - 分屏
+        windowStatus = windowClass.getWindowStatus()
+        console.info(`${message} windowStatus: ${windowStatus}, expect 5`);
+        await sleep(1000)
+        expect(windowStatus).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+        windowClass.off('windowStatusChange')
+        done();
+      } else {
+        console.info(`${message} not support`);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    : testWindowStatusChange_0200
+     * @tc.name      : testWindowStatusChange_0200
+     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testWindowStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testWindowStatusChange_0200';
+      let windowStatusChange:window.WindowStatusType|undefined = undefined;
+      if (isPCStatus != '') {
+        let windowClass = windowStage.getMainWindowSync()
+        // 获取窗口状态 - 自由窗口
+        let windowStatusType = windowClass.getWindowStatus();
+        console.info(message + ' windowClass.getWindowStatus(). windowStatusType: ' + windowStatusType);
+        if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
+          await windowClass.recover();
+          await sleep(200);
+        }
+        windowClass.on('windowStatusChange', (WindowStatusType) => {
+          console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
+          windowStatusChange = WindowStatusType;
+        });
+        await sleep(1000)
+        await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE)
+        await sleep(1000)
+        console.error(message + ' Succeeded in maximize(window.MaximizePresentation.EXIT_IMMERSIVE). windowStatusChange: ' + JSON.stringify(windowStatusChange));
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.MAXIMIZE);
+        await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+        await sleep(1000)
+        console.error(message + ' Succeeded in maximize(window.MaximizePresentation.ENTER_IMMERSIVE). windowStatusChange: ' + JSON.stringify(windowStatusChange));
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.FULL_SCREEN);
+        await windowClass.recover();
+        await sleep(1000)
+        console.error(message + ' Succeeded in recover. windowStatusChange: ' + JSON.stringify(windowStatusChange));
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.FLOATING);
+        await sleep(1000)
+        await windowClass.minimize();
+        await sleep(1000)
+        console.error(message + ' Succeeded in minimize. windowStatusChange: ' + JSON.stringify(windowStatusChange));
+        let windowStatusType2 = windowClass.getWindowStatus();
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.MINIMIZE);
+        expect(windowStatusType2).assertEqual(window.WindowStatusType.MINIMIZE);
+        windowClass.off('windowStatusChange')
+        await windowClass.restore();
+        done();
+      } else {
+        console.info(`${message} not support`);
+        done()
+      }
+    })
+
+   
+
 
   })
 }

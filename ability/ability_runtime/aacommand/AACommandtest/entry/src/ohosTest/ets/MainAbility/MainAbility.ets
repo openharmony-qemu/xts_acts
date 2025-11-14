@@ -52,210 +52,192 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0700 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.log('ACTS_AACommand_finish_01_0700 start err: ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0700 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult1", data.stdResult);
       console.log('ACTS_AACommand_finish_01_0700 - executeShellCommand: end ');
       await startAbilityTest('ACTS_AACommand_finish_01_0700', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0700 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_0700 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_0700 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult2", data.stdResult);
       console.info('ACTS_AACommand_finish_01_0700 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0700 err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s class ' +
       'AACommandTest#ACTS_AACommand_finish_01_0400 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0400 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_0400 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_0400 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult11", data.stdResult);
       console.log('ACTS_AACommand_finish_01_0400 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_0400', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0400 start error: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_0700 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_0700 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult12", data.stdResult);
       console.info('ACTS_AACommand_finish_01_0700 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0700 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0100 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0100 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_0100 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_0100 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult13", data.stdResult);
       console.log('ACTS_AACommand_finish_01_0100 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_0100', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0100 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_0700 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_0700 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult14", data.stdResult);
       console.info('ACTS_AACommand_finish_01_0700 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0700 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s class ' +
       'AACommandTest#ACTS_AACommand_finish_01_0500 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0500 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_0500 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_0500 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult15", data.stdResult);
       console.log('ACTS_AACommand_finish_01_0500 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_0500', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0500 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_0500 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_0500 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult16", data.stdResult);
       console.info('ACTS_AACommand_finish_01_0500 end');
-    })
-
-    await sleep(2000)
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0500 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0600 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0600 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_0600 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_0600 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult17", data.stdResult);
       console.log('ACTS_AACommand_finish_01_0600 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_0600', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0600 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_0600 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_0600 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult18", data.stdResult);
       console.info('ACTS_AACommand_finish_01_0600 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0600 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap -s ' +
       'class AACommandTest#ACTS_AACommand_finish_01_0900 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_0900 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_0900 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_0900 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult19", data.stdResult);
       console.log('ACTS_AACommand_finish_01_0900 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_0900', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0900 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_0900 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_0900 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult20", data.stdResult);
       console.info('ACTS_AACommand_finish_01_0900 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_0900 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_1300 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_1300 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_1300 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_1300 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult23", data.stdResult);
       console.log('ACTS_AACommand_finish_01_1300 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_1300', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_1300 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_1300 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_1300 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult24", data.stdResult);
       console.info('ACTS_AACommand_finish_01_1300 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_1300 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_1400 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_1400 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_1400 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_1400 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult25", data.stdResult);
       console.log('ACTS_AACommand_finish_01_1400 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_1400', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_1400 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_1400 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then( (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_1400 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult26", data.stdResult);
       console.info('ACTS_AACommand_finish_01_1400 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_1400 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_1500 -s unittest OpenHarmonyTestRunner';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+    await abilityDelegator!.executeShellCommand(cmd).then(async (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_finish_01_1500 - executeShellCommand: start ');
-      console.log('ACTS_AACommand_finish_01_1500 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_finish_01_1500 stdResult = ' + data.stdResult);
       AppStorage.setOrCreate<string>("stdResult27", data.stdResult);
       console.log('ACTS_AACommand_finish_01_1500 - executeShellCommand: end');
       await startAbilityTest('ACTS_AACommand_finish_01_1500', this.context);
-    })
-
-    await sleep(4000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_1500 start err: ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa dump -a';
-    abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
-      console.info('ACTS_AACommand_finish_01_1500 : err : ' + JSON.stringify(err));
+    await abilityDelegator!.executeShellCommand(cmd).then( (data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.info('ACTS_AACommand_finish_01_1500 : data : ' + JSON.stringify(data));
       AppStorage.setOrCreate<string>("stdResult28", data.stdResult);
       console.info('ACTS_AACommand_finish_01_1500 end');
-    })
-
-    await sleep(2000);
-
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_finish_01_1500 : err : ' + JSON.stringify(err));
+      });
+    await sleep(1000);
     cmd = 'aa test -m entry_test -b com.example.aacommandrelyhap ' +
       '-s class AACommandTest#ACTS_AACommand_finish_01_0300 -s unittest OpenHarmonyTestRunner';
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
@@ -297,7 +279,6 @@ export default class MainAbility extends Ability {
       AppStorage.setOrCreate<string>("stdResult34", data.stdResult);
       console.info('ACTS_AACommand_finish_01_1600 end');
     })
-
     setTimeout(() => {
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
     }, 6000)

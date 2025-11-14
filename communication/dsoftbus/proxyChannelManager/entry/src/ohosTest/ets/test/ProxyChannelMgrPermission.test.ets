@@ -117,12 +117,13 @@ export default function noPermissionProxyMgr() {
     })
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr结构错误
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr结构错误
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_5000----------------");

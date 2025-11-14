@@ -33,12 +33,13 @@ export default function DeviceStatusUnitTest() {
         }
 
         /**
-         * @tc.number    : SUB_MSDP_DeviceStatus_API_Stationary_0100
-         * @tc.name      : SUB_MSDP_DeviceStatus_API_Stationary_0100
-         * @tc.desc      : Stationary callback interface test
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0100
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0100
+         * @tc.desc   Stationary callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MSDP_DeviceStatus_API_Stationary_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.log("SUB_MSDP_DeviceStatus_API_Stationary_0100 on start");
@@ -75,12 +76,13 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @tc.number    : SUB_MSDP_DeviceStatus_API_Stationary_0200
-         * @tc.name      : SUB_MSDP_DeviceStatus_API_Stationary_0200
-         * @tc.desc      : Stationary callback interface test
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0200
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0200
+         * @tc.desc   Stationary callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MSDP_DeviceStatus_API_Stationary_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.log("SUB_MSDP_DeviceStatus_API_Stationary_0200 on start");
@@ -117,12 +119,13 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @tc.number    : SUB_MSDP_DeviceStatus_API_Stationary_0300
-         * @tc.name      : SUB_MSDP_DeviceStatus_API_Stationary_0300
-         * @tc.desc      : Stationary callback interface test
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0300
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0300
+         * @tc.desc   Stationary callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MSDP_DeviceStatus_API_Stationary_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.log("SUB_MSDP_DeviceStatus_API_Stationary_0300 on start");
@@ -162,12 +165,13 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @tc.number    : SUB_MSDP_DeviceStatus_API_Stationary_0400
-         * @tc.name      : SUB_MSDP_DeviceStatus_API_Stationary_0400
-         * @tc.desc      : Stationary callback interface test
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0400
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0400
+         * @tc.desc   Stationary callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MSDP_DeviceStatus_API_Stationary_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.log("SUB_MSDP_DeviceStatus_API_Stationary_0400 on start");
@@ -204,12 +208,13 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @tc.number    : SUB_MSDP_DeviceStatus_API_Stationary_0500
-         * @tc.name      : SUB_MSDP_DeviceStatus_API_Stationary_0500
-         * @tc.desc      : Stationary callback interface test
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0500
+         * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0500
+         * @tc.desc   Stationary callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MSDP_DeviceStatus_API_Stationary_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function (done) {
             console.log("SUB_MSDP_DeviceStatus_API_Stationary_0500 on start");

@@ -256,7 +256,22 @@ napi_property_descriptor desc[] = {
     {"testNativeWindowCleanCacheLoopWhenBufferRequested", nullptr, testNativeWindowCleanCacheLoopWhenBufferRequested,
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowCleanCacheLoopWhenBufferFlushed", nullptr, testNativeWindowCleanCacheLoopWhenBufferFlushed,
-     nullptr, nullptr, nullptr, napi_default, nullptr}};
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowPreAllocBufferAbNormalPra", nullptr, testNativeWindowPreAllocBufferAbNormalPra, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeWindowPreAllocBufferAbNormalPra2", nullptr, testNativeWindowPreAllocBufferAbNormalPra2, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowPreAllocBufferBufferCnt", nullptr, testNativeWindowPreAllocBufferBufferCnt, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeWindowPreAllocBufferAbnormal", nullptr, testNativeWindowPreAllocBufferAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeWindowPreAllocBufferDetachAttach", nullptr, testNativeWindowPreAllocBufferDetachAttach, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowPreAllocBufferDetachAttach02", nullptr, testNativeWindowPreAllocBufferDetachAttach02, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowPreAllocBufferNormal", nullptr, testNativeWindowPreAllocBufferNormal, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+};
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)

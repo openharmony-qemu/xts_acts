@@ -41,12 +41,13 @@ export default function UsbSystemApiNormalJsTest() {
   
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0100
-     * @tc.name       : testUsbAddDeviceAccessRightNormalApp001
-     * @tc.desc       : addDeviceAccessRight Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbAddDeviceAccessRightNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0100
+     * @tc.desc   addDeviceAccessRight Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbAddDeviceAccessRightNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -76,12 +77,13 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0200
-     * @tc.name       : testGetFunctionsFromStringNormalApp001
-     * @tc.desc       : getFunctionsFromString Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetFunctionsFromStringNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0200
+     * @tc.desc   getFunctionsFromString Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetFunctionsFromStringNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -99,12 +101,13 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0300
-     * @tc.name       : testGetStringFromFunctionsNormalApp001
-     * @tc.desc       : getStringFromFunctions Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetStringFromFunctionsNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0300
+     * @tc.desc   getStringFromFunctions Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetStringFromFunctionsNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -122,12 +125,13 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0400
-     * @tc.name       : testSetDeviceFunctionsNormalApp001
-     * @tc.desc       : setDeviceFunctions Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testSetDeviceFunctionsNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0400
+     * @tc.desc   setDeviceFunctions Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDeviceFunctionsNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -146,12 +150,13 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0500
-     * @tc.name       : testGetDeviceFunctionsNormalApp001
-     * @tc.desc       : getDeviceFunctions Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetDeviceFunctionsNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0500
+     * @tc.desc   getDeviceFunctions Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDeviceFunctionsNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -168,12 +173,13 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0600
-     * @tc.name       : testGetPortListNormalApp001
-     * @tc.desc       : getPortList Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetPortListNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0600
+     * @tc.desc   getPortList Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPortListNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -189,12 +195,13 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0700
-     * @tc.name       : testGetPortSupportModesNormalApp001
-     * @tc.desc       : getPortSupportModes Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testGetPortSupportModesNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0700
+     * @tc.desc   getPortSupportModes Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPortSupportModesNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -212,12 +219,13 @@ export default function UsbSystemApiNormalJsTest() {
     });
 
     /**
-     * @tc.number     : SUB_USB_Spec_Sec_SysApiAuthen_0800
-     * @tc.name       : testSetPortRoleTypesNormalApp001
-     * @tc.desc       : setPortRoleTypes Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testSetPortRoleTypesNormalApp001
+     * @tc.number SUB_USB_Spec_Sec_SysApiAuthen_0800
+     * @tc.desc   setPortRoleTypes Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPortRoleTypesNormalApp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

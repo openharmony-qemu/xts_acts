@@ -13,14 +13,11 @@
  * limitations under the License.
  */
 
-import formInfo  from '@ohos.app.form.formInfo';
-import formHost from '@ohos.app.form.formHost';
 import commonEvent from '@ohos.commonEvent';
-import { beforeAll, beforeEach, afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, afterEach, describe, expect, it } from '@ohos/hypium';
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Want } from '@kit.AbilityKit';
 
 interface onFormEvent {
     events: string[];
@@ -56,7 +53,7 @@ function sleep(time: number): Promise<void> {
     return new Promise((resolve)=>setTimeout(resolve,time));
 }
 
-export default function UpdateFormSizeTest() {
+export default function updateFormSizeTest() {
   describe(`UpdateFormSizeTest`, () => {
     beforeAll(async (done: () => void) => {
         done();
@@ -73,29 +70,29 @@ export default function UpdateFormSizeTest() {
         commonEvent.unsubscribe(subscriberonFormLocationChanged, () => unsubscribeCallback("afterEach unsubscribe subscriberonFormLocationChanged"));
     })
 
-    /*
-     * @tc.number  UpdateFormSize_0100
-     * @tc.name    UpdateFormSize_0100
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0100`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0100 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
             console.info("!!!====>UpdateFormSize_0100 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(16501001);
             
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0100 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0100 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -111,35 +108,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0100 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0100 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0100 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbility end`);
     });
 
-    /*
-     * @tc.number  UpdateFormSize_0200
-     * @tc.name    UpdateFormSize_0200
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0200`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0200 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0200 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(16501001);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0200 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0200 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -155,35 +152,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0200 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0200 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0200 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbility end`);
     });
 
-    /*
-     * @tc.number  UpdateFormSize_0300
-     * @tc.name    UpdateFormSize_0300
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0300`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0300 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0300 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(16501001);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0300 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0300 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -199,35 +196,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0300 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0300 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0300 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbility end`);
     });
 
-    /*
-     * @tc.number  UpdateFormSize_0400
-     * @tc.name    UpdateFormSize_0400
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0400`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0400 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0400 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(16501001);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0400 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0400 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -243,35 +240,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0400 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0400 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0400 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbility end`);
     });
 
-    /*
-     * @tc.number  UpdateFormSize_0500
-     * @tc.name    UpdateFormSize_0500
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0500`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0500 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0500 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(0);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0500 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0500 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -286,35 +283,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0500 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0500 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0500 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbility end`);
     });
 
-    /*
-     * @tc.number  UpdateFormSize_0600
-     * @tc.name    UpdateFormSize_0600
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0600`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0600 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0600 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(16501012);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0600 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0600 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -329,35 +326,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 0,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0600 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0600 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0600 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbility end`);
     });
 
-    /*
-     * @tc.number  UpdateFormSize_0700
-     * @tc.name    UpdateFormSize_0700
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0700`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0700 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0700 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(16501012);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0700 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0700 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -372,35 +369,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 5,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0700 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0700 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0700 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbility end`);
     });
 
-    /*
-     * @tc.number  UpdateFormSize_0800
-     * @tc.name    UpdateFormSize_0800
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`UpdateFormSize_0800`, 0, async (done:Function) => {
-        console.log(`UpdateFormSize_0800 start`);
+    it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0800 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(401);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('UpdateFormSize_0800 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`UpdateFormSize_0800 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -416,35 +413,35 @@ export default function UpdateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`UpdateFormSize_0800 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`UpdateFormSize_0800 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`UpdateFormSize_0800 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbility end`);
     });
 
-    /*
-     * @tc.number  FormLocationChanged_0100
-     * @tc.name    FormLocationChanged_0100
-     * @tc.desc    Function FormLocationChanged test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100
+     * @tc.desc   Function FormLocationChanged test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
-    it(`FormLocationChanged_0100`, 0, async (done:Function) => {
-        console.log(`FormLocationChanged_0100 start`);
+    it(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100`, 0, async (done:Function) => {
+        console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 start`);
         let onFormLocationChangedCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>FormLocationChanged_0100 onFormLocationChangedCallBack data:====>" + JSON.stringify(data));
+            console.info("!!!====>SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 onFormLocationChangedCallBack data:====>" + JSON.stringify(data));
             expect(data.code).assertEqual(0);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('FormLocationChanged_0100 publish' + JSON.stringify(err));
+                console.info('SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 publish' + JSON.stringify(err));
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberonFormLocationChanged, onFormLocationChangedCallBack);
-        console.log(`FormLocationChanged_0100 startAbility start`);
+        console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -458,11 +455,11 @@ export default function UpdateFormSizeTest() {
                 "formLocation" : 0,
             }
         }).then(() => {
-            console.log(`FormLocationChanged_0100 startAbilityhost end`);
+            console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`FormLocationChanged_0100 startAbilityhost error: ${JSON.stringify(err)}`);
+            console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`FormLocationChanged_0100 startAbility end`);
+        console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbility end`);
     });
   })
 }

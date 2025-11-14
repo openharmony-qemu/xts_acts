@@ -42,3 +42,6 @@ export const textContentAlignTest: (a: string) => void;
 export const createPixelRoundNativeRoot: (content: NodeContent, tag: string) => void;
 export const setPixelRound: () => void;
 export const getPixelRound: ()=>string;
+export const createColumnMatchParentNativeRoot: (content: NodeContent, tag: string) => void;
+export const createColumnWrapContentNativeRoot: (content: NodeContent, tag: string) => void;
+export const createColumnFixAtiDealSizeNativeRoot: (content: NodeContent, tag: string) => void;

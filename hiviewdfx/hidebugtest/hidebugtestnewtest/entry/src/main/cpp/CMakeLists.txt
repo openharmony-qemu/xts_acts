@@ -12,4 +12,4 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
 add_library(entry SHARED HiDeBugNewTest.cpp)
-target_link_libraries(entry PUBLIC libace_napi.z.so libohhidebug.so)
+target_link_libraries(entry PUBLIC libace_napi.z.so libohhidebug.so libhilog_ndk.z.so)

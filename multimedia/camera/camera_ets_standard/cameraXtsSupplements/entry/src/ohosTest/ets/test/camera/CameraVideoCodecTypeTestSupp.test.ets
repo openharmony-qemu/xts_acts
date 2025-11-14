@@ -278,7 +278,6 @@ export default function CameraVideoCodecTypeTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

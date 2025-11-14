@@ -459,6 +459,23 @@ export default function ImageGetMimeTypeTest() {
         })
 
         /**
+         * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900
+         * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900
+         * @tc.desc      : imageSourceGetMimeType
+         *                 1.create ImageSource
+         *                 2.set picture -> test.wbmp
+         *                 3.return mimetype
+         * @tc.size      : MEDIUM
+         * @tc.type      : Functional
+         * @tc.level     : Level 1
+         */
+        it('SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            async (done: Function) => {
+            await imageSourceGetMimeTypeTest(done, "SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_1900",
+                "test.wbmp", "image/wbmp", "uri");
+        })
+
+        /**
          * @tc.number    : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0100
          * @tc.name      : SUB_MULTIMEDIA_IMAGE_SOURCE_IMAGESOURCEGETMIMETYPE_WRONG_SUFFIX_0100
          * @tc.desc      : imageSourceGetMimeType

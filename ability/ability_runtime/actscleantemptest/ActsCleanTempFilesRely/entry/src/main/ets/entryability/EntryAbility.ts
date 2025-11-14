@@ -72,13 +72,29 @@ function startAndTerminate(action): void {
       }, (err) => {
       console.log(action + ' startAbility err: ' + JSON.stringify(err));
       if (action !== 'Acts_CleanTempFiles_0203') {
-        setTimeout(() => {
-          currentContext.terminateSelf().then(() => {
-            console.log(action + 'rely terminateSelf end');
-          }).catch((err) => {
-            console.log(action + 'rely terminateSelf err: ' + JSON.stringify(err));
+        let subscriber: commonEvent.CommonEventSubscriber;
+        let ACTS_Register: commonEvent.CommonEventSubscribeInfo = {
+          events: ['Ability_onDestroy_SecondAbility']
+        };
+        commonEvent.createSubscriber(ACTS_Register).then((data) => {
+          subscriber = data;
+          commonEvent.subscribe(subscriber, (err, data) => {
+            console.log(action + ' subscribe err: ' + JSON.stringify(err) + ' data: ' + JSON.stringify(data));
+            if (data.event === 'Ability_onDestroy_SecondAbility') {
+              console.log(action + ' receive Ability_onDestroy_SecondAbility event');
+              setTimeout(() => {
+                currentContext.terminateSelf().then(() => {
+                  console.log(action + ' rely terminateSelf end');
+                }).catch((err) => {
+                  console.log(action + ' rely terminateSelf err: ' + JSON.stringify(err));
+                });
+              }, DELAY_TIME);
+              commonEvent.unsubscribe(subscriber, (err) => {
+                console.log(action + ' unsubscribe err: ' + JSON.stringify(err));
+              });
+            }
           });
-        }, DELAY_TIME);
+        });
       }
     });
   }, DELAY_TIME);
@@ -175,7 +191,7 @@ function cleanTempFiles(actionStr): void {
         console.log('Acts_CleanTempFiles_0302 publish err: ' + JSON.stringify(err));
         currentContext.terminateSelf();
       });
-    }, CLEAN_TEMP_DELAY_TIME)
+    }, CLEAN_TEMP_DELAY_TIME);
   }
 }
 

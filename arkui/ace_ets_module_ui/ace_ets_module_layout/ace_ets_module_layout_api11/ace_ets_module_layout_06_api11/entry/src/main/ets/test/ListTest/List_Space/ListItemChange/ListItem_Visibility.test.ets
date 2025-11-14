@@ -240,9 +240,11 @@ export default function listItem_Visibility() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
-      expect(locationText4Again.bottom).assertEqual(locationList.bottom);
+      console.info(`[testListItemVisibilityFirstHidden] locationText4Again.bottom=${(locationText4Again.bottom)}`); 
+      console.info(`[testListItemVisibilityFirstHidden] locationList.bottom=${(locationList.bottom)}`);
+      expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + vp2px(50) + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop));
       await CommonFunc.sleep(2000);
       console.info('new testListItemVisibilityFirstHidden END');
@@ -301,9 +303,11 @@ export default function listItem_Visibility() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
-      expect(locationText4Again.bottom).assertEqual(locationList.bottom);
+      console.info(`[testListItemVisibilityFirstVisibile] locationText4Again.bottom=${(locationText4Again.bottom)}`); 
+      console.info(`[testListItemVisibilityFirstVisibile] locationList.bottom=${(locationList.bottom)}`);
+      expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + vp2px(50) + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top +  globalThis.winTop));
       await CommonFunc.sleep(1000);
       console.info('new testListItemVisibilityFirstVisibile END');

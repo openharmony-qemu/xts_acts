@@ -53,13 +53,14 @@ export default function inputMethodTest() {
         })
 
         /**
-          * @tc.number  inputmethodNomal_test_switchInputMethod_static_001
-          * @tc.name    inputmethodNomal_test_switchInputMethod_static_001
-          * @tc.desc    Test Indicates the input method which will replace the current one.
-          * @tc.size    MediumTest
-          * @tc.type    Function
-          * @tc.level   Level2
-          */
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethodNomal_test_switchInputMethod_static_001
+         * @tc.number inputmethodNomal_test_switchInputMethod_static_001
+         * @tc.desc   Test Indicates the input method which will replace the current one.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('inputmethodNomal_test_switchInputMethod_static_001', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>************* inputmethodNomal_test_switchInputMethod_static_001 Test start*************");
             let inputM = inputMethod.getCurrentInputMethod()
@@ -87,13 +88,14 @@ export default function inputMethodTest() {
         })
 
         /**
-          * @tc.number  inputmethodNomal_test_switchInputMethod_static_002
-          * @tc.name    inputmethodNomal_test_switchInputMethod_static_002
-          * @tc.desc    Test Indicates the input method which will replace the current one.
-          * @tc.size    MediumTest
-          * @tc.type    Function
-          * @tc.level   Level2
-          */
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethodNomal_test_switchInputMethod_static_002
+         * @tc.number inputmethodNomal_test_switchInputMethod_static_002
+         * @tc.desc   Test Indicates the input method which will replace the current one.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('inputmethodNomal_test_switchInputMethod_static_002', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>************* inputmethodNomal_test_switchInputMethod_static_002 Test start*************");
             let inputM = inputMethod.getCurrentInputMethod()
@@ -119,12 +121,13 @@ export default function inputMethodTest() {
 
 
         /**
-         * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_001
-         * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_001
-         * @tc.desc    Test Indicates the input method which will hide softboard with calback.
-         * @tc.size    MediumTest
-         * @tc.type    Function
-         * @tc.level   Level2
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_001
+         * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_001
+         * @tc.desc   Test Indicates the input method which will hide softboard with calback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>*********inputmethodNomal_test_hideSoftKeyboard_static_001 start************");
@@ -150,12 +153,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_002
-         * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_002
-         * @tc.desc    Test Indicates the input method which will hide softboard with Promise.
-         * @tc.size    MediumTest
-         * @tc.type    Function
-         * @tc.level   Level2
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_002
+         * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_002
+         * @tc.desc   Test Indicates the input method which will hide softboard with Promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethodNomal_test_hideSoftKeyboard_static_002', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>*********inputmethodNomal_test_hideSoftKeyboard_static_002 start************");
@@ -175,12 +179,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  inputmethod_test_getCurrentInputMethod_static_001
-         * @tc.name    inputmethod_test_getCurrentInputMethod_static_001
-         * @tc.desc    return The InputMethodProperty object of the current input method.
-         * @tc.size    MediumTest
-         * @tc.type    Function
-         * @tc.level   1
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethod_test_getCurrentInputMethod_static_001
+         * @tc.number inputmethod_test_getCurrentInputMethod_static_001
+         * @tc.desc   return The InputMethodProperty object of the current input method.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('inputmethod_test_getCurrentInputMethod_static_001', Level.LEVEL1, async (done: () => void)  => {
             let currentIme = inputMethod.getCurrentInputMethod();
@@ -194,12 +199,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethod_test_getInputMethods_static_001
          * @tc.number inputmethod_test_getInputMethods_static_001
-         * @tc.name inputmethod_test_getInputMethods_static_001
-         * @tc.desc List input methods,getInputMethods().interfaces. Callback.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   List input methods,getInputMethods().interfaces. Callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethod_test_getInputMethods_static_001', Level.LEVEL2, async (done: () => void)  => {
             let inputMethodSetting = inputMethod.getSetting();
@@ -225,12 +231,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethod_test_getInputMethods_static_002
          * @tc.number inputmethod_test_getInputMethods_static_002
-         * @tc.name inputmethod_test_getInputMethods_static_002
-         * @tc.desc List input methods,getInputMethods().interfaces. Callback.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   List input methods,getInputMethods().interfaces. Callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethod_test_getInputMethods_static_002', Level.LEVEL2, async (done: () => void)  => {
             let inputMethodSetting = inputMethod.getSetting();
@@ -255,12 +262,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethod_test_getInputMethods_static_003
          * @tc.number inputmethod_test_getInputMethods_static_003
-         * @tc.name inputmethod_test_getInputMethods_static_003
-         * @tc.desc List input methods,getInputMethods().interfaces.Promise
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   List input methods,getInputMethods().interfaces.Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethod_test_getInputMethods_static_003', Level.LEVEL2, async (done: () => void)  => {
             let inputMethodSetting = inputMethod.getSetting();
@@ -279,12 +287,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputmethod_test_getInputMethods_static_004
          * @tc.number inputmethod_test_getInputMethods_static_004
-         * @tc.name inputmethod_test_getInputMethods_static_004
-         * @tc.desc List input methods,().interfaces.Promise
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level2
+         * @tc.desc   List input methods,().interfaces.Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputmethod_test_getInputMethods_static_004', Level.LEVEL2, async (done: () => void)  => {
             let inputMethodSetting = inputMethod.getSetting();
@@ -303,12 +312,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_Enable_static_0100
          * @tc.number SUB_InputMethod_IMF_Enable_static_0100
-         * @tc.name SUB_InputMethod_IMF_Enable_static_0100
-         * @tc.desc List input methods sync.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   List input methods sync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_InputMethod_IMF_Enable_static_0100', Level.LEVEL1, async (done: () => void)  => {
             console.info("-----------------------SUB_InputMethod_IMF_Enable_static_0100 start-----------------------");
@@ -329,12 +339,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_Enable_static_0200
          * @tc.number SUB_InputMethod_IMF_Enable_static_0200
-         * @tc.name SUB_InputMethod_IMF_Enable_static_0200
-         * @tc.desc List input methods sync.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   List input methods sync.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_InputMethod_IMF_Enable_static_0200', Level.LEVEL2, async (done: () => void)  => {
             console.info("-----------------------SUB_InputMethod_IMF_Enable_static_0200 start-----------------------");
@@ -354,12 +365,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_Enable_static_0400
          * @tc.number SUB_InputMethod_IMF_Enable_static_0400
-         * @tc.name SUB_InputMethod_IMF_Enable_static_0400
-         * @tc.desc List all input methods.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   List all input methods.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_InputMethod_IMF_Enable_static_0400', Level.LEVEL2, async (done: () => void)  => {
             console.info("-----------------------SUB_InputMethod_IMF_Enable_static_0400 start-----------------------");
@@ -394,12 +406,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_Enable_static_0500
          * @tc.number SUB_InputMethod_IMF_Enable_static_0500
-         * @tc.name SUB_InputMethod_IMF_Enable_static_0500
-         * @tc.desc List all input methods.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   List all input methods.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_InputMethod_IMF_Enable_static_0500', Level.LEVEL2, async (done: () => void)  => {
             console.info("-----------------------SUB_InputMethod_IMF_Enable_static_0500 is start-----------------------");
@@ -426,12 +439,13 @@ export default function inputMethodTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_Enable_static_0600
          * @tc.number SUB_InputMethod_IMF_Enable_static_0600
-         * @tc.name SUB_InputMethod_IMF_Enable_static_0600
-         * @tc.desc List all input methods.
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   List all input methods.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_InputMethod_IMF_Enable_static_0600', Level.LEVEL2, async (done: () => void)  => {
             console.info("-----------------------SUB_InputMethod_IMF_Enable_static_0600 start-----------------------");
@@ -451,12 +465,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  inputMethod_test_getCurrentInputMethodSubtype_static_001
-         * @tc.name    inputMethod_test_getCurrentInputMethodSubtype_static_001
-         * @tc.desc    Get the current input method subtype
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputMethod_test_getCurrentInputMethodSubtype_static_001
+         * @tc.number inputMethod_test_getCurrentInputMethodSubtype_static_001
+         * @tc.desc   Get the current input method subtype
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputMethod_test_getCurrentInputMethodSubtype_static_001', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>-----------------inputMethod_test_getCurrentInputMethodSubtype_static_001 start---------------------");
@@ -473,13 +488,14 @@ export default function inputMethodTest() {
         });
 
         /**
-        * @tc.number  SUB_InputMethod_IMF_ListControl_static_0600
-        * @tc.name   SUB_InputMethod_IMF_ListControl_static_0600
-        * @tc.desc    Function test
-        * @tc.size    MEDIUMTEST
-        * @tc.type    Function
-        * @tc.level   2
-        */
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_ListControl_static_0600
+         * @tc.number SUB_InputMethod_IMF_ListControl_static_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_InputMethod_IMF_ListControl_static_0600', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>SUB_InputMethod_IMF_ListControl_static_0600 start");
             let kikakeyboard =  "com.example.kikakeyboard";
@@ -499,13 +515,14 @@ export default function inputMethodTest() {
         });
 
         /**
-        * @tc.number  SUB_InputMethod_IMF_Panel_static_0600
-        * @tc.name   SUB_InputMethod_IMF_Panel_static_0600
-        * @tc.desc    Function test
-        * @tc.size    MEDIUMTEST
-        * @tc.type    Function
-        * @tc.level   2
-        */
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_Panel_static_0600
+         * @tc.number SUB_InputMethod_IMF_Panel_static_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_InputMethod_IMF_Panel_static_0600', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>SUB_InputMethod_IMF_Panel_static_0600 start");
             try {
@@ -525,13 +542,14 @@ export default function inputMethodTest() {
         });
 
         /**
-        * @tc.number  inputMethod_test_listCurrentInputMethodSubtype_static_001
-        * @tc.name    inputMethod_test_listCurrentInputMethodSubtype_static_001
-        * @tc.desc    List subtype of the specified input method
-        * @tc.size    MEDIUMTEST
-        * @tc.type    Function
-        * @tc.level   2
-        */
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputMethod_test_listCurrentInputMethodSubtype_static_001
+         * @tc.number inputMethod_test_listCurrentInputMethodSubtype_static_001
+         * @tc.desc   List subtype of the specified input method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('inputMethod_test_listCurrentInputMethodSubtype_static_001', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>-----------------inputMethod_test_listCurrentInputMethodSubtype_static_001 start---------------------");
             let inputMethodSetting = inputMethod.getSetting();
@@ -556,12 +574,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  inputMethod_test_listCurrentInputMethodSubtype_002
-         * @tc.name    inputMethod_test_listCurrentInputMethodSubtype_002
-         * @tc.desc    List subtype of current input method
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputMethod_test_listCurrentInputMethodSubtype_002
+         * @tc.number inputMethod_test_listCurrentInputMethodSubtype_002
+         * @tc.desc   List subtype of current input method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputMethod_test_listCurrentInputMethodSubtype_002', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>-----------------inputMethod_test_listCurrentInputMethodSubtype_002 start---------------------");
@@ -582,12 +601,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  inputMethod_test_listInputMethodSubtype_static_001
-         * @tc.name    inputMethod_test_listInputMethodSubtype_static_001
-         * @tc.desc    List subtype of the specified input method
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputMethod_test_listInputMethodSubtype_static_001
+         * @tc.number inputMethod_test_listInputMethodSubtype_static_001
+         * @tc.desc   List subtype of the specified input method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputMethod_test_listInputMethodSubtype_static_001', Level.LEVEL2, async (done: () => void) => {
             console.info("====>-----------------inputMethod_test_listInputMethodSubtype_static_001 start---------------------");
@@ -615,13 +635,14 @@ export default function inputMethodTest() {
         });
 
         /**
-        * @tc.number  inputMethod_test_listInputMethodSubtype_static_002
-        * @tc.name    inputMethod_test_listInputMethodSubtype_static_002
-        * @tc.desc    List subtype of the specified input method
-        * @tc.size    MEDIUMTEST
-        * @tc.type    Function
-        * @tc.level   2
-        */
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputMethod_test_listInputMethodSubtype_static_002
+         * @tc.number inputMethod_test_listInputMethodSubtype_static_002
+         * @tc.desc   List subtype of the specified input method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('inputMethod_test_listInputMethodSubtype_static_002', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>-----------------inputMethod_test_listInputMethodSubtype_static_002 start---------------------");
             let inputM = inputMethod.getCurrentInputMethod()
@@ -659,12 +680,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  inputMethod_test_listInputMethodSubtype_static_003
-         * @tc.name    inputMethod_test_listInputMethodSubtype_static_003
-         * @tc.desc    List subtype of the specified input method
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputMethod_test_listInputMethodSubtype_static_003
+         * @tc.number inputMethod_test_listInputMethodSubtype_static_003
+         * @tc.desc   List subtype of the specified input method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputMethod_test_listInputMethodSubtype_static_003', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>-----------------inputMethod_test_listInputMethodSubtype_static_003 start---------------------");
@@ -692,12 +714,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  inputMethod_test_listInputMethodSubtype_static_004
-         * @tc.name    inputMethod_test_listInputMethodSubtype_static_004
-         * @tc.desc    List subtype of the specified input method
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   inputMethod_test_listInputMethodSubtype_static_004
+         * @tc.number inputMethod_test_listInputMethodSubtype_static_004
+         * @tc.desc   List subtype of the specified input method
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('inputMethod_test_listInputMethodSubtype_static_004', Level.LEVEL2, async (done: () => void)  => {
             console.info("====>-----------------inputMethod_test_listInputMethodSubtype_static_004 start---------------------");
@@ -732,14 +755,15 @@ export default function inputMethodTest() {
             console.info("====>-----------------inputMethod_test_listInputMethodSubtype_static_004 end---------------------");
         });
 
-       /**
-        * @tc.number  Sub_Misc_inputMethod_Direction_static_0100
-        * @tc.name   Sub_Misc_inputMethod_Direction_static_0100
-        * @tc.desc    Function test
-        * @tc.size    MEDIUMTEST
-        * @tc.type    Function
-        * @tc.level   2
-        */
+        /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   Sub_Misc_inputMethod_Direction_static_0100
+         * @tc.number Sub_Misc_inputMethod_Direction_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Sub_Misc_inputMethod_Direction_static_0100', Level.LEVEL2, async (done: () => void) => {
             let movement: inputMethod.Movement = {
                 direction: inputMethod.Direction.CURSOR_UP
@@ -762,12 +786,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  Sub_Misc_inputMethod_TextInputType_static_0100
+         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_TextInputType_static_0100
-         * @tc.desc    Function test
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @tc.number Sub_Misc_inputMethod_TextInputType_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Misc_inputMethod_TextInputType_static_0100', Level.LEVEL2, async (done: () => void) => {
             let none = inputMethod.TextInputType.NONE;
@@ -804,12 +829,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  Sub_Misc_inputMethod_EnterKeyType_static_0100
+         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_EnterKeyType_static_0100
-         * @tc.desc    Function test
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @tc.number Sub_Misc_inputMethod_EnterKeyType_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Misc_inputMethod_EnterKeyType_static_0100', Level.LEVEL2, async (done: () => void) => {
             let unspecified = inputMethod.EnterKeyType.UNSPECIFIED;
@@ -843,12 +869,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  Sub_Misc_inputMethod_KeyboardStatus_static_0100
+         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_KeyboardStatus_static_0100
-         * @tc.desc    Function test
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @tc.number Sub_Misc_inputMethod_KeyboardStatus_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Misc_inputMethod_KeyboardStatus_static_0100', Level.LEVEL2, async (done: () => void) => {
             let none = inputMethod.KeyboardStatus.NONE;
@@ -864,12 +891,13 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @tc.number  Sub_Misc_inputMethod_RequestKeyboardReason_static_0100
+         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_RequestKeyboardReason_static_0100
-         * @tc.desc    Function test
-         * @tc.size    MEDIUMTEST
-         * @tc.type    Function
-         * @tc.level   2
+         * @tc.number Sub_Misc_inputMethod_RequestKeyboardReason_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Misc_inputMethod_RequestKeyboardReason_static_0100', Level.LEVEL2, async (done: () => void) => {
             let none = inputMethod.RequestKeyboardReason.NONE;
@@ -887,14 +915,15 @@ export default function inputMethodTest() {
             done();
         });
 
-       /**
-        * @tc.number  SUB_InputMethod_IMF_panelInfo_static_0100
-        * @tc.name  SUB_InputMethod_IMF_panelInfo_static_0100
-        * @tc.desc    Function test
-        * @tc.size    MediumTest
-        * @tc.type    Function
-        * @tc.level   2
-        */
+        /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   SUB_InputMethod_IMF_panelInfo_static_0100
+         * @tc.number SUB_InputMethod_IMF_panelInfo_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_InputMethod_IMF_panelInfo_static_0100', Level.LEVEL2, async (done: () => void) => {
             console.info('====>SUB_InputMethod_IMF_panelInfo_static_0100 start');
             let panel: PanelInfo;
@@ -923,14 +952,15 @@ export default function inputMethodTest() {
             done();
         });
 
-       /**
-        * @tc.number  Sub_Misc_inputMethod_inputWindowInfo_static_0201
-        * @tc.name  Sub_Misc_inputMethod_inputWindowInfo_static_0201
-        * @tc.desc    Function test
-        * @tc.size    MediumTest
-        * @tc.type    Function
-        * @tc.level   2
-        */
+        /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   Sub_Misc_inputMethod_inputWindowInfo_static_0201
+         * @tc.number Sub_Misc_inputMethod_inputWindowInfo_static_0201
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Sub_Misc_inputMethod_inputWindowInfo_static_0201', Level.LEVEL2, async (done: () => void) => {
             let inputWindowInfo: inputMethod.InputWindowInfo = {
                 name: 'inputWindowInfo_0201/99',
@@ -954,14 +984,15 @@ export default function inputMethodTest() {
             }
         });
 
-       /**
-        * @tc.number  Sub_Misc_inputMethod_ExtendAction_static_0100
-        * @tc.name   Sub_Misc_inputMethod_ExtendAction_static_0100
-        * @tc.desc    Function test
-        * @tc.size    MEDIUMTEST
-        * @tc.type    Function
-        * @tc.level   2
-        */
+        /**
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   Sub_Misc_inputMethod_ExtendAction_static_0100
+         * @tc.number Sub_Misc_inputMethod_ExtendAction_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Sub_Misc_inputMethod_ExtendAction_static_0100', Level.LEVEL2, async (done: () => void) => {
             let select_all = inputMethod.ExtendAction.SELECT_ALL;
             console.info("====>Sub_Misc_inputMethod_ExtendAction_static_0100 select_all:" + select_all);
@@ -979,13 +1010,14 @@ export default function inputMethodTest() {
         });
 
         /**
-        * @tc.number  Sub_Misc_inputMethod_FunctionKey_static_0100
-        * @tc.name   Sub_Misc_inputMethod_FunctionKey_static_0100
-        * @tc.desc    Function test
-        * @tc.size    MEDIUMTEST
-        * @tc.type    Function
-        * @tc.level   2
-        */
+         * @generated.time 2025-11-09 20:53:26
+         * @tc.name   Sub_Misc_inputMethod_FunctionKey_static_0100
+         * @tc.number Sub_Misc_inputMethod_FunctionKey_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Sub_Misc_inputMethod_FunctionKey_static_0100', Level.LEVEL2, async (done: () => void) => {
             let functionKey: inputMethod.FunctionKey = {
                 enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED

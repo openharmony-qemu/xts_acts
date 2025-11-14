@@ -52,8 +52,8 @@ struct bindPopupTest {
     + '2.点击按钮PopupOptions2气泡的内外描边线性渐变显示正常，内描边的颜色是从红到蓝，外描边的颜色是绿\n'
     + '3.点击按钮CustomPopupOptions1气泡的内外描边线性渐变显示正常，内描边的颜色是从蓝紫到天蓝，外描边的颜色是半透明绿\n'
     + '4.点击按钮CustomPopupOptions2气泡的内外描边线性渐变显示正常，内描边的颜色是从藏蓝到粉紫，外描边的颜色是透明\n'
-    + '5.点击按钮PopupCommonOptions1气泡的内外描边线性渐变显示正常，内描边的颜色是从黄到紫，外描边的颜色是透明\n'
-    + '6.点击按钮PopupCommonOptions2气泡的内外描边线性渐变显示正常，内描边的颜色是从黄到蓝，外描边的颜色是浅紫\n';
+    + '5.点击按钮PopupCommonOptions1气泡的内外描边线性渐变显示正常，内描边的颜色是从黑到蓝，外描边的颜色是从黄到粉\n'
+    + '6.点击按钮PopupCommonOptions2气泡的内外描边（对角线）线性渐变显示正常，内描边的颜色是从橙到蓝，外描边的颜色是从粉到黑\n';
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
   @State uri: string = '';
@@ -67,7 +67,9 @@ struct bindPopupTest {
       Image($r('app.media.ic_public_pass'))
         .width('20vp')
         .height('20vp')
-    }.width('30%')
+    }
+    .margin({ bottom: '20vp' })
+    .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -90,6 +92,7 @@ struct bindPopupTest {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -347,6 +350,7 @@ struct bindPopupTest {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

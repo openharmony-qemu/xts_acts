@@ -21,6 +21,7 @@ import { abilityAccessCtrl, common, PermissionRequestResult} from '@kit.AbilityK
 import { Driver, ON } from '@kit.TestKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
+let TAG = "PASTEBOARDSNDK--------------------"
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 
@@ -85,12 +86,13 @@ export default function pasteBoardJEtsunitTest() {
     })
     
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1500
-     * @tc.name       Adds PlainTextData
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test1
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0100 start');
@@ -129,12 +131,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1400
-     * @tc.name       Adds PlainTextData = ''
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test2
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('f_test2: SUB_pasteBoard_function_JS_API_0200 start');
@@ -163,12 +166,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1300
-     * @tc.name       Adds PlainTextData = 'Hello 中国!@#$%^&*()_+{}\?.'
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test3
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('f_test3: SUB_pasteBoard_function_JS_API_0300 start');
@@ -200,12 +204,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1600
-     * @tc.name       Adds 300K PlainTextData
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test4
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1600
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0400 start');
@@ -241,12 +246,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1700
-     * @tc.name       Adds 301K PlainTextData
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test5
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0500 start');
@@ -280,12 +286,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0700
-     * @tc.name       Adds htmlText
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test6
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0600 start');
@@ -318,12 +325,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0600
-     * @tc.name       Adds htmlText = ''
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test7
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0600
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('f_test7: SUB_pasteBoard_function_JS_API_0700 start');
@@ -352,12 +360,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1100
-     * @tc.name       Adds htmlText = 'Hello 中国!@#$%^&*()_+{}\?.'
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test8
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0800 start');
@@ -387,12 +396,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0900
-     * @tc.name       Adds uriText
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test9
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0900
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_0900 start');
@@ -424,12 +434,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0800
-     * @tc.name       Adds uriText = ''
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test10
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0800
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1000 start');
@@ -458,12 +469,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1200
-     * @tc.name       Set uriText = 'Hello //'
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test11
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1100 start');
@@ -493,12 +505,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1000
-     * @tc.name       Adds want
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test12
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1000
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1200 start');
@@ -534,12 +547,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0200
-     * @tc.name       Adds one record(s)
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test13
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1300 start')
@@ -570,12 +584,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0300
-     * @tc.name       Adds 2 record(s)
-     * @tc.desc             Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test14
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1400 start')
@@ -604,12 +619,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0100
-     * @tc.name       Adds 15 record(s)
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test15
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1500 start')
@@ -643,12 +659,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0400
-     * @tc.name       Adds 30 record(s)
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test16
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1600 start')
@@ -681,12 +698,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_0500
-     * @tc.name       Adds 31 record(s)
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test17
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_0500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1700 start')
@@ -721,12 +739,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataAddRead_1800
-     * @tc.name       Adds PlainText,HtmlText,UriText
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test18
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1800
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1800 start')
@@ -766,12 +785,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1200
-     * @tc.name       Delete one PlainTextData
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test19
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_1900 start')
@@ -815,12 +835,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0800
-     * @tc.name       Delete one htmlText
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test20
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0800
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2000 start')
@@ -863,12 +884,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0900
-     * @tc.name       Delete one uriText
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test21
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0900
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2100 start')
@@ -911,12 +933,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1000
-     * @tc.name       Delete one want
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test22
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1000
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2200 start')
@@ -962,12 +985,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0700
-     * @tc.name       Deletes 300K PlainTextData
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test23
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2300 start')
@@ -1013,12 +1037,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2100
-     * @tc.name       Deletes 30 record(s)
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test24
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2400 start')
@@ -1070,12 +1095,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1100
-     * @tc.name       Deletes replaced record
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test25
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2500 start')
@@ -1124,12 +1150,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2200
-     * @tc.name       Deletes 文本、uri、html
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test26
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2600 start')
@@ -1183,12 +1210,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1800
-     * @tc.name       Replaces 文本 record
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test27
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1800
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2700 start')
@@ -1227,12 +1255,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1500
-     * @tc.name       Replaces htmlText record
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test28
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2800 start')
@@ -1267,12 +1296,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1600
-     * @tc.name       Replaces uri record
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test29
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1600
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_2900 start')
@@ -1307,12 +1337,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1700
-     * @tc.name       Replaces want record
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test30
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3000 start')
@@ -1353,12 +1384,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1400
-     * @tc.name       Replaces 300k文本 record
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test31
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3100 start')
@@ -1396,12 +1428,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0200
-     * @tc.name       Adds one record(s), gets record count
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test32
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3200 start')
@@ -1429,12 +1462,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0300
-     * @tc.name       Adds 2 record(s), gets record count
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test33
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3300 start')
@@ -1470,12 +1504,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0100
-     * @tc.name       Adds 15 record(s), gets record count
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test34
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3400 start')
@@ -1511,12 +1546,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0400
-     * @tc.name       Adds 30 record(s), gets record count
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test35
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3500 start')
@@ -1552,12 +1588,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0700
-     * @tc.name       Adds 31 record(s), gets record count
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test36
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3600 start')
@@ -1594,12 +1631,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0500
-     * @tc.name       Replaces one record, gets record count
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test37
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3700 start')
@@ -1640,12 +1678,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataQuery_0600
-     * @tc.name       Clears pasteBoard, gets record count
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test38
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataQuery_0600
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3800 start')
@@ -1685,12 +1724,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0200
-     * @tc.name       Adds Property
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test39
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_3900 start')
@@ -1743,12 +1783,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0300
-     * @tc.name       Set Property's tags
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test40
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4000 start');
@@ -1800,12 +1841,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0500
-     * @tc.name       Clears pasteBoard and check property
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test41
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4100 start');
@@ -1843,12 +1885,13 @@ export default function pasteBoardJEtsunitTest() {
     });
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0900
-     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等文本数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test42
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0900
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4200 start')
@@ -1884,12 +1927,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0600
-     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等html数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test43
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0600
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4300 start')
@@ -1927,12 +1971,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0700
-     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等uri数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test44
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4400 start')
@@ -1969,12 +2014,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0800
-     * @tc.name       打开内容变化通知功能：向剪贴板数据增加、删除等want数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test45
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0800
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4500 start')
@@ -2014,12 +2060,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_1000
-     * @tc.name       打开内容变化通知功能：清除剪切板内容
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test46
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_1000
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4600 start')
@@ -2055,12 +2102,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0400
-     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等文本数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test47
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4700 start')
@@ -2097,12 +2145,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0100
-     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等html数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test48
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4800 start')
@@ -2139,12 +2188,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0200
-     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等uri数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test49
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_4900 start')
@@ -2181,12 +2231,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0300
-     * @tc.name       关闭内容变化通知功能：向剪贴板数据增加、删除等want数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test50
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5000 start')
@@ -2226,12 +2277,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0500
-     * @tc.name       关闭内容变化通知功能：清除剪切板内容
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test51
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ContentChangeEvent_0500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5100 start')
@@ -2267,12 +2319,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2400
-     * @tc.name       清除剪切板内的文本数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test52
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5200 start')
@@ -2317,12 +2370,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2200
-     * @tc.name       清除剪切板内的uri数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test53
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5300 start')
@@ -2361,12 +2415,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2100
-     * @tc.name       清除剪切板内的html数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test54
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5400 start')
@@ -2406,12 +2461,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2300
-     * @tc.name       清除剪切板内的want数据项
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test55
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5500 start')
@@ -2452,12 +2508,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0200
-     * @tc.name       向剪切板内增加30条数据项，然后清除
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test56
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5600 start')
@@ -2503,12 +2560,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0300
-     * @tc.name       向剪贴板数据各增加5条文本、uri、html数据，然后清除
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test57
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5700 start')
@@ -2561,12 +2619,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0900
-     * @tc.name       向剪贴板数据增加文本数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test58
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0900
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5800 start')
@@ -2588,12 +2647,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0600
-     * @tc.name       向剪贴板数据增加uri数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test59
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0600
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_5900 start')
@@ -2616,12 +2676,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0500
-     * @tc.name       向剪贴板数据增加html数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test60
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6000 start')
@@ -2644,12 +2705,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0700
-     * @tc.name       向剪贴板数据增加want数据项，查询剪贴板存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test61
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6100 start')
@@ -2674,12 +2736,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0400
-     * @tc.name       向剪贴板数据各增加5条文本、uri、html，查询剪贴板存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test62
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6200 start')
@@ -2723,12 +2786,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1200
-     * @tc.name       更新剪贴板数据，查询剪贴板存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test63
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_1200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test63', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6300 start')
@@ -2766,12 +2830,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0100
-     * @tc.name       删除所有的剪贴板数据，查询剪贴板不存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test64
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6400 start')
@@ -2805,12 +2870,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2500
-     * @tc.name       清除剪贴板数据，查询剪贴板不存在剪贴板数据
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test65
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_2500
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test65', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6500 start')
@@ -2849,12 +2915,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0800
-     * @tc.name       将文本数据强制转换为文本
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test66
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0800
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test66', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6600 start')
@@ -2889,12 +2956,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0600
-     * @tc.name       将一条含有特殊字符、中英混杂的文本数据强制转换为文本
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test67
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0600
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test67', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6700 start')
@@ -2929,12 +2997,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0700
-     * @tc.name       将一条超长文本数据 (大小为301K)强制转换为文本
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test68
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0700
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test68', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6800 start')
@@ -2972,12 +3041,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_PasteDataConvert_0400
-     * @tc.name       将uri数据强制转换为文本
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test69
+     * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0400
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test69', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_6900 start')
@@ -3010,12 +3080,13 @@ export default function pasteBoardJEtsunitTest() {
     })
 
     /**
-     * @tc.number     SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0800
-     * @tc.name       复制文本、uri格式
-     * @tc.desc       Test pasteBoard API functionality.
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test70
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_ClearOrHas_0800
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pasteboard_function_test70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_pasteBoard_function_JS_API_7000 start')
@@ -3040,6 +3111,179 @@ export default function pasteBoardJEtsunitTest() {
           });
         });
       });
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test71
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_onRemoteUpdate_0100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('pasteboard_function_test71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7100 start')
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      systemPasteboard.clear().then(() => {
+        console.info('f_test71: Open the infor for pasteboard content changes')
+        systemPasteboard.onRemoteUpdate(contentChanges);
+
+        let textData = 'Hello World!';
+        let pasteData = pasteboard.createPlainTextData(textData);
+        console.info('f_test71: Writes PasteData to the pasteboard');
+        systemPasteboard.setPasteData(pasteData).then(() => {
+          console.info('f_test71: Checks there is content in the pasteboard')
+          systemPasteboard.hasPasteData().then((data: boolean) => {
+            expect(data).assertTrue();
+
+            console.info('f_test71: Checks the number of records');
+            systemPasteboard.getPasteData().then((data) => {
+              let pasteData1 = data;
+              expect(pasteData1.getRecordCount() == 1).assertTrue();
+
+              console.info('f_test71: Removes the Record')
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
+
+              console.info('SUB_pasteBoard_function_JS_API_7100 end');
+              done();
+            })
+          });
+        });
+      });
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test72
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_onRemoteUpdate_0200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('pasteboard_function_test72', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7200 start')
+      let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      try {
+        systemPasteboard.onRemoteUpdate(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
+        expect(err.code).assertEqual('401');
+        done();
+      }
+      console.info('SUB_pasteBoard_function_JS_API_7200 end')
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test73
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0100
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('pasteboard_function_test73', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7300 start')
+
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      systemPasteboard.clear().then(() => {
+        console.info('f_test73: Close the infor for pasteboard content changes')
+        systemPasteboard.offRemoteUpdate(contentChanges)
+
+        let textData = 'Hello World!';
+        let pasteData = pasteboard.createPlainTextData(textData);
+
+        console.info('f_test73: Writes PasteData to the pasteboard');
+        systemPasteboard.setPasteData(pasteData).then(() => {
+          console.info('f_test73: Checks there is content in the pasteboard')
+          systemPasteboard.hasPasteData().then((data: boolean) => {
+            expect(data).assertTrue();
+
+            console.info('f_test73: Checks the number of records');
+            systemPasteboard.getPasteData().then((data) => {
+              let pasteData1 = data;
+              expect(pasteData1.getRecordCount() == 1).assertTrue();
+
+              console.info('f_test73: Removes the Record')
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
+
+              console.info('SUB_pasteBoard_function_JS_API_7300 end');
+              done();
+            })
+          });
+        });
+      });
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test74
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0200
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('pasteboard_function_test74', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7400 start')
+
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      systemPasteboard.clear().then(() => {
+        console.info('f_test74: Close the infor for pasteboard content changes')
+        systemPasteboard.offRemoteUpdate()
+
+        let textData = 'Hello World!';
+        let pasteData = pasteboard.createPlainTextData(textData);
+
+        console.info('f_test74: Writes PasteData to the pasteboard');
+        systemPasteboard.setPasteData(pasteData).then(() => {
+          console.info('f_test74: Checks there is content in the pasteboard')
+          systemPasteboard.hasPasteData().then((data: boolean) => {
+            expect(data).assertTrue();
+
+            console.info('f_test74: Checks the number of records');
+            systemPasteboard.getPasteData().then((data) => {
+              let pasteData1 = data;
+              expect(pasteData1.getRecordCount() == 1).assertTrue();
+
+              console.info('f_test74: Removes the Record')
+              let removeat: boolean = pasteData1.removeRecordAt(0);
+              expect(removeat).assertTrue();
+
+              console.info('SUB_pasteBoard_function_JS_API_7400 end');
+              done();
+            })
+          });
+        });
+      });
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   pasteboard_function_test75
+     * @tc.number SUB_Pasteboard_Local_SDK_SystemPasteboard_offRemoteUpdate_0300
+     * @tc.desc   Test pasteBoard API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('pasteboard_function_test75', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_pasteBoard_function_JS_API_7500 start')
+      let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      try {
+        systemPasteboard.offRemoteUpdate(undefined);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + `Failed to on. Cause: ${err.message + err.code}`);
+        expect(err.code).assertEqual('401');
+        done();
+      }
+      console.info('SUB_pasteBoard_function_JS_API_7500 end')
     })
   });
 }

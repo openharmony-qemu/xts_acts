@@ -60,12 +60,13 @@ export default function relationalStoreErrorCode51Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   setDistributedTablesTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setDistributedTablesTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* setDistributedTablesTest001 start *************");
@@ -79,12 +80,13 @@ export default function relationalStoreErrorCode51Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   setDistributedTablesTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setDistributedTablesTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
       console.info(TAG + "************* setDistributedTablesTest002 start *************");
@@ -98,12 +100,13 @@ export default function relationalStoreErrorCode51Test() {
     })
 
     /**
-     * @tc.name delete success callback
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   setDistributedTablesTest003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
-     * @tc.desc delete success callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   delete success callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setDistributedTablesTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  (done:Function) =>{
       console.info(TAG + "************* setDistributedTablesTest003 start *************");

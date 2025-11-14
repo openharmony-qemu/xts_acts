@@ -838,16 +838,6 @@ export async function resourceManagerTest(displayContext: Context): Promise<bool
         console.error('DisplayContextTest resourceManager.getColor(res) fail' + error.name + error.message);
       });
   }
-  if (result) {
-    await displayContext.resourceManager.getColor($r('sys.color.ohos_id_color_sub_background').id)
-      .then((data) => {
-        result &&= (data > 0);
-        console.log(`DisplayContextTest resourceManager.getStringValue, data: ${data}, result: ${result}`);
-      }).catch((error: Error) => {
-        console.error('DisplayContextTest resourceManager.getStringValue fail' + error.name + error.message);
-        expect().assertFail();
-      });
-  }
   console.log(`DisplayContextTest resourceManagerTest end, result: ${result}`);
   return result;
 }

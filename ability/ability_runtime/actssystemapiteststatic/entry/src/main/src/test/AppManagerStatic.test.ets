@@ -18,7 +18,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import appManager from "@ohos.app.ability.appManager"
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 class CustomApplicationStateObserver implements appManager.ApplicationStateObserver {
@@ -68,7 +68,7 @@ export default function appManagerStaticTest() {
       * @tc.level 3
       */
     it('System_API_Test_App_Manager_Static_1700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let bundleName = "com.example.systemapitest.static";
+      let bundleName = "com.ohos.application";
       try {
         appManager.killProcessesByBundleName(bundleName, false).then(() => {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1700 killProcessesByBundleName success.');
@@ -76,14 +76,14 @@ export default function appManagerStaticTest() {
           done();
         }).catch((err: BusinessError): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(16000050);
+          expect(err.code).assertEqual(201);
           done();
         });
       } catch (paramError: BusinessError) {
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 [appManager] error: ${code}, ${message}`);
-        expect(paramError.code).assertEqual(16000050);
+        expect(paramError.code).assertEqual(201);
         done();
       }
     });
@@ -95,7 +95,7 @@ export default function appManagerStaticTest() {
      * @tc.level 3
      */
     it('System_API_Test_App_Manager_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let bundleName = "com.example.systemapitest.static";
+      let bundleName = "com.ohos.application";
       try {
         appManager.killProcessesByBundleName(bundleName, false, 0).then(() => {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1800 killProcessesByBundleName success.');
@@ -103,14 +103,14 @@ export default function appManagerStaticTest() {
           done();
         }).catch((err: BusinessError): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(16000050);
+          expect(err.code).assertEqual(201);
           done();
         });
       } catch (paramError: BusinessError) {
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1800 [appManager] error: ${code}, ${message}`);
-        expect(paramError.code).assertEqual(16000050);
+        expect(paramError.code).assertEqual(201);
         done();
       }
     });
@@ -351,7 +351,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on("applicationState", observer);
+          const observerId = appManager.onApplicationStateChange(observer);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
         } catch (err: BusinessError) {
@@ -375,7 +375,7 @@ export default function appManagerStaticTest() {
         let bundleNameList = ['bundleName1', 'bundleName2'];
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on("applicationState", observer, bundleNameList);
+          const observerId = appManager.onApplicationStateChange(observer, bundleNameList);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
         } catch (err: BusinessError) {
@@ -400,7 +400,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off applicationState`);
-          appManager.off('applicationState', 1).then(() => {
+          appManager.offApplicationStateChange(1).then(() => {
             hilog.info(domain, tag, `${itName} off success`);
             expect().assertFail();
             done();
@@ -434,7 +434,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off applicationState`);
-          appManager.off('applicationState', 1, (err: BusinessError<void> | null): void => {
+          appManager.offApplicationStateChange(1, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('401');
             done();

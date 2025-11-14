@@ -15,6 +15,7 @@
 import hilog from '@ohos.hilog';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import avSession from '@ohos.multimedia.avsession';
+import { BusinessError } from '@ohos.base';
 
 export default function abilityTest() {
     describe('AVSessionERRCodeTest', () => {
@@ -1162,11 +1163,110 @@ export default function abilityTest() {
             let err_code: avSession.AVSessionErrorCode =
                 avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR
             if (err_code == 6616100) {
-                expect(true).assertTrue();
+                console.info("SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR_STATIC_0100 success");
             } else {
                 console.info("ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR", err_code, typeof err_code);
                 expect(false).assertTrue();
             }
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0100
+         * @tc.desc        Testing DecoderType: video/avc enum
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
+            let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_VIDEO_AVC;
+            if (decoderType.toString() == "video/avc") {
+                expect(true).assertTrue();
+            } else {
+                console.info(`DecoderType_video/avc enum :${decoderType}`);
+                expect(false).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0200
+         * @tc.desc        Testing DecoderType: video/hevc enum
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
+            let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+            if (decoderType.toString() == "video/hevc") {
+                expect(true).assertTrue();
+            } else {
+                console.info(`DecoderType_video/hevc enum :${decoderType}`);
+                expect(false).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0300
+         * @tc.desc        Testing DecoderType: audio/av3a enum
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
+            let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_AUDIO_VIVID;
+            if (decoderType.toString() == "audio/av3a") {
+                expect(true).assertTrue();
+            } else {
+                console.info(`DecoderType_audio/av3a enum :${decoderType}`);
+                expect(false).assertTrue();
+            }
+            done();
+        })
+	
+	/**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100
+         * @tc.desc        compare all value in ResolutionLevel to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            console.info(`TestLog: RESOLUTION_480P is ${avSession.ResolutionLevel.RESOLUTION_480P}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_480P).assertEqual(0 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_720P is ${avSession.ResolutionLevel.RESOLUTION_720P}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_720P).assertEqual(1 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_1080P is ${avSession.ResolutionLevel.RESOLUTION_1080P}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_1080P).assertEqual(2 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_2K is ${avSession.ResolutionLevel.RESOLUTION_2K}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_2K).assertEqual(3 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_4K is ${avSession.ResolutionLevel.RESOLUTION_4K}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_4K).assertEqual(4 as avSession.ResolutionLevel);
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_STATIC_0100
+         * @tc.desc        compare all value in ResolutionLevel to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: () => void): Promise<void> => {
+            try{
+                let avCommand: avSession.AVCastControlCommand = {command:'seek',parameter: 15};
+                console.info(`ControlCommand successfully ${JSON.stringify(avCommand)}`);
+            } catch(err: BusinessError){
+                expect(false).assertTrue();
+                console.error(`ControlCommand BusinessError: code: ${err.code}, message: ${err.message}`);
+            };
             done();
         })
     })

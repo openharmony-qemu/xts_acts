@@ -66,15 +66,21 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    let isFreeWindowMode = false;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
       windowStage = AppStorage.get('windowStage') as window.WindowStage;  
       isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.USER_PROPERTY);
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     });
 
     /**
@@ -333,6 +339,67 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
         done()
       }
     });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_0100
+     * @tc.name      : testGetAllMainWindowInfo_0100
+     * @tc.desc      : ±±ÏògetAllMainWindowInfo²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testGetAllMainWindowInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetAllMainWindowInfo_0100 ';
+      console.log(caseName + 'begin');
+      try {
+        await window.getAllMainWindowInfo();
+        console.info(`${caseName} Succeeded in getAllMainWindowInfo.`);
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
+        if (isPCStatus == '') {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+        done()
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0100
+     * @tc.name      : testGetMainWindowSnapshot_0100
+     * @tc.desc      : ±±ÏògetMainWindowSnapshot²âÊÔ´íÎóÂëÐ£Ñé801¡¢201
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testGetMainWindowSnapshot_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetMainWindowSnapshot_0100 ';
+      console.log(caseName + 'begin');
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        let windowIdArray = [windowId];
+        let configs: window.WindowSnapshotConfiguration = {
+          useCache: false
+        }
+        await window.getMainWindowSnapshot(windowIdArray,configs)
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
+        if (isPCStatus == '') {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(201);
+        }
+        done()
+      }
+    });
+
 
   })
 }

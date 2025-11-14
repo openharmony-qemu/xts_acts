@@ -13,10 +13,24 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import {
+  UiComponent,
+  UiDriver,
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  BY,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../MainAbility/common/Common';
+
 export default function APIshouldBuiltInRecognizerParallelWith() {
   describe('APIshouldBuiltInRecognizerParallelWith', () => {
     beforeEach(async (done: Function) => {
@@ -58,7 +72,7 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text01');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('APIshouldBuiltInRecognizerParallelWith_0100 obj',obj,obj.$attrs.content);
+      console.info('APIshouldBuiltInRecognizerParallelWith_0100 obj', obj, obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('API_getTag');
       await CommonFunc.sleep(1000);
       console.info('[APIshouldBuiltInRecognizerParallelWith_0100] END');
@@ -77,7 +91,7 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text02');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('APIshouldBuiltInRecognizerParallelWith_0200 obj',obj,obj.$attrs.content);
+      console.info('APIshouldBuiltInRecognizerParallelWith_0200 obj', obj, obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('false');
       await CommonFunc.sleep(1000);
       console.info('[APIshouldBuiltInRecognizerParallelWith_0200] END');
@@ -96,7 +110,7 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text03');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('APIshouldBuiltInRecognizerParallelWith_0300 obj',obj,obj.$attrs.content);
+      console.info('APIshouldBuiltInRecognizerParallelWith_0300 obj', obj, obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('API_getEventTargetInfo');
       await CommonFunc.sleep(1000);
       console.info('[APIshouldBuiltInRecognizerParallelWith_0300] END');
@@ -115,10 +129,35 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APIshouldBuiltInRecognizerParallelWith_Text04');
       let obj: ESObject = JSON.parse(strJson);
-      console.info('APIshouldBuiltInRecognizerParallelWith_0400 obj',obj,obj.$attrs.content);
+      console.info('APIshouldBuiltInRecognizerParallelWith_0400 obj', obj, obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('API_getPanGestureOptions');
       await CommonFunc.sleep(1000);
       console.info('[APIshouldBuiltInRecognizerParallelWith_0400] END');
+      done();
+    });
+
+    /**
+     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0500
+     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0500
+     * @tc.desc      api for test isBegin and isEnd
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
+     */
+    it('APIshouldBuiltInRecognizerParallelWith_0500', Level.LEVEL0, async (done: Function) => {
+      console.info('APIshouldBuiltInRecognizerParallelWith_0500 START');
+      let driver = await Driver.create();
+      let scrollBar: Component = await driver.findComponent(ON.id('inner'));
+      await scrollBar.scrollToTop();
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('isBegin')).assertEqual(true);
+      expect(AppStorage.get('isEnd')).assertEqual(false);
+      await scrollBar.scrollToBottom(20000);
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get('isBegin')).assertEqual(false);
+      expect(AppStorage.get('isEnd')).assertEqual(true);
+      await CommonFunc.sleep(200);
+      console.info('[APIshouldBuiltInRecognizerParallelWith_0500] END');
       done();
     });
   })

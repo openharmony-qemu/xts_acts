@@ -23,7 +23,7 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
-     "testRunner": {
+    "testRunner": {
       "srcPath": "",
       "name": ""
     },

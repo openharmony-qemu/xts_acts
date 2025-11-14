@@ -326,7 +326,7 @@ export default function audioRoutingManager() {
     it("SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
-        routingManager.off('preferOutputDeviceChangeForRendererInfo', (data: audio.AudioDeviceDescriptors) => {
+        routingManager.offPreferOutputDeviceChangeForRendererInfo((data: audio.AudioDeviceDescriptors) => {
         });
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS`);
         expect(true).assertTrue();
@@ -392,7 +392,6 @@ export default function audioRoutingManager() {
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
         expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
         expect(data[0].networkId).assertEqual("LocalDevice");
-        expect(true).assertTrue();
         done();
       } catch (e: BusinessError) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0400 ERROR: ${e.message},ErrorCode:${e.code}`);

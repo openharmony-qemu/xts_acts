@@ -166,7 +166,7 @@ export default function audioCapturerEnhanceTest() {
             numBuffersToCapture--;
           }
         }
-        audioCap.on('readData', readDataCallback);
+        audioCap.onReadData(readDataCallback);
 
         console.log(`${Tag} read ok`);
 
@@ -228,7 +228,6 @@ export default function audioCapturerEnhanceTest() {
           expect(false).assertTrue();
           done();
         } else {
-          expect(true).assertTrue();
           done();
         }
       }

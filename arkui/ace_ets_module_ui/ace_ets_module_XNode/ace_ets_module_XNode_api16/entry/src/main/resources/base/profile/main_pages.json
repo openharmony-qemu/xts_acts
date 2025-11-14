@@ -13,6 +13,7 @@
         "MainAbility/pages/FrameNode/resourceColorErrorCodeTest",
         "MainAbility/pages/FrameNode/setCrossLanguageOptionsErrorCodeTest",
         "MainAbility/pages/PostFrame/postFrameCallbackTest",
-        "MainAbility/pages/FrameNode/FrameNodeMethodErrorCodeTest"
+        "MainAbility/pages/FrameNode/FrameNodeMethodErrorCodeTest",
+        "MainAbility/pages/Context/IsFollowingSystemFontScaleTrueTest"
     ]
 }

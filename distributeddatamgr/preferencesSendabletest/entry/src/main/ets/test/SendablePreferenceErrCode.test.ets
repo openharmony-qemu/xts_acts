@@ -62,12 +62,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name testSendablePreferencesOn0210
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOn0210
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_2300
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOn0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let observer = (key: string) => {
@@ -86,12 +87,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name getPreferences interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testGetPreferencesHelper003
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2400
-     * @tc.desc getPreferences interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetPreferencesHelper003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const options:sendablePreferences.Options= {name: null}
@@ -108,12 +110,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name getPreferencesSync interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testGetPreferencesSyncinterface002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2500
-     * @tc.desc getPreferencesSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetPreferencesSyncinterface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const options:sendablePreferences.Options= {name: null}
@@ -130,12 +133,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name removePreferencesFromCache interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testRemovePreferencesFromCache002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2600
-     * @tc.desc removePreferencesFromCache interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRemovePreferencesFromCache002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const options:sendablePreferences.Options= {name: null}
@@ -152,12 +156,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_removePreferencesFromCacheSync_0200
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2700
-     * @tc.name removePreferencesFromCacheSync interface test
-     * @tc.desc removePreferencesFromCacheSync interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   removePreferencesFromCacheSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_removePreferencesFromCacheSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const options:sendablePreferences.Options= {name: null}
@@ -174,12 +179,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name deletePreferences interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testDeletePreferencesHelper003
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2800
-     * @tc.desc deletePreferences interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   deletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeletePreferencesHelper003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const options:sendablePreferences.Options= {name: null}
@@ -196,12 +202,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesGetErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_2900
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesGetErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -217,12 +224,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesGetSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3000
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesGetSyncErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -238,12 +246,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesHasErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3100
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesHasErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -259,12 +268,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesHasSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3200
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesHasSyncErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -281,12 +291,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3300
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -302,12 +313,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesPutSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3400
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesPutSyncErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -323,12 +335,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesDeleteErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3500
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesDeleteErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -344,12 +357,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name get string promise interface test
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testPreferencesDeleteSyncErr0100
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiPromiseTest_3600
-     * @tc.desc get string promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   get string promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPreferencesDeleteSyncErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -365,12 +379,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name testSendablePreferencesOff0210
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOff0210
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_3700
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOff0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let observer = (key: string) => {
@@ -389,12 +404,13 @@ export default function sendablePreferencesPromiseTest() {
     })
 
     /**
-     * @tc.name testSendablePreferencesOn0400
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOn0400
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_3800
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let observer = (data: lang.ISendable) => {
@@ -418,12 +434,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name testSendablePreferencesOnerr0100
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOnErr0100
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_3900
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOnErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -445,12 +462,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name testSendablePreferencesOnerr0200
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOnErr0200
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4000
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOnErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -473,12 +491,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name testSendablePreferencesOnerr0300
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOnerr0300
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4100
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOnerr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -500,12 +519,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name testSendablePreferencesOffErr0100
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOffErr0100
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4300
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOffErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try{
@@ -531,13 +551,14 @@ export default function sendablePreferencesPromiseTest() {
       })
 
 
-      /**
-     * @tc.name testSendablePreferencesOffErr0100
+    /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOffErr0200
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4400
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOffErr0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try{
@@ -564,13 +585,14 @@ export default function sendablePreferencesPromiseTest() {
 
 
 
-       /**
-     * @tc.name testSendablePreferencesOffErr0100
+    /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesOffErr0300
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4500
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesOffErr0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try{
@@ -596,15 +618,16 @@ export default function sendablePreferencesPromiseTest() {
       })
 
 
-    /**
-     * @tc.name testSendablePreferencesOnErr0400
-     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4600
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+      /**
+       * @generated.time 2025-11-09 20:49:54
+       * @tc.name   testSendablePreferencesOnErr0400
+       * @tc.number testSendablePreferencesOnErr0400
+       * @tc.desc   testSendablePreferencesOnErr0400
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('testSendablePreferencesOnErr0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         for(let i = 0;i<100;i++){
@@ -622,15 +645,16 @@ export default function sendablePreferencesPromiseTest() {
     })
 
 
-    /**
-     * @tc.name testSendablePreferencesgetpreferenceErr0100
-     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4700
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+      /**
+       * @generated.time 2025-11-09 20:49:54
+       * @tc.name   testSendablePreferencesgetpreferenceErr0100
+       * @tc.number testSendablePreferencesgetpreferenceErr0100
+       * @tc.desc   testSendablePreferencesgetpreferenceErr0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('testSendablePreferencesgetpreferenceErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const options = {
@@ -651,15 +675,16 @@ export default function sendablePreferencesPromiseTest() {
 
 
 
-    /**
-     * @tc.name testSendablePreferencesgetpreferencesyncErr0100
-     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4800
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+      /**
+       * @generated.time 2025-11-09 20:49:54
+       * @tc.name   testSendablePreferencesgetpreferencesyncErr0100
+       * @tc.number testSendablePreferencesgetpreferencesyncErr0100
+       * @tc.desc   testSendablePreferencesgetpreferencesyncErr0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('testSendablePreferencesgetpreferencesyncErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const options = {
@@ -679,15 +704,16 @@ export default function sendablePreferencesPromiseTest() {
 
 
 
-    /**
-     * @tc.name testSendablePreferencesdeletePreferencesErr0100
-     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_4900
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+      /**
+       * @generated.time 2025-11-09 20:49:54
+       * @tc.name   testSendablePreferencesdeletePreferencesErr0100
+       * @tc.number testSendablePreferencesdeletePreferencesErr0100
+       * @tc.desc   testSendablePreferencesdeletePreferencesErr0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('testSendablePreferencesdeletePreferencesErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const options = {
@@ -707,15 +733,16 @@ export default function sendablePreferencesPromiseTest() {
 
 
 
-    /**
-     * @tc.name testSendablePreferencesremovePreferencesFromCacheErr0100
-     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_5000
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+      /**
+       * @generated.time 2025-11-09 20:49:54
+       * @tc.name   testSendablePreferencesremovePreferencesFromCacheErr0100
+       * @tc.number testSendablePreferencesremovePreferencesFromCacheErr0100
+       * @tc.desc   testSendablePreferencesremovePreferencesFromCacheErr0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('testSendablePreferencesremovePreferencesFromCacheErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const options = {
@@ -735,15 +762,16 @@ export default function sendablePreferencesPromiseTest() {
 
 
 
-    /**
-     * @tc.name testSendablePreferencesremovePreferencesFromCacheSyncErr0100
-     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_5100
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+      /**
+       * @generated.time 2025-11-09 20:49:54
+       * @tc.name   testSendablePreferencesremovePreferencesFromCacheSyncErr0100
+       * @tc.number testSendablePreferencesremovePreferencesFromCacheSyncErr0100
+       * @tc.desc   testSendablePreferencesremovePreferencesFromCacheSyncErr0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('testSendablePreferencesremovePreferencesFromCacheSyncErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const options = {
@@ -764,12 +792,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name testSendablePreferencesPutNumber0300
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesPutNumber0300
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_5200
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesPutNumber0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -786,12 +815,13 @@ export default function sendablePreferencesPromiseTest() {
 
 
     /**
-     * @tc.name testSendablePreferencesPutNumber0200
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesPutNumber0200
      * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsApiPromiseTest_5300
-     * @tc.desc put PutNumber promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   put PutNumber promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSendablePreferencesPutNumber0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -805,6 +835,57 @@ export default function sendablePreferencesPromiseTest() {
       }
       done();
     })
+
+
+
+
+    
+    /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesHasPromiseFalseTest0100
+     * @tc.number testSendablePreferencesHasPromiseFalseTest0100
+     * @tc.desc   testSendablePreferencesHasPromiseFalseTest0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSendablePreferencesHasPromiseFalseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + 'testSendablePreferencesHasPromiseFalseTest0100 start' );
+      try {
+        let ret: boolean = await mPreferences.has(KEY_STRING);
+        expect(ret).assertEqual(false);
+        done();
+      } catch (err) {
+        console.info(TAG +"testSendablePreferencesHasPromiseFalseTest0100 catch: " + err.code + err.messagr);
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+    
+    /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   testSendablePreferencesHasSyncPromiseFalseTest0100
+     * @tc.number testSendablePreferencesHasSyncPromiseFalseTest0100
+     * @tc.desc   testSendablePreferencesHasSyncPromiseFalseTest0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSendablePreferencesHasSyncPromiseFalseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + 'testSendablePreferencesHasSyncPromiseFalseTest0100 start' );
+      try {
+        let ret: boolean = await mPreferences.hasSync(KEY_STRING);
+        expect(ret).assertEqual(false);
+        done();
+      } catch (err) {
+        console.info(TAG +"testSendablePreferencesHasSyncPromiseFalseTest0100 catch: " + err.code + err.messagr);
+        expect().assertFail();
+        done();
+      }
+    })
+
 
   })
 }

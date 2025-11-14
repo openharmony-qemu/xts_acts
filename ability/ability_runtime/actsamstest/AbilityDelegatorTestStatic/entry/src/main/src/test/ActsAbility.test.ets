@@ -290,11 +290,15 @@ export default function abilityDelegatorStage() {
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12703', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 begin');
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility1 -b com.acts.abilitydelegatortest.static")
+      await Utils.msSleep(2000)
       try {
         abilityDelegator.startAbility({}, (err: BusinessError<void> | null):void => {
           hilog.info(0x0000, 'testTag EntryAbility', 'startAbility callback err ' + JSON.stringify(err?.code));
           if (err) {
             expect(err?.code).assertEqual(16000019);
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.abilitydelegatortest.static")
+            await Utils.msSleep(2000)
             done();
           } else {
             expect(false).assertTrue();

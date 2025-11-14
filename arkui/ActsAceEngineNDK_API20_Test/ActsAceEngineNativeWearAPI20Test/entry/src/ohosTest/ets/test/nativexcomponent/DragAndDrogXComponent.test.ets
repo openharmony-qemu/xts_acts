@@ -222,7 +222,7 @@ export default function DragAndDrogXComponent() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         await Utils.driver.longClickAt(ImageComponentOnePoint, 1500);
-        await Utils.sleep(100);
+        await Utils.sleep(2000);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_STARTED_0100 start<====`);
         let Result: number = nativexcomponent.GetOnPreDragResult(4);
         expect(4).assertEqual(Result);
@@ -245,7 +245,7 @@ export default function DragAndDrogXComponent() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         await Utils.driver.longClickAt(ImageComponentOnePoint, 1500);
-        await Utils.sleep(100);
+        await Utils.sleep(2000);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_FINISHED_0100 start<====`);
         let Result: number = nativexcomponent.GetOnPreDragResult(5);
         expect(5).assertEqual(Result);

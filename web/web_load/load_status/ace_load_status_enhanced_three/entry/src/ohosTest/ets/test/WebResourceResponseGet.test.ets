@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver } from '@kit.TestKit';
@@ -240,6 +241,76 @@ export default function webResourceResponseGet() {
       done();
     })
 
+
+    /*
+     *@tc.number  : SUB_ACE_WEB_GetResponseDataEx_Return_Undefined
+     *@tc.name    : testGetResponseDataExReturnUndefined
+     *@tc.desc    : test getResponseDataEx return undefined
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testGetResponseDataExReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testGetResponseDataExReturnUndefined start')
+        try {
+            let webResourceResponse:WebResourceResponse = new WebResourceResponse();
+            let responseDataEx = webResourceResponse.getResponseDataEx()
+            console.log('[WebResourceResponse] getResponseDataEx:' + responseDataEx);
+            expect(responseDataEx).assertUndefined()
+        } catch(error) {
+            console.error('testGetResponseDataExReturnUndefined error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testGetResponseDataExReturnUndefined end')
+        done()
+    })
+
+    /*
+     *@tc.number  : SUB_ACE_WEB_GetResponseIsReady_Return_False
+     *@tc.name    : testGetResponseIsReadyReturnFalse
+     *@tc.desc    : test getResponseIsReady return false
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testGetResponseIsReadyReturnFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testGetResponseIsReadyReturnFalse start')
+        try {
+            let webResourceResponse:WebResourceResponse = new WebResourceResponse();
+            webResourceResponse.setResponseIsReady(false)
+            let responseIsReady: boolean = webResourceResponse.getResponseIsReady()
+            console.log('[WebResourceResponse] getResponseIsReady:' + responseIsReady);
+            expect(responseIsReady).assertEqual(false)
+        } catch(error) {
+            console.error('testGetResponseIsReadyReturnFalse error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testGetResponseIsReadyReturnFalse end')
+        done()
+    })
+
+
+   /*
+     *@tc.number  : SUB_ACE_WEB_GetResponseHeader_Length_0001
+     *@tc.name    : testGetResponseHeaderLength0
+     *@tc.desc    : test getResponseHeader length 0
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testGetResponseHeaderLength0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testGetResponseHeaderLength0 start')
+        try {
+            let webResourceResponse:WebResourceResponse = new WebResourceResponse();
+            console.log('[WebResourceResponse] getResponseHeader length:' + webResourceResponse.getResponseHeader().length);
+            expect(webResourceResponse.getResponseHeader().length).assertEqual(0)
+        } catch(error) {
+            console.error('testGetResponseHeaderLength0 error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testGetResponseHeaderLength0 end')
+        done()
+    })
 
   })
 }

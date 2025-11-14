@@ -34,20 +34,20 @@ struct Index {
   ports: WebMessagePort[] = null;
   testObj = {
     test: (data1, data2, data3) => {
-      console.log("data1:" + data1);
-      console.log("data2:" + data2);
-      console.log("data3:" + data3);
-      return "AceString";
+      console.log('data1:' + data1);
+      console.log('data2:' + data2);
+      console.log('data3:' + data3);
+      return 'AceString';
     },
     toString: () => {
-      console.log('toString' + "interface instead.");
+      console.log('toString' + 'interface instead.');
     }
   }
-  message = new ConsoleMessage("1", "12", 23, MessageLevel.Debug);
+  message: ConsoleMessage = new ConsoleMessage('1', '12', 23, MessageLevel.Debug);
   controller: WebController = new WebController();
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
   responseweb: WebResourceResponse = new WebResourceResponse()
-  @State str: string = "emitStoreWebArchive"
+  @State str: string = 'emitStoreWebArchive'
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -57,10 +57,10 @@ struct Index {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack = (eventData) => {
-    console.info("web page valueChangeCallBack");
+  private valueChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
       }
@@ -71,11 +71,11 @@ struct Index {
       Utils.emitEvent(res, 102);
     },
     toString: (str) => {
-      console.info("ets toString:" + String(str));
+      console.info('ets toString:' + String(str));
     },
     register: (res) => {
       Utils.emitEvent(res, 86);
-      return "web222"
+      return 'web222'
     }
   }
 
@@ -94,13 +94,13 @@ struct Index {
             Web({ src: 'www.baidu.com', controller: this.controller })
                 .multiWindowAccess(true).key('multiwindow')
                 .onWindowExit(() => {
-                    console.log("onWindowExit...");
+                    console.log('onWindowExit...');
                     setTimeout(()=>{
                         Utils.emitEvent(this.isVoid,800)
                     },1000)
                 }).
                onWindowNew((event) => {
-                console.log("onWindowNew...");
+                console.log('onWindowNew...');
                 let popController: web_webview.WebviewController = new web_webview.WebviewController();
                 event.handler.setWebController(popController);
                 setTimeout(()=>{
@@ -108,23 +108,23 @@ struct Index {
                 },1000)
 
                }).onFullScreenEnter((event) => {
-                 console.log("onFullScreenEnter...");
+                 console.log('onFullScreenEnter...');
                  this.handler = event.handler;
                  setTimeout(()=>{
                     Utils.emitEvent(this.isVoid,802)
                 },1000)
                }).onFullScreenExit(() => {
-                  console.info("onFullScreenExit...");
+                  console.info('onFullScreenExit...');
                   this.handler.exitFullScreen();
                 })
 
             Web({ src: 'www.baidu.com', controller: this.controller }).key('web2')
-            .webStandardFont("HarmonyOS-Sans-Condensed")
-            .webSeriFont("HarmonyOS-Sans-Condensed")
-            .webSanSeriFont("HarmonyOS-Sans-Condensed")
-            .webFixedFont("HarmonyOS-Sans-Condensed")
-            .webFantasyFont("HarmonyOS-Sans-Condensed")
-            .webCursiveFont("HarmonyOS-Sans-Condensed")
+            .webStandardFont('HarmonyOS-Sans-Condensed')
+            .webSeriFont('HarmonyOS-Sans-Condensed')
+            .webSanSeriFont('HarmonyOS-Sans-Condensed')
+            .webFixedFont('HarmonyOS-Sans-Condensed')
+            .webFantasyFont('HarmonyOS-Sans-Condensed')
+            .webCursiveFont('HarmonyOS-Sans-Condensed')
             .defaultFixedFontSize(this.defaultFixed)
             .defaultFontSize(this.defaultFontSize)
             .minLogicalSize(this.minLogicalSize)
@@ -157,8 +157,8 @@ struct Index {
                 }).textZoomAtio(this.atio).tableData(true)
                 .javaScriptProxy({
                     object: this.testObj,
-                    name: "objName",
-                    methodList: ["test", "toString"],
+                    name: 'objName',
+                    methodList: ['test', 'toString'],
                     controller: this.controller,
                  }).onConsole((event) => {
                       console.log('getMessage:' + event.message.getMessage());
@@ -186,101 +186,101 @@ struct Index {
                     e.keyCode;
                 })
 
-            Button("web click").key('webcomponentapi9').onClick(async ()=>{
-                console.info("key==>"+this.str)
+            Button('web click').key('webcomponentapi9').onClick(async ()=>{
+                console.info('key==>'+this.str)
                 switch(this.str){
                     // add
-                    case "emitGeturl":
+                    case 'emitGeturl':
                          let url = this.controllerTwo.getUrl();
                          Utils.emitEvent(url,810);
                          break;
-                    case "emitclearClientAuthenticationCache":
+                    case 'emitclearClientAuthenticationCache':
                         this.controllerTwo.clearClientAuthenticationCache();
                         Utils.emitEvent(this.isVoid,811);
                         break;
-                    case "emitclearSslCache":
+                    case 'emitclearSslCache':
                         this.controllerTwo.clearSslCache();
                         Utils.emitEvent(this.isVoid,812);
                         break;
-                    case "emitsearchNext":
+                    case 'emitsearchNext':
                         this.controllerTwo.searchNext(true);
                         Utils.emitEvent(this.isVoid,813);
                         break;
-                    case "emitclearMatches":
+                    case 'emitclearMatches':
                         this.controllerTwo.clearMatches();
                         Utils.emitEvent(this.isVoid,814);
                         break;
-                    case "emitDefaultUserAgent":
+                    case 'emitDefaultUserAgent':
                         let usrAgent = this.controller.getDefaultUserAgent();
                         Utils.emitEvent(usrAgent,815);
                         break;
-                    case "emitgetWebId":
+                    case 'emitgetWebId':
                         let webId = this.controllerTwo.getWebId();
                         Utils.emitEvent(webId,816);
                         break;
-                    case "emitpostMessage":
+                    case 'emitpostMessage':
                         let sendPortArray = new Array(this.ports[1]);
                         let msgEvent = new WebMessageEvent();
-                        msgEvent.setData("__init_port__");
+                        msgEvent.setData('__init_port__');
                         msgEvent.setPorts(sendPortArray);
-                        this.controller.postMessage({message: msgEvent, url: "*"});
+                        this.controller.postMessage({message: msgEvent, url: '*'});
                         break;
-                    case "emitcreateWebMessagePorts":
+                    case 'emitcreateWebMessagePorts':
                         this.ports = this.controller.createWebMessagePorts();
-                        console.info("createWebMessagePorts size:" + this.ports.length)
+                        console.info('createWebMessagePorts size:' + this.ports.length)
                         Utils.emitEvent(this.ports.length,817);
                         break;
-                    case "emitdeleteSessionCookie":
+                    case 'emitdeleteSessionCookie':
                         web_webview.WebCookieManager.deleteSessionCookie();
                         Utils.emitEvent(this.isVoid,818);
                         break;
-                    case "emitdeleteExpiredCookie":
+                    case 'emitdeleteExpiredCookie':
                         web_webview.WebCookieManager.deleteExpiredCookie();
                         Utils.emitEvent(this.isVoid,810);
                         break;
-                    case "emitexistCookie":
+                    case 'emitexistCookie':
                         let vaue = web_webview.WebCookieManager.existCookie();
                         Utils.emitEvent(vaue,820);
                         break;
-                    case "emitgetCookie":
+                    case 'emitgetCookie':
                         let value = web_webview.WebCookieManager.getCookie('www.baidu.com');
-                        console.info("value: " + value);
+                        console.info('value: ' + value);
                         Utils.emitEvent(value,821);
                         break;
 
-                    case "emitsetCookie":
+                    case 'emitsetCookie':
                         let value02 = web_webview.WebCookieManager.setCookie('www.baidu.com','a=b');
-                        console.info("value: " + value02);
+                        console.info('value: ' + value02);
                         Utils.emitEvent(value02,822);
                         break;
 
-                    case "emitsaveCookie":
+                    case 'emitsaveCookie':
                         web_webview.WebCookieManager.saveCookie();
                         Utils.emitEvent(this.isVoid,823);
                         break;
-                    case "emitputAcceptFileURICookieEnabled":
+                    case 'emitputAcceptFileURICookieEnabled':
                         web_webview.WebCookieManager.putAcceptFileURICookieEnabled(false)
                         Utils.emitEvent(this.isVoid,824);
                         break;
-                    case "emitputAcceptThirdPartyCookieEnabled":
+                    case 'emitputAcceptThirdPartyCookieEnabled':
                         web_webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(false)
                         Utils.emitEvent(this.isVoid,825);
                         break;
 
-                    case "emitisFileURICookieAllowed":
+                    case 'emitisFileURICookieAllowed':
                         let isAll = web_webview.WebCookieManager.isFileURICookieAllowed();
                         Utils.emitEvent(isAll,826);
                         break;
-                    case "emitisThirdPartyCookieAllowed":
+                    case 'emitisThirdPartyCookieAllowed':
                         let isThirdParty = web_webview.WebCookieManager.isThirdPartyCookieAllowed();
                         Utils.emitEvent(isThirdParty,827);
                         break;
-                    case "hasImage":
+                    case 'hasImage':
                         // let flag = true
                         try{
                             thid.controllerTwo.hasImage((err.data)=>{
                                 if(err) {
-                                    console.info("has ImageError" + JSON.stringfy(err))
+                                    console.info('has ImageError' + JSON.stringfy(err))
                                     return;
                                 }
                                 Utils.emitEvent(flag,828);
@@ -289,35 +289,35 @@ struct Index {
                             console.error(`ErrorCode:${error.code},Message:${error.message}`);
                         }
                         break;
-                    case "hasImageTwo":
+                    case 'hasImageTwo':
                         let flag = true
                         try{
                             thid.controllerTwo.hasImage().then((data)=>{
                                 Utils.emitEvent(flag,829);
                             })
                             .catch(function(error)) {
-                                console.error("error" +error)
+                                console.error('error' +error)
                             }
 
                         }catch(error){
                             console.error(`ErrorCode:${error.code},Message:${error.message}`);
                         }
                         break;
-                    case "setNetworkAvailable":
+                    case 'setNetworkAvailable':
                         this.controllerTwo.setNetworkAvailable(this.netWorkStatus);
                         Utils.emitEvent(this.netWorkStatus,830);
                         break;
-                    case "getFavicon":
-                        let icon = "baidu"
+                    case 'getFavicon':
+                        let icon = 'baidu'
                         this.controllerTwo.getFavicon();
                         Utils.emitEvent(this.icon,831);
                         break;
-                    case "getOriginalUrl":
-                        let url = "www.baidu.com"
+                    case 'getOriginalUrl':
+                        let url = 'www.baidu.com'
                         this.controllerTwo.getOriginalUrl();
                         Utils.emitEvent(this.netWorkStatus,832);
                         break;
-                    case "history":
+                    case 'history':
                         let res = 1;
                         let historyList = this.controllerTwo.getBackForwardEntries();
                         this.controllerTwo.initializeWebEngine();
@@ -325,7 +325,7 @@ struct Index {
                         historyItem.historyRawUrl
                         Utils.emitEvent(this.netWorkStatus,833);
                         break;
-                    case "pageUp":
+                    case 'pageUp':
                         let res = true
                         this.controllerTwo.pageUp(true);
                         this.controllerTwo.pageDown(true);
@@ -334,7 +334,7 @@ struct Index {
                         break;
 
                     default:
-                        console.info("can not match case")
+                        console.info('can not match case')
                 }
             })
         }

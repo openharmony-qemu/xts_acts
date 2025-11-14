@@ -111,5 +111,31 @@ export default function StorageDeprecatedTest() {
       console.info('[StorageDeprecatedTest_002] END');
       done();
     });
+
+    /**
+     * @tc.number    StorageDeprecatedTest_003
+     * @tc.name      StorageDeprecatedTest_003
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 3
+     * @tc.type
+     * @tc.size
+     */
+    it('StorageDeprecatedTest_003', Level.LEVEL0, async (done: Function) => {
+      console.info('[StorageDeprecatedTest_003] START');
+      await CommonFunc.sleep(2000);
+      let para: Record<string, number> = { 'StorageDeprecatedTest_003': 47 };
+      let storage: LocalStorage = new LocalStorage(para);
+      let res_0031: boolean = storage.setOrCreate('StorageDeprecatedTest_003', 48);
+      let res_0032: boolean = storage.setOrCreate('StorageDeprecatedTest_003_no', null);
+      console.info("[StorageDeprecatedTest_003] component res_0031: " + JSON.stringify(res_0031));
+      console.info("[StorageDeprecatedTest_003] component res_0032: " + JSON.stringify(res_0032));
+      expect(res_0031).assertTrue();
+      storage.delete('StorageDeprecatedTest_003');
+      storage.delete('StorageDeprecatedTest_003_no');
+      console.info('[StorageDeprecatedTest_003] END');
+      done();
+    });
+
+
   })
 }

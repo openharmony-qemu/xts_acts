@@ -19,6 +19,10 @@ import formProviderTest from './FormProvider.test';
 import formLinkTest from './FormLink.test';
 import formInfoTest from './FormInfo.test';
 import formErrorTest from './FormError.test';
+import OverflowApiCoverTest from './OverflowApiCoverTest.test';
+import formHostTest from './FormHost.test';
+import formAgentTest from './FormAgent.test';
+import formObserverTest from './FormObserver.test';
 
 
 export default function testsuite() {
@@ -28,4 +32,8 @@ export default function testsuite() {
   formLinkTest();
   formInfoTest();
   formErrorTest();
+  OverflowApiCoverTest();
+  formHostTest();
+  formAgentTest();
+  formObserverTest();
 }

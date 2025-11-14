@@ -28,8 +28,8 @@ const TAG = '[AccelerometerUncalibrated]';
 struct AccelerometerUncalibrated {
   @State FillColor: string = '#FF000000';
   @State name: string = 'AccelerometerUncalibrated';
-  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有未校准加速度传感器' + '\n操作步骤：\n1.确定设备是否有未校准加速度传感器\n2.如果有该传感器，点击开启，在2秒内向各方向迅速移动设备，观察数值是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)'
-    + '\n预期结果：观察显示数值,跟随移动变化';
+  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有未校准加速度传感器' + '\n操作步骤：\n1.确定设备是否有未校准加速度传感器\n2.如果有该传感器，点击开启，在2秒内向各方向迅速移动设备，观察数值或触发次数是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)'
+    + '\n预期结果：观察显示数值或触发次数,跟随移动变化';
   @State Vue: boolean = false;
   @State isHave: boolean = true;
   @State isSensor: boolean = true;
@@ -41,6 +41,7 @@ struct AccelerometerUncalibrated {
   @State nextY: string = '';
   @State nextZ: string = '';
   @State intervalNum: number = 0;
+  @State backCount: number = 0;
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name)
@@ -53,6 +54,7 @@ struct AccelerometerUncalibrated {
       Logger.info(TAG, 'enter')
       try {
         sensor.on(sensor.SensorId.ACCELEROMETER_UNCALIBRATED, (data: sensor.AccelerometerUncalibratedResponse) => {
+          this.backCount += 1;
           this.dataX = data.x.toFixed(0)
           this.dataY = data.y.toFixed(0)
           this.dataZ = data.z.toFixed(0)
@@ -66,7 +68,8 @@ struct AccelerometerUncalibrated {
             this.nextX = data.x.toFixed(0);
             this.nextY = data.y.toFixed(0);
             this.nextZ = data.z.toFixed(0);
-            if (this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextZ !== this.dataZ) {
+            if ((this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextZ !== this.dataZ) || 
+            this.backCount > 0) {
               this.Vue = true;
             }
           }, 100)
@@ -129,6 +132,7 @@ struct AccelerometerUncalibrated {
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -142,7 +146,9 @@ struct AccelerometerUncalibrated {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -166,6 +172,7 @@ struct AccelerometerUncalibrated {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -232,6 +239,12 @@ struct AccelerometerUncalibrated {
           .textAlign(TextAlign.Start)
           .width('100%')
           .margin({ bottom: 24 })
+        Text('触发订阅的次数: ' + this.backCount)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ bottom: 24 })
       }
       .width('80%')
       .height('30%')
@@ -267,6 +280,7 @@ struct AccelerometerUncalibrated {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

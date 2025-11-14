@@ -33,6 +33,8 @@ void addKernelEnhanceKitOneTest(std::vector<napi_property_descriptor>& descData)
         CstandardLibrary_mallinfo_arena, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"cstandardLibrary_mallinfo_ordblks", nullptr,
         CstandardLibrary_mallinfo_ordblks, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"cstandardLibrary_malloc_check_from_ptr", nullptr,
+        CstandardLibrary_malloc_check_from_ptr, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 void addKernelEnhanceKitTest(std::vector<napi_property_descriptor>& descData)
@@ -123,6 +125,7 @@ napi_value CstandardLibrary_memalign(napi_env env, napi_callback_info info)
 napi_value CstandardLibrary_mallinfo(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     napi_create_int32(env, true, &result);
     return result;
@@ -131,6 +134,7 @@ napi_value CstandardLibrary_mallinfo(napi_env env, napi_callback_info info)
 napi_value CstandardLibrary_mallinfo_arena(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.arena = 0;
     napi_create_int32(env, pr.arena == 0, &result);
@@ -140,6 +144,7 @@ napi_value CstandardLibrary_mallinfo_arena(napi_env env, napi_callback_info info
 napi_value CstandardLibrary_mallinfo_ordblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.ordblks = 0;
     napi_create_int32(env, pr.ordblks == 0, &result);
@@ -149,6 +154,7 @@ napi_value CstandardLibrary_mallinfo_ordblks(napi_env env, napi_callback_info in
 napi_value CstandardLibrary_mallinfo_smblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.smblks = 0;
     napi_create_int32(env, pr.smblks == 0, &result);
@@ -158,6 +164,7 @@ napi_value CstandardLibrary_mallinfo_smblks(napi_env env, napi_callback_info inf
 napi_value CstandardLibrary_mallinfo_hblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.hblks = 0;
     napi_create_int32(env, pr.hblks == 0, &result);
@@ -167,6 +174,7 @@ napi_value CstandardLibrary_mallinfo_hblks(napi_env env, napi_callback_info info
 napi_value CstandardLibrary_mallinfo_hblkhd(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.hblkhd = 0;
     napi_create_int32(env, pr.hblkhd == 0, &result);
@@ -176,6 +184,7 @@ napi_value CstandardLibrary_mallinfo_hblkhd(napi_env env, napi_callback_info inf
 napi_value CstandardLibrary_mallinfo_usmblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.usmblks = 0;
     napi_create_int32(env, pr.usmblks == 0, &result);
@@ -185,6 +194,7 @@ napi_value CstandardLibrary_mallinfo_usmblks(napi_env env, napi_callback_info in
 napi_value CstandardLibrary_mallinfo_fsmblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.fsmblks = 0;
     napi_create_int32(env, pr.fsmblks == 0, &result);
@@ -194,6 +204,7 @@ napi_value CstandardLibrary_mallinfo_fsmblks(napi_env env, napi_callback_info in
 napi_value CstandardLibrary_mallinfo_uordblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.uordblks = 0;
     napi_create_int32(env, pr.uordblks == 0, &result);
@@ -203,6 +214,7 @@ napi_value CstandardLibrary_mallinfo_uordblks(napi_env env, napi_callback_info i
 napi_value CstandardLibrary_mallinfo_fordblks(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.fordblks = 0;
     napi_create_int32(env, pr.fordblks == 0, &result);
@@ -212,6 +224,7 @@ napi_value CstandardLibrary_mallinfo_fordblks(napi_env env, napi_callback_info i
 napi_value CstandardLibrary_mallinfo_keepcost(napi_env env, napi_callback_info info)
 {
     napi_value result;
+    mallinfo2();
     struct mallinfo pr = mallinfo();
     pr.keepcost = 0;
     napi_create_int32(env, pr.keepcost == 0, &result);
@@ -314,5 +327,26 @@ napi_value CstandardLibrary_mallinfo2_keepcost(napi_env env, napi_callback_info 
     struct mallinfo2 pr = mallinfo2();
     pr.keepcost = 0;
     napi_create_int32(env, pr.keepcost == 0, &result);
+    return result;
+}
+
+napi_value CstandardLibrary_malloc_check_from_ptr(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int retValue = 0;
+    size_t size = 10;
+    void *ptr = nullptr;
+    if (malloc_check_from_ptr(ptr) == 0 || malloc_check_from_ptr(ptr) == -1) {
+        retValue += 1;
+    }
+    ptr = malloc(size);
+    if (malloc_check_from_ptr(ptr) == 1 || malloc_check_from_ptr(ptr) == -1) {
+        retValue += 1;
+    }
+    char* src = "test";
+    if (malloc_check_from_ptr(src) == 0 || malloc_check_from_ptr(ptr) == -1) {
+        retValue  += 1;
+    }
+    napi_create_int32(env, retValue, &result);
     return result;
 }

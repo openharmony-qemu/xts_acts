@@ -885,5 +885,120 @@ export default function nativeBufferTest() {
         done();
       }
     });
-  })
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1000
+     * @tc.name       : testNativeBufferMapWaitFence0ms
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeBufferMapWaitFence0ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+          let result: number = nativebuffer.oHNativeBufferMapWaitFence0ms();
+          console.info("testNativeBufferMapWaitFence0ms result: " + result)
+          expect(result).assertEqual(0);
+          done();
+      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1001
+     * @tc.name       : testNativeBufferMapWaitFence100ms
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeBufferMapWaitFence100ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+          let result: number = nativebuffer.oHNativeBufferMapWaitFence100ms();
+          console.info("testNativeBufferMapWaitFence100ms result: " + result)
+          expect(result).assertEqual(0);
+          done();
+      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1002
+     * @tc.name       : testNativeBufferMapWaitFence5000ms
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeBufferMapWaitFence5000ms', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+          let result: number = nativebuffer.oHNativeBufferMapWaitFence5000ms();
+          console.info("testNativeBufferMapWaitFence5000ms result: " + result)
+          expect(result).assertEqual(0);
+          done();
+      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1003
+     * @tc.name       : testNativeBufferMapWaitFenceNullptr
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeBufferMapWaitFenceNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+          let result: number = nativebuffer.oHNativeBufferMapWaitFenceNullptr();
+          console.info("testNativeBufferMapWaitFenceNullptr result: " + result)
+          expect(result).assertEqual(0);
+          done();
+      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1004
+     * @tc.name       : testNativeBufferMapWaitFenceAbnormal
+     * @tc.desc       : test OH_NativeBuffer_MapWaitFence
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeBufferMapWaitFenceAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+          let result: number = nativebuffer.oHNativeBufferMapWaitFenceAbnormal();
+          console.info("testNativeBufferMapWaitFenceAbnormal result: " + result)
+          expect(result).assertEqual(0);
+          done();
+      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1100
+     * @tc.name       : testOHNativeBufferMetadataTypeEnumTraversal
+     * @tc.desc       : test OH_NativeBuffer_MetadataType
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testOHNativeBufferMetadataTypeEnumTraversal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        if (deviceTypeInfo == "default") {
+          expect(0).assertEqual(0);
+          done();
+        } else {
+          let result: number = nativebuffer.oHNativeBufferSetMetadataValueEnumTraversal();
+          console.info("testOHNativeBufferMetadataType result: " + result)
+          expect(result).assertEqual(0);
+          done();
+        }
+      });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_1200
+     * @tc.name       : testNativeBufferSetMetadataValueREGION
+     * @tc.desc       : test OH_REGION_OF_INTEREST_METADATA
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeBufferSetMetadataValueREGION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        if (deviceTypeInfo == "default") {
+          expect(0).assertEqual(0);
+          done();
+        } else {
+          let result: number = nativebuffer.oHNativeBufferSetMetadataValueREGION();
+          console.info("testNativeBufferSetMetadataValueREGION result: " + result)
+          expect(result).assertEqual(0);
+          done();
+        }
+      });
+  });
 }

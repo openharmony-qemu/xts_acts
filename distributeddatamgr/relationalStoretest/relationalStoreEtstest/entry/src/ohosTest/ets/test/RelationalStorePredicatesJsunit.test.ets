@@ -125,12 +125,13 @@ export default function relationalStorePredicatesTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name testEqualTo0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0010
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0001 start *************");
@@ -146,12 +147,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEqualTo0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0020
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0002 start *************");
@@ -167,12 +169,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEqualTo0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0030
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0003 start *************");
@@ -188,12 +191,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEqualTo0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0040
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0004 start *************");
@@ -209,12 +213,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEqualTo0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0050
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0005 start *************");
@@ -230,12 +235,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEqualTo0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0060
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0006 start *************");
@@ -252,12 +258,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEqualTo0007
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0070
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0007 start *************");
@@ -274,12 +281,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEqualTo0008
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEqualTo0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0080
-     * @tc.desc predicates equalTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates equalTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEqualTo0008 start *************");
@@ -296,12 +304,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0090
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0001 start *************");
@@ -317,12 +326,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0100
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0002 start *************");
@@ -339,12 +349,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0110
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0003 start *************");
@@ -360,12 +371,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0120
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0004 start *************");
@@ -381,12 +393,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0130
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0005 start *************");
@@ -402,12 +415,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0140
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0006 start *************");
@@ -423,12 +437,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0007
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0150
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0007 start *************");
@@ -444,12 +459,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotEqualTo0008
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotEqualTo0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0160
-     * @tc.desc predicates notEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates notEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotEqualTo0008 start *************");
@@ -465,12 +481,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNull0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNull0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0170
-     * @tc.desc predicates isNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNull001 start *************");
@@ -484,12 +501,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNull0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNull0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0180
-     * @tc.desc predicates isNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNull0002 start *************");
@@ -503,12 +521,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNull0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNull0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0190
-     * @tc.desc predicates isNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNull0003 start *************");
@@ -522,12 +541,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNull0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNull0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0200
-     * @tc.desc predicates isNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNull0004 start *************");
@@ -541,12 +561,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNotNull0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNotNull0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0210
-     * @tc.desc predicates isNotNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNotNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNotNull0001 start *************");
@@ -560,12 +581,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNotNull0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNotNull0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0220
-     * @tc.desc predicates isNotNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNotNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNotNull0002 start *************");
@@ -579,12 +601,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNotNull0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNotNull0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0230
-     * @tc.desc predicates isNotNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNotNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNotNull0003 start *************");
@@ -598,12 +621,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIsNotNull0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIsNotNull0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0240
-     * @tc.desc predicates isNotNull normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates isNotNull normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testIsNotNull0004 start *************");
@@ -617,12 +641,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0250
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0001 start *************");
@@ -638,12 +663,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0260
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0002 start *************");
@@ -659,12 +685,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0270
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0003 start *************");
@@ -680,12 +707,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0280
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0004 start *************");
@@ -701,12 +729,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0290
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0005 start *************");
@@ -722,12 +751,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0300
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0006 start *************");
@@ -743,12 +773,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0007
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0310
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0007 start *************");
@@ -764,12 +795,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThan0008
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThan0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0320
-     * @tc.desc predicates greaterThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThan0008 start *************");
@@ -785,12 +817,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThanOrEqualTo0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThanOrEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0330
-     * @tc.desc predicates greaterThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThanOrEqualTo0001 start *************");
@@ -806,12 +839,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThanOrEqualTo0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThanOrEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0340
-     * @tc.desc predicates greaterThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThanOrEqualTo0002 start *************");
@@ -827,12 +861,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThanOrEqualTo0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThanOrEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0350
-     * @tc.desc predicates greaterThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThanOrEqualTo0003 start *************");
@@ -848,12 +883,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGreaterThanOrEqualTo0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGreaterThanOrEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0360
-     * @tc.desc predicates greaterThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates greaterThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGreaterThanOrEqualTo0004 start *************");
@@ -869,12 +905,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0370
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0001 start *************");
@@ -890,12 +927,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0380
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0002 start *************");
@@ -911,12 +949,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0390
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0003 start *************");
@@ -932,12 +971,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0400
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0004 start *************");
@@ -953,12 +993,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0410
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0005 start *************");
@@ -974,12 +1015,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0420
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0006 start *************");
@@ -995,12 +1037,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0007
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0430
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0007 start *************");
@@ -1016,12 +1059,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThan0008
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThan0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0440
-     * @tc.desc predicates lessThan normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThan normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThan0008 start *************");
@@ -1037,12 +1081,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThanOrEqualTo0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThanOrEqualTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0450
-     * @tc.desc predicates lessThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThanOrEqualTo0001 start *************");
@@ -1058,12 +1103,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThanOrEqualTo0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThanOrEqualTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0460
-     * @tc.desc predicates lessThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThanOrEqualTo0002 start *************");
@@ -1079,12 +1125,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThanOrEqualTo0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThanOrEqualTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0470
-     * @tc.desc predicates lessThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThanOrEqualTo0003 start *************");
@@ -1100,12 +1147,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLessThanOrEqualTo0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLessThanOrEqualTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0480
-     * @tc.desc predicates lessThanOrEqualTo normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates lessThanOrEqualTo normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLessThanOrEqualTo0004 start *************");
@@ -1121,12 +1169,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0490
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0001 start *************");
@@ -1142,12 +1191,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0500
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0002 start *************");
@@ -1163,12 +1213,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0510
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0003 start *************");
@@ -1184,12 +1235,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0520
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0004 start *************");
@@ -1205,12 +1257,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0530
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0005 start *************");
@@ -1226,12 +1279,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0540
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0006 start *************");
@@ -1247,12 +1301,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0007
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0550
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0007 start *************");
@@ -1268,12 +1323,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBetween0008
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBetween0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0560
-     * @tc.desc predicates between normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates between normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBetween0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBetween0008 start *************");
@@ -1289,12 +1345,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotBetween0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotBetween0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0570
-     * @tc.desc test string value with notBetween.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test string value with notBetween.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotBetween0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotBetween0001 start *************");
@@ -1310,12 +1367,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotBetween0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotBetween0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0580
-     * @tc.desc test double value with notBetween.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test double value with notBetween.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotBetween0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotBetween0002 start *************");
@@ -1331,12 +1389,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotBetween0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotBetween0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0590
-     * @tc.desc test integer value with notBetween.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test integer value with notBetween.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotBetween0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotBetween0003 start *************");
@@ -1352,12 +1411,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotBetween0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotBetween0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0600
-     * @tc.desc test long value with notBetween.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test long value with notBetween.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotBetween0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testNotBetween0004 start *************");
@@ -1373,12 +1433,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGlob0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGlob0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0610
-     * @tc.desc end with ? by glob.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   end with ? by glob.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGlob0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGlob0001 start *************");
@@ -1394,12 +1455,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGlob0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGlob0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0620
-     * @tc.desc begin with * by glob.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   begin with * by glob.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGlob0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGlob0002 start *************");
@@ -1415,12 +1477,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGlob0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGlob0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0630
-     * @tc.desc end with ? by glob.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   end with ? by glob.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGlob0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGlob0003 start *************");
@@ -1436,12 +1499,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGlob0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGlob0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0640
-     * @tc.desc begin with ? by glob.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   begin with ? by glob.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGlob0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGlob0004 start *************");
@@ -1457,12 +1521,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGlob0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGlob0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0650
-     * @tc.desc begin and end with * by glob.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   begin and end with * by glob.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGlob0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGlob0005 start *************");
@@ -1478,12 +1543,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGlob0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGlob0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0660
-     * @tc.desc begin and end with ? by glob.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   begin and end with ? by glob.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGlob0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testGlob0006 start *************");
@@ -1499,12 +1565,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testContains0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testContains0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0670
-     * @tc.desc predicates contains normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates contains normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testContains0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testContains0001 start *************");
@@ -1518,12 +1585,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testContains0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testContains0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0680
-     * @tc.desc predicates contains normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates contains normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testContains0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testContains0002 start *************");
@@ -1537,12 +1605,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testContains0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testContains0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0690
-     * @tc.desc predicates contains normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates contains normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testContains0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testContains0003 start *************");
@@ -1556,12 +1625,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testContains0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testContains0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0700
-     * @tc.desc predicates contains normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates contains normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testContains0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testContains0004 start *************");
@@ -1575,12 +1645,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginsWith0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginsWith0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0710
-     * @tc.desc predicates beginsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginsWith0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginsWith0001 start *************");
@@ -1594,12 +1665,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginsWith0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginsWith0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0720
-     * @tc.desc predicates beginsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginsWith0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginsWith0002 start *************");
@@ -1613,12 +1685,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginsWith0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginsWith0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0730
-     * @tc.desc predicates beginsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginsWith0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginsWith0003 start *************");
@@ -1632,12 +1705,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginsWith0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginsWith0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0740
-     * @tc.desc predicates beginsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginsWith0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginsWith0004 start *************");
@@ -1651,12 +1725,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEndsWith0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEndsWith0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0750
-     * @tc.desc predicates endsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates endsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndsWith0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEndsWith0001 start *************");
@@ -1670,12 +1745,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEndsWith0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEndsWith0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0760
-     * @tc.desc predicates endsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates endsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndsWith0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEndsWith0002 start *************");
@@ -1689,12 +1765,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEndsWith0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEndsWith0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0770
-     * @tc.desc predicates endsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates endsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndsWith0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEndsWith0003 start *************");
@@ -1708,12 +1785,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testEndsWith0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testEndsWith0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0780
-     * @tc.desc predicates endsWith normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates endsWith normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndsWith0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testEndsWith0004 start *************");
@@ -1727,12 +1805,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLike0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLike0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0790
-     * @tc.desc predicates like normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates like normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLike0001 start *************");
@@ -1746,12 +1825,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLike0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLike0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0800
-     * @tc.desc predicates like normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates like normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLike0002 start *************");
@@ -1765,12 +1845,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLike0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLike0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0810
-     * @tc.desc predicates like normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates like normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLike0003 start *************");
@@ -1784,12 +1865,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLike0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLike0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0820
-     * @tc.desc predicates like normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates like normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testLike0004 start *************");
@@ -1803,12 +1885,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginWrap0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginWrap0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0830
-     * @tc.desc predicates beginWrap normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginWrap normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginWrap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginWrap0001 start *************");
@@ -1829,12 +1912,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginWrap0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginWrap0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0840
-     * @tc.desc predicates beginWrap normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginWrap normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginWrap0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginWrap0002 start *************");
@@ -1853,12 +1937,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginWrap0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginWrap0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0850
-     * @tc.desc predicates beginWrap normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginWrap normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginWrap0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginWrap0003 start *************");
@@ -1877,12 +1962,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginWrap0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginWrap0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0860
-     * @tc.desc predicates beginWrap normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginWrap normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginWrap0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginWrap0004 start *************");
@@ -1900,12 +1986,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testBeginWrap0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testBeginWrap0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0870
-     * @tc.desc predicates beginWrap normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates beginWrap normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginWrap0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG + "************* testBeginWrap0005 start *************");
@@ -1923,12 +2010,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testAnd0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testAnd0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0880
-     * @tc.desc predicates and normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates and normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testAnd0001 start *************");
@@ -1945,12 +2033,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testAnd0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testAnd0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0890
-     * @tc.desc predicates or normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates or normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testAnd0002 start *************");
@@ -1970,12 +2059,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testAnd0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testAnd0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0900
-     * @tc.desc predicates and normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates and normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testAnd0003 start *************");
@@ -1990,12 +2080,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testAnd0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testAnd0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0910
-     * @tc.desc predicates and normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates and normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testAnd0004 start *************");
@@ -2011,12 +2102,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOrder0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOrder0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0920
-     * @tc.desc predicates order normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates order normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrder0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOrder0001 start *************");
@@ -2037,12 +2129,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOrder0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOrder0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0930
-     * @tc.desc predicates order normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates order normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrder0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOrder0002 start *************");
@@ -2063,12 +2156,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOrder0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOrder0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0940
-     * @tc.desc predicates order normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates order normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrder0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOrder0003 start *************");
@@ -2081,12 +2175,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOrder0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOrder0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0950
-     * @tc.desc predicates order normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates order normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrder0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOrder0004 start *************");
@@ -2099,12 +2194,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLimit0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLimit0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0960
-     * @tc.desc predicates limit normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates limit normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testLimit0001 start *************");
@@ -2117,12 +2213,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLimit0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLimit0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0970
-     * @tc.desc predicates limit normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates limit normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testLimit0002 start *************");
@@ -2135,12 +2232,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLimit0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLimit0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0980
-     * @tc.desc predicates limit normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates limit normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testLimit0003 start *************");
@@ -2153,12 +2251,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLimit0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLimit0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_0990
-     * @tc.desc predicates limit normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates limit normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testLimit0004 start *************");
@@ -2171,12 +2270,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLimit0005
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLimit0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1000
-     * @tc.desc predicates limit normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates limit normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testLimit0005 start *************");
@@ -2189,12 +2289,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testLimit0006
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testLimit0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1010
-     * @tc.desc predicates limit normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates limit normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testLimit0006 start *************");
@@ -2207,12 +2308,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOffset0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOffset0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1020
-     * @tc.desc predicates offset normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates offset normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOffset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOffset0001 start *************");
@@ -2225,12 +2327,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOffset0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOffset0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1030
-     * @tc.desc predicates offset normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates offset normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOffset0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOffset0002 start *************");
@@ -2243,12 +2346,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOffset0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOffset0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1040
-     * @tc.desc predicates offset normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates offset normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOffset0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOffset0003 start *************");
@@ -2261,12 +2365,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testOffset0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testOffset0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1050
-     * @tc.desc predicates offset normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates offset normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOffset0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testOffset0004 start *************");
@@ -2279,12 +2384,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIn0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIn0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1060
-     * @tc.desc predicates in normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates in normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIn0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIn0001 start *************");
@@ -2298,12 +2404,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIn0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIn0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1070
-     * @tc.desc predicates in normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates in normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIn0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIn0002 start *************");
@@ -2317,12 +2424,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIn0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIn0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1080
-     * @tc.desc predicates in normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates in normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIn0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIn0003 start *************");
@@ -2336,12 +2444,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIn0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIn0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1090
-     * @tc.desc predicates in normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates in normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIn0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIn0004 start *************");
@@ -2355,12 +2464,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotIn0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotIn0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1100
-     * @tc.desc the common and min value test with notin.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   the common and min value test with notin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotIn0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testNotIn0001 start *************");
@@ -2374,12 +2484,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotIn0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotIn0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1110
-     * @tc.desc the common and max value test with notin.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   the common and max value test with notin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotIn0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testNotIn0002 start *************");
@@ -2393,12 +2504,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testNotIn0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotIn0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1120
-     * @tc.desc the min and max value test with notin.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   the min and max value test with notin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotIn0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testNotIn0003 start *************");
@@ -2412,12 +2524,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testCreate0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testCreate0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1130
-     * @tc.desc predicates constructor test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates constructor test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCreate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testCreate0001 start *************");
@@ -2429,12 +2542,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testCreate0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testCreate0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1140
-     * @tc.desc predicates constructor test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates constructor test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCreate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testCreate0002 start *************");
@@ -2446,12 +2560,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGroupBy0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGroupBy0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1150
-     * @tc.desc predicates groupBy test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates groupBy test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGroupBy0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testGroupBy0001 start *************");
@@ -2464,12 +2579,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testGroupBy0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testGroupBy0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1160
-     * @tc.desc predicates groupBy test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates groupBy test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGroupBy0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testGroupBy0002 start *************");
@@ -2482,12 +2598,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIndexedBy0001
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIndexedBy0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1170
-     * @tc.desc predicates indexedBy test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates indexedBy test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIndexedBy0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIndexedBy0001 start *************");
@@ -2504,12 +2621,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIndexedBy0002
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIndexedBy0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1180
-     * @tc.desc predicates indexedBy test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates indexedBy test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIndexedBy0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIndexedBy0002 start *************");
@@ -2526,12 +2644,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIndexedBy0003
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIndexedBy0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1190
-     * @tc.desc predicates indexedBy test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates indexedBy test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIndexedBy0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIndexedBy0003 start *************");
@@ -2550,12 +2669,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
-     * @tc.name testIndexedBy0004
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testIndexedBy0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1200
-     * @tc.desc predicates indexedBy test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   predicates indexedBy test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIndexedBy0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info(TAG + "************* testIndexedBy0004 start *************");
@@ -2576,13 +2696,13 @@ export default function relationalStorePredicatesTest() {
     console.info(TAG + "*************Unit Test End*************");
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0001
-     * @tc.name Normal test case of predicates, test "notLike" for string value
-     * @tc.desc 1.Execute notLike ("stringValue", "ABCDEFGHIJKLMN")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("stringValue", "ABCDEFGHIJKLMN")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0001 start *************");
@@ -2597,13 +2717,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0002
-     * @tc.name Normal test case of predicates, test "notLike" for string value
-     * @tc.desc 1.Execute notLike ("stringValue", "LMNX")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("stringValue", "LMNX")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0002 start *************");
@@ -2618,13 +2738,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0003
-     * @tc.name Normal test case of predicates, test "notLike" for Chinese character value
-     * @tc.desc 1.Execute notLike ("characterValue", "中")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "中")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0003 start *************");
@@ -2639,13 +2759,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0004
-     * @tc.name Normal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", "#")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0004 start *************");
@@ -2660,17 +2780,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0006
-     * @tc.name Normal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.insert data ("characterValue", "#")
-     *          5.Execute notLike ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0006 start *************");
@@ -2712,17 +2828,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0007
-     * @tc.name Normal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.insert data ("characterValue", "-")
-     *          5.Execute notLike ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0007 start *************");
@@ -2764,17 +2876,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0008
-     * @tc.name Normal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.updata data "characterValue", "中" - "#"
-     *          5.Execute notLike ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0008 start *************");
@@ -2825,17 +2933,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0009
-     * @tc.name Normal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.updata data "characterValue", "中" - "-"
-     *          5.Execute notLike ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0009 start *************");
@@ -2886,17 +2990,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0010
-     * @tc.name Normal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.delete data ("characterValue", "中")
-     *          5.Execute notLike ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0010 start *************");
@@ -2933,17 +3033,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0011
-     * @tc.name Normal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.delete data ("characterValue", "#")
-     *          5.Execute notLike ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotLike0011 start *************");
@@ -2981,13 +3077,13 @@ export default function relationalStorePredicatesTest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0012
-     * @tc.name Abnormal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", null)
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG, `************* testNotLike0012 start *************`);
@@ -3005,13 +3101,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0013
-     * @tc.name Abnormal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("characterValue", undefined)
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("characterValue", undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG, `************* testNotLike0013 start *************`);
@@ -3029,13 +3125,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotLike0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotLike_0014
-     * @tc.name Abnormal test case of predicates, test "notLike" for character value
-     * @tc.desc 1.Execute notLike ("", "#")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notLike ("", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotLike0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG, `************* testNotLike0014 start *************`);
@@ -3053,13 +3149,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0001
-     * @tc.name Normal test case of predicates, test "notContains" for string value
-     * @tc.desc 1.Execute notContains ("stringValue", "ABC")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("stringValue", "ABC")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0001 start *************");
@@ -3074,13 +3170,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0002
-     * @tc.name Normal test case of predicates, test "notContains" for string value
-     * @tc.desc 1.Execute notContains ("stringValue", "ABCX")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("stringValue", "ABCX")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0002 start *************");
@@ -3095,13 +3191,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0003
-     * @tc.name Normal test case of predicates, test "notContains" for  Chinese character value
-     * @tc.desc 1.Execute notContains ("characterValue", "中")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "中")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0003 start *************");
@@ -3116,13 +3212,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0004
-     * @tc.name Normal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", "#")
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0004 start *************");
@@ -3137,17 +3233,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0006
-     * @tc.name Normal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.insert data ("characterValue", "#")
-     *          5.Execute notContains ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0006 start *************");
@@ -3185,17 +3277,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0007
-     * @tc.name Normal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.insert data ("characterValue", "-")
-     *          5.Execute notContains ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0007 start *************");
@@ -3233,17 +3321,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0008
-     * @tc.name Normal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.updata data "characterValue", "中" - "#"
-     *          5.Execute notContains ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0008 start *************");
@@ -3294,17 +3378,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0009
-     * @tc.name Normal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.updata data "characterValue", "中" - "-"
-     *          5.Execute notContains ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0009 start *************");
@@ -3355,17 +3435,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0010
-     * @tc.name Normal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.delete data ("characterValue", "中")
-     *          5.Execute notContains ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0010 start *************");
@@ -3402,17 +3478,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0011
-     * @tc.name Normal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", "#")
-     *          2.Query data
-     *          3.close result
-     *          4.delete data ("characterValue", "#")
-     *          5.Execute notContains ("characterValue", "#")
-     *          6.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", "#")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.log(TAG + "************* testNotContains0011 start *************");
@@ -3449,13 +3521,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0012
-     * @tc.name Abnormal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", null)
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG, `************* testNotContains0012 start *************`);
@@ -3473,13 +3545,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0013
-     * @tc.name Abnormal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", undefined)
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG, `************* testNotContains0013 start *************`);
@@ -3497,13 +3569,13 @@ export default function relationalStorePredicatesTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   testNotContains0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_NotContains_0014
-     * @tc.name Abnormal test case of predicates, test "notContains" for character value
-     * @tc.desc 1.Execute notContains ("characterValue", undefined)
-     *          2.Query data
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Execute notContains ("characterValue", undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotContains0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info(TAG, `************* testNotContains0014 start *************`);

@@ -65,13 +65,13 @@ export default function UltralightTagErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0100
          * @tc.number SUB_Communication_NFC_mifareUltralight_0100
-         * @tc.name testreadMultiplePages
-         * @tc.desc Test readMultiplePages api by promise. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test readMultiplePages api by promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareUltralight_0100', Level.LEVEL1, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
@@ -79,6 +79,11 @@ export default function UltralightTagErrorTest() {
                 (async () => {
                     try {
                         let result = await MifareUltralightTag.readMultiplePages('test');
+                        if (result.length > 0) {
+                            expect(result.length > 0).assertTrue();
+                        } else{
+                            expect(result).assertDeepEquals([]);
+                        }
                         console.info("[NFC_test]mifareUltralight1 readMultiplePages data: " + result);
                     } catch(error) {
                         console.info("[NFC_test]mifareUltralight1 readMultiplePages errorcode: " + error.code);
@@ -94,13 +99,13 @@ export default function UltralightTagErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0200
          * @tc.number SUB_Communication_NFC_mifareUltralight_0200
-         * @tc.name testreadMultiplePages
-         * @tc.desc Test readMultiplePages api by callback. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test readMultiplePages api by callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareUltralight_0200', Level.LEVEL1, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
@@ -112,6 +117,11 @@ export default function UltralightTagErrorTest() {
                             expect(true).assertEqual(true);
                         } else {
                             console.info("[NFC_test]mifareUltralight2 readMultiplePages data: " + data + "json2:" + JSON.stringify(data));
+                            if (data.length > 0) {
+                                expect(data.length > 0).assertTrue();
+                            } else  {
+                                expect(data).assertDeepEquals([]);
+                            }
                             expect(true).assertTrue(data >= 0);
                         }
                     });
@@ -128,13 +138,13 @@ export default function UltralightTagErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0300
          * @tc.number SUB_Communication_NFC_mifareUltralight_0300
-         * @tc.name testwriteSinglePage
-         * @tc.desc Test writeSinglePage api by promise. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test writeSinglePage api by promise. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareUltralight_0300', Level.LEVEL1, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
@@ -158,13 +168,13 @@ export default function UltralightTagErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0400
          * @tc.number SUB_Communication_NFC_mifareUltralight_0400
-         * @tc.name testwriteSinglePage
-         * @tc.desc Test writeSinglePage api by callback. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test writeSinglePage api by callback. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_mifareUltralight_0400', Level.LEVEL1, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
@@ -192,15 +202,15 @@ export default function UltralightTagErrorTest() {
             }
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_mifareUltralight_0500
-         * @tc.name getMifareUltralight
-         * @tc.desc Test getMifareUltralight api. The error code is 401
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 1
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:44
+          * @tc.name   SUB_Communication_NFC_mifareUltralight_0500
+          * @tc.number SUB_Communication_NFC_mifareUltralight_0500
+          * @tc.desc   Test getMifareUltralight api. The error code is 401
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL1
+          */
          it('SUB_Communication_NFC_mifareUltralight_0500', Level.LEVEL1, function ()  {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
                 try {

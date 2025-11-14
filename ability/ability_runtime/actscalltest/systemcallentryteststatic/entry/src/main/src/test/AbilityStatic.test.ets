@@ -22,7 +22,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Caller } from '@ohos.app.ability.UIAbility';
 import rpc from '@ohos.rpc';
 
-let domain = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 class CustomParcelable implements rpc.Parcelable {
@@ -64,7 +64,7 @@ export default function AbilityStaticTest() {
         caller.release();
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller release fail error code: ${err?.code}, msg: ${err?.message}`);
         done();
@@ -127,7 +127,7 @@ export default function AbilityStaticTest() {
         caller.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller onRelease fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
@@ -148,7 +148,7 @@ export default function AbilityStaticTest() {
         caller.onRemoteStateChange((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller onRemoteStateChange fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
@@ -166,10 +166,10 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0600';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.on('release', (msg) => {});
+        caller.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller on release fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
@@ -187,10 +187,10 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0700';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.off('release', (msg) => {});
+        caller.offRelease((msg) => {});
         done();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller off release with callback fail error code: ${err?.code}, msg: ${err?.message}`);
         expect().assertFail();
@@ -207,10 +207,10 @@ export default function AbilityStaticTest() {
       const itName = 'ACTS_CommonComponent_Call_Static_0800';
       hilog.info(domain, tag, `${itName} start`);
       try {
-        caller.off('release');
+        caller.offRelease();
         done();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller off release fail error code: ${err?.code}, msg: ${err?.message}`);
         expect().assertFail();

@@ -188,8 +188,36 @@ export default function audioManagerApi9() {
         expect(Number(error.code)).assertEqual(6800101);
         done();
       }
-
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
+     * @tc.desc        getAPPVolumePercentage
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let audioVolumeManager = audioManager.getVolumeManager();
+      try {
+        let groupManager = audioVolumeManager.getAppVolumePercentage();
+        if ((typeof groupManager) == 'object') {
+          console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  PASS');
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  FAIL');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error: BusinessError) {
+        console.error(`audioManagerApi9Test: failed to getAppVolumePercentage: Callback:  ${error.message},code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
     /**
      * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
      * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
@@ -605,7 +633,7 @@ export default function audioManagerApi9() {
       try {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-        groupManager.on('ringerModeChange', (AudioRingMode) => {
+        groupManager.onRingerModeChange((AudioRingMode) => {
         });
         expect(true).assertTrue();
         done();
@@ -835,7 +863,6 @@ export default function audioManagerApi9() {
               expect(true).assertTrue();
             } else if (value == true && flag == false) {
               console.info(`${TagFrmwk}: Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : PASS :${value} flag is ${flag}`);
-              expect(true).assertTrue();
             } else {
               console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0200 Device Test: Callback : isCommunicationDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
               expect(false).assertTrue();
@@ -844,6 +871,188 @@ export default function audioManagerApi9() {
           });
         }
       });
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
+     * @tc.desc        OnVolumeChange - setVolume - MEDIA
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let audioVolumeManager = audioManager.getVolumeManager();
+      let groupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID)
+      let maxVolume = await groupManager.getMaxVolume(audio.AudioVolumeType.MEDIA)
+      let minVolume = await groupManager.getMinVolume(audio.AudioVolumeType.MEDIA)
+      await audioVolumeManager.setAppVolumePercentage(maxVolume);
+      await Utils.msSleep(5000);
+      audioVolumeManager.onAppVolumeChange((VolumeEvent) => {
+        console.info(`SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100 VolumeEvent.volumeType: ${VolumeEvent.volumeType}, VolumeEvent.volume:${VolumeEvent.volume},VolumeEvent.volumeMode:${VolumeEvent.volumeMode}, VolumeEvent.updateUi:${VolumeEvent.updateUi}`);
+        expect(VolumeEvent.volumeType).assertEqual(audio.AudioVolumeType.MEDIA);
+        expect(VolumeEvent.volume).assertEqual(minVolume);
+        expect(VolumeEvent.updateUi).assertEqual(false);
+        done();
+      });
+      await audioVolumeManager.setAppVolumePercentage(minVolume);
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
+     * @tc.name        SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
+     * @tc.desc        OnVolumeChange - getVolumeManager - MEDIA
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let audioSpatializationManager: audio.AudioSpatializationManager = audioManager.getSpatializationManager();
+        done();
+      } catch (error: BusinessError) {
+        console.info(`ON_MICSTATECHANGE error ${error.message}, code ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
+     * @tc.desc        OnAudioSceneChange - audioManager
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        audioManager.onAudioSceneChange((audioScene) => {
+          console.info(`AudioSceneChange event: ${audioScene} `);
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err: BusinessError) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
+     * @tc.desc        OffAudioSceneChange - audioManager
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let cb = (audioScene: audio.AudioScene) => {
+          console.info(`AudioSceneChange event: ${audioScene} `);
+      }
+      try {
+        audioManager.onAudioSceneChange(cb);
+        audioManager.offAudioSceneChange(cb);
+        audioManager.onAudioSceneChange(cb);
+        audioManager.offAudioSceneChange();
+        expect(true).assertTrue();
+        done();
+      } catch (err: BusinessError) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
+     * @tc.desc        Test that no recording stream is currently started
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error: BusinessError) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
+     * @tc.desc        Test that a recording stream is currently started
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let streamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+      let capturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: streamInfo,
+        capturerInfo: capturerInfo
+      };
+      let checkCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_WAKEUP,
+        capturerFlags: 0
+      };
+      try {
+        let audioCap = await audio.createAudioCapturer(capturerOptions);
+        console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+        await audioCap.start();
+        const isAvailable = streamManager.isRecordingAvailable(checkCapturerInfo);
+        expect(isAvailable).assertFalse();
+        await audioCap.stop();
+        await audioCap.release();
+      } catch (error: BusinessError) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
+     * @tc.desc        Test input parameter sourceType invalid
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        capturerFlags: 0
+      };
+      try {
+        streamManager.isRecordingAvailable(capturerInfo);
+        expect(false).assertTrue();
+      } catch (error: BusinessError) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(Number(error.code) == 6800101).assertTrue();
+      }
+      done();
     })
   })
 }

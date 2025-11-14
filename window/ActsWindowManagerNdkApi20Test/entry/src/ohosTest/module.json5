@@ -70,6 +70,9 @@
     "requestPermissions":[
       {
         "name" : "ohos.permission.ACCESS_VIRTUAL_SCREEN"
+      },
+      {
+        "name": "ohos.permission.CUSTOM_SCREEN_CAPTURE"
       }
     ]
   }

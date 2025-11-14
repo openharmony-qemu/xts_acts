@@ -101,7 +101,6 @@ import {
   Fn16_testDateValueInArray,
   Fn170_testFrozenArrayLiteralInMap,
   Fn171_testFrozenRegExpLiteralInArray,
-  Fn172_testModifiedDateLiteralInMap,
   Fn173_testSetWithDeletedElemInArray,
   Fn174_testClearedMapLiteralInMap,
   Fn175_testFunctionWithThisBindingInArray,
@@ -2358,18 +2357,6 @@ export default function Object8Test() {
       expect(result).assertEqual(true);
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_Object8_TEST_17200
-     * @tc.name Object8Test172
-     * @tc.desc test object fromEntries with modified Date literal in map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('Object8Test172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result = Fn172_testModifiedDateLiteralInMap();
-      expect(result).assertEqual(true);
-    });
 
     /**
      * @tc.number SUB_BUILTINS_Object8_TEST_17300

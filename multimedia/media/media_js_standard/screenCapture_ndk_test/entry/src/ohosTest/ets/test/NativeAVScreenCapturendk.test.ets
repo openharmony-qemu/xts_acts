@@ -58,11 +58,14 @@ function reqPermissionsFromUser(permissions: Array<Permissions>, context:common.
 
 export default function nativeAVScreenCaptureNdkTest() {
   describe('NativeAVScreenCaptureNdkTest', () => {
+    let currentDeviceIsPc: boolean = false;
     beforeAll(async (done: Function) => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
       let context2: UIAbility = await delegator.getCurrentTopAbility();
       reqPermissionsFromUser(permissions, context2.context, done);
+      currentDeviceIsPc = deviceinfo.deviceType === '2in1';
+      console.info('the value of the deviceType is: ' + deviceinfo.deviceType);
       console.info('beforeAll case');
       Utils.allowScreenCapture();
     });
@@ -1027,6 +1030,82 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_FILL_MODE_0002', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForFillModeScale();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
+     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Scale
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForCornerWrapMode();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
+     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Scale
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForClosedMode();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
+     * @tc.desc         OH_AVScreenCapture_SetPickerMode
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowOnly();
+      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenOnly();
+      expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow();
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001
+     * @tc.desc         OH_AVScreenCapture_ExcludePickerWindows
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
+      let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
+     * @tc.desc         OH_AVScreenCapture_presentPicker not surport
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker1();
       expect(result).assertEqual(0);
       done();
     });

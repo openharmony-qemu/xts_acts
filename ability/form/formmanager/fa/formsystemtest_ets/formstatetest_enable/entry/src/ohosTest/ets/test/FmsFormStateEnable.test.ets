@@ -118,10 +118,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_0200
-         * @tc.name: The form user does not have permission.
-         * @tc.desc: 1.The form user calls the enable update interface.
-         *           2.Verify the result of the enable update interface.
+         * @tc.name   FMS_enableFormsUpdate_0200
+         * @tc.number FMS_enableFormsUpdate_0200
+         * @tc.desc   1.The form user calls the enable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_enableFormsUpdate_0200 start`);
@@ -168,10 +170,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_0300
-         * @tc.name: The length of the formId list is 0 (no formId)
-         * @tc.desc: 1.The form user calls the enable update interface.
-         *           2.Verify the result of the enable update interface.
+         * @tc.name   FMS_enableFormsUpdate_0300
+         * @tc.number FMS_enableFormsUpdate_0300
+         * @tc.desc   1.The form user calls the enable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_enableFormsUpdate_0300 start`);
@@ -216,10 +220,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_0400
-         * @tc.name: formID id is error(formID < 0)
-         * @tc.desc: 1.The form user calls the enable update interface.
-         *           2.Verify the result of the enable update interface.
+         * @tc.name   FMS_enableFormsUpdate_0400
+         * @tc.number FMS_enableFormsUpdate_0400
+         * @tc.desc   1.The form user calls the enable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_enableFormsUpdate_0400 start`);
@@ -264,10 +270,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_0500
-         * @tc.name: formID id is error(formID == 0)
-         * @tc.desc: 1.The form user calls the enable update interface.
-         *           2.Verify the result of the enable update interface.
+         * @tc.name   FMS_enableFormsUpdate_0500
+         * @tc.number FMS_enableFormsUpdate_0500
+         * @tc.desc   1.The form user calls the enable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_enableFormsUpdate_0500 start`);
@@ -312,10 +320,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_0600
-         * @tc.name: formID id is error because formId is not self
-         * @tc.desc: 1.The form user calls the enable update interface.
-         *           2.Verify the result of the enable update interface.
+         * @tc.name   FMS_enableFormsUpdate_0600
+         * @tc.number FMS_enableFormsUpdate_0600
+         * @tc.desc   1.The form user calls the enable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_enableFormsUpdate_0600 start`);
@@ -398,10 +408,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_0700
-         * @tc.name: formID id is error because formId is not exist
-         * @tc.desc: 1.The form user calls the enable update interface.
-         *           2.Verify the result of the enable update interface.
+         * @tc.name   FMS_enableFormsUpdate_0700
+         * @tc.number FMS_enableFormsUpdate_0700
+         * @tc.desc   1.The form user calls the enable update interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_enableFormsUpdate_0700 start`);
@@ -482,10 +494,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_0900
-         * @tc.name: Use -1 form Id and created 2 form card Id notify the form to be invisible.
-         * @tc.desc: 1.The form user calls the visible notification interface.
-         *           2.Verify the result of the visible notification interface.
+         * @tc.name   FMS_enableFormsUpdate_0900
+         * @tc.number FMS_enableFormsUpdate_0900
+         * @tc.desc   1.The form user calls the visible notification interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_0900`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_enableFormsUpdate_0900 start`);
@@ -626,10 +640,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_1000
-         * @tc.name: Use -1 form Id and created 2 form card Id notify the form to be invisible.
-         * @tc.desc: 1.The form user calls the visible notification interface.
-         *           2.Verify the result of the visible notification interface.
+         * @tc.name   FMS_enableFormsUpdate_1000
+         * @tc.number FMS_enableFormsUpdate_1000
+         * @tc.desc   1.The form user calls the visible notification interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_1000`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_enableFormsUpdate_1000 start`);
@@ -774,10 +790,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_enableFormsUpdate_1200
-         * @tc.name: Use -1 form Id and created 2 form card Id notify the form to be visible.
-         * @tc.desc: 1.The form user calls the visible notification interface.
-         *           2.Verify the result of the visible notification interface.
+         * @tc.name   FMS_enableFormsUpdate_1200
+         * @tc.number FMS_enableFormsUpdate_1200
+         * @tc.desc   1.The form user calls the visible notification interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_enableFormsUpdate_1200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log(`FMS_enableFormsUpdate_1200 start`);

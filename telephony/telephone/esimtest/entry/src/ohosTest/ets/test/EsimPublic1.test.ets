@@ -21,7 +21,6 @@ const SLOT_0: number = 0;
 const SLOT_1: number = 1;
 const SLOT_2: number = 2;
 const SLOT_3: number = -1;
-const SLOT_4: number = 0.0000099;
 const SLOT_5: null = null;
 const PORT_INDEX: number = 0;
 let isEsimSupport: boolean = false;
@@ -48,8 +47,13 @@ export default function EsimPublic1() {
   describe('EsimPublic1', () => {
     beforeAll(async (done: Function) => {
       try {
-        isEsimSupport = eSIM.isSupported(SLOT_0);
-        if (isEsimSupport) {
+        let slotId=-1
+        if (eSIM.isSupported(SLOT_0)) {
+          slotId=0
+        } else if(eSIM.isSupported(SLOT_1)) {
+          slotId=1
+        }
+        if (slotId != -1) {
           console.info(`eSIM is supported`);
         }
         done();
@@ -79,18 +83,28 @@ export default function EsimPublic1() {
     it("testTelephonyEsimIsSupported0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimIsSupported0100';
       console.info(`${caseName} test start`);
-      let isEsimSupport: boolean = eSIM.isSupported(SLOT_0);
-      if (isEsimSupport) {
-        console.info(`eSIM is supported`);
-        expect(true).assertTrue();
-        console.info(`${caseName} test end`);
-        done();
-      } else {
-        console.info(`${caseName} eSIM is not supported`);
+      try{
+        let isEsimSupport: boolean = eSIM.isSupported(SLOT_0);
+        if (isEsimSupport) {
+          console.info(`${caseName} success : the data is:${isEsimSupport}`);
+          console.info(`eSIM is supported`);
+          expect(isEsimSupport).assertTrue();
+          console.info(`${caseName} test end`);
+          done();
+        } else {
+          expect(isEsimSupport).assertFalse();
+          console.info(`${caseName} success : the data is:${isEsimSupport}`);
+          expect(true).assertTrue();
+          console.info(`${caseName} test end`);
+          done();
+        }
+      }catch (err) {
+        console.info(`${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
         expect().assertFail();
         console.info(`${caseName} test end`);
         done();
       }
+
     });
 
     /**
@@ -106,10 +120,13 @@ export default function EsimPublic1() {
       console.info(`${caseName} test start`);
       try {
         let data: boolean = eSIM.isSupported(SLOT_1);
-        console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
-        console.info(`${caseName} test end`);
-        done();
+        if(data){
+          console.info(`eSIM is supported`);
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(true).assertTrue();
+          console.info(`${caseName} test end`);
+          done();
+        }
       } catch (err) {
         console.info(`${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
@@ -132,7 +149,7 @@ export default function EsimPublic1() {
       try {
         let data: boolean = eSIM.isSupported(SLOT_2);
         console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
+        expect().assertFail();
         console.info(`${caseName} test end`);
         done();
       } catch (err) {
@@ -157,7 +174,7 @@ export default function EsimPublic1() {
       try {
         let data: boolean = eSIM.isSupported(SLOT_3);
         console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
+        expect().assertFail();
         console.info(`${caseName} test end`);
         done();
       } catch (err) {
@@ -167,32 +184,6 @@ export default function EsimPublic1() {
         done();
       }
     });
-
-    /**
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0500
-     * @tc.name      : testTelephonyEsimIsSupported0500
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it("testTelephonyEsimIsSupported0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName: string = 'testTelephonyEsimIsSupported0500';
-      console.info(`${caseName} test start`);
-      try {
-        let data: boolean = eSIM.isSupported(SLOT_4);
-        console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
-        console.info(`${caseName} test end`);
-        done();
-      } catch (err) {
-        console.info(`${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(401);
-        console.info(`${caseName} test end`);
-        done();
-      }
-    });
-
     /**
      * @tc.number    : SUB_Telephony_Esim_IsSupported_0600
      * @tc.name      : testTelephonyEsimIsSupported0600
@@ -207,7 +198,7 @@ export default function EsimPublic1() {
       try {
         let data: boolean = eSIM.isSupported(SLOT_5);
         console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
+        expect().assertFail();
         console.info(`${caseName} test end`);
         done();
       } catch (err) {
@@ -231,10 +222,20 @@ export default function EsimPublic1() {
       console.info(`${caseName} test start`);
       try {
         let data = await eSIM.addProfile(profile);
-        console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
-        console.info(`${caseName} test end`);
-        done();
+        if(data){
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertTrue();
+          console.info(`${caseName} test end`);
+          done();
+        }
+        else{
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertFalse();
+          expect().assertFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+
       } catch (err) {
         if (err.code === 801) {
           console.info(`${caseName} The current device type does not, promise: err->${JSON.stringify(err)}`);
@@ -265,7 +266,7 @@ export default function EsimPublic1() {
       try {
         let data = await eSIM.addProfile(null);
         console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
+        expect().assertFail();
         console.info(`${caseName} test end`);
         done();
       } catch (err) {

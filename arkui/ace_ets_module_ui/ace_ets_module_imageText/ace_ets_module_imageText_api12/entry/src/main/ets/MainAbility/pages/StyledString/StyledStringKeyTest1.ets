@@ -33,6 +33,7 @@ struct StyledStringKeyTest1 {
     styledKey: StyledStringKey.USER_DATA,
     styledValue: new MyUserDateSpan("hello")
   }])
+  styleString2: MutableStyledString = new MutableStyledString("hello world")
 
   onPageShow(): void {
     this.controller.setStyledString(this.styleString)
@@ -41,13 +42,22 @@ struct StyledStringKeyTest1 {
   build() {
     Column({space:10}) {
       Text(undefined, { controller: this.controller })
-      Button("get user data")
-        .id('StyledStringKeyTest1_btn')
-        .onClick(() => {
-          let arr = this.styleString.getStyles(0, this.styleString.length)
-          let userDataSpan = arr[0].styledValue as MyUserDateSpan
-          this.name = userDataSpan.name
-        })
+      Row(){
+        Button("get user data")
+          .id('StyledStringKeyTest1_btn')
+          .onClick(() => {
+            let arr = this.styleString.getStyles(0, this.styleString.length)
+            AppStorage.setOrCreate('stylesList1',arr)
+            let userDataSpan = arr[0].styledValue as MyUserDateSpan
+            this.name = userDataSpan.name
+          })
+        Button('StyledStringKeyTest2_btn')
+          .id('StyledStringKeyTest2_btn')
+          .onClick(() => {
+            let arr = this.styleString2.getStyles(0, this.styleString2.length)
+            AppStorage.setOrCreate('stylesList2',arr)
+          })
+      }
       Text(this.name).id('StyledStringKeyTest1_text')
     }.width('100%')
   }

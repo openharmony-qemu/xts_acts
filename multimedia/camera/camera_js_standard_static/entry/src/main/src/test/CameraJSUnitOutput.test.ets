@@ -3359,7 +3359,6 @@ export default function cameraJSUnitOutput() {
         return Math.abs((cameraOutputCap.previewProfiles[0].size.width / cameraOutputCap.previewProfiles[0].size.height) - (videoProfile.size.width / videoProfile.size.height)) < Number.EPSILON;
       });
       videoOutput = cameraManager.createVideoOutput(videoProfileValid!, videoSurfaceId!);
-      let videoOutput2 = cameraManager.createVideoOutput(videoProfileValid!, videoSurfaceId!);
       //创建会话
       createPhotoSession(cameraObj.SceneMode.NORMAL_VIDEO)
       // 配置会话
@@ -3372,9 +3371,6 @@ export default function cameraJSUnitOutput() {
       }
       if (videoOutput != null && videoOutput != undefined) {
         cameraSession.addOutput(videoOutput);
-      }
-      if (videoOutput2 != null && videoOutput2 != undefined) {
-        cameraSession.addOutput(videoOutput2);
       }
       try {
         await cameraSession.commitConfig();

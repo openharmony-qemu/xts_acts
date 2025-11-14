@@ -130,12 +130,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DataObject_on_Change_ErrTest_0100
      * @tc.number SUB_DataObject_on_Change_ErrTest_0100
-     * @tc.name DataObjectErrTest01
-     * @tc.desc Test DataObject on Change
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on Change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DataObject_on_Change_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_DataObject_on_Change_ErrTest_0100 start ************')
@@ -151,12 +152,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   SUB_DataObject_off_Change_ErrTest_0100
      * @tc.number SUB_DataObject_off_Change_ErrTest_0100
-     * @tc.name DataObjectErrTest02
-     * @tc.desc Test DataObject off Change
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off Change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DataObject_off_Change_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ SUB_DataObject_off_Change_ErrTest_0100 start ************')
@@ -172,12 +174,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest03
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0300
-     * @tc.name DataObjectErrTest03
-     * @tc.desc Test DataObject offStatus
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject offStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest03 start ************')
@@ -193,12 +196,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest04
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0400
-     * @tc.name DataObjectErrTest04
-     * @tc.desc Test DataObject save
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject save
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest04 start ************')
@@ -215,12 +219,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest05
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0500
-     * @tc.name DataObjectErrTest05
-     * @tc.desc Test DataObject save
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject save
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest05 start ************')
@@ -238,12 +243,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest06
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0600
-     * @tc.name DataObjectErrTest06
-     * @tc.desc Test DataObject revokeSave
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject revokeSave
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest06 start ************')
@@ -260,12 +266,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest07
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0700
-     * @tc.name DataObjectErrTest07
-     * @tc.desc Test DataObject bindAssetStore
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject bindAssetStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest07 start ************')
@@ -287,12 +294,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest08
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0800
-     * @tc.name DataObjectErrTest08
-     * @tc.desc Test DataObject bindAssetStore
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject bindAssetStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest08 start ************')
@@ -314,12 +322,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest09
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0900
-     * @tc.name DataObjectErrTest09
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest09 start ************')
@@ -338,12 +347,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest10
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1000
-     * @tc.name DataObjectErrTest10
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest10 start ************')
@@ -361,12 +371,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest11
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1100
-     * @tc.name DataObjectErrTest11
-     * @tc.desc Test DataObject on change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest11 start ************')
@@ -382,12 +393,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest12
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1200
-     * @tc.name DataObjectErrTest12
-     * @tc.desc Test DataObject on change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest12 start ************')
@@ -403,12 +415,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest13
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1300
-     * @tc.name DataObjectErrTest13
-     * @tc.desc Test DataObject on change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest13 start ************')
@@ -424,12 +437,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest14
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1400
-     * @tc.name DataObjectErrTest14
-     * @tc.desc Test DataObject on change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest14 start ************')
@@ -446,12 +460,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest15
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1500
-     * @tc.name DataObjectErrTest15
-     * @tc.desc Test DataObject on change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest15 start ************')
@@ -468,12 +483,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest16
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1600
-     * @tc.name DataObjectErrTest16
-     * @tc.desc Test DataObject on status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest16 start ************')
@@ -489,12 +505,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest17
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1700
-     * @tc.name DataObjectErrTest17
-     * @tc.desc Test DataObject on status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest17 start ************')
@@ -510,12 +527,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest18
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1800
-     * @tc.name DataObjectErrTest18
-     * @tc.desc Test DataObject on status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest18 start ************')
@@ -531,12 +549,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest19
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1900
-     * @tc.name DataObjectErrTest19
-     * @tc.desc Test DataObject on status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest19 start ************')
@@ -553,12 +572,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest20
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2000
-     * @tc.name DataObjectErrTest20
-     * @tc.desc Test DataObject on status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest20 start ************')
@@ -575,12 +595,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest21
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2100
-     * @tc.name DataObjectErrTest21
-     * @tc.desc Test DataObject off change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest21 start ************')
@@ -597,12 +618,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest22
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2200
-     * @tc.name DataObjectErrTest22
-     * @tc.desc Test DataObject off change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest22 start ************')
@@ -620,12 +642,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest23
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2300
-     * @tc.name DataObjectErrTest23
-     * @tc.desc Test DataObject off change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest23 start ************')
@@ -642,12 +665,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest24
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2400
-     * @tc.name DataObjectErrTest24
-     * @tc.desc Test DataObject off change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest24 start ************')
@@ -664,12 +688,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest25
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2500
-     * @tc.name DataObjectErrTest25
-     * @tc.desc Test DataObject off change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest25 start ************')
@@ -686,12 +711,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest26
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2600
-     * @tc.name DataObjectErrTest26
-     * @tc.desc Test DataObject off change20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off change20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest26 start ************')
@@ -708,12 +734,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest27
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2700
-     * @tc.name DataObjectErrTest27
-     * @tc.desc Test DataObject off_status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off_status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest27 start ************')
@@ -730,12 +757,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest28
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2800
-     * @tc.name DataObjectErrTest28
-     * @tc.desc Test DataObject off_status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off_status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest28 start ************')
@@ -753,12 +781,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest29
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2900
-     * @tc.name DataObjectErrTest29
-     * @tc.desc Test DataObject off_status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off_status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest29 start ************')
@@ -775,12 +804,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest30
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3000
-     * @tc.name DataObjectErrTest30
-     * @tc.desc Test DataObject off_status20
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off_status20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest30 start ************')
@@ -797,12 +827,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest31
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3100
-     * @tc.name DataObjectErrTest31
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest31 start ************')
@@ -819,12 +850,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest32
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3200
-     * @tc.name DataObjectErrTest32
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest32 start ************')
@@ -841,12 +873,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest33
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3300
-     * @tc.name DataObjectErrTest33
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest33 start ************')
@@ -863,12 +896,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest34
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3400
-     * @tc.name DataObjectErrTest34
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest34 start ************')
@@ -884,13 +918,14 @@ export default function DataObjectErrTest() {
       console.info(TAG + '************ DataObjectErrTest34 end ************')
     })
 
-/**
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest35
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3500
-     * @tc.name DataObjectErrTest35
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest35 start ************')
@@ -907,12 +942,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest36
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3600
-     * @tc.name DataObjectErrTest36
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest36 start ************')
@@ -929,12 +965,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest37
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3700
-     * @tc.name DataObjectErrTest37
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest37 start ************')
@@ -951,12 +988,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest38
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3800
-     * @tc.name DataObjectErrTest38
-     * @tc.desc Test DataObject setAsset
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest38 start ************')
@@ -975,12 +1013,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest39
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3900
-     * @tc.name DataObjectErrTest39
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest39 start ************')
@@ -997,12 +1036,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest40
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4000
-     * @tc.name DataObjectErrTest40
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest40 start ************')
@@ -1023,12 +1063,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest41
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4100
-     * @tc.name DataObjectErrTest41
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest41 start ************')
@@ -1045,12 +1086,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest42
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4200
-     * @tc.name DataObjectErrTest42
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest42 start ************')
@@ -1078,12 +1120,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest43
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4300
-     * @tc.name DataObjectErrTest43
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest43 start ************')
@@ -1102,12 +1145,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest44
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4400
-     * @tc.name DataObjectErrTest44
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest44 start ************')
@@ -1124,12 +1168,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest45
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4500
-     * @tc.name DataObjectErrTest45
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest45 start ************')
@@ -1146,12 +1191,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest46
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4600
-     * @tc.name DataObjectErrTest46
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest46 start ************')
@@ -1168,12 +1214,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest47
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4700
-     * @tc.name DataObjectErrTest47
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest47 start ************')
@@ -1190,12 +1237,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest48
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4800
-     * @tc.name DataObjectErrTest48
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest48 start ************')
@@ -1212,12 +1260,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest49
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4900
-     * @tc.name DataObjectErrTest49
-     * @tc.desc Test DataObject setAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject setAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest49 start ************')
@@ -1234,12 +1283,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest50
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5000
-     * @tc.name DataObjectErrTest50
-     * @tc.desc Test DataObject on progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest50 start ************')
@@ -1255,12 +1305,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest51
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5100
-     * @tc.name DataObjectErrTest51
-     * @tc.desc Test DataObject on progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest51 start ************')
@@ -1276,12 +1327,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest52
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5200
-     * @tc.name DataObjectErrTest52
-     * @tc.desc Test DataObject on progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest52 start ************')
@@ -1297,12 +1349,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest53
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5300
-     * @tc.name DataObjectErrTest53
-     * @tc.desc Test DataObject on progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest53 start ************')
@@ -1319,12 +1372,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest54
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5400
-     * @tc.name DataObjectErrTest54
-     * @tc.desc Test DataObject on progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest54 start ************')
@@ -1341,12 +1395,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest55
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5500
-     * @tc.name DataObjectErrTest55
-     * @tc.desc Test DataObject off progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest55 start ************')
@@ -1363,12 +1418,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest56
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5600
-     * @tc.name DataObjectErrTest56
-     * @tc.desc Test DataObject off progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest56 start ************')
@@ -1385,12 +1441,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest57
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5700
-     * @tc.name DataObjectErrTest57
-     * @tc.desc Test DataObject off progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest57 start ************')
@@ -1408,12 +1465,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest58
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5800
-     * @tc.name DataObjectErrTest58
-     * @tc.desc Test DataObject off progressChanged
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off progressChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest58 start ************')
@@ -1431,12 +1489,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest59
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5900
-     * @tc.name DataObjectErrTest59
-     * @tc.desc Test DataObject off
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest59 start ************')
@@ -1452,12 +1511,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest60
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6000
-     * @tc.name DataObjectErrTest60
-     * @tc.desc Test DataObject off
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest60 start ************')
@@ -1473,12 +1533,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest61
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6100
-     * @tc.name DataObjectErrTest61
-     * @tc.desc Test DataObject off
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest61 start ************')
@@ -1494,12 +1555,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest62
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6200
-     * @tc.name DataObjectErrTest62
-     * @tc.desc Test DataObject off
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest62 start ************')
@@ -1515,12 +1577,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest63
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6300
-     * @tc.name DataObjectErrTest63
-     * @tc.desc Test DataObject off
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest63', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest63 start ************')
@@ -1536,12 +1599,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest64
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6400
-     * @tc.name DataObjectErrTest64
-     * @tc.desc Test DataObject on progressChanged 2000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on progressChanged 2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest64 start ************')
@@ -1559,12 +1623,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest65
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6500
-     * @tc.name DataObjectErrTest65
-     * @tc.desc Test DataObject on status 2000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on status 2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest65', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest65 start ************')
@@ -1582,12 +1647,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest66
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6600
-     * @tc.name DataObjectErrTest66
-     * @tc.desc Test DataObject on change 2000
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on change 2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest66', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest66 start ************')
@@ -1605,12 +1671,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest67
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6700
-     * @tc.name DataObjectErrTest67
-     * @tc.desc Test DataObject on progressChanged off on
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on progressChanged off on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest67', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest67 start ************')
@@ -1633,12 +1700,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest68
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6800
-     * @tc.name DataObjectErrTest68
-     * @tc.desc Test DataObject on status off on
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on status off on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest68', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest68 start ************')
@@ -1661,12 +1729,13 @@ export default function DataObjectErrTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest69
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6900
-     * @tc.name DataObjectErrTest69
-     * @tc.desc Test DataObject on change off on
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Test DataObject on change off on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DataObjectErrTest69', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info(TAG + '************ DataObjectErrTest69 start ************')
@@ -1686,6 +1755,64 @@ export default function DataObjectErrTest() {
         expect().assertFail();
       }
       console.info(TAG + '************ DataObjectErrTest69 end ************');
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest70
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7000
+     * @tc.desc   Test DataObject SetSessionId Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest70 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let result = g_object.setSessionId(distributedDataObject.genSessionId());
+      expect(result).assertEqual(true);
+      console.info(TAG + '************ DataObjectErrTest70 end ************');
+    })
+
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   DataObjectErrTest71
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7100
+     * @tc.desc   Test DataObject SetSessionId Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest71 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let result = g_object.setSessionId('123456@123');
+      expect(result).assertEqual(false);
+      console.info(TAG + '************ DataObjectErrTest71 end ************');
     })
   })
 }

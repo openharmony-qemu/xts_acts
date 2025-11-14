@@ -19,7 +19,7 @@ import formError from "@ohos.application.formError";
 import Utils from './Util.test';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
 
 export default function formErrorTest() {
@@ -27,9 +27,12 @@ export default function formErrorTest() {
         hilog.info(DOMAIN, TAG, 'formErrorTest describe start');
 
         /**
-         * @tc.number: FormErrorStaticTest001
-         * @tc.name: FormErrorStaticTest001
-         * @tc.desc: check formError
+         * @tc.name   FormErrorStaticTest001
+         * @tc.number FormErrorStaticTest001
+         * @tc.desc   check formError
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormErrorStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);

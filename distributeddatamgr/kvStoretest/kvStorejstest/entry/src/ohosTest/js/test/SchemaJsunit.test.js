@@ -109,14 +109,17 @@ describe('schemaTest', function() {
             await ddm.createKVManager(config).then((manager) => {
                 kvManager = manager;
                 console.info('beforeAll createKVManager success');
+                done();
             }).catch((err) => {
                 console.info('beforeAll createKVManager err ' + err);
+                done();
             });
         } catch (e) {
             console.info("fail on exception: " + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     afterAll(async function (done) {
@@ -137,23 +140,27 @@ describe('schemaTest', function() {
             console.info('afterEach closeKVStore success');
             await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
                 console.info('afterEach deleteKVStore success');
+                kvStore = null;
+                done();
             }).catch((err) => {
                 console.info('afterEach deleteKVStore err ' + err);
+                done();
             });
         }).catch((err) => {
             console.info('afterEach closeKVStore err ' + err);
+            done();
         });
-        kvStore = null;
-        done();
+
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testToJsonString001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2100
-     * @tc.name testToJsonString001
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testToJsonString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
@@ -183,12 +190,13 @@ describe('schemaTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testToJsonString002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2200
-     * @tc.name testToJsonString002
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testToJsonString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
@@ -222,12 +230,13 @@ describe('schemaTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testToJsonString003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2300
-     * @tc.name testToJsonString003
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testToJsonString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
@@ -269,14 +278,15 @@ describe('schemaTest', function() {
         done();
     })
 
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2000
-     * @tc.name testToJsonString004
-     * @tc.desc Test Js Api Schema.ToJsonString() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+        /**
+         * @generated.time 2025-11-09 20:49:49
+         * @tc.name   testToJsonString004
+         * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_2000
+         * @tc.desc   Test Js Api Schema.ToJsonString() testcase 004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testToJsonString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 let name = new ddm.FieldNode('name');
@@ -315,14 +325,15 @@ describe('schemaTest', function() {
         })
 
 
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1800
-     * @tc.name testroot001
-     * @tc.desc Test Js Api Schema.root testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:49
+      * @tc.name   testroot001
+      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1800
+      * @tc.desc   Test Js Api Schema.root testcase 001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testroot001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
             let english = new ddm.FieldNode('english');
@@ -337,14 +348,15 @@ describe('schemaTest', function() {
         done();
     })
 
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1500
-     * @tc.name testindexes001
-     * @tc.desc Test Js Api Schema.indexes testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:49
+      * @tc.name   testindexes001
+      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1500
+      * @tc.desc   Test Js Api Schema.indexes testcase 001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testindexes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
 
@@ -358,14 +370,15 @@ describe('schemaTest', function() {
         done();
     })
 
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1700
-     * @tc.name testmode001
-     * @tc.desc Test Js Api Schema.mode testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:49
+      * @tc.name   testmode001
+      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1700
+      * @tc.desc   Test Js Api Schema.mode testcase 001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testmode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
 
@@ -380,14 +393,15 @@ describe('schemaTest', function() {
         done();
     })
 
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1600
-     * @tc.name testmode002
-     * @tc.desc Test Js Api Schema.mode testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:49
+      * @tc.name   testmode002
+      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1600
+      * @tc.desc   Test Js Api Schema.mode testcase 002
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testmode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
 
@@ -402,14 +416,15 @@ describe('schemaTest', function() {
         done();
     })
 
-    /**
-     * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1900
-     * @tc.name testskip001
-     * @tc.desc Test Js Api Schema.skip testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:49
+      * @tc.name   testskip001
+      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaJsApiTest_1900
+      * @tc.desc   Test Js Api Schema.skip testcase 001
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testskip001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         try {
 

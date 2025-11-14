@@ -91,12 +91,13 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************insertSync***************************/
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100');
@@ -123,12 +124,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0200
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase illegal paramter
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0200');
@@ -147,12 +149,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0300
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase illegal paramter
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0300');
@@ -178,12 +181,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0400
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase illegal paramter
-     * @tc.type: FUNC
-     * @tc.name TTest Js Api relationalStore.insertSync() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0400');
@@ -209,12 +213,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0500
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase illegal paramter
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 005
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0500');
@@ -239,12 +244,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0600
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase illegal paramter
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 006
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0600');
@@ -270,12 +276,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0700
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 007
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0700');
@@ -306,12 +313,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0800
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase Corrupt database
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 008
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase Corrupt database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info(TAG + 'SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0800');
@@ -348,12 +356,13 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************updateSync***************************/
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1000
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1000');
@@ -390,12 +399,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1100
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 002
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1100');
@@ -432,12 +442,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1200
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1200');
@@ -469,12 +480,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1400
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 004
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1400');
@@ -504,12 +516,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1500
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 005
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 005
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1500');
@@ -538,12 +551,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1600
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 006
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 006
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1600');
@@ -573,12 +587,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1700
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 007
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 007
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1700');
@@ -607,12 +622,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1800
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 009
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 009
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1800');
@@ -648,12 +664,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1900
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 010
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 010
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1900');
@@ -689,12 +706,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2000
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 011
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 011
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2000');
@@ -724,12 +742,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2100
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 012
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 012
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2100');
@@ -765,12 +784,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2200
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 013
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 013
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2200');
@@ -807,12 +827,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400
-     * @tc.desc Test Js Api relationalStore.updateSync() testcase 014
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.updateSync() testcase 014
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.updateSync() testcase 014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2300');
@@ -851,12 +872,13 @@ export default function RelationalStoreSyncApiTest() {
     /***************************************deleteSync***************************/
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400
-     * @tc.desc Test Js Api relationalStore.deleteSync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.deleteSync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400');
@@ -886,12 +908,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2500
-     * @tc.desc Test Js Api relationalStore.deleteSync() testcase 002
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.deleteSync() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2500');
@@ -921,12 +944,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2600
-     * @tc.desc Test Js Api relationalStore.deleteSync() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.deleteSync() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2600');
@@ -956,12 +980,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2700
-     * @tc.desc Test Js Api relationalStore.deleteSync() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.deleteSync() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2700');
@@ -991,12 +1016,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2800
-     * @tc.desc Test Js Api relationalStore.deleteSync() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.deleteSync() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2800');
@@ -1026,12 +1052,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2900
-     * @tc.desc Test Js Api relationalStore.deleteSync() testcase 013
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.deleteSync() testcase 013
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2900');
@@ -1064,12 +1091,13 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************querySync***************************/
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3100
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3100');
@@ -1106,12 +1134,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3200
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3200');
@@ -1147,12 +1176,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3300
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3300');
@@ -1181,12 +1211,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3400
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3400');
@@ -1217,12 +1248,13 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************batchInsertSync***************************/
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3500
-     * @tc.desc Test Js Api relationalStore.batchInsertSync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3500');
@@ -1262,12 +1294,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3600
-     * @tc.desc Test Js Api relationalStore.batchInsertSync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3600');
@@ -1307,12 +1340,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3700
-     * @tc.desc Test Js Api relationalStore.batchInsertSync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3700');
@@ -1352,12 +1386,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3800
-     * @tc.desc Test Js Api relationalStore.batchInsertSync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3800');
@@ -1398,12 +1433,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3900
-     * @tc.desc Test Js Api relationalStore.batchInsertSync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3900');
@@ -1426,12 +1462,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase Corrupt database
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 008
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase Corrupt database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000');
@@ -1464,12 +1501,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4100
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase the wal File is 200M
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 009
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase the wal File is 200M
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4100');
@@ -1513,12 +1551,13 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************querySqlSync***************************/
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4200
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4200');
@@ -1555,12 +1594,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4300
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4300');
@@ -1593,12 +1633,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4400
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4400');
@@ -1625,12 +1666,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4500
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4500');
@@ -1659,12 +1701,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4600
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4600');
@@ -1694,12 +1737,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4700
-     * @tc.desc Test Js Api relationalStore.querySync() testcase 001
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.querySync() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4700');
@@ -1735,12 +1779,13 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************executeSync***************************/
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4800
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4800');
@@ -1760,12 +1805,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4900
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4900');
@@ -1787,12 +1833,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5000
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5000');
@@ -1812,12 +1859,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5100
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5100');
@@ -1837,12 +1885,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5200
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5200');
@@ -1862,12 +1911,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5300
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5300');
@@ -1888,12 +1938,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5500
-     * @tc.desc Test Js Api relationalStore.insertSync() testcase Corrupt database
-     * @tc.type: FUNC
-     * @tc.name Test Js Api relationalStore.insertSync() testcase 008
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api relationalStore.insertSync() testcase Corrupt database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5500');
@@ -1926,12 +1977,13 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5700
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5700');
@@ -1972,12 +2024,13 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
+     * @generated.time 2025-11-09 20:49:51
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5800
-     * @tc.desc Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.type: FUNC
-     * @tc.name Test Js Api SingleKvStore.GetResultSet() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
       console.info('SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5800');

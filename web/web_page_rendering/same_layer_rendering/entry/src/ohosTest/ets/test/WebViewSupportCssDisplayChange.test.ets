@@ -67,7 +67,7 @@ export default function webViewSupportCssDisplayChange() {
     it('emitSupportCssDisplayChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSupportCssDisplayChange0100", 153940)
       Utils.registerEvent("emitSupportCssDisplayChange0100", 'Hidden', 153950, done);
-      waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
+      await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
     })
 
     /*
@@ -81,8 +81,7 @@ export default function webViewSupportCssDisplayChange() {
     it('emitSupportCssDisplayChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSupportCssDisplayChange0200", 153940)
       Utils.registerEvent("emitSupportCssDisplayChange0200", 'visible', 153960, done);
-      let component = await driver.findComponent(ON.id("WebSupportCssDisplayChangeButton"));
-      await component.click();
+      await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
     })
 
   })

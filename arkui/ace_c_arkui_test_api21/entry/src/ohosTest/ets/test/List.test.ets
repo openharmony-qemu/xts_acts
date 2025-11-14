@@ -18,6 +18,10 @@ import EdgesPositionTest from './position/EdgesPositionTest.test'
 import textContentAlignTest from './textContentAlign/TextContentAlignTest.test'
 import PixelRoundTest from './PixelRound/PixelRoundTest.test'
 import TestAllowForceDark from './allowForceDark/TestAllowForceDark.test'
+import ColumnMatchParentTest from './Column/ColumnMatchParentTest'
+import ColumnWrapContentTest from './Column/ColumnWrapContentTest'
+import ColumnFixAtiDealSizeTest from './Column/ColumnFixAtiDealSizeTest'
+import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffect.test'
 
 export default function testsuite() {
   TestInvalidateAttributes();
@@ -26,4 +30,8 @@ export default function testsuite() {
   textContentAlignTest();
   PixelRoundTest();
   TestAllowForceDark();
+  ColumnMatchParentTest();
+  ColumnWrapContentTest();
+  ColumnFixAtiDealSizeTest();
+  ImageContentTransitionEffectTest();
 }

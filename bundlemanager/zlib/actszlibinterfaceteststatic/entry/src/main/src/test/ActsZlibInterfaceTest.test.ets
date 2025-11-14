@@ -67,13 +67,14 @@ export default function ActsZlibInterfaceTest() {
         zlib.compressFile(inFile33, outFile35, options).then((): Promise<void> => {
           hilog.info(domain, tag, 'getOriginalSize prepare test.zip success');
           try {
-            zlib.getOriginalSize(outFile35).then((data: double): void => {
+            zlib.getOriginalSize(outFile35).then((data: long): void => {
               hilog.info(domain, tag, `ActsZlibInterfaceTest_static_01 getOriginalSize success. getOriginalSize: ${data}`);
               expect(data >= 0).assertEqual(true);
               done();
-            }).catch((err: Error) => {
-              hilog.info(domain, tag, "getOriginalSize failed with error:" + err);
-              expect(err).assertFail();
+              }).catch((errData: BusinessError<void>): void => {
+                hilog.error(domain, tag,
+                  `ACTS_ZlibInterfaceTest_static_01 getOriginalSize failed errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData).assertFail();
               done();
             });
           } catch(errData: BusinessError) {

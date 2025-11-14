@@ -29,9 +29,9 @@
    static sub(c0: char, c1: char): char {
      let c: Char = new Char(c'0');
      if (c0 > c1) {
-       c = (c0 - c1).toChar();
+       c = (c0.toInt() - c1.toInt()).toChar();
      } else {
-       c = (c1 - c0).toChar();
+       c = (c1.toInt() - c0.toInt()).toChar();
      }
      return c as char;
    }

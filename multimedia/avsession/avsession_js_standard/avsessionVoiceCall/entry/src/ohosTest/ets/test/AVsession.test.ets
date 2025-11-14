@@ -2287,6 +2287,7 @@ export default function abilityTest() {
         subtitle: 'music_sub_name',
         description: 'music_description',
         pcmSrc: true,
+        mediaImage: 'Image',
         extras: {extras:'any'}
       };
       let queueItem_1: avSession.AVQueueItem = {
@@ -2299,6 +2300,7 @@ export default function abilityTest() {
         subtitle: 'music_sub_name',
         description: 'music_description',
         pcmSrc: true,
+        mediaImage: 'Image',
         extras: {extras:'any'}
       };
       let queueItem_2: avSession.AVQueueItem = {
@@ -3843,7 +3845,8 @@ export default function abilityTest() {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
-          album:str.substring(0,40960)
+          album:str.substring(0,40960),
+          title: 'this is a title'
       };
       await session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
@@ -4632,7 +4635,57 @@ export default function abilityTest() {
         expect(err.code).assertEqual(6600103);
       });
       done();
-    })   
+    })
+
+   /* *
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_0100
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_0100
+    * @tc.desc      : Testing call getAVSession(context)
+    * @tc.size      : MediumTest
+    * @tc.type      : Fault Tolerance
+    * @tc.level     : Level 2
+    */
+
+    it('SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try{
+        await sleep(500);
+        avSession.getAVSession(context).then((data) => {
+          session = data;
+          console.info('getAVSession successfully${session.sessionType}');
+        })
+      } catch (err) {
+        console.info('getAVSession failed${err.code} message:${err.message}');
+        expect(false).assertTrue()
+        done();
+      }
+      done();
+    })       
+
+   /* *
+    * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_0200
+    * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_0200
+    * @tc.desc      : Testing call getAVSession(context) 6600102
+    * @tc.size      : MediumTest
+    * @tc.type      : Fault Tolerance
+    * @tc.level     : Level 4
+    */
+
+    it('SUB_MULTIMEDIA_AVSESSION_GETAVSESSION_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      await session.destroy();
+      try{
+        await sleep(500);
+        avSession.getAVSession(context).then((data) => {
+          expect(data.sessionTag).assertEqual(session.sessionTag)
+          console.info('getAVSession successfully${data.sessionType}');
+          expect(false).assertTrue();
+        })
+      } catch (err) {
+        console.info('getAVSession failed${err.code} message:${err.message}');
+        expect(err.code).assertEqual(6600102)
+        done();
+      }
+      done();
+    })  
 
 
   })

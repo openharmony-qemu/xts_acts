@@ -25,6 +25,13 @@
         "MainAbility/pages/Context/FrameNodeIsDisposedTest",
         "MainAbility/pages/Context/RenderNodeIsDisposedTest",
         "MainAbility/pages/Context/NodeAdapterIsDisposedTest",
-        "MainAbility/pages/FrameNode/frameNodeGetAttributeTest"
+        "MainAbility/pages/FrameNode/frameNodeGetAttributeTest",
+        "MainAbility/pages/FrameNode/IsModifiableBooleanTest",
+        "MainAbility/pages/FrameNode/GetAllAvailableItemsTest",
+        "MainAbility/pages/FrameNode/RenderNodeMethodNullTest",
+        "MainAbility/pages/FrameNode/MakeNodeNullTest",
+        "MainAbility/pages/FrameNode/AttachNodeAdapterBooleanTest",
+        "MainAbility/pages/Context/IsFollowingSystemFontScaleFalseTest",
+        "MainAbility/pages/FrameNode/isTransferredTest"
   ]
 }

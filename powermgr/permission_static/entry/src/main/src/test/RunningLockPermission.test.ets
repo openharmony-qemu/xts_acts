@@ -17,11 +17,10 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import { BusinessError } from '@ohos.base'
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
-import runningLock from '@ohos.runningLock'
+import runningLock from '@ohos.runningLock';
 
 let domain: int = 0x0000;
 let tag: string = 'RunningLockPermissionTest';
-const PERMISSION_DENIED_CODE = 201;
 
 export default function RunningLockPermissionTest() {
 
@@ -29,14 +28,15 @@ export default function RunningLockPermissionTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number RunningLockPermissionETSTest_0100
+     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockPermissionTest_static_0100
+     * @tc.number RunningLockPermissionETSTest_0100
      * @tc.desc   Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it("testRunningLockPermissionTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("testRunningLockPermissionTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'testRunningLockPermissionTest_static_0100';
         hilog.info(domain, tag, `${TAG} start`);
@@ -47,25 +47,26 @@ export default function RunningLockPermissionTest() {
               expect().assertFail();
               done();
             })
-            .catch((error: BusinessError) : void => {
+            .catch((error: BusinessError): void => {
               hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
-              expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+              expect(error.code).assertEqual(201);
               done();
             })
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(PERMISSION_DENIED_CODE);
+          expect(e.code).assertEqual(201);
           done();
         }
       })
 
     /**
-     * @tc.number RunningLockPermissionETSTest_0200
+     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testRunningLockPermissionTest_static_0200
+     * @tc.number RunningLockPermissionETSTest_0200
      * @tc.desc   Function test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRunningLockPermissionTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -76,8 +77,8 @@ export default function RunningLockPermissionTest() {
             (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
               hilog.info(domain, tag, `${TAG} lock:${lock}`);
               if (lock === undefined) {
-                hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(error)}`);
-                expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+                hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+                expect(error?.code).assertEqual(201);
                 done();
               } else {
                 expect().assertFail();
@@ -86,10 +87,9 @@ export default function RunningLockPermissionTest() {
             })
         } catch (e : BusinessError) {
           hilog.error(domain, tag, `${TAG} e in catch: ${JSON.stringify(e)}`);
-          expect(e.code).assertEqual(PERMISSION_DENIED_CODE);
+          expect(e.code).assertEqual(201);
           done();
         }
       })
   })
-  hilog.info(domain, tag, '%{public}s', 'BrightnessTest end');
 }

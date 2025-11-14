@@ -35,6 +35,7 @@ struct webViewSetAudioMuted {
   @State databaseAccess: boolean = true;
   @State userAgent: string = "Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State mutedResult: string = "false";
+  @State muted: boolean = false;
   @State checkResult: string = "";
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
@@ -73,6 +74,7 @@ struct webViewSetAudioMuted {
           switch (this.str) {
             case "emitSetAudioMuted": {
               try {
+                this.controller.setAudioMuted(true);
                 this.controller.runJavaScript("enableMute()", (error, result) => {
                   this.mutedResult = result
                   console.log(`The controller.enableMute() return value is: ${result}`);
@@ -92,10 +94,12 @@ struct webViewSetAudioMuted {
             case "emitSetAudioDisMuted": {
               try {
                 this.mutedResult = 'true';
+                this.controller.setAudioMuted(false);
                 this.controller.runJavaScript("disableMute()", (error, result) => {
                   this.mutedResult = result
                   console.log(`The controller.disableMute() return value is: ${result}`);
                 })
+
                 this.controller.runJavaScript("checkMute()", (error, result) => {
                   this.checkResult = result
                   console.log(`The controller.checkMute() return value is: ${result}`);
@@ -108,6 +112,8 @@ struct webViewSetAudioMuted {
               }
               break;
             }
+
+
           }
         })
       }

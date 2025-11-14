@@ -45,9 +45,9 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
      * @tc.desc      : test the function of Recover
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testRecover', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testRecover', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = 'testRecover';
       console.log(msgStr + ' begin');
       try {

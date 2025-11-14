@@ -32,6 +32,7 @@ import cameraSecureSessionTest from './CameraSecureSessionTest.test.ets'
 import cameraSessionCameraRotationTest from './CameraSessionCameraRotationTest.test.ets'
 import cameraVideoCodecTypeTest from './CameraVideoCodecTypeTest.test.ets'
 import cameraSessionAutoDeviceSwitchTest from './CameraSessionAutoDeviceSwitchTest.test.ets'
+import cameraSessionSystemPressureTest from './CameraSessionSystemPressureTest.test.ets'
 import cameraMirrorTest from './CameraMirrorTest.test.ets'
 import cameraVideoMirrorTest from './CameraVideoMirrorTest.test.ets'
 import cameraVideoQualityPrioritizationTest from './CameraVideoQualityPrioritizationTest.test.ets'
@@ -67,4 +68,5 @@ export default function testsuite() {
   cameraVideoQualityPrioritizationTest();
   cameraConcurrentTest();
   cameraPhotoSessionTest();
+  cameraSessionSystemPressureTest();
 }

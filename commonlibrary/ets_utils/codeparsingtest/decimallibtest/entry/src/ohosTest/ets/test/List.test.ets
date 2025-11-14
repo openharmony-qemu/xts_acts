@@ -14,8 +14,10 @@
 */
 
 import decimalTest from './decimal/Decimal.test'
+import Decimal2Test from './decimal/Decimal2.test'
 
 
 export default function testsuite() {
+  Decimal2Test();
   decimalTest();
 }

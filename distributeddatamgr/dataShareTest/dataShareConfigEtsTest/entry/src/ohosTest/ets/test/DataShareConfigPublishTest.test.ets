@@ -58,12 +58,13 @@ export default function dataShareConfigPublishTest() {
     })
 
     /**
-     * @tc.name dataShareConfigPublishTest001
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest001
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0010
-     * @tc.desc single uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   single uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
@@ -94,12 +95,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest002
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest002
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0070
-     * @tc.desc uri is 256
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let tmpStr = "123456".repeat(34);
@@ -133,12 +135,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest003
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0110
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -169,12 +172,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest004
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest004
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0060
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -202,12 +206,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest005
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest005
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0130
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -237,12 +242,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest006
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest006
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0140
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -272,12 +278,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest007
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest007
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0170
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -307,12 +314,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest008
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest008
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0180
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -342,12 +350,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest009
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest009
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0190
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -377,12 +386,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest010
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest010
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0200
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -412,12 +422,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest011
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest011
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0370
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -444,12 +455,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest012
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest012
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0380
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -476,12 +488,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest014
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest014
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0260
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -511,12 +524,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest015
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0280
-     * @tc.desc value length is 4096
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   value length is 4096
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -546,12 +560,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest016
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest016
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0270
-     * @tc.desc value length is 4097
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   value length is 4097
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -576,12 +591,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest017
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest017
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0220
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -611,12 +627,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest018
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest018
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0230
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -646,12 +663,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest019
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest019
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0250
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -681,12 +699,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest020
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest020
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0290
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -721,12 +740,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest021
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest021
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0300
-     * @tc.desc allowList length is 256
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   allowList length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -759,12 +779,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest022
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest022
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0330
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -794,12 +815,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest023
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest023
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0340
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -829,12 +851,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest024
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest024
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0360
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -864,12 +887,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest025
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest025
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0150
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -887,12 +911,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest026
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest026
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0160
-     * @tc.desc depth is 2,UPSTREAM
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   depth is 2,UPSTREAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -910,12 +935,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest027
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest027
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0120
-     * @tc.desc proxyData is []
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   proxyData is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -934,12 +960,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest028
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest028
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0080
-     * @tc.desc uri is 32
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri is 32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -971,12 +998,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest029
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest029
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0100
-     * @tc.desc uri is 33
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri is 33
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1004,12 +1032,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest030
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest030
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0090
-     * @tc.desc uri is 32,then add uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   uri is 32,then add uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1064,12 +1093,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest031
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest031
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0350
-     * @tc.desc allowList length is 256
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   allowList length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1107,12 +1137,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest032
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest032
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0020
-     * @tc.desc three different uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   three different uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1155,12 +1186,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest033
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest033
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0030
-     * @tc.desc three same uri
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   three same uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1201,12 +1233,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest034
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest034
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0050
-     * @tc.desc contains error bundle name
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   contains error bundle name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1240,12 +1273,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest035
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest035
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0040
-     * @tc.desc error bundle name
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   error bundle name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1274,12 +1308,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest036
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest036
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1250
-     * @tc.desc error bundle name
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   error bundle name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
@@ -1348,12 +1383,13 @@ export default function dataShareConfigPublishTest() {
     });
 
     /**
-     * @tc.name dataShareConfigPublishTest037
+     * @generated.time 2025-11-09 20:49:53
+     * @tc.name   dataShareConfigPublishTest037
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1260
-     * @tc.desc error bundle name
-     * @tc.size MediumTest
-     * @tc.type RELIABILITY
-     * @tc.level Level 1
+     * @tc.desc   error bundle name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dataShareConfigPublishTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {

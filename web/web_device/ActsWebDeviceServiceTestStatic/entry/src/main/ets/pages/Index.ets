@@ -13,9 +13,8 @@
  * limitations under the License.
  */
 
-import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { Entry, Web, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, OnGeolocationShowEvent, JsGeolocation} from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State, MutableState, stateOf, observableProxy } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 import webView from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';

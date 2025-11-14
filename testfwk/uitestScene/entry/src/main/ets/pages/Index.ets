@@ -22,15 +22,18 @@ struct ScrollExample {
   private arr: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
   @State hoverText : string = 'jump'
   @State pressure : number = 0.0
+  @State isShowSwipeEventCom: boolean = false;
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('MainPage')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
+        .accessibilityDefaultFocus(true)
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           Column() {
             Button('toast').fontSize(25).fontWeight(FontWeight.Bold)
+              .id('toastBtn')
               .onClick(() => {
                 try {
                   console.info('toastShow start')
@@ -45,6 +48,7 @@ struct ScrollExample {
               })
 
             Button('dialog').fontSize(25).fontWeight(FontWeight.Bold)
+              .id('dialogBtn')
               .onClick(() => {
                 console.info('dialog start')
                 AlertDialog.show(
@@ -96,6 +100,7 @@ struct ScrollExample {
                 .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
+            .id('twiceBtn')
             .type(ButtonType.Capsule)
             .margin({ top: 20 })
             .gesture(
@@ -162,6 +167,7 @@ struct ScrollExample {
                 .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
+            .id('scrollBtn')
             .type(ButtonType.Capsule)
             .margin({ top: 20 })
             .onClick(() => {
@@ -169,18 +175,36 @@ struct ScrollExample {
               router.push({ uri: 'pages/scroll' })
               console.info('jump to scroll over')
             })
-            Button() {
-              Text('wearList')
-                .fontSize(25)
-                .fontWeight(FontWeight.Bold)
+            Row() {
+              Button() {
+                Text('wearList')
+                  .fontSize(25)
+                  .fontWeight(FontWeight.Bold)
+              }
+              .id('wearListBtn')
+              .type(ButtonType.Capsule)
+              .margin({ top: 20 })
+              .onClick(() => {
+                console.info('jump to wearList')
+                router.push({ uri: 'pages/wearList' })
+                console.info('jump to wearList over')
+              })
+              Button() {
+                Text('并行测试')
+                  .fontSize(25)
+                  .fontWeight(FontWeight.Bold)
+              }
+              .id('to5')
+              .margin({left: 10})
+              .type(ButtonType.Capsule)
+              .margin({ top: 20 })
+              .onClick(() => {
+                console.info('jump to five')
+                router.push({ uri: 'pages/five' })
+                console.info('jump to five over')
+              })
             }
-            .type(ButtonType.Capsule)
-            .margin({ top: 20 })
-            .onClick(() => {
-              console.info('jump to wearList')
-              router.push({ uri: 'pages/wearList' })
-              console.info('jump to wearList over')
-            })
+
             Row() {
               Checkbox({ name: 'hi' })
                 .size({ width: 30, height: 30 })
@@ -217,7 +241,8 @@ struct ScrollExample {
                 .fontWeight(FontWeight.Bold)
             }.type(ButtonType.Capsule)
             .margin({
-              top: 20, left: 150
+              top: 20, left: 150,
+              bottom: 20
             })
             .onClick(() => {
               console.info('jump to second')
@@ -228,6 +253,12 @@ struct ScrollExample {
         }
         .scrollable(ScrollDirection.Vertical)
         .scrollBar(BarState.On)
+        .onScrollStart(() => {
+          this.isShowSwipeEventCom = true
+        })
+        .onScrollStop(() => {
+          this.isShowSwipeEventCom = false;
+        })
         .scrollBarColor(Color.Gray)
         .scrollBarWidth(30)
         .id('parentScroll')
@@ -239,12 +270,20 @@ struct ScrollExample {
         console.log(`onTouch action 11111`);
         this.pressure = event.pressure;
       })
-      Text(this.pressure.toFixed(1))
-        .id('pressure')
-        .fontSize(20)
-      Text('MainPage_End')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
+      Column() {
+          Text('ShowSwipeEventCom')
+            .id('ShowSwipeEventCom')
+            .fontSize(20)
+            .visibility(this.isShowSwipeEventCom ? Visibility.Visible: Visibility.Hidden)
+        Text(this.pressure.toFixed(1))
+          .id('pressure')
+          .fontSize(20)
+        Text('MainPage_End')
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
+      }.margin({
+        top: 20
+      })
     }
   }
 }

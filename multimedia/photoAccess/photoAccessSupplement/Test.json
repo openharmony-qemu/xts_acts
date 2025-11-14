@@ -37,13 +37,15 @@
             "push": [
                 "./resource/medialibrary/01.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "./resource/medialibrary/01.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
-                "./resource/medialibrary/01.jpg ->/data/tmp/case"
+                "./resource/medialibrary/01.jpg ->/data/tmp/case",
+                "./resource/medialibrary/test_exif.jpg ->/data/tmp/case"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "mediatool send /data/tmp/case/01.jpg"
+                "mediatool send /data/tmp/case/01.jpg",
+                "mediatool send /data/tmp/case/test_exif.jpg"
             ],
             "teardown-command": [
                 "rm -rf /data/tmp/case/*"

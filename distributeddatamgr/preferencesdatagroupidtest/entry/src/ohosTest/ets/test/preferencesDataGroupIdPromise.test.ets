@@ -30,18 +30,19 @@ export default function preferencesDataGroupIdPromise() {
     console.log(TAG + "*************Unit Test Begin*************");
 
 
-    /**
-     * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0300
-     * @tc.name preferences dataGroupId null promise test
-     * @tc.desc preferences getPreferences dataGroupId null promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
      class Option{
       name : string = '';
       dataGroupId: null | undefined
      }
+    /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0100
+     * @tc.number SUB_DDM_Preferences_DataGroupId_Promise_0100
+     * @tc.desc   SUB_DDM_Preferences_DataGroupId_Promise_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_Preferences_DataGroupId_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options : Option = {
         name: "test_preferences_callback",
@@ -71,12 +72,13 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0200
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0600
-     * @tc.name preferences dataGroupId undefined promise test
-     * @tc.desc preferences getPreferences dataGroupId undefined promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   preferences getPreferences dataGroupId undefined promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DDM_Preferences_DataGroupId_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const Options: dataPreferences.Options = {
@@ -107,12 +109,13 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0300
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1000
-     * @tc.name preferences dataGroupId promise test
-     * @tc.desc preferences getPreferences dataGroupId promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences getPreferences dataGroupId promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Promise_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {
@@ -146,13 +149,14 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0400
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1400
-     * @tc.name preferences dataGroupId null promise test
-     * @tc.desc preferences getPreferences dataGroupId null promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */ 
+     * @tc.desc   preferences getPreferences dataGroupId null promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_Preferences_DataGroupId_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options : Option= {
         name: "test_preferences_callback",
@@ -182,12 +186,13 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0500
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_0700
-     * @tc.name preferences dataGroupId undefined promise test
-     * @tc.desc preferences removePreferencesFromCache dataGroupId undefined promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences removePreferencesFromCache dataGroupId undefined promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Promise_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {
@@ -218,12 +223,13 @@ export default function preferencesDataGroupIdPromise() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_DDM_Preferences_DataGroupId_Promise_0600
      * @tc.number SUB_DistributedData_Preference_SDK_DataGroupIdTest_1100
-     * @tc.name preferences dataGroupId promise test
-     * @tc.desc preferences removePreferencesFromCache dataGroupId promise test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   preferences removePreferencesFromCache dataGroupId promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_Preferences_DataGroupId_Promise_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const Options: dataPreferences.Options = {

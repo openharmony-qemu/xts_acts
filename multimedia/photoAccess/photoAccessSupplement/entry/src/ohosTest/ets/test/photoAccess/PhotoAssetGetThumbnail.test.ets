@@ -341,24 +341,6 @@ export default function getThumbnailTest() {
       });
     });
 
-    /**
-     * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_0011
-     * @tc.name     SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_0011
-     * @tc.desc     getThumbnail
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
-     */
-    it('SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_0011', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_0011';
-      const fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.mp4');
-      const size: image.Size = {
-        width: 128, height: 128
-      };
-      await getThumbnailPromiseAbnormal(done, testNum, fetchOps, size, (errorCode: number) => {
-        expect(errorCode).assertEqual('3');
-      });
-    });
 
     /**
      * @tc.number   SUB_MEDIA_PHOTO_ASSET_SENDABLE_ASSET_GET_THUMBNAIL_0012

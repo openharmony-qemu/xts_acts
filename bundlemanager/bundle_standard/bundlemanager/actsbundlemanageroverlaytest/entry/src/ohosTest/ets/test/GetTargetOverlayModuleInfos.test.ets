@@ -20,6 +20,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestT
 
 const MODULE_NAME = "entry_test";
 const MODULE_NAME1 = "test1";
+const MODULE_NAME_TARGET = "entry";
 const MODULE_NAME2 = "hsp";
 const ERROR_INCOMING_MODULE_NAME_NOT_INSTALL = 17700002;
 const ERROR_INCOMING_MODULE_NAME_IS_OVERLAY = 17700034;
@@ -112,6 +113,91 @@ export default function getTargetOverlayModuleInfos() {
           expect().assertFail();
       }
     })
+
+    /*
+    * @tc.number: Sub_Bms_Framework_Overlay_Query_0910
+    * @tc.name:   Sub_Bms_Framework_Overlay_Query_0910
+    * @tc.desc:   test getTargetOverlayModuleInfos promise length
+    * @tc.size:   MediumTest
+    * @tc.type:   Function
+    * @tc.level:  Level 2
+   */
+        it('Sub_Bms_Framework_Overlay_Query_0910', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done:Function) => {
+          try {
+            await overlay.getTargetOverlayModuleInfos(MODULE_NAME_TARGET).then(data => {
+              console.info("Sub_Bms_Framework_Overlay_Query_0910 result" + JSON.stringify(data));
+              expect(data.length == 1).assertTrue();
+              data.forEach((val,idx,array)=>{
+                 if (idx == 0) {
+                     console.info("Sub_Bms_Framework_Overlay_Query_0910 idx" + idx);
+                     expect(val.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
+                     expect(val.moduleName).assertEqual("hsp")
+                     expect(val.targetModuleName).assertEqual("entry")
+                     expect(val.priority == 1).assertTrue();
+                     expect(val.state == 1).assertTrue();
+                    
+                 }
+    
+              });
+            }).catch((err: BusinessError) => {
+              console.info("Sub_Bms_Framework_Overlay_Query_0910 fail" + JSON.stringify(err));
+              expect().assertFail()
+            });
+          }catch (e) {
+            console.info("Sub_Bms_Framework_Overlay_Query_0910 catch" + JSON.stringify(e));
+            expect().assertFail();
+          }
+          done();
+    
+        })
+    
+    
+        /*
+         * @tc.number: Sub_Bms_Framework_Overlay_Query_0920
+         * @tc.name:   Sub_Bms_Framework_Overlay_Query_0920
+         * @tc.desc:   test getTargetOverlayModuleInfos callback length
+         * @tc.size:   MediumTest
+         * @tc.type:   Function
+         * @tc.level:  Level 2
+        */
+        it('Sub_Bms_Framework_Overlay_Query_0920', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done:Function) => {
+          try {
+    
+            overlay.getTargetOverlayModuleInfos(MODULE_NAME_TARGET, (err, data) => {
+              if (err) {
+                console.error('Sub_Bms_Framework_Overlay_Query_0920 failed due to err code : ' + err.code + ' ' + 'message :' + err.message);
+                expect().assertFail();
+              } else {
+                console.info("Sub_Bms_Framework_Overlay_Query_0920 result" + JSON.stringify(data));
+                expect(data.length == 1).assertTrue();
+                data.forEach((val,idx,array)=>{
+                  if (idx == 0) {
+                    console.info("Sub_Bms_Framework_Overlay_Query_0920 idx" + idx);
+                    expect(val.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
+                    expect(val.moduleName).assertEqual("hsp")
+                    expect(val.targetModuleName).assertEqual("entry")
+                    expect(val.priority == 1).assertTrue();
+                    expect(val.state == 1).assertTrue();
+                  }
+    
+                });
+                
+              }
+              
+            });
+    
+    
+          }catch (e) {
+            console.info("Sub_Bms_Framework_Overlay_Query_0920 catch" + JSON.stringify(e));
+            expect().assertFail();
+          }
+          done();
+    
+        })
+    
+
+
+
 
 
   })

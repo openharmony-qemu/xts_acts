@@ -19,14 +19,15 @@ import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from "@ohos.app.ability.contextConstant";
 import bundleManager from '@ohos.bundle.bundleManager';
 import fileIo from '@ohos.file.fs';
+import CompletionHandler from "@ohos.app.ability.CompletionHandler";
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext
 
@@ -122,7 +123,7 @@ export default function startAbilityTestStatic() {
       hilog.info(domain, tag, `it begin`);
       let filePath = "/data/storage/el2/base/haps/entry/files/test.pdf";
       let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-      const fd: number = file.fd;
+      const fd: int = file.fd;
       console.log('testTag: fd : ' + fd);
       let want: Want = {
         deviceId: '',
@@ -135,8 +136,26 @@ export default function startAbilityTestStatic() {
         type: '',
         parameters: {
           'keyFd': { 'type': 'FD', 'value': fd } as Record<string, Object>
-        } as Record<string, Object>,
+        } as Record<string, RecordData>,
+        flags: 1,
       };
+
+      let handler: CompletionHandler = {
+        onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
+          hilog.info(domain, tag,  '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 onRequestSuccess called,
+            element: ${JSON.stringify(element)}, message: ${message}`);
+          expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
+          expect(element.abilityName).assertEqual('EntryAbility');
+          expect(message).assertContain('Succeeded');
+          done();
+        },
+        onRequestFailure: (element: bundleManager.ElementName, message: string) => {
+          hilog.info(domain, tag,  '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 onRequestFailure called,
+            element: ${JSON.stringify(element)}, message: ${message}`);
+          expect().assertFail();
+          done();
+        }
+      }
 
       let options: StartOptions = {
         windowMode: 0,
@@ -156,7 +175,9 @@ export default function startAbilityTestStatic() {
         minWindowWidth: 100,
         minWindowHeight: 100,
         maxWindowWidth: 100,
-        maxWindowHeight: 100
+        maxWindowHeight: 100,
+        completionHandler: handler,
+        hideStartWindow: true
       };
       let options1: StartOptions = {
         displayId: 0,

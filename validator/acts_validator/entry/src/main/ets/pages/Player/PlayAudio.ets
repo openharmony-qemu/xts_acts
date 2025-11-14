@@ -84,7 +84,7 @@ struct playAudio {
       .onClick(() => {
         this.showControls = !this.showControls;
       })
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Player/PlayAudioList',

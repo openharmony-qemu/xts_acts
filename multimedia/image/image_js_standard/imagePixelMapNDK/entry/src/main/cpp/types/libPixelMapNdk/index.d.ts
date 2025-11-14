@@ -30,7 +30,9 @@ interface decodeOptions {
   height?: number,
   pixelFormat?: image.pixelFormat,
   desiredRegion?: myRegion,
-  cropAndScaleStrategy?: image.CropAndScaleStrategy
+  cropAndScaleStrategy?: image.CropAndScaleStrategy,
+  dynamicRange?: image.DecodingDynamicRange,
+  mimeType?: string
 }
 
 //DMA TEST

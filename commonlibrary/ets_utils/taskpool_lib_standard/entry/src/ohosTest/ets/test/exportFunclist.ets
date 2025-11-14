@@ -77,3 +77,21 @@ export function getLongString(): string {
   }
   return res;
 }
+
+@Concurrent
+export function getTaskResult(taskId: number):boolean {
+  let task: taskpool.Task | undefined = taskpool.getTask(taskId);
+  if (task == undefined) {
+    return false;
+  }
+  return true;
+}
+
+export function asyncSleep(time: number) {
+  let p: Promise<void> = new Promise<void>((resolve: Function, reject: Function) => {
+    setTimeout(() => {
+      resolve(1)
+    }, time)
+  })
+  return p
+}

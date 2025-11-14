@@ -54,6 +54,15 @@ struct PushNameRouterPage {
         Button('Push').onClick(()=>{
           this.routePage()
         }).id('PushNameRouter_btn_push')
+       Button('getStateByUrlEmpty').onClick(()=> {
+          let router:Router = this.getUIContext().getRouter()
+          let options: router.RouterState[] = router.getStateByUrl('MainAbility/pages/UIObserver/PushNameRouterPage1')
+          console.log('getStateByIndexPage getStateByUrl options', options?.length)
+          if (options?.length > 0) {
+            console.log('getStateByIndexPage getStateByUrl Empty options length', options?.length)
+          }
+          AppStorage.setOrCreate('getStateByUrlValueEmpty', options)
+        }).id('getStateByUrlEmptyBtn')
         Button('getStateByUrl').onClick(()=> {
           let router:Router = this.getUIContext().getRouter()
           let options: router.RouterState[] = router.getStateByUrl('MainAbility/pages/UIObserver/PushNameRouterPage')

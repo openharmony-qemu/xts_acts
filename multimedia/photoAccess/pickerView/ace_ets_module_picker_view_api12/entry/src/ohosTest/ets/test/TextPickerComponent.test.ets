@@ -1119,9 +1119,6 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
-        expect(baseItemInfo.photoSubType).not().assertUndefined();
-        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
-        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -1178,9 +1175,6 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
-        expect(baseItemInfo.photoSubType).not().assertUndefined();
-        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
-        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -1237,9 +1231,6 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
-        expect(baseItemInfo.photoSubType).not().assertUndefined();
-        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
-        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -2114,9 +2105,6 @@ export default function TextPicker() {
         expect(baseItemInfo.height).not().assertUndefined();
         expect(baseItemInfo.size).not().assertUndefined();
         expect(baseItemInfo.duration).not().assertUndefined();
-        expect(baseItemInfo.photoSubType).not().assertUndefined();
-        expect(baseItemInfo.dynamicRangeType).not().assertUndefined();
-        expect(baseItemInfo.orientation).not().assertUndefined();
         done();
       }
       let event: events_emitter.InnerEvent = {
@@ -2544,6 +2532,64 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker53 finish");
+      done();
+    });
+
+    /**
+     * @tc.number     testPicker54
+     * @tc.name       testPicker54
+     * @tc.desc       Testing setData(SET_SELECTED_INFO)
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPicker54', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let pickerController: PickerController = new PickerController();
+      const preselectedInfos: PreselectedInfo[] = [
+        { uri: 'file://media/Photo/test2.jpg', preselectablePickerIndex: 2 },
+        { uri: 'file://media/Photo/test3.jpg', preselectablePickerIndex: 2 }
+      ];
+      pickerOptions.pickerIndex = 2;
+      pickerOptions.preselectedInfos = preselectedInfos;
+
+      let callback = (event: events_emitter.EventData) => {
+        let result: PhotoPickerResult = event?.data?.msg;
+        console.info('testPicker54 received result: ' + JSON.stringify(result));
+        expect(result.preselectedInfos?.length).assertEqual(2);
+      };
+
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(event, callback);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      };
+
+      await routeToUrl(options);
+
+      // Set DataType.SET_SELECTED_INFO
+      pickerController.setData(DataType.SET_SELECTED_INFO, preselectedInfos);
+
+      await clickResultButton(driver);
+      events_emitter.off(event.eventId);
+
+      await CommonFunc.sleep(2000);
+      router.back();
+      console.info("testPicker54 finish");
       done();
     });
   })

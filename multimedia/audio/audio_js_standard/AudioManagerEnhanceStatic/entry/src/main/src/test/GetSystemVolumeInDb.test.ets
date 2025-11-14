@@ -324,7 +324,6 @@ export default function audioManagerTest() {
         try {
           let data = await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.MIC);
           console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
-          expect(true).assertTrue();
           done();
         } catch (error: BusinessError) {
           console.log(`${TagFrmwk}:getSystemVolumeInDb : error ${error.message} ${error.code}`);

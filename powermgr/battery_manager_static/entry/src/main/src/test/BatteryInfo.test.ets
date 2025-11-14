@@ -26,12 +26,13 @@ export default function BatteryInfoTest() {
   describe("BatteryInfoTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'BatteryInfoTest start');
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0010
-     * @tc.name testBatteryInfoTest_static_0100
-     * @tc.desc Battery acquisition kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Battery acquisition kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testBatteryInfoTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -53,12 +54,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0020
-     * @tc.name testBatteryInfoTest_static_0200
-     * @tc.desc Battery charging kit
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Battery charging kit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testBatteryInfoTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -78,12 +80,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0030
-     * @tc.name testBatteryInfoTest_static_0300
-     * @tc.desc Get Battery Health Get KIT
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get Battery Health Get KIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -103,12 +106,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0040
-     * @tc.name testBatteryInfoTest_static_0400
-     * @tc.desc Obtaining the SUB Connection Type KIT
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Obtaining the SUB Connection Type KIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testBatteryInfoTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -128,12 +132,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0050
-     * @tc.name testBatteryInfoTest_static_0500
-     * @tc.desc Obtaining the Voltage Interface KIT
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Obtaining the Voltage Interface KIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -154,12 +159,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0060
-     * @tc.name testBatteryInfoTest_static_0600
-     * @tc.desc Obtaining the Battery Technology Interface KIT
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Obtaining the Battery Technology Interface KIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -179,12 +185,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0070
-     * @tc.name testBatteryInfoTest_static_0700
-     * @tc.desc BatteryTemperature values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryTemperature values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -205,12 +212,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0080
-     * @tc.name testBatteryInfoTest_static_0800
-     * @tc.desc isBatteryPresent values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isBatteryPresent values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -230,12 +238,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_0900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0090
-     * @tc.name testBatteryInfoTest_static_0900
-     * @tc.desc batteryCapacityLevel values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   batteryCapacityLevel values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -255,12 +264,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0100
-     * @tc.name testBatteryInfoTest_static_1000
-     * @tc.desc nowCurrent values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   nowCurrent values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -282,12 +292,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0110
-     * @tc.name testBatteryInfoTest_static_1100
-     * @tc.desc totalEnergy values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   totalEnergy values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -308,12 +319,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0120
-     * @tc.name testBatteryInfoTest_static_1200
-     * @tc.desc estimatedRemainingChargeTime values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   estimatedRemainingChargeTime values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -336,12 +348,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0130
-     * @tc.name testBatteryInfoTest_static_1300
-     * @tc.desc remainingEnergy values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   remainingEnergy values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -362,12 +375,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0140
-     * @tc.name testBatteryInfoTest_static_1400
-     * @tc.desc BatteryPluggedType values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryPluggedType values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -386,12 +400,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0150
-     * @tc.name testBatteryInfoTest_static_1500
-     * @tc.desc BatteryPluggedType values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryPluggedType values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -410,12 +425,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0160
-     * @tc.name testBatteryInfoTest_static_1600
-     * @tc.desc BatteryPluggedType values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryPluggedType values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -434,12 +450,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0170
-     * @tc.name testBatteryInfoTest_static_1700
-     * @tc.desc BatteryPluggedType values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryPluggedType values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -458,12 +475,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0180
-     * @tc.name testBatteryInfoTest_static_1800
-     * @tc.desc BatteryChargeState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryChargeState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -482,12 +500,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_1900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0190
-     * @tc.name testBatteryInfoTest_static_1900
-     * @tc.desc BatteryChargeState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryChargeState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -506,12 +525,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0200
-     * @tc.name testBatteryInfoTest_static_2000
-     * @tc.desc BatteryChargeState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryChargeState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -530,12 +550,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0210
-     * @tc.name testBatteryInfoTest_static_2100
-     * @tc.desc BatteryChargeState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryChargeState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -554,12 +575,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0220
-     * @tc.name testBatteryInfoTest_static_2200
-     * @tc.desc BatteryHealthState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -578,12 +600,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0230
-     * @tc.name testBatteryInfoTest_static_2300
-     * @tc.desc BatteryHealthState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -602,12 +625,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0240
-     * @tc.name testBatteryInfoTest_static_2400
-     * @tc.desc BatteryHealthState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -626,12 +650,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0250
-     * @tc.name testBatteryInfoTest_static_2500
-     * @tc.desc BatteryHealthState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -651,12 +676,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0260
-     * @tc.name testBatteryInfoTest_static_2600
-     * @tc.desc BatteryHealthState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -675,12 +701,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0270
-     * @tc.name testBatteryInfoTest_static_2700
-     * @tc.desc BatteryHealthState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -699,12 +726,38 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2710
+     * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0271
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testBatteryInfoTest_static_2710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testBatteryInfoTest_static_2710';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let batteryCapacityLevelNone: number = batteryInfo.BatteryCapacityLevel.LEVEL_NONE;
+          hilog.info(domain, tag, `${TAG} batteryCapacityLevelNone: ${JSON.stringify(batteryCapacityLevelNone)}`);
+          expect(batteryCapacityLevelNone).assertEqual(0);
+          done();
+        } catch (e: BusinessError) {
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0280
-     * @tc.name testBatteryInfoTest_static_2800
-     * @tc.desc BatteryHealthState values Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryHealthState values Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -723,12 +776,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_2900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0290
-     * @tc.name testBatteryInfoTest_static_2900
-     * @tc.desc BatteryCapacityLevel Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryCapacityLevel Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -747,12 +801,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0300
-     * @tc.name testBatteryInfoTest_static_3000
-     * @tc.desc BatteryCapacityLevel Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryCapacityLevel Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -771,12 +826,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0310
-     * @tc.name testBatteryInfoTest_static_3100
-     * @tc.desc BatteryCapacityLevel Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryCapacityLevel Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -795,12 +851,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0320
-     * @tc.name testBatteryInfoTest_static_3200
-     * @tc.desc BatteryCapacityLevel Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryCapacityLevel Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -819,12 +876,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0330
-     * @tc.name testBatteryInfoTest_static_3300
-     * @tc.desc BatteryCapacityLevel Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryCapacityLevel Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -844,12 +902,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0340
-     * @tc.name testBatteryInfoTest_static_3400
-     * @tc.desc BatteryCapacityLevel Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   BatteryCapacityLevel Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -869,12 +928,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0350
-     * @tc.name testBatteryInfoTest_static_3500
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -894,12 +954,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0360
-     * @tc.name testBatteryInfoTest_static_3600
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -920,12 +981,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3700
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0370
-     * @tc.name testBatteryInfoTest_static_3700
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -946,12 +1008,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3800
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0380
-     * @tc.name testBatteryInfoTest_static_3800
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -972,12 +1035,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_3900
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0390
-     * @tc.name testBatteryInfoTest_static_3900
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -997,12 +1061,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_4000
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0400
-     * @tc.name testBatteryInfoTest_static_4000
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1023,12 +1088,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_4100
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0410
-     * @tc.name testBatteryInfoTest_static_4100
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1049,12 +1115,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_4200
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0420
-     * @tc.name testBatteryInfoTest_static_4200
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1074,12 +1141,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_4300
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0430
-     * @tc.name testBatteryInfoTest_static_4300
-     * @tc.desc CommonEventBatteryChangedKey Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   CommonEventBatteryChangedKey Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1100,12 +1168,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_4400
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0440
-     * @tc.name testBatteryInfoTest_static_4400
-     * @tc.desc setBatteryConfig Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   setBatteryConfig Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1123,12 +1192,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_4500
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0450
-     * @tc.name testBatteryInfoTest_static_4500
-     * @tc.desc getBatteryConfig Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   getBatteryConfig Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1145,12 +1215,13 @@ export default function BatteryInfoTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBatteryInfoTest_static_4600
      * @tc.number SUB_PowerSystem_BatteryInfo_ETSTest_0460
-     * @tc.name testBatteryInfoTest_static_4600
-     * @tc.desc isBatteryConfigSupported Interface Test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   isBatteryConfigSupported Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBatteryInfoTest_static_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

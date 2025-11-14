@@ -101,8 +101,6 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text')
       let strJson2 = getInspectorByKey('SearchEvent2Text2');
       await CommonFunc.sleep(200);
@@ -115,7 +113,6 @@ export default function SearchEvent2() {
       expect(obj2.$attrs.content).assertEqual('01');
       console.info('[SearchEvent2_002] END');
       done();
-
     });
 
     /*
@@ -218,8 +215,6 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -256,8 +251,6 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -291,8 +284,6 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -302,13 +293,6 @@ export default function SearchEvent2() {
       expect(obj.$attrs.content).assertEqual('onWillInsert');
       console.info('[SearchEvent2_007] END');
       done();
-
     });
-
-
-
-
-
-
   })
 }

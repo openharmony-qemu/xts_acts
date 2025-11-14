@@ -57,12 +57,13 @@ export default function userauthTest_Nopermission_API12() {
     })
 
     /**
-     * @tc.number     SUB_Security_IAM_Func_API12_static_0110
-     * @tc.name       SUB_Security_IAM_Func_API12_static_0110
-     * @tc.desc       Unapplied permission call GetEnrolledState
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_IAM_Func_API12_static_0110
+     * @tc.number SUB_Security_IAM_Func_API12_static_0110
+     * @tc.desc   Unapplied permission call GetEnrolledState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_IAM_Func_API12_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, format, 'testFace SUB_Security_IAM_Func_API12_static_0110 start');
@@ -76,7 +77,26 @@ export default function userauthTest_Nopermission_API12() {
       done();
     })
 
-
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SUB_Security_IAM_UserAuth_FUNC_Static_0140
+     * @tc.number SUB_Security_IAM_UserAuth_FUNC_Static_0140
+     * @tc.desc   getAuthLockState Nopermission API12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_IAM_UserAuth_FUNC_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, format, 'testFace SUB_Security_IAM_UserAuth_FUNC_Static_0140 start');
+      let authType:userAuth.UserAuthType = userAuth.UserAuthType.PIN
+      try {
+        await userAuth.getAuthLockState(authType);
+      } catch (error:BusinessError) {
+        hilog.info(domain, tag, format, "SUB_Security_IAM_UserAuth_FUNC_Static_0140 fail code is " + 'error.code:' + error.code);
+        expect(error.code).assertEqual(201);
+      }
+      done();
+    })
 
   });
 };

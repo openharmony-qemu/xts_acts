@@ -41,6 +41,8 @@ function testSetLocationPolicy() {
     try {
       locationManager.setLocationPolicy(SELFWANT, locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE);
       expect(false).assertTrue();
+      let resAfter = locationManager.getLocationPolicy(SELFWANT);
+      expect(resAfter == locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
     } finally {

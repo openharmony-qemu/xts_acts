@@ -15,6 +15,8 @@
 
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 import JSON from "@ohos.util.json";
+import util from '@ohos.util'
+import url from '@ohos.url'
 
 const BigIntMode = {  
   DEFAULT: 0,  
@@ -719,5 +721,495 @@ describe('JsonTest', function () {
     let rst = " ";
     let obj = JSON.stringify(rst);
     expect(obj).assertEqual('" "');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0044
+   * @tc.name: teststringify0044
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("name=cc&name=3f&1=a&4=c");
+    let obj = JSON.stringify(rst);
+    expect(obj).assertEqual('{"urlClass":{},"parentUrl":null}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0045
+   * @tc.name: teststringify0045
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("name=cc&name=3f&1=a&4=c");
+    let obj = JSON.stringify(rst.toString());
+    expect(obj).assertEqual('"name=cc&name=3f&1=a&4=c"');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0046
+   * @tc.name: teststringify0046
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("name=cc&name=3f&1=a&4=c");
+    let obj = JSON.stringify(rst.entries());
+    expect(obj).assertEqual('[["name","cc"],["name","3f"],["1","a"],["4","c"]]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0047
+   * @tc.name: teststringify0047
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("sclal=value&aa=89&ux=78");
+    let obj = JSON.stringify(rst.keys());
+    expect(obj).assertEqual('["sclal","aa","ux"]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0048
+   * @tc.name: teststringify0048
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("sclal=value&aa=89&ux=78");
+    let obj = JSON.stringify(rst.values());
+    expect(obj).assertEqual('["value","89","78"]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0049
+   * @tc.name: teststringify0049
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("sclal=value&aa=89&ux=78&djj=12");
+    let obj = JSON.stringify(rst.has('ux'));
+    expect(obj).assertEqual('true');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0050
+   * @tc.name: teststringify0050
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("ux=value&aa=89&ux=78&ux=12");
+    let obj = JSON.stringify(rst.getAll('ux'));
+    expect(obj).assertEqual('["value","78","12"]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0051
+   * @tc.name: teststringify0051
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new url.URLParams("ux=value&aa=89&ux=78&ux=12");
+    let obj = JSON.stringify(rst.get('cc'));
+    expect(obj).assertEqual(undefined);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0052
+   * @tc.name: teststringify0052
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = url.URL.parseURL("https://www.test1111.com/jkaj?aa=bb&ss=c87#sajh");
+    let obj = JSON.stringify(rst.params.values());
+    expect(obj).assertEqual('["bb","c87"]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0053
+   * @tc.name: teststringify0053
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = url.URL.parseURL("https://www.test1111.com/jkaj?aa=bb#sajh");
+    let obj = JSON.stringify(rst.params.entries());
+    expect(obj).assertEqual('[["aa","bb"]]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0054
+   * @tc.name: teststringify0054
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = url.URL.parseURL("https://www.test1111.com/jkaj?aa=bb#sajh");
+    let obj = JSON.stringify(rst.origin);
+    expect(obj).assertEqual('"https://www.test1111.com"');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0055
+   * @tc.name: teststringify0055
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    try {
+      let rst1 = url.URL.parseURL("https://www.test1111.com/jkaj?aa=bb#sajh");
+      JSON.parse(rst1.host)
+    } catch (e) {
+      let name = e.name;
+      expect(name).assertEqual('BusinessError');
+    }
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0056
+   * @tc.name: teststringify0056
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = util.parseUUID("84bdf796-66cc-4655-9b89-d6218d100f9c");
+    let obj = JSON.stringify(rst);
+    let str = '{"0":132,"1":189,"2":247,"3":150,"4":102,"5":204,"6":70,"7":85,"8":155,' +
+        '"9":137,"10":214,"11":33,"12":141,"13":16,"14":15,"15":156}';
+    expect(obj).assertEqual(str);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0057
+   * @tc.name: teststringify0057
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rst = new util.TextDecoder();
+    let obj = JSON.stringify(rst);
+    expect(obj).assertEqual('{"encodeStr":"utf-8","flags":0,"isIgnoreBOM":false,"isFatal":false,"textDecoder":{}}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0058
+   * @tc.name: teststringify0058
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textDecoderOptions = {
+      fatal: false,
+      ignoreBOM : true
+    }
+    let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+    let obj = JSON.stringify(textDecoder);
+    expect(obj).assertEqual('{"encodeStr":"utf-8","flags":4,"isIgnoreBOM":true,"isFatal":false,"textDecoder":{}}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0059
+   * @tc.name: teststringify0059
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textDecoderOptions = {
+      fatal: false,
+      ignoreBOM : true
+    }
+    let decodeToStringOptions = {
+      stream: false
+    }
+    let textDecoder = util.TextDecoder.create('base64', textDecoderOptions);
+    let uint8 = new Uint8Array([0xEF, 0xBB, 0xBF, 0x61, 0x62, 0x63]);
+    let retStr = textDecoder.decodeToString(uint8, decodeToStringOptions);
+    let obj = JSON.stringify(textDecoder);
+    expect(obj).assertEqual('{"encodeStr":"base64","flags":4,"isIgnoreBOM":true,"isFatal":false,"textDecoder":{}}');
+    expect(JSON.stringify(retStr)).assertEqual(undefined)
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0060
+   * @tc.name: teststringify0060
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textEncoder = new util.TextEncoder("utf-8");
+    let obj = JSON.stringify(textEncoder);
+    expect(obj).assertEqual('{}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0061
+   * @tc.name: teststringify0061
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textEncoder = util.TextEncoder.create("utf-8");
+    let obj = JSON.stringify(textEncoder);
+    expect(obj).assertEqual(undefined);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0062
+   * @tc.name: teststringify0062
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textEncoder = new util.TextEncoder();
+    let result = textEncoder.encodeInto("\uD800\uD801");
+    let obj = JSON.stringify(result);
+    expect(obj).assertEqual('{"0":237,"1":160,"2":128,"3":237,"4":160,"5":129}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0063
+   * @tc.name: teststringify0063
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textEncoder = new util.TextEncoder();
+    let result = textEncoder.encodeInto("this is test");
+    let obj = JSON.stringify(result);
+    let str = '{"0":116,"1":104,"2":105,"3":115,"4":32,"5":105,"6":115,"7":32,"8":116,"9":101,"10":115,"11":116}';
+    expect(obj).assertEqual(str);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0064
+   * @tc.name: teststringify0064
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textEncoder = new util.TextEncoder();
+    let buffer = new ArrayBuffer(4);
+    let uint8 = new Uint8Array(buffer);
+    let result = textEncoder.encodeIntoUint8Array('abcd', uint8);
+    let obj = JSON.stringify(result);
+    expect(obj).assertEqual('{"read":4,"written":4}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0065
+   * @tc.name: teststringify0065
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rationalNumber = new util.RationalNumber();
+    let obj = JSON.stringify(rationalNumber);
+    expect(obj).assertEqual('{"mnum":0,"mden":0}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0066
+   * @tc.name: teststringify0066
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
+    let obj = JSON.stringify(rationalNumber);
+    expect(obj).assertEqual('{"mnum":1,"mden":2}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0067
+   * @tc.name: teststringify0067
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let rational = util.RationalNumber.createRationalFromString("3/4");
+    let obj = JSON.stringify(rational);
+    expect(obj).assertEqual('{"mnum":3,"mden":4}');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0068
+   * @tc.name: teststringify0068
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let pro = new util.LRUCache();;
+    let obj = JSON.stringify(pro);
+    let str = '{"maxSize":64,"maxNumber":2147483647,"putCount":0,' +
+          '"createCount":0,"evictionCount":0,"hitCount":0,"missCount":0,"length":0,"cache":{}}';
+    expect(obj).assertEqual(str);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0069
+   * @tc.name: teststringify0069
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let pro = new util.LRUCache();
+    pro.updateCapacity(100);
+    let obj = JSON.stringify(pro);
+    let str = '{"maxSize":100,"maxNumber":2147483647,"putCount":0,"createCount":0,' +
+        '"evictionCount":0,"hitCount":0,"missCount":0,"length":0,"cache":{}}';
+    expect(obj).assertEqual(str);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0070
+   * @tc.name: teststringify0070
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let pro = new util.LRUCache();
+    pro.put(2, 10);
+    let str = '{"maxSize":64,"maxNumber":2147483647,"putCount":1,' +
+        '"createCount":0,"evictionCount":0,"hitCount":0,"missCount":0,"length":1,"cache":{}}';
+    let obj = JSON.stringify(pro);
+    expect(obj).assertEqual(str);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0071
+   * @tc.name: teststringify0071
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let pro = new util.LRUCache();
+    pro.put(2, 10);
+    pro.updateCapacity(2);
+    pro.put(50, 22);
+    let str = '{"maxSize":2,"maxNumber":2147483647,"putCount":2,"createCount":0,' +
+        '"evictionCount":0,"hitCount":0,"missCount":0,"length":2,"cache":{}}';
+    let obj = JSON.stringify(pro);
+    expect(obj).assertEqual(str);
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0072
+   * @tc.name: teststringify0072
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let pro = new util.LRUCache();
+    pro.put(2, 10);
+    pro.put(2, "anhu");
+    pro.put("afaf", "grfb");
+    let result = pro.values();
+    let obj = JSON.stringify(result);
+    expect(obj).assertEqual('["anhu","grfb"]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0073
+   * @tc.name: teststringify0073
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let pro = new util.LRUCache();
+    pro.put(2, 10);
+    pro.put(2, "anhu");
+    pro.put("afaf", "grfb");
+    let result = pro.keys();
+    let obj = JSON.stringify(result);
+    expect(obj).assertEqual('[2,"afaf"]');
+  });
+
+  /**
+   * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_JSON_0074
+   * @tc.name: teststringify0074
+   * @tc.desc: Convert a JavaScript object or value to a JSON string
+   * @tc.size: MediumTest
+   * @tc.type: Function
+   * @tc.level: Level 1
+   */
+  it("teststringify0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let textDecoderOptions = {
+      fatal: false,
+      ignoreBOM : true
+    }
+    let decodeToStringOptions = {
+      stream: false
+    }
+    let textDecoder = util.TextDecoder.create('utf-8', textDecoderOptions);
+    let uint8 = new Uint8Array([0xEF, 0xBB, 0xBF, 0x61, 0x62, 0x63]);
+    let retStr = textDecoder.decodeToString(uint8, decodeToStringOptions);
+    let obj = JSON.stringify(retStr);
+    expect(obj).assertEqual('"abc"');
   });
 })}

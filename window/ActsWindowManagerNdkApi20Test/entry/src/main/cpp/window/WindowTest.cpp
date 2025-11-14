@@ -21,6 +21,9 @@ int32_t g_windowId = PARAM_NEGATIVE_1;
 int32_t g_mainWindowId = PARAM_NEGATIVE_1;
 int32_t g_displayId = PARAM_NEGATIVE_1;
 int32_t g_result = 0;
+size_t g_snapshotListSize = 0;
+OH_PixelmapNative **g_snapshotPixelMapList = nullptr;
+bool g_callbackExecuted = false;
 
 napi_value GetWindowId(napi_env env, napi_callback_info info)
 {
@@ -680,4 +683,327 @@ napi_value UnregisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback
     return retValue;
 }
 
+napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "CreateNativeNode env or info is null");
+        return nullptr;
+    }
+    size_t argCnt = PARAM_2;
+    napi_value args[PARAM_2] = { nullptr, nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_2) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t displayId = 0;
+    napi_get_value_int32(env, args[1], &displayId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200 windowId: %{public}d", windowId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200 displayId: %{public}d", displayId);
+    napi_value retValue;
+    WindowManager_MainWindowInfo *infoList = NULL;
+    size_t mainWindowInfoSize = 0;
+    int32_t result = OH_WindowManager_GetAllMainWindowInfo(&infoList, &mainWindowInfoSize);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200: %{public}d", result);
+    if (result != OK) {
+        napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+        return retValue;
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200 mainWindowInfoSize: %{public}d",
+        mainWindowInfoSize);
+    if (mainWindowInfoSize < 1) {
+        napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+        return retValue;
+    }
+    for (size_t i = 0; i < mainWindowInfoSize; i++) {
+        WindowManager_MainWindowInfo* currentWindow = &infoList[i];
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+            "Test_OH_WindowManager_GetAllMainWindowInfo_0200 infoList[%{public}d]: "
+            "%{public}d, %{public}d, %{public}d, %{public}s", i, currentWindow->displayId,
+            currentWindow->windowId, currentWindow->showing, currentWindow->label);
+        if (currentWindow->windowId != windowId) {
+            continue;
+        }
+        if (currentWindow->displayId == displayId && currentWindow->windowId == windowId &&
+            currentWindow->showing == true && currentWindow->label != "label") {
+            napi_create_int32(env, 0, &retValue);
+            return retValue;
+        }
+    }
+    OH_WindowManager_ReleaseAllMainWindowInfo(infoList);
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+
+void OnWindowSnapshotCallback(const OH_PixelmapNative** snapshotPixelMapList, size_t snapshotListSize)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "OnWindowSnapshotCallback success. snapshotListSize: %{public}u", snapshotListSize);
+    if (g_snapshotPixelMapList != nullptr) {
+        free(g_snapshotPixelMapList);
+    }
+    g_snapshotListSize = snapshotListSize;
+    g_callbackExecuted = true;
+    
+    if (snapshotListSize > 0 && snapshotPixelMapList != nullptr) {
+        g_snapshotPixelMapList = (OH_PixelmapNative**)malloc(sizeof(OH_PixelmapNative*) * snapshotListSize);
+        if (g_snapshotPixelMapList != nullptr) {
+            for (size_t i = 0; i < snapshotListSize; i++) {
+                g_snapshotPixelMapList[i] = const_cast<OH_PixelmapNative*>(snapshotPixelMapList[i]);
+            }
+        }
+    } else {
+        g_snapshotPixelMapList = nullptr;
+    }
+    OH_WindowManager_ReleaseMainWindowSnapshot(*g_snapshotPixelMapList);
+}
+
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_callback_info info)
+{
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = false;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(nullptr, 1, config, OnWindowSnapshotCallback);
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "Test_OH_WindowManager_GetMainWindowSnapshot_0200: %{public}d", result);
+    if (result == WINDOW_MANAGER_ERRORCODE_INVALID_PARAM) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_INVALID_PARAM, &retValue);
+        return retValue;
+    } else if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+   
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0300(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "CreateNativeNode env or info is null");
+        return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(0);
+    windowIdList.push_back(windowId);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = false;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        windowIdList.size(), config, OnWindowSnapshotCallback);
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "test_OH_WindowManager_GetMainWindowSnapshot_0300: %{public}d", result);
+    if (result == WINDOW_MANAGER_ERRORCODE_INVALID_PARAM) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_INVALID_PARAM, &retValue);
+        return retValue;
+    } else if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0400(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(-1);
+    windowIdList.push_back(windowId);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = false;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        windowIdList.size(), config, OnWindowSnapshotCallback);
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "Test_OH_WindowManager_GetMainWindowSnapshot_0400: %{public}d", result);
+    if (result == WINDOW_MANAGER_ERRORCODE_INVALID_PARAM) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_INVALID_PARAM, &retValue);
+        return retValue;
+    } else if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+   
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0500(napi_env env, napi_callback_info info)
+{
+    g_callbackExecuted = false;
+    g_snapshotPixelMapList = nullptr;
+    g_snapshotListSize = 0;
+    
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(PARAM_1000);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = false;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        windowIdList.size(), config, OnWindowSnapshotCallback);
+    
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetMainWindowSnapshot_0500: %{public}d", result);
+    
+    int timeout = 1000;
+    while (!g_callbackExecuted && timeout > 0) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        timeout--;
+    }
+    
+    napi_value retValue;
+    if (g_callbackExecuted && g_snapshotListSize == 1 && g_snapshotPixelMapList != nullptr) {
+        napi_create_int32(env, 0, &retValue); // 成功
+    } else {
+        napi_create_int32(env, PARAM_NEGATIVE_1, &retValue); // 失败
+    }
+    
+    return retValue;
+}
+
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0600(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(windowId);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = false;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        NULL, config, OnWindowSnapshotCallback);
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "Test_OH_WindowManager_GetMainWindowSnapshot_0600: %{public}d", result);
+    if (result == WINDOW_MANAGER_ERRORCODE_INVALID_PARAM) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_INVALID_PARAM, &retValue);
+        return retValue;
+    } else if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0700(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(windowId);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = false;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        windowIdList.size(), config, OnWindowSnapshotCallback);
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "Test_OH_WindowManager_GetMainWindowSnapshot_0700: %{public}d", result);
+    if (g_snapshotListSize == 1) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+   
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0800(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(windowId);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = true;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        windowIdList.size(), config, OnWindowSnapshotCallback);
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "Test_OH_WindowManager_GetMainWindowSnapshot_0800: %{public}d", result);
+    if (g_snapshotListSize == 1) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
 }

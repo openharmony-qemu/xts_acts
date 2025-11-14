@@ -1079,6 +1079,204 @@ HWTEST_F(DrawingNativeRectTest, testRectDestroyNull, Function | SmallTest | Leve
     OH_Drawing_RectDestroy(rect);
 }
 
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1600
+ * @tc.name: testRectInsetNormal
+ * @tc.desc: Test for testRectInsetNormal
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectInsetNormal, Function | SmallTest | Level0) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, 400, 300);
+    EXPECT_NE(rect, nullptr);
+    float left = 10.0;
+    float top = -20.0;
+    float right = 30.0;
+    float bottom = -40.0;
+    OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 110.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 180.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 370.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 340.0);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1601
+ * @tc.name: testRectInsetAbNormal
+ * @tc.desc: Test for testRectInsetAbNormal
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectInsetAbNormal, Function | SmallTest | Level3) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, 400, 300);
+    EXPECT_NE(rect, nullptr);
+    float left = 100;
+    float top = 0;
+    float right = 200;
+    float bottom = 100;
+    OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 200.0);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602
+ * @tc.name: testRectInsetNull
+ * @tc.desc: Test for testRectInsetNull
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectInsetNull, Function | SmallTest | Level3) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, 400, 300);
+    EXPECT_NE(rect, nullptr);
+    float left = 100;
+    float top = 0;
+    float right = 200;
+    float bottom = 100;
+    OH_Drawing_ErrorCode code = OH_Drawing_RectInset(nullptr, left, top, right, bottom);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 400.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 300.0);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1603
+ * @tc.name: testRectInsetCalls
+ * @tc.desc: Test for testRectInsetCalls
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectInsetCalls, Function | SmallTest | Level3) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 200, 400, 300);
+    EXPECT_NE(rect, nullptr);
+    float left = 10.0;
+    float top = -20.0;
+    float right = 30.0;
+    float bottom = -40.0;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
+        EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    }
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 700.0);
+    // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1700
+ * @tc.name: testRectContainsNormal
+ * @tc.desc: Test for testRectContainsNormal
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(DrawingNativeRectTest, testRectContainsNormal, Function | SmallTest | Level0) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    EXPECT_NE(other, nullptr);
+    bool isContains;
+    OH_Drawing_ErrorCode code = OH_Drawing_RectContains(rect, other, &isContains);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, true);
+    // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RectDestroy(other);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1701
+ * @tc.name: testRectContainsNull
+ * @tc.desc: Test for testRectContainsNull
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectContainsNull, Function | SmallTest | Level3) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    EXPECT_NE(other, nullptr);
+    bool isContains;
+    OH_Drawing_ErrorCode code = OH_Drawing_RectContains(nullptr, other, &isContains);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isContains, false);
+    // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RectDestroy(other);
+}
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1702
+ * @tc.name: testRectContainsNull1
+ * @tc.desc: Test for testRectContainsNull1
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectContainsNull1, Function | SmallTest | Level3) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    EXPECT_NE(other, nullptr);
+    bool isContains;
+    OH_Drawing_ErrorCode code = OH_Drawing_RectContains(rect, nullptr, &isContains);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isContains, false);
+    // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RectDestroy(other);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1703
+ * @tc.name: testRectContainsCalls
+ * @tc.desc: Test for testRectContainsCalls
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeRectTest, testRectContainsCalls, Function | SmallTest | Level3) {
+    // 1. Call OH_Drawing_RectCreate to create a rectangle object
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    EXPECT_NE(other, nullptr);
+    bool isContains;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode code = OH_Drawing_RectContains(rect, other, &isContains);
+        EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isContains, true);
+    }
+    // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RectDestroy(other);
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

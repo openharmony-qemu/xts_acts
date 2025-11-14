@@ -15,7 +15,7 @@
 import { describe , it, expect, Level, TestType, Size } from '../../../hypium/index'
 import notificationManager from '@ohos.notificationManager'
 import image from '@ohos.multimedia.image';
-import {BusinessError} from '@ohos.base';
+import {BusinessError, RecordData} from '@ohos.base';
 import hilog from '@ohos.hilog';
 import WantAgent from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
@@ -1658,7 +1658,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         console.log('Succeeded in creating pixelmap.');
       })
 
-      let parameters1 : Record<String,Object> = {
+      let parameters1 : Record<String,RecordData> = {
         "mykey0": 2222,
         "mykey1": [1, 2, 3],
         "mykey2": "[1, 2, 3]",
@@ -1789,7 +1789,7 @@ export default function ActsNotificationSystemLiveViewTest() {
 
       //wantAgent对象
       let wantAgent: Object;
-      let parameters1 : Record<String,Object> = {
+      let parameters1 : Record<String,RecordData> = {
         "mykey0": 2222,
         "mykey1": [1, 2, 3],
         "mykey2": "[1, 2, 3]",
@@ -1930,7 +1930,7 @@ export default function ActsNotificationSystemLiveViewTest() {
 
       //wantAgent对象
       let wantAgent: Object;
-      let parameters1 : Record<String,Object> = {
+      let parameters1 : Record<String,RecordData> = {
         "mykey0": 2222,
         "mykey1": [1, 2, 3],
         "mykey2": "[1, 2, 3]",

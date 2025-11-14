@@ -36,6 +36,7 @@ import SecurityHuksDerivePBKDF2PromiseJsunit from './SecurityHuksDerivePBKDF2Pro
 import SecurityHuksHmacCallbackJsunit from './SecurityHuksHmacCallbackJsunit.test.js'
 import SecurityHuksHmacPromiseJsunit from './SecurityHuksHmacPromiseJsunit.test.js'
 import SecurityHuksImportJsunit from './SecurityHuksImportJsunit.test.js'
+import SecurityHuksQueryKeyJsunit from './SecurityHuksQueryKeyJsunit.test.js'
 import SecurityHuksSignVerifyDSACallbackJsunit from './SecurityHuksSignVerifyDSACallbackJsunit.test.js'
 import SecurityHuksSignVerifyDSAPromiseJsunit from './SecurityHuksSignVerifyDSAPromiseJsunit.test.js'
 import SecurityHuksSignVerifyECCCallbackJsunit from './SecurityHuksSignVerifyECCCallbackJsunit.test.js'
@@ -71,6 +72,7 @@ export default function testsuite() {
     SecurityHuksHmacCallbackJsunit()
     SecurityHuksHmacPromiseJsunit()
     SecurityHuksImportJsunit()
+    SecurityHuksQueryKeyJsunit()
     SecurityHuksSignVerifyDSACallbackJsunit()
     SecurityHuksSignVerifyDSAPromiseJsunit()
     SecurityHuksSignVerifyECCCallbackJsunit()

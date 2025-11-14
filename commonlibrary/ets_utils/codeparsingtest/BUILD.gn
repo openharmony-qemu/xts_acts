@@ -19,6 +19,9 @@ group("codeparsingtest") {
     deps = [
       "actscodeparsingtest:ActsCodeParsingTest",
       "baselibtest:ActsBaseLibTest",
+      "maptest:ActsMapTest",
+      "settest:ActsSetTest",
+      "weaktest:ActsWeakTest",
       "builtinsarraytest:ActsBuiltinsArrayTest",
       "builtinstest:ActsBuiltinsTest",
       "builtinsupplytest:ActsBuiltinSupplyTest",
@@ -27,7 +30,11 @@ group("codeparsingtest") {
       "etsspectest:ActsBaseSpecTest",
       "specialchartest:ActsSpecialCharTest",
       "proxytest:ActsProxyTest",
+      "proxy2test:ActsProxy2Test",
       "objecttest:ActsObjectTest",
+      "arraytest:ActsArrayTest",
+      "regexptest:ActsRegExpTest",
+      "dataviewtest:ActsDataViewTest",
     ]
   }
 }

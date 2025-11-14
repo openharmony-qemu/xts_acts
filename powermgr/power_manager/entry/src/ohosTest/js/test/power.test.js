@@ -47,12 +47,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_IsScreenOn_Promise_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0010
-     * @tc.name testPower_IsScreenOn_Promise_Test
-     * @tc.desc Checks whether the screen of a device is on or off (deprecated since 9)
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the screen of a device is on or off (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Power_IsScreenOn_Promise_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'Power_IsScreenOn_Promise_Test';
@@ -73,12 +74,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_IsScreenOn_Callback_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0020
-     * @tc.name testPower_IsScreenOn_Callback_Test
-     * @tc.desc Checks whether the screen of a device is on or off (deprecated since 9)
-     * @tc.level: Level 1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Checks whether the screen of a device is on or off (deprecated since 9)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Power_IsScreenOn_Callback_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let TAG = 'Power_IsScreenOn_Callback_Test';
@@ -99,12 +101,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_IsActive_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0030
-     * @tc.name testPower_IsActive_Test
-     * @tc.desc On and Off Screen and get the current screen on and off
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   On and Off Screen and get the current screen on and off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Power_IsActive_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let TAG = 'Power_IsActive_Test';
@@ -122,12 +125,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testPower_GetPowerMode_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0040
-     * @tc.name testPower_GetPowerMode_Test
-     * @tc.desc Gets and sets the power mode
-     * @tc.level: Level 0
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Gets and sets the power mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPower_GetPowerMode_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let TAG = 'testPower_GetPowerMode_Test';
@@ -144,12 +148,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_DevicePowerMode_MODENORMAL_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0050
-     * @tc.name testPower_DevicePowerMode_MODENORMAL_Test
-     * @tc.desc Get device power mode MODE_NORMAL
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Power_DevicePowerMode_MODENORMAL_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -167,12 +172,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_DevicePowerMode_MODEPOWERSAVE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0060
-     * @tc.name testPower_DevicePowerMode_MODEPOWERSAVE_Test
-     * @tc.desc Get device power mode MODE_POWER_SAVE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_POWER_SAVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Power_DevicePowerMode_MODEPOWERSAVE_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -190,12 +196,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_DevicePowerMode_MODEPERFORMANCE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0070
-     * @tc.name testPower_DevicePowerMode_MODEPERFORMANCE_Test
-     * @tc.desc Get device power mode MODE_PERFORMANCE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_PERFORMANCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Power_DevicePowerMode_MODEPERFORMANCE_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -213,12 +220,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_DevicePowerMode_MODE_EXTREME_POWER_SAVE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0080
-     * @tc.name testPower_DevicePowerMode_MODE_EXTREME_POWER_SAVE_Test
-     * @tc.desc Get device power mode MODE_EXTREME_POWER_SAVE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_EXTREME_POWER_SAVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Power_DevicePowerMode_MODE_EXTREME_POWER_SAVE_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -236,12 +244,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_DevicePowerMode_MODE_CUSTOM_POWER_SAVE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0081
-     * @tc.name Power_DevicePowerMode_MODE_CUSTOM_POWER_SAVE_Test
-     * @tc.desc Get device power mode MODE_CUSTOM_POWER_SAVE
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Get device power mode MODE_CUSTOM_POWER_SAVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Power_DevicePowerMode_MODE_CUSTOM_POWER_SAVE_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -259,12 +268,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   Power_IsStandby_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0090
-     * @tc.name testPower_IsStandby_Test
-     * @tc.desc Device isStandby interface verification
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Device isStandby interface verification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Power_IsStandby_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'Power_IsStandby_Test';
@@ -281,12 +291,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0080
-     * @tc.name testSystem_API_Test_Power_Manager_0100
-     * @tc.desc Test the third-party application call reboot will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call reboot will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0100';
@@ -300,12 +311,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0090
-     * @tc.name testSystem_API_Test_Power_Manager_0200
-     * @tc.desc Test the third-party application call wakeup will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call wakeup will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0200';
@@ -319,12 +331,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0100
-     * @tc.name testSystem_API_Test_Power_Manager_0300
-     * @tc.desc Test the third-party application call suspend will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call suspend will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0300';
@@ -338,12 +351,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0400
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0110
-     * @tc.name testSystem_API_Test_Power_Manager_0400
-     * @tc.desc Test the third-party application call suspend will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call suspend will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0400';
@@ -357,12 +371,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0500
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0110
-     * @tc.name testSystem_API_Test_Power_Manager_0500
-     * @tc.desc Test the third-party application call suspend will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call suspend will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0500';
@@ -376,12 +391,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0600
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0120
-     * @tc.name testSystem_API_Test_Power_Manager_0600
-     * @tc.desc Test the third-party application call setPowerMode will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerMode will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0600';
@@ -405,12 +421,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0601
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0121
-     * @tc.name System_API_Test_Power_Manager_0601
-     * @tc.desc Test the third-party application call setPowerMode will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerMode will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0601';
@@ -434,12 +451,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0700
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0130
-     * @tc.name testSystem_API_Test_Power_Manager_0700
-     * @tc.desc Test the third-party application call setPowerMode will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerMode will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0700';
@@ -463,12 +481,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0701
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0131
-     * @tc.name System_API_Test_Power_Manager_0701
-     * @tc.desc Test the third-party application call setPowerMode will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerMode will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0701';
@@ -492,12 +511,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0800
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0140
-     * @tc.name testSystem_API_Test_Power_Manager_0800
-     * @tc.desc Test the third-party application call setPowerMode will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerMode will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0800';
@@ -521,12 +541,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_0900
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0150
-     * @tc.name testSystem_API_Test_Power_Manager_0900
-     * @tc.desc Test the third-party application call setScreenOffTime will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_0900';
@@ -540,12 +561,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   System_API_Test_Power_Manager_1000
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0160
-     * @tc.name testSystem_API_Test_Power_Manager_1000
-     * @tc.desc Test the third-party application call setScreenOffTime will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_Power_Manager_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'System_API_Test_Power_Manager_1000';
@@ -559,12 +581,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSystem_API_Test_Power_Manager_1100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0170
-     * @tc.name testSystem_API_Test_Power_Manager_1100
-     * @tc.desc Test the third-party application call setScreenOffTime will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSystem_API_Test_Power_Manager_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'testSystem_API_Test_Power_Manager_1100';
@@ -578,12 +601,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSystem_API_Test_Power_Manager_1200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0180
-     * @tc.name testSystem_API_Test_Power_Manager_1200
-     * @tc.desc Test the third-party application call refreshActivity will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSystem_API_Test_Power_Manager_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'testSystem_API_Test_Power_Manager_1200';
@@ -597,12 +621,13 @@ export default function PowerTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testSystem_API_Test_Power_Manager_1300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0190
-     * @tc.name testSystem_API_Test_Power_Manager_1300
-     * @tc.desc Test the third-party application call setPowerKeyFilteringStrategy will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setPowerKeyFilteringStrategy will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSystem_API_Test_Power_Manager_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -617,12 +642,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0200
-     * @tc.name PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test
-     * @tc.desc Power Key Filtering Strategy
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Power Key Filtering Strategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -640,12 +666,13 @@ export default function PowerTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   PowerKeyFilteringStrategy_LONG_PRESS_FILTERING_ONCE_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0210
-     * @tc.name PowerKeyFilteringStrategy_LONG_PRESS_FILTERING_ONCE_Test
-     * @tc.desc Power Key Filtering Strategy
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Power Key Filtering Strategy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PowerKeyFilteringStrategy_LONG_PRESS_FILTERING_ONCE_Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {

@@ -17,10 +17,25 @@ import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
+import { webview } from '@kit.ArkWeb';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    webview.WebviewController.setActiveWebEngineVersion(webview.ArkWebEngineVersion.M114)
+    if (webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M114) {
+      console.log("Active Web Engine Version set to M114")
+    } else if (webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M132) {
+      console.log("Active Web Engine Version set to M132")
+    } else if (webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.SYSTEM_DEFAULT) {
+      console.log("Active Web Engine Version set to SYSTEM_DEFAULT")
+    }
+    if (webview.WebviewController.isActiveWebEngineEvergreen()) {
+      console.log("Active Web Engine is Evergreen")
+    } else {
+      console.log("Active Web Engine is Evergreen false")
+    }
+
   }
 
   onDestroy(): void {

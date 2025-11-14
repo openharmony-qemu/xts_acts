@@ -30,11 +30,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let g_context: common.UIAbilityContext;
 
-let capturerInfo: audio.AudioCapturerInfo = {
-  source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
-  capturerFlags: 0
-}
-
 export default function AudioRoutingManagerTest() {
 
   describe('AudioRoutingManagerTest', () => {
@@ -250,10 +245,10 @@ export default function AudioRoutingManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
       try {
-        audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, (data: audio.DeviceChangeAction) => {
           console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
         });
-        audioRoutingManager.off('availableDeviceChange', (data: audio.DeviceChangeAction) => {
+        audioRoutingManager.offAvailableDeviceChange((data: audio.DeviceChangeAction) => {
           console.info(`${Tag}:  off_availableDeviceChange 'availableDeviceChange': SUCCESS`);
         });
         expect(true).assertTrue();
@@ -276,7 +271,7 @@ export default function AudioRoutingManagerTest() {
       try {
         let blockMic: boolean = await audioRoutingManager.isMicBlockDetectionSupported()
         if (blockMic == true) {
-          audioRoutingManager.on('micBlockStatusChanged', (deviceBlockStatusInfo: audio.DeviceBlockStatusInfo) =>{
+          audioRoutingManager.onMicBlockStatusChanged((deviceBlockStatusInfo: audio.DeviceBlockStatusInfo) =>{
             if (deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.BLOCKED ||
               deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.UNBLOCKED) {
               console.info(`${Tag}:  on_micBlockStatusChanged: SUCCESS`);
@@ -286,11 +281,47 @@ export default function AudioRoutingManagerTest() {
               expect(false).assertTrue();
             }
           })
-          audioRoutingManager.off('micBlockStatusChanged')
+          audioRoutingManager.offMicBlockStatusChanged()
         }
         expect(true).assertTrue();
       } catch (error: BusinessError) {
         console.error(`${Tag}:  on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800
+     * @tc.desc        audio.DeviceBlockStatusInfo
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
+      try {
+        let blockMic: boolean = await audioRoutingManager.isMicBlockDetectionSupported()
+        if (blockMic == true) {
+          audioRoutingManager.onMicBlockStatusChanged((deviceBlockStatusInfo: audio.DeviceBlockStatusInfo) =>{
+            let audioDeviceBlockStatusInfo: audio.DeviceBlockStatus = deviceBlockStatusInfo.blockStatus;
+            if (audioDeviceBlockStatusInfo == audio.DeviceBlockStatus.BLOCKED ||
+              audioDeviceBlockStatusInfo == audio.DeviceBlockStatus.UNBLOCKED) {
+              let audioDevices: audio.AudioDeviceDescriptors = deviceBlockStatusInfo.devices;
+              console.info(`${Tag}: audioDevices[0].id: ${audioDevices[0].id}`);
+              expect(audioDevices[0].id).assertLargerOrEqual(0);
+              console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
+              expect(true).assertTrue();
+            } else {
+              console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
+              expect(false).assertTrue();
+            }
+          })
+          audioRoutingManager.offMicBlockStatusChanged()
+        }
+        expect(true).assertTrue();
+      } catch (error: BusinessError) {
+        console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
       }
       done();

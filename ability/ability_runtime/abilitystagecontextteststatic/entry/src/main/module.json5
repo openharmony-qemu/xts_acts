@@ -17,6 +17,7 @@
   "module": {
     "name": "entry",
     "type": "entry",
+    "srcEntry": "./ets/Application/MyAbilityStage.ets",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [],

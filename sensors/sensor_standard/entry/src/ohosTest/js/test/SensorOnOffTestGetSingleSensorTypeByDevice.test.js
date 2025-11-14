@@ -141,7 +141,7 @@ describe("SensorJsTest_getSingleSensorbyDevice", function () {
      */
     it('GetSingleSensorByDeviceSync_JSTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info("------------------GetSingleSensorByDeviceSync_JSTest_003-------------------------");
-        const TAG = 'GetSingleSensorByDeviceSync_JSTest_003'
+        const TAG = 'GetSingleSensorByDeviceSync_JSTest_003';
         try {
             const type = sensor.SensorId.ACCELEROMETER;
             const loopCount = 1000;
@@ -160,6 +160,60 @@ describe("SensorJsTest_getSingleSensorbyDevice", function () {
             done();
         } catch (error) {
             console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message)
+            done();
+        }
+    })
+
+    /**
+     * @tc.number:SUB_SensorsSystem_GetSingleSensorByDeviceSync_JSTest_004
+     * @tc.name: GetSingleSensorByDeviceSync_JSTest_004
+     * @tc.desc: Test getSingleSensorByDeviceSync with invalid type
+     * @tc.level:Level 3
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it('GetSingleSensorByDeviceSync_JSTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
+        console.info("------------------GetSingleSensorByDeviceSync_JSTest_004-------------------------");
+        const TAG = '====>GetSingleSensorByDeviceSync_JSTest_004';
+        try {
+            const type = sensor.SensorId.ACCELEROMETER;
+            const deviceId = 10000;
+            const result = sensor.getSingleSensorByDeviceSync(type, deviceId);
+            console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
+            expect(result.length === 0).assertTrue();
+            done();
+        } catch (error) {
+            console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
+            expect(false).assertTrue();
+            done();
+        }
+    })
+
+    /**
+     * @tc.number:SUB_SensorsSystem_GetSingleSensorByDeviceSync_JSTest_005
+     * @tc.name: GetSingleSensorByDeviceSync_JSTest_005
+     * @tc.desc: Test getSingleSensorByDeviceSync with invalid type
+     * @tc.level:Level 3
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it('GetSingleSensorByDeviceSync_JSTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
+        console.info("------------------GetSingleSensorByDeviceSync_JSTest_005-------------------------");
+        const TAG = '====>GetSingleSensorByDeviceSync_JSTest_005'
+        try {
+            const type = sensor.SensorId.ACCELEROMETER;
+            const deviceId = -1;
+            const result = sensor.getSingleSensorByDeviceSync(type, deviceId);
+            console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
+            if (result.length === 0) {
+                console.info(TAG + '====> No sensors found, Test case will return true.');
+            } else {
+                expect(result.length > 0).assertTrue();
+            }
+            done();
+        } catch (error) {
+            console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
+            expect(false).assertTrue();
             done();
         }
     })

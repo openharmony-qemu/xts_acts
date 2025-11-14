@@ -131,6 +131,9 @@ export default function NodeEventTypeTest() {
           console.info("====>testNODE_TEXT_INPUT_ON_WILL_CHANGE0100 start====");
           let com = await Utils.driver.findComponent(ON.id('textinput8'));
           await com.inputText('aaaaa');
+          await Utils.sleep(500);
+          await Utils.driver.triggerKey(2047)
+          await Utils.sleep(500);
           let result: number = nativerenderndk.NodeEventTypeTest_008();
           console.info(`====>testNODE_TEXT_INPUT_ON_WILL_CHANGE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -155,6 +158,9 @@ export default function NodeEventTypeTest() {
           console.info("====>testNODE_TEXT_AREA_ON_WILL_CHANGE0100 start====");
           let com = await Utils.driver.findComponent(ON.id('textarea9'));
           await com.inputText('a');
+          await Utils.sleep(500);
+          await Utils.driver.triggerKey(2047)
+          await Utils.sleep(500);
           await inputMethod.getController().stopInputSession();
           let result: number = nativerenderndk.NodeEventTypeTest_009();
           console.info(`====>testNODE_TEXT_AREA_ON_WILL_CHANGE0100 result====${result}`);

@@ -252,7 +252,6 @@ static void InitPush5(std::vector<napi_property_descriptor> &desc)
         XL("AVCodeOHAudioCodecSetParameterOperateInvalidState", AVCodeOHAudioCodecSetParameterOperateInvalidState));
     desc.push_back(XL("AVCodeOHAudioCodecSetParameterOperateUnknown", AVCodeOHAudioCodecSetParameterOperateUnknown));
     desc.push_back(XL("AVCodeOHAudioCodecPushInputBufferInvalidVal", AVCodeOHAudioCodecPushInputBufferInvalidVal));
-    desc.push_back(XL("EnumAACPROFILEHE", EnumAACPROFILEHE));
 }
 
 static void InitPush6(std::vector<napi_property_descriptor> &desc)
@@ -278,7 +277,109 @@ static void InitPush6(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("EnumMPEGProfile19", EnumMPEGProfile19));
     desc.push_back(XL("EnumMPEGProfile20", EnumMPEGProfile20));
     desc.push_back(XL("EnumMPEGProfile21", EnumMPEGProfile21));
+    desc.push_back(XL("EnumOHH263Profile1", EnumOHH263Profile1));
+    desc.push_back(XL("EnumOHH263Profile2", EnumOHH263Profile2));
+    desc.push_back(XL("EnumOHAVOutputFormat1", EnumOHAVOutputFormat1));
+    desc.push_back(XL("EnumOHAVOutputFormat2", EnumOHAVOutputFormat2));
+    desc.push_back(XL("EnumOHAVOutputFormat3", EnumOHAVOutputFormat3));
+    desc.push_back(XL("EnumOHAVOutputFormat4", EnumOHAVOutputFormat4));
+    desc.push_back(XL("EnumOHAVOutputFormat5", EnumOHAVOutputFormat5));
+    desc.push_back(XL("EnumOHAVOutputFormat6", EnumOHAVOutputFormat6));
+    desc.push_back(XL("EnumOHAVColorPrimary1", EnumOHAVColorPrimary1));
+    desc.push_back(XL("EnumOHAVColorPrimary2", EnumOHAVColorPrimary2));
+    desc.push_back(XL("EnumOHAVColorPrimary3", EnumOHAVColorPrimary3));
+    desc.push_back(XL("EnumOHAVColorPrimary4", EnumOHAVColorPrimary4));
+    desc.push_back(XL("EnumOHAVColorPrimary5", EnumOHAVColorPrimary5));
+    desc.push_back(XL("EnumOHAVColorPrimary6", EnumOHAVColorPrimary6));
+    desc.push_back(XL("EnumOHAVColorPrimary7", EnumOHAVColorPrimary7));
+    desc.push_back(XL("EnumOHAVColorPrimary8", EnumOHAVColorPrimary8));
 }
+
+static void InitPush7(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("EnumAudioChannelSet30", EnumAudioChannelSet30));
+    desc.push_back(XL("EnumAudioChannelSet31", EnumAudioChannelSet31));
+    desc.push_back(XL("EnumAudioChannelSet32", EnumAudioChannelSet32));
+    desc.push_back(XL("EnumAudioChannelSet33", EnumAudioChannelSet33));
+    desc.push_back(XL("EnumAudioChannelSet34", EnumAudioChannelSet34));
+    desc.push_back(XL("EnumAudioChannelSet35", EnumAudioChannelSet35));
+    desc.push_back(XL("EnumAudioChannelSet36", EnumAudioChannelSet36));
+    desc.push_back(XL("EnumAudioChannelSet37", EnumAudioChannelSet37));
+    desc.push_back(XL("EnumAudioChannelSet38", EnumAudioChannelSet38));
+    desc.push_back(XL("EnumAudioChannelSet39", EnumAudioChannelSet39));
+    desc.push_back(XL("EnumAudioChannelSet40", EnumAudioChannelSet40));
+    desc.push_back(XL("EnumAudioChannelSet41", EnumAudioChannelSet41));
+    desc.push_back(XL("EnumAudioChannelSet42", EnumAudioChannelSet42));
+    desc.push_back(XL("EnumAudioChannelSet43", EnumAudioChannelSet43));
+    desc.push_back(XL("EnumAudioChannelSet44", EnumAudioChannelSet44));
+    desc.push_back(XL("EnumAudioChannelSet45", EnumAudioChannelSet45));
+    desc.push_back(XL("EnumAudioChannelSet46", EnumAudioChannelSet46));
+    desc.push_back(XL("EnumAudioChannelSet47", EnumAudioChannelSet47));
+    desc.push_back(XL("EnumAudioChannelSet48", EnumAudioChannelSet48));
+    desc.push_back(XL("EnumAudioChannelSet49", EnumAudioChannelSet49));
+    desc.push_back(XL("EnumAudioChannelSet50", EnumAudioChannelSet50));
+    desc.push_back(XL("EnumOHTransferCharacteristic1", EnumOHTransferCharacteristic1));
+    desc.push_back(XL("EnumOHTransferCharacteristic2", EnumOHTransferCharacteristic2));
+    desc.push_back(XL("EnumOHTransferCharacteristic3", EnumOHTransferCharacteristic3));
+    desc.push_back(XL("EnumOHTransferCharacteristic4", EnumOHTransferCharacteristic4));
+    desc.push_back(XL("EnumOHTransferCharacteristic5", EnumOHTransferCharacteristic5));
+    desc.push_back(XL("EnumOHTransferCharacteristic6", EnumOHTransferCharacteristic6));
+    desc.push_back(XL("EnumOHTransferCharacteristic7", EnumOHTransferCharacteristic7));
+    desc.push_back(XL("EnumOHTransferCharacteristic8", EnumOHTransferCharacteristic8));
+    desc.push_back(XL("EnumOHTransferCharacteristic9", EnumOHTransferCharacteristic9));
+    desc.push_back(XL("EnumOHTransferCharacteristic10", EnumOHTransferCharacteristic10));
+    desc.push_back(XL("EnumOHTransferCharacteristic11", EnumOHTransferCharacteristic11));
+    desc.push_back(XL("EnumOHTransferCharacteristic12", EnumOHTransferCharacteristic12));
+    desc.push_back(XL("EnumOHTransferCharacteristic13", EnumOHTransferCharacteristic13));
+    desc.push_back(XL("AVCodeOHAudioDecoderSetCallbackInvalidVal", AVCodeOHAudioDecoderSetCallbackInvalidVal));
+    desc.push_back(XL("AVCodeOHAudioEncoderSetCallbackInvalidVal", AVCodeOHAudioEncoderSetCallbackInvalidVal));
+    desc.push_back(XL("AVCodeOHAVDataSource", AVCodeOHAVDataSource));
+}
+
+static void InitPush8(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("EnumOHMatrixCoefficient1", EnumOHMatrixCoefficient1));
+    desc.push_back(XL("EnumOHMatrixCoefficient2", EnumOHMatrixCoefficient2));
+    desc.push_back(XL("EnumOHMatrixCoefficient3", EnumOHMatrixCoefficient3));
+    desc.push_back(XL("EnumOHMatrixCoefficient4", EnumOHMatrixCoefficient4));
+    desc.push_back(XL("EnumOHMatrixCoefficient5", EnumOHMatrixCoefficient5));
+    desc.push_back(XL("EnumOHMatrixCoefficient6", EnumOHMatrixCoefficient6));
+    desc.push_back(XL("EnumOHMatrixCoefficient7", EnumOHMatrixCoefficient7));
+    desc.push_back(XL("EnumOHMatrixCoefficient8", EnumOHMatrixCoefficient8));
+    desc.push_back(XL("EnumOHMatrixCoefficient9", EnumOHMatrixCoefficient9));
+    desc.push_back(XL("EnumOHMatrixCoefficient10", EnumOHMatrixCoefficient10));
+    desc.push_back(XL("EnumOHBitsPerSample1", EnumOHBitsPerSample1));
+    desc.push_back(XL("EnumOHBitsPerSample2", EnumOHBitsPerSample2));
+    desc.push_back(XL("EnumOHBitsPerSample3", EnumOHBitsPerSample3));
+    desc.push_back(XL("EnumOHBitsPerSample4", EnumOHBitsPerSample4));
+    desc.push_back(XL("EnumOHBitsPerSample5", EnumOHBitsPerSample5));
+    desc.push_back(XL("EnumOHBitsPerSample6", EnumOHBitsPerSample6));
+    desc.push_back(XL("EnumOHBitsPerSample7", EnumOHBitsPerSample7));
+    desc.push_back(XL("EnumOHCoreHdrType1", EnumOHCoreHdrType1));
+    desc.push_back(XL("EnumOHCoreHdrType2", EnumOHCoreHdrType2));
+    desc.push_back(XL("EnumAACPROFILEHE", EnumAACPROFILEHE));
+    desc.push_back(XL("EnumAACPROFILEHE1", EnumAACPROFILEHE1));
+    desc.push_back(XL("EnumHEVCProfile1", EnumHEVCProfile1));
+    desc.push_back(XL("EnumHEVCProfile2", EnumHEVCProfile2));
+    desc.push_back(XL("EnumVVCProfile1", EnumVVCProfile1));
+    desc.push_back(XL("EnumVVCProfile2", EnumVVCProfile2));
+    desc.push_back(XL("EnumVVCProfile3", EnumVVCProfile3));
+    desc.push_back(XL("EnumVVCProfile4", EnumVVCProfile4));
+    desc.push_back(XL("EnumVVCProfile5", EnumVVCProfile5));
+    desc.push_back(XL("EnumVVCProfile6", EnumVVCProfile6));
+    desc.push_back(XL("EnumVVCProfile7", EnumVVCProfile7));
+    desc.push_back(XL("EnumVVCProfile8", EnumVVCProfile8));
+    desc.push_back(XL("EnumVVCProfile9", EnumVVCProfile9));
+    desc.push_back(XL("EnumVVCProfile10", EnumVVCProfile10));
+    desc.push_back(XL("EnumVVCProfile11", EnumVVCProfile11));
+    desc.push_back(XL("EnumVVCProfile12", EnumVVCProfile12));
+    desc.push_back(XL("EnumVVCProfile13", EnumVVCProfile13));
+    desc.push_back(XL("EnumVVCProfile14", EnumVVCProfile14));
+    desc.push_back(XL("EnumVVCProfile15", EnumVVCProfile15));
+    desc.push_back(XL("EnumOHScalingMode1", EnumOHScalingMode1));
+    desc.push_back(XL("EnumOHScalingMode2", EnumOHScalingMode2));
+}
+
 
 static void InitPushAVCLevel(std::vector<napi_property_descriptor> &desc)
 {
@@ -410,6 +511,16 @@ static void InitPushOH_AVDemuxeFunctionTest(std::vector<napi_property_descriptor
     desc.push_back(XL("OH_AVCencInfo_SetSubsampleInfoTest", OH_AVCencInfo_SetSubsampleInfoTest));
     desc.push_back(XL("OH_AVCencInfo_SetModeTest", OH_AVCencInfo_SetModeTest));
     desc.push_back(XL("OH_AVCencInfo_SetAVBufferTest", OH_AVCencInfo_SetAVBufferTest));
+    desc.push_back(XL("OH_AVDemuxer_ReadSampleBufferTestNotPermit", OH_AVDemuxer_ReadSampleBufferTestNotPermit));
+    desc.push_back(XL("OH_AVDemuxer_SeekToTimeTestNotPermit", OH_AVDemuxer_SeekToTimeTestNotPermit));
+    desc.push_back(XL("OH_AVMuxer_SetRotationNotPermit", OH_AVMuxer_SetRotationNotPermit));
+    desc.push_back(XL("OH_AVMuxer_SetFormatNotPermit", OH_AVMuxer_SetFormatNotPermit));
+    desc.push_back(XL("OH_AVMuxer_AddTrackNotPermit", OH_AVMuxer_AddTrackNotPermit));
+    desc.push_back(XL("OH_AVMuxer_StartNotPermit", OH_AVMuxer_StartNotPermit));
+    desc.push_back(XL("OH_AVMuxer_WriteSampleNotPermit", OH_AVMuxer_WriteSampleNotPermit));
+    desc.push_back(XL("OH_AVMuxer_WriteSampleBufferNotPermit", OH_AVMuxer_WriteSampleBufferNotPermit));
+    desc.push_back(XL("OH_AVMuxer_StopNotPermit", OH_AVMuxer_StopNotPermit));
+    desc.push_back(XL("WriteMp4File", WriteMp4File));
 }
 
 static void InitPushOH_AVErrCodeTest(std::vector<napi_property_descriptor> &desc)
@@ -432,6 +543,44 @@ static void InitPushOH_AVErrCodeTest(std::vector<napi_property_descriptor> &desc
     desc.push_back(XL("OH_AVErrCodeTest17", OH_AVErrCodeTest17));
     desc.push_back(XL("OH_AVErrCodeTest18", OH_AVErrCodeTest18));
     desc.push_back(XL("OH_AVFormat_SetIntValueTest", OH_AVFormat_SetIntValueTest));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer", VideoEncoder_QueryOutputBuffer));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer", VideoEncoder_QueryInputBuffer));
+    desc.push_back(XL("VideoDecoder_AVDecodeSync", VideoDecoder_AVDecodeSync));
+}
+
+static void InitPushOH_VideoEncoderFunction2Test(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("VideoEncoder_FreeOutputBuffer", VideoEncoder_FreeOutputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_RegisterParameterCallback", VideoEncoder_RegisterParameterCallback_Test));
+    desc.push_back(XL("VideoEncoder_SetParameter", VideoEncoder_SetParameter_Test));
+    desc.push_back(XL("VideoEncoder_NotifyEndOfStream", VideoEncoder_NotifyEndOfStream_Test));
+    desc.push_back(XL("VideoEncoder_PushInputData", VideoEncoder_PushInputData_Test));
+    desc.push_back(XL("VideoEncoder_PushInputBuffer", VideoEncoder_PushInputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_PushInputParameter", VideoEncoder_PushInputParameter_Test));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer1", VideoEncoder_QueryInputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer2", VideoEncoder_QueryInputBuffer_Test2));
+    desc.push_back(XL("VideoEncoder_QueryInputBuffer3", VideoEncoder_QueryInputBuffer_Test3));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer1", VideoEncoder_QueryOutputBuffer_Test));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer2", VideoEncoder_QueryOutputBuffer_Test2));
+    desc.push_back(XL("VideoEncoder_QueryOutputBuffer3", VideoEncoder_QueryOutputBuffer_Test3));
+    desc.push_back(XL("VideoDecoder_SetSurface", VideoDecoder_SetSurface_Test));
+    desc.push_back(XL("VideoDecoder_SetParameter", VideoDecoder_SetParameter_Test));
+    desc.push_back(XL("VideoDecoder_PushInputData", VideoDecoder_PushInputData_Test));
+    desc.push_back(XL("VideoDecoder_RenderOutputData", VideoDecoder_RenderOutputData_Test));
+    desc.push_back(XL("VideoDecoder_FreeOutputData", VideoDecoder_FreeOutputData_Test));
+    desc.push_back(XL("VideoDecoder_PushInputBuffer", VideoDecoder_PushInputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_RenderOutputBuffer", VideoDecoder_RenderOutputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_RenderOutputBufferAtTime", VideoDecoder_RenderOutputBufferAtTime_Test));
+    desc.push_back(XL("VideoDecoder_FreeOutputBuffer", VideoDecoder_FreeOutputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_QueryInputBuffer", VideoDecoder_QueryInputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_QueryInputBuffer2", VideoDecoder_QueryInputBuffer_Test2));
+    desc.push_back(XL("VideoDecoder_QueryInputBuffer3", VideoDecoder_QueryInputBuffer_Test3));
+    desc.push_back(XL("VideoDecoder_QueryOutputBuffer1", VideoDecoder_QueryOutputBuffer_Test));
+    desc.push_back(XL("VideoDecoder_QueryOutputBuffer2", VideoDecoder_QueryOutputBuffer_Test2));
+    desc.push_back(XL("VideoDecoder_QueryOutputBuffer3", VideoDecoder_QueryOutputBuffer_Test3));
+    desc.push_back(XL("VideoDecoder_Configure", VideoDecoder_Configure_Test));
+    desc.push_back(XL("VideoDecoder_Prepare", VideoDecoder_Prepare_Test));
+    desc.push_back(XL("VideoDecoder_Start", VideoDecoder_Start_Test));
 }
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -443,6 +592,8 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPush4(desc);
     InitPush5(desc);
     InitPush6(desc);
+    InitPush7(desc);
+    InitPush8(desc);
     InitPushAVCLevel(desc);
     InitPushOH_VVCLevelTest(desc);
     InitPushOH_MPEG4LevelTest(desc);
@@ -450,6 +601,7 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPushOH_VideoEncoderFunctionTest(desc);
     InitPushOH_AVDemuxeFunctionTest(desc);
     InitPushOH_AVErrCodeTest(desc);
+    InitPushOH_VideoEncoderFunction2Test(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

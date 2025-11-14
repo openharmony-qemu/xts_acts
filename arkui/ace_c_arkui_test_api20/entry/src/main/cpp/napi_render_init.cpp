@@ -35,6 +35,8 @@
 #include "Flex/FlexCrossLanguageTest.h"
 #include "Stack/StackCrossLanguageTest.h"
 #include "RelativeContainer/RelativeContainerCrossLanguageTest.h"
+#include "napi/native_api.h"
+#include "node/NodeCreatorTest.h"
 
 namespace ArkUICapiTest
 {
@@ -89,7 +91,17 @@ namespace ArkUICapiTest
              nullptr, nullptr, nullptr, napi_default, nullptr},
             {"createCrossLanguageRelativeContainerNode", nullptr, RelativeContainerCrossLanguageTest::createCrossLanguageRelativeContainerNode,
              nullptr, nullptr, nullptr, napi_default, nullptr},
-        };
+			 { "CreateNodeArkUIPostAsyncUITask", nullptr,
+            NativeModule::CreateNodeArkUIPostAsyncUITask, nullptr, nullptr, nullptr, napi_default, nullptr },
+			{ "CreateNodeArkUIPostUITask", nullptr,
+				NativeModule::CreateNodeArkUIPostUITask, nullptr, nullptr, nullptr, napi_default, nullptr },
+			{ "CreateNodeArkUIPostUITaskAndWait", nullptr,
+				NativeModule::CreateNodeArkUIPostUITaskAndWait, nullptr, nullptr, nullptr, napi_default, nullptr },
+			{ "CreateNodeTreeOnUIThread", nullptr,
+				NativeModule::CreateNodeTreeOnUIThread, nullptr, nullptr, nullptr, napi_default, nullptr },
+			{ "DisposeNodeTree", nullptr,
+				NativeModule::DisposeNodeTree, nullptr, nullptr, nullptr, napi_default, nullptr }
+			};
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

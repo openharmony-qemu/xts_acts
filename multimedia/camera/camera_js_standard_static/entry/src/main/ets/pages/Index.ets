@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { memo} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
@@ -22,14 +21,21 @@ import { Hypium } from "../../../hypium/index";
 
 class MyController extends XComponentController {
   onSurfaceCreated(surfaceId: string): void {
-    surfaceIds = surfaceId;
-    console.info('CameraModuleTest: XComponent onLoad surfaceIds: ' + surfaceIds)
-    Hypium.set('SurfaceId', surfaceIds);
+    console.info(TAG + 'XComponent onSurfaceCreated is called')
+    if (!isSurfaceCreated) {
+      isSurfaceCreated = true;
+      surfaceIds = surfaceId;
+      console.info(TAG + 'onSurfaceCreated XComponent surfaceIds: ' + surfaceIds)
+      Hypium.set('SurfaceId', surfaceIds);
+    } else {
+      console.info(TAG + 'surfaceIds has been created: ' + surfaceIds)
+    }
   }
 }
 
 let TAG = 'CameraModuleTest: ';
 let surfaceIds: string;
+let isSurfaceCreated: boolean = false;
 let mXComponentController: MyController = new MyController();
 
 @Entry
@@ -58,6 +64,17 @@ struct MyStateSample {
         type: XComponentType.SURFACE,
         controller: mXComponentController
       } as XComponentOptions)
+      .onLoad(() => {
+        console.info(TAG + 'XComponent onLoad is called')
+        if (!isSurfaceCreated) {
+          isSurfaceCreated = true;
+          surfaceIds = mXComponentController.getXComponentSurfaceId();
+          console.info(TAG + 'XComponent onLoad surfaceIds: ' + surfaceIds)
+          Hypium.set('SurfaceId', surfaceIds);
+        } else {
+          console.info(TAG + 'XComponent: surfaceIds has been created: ' + surfaceIds)
+        }
+      })
         .width('1920px')
         .height('1080px')
     }

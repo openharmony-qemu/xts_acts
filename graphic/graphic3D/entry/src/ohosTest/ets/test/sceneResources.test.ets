@@ -128,6 +128,7 @@ export default function sceneResourcesTest() {
       try {
         anim.restart();
         console.info(msg + " Succeed in anim.restart() ");
+        expect(anim.running).assertTrue();
         done();
       } catch (err) {
         console.info(msg + " Failed in anim.restart() " + JSON.stringify(err));

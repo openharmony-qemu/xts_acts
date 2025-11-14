@@ -490,7 +490,7 @@ describe('HilogJsTest', function () {
       console.info('testHilogJsApi31 start');
       try{
         // @ts-ignore
-        hilog.info("ä¸­æ–‡domainId", "HILOGTEST", "username:%{public}s, password:%{public}s.", "username", "password")
+        hilog.info("ÖÐÎÄdomainId", "HILOGTEST", "username:%{public}s, password:%{public}s.", "username", "password")
       }catch(error){
         console.log(`testHilogJsApi31 got an error: ${JSON.stringify(error)}`)
         expect().assertFail();
@@ -570,7 +570,7 @@ describe('HilogJsTest', function () {
     it('testHilogJsApi36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi36 start');
       try{
-        hilog.info(0x3200, "HILOGTEST", "ä¸­æ–‡æµ‹è¯•:%{public}s, æ··åˆæ‰“å°:%{public}s", "ä¸­æ–‡æ‰“å°æµ‹è¯•", "forä¸­æ–‡test,.;:*_-=^(%)?#$/|\\")
+        hilog.info(0x3200, "HILOGTEST", "ÖÐÎÄ²âÊÔ:%{public}s, »ìºÏ´òÓ¡:%{public}s", "ÖÐÎÄ´òÓ¡²âÊÔ", "forÖÐÎÄtest,.;:*_-=^(%)?#$/|\\")
       }catch(error){
         console.log(`testHilogJsApi36 got an error: ${JSON.stringify(error)}`)
         expect().assertFail();
@@ -662,7 +662,7 @@ describe('HilogJsTest', function () {
     it('testHilogJsApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info('testHilogJsApi43 start');
       // @ts-ignore
-      const res = hilog.isLoggable("ä¸­æ–‡æµ‹è¯•", "HILOGTEST", hilog.LogLevel.INFO);
+      const res = hilog.isLoggable("ÖÐÎÄ²âÊÔ", "HILOGTEST", hilog.LogLevel.INFO);
       expect(res).assertEqual(undefined);
       console.info('testHilogJsApi43 end');
     })
@@ -694,7 +694,7 @@ describe('HilogJsTest', function () {
     /**
      * @tc.number SUB_DFX_DFT_Hilog_Redirect_0100
      * @tc.name hilog interface test
-     * @tc.desc éªŒè¯nativieå±‚æµæ°´æ—¥å¿—æ‰“å°å¯é€šè¿‡å›žè°ƒæŽ¥å£é‡å®šå‘ç›´è‡ªèº«jså±‚.
+     * @tc.desc ÑéÖ¤nativie²ãÁ÷Ë®ÈÕÖ¾´òÓ¡¿ÉÍ¨¹ý»Øµ÷½Ó¿ÚÖØ¶¨ÏòÖ±×ÔÉíjs²ã.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level3
@@ -718,7 +718,7 @@ describe('HilogJsTest', function () {
     /**
      * @tc.number SUB_DFX_DFT_Hilog_Redirect_0200
      * @tc.name hilog interface test
-     * @tc.desc éªŒè¯jså±‚æµæ°´æ—¥å¿—æ‰“å°å¯é€šè¿‡å›žè°ƒæŽ¥å£é‡å®šå‘ç›´è‡ªèº«jså±‚.
+     * @tc.desc ÑéÖ¤js²ãÁ÷Ë®ÈÕÖ¾´òÓ¡¿ÉÍ¨¹ý»Øµ÷½Ó¿ÚÖØ¶¨ÏòÖ±×ÔÉíjs²ã.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level3
@@ -826,6 +826,120 @@ describe('HilogJsTest', function () {
         console.log(`testHilogJsApi01 got an error: ${JSON.stringify(error)}`)
         expect().assertFail()
       }
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1700
+     * @tc.name hilog interface test
+     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-Ê¹ÓÃÄ¬ÈÏÈÕÖ¾¼¶±ðsetLogLevel 
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1800
+     * @tc.name hilog interface test
+     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½Ï´óÖµsetLogLevel 
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_CLOSE_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(false);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1900
+     * @tc.name hilog interface test
+     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½ÏÐ¡ÖµsetLogLevel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_OPEN_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+    
+    /**
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2400
+     * @tc.name hilog interface test
+     * @tc.desc hilogµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿ÚºóÖ´ÐÐsetMinLogLevel·½·¨
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.ERROR, hilog.PreferStrategy.PREFER_CLOSE_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.WARN);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(false);
+      expect(res1).assertEqual(true);
+      hilog.setMinLogLevel(hilog.LogLevel.WARN)
+      let res2 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.WARN);
+      let res3 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res2).assertEqual(true);
+      expect(res3).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2000
+     * @tc.name hilog interface test
+     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-Ê¹ÓÃÄ¬ÈÏÈÕÖ¾¼¶±ðOH_LOG_SetLogLevel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+        console.info('SUB_DFX_DFT_DefaultLevel_2000 start');
+        const res = hilogndk.ohSetLogLevelTest1();
+        expect(res).assertEqual(true);
+        console.info('SUB_DFX_DFT_DefaultLevel_2000 end');
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2100
+     * @tc.name hilog interface test
+     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½Ï´óÖµOH_LOG_SetLogLevel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info('SUB_DFX_DFT_DefaultLevel_2100 start');
+      const res = hilogndk.ohSetLogLevelTest2();
+      expect(res).assertEqual(true);
+      console.info('SUB_DFX_DFT_DefaultLevel_2100 end');
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2200
+     * @tc.name hilog interface test
+     * @tc.desc hilogÐÂÔöÏòÏÂµ÷ÕûÈÕÖ¾¼¶±ð½Ó¿Ú-±È½ÏÄ¬ÈÏÖµºÍÉèÖÃÖµºóÈ¡½ÏÐ¡ÖµOH_LOG_SetLogLevel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info('SUB_DFX_DFT_DefaultLevel_2200 start');
+      const res = hilogndk.ohSetLogLevelTest3();
+      expect(res).assertEqual(true);
+      console.info('SUB_DFX_DFT_DefaultLevel_2200 end');
     })
   })
 }

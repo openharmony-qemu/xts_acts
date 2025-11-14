@@ -49,12 +49,13 @@ export default function storagePromiseTest() {
             });
         })
         /**
-         * @tc.name testClear0011
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testClear0011
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0400
-         * @tc.desc clear promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   clear promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testClear0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_STRING_ELEMENT, "test");
@@ -69,12 +70,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testHasKey0031
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testHasKey0031
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1700
-         * @tc.desc has string interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has string interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHasKey0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_STRING_ELEMENT, "test");
@@ -88,12 +90,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testHasKey0032
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testHasKey0032
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1500
-         * @tc.desc has int interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has int interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHasKey0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_INT_ELEMENT, 1);
@@ -107,12 +110,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testHasKey0033
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testHasKey0033
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1400
-         * @tc.desc has float interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has float interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHasKey0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_FLOAT_ELEMENT, 2.0);
@@ -126,12 +130,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testHasKey0034
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testHasKey0034
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1600
-         * @tc.desc has boolean interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has boolean interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHasKey0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_BOOLEAN_ELEMENT, false);
@@ -145,12 +150,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testHasKey0035
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testHasKey0035
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1300
-         * @tc.desc has long interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   has long interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHasKey0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_LONG_ELEMENT, 0);
@@ -164,12 +170,32 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testGetDefValue0061
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testHasKey0036
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2600
+         * @tc.desc   has long interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testHasKey0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            await mPref.has(KEY_TEST_STRING_ELEMENT).then((ret) => {
+                expect(ret).assertEqual(false);
+                done();
+            }).catch((err) => {
+                expect().assertFail();
+                done();
+            });
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testGetDefValue0061
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0800
-         * @tc.desc get string promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get string promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetDefValue0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -183,12 +209,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testGetFloat0071
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testGetFloat0071
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0900
-         * @tc.desc get float promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get float promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetFloat0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -203,12 +230,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testGetInt0081
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testGetInt0081
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1000
-         * @tc.desc get int promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get int promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetInt0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -223,12 +251,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testGetLong0091
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testGetLong0091
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1100
-         * @tc.desc get long promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get long promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetLong0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -243,12 +272,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testGetString101
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testGetString101
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1200
-         * @tc.desc get String promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get String promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetString101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -264,12 +294,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testPutBoolean0121
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPutBoolean0121
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1900
-         * @tc.desc put boolean promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put boolean promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPutBoolean0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -285,12 +316,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testPutFloat0131
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPutFloat0131
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2000
-         * @tc.desc put float promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put float promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPutFloat0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -306,12 +338,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testPutInt0141
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPutInt0141
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2100
-         * @tc.desc put int promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put int promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPutInt0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -327,12 +360,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testPutLong0151
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPutLong0151
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2200
-         * @tc.desc put long promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put long promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPutLong0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -349,12 +383,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testPutString0161
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPutString0161
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2300
-         * @tc.desc put String promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put String promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPutString0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -371,12 +406,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testPutString0171
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPutString0171
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2500
-         * @tc.desc deleteSync promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   deleteSync promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPutString0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_STRING_ELEMENT, "abc");
@@ -392,12 +428,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testFlush00181
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testFlush00181
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0600
-         * @tc.desc flush promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   flush promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testFlush00181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -414,12 +451,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testMaxLengthofKey0200
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testMaxLengthofKey0200
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1800
-         * @tc.desc Maximum length of key test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Maximum length of key test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testMaxLengthofKey0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
@@ -432,15 +470,16 @@ export default function storagePromiseTest() {
             })
         })
 
-        /**
-         * @tc.name testMaxLengthofValue0210
-         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2400
-         * @tc.desc Maximum length of value test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
 
+        /**
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testMaxLengthofValue0210
+         * @tc.number testMaxLengthofValue0210
+         * @tc.desc   testMaxLengthofValue0210
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMaxLengthofValue0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
             await mPref.putSync("test", "abc");
@@ -454,15 +493,16 @@ export default function storagePromiseTest() {
         })
 
 
-        /**
-         * @tc.name testMaxLengthofValue0220
-         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0300
-         * @tc.desc Maximum length of value test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
 
+        /**
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testMaxLengthofValue0220
+         * @tc.number testMaxLengthofValue0220
+         * @tc.desc   testMaxLengthofValue0220
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMaxLengthofValue0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
             await mPref.putSync("test", MAX_VALUE_LENGTH);
@@ -475,15 +515,16 @@ export default function storagePromiseTest() {
             });
         })
 
-        /**
-         * @tc.name testDelete0230
-         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0500
-         * @tc.desc delete promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
 
+        /**
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testDelete0230
+         * @tc.number testDelete0230
+         * @tc.desc   testDelete0230
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDelete0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(KEY_TEST_STRING_ELEMENT, "abc");
             expect("abc").assertEqual(mPref.getSync(KEY_TEST_STRING_ELEMENT, "default"));
@@ -497,12 +538,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testMaxLengthofKey0240
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testMaxLengthofKey0240
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0200
-         * @tc.desc Maximum length of key test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Maximum length of key test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testMaxLengthofKey0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.putSync(MAX_KEY_LENGTH, "value1");
@@ -516,15 +558,16 @@ export default function storagePromiseTest() {
             });
         })
 
-        /**
-         * @tc.name testMaxLengthofValue0250
-         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0100
-         * @tc.desc Maximum length of value test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
 
+        /**
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testMaxLengthofValue0250
+         * @tc.number testMaxLengthofValue0250
+         * @tc.desc   testMaxLengthofValue0250
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testMaxLengthofValue0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clearSync();
             await mPref.putSync("test", MAX_VALUE_LENGTH)
@@ -540,12 +583,13 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @tc.name testGetDefValue0260
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testGetDefValue0260
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0700
-         * @tc.desc get string promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   get string promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetDefValue0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await mPref.clear();
@@ -556,6 +600,27 @@ export default function storagePromiseTest() {
                 expect(null).assertFail();
                 done();
             });
+        })
+
+
+        /**
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testHassyncKeyTest0001
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2700
+         * @tc.desc   has string interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('testHassyncKeyTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let ret = await mPref.hasSync(KEY_TEST_STRING_ELEMENT)
+                expect(ret).assertEqual(false);
+                done();
+            } catch (err) {
+                expect().assertFail()
+                done();
+      }
         })
     })
 }

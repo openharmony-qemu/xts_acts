@@ -28,6 +28,8 @@ describe("WorkSchedulerPerformanceTest", function () {
     performanceIsLastWorkTimeOutCallback()
     performanceIsLastWorkTimeOutPromise()
     performanceStopAndClearWorks()
+    performanceObtainAllWorksCallbackresIsNull()
+    performanceObtainAllWorksPromiseresIsNull()
     console.log("**********WorkScheduler Performance Test End**********")
 })
 
@@ -166,8 +168,11 @@ function performanceObtainAllWorksCallback() {
         let startTime = new Date().getTime()
         try{
             await workscheduler.obtainAllWorks((err, res) => {
+                console.info('WorkSchedulerPerformance_005 obtainAllWorks callback success, res is:' + JSON.stringify(res));
+                console.info('WorkSchedulerPerformance_005 obtainAllWorks callback success, res.length is:' + res.length);
                 let totalTime = new Date().getTime() - startTime
                 console.info('WorkSchedulerPerformance_005: obtainAllWorks callback WaitTime: ' + totalTime + 'ms')
+                expect(res.length).assertLarger(0);
                 done()
             })
         } catch (error) {
@@ -195,8 +200,11 @@ function performanceObtainAllWorksPromise() {
         try{
             await workscheduler.obtainAllWorks()
                 .then((res) => {
+                    console.info('WorkSchedulerPerformance_006 obtainAllWorks promise success, res is:' + JSON.stringify(res));
+                    console.info('WorkSchedulerPerformance_006 obtainAllWorks promise success, res.length is:' + res.length);
                     let totalTime = new Date().getTime() - startTime
                     console.info('WorkSchedulerPerformance_006: obtainAllWorks promise WaitTime: ' + totalTime + 'ms')
+                    expect(res.length).assertLarger(0);
                     done()
                 })
                 .catch((err) => {
@@ -226,8 +234,10 @@ function performanceIsLastWorkTimeOutCallback() {
         let startTime = new Date().getTime()
         try{
             await workscheduler.isLastWorkTimeOut(207, (err, res) => {
+                console.info('WorkSchedulerPerformance_007 isLastWorkTimeOut callback success, res is:' + res);
                 let totalTime = new Date().getTime() - startTime
                 console.info('WorkSchedulerPerformance_007: isLastWorkTimeOut callback WaitTime: ' + totalTime + 'ms')
+                expect(res == false).assertTrue();
                 done()
             })
         } catch (error) {
@@ -255,8 +265,10 @@ function performanceIsLastWorkTimeOutPromise() {
         try{
             await workscheduler.isLastWorkTimeOut(208)
                 .then((res) => {
+                    console.info('WorkSchedulerPerformance_008 isLastWorkTimeOut promise success, res is:' + res);
                     let totalTime = new Date().getTime() - startTime
                     console.info('WorkSchedulerPerformance_008: isLastWorkTimeOut promise WaitTime: ' + totalTime + 'ms')
+                    expect(res == false).assertTrue();
                     done()
                 })
                 .catch((err) => {
@@ -288,5 +300,43 @@ function performanceStopAndClearWorks() {
         let totalTime = new Date().getTime() - startTime
         console.info('WorkSchedulerPerformance_009: stopAndClearWorks WaitTime: ' + totalTime + 'ms')
     })
+}
+
+function performanceObtainAllWorksCallbackresIsNull() {
+        it("WorkSchedulerPerformance_010", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkFun055---------------------------');
+            workscheduler.stopAndClearWorks()
+            try{
+                await workscheduler.obtainAllWorks((err, res) => {
+                    console.info('WorkSchedulerPerformance_010 obtainAllWorks callback success, res is:' + JSON.stringify(res));
+                    console.info('WorkSchedulerPerformance_010 obtainAllWorks callback success, res.length is:' + res.length);
+                    expect(res.length).assertEqual(0);
+                    done();
+                })
+            } catch (error) {
+                done()
+            }
+        })
+}
+
+function performanceObtainAllWorksPromiseresIsNull() {
+        it("WorkSchedulerPerformance_011", Level.LEVEL0, async function (done) {
+            console.info('----------------------testStartWorkFun055---------------------------');
+            workscheduler.stopAndClearWorks()
+            try{
+                await workscheduler.obtainAllWorks()
+                    .then((res) => {
+                        console.info('WorkSchedulerPerformance_011 obtainAllWorks promise success, res is:' + JSON.stringify(res));
+                        console.info('WorkSchedulerPerformance_011 obtainAllWorks promise success, res.length is:' + res.length);
+                        expect(res.length).assertEqual(0);
+                        done();
+                    })
+                    .catch((err) => {
+                        done()
+                    })
+            } catch (error) {
+                done()
+            }
+        })
 }
 }

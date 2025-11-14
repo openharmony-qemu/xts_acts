@@ -16,6 +16,9 @@ add_library(nativerender SHARED
     position/EdgesPositionTest.cpp
     textContentAlign/TextContentAlignTest.cpp
     PixelRound/PixelRoundTest.cpp
+    Column/ColumnMatchParentTest.cpp
+    Column/ColumnWrapContentTest.cpp
+    Column/ColumnFixAtiDealSizeTest.cpp
 )
 
 add_library(nativefunc SHARED

@@ -53,7 +53,7 @@ export default function deviceInfoTest() {
      * @tc.size      : MediumTest
      */
     it("test_get_device_info_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         deviceInfo.getDeviceInfo(SELFWANT, LABEL_DEVICE_NAME);
         expect(false).assertTrue();

@@ -68,7 +68,7 @@ export default function RichEditorOnWillChange019() {
       let rich = await driver.findComponent(ON.id('rich_struct'));
 
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
-      int_callback_status.click();
+      await int_callback_status.click();
       await CommonFunc.sleep(500);
 
       let pointCenter = await rich.getBoundsCenter();

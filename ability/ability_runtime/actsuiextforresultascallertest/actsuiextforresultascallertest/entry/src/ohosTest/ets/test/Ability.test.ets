@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2025 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function abilityTest() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      await sleep(2000);
+      await sleep(1000);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -160,7 +160,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0400', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -214,7 +213,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0500', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -268,7 +266,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0600', Level.LEVEL0, async (done: Function) => {
-      await sleep(1000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -319,7 +316,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0700', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       if (deviceSupport === 'false') {
         done();
         return;
@@ -385,7 +381,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1100', Level.LEVEL0, async (done: Function) => {
-      await sleep(1000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -433,7 +428,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1200', Level.LEVEL0, async (done: Function) => {
-      await sleep(1000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -488,7 +482,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1300', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -542,7 +535,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1400', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -595,7 +587,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1500', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -648,7 +639,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1600', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -701,7 +691,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1700', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -755,7 +744,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1800', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -809,7 +797,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_1900', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -857,7 +844,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_2000', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -954,7 +940,7 @@ export default function abilityTest() {
               console.info('====>[UIExtensionForResultAsCallerUIAbility] 2100 killui2 ng' + JSON.stringify(err));
               expect().assertFail();
             });
-          await sleep(1000);
+          await sleep(300);
           await abilityDelegator.executeShellCommand('aa dump -a')
             .then((result: AbilityDelegatorRegistry.ShellCmdResult) => {
               console.info('====>[UIExtensionForResultAsCallerUIAbility] 2100 aa dump  ok' + JSON.stringify(result));
@@ -988,7 +974,6 @@ export default function abilityTest() {
     * @tc.level: Level1
     */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0800', Level.LEVEL0, async (done: Function) => {
-      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -1051,7 +1036,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0900', Level.LEVEL0, async (done: Function) => {
-      await sleep(1000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;
@@ -1103,7 +1087,6 @@ export default function abilityTest() {
      * @tc.level: Level1
      */
     it('SUB_Ability_AbilityRuntime_UIExtensionStartAbilityForResultAsCaller_0300', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         subscriber = data;

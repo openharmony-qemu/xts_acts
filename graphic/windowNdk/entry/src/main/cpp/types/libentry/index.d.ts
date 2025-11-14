@@ -82,3 +82,5 @@ export const testInjectTouchEventwithSubWindowButtonDownCancle: (windowId: numbe
 export const testInjectTouchEventwithSubWindowSlideDownCancle: (windowId: number, width: number, height: number) => number;
 export const testInjectTouchEventwithHideSubWindowDown: (windowId: number, width: number, height: number) => number;
 
+export const test_OH_WindowManager_GetAllMainWindowInfo_0100: () => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0100: (windowId: number) => number;

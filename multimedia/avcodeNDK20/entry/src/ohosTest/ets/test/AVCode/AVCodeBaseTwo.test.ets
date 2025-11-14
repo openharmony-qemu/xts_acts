@@ -437,5 +437,71 @@ export default function AVCodeBaseTwoTest() {
         done()
       }
     });
+
+    /**
+     * @tc.number   SUB_AVCodeBaseTwo_Test_02000
+     * @tc.name     testAVCodeBaseTwoTest02000
+     * @tc.desc     testing OH_AVCLevel AVC_LEVEL_1.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTwoTest02000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTwoTest02100';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.VideoEncoder_QueryOutputBuffer();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBaseTwo_Test_02100
+     * @tc.name     testAVCodeBaseTwoTest02100
+     * @tc.desc     testing OH_AVCLevel AVC_LEVEL_1.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTwoTest02100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTwoTest02100';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.VideoEncoder_QueryInputBuffer();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.number   SUB_AVCodeBaseTwo_Test_02200
+     * @tc.name     testAVCodeBaseTwoTest02200
+     * @tc.desc     testing OH_AVCLevel AVC_LEVEL_1.
+     * @tc.level    Level3
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     */
+    it('testAVCodeBaseTwoTest02200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = 'testAVCodeBaseTwoTest02200';
+      try {
+        console.info(TAG + "===> START");
+        let result: number = libavcode.VideoDecoder_AVDecodeSync();
+        console.info(TAG + "Test ret Result ===> " + result);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error( "====> " + TAG + " err: " + err);
+        done()
+      }
+    });
   })
 }

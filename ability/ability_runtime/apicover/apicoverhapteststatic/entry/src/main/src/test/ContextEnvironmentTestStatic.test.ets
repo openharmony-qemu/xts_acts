@@ -26,7 +26,7 @@ import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import { BusinessError } from '@ohos.base';
 
 
-const domain = 0x0000;
+const domain: int = 0x0000;
 const tag = 'testTag'
 
 class CustomEnvironmentCallback implements EnvironmentCallback {
@@ -75,14 +75,14 @@ export default function ContextEnvironmentStaticTest() {
           for (let i = 0; i < count; i++) {
             hilog.info(domain, tag, `${itName} on environment`);
             const cb = new CustomEnvironmentCallback();
-            const callbackId = applicationContext.on('environment', cb);
+            const callbackId = applicationContext.onEnvironment(cb);
             hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}, callNum: ${callNum}`);
 
             await Utils.msSleep(700);
 
             let code: int | undefined = undefined;
             hilog.info(domain, tag, `${itName} off environment`);
-            applicationContext.off('environment', callbackId, (err: BusinessError<void> | null): void => {
+            applicationContext.offEnvironment(callbackId, (err: BusinessError<void> | null): void => {
               hilog.info(domain, tag, `${itName} off environment err: code ${err?.code}, message: ${err?.message}`);
               code = err?.code;
             })
@@ -113,7 +113,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', 100, (err: BusinessError<void> | null): void => {
+          applicationContext.offEnvironment(100, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('401');
             done();
@@ -139,7 +139,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', -1, (err: BusinessError<void> | null): void => {
+          applicationContext.offEnvironment(-1, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('401');
             done();
@@ -165,7 +165,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', 100).then(() => {
+          applicationContext.offEnvironment(100).then(() => {
             hilog.info(domain, tag, `${itName} off success`);
             expect().assertFail();
             done();
@@ -197,7 +197,7 @@ export default function ContextEnvironmentStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off environment`);
-          applicationContext.off('environment', -1).then(() => {
+          applicationContext.offEnvironment(-1).then(() => {
             hilog.info(domain, tag, `${itName} off success`);
             expect().assertFail();
             done();
@@ -229,7 +229,7 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} set color mode`);
@@ -240,7 +240,7 @@ export default function ContextEnvironmentStaticTest() {
         expect(cb.configurationUpdated).assertTrue();
 
         hilog.info(domain, tag, `${itName} off environment`);
-        await applicationContext.off('environment', callbackId);
+        await applicationContext.offEnvironment(callbackId);
         hilog.info(domain, tag, `${itName} reset color mode`);
         applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
       } catch (err: BusinessError) {
@@ -263,7 +263,7 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} set color mode`);
@@ -274,7 +274,7 @@ export default function ContextEnvironmentStaticTest() {
         expect(cb.configurationUpdated).assertTrue();
 
         hilog.info(domain, tag, `${itName} off environment`);
-        await applicationContext.off('environment', callbackId);
+        await applicationContext.offEnvironment(callbackId);
         hilog.info(domain, tag, `${itName} reset color mode`);
         applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
       } catch (err: BusinessError) {
@@ -297,7 +297,7 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} set language`);
@@ -308,7 +308,7 @@ export default function ContextEnvironmentStaticTest() {
         expect(cb.configurationUpdated).assertTrue();
 
         hilog.info(domain, tag, `${itName} off environment`);
-        await applicationContext.off('environment', callbackId);
+        await applicationContext.offEnvironment(callbackId);
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
@@ -329,11 +329,11 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} off environment`);
-        applicationContext.off('environment', callbackId, (err: BusinessError<void> | null): void => {
+        applicationContext.offEnvironment(callbackId, (err: BusinessError<void> | null): void => {
           hilog.info(domain, tag, `${itName} off environment err: code ${err?.code}, message: ${err?.message}`);
           expect(`${err?.code}`).assertEqual('0');
 
@@ -370,11 +370,11 @@ export default function ContextEnvironmentStaticTest() {
       try {
         hilog.info(domain, tag, `${itName} on environment`);
         const cb = new CustomEnvironmentCallback();
-        const callbackId = applicationContext.on('environment', cb);
+        const callbackId = applicationContext.onEnvironment(cb);
         hilog.info(domain, tag, `${itName} callbackId:  ${callbackId}`);
 
         hilog.info(domain, tag, `${itName} off environment`);
-        applicationContext.off('environment', callbackId).then(() => {
+        applicationContext.offEnvironment(callbackId).then(() => {
           hilog.info(domain, tag, `${itName} set color mode`);
           applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_LIGHT);
           await Utils.msSleep(2000);

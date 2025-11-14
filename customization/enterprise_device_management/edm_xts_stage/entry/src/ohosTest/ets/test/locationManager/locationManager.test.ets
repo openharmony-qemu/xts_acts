@@ -40,6 +40,8 @@ function testSetLocationPolicy() {
     try {
       locationManager.setLocationPolicy(SELFWANT, locationManager.LocationPolicy.DEFAULT_LOCATION_SERVICE);
       expect(false).assertTrue();
+      let resAfter = locationManager.getLocationPolicy(SELFWANT);
+      expect(resAfter == locationManager.LocationPolicy.DEFAULT_LOCATION_SERVICE).assertTrue();
     } catch (error) {
       expect(error.code == 9200001).assertTrue();
     }
@@ -55,10 +57,12 @@ function testSetLocationPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_location_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       locationManager.setLocationPolicy(SELFWANT, locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE);
       expect(false).assertTrue();
+      let resAfter = locationManager.getLocationPolicy(SELFWANT);
+      expect(resAfter == locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE).assertTrue();
     } catch (error) {
       expect(error.code == 9200002).assertTrue();
     } finally {
@@ -79,7 +83,7 @@ function testSetLocationPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       locationManager.setLocationPolicy(SELFWANT, locationManager.LocationPolicy.FORCE_OPEN_LOCATION_SERVICE);
-      let getPolicy: locationManager.LocationPolicy = locationManager.getLocationPolicy(SELFWANT);;
+      let getPolicy: locationManager.LocationPolicy = locationManager.getLocationPolicy(SELFWANT);
       expect(getPolicy == locationManager.LocationPolicy.FORCE_OPEN_LOCATION_SERVICE).assertTrue();
     } catch (error) {
       expect(error == null).assertTrue();
@@ -102,6 +106,8 @@ function testSetLocationPolicy() {
     try {
       locationManager.setLocationPolicy(null, locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE);
       expect(false).assertTrue();
+      let resAfter = locationManager.getLocationPolicy(SELFWANT);
+      expect(resAfter == locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE).assertTrue();
     } catch (error) {
       expect(error.code == 401).assertTrue();
     } finally {
@@ -139,7 +145,7 @@ function testGetLocationPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_location_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       locationManager.getLocationPolicy(SELFWANT);
       expect(false).assertTrue();

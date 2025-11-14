@@ -1336,11 +1336,12 @@ export default function windowRotationTest() {
       let caseName = 'testTwoPagesWithoutSetPreferredOrientation';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
+        
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('page2'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1383,11 +1384,12 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationLandscapeToPortrait_Inverted';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
+        
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1450,11 +1452,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationLandscape_InvertedToPortrait';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1517,11 +1519,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationUserPortraitToUserLandscape';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1585,11 +1587,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1652,11 +1654,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationFollowDeskTop';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1695,6 +1697,52 @@ export default function windowRotationTest() {
       }
 
     });
+
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_GetPreferredOrientation_API_0100
+     * @tc.name       testGetPreferredOrientation_enum
+     * @tc.desc       Sets the display direction property of the window
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testGetPreferredOrientation_enum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetPreferredOrientation_enum';
+      let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let mainWin: window.Window = windowStage.getMainWindowSync();
+      console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
+      expect(!!mainWin).assertTrue();
+      let num = 0
+      let orientationItem = ['UNSPECIFIED', 'PORTRAIT', 'LANDSCAPE', 'PORTRAIT_INVERTED',
+        'LANDSCAPE_INVERTED', 'AUTO_ROTATION', 'AUTO_ROTATION_PORTRAIT', 'AUTO_ROTATION_LANDSCAPE',
+        'AUTO_ROTATION_RESTRICTED', 'AUTO_ROTATION_PORTRAIT_RESTRICTED', 'AUTO_ROTATION_LANDSCAPE_RESTRICTED', 'LOCKED',
+        'AUTO_ROTATION_UNSPECIFIED',
+        'USER_ROTATION_PORTRAIT', 'USER_ROTATION_LANDSCAPE', 'USER_ROTATION_PORTRAIT_INVERTED',
+        'USER_ROTATION_LANDSCAPE_INVERTED', 'FOLLOW_DESKTOP', 'UNSPECIFIED'];
+      for (let i = 0; i < orientationItem.length; i++) {
+        await sleep(900)
+        await sleep(900)
+        let orientation: window.Orientation = window.Orientation[orientationItem[i]]
+        console.log(msgStr + 'i : ' + i + ' ,orientation : ' + orientation);
+        console.log(msgStr + 'i : ' + i + ' ,window.Orientation : ' + JSON.stringify(orientationItem[i]));
+        await (mainWin as window.Window).setPreferredOrientation(orientation).then(async () => {
+          console.log(msgStr + 'success set window.setPreferredOrientation : ' + orientation);
+          await sleep(500);
+          let CurrentOrientation = mainWin.getPreferredOrientation();
+          expect(CurrentOrientation).assertEqual(orientation);
+          num++
+          if (num == orientationItem.length) {
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.log(msgStr + 'window.setPreferredOrientation failed set error:' + orientation);
+        });
+        await sleep(900)
+        await sleep(300)
+      }
+    })
 
 
   })

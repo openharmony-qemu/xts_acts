@@ -146,6 +146,34 @@ export default function httpRequestJsunit() {
         done();
       }
     });
+     /**
+     * @tc.number: SUB_NetworkMgr_Http_HttpRequest_Request_0400
+     * @tc.name: testNetworkMgrHttpHttpRequestRequest0400
+     * @tc.desc: Test Test httpRequest property.
+     * @tc.level: level1
+     * @tc.type: Function
+     * @tc.size: MediumTest
+     */
+    it("testNetworkMgrHttpHttpRequestRequest0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName:string = "testNetworkMgrHttpHttpRequestRequest0400";
+      console.info(`${caseName}---Start`);
+      try {
+        let httpRequest = http.createHttp();
+        let resp = await httpRequest.request("https://www.baidu.com/", {
+             dnsServers:['223.5.5.5'],
+        });
+        console.info(`${caseName} createHttp success `+ JSON.stringify(resp));
+        expectTrue(resp.responseCode == 200);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.info("testNetworkMgrHttpHttpRequestRequest0400 : error = " + error);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
     /**
      * @tc.number: SUB_NetworkMgr_Http_HttpRequest_Destroy_0100
      * @tc.name: testNetworkMgrHttpHttpRequestDestroy0100

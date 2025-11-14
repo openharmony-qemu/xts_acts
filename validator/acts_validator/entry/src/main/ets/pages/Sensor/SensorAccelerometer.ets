@@ -26,8 +26,8 @@ import promptAction from '@ohos.promptAction';
 struct SensorAccelerometer {
   @State FillColor: string = '#FF000000';
   @State name: string = 'SensorAccelerometer';
-  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有加速度传感器' + '\n操作步骤：\n1.确定设备是否有加速度传感器\n2.如果有该传感器，点击开启并各方向移动设备，观察数值是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)'
-    + '\n预期结果：观察显示数值,跟随移动变化';
+  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有加速度传感器' + '\n操作步骤：\n1.确定设备是否有加速度传感器\n2.如果有该传感器，点击开启并各方向移动设备，观察数值或触发次数是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)'
+    + '\n预期结果：观察显示数值或触发次数,跟随移动变化';
   private tag: string = 'Sensor Accelerometer';
   @State Vue: boolean = false;
   @State isSensor: boolean = true;
@@ -40,6 +40,7 @@ struct SensorAccelerometer {
   @State nextY: string = '';
   @State nextZ: string = '';
   @State intervalNum: number = 0;
+  @State backCount: number = 0;
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name)
@@ -52,21 +53,26 @@ struct SensorAccelerometer {
       Logger.info(this.tag, 'enter')
       try {
         sensor.on(1, (data: sensor.AccelerometerResponse) => {
+          this.backCount += 1;
           Logger.info(this.tag, 'Succeeded in invoking on. X-coordinate component: ' + data.x);
-          this.dataX = data.x.toFixed(0);
+          this.dataX = data.x.toFixed(2);
           Logger.info(this.tag, 'Succeeded in invoking on. Y-coordinate component: ' + data.y);
-          this.dataY = data.y.toFixed(0);
+          this.dataY = data.y.toFixed(2);
           Logger.info(this.tag, 'Succeeded in invoking on. Z-coordinate component: ' + data.z);
-          this.dataZ = data.z.toFixed(0);
+          this.dataZ = data.z.toFixed(2);
           this.intervalNum = setInterval(() => {
-            this.nextX = data.x.toFixed(0);
-            this.nextY = data.y.toFixed(0);
-            this.nextZ = data.z.toFixed(0);
-            if (this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextY !== this.dataY) {
+            this.nextX = data.x.toFixed(2);
+            this.nextY = data.y.toFixed(2);
+            this.nextZ = data.z.toFixed(2);
+            if ((this.nextX !== this.dataX || this.nextY !== this.dataY || this.nextY !== this.dataY) ||
+             this.backCount > 0) {
               this.Vue = true;
             }
           }, 5000)
         }, { interval: 100000000 });
+        setTimeout(() => {
+          sensor.off(sensor.SensorId.ACCELEROMETER);
+        }, 5000);
       } catch (error) {
         let e: BusinessError.BusinessError = error as BusinessError.BusinessError;
         Logger.error(this.tag, `Failed to invoke on. Code: ${e.code}, message: ${e.message}`);
@@ -154,6 +160,12 @@ struct SensorAccelerometer {
           .textAlign(TextAlign.Start)
           .width('100%')
           .margin({ bottom: 24 })
+        Text('触发订阅的次数: ' + this.backCount)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ bottom: 24 })
       }
       .width('80%')
       .height('30%')
@@ -178,7 +190,7 @@ struct SensorAccelerometer {
       }
       .width('80%')
       .height('50%')
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Sensor/Sensor_index',

@@ -21,7 +21,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function CustomDialogMaskTest() {
 
   const SUITE: string = 'CustomDialogMask'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
 
   describe('CustomDialogMaskTest', () => {
 

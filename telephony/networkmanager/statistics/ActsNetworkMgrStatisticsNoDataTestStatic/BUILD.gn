@@ -19,7 +19,6 @@ ohos_js_app_static_suite("ActsNetworkMgrStatisticsNoDataStaticTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsNetworkMgrStatisticsNoDataStaticTest"
-  part_name = "sms_mms"
   part_name = "netmanager_base"
   subsystem_name = "communication"
 }

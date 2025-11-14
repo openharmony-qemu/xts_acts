@@ -295,5 +295,137 @@ export default function effectKitBTest() {
         })
       })
     })
+    
+    /**
+     * @tc.number     testGetTopProportionColors_2
+     * @tc.name       testGetTopProportionColors_2
+     * @tc.desc       test getTopProportionColors
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let msgStr = 'testGetTopProportionColors_2'
+      let imageSource = image.createImageSource(testPng.buffer);
+      console.info(msgStr + "promise create pixmap.start");
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info(msgStr + "Napi create ColorPicker.start");
+        effectKit.createColorPicker(pixelMap).then(colorPicker => {
+          let color1 = colorPicker.getTopProportionColors(2);
+          console.info(msgStr + JSON.stringify(color1));
+          expect(color1.length > 0).assertTrue();
+          let color2 = colorPicker.getTopProportionColors(-1);
+          console.info(msgStr + JSON.stringify(color2));
+          if(color2[0] == undefined){
+            color2.pop();
+            expect(color2.length == 0).assertTrue();
+          } else {
+            expect(color2.length > 0).assertTrue();
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(msgStr + "Napi colorPicker.error=" + error);
+          expect().assertFail();
+          done();
+        })
+      })
+    })
+    
+    /**
+     * @tc.number     isBlackOrWhiteOrGrayColor_2
+     * @tc.name       isBlackOrWhiteOrGrayColor_2
+     * @tc.desc       test isBlackOrWhiteOrGrayColor
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let msgStr = 'isBlackOrWhiteOrGrayColor_2'
+      let imageSource = image.createImageSource(testPng.buffer);
+      console.info(msgStr + "promise create pixmap.start");
+      imageSource.createPixelMap().then(pixelMap => {
+        effectKit.createColorPicker(pixelMap).then((colorPicker) => {
+          let color_white = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
+          expect(color_white == true).assertTrue();
+          let color_blue = colorPicker.isBlackOrWhiteOrGrayColor(0xFF0000FF);
+          expect(color_blue == false).assertTrue();
+          console.info(msgStr + '  ' + color_white + ' ' + color_blue);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(msgStr + "Napi colorPicker.error=" + error);
+          expect().assertFail();
+          done();
+        })
+      })
+    })
+    
+    /**
+     * @tc.number     createColorPicker_callback_0100
+     * @tc.name       createColorPicker_callback_0100
+     * @tc.desc       test createColorPicker callback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('createColorPicker_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const color = new ArrayBuffer(96);
+      let opts : image.InitializationOptions = {
+        editable: true,
+        pixelFormat: 3,
+        size: {
+          height: 4,
+          width: 6
+        }
+      }
+      image.createPixelMap(color, opts).then((pixelMap) => {
+        effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+          if (error) {
+            console.error('www data Failed to create color picker.');
+            expect().assertFail();
+            done();
+          } else {
+            console.info('www data Succeeded in creating color picker.');
+            let color = colorPicker.getLargestProportionColor();
+            console.info('www data get largest proportion color = ' + color);
+            expect(color == undefined).assertTrue();
+            done();
+          }
+        })
+      })
+    })
+    
+    /**
+     * @tc.number     createColorPicker_callback_0200
+     * @tc.name       createColorPicker_callback_0200
+     * @tc.desc       test createColorPicker callback
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('createColorPicker_callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName = 'createColorPicker_callback_0200';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log("effectKitTest" + msgStr + 'begin');
+      let imageSource = image.createImageSource(testJpg.buffer);
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info('www data createPixelMap succeed');
+        effectKit.createColorPicker(pixelMap).then(colorPicker => {
+          let color = colorPicker.getLargestProportionColor();
+          console.info('www data get largest proportion color succeed ', JSON.stringify(colorPicker));
+          expect(color !== undefined).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('www data get largest proportion color error');
+          expect().assertFail();
+        })
+      }).catch((err: BusinessError) => {
+        console.error('www data createPixelMap error');
+        expect().assertFail();
+        done();
+      })
+
+
+    })
+
   })
 }

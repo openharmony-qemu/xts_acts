@@ -106,15 +106,24 @@ class MyAbility extends UIAbility {
       let pathDir = this.context.filesDir
       Hypium.set('pathDir', pathDir)
       Hypium.set('Context', this.context)
-      Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+      let hypiumTestAsync = async (abilityDelegator: abilityDelegatorRegistry.AbilityDelegator,
+      abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs, testsuite: () => void) => {
+      const worker = new EAWorker();
+      worker.start();
+      const job = worker.run<void>(Hypium.hypiumTest, abilityDelegator, abilityDelegatorArguments, testsuite);
+      job.Await();
+      worker.join();
+      };
+      hypiumTestAsync(abilityDelegator, abilityDelegatorArguments, testsuite);
       hilog.info(0x0000, 'testTag', '%{public}s', 'onCreate end');
     } catch (err) {
       hilog.error(0x0000, 'testTag', '  onCreate err: ' + err);
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {

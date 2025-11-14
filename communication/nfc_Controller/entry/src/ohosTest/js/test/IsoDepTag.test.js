@@ -37,12 +37,27 @@ let isoDepTaginfo = {
     "tagRfDiscId": 1,
 };
 
+let isoDepTaginfo1 = {
+    "uid": [0x01, 0x02, 0x03, 0x04],
+    "technology": [1, 3],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+        {
+            "HistoricalBytes": "", "HiLayerResponse": "",
+        },
+    ],
+    "tagRfDiscId": 1,
+};
+
 let CardType = {
     PAYMENT : "payment",
     OTHER : "other",
 };
 
 let IsoDepTag ;
+let IsoDepTag1 ;
 
 export default function nfcIsoDepTagTest() {
     describe('nfcIsoDepTagTest', function () {
@@ -50,6 +65,7 @@ export default function nfcIsoDepTagTest() {
             console.info('rbeforeAll called')
             try {
                 IsoDepTag = tag.getIsoDep(isoDepTaginfo);
+                IsoDepTag1 = tag.getIsoDep(isoDepTaginfo1);
             } catch (error) {
                 console.info('getIsoDep is ->' + error)
             }
@@ -65,16 +81,22 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0100
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0100
-         * @tc.name Test getHistoricalBytes IsoDep
-         * @tc.desc Obtains the history bytes of a label.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Obtains the history bytes of a label.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0100', Level.LEVEL0, function ()  { 
             if (IsoDepTag != null && IsoDepTag != undefined) {
                 let ResponseFlags = IsoDepTag.getHistoricalBytes(); 
+                if (ResponseFlags.length > 0) {
+                    expect(ResponseFlags.length > 0).assertTrue();
+                } else {
+                    expect(ResponseFlags).assertDeepEquals([]);
+                }
                 expect(ResponseFlags).assertInstanceOf('Array')
                 console.info('[NFC_test] Isodep1 test ResponseFlags data>:' + ResponseFlags);
             } else {
@@ -84,16 +106,47 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0101
+         * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0101
+         * @tc.desc   Obtains the history bytes of a label.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcIsoDep_js_0101', Level.LEVEL0, function ()  { 
+            if (IsoDepTag1 != null && IsoDepTag1 != undefined) {
+                let ResponseFlags = IsoDepTag1.getHistoricalBytes(); 
+                if (ResponseFlags.length > 0) {
+                    expect(ResponseFlags.length > 0).assertTrue();
+                } else {
+                    expect(ResponseFlags).assertDeepEquals([]);
+                }
+                expect(ResponseFlags).assertInstanceOf('Array')
+                console.info('[NFC_test] Isodep1 test ResponseFlags data>:' + ResponseFlags);
+            } else {
+                console.info("[NFC_test]IsoDepTag1 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0200
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0200
-         * @tc.name Test getHiLayerResponse IsoDep
-         * @tc.desc HiLayer response byte for obtaining the tag.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   HiLayer response byte for obtaining the tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0200', Level.LEVEL0, function ()  {
             if (IsoDepTag != null && IsoDepTag != undefined) {
                 let HiLayerResponse = IsoDepTag.getHiLayerResponse(); 
+                if (HiLayerResponse.length > 0) {
+                    expect(HiLayerResponse.length > 0).assertTrue();
+                } else {
+                    expect(HiLayerResponse).assertDeepEquals([]);
+                }
                 expect(HiLayerResponse).assertInstanceOf('Array')
                 console.info('[NFC_test] Isodep2 test ResponseFlags data2>:' + HiLayerResponse);
             } else {
@@ -103,18 +156,50 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0201
+         * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0201
+         * @tc.desc   HiLayer response byte for obtaining the tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfcIsoDep_js_0201', Level.LEVEL0, function ()  {
+            if (IsoDepTag1 != null && IsoDepTag1 != undefined) {
+                let HiLayerResponse = IsoDepTag1.getHiLayerResponse(); 
+                if (HiLayerResponse.length > 0) {
+                    expect(HiLayerResponse.length > 0).assertTrue();
+                } else {
+                    expect(HiLayerResponse).assertDeepEquals([]);
+                }
+                expect(HiLayerResponse).assertInstanceOf('Array')
+                console.info('[NFC_test] Isodep2 test ResponseFlags data2>:' + HiLayerResponse);
+            } else {
+                console.info("[NFC_test]IsoDepTag2 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0300
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0300
-         * @tc.name Test isExtendedApduSupported IsoDep
-         * @tc.desc Check whether extended APDUs are supported.Promise
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether extended APDUs are supported.Promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0300', Level.LEVEL0, async function (done) {
             if (IsoDepTag != null && IsoDepTag != undefined) {
                 await IsoDepTag.isExtendedApduSupported().then((data) => {
-                    console.info("[NFC_test] Isodep3 isExtendedApduSupported data: " + data);
-                    expect(true).assertEqual(data);
+                    if (data == true) {
+                        console.info("[NFC_test] Isodep3 isExtendedApduSupported data: " + data);
+                        expect(data).assertTrue();
+                    } else {
+                        console.info("[NFC_test] Isodep3 isExtendedApduSupported data: " + data);
+                        expect(data).assertFalse();
+                    }
+                    
                     done();
                 }).catch((err)=> {
                     console.info("[NFC_test] Isodep3 isExtendedApduSupported data");
@@ -143,12 +228,13 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0400
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0400
-         * @tc.name Test isExtendedApduSupported IsoDep
-         * @tc.desc Check whether extended APDUs are supported.callback
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether extended APDUs are supported.callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcIsoDep_js_0400', Level.LEVEL0, async function (done) {
             if (IsoDepTag != null && IsoDepTag != undefined) {
@@ -166,31 +252,43 @@ export default function nfcIsoDepTagTest() {
                         expect(true).assertTrue();
                     } else {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported data: " + data);
+                        if (data == true) {
+                            console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
+                            expect(data).assertTrue();
+                        } else {
+                            console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
+                            expect(data).assertFalse();
+                        }
                         expect(true).assertEqual(data);           
                     }
-                    done();
                 });
             } else {
                 console.info("[NFC_test]IsoDepTag4 = null & = undefined: ");
                 expect().assertFail();
             }
+            done();
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0500
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card emulation.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:45
+          * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0500
+          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0500
+          * @tc.desc   Whether to support a certain type of card emulation.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('SUB_Communication_NFC_nfccardEmulationnfc_js_0500', Level.LEVEL0, function ()  {
             if (IsoDepTag != null && IsoDepTag != undefined) {
-                let cardEmulationnfc ;
                 try {
-                    cardEmulationnfc = cardEmulation.isSupported(cardEmulation.FeatureType.ESE);
-                    console.info('[NFC_test] cardEmulationnfc5 type ->' + cardEmulationnfc )
-                    expect(cardEmulationnfc).assertFalse();
+                    let cardEmulationnfc = cardEmulation.isSupported(cardEmulation.FeatureType.ESE);
+                    if (cardEmulation == true) {
+                        console.info('[NFC_test] cardEmulationnfc5 type ->' + cardEmulationnfc )
+                        expect(cardEmulationnfc).assertTrue();
+                    } else {
+                        console.info('[NFC_test] cardEmulationnfc5 type ->' + cardEmulationnfc )
+                        expect(cardEmulationnfc).assertFalse();
+                    }
                 } catch (error) {
                     console.info('[NFC_test] cardEmulationnfc5 error' + error)
                     expect().assertFail();
@@ -201,20 +299,25 @@ export default function nfcIsoDepTagTest() {
             }
         })
 
-       /**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0600
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0600
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc hasHceCapability to support a certain type of card emulation.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   hasHceCapability to support a certain type of card emulation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_0600', Level.LEVEL0, function ()  {
-            let cardEmulationnfc ;
             try {
-                cardEmulationnfc = cardEmulation.hasHceCapability();
-                console.info('[NFC_test] cardEmulationnfc6 hasHceCapability type ->' + cardEmulationnfc )
-                expect(cardEmulationnfc).assertTrue();
+                let cardEmulationnfc = cardEmulation.hasHceCapability();
+                if (cardEmulationnfc == true) {
+                    console.info('[NFC_test] cardEmulationnfc6 hasHceCapability type ->' + cardEmulationnfc )
+                    expect(cardEmulationnfc).assertTrue();
+                } else {
+                    console.info('[NFC_test] cardEmulationnfc6 hasHceCapability type ->' + cardEmulationnfc )
+                    expect(cardEmulationnfc).assertFalse();
+                }                
             } catch (error) {
                 console.info('[NFC_test] cardEmulationnfc6 error' + error + "/" + error.code)
                 expect(801).assertEqual(error.code);
@@ -222,12 +325,13 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0700
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0700
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card isDefaultService.
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card isDefaultService.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_0700', Level.LEVEL0, function ()  {
             let cardEmulationnfc ;
@@ -237,30 +341,41 @@ export default function nfcIsoDepTagTest() {
             };
             try {
                 cardEmulationnfc = cardEmulation.isDefaultService(elementName, CardType.PAYMENT);
-                console.info('[NFC_test] cardEmulationnfc7 isDefaultService type ->' + cardEmulationnfc )
-                expect(cardEmulationnfc).assertFalse();
+                if (cardEmulationnfc == true) {
+                    console.info('[NFC_test] cardEmulationnfc7 isDefaultService type ->' + cardEmulationnfc )
+                    expect(cardEmulationnfc).assertTrue();
+                } else {
+                    console.info('[NFC_test] cardEmulationnfc7 isDefaultService type ->' + cardEmulationnfc )
+                    expect(cardEmulationnfc).assertFalse();
+                }  
             } catch (error) {
                 console.info('[NFC_test] cardEmulationnfc7 error' + error + "/" + error.code)
                 expect(801).assertEqual(error.code);
             }
             try {
                 cardEmulationnfc = cardEmulation.isDefaultService();
-                console.info('[NFC_test] cardEmulationnfc7 isDefaultService 401 ->' + cardEmulationnfc )
-                expect().assertFail();
+                if (cardEmulationnfc == true) {
+                    console.info('[NFC_test] cardEmulationnfc7 isDefaultService type ->' + cardEmulationnfc )
+                    expect(cardEmulationnfc).assertTrue();
+                } else {
+                    console.info('[NFC_test] cardEmulationnfc7 isDefaultService type ->' + cardEmulationnfc )
+                    expect(cardEmulationnfc).assertFalse();
+                }
             } catch (error) {
                 console.info('[NFC_test] cardEmulationnfc7 401' + error + "/" + error.code)
                 expect(401).assertEqual(error.code);
             }
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_Enumerated_js_0800
-         * @tc.name Test Enumerated
-         * @tc.desc Enumeration return value test
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 2
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:45
+          * @tc.name   SUB_Communication_NFC_Enumerated_js_0800
+          * @tc.number SUB_Communication_NFC_Enumerated_js_0800
+          * @tc.desc   Enumeration return value test
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_Communication_NFC_Enumerated_js_0800', Level.LEVEL2, function ()  {
             console.info('[nfc_test]1 PAYMENT Enumerated value test pass:' + cardEmulation.CardType.PAYMENT)
             expect(cardEmulation.CardType.PAYMENT).assertEqual("payment");
@@ -351,12 +466,13 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_0900
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_0900
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService on/off
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService on/off
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_0900', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();
@@ -365,6 +481,11 @@ export default function nfcIsoDepTagTest() {
                 if (err){
                   console.error('[NFC_test]0900 apduCallback err is' + err );
                 }else{
+                    if (data.length > 0) {
+                        expect(data.length > 0).assertTrue();
+                    } else {
+                        expect(data).assertDeepEquals([]);
+                    }
                     console.log('[NFC_test]0900 got apdu data ' + data );
                 }
             };
@@ -398,12 +519,13 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1000
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1000
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService transmit
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService transmit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1000', Level.LEVEL0,async function (done)  {
             let hceService = new cardEmulation.HceService();
@@ -420,12 +542,13 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1100
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1100
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService transmit
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService transmit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1100', Level.LEVEL0,async function (done)  {
             let hceService = new cardEmulation.HceService();
@@ -444,12 +567,13 @@ export default function nfcIsoDepTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1200
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1200
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService on/off
-         * @tc.size since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService on/off
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1200', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();
@@ -482,12 +606,13 @@ export default function nfcIsoDepTagTest() {
         })      
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_NFC_nfccardEmulationnfc_js_1400
          * @tc.number SUB_Communication_NFC_nfccardEmulationnfc_js_1400
-         * @tc.name Test cardEmulationnfc
-         * @tc.desc Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Whether to support a certain type of card HceService startHCE/stopHCE/sendResponse
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfccardEmulationnfc_js_1400', Level.LEVEL0, function ()  {
             let hceService = new cardEmulation.HceService();

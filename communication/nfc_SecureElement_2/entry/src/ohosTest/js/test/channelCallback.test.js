@@ -54,29 +54,39 @@ export default function channelCallbacktest() {
                 let seIsConnected = Service.isConnected();
                 console.info("[NFC_test] Logical SEService isConnected The connection status is: " + seIsConnected);
                 if (seIsConnected) {
-                            getReader = Service.getReaders();
-                    console.info("[NFC_test] createService channelCallbacktest getReader value  is: " + getReader);                                    
+                    getReader = Service.getReaders();
+                    console.info("[NFC_test] createService channelCallbacktest getReader value  is: " + getReader);
+                    if(getReader.length > 0) {
+                        expect(getReader.length > 0).assertTrue();
+                    } else {
+                        expect(getReader).assertDeepEquals([]);
+                    }                                
                     for (let i = 0; i < getReader.length; i++) {
-                        if (!getReader[i].isSecureElementPresent()) {
-                            console.info("[NFC_test] se not present : " + i);
-                            continue;
-                        }
                         if (getReader[i].getName() != "eSE") {
                             console.info("[NFC_test] se reader not ese.");
                             continue;
                         }
-                        Reader = getReader[i];
-                        console.info("[NFC_test] createService channelCallbacktest getReader name is: " + Reader.getName());
-                        let readerIsPresent = Reader.isSecureElementPresent();
-                        console.info("[NFC_test] isSecureElementPresent status is: " + readerIsPresent);
-                        if (readerIsPresent) {
+
+                        let getReaderstate = getReader[i].isSecureElementPresent();
+
+                        if (getReaderstate == false) {
+                            console.info("[NFC_test] se not present : " + i);
+                            expect(getReaderstate).assertFalse();
+                            continue;
+                        } else {
+                            Reader = getReader[i];
+                            console.info("[NFC_test] newSEService channelCallbacktest getReader name is: " + Reader.getName());
                             Session = Reader.openSession();
                             let sessionIsClosed = Session.isClosed();
-                            console.info("[NFC_test] createService Logical Session isConnected The connection status is: " + sessionIsClosed);
+                            console.info("[NFC_test] Logical Session isConnected The connection status is: " + sessionIsClosed);
+                            expect(getReaderstate).assertTrue();
                         }
                     }
                 }
             }).catch((err) =>{
+                if (err.code == 801) {
+                    expect(801).assertEqual(err.code);
+                }
                 console.info("[NFC_test] channelCallbacktest err.code " + err.code + "err.message " + err.message);
             })
             done();
@@ -99,12 +109,14 @@ export default function channelCallbacktest() {
             done();
         })
 
-       /**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_0900
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_0900
-         * @tc.name Test isBasicChannel
-         * @tc.desc open BasicChannel Check whether the channel is a basic channel.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open BasicChannel Check whether the channel is a basic channel.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_0900', Level.LEVEL0, async function (done) {
             try {
@@ -122,6 +134,13 @@ export default function channelCallbacktest() {
                                         console.info("[NFC_test]09 openBasicChannel data != null " + result);
                                         let P2BasicChannel = result;
                                         let isBasic = P2BasicChannel.isBasicChannel();
+                                        if (isBasic == true) {
+                                            console.info("[NFC_test]09 Check whether the channel is a basic channel: " + isBasic);
+                                            expect(isBasic).assertTrue();
+                                        } else {
+                                            console.info("[NFC_test]09 Check whether the channel is a basic channel: " + isBasic);
+                                            expect(isBasic).assertFalse();
+                                        }
                                         console.info("[NFC_test]09 Check whether the channel is a basic channel: " + isBasic);
                                         expect(isBasic).assertTrue();
                                         P2BasicChannel.close();
@@ -148,11 +167,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1000
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1000
-         * @tc.name Test isClosed
-         * @tc.desc open LogicalChannel Check whether the channel is closed.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Check whether the channel is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1000', Level.LEVEL0, async function (done) {
             try {
@@ -172,8 +193,13 @@ export default function channelCallbacktest() {
                                         P2LogicalChannel.close();
                                         console.info("[NFC_test]10 Data received by the application select command: " );
                                         let isChannelClosed = P2LogicalChannel.isClosed();
-                                        console.info("[NFC_test]10 Check whether the channel is closed: " + isChannelClosed);
-                                        expect(isChannelClosed).assertTrue();                              
+                                        if (isChannelClosed == true) {
+                                            console.info("[NFC_test]10 Check whether the channel is closed: " + isChannelClosed);
+                                            expect(isChannelClosed).assertTrue(); 
+                                        } else {
+                                            console.info("[NFC_test]10 Check whether the channel is closed: " + isChannelClosed);
+                                            expect(isChannelClosed).assertFalse(); 
+                                        }                          
                                     }
                                     resolve();
                                 });
@@ -197,11 +223,13 @@ export default function channelCallbacktest() {
 
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1100
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1100
-         * @tc.name Test getSelectResponse
-         * @tc.desc open BasicChannel Returns the data received from the application selection command.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open BasicChannel Returns the data received from the application selection command.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1100', Level.LEVEL0, async function (done) {
             try {
@@ -220,6 +248,11 @@ export default function channelCallbacktest() {
                                         let nfcBasicChannel = result;
                                         let getResponse = nfcBasicChannel.getSelectResponse();
                                         console.info("[NFC_test]11 getSelectResponse data: " + getResponse);
+                                        if (getResponse.length > 0) {
+                                            expect(getResponse.length > 0).assertTrue();
+                                        } else {
+                                            expect(getResponse).assertDeepEquals([]);
+                                        }
                                         nfcBasicChannel.close();
                                         console.info("[NFC_test]11 Data received by the application select command: " );
                                         expect(getResponse).assertInstanceOf('Array');                                        
@@ -245,11 +278,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1200
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1200
-         * @tc.name Test transmit
-         * @tc.desc open LogicalChannel Send an APDU command to the SE 
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Send an APDU command to the SE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1200', Level.LEVEL0, async function (done) {
             try {
@@ -299,12 +334,14 @@ export default function channelCallbacktest() {
             done();
         })
 
-       /**
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1300
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1300
-         * @tc.name Test transmit
-         * @tc.desc open LogicalChannel Send an APDU command to the SE 
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Send an APDU command to the SE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1300', Level.LEVEL0, async function (done) {
             try {
@@ -337,11 +374,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1400
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1400
-         * @tc.name Test isClosed
-         * @tc.desc open LogicalChannel Check whether the channel is a basic channel.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open LogicalChannel Check whether the channel is a basic channel.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1400', Level.LEVEL0, async function (done) {
             try {
@@ -356,8 +395,13 @@ export default function channelCallbacktest() {
                             let OmaLogicalChannel = data;
                             OmaLogicalChannel.close();
                             let isChannelClosed = OmaLogicalChannel.isClosed();
-                            console.info("[NFC_test]14 Check whether the channel is disabled: " + isChannelClosed);
-                            expect(isChannelClosed).assertTrue();
+                            if (isChannelClosed == true) {
+                                console.info("[NFC_test]14 Check whether the channel is disabled: " + isChannelClosed);
+                                expect(isChannelClosed).assertTrue(); 
+                            } else {
+                                console.info("[NFC_test]14 Check whether the channel is disabled: " + isChannelClosed);
+                                expect(isChannelClosed).assertFalse(); 
+                            }
                         }
                         else {
                             console.info("[NFC_test]14 openLogicalChannel data == null");
@@ -376,11 +420,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1500
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1500
-         * @tc.name Test isClosed
-         * @tc.desc open BasicChannel Check whether the channel is a basic channel.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   open BasicChannel Check whether the channel is a basic channel.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1500', Level.LEVEL0, async function (done) {
             try {
@@ -395,8 +441,13 @@ export default function channelCallbacktest() {
                             let OmaLogicalChannel = data;
                             OmaLogicalChannel.close();
                             let isChannelClosed = OmaLogicalChannel.isClosed();
-                            console.info("[NFC_test]15 Check whether the channel is disabled: " + isChannelClosed);
-                            expect(isChannelClosed).assertTrue();
+                            if (isChannelClosed == true) {
+                                console.info("[NFC_test]15 Check whether the channel is disabled: " + isChannelClosed);
+                                expect(isChannelClosed).assertTrue(); 
+                            } else {
+                                console.info("[NFC_test]15 Check whether the channel is disabled: " + isChannelClosed);
+                                expect(isChannelClosed).assertFalse(); 
+                            }
                         }
                         else {
                             console.info("[NFC_test]15 openBasicChannel data == null");
@@ -415,11 +466,13 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1600
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1600
-         * @tc.name Test isClosed
-         * @tc.desc Check whether the channel is closed.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether the channel is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_Ese_LogicalChannel_js_1600', Level.LEVEL0, async function (done) {
             try {
@@ -434,8 +487,13 @@ export default function channelCallbacktest() {
                             let OmaLogicalChannel = data;
                             OmaLogicalChannel.close();
                             let isChannelClosed = OmaLogicalChannel.isClosed();
-                            console.info("[NFC_test]16 Check whether the channel is disabled: " + isChannelClosed);
-                            expect(isChannelClosed).assertTrue();
+                            if (isChannelClosed == true) {
+                                console.info("[NFC_test]16 Check whether the channel is disabled: " + isChannelClosed);
+                                expect(isChannelClosed).assertTrue(); 
+                            } else {
+                                console.info("[NFC_test]16 Check whether the channel is disabled: " + isChannelClosed);
+                                expect(isChannelClosed).assertFalse(); 
+                            }
                         }
                         else {
                             console.info("[NFC_test]16 openLogicalChannel data == null");

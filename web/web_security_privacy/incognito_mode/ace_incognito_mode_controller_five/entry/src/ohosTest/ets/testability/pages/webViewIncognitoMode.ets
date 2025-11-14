@@ -475,6 +475,104 @@ struct webViewIncognitoMode {
                 }
                 break;
               }
+              case 'emitWebViewIncognitoMode21': {
+                try {
+                  this.isPrivacy = true;
+                  webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn', true);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl('https://m.weibo.cn');
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', false)
+                    .then(result => {
+                        console.log('emitWebViewIncognitoMode1111' + result)
+                      if(!result) {
+                        Utils.emitEvent(false, 20251020);
+                      }
+                    }).catch(() => {
+                    console.log('emitWebViewIncognitoMode2222')
+                    Utils.emitEvent(true, 20251020);
+                  });
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
+              case 'emitWebViewIncognitoMode22': {
+                try {
+                  this.isPrivacy = true;
+                  webview.GeolocationPermissions.allowGeolocation('https://m.weibo.cn', true);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl('https://m.weibo.cn');
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  webview.GeolocationPermissions.getAccessibleGeolocation('https://m.weibo.cn', (error, result) => {
+                    if (error) {
+                      Utils.emitEvent(true, 20251021);
+                      return;
+                    }
+                    if (result) {
+                      Utils.emitEvent(false, 20251021);
+                    }
+                    console.log('getAccessibleGeolocationAsync result: ' + result);
+                  }, false);
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+              case 'emitWebViewIncognitoMode23': {
+                try {
+                  this.isPrivacy = true;
+                  webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com', true);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl('https://m.baidu.com');
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  webview.GeolocationPermissions.getStoredGeolocation(false)
+                    .then(origins => {
+                      let originsStr: string = origins.join();
+                      console.log('emitWebViewIncognitoMode23: ' + originsStr);
+                      if (originsStr == 'https://m.baidu.com') {
+                        Utils.emitEvent(false, 20251022);
+                      } else {
+                        Utils.emitEvent(true, 20251022);
+                      }
+                    }).catch(() => {
+                  });
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
+              case 'emitWebViewIncognitoMode24': {
+                try {
+                  this.isPrivacy = true;
+                  webview.GeolocationPermissions.allowGeolocation('https://m.baidu.com', true);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl('https://m.baidu.com');
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                    if (error) {
+                      return;
+                    }
+                    let originsStr: string = origins.join();
+                    if (originsStr == 'https://m.baidu.com') {
+                      Utils.emitEvent(false, 20251023);
+                    } else {
+                      Utils.emitEvent(true, 20251023);
+                    }
+                    console.log('emitWebViewIncognitoMode24 origins: ' + originsStr);
+                  },false);
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
             }
           })
       }

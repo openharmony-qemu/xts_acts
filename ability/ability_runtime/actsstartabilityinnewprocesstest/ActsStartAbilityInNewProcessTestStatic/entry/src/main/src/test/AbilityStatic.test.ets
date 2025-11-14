@@ -39,7 +39,7 @@ interface ParametersObj  {
   acts_startupVisibility: number | undefined
   targetPid: string
 }
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let testTag: string = 'testTag';
 
 function getCount(str: string, substring: string): number {
@@ -199,24 +199,6 @@ export default function abilitystaticTest() {
       };
       pids = new Array<string>();
     })
-    afterEach(async (): Promise<void> => {
-      let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static afterEach]';
-      try {
-        if (subscriber) {
-          commonEvent.unsubscribe(subscriber, (err: BusinessError<void> | null) => {
-            hilog.info(domain, testTag, '%{public}s', `${tag} unsubscribe success`);
-          })
-        }
-        let forcestop = 'aa force-stop com.example.startabilityinnewprocesstest.static';
-        abilityDelegator.executeShellCommand(forcestop).catch<void>((err:BusinessError): void => {
-          hilog.info(domain, testTag, '%{public}s', `${tag} executeShellCommand failed.`);
-        })
-        await Utils.msSleep(1000);
-      } catch (err: BusinessError) {
-        hilog.info(domain, testTag, '%{public}s', `${tag} err: ${JSON.stringify(err)}`);
-      }
-    })
-
 
     /**
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400

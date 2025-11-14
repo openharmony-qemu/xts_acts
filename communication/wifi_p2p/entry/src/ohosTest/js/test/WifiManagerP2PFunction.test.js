@@ -66,12 +66,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0003
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup and getCurrentP2pGroup API Function
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0003
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0003
+         * @tc.desc   Test createP2pGroup and getCurrentP2pGroup API Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             let wifiP2PConfig = {
                 deviceAddress : "00:00:00:00:00:00",
@@ -154,12 +156,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0004
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-Setting a 7-bit Key Function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0004
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0004
+         * @tc.desc   Test createP2pGroup-Setting a 7-bit Key Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -235,12 +239,14 @@ export default function actsWifiManagerFunctionTest() {
 
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0104
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-Key setting: Chinese, English, and characters Function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0104
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0104
+         * @tc.desc   Test createP2pGroup-Key setting: Chinese, English, and characters Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -282,12 +288,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0204
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-Key setting 64 bit Function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0204
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0204
+         * @tc.desc   Test createP2pGroup-Key setting 64 bit Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -329,12 +337,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0304
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-Key setting 65 bitsFunction.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0304
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0304
+         * @tc.desc   Test createP2pGroup-Key setting 65 bitsFunction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -409,12 +419,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0007
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-2.4 GHz frequency band setting Function
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0007
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0007
+         * @tc.desc   Test createP2pGroup-2.4 GHz frequency band setting Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -456,12 +468,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0107
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-5 GHz frequency band setting Function
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0107
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0107
+         * @tc.desc   Test createP2pGroup-5 GHz frequency band setting Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -506,12 +520,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0207
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-Auto frequency band setting Function
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0207
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0207
+         * @tc.desc   Test createP2pGroup-Auto frequency band setting Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -553,12 +569,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0008
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-SSID is an empty string Function.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0008
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0008
+         * @tc.desc   Test createP2pGroup-SSID is an empty string Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -599,12 +617,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0108
-        * @tc.name testcreateP2pGroup
-        * @tc.desc Test createP2pGroup-SSID is a space Function.
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0108
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0108
+         * @tc.desc   Test createP2pGroup-SSID is a space Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -645,12 +665,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-       * @tc.number SUB_Communication_WiFi_XTS_P2P_0308
-       * @tc.name testcreateP2pGroup
-       * @tc.desc Test createP2pGroup-the password must be a space.
-       * @tc.type Function
-       * @tc.level Level 0
-       */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0308
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0308
+         * @tc.desc   Test createP2pGroup-the password must be a space.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
             expect(wifiMg.isWifiActive()).assertTrue();
@@ -691,12 +713,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0009
-        * @tc.name testP2pCancelConnect
-        * @tc.desc Test p2pCancelConnect Group API functionality.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0009
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0009
+         * @tc.desc   Test p2pCancelConnect Group API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let DeviceAddressType  = {
                 RANDOM_DEVICE_ADDRESS : 0 ,
@@ -748,12 +772,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0011
-        * @tc.name testremoveP2pGroup
-        * @tc.desc Test remove a nonexistent group.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0011
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0011
+         * @tc.desc   Test remove a nonexistent group.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let removeP2pGroupResult = wifiMg.removeP2pGroup(10000);
@@ -788,13 +814,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0002
-        * @tc.name testP2pLocalDevice
-        * @tc.desc Test get P2pLocalDevice API functionality.
-        * @tc.type Function
-        * @tc.level Level 3
-        * @tc.size: MediumTest
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0002
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0002
+         * @tc.desc   Test get P2pLocalDevice API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             await wifiMg.getP2pLocalDevice()
                 .then(data => {
@@ -842,12 +869,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0010
-        * @tc.name testGetP2pLinkedInfo
-        * @tc.desc Test getP2pLinkedInfo API functionality
-        * @tc.type Function
-        * @tc.level Level 2
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0010
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0010
+         * @tc.desc   Test getP2pLinkedInfo API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             let p2pConnectState = {
                 DISCONNECTED :0,
@@ -899,12 +928,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0001
-        * @tc.name testGetP2pPeerDevices
-        * @tc.desc Test getP2pPeerDevices promise API functionality
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0001
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0001
+         * @tc.desc   Test getP2pPeerDevices promise API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done){
             try {
                 console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
@@ -932,12 +963,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_0101
-        * @tc.name testGetP2pPeerDevices
-        * @tc.desc Test getP2pPeerDevices callback API functionality
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_0101
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_0101
+         * @tc.desc   Test getP2pPeerDevices callback API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done){
             try {
                 console.log("[wifi_test]check the state of wifi: " + wifiMg.isWifiActive());
@@ -991,12 +1024,13 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WifiManager_XTS_P2p_CreateGroup_0100
          * @tc.number SUB_Communication_WifiManager_XTS_P2p_CreateGroup_0100
-         * @tc.name testCreateGroup
-         * @tc.desc Test createGroup Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test createGroup Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WifiManager_XTS_P2p_CreateGroup_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done){
             try {
@@ -1010,13 +1044,14 @@ export default function actsWifiManagerFunctionTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFi_XTS_P2P_P2pConnectState_0100
-        * @tc.name testP2pConnectState
-        * @tc.desc Test P2pConnectState API functionality
-        * @tc.type Function
-        * @tc.size: MediumTest
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_Communication_WiFi_XTS_P2P_P2pConnectState_0100
+         * @tc.number SUB_Communication_WiFi_XTS_P2P_P2pConnectState_0100
+         * @tc.desc   Test P2pConnectState API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFi_XTS_P2P_P2pConnectState_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 let DISCONNECTED = wifiMg.P2pConnectState.DISCONNECTED;

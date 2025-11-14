@@ -21,6 +21,12 @@
 
 #define NAPI_RETVAL_NOTHING
 
+#define ASSERT_EQ_RS(a, b, str)                                                     \
+    if ((a) != (b)) {                                                                   \
+        OH_LOG_ERROR(LOG_APP, "%{public}s failed status=%{pusblic}d", str, a);      \
+        return nullptr;                                                             \
+    }                                                                               \
+    
 #define GET_AND_THROW_LAST_ERROR(env)                                                                   \
     do {                                                                                                \
         const napi_extended_error_info* errorInfo = nullptr;                                            \

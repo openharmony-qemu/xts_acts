@@ -44,7 +44,9 @@ struct ImageExample {
       Image($r('app.media.ic_public_pass'))
         .width('20vp')
         .height('20vp')
-    }.width('30%')
+    }
+    .margin({ bottom: '20vp' })
+    .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -67,6 +69,7 @@ struct ImageExample {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -172,6 +175,7 @@ struct ImageExample {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)
@@ -194,7 +198,7 @@ struct ImageExample {
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
-
+      .margin({ bottom: '20vp' })
     }.width('100%')
     .height('100%')
     .backgroundColor('#F1F3F5')

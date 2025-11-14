@@ -37,6 +37,8 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
   describe('window_verification_problem_test', () => {
     console.log('describe window_verification_problem_test start!!!')
     let isPCStatus: string = '';
+    let isAutoWindow: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       console.info('window_layout_test beforeAll begin');
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -44,6 +46,13 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+      console.error(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       console.info('window_layout_test beforeAll end');
     })
     /**
@@ -136,9 +145,9 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
      * @tc.desc      : Set the screen brightness value
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowBrightness_MainWin_DefaultValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+    it('testSetWindowBrightness_MainWin_DefaultValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testSetWindowBrightness_MainWin_DefaultValue_Promise';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -163,9 +172,9 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
      * @tc.desc      : Set the screen brightness value
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowBrightness_MainWin_DefaultValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowBrightness_MainWin_DefaultValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSetWindowBrightness_NotAppWin_Callback';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

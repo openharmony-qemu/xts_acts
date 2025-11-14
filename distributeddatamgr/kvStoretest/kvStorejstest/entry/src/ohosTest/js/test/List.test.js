@@ -24,6 +24,9 @@ import kvStoreResultSetTest from './KvStoreResultSetJsunit.test.js'
 import queryTest from './QueryJsunit.test.js'
 import fieldNodeTest from './FieldNodeJsunit.test.js'
 import schemaTest from './SchemaJsunit.test.js'
+import SingleKvStoreReturnValueDisData from './SingleKvStoreReturnValueDisData.test.js';
+import DeviceKvStoreReturnValueDisData from './DeviceKvStoreReturnValueDisData.test.js';
+
 export default function testsuite() {
     deviceKvStoreCallbackTest()
     deviceKvStorePromiseTest()
@@ -36,4 +39,6 @@ export default function testsuite() {
     queryTest()
     fieldNodeTest()
     schemaTest()
+    SingleKvStoreReturnValueDisData();
+    DeviceKvStoreReturnValueDisData();
 }

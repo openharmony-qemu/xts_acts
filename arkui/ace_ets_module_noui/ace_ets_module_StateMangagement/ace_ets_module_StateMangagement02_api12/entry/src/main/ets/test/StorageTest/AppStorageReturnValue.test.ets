@@ -220,7 +220,7 @@ export default function AppStorageReturnValue() {
       AppStorage.delete('res_link');
       console.info('[AppStorageReturnValue_008] END');
       done();
-
+    });
        /**
      * @tc.number    AppStorageReturnValue_009
      * @tc.name      AppStorageReturnValue_009
@@ -265,6 +265,27 @@ export default function AppStorageReturnValue() {
       done();
     });
 
+    /**
+     * @tc.number    AppStorageReturnValue_011
+     * @tc.name      AppStorageReturnValue_011
+     * @tc.desc      all keys in AppStorage.
+     * @tc.level     Level 2
+     * @tc.type
+     * @tc.size
+     */
+    it('AppStorageReturnValue_011', Level.LEVEL0, async (done: Function) => {
+      console.info('[AppStorageReturnValue_011] START');
+      await CommonFunc.sleep(1000);
+      let res1:AbstractProperty<string>  | undefined = AppStorage.Get('noHas');
+      let res2:AbstractProperty<string>  | undefined = AppStorage.get('noHas');
+      console.info("[AppStorageReturnValue_011] component res1 is: " + JSON.stringify(res1));
+      console.info("[AppStorageReturnValue_011] component res2 is: " + JSON.stringify(res2));
+      expect(res1).assertEqual(undefined);
+      expect(res2).assertEqual(undefined);
+      console.info('[AppStorageReturnValue_011] END');
+      done();
     });
+
+    
   })
 }

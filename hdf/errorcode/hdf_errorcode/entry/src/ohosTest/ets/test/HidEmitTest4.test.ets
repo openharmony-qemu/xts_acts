@@ -51,12 +51,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELX_0100
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELX_0100
-     * @tc.desc    : Test HidDdkErrCodeHIDRELX.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELX_0100
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELX_0100
+     * @tc.desc   Test HidDdkErrCodeHIDRELX.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELX_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -72,12 +73,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELY_0200
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELY_0200
-     * @tc.desc    : Test HidDdkErrCodeHIDRELY.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELY_0200
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELY_0200
+     * @tc.desc   Test HidDdkErrCodeHIDRELY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELY_0200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -93,12 +95,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELZ_0300
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELZ_0300
-     * @tc.desc    : Test HidDdkErrCodeHIDRELZ.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELZ_0300
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELZ_0300
+     * @tc.desc   Test HidDdkErrCodeHIDRELZ.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELZ_0300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -114,12 +117,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELRX_0400
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELRX_0400
-     * @tc.desc    : Test HidDdkErrCodeHIDRELRX.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRX_0400
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRX_0400
+     * @tc.desc   Test HidDdkErrCodeHIDRELRX.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELRX_0400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -135,12 +139,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELRY_0500
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELRY_0500
-     * @tc.desc    : Test HidDdkErrCodeHIDRELRY.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRY_0500
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRY_0500
+     * @tc.desc   Test HidDdkErrCodeHIDRELRY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELRY_0500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -156,12 +161,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELRZ_0600
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELRZ_0600
-     * @tc.desc    : Test HidDdkErrCodeHIDRELRZ.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRZ_0600
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRZ_0600
+     * @tc.desc   Test HidDdkErrCodeHIDRELRZ.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELRZ_0600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -177,12 +183,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEEL_0700
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEEL_0700
-     * @tc.desc    : Test HidDdkErrCodeHIDRELHWHEEL.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEEL_0700
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEEL_0700
+     * @tc.desc   Test HidDdkErrCodeHIDRELHWHEEL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEEL_0700', Level.LEVEL0, async (done: Function) => {
       try {
@@ -198,12 +205,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELDIAL_0800
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELDIAL_0800
-     * @tc.desc    : Test HidDdkErrCodeHIDRELDIAL.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELDIAL_0800
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELDIAL_0800
+     * @tc.desc   Test HidDdkErrCodeHIDRELDIAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELDIAL_0800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -219,12 +227,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEEL_0900
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEEL_0900
-     * @tc.desc    : Test HidDdkErrCodeHIDRELWHEEL.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEEL_0900
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEEL_0900
+     * @tc.desc   Test HidDdkErrCodeHIDRELWHEEL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEEL_0900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -240,12 +249,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELMISC_1000
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELMISC_1000
-     * @tc.desc    : Test HidDdkErrCodeHIDRELMISC.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELMISC_1000
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELMISC_1000
+     * @tc.desc   Test HidDdkErrCodeHIDRELMISC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELMISC_1000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -261,12 +271,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELRESERVED_1100
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELRESERVED_1100
-     * @tc.desc    : Test HidDdkErrCodeHIDRELRESERVED.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELRESERVED_1100
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELRESERVED_1100
+     * @tc.desc   Test HidDdkErrCodeHIDRELRESERVED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELRESERVED_1100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -282,12 +293,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEELHIRES_1200
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEELHIRES_1200
-     * @tc.desc    : Test HidDdkErrCodeHIDRELWHEELHIRES.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEELHIRES_1200
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEELHIRES_1200
+     * @tc.desc   Test HidDdkErrCodeHIDRELWHEELHIRES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELWHEELHIRES_1200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -303,12 +315,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEELHIRES_1300
-     * @tc.name    : SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEELHIRES_1300
-     * @tc.desc    : Test HidDdkErrCodeHIDRELHWHEELHIRES.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEELHIRES_1300
+     * @tc.number SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEELHIRES_1300
+     * @tc.desc   Test HidDdkErrCodeHIDRELHWHEELHIRES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidDdkErrCodeHIDRELHWHEELHIRES_1300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -324,12 +337,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceHIDMSCSERIAL_1400
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceHIDMSCSERIAL_1400
-     * @tc.desc    : Test HidCreateDeviceHIDMSCSERIAL.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCSERIAL_1400
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCSERIAL_1400
+     * @tc.desc   Test HidCreateDeviceHIDMSCSERIAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceHIDMSCSERIAL_1400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -345,12 +359,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceHIDMSCPULSELED_1500
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceHIDMSCPULSELED_1500
-     * @tc.desc    : Test HidCreateDeviceHIDMSCPULSELED.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCPULSELED_1500
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCPULSELED_1500
+     * @tc.desc   Test HidCreateDeviceHIDMSCPULSELED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceHIDMSCPULSELED_1500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -366,12 +381,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceHIDMSCGESTURE_1600
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceHIDMSCGESTURE_1600
-     * @tc.desc    : Test HidCreateDeviceHIDMSCGESTURE.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCGESTURE_1600
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCGESTURE_1600
+     * @tc.desc   Test HidCreateDeviceHIDMSCGESTURE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceHIDMSCGESTURE_1600', Level.LEVEL0, async (done: Function) => {
       try {
@@ -387,12 +403,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
-     * @tc.desc    : Test HidCreateDeviceHIDMSCRAW.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800
+     * @tc.desc   Test HidCreateDeviceHIDMSCRAW.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceHIDMSCRAW_1800', Level.LEVEL0, async (done: Function) => {
       try {
@@ -408,12 +425,13 @@ export default function ActsHidEmitCodeTest4() {
     })
 
     /**
-     * @tc.number  : SUB_Driver_Ext_HidCreateDeviceHIDMSCTIMESTAMP_1900
-     * @tc.name    : SUB_Driver_Ext_HidCreateDeviceHIDMSCTIMESTAMP_1900
-     * @tc.desc    : Test HidCreateDeviceHIDMSCTIMESTAMP.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceHIDMSCTIMESTAMP_1900
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceHIDMSCTIMESTAMP_1900
+     * @tc.desc   Test HidCreateDeviceHIDMSCTIMESTAMP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Driver_Ext_HidCreateDeviceHIDMSCTIMESTAMP_1900', Level.LEVEL0, async (done: Function) => {
       try {

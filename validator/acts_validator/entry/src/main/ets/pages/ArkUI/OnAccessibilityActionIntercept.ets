@@ -130,7 +130,9 @@ struct OnAccessibilityActionIntercept {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -150,6 +152,7 @@ struct OnAccessibilityActionIntercept {
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -166,6 +169,7 @@ struct OnAccessibilityActionIntercept {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -364,6 +368,7 @@ struct OnAccessibilityActionIntercept {
               .width('20vp')
               .height('20vp')
           }
+          .margin({ bottom: '20vp' })
           .width('30%')
           .height('30vp')
           .backgroundColor(Color.Grey)
@@ -386,7 +391,7 @@ struct OnAccessibilityActionIntercept {
         .width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor(Color.Black)
-      }.width('100%')
+      }.height("16%").width('100%')
     }
   }
 }

@@ -19,6 +19,7 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EV
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import sysDeviceInfo from '@ohos.deviceInfo';
 
 const DELEGATED_POLICIES: Array<string> = [ "set_browser_policies" ];
 
@@ -76,7 +77,7 @@ export default function adminManagerTest() {
      */
     it("test_setDelegatedPolicies_001", Level.LEVEL0, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         adminManager.setDelegatedPolicies(SELFWANT, BUNDLENAME1, DELEGATED_POLICIES);
         expect(false).assertTrue();
       } catch (error) {
@@ -97,7 +98,7 @@ export default function adminManagerTest() {
      */
     it("test_getDelegatedPolicies_001", Level.LEVEL0, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         adminManager.getDelegatedPolicies(SELFWANT, BUNDLENAME1);
         expect(false).assertTrue();
       } catch (error) {
@@ -118,7 +119,7 @@ export default function adminManagerTest() {
      */
     it("test_getDelegatedBundleNames_001", Level.LEVEL0, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         adminManager.getDelegatedBundleNames(SELFWANT, DELEGATED_POLICIES[0]);
         expect(false).assertTrue();
       } catch (error) {
@@ -159,6 +160,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startadminprovision_001", Level.LEVEL0, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       try {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("context"), PARAMETERS_LOWER_BOUND);

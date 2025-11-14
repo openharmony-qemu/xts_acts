@@ -51,8 +51,9 @@ class EntryAbility extends UIAbility {
     });
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {
@@ -61,10 +62,10 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
-    // this.callee.on('testCall', (dataOut: rpc.MessageSequence) => {
-    //   return new CustomParcelable();
-    // });
-    // this.callee.off('testCall');
+    this.callee.on('testCall', (dataOut: rpc.MessageSequence) => {
+      return new CustomParcelable();
+    });
+    this.callee.off('testCall');
   }
 
   onBackground() {

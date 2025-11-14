@@ -31,30 +31,31 @@ class MyAbility extends UIAbility {
 
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     try {
-      Hypium.set('context', this.context);
-      hilog.info(0x0000, 'testTag', 'MyAbilityStage Hypium.set');
-      let appContext: Context = Hypium.get('context') as Context;
-      let path: string = appContext.filesDir;
-      hilog.info(0x0000, 'testTag', 'MyAbilityStage appContext.filePath' + path);
-
       hilog.info(0x0000, 'testTag', 'EntryAbility onCreate');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
       abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
       if (abilityDelegatorArguments != undefined) {
-        hilog.info(0x0000, 'testTag', 'zhaoxu abilityDelegatorArguments is not undefined');
+        hilog.info(0x0000, 'testTag', 'abilityDelegatorArguments is not undefined');
       } else {
-        hilog.info(0x0000, 'testTag', 'zhaoxu abilityDelegatorArguments is undefined');
+        hilog.info(0x0000, 'testTag', 'abilityDelegatorArguments is undefined');
       }
+      Hypium.set('context', this.context);
+      hilog.info(0x0000, 'testTag', 'MyAbilityStage Hypium.set');
+      let appContext: Context = Hypium.get('context') as Context;
+      let path: string = appContext.filesDir;
+      hilog.info(0x0000, 'testTag', 'MyAbilityStage appContext.filePath' + path);
+      Hypium.set('pathDir', path)
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
       hilog.info(0x0000, 'testTag', '%{public}s', 'onCreate end');
     } catch (err) {
-      hilog.error(0x0000, 'testTag', 'zhaoxu onCreate err: ' + err);
+      hilog.error(0x0000, 'testTag', 'onCreate err: ' + err);
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {
@@ -66,22 +67,19 @@ class MyAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    hilog.info(0x0000, 'testTag', 'zhaoxu EntryAbility onWindowStageCreate');
+    hilog.info(0x0000, 'testTag', 'EntryAbility onWindowStageCreate');
     try {
       let pathDir = this.context.filesDir
       Hypium.set('pathDir', pathDir)
-      hilog.info(0x0000, 'testTag', 'zhaoxu set Context: 1111');
       Hypium.set('Context', this.context)
-      hilog.info(0x0000, 'testTag', 'zhaoxu set Context: ' + this.context);
-      hilog.info(0x0000, 'testTag', 'zhaoxu set pathDir: ' + pathDir);
+      hilog.info(0x0000, 'testTag', 'set pathDir: ' + pathDir);
       windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag', 'loadContent entering');
-        if (err == null) {
+        if (err!.code) {
           hilog.info(0x0000, 'testTag', 'loadContent ok');
           return;
-        } else {
-          hilog.info(0x0000, 'testTag', 'loadContent error');
         }
+        hilog.info(0x0000, 'testTag', 'loadContent error');
       });
     } catch (e: Error) {
       hilog.info(0x0000, 'testTag', 'loadContent catch error：-----------' + e.message);

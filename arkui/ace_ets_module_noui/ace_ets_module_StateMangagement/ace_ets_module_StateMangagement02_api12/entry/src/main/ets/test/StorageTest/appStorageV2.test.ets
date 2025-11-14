@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { AppStorageV2 } from '@ohos.arkui.StateManagement';
 
 export default function appStorageV2() {
   describe('appStorageV2', () => {
@@ -51,7 +52,7 @@ export default function appStorageV2() {
      * @tc.desc      all keys in AppStorage.
      * @tc.level     Level 2
      * @tc.type
-    * @tc.size
+     * @tc.size
      */
     it('appStorageV2_001', Level.LEVEL0, async (done: Function) => {
       console.info('[appStorageV2_001] START');
@@ -103,5 +104,31 @@ export default function appStorageV2() {
       await btn6.click();
       done();
     });
+
+    /**
+     * @tc.number    appStorageV2_003
+     * @tc.name      appStorageV2_003
+     * @tc.desc      all keys in AppStorage.
+     * @tc.level     Level 2
+     * @tc.type
+     * @tc.size
+     */
+    it('appStorageV2_003', Level.LEVEL0, async (done: Function) => {
+      console.info('[appStorageV2_003] START');
+      await CommonFunc.sleep(1000);
+      let res1: Array<string> = AppStorage.get<Array<string>>('AppStorageV2Keys')!;
+      let res2: Array<string> = AppStorage.get<Array<string>>('AppStorageV2KeysEmpty')!;
+      console.info("[appStorageV2_003] component res1 is: " + JSON.stringify(res1));
+      console.info("[appStorageV2_003] component res2 is: " + JSON.stringify(res2));
+      console.info("[appStorageV2_003] component AppStorageV2.keys is: " + JSON.stringify(AppStorageV2.keys()));
+      expect(res1.length > 0).assertTrue();
+      expect(res2.length).assertEqual(0);
+      let res3: undefined = AppStorage.get<undefined>('AppStorageV2Connect001');
+      expect(res3).assertEqual(undefined);
+      console.info("[appStorageV2_003] component appstorage.clear is: " + JSON.stringify(AppStorage.clear()));
+      console.info('[appStorageV2_003] END');
+      done();
+    });
+
   })
 }

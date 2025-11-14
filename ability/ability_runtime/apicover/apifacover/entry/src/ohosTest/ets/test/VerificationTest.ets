@@ -57,7 +57,6 @@ export default function verificationTest() {
 
     afterEach(async (done: Function) => {
       try{
-        await driver1.delayMs(1000);
         done();
       }catch{
         console.info("VerificationTestTest afterEach delayMs error" );
@@ -367,7 +366,7 @@ export default function verificationTest() {
           console.info(TAG + `fail click ` + JSON.stringify(e));
         }
         console.info(TAG + `end click`);
-        await sleep(4000);
+        await sleep(2000);
         console.info(TAG + `end`);
         done();
       } catch (err) {
@@ -438,7 +437,7 @@ export default function verificationTest() {
         .catch((err: BusinessError) => {
           console.info(TAG + "setMissionLabel err = " + JSON.stringify(err));
         });
-      await sleep(1000);
+      await sleep(500);
       expect(missionLabelUpdatedFlag).assertTrue();
       done();
     })
@@ -472,7 +471,7 @@ export default function verificationTest() {
         .catch((err: BusinessError) => {
           console.info(TAG + "setMissionLabel2 err = " + JSON.stringify(err));
         });
-      await sleep(1000);
+      await sleep(500);
       expect(missionLabelUpdatedCount).assertEqual(2);
 
       missionLabelUpdatedCount = 0;
@@ -490,7 +489,7 @@ export default function verificationTest() {
           missionLabelUpdatedCount++;
         }
       })
-      await sleep(1000);
+      await sleep(500);
       expect(missionLabelUpdatedCount).assertEqual(2);
       done();
     })

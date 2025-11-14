@@ -15,6 +15,11 @@
 #include "AVCode/AVCode_Test.h"
 #include "common/Common.h"
 #include <cstdint>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <fstream>
+#include <iostream>
 #include <multimedia/player_framework/native_avcapability.h>
 #include <multimedia/player_framework/native_avcodec_videodecoder.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
@@ -23,6 +28,65 @@
 #include <multimedia/player_framework/native_avmuxer.h>
 #include <multimedia/player_framework/native_cencinfo.h>
 #include <hilog/log.h>
+
+const char* MP4_FILE = "/data/storage/el2/base/haps/entry_test/files/01_video_audio.mp4";
+const int BLOCK_24 = 24;
+const int BLOCK_16 = 16;
+const int BLOCK_8 = 8;
+const int BLOCK_4 = 4;
+const int COUNT_2 = 2;
+const int MUNUSONE = -1;
+const int SMAPLE_RATE = 4410;
+const int SEEK_TIME = 100;
+const int BUFFER_SIZE = 15;
+const int BUFFER_PTS = 12;
+const int BUFFER_AV = 11;
+
+static void WriteBox(std::ofstream& out, uint32_t size, const std::string& type, const char* data = nullptr)
+{
+    out.put((size >> BLOCK_24) & 0xFF);
+    out.put((size >> BLOCK_16) & 0xFF);
+    out.put((size >> BLOCK_8) & 0xFF);
+    out.put(size & 0xFF);
+    out.write(type.c_str(), BLOCK_4);
+    if (data && size > BLOCK_8) {
+        out.write(data, size - BLOCK_8);
+    }
+}
+
+napi_value WriteMp4File(napi_env env, napi_callback_info info)
+{
+    std::ofstream out(MP4_FILE, std::ios::binary);
+    if (!out.is_open()) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "AVCode", "WriteMp4File error.");
+        return nullptr;
+    }
+    const char ftypData[] = "isom\0\0\0\0";
+    WriteBox(out, BLOCK_16, "ftyp", ftypData);
+    const char mvhdData[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+                             0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00,
+                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01};
+    uint32_t mvhdSize = BLOCK_8 + sizeof(mvhdData);
+    WriteBox(out, mvhdSize, "mvhd", mvhdData);
+
+    const char tkhdData[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00,
+                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00};
+    uint32_t tkhdSize = BLOCK_8 + sizeof(tkhdData);
+    WriteBox(out, tkhdSize, "tkhd", tkhdData);
+    const char mdiaData[] = "minimal";
+    uint32_t mdiaSize = BLOCK_8 + sizeof(mdiaData) - 1;
+    WriteBox(out, mdiaSize, "mdia", mdiaData);
+    uint32_t trakSize = BLOCK_8 + tkhdSize + mdiaSize;
+    WriteBox(out, trakSize, "trak");
+    uint32_t moovSize = BLOCK_8 + mvhdSize + trakSize;
+    WriteBox(out, moovSize, "moov");
+    WriteBox(out, BLOCK_8, "mdat");
+    out.close();
+    return nullptr;
+}
 
 napi_value OH_AVCLevelTest1(napi_env env, napi_callback_info info)
 {
@@ -1108,3 +1172,221 @@ napi_value OH_AVCencInfo_SetAVBufferTest(napi_env env, napi_callback_info info)
     return retValue;
 }
 
+napi_value OH_AVDemuxer_ReadSampleBufferTestNotPermit(napi_env env, napi_callback_info info)
+{
+    int fd1 = open(MP4_FILE, O_RDONLY);
+    int64_t sizeTest = 0;
+    struct stat fileStatus;
+    if (stat(MP4_FILE, &fileStatus) == 0) {
+        sizeTest = static_cast<int64_t>(fileStatus.st_size);
+    }
+    uint32_t trackIndex = 0;
+    OH_AVSource *source = OH_AVSource_CreateWithFD(fd1, 0, sizeTest);
+    OH_AVDemuxer *demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "AVCode", "demuxer is nullptr");
+    }
+    OH_AVBuffer *buffer = OH_AVBuffer_Create(sizeTest);
+    OH_AVErrCode setResult = OH_AVDemuxer_ReadSampleBuffer(demuxer, trackIndex, buffer);
+
+    close(fd1);
+    OH_AVDemuxer_Destroy(demuxer);
+    napi_value retValue;
+    napi_create_int32(env, setResult == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVDemuxer_SeekToTimeTestNotPermit(napi_env env, napi_callback_info info)
+{
+    int fd1 = open(MP4_FILE, O_RDONLY);
+    int64_t sizeTest = 0;
+    struct stat fileStatus;
+    if (stat(MP4_FILE, &fileStatus) == 0) {
+        sizeTest = static_cast<int64_t>(fileStatus.st_size);
+    }
+    OH_AVSource *source = OH_AVSource_CreateWithFD(fd1, 0, sizeTest);
+    OH_AVDemuxer *demuxer = OH_AVDemuxer_CreateWithSource(source);
+    if (demuxer == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, "AVCode", "demuxer is nullptr");
+    }
+
+    OH_AVFormat *format = OH_AVSource_GetSourceFormat(source);
+    int32_t outCount = 0;
+    OH_AVFormat_GetIntValue(format, OH_MD_KEY_TRACK_COUNT, &outCount);
+    OH_AVErrCode setResult = OH_AVDemuxer_SeekToTime(demuxer, SEEK_TIME, SEEK_MODE_NEXT_SYNC);
+
+    close(fd1);
+    OH_AVDemuxer_Destroy(demuxer);
+    napi_value retValue;
+    napi_create_int32(env, setResult == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVMuxer_SetRotationNotPermit(napi_env env, napi_callback_info info)
+{
+    int audioTrackId = -1;
+    int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    OH_AVFormat *trackFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_AUDIO_AAC);
+    OH_AVFormat_SetIntValue(trackFormat, OH_MD_KEY_AUD_SAMPLE_RATE, SMAPLE_RATE);
+    OH_AVFormat_SetIntValue(trackFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, COUNT_2);
+    OH_AVFormat_SetIntValue(trackFormat, OH_MD_KEY_ENABLE_MOOV_FRONT, 1);
+    OH_AVMuxer_AddTrack(muxer, &audioTrackId, trackFormat);
+    OH_AVErrCode result = OH_AVMuxer_Start(muxer);
+    result = OH_AVMuxer_SetRotation(muxer, 0);
+    OH_AVMuxer_Stop(muxer);
+
+    close(fileDescribe);
+    OH_AVMuxer_Destroy(muxer);
+    OH_AVFormat_Destroy(trackFormat);
+    napi_value retValue;
+    napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVMuxer_SetFormatNotPermit(napi_env env, napi_callback_info info)
+{
+    int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    OH_AVFormat *trackFormat = OH_AVFormat_Create();
+    OH_AVFormat *fileFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
+    OH_AVErrCode result = OH_AVMuxer_SetFormat(muxer, fileFormat);
+    int audioTrackId = -1;
+    OH_AVMuxer_AddTrack(muxer, &audioTrackId, trackFormat);
+    result = OH_AVMuxer_Start(muxer);
+    OH_AVErrCode retFormat = OH_AVMuxer_SetFormat(muxer, fileFormat);
+    if (retFormat == AV_ERR_OPERATE_NOT_PERMIT) {
+        result = retFormat;
+    }
+    OH_AVMuxer_Stop(muxer);
+
+    close(fileDescribe);
+    OH_AVMuxer_Destroy(muxer);
+    OH_AVFormat_Destroy(trackFormat);
+    OH_AVFormat_Destroy(fileFormat);
+    napi_value retValue;
+    napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVMuxer_AddTrackNotPermit(napi_env env, napi_callback_info info)
+{
+    int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    OH_AVFormat *trackFormat = OH_AVFormat_Create();
+    OH_AVFormat *fileFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
+    OH_AVMuxer_SetFormat(muxer, fileFormat);
+    OH_AVErrCode result = OH_AVMuxer_Start(muxer);
+    int audioTrackId = -1;
+    OH_AVErrCode retTrack = OH_AVMuxer_AddTrack(muxer, &audioTrackId, trackFormat);
+    if (retTrack == AV_ERR_OPERATE_NOT_PERMIT) {
+        result = retTrack;
+    }
+
+    retTrack = OH_AVMuxer_AddTrack(muxer, &audioTrackId, nullptr);
+    if (retTrack == AV_ERR_UNSUPPORT) {
+        result = retTrack;
+    }
+
+    OH_AVMuxer_Stop(muxer);
+
+    close(fileDescribe);
+    OH_AVMuxer_Destroy(muxer);
+    OH_AVFormat_Destroy(trackFormat);
+    OH_AVFormat_Destroy(fileFormat);
+    napi_value retValue;
+    napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVMuxer_StartNotPermit(napi_env env, napi_callback_info info)
+{
+    int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    OH_AVErrCode result = OH_AVMuxer_Start(muxer);
+
+    close(fileDescribe);
+    OH_AVMuxer_Destroy(muxer);
+    napi_value retValue;
+    napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVMuxer_WriteSampleNotPermit(napi_env env, napi_callback_info info)
+{
+    int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    OH_AVFormat *trackFormat = OH_AVFormat_Create();
+    OH_AVFormat *fileFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
+    OH_AVMuxer_SetFormat(muxer, fileFormat);
+    OH_AVErrCode result = OH_AVMuxer_Start(muxer);
+    OH_AVCodecBufferAttr attrInfo;
+    attrInfo.pts = BUFFER_PTS;
+    attrInfo.size = BUFFER_SIZE;
+    attrInfo.offset = 0;
+    attrInfo.flags |= AVCODEC_BUFFER_FLAGS_SYNC_FRAME;
+    OH_AVMemory *sample = OH_AVMemory_Create(BUFFER_AV);
+    int trackId = -1;
+    OH_AVErrCode retWrite = OH_AVMuxer_WriteSample(muxer, trackId, sample, attrInfo);
+    if (retWrite == AV_ERR_OPERATE_NOT_PERMIT) {
+        result = retWrite;
+    }
+    OH_AVMuxer_Stop(muxer);
+
+    close(fileDescribe);
+    OH_AVMuxer_Destroy(muxer);
+    OH_AVFormat_Destroy(trackFormat);
+    OH_AVFormat_Destroy(fileFormat);
+    OH_AVMemory_Destroy(sample);
+    napi_value retValue;
+    napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVMuxer_WriteSampleBufferNotPermit(napi_env env, napi_callback_info info)
+{
+    int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    OH_AVFormat *trackFormat = OH_AVFormat_Create();
+    OH_AVFormat *fileFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
+    OH_AVMuxer_SetFormat(muxer, fileFormat);
+    OH_AVErrCode result = OH_AVMuxer_Start(muxer);
+    OH_AVCodecBufferAttr attrInfo;
+    attrInfo.pts = BUFFER_PTS;
+    attrInfo.size = BUFFER_SIZE;
+    attrInfo.offset = 0;
+    attrInfo.flags |= AVCODEC_BUFFER_FLAGS_SYNC_FRAME;
+    OH_AVBuffer *sample = OH_AVBuffer_Create(BUFFER_AV);
+    int trackId = -1;
+    OH_AVErrCode retWriteBuff = OH_AVMuxer_WriteSampleBuffer(muxer, trackId, sample);
+    if (retWriteBuff == AV_ERR_OPERATE_NOT_PERMIT) {
+        result = retWriteBuff;
+    }
+    OH_AVMuxer_Stop(muxer);
+
+    close(fileDescribe);
+    OH_AVMuxer_Destroy(muxer);
+    OH_AVFormat_Destroy(trackFormat);
+    OH_AVFormat_Destroy(fileFormat);
+    OH_AVBuffer_Destroy(sample);
+    napi_value retValue;
+    napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}
+
+napi_value OH_AVMuxer_StopNotPermit(napi_env env, napi_callback_info info)
+{
+    int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    OH_AVErrCode result = OH_AVMuxer_Stop(muxer);
+    close(fileDescribe);
+    OH_AVMuxer_Destroy(muxer);
+    napi_value retValue;
+    napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
+    return retValue;
+}

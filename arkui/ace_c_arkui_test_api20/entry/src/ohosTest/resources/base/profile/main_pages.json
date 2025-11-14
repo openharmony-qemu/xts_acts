@@ -30,6 +30,9 @@
     "MainAbility/pages/Stack/StackTypeNodePage",
     "MainAbility/pages/Stack/StackCNodePage",
     "MainAbility/pages/RelativeContainer/RelativeContainerTypeNodePage",
-    "MainAbility/pages/RelativeContainer/RelativeContainerCNodePage"
+    "MainAbility/pages/RelativeContainer/RelativeContainerCNodePage",
+    "MainAbility/pages/capi/ArkUIPostAsyncUITask",
+    "MainAbility/pages/capi/ArkUIPostUITask",
+    "MainAbility/pages/capi/ArkUIPostUITaskAndWait"
   ]
 }

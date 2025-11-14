@@ -179,7 +179,7 @@ function testGetSecurityStatus() {
    * @tc.size      : MediumTest
    */
   it("test_get_security_status_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getSecurityStatus(SELFWANT, PATCH);
       expect(false).assertTrue();
@@ -325,7 +325,7 @@ function testSetPasswordPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_password_policy_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setPasswordPolicy(SELFWANT, PASSWORD_POLICY);
       expect(false).assertTrue();
@@ -471,7 +471,7 @@ function testGetPasswordPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_password_policy_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getPasswordPolicy(SELFWANT);
       expect(false).assertTrue();
@@ -558,7 +558,7 @@ function testInstallUserCertificate() {
    * @tc.size      : MediumTest
    */
   it("test_install_user_certificate_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       await securityManager.installUserCertificate(SELFWANT, CERTIFICATE);
       expect(false).assertTrue();
@@ -686,7 +686,7 @@ function testInstallUserCertificate() {
    * @tc.size      : MediumTest
    */
   it("test_install_user_certificate_0201", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.installUserCertificate(SELFWANT, CERTIFICATE, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
@@ -796,6 +796,8 @@ function testInstallUserCertificate() {
     try {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE_MAX_ALIAS, INT_VALID_ACCOUNTID);
       expect(path !== undefined).assertTrue();
+      let res = securityManager.getUserCertificates(SELFWANT, INT_VALID_ACCOUNTID);
+      expect(res.length > 0).assertTrue();
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -855,7 +857,7 @@ function testGetUserCertificates() {
    * @tc.size      : MediumTest
    */
   it("test_get_user_certificates_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getUserCertificates(SELFWANT, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
@@ -956,7 +958,7 @@ function testUninstallUserCertificate() {
    * @tc.size      : MediumTest
    */
   it("test_uninstall_user_certificate_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       await securityManager.uninstallUserCertificate(SELFWANT, 'test');
       expect(false).assertTrue();
@@ -1060,7 +1062,7 @@ function testSetClipboardPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_clipboard_policy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setAppClipboardPolicy(SELFWANT, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
@@ -1249,7 +1251,7 @@ function testGetClipboardPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_clipboard_policy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getAppClipboardPolicy(SELFWANT, TEST_TOKEN_ID);
       expect(false).assertTrue();
@@ -1306,7 +1308,7 @@ function testGetClipboardPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_clipboard_policy_0500", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getAppClipboardPolicy(SELFWANT);
       expect(false).assertTrue();
@@ -1372,7 +1374,7 @@ function testSetClipboardPolicyByBundleName() {
    * @tc.size      : MediumTest
    */
   it("test_set_clipboard_policy_by_bundle_name_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
@@ -1657,7 +1659,7 @@ function testGetClipboardPolicyByBundleName() {
    * @tc.size      : MediumTest
    */
   it("test_get_clipboard_policy_by_bundle_name_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID);
       expect(false).assertTrue();
@@ -1758,7 +1760,7 @@ function testSetWatermarkImage() {
    * @tc.size      : MediumTest
    */
   it("test_set_watermark_image_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -1908,7 +1910,7 @@ function testCancelWatermarkImage() {
    * @tc.size      : MediumTest
    */
   it("test_cancel_watermark_image_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.cancelWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID);
       expect(false).assertTrue();
@@ -2012,7 +2014,7 @@ function testSetPermissionManagedState() {
    * @tc.size      : MediumTest
    */
   it("test_set_permission_managed_state_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
       expect(false).assertTrue();
@@ -2098,7 +2100,7 @@ function testSetPermissionManagedState() {
   it("test_set_permission_managed_state_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.setPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
+      securityManager.setPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200012).assertTrue();
@@ -2119,7 +2121,7 @@ function testSetPermissionManagedState() {
   it("test_set_permission_managed_state_0700", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_DEFAULT);
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DEFAULT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200012).assertTrue();
@@ -2141,9 +2143,56 @@ function testSetPermissionManagedState() {
   it("test_set_permission_managed_state_0800", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED)
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DENIED)
       let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
-      expect(managedState == TEST_PERMISSION_MANAGED_STATE_GRANTED).assertTrue();
+      expect(managedState == securityManager.PermissionManagedState.DENIED).assertTrue();
+    } catch(error) {
+      expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0900
+   * @tc.name      : test_set_permission_managed_state_0900
+   * @tc.desc      : test securityManager setPermissionManagedState set granted state
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_permission_managed_state_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DENIED)
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DEFAULT)
+      let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
+      expect(managedState == securityManager.PermissionManagedState.DEFAULT).assertTrue();
+    } catch(error) {
+      expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1000
+   * @tc.name      : test_set_permission_managed_state_1000
+   * @tc.desc      : test securityManager setPermissionManagedState set granted state
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_permission_managed_state_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED)
+      let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
+      expect(managedState == securityManager.PermissionManagedState.GRANTED).assertTrue();
+    } catch(error) {
+      expect(error.code == 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2179,7 +2228,7 @@ function testGetPermissionManagedState() {
    * @tc.size      : MediumTest
    */
   it("test_get_permission_managed_state_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
       expect(false).assertTrue();

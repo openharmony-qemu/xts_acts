@@ -985,8 +985,8 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3700';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1ResolveDelay = 50;
-      const overallDelay = 150;
+      const p1ResolveDelay = 150;
+      const overallDelay = 500;
       const anyThenErrorMessage = 'Error thrown in any.then in 3700';
       const p1ResolveValue = 'p1 resolved value in 3700';
       const p2ResolveValue = 'p2 immediate value in 3700';
@@ -1074,9 +1074,9 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3800';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1ResolveDelay = 50;
-      const p2ResolveDelay = 100;
-      const overallDelay = 200;
+      const p1ResolveDelay = 150;
+      const p2ResolveDelay = 300;
+      const overallDelay = 500;
       const p1ResolveValue = 'p1 resolved value in 3800';
       const p2ResolveValue = 'p2 resolved value in 3800';
 
@@ -1178,9 +1178,9 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3900';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1ResolveDelay = 50;
-      const p2RejectDelay = 100;
-      const overallDelay = 200;
+      const p1ResolveDelay = 150;
+      const p2RejectDelay = 300;
+      const overallDelay = 500;
       const p1ResolveValue = 'p1 resolved value in 3900';
       const p2RejectError = 'p2 rejected in 3900';
 
@@ -1289,9 +1289,9 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest4000';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1ResolveDelay = 60;
-      const p2RejectDelay = 120;
-      const overallDelay = 220;
+      const p1ResolveDelay = 160;
+      const p2RejectDelay = 300;
+      const overallDelay = 500;
       const p1ResolveValue = 'p1 resolved value in 4000';
       const p2RejectError = 'p2 rejected in 4000';
 
@@ -1400,9 +1400,9 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest4100';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1RejectDelay = 100;
-      const p2ResolveDelay = 50;
-      const overallDelay = 200;
+      const p1RejectDelay = 300;
+      const p2ResolveDelay = 150;
+      const overallDelay = 500;
       const p1RejectError = 'p1 rejected in 4100';
       const p2ResolveValue = 'p2 resolved value in 4100';
 
@@ -1511,9 +1511,9 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest4200';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1RejectDelay = 100;
-      const p2ResolveDelay = 50;
-      const overallDelay = 200;
+      const p1RejectDelay = 300;
+      const p2ResolveDelay = 150;
+      const overallDelay = 500;
       const p1RejectError = 'p1 rejected in 4200';
       const p2ResolveValue = 'p2 resolved value in 4200';
 

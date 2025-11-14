@@ -3411,7 +3411,6 @@ export default function AudioEffectTest() {
               console.info(TAG + "setAudioEffectMode EFFECT_NONE SUCCESS");
               audioRenderer.getAudioEffectMode((err: BusinessError<void> | null, effectmode: audio.AudioEffectMode | undefined) => {
                 if (effectmode! == 0) {
-                  expect(true).assertTrue();
                   console.info(`getAudioEffectMode EFFECT_NONE SUCCESS: ${effectmode}`);
                   audioRenderer.release();
                   done();

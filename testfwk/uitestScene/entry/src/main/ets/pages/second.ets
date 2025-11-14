@@ -13,11 +13,18 @@
  * limitations under the License.
  */
 import router from '@system.router';
+import { KeyboardAvoidMode } from '@ohos.arkui.UIContext'
 
 @Entry
 @Component
 struct Second {
   private content: string = "Second Page"
+  @State test: string = 'test'
+
+  aboutToAppear(): void {
+    let context = this.getUIContext();
+    context.setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
+  }
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -36,6 +43,22 @@ struct Second {
       .onClick(() => {
         router.back()
       })
+      TextInput({ placeholder: 'welcome', text: this.content })
+        .type(InputType.Normal)
+        .width(300)
+        .height(50)
+        .enabled(true)
+        .fontSize(25)
+        .id('changTest')
+        .margin({ top: 20 })
+      TextInput()
+        .type(InputType.Normal)
+        .width(300)
+        .height(50)
+        .enabled(true)
+        .fontSize(25)
+        .id('changContext')
+        .margin({ top: 20 })
     }
     .width('100%')
     .height('100%')

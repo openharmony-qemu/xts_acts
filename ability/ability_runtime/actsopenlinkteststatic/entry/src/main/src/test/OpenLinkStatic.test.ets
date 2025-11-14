@@ -17,12 +17,12 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, aft
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext;
 let link = 'example://www.example.com';
@@ -30,17 +30,17 @@ let linkNotExist = 'demo://www.example.com';
 let invalidParamErrNo = 401;
 let componentNotExistErrNo = 16000019;
 let resultCode = 111;
-let trueparameters: Record<String,Object> = {"demo_key": "demo_value"};
+let trueparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let trueParamOptions: OpenLinkOptions = {
   appLinkingOnly: true,
   parameters: trueparameters
 };
-let falseparameters: Record<String,Object> = {"demo_key": "demo_value"};
+let falseparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let falseParamOptions: OpenLinkOptions = {
   appLinkingOnly: false,
   parameters: falseparameters
 };
-let parameters: Record<String,Object> = {"demo_key": "demo_value", "demo_num": 111}
+let parameters: Record<String, RecordData> = {"demo_key": "demo_value", "demo_num": 111}
 let paramOptions: OpenLinkOptions = {
   parameters: parameters
 };
@@ -82,7 +82,7 @@ export default function openLinkStaticTest() {
         })
       } catch (err: BusinessError) {
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open fail: ` + err.code + err.message);
-        expect().assertFail();
+        expect(err.code).assertEqual(invalidParamErrNo);
         done();
       }
     });

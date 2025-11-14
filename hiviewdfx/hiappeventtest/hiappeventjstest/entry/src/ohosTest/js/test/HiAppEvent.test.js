@@ -980,7 +980,7 @@ describe('HiAppEventApiTest', function () {
         console.info('testHiAppEventApi37 end')
         done()
     })
-    
+
     /**
      * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_3800
      * @tc.name: testHiAppEventApi38
@@ -1398,5 +1398,20 @@ describe('HiAppEventApiTest', function () {
         })
         console.info('testHiAppEventApi52 end')
     });
+
+    /**
+     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_JSNAPI_53200
+     * @tc.name testHiAppEventApi53
+     * @tc.desc HiAppEvent configure,return false
+     */
+    it('testHiAppEventApi53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        console.info('testHiAppEventApi53 start')
+        let configret =false;
+        configret = HiAppEvent.configure(null);
+        expect(configret).assertFalse();
+        console.info('testHiAppEventApi23 end');
+        done();
+    });
+
 })
 }

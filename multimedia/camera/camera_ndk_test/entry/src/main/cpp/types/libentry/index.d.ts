@@ -330,6 +330,8 @@ export const sessionGetVideoRotation: (a: number) => number;
 
 export const sessionGetPreviewRotation: (a: number) => number;
 
+export const sessionGetImageRotation: (a: number) => number;
+
 export const sessionSetPreviewRotation: (a: number, b: boolean) => number;
 
 export const sessionGetFocusMode: () => number;

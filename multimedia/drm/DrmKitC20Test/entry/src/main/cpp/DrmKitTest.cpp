@@ -362,7 +362,7 @@ napi_value DRM_MediaKeyRequestDefaultUrl(napi_env env, napi_callback_info info)
     napi_value result;
     DRM_MediaKeyRequest requestData;
     Drm_ErrCode ret6 = OH_MediaKeySession_GenerateMediaKeyRequest(nullptr, nullptr, &requestData);
-    napi_create_int32(env, requestData.defaultUrl[0] == '\0', &result);
+    napi_create_int32(env, requestData.defaultUrl != nullptr, &result);
     return result;
 }
 napi_value DRM_CertificateStatusTest1(napi_env env, napi_callback_info info)

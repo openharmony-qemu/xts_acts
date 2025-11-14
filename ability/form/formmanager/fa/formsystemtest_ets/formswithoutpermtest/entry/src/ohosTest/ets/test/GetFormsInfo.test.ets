@@ -30,9 +30,12 @@ export const getFormsInfoTest = (describeName:string, filterParameter:number) =>
     const moduleName = `a`;
 
     /**
-     * @tc.name: getFormsInfo
-     * @tc.number: FMS_getFormsInfo_0800
-     * @tc.desc: Query specific form configuration information by bundle name without permission (by AsyncCallback)
+     * @tc.name   ${callbackName}
+     * @tc.number FMS_getFormsInfo_0800
+     * @tc.desc   Query specific form configuration information by bundle name without permission (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`${callbackName}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(`==========${callbackName} ${describeName} start==========`);
@@ -53,9 +56,12 @@ export const getFormsInfoTest = (describeName:string, filterParameter:number) =>
     });
 
     /**
-     * @tc.name getFormsInfo
+     * @tc.name   ${promiseName}
      * @tc.number FMS_getFormsInfo_0800
-     * @tc.desc: Query specific form configuration information by bundle name without permission (by Promise)
+     * @tc.desc   Query specific form configuration information by bundle name without permission (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`${promiseName}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(`==========${promiseName} ${describeName} start==========`);
@@ -75,9 +81,12 @@ export const getFormsInfoTest = (describeName:string, filterParameter:number) =>
     });
 
     /**
-     * @tc.name: getFormsInfo
-     * @tc.number: FMS_getFormsInfo_1300
-     * @tc.desc: Query specific form configuration information by bundle name and module name without permission (by AsyncCallback)
+     * @tc.name   ${callbackName1}
+     * @tc.number FMS_getFormsInfo_1300
+     * @tc.desc   Query specific form configuration information by bundle name and module name without permission (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`${callbackName1}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(`==========${callbackName1} ${describeName} start==========`);
@@ -98,9 +107,12 @@ export const getFormsInfoTest = (describeName:string, filterParameter:number) =>
     });
 
     /**
-     * @tc.name getFormsInfo
+     * @tc.name   ${promiseName1}
      * @tc.number FMS_getFormsInfo_1300
-     * @tc.desc: Query specific form configuration information by bundle name and module name without permission (by Promise)
+     * @tc.desc   Query specific form configuration information by bundle name and module name without permission (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`${promiseName1}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(`==========${promiseName1} ${describeName} start==========`);

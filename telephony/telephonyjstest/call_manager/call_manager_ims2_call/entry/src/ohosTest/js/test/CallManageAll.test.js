@@ -162,13 +162,18 @@ export default function CallManageImsCall() {
         it('Telephony_CallManager_hasCall_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
                 var data = await call.hasCall();
-                console.log(`Telephony_CallManager_hasCall_Promise_0400 finish data = ${data}`);
+                if (data) {
+                    expect(data == true).assertTrue();
+                    console.info(`Telephony_CallManager_hasCall_Promise_0400 success, has call->${JSON.stringify(data)}`);
+                } else {
+                    expect(data == false).assertTrue();
+                    console.info(`Telephony_CallManager_hasCall_Promise_0400 success, does not has call->${JSON.stringify(data)}`);
+                }
                 done();
             } catch (err) {
                 console.log('Telephony_CallManager_hasCall_Promise_0400 fail');
                 expect().assertFail();
                 done();
-
             }
         });
 
@@ -385,13 +390,14 @@ export default function CallManageImsCall() {
             let CaseName = 'Telephony_CallManager_Dial_Async_0100';
             try {
                 call.dial("", (err, data) => {
+                    expect(data == undefined).assertTrue();
                     console.info(CaseName + " case success" + JSON.stringify(data));
                     done();
                     return;
                 });
             } catch (err) {
                 console.info(CaseName + ' case error' + JSON.stringify(err));
-                expect().assertFail();
+                expect(err).assertFalse();
                 done();
             }
         });
@@ -408,13 +414,14 @@ export default function CallManageImsCall() {
                 call.dial("", {
                     extras: false
                 }, (err, data) => {
+                    expect(data == undefined).assertTrue();
                     console.info(CaseName + " case success" + JSON.stringify(data));
                     done();
                     return;
                 });
             } catch (err) {
                 console.info(CaseName + ' case error' + JSON.stringify(err));
-                expect().assertFail();
+                expect(err).assertFalse();
                 done();
             }
         });

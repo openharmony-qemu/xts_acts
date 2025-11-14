@@ -7,6 +7,7 @@
     "pages/pinch",
     "pages/drag",
     "pages/scroll",
-    "pages/wearList"
+    "pages/wearList",
+    "pages/five"
   ]
 }

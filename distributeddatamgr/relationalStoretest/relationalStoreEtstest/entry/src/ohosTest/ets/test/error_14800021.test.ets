@@ -67,12 +67,13 @@ const asset3:data_relationalStore.Asset = {
 export default function error14800021Test() {
   describe('error14800021Test', () => {
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0100
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0100
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0100
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0100
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -113,12 +114,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0200
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0200
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0200
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0200
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -194,12 +196,13 @@ export default function error14800021Test() {
 
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0300
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -315,12 +318,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0400
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -374,12 +378,13 @@ export default function error14800021Test() {
 
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0500
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0500
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0500
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0500
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -439,12 +444,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0600
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0600
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0600
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0600
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -491,12 +497,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0700
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0700
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0700
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0700
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -560,12 +567,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_1200
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -618,12 +626,13 @@ export default function error14800021Test() {
 
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0400
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0900
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0900
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0900
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -663,12 +672,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_1000
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1000
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1000
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1000
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -716,12 +726,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_1100
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1100
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1100
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1100
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -771,12 +782,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_0800
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0800
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0800
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0800
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
@@ -819,12 +831,13 @@ export default function error14800021Test() {
     })
 
     /**
-     * @tc.name      : testSUBDistributedDataRDBSDKErrorCode14800021_1300
-     * @tc.number    : SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1300
-     * @tc.desc      : Verify the properties of the text type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1300
+     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1300
+     * @tc.desc   Verify the properties of the text type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);

@@ -112,6 +112,7 @@ namespace ArkUICapiTest {
 #define PARAM_NEGATIVE_1000 (-1000)
 #define PARAM_NEGATIVE_2000 (-2000)
 #define SIZE_0 0
+#define SIZE_2 2
 #define SIZE_10 10
 #define SIZE_20 20
 #define SIZE_30 30

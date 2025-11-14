@@ -12,6 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { NodeContent, UIContext } from "@kit.ArkUI";
+
+export const CreateNodeArkUIPostAsyncUITask: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostUITask: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeArkUIPostUITaskAndWait: (slot: NodeContent, context: UIContext) => void;
+export const CreateNodeTreeOnUIThread: (slot: NodeContent, context: UIContext) => void;
+export const DisposeNodeTree: (slot: NodeContent) => void;
 export const testPostOnIdle: (a: string) => void;
 
 export const customComponentOnDrawFrontTest: (a: string) => void;

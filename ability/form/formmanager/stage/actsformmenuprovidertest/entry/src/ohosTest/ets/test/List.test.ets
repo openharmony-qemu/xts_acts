@@ -13,9 +13,11 @@
  * limitations under the License.
  */
 
-import formMenuTest from './formMenu.test';
-import formProviderApiTest from './formProviderApi.test';
+import formMenuTest from './FormMenu.test';
+import formProviderApiTest from './FormProviderApi.test';
+import formEnum from './FormEnum.test';
 
 export default function testsuite() {
   formProviderApiTest();
+  formEnum();
 }

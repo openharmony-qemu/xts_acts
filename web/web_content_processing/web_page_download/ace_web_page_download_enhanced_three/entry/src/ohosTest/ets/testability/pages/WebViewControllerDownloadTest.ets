@@ -123,14 +123,14 @@ struct WebViewControllerDownloadTest {
         Button('WebViewControllerDownloadTestButton')
           .key('WebViewControllerDownloadTestButton').onClick(async () => {
           console.info('key==>' + this.str)
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 0);
+          await waitForExist(() => this.isReceive, this.str + ' isReceive', 0);
           this.isReceive = -1;
           switch (this.str) {
             case 'testGetGuid001': {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' guids:' + this.guids)
                 
                 let check = (v1: string[], v2: number): boolean => {
@@ -147,7 +147,7 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
                 this.controller.startDownload(this.downloadUrlImg);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' guids:' + this.guids)
 
                 let check = (v1: string[], v2: number): boolean => {
@@ -172,7 +172,7 @@ struct WebViewControllerDownloadTest {
                   return '' + flag;
                 }, this.str, 'true');
 
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' currentSpeed:' + this.currentSpeed)
                 Utils.emitEvent(flag, 131600);
               } catch (error) {
@@ -192,7 +192,11 @@ struct WebViewControllerDownloadTest {
                   return '' + flag;
                 }, this.str, 'true');
 
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem && this.currentDownloadState == webView.WebDownloadState.IN_PROGRESS) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
+                }
                 console.info(this.str + ' percentComplete:' + this.percentComplete)
                 Utils.emitEvent(flag, 131610);
               } catch (error) {
@@ -211,7 +215,7 @@ struct WebViewControllerDownloadTest {
                   }
                   return '' + flag;
                 }, this.str, 'true');
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' percentComplete:' + this.percentComplete)
                 Utils.emitEvent(flag, 131620);
               } catch (error) {
@@ -223,7 +227,7 @@ struct WebViewControllerDownloadTest {
             case 'testGetTotalBytes001': {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' totalBytes:' + this.totalBytes)
 
                 let check = (v1: number, v2: number): boolean => {
@@ -240,7 +244,7 @@ struct WebViewControllerDownloadTest {
             case 'testGetMethod001': {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' methods:' + this.methods)
 
                 let check = (v1: string[], v2: number): boolean => {
@@ -257,7 +261,7 @@ struct WebViewControllerDownloadTest {
             case 'testGetMimeType001': {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' mimeTypes:' + this.mimeTypes)
 
                 let check = (v1: string[], v2: boolean): boolean => {
@@ -274,14 +278,21 @@ struct WebViewControllerDownloadTest {
             case 'testGetMimeType002': {
               try {
                 this.controller.startDownload(this.downloadUrlVideo);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
                 console.info(this.str + ' mimeTypes:' + this.mimeTypes)
 
-                let check = (v1: string[], v2: boolean): boolean => {
-                  return v1.length <= 1 && v1.indexOf('video/mp4') >= 0 ? true: false;
+                let flag = false;
+                await waitForExist(()=> {
+                  if (this.mimeTypes.length <= 1 && this.mimeTypes.indexOf('video/mp4') >= 0) {
+                    flag = true;
+                  }
+                  return '' + flag;
+                }, this.str, 'true');
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem && this.currentDownloadState == webView.WebDownloadState.IN_PROGRESS) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
                 }
-                await waitForAssert(()=>this.mimeTypes, check, true, 131660, this.str);
-
+                Utils.emitEvent(flag, 131660);
 
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -292,13 +303,21 @@ struct WebViewControllerDownloadTest {
             case 'testGetMimeType003': {
               try {
                 this.controller.startDownload(this.downloadUrl);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
                 console.info(this.str + ' mimeTypes:' + this.mimeTypes)
 
-                let check = (v1: string[], v2 : boolean): boolean => {
-                  return v1.length <=1 && v1.indexOf('application/x-msdownload') >= 0 ? true:false;
+                let flag = false;
+                await waitForExist(()=> {
+                  if (this.mimeTypes.length <=1 && this.mimeTypes.indexOf('application/x-msdownload') >= 0) {
+                    flag = true;
+                  }
+                  return '' + flag;
+                }, this.str, 'true');
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem && this.currentDownloadState == webView.WebDownloadState.IN_PROGRESS) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
                 }
-                await waitForAssert(()=>this.mimeTypes, check, true, 131670, this.str);
+                Utils.emitEvent(flag, 131670);
 
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -309,13 +328,21 @@ struct WebViewControllerDownloadTest {
             case 'testGetUrl001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
                 console.info(this.str + ' urls:' + this.urls)
 
-                let check = (v1: string[], v2: boolean): boolean => {
-                  return v1.length <=1 && v1.indexOf(this.downloadUrl) >= 0 ? true:false;
+                let flag = false;
+                await waitForExist(()=> {
+                  if (this.urls.length <=1 && this.urls.indexOf(this.downloadUrl) >= 0) {
+                    flag = true;
+                  }
+                  return '' + flag;
+                }, this.str, 'true');
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem && this.currentDownloadState == webView.WebDownloadState.IN_PROGRESS) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
                 }
-                await waitForAssert(()=>this.urls, check, true, 131680, this.str);
+                Utils.emitEvent(flag, 131680);
 
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -326,13 +353,21 @@ struct WebViewControllerDownloadTest {
             case 'testGetSuggestedFileName001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
                 console.info(this.str + ' suggestedFileName:' + this.suggestedFileName)
 
-                let check = (v1: string, v2: boolean): boolean => {
-                  return v1.length != 0 && this.downloadUrl.indexOf(v1) >= 0 ? true:false;
+                let flag = false;
+                await waitForExist(()=> {
+                  if (this.suggestedFileName.length != 0 && this.downloadUrl.indexOf(this.suggestedFileName) >= 0) {
+                    flag = true;
+                  }
+                  return '' + flag;
+                }, this.str, 'true');
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem && this.currentDownloadState == webView.WebDownloadState.IN_PROGRESS) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
                 }
-                await waitForAssert(()=>this.suggestedFileName, check, true, 131690, this.str);
+                Utils.emitEvent(flag, 131690);
 
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -343,7 +378,7 @@ struct WebViewControllerDownloadTest {
             case 'testGetReceivedBytes001': {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' receivedBytes:' + this.receivedBytes)
 
                 let check = (v1: number, v2: boolean): boolean => {
@@ -360,7 +395,7 @@ struct WebViewControllerDownloadTest {
             case 'testGetFullPath001': {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.COMPLETED);
                 console.info(this.str + ' fullPath:' + this.fullPath)
 
                 this.savePath = Utils.getSandboxFileDir() + 'testDownloadFile';
@@ -378,6 +413,7 @@ struct WebViewControllerDownloadTest {
             case 'testSerialize001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
+
                 await waitForExist(()=>this.downloadingItem, this.str)
                 if (this.downloadingItem) {
                   this.downloadingItem.cancel()

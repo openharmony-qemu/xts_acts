@@ -21,7 +21,8 @@ struct PanGestureExample {
   @State positionX: number = 0
   @State positionY: number = 0
   private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left | PanDirection.Right })
-  @State gesture1: string="init"
+  @State gesture1: string = "init"
+
   build() {
     Column() {
       Column() {
@@ -49,12 +50,27 @@ struct PanGestureExample {
             console.info('Pan end')
           })
       )
+
       Text(this.gesture1).id("gesture").height('10%').width('30%')
       Button('修改PanGesture触发条件')
         .onClick(() => {
           // 将PanGesture手势事件触发条件改为双指以任意方向拖动
           this.panOption.setDirection(PanDirection.Right)
-          this.gesture1 = this.panOption.getDirection()+""
+          this.gesture1 = this.panOption.getDirection() + ""
+          this.panOption.setDirection(PanDirection.All)
+          AppStorage.setOrCreate('All', this.panOption.getDirection())
+          this.panOption.setDirection(PanDirection.Horizontal)
+          AppStorage.setOrCreate('Horizontal', this.panOption.getDirection())
+          this.panOption.setDirection(PanDirection.Vertical)
+          AppStorage.setOrCreate('Vertical', this.panOption.getDirection())
+          this.panOption.setDirection(PanDirection.Left)
+          AppStorage.setOrCreate('Left', this.panOption.getDirection())
+          this.panOption.setDirection(PanDirection.Up)
+          AppStorage.setOrCreate('Up', this.panOption.getDirection())
+          this.panOption.setDirection(PanDirection.Down)
+          AppStorage.setOrCreate('Down', this.panOption.getDirection())
+          this.panOption.setDirection(PanDirection.None)
+          AppStorage.setOrCreate('None', this.panOption.getDirection())
           this.panOption.setFingers(2)
         }).id('gesture1').height('10%').width('30%')
     }.height('90%').width('100%').align(Alignment.Top)

@@ -27,6 +27,22 @@ export default class LiveFormExtAbility extends LiveFormExtensionAbility {
     let borderRadius: number = liveFormInfo.borderRadius;
     hilog.info(0x0000, TAG, `onLiveFormCreate, formId: ${formId}, borderRadius: ${borderRadius}, width: ${rect.width}`);
 
+    try {
+      this.context.startAbilityByLiveForm({});
+    } catch (error) {
+      if(error.code === 801) {
+        hilog.info(0x0000, TAG, `startAbilityByLiveForm error code: 801`);
+      } else if (error.code === 16500050) {
+        hilog.info(0x0000, TAG, `startAbilityByLiveForm error code: 16500050`);
+      } else if (error.code === 16500100) {
+        hilog.info(0x0000, TAG, `startAbilityByLiveForm error code: 16500100`);
+      } else if (error.code === 16501000) {
+        hilog.info(0x0000, TAG, `startAbilityByLiveForm error code: 16501000`);
+      } else if(error.code === 16501011) {
+        hilog.info(0x0000, TAG, `startAbilityByLiveForm error code: 16501011`);
+      }
+    }
+
     let storage: LocalStorage = new LocalStorage();
     storage.setOrCreate('context', this.context);
     session.loadContent('pages/LiveForm', storage);

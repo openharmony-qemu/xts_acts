@@ -246,16 +246,14 @@ export default function ActsGetMultipleAccounts() {
       var appAccountManager = account.createAppAccountManager();
       console.info("====>getAllAccessibleAccounts 0200 start====");
       try {
-        var data = await appAccountManager.getAllAccessibleAccounts();
+        let data = await appAccountManager.getAllAccessibleAccounts();
+        console.info("====>getAllAccessibleAccounts 0200 data:" + JSON.stringify(data));
+        console.info("====>data.length:" + data.length);
+        expect(data.length > 0).assertTrue();
       } catch (err) {
         console.info("====>getAllAccessibleAccounts 0200 err:" + JSON.stringify(err));
         expect().assertFail();
-        done();
-        return
       }
-      console.info("====>getAllAccessibleAccounts 0200 data:" + JSON.stringify(data));
-      console.info("====>data.length:" + data.length);
-      expect(data.length > 0).assertTrue();
       done()
     });
 

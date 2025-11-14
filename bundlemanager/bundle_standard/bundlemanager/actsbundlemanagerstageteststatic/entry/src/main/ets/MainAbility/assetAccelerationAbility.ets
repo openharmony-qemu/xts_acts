@@ -21,8 +21,9 @@ export default class ExtensionAbility extends UIAbility {
     console.log(TAG, `UIExtensionProvider onBackground`)
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     console.log(TAG, `UIExtensionProvider onDestroy`)
+    return undefined;
   }
 
   onSessionCreate(want: Want, session: UIExtensionContentSession) {

@@ -22,12 +22,9 @@ export const oHNativeBufferGetSeqNum: () => number;
 export const oHNativeBufferAllocAbnormal: () => number;
 export const oHNativeBufferReferenceAbnormal: () => number;
 export const oHNativeBufferUnreferenceAbnormal: () => number;
-export const oHNativeBufferGetConfigAbnormal: () => number;
 export const oHNativeBufferMapAbnormal: () => number;
 export const oHNativeBufferUnmapAbnormal: () => number;
 export const oHNativeBufferGetSeqNumAbnormal: () => number;
-
-//
 export const oHNativeBufferAllocNullptr: () => number;
 export const oHNativeBufferAllocNormal: () => Array<number>;
 export const oHNativeBufferAllocAbormal: () => Array<number>;
@@ -65,6 +62,12 @@ export const oHNativeBufferSetMetadataValueNullptr: () => Array<number>;
 export const oHNativeBufferGetMetadataValueAbnormal: () => Array<number>;
 export const oHNativeBufferGetMetadataValueNullptr: () => Array<number>;
 export const oHNativeBufferY8Y16USAGEandAlloc: () => Array<number>;
-
+export const oHNativeBufferMapWaitFence0ms: () => number;
+export const oHNativeBufferMapWaitFence100ms: () => number;
+export const oHNativeBufferMapWaitFence5000ms: () => number;
+export const oHNativeBufferMapWaitFenceNullptr: () => number;
+export const oHNativeBufferMapWaitFenceAbnormal: () => number;
+export const oHNativeBufferSetMetadataValueEnumTraversal: () => number;
+export const oHNativeBufferSetMetadataValueREGION: () => number;
 
 

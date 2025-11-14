@@ -42,9 +42,9 @@ class EntryAbility extends UIAbility {
     }
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onDestroy');
-
+    return undefined;
   }
 
   onWindowStageDestroy() {
@@ -53,6 +53,17 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    try {
+      this.context.startAbility({}, (err: BusinessError | null) => {
+        if (err?.code !== 0) {
+          hilog.info(0x0000, 'testTag EntryAbility', `startAbility failed, code is ${err?.code}, message is ${err?.message}`);
+        } else {
+          hilog.info(0x0000, 'testTag EntryAbility',  `startAbility success`);
+        }
+      });
+    } catch (err: BusinessError) {
+      hilog.info(0x0000, 'testTag EntryAbility',  `startAbility fail: ` + JSON.stringify(err));
+    }
   }
 
   onBackground() {

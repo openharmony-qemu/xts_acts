@@ -28,14 +28,15 @@ const TAG = '[HeartRate]';
 struct HeartRate {
   @State FillColor: string = '#FF000000';
   @State name: string = 'HeartRate';
-  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有心率传感器' + '\n操作步骤：\n1.确定设备是否有心率传感器\n2.如果有该传感器，点击开启并佩戴设备，观察心率值是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
-    + '\n预期结果：数值发生变化';
+  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有心率传感器' + '\n操作步骤：\n1.确定设备是否有心率传感器\n2.如果有该传感器，点击开启并佩戴设备，观察心率值或触发次数是否发生变化\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
+    + '\n预期结果：数值或触发次数发生变化';
   @State Vue: boolean = false;
   @State isHave: boolean = true;
   @State sensorChange: boolean = false;
   @State dataHeartRate: string = '';
   @State nextHeartRate: string = '';
   @State intervalNum: number = 0;
+  @State backCount: number = 0;
 
   async aboutToAppear() {
     await FirstDialog.ChooseDialog(this.StepTips, this.name)
@@ -48,11 +49,12 @@ struct HeartRate {
       Logger.info(TAG, 'enter')
       try {
         sensor.on(sensor.SensorId.HEART_RATE, (data: sensor.HeartRateResponse) => {
+          this.backCount += 1;
           console.info('Succeeded in invoking on. HeartRate: ' + data.heartRate);
           this.dataHeartRate = data.heartRate.toFixed(2);
           this.intervalNum = setInterval(() => {
             this.nextHeartRate = data.heartRate.toFixed(2);
-            if (this.nextHeartRate !== this.dataHeartRate) {
+            if (this.nextHeartRate !== this.dataHeartRate || this.backCount > 0) {
               this.Vue = true;
             }
           }, 100)
@@ -115,6 +117,7 @@ struct HeartRate {
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -128,7 +131,9 @@ struct HeartRate {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -152,6 +157,7 @@ struct HeartRate {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -206,6 +212,12 @@ struct HeartRate {
           .textAlign(TextAlign.Start)
           .width('100%')
           .margin({ bottom: 24 })
+        Text('触发订阅的次数: ' + this.backCount)
+          .fontColor(Color.White)
+          .fontSize('18fp')
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ bottom: 24 })
       }
       .width('80%')
       .height('30%')
@@ -241,6 +253,7 @@ struct HeartRate {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

@@ -32,7 +32,30 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue;
   static driver: Driver = Driver.create();
-  
+
+  static str2DeviceType(str: string): number{
+    switch (str) {
+      case "default":
+      case "phone":
+        return 0;
+      case "tablet":
+        return 1;
+      case "car":
+        return 2;
+      case "PC":
+        return 3;
+      case "tv":
+        return 4;
+      case "wearable":
+      case "liteWearable":
+        return 6;
+      case "2in1":
+        return 7;
+      default:
+        return -1;
+    }
+  }
+
   static sleep(time: number) {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
@@ -385,6 +408,15 @@ export default class Utils {
   }
 
   static async keydo(name: string, type: number, key: number, ndkfunction: Function) {
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   name
+     * @tc.number name
+     * @tc.desc   name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
+     */
     it(name,type,async (done: Function) => {
       try {
         console.info(`====>${name} start<====`);

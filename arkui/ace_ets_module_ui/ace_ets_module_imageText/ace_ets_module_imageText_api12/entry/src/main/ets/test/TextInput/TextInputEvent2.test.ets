@@ -101,8 +101,6 @@ export default function TextInputEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text')
       let strJson2 = getInspectorByKey('TextInputEvent2Text2');
       await CommonFunc.sleep(200);
@@ -218,8 +216,6 @@ export default function TextInputEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -256,8 +252,6 @@ export default function TextInputEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -291,8 +285,6 @@ export default function TextInputEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -302,13 +294,6 @@ export default function TextInputEvent2() {
       expect(obj.$attrs.content).assertEqual('onWillInsert');
       console.info('[TextInputEvent2_007] END');
       done();
-
     });
-
-
-
-
-
-
   })
 }

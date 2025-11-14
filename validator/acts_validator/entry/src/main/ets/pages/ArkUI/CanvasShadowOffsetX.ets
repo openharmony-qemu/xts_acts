@@ -50,23 +50,23 @@ struct SetCircle {
                 .blockBorderColor('#07B9A2')
                 .blockBorderWidth('1vp')
                 .onChange((value: number, mode: SliderChangeMode) => {
-                  this.context.clearRect(10, 50, 400, 300);
+                  this.context.clearRect(0, 0, 250, 200);
                   this.X = value;
                   this.context.shadowBlur = 10;
                   this.context.shadowOffsetX = (this.X) * 0.1;
                   this.context.shadowColor = 'rgb(0,0,0)';
                   this.context.fillStyle = 'rgb(255,0,0)';
-                  this.context.fillRect(150, 150, 100, 100);
+                  this.context.fillRect(50, 20, 100, 50);
                   if (value >= 100) {
                     this.Vue = true;
                   }
                 })
             }
-          }.width('70%').height('25%')
+          }.width('70%').height('20%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-            Text('阴影偏移: ' + (this.X) * 0.05)
-          }.width('100%').height('20%')
+            Text('阴影偏移: ' + (this.X) * 0.05).fontSize(10).fontColor(Color.Black)
+          }.width('100%').height('10%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
             Canvas(this.context)
@@ -78,11 +78,11 @@ struct SetCircle {
                 this.context.shadowOffsetX = 0;
                 this.context.shadowColor = 'rgb(0,0,0)';
                 this.context.fillStyle = 'rgb(255,0,0)';
-                this.context.fillRect(150, 150, 100, 100);
+                this.context.fillRect(50, 20, 100, 50);
               })
           }
           .width('100%')
-          .height('55%')
+          .height('70%')
         }
       }
       .scrollBarWidth('6vp')
@@ -104,7 +104,7 @@ struct SetCircle {
         X: $X,
         name: $name,
         Vue: $Vue,
-      })
+      }).margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')
