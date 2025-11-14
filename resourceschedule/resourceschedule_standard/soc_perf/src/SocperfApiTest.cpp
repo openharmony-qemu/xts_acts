@@ -186,7 +186,7 @@ HWTEST_F(SocperfTestSuite, Check, Function | MediumTest | Level1)
  * @tc.type FUNC
  * @tc.size:MediumTest
  */
-HWTEST_F(SocperfTestSuite, ConfigBoost, Function | MediumTest Level1)
+HWTEST_F(SocperfTestSuite, ConfigBoost, Function | MediumTest | Level1)
 {
     std::string content;
     OHOS::LoadStringFromFile("/vendor/etc/soc_perf/socperf_boost_config_ext.xml", content);
