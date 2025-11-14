@@ -431,7 +431,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
-      for(int i = 0 ; i++ ; i < 15 ){
+      for(let i = 0 ; i < 15; i++ ){
         if(expect(result).assertEqual(5)){
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_0100 END`);
           break;
@@ -475,7 +475,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
-      for(int i = 0 ; i++ ; i < 15 ){
+      for(let i = 0 ; i < 15; i++ ){
         if(expect(result).assertEqual(0)){
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0200 END` + result);
           break;
@@ -527,7 +527,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success');
       //调用取消订阅事件接口
-      for(int i = 0 ; i++ ; i < 15 ){
+      for(let i = 0 ; i < 15; i++ ){
         await Utils.msSleep(1000)
         if(expect(onConsume_number).assertEqual(1)){
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0200 END` + result);
@@ -577,7 +577,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId7", eventData);
       console.info(Tag +'emitterEmit success');
       //调用取消订阅事件接口
-      for(int i = 0 ; i++ ; i < 15 ){
+      for(let i = 0 ; i < 15; i++ ){
         await Utils.msSleep(1000)
         if(expect(onConsume_number).assertEqual(0)){
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0400 END` + result);
@@ -622,7 +622,7 @@ export default function ActsEmitterandComEventTest() {
       await Utils.msSleep(1000)
       emitter.emit<Sample>("eventId111", eventData);
       console.info(Tag+ ' emitterEmit success 10分钟');
-      for(int i = 0 ; i++ ; i < 15 ){
+      for(let i = 0 ; i < 15; i++ ){
         await Utils.msSleep(1000)
         if(expect(result).assertEqual(3)){
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Sendable_Static_0001` + result);
