@@ -15,7 +15,8 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it,expect, Level } from "@ohos/hypium"
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter'
-import Utils from './Utils';
+import CommonFunc from '../../MainAbility/common/Common';
+
 
 export default function richEditorTest() {
   describe('richEditorTest',() => {
@@ -31,7 +32,7 @@ export default function richEditorTest() {
         if (!("richEditorPage" == pages.name)) {
           console.info("get richEditor pages.name: " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          await Utils.sleep(2000);
+          await CommonFunc.sleep(2000);
           console.info("push richEditor page result: " + JSON.stringify(result));
         }
       } catch (err) {
@@ -41,7 +42,7 @@ export default function richEditorTest() {
     });
 
     afterEach(async  () => {
-      await Utils.sleep(1000);
+      await CommonFunc.sleep(1000);
       console.info("RichEditor after each called");
     })
 
@@ -57,7 +58,7 @@ export default function richEditorTest() {
     it('testRichEditorCopyOptions01', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions01';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000)
+      await CommonFunc.sleep(1000)
 
       try {
         let eventData: events_emitter.EventData = {
@@ -77,7 +78,7 @@ export default function richEditorTest() {
       } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      await Utils.sleep(2000);
+      await CommonFunc.sleep(2000);
       let strJsonNew = getInspectorByKey('key_RichEditor');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component copyOption is: ' +  JSON.stringify(objNew.$attrs.copyOption));
@@ -99,7 +100,7 @@ export default function richEditorTest() {
     it('testRichEditorCopyOptions02', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions02';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000)
+      await CommonFunc.sleep(1000)
 
       try {
         let eventData: events_emitter.EventData = {
@@ -116,7 +117,7 @@ export default function richEditorTest() {
       } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      await Utils.sleep(2000);
+      await CommonFunc.sleep(2000);
       let strJsonNew = getInspectorByKey('key_RichEditor');
       let objNew:ESObject = JSON?.parse(strJsonNew);
       console.info('[' + tagName + '] component copyOption is: ' +  JSON.stringify(objNew.$attrs.copyOption));
@@ -137,7 +138,7 @@ export default function richEditorTest() {
     it('testRichEditorCopyOptions03', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions03';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000)
+      await CommonFunc.sleep(1000)
 
       try {
         let eventData: events_emitter.EventData = {
@@ -154,7 +155,7 @@ export default function richEditorTest() {
       } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      await Utils.sleep(2000);
+      await CommonFunc.sleep(2000);
       let strJsonNew = getInspectorByKey('key_RichEditor');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component copyOption is: ' +  JSON.stringify(objNew.$attrs.copyOption));
@@ -176,7 +177,7 @@ export default function richEditorTest() {
     it('testRichEditorCopyOptions04', Level.LEVEL0, async (done: Function) => {
       let tagName = 'testRichEditorCopyOptions04';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000)
+      await CommonFunc.sleep(1000)
 
       try {
         let eventData: events_emitter.EventData = {
@@ -193,7 +194,7 @@ export default function richEditorTest() {
       } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      await Utils.sleep(2000);
+      await CommonFunc.sleep(2000);
       let strJsonNew = getInspectorByKey('key_RichEditor');
       let objNew:ESObject = JSON.parse(strJsonNew);
       console.info('[' + tagName + '] component copyOption is: ' +  JSON.stringify(objNew.$attrs.copyOption));
