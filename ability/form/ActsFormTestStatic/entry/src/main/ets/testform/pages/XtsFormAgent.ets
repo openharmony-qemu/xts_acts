@@ -18,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
 import formAgent from '@ohos.app.form.formAgent';
 import Want from '@ohos.app.ability.Want';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag formAgentTest';
@@ -46,7 +46,7 @@ struct XtsFormAgent {
             'ohos.extra.param.key.form_dimension': 2,
             'ohos.extra.param.key.form_name': 'widget',
             'ohos.extra.param.key.module_name': 'entry'
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         };
         try {
           formAgent.requestPublishForm(want, (error: BusinessError|null, data: string|undefined) => {
@@ -74,7 +74,7 @@ struct XtsFormAgent {
             'ohos.extra.param.key.form_dimension': 2,
             'ohos.extra.param.key.form_name': 'widget',
             'ohos.extra.param.key.module_name': 'entry'
-          } as Record<string, Object>
+          } as Record<string, RecordData>
         };
         try {
           formAgent.requestPublishForm(want).then((data: string) => {
