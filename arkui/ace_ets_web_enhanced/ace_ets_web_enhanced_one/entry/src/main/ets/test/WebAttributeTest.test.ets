@@ -566,7 +566,7 @@ export default function webAttributeTest() {
     it('testBlockNetWork002', 0, async (done: Function) => {
       Utils.emitEvent("emitBlockNetWork002", 10)
       await Utils.sleep(2000);
-      Utils.registerEvent("testBlockNetWork002", 'OpenAtom OpenHarmony', 60420, done);
+      Utils.registerEvent("testBlockNetWork002", 'Example Domain', 60420, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
