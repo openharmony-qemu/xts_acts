@@ -65,11 +65,11 @@ export default function PromiseRaceTest() {
         expect(typeof stringResult).assertEqual('string');
         expect(stringResult).assertEqual('test string');
 
-        console.info(`${caseName} Testing int type`);
-        const intPromise = Promise.resolve(42);
-        const intResult = await Promise.race([intPromise]);
-        expect(typeof intResult).assertEqual('int');
-        expect(intResult).assertEqual(42);
+        console.info(`${caseName} Testing number type`);
+        const numberPromise = Promise.resolve(42);
+        const numberResult = await Promise.race([numberPromise]);
+        expect(typeof numberResult).assertEqual('number');
+        expect(numberResult).assertEqual(42);
 
         console.info(`${caseName} Testing boolean type`);
         const booleanPromise = Promise.resolve(true);

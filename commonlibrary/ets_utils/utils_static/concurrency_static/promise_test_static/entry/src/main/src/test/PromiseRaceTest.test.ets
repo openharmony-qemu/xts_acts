@@ -49,7 +49,7 @@ export default function PromiseRaceTest() {
     /**
      * @tc.number SUB_PROMISE_RACE_TEST_0100
      * @tc.name PromiseRaceTest0100
-     * @tc.desc Test Promise.race with different types in iterable array (string|number|boolean|bigint|object|promise)
+     * @tc.desc Test Promise.race with different types in iterable array (string|int|boolean|bigint|object|promise)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -151,10 +151,10 @@ export default function PromiseRaceTest() {
       console.info(`${caseName} test start`);
 
       try {
-        console.info(`${caseName} Testing string and number combination`);
+        console.info(`${caseName} Testing string and int combination`);
         const stringPromise = Promise.resolve('string value');
-        const numberPromise = Promise.resolve(42);
-        const result1 = await Promise.race([stringPromise, numberPromise]);
+        const intPromise = Promise.resolve(42);
+        const result1 = await Promise.race([stringPromise, intPromise]);
         expect(result1).assertEqual('string value');
 
         console.info(`${caseName} Testing boolean and object combination`);
