@@ -60,7 +60,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_sync_Static_0010 start----------------");
       let currentTime = systemDateTime.getTime(true);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getTime_sync_Static_0010 currentTime: " + JSON.stringify(currentTime));
-      expect(typeof(currentTime) === 'number').assertEqual(true);
+      expect(typeof(currentTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_sync_Static_0010 end-----------------");
     });
@@ -105,7 +105,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_sync_Static_0020 start----------------");
       let currentTime = systemDateTime.getTime(false);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getTime_sync_Static_0020 currentTime: " + JSON.stringify(currentTime));
-      expect(typeof(currentTime) === 'number').assertEqual(true);
+      expect(typeof(currentTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_sync_Static_0020 end-----------------");
     });
@@ -122,7 +122,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_sync_Static_0030 start----------------");
       let currentTime = systemDateTime.getTime();
       hilog.info(domain, tag, "====>SUB_systemDateTime_getTime_sync_Static_0030 currentTime: " + JSON.stringify(currentTime));
-      expect(typeof(currentTime) === 'number').assertEqual(true);
+      expect(typeof(currentTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getTime_sync_Static_0030 end-----------------");
     });
@@ -139,7 +139,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0050 start----------------");
       let realActiveTime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, true);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0050 currentTime: " + JSON.stringify(realActiveTime));
-      expect(typeof(realActiveTime) === 'number').assertEqual(true);
+      expect(typeof(realActiveTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0050 end-----------------");
     });
@@ -156,7 +156,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0060 start----------------");
       let realActiveTime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE, false);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0060 currentTime: " + JSON.stringify(realActiveTime));
-      expect(typeof(realActiveTime) === 'number').assertEqual(true);
+      expect(typeof(realActiveTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0060 end-----------------");
     });
@@ -173,7 +173,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0070 start----------------");
       let realActiveTime = systemDateTime.getUptime(systemDateTime.TimeType.ACTIVE);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0070 currentTime: " + JSON.stringify(realActiveTime));
-      expect(typeof(realActiveTime) === 'number').assertEqual(true);
+      expect(typeof(realActiveTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0070 end-----------------");
     });
@@ -190,7 +190,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0090 start----------------");
       let realTime = systemDateTime.getUptime(systemDateTime.TimeType.STARTUP, true);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0090 currentTime: " + JSON.stringify(realTime));
-      expect(typeof(realTime) === 'number').assertEqual(true);
+      expect(typeof(realTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0090 end-----------------");
     });
@@ -207,7 +207,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0100 start----------------");
       let realTime = systemDateTime.getUptime(systemDateTime.TimeType.STARTUP, false);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0100 currentTime: " + JSON.stringify(realTime));
-      expect(typeof(realTime) === 'number').assertEqual(true);
+      expect(typeof(realTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0100 end-----------------");
     });
@@ -224,7 +224,7 @@ export default function SystemDateTimeJsunitStaticTest() {
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0110 start----------------");
       let realTime = systemDateTime.getUptime(systemDateTime.TimeType.STARTUP);
       hilog.info(domain, tag, "====>SUB_systemDateTime_getUptime_sync_Static_0110 currentTime: " + JSON.stringify(realTime));
-      expect(typeof(realTime) === 'number').assertEqual(true);
+      expect(typeof(realTime) === 'long').assertEqual(true);
       done();
       hilog.info(domain, tag, "====>----------SUB_systemDateTime_getUptime_sync_Static_0110 end-----------------");
     });
