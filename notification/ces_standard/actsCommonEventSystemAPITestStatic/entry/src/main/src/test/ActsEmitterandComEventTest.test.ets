@@ -431,8 +431,8 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
-      for(let i = 0 ; i < 15; i++ ){
-        if(expect(result).assertEqual(5)){
+      for(let i = 0 ; i < 15; i++ ) {
+        if(result === 5){
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_0100 END`);
           break;
         }
@@ -473,16 +473,8 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       emitter.emit("eventId1", eventData);
       emitter.emit("eventId1", eventData);
-      await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
-      for(let i = 0 ; i < 15; i++ ){
-        if(expect(result).assertEqual(0)){
-          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0200 END` + result);
-          break;
-        }
-        await Utils.msSleep(1000)
-      }
-      await Utils.msSleep(2000)
+      await Utils.msSleep(5000)
       expect(result).assertEqual(0)
       done();
     })
@@ -507,7 +499,6 @@ export default function ActsEmitterandComEventTest() {
       emitter.onceEventData("eventId5", ():void => {
         console.info(Tag +'once callback success'+onConsume_number);
         onConsume_number += 1
-        // return onConsume_number
       });
       await Utils.msSleep(100)
       emitter.off("eventId6");
@@ -515,7 +506,7 @@ export default function ActsEmitterandComEventTest() {
       await Utils.msSleep(100)
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success'+emit_number);
-      await Utils.msSleep(100) //napi异步处理局限，极限情况下会出现订阅返回2次，加等待即可
+      await Utils.msSleep(100) //异步处理局限，极限情况下会出现订阅返回2次，加等待即可
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success');
       emitter.emit("eventId5", eventData);
@@ -526,11 +517,10 @@ export default function ActsEmitterandComEventTest() {
       console.info(Tag +'emitterEmit success');
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success');
-      //调用取消订阅事件接口
       for(let i = 0 ; i < 15; i++ ){
         await Utils.msSleep(1000)
-        if(expect(onConsume_number).assertEqual(1)){
-          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0200 END` + result);
+        if(onConsume_number === 1){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0300 END` + onConsume_number);
           break;
         } 
       }
@@ -576,14 +566,6 @@ export default function ActsEmitterandComEventTest() {
       console.info(Tag +'emitterEmit success');
       emitter.emit("eventId7", eventData);
       console.info(Tag +'emitterEmit success');
-      //调用取消订阅事件接口
-      for(let i = 0 ; i < 15; i++ ){
-        await Utils.msSleep(1000)
-        if(expect(onConsume_number).assertEqual(0)){
-          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0400 END` + result);
-          break;
-        } 
-      }
       await Utils.msSleep(2000)
       expect(onConsume_number).assertEqual(0)
       done();
@@ -624,7 +606,7 @@ export default function ActsEmitterandComEventTest() {
       console.info(Tag+ ' emitterEmit success 10分钟');
       for(let i = 0 ; i < 15; i++ ){
         await Utils.msSleep(1000)
-        if(expect(result).assertEqual(3)){
+        if(result === 3){
           console.info(`${Tag} Sub_Notification_Emitter_Publish_Sendable_Static_0001` + result);
           emitter.off("eventId111");
           break;
