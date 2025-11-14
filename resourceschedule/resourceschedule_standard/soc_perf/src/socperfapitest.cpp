@@ -145,7 +145,11 @@ bool LoadCmdInfo(const xmlNode* child, const std::string& configFile)
 
 /**
  * @tc.number CheckConfigResource001
+ * @tc.name: CheckConfigResource001
+ * @tc.desc: check socperf config
+ * @tc.level:Level 1
  * @tc.type FUNC
+ * @tc.size:MediumTest
  */
 HWTEST_F(SocperfTestSuite, Check, Function | MediumTest | Level1)
 {
@@ -176,7 +180,11 @@ HWTEST_F(SocperfTestSuite, Check, Function | MediumTest | Level1)
  
 /**
  * @tc.number CheckConfigBoost_001
+ * @tc.name: CheckConfigResource001
+ * @tc.desc: check socperf config
+ * @tc.level:Level 3
  * @tc.type FUNC
+ * @tc.size:MediumTest
  */
 HWTEST_F(SocperfTestSuite,ConfigBoost, Function | MediumTest Level1)
 {
