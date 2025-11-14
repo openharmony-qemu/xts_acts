@@ -756,4 +756,566 @@ export default function VibratorJsTest_misc_12() {
                 done();
             }
         })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0050
+        * @tc.desc:VibratorPatternBuilder Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0501
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0050";    
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0
+                    },
+                    {
+                        time:0.1,
+                        frequency:-6
+                    },
+                    {
+                        time:0.2,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:0.3,
+                        intensity:0,
+                        frequency:-4
+                    }
+                ]
+                let param = {
+                    intensity:0,
+                    frequency:0,
+                    points:pointsMe,
+                    index:2
+                }
+                builder.addContinuousEvent(1800000, 1, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + " builder.build is " + JSON.stringify(VibratorPattern));
+                expect(VibratorPattern != null).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0060
+        * @tc.desc:VibratorPatternBuilder Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0601
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0060";    
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:42,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:128,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:217,
+                        intensity:0,
+                        frequency:-4
+                    }
+                ]
+                let param = {
+                    points:pointsMe,
+                    index:0
+                }
+                builder.addContinuousEvent(0, 217, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + " builder.build is " + JSON.stringify(VibratorPattern));
+                expect(VibratorPattern != null).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0051
+        * @tc.desc:VibratorPatternBuilder Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0510
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0051";    
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:42,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:128,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:217,
+                        intensity:0,
+                        frequency:-4
+                    }
+                ]
+                let param = {
+                    intensity:97,
+                    frequency:34,
+                    points:pointsMe,
+                    index:0
+                }
+                builder.addContinuousEvent(1800001, 217, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + " builder.build is " + JSON.stringify(VibratorPattern));
+                expect(false).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0061
+        * @tc.desc:VibratorPatternBuilder Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0610
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0061";    
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:42,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:128,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:217,
+                        intensity:0,
+                        frequency:-4
+                    }
+                ]
+                let param = {
+                    intensity:97,
+                    frequency:34,
+                    points:pointsMe,
+                    index:0
+                }
+                builder.addContinuousEvent(0, 0, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + " builder.build is " + JSON.stringify(VibratorPattern));
+                expect(false).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0071
+        * @tc.desc:VibratorPatternBuilder Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0710
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0071";    
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:42,
+                        intensity:1,
+                        frequency:-6
+                    },
+                    {
+                        time:128,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:217,
+                        intensity:0,
+                        frequency:-4
+                    }
+                ]
+                let param = {
+                    intensity:97,
+                    frequency:34,
+                    points:pointsMe,
+                    index:3
+                }
+                builder.addContinuousEvent(0, 217, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + " builder.build is " + JSON.stringify(VibratorPattern));
+                expect(false).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0081
+        * @tc.desc:VibratorPatternBuilder Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0810
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0081";    
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:42,
+                        intensity:-1,
+                        frequency:-6
+                    },
+                    {
+                        time:128,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:217,
+                        intensity:0,
+                        frequency:-4
+                    }
+                ]
+                let param = {
+                    intensity:97,
+                    frequency:34,
+                    points:pointsMe,
+                    index:1
+                }
+                builder.addContinuousEvent(0, 217, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + " builder.build is " + JSON.stringify(VibratorPattern));
+                expect(false).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0091
+        * @tc.desc:VibratorPatternBuilder Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0910
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0091";    
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let pointsMe  = vibrator.VibratorCurvePoint = [
+                    {
+                        time:0,
+                        intensity:0,
+                        frequency:-7
+                    },
+                    {
+                        time:42,
+                        intensity:1,
+                        frequency:-101
+                    },
+                    {
+                        time:128,
+                        intensity:1,
+                        frequency:-4
+                    },
+                    {
+                        time:217,
+                        intensity:0,
+                        frequency:-4
+                    }
+                ]
+                let param = {
+                    intensity:97,
+                    frequency:34,
+                    points:pointsMe,
+                    index:1
+                }
+                builder.addContinuousEvent(0, 217, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + " builder.build is " + JSON.stringify(VibratorPattern));
+                expect(false).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + `addContinuousEvent catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0040
+        * @tc.desc:VibratorEvent Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0401
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0040";
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let param = vibrator.TransientParam = {
+                    intensity: 0,
+                    frequency: 0,
+                };
+                builder.addTransientEvent(1800000, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + ` VibratorPattern: ${JSON.stringify(VibratorPattern)}`);
+                expect(VibratorPattern != null).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0041
+        * @tc.desc:VibratorEvent Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0410
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0041";
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let param = vibrator.TransientParam = {
+                    index:2
+                };
+                builder.addTransientEvent(0, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + ` VibratorPattern: ${JSON.stringify(VibratorPattern)}`);
+                expect(VibratorPattern != null).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0042
+        * @tc.desc:VibratorEvent Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0420
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0042";
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let param = vibrator.TransientParam = {
+                    index:2
+                };
+                builder.addTransientEvent(1800001, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + ` VibratorPattern: ${JSON.stringify(VibratorPattern)}`);
+                expect(false).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0043
+        * @tc.desc:VibratorEvent Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0430
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0043";
+            try {
+                let builder = new vibrator.VibratorPatternBuilder();
+                let param = vibrator.TransientParam = {
+                    index:3
+                };
+                builder.addTransientEvent(0, param);
+                let VibratorPattern = builder.build()
+                console.info(TAG + ` VibratorPattern: ${JSON.stringify(VibratorPattern)}`);
+                expect(false).assertTrue();
+                done();
+            } catch (error) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0044
+        * @tc.desc:VibratorTime Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0440
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0044";
+            try {
+                let effect = vibrator.VibratorTime = {
+                    type: "time",
+                    duration: 1
+                };
+                let attribute = vibrator.VibratorAttribute = {
+                    usage: "unknown"
+                };
+                await vibrator.startVibration(effect, attribute);
+                console.info(TAG + ` duration: 1  startVibration success`);
+                expect(attribute != null).assertTrue();
+            } catch (error) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } finally {
+                await vibrator.stopVibration();
+                console.info(TAG + ` stopVibration success`);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0045
+        * @tc.desc:VibratorTime Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0450
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0045";
+            try {
+                let effect = vibrator.VibratorTime = {
+                    type: "time",
+                    duration: 0
+                };
+                let attribute = vibrator.VibratorAttribute = {
+                    usage: "unknown"
+                };
+                await vibrator.startVibration(effect, attribute);
+                console.info(TAG + ` duration: 0  startVibration success`);
+                expect(false).assertTrue();
+            } catch (error) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(error.code).assertEqual(401);
+            } finally {
+                await vibrator.stopVibration();
+                console.info(TAG + ` stopVibration success`);
+                done();
+            }
+        })
+
+        /*
+        * @tc.name:VibratorProgramticHapticTest0046
+        * @tc.desc:VibratorTime Test
+        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0460
+        * @tc.level:Level 3
+        * @tc.type:Function
+        * @tc.size:MediumTest
+        */
+        it("VibratorProgramticHapticTest0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            TAG = "====>VibratorProgramticHapticTest0046";
+            try {
+                let effect = vibrator.VibratorTime = {
+                    type: "time",
+                    duration: 1800000
+                };
+                let attribute = vibrator.VibratorAttribute = {
+                    usage: "unknown"
+                };
+                await vibrator.startVibration(effect, attribute);
+                console.info(TAG + ` duration: 1800000  startVibration success`);
+                expect(attribute != null).assertTrue();
+            } catch (error) {
+                console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+                expect(false).assertTrue();
+            } finally {
+                await vibrator.stopVibration();
+                console.info(TAG + ` stopVibration success`);
+                done();
+            }
+        })
     })}
