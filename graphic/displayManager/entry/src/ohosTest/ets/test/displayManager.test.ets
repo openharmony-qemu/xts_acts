@@ -2898,25 +2898,37 @@ export default function displayTest() {
      */
     it('testOnBrightnessInfoChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0300';
-      class VirtualScreenOptions {
-        name: string = '';
-        width: number = 0;
-        height: number = 0;
-        density: number = 0;
-        surfaceId: string = '';
-      }
-      let option: VirtualScreenOptions = {
-        name: 'screen01',
-        width: 1,
-        height: 2340,
-        density: 2,
-        surfaceId: ''
-      }
+      let subWindowClass: window.Window | undefined;
       try {
-        let screenId: number = await display.createVirtualScreen(option);
-        console.log(caseName + 'success in createVirtualScreen ' + screenId);
-        await display.setVirtualScreenSurface(screenId, 'surfaceId');
-        await display.makeUnique(screenId);
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        subWindowClass.setUIContent('testability/pages/getSurfaceId')
+        await subWindowClass.resizeAsync(1000, 1200);
+        await subWindowClass.moveWindowToAsync(100, 100)
+        subWindowClass.showWindow();
+
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('button'));
+
+        let screenId = 0;
+        if (btn == undefined) {
+          console.log(caseName + 'device not support');
+        } else {
+          await btn.click();
+          await sleep(1000);
+
+          let hw = await driver.findComponent(ON.id('testResult'));
+          let testNum = await hw.getText();
+          console.log(caseName + 'testResult : ' + testNum);
+          expect(testNum == 'success').assertTrue();
+          if (testNum == 'not support') {
+            await subWindowClass.destroyWindow();
+            done();
+          } else {
+            let screenIdStr = await driver.findComponent(ON.id('screenId'));
+            console.log(caseName + 'screenIdStr : ' + screenIdStr);
+            screenId = Number(screenIdStr);
+          }
+        }
 
         let options: StartOptions = {
           displayId: screenId
@@ -2951,9 +2963,11 @@ export default function displayTest() {
         display.off('brightnessInfoChange', callback1);
         await windowClass.setWindowBrightness(-1);
         display.off('brightnessInfoChange');
+        await subWindowClass.destroyWindow();
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await subWindowClass.destroyWindow();
         if (e.code == 801) {
           done()
         } else {

@@ -3443,19 +3443,22 @@ export default function windowImmersiveTest() {
           windowClass.on('avoidAreaChange', async (data) => {
             console.info(`${caseName} Succeeded in enabling the listener for avoid area changes. type:
             ${JSON.stringify(data.type)} area: ${JSON.stringify(data.area)}`);
-            if(data.type == window.AvoidAreaType.TYPE_CUTOUT) {
-              expect(!data.area).assertNull();
-              windowClass.off('avoidAreaChange');
-              await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
-              await sleep(1000);
-              await terminateAbility7(caseName);
-              done();
-            } else {
-              await sleep(1000);
-            }
-          });
-          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
+              if(data.type == window.AvoidAreaType.TYPE_CUTOUT) {
+                expect(data.area!= null).assertTrue();
+                windowClass.off('avoidAreaChange');
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await sleep(1000);
+                await terminateAbility7(caseName);
+                done();
+              } else {
+                await sleep(3000)
+              }
+            });
+            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
+          }
         }
+      } else {
+        done();
       }
     });
     
