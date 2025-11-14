@@ -56,11 +56,12 @@ export default function ParticleAttributeTest() {
       await CommonFunc.sleep(1000);
       console.info("particleAttributeTest after each called");
     });
+
     /**
-     * @tc.number ParticleAnimatorTest_001
-     * @tc.name ParticleAnimatorTest_001
+     * @tc.number ParticleAttributeTest_001
+     * @tc.name ParticleAttributeTest_001
      * @tc.desc test the particle of attribute
-     * @tc.level Level 2
+     * @tc.level Level 0
      * @tc.type
      * @tc.size
      */

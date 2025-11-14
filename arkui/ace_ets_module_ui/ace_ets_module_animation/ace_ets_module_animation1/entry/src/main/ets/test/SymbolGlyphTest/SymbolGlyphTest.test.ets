@@ -56,13 +56,11 @@ export default function SymbolGlyphTest() {
       await CommonFunc.sleep(1000);
       console.info("SymbolGlyphTest after each called");
     });
+
     /**
-     * @tc.number SymbolGlyphTest
-     * @tc.name testBack
+     * @tc.number SymbolGlyphTest_001
      * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.level Level 0
      */
     it("SymbolGlyphTest_001", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_001] START");
@@ -74,6 +72,12 @@ export default function SymbolGlyphTest() {
       console.info("[SymbolGlyphTest_001] END");
       done();
     });
+
+    /**
+     * @tc.number SymbolGlyphTest_002
+     * @tc.desc SymbolGlyphTest_002
+     * @tc.level Level 0
+     */
     it("SymbolGlyphTest_002", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_002] START");
       await CommonFunc.sleep(1000);
@@ -84,6 +88,12 @@ export default function SymbolGlyphTest() {
       console.info("[SymbolGlyphTest_002] END");
       done();
     });
+
+    /**
+     * @tc.number SymbolGlyphTest_003
+     * @tc.desc SymbolGlyphTest_003
+     * @tc.level Level 0
+     */
     it("SymbolGlyphTest_003", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_003] START");
       await CommonFunc.sleep(1000);
@@ -94,6 +104,12 @@ export default function SymbolGlyphTest() {
       console.info("[SymbolGlyphTest_003] END");
       done();
     });
+
+    /**
+     * @tc.number SymbolGlyphTest_004
+     * @tc.desc SymbolGlyphTest_004
+     * @tc.level Level 0
+     */
     it("SymbolGlyphTest_004", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_004] START");
       await CommonFunc.sleep(1000);
