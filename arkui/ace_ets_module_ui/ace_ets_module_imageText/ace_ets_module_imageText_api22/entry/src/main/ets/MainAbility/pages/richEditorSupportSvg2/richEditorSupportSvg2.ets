@@ -32,66 +32,70 @@ struct styled_string_demo4 {
     Row() {
       Column({ space: 5 }) {
         Text(this.currentSupportSvg2 || '').id('ColorFilter_content');
-        RichEditor(this.options).width('100%').height('10%')
+        RichEditor(this.options).width('30%').height('7%')
         Row() {
-          Button('richEditor1').id('richEditor1')
-            .onClick(() => {
-              this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
-                resourceValue: $r('app.media.strokeFile'),
-                size: { width: 50, height: 50 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain,
-                colorFilter: this.colorFilterMatrix,
-                syncLoad: true,
-                supportSvg2: true,
-              })));
-              this.controller.setStyledString(this.mutableStr);
-            })
+          Column() {
+            Button('richEditor1').fontSize(10).id('richEditor1')
+              .onClick(() => {
+                this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.strokeFile'),
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  colorFilter: this.colorFilterMatrix,
+                  syncLoad: true,
+                  supportSvg2: true,
+                })));
+                this.controller.setStyledString(this.mutableStr);
+              })
 
-          Button('richEditor2').id('richEditor2')
-            .onClick(() => {
-              this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
-                resourceValue: $r('app.media.strokeFile'),
-                size: { width: 50, height: 50 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain,
-                colorFilter: this.colorFilterMatrix,
-                syncLoad: true,
-                supportSvg2: false,
-              })));
-              this.controller.setStyledString(this.mutableStr);
-            })
+            Button('richEditor2').fontSize(10).id('richEditor2')
+              .onClick(() => {
+                this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.strokeFile'),
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  colorFilter: this.colorFilterMatrix,
+                  syncLoad: true,
+                  supportSvg2: false,
+                })));
+                this.controller.setStyledString(this.mutableStr);
+              })
+          }
 
-          Button('richEditor3').id('richEditor3')
-            .onClick(() => {
-              this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
-                resourceValue: $r('app.media.strokeFile'),
-                size: { width: 50, height: 50 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain,
-                colorFilter: this.colorFilterMatrix,
-                syncLoad: true,
-                supportSvg2: undefined,
-              })));
-              this.controller.setStyledString(this.mutableStr);
-            })
+          Column() {
+            Button('richEditor3').fontSize(10).id('richEditor3')
+              .onClick(() => {
+                this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.strokeFile'),
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  colorFilter: this.colorFilterMatrix,
+                  syncLoad: true,
+                  supportSvg2: undefined,
+                })));
+                this.controller.setStyledString(this.mutableStr);
+              })
 
-          Button('richEditor4').id('richEditor4')
-            .onClick(() => {
-              this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
-                resourceValue: $r('app.media.strokeFile'),
-                size: { width: 50, height: 50 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain,
-                colorFilter: this.colorFilterMatrix,
-                syncLoad: true,
-              })));
-              this.controller.setStyledString(this.mutableStr);
-            })
+            Button('richEditor4').fontSize(10).id('richEditor4')
+              .onClick(() => {
+                this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.strokeFile'),
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  colorFilter: this.colorFilterMatrix,
+                  syncLoad: true,
+                })));
+                this.controller.setStyledString(this.mutableStr);
+              })
+          }
         }
 
         Button('RichEditorGet').height('5%').id('get_styles')
@@ -108,7 +112,9 @@ struct styled_string_demo4 {
           })
       }
       .width('100%')
+      .height('100%')
+      .justifyContent(FlexAlign.Start)
+      .padding({top: 10})
     }
-    .height('100%')
   }
 }
