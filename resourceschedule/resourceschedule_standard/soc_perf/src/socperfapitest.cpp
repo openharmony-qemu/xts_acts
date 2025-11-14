@@ -142,13 +142,12 @@ bool LoadCmdInfo(const xmlNode* child, const std::string& configFile)
     }
     return true;
 }
- 
-/*
- * @tc.name: CheckConfig resource
- * @tc.desc: CheckConfig resource
+
+/**
+ * @tc.number CheckConfigResource001
  * @tc.type FUNC
  */
-HWTEST_F(SocperfTestSuite, CheckConfigResource, Function | MediumTest | Level1)
+HWTEST_F(SocperfTestSuite, Check, Function | MediumTest | Level1)
 {
     std::string content;
     OHOS::LoadStringFromFile("/vendor/etc/soc_perf/socperf_resource_config.xml", content);
@@ -175,12 +174,11 @@ HWTEST_F(SocperfTestSuite, CheckConfigResource, Function | MediumTest | Level1)
     }
 }
  
-/*
- * @tc.name: CheckConfig boost
- * @tc.desc: CheckConfig boost
+/**
+ * @tc.number CheckConfigBoost_001
  * @tc.type FUNC
  */
-HWTEST_F(SocperfTestSuite, CheckConfigBoost, Function | MediumTest | Level1)
+HWTEST_F(SocperfTestSuite,ConfigBoost, Function | MediumTest Level1)
 {
     std::string content;
     OHOS::LoadStringFromFile("/vendor/etc/soc_perf/socperf_boost_config_ext.xml", content);
