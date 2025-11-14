@@ -24,8 +24,8 @@ config("socperfapitest_config") {
  
 ohos_moduletest_suite("ActsSOCPERFAPITest") {
   module_out_path = module_output_path
-  sources = [ "src/socperfapiTest.cpp" ]
- 
+  sources = [ "src/socperfapi_test.cpp" ]
+
   deps = [
     "//third_party/googletest:gmock",
     "//third_party/googletest:gtest",
