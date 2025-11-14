@@ -1247,12 +1247,15 @@ export default function VibratorJsTest_misc_12() {
                 await vibrator.startVibration(effect, attribute);
                 console.info(TAG + ` duration: 1  startVibration success`);
                 expect(attribute != null).assertTrue();
+                done();
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
-                expect(false).assertTrue();
-            } finally {
-                await vibrator.stopVibration();
-                console.info(TAG + ` stopVibration success`);
+                if (isAvailable) {
+                    expect(false).assertTrue();
+                } else {
+                    console.info(TAG + ` device is not supported`);
+                    expect(error.code).assertEqual(14600101);
+                } 
                 done();
             }
         })
@@ -1278,12 +1281,10 @@ export default function VibratorJsTest_misc_12() {
                 await vibrator.startVibration(effect, attribute);
                 console.info(TAG + ` duration: 0  startVibration success`);
                 expect(false).assertTrue();
+                done();
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
                 expect(error.code).assertEqual(401);
-            } finally {
-                await vibrator.stopVibration();
-                console.info(TAG + ` stopVibration success`);
                 done();
             }
         })
@@ -1309,12 +1310,15 @@ export default function VibratorJsTest_misc_12() {
                 await vibrator.startVibration(effect, attribute);
                 console.info(TAG + ` duration: 1800000  startVibration success`);
                 expect(attribute != null).assertTrue();
+                done();
             } catch (error) {
                 console.info(TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
-                expect(false).assertTrue();
-            } finally {
-                await vibrator.stopVibration();
-                console.info(TAG + ` stopVibration success`);
+                if (isAvailable) {
+                    expect(false).assertTrue();
+                } else {
+                    console.info(TAG + ` device is not supported`);
+                    expect(error.code).assertEqual(14600101);
+                }
                 done();
             }
         })
