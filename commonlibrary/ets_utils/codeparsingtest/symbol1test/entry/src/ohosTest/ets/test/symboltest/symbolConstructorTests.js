@@ -1899,5 +1899,174 @@ export const SymbolConstructorTestUtils = {
 
 
 
+    /**
+     * 115. Symbol as WebSocket event name (browser only) works.
+     * Feature: Symbols can be used as WebSocket event names (stringified).
+     */
+    async test115_SymbolAsWebSocketEvent() {
+        if (typeof WebSocket === "undefined") {
+            return "Test Skipped: SymbolAsWebSocketEventTest115 (WebSocket not available)";
+        }
+        const symWsEvent = Symbol("ws-event");
+        let eventTriggered = false;
+
+        class MockWebSocket extends WebSocket {
+            constructor() { super("ws://localhost"); }
+            dispatchEvent(event) {
+                if (event.type === symWsEvent.toString()) eventTriggered = true;
+            }
+        }
+        const ws = new MockWebSocket();
+        ws.addEventListener(symWsEvent.toString(), () => {});
+        ws.dispatchEvent(new Event(symWsEvent.toString()));
+
+        if (!eventTriggered) {
+            throw new Error(`Test115 failed: WebSocket event with Symbol name not triggered`);
+        }
+        return "Test Passed: SymbolAsWebSocketEventTest115";
+    },
+
+    /**
+     * 116. Proxy intercepts set operation for Symbol properties.
+     * Feature: Proxy can intercept set operations on Symbol properties.
+     */
+    async test116_SymbolProxySetInterception() {
+        const symKey = Symbol("proxy-set");
+        const target = { [symKey]: "original" };
+        let setCalled = false;
+        const proxy = new Proxy(target, {
+            set(target, key, value) {
+                if (key === symKey) {
+                    setCalled = true;
+                    target[key] = value;
+                    return true;
+                }
+                return false;
+            }
+        });
+        proxy[symKey] = "new-value";
+
+        if (!setCalled || target[symKey] !== "new-value") {
+            throw new Error(`Test116 failed: Proxy set(Symbol) not intercepted, target value="${target[symKey]}" (expected "new-value")`);
+        }
+        return "Test Passed: SymbolProxySetInterceptionTest116";
+    },
+
+    /**
+     * 117. Symbol property default writable is true.
+     * Feature: Symbol properties have writable: true in default property descriptor.
+     */
+    async test117_SymbolPropertyDefaultWritable() {
+        const symKey = Symbol("default-writable");
+        const obj = { [symKey]: "original" };
+        obj[symKey] = "modified";
+
+        if (obj[symKey] !== "modified") {
+            throw new Error(`Test117 failed: Symbol property not writable (value="${obj[symKey]}" expected "modified")`);
+        }
+        return "Test Passed: SymbolPropertyDefaultWritableTest117";
+    },
+
+    /**
+     * 118. Symbol with URLSearchParams (converted to string key).
+     * Feature: Symbols used as URLSearchParams keys are converted to string.
+     */
+    async test118_SymbolWithURLSearchParams() {
+        if (typeof URLSearchParams === "undefined") {
+            return "Test Skipped: SymbolWithURLSearchParamsTest118 (URLSearchParams not available)";
+        }
+        const symParam = Symbol("param-key");
+        const params = new URLSearchParams();
+        params.append(symParam.toString(), "param-value");
+        const paramValue = params.get(symParam.toString());
+
+        if (paramValue !== "param-value") {
+            throw new Error(`Test118 failed: URLSearchParams with Symbol key returned "${paramValue}" (expected "param-value")`);
+        }
+        return "Test Passed: SymbolWithURLSearchParamsTest118";
+    },
+
+
+
+    /**
+     * 120. Symbol properties not restored by Object.fromEntries().
+     * Feature: Object.fromEntries() does not restore Symbol-keyed properties.
+     */
+    async test120_ObjectFromEntriesExcludeSymbol() {
+        const symKey = Symbol("from-entries");
+        const original = { [symKey]: "value", strKey: "str-val" };
+        const entries = Object.entries(original);
+        const restored = Object.fromEntries(entries);
+        const restoredSymbols = Object.getOwnPropertySymbols(restored);
+
+        if (restoredSymbols.includes(symKey)) {
+            throw new Error(`Test120 failed: Object.fromEntries() restored Symbol property ${symKey} (expected excluded)`);
+        }
+        return "Test Passed: ObjectFromEntriesExcludeSymbolTest120";
+    },
+
+    /**
+     * 121. Symbol with Crypto API (no impact on operations).
+     * Feature: Symbols as additional data don't affect Crypto API results.
+     */
+    async test121_SymbolWithCrypto() {
+        if (typeof crypto === "undefined" || typeof crypto.subtle === "undefined") {
+            return "Test Skipped: SymbolWithCryptoTest121 (Crypto API not available)";
+        }
+        const symCrypto = Symbol("crypto-data");
+        const key = await crypto.subtle.generateKey(
+            { name: "AES-GCM", length: 128 },
+            true,
+            ["encrypt", "decrypt"]
+        );
+        const data = new TextEncoder().encode("secret");
+        const iv = crypto.getRandomValues(new Uint8Array(12));
+        const encrypted = await crypto.subtle.encrypt(
+            { name: "AES-GCM", iv, additionalData: symCrypto.toString() },
+            key,
+            data
+        );
+
+        if (!(encrypted instanceof ArrayBuffer)) {
+            throw new Error(`Test121 failed: Crypto encrypt with Symbol additionalData failed`);
+        }
+        return "Test Passed: SymbolWithCryptoTest121";
+    },
+
+    /**
+     * 122. Symbol.prototype.toString() works in strict mode.
+     * Feature: Symbol.prototype.toString() behaves consistently in strict mode.
+     */
+    async test122_SymbolToStringInStrictMode() {
+        "use strict";
+        const sym = Symbol("strict-tostring");
+        const strResult = sym.toString();
+        const expected = `Symbol(${sym.description})`;
+
+        if (strResult !== expected) {
+            throw new Error(`Test122 failed: Strict mode Symbol.toString() returned "${strResult}" (expected "${expected}")`);
+        }
+        return "Test Passed: SymbolToStringInStrictModeTest122";
+    },
+
+
+
+    /**
+     * 124. Symbol in Array.from() retains uniqueness.
+     * Feature: Array.from processes Symbol elements while retaining uniqueness.
+     */
+    async test124_SymbolInArrayFrom() {
+        const sym1 = Symbol("array-from");
+        const sym2 = Symbol("array-from");
+        const iterable = {
+            [Symbol.iterator]: () => [sym1, sym2][Symbol.iterator]()
+        };
+        const result = Array.from(iterable);
+
+        if (result.length !== 2 || result[0] !== sym1 || result[1] !== sym2) {
+            throw new Error(`Test124 failed: Array.from returned [${result}] (expected [${sym1}, ${sym2}], length=2)`);
+        }
+        return "Test Passed: SymbolInArrayFromTest124";
+    }
 
 };
