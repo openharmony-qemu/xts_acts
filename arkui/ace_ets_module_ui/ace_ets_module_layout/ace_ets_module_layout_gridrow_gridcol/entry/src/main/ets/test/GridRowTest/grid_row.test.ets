@@ -90,7 +90,7 @@ export default function grid_rowOnBreakpointChangeJsunit() {
       console.info("[testgrid_rowOnBreakpointChange003] component backgroundColor strJson:" + strJson);
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$type).assertEqual('GridRow');
-      expect(JSON.parse(strJson).$attrs.backgroundColor).assertEqual("0xFFFF0000");
+      expect(JSON.parse(strJson).$attrs.backgroundColor).assertEqual("#FFFF0000");
       console.info("[testgrid_rowOnBreakpointChange003] backgroundColor value :" + JSON.parse(strJson)
         .$attrs
         .backgroundColor);
