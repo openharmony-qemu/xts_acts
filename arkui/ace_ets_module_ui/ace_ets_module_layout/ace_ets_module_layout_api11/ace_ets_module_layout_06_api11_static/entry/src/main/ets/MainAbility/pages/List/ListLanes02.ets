@@ -45,8 +45,6 @@ import {
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
-
-
 @Entry
 @Component
 struct ListLanes02 {
@@ -55,13 +53,13 @@ struct ListLanes02 {
   @State listDirection: Axis = Axis.Vertical
   @State listSpace: string = '20'
   @State alignListItem: ListItemAlign = ListItemAlign.Start
-  @State initialIndex: number = 0
-  messageManager: MessageManager<string | number | Dimension | Axis> = new MessageManager<string | number | Dimension | Axis>()
+  @State initialIndex: int = 0
+  messageManager: MessageManager<string | int | Dimension | Axis> = new MessageManager<string | int | Dimension | Axis>()
 
   onPageShow() {
     console.info('ListLanes  onPageShow');
-    AppStorage.setOrCreate<MessageManager<string | number | Dimension | Axis>>("messageManager",  this.messageManager);
-    let callback: Callback<string | number | Dimension | Axis> = (message:Message<string | number | Dimension | Axis>) => {
+    AppStorage.setOrCreate<MessageManager<string | int | Dimension | Axis>>("messageManager",  this.messageManager);
+    let callback: Callback<string | int | Dimension | Axis> = (message:Message<string | int | Dimension | Axis>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'listGutter') {
         this.listGutter = message.value as Dimension
@@ -73,7 +71,7 @@ struct ListLanes02 {
         this.listSpace = message.value as string
       }
       if (message.name == 'initialIndex') {
-        this.initialIndex = message.value as number
+        this.initialIndex = message.value as int
       }
 
     }
@@ -82,14 +80,14 @@ struct ListLanes02 {
 
   build() {
     Column() {
-      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text('' + item)
               .width('100%').height(100).fontSize(16)
               .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           }.key('ListItem02_' + item).borderWidth(1)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }
       .key('ListLanesKey02')
       .listDirection(this.listDirection) 

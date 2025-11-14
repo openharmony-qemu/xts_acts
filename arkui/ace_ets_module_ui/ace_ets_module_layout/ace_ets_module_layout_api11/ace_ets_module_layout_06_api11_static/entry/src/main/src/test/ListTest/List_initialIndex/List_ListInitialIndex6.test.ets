@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,6 +81,7 @@ export default function list_ListInitialIndex6Test() {
     
     
     
+
 
 /*
      * @tc.number   testListInitialIndexToThreeWithTwoLane_static
@@ -171,12 +172,14 @@ it('testListInitialIndexToThreeWithTwoLane_static', Level.LEVEL0, async (done: (
 
       let driver = Driver.create();
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + listContainer.left + listContainer_width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.bottom - listContainer_height / 6)).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.top - listContainer_height / 6)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + listContainer.left + listContainer_width / 2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + listContainer.bottom - listContainer_height / 6)).toInt());
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex6_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex6_2');
+  console.log('----firstListItem.top = ' + firstListItem.top + ', firstListItem.bottom = ' + firstListItem.bottom + ', firstListItem.left = ' + firstListItem.left + ', firstListItem.right = ' + firstListItem.right)
+  console.log('----secondListItem.top = ' + secondListItem.top + ', secondListItem.bottom = ' + secondListItem.bottom + ', secondListItem.left = ' + secondListItem.left + ', secondListItem.right = ' + secondListItem.right)
 
       expect(Math.abs(firstListItem.top - listContainer.top) <= 1).assertTrue();
       expect(Math.abs(firstListItem.left - listContainer.left) <= 1).assertTrue();

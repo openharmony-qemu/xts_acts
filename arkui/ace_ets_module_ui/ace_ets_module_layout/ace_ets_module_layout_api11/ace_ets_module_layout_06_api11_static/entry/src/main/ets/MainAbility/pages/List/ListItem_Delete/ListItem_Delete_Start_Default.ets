@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,6 +22,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -82,7 +83,7 @@ struct ListItem_Delete_Start_Default {
         })
         .id('ListItem_Delete_Start_Default_button1')
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text("item" + item)
               .width('100%')
@@ -111,7 +112,7 @@ struct ListItem_Delete_Start_Default {
               }
             }
           })
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }.key('ListItem_Delete_Start_Default_1')
       .width('90%')
       .height('80%')

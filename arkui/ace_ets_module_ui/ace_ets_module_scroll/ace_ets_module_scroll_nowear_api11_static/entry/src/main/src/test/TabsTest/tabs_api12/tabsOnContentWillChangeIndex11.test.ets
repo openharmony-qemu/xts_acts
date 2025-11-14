@@ -69,11 +69,11 @@ export default function tabsOnContentWillChangeIndex11JsunitTest() {
 it('tabsOnContentWillChangeJsunitTest_static_0110', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('tabsOnContentWillChangeJsunitTest_static_0110 START');
 
-      
+      // simulate the "tab"
       let driver = Driver.create();
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
-      
+      // -> 2015
       await driver.triggerKey(2015);
       await CommonFunc.sleep(1000);
 
@@ -82,7 +82,7 @@ it('tabsOnContentWillChangeJsunitTest_static_0110', Level.LEVEL1, async (done: (
       console.info("[tabsOnContentWillChangeJsunitTest_static_0110] component obj is: " + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('1');
 
-      
+      // -> 2015
       await driver.triggerKey(2015);
       await CommonFunc.sleep(1000);
 
@@ -91,9 +91,9 @@ it('tabsOnContentWillChangeJsunitTest_static_0110', Level.LEVEL1, async (done: (
       console.info("[tabsOnContentWillChangeJsunitTest_static_0110] component obj is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('2');
 
-      
+      // it can not response when ->
 
-      
+      // -> 2015
       await driver.triggerKey(2015);
       await CommonFunc.sleep(1000);
 

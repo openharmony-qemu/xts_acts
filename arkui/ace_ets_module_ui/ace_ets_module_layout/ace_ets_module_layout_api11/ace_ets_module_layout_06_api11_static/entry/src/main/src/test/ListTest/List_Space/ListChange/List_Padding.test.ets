@@ -39,7 +39,6 @@ export default function List_Padding() {
   describe('List_Padding', () => {
     beforeAll(() => {
       console.log("List_Padding beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +73,7 @@ export default function List_Padding() {
     
     
     
+
 
 /*
      * @tc.number   testListPaddingToTwenty_static

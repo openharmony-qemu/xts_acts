@@ -39,7 +39,6 @@ export default function listItem_Visibility() {
   describe('ListItem_VisibilityTest', () => {
     beforeAll(() => {
       console.log("ListItem_VisibilityTest beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -73,6 +72,7 @@ export default function listItem_Visibility() {
     
     
     
+
 
 /*
      * @tc.number   testListItemVisibilityFirstNone_static
@@ -124,7 +124,7 @@ it('testListItemVisibilityFirstNone_static', Level.LEVEL0, async (done: () => vo
 	  expect(Math.abs(Math.round(locationText2.top - locationText1.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationText3.top - locationText2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationText4.top - locationText3.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-	  
+
 	  expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(80))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(500))) <= 1).assertTrue();
@@ -139,9 +139,10 @@ it('testListItemVisibilityFirstNone_static', Level.LEVEL0, async (done: () => vo
       done();
     });
 
-    
-    
-    
+
+
+
+
 
 /*
      * @tc.number   testListItemVisibilitySecondNone_static
@@ -212,6 +213,7 @@ it('testListItemVisibilitySecondNone_static', Level.LEVEL0, async (done: () => v
     
     
 
+
 /*
      * @tc.number   testListItemVisibilityFirstHidden_static
      * @tc.name     testListItemVisibilityFirstHidden_static
@@ -270,7 +272,7 @@ it('testListItemVisibilityFirstHidden_static', Level.LEVEL0, async (done: () => 
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
       expect(locationText4Again.bottom).assertEqual(locationList.bottom);
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
@@ -285,6 +287,7 @@ it('testListItemVisibilityFirstHidden_static', Level.LEVEL0, async (done: () => 
     
     
     
+
 
 /*
      * @tc.number   testListItemVisibilityFirstVisibile_static
@@ -342,7 +345,7 @@ it('testListItemVisibilityFirstVisibile_static', Level.LEVEL0, async (done: () =
         (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top )).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
       expect(locationText4Again.bottom).assertEqual(locationList.bottom);
       driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),

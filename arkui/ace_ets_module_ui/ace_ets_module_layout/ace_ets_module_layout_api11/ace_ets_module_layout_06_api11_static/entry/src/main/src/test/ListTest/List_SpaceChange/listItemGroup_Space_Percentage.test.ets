@@ -38,7 +38,6 @@ export default function listItemGroup_Space_Percentage() {
   describe('listItemGroup_Space_Percentage', () => {
     beforeAll(() => {
       console.log("listItemGroup_Space_Percentage beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,8 +65,6 @@ export default function listItemGroup_Space_Percentage() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      
-      
       routerInstance.back()
       console.info("listItemGroup_Space_Percentage after each called");
     });
@@ -76,6 +73,7 @@ export default function listItemGroup_Space_Percentage() {
     
     
     
+
 
 /*
      * @tc.number   testListItemGroupSpacePercentage_static

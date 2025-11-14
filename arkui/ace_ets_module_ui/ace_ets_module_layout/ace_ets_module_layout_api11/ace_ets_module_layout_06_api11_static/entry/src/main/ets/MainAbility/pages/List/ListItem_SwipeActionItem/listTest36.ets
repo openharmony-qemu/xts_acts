@@ -41,6 +41,7 @@ import {
   Text,
   TextAlign,
   TextAttribute,
+
   Builder,
   Row,
   List,
@@ -49,7 +50,8 @@ import {
   Axis,
   animateTo,
   SwipeEdgeEffect,
-  SwipeActionState
+  SwipeActionState,
+  TransitionEffect
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { UIContext} from '@ohos.arkui.UIContext';
@@ -101,7 +103,7 @@ struct ListItemExample36 {
           this.arr = [0, 1, 2, 3, 4];
         })
       List({ space: 10 }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text("item" + item)
               .width('60%')
@@ -111,6 +113,7 @@ struct ListItemExample36 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }
+          // .transition(TransitionEffect.OPACITY.opacity(0))
 /*          .transition({ type: TransitionType.Delete, opacity: 0 })*/
           .swipeAction({
             start: {
@@ -171,7 +174,7 @@ struct ListItemExample36 {
 
           })
           .key('lSwipe36Action' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }.listDirection(Axis.Horizontal).height('80%')
       .width('90%')
 

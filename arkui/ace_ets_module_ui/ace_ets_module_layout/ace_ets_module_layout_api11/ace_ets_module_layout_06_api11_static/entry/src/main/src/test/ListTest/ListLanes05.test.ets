@@ -49,7 +49,6 @@ export default function ListLanes05() {
   describe('ListLanes05', () => {
     beforeAll(() => {
       console.info("ListLanes05 beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -79,6 +78,7 @@ export default function ListLanes05() {
     
     
 
+
 /*
      * @tc.number   ListLanes05_static_001
      * @tc.name     ListLanes05_static_001
@@ -96,8 +96,6 @@ it('ListLanes05_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       let context = AppStorage.get<UIContext>("context")
       expect(Math.abs(Math.round(ListItem01_1.top - ListItem01_0.bottom) - Math.round(context!.lpx2px(10))) <= 1)
         .assertTrue();
-
-
       console.info('[ListLanes05_static_001] END');
       done();
     });
@@ -105,6 +103,7 @@ it('ListLanes05_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
     
+
 
 /*
      * @tc.number   ListLanes05_static_002
@@ -127,6 +126,7 @@ it('ListLanes05_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
 
+
 /*
      * @tc.number   ListLanes05_static_003
      * @tc.name     ListLanes05_static_003
@@ -148,6 +148,7 @@ it('ListLanes05_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
     
     
     
+
 
 /*
      * @tc.number   ListLanes05_static_004

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,6 @@ export default function List_scrollToIndex1() {
   describe('List_scrollToIndex1', () => {
     beforeAll(() => {
       console.info("List_scrollToIndex1 beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -73,6 +72,7 @@ export default function List_scrollToIndex1() {
     
     
 
+
 /*
      * @tc.number   List_scrollToIndex1_static_0100
      * @tc.name     List_scrollToIndex1_static_0100
@@ -88,7 +88,9 @@ it('List_scrollToIndex1_static_0100', Level.LEVEL0, async (done: () => void): Pr
 
       let List: RectValue = CommonFunc.getComponentRect('List_scrollToIndex1_List');
       let ListItem: RectValue = CommonFunc.getComponentRect('List_scrollToIndex1_ListItem5');
+  console.info('[List_scrollToIndex1_0100] ListItem.top = ' + ListItem.top + ", List.top = " + List.top);
       expect(Math.abs(ListItem.top - List.top) <= 1).assertTrue();
+  console.info('[List_scrollToIndex1_0100] ListItem.bottom = ' + ListItem.bottom + ", List.top = " + List.top);
       expect(Math.abs(Math.round(ListItem.bottom) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex1_0100] END');
       done();

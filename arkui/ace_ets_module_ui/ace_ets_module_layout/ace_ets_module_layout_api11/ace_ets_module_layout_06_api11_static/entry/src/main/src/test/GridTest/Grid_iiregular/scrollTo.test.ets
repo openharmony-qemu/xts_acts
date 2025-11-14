@@ -38,7 +38,6 @@ export default function scrollByJsunit() {
   describe('scrollToJsunit', () => {
     beforeAll(() => {
       console.info("scrollToJsunit beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +73,7 @@ export default function scrollByJsunit() {
     
     
 
+
 /*
      * @tc.number   scrollToJsunit_static_0001
      * @tc.name     scrollToJsunit_static_0001
@@ -108,6 +108,7 @@ it('scrollToJsunit_static_0001', Level.LEVEL0, async (done: () => void): Promise
     
     
 
+
 /*
      * @tc.number   scrollToJsunit_static_0002
      * @tc.name     scrollToJsunit_static_0002
@@ -120,7 +121,7 @@ it('scrollToJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promise
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('scrollTo2'));
-      await btn!.click();
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(100);
 
 
@@ -141,6 +142,7 @@ it('scrollToJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promise
 
     
     
+
 
 /*
      * @tc.number   scrollToJsunit_static_0003
@@ -171,10 +173,11 @@ it('scrollToJsunit_static_0003', Level.LEVEL0, async (done: () => void): Promise
       done();
     });
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollToJsunit_static_0004
@@ -206,10 +209,11 @@ it('scrollToJsunit_static_0004', Level.LEVEL0, async (done: () => void): Promise
       done();
     });
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollToJsunit_static_0005
@@ -238,10 +242,11 @@ it('scrollToJsunit_static_0005', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollToJsunit_0005] END');
       done();
     });
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollToJsunit_static_0006
@@ -272,10 +277,11 @@ it('scrollToJsunit_static_0006', Level.LEVEL0, async (done: () => void): Promise
       done();
     });
 
-    
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollToJsunit_static_0007
@@ -305,11 +311,12 @@ it('scrollToJsunit_static_0007', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollToJsunit_0007] END');
       done();
     });
-    
 
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollToJsunit_static_0008
@@ -339,11 +346,12 @@ it('scrollToJsunit_static_0008', Level.LEVEL0, async (done: () => void): Promise
       console.info('[scrollToJsunit_0008] END');
       done();
     });
-    
 
 
-    
-    
+
+
+
+
 
 /*
      * @tc.number   scrollToJsunit_static_0009

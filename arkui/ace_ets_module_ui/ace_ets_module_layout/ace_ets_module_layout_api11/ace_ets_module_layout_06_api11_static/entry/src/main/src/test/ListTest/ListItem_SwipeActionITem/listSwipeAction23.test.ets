@@ -38,6 +38,10 @@ export default function listSwipeAction23Jsunit() {
   describe('listSwipeAction23Test', () => {
     beforeAll(async (): Promise<void> => {
       console.info("listSwipeAction23Test beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListItem_SwipeActionItem/listTest23"
       }
@@ -69,6 +73,7 @@ export default function listSwipeAction23Jsunit() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220
@@ -113,6 +118,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0220', Level.LEVEL0,
     
     
 
+
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0230
      * @tc.name     SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0230
@@ -156,6 +162,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0230', Level.LEVEL0,
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0240

@@ -40,7 +40,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct StartAndEnd {
-  @State numberData: String[] = ['0', '1', '2', '3', '4'];
+  @State Number1: string[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
   @State index: number = 0;
   @State text2: string = '';
@@ -52,8 +52,8 @@ struct StartAndEnd {
       Text(this.text2).id('StartAndEnd_end')
       Stack({ alignContent: Alignment.BottomEnd }) {
         Grid(this.scroller) {
-          ForEach(this.numberData, (day: string) => {
-            ForEach(this.numberData, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
+            ForEach(this.Number1, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

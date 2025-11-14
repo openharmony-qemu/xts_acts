@@ -39,7 +39,6 @@ export default function List_lanes() {
   describe('List_lanes', () => {
     beforeAll(() => {
       console.log("List_lanes beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -75,6 +74,7 @@ export default function List_lanes() {
     
     
 
+
 /*
      * @tc.number   testListLanesToTwo_static
      * @tc.name     testListLanesToTwo_static
@@ -83,7 +83,7 @@ export default function List_lanes() {
      */
 it('testListLanesToTwo_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testListLanesToTwo START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+      AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'addLanes', value: 2
       })
       await CommonFunc.sleep(1000);
@@ -128,6 +128,7 @@ it('testListLanesToTwo_static', Level.LEVEL0, async (done: () => void): Promise<
     
     
     
+
 
 /*
      * @tc.number   testListLanesToRange01_static
@@ -184,6 +185,7 @@ it('testListLanesToRange01_static', Level.LEVEL0, async (done: () => void): Prom
     
     
     
+
 
 /*
      * @tc.number   testListLanesToRange02_static

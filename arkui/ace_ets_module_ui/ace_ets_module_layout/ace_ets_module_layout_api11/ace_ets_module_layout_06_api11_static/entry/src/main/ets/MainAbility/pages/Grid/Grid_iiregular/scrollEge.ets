@@ -22,6 +22,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -49,14 +50,14 @@ import {
 @Entry
 @Component
 struct scrollEge {
-  @State numberData: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
+  @State Number1: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
   scroller: Scroller = new Scroller();
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
         
-        ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (day: string) => {
           GridItem() {
             Text(day)
               .fontSize(16)
@@ -143,13 +144,12 @@ struct scrollEge {
         })
 
 
-      
-      
-      
-      
-      
-      
-
+      Button('scrollToIndex undefined')
+        .height('5%')
+        .id('scrollEge8')
+        .onClick((e:ClickEvent) => {
+          // this.scroller.scrollToIndex(undefined)
+        })
     }.width('100%').margin({ top: 5 } as Margin).height('100%').key('columnKeys')
   }
 }

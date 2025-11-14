@@ -38,6 +38,10 @@ export default function listSwipeAction13EndJsunit() {
   describe('listSwipeAction13EndTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("listSwipeAction13EndTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListItem_SwipeActionItem/listTest13"
       }
@@ -69,6 +73,7 @@ export default function listSwipeAction13EndJsunit() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0130

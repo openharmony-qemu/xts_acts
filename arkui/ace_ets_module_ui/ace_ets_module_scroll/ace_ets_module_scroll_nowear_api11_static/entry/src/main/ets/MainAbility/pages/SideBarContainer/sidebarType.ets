@@ -29,12 +29,11 @@ struct sidebarType {
   selectedIcon: Resource = $r("app.media.icon");
   @State arr: number[] = [1, 2, 3] as number[];
   @State current: number = 1;
-
   build() {
     Column() {
       SideBarContainer(SideBarContainerType.AUTO) {
         Column() {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: number) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -45,7 +44,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: int) => String(item))
+          }, (item: number) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -57,7 +56,7 @@ struct sidebarType {
         .margin({ top: 50, left: 20, right: 30 } as Margin)
       }
       .key("ArkUX_SideBarContainer_1000")
-      
+      .sideBarWidth(150)
       .minContentWidth(300)
       .minSideBarWidth(100)
       .controlButton({
@@ -71,17 +70,17 @@ struct sidebarType {
           switching: $r("app.media.icon")
         }
       })
-      
-      
-      
-      
-      
-      
+      .divider(this.nullFlag ? null : {
+        strokeWidth: this.strokeWidthStr,
+        color: this.dividerColorStr,
+        startMargin: this.startMarginStr,
+        endMargin: this.endMarginStr
+      } as DividerStyle)
 
 
       SideBarContainer(SideBarContainerType.AUTO) {
         Column() {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: number) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -92,7 +91,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: int) => String(item))
+          }, (item: number) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -104,7 +103,7 @@ struct sidebarType {
         .margin({ top: 50, left: 20, right: 30 } as Margin)
       }
       .key("ArkUX_SideBarContainer_1100")
-      
+      .sideBarWidth(150)
       .minContentWidth(30000)
       .minSideBarWidth(10000)
       .controlButton({
@@ -127,7 +126,7 @@ struct sidebarType {
 
       SideBarContainer(SideBarContainerType.Embed) {
         Column() {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: number) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -138,7 +137,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: int) => String(item))
+          }, (item: number) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -150,7 +149,7 @@ struct sidebarType {
         .margin({ top: 50, left: 20, right: 30 } as Margin)
       }
       .key("ArkUX_SideBarContainer_1200")
-      
+      .sideBarWidth(150)
       .minContentWidth(10)
       .minSideBarWidth(10)
       .controlButton({
@@ -174,7 +173,7 @@ struct sidebarType {
 
       SideBarContainer(SideBarContainerType.Overlay) {
         Column() {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: number) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index2" + item)
@@ -185,7 +184,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: int) => String(item))
+          }, (item: number) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -197,7 +196,7 @@ struct sidebarType {
         .margin({ top: 50, left: 20, right: 30 } as Margin)
       }
       .key("ArkUX_SideBarContainer_1300")
-      
+      .sideBarWidth(150)
       .minContentWidth(200)
       .minSideBarWidth(400)
       .controlButton({
@@ -221,7 +220,7 @@ struct sidebarType {
 
       SideBarContainer() {
         Column() {
-          ForEach(this.arr, (item: number, index: int) => {
+          ForEach(this.arr, (item: number) => {
             Column({ space: 5 } as ColumnOptions) {
               Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
               Text("Index0" + item)
@@ -232,7 +231,7 @@ struct sidebarType {
             .onClick((e: ClickEvent) => {
               this.current = item
             })
-          }, (item: number, index: int) => String(item))
+          }, (item: number) => String(item))
         }.width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor('#19000000')
@@ -244,9 +243,9 @@ struct sidebarType {
         .margin({ top: 50, left: 20, right: 30 } as Margin)
       }
       .key("ArkUX_SideBarContainer_1400")
-      
-      .minContentWidth(undefined)
-      .minSideBarWidth(undefined)
+      .sideBarWidth(150)
+      // .minContentWidth(null)
+      // .minSideBarWidth(null)
       .controlButton({
         left: 16,
         top: 48,

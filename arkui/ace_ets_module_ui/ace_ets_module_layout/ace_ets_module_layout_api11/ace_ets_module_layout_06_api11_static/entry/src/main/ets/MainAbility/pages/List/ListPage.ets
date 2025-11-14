@@ -44,27 +44,25 @@ import {
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
-
-
 @Entry
 @Component
 struct ListPage {
   @State arr: string[] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   @State listPosition: number = 0 
   @State space: number = 20
-  @State initialIndex: number = 0
+  @State initialIndex: int = 0
   @State listDirection: Axis  = Axis.Vertical
   @State strokeWidth: number = 2
   @State dividerColor: Color = Color.Blue
   @State startMargin: number = 3
   @State endMargin: number = 2
   @State scrollBar: BarState = BarState.Off
-  @State cachedCount: number = 1
+  @State cachedCount: int = 1
   @State editMode: boolean = false
   @State edgeEffect: EdgeEffect = EdgeEffect.Spring
   @State chainAnimation: boolean = false
   @State multiSelectable: boolean = false
-  @State lanes: number = 1
+  @State lanes: int = 1
   @State alignListItem: ListItemAlign = ListItemAlign.End
   @State sticky: StickyStyle = StickyStyle.None
   @State onScrollText: string = "onScroll"
@@ -77,18 +75,18 @@ struct ListPage {
   @State onItemDragText: string = "onItemDrag"
   @State onItemDropText: string = "onItemDrop"
   scroller: Scroller = new Scroller()
-  messageManager: MessageManager<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle| Axis> = new MessageManager<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle| Axis>()
+  messageManager: MessageManager<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle | Axis | int> = new MessageManager<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle | Axis | int>()
 
   onPageShow() {
     console.info('ListPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle| Axis>>("messageManager",  this.messageManager);
-    let callback: Callback<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle| Axis> = (message: Message<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle| Axis>) => {
+    AppStorage.setOrCreate<MessageManager<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle | Axis | int>>("messageManager",  this.messageManager);
+    let callback: Callback<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle | Axis | int> = (message: Message<string | number | boolean | BarState | Color | EdgeEffect | ListItemAlign | StickyStyle | Axis | int>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'space') {
-        this.space = message.value as number
+        this.space = Number.parseInt(message.value as string)
       }
       if (message.name == 'initialIndex') {
-        this.initialIndex = message.value as number
+        this.initialIndex = message.value as int
       }
       if (message.name == 'listDirection') {
         this.listDirection = message.value as Axis
@@ -109,7 +107,7 @@ struct ListPage {
         this.scrollBar = message.value as BarState
       }
       if (message.name == 'cachedCount') {
-        this.cachedCount = message.value as number
+        this.cachedCount = message.value as int
       }
       if (message.name == 'editMode') {
         this.editMode = message.value as boolean
@@ -124,7 +122,7 @@ struct ListPage {
         this.multiSelectable = message.value as boolean
       }
       if (message.name == 'lanes') {
-        this.lanes = message.value as number
+        this.lanes = message.value as int
       }
       if (message.name == 'alignListItem') {
         this.alignListItem = message.value as ListItemAlign
@@ -173,11 +171,11 @@ struct ListPage {
               .width('90%').height(20).fontSize(10)
               .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
           }
-        }, (item: string,index:int) => item)
+        }, (item:string) => item)
       }.key('list_default')
       .height('5%')
 
-      List({ space: this.space, initialIndex: Double.toInt(this.initialIndex), scroller: this.scroller }) {
+      List({ space: this.space, initialIndex: this.initialIndex, scroller: this.scroller }) {
         ForEach(this.arr, (item: string) => {
           ListItem() {
             Text('' + item)
@@ -190,7 +188,7 @@ struct ListPage {
               .key('' + item)
           }
           .border({ width: 2, color: Color.Green })
-        }, (item: string,index:int) => item)
+        }, (item:string) => item)
       }
       .height('60%')
       .width("90%")
@@ -200,21 +198,21 @@ struct ListPage {
       .divider({strokeWidth: this.strokeWidth, color: this.dividerColor,
         startMargin: this.startMargin, endMargin: this.endMargin })
       .scrollBar(this.scrollBar)
-      .cachedCount(Double.toInt(this.cachedCount))
+      .cachedCount(this.cachedCount)
       .edgeEffect(this.edgeEffect)
       .chainAnimation(this.chainAnimation)
       .multiSelectable(this.multiSelectable)
-      .lanes(Double.toInt(this.lanes))
+      .lanes(this.lanes)
       .alignListItem(this.alignListItem)
-      /*.onItemDelete((index: number) => {
-        this.onScrollText = "onItemDelete:succ"
-        console.info('onItemDelete index: ' + index)
-        return true
-      })*/
-      .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
-        this.onScrollText = "onScroll:succ"
-        console.info('scrollState:' + scrollState + ', scrollOffset:' + scrollOffset)
-      })
+     // .onItemDelete((index: number) => {
+     //   this.onScrollText = "onItemDelete:succ"
+     //   console.info('onItemDelete index: ' + index)
+     //   return true
+     // })
+     //  .onScroll((scrollOffset: number, scrollState: ScrollState) => {
+     //    this.onScrollText = "onScroll:succ"
+     //    console.info('scrollState:' + scrollState + ', scrollOffset:' + scrollOffset)
+     //  })
       .onReachStart(() => {
         this.onReachStartText = "onReachStart:succ"
         console.info('onReachStart')

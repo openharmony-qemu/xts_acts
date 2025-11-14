@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,6 @@ export default function list_ListInitialIndex1Test() {
   describe('List_ListInitialIndex1Test', () => {
     beforeAll(() => {
       console.info("List_ListInitialIndex1Test beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -81,6 +80,7 @@ export default function list_ListInitialIndex1Test() {
     
     
     
+
 
 /*
      * @tc.number   testListInitialIndexToTwoWithOneLane_static

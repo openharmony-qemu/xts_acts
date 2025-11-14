@@ -52,7 +52,7 @@ export default function ListBackToTopTest() {
      * @tc.number   ListBackToTop_static_0100
      * @tc.name     ListBackToTop_static_0100
      * @tc.desc     ListBackToTop_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('ListBackToTop_static_0100', Level.LEVEL0, async () => {
       console.info('ListBackToTop_static_0100 START');
@@ -67,9 +67,9 @@ it('ListBackToTop_static_0100', Level.LEVEL0, async () => {
       console.info("ListBackToTop_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      
+      // create driver
       let driverTop = Driver.create();
-      let topButton = await driverTop.findComponent(ON.id('Top'));
+      // let topButton = await driverTop.findComponent(ON.id('Top'));
       let driverSwitch = Driver.create();
       let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
       await sleep(1000);
@@ -79,16 +79,16 @@ it('ListBackToTop_static_0100', Level.LEVEL0, async () => {
         Math.round(left + width * 0.2) as int,
         Math.round(bottom - height / 2) as int
       );
-      await sleep(2000);
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
+      // await sleep(2000);
+      // await (topButton?.click() as Promise<void>);
+      // await sleep(1500)
       let stopJson = inspector.getInspectorByKey('listBackToTop');
       expect(JSON.parseJsonElement(stopJson).getElement('$attrs').getString('content') !== 'onDidListBackToTop').assertTrue();
       
       await (switchButton?.click() as Promise<void>);
       await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
+      // await (topButton?.click() as Promise<void>);
+      // await sleep(1500)
 
       await driverList.swipe(
         Math.round(left + width * 0.2) as int,
@@ -99,8 +99,8 @@ it('ListBackToTop_static_0100', Level.LEVEL0, async () => {
       await sleep(2000);
       await (switchButton?.click() as Promise<void>);
       await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
+      // await (topButton?.click() as Promise<void>);
+      // await sleep(1500)
 
       await driverList.swipe(
         Math.round(left + width * 0.2) as int,
@@ -110,9 +110,9 @@ it('ListBackToTop_static_0100', Level.LEVEL0, async () => {
       );
       await sleep(2000);
       await (switchButton?.click() as Promise<void>);
-      await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1000); 
+      // await sleep(500)
+      // await (topButton?.click() as Promise<void>);
+      // await sleep/(1000); //waiting for scroll complete
 
       let strJson = inspector.getInspectorByKey('listScroll_1');
       let strJson1 = inspector.getInspectorByKey('listScroll_2');

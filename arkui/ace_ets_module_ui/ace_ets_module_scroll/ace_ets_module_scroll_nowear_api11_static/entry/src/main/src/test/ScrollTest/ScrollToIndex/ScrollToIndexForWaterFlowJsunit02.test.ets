@@ -40,20 +40,20 @@ export default function ScrollToIndexForWaterFlowJsunit02() {
     beforeEach(async (): Promise<void> => {
       console.info("ScrollToIndexForWaterFlowJsunit02 beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Scroll/loadingprogrees_add02",
+        url: 'MainAbility/pages/Scroll/ScrollToIndex/ScrollToIndexForWaterFlow02',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ScrollToIndexForWaterFlowJsunit02 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("ScrollToIndexForWaterFlow02" == pages.name)) {
           console.info("get ScrollToIndexForWaterFlowJsunit02 pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ScrollToIndexForWaterFlowJsunit02 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ScrollToIndexForWaterFlowJsunit02 page error:" + err);
@@ -67,17 +67,17 @@ export default function ScrollToIndexForWaterFlowJsunit02() {
      * @tc.number   ScrollToIndexForWaterFlow02_static_0100
      * @tc.name     ScrollToIndexForWaterFlow02_static_0100
      * @tc.desc     ScrollToIndexForWaterFlow02_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ScrollToIndexForWaterFlow02_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[ApiCommponentAdd02Jsunit_static_0900] START');
+it('ScrollToIndexForWaterFlow02_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ScrollToIndexForWaterFlow02_static_0900] START');
       let driver = Driver.create();
 
       await driver.delayMs(1000);
-      let button = await driver.findComponent(ON.text("Grid-66-true"));
+      let button = await driver.findComponent(ON.text('Grid-66-true'));
       await (button?.click() as Promise<void>)
       await driver.delayMs(2000);
-      let button_Item = await driver.findComponent(ON.text("Item-99-true"));
+      let button_Item = await driver.findComponent(ON.text('Item-99-true'));
       await (button_Item?.click() as Promise<void>)
       await driver.delayMs(2000);
       let textItemCom = await driver.findComponent(ON.text("NN99"));
@@ -89,7 +89,7 @@ it('ScrollToIndexForWaterFlow02_static_0100', Level.LEVEL0, async (done: () => v
       expect(isSmoothObj).assertInstanceOf("Object");
       expect(currentItemID).assertEqual("ItemTextWaterFlow02_99");
 
-      console.info('[ApiCommponentAdd02Jsunit_static_0900] END');
+      console.info('[ScrollToIndexForWaterFlow02_static_0900] END');
       done();
     });
 
@@ -98,9 +98,9 @@ it('ScrollToIndexForWaterFlow02_static_0100', Level.LEVEL0, async (done: () => v
      * @tc.number   ScrollToIndexForWaterFlow02_static_0200
      * @tc.name     ScrollToIndexForWaterFlow02_static_0200
      * @tc.desc     ScrollToIndexForWaterFlow02_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('ScrollToIndexForWaterFlow02_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollToIndexForWaterFlow02_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForWaterFlow02_static_0200] START');
       let driver = Driver.create();
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,6 @@ export default function ListItem_Delete_End() {
   describe('ListItem_Delete_End', () => {
     beforeAll(() => {
       console.log("ListItem_Delete_End beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -50,7 +49,7 @@ export default function ListItem_Delete_End() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListItem_Delete_End state pages:" + JSON.stringify(pages));
         if (!("ListItem_Delete_End" == pages.name)) {
@@ -75,6 +74,7 @@ export default function ListItem_Delete_End() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_End_static_0200
@@ -107,7 +107,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0200', Level.LEVEL0, async (done: () => v
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(5))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_End_text_01');
 
@@ -138,6 +138,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0200', Level.LEVEL0, async (done: () => v
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_End_static_0300
@@ -176,7 +177,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0300', Level.LEVEL0, async (done: () => v
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(30))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
 
       let text_011 = inspector.getInspectorByKey('ListItem_Delete_End_text_01');
 
@@ -197,6 +198,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0300', Level.LEVEL0, async (done: () => v
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_End_static_0400
@@ -259,6 +261,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0400', Level.LEVEL0, async (done: () => v
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_End_static_0500
      * @tc.name     SUB_ACE_ListItem_Delete_End_static_0500
@@ -319,6 +322,7 @@ it('SUB_ACE_ListItem_Delete_End_static_0500', Level.LEVEL0, async (done: () => v
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_Delete_End_static_0600

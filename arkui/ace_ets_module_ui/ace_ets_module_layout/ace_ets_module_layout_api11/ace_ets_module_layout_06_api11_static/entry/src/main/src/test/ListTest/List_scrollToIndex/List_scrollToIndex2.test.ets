@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +37,6 @@ export default function List_scrollToIndex2() {
   describe('List_scrollToIndex2', () => {
     beforeAll(() => {
       console.info("List_scrollToIndex2 beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +73,7 @@ export default function List_scrollToIndex2() {
     
     
 
+
 /*
      * @tc.number   List_scrollToIndex2_static_0100
      * @tc.name     List_scrollToIndex2_static_0100
@@ -97,6 +97,7 @@ it('List_scrollToIndex2_static_0100', Level.LEVEL0, async (done: () => void): Pr
     
     
     
+
 
 /*
      * @tc.number   List_scrollToIndex2_static_0200
@@ -122,6 +123,7 @@ it('List_scrollToIndex2_static_0200', Level.LEVEL0, async (done: () => void): Pr
     
     
 
+
 /*
      * @tc.number   List_scrollToIndex2_static_0300
      * @tc.name     List_scrollToIndex2_static_0300
@@ -145,6 +147,7 @@ it('List_scrollToIndex2_static_0300', Level.LEVEL0, async (done: () => void): Pr
     
     
     
+
 
 /*
      * @tc.number   List_scrollToIndex2_static_0400
@@ -171,6 +174,7 @@ it('List_scrollToIndex2_static_0400', Level.LEVEL0, async (done: () => void): Pr
     
     
 
+
 /*
      * @tc.number   List_scrollToIndex2_static_0500
      * @tc.name     List_scrollToIndex2_static_0500
@@ -195,6 +199,7 @@ it('List_scrollToIndex2_static_0500', Level.LEVEL0, async (done: () => void): Pr
     
     
     
+
 
 /*
      * @tc.number   List_scrollToIndex2_static_0600
@@ -221,6 +226,7 @@ it('List_scrollToIndex2_static_0600', Level.LEVEL0, async (done: () => void): Pr
     
     
 
+
 /*
      * @tc.number   List_scrollToIndex2_static_0700
      * @tc.name     List_scrollToIndex2_static_0700
@@ -244,6 +250,7 @@ it('List_scrollToIndex2_static_0700', Level.LEVEL0, async (done: () => void): Pr
     
     
     
+
 
 /*
      * @tc.number   List_scrollToIndex2_static_0800
@@ -270,6 +277,7 @@ it('List_scrollToIndex2_static_0800', Level.LEVEL0, async (done: () => void): Pr
     
     
 
+
 /*
      * @tc.number   List_scrollToIndex2_static_0900
      * @tc.name     List_scrollToIndex2_static_0900
@@ -294,6 +302,7 @@ it('List_scrollToIndex2_static_0900', Level.LEVEL0, async (done: () => void): Pr
     
     
     
+
 
 /*
      * @tc.number   List_scrollToIndex2_static_1000

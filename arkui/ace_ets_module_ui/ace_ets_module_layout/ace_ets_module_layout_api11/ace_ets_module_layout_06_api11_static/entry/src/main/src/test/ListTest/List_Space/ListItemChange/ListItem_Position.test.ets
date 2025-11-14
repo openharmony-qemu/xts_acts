@@ -39,7 +39,6 @@ export default function listItem_Position() {
   describe('ListItem_PositionTest', () => {
     beforeAll(() => {
       console.log("ListItem_PositionTest beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -73,6 +72,7 @@ export default function listItem_Position() {
     
     
     
+
 
 /*
      * @tc.number   testListItemPosition_static

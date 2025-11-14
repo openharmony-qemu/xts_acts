@@ -29,6 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../Util.test';
+;
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -37,6 +38,10 @@ export default function listSwipeAction29Jsunit() {
   describe('listSwipeAction29Test', () => {
     beforeAll(async (): Promise<void> => {
       console.info("listSwipeAction29Test beforeEach start");
+      await UtilsTest.msSleep(2000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
+      await UtilsTest.msSleep(2000)
+
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListItem_SwipeActionItem/listTest29"
       }
@@ -46,7 +51,7 @@ export default function listSwipeAction29Jsunit() {
         let pages:router.RouterState = routerInstance.getState();
         console.info("listSwipeAction29Test  success pages " + JSON.stringify(pages));
         routerInstance.pushUrl(options)
-        await CommonFunc.sleep(4000);
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("push listTest29 page error: " + err);
       }
@@ -61,7 +66,7 @@ export default function listSwipeAction29Jsunit() {
       let buttonReset = await driverReset.findComponent(ON.id('btreset29'));
       await CommonFunc.sleep(300);
       buttonReset!.click();
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(2000);
       done();
     });
 
@@ -69,6 +74,7 @@ export default function listSwipeAction29Jsunit() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290
@@ -100,16 +106,16 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(62))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       
       let textSwipeOffset = inspector.getInspectorByKey('swipe29Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeOffset).getElement('$attrs')));
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content'))))<=1).assertTrue();
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       let buttonReset = await driver.findComponent(ON.id('btreset29'));
       await driver.delayMs(300);
       buttonReset!.click();
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(1000);
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
@@ -117,7 +123,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(88))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(4000);
+      await CommonFunc.sleep(1000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe29Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs')));
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content'))))<=1).assertTrue();
@@ -127,6 +133,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0290', Level.LEVEL0,
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310
@@ -161,13 +168,12 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       
       let textSwipeOffset = inspector.getInspectorByKey('swipe29Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0310 json is ' + JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content'));
       let Swipe29Action_swipe: RectValue = CommonFunc.getComponentRect('lSwipe29Row');
       let swipe_width = Swipe29Action_swipe.right - Swipe29Action_swipe.left;
-      let context = AppStorage.get<UIContext>("context")
       console.info('29 0310 json' + Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_width)));
       
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content')))-Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_width)))<=1).assertTrue();
@@ -178,11 +184,11 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(230))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset29'));
       await driver.delayMs(300);
       buttonReset2!.click();
-      await CommonFunc.sleep(4000);
+      await CommonFunc.sleep(1000);
 
       
       driver.swipe(
@@ -191,10 +197,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(5))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe29Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0310 json is ' + JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content'));
-      console.info('29 0310 json' + Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_width)));
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset2).getElement('$attrs').getString('content')))-(-Math.round(UIContext.getFocusedUIContext()!.px2vp(swipe_width))))<=1).assertTrue();
       
       driver.swipe(
@@ -203,7 +208,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(2))).toInt(),
         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
       );
-      await CommonFunc.sleep(5000);
+      await CommonFunc.sleep(1000);
       done();
     });
 

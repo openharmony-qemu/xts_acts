@@ -37,7 +37,6 @@ export default function List_alignListItem() {
   describe('List_alignListItem', () => {
     beforeAll(() => {
       console.log("List_alignListItem beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -72,6 +71,7 @@ export default function List_alignListItem() {
     
     
     
+
 
 /*
      * @tc.number   testListAlignListItemStart_static
@@ -131,6 +131,7 @@ it('testListAlignListItemStart_static', Level.LEVEL0, async (done: () => void): 
     
     
     
+
 
 /*
      * @tc.number   testListAlignListItemCenter_static
@@ -196,6 +197,7 @@ it('testListAlignListItemCenter_static', Level.LEVEL0, async (done: () => void):
     
     
     
+
 
 /*
      * @tc.number   testListAlignListItemEnd_static

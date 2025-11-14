@@ -40,10 +40,8 @@ export default function sideBarShowSideBarJsunit() {
         console.info("get sideBar state success " + JSON.stringify(pages));
         if (!("sideBar" == pages.name)) {
           console.info("get sideBar state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push sideBar page error: " + err);
@@ -60,9 +58,9 @@ export default function sideBarShowSideBarJsunit() {
      * @tc.number   testsideBarShowSideBar0001_static_01
      * @tc.name     testsideBarShowSideBar0001_static_01
      * @tc.desc     testsideBarShowSideBar0001_static_01
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('testsideBarShowSideBar0001_static_01', Level.LEVEL0, async () => {
+it('testsideBarShowSideBar0001_static_01', Level.LEVEL1, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0001_static_01 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('SideBarContainer');
@@ -79,9 +77,9 @@ it('testsideBarShowSideBar0001_static_01', Level.LEVEL0, async () => {
      * @tc.number   testsideBarShowSideBar0002_static_02
      * @tc.name     testsideBarShowSideBar0002_static_02
      * @tc.desc     testsideBarShowSideBar0002_static_02
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('testsideBarShowSideBar0002_static_02', Level.LEVEL0, async () => {
+it('testsideBarShowSideBar0002_static_02', Level.LEVEL1, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0002_static_02 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('SideBarContainer');
@@ -98,9 +96,9 @@ it('testsideBarShowSideBar0002_static_02', Level.LEVEL0, async () => {
      * @tc.number   testsideBarShowSideBar0003_static_03
      * @tc.name     testsideBarShowSideBar0003_static_03
      * @tc.desc     testsideBarShowSideBar0003_static_03
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('testsideBarShowSideBar0003_static_03', Level.LEVEL0, async () => {
+it('testsideBarShowSideBar0003_static_03', Level.LEVEL1, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0003_static_03 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('SideBarContainer');

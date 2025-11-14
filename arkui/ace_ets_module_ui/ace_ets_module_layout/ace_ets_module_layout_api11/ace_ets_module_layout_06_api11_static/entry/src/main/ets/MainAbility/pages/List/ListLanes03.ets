@@ -50,7 +50,7 @@ struct ListLanes03 {
   @State listDirection: Axis = Axis.Vertical
   @State listSpace: string = '2'
   @State alignListItem: ListItemAlign = ListItemAlign.Start
-  @State initialIndex: number = 0
+  @State initialIndex: int = 0
 
   onPageShow(): void {
     let context = this.getUIContext() as UIContext
@@ -59,8 +59,8 @@ struct ListLanes03 {
 
   build() {
     Column() {
-      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -70,7 +70,7 @@ struct ListLanes03 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.key('ListLanes31_' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }
       .listDirection(this.listDirection) 
       .edgeEffect(EdgeEffect.Spring) 
@@ -80,8 +80,8 @@ struct ListLanes03 {
       .padding(5)
       .margin({ top: 10 } as Margin)
 
-      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -91,7 +91,7 @@ struct ListLanes03 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.key('ListLanes32_' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }
       .listDirection(this.listDirection) 
       .edgeEffect(EdgeEffect.Spring) 
@@ -101,8 +101,8 @@ struct ListLanes03 {
       .padding(5)
       .margin({ top: 10 } as Margin)
 
-      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -112,7 +112,7 @@ struct ListLanes03 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.key('ListLanes33_' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }
       .listDirection(this.listDirection) 
       .edgeEffect(EdgeEffect.Spring) 
@@ -122,8 +122,8 @@ struct ListLanes03 {
       .padding(5)
       .margin({ top: 10 } as Margin)
 
-      List({ space: this.listSpace, initialIndex: Double.toInt(this.initialIndex) }) {
-        ForEach(this.arr, (item: number,index:int) =>  {
+      List({ space: this.listSpace, initialIndex: this.initialIndex }) {
+        ForEach(this.arr, (item: number) =>  {
           ListItem() {
             Text('' + item)
               .width('100%')
@@ -133,7 +133,7 @@ struct ListLanes03 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }.key('ListLanes34_' + item)
-        }, (item: number,index:int) => item.toString())
+        }, (item: number) => item.toString())
       }
       .listDirection(this.listDirection) 
       .edgeEffect(EdgeEffect.Spring) 

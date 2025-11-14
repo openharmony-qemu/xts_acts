@@ -50,7 +50,7 @@ export default function scrollByJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get scrollPageJsunit state pages: " + JSON.stringify(pages));
         if (!("scrollPage" == pages.name)) {
@@ -66,9 +66,9 @@ export default function scrollByJsunit() {
     });
 
     afterEach(async () => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
+      // const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("List_scrollToIndex1 after each called");
     });
 
@@ -77,6 +77,7 @@ export default function scrollByJsunit() {
 
     
     
+
 
 /*
      * @tc.number   scrollPageJsunit_static_0001
@@ -113,6 +114,7 @@ it('scrollPageJsunit_static_0001', Level.LEVEL0, async (done: () => void): Promi
     
     
 
+
 /*
      * @tc.number   scrollPageJsunit_static_0002
      * @tc.name     scrollPageJsunit_static_0002
@@ -136,6 +138,8 @@ it('scrollPageJsunit_static_0002', Level.LEVEL0, async (done: () => void): Promi
       let ScrollBarItem: RectValue = CommonFunc.getComponentRect('gridPage');
       let scrollTextItem: RectValue = CommonFunc.getComponentRect('scrollPage_text0');
       await CommonFunc.sleep(1000);
+  console.info('[scrollPageJsunit_0020]ScrollBarItem.top = ' + ScrollBarItem.top);
+  console.info('[scrollPageJsunit_0020] scrollTextItem.top = ' + scrollTextItem.top);
       expect(Math.abs(Math.round(ScrollBarItem.top) - Math.round(scrollTextItem.top)) <= 1).assertTrue();
 
       console.info('[scrollPageJsunit_0020] END');

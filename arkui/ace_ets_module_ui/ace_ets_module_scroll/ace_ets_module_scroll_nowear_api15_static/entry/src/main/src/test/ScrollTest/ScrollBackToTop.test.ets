@@ -33,11 +33,8 @@ export default function ScrollBackToTopTest() {
         console.info("get ScrollBackToTopTest state pages:" + JSON.stringify(pages));
         if (pages == null || !("ScrollSwipe" == pages.name)) {
           console.info("get ScrollBackToTopTest pages.name:" + JSON.stringify(pages.name));
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ScrollBackToTopTest page error:" + err);
@@ -50,7 +47,7 @@ export default function ScrollBackToTopTest() {
      * @tc.number   ScrollTest1_static_0100
      * @tc.name     ScrollTest1_static_0100
      * @tc.desc     ScrollTest1_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    0
      */
 it('ScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollTest_0100 START');
@@ -65,19 +62,19 @@ it('ScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info("ScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      
+      // create driver
       let driverTop =  Driver.create();
       let topButton = await driverTop.findComponent(ON.id('Top'));
       let driverSwitch =  Driver.create();
       let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
-      await sleep(1000);  
+      await sleep(1000);  //wait for driver to be ready
       await driverScroll.swipe(
         Math.round(left + width * 0.2) as int,
         Math.round(bottom - height / 4) as int,
         Math.round(left + width * 0.2) as int,
         Math.round(bottom - height / 2) as int
       );
-      
+      //waiting for scroll to complete
       await sleep(2000);
       await (topButton?.click() as Promise<void>);
       await sleep(1500)
@@ -111,7 +108,7 @@ it('ScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       await (switchButton?.click() as Promise<void>);
       await sleep(500)
       await (topButton?.click() as Promise<void>);
-      await sleep(1000); 
+      await sleep(1000); //waiting for backToTop
 
       let strJson = inspector.getInspectorByKey('Scroll_1');
       let strJson1 = inspector.getInspectorByKey('Scroll_2');
@@ -124,16 +121,17 @@ it('ScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info("getInspectorByKey result for ScrollBackToTop: " + strJson3);
       let obj3 = JSON.parseJsonElement(strJson3);
       let obj4 = JSON.parseJsonElement(strJson4);
-      
+      // output console info
       console.info("[ScrollTest_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[ScrollTest_static_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ScrollTest_static_0100] component obj3 is: " + JSON.stringify(obj3));
       console.info("[ScrollTest_static_0100] component obj4 is: " + JSON.stringify(obj4));
-      
+      // assertEqual backToTop event
       expect(obj.getElement("$attrs").getString("content")).assertEqual('onWillScroll');
       expect(obj3.getElement("$attrs").getString("content")).assertEqual('onDidScrollBackToTop');
       expect(obj4.getElement("$attrs").getString("content")).assertEqual('DidAbnormal');
       console.info('[ScrollTest_static_0100] END');
+      done()
     })
   })
 }

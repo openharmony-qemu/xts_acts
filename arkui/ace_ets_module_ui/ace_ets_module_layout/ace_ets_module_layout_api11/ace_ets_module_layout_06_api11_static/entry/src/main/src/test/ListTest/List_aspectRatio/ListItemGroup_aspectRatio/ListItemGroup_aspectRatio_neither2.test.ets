@@ -61,7 +61,7 @@ export default function ListItemGroup_aspectRatio_neither2() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListItemGroup_aspectRatio_neither2 state pages:" + JSON.stringify(pages));
         if (!("ListItemGroup_aspectRatio_neither2" == pages.name)) {
@@ -77,7 +77,7 @@ export default function ListItemGroup_aspectRatio_neither2() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("ListItemGroup_aspectRatio_neither2 after each called");
     });
 
@@ -85,6 +85,7 @@ export default function ListItemGroup_aspectRatio_neither2() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0100
@@ -114,6 +115,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0100', Level.LEVEL0, async
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0200
      * @tc.name     SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0200
@@ -142,6 +144,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0200', Level.LEVEL0, async
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0300
      * @tc.name     SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0300
@@ -169,6 +172,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0300', Level.LEVEL0, async
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_neither2_static_0400

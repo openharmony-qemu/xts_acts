@@ -49,7 +49,6 @@ export default function ListItem_aspectRatio_all2() {
   describe('ListItem_aspectRatio_all2', () => {
     beforeAll(() => {
       console.info("ListItem_aspectRatio_all2 beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -86,6 +85,7 @@ export default function ListItem_aspectRatio_all2() {
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItem_aspectRatio_all2_static_0100
      * @tc.name     SUB_ACE_ListItem_aspectRatio_all2_static_0100
@@ -113,6 +113,7 @@ it('SUB_ACE_ListItem_aspectRatio_all2_static_0100', Level.LEVEL0, async (done: (
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_aspectRatio_all2_static_0200
@@ -143,6 +144,7 @@ it('SUB_ACE_ListItem_aspectRatio_all2_static_0200', Level.LEVEL0, async (done: (
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItem_aspectRatio_all2_static_0300
      * @tc.name     SUB_ACE_ListItem_aspectRatio_all2_static_0300
@@ -170,6 +172,7 @@ it('SUB_ACE_ListItem_aspectRatio_all2_static_0300', Level.LEVEL0, async (done: (
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItem_aspectRatio_all2_static_0400

@@ -1,4 +1,4 @@
-
+// import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { BusinessError } from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager'
 import window from '@ohos.window';
@@ -10,15 +10,15 @@ export struct StatusClickComponent {
   public isLandScape: boolean = false;
 
   private changeOrientation(isLandscape: boolean) {
-    
-    
-    
-    
+    // let context = getContext(this) as common.UIAbilityContext;
+    // window.getLastWindow(context).then((lastWindow) => {
+    //   lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    // });
   }
   build() {
     Column() {
       Button('Top').onClick((e:ClickEvent) => {
-        
+        // 发布公共事件
         try {
           commonEventManager.publish('usual.event.CLICK_STATUSBAR', (err: BusinessError | null) => {
             console.log('Publish statusBar click');

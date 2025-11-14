@@ -26,116 +26,116 @@ export class WaterFlowDataSource implements IDataSource<number> {
     }
   }
 
-  
-  public getData(index: int): number {
-    return this.dataArray[index.toInt()]
+  // 获取索引对应的数据
+  public getData(index: Int): number {
+    return this.dataArray[index as int]
   }
 
-  
+  // 通知控制器数据重新加载
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded()
     })
   }
 
-  
-  notifyDataAdd(index: int): void {
+  // 通知控制器数据增加
+  notifyDataAdd(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index)
     })
   }
 
-  
-  notifyDataChange(index: int): void {
+  // 通知控制器数据变化
+  notifyDataChange(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index)
     })
   }
 
-  
-  notifyDataDelete(index: int): void {
+  // 通知控制器数据删除
+  notifyDataDelete(index: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index)
     })
   }
 
-  
-  notifyDataMove(from: int, to: int): void {
+  // 通知控制器数据位置变化
+  notifyDataMove(from: Int, to: Int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to)
     })
   }
 
-  
+  //通知控制器数据批量修改
   notifyDatasetChange(operations: DataOperation[]): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange(operations);
     })
   }
 
-  
-  public totalCount(): int {
+  // 获取数据总数
+  public totalCount(): Int {
     return this.dataArray.length
   }
 
-  
+  // 注册改变数据的控制器
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener)
     }
   }
 
-  
+  // 注销改变数据的控制器
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt()
+    const pos = this.listeners.indexOf(listener)
     if (pos >= 0) {
       this.listeners.splice(pos, 1)
     }
   }
 
-  
+  // 增加数据
   public add1stItem(): void {
     this.dataArray.splice(0, 0, this.dataArray.length)
     this.notifyDataAdd(0)
   }
 
-  
+  // 在数据尾部增加一个元素
   public addLastItem(): void {
     this.dataArray.splice(this.dataArray.length, 0, this.dataArray.length)
     this.notifyDataAdd(this.dataArray.length - 1)
   }
 
-  
-  public addItem(index: int): void {
+  // 在指定索引位置增加一个元素
+  public addItem(index: Int): void {
     this.dataArray.splice(index, 0, this.dataArray.length)
     this.notifyDataAdd(index)
   }
 
-  
+  // 删除第一个元素
   public delete1stItem(): void {
     this.dataArray.splice(0, 1)
     this.notifyDataDelete(0)
   }
 
-  
+  // 删除第二个元素
   public delete2ndItem(): void {
     this.dataArray.splice(1, 1)
     this.notifyDataDelete(1)
   }
 
-  
+  // 删除最后一个元素
   public deleteLastItem(): void {
     this.dataArray.splice(-1, 1)
     this.notifyDataDelete(this.dataArray.length)
   }
 
-  
-  public deleteItem(index: int): void {
+  // 在指定索引位置删除一个元素
+  public deleteItem(index: Int): void {
     this.dataArray.splice(index, 1)
     this.notifyDataDelete(index)
   }
 
-  
+  // 重新加载数据
   public reload(): void {
     this.dataArray.splice(1, 1)
     this.dataArray.splice(3, 2)

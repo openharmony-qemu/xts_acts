@@ -41,14 +41,13 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollPage {
-  @State numberData: String[] = ['0', '1'];
+  @State Number1: string[] = ['0', '1'];
   scroller: Scroller = new Scroller();
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
-        
-        ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (day: string) => {
           GridItem() {
             Text(day)
               .fontSize(16)
@@ -59,12 +58,9 @@ struct scrollPage {
               .key('scrollPage_text' + day)
           }
         }, (day: string) => day)
-        
       }
       .key('gridPage')
       .columnsTemplate('1fr')
-      
-      
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
       .scrollBar(BarState.On)

@@ -39,7 +39,6 @@ export default function List_ListSize() {
   describe('List_ListSizeTest', () => {
     beforeAll(() => {
       console.log("List_ListSizeTest beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +73,7 @@ export default function List_ListSize() {
     
     
     
+
 
 /*
      * @tc.number   testListListSizeMeet_static

@@ -41,18 +41,18 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollTo {
-  @State numberData: String[] = ['0', '1', '2', '3', '4'];
+  @State Number1: string[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
-                .backgroundColor(0xF9CF93)
+                // .backgroundColor(0xF9CF93)
                 .width('100%')
                 .height(80)
                 .textAlign(TextAlign.Center)
@@ -75,14 +75,14 @@ struct scrollTo {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 }
       })
       .width('90%')
-      .backgroundColor(0xFAEEE0)
+      // .backgroundColor(0xFAEEE0)
       .height(80)
 
       Button('scrollTo+90')
         .height('5%')
         .id('scrollTo1')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset()!.yOffset;
+          const yOffset: number = this.scroller.currentOffset()?.yOffset!;
           this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + 90 })
         })
 
@@ -91,7 +91,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo2')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset()!.yOffset;
+          const yOffset: number = this.scroller.currentOffset()?.yOffset!;
           this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset - 100 })
         })
 
@@ -100,7 +100,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo3')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset()!.yOffset;
+          const yOffset: number = this.scroller.currentOffset()?.yOffset!;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 0 })
         })
 
@@ -123,7 +123,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo6')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset()!.yOffset;
+          const yOffset: number = this.scroller.currentOffset()?.yOffset!;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 270 })
         })
 
@@ -132,7 +132,7 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo7')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset()!.yOffset;
+          const yOffset: number = this.scroller.currentOffset()?.yOffset!;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa100%' })
         })
 
@@ -141,19 +141,17 @@ struct scrollTo {
         .height('5%')
         .id('scrollTo8')
         .onClick((e:ClickEvent) => {
-          const yOffset: number = this.scroller.currentOffset()!.yOffset;
+          const yOffset: number = this.scroller.currentOffset()?.yOffset!;
           this.scroller.scrollTo({ xOffset: 0, yOffset: 'aa' })
         })
 
-
-      
-      
-      
-      
-      
-      
-      
-
+      Button('scrollTo undefined')
+        .height('5%')
+        .id('scrollTo9')
+        .onClick((e:ClickEvent) => {
+          const yOffset: number = this.scroller.currentOffset()?.yOffset!;
+          this.scroller.scrollTo({ xOffset: 0, yOffset: 'undefined' })
+        })
 
     }.width('100%').margin({ top: 5 } as Margin)
   }

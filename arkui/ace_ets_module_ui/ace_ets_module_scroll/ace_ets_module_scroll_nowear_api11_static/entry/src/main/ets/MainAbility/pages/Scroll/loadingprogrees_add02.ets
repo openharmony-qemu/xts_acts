@@ -12,13 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Color, Text,LoadingProgress, Margin} from '@ohos.arkui.component'
+import { Entry, Column, Component, Color, Text,LoadingProgress, Margin, ColumnOptions } from '@ohos.arkui.component'
 
 @Entry
 @Component
 struct LoadingProgressExampleAdd {
   build() {
-    Column() {
+    Column({ space: 5 } as ColumnOptions) {
       Text('Orbital LoadingProgress ').fontSize(9).fontColor(0xCCCCCC).width('90%')
       LoadingProgress().key('loadingAdd')
         .color(Color.Blue)

@@ -61,7 +61,7 @@ export default function ListItemGroup_aspectRatio_width() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListItemGroup_aspectRatio_width state pages:" + JSON.stringify(pages));
         if (!("ListItemGroup_aspectRatio_width" == pages.name)) {
@@ -77,7 +77,7 @@ export default function ListItemGroup_aspectRatio_width() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("ListItemGroup_aspectRatio_width after each called");
     });
 
@@ -85,6 +85,7 @@ export default function ListItemGroup_aspectRatio_width() {
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_width_static_0100
@@ -111,6 +112,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_width_static_0100', Level.LEVEL0, async (d
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_width_static_0200
      * @tc.name     SUB_ACE_ListItemGroup_aspectRatio_width_static_0200
@@ -136,6 +138,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_width_static_0200', Level.LEVEL0, async (d
     
     
 
+
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_width_static_0300
      * @tc.name     SUB_ACE_ListItemGroup_aspectRatio_width_static_0300
@@ -160,6 +163,7 @@ it('SUB_ACE_ListItemGroup_aspectRatio_width_static_0300', Level.LEVEL0, async (d
     
     
     
+
 
 /*
      * @tc.number   SUB_ACE_ListItemGroup_aspectRatio_width_static_0400

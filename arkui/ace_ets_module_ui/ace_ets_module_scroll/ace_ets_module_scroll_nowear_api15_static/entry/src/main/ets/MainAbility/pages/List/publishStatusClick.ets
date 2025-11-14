@@ -2,7 +2,7 @@ import { Entry, Component, Column, Button, ClickEvent } from '@ohos.arkui.compon
 import { State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from "@ohos.base";
 import commonEventManager from '@ohos.commonEventManager'
-
+// import { window } from '@kit.ArkUI';
 import common from '@ohos.app.ability.common';
 
 @Component
@@ -10,10 +10,10 @@ export struct StatusClickComponent {
   public isLandScape: boolean = false;
 
   private changeOrientation(isLandscape: boolean) {
-    
-    
-    
-    
+    // let context = getContext(this) as common.UIAbilityContext;
+    // window.getLastWindow(context).then((lastWindow) => {
+    //   lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    // });
   }
 
   build() {

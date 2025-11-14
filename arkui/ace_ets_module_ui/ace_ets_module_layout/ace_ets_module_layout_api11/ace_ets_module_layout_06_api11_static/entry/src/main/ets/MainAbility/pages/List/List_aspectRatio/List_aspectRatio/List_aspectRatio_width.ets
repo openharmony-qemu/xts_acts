@@ -42,15 +42,15 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Component
 struct List_aspectRatio_width {
   @State aspectRatio1: number = 1;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  messageManager: MessageManager<string> = new MessageManager<string>();
 
   onPageShow() {
     console.info('Grid_RowCol_ItemContentSize onPageShow');
-      AppStorage.setOrCreate<MessageManager<number>>("messageManager", this.messageManager );
-    let callback: Callback<number> = (message: Message<number>) => {
+      AppStorage.setOrCreate<MessageManager<string>>("messageManager", this.messageManager );
+    let callback: Callback<string> = (message: Message<string>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'aspectRatio1') {
-        this.aspectRatio1 = message.value;
+        this.aspectRatio1 = Number.parseInt(message.value);
       }
     };
     this.messageManager.registerCallback(callback);

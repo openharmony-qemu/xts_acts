@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,6 @@ export default function list_ListFrictionTest() {
   describe('list_ListFrictionTest',  ()=> {
     beforeAll(() => {
       console.info("list_ListFrictionTest beforeAll start");
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -82,6 +81,7 @@ export default function list_ListFrictionTest() {
     
     
 
+
 /*
      * @tc.number   testListFriction_static_001
      * @tc.name     testListFriction_static_001
@@ -94,10 +94,10 @@ it('testListFriction_static_001', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(2000);
       let listContainerStrJson = inspector.getInspectorByKey('List_ListFriction');
       expect(JSON.parseJsonElement(listContainerStrJson).getString('$type')).assertEqual('List');
-      console.info('[testListFriction] listContainerStrJson friction: ' + JSON.parseJsonElement(listContainerStrJson).getElement('$attrs').getString('friction'));
+      console.info('[testListFriction] listContainerStrJson friction: ' + JSON.parseJsonElement(listContainerStrJson).getElement('$attrs').getDouble('friction'));
       let listDefJson = inspector.getInspectorByKey('list_friction_default');
-      console.info('[testListFriction] listDefJson friction: ' + JSON.parseJsonElement(listDefJson).getElement('$attrs').getString('friction'));
-      expect(JSON.parseJsonElement(listContainerStrJson).getElement('$attrs').getString('friction')).assertEqual(JSON.parseJsonElement(listDefJson).getElement('$attrs').getString('friction'));
+      console.info('[testListFriction] listDefJson friction: ' + JSON.parseJsonElement(listDefJson).getElement('$attrs').getDouble('friction'));
+      expect(JSON.parseJsonElement(listContainerStrJson).getElement('$attrs').getDouble('friction')).assertEqual(JSON.parseJsonElement(listDefJson).getElement('$attrs').getDouble('friction'));
       console.info('[testListFriction] END');
       done();
     });
@@ -105,6 +105,7 @@ it('testListFriction_static_001', Level.LEVEL0, async (done: () => void): Promis
     
     
     
+
 
 /*
      * @tc.number   testListFriction_static_002
@@ -118,7 +119,7 @@ it('testListFriction_static_002', Level.LEVEL0, async (done: () => void): Promis
       await CommonFunc.sleep(2000);
       let listContainerStrJson = inspector.getInspectorByKey('List_ListFriction');
       expect(JSON.parseJsonElement(listContainerStrJson).getString('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(listContainerStrJson).getElement('$attrs').getString('friction')).assertEqual(10);
+      expect(JSON.parseJsonElement(listContainerStrJson).getElement('$attrs').getDouble('friction')).assertEqual(10);
       console.info('[testListFriction] END');
       done();
     });

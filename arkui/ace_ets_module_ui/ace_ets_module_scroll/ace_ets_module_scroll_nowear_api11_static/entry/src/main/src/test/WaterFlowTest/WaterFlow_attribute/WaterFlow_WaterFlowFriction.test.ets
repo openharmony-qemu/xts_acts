@@ -20,7 +20,7 @@ import { UtilsTest, startAbility } from '../../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
+import { MessageManager, Message } from '../../../../ets/MainAbility/common/MessageManager';
 
 export default function waterFlow_WaterFlowFrictionTest() {
   describe('waterFlow_WaterFlowFrictionTest', () => {
@@ -43,10 +43,8 @@ export default function waterFlow_WaterFlowFrictionTest() {
         console.info("get WaterFlowFrictionPage state pages:" + JSON.stringify(pages));
         if (!("WaterFlowFrictionPage" == pages.name)) {
           console.info("get WaterFlow_WaterFlow pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push WaterFlowFrictionPage page error:" + err);
@@ -62,21 +60,25 @@ export default function waterFlow_WaterFlowFrictionTest() {
      * @tc.number   testWaterFlowFriction_static_0100
      * @tc.name     testWaterFlowFriction_static_0100
      * @tc.desc     testWaterFlowFriction_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('testWaterFlowFriction_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('testWaterFlowFriction_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('[testWaterFlowFriction_static_0100] START');
-      AppStorage.get<MessageManager>('messageManager')?.notify({name:'friction', value:-1})
+      const messageManager = AppStorage.get<MessageManager<number>>('messageManager')
+      if (messageManager !== undefined) {
+        messageManager?.notify({name:'friction', value:-1} as Message<number>)
+
+      }
       await CommonFunc.sleep(2000);
       let scrollContainerStrJson = inspector.getInspectorByKey('WaterFlow_WaterFlowFriction');
       let scrollContainerObj = JSON.parseJsonElement(scrollContainerStrJson);
       expect(scrollContainerObj.getString('$type')).assertEqual('WaterFlow');
-      console.info('[testWaterFlowFriction_static_0100] scrollContainerObj friction: ' + scrollContainerObj.getElement('$attrs').getString('friction'));
+      console.info('[testWaterFlowFriction_static_0100] scrollContainerObj friction: ' + scrollContainerObj.getElement('$attrs').getDouble('friction'));
 
       let flowDefJson = inspector.getInspectorByKey('waterFlow_friction_default');
       let flowDefObj = JSON.parseJsonElement(flowDefJson);
-      console.info('[testWaterFlowFriction_static_0100] flowDefObj friction: ' + flowDefObj.getElement('$attrs').getString('friction'));
-      expect(scrollContainerObj.getElement('$attrs').getString('friction')).assertEqual(flowDefObj.getElement('$attrs').getString('friction'));
+      console.info('[testWaterFlowFriction_static_0100] flowDefObj friction: ' + flowDefObj.getElement('$attrs').getDouble('friction'));
+      expect(scrollContainerObj.getElement('$attrs').getDouble('friction')).assertEqual(flowDefObj.getElement('$attrs').getDouble('friction'));
       console.info('[testWaterFlowFriction_static_0100] END');
       done();
     });
@@ -86,16 +88,16 @@ it('testWaterFlowFriction_static_0100', Level.LEVEL0, async (done: () => void): 
      * @tc.number   testWaterFlowFriction_static_0200
      * @tc.name     testWaterFlowFriction_static_0200
      * @tc.desc     testWaterFlowFriction_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level    Level.LEVEL1
      */
-it('testWaterFlowFriction_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+it('testWaterFlowFriction_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> =>{
       console.info('[testWaterFlowFriction_static_0200] START');
-      AppStorage.get<MessageManager>('messageManager')?.notify({name:'friction', value:10})
+      AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'friction', value:10})
       await CommonFunc.sleep(2000);
       let scrollContainerStrJson = inspector.getInspectorByKey('WaterFlow_WaterFlowFriction');
       let scrollContainerObj = JSON.parseJsonElement(scrollContainerStrJson);
       expect(scrollContainerObj.getString('$type')).assertEqual('WaterFlow');
-      expect(scrollContainerObj.getElement('$attrs').getString('friction')).assertEqual(10);
+      expect(scrollContainerObj.getElement('$attrs').getDouble('friction')).assertEqual(10);
       console.info('[testWaterFlowFriction_static_0200] END');
       done();
     });

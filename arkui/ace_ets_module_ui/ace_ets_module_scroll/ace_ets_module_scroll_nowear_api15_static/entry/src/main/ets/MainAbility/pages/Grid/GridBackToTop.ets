@@ -30,7 +30,7 @@ struct GridExampleA {
   @State isBackToTop: boolean|undefined|null = false
   @State scrollCount: number = 0;
   @State scrollOffset: number = 0;
-  private currentIndex: number = 0;
+  private currentIndex: int = 0;
   build() {
     Column() {
       StatusClickComponent()
@@ -65,7 +65,7 @@ struct GridExampleA {
           GridItem() {
             Text('' + item)
               .width('100%').height('20%').fontSize(16)
-              .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+              .textAlign(TextAlign.Center).borderRadius(10)//.backgroundColor(0xFFFFFF)
           }
           .onAppear(() => {
             this.currentIndex = index;
@@ -79,11 +79,9 @@ struct GridExampleA {
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
 
-      .onWillScroll((scrollOffset: number, scrollState:
-        ScrollState, scrollSource: ScrollSource): undefined | ScrollResult => {
+      .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
           this.message='onWillScroll'
           this.message3 = 'NotBackToTop';
-        return undefined;
       })
       .onDidScroll((scrollOffset: number, scrollState: ScrollState): void => {
         this.message1='onDidScroll'
@@ -91,6 +89,7 @@ struct GridExampleA {
       .onDidScroll((offset: number, scrollState: ScrollState): void => {
         this.scrollOffset = offset;
           if (this.scrollCount === 3) {
+            console.log('DidAbnormal---------')
             this.message4 = 'DidAbnormal';
           }
       })
@@ -102,7 +101,7 @@ struct GridExampleA {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    // .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

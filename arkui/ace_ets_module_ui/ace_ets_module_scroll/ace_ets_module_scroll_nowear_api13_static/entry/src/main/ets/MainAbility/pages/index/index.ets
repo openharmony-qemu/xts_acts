@@ -26,7 +26,7 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -35,13 +35,10 @@ struct Index {
     Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(50)
-      
       Button(" ") {
         Text('next page')
           .fontSize(25)
-        
       }
-      
       .margin({
         top: 20
       } as Margin)

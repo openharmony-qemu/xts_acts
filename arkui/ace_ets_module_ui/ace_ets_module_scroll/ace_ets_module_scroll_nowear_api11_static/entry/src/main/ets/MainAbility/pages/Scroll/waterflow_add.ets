@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Color, Text, LoadingProgress, Alignment, Margin,
-  WaterFlow, ForEach, FlowItem, Image, Scroller,Builder} from '@ohos.arkui.component'
+import { Entry, Column, Component, Color, Text, LoadingProgress, Alignment, Margin,FlexDirection,
+  WaterFlow, ForEach, FlowItem, Image, Scroller,Builder, ColumnOptions,ImageFit, NestedScrollMode } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -23,7 +23,7 @@ struct WaterflowDemo {
   @State maxSize: number = 100
   @State fontSize: number = 24
 
-  @State colors: Array<number> = new Array<number>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F)
+  @State colors: Array<int> = new Array<int>(0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F)
   scroller: Scroller = new Scroller()
   @State  datsSource:Array<number>= new Array<number>(12,1,0,2,3,4,5,6,7,8,9,12,1,0,2,3,4,5,6,7,8,9)
 
@@ -44,48 +44,50 @@ struct WaterflowDemo {
   }
 
   build() {
-    Column() {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    Column({ space: 2 } as ColumnOptions) {
+      WaterFlow({ footer: () => {
+        this.itemFoot()
+      }, scroller: this.scroller }) {
+        ForEach(this.datsSource, (item: number) => {
+          FlowItem() {
+            Column() {
+              Text("N" + item).fontSize(12).height('16')
+              Image('res/waterFlowTest(' + item % 5 + ').jpg')
+                .objectFit(ImageFit.Fill)
+                .width('100%')
+                .layoutWeight(1)
+            }
+          }
+          .width('100%')
+          .height(20)
+          .backgroundColor(this.colors[(item as int) % 5])
+        }, (item: number) => String(item))
+      }
+      .columnsTemplate("1fr 1fr 1fr 1fr")
+      .key('waterflowAdd')
+      .itemConstraintSize({
+        minWidth: 0,
+        maxWidth: '100%',
+        minHeight: 0,
+        maxHeight: '100%'
+      })
+      .columnsGap(10)
+      .rowsGap(5)
+      .onReachStart(() => {
+        console.info("onReachStart")
+      })
+      .onReachEnd(() => {
+        console.info("onReachEnd")
+      })
+      .enableScrollInteraction(true)
+      .nestedScroll({
+        scrollForward:NestedScrollMode.PARENT_FIRST,
+        scrollBackward:NestedScrollMode.SELF_FIRST
+      })
+      .backgroundColor(0xFAEEE0)
+      .width('100%')
+      .height('80%')
+      .layoutDirection(FlexDirection.Column)
     }
   }
 }

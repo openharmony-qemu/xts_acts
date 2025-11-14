@@ -39,7 +39,6 @@ export default function listItem_PadMar() {
   describe('ListItem_PadMarTest', () => {
     beforeAll(() => {
       console.log("ListItem_PadMarTest beforeAll start111")
-            
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -73,6 +72,7 @@ export default function listItem_PadMar() {
     
     
     
+
 
 /*
      * @tc.number   testListItemPadMar_static

@@ -21,24 +21,24 @@ import { WaterFlowDataSource } from './WaterFlowDataSource';
 @Entry
 @Component
 struct WaterFlowFrictionPage {
-  @State minSize: number = 50;
-  @State maxSize: number = 100;
-  @State fontSize: number = 24;
+  @State minSize: int = 50;
+  @State maxSize: int = 100;
+  @State fontSize: int = 24;
   @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[];
   scroller: Scroller = new Scroller();
   datasource: WaterFlowDataSource = new WaterFlowDataSource();
   private itemWidthArray: number[] = new Array<number>();
   private itemHeightArray: number[] = new Array<number>();
   @State friction: number = 1000;
-  messageManager: MessageManager = new MessageManager();
+  messageManager: MessageManager<number> = new MessageManager<number>();
 
   onPageShow() {
     console.info('WaterFlow_lanes page show called');
-    AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager);
-    let callback: Callback = (message: Message) => {
+    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
+    let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'friction') {
-        
+        this.friction = message.value as number;
       }
     };
     this.messageManager.registerCallback(callback);
@@ -84,15 +84,15 @@ struct WaterFlowFrictionPage {
           }
           .width('100%')
           .height('5%')
-          .height(this.itemHeightArray[item.toInt()])
-          .backgroundColor(this.colors[item.toInt() % 5])
+          .height(this.itemHeightArray[item as int])
+          .backgroundColor(this.colors[(item as int) % 5])
         }, (item: number) => `${item}`)
       }
       .width('90%')
       .height('10%')
       .key('waterFlow_friction_default')
 
-      WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
+      WaterFlow({ footer: () => { this.itemFoot() }, scroller: this.scroller }) {
         LazyForEach(this.datasource, (item: number) => {
           FlowItem() {
             Column() {
@@ -104,8 +104,8 @@ struct WaterFlowFrictionPage {
             }
           }
           .width('100%')
-          .height(this.itemHeightArray[item.toInt()])
-          .backgroundColor(this.colors[item.toInt() % 5])
+          .height(this.itemHeightArray[item as int])
+          .backgroundColor(this.colors[(item as int) % 5])
         }, (item: number) => `${item}`)
       }
       .columnsTemplate("1fr 1fr 1fr 1fr")
