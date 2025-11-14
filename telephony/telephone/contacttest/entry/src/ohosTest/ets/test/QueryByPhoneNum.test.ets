@@ -1062,7 +1062,7 @@ export default function QueryByEmailPhoneNumTest() {
       let context: Context = AppStorage.get('context') as Context;
       try {
         sleep(500);
-        contact.queryContactsByPhoneNumber(context, '13811111111', holder, attr, (err: BusinessError, data: contact.Contact[]) => {
+        contact.queryContactsByPhoneNumber(context, '13811114321', holder, attr, (err: BusinessError, data: contact.Contact[]) => {
           if (err) {
             console.info(`${caseName} queryContacts:err->${JSON.stringify(err)}`);
             ExpectTrue(err.code === 401);

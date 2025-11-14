@@ -2427,7 +2427,7 @@ export default function windowPropertiesTest2() {
      * @tc.type   : Function
      * @tc.level  : Level 3
      */
-    it('testgetColorSpace_default_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testgetColorSpace_default_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testgetColorSpace_default_promise';
       let windowClass = windowStage.getMainWindowSync();
       let promise = windowClass.setColorSpace(window.ColorSpace.DEFAULT);
@@ -2457,7 +2457,7 @@ export default function windowPropertiesTest2() {
      * @tc.type   : Function
      * @tc.level  : Level 3
      */
-    it('testgetColorSpace_default_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testgetColorSpace_default_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testgetColorSpace_default_Callback';
       let windowClass = windowStage.getMainWindowSync();
       let promise = windowClass.setColorSpace(window.ColorSpace.DEFAULT);

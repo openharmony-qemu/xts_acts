@@ -81,9 +81,9 @@ export namespace anyns {
   export let sumChar: char;
   class ACHAR {
       static val1: char = c'C';
-      static val2: char = 2;
+      static val2: char = Int.toChar(2);
       public static add(): char {
-          sumChar = (ACHAR.val1 + ACHAR.val2).toChar();
+          sumChar = (ACHAR.val1.toInt() + ACHAR.val2.toInt()).toChar();
           return sumChar;
       }
   }

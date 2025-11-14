@@ -16,6 +16,19 @@
 import { describe, expect, it, TestType, Level, Size } from '@ohos/hypium'
 import nativeimage from 'libnativeimage.so'
 import deviceInfo from '@ohos.deviceInfo'
+import { taskpool } from '@kit.ArkTS'
+
+
+// 定义需要子线程执行的独立函数
+@Concurrent
+async function oHNativeWindowDropBufferModeSetTrueNormal(): Promise<number> {
+  return nativeimage.oHNativeWindowDropBufferModeSetTrueNormal();
+}
+
+@Concurrent
+async function oHNativeWindowDropBufferModeSetTrueNormal2(): Promise<number> {
+  return nativeimage.oHNativeWindowDropBufferModeSetTrueNormal2();
+}
 
 export default function nativeImageTest() {
     describe('NativeImageTest', () => {
@@ -928,6 +941,7 @@ export default function nativeImageTest() {
         expect(result).assertEqual(0);
         done();
       });
+
     /**
      * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2400
      * @tc.name       : testConsumerSurfaceSetDefaultUsageSizeNormal
@@ -942,6 +956,7 @@ export default function nativeImageTest() {
         expect(result).assertEqual(0);
         done();
       });
+
     /**
      * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2500
      * @tc.name       : TestNativeWindowDropBufferModeSetTrueNormal
@@ -952,24 +967,38 @@ export default function nativeImageTest() {
      */
     it('testNativeWindowDropBufferModeSetTrueNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativeimage.oHNativeWindowDropBufferModeSetTrueNormal();
-        expect(result).assertEqual(0);
-        done();
-      });
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2600
-       * @tc.name       : testNativeWindowDropBufferModeSetTrueNormal2
-       * @tc.desc       : test testNativeWindowDropBufferModeSetTrueNormal2
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
-      it('testNativeWindowDropBufferModeSetTrueNormal2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeWindowDropBufferModeSetTrueNormal2();
+        try {
+          // 通过 taskpool 调度到子线程执行
+          const result = await taskpool.execute(oHNativeWindowDropBufferModeSetTrueNormal);
           expect(result).assertEqual(0);
-          done();
-        });
+        } catch (err) {
+          console.error(`Task execution failed: ${err}`);
+        } finally {
+          done();  // 确保完成回调
+        }
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2600
+     * @tc.name       : testNativeWindowDropBufferModeSetTrueNormal2
+     * @tc.desc       : test testNativeWindowDropBufferModeSetTrueNormal2
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeWindowDropBufferModeSetTrueNormal2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          // 通过 taskpool 调度到子线程执行
+          const result = await taskpool.execute(oHNativeWindowDropBufferModeSetTrueNormal2);
+          expect(result).assertEqual(0);
+        } catch (err) {
+          console.error(`Task execution failed: ${err}`);
+        } finally {
+          done();  // 确保完成回调
+        }
+      });
+
     /**
      * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2700
      * @tc.name       : testNativeWindowDropBufferModeSetAbNormal
@@ -984,7 +1013,6 @@ export default function nativeImageTest() {
         expect(result).assertEqual(0);
         done();
       });
-
 
     /**
      * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_2800
@@ -1016,333 +1044,373 @@ export default function nativeImageTest() {
         done();
     });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3000
-       * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageNormal
-       * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
-       */
-      it('testNativeImageCreateWithSingleBufferModeUsingTextImageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageNormal();
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3000
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageNormal
+     * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeImageCreateWithSingleBufferModeUsingTextImageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3001
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageNull
+     * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageCreateWithSingleBufferModeUsingTextImageNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageNull();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3002
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageAbnormal
+     * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageCreateWithSingleBufferModeUsingTextImageAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: Array<number> = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageAbnormal();
+        expect(result[0]).assertEqual(0);
+        expect(result[1]).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3003
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageMultipleCalls
+     * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageCreateWithSingleBufferModeUsingTextImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3100
+     * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageNormal
+     * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: Array<number> = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageNormal();
+        expect(result[0]).assertEqual(0);
+        expect(result[1]).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3101
+     * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal
+     * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: Array<number> = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal();
+        expect(result[0]).assertEqual(0);
+        expect(result[1]).assertEqual(0);
+        expect(result[2]).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3102
+     * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageMultipleCalls
+     * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3200
+     * @tc.name       : testNativeImageReleaseTextImageNormal
+     * @tc.desc       : test oH_NativeImage_ReleaseTextImage
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeImageReleaseTextImageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageReleaseTextImageNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3201
+     * @tc.name       : testNativeImageReleaseTextImageNull
+     * @tc.desc       : test oH_NativeImage_ReleaseTextImage
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageReleaseTextImageNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageReleaseTextImageNull();
+        expect(result).assertEqual(-1);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3202
+     * @tc.name       : testNativeImageReleaseTextImageMultipleCalls
+     * @tc.desc       : test oH_NativeImage_ReleaseTextImage
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageReleaseTextImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageReleaseTextImageMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3203
+     * @tc.name       : testNativeImageReleaseTextImageDestroyImage
+     * @tc.desc       : test oH_NativeImage_ReleaseTextImage
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageReleaseTextImageDestroyImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageReleaseTextImageDestroyImage();
+        expect(result).assertEqual(40001000);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3300
+     * @tc.name       : testNativeImageGetColorSpaceNormal
+     * @tc.desc       : test oH_NativeImage_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeImageGetColorSpaceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageGetColorSpaceNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3301
+     * @tc.name       : testNativeImageGetColorSpaceNull
+     * @tc.desc       : test oH_NativeImage_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageGetColorSpaceNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageGetColorSpaceNull();
+        expect(result).assertEqual(-1);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3302
+     * @tc.name       : testNativeImageGetColorSpaceMultipleCalls
+     * @tc.desc       : test oH_NativeImage_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageGetColorSpaceMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageGetColorSpaceMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3303
+     * @tc.name       : testNativeImageGetColorSpaceDestoryImage
+     * @tc.desc       : test oH_NativeImage_GetColorSpace
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageGetColorSpaceDestoryImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageGetColorSpaceDestoryImage();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3400
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeTest1
+     * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNativeImageCreateWithSingleBufferModeTest1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        if (deviceTypeInfo == "default") {
+          console.log("This testcase does not support rk");
+          done();
+        } else {
+          let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeTest1();
           expect(result).assertEqual(0);
           done();
-        });
+        }
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3001
-       * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageNull
-       * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageCreateWithSingleBufferModeUsingTextImageNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageNull();
-          expect(result).assertEqual(0);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3401
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeTest2
+     * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNativeImageCreateWithSingleBufferModeTest2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeTest2();
+        expect(result).assertEqual(0);
+        done();
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3002
-       * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageAbnormal
-       * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageCreateWithSingleBufferModeUsingTextImageAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: Array<number> = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageAbnormal();
-          expect(result[0]).assertEqual(0);
-          expect(result[1]).assertEqual(0);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3402
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeTest3
+     * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNativeImageCreateWithSingleBufferModeTest3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeTest3();
+        expect(result).assertEqual(40001000);
+        done();
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3003
-       * @tc.name       : testNativeImageCreateWithSingleBufferModeUsingTextImageMultipleCalls
-       * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageCreateWithSingleBufferModeUsingTextImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeUsingTextImageMultipleCalls();
-          expect(result).assertEqual(0);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3500
+     * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeTest
+     * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testConsumerSurfaceCreateWithSingleBufferModeTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let result: number = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeTest();
+        expect(result).assertEqual(-1);
+        done();
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3100
-       * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageNormal
-       * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
-       */
-      it('testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-        async (done: Function) => {
-          let result: Array<number> = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageNormal();
-          expect(result[0]).assertEqual(0);
-          expect(result[1]).assertEqual(0);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3600
+     * @tc.name       : testNativeImageAcquireLatestNativeWindowBufferAbNormal
+     * @tc.desc       : test OH_NativeImage_AcquireLatestNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageAcquireLatestNativeWindowBufferAbNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageAcquireLatestNativeWindowBufferAbNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3101
-       * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal
-       * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: Array<number> = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal();
-          expect(result[0]).assertEqual(0);
-          expect(result[1]).assertEqual(0);
-          expect(result[2]).assertEqual(0);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3601
+     * @tc.name       : testNativeImageAcquireLatestNativeWindowBufferAbNormal01
+     * @tc.desc       : test OH_NativeImage_AcquireLatestNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeImageAcquireLatestNativeWindowBufferAbNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageAcquireLatestNativeWindowBufferAbNormal01();
+        expect(result).assertEqual(0);
+        done();
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3102
-       * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageMultipleCalls
-       * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageMultipleCalls();
-          expect(result).assertEqual(0);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3602
+     * @tc.name       : testNativeImageAcquireLatestNativeWindowBufferAbNormal02
+     * @tc.desc       : test OH_NativeImage_AcquireLatestNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageAcquireLatestNativeWindowBufferAbNormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageAcquireLatestNativeWindowBufferAbNormal02();
+        expect(result).assertEqual(0);
+        done();
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3200
-       * @tc.name       : testNativeImageReleaseTextImageNormal
-       * @tc.desc       : test oH_NativeImage_ReleaseTextImage
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
-       */
-      it('testNativeImageReleaseTextImageNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageReleaseTextImageNormal();
-          expect(result).assertEqual(0);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3603
+     * @tc.name       : testNativeImageAcquireLatestNativeWindowBufferAbNormal03
+     * @tc.desc       : test OH_NativeImage_AcquireLatestNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeImageAcquireLatestNativeWindowBufferAbNormal03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageAcquireLatestNativeWindowBufferAbNormal03();
+        expect(result).assertEqual(0);
+        done();
+      });
 
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3201
-       * @tc.name       : testNativeImageReleaseTextImageNull
-       * @tc.desc       : test oH_NativeImage_ReleaseTextImage
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageReleaseTextImageNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageReleaseTextImageNull();
-          expect(result).assertEqual(-1);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3202
-       * @tc.name       : testNativeImageReleaseTextImageMultipleCalls
-       * @tc.desc       : test oH_NativeImage_ReleaseTextImage
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageReleaseTextImageMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageReleaseTextImageMultipleCalls();
-          expect(result).assertEqual(0);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3203
-       * @tc.name       : testNativeImageReleaseTextImageDestroyImage
-       * @tc.desc       : test oH_NativeImage_ReleaseTextImage
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageReleaseTextImageDestroyImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageReleaseTextImageDestroyImage();
-          expect(result).assertEqual(40001000);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3300
-       * @tc.name       : testNativeImageGetColorSpaceNormal
-       * @tc.desc       : test oH_NativeImage_GetColorSpace
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 0
-       */
-      it('testNativeImageGetColorSpaceNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageGetColorSpaceNormal();
-          expect(result).assertEqual(0);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3301
-       * @tc.name       : testNativeImageGetColorSpaceNull
-       * @tc.desc       : test oH_NativeImage_GetColorSpace
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageGetColorSpaceNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageGetColorSpaceNull();
-          expect(result).assertEqual(-1);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3302
-       * @tc.name       : testNativeImageGetColorSpaceMultipleCalls
-       * @tc.desc       : test oH_NativeImage_GetColorSpace
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageGetColorSpaceMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageGetColorSpaceMultipleCalls();
-          expect(result).assertEqual(0);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3303
-       * @tc.name       : testNativeImageGetColorSpaceDestoryImage
-       * @tc.desc       : test oH_NativeImage_GetColorSpace
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 3
-       */
-      it('testNativeImageGetColorSpaceDestoryImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageGetColorSpaceDestoryImage();
-          expect(result).assertEqual(0);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3400
-       * @tc.name       : testNativeImageCreateWithSingleBufferModeTest1
-       * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 2
-       */
-      it('testNativeImageCreateWithSingleBufferModeTest1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-        async (done: Function) => {
-          if (deviceTypeInfo == "default") {
-            console.log("This testcase does not support rk");
-            done();
-          } else {
-            let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeTest1();
-            expect(result).assertEqual(0);
-            done();
-          }
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3401
-       * @tc.name       : testNativeImageCreateWithSingleBufferModeTest2
-       * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 2
-       */
-      it('testNativeImageCreateWithSingleBufferModeTest2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeTest2();
-          expect(result).assertEqual(0);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3402
-       * @tc.name       : testNativeImageCreateWithSingleBufferModeTest3
-       * @tc.desc       : test oH_NativeImage_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 2
-       */
-      it('testNativeImageCreateWithSingleBufferModeTest3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-        async (done: Function) => {
-          let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeTest3();
-          expect(result).assertEqual(40001000);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3500
-       * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeTest1
-       * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 2
-       */
-      it('testConsumerSurfaceCreateWithSingleBufferModeTest1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-        async (done: Function) => {
-          if (deviceTypeInfo == "default") {
-            console.log("This testcase does not support rk");
-            done();
-          } else {
-          let result: number = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeTest1();
-          expect(result).assertEqual(0);
-          done();
-          }
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3501
-       * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeTest2
-       * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 2
-       */
-      it('testConsumerSurfaceCreateWithSingleBufferModeTest2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-        async (done: Function) => {
-          let result: number = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeTest2();
-          expect(result).assertEqual(0);
-          done();
-        });
-
-      /**
-       * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3502
-       * @tc.name       : testConsumerSurfaceCreateWithSingleBufferModeTest3
-       * @tc.desc       : test oH_ConsumerSurface_CreateWithSingleBufferMode
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 2
-       */
-      it('testConsumerSurfaceCreateWithSingleBufferModeTest3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-        async (done: Function) => {
-          let result: number = nativeimage.oHConsumerSurfaceCreateWithSingleBufferModeTest3();
-          expect(result).assertEqual(-1);
-          done();
-        });
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3604
+     * @tc.name       : testNativeImageAcquireLatestNativeWindowBufferCall
+     * @tc.desc       : test OH_NativeImage_AcquireLatestNativeWindowBuffer
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeImageAcquireLatestNativeWindowBufferCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageAcquireLatestNativeWindowBufferCall();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }

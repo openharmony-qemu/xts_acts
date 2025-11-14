@@ -61,9 +61,13 @@ export default function usbCanIUseTest() {
     })
 
     /**
-     * @tc.number     : SUB_Driver_Ext_USBCanIUse_0100
-     * @tc.name       : testUsbCanIUse001
-     * @tc.desc       : OH_Usb_CanIUse Interface testing
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUsbCanIUse001
+     * @tc.number SUB_Driver_Ext_USBCanIUse_0100
+     * @tc.desc   OH_Usb_CanIUse Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUsbCanIUse001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let flag = canIUse("SystemCapability.Driver.USB.Extension");

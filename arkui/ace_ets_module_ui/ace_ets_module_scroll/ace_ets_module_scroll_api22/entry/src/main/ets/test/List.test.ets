@@ -16,14 +16,32 @@
 import ContentOffset from './ListTest/ContentOffset.test';
 import scrollSnapAnimationSpeedModifier from './ListTest/scrollSnapAnimationSpeedModifier.test'; 
 import scrollSnapAnimationSpeed from './ListTest/scrollSnapAnimationSpeed.test'; 
+import listScrollbarColor from './ListTest/listScrollbarColor.test'; 
+import scrollScrollbarColor from './ScrollTest/scrollScrollbarColor.test'; 
+import gridScrollbarColor from './GridTest/gridScrollbarColor.test'; 
+import scrollbarColor from './WaterFlowTest/scrollbarColor.test';
+import ListContentSize from './ListTest/ListContentSize.test';
+import GridContentSize from './GridTest/GridContentSize.test';
+import ScrollContentSize from './ScrollTest/ScrollContentSize.test';
+import WaterFlowContentSize from './WaterFlowTest/WaterFlowContentSize.test';
 import ListFillPolicy from './ListTest/ListFillPolicy.test';
 import GridFillPolicy from './GridTest/GridFillPolicy.test';
 import WaterFlowFillPolicy from './WaterFlowTest/WaterFlowFillPolicy.test';
+import WaterFlowFillPolicyModifier from './WaterFlowTest/WaterFlowFillPolicyModifier.test';
 
 export default function testsuite() {
+  WaterFlowFillPolicyModifier();
   ContentOffset();
   scrollSnapAnimationSpeedModifier();
   scrollSnapAnimationSpeed();
+  listScrollbarColor();
+  scrollScrollbarColor();
+  gridScrollbarColor();
+  scrollbarColor();
+  ListContentSize();
+  GridContentSize();
+  ScrollContentSize();
+  WaterFlowContentSize();
   ListFillPolicy();
   GridFillPolicy();
   WaterFlowFillPolicy();

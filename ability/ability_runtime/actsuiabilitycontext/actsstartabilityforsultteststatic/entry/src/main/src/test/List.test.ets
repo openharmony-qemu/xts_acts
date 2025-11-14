@@ -14,7 +14,9 @@
  */
 
 import startAbilityForResultTestStatic from "./StartAbilityforResultStatic.test";
+import UIAbilityContextStatic from "./UIAbilityContextStatic.test";
 
 export default function testsuite() {
     startAbilityForResultTestStatic();
+    UIAbilityContextStatic();
 }

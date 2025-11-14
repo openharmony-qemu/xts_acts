@@ -404,9 +404,9 @@ export default function windowFocusTest() {
      * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0100
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('test_ISWINDOWHIGHLIGHTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_ISWINDOWHIGHLIGHTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0100';
       console.log(caseName + 'begin');
       let windowClass = await windowStage.createSubWindow('test_ISWINDOWHIGHLIGHTED_0100');
@@ -618,10 +618,10 @@ export default function windowFocusTest() {
      * @tc.desc      : test_mainWindow_off_noInteractionDetected
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
 
-    it("test_mainWindow_off_noInteractionDetected", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("test_mainWindow_off_noInteractionDetected", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_mainWindow_off_noInteractionDetected";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();

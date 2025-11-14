@@ -100,6 +100,10 @@ function validateMediaDescriptionKey(track: media.MediaDescription): void{
   validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_CHANNEL_COUNT, 'number', composeKeys([BinaryKeys.get("AUD")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_RATE, 'number', composeKeys([BinaryKeys.get("AUD")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_HDR_TYPE, 'number', composeKeys([BinaryKeys.get("VID")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_BITRATE, 'number', composeKeys([BinaryKeys.get("AUD")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_DEPTH, 'number', composeKeys([BinaryKeys.get("AUD")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH, 'number', composeKeys([BinaryKeys.get("VID")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT, 'number', composeKeys([BinaryKeys.get("VID")!]))
 }
 
 export default function AVMetadata() {

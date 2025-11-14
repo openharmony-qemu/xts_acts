@@ -243,6 +243,7 @@ struct videoNew {
         Button({ stateEffect: this.Vue }) {
           Image($r('app.media.ic_public_pass')).width('20vp').height('20vp')
         }
+        .margin({ bottom: '30vp' })
         .width('40%')
         .height('30vp')
         .backgroundColor(Color.Grey)
@@ -262,7 +263,7 @@ struct videoNew {
         Blank().width(40)
         Button() {
           Image($r('app.media.ic_public_fail')).width('20vp').height('20vp')
-        }.width('40%').height('30vp').backgroundColor(Color.Grey)
+        }.margin({ bottom: '30vp' }).width('40%').height('30vp').backgroundColor(Color.Grey)
         .onClick(() => {
           router.back({
             url: this.Url,

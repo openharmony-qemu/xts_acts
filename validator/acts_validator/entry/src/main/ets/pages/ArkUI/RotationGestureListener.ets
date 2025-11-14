@@ -49,7 +49,8 @@ struct RotationGestureExample {
       Image($r('app.media.ic_public_pass'))
         .width('20vp')
         .height('20vp')
-    }.width('30%')
+    }
+    .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -58,7 +59,7 @@ struct RotationGestureExample {
         params: {
           result: 'true ', title: this.name,
         }
-      })
+      });
       promptAction.showToast({
         message: '通过', duration: 1000
       });
@@ -110,7 +111,7 @@ struct RotationGestureExample {
             .margin({ left: '20vp' })
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
+        .size({ width: '10%', height: '10%' })
         .onClick(() => {
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
@@ -122,6 +123,7 @@ struct RotationGestureExample {
           .fontColor(Color.White)
           .fontSize('18fp')
           .margin({ left: '-20vp' })
+
         Text('hello')
           .fontColor(Color.White)
           .visibility(Visibility.Hidden)
@@ -134,12 +136,15 @@ struct RotationGestureExample {
       Column() {
         Column() {
           Text('RotationGesture angle:' + this.angle)
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
         }
-        .height(200)
-        .width(300)
-        .padding(20)
+        .height('30%')
+        .width('80%')
+        .padding('5%')
         .border({ width: 3 })
-        .margin(80)
+        .margin('5%')
         .rotate({ angle: this.angle })
         .gesture(
           RotationGesture({ fingers: 2, angle: 5, isFingerCountLimited: false })
@@ -156,20 +161,28 @@ struct RotationGestureExample {
             })
         )
 
-        Button('点击添加监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.addGlobalGestureListener(GestureListenerType.ROTATION,
-            { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, rotationGesture);
-          console.info('aaa --- 添加监听')
-        })
+        Button('点击添加监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.addGlobalGestureListener(GestureListenerType.ROTATION,
+              { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, rotationGesture);
+            console.info('aaa --- 添加监听')
+          })
 
-        Button('点击移除监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.removeGlobalGestureListener(GestureListenerType.ROTATION, rotationGesture);
-          console.info('aaa --- 移除监听')
-        })
+        Button('点击移除监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.removeGlobalGestureListener(GestureListenerType.ROTATION, rotationGesture);
+            console.info('aaa --- 移除监听')
+          })
       }
-      .height('80%')
+      .height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 

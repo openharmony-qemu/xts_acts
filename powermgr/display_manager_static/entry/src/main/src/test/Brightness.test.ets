@@ -28,12 +28,13 @@ export default function BrightnessTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBrightnessTest_static_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0010
-     * @tc.name testBrightnessTest_static_0100
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testBrightnessTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +51,13 @@ export default function BrightnessTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBrightnessTest_static_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0020
-     * @tc.name testBrightnessTest_static_0200
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBrightnessTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -72,12 +74,13 @@ export default function BrightnessTest() {
       })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBrightnessTest_static_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0030
-     * @tc.name testBrightnessTest_static_0300
-     * @tc.desc Test the third-party application call setValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call setValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testBrightnessTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

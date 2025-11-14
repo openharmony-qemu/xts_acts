@@ -165,9 +165,9 @@ export default function windowModalTest() {
      * @tc.desc      : Test the function value of setSubWindowModal
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testsetSubWindowModal_Function_Promise1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("testsetSubWindowModal_Function_Promise1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testsetSubWindowModal_Function_Promise1 ";
       console.log(msgStr + " begin");
       try {
@@ -217,9 +217,9 @@ export default function windowModalTest() {
      * @tc.desc      : Test the function value of setSubWindowModal
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testsetSubWindowModal_Function_Promise2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("testsetSubWindowModal_Function_Promise2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testsetSubWindowModal_Function_Promise2 ";
       console.log(msgStr + " begin");
       try {
@@ -269,9 +269,9 @@ export default function windowModalTest() {
      * @tc.desc      : Test the function value of setSubWindowModal
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testsetSubWindowModal_Function_Promise3", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("testsetSubWindowModal_Function_Promise3", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testsetSubWindowModal_Function_Promise3 ";
       console.log(msgStr + " begin");
       ohosWindow.getLastWindow(context).then(wnd => {
@@ -1052,9 +1052,9 @@ export default function windowModalTest() {
            * @tc.desc      : testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY
            * @tc.size      : MediumTest
            * @tc.type      : Function
-           * @tc.level     : Level3
+           * @tc.level     : LEVEL0
           */
-    it("testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY";
       console.log(msgStr + " begin");
       let windowClass: ohosWindow.Window;
@@ -1239,9 +1239,9 @@ export default function windowModalTest() {
      * @tc.desc      :
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetSubWindowModalModalityType_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetSubWindowModalModalityType_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'setSubWindowModalModalityTypeTest_0300';
       try {
         let subWindow = windowStage.createSubWindow("testSubWindow");
@@ -1384,9 +1384,9 @@ export default function windowModalTest() {
      * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testCreateSubWindowWithOptionsModalityType_0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testCreateSubWindowWithOptionsModalityType_0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testCreateSubWindowWithOptionsModalityTypeTest_0300';
       let options: window.SubWindowOptions = {
         title: 'title',

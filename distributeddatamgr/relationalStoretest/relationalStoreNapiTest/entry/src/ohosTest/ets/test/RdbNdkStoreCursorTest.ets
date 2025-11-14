@@ -48,12 +48,13 @@ export default function RdbNdkStoreCursorTest() {
         afterAll(async () => {})
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0100
-         * @tc.desc: Normal testCase of NDK cursor for GetColumnType.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0100
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0100
+         * @tc.desc   Normal testCase of NDK cursor for GetColumnType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0100' , ' begin');
@@ -63,12 +64,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0200
-         * @tc.desc: Normal testCase of NDK cursor for GetColumnIndex.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0200
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0200
+         * @tc.desc   Normal testCase of NDK cursor for GetColumnIndex.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0200' , ' begin');
@@ -78,12 +80,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0300
-         * @tc.desc: Normal testCase of NDK cursor for GetColumnName.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0300
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0300
+         * @tc.desc   Normal testCase of NDK cursor for GetColumnName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0300' , ' begin');
@@ -93,12 +96,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0400
-         * @tc.desc: Normal testCase of NDK cursor for Getxxx.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0400
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0400
+         * @tc.desc   Normal testCase of NDK cursor for Getxxx.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0400' , ' begin');
@@ -108,12 +112,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0500
-         * @tc.desc: Normal testCase of NDK cursor for GetColumnIndex.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0500
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0500
+         * @tc.desc   Normal testCase of NDK cursor for GetColumnIndex.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0500' , ' begin');
@@ -123,12 +128,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0600
-         * @tc.desc: Normal testCase of NDK cursor for GetColumnIndex.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0600
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0600
+         * @tc.desc   Normal testCase of NDK cursor for GetColumnIndex.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0600' , ' begin');
@@ -138,12 +144,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0700
-         * @tc.desc: Normal testCase of NDK cursor for GetColumnType.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0700
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0700
+         * @tc.desc   Normal testCase of NDK cursor for GetColumnType.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0700' , ' begin');
@@ -153,12 +160,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0800
-         * @tc.desc: Normal testCase of NDK cursor for GetColumnName.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0800
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0800
+         * @tc.desc   Normal testCase of NDK cursor for GetColumnName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0800' , ' begin');
@@ -168,12 +176,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0900
-         * @tc.desc: Normal testCase of NDK cursor for getSize.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_0900
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_0900
+         * @tc.desc   Normal testCase of NDK cursor for getSize.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_0900' , ' begin');
@@ -183,12 +192,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1000
-         * @tc.desc: Normal testCase of NDK cursor for getText.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1000
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1000
+         * @tc.desc   Normal testCase of NDK cursor for getText.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1000' , ' begin');
@@ -198,12 +208,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1100
-         * @tc.desc: Normal testCase of NDK cursor for getInt64.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1100
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1100
+         * @tc.desc   Normal testCase of NDK cursor for getInt64.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1100' , ' begin');
@@ -213,12 +224,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1200
-         * @tc.desc: Normal testCase of NDK cursor for getReal.
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1200
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1200
+         * @tc.desc   Normal testCase of NDK cursor for getReal.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1200' , ' begin');
@@ -228,12 +240,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1300
-         * @tc.desc: getBlob
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1300
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1300
+         * @tc.desc   getBlob
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1300' , ' begin');
@@ -243,12 +256,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1400
-         * @tc.desc: isNull
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1400
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1400
+         * @tc.desc   isNull
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1400' , ' begin');
@@ -258,12 +272,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1500
-         * @tc.desc: getRowCount
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1500
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1500
+         * @tc.desc   getRowCount
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1500' , ' begin');
@@ -273,12 +288,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1600
-         * @tc.desc: getRowCount
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1600
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1600
+         * @tc.desc   getRowCount
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1600' , ' begin');
@@ -288,12 +304,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1700
-         * @tc.desc: getRowCount
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1700
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1700
+         * @tc.desc   getRowCount
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1700' , ' begin');
@@ -303,12 +320,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1800
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1800
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1800
+         * @tc.desc   SUB_DDM_RDB_CURSOR_1800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1800' , ' begin');
@@ -318,12 +336,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1900
-         * @tc.desc: getRowCount
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_1900
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_1900
+         * @tc.desc   getRowCount
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_1900' , ' begin');
@@ -333,12 +352,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2000
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_2000
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2000
+         * @tc.desc   SUB_DDM_RDB_CURSOR_2000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_2000' , ' begin');
@@ -348,12 +368,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2100
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_2100
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2100
+         * @tc.desc   SUB_DDM_RDB_CURSOR_2100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_2100' , ' begin');
@@ -363,12 +384,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2200
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_2200
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2200
+         * @tc.desc   SUB_DDM_RDB_CURSOR_2200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_2200' , ' begin');
@@ -378,12 +400,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2300
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_2300
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2300
+         * @tc.desc   SUB_DDM_RDB_CURSOR_2300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_2300' , ' begin');
@@ -393,12 +416,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2400
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_2400
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2400
+         * @tc.desc   SUB_DDM_RDB_CURSOR_2400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_2400' , ' begin');
@@ -408,12 +432,13 @@ export default function RdbNdkStoreCursorTest() {
         })
 
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2500
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_2500
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2500
+         * @tc.desc   SUB_DDM_RDB_CURSOR_2500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_2500' , ' begin');
@@ -423,12 +448,13 @@ export default function RdbNdkStoreCursorTest() {
         })
         
         /**
-         * @tc.number: SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2600
-         * @tc.desc:
-         * @tc.type: FUNC
-         * @tc.name predicates cursor normal test
-         * @tc.size   : MediumTest
-         * @tc.level  : Level 2
+         * @generated.time 2025-11-09 20:49:52
+         * @tc.name   SUB_DDM_RDB_CURSOR_2600
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetNdkAPITest_2600
+         * @tc.desc   SUB_DDM_RDB_CURSOR_2600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_RDB_CURSOR_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
             hilog.info(0x0000, TAG, 'testTag SUB_DDM_RDB_CURSOR_2600' , ' begin');

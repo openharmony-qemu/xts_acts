@@ -30,9 +30,11 @@ group("codeparsingtest") {
       "etsspectest:ActsBaseSpecTest",
       "specialchartest:ActsSpecialCharTest",
       "proxytest:ActsProxyTest",
+      "proxy2test:ActsProxy2Test",
       "objecttest:ActsObjectTest",
       "arraytest:ActsArrayTest",
       "regexptest:ActsRegExpTest",
+      "dataviewtest:ActsDataViewTest",
     ]
   }
 }

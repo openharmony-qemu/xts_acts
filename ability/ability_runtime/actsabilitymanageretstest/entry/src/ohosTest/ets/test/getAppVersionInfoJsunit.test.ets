@@ -36,7 +36,6 @@ function checkAppVersionInfo(msg: string, data: ESObject) {
 export default function getHapModuleInfoJsunit() {
   describe('getAppVersionInfoTest', () => {
     let TAG1 = "SUB_AA_OpenHarmony == getAppVersionInfoTest: ";
-    let sleepTimeOne = 1000;
     let id: number;
     beforeAll(async (done: Function) => {
       console.log(TAG1 + "beforeAll called");
@@ -46,19 +45,15 @@ export default function getHapModuleInfoJsunit() {
       })
       id = delayInfo.requestId;
       console.log(TAG1 + "requestId is : " + id);
-      setTimeout(() => {
-        console.log(TAG1 + "beforeAll end");
+      console.log(TAG1 + "beforeAll end");
         done();
-      }, sleepTimeOne);
     })
 
     afterAll(async (done: Function) => {
       console.log(TAG1 + "afterAll called");
       backgroundTaskManager.cancelSuspendDelay(id);
-      setTimeout(() => {
-        console.log(TAG1 + "afterAll end");
+      console.log(TAG1 + "afterAll end");
         done();
-      }, sleepTimeOne)
     })
 
     /**
@@ -69,7 +64,6 @@ export default function getHapModuleInfoJsunit() {
      */
     it('context_getAppVersionInfo_test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[context_getAppVersionInfo_test_0100] START');
-      await Utils.sleep(1000);
       let timeOldStamp = Utils.getNowTime();
       let context = ability_featureAbility.getContext();
       context.getAppVersionInfo()
@@ -97,7 +91,6 @@ export default function getHapModuleInfoJsunit() {
     it('context_getAppVersionInfo_test_0200', Level.LEVEL0, async (done: Function) => {
       try {
         console.info('[context_getAppVersionInfo_test_0200] START');
-        await Utils.sleep(1000);
         let timeOldStamp = await Utils.getNowTime();
         let context = ability_featureAbility.getContext();
         context.getAppVersionInfo((error, data) => {

@@ -13,7 +13,15 @@
  * limitations under the License.
  */
 
+import WebViewIsCapture from  './WebViewIsCapture.test'
+import WebViewGetMimeTypes from './WebViewGetMimeTypes.test'
+import WebViewGetAcceptType from './WebViewGetAcceptType.test'
+import WebViewGetMode from './WebViewGetMode.test'
 import WebViewContextMenuMediaType from './WebViewContextMenuMediaType.test'
 export default function testsuite() {
+  WebViewIsCapture()
+  WebViewGetMimeTypes()
+  WebViewGetAcceptType()
+  WebViewGetMode()
   WebViewContextMenuMediaType()
 }

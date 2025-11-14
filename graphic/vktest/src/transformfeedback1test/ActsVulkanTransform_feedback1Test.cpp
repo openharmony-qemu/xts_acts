@@ -51,7 +51,7 @@ namespace OHOS {
     {
         printf("------start ActsVulkanTransformfeedback1Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/transform-feedback1.txt "
                 "--deqp-log-filename=ActsVulkanTransformfeedback1Test.qpa");
         }

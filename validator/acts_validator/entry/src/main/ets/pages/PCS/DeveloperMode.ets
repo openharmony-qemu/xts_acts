@@ -133,7 +133,7 @@ struct DeveloperMode {
         startEnable: $startEnable,
         result: $result,
         hasReboot: $hasReboot,
-      })
+      }).margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

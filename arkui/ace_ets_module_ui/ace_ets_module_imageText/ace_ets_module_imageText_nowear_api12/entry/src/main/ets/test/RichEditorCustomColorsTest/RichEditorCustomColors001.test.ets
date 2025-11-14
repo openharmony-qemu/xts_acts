@@ -70,7 +70,7 @@ export default function RichEditorCustomColors001() {
       await CommonFunc.sleep(1000);
 
       let back = await driver.findComponent(ON.id('set_select'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
 
       //KEYCODE_DEL

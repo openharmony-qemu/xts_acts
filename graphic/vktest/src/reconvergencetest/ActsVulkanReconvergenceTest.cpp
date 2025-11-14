@@ -43,7 +43,7 @@ namespace OHOS {
     {
         printf("------start ActsVulkanReconvergenceTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/reconvergence.txt "
                 "--deqp-log-filename=ActsVulkanReconvergenceTest.qpa");
         }

@@ -313,9 +313,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Verify that the scene shows the status bar and hides the navigation bar
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetSystemBarEnable_ShowStatusBar_HideNavBar_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testSetSystemBarEnable_ShowStatusBar_HideNavBar_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testSetSystemBarEnable_ShowStatusBar_HideNavBar_Promise';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1171,9 +1171,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Verify the scenario of opening modal window
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testDialogTargetTouch_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testDialogTargetTouch_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testDialogTargetTouch_Promise';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin context==' + JSON.stringify(context));
@@ -1272,9 +1272,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Test the enumeration value of WindowEventType
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testWindowEventType_Enum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testWindowEventType_Enum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindowEventType_Enum';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1336,9 +1336,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Test the function of setSpecificSystemBarEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetSpecificSystemBarEnabled_2_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testSetSpecificSystemBarEnabled_2_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = 'testSetSpecificSystemBarEnabled_2';
       console.log(msgStr + 'begin')
       try {
@@ -1403,9 +1403,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : test the function of SetWindowDecorHeight
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowDecorHeight', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowDecorHeight', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr: string = 'testSetWindowDecorHeight';
       console.log(msgStr + ' begin');
       let height = 50
@@ -1549,9 +1549,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Test the function value of shiftAppWindowFocus
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testShiftAppWindowFocus_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testShiftAppWindowFocus_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr: string = 'testShiftAppWindowFocus_Function_Promise';
       console.log(msgStr + 'begin');
       try {
@@ -1622,9 +1622,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Test the function value of getWindowSystemBarProperties
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testGetWindowSystemBarProperties_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it("testGetWindowSystemBarProperties_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "testGetWindowSystemBarProperties_Function";
       console.log(msgStr + " begin");
       ohosWindow.getLastWindow(context).then(wnd => {
@@ -1693,9 +1693,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : test_subWindow_GetWindowSystemBarProperties_1300004
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : Level 0
      */
-    it("test_subWindow_GetWindowSystemBarProperties_1300004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+    it("test_subWindow_GetWindowSystemBarProperties_1300004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_subWindow_GetWindowSystemBarProperties_1300004";
       console.log(msgStr + " begin");
       let SubWindowClass: ohosWindow.Window | void;
@@ -1762,9 +1762,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : test the function of setWindowLimits
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowLimits_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowLimits_Function_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let tag = 'setWindowLimits_Function_Promise '
       console.log(tag + 'begin')
       try {
@@ -1805,9 +1805,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Test the function value of EnableLandscapeMultiWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testEnableLandscapeMultiWindow_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it("testEnableLandscapeMultiWindow_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "testEnableLandscapeMultiWindow_Function";
       console.log(msgStr + " begin");
       ohosWindow.getLastWindow(context).then(wnd => {
@@ -1837,9 +1837,9 @@ export default function windowPromiseTest(context: common.UIAbilityContext, wind
      * @tc.desc      : Test the function value of DisableLandscapeMultiWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testDisableLandscapeMultiWindow_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it("testDisableLandscapeMultiWindow_Function", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = "testDisableLandscapeMultiWindow_Function";
       console.log(msgStr + " begin");
       ohosWindow.getLastWindow(context).then(wnd => {

@@ -32,7 +32,7 @@ struct Slider18 {
         max: 100
       })
         .id('Slider18')
-        .width('100%')
+        .width('80%')
         .showTips(true)
         .onChange((value: number, mode: SliderChangeMode) => {
           this.outSetValueOne = value

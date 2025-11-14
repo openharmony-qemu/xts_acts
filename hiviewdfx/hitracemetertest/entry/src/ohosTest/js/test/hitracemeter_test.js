@@ -235,8 +235,8 @@ describe("HitraceMeterTest", function () {
         try {
             console.info("DFX_DFR_HitraceMeter_0600 3 start")
             let istrace = hiTraceMeter.isTraceEnabled()
-            expect(istrace).assertTrue();
             if (istrace) {
+                expect(istrace).assertTrue();
                 let customArgs = 'key0=value0';
                 for(let index = 1; index < 10; index++) {
                   customArgs += `,key${index}=value${index}`

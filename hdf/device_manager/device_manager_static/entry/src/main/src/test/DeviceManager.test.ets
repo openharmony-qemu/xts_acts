@@ -132,9 +132,13 @@ export default function DeviceManagerTest() {
     const SERVICE_NOT_BOUND = 26300003
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0100
-     * @tc.name       testQueryDevices001
-     * @tc.desc       verify queryDevice result
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0100
+     * @tc.desc   verify queryDevice result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testQueryDevices001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:()=>void) : Promise<void> => {
@@ -164,9 +168,13 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0200
-     * @tc.name       testQueryDevices002
-     * @tc.desc       verify queryDevice no param result
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0200
+     * @tc.desc   verify queryDevice no param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:()=>void) : Promise<void> => {
@@ -190,9 +198,13 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0300
-     * @tc.name       testQueryDevices003
-     * @tc.desc       verify queryDevice param is 12345
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices003
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0300
+     * @tc.desc   verify queryDevice param is 12345
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryDevices003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:()=>void) : Promise<void> => {
@@ -215,9 +227,13 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0400
-     * @tc.name       testQueryDevices004
-     * @tc.desc       verify queryDevice errcode 22900001
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices004
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0400
+     * @tc.desc   verify queryDevice errcode 22900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryDevices004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:()=>void) : Promise<void> => {
@@ -239,9 +255,13 @@ export default function DeviceManagerTest() {
     })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0500
-     * @tc.name       testBindDriverWithDeviceId001
-     * @tc.desc       verify bindDriverWithDeviceId promise
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDriverWithDeviceId001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0500
+     * @tc.desc   verify bindDriverWithDeviceId promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testBindDriverWithDeviceId001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
@@ -273,9 +293,13 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0600
-     * @tc.name       testUnbindDriverWithDeviceId002
-     * @tc.desc       verify unbindDriverWithDeviceId promise and no binding relationship
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUnbindDriverWithDeviceId002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0600
+     * @tc.desc   verify unbindDriverWithDeviceId promise and no binding relationship
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testUnbindDriverWithDeviceId002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
@@ -299,9 +323,13 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0700
-     * @tc.name       testUnbindDriverWithDeviceId003
-     * @tc.desc       verify unbindDriverWithDeviceId promise
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUnbindDriverWithDeviceId003
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0700
+     * @tc.desc   verify unbindDriverWithDeviceId promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testUnbindDriverWithDeviceId003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
@@ -325,9 +353,13 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0800
-     * @tc.name       testBindDriverWithDeviceId002
-     * @tc.desc       verify bindDriverWithDeviceId promise success
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDriverWithDeviceId002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0800
+     * @tc.desc   verify bindDriverWithDeviceId promise success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testBindDriverWithDeviceId002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {
@@ -354,9 +386,13 @@ export default function DeviceManagerTest() {
       })
 
     /**
-     * @tc.number     SUB_Driver_Ext_DeviceManagerAPIFunc_0900
-     * @tc.name       testUnbindDriverWithDeviceId001
-     * @tc.desc       verify unbindDriverWithDeviceId promise success
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUnbindDriverWithDeviceId001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0900
+     * @tc.desc   verify unbindDriverWithDeviceId promise success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testUnbindDriverWithDeviceId001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:()=>void) : Promise<void> => {

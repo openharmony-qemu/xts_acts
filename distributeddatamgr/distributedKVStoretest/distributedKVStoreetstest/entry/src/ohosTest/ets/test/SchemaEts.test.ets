@@ -114,6 +114,7 @@ export default function schemaTest(){
       } catch (e) {
         console.info("fail on exception: " + e);
         expect(null).assertFail();
+        done();
       }
 
     })
@@ -132,27 +133,31 @@ export default function schemaTest(){
 
     afterEach(async function (done) {
       console.info('afterEach');
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
         console.info('afterEach closeKVStore success');
         await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
           console.info('afterEach deleteKVStore success');
+          kvStore = null;
+          done();
         }).catch((err) => {
           console.info('afterEach deleteKVStore err ' + err);
+          done();
         });
       }).catch((err) => {
         console.info('afterEach closeKVStore err ' + err);
+        done();
       });
-      kvStore = null;
-      done();
+
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0100
-     * @tc.desc  Test Js Api Schema.ToJsonString() testcase 001
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0100
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0100
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -182,12 +187,13 @@ export default function schemaTest(){
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0200
-     * @tc.desc  Test Js Api Schema.ToJsonString() testcase 002
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0200
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0200
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0200
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -221,12 +227,13 @@ export default function schemaTest(){
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300
-     * @tc.desc  Test Js Api Schema.ToJsonString() testcase 003
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0300
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0300
+     * @tc.desc   Test Js Api Schema.ToJsonString() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -257,26 +264,30 @@ export default function schemaTest(){
         await kvStore.getEntries(query).then((entries) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 get success : ' + JSON.stringify(entries));
           expect(entries.length == 2).assertTrue();
+          done();
         }).catch((err) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 get fail ' + err);
           expect(null).assertFail();
+          done();
         });
       } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 fail on exception: " + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
 
-    /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400
-     * @tc.desc  Test Js Api Schema.ToJsonString() testcase 004
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0400
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400
+     * @tc.number SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400
+     * @tc.desc   SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
         let name = new ddm.FieldNode('name');
@@ -303,26 +314,30 @@ export default function schemaTest(){
         await kvStore.getEntries('test_key_').then((entries) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 get success : ' + JSON.stringify(entries));
           expect(entries.length == 3).assertTrue();
+          done();
         }).catch((err) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 get fail ' + err);
           expect(null).assertFail();
+          done();
         });
       } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 fail on exception: " + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
 
 
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_ROOT_0100
-     * @tc.desc  Test Js Api Schema.root testcase 001
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0500
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_ROOT_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0500
+     * @tc.desc   Test Js Api Schema.root testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_ROOT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -339,12 +354,13 @@ export default function schemaTest(){
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_INDEXES_0100
-     * @tc.desc  Test Js Api Schema.indexes testcase 001
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0600
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_INDEXES_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0600
+     * @tc.desc   Test Js Api Schema.indexes testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_INDEXES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -360,12 +376,13 @@ export default function schemaTest(){
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_MODE_0100
-     * @tc.desc  Test Js Api Schema.mode testcase 001
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0700
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_MODE_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0700
+     * @tc.desc   Test Js Api Schema.mode testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_MODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -382,12 +399,13 @@ export default function schemaTest(){
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_MODE_0200
-     * @tc.desc  Test Js Api Schema.mode testcase 002
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0800
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_MODE_0200
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0800
+     * @tc.desc   Test Js Api Schema.mode testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_MODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {
@@ -404,12 +422,13 @@ export default function schemaTest(){
     })
 
     /**
-     * @tc.name SUB_DDM_DKV_SCHEMA_SKIP_0100
-     * @tc.desc  Test Js Api Schema.skip testcase 001
-     * @tc.type: FUNC
-     * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0900
-     * @tc.size: MediumTest
-     * @tc.level: Level 2
+     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_DDM_DKV_SCHEMA_SKIP_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_DisKVSchemaEtsApiTest_0900
+     * @tc.desc   Test Js Api Schema.skip testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_DKV_SCHEMA_SKIP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
       try {

@@ -24,7 +24,7 @@ struct AccessibilityRoleTypeTest {
     '注意：1、利用DevEvoTesting中的UIViewer工具点击当前页面，查询右下角组件信息可获取到$\{winId}和$\{elementId}的值，$\{winId}值为hostWindowId，$\{elementId}值为ID；同页面$\{winId}为唯一值无需重复查询。\n' +
     '\n' +
     '预期结果：\n' +
-    'AccessibilityRole:0~124依次dump出的内容为：[0]actionsheet,[1]alertdialog,[2]indexercomponent,[3]badgecomponent,[4]blank,[5]button,[6]backbutton,[7]sheetdragbar,[8]calendarpicker,[9]calendar,[10]canvas,[11]canvasgradient,[12]canvaspattern,[13]checkbox,[14]checkboxgroup,[15]circle,[16]columnsplit,[17]column,[18]canvasrenderingcontext2d,[19]chart,[20]counter,[21]containermodal,[22]datapanel,[23]datepicker,[24]dialog,[25]divider,[26]dragbar,[27]effectcomponent,[28]ellipse,[29]flex,[30]flowitem,[31]formcomponent,[32]formlink,[33]gauge,[34]grid,[35]gridcol,[36]gridcontainer,[37]griditem,[38]gridrow,[39]hyperlink,[40]image,[41]imageanimator,[42]imagebitmap,[43]imagedata,[44]imagespan,[45]label,[46]line,[47]list,[48]listitem,[49]listitemgroup,[50]loadingprogress,[51]marquee,[52]matrix2d,[53]menu,[54]menuitem,[55]menuitemgroup,[56]navdestination,[57]navrouter,[58]navigation,[59]navigationbar,[60]navigationmenu,[61]navigator,[62]offscreencanvas,[63]offscreencanvasrenderingcontext2d,[64]option,[65]panel,[66]paperpage,[67]path,[68]path2d,[69]patternlock,[70]picker,[71]pickerview,[72]plugincomponent,[73]polygon,[74]polyline,[75]popup,[76]progress,[77]qrcode,[78]radio,[79]rating,[80]rect,[81]refresh,[82]relativecontainer,[83]remotewindow,[84]richeditor,[85]richtext,[86]rolepager,[87]row,[88]rowsplit,[89]scroll,[90]scrollbar,[91]search,[92]searchfield,[93]select,[94]shape,[95]sidebarcontainer,[96]slider,[97]span,[98]stack,[99]stepper,[100]stepperitem,[101]swiper,[102]swiperindicator,[103]switch,[104]symbolglyph,[105]tabcontent,[106]tabbar,[107]tabs,[108]text,[109]textclock,[110]textentry,[111]textinput,[112]textpicker,[113]texttimer,[114]textarea,[115]textfield,[116]timepicker,[117]titlebar,[118]toggler,[119]uiextensioncomponent,[120]video,[121]waterflow,[122]web,[123]xcomponent,[124]NULL.';
+    'AccessibilityRole:0~124依次dump出的内容为：[0]actionsheet,[1]alertdialog,[2]alphabetindexer,[3]badge,[4]blank,[5]button,[6]backbutton,[7]sheetdragbar,[8]calendarpicker,[9]calendar,[10]canvas,[11]canvasgradient,[12]canvaspattern,[13]checkbox,[14]checkboxgroup,[15]circle,[16]columnsplit,[17]column,[18]canvasrenderingcontext2d,[19]chart,[20]counter,[21]containermodal,[22]datapanel,[23]datepicker,[24]dialog,[25]divider,[26]dragbar,[27]effectcomponent,[28]ellipse,[29]flex,[30]flowitem,[31]formcomponent,[32]formlink,[33]gauge,[34]grid,[35]gridcol,[36]gridcontainer,[37]griditem,[38]grid-row,[39]hyperlink,[40]image,[41]imageanimator,[42]imagebitmap,[43]imagedata,[44]imagespan,[45]label,[46]line,[47]list,[48]listitem,[49]listitemgroup,[50]loadingprogress,[51]marquee,[52]matrix2d,[53]menu,[54]menuitem,[55]menuitemgroup,[56]navdestination,[57]navrouter,[58]navigation,[59]navigation-bar,[60]navigation-menu,[61]navigator,[62]offscreencanvas,[63]offscreencanvasrenderingcontext2d,[64]option,[65]panel,[66]paperpage,[67]path,[68]path2d,[69]patternlock,[70]picker,[71]picker-view,[72]plugincomponent,[73]polygon,[74]polyline,[75]popup,[76]progress,[77]qrcode,[78]radio,[79]rating,[80]rect,[81]refresh,[82]relativecontainer,[83]remotewindow,[84]richeditor,[85]richtext,[86]rolepager,[87]row,[88]rowsplit,[89]scroll,[90]scrollbar,[91]search,[92]searchfield,[93]select,[94]shape,[95]sidebarcontainer,[96]slider,[97]span,[98]stack,[99]stepper,[100]stepperitem,[101]swiper,[102]swiperindicator,[103]switch,[104]symbolglyph,[105]tabcontent,[106]tab-bar,[107]tabs,[108]text,[109]textclock,[110]textentry,[111]textinput,[112]textpicker,[113]texttimer,[114]textarea,[115]textfield,[116]timepicker,[117]titlebar,[118]toggler,[119]uiextensioncomponent,[120]video,[121]waterflow,[122]web,[123]xcomponent,[124]NULL';
   @State Vue: boolean = true;
   @State active: boolean = false;
   @State intervalNum: number = 0;
@@ -53,6 +53,7 @@ struct AccessibilityRoleTypeTest {
           .width('20vp')
           .height('20vp')
       }
+      .margin({ bottom: '20vp' })
       .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
@@ -65,7 +66,9 @@ struct AccessibilityRoleTypeTest {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
-      }.width('30%')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -89,6 +92,7 @@ struct AccessibilityRoleTypeTest {
         .width('20vp')
         .height('20vp')
     }
+    .margin({ bottom: '20vp' })
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
@@ -185,6 +189,7 @@ struct AccessibilityRoleTypeTest {
             .width('20vp')
             .height('20vp')
         }
+        .margin({ bottom: '20vp' })
         .width('30%')
         .height('30vp')
         .backgroundColor(Color.Grey)

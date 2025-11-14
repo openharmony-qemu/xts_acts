@@ -261,9 +261,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      : Verify the scenario of loading an existing page
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetUIContent_Existence_page', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetUIContent_Existence_page', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let win: ohosWindow.Window | void;
       let msgStr = "testSetUIContent_Existence_page";
       try {
@@ -428,9 +428,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      : To verify the setting of the wide color gamut color space
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowColorSpace_Multiple_Wide_Gamut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowColorSpace_Multiple_Wide_Gamut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowColorSpace_Multiple_Wide_Gamut begin');
       let wnd: ohosWindow.Window = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -458,9 +458,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      : To verify that the color space of invaild values is set successfully
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowColorSpace_Invalid_ParamsTwo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowColorSpace_Invalid_ParamsTwo', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowColorSpace_Invalid_ParamsTwo begin');
       let wnd = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -767,9 +767,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      :  Set the brightness bar input parameter to decimal
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowBrightness_Invalid_ParamsTwo_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowBrightness_Invalid_ParamsTwo_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowBrightness_Invalid_ParamsTwo_Promise begin');
       let wnd = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -824,9 +824,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      :  Set the brightness bar input parameter to number min
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowBrightness_Invalid_ParamsFour_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowBrightness_Invalid_ParamsFour_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowBrightness_Invalid_ParamsFour_Promise begin');
       let wnd: ohosWindow.Window = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -1135,9 +1135,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      :  Setting window focus acquisition and defocus
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowFocusable_Multiple_Calls_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowFocusable_Multiple_Calls_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowFocusable_Multiple_Calls_Promise begin');
       let wnd = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -1167,9 +1167,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      :  Set whether the window can be touched or not
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowTouchable_Invoked_Twice', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowTouchable_Invoked_Twice', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowTouchable_Invoked_Twice begin');
       let wnd = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -1259,9 +1259,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      :  Set whether the window screenOn
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowKeepScreenOn_Base_True_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowKeepScreenOn_Base_True_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowKeepScreenOn_Base_True_Promise begin');
       let wnd: ohosWindow.Window = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -1283,9 +1283,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      :  Set whether the window screenOn
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowKeepScreenOn_Base_False_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowKeepScreenOn_Base_False_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowKeepScreenOn_Base_False_Promise begin');
       let wnd: ohosWindow.Window = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -1307,9 +1307,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      :  Set whether setKeepScreenOn or not
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowKeepScreenOn_Base_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowKeepScreenOn_Base_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowKeepScreenOn_Base_Callback begin');
       let wnd = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -1341,9 +1341,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      : Verify the window privacy mode
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowPrivacyMode_False_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowPrivacyMode_False_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowPrivacyMode_False_Promise begin');
       let wnd = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();
@@ -1365,9 +1365,9 @@ export default function windowRefactorInterfaceTest(context: common.UIAbilityCon
      * @tc.desc      : Verify the window privacy mode
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowPrivacyMode_True_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testSetWindowPrivacyMode_True_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testSetWindowPrivacyMode_True_Promise begin');
       let wnd: ohosWindow.Window = windowStage.getMainWindowSync();
       expect(wnd != null).assertTrue();

@@ -239,9 +239,9 @@ struct webViewOnScroll {
                 setTimeout(() => {
                   if (this.isWebBottom) {
                     console.log("页面已经滑动到底部");
-                    Utils.emitEvent(true, 110)
+                    Utils.emitEvent(true, 179970)
                   } else {
-                    Utils.emitEvent(false, 110)
+                    Utils.emitEvent(false, 179970)
                   }
                 },3000)
               } catch (error) {

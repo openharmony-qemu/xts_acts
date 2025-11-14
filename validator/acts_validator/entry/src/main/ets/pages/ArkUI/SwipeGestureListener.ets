@@ -50,7 +50,8 @@ struct SwipeGestureExample {
       Image($r('app.media.ic_public_pass'))
         .width('20vp')
         .height('20vp')
-    }.width('30%')
+    }
+    .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -59,7 +60,7 @@ struct SwipeGestureExample {
         params: {
           result: 'true ', title: this.name,
         }
-      })
+      });
       promptAction.showToast({
         message: '通过', duration: 1000
       });
@@ -111,7 +112,7 @@ struct SwipeGestureExample {
             .margin({ left: '20vp' })
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
+        .size({ width: '10%', height: '10%' })
         .onClick(() => {
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
@@ -123,6 +124,7 @@ struct SwipeGestureExample {
           .fontColor(Color.White)
           .fontSize('18fp')
           .margin({ left: '-20vp' })
+
         Text('hello')
           .fontColor(Color.White)
           .visibility(Visibility.Hidden)
@@ -135,12 +137,21 @@ struct SwipeGestureExample {
       Column() {
         Column() {
           Text('SwipeGesture speed\n' + this.speed)
+            .fontSize('5%')
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
+
           Text('SwipeGesture angle\n' + this.rotateAngle)
+            .fontSize('5%')
+            .width('100%')
+            .fontColor(Color.Black)
+            .textAlign(TextAlign.Center)
         }
         .border({ width: 3 })
-        .width(300)
-        .height(200)
-        .margin(100)
+        .width('80%')
+        .height('30%')
+        .margin('5%')
         .gesture(
           SwipeGesture({
             fingers: 1,
@@ -160,20 +171,28 @@ struct SwipeGestureExample {
             })
         )
 
-        Button('点击添加监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.addGlobalGestureListener(GestureListenerType.SWIPE,
-            { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, swipePressGesture);
-          console.info('aaa --- 添加监听')
-        })
+        Button('点击添加监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.addGlobalGestureListener(GestureListenerType.SWIPE,
+              { actionPhases: [GestureActionPhase.WILL_START, GestureActionPhase.WILL_END] }, swipePressGesture);
+            console.info('aaa --- 添加监听')
+          })
 
-        Button('点击移除监听').onClick(() => {
-          let observer = this.getUIContext().getUIObserver();
-          observer.removeGlobalGestureListener(GestureListenerType.SWIPE, swipePressGesture);
-          console.info('aaa --- 移除监听')
-        })
+        Button('点击移除监听')
+          .width('60%')
+          .height('10%')
+          .margin('5%')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.removeGlobalGestureListener(GestureListenerType.SWIPE, swipePressGesture);
+            console.info('aaa --- 移除监听')
+          })
       }
-      .height('80%')
+      .height('70%')
       .width('100%')
       .backgroundColor(Color.White)
 

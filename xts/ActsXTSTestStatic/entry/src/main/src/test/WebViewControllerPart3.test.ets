@@ -48,14 +48,15 @@ export default function webViewControllerPart3Test() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0100
-    * @tc.name       : testSetNetworkAvailableStatic001
-    * @tc.desc       : test setNetworkAvailable
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testSetNetworkAvailableStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0100
+     * @tc.desc   test setNetworkAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetNetworkAvailableStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -68,14 +69,15 @@ export default function webViewControllerPart3Test() {
         done();
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0200
-    * @tc.name       : testSetNetworkAvailableStatic002
-    * @tc.desc       : test setNetworkAvailable
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testSetNetworkAvailableStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0200
+     * @tc.desc   test setNetworkAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetNetworkAvailableStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

@@ -56,11 +56,15 @@ describe('IndexUtilInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_INDEXUTIL_0100
-    * @tc.name    test getIndex interface
-    * @tc.desc    check the getIndex interface
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_indexutil_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0100
+     * @tc.desc   check the getIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_indexutil_0100', Level.LEVEL0, function () {
         console.log('i18n_test_indexutil_0100 ' + 'start');
         let index = I18n.getInstance();
@@ -69,11 +73,15 @@ describe('IndexUtilInI18nTest', function () {
         expect(value).assertEqual('A');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_INDEXUTIL_0200
-    * @tc.name    test getIndexList interface
-    * @tc.desc    check the getIndexList interface
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_indexutil_0200
+     * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0200
+     * @tc.desc   check the getIndexList interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_test_indexutil_0200', Level.LEVEL0, function () {
         console.log('i18n_test_indexutil_0200 ' + 'start');
         let index = I18n.getInstance();
@@ -83,11 +91,15 @@ describe('IndexUtilInI18nTest', function () {
         expect(len).assertLarger(0);
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_INDEXUTIL_0300
-    * @tc.name    test addLocale interface
-    * @tc.desc    check the addLocale interface
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_indexutil_0300
+     * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0300
+     * @tc.desc   check the addLocale interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_indexutil_0300', Level.LEVEL2, function () {
         console.log('i18n_test_indexutil_0300 ' + 'start');
         let index = I18n.getInstance();
@@ -97,11 +109,15 @@ describe('IndexUtilInI18nTest', function () {
         expect(value).assertEqual('A');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_INDEXUTIL_0400
-    * @tc.name    test getInstance interface with zh locale
-    * @tc.desc    check the getInstance interface with zh locale
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_test_indexutil_0400
+     * @tc.number SUB_GLOBAL_I18N_JS_INDEXUTIL_0400
+     * @tc.desc   check the getInstance interface with zh locale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_test_indexutil_0400', Level.LEVEL2, function () {
         console.log('i18n_test_indexutil_0400 ' + 'start');
         let index = I18n.getInstance('zh');

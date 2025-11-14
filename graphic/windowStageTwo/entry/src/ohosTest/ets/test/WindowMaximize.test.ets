@@ -27,6 +27,7 @@ export default function windowMaximizeTest() {
     let windowStage: ohosWindow.WindowStage;
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -41,6 +42,11 @@ export default function windowMaximizeTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -75,9 +81,9 @@ export default function windowMaximizeTest() {
      * @tc.desc      : test the function of testPresentationDefaultArgs
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testPresentationDefaultArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testPresentationDefaultArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const message = 'TestPresentationDefaultArgs';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -109,9 +115,9 @@ export default function windowMaximizeTest() {
      * @tc.desc      : test the function of testPresentationEnterImmersive
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testPresentationEnterImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testPresentationEnterImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const message = 'TestPresentationEnterImmersive';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -143,9 +149,9 @@ export default function windowMaximizeTest() {
      * @tc.desc      : test the function of testPresentationExitImmersive
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testPresentationExitImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testPresentationExitImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationExitImmersive';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -179,9 +185,9 @@ export default function windowMaximizeTest() {
      * @tc.desc      : test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -190,7 +196,7 @@ export default function windowMaximizeTest() {
         windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).then(() => {
           const immersiveModeEnabledState = windowClass.getImmersiveModeEnabledState();
           console.info(`${message} Succeeded in maximizing the window, immersiveModeEnabledState is：${immersiveModeEnabledState}`);
-          if(isPCStatus == ''|| isAutoWindow =='false'){
+          if(isFreeWindowMode == false){
             expect(immersiveModeEnabledState).assertTrue();
             done();
           }else{
@@ -259,9 +265,9 @@ export default function windowMaximizeTest() {
      * @tc.desc      : test the function of testPresentationFollowAppImmersiveInLayoutFullScreenTrue
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testPresentationFollowAppImmersiveInLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testPresentationFollowAppImmersiveInLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInLayoutFullScreenTrue';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -333,9 +339,9 @@ export default function windowMaximizeTest() {
      * @tc.desc      : test the function of testPresentationFollowAppImmersiveInSetImmersiveModeTrue
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testPresentationFollowAppImmersiveInSetImmersiveModeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testPresentationFollowAppImmersiveInSetImmersiveModeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInSetImmersiveModeTrue';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -344,7 +350,7 @@ export default function windowMaximizeTest() {
         windowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING).then(() => {
           const immersiveModeEnabledState = windowClass.getImmersiveModeEnabledState();
           console.info(`${message} Succeeded in maximizing the window, immersiveModeEnabledState is：${immersiveModeEnabledState}`);
-          if(isPCStatus == ''|| isAutoWindow =='false'){
+          if(isFreeWindowMode == false){
             expect(immersiveModeEnabledState).assertTrue();
             done();
           }else{
@@ -508,9 +514,9 @@ export default function windowMaximizeTest() {
         * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_1
         * @tc.size      : MediumTest
         * @tc.type      : Function
-        * @tc.level     : Level 3
+        * @tc.level     : LEVEL0
     */
-    it('testSetTitleAndDockHoverShow_Title_show_dock_hide_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetTitleAndDockHoverShow_Title_show_dock_hide_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_1';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -560,9 +566,9 @@ export default function windowMaximizeTest() {
         * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_2
         * @tc.size      : MediumTest
         * @tc.type      : Function
-        * @tc.level     : Level 3
+        * @tc.level     : LEVEL0
     */
-    it('testSetTitleAndDockHoverShow_Title_show_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetTitleAndDockHoverShow_Title_show_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_2';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -717,9 +723,9 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_1', TestType.FUNCTION | Si
         * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
         * @tc.size      : MediumTest
         * @tc.type      : Function
-        * @tc.level     : Level 3
+        * @tc.level     : LEVEL0
     */
-it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_2';
   try {
     let windowClass = windowStage.getMainWindowSync();
@@ -1275,7 +1281,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         await subWindowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
         let windowStatusType = subWindowClass.getWindowStatus();
         console.info(caseName+ ' subWindowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
-        if(isPCStatus == ''|| isAutoWindow =='false'){
+        if(isFreeWindowMode == false){
           expect(windowStatusType).assertEqual(window.WindowStatusType.FLOATING)
           await subWindowClass.destroyWindow()
           done()
@@ -1325,7 +1331,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
         let windowStatusType = subWindowClass.getWindowStatus();
         console.info(caseName+ ' subWindowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
-        if(isPCStatus == ''|| isAutoWindow =='false'){
+        if(isFreeWindowMode == false){
           expect(windowStatusType).assertEqual(window.WindowStatusType.FLOATING)
           await subWindowClass.destroyWindow()
           done()
@@ -1375,7 +1381,7 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         await subWindowClass.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
         let windowStatusType = subWindowClass.getWindowStatus();
         console.info(caseName+ ' subWindowClass.getWindowStatus(). windowStatusType: ' + JSON.stringify(windowStatusType));
-        if(isPCStatus == ''|| isAutoWindow =='false'){
+        if(isFreeWindowMode == false){
           expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
           await subWindowClass.destroyWindow()
           done()

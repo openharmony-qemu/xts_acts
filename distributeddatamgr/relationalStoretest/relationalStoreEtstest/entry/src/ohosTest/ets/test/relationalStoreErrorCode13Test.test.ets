@@ -58,12 +58,13 @@ export default function relationalStoreErrorCode13Test() {
 
 
     /**
-     * @tc.name  errcode is 14800013
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_0300
-     * @tc.desc  errcode is 14800013
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   errcode is 14800013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode003 start *************");
@@ -85,12 +86,13 @@ export default function relationalStoreErrorCode13Test() {
       console.info(TAG + "************* errcode003 end *************");
     })
     /**
-     * @tc.name beginTrans errcode is 14800047
+     * @generated.time 2025-11-09 20:49:50
+     * @tc.name   errcode035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBAPIErrcodeTest_3500
-     * @tc.desc beginTrans errcode is 14800047
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   beginTrans errcode is 14800047
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('errcode035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "************* errcode035 start *************");

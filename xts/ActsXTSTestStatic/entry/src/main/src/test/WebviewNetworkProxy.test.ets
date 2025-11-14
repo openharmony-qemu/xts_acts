@@ -48,14 +48,15 @@ export default function webviewNetworkProxy() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0100
-    * @tc.name       : testNetworkProxySchemeFilterMatchAllSchemes
-    * @tc.desc       : test ProxySchemeFilter MATCH_ALL_SCHEMES
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testNetworkProxySchemeFilterMatchAllSchemes
+     * @tc.number SUB_WEB_NETWORKPROXY_0100
+     * @tc.desc   test ProxySchemeFilter MATCH_ALL_SCHEMES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkProxySchemeFilterMatchAllSchemes',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       await Utils.msSleep(3000);
@@ -68,14 +69,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0200
-    * @tc.name       : testNetworkProxySchemeFilterMatchHttp
-    * @tc.desc       : test ProxySchemeFilter MATCH_HTTP
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testNetworkProxySchemeFilterMatchHttp
+     * @tc.number SUB_WEB_NETWORKPROXY_0200
+     * @tc.desc   test ProxySchemeFilter MATCH_HTTP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkProxySchemeFilterMatchHttp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testNetworkProxySchemeFilterMatchHttp', 10);
@@ -87,14 +89,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0300
-    * @tc.name       : testNetworkProxySchemeFilterMatchHttps
-    * @tc.desc       : test ProxySchemeFilter MATCH_HTTPS
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testNetworkProxySchemeFilterMatchHttps
+     * @tc.number SUB_WEB_NETWORKPROXY_0300
+     * @tc.desc   test ProxySchemeFilter MATCH_HTTPS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkProxySchemeFilterMatchHttps', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testNetworkProxySchemeFilterMatchHttps', 10);
@@ -106,14 +109,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0400
-    * @tc.name       : testInsertProxyRule
-    * @tc.desc       : test insertProxyRule
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testInsertProxyRule
+     * @tc.number SUB_WEB_NETWORKPROXY_0400
+     * @tc.desc   test insertProxyRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInsertProxyRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testInsertProxyRule', 10);
@@ -125,14 +129,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0500
-    * @tc.name       : testInsertDirectRule
-    * @tc.desc       : test insertDirectRule
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testInsertDirectRule
+     * @tc.number SUB_WEB_NETWORKPROXY_0500
+     * @tc.desc   test insertDirectRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInsertDirectRule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testInsertDirectRule', 10);
@@ -144,14 +149,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0600
-    * @tc.name       : testInsertBypassRule
-    * @tc.desc       : test insertBypassRule
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testInsertBypassRule
+     * @tc.number SUB_WEB_NETWORKPROXY_0600
+     * @tc.desc   test insertBypassRule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInsertBypassRule',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testInsertBypassRule', 10);
@@ -163,14 +169,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0700
-    * @tc.name       : testBypassHostnamesWithoutPeriod
-    * @tc.desc       : test bypassHostnamesWithoutPeriod
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testBypassHostnamesWithoutPeriod
+     * @tc.number SUB_WEB_NETWORKPROXY_0700
+     * @tc.desc   test bypassHostnamesWithoutPeriod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBypassHostnamesWithoutPeriod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testBypassHostnamesWithoutPeriod', 10);
@@ -182,14 +189,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0800
-    * @tc.name       : testClearImplicitRules
-    * @tc.desc       : test clearImplicitRules
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testClearImplicitRules
+     * @tc.number SUB_WEB_NETWORKPROXY_0800
+     * @tc.desc   test clearImplicitRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testClearImplicitRules',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testClearImplicitRules', 10);
@@ -201,14 +209,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_0900
-    * @tc.name       : testEnableReverseBypass
-    * @tc.desc       : test enableReverseBypass
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testEnableReverseBypass
+     * @tc.number SUB_WEB_NETWORKPROXY_0900
+     * @tc.desc   test enableReverseBypass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEnableReverseBypass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testEnableReverseBypass', 10);
@@ -220,14 +229,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_1000
-    * @tc.name       : testGetBypassRules
-    * @tc.desc       : test getBypassRules
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testGetBypassRules
+     * @tc.number SUB_WEB_NETWORKPROXY_1000
+     * @tc.desc   test getBypassRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetBypassRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testGetBypassRules', 10);
@@ -239,14 +249,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_1100
-    * @tc.name       : testGetProxyRules
-    * @tc.desc       : test getProxyRules
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testGetProxyRules
+     * @tc.number SUB_WEB_NETWORKPROXY_1100
+     * @tc.desc   test getProxyRules
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetProxyRules', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>   {
       Utils.emitEvent('testGetProxyRules', 10);
@@ -258,14 +269,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_1200
-    * @tc.name       : testIsReverseBypassEnabled
-    * @tc.desc       : test isReverseBypassEnabled
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testIsReverseBypassEnabled
+     * @tc.number SUB_WEB_NETWORKPROXY_1200
+     * @tc.desc   test isReverseBypassEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testIsReverseBypassEnabled',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testIsReverseBypassEnabled', 10);
@@ -277,14 +289,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_1300
-    * @tc.name       : testGetSchemeFilter
-    * @tc.desc       : test getSchemeFilter
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testGetSchemeFilter
+     * @tc.number SUB_WEB_NETWORKPROXY_1300
+     * @tc.desc   test getSchemeFilter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetSchemeFilter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testGetSchemeFilter', 10);
@@ -296,14 +309,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_1300
-    * @tc.name       : testProxyGetUrl
-    * @tc.desc       : test getUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testProxyGetUrl
+     * @tc.number SUB_WEB_NETWORKPROXY_1300
+     * @tc.desc   test getUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testProxyGetUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testProxyGetUrl', 10);
@@ -315,14 +329,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_1500
-    * @tc.name       : testApplyProxyOverride
-    * @tc.desc       : test applyProxyOverride
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testApplyProxyOverride
+     * @tc.number SUB_WEB_NETWORKPROXY_1500
+     * @tc.desc   test applyProxyOverride
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testApplyProxyOverride', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testApplyProxyOverride', 10);
@@ -334,14 +349,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_NETWORKPROXY_1600
-    * @tc.name       : testRemoveProxyOverride
-    * @tc.desc       : test removeProxyOverride
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testRemoveProxyOverride
+     * @tc.number SUB_WEB_NETWORKPROXY_1600
+     * @tc.desc   test removeProxyOverride
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRemoveProxyOverride', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> =>  {
       Utils.emitEvent('testRemoveProxyOverride', 10);
@@ -353,6 +369,15 @@ export default function webviewNetworkProxy() {
       done();
     })
 
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitonSwitchNextPage', 10);

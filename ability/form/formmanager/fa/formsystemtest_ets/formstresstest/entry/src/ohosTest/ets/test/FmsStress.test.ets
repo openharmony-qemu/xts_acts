@@ -73,6 +73,8 @@ let options:CommonEventManager.CommonEventPublishData = {
     isOrdered: true
 }
 
+let ERROR_CODE_FORM_PERMISSION_DENY_SYS = 202;
+
 function sleep(time: number): Promise<void> {
     return new Promise((resolve)=>setTimeout(resolve,time));
 }
@@ -484,13 +486,13 @@ export default function test() {
         it(`FMS_stressTest_1800`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_stressTest_1800`;
             try {
-                const systemstatus = await formHost.isSystemReady();
+                const systemstatus = await formHostNew.isSystemReady();
                 console.info(`${tcNumber} systemstatus: ${JSON.stringify(systemstatus)}`);
-                expect(systemstatus).assertEqual(undefined);
+                expect().assertFail();
                 done();
             } catch(error) {
-                console.error(`${tcNumber} getAllFormsInfo error: ${JSON.stringify(error)}`);
-                expect(error?.code).assertEqual(1);
+                console.error(`${tcNumber} isSystemReady error: ${JSON.stringify(error)}`);
+                expect(error?.code).assertEqual(ERROR_CODE_FORM_PERMISSION_DENY_SYS);
                 done();
             } 
         });

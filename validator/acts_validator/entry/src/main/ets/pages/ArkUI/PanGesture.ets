@@ -43,10 +43,10 @@ struct PanGestureExample {
               .height('60%')
               .width('60%')
           }
-          .height('350vp')
-          .width('350vp')
-          .padding(20)
-          .margin(80)
+          .height('35%')
+          .width('90%')
+          .padding('5%')
+          .margin('5%')
           .translate({ x: this.X, y: this.Y, z: 5 })
           .gesture(
             PanGesture({})
@@ -64,13 +64,14 @@ struct PanGestureExample {
           )
 
           Text('偏移坐标x: ' + this.X + '\n' + '偏移坐标y: ' + this.Y)
+            .fontColor(Color.Black)
         }
       }
-      .scrollBarWidth('6vp')
+      .scrollBarWidth('3%')
       .scrollBarColor('#cccccc')
     }
-    .width('100%')
     .height('80%')
+    .width('100%')
     .backgroundColor(Color.White)
     .justifyContent(FlexAlign.SpaceEvenly)
   }
@@ -82,9 +83,9 @@ struct PanGestureExample {
         Url: 'pages/ArkUI/ArkUI_index',
         StepTips: this.StepTips,
         content: this.specificNoParam,
-        X: $X,
+        X:$X,
         Y: $Y,
-        name: $name,
+        name:$name,
         Vue: $Vue,
       })
     }

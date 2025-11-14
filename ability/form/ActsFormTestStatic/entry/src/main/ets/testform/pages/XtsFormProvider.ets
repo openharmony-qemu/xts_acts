@@ -14,7 +14,7 @@
  */
 
 import { Text, Component, Column, Row, Button, ClickEvent, Entry, FormComponent, FormCallbackInfo, Visibility } from '@ohos.arkui.component';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import formBindingData from '@ohos.app.form.formBindingData';
 import formHost from '@ohos.app.form.formHost';
@@ -101,7 +101,7 @@ struct XtsFormProvider {
               'ohos.extra.param.key.form_dimension': 2,
               'ohos.extra.param.key.form_name': 'widget',
               'ohos.extra.param.key.module_name': 'entry'
-            } as Record<string, Object>
+            } as Record<string, RecordData>
           };
           try {
             formProvider.openFormManagerCrossBundle(want)
@@ -183,7 +183,7 @@ struct XtsFormProvider {
       Button('requestPublishForm Tests').onClick((e: ClickEvent) => {
         hilog.info(DOMAIN, TAG, 'requestPublishForm Tests triggered.');
         try {
-          let wantParams: Record<string, Object> = {
+          let wantParams: Record<string, RecordData> = {
             'ohos.extra.param.key.form_dimension': 2,
             'ohos.extra.param.key.form_name': 'widget',
             'ohos.extra.param.key.module_name': 'entry',

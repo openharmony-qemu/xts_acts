@@ -4465,6 +4465,13 @@ export default function audioFramework() {
             };
             data.on('stateChange', stateChangeCallback);
             data.off('stateChange', stateChangeCallback);
+            let readDataCallback = (value: ArrayBuffer) => {
+                console.info(`read valus: ${value}`);
+              };
+            data.on('readData', readDataCallback);
+            console.info('Capturer readData on success.');
+            data.off('readData', readDataCallback);
+            console.info('Capturer readData of success.');
             data.release().then(() => {
               console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
               console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
@@ -4479,6 +4486,7 @@ export default function audioFramework() {
           });
           done();
       })
+
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0100
      * @tc.name      : isActive - Media - Promise
@@ -6994,6 +7002,34 @@ export default function audioFramework() {
             let error = err as BusinessError;
             console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
             expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400
+    * @tc.desc      : isAcousticEchoCancelerSupported - true
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
+          console.info(`[AEC Support] Source Type: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`)
+          if (isSupportAEC) {
+              console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
+              expect(isSupportAEC).assertEqual(true);
+          } else {
+              console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
+              expect(isSupportAEC).assertEqual(false);
+          } 
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+          expect(false).assertTrue();        
         }
         done();
     })

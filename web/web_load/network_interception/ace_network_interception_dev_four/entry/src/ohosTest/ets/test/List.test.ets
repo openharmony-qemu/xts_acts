@@ -22,10 +22,12 @@ import setAndClearServiceWorkerWebSchemeHandler from './SetAndClearServiceWorker
 import customizeSchemes from './CustomizeSchemes.test';
 import WebNetError from './WebNetError.test';
 import webViewGetRequestResourceType from './WebViewGetRequestResourceType.test';
+import WebResourceType from './WebResourceType.test';
 
 
 export default function testsuite() {
        webViewGetRequestResourceType()
+       WebResourceType()
        webViewOnRequestStart()
        webViewOnRequestStartTwo()
        webViewOnRequestStop()

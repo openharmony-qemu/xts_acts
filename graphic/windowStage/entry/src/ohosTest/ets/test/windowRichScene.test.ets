@@ -22,6 +22,8 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
   describe('window_richScene_test', () => {
     console.log('describe window_richScene_test start!!!')
     let isPCStatus: string = '';
+    let isAutoWindow: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       console.info('window_richScene_test beforeAll begin');
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -30,6 +32,13 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
       console.info('window_richScene_test beforeAll end');
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+      console.error(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     })
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0110
@@ -704,9 +713,9 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
      * @tc.desc      : Gets the current window gamut mode
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowColorSpace_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testGetWindowColorSpace_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetWindowColorSpace_Invoke_Interface_Two_Times';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1636,9 +1645,9 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
      * @tc.desc      : Gets the main window under the WindowStage instance
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testGetMainWindowSync_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testGetMainWindowSync_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetMainWindowSync_Invoke_Interface_Two_Times';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

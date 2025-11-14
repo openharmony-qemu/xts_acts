@@ -137,12 +137,13 @@ export default function relationalStoreCloudSyncEtsTest() {
     console.log(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name test PRIKeyType string
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStorePRIKeyType0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0200
-     * @tc.desc test PRIKeyType string
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test PRIKeyType string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePRIKeyType0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStorePRIKeyType0010 start *************");
@@ -167,12 +168,13 @@ export default function relationalStoreCloudSyncEtsTest() {
 
     
     /**
-     * @tc.name test PRIKeyType number
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStorePRIKeyType0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0100
-     * @tc.desc test PRIKeyType number
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test PRIKeyType number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStorePRIKeyType0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStorePRIKeyType0020 start *************");
@@ -195,12 +197,13 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @tc.name test UTCTime type
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreUTCTime0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0300
-     * @tc.desc test UTCTime type
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test UTCTime type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreUTCTime0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreUTCTime0010 start *************");
@@ -218,12 +221,13 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @tc.name test ModifyTime type
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreModifyTime0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0500
-     * @tc.desc test ModifyTime type
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test ModifyTime type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreModifyTime0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreModifyTime0010 start *************");
@@ -244,12 +248,13 @@ export default function relationalStoreCloudSyncEtsTest() {
       console.log(TAG + "************* testRdbStoreModifyTime0010 end *************");
     })
     /**
-     * @tc.name test Progress type
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreProgress0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0800
-     * @tc.desc test Progress type
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test Progress type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreProgress0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreProgress0010 start *************");
@@ -266,12 +271,13 @@ export default function relationalStoreCloudSyncEtsTest() {
       console.log(TAG + "************* testRdbStoreProgress0010 end *************");
     })
     /**
-     * @tc.name test Statistic
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreStatistic0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0900
-     * @tc.desc test Statistic
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test Statistic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreStatistic0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreStatistic0010 start *************");
@@ -291,12 +297,13 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @tc.name test TableDetails
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreTableDetails0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_1000
-     * @tc.desc test TableDetails
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test TableDetails
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreTableDetails0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreTableDetails0010 start *************");
@@ -317,12 +324,13 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @tc.name test ProgressCode
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreProgressCode0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0600
-     * @tc.desc test ProgressCode
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test ProgressCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreProgressCode0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreProgressCode0010 start *************");
@@ -346,12 +354,13 @@ export default function relationalStoreCloudSyncEtsTest() {
     })
 
     /**
-     * @tc.name test ProgressDetails
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreProgressDetails0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeJsApiTest_0700
-     * @tc.desc test ProgressDetails
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   test ProgressDetails
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreProgressDetails0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreProgressDetails0010 start *************");

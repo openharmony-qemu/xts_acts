@@ -36,12 +36,15 @@ export default function inputMethodAuthorityJSUnit() {
       });
     })
 
-    /*
-     * @tc.number  inputmethod_test_switchInputMethod_001
-     * @tc.name    Test Indicates the input method which will replace the current one.
-     * @tc.desc    Function test
-     * @tc.level   0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethod_test_switchInputMethod_001
+     * @tc.number inputmethod_test_switchInputMethod_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('inputmethod_test_switchInputMethod_001', Level.LEVEL0, async (done: Function) => {
       console.info("====>************* inputmethod_test_switchInputMethod_001 Test start*************");
       let inputM = inputMethod.getCurrentInputMethod()
@@ -65,11 +68,14 @@ export default function inputMethodAuthorityJSUnit() {
       });
     });
 
-    /*
-     * @tc.number  inputmethod_test_switchInputMethod_002
-     * @tc.name    Test Indicates the input method which will replace the current one.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethod_test_switchInputMethod_002
+     * @tc.number inputmethod_test_switchInputMethod_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputmethod_test_switchInputMethod_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputmethod_test_switchInputMethod_002 Test start*************");
@@ -100,11 +106,14 @@ export default function inputMethodAuthorityJSUnit() {
       });
     });
 
-    /*
-     * @tc.number  inputmethod_test_showSoftKeyboard_001
-     * @tc.name    Test Indicates the input method which will show softboard with calback.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethod_test_showSoftKeyboard_001
+     * @tc.number inputmethod_test_showSoftKeyboard_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputmethod_test_showSoftKeyboard_001', Level.LEVEL2, async (done: Function) => {
       let inputMethodCtrl = inputMethod.getInputMethodController()
@@ -125,11 +134,14 @@ export default function inputMethodAuthorityJSUnit() {
       });
     });
 
-    /*
-     * @tc.number  inputmethod_test_showSoftKeyboard_002
-     * @tc.name    Test Indicates the input method which will show softboard with Promise.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethod_test_showSoftKeyboard_002
+     * @tc.number inputmethod_test_showSoftKeyboard_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputmethod_test_showSoftKeyboard_002', Level.LEVEL2, async (done: Function) => {
       let inputMethodCtrl = inputMethod.getInputMethodController()
@@ -151,11 +163,14 @@ export default function inputMethodAuthorityJSUnit() {
       })
     });
 
-    /*
-     * @tc.number  inputmethod_test_hideSoftKeyboard_001
-     * @tc.name    Test Indicates the input method which will hide softboard with calback.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethod_test_hideSoftKeyboard_001
+     * @tc.number inputmethod_test_hideSoftKeyboard_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputmethod_test_hideSoftKeyboard_001', Level.LEVEL2, async (done: Function) => {
       let inputMethodCtrl = inputMethod.getInputMethodController()
@@ -177,11 +192,14 @@ export default function inputMethodAuthorityJSUnit() {
       })
     });
 
-    /*
-     * @tc.number  inputmethod_test_hideSoftKeyboard_002
-     * @tc.name    Test Indicates the input method which will hide softboard with Promise.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputmethod_test_hideSoftKeyboard_002
+     * @tc.number inputmethod_test_hideSoftKeyboard_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputmethod_test_hideSoftKeyboard_002', Level.LEVEL2, async (done: Function) => {
       let inputMethodCtrl = inputMethod.getInputMethodController()
@@ -201,11 +219,14 @@ export default function inputMethodAuthorityJSUnit() {
       })
     });
 
-    /*
-     * @tc.number  inputMethod_test_switchCurrentInputMethodAndSubtype_001
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputMethod_test_switchCurrentInputMethodAndSubtype_001
+     * @tc.number inputMethod_test_switchCurrentInputMethodAndSubtype_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_switchCurrentInputMethodAndSubtype_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethod_test_switchCurrentInputMethodAndSubtype_001 Test start*************");
@@ -255,11 +276,14 @@ export default function inputMethodAuthorityJSUnit() {
       console.info("====>************* inputMethod_test_switchCurrentInputMethodAndSubtype_001 Test end*************");
     });
 
-    /*
-     * @tc.number  inputMethod_test_switchCurrentInputMethodAndSubtype_002
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputMethod_test_switchCurrentInputMethodAndSubtype_002
+     * @tc.number inputMethod_test_switchCurrentInputMethodAndSubtype_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_switchCurrentInputMethodAndSubtype_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethod_test_switchCurrentInputMethodAndSubtype_002 Test start*************");
@@ -310,11 +334,14 @@ export default function inputMethodAuthorityJSUnit() {
       console.info("====>************* inputMethod_test_switchCurrentInputMethodAndSubtype_002 Test end*************");
     });
 
-    /*
-     * @tc.number  inputMethod_test_switchCurrentInputMethodSubtype_001
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_001
+     * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_switchCurrentInputMethodSubtype_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethod_test_switchCurrentInputMethodSubtype_001 Test start*************");
@@ -352,11 +379,14 @@ export default function inputMethodAuthorityJSUnit() {
       console.info("====>************* inputMethod_test_switchCurrentInputMethodSubtype_001 Test end*************");
     });
 
-    /*
-     * @tc.number  inputMethod_test_switchCurrentInputMethodSubtype_002
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   inputMethod_test_switchCurrentInputMethodSubtype_002
+     * @tc.number inputMethod_test_switchCurrentInputMethodSubtype_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_switchCurrentInputMethodSubtype_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethod_test_switchCurrentInputMethodSubtype_002 Test start*************");
@@ -395,12 +425,13 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_InputMethodState_0901
-     * @tc.name    Sub_InputMethod_IME_InputMethodState_0901
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_InputMethodState_0901
+     * @tc.number Sub_InputMethod_IME_InputMethodState_0901
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_InputMethodState_0901', Level.LEVEL2, async (done: Function) => {
       try{
@@ -427,12 +458,13 @@ export default function inputMethodAuthorityJSUnit() {
     };
 
     /**
-     * @tc.number  Sub_Misc_InputMethod_IME_recvMessage_0100
-     * @tc.name    Sub_Misc_InputMethod_IME_recvMessage_0100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_Misc_InputMethod_IME_recvMessage_0100
+     * @tc.number Sub_Misc_InputMethod_IME_recvMessage_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Misc_InputMethod_IME_recvMessage_0100', Level.LEVEL2, async (done: Function) => {
       let inputMethodController = inputMethod.getController();
@@ -461,12 +493,13 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_getSecurityMode_0101
-     * @tc.name    Sub_InputMethod_IME_getSecurityMode_0101
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_getSecurityMode_0101
+     * @tc.number Sub_InputMethod_IME_getSecurityMode_0101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_getSecurityMode_0101', Level.LEVEL2, async (done: Function) => {
       try{
@@ -484,12 +517,13 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_createPanel_0101
-     * @tc.name    Sub_InputMethod_IME_createPanel_0101
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_createPanel_0101
+     * @tc.number Sub_InputMethod_IME_createPanel_0101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_createPanel_0101', Level.LEVEL2, async (done: Function) => {
       let panelInfo: inputmethodengine.PanelInfo = {
@@ -518,12 +552,13 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IME_createPanel_0201
-     * @tc.name    Sub_InputMethod_IME_createPanel_0201
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IME_createPanel_0201
+     * @tc.number Sub_InputMethod_IME_createPanel_0201
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IME_createPanel_0201', Level.LEVEL2, async (done: Function) => {
       let panelInfo: inputmethodengine.PanelInfo = {
@@ -545,12 +580,13 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IMF_DiscardTypingText_0200
-     * @tc.name    Sub_InputMethod_IMF_DiscardTypingText_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_DiscardTypingText_0200
+     * @tc.number Sub_InputMethod_IMF_DiscardTypingText_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IMF_DiscardTypingText_0200', Level.LEVEL2, async (done: Function) => {
       try{
@@ -567,12 +603,13 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0100
-     * @tc.name    Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0100
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0100
+     * @tc.number Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0100', Level.LEVEL2, async (done: Function) => {
       try{
@@ -589,12 +626,13 @@ export default function inputMethodAuthorityJSUnit() {
     });
 
     /**
-     * @tc.number  Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200
-     * @tc.name    Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200
+     * @tc.number Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200', Level.LEVEL2, async (done: Function) => {
       try{

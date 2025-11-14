@@ -97,12 +97,13 @@ export default function rdbStoreDeleteTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0450
-     * @tc.name   : testRdbStoreDelete001
-     * @tc.desc   : RdbStore delete callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0450
+     * @tc.desc   RdbStore delete callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete001 start *************");
@@ -129,12 +130,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0440
-     * @tc.name   : testRdbStoreDelete002
-     * @tc.desc   : RdbStore delete callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0440
+     * @tc.desc   RdbStore delete callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete002 start *************");
@@ -159,12 +161,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0480
-     * @tc.name   : testRdbStoreDelete003
-     * @tc.desc   : RdbStore delete callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0480
+     * @tc.desc   RdbStore delete callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete003 start *************");
@@ -189,12 +192,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0460
-     * @tc.name   : testRdbStoreDelete004
-     * @tc.desc   : RdbStore delete promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0460
+     * @tc.desc   RdbStore delete promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete004 start *************");
@@ -223,12 +227,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0500
-     * @tc.name   : testRdbStoreDelete005
-     * @tc.desc   : RdbStore delete promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0500
+     * @tc.desc   RdbStore delete promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete005 start *************");
@@ -255,12 +260,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0490
-     * @tc.name   : testRdbStoreDelete006
-     * @tc.desc   : RdbStore delete promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0490
+     * @tc.desc   RdbStore delete promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete006 start *************");
@@ -286,12 +292,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0530
-     * @tc.name   : testRdbStoreDelete007
-     * @tc.desc   : RdbStore delete callback test: parameter missing
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete007
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0530
+     * @tc.desc   RdbStore delete callback test: parameter missing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete007 start *************");
@@ -323,12 +330,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0470
-     * @tc.name   : testRdbStoreDelete008
-     * @tc.desc   : RdbStore delete callback test: predicate nonexistence
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDelete008
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0470
+     * @tc.desc   RdbStore delete callback test: predicate nonexistence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDelete008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDelete008 start *************");
@@ -355,12 +363,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0510
-     * @tc.name   : testRdbStoreDeleteError001
-     * @tc.desc   : RdbStore delete callback test: undefined
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDeleteError001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0510
+     * @tc.desc   RdbStore delete callback test: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDeleteError001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDeleteError001 start *************");
@@ -384,12 +393,13 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0520
-     * @tc.name   : testRdbStoreDeleteError005
-     * @tc.desc   : RdbStore delete promise test: undefined
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testRdbStoreDeleteError005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0520
+     * @tc.desc   RdbStore delete promise test: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreDeleteError005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "************* testRdbStoreDeleteError005 start *************");

@@ -161,7 +161,7 @@ struct audioOutputRouting {
         }
       }.width('100%').height('80%').backgroundColor(Color.Black)
       .justifyContent(FlexAlign.SpaceEvenly)
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Audio/Audio_index',
