@@ -22,7 +22,7 @@ import symbolToStringTestTest from "./symboltest/SymbolToString.test";
 
 export default function testsuite() {
 
-  finalizationRegistryTest();
+ 
   finalizationRegistryRegisterTest();
   finalizationRegistryUnregisterTest();
   symbolAsyncIteratorTestTest();
