@@ -15,7 +15,7 @@
 
 export default class Utils {
 
-  static sleep(time:number) {
+  static msSleep(time:number) {
     return new Promise<void>((resolve, reject) => {
       setTimeout(() => {
         resolve()
