@@ -23,7 +23,7 @@ export default function NavigationTest() {
     beforeEach(async  (done:Function) =>{
       console.info("NavigationTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Navigation/NavigationTest/NavigationTest',
+        url: 'MainAbility/pages/Navigation/NavigationTest',
       }
       try {
         router.clear();
