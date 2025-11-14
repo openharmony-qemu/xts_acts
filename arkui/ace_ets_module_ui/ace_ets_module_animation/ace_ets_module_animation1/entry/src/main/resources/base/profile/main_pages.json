@@ -1,0 +1,19 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/FrameNodeAnimation",
+        "MainAbility/pages/ParticleEmitter",
+        "MainAbility/pages/Vector2TTest",
+        "MainAbility/pages/FrameNodeAnimationPage",
+        "MainAbility/pages/TestSweepGradientOptions",
+        "MainAbility/pages/TransitionEdgeTest",
+        "MainAbility/pages/AnimatorResult/ExpectedFrameRateRange",
+        "MainAbility/pages/AnimatorResult/AnimatorResult",
+        "MainAbility/pages/AnimatorResult/animateToTest",
+        "MainAbility/pages/AnimatorResult/setExpectedFrameRateRange",
+        "MainAbility/pages/Particle/Particle",
+        "MainAbility/pages/SymbolGlyph/SymbolGlyph",
+        "MainAbility/pages/Particle/particleAnimationTest",
+        "MainAbility/pages/Particle/particleAttributeTest"
+    ]
+}
