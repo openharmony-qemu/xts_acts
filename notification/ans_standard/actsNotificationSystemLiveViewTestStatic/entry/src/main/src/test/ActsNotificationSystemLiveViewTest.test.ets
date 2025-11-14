@@ -1081,7 +1081,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-          console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 pixelMap: ${pixelMap}`);
+          console.info(`${TAG} Sub_Notification_Ans_Live_Publish_Static_7600 pixelMap: ${pixelMap}`);
           console.log('Succeeded in creating pixelmap.');
         })
 
@@ -1198,9 +1198,8 @@ export default function ActsNotificationSystemLiveViewTest() {
             }
           })
         } catch (error) {
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,
-            JSON.stringify(error));
           let err: BusinessError = error as BusinessError
+          console.error(`${TAG} `+` ${TEST_SUITE_NAME} ` + ` ${TEST_CASE_NAME} ` + 'publish failed! ${err.code} ${err.message}');
           expect(err.code).assertEqual(401);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
           done();
