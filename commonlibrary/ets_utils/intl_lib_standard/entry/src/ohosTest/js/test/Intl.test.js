@@ -503,7 +503,7 @@ describe('etsIntlFunTest', function () {
             currencyDisplay: 'name', currencySign: 'accounting', signDisplay: 'always' };
         var intlObj = new Intl.NumberFormat("en-GB", option);
         console.log("intlNumberFormatTest016::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+€123,456.79');
+        expect(intlObj.format(number)).assertEqual('+123,456.79 euros');
         expect(intlObj.resolvedOptions().locale).assertEqual('en-GB');
         expect(intlObj.resolvedOptions().style).assertEqual('currency');
         expect(intlObj.resolvedOptions().currency).assertEqual('EUR');
@@ -525,7 +525,7 @@ describe('etsIntlFunTest', function () {
             currencyDisplay: 'code', currencySign: 'accounting', signDisplay: 'always' };
         var intlObj = new Intl.NumberFormat("en-US", option);
         console.log("intlNumberFormatTest017::" + intlObj.format(number));
-        expect(intlObj.format(number)).assertEqual('+$123,456.79');
+        expect(intlObj.format(number)).assertEqual('+USD 123,456.79');
         expect(intlObj.resolvedOptions().currency).assertEqual('USD');
         expect(intlObj.format(number)).assertContain('123,456.79');
     })

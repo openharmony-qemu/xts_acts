@@ -26,7 +26,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext;
 
-let parameters: Record<String,Object> = {"demo_key": "demo_value", "demo_num": 111}
+let parameters: Record<String, RecordData> = {"demo_key": "demo_value", "demo_num": 111}
 let paramOptions: OpenLinkOptions = {
   parameters: parameters
 };

@@ -14,7 +14,7 @@
 */
 
 import notification from '@ohos.notification'
-import { UiDriver, BY } from '@ohos.UiTest';
+import { UiDriver, BY,ON } from '@ohos.UiTest';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import image from '@ohos.multimedia.image'
 import wantAgent from '@ohos.wantAgent'
@@ -136,7 +136,7 @@ export default function ActsNotificationPublishTest() {
       console.info(`Sub_Notification_Ans_Enable_Query_2700 ===>====>come in driveFn`);
       await sleep(1000);
       console.info(`Sub_Notification_Ans_Enable_Query_2700 ===>====>driver is ${JSON.stringify(driver)}`);
-      let button = await driver.findComponent(BY.text('允许'));
+      let button = await driver.findComponent(ON.text('允许'));
       console.info(`Sub_Notification_Ans_Enable_Query_2700 ===>====>button is ${JSON.stringify(button)}`);
       if (button !== null) {
         await button.click();

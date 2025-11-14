@@ -940,7 +940,7 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
             expect(InputDeviceData.axisRanges[j].min).assertInstanceOf('Number');
             expect(InputDeviceData.axisRanges[j].fuzz).assertInstanceOf('Number');
             expect(InputDeviceData.axisRanges[j].flat).assertInstanceOf('Number');
-            expect(InputDeviceData.axisRanges[j].InputDeviceDataolution).assertInstanceOf('Number');
+            expect(InputDeviceData.axisRanges[j].resolution).assertInstanceOf('Number');
           }
         })
       } catch (err) {
