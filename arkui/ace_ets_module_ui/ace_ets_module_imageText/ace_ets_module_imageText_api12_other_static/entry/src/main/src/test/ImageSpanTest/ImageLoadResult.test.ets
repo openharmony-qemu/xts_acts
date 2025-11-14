@@ -35,7 +35,7 @@ export default function ImageLoadResultTest() {
 
       try {
         let p =
-          new Promise<void>(async (resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void) => {
+          new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void) => {
             let timer: number;
             timer = setTimeout(() => {
               reject(new Error('execute timeout ' + 1000 + 'ms'));
@@ -78,7 +78,7 @@ export default function ImageLoadResultTest() {
     });
 
 
-    
+
     /*
      * @tc.number   ImageLoadResultTest_static_0010
      * @tc.name     ImageLoadResultTest_static_0010
@@ -101,7 +101,7 @@ export default function ImageLoadResultTest() {
     });
 
 
-    
+
     /*
      * @tc.number   ImageLoadResultTest_static_0020
      * @tc.name     ImageLoadResultTest_static_0020
