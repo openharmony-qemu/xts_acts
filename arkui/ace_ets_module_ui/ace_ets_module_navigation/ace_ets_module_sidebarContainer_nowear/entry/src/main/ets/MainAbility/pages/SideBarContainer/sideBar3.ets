@@ -16,8 +16,8 @@
 @Entry
 @Component
 struct SideBarShowSideBar {
-  normalIcon: Resource = $r("app.media.user")
-  selectedIcon: Resource = $r("app.media.userFull")
+  normalIcon: Resource = $r('app.media.user')
+  selectedIcon: Resource = $r('app.media.userFull')
   @State arr: number[] = [1, 2, 3]
   @State current: number = 1
 
@@ -33,7 +33,7 @@ struct SideBarShowSideBar {
         ForEach(this.arr, (item: number) => {
           Column({ space: 5 }) {
             Image(this.current === item ? this.selectedIcon : this.normalIcon).width(64).height(64)
-            Text("Index0" + item)
+            Text('Index0' + item)
               .fontSize(25)
               .fontColor(this.current === item ? '#0A59F7' : '#999')
               .fontFamily('source-sans-pro,cursive,sans-serif')
@@ -56,7 +56,7 @@ struct SideBarShowSideBar {
         }.justifyContent(FlexAlign.Center)
       }.width('100%')
     }
-    .key("SideBarContainer")
+    .key('SideBarContainer')
     .showSideBar(true)
     .autoHide(false)
     .sideBarWidth(240)
