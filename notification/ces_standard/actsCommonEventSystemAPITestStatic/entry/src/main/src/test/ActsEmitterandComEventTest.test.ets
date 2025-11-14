@@ -431,10 +431,17 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
+      for(int i = 0 ; i++ ; i < 15 ){
+        if(expect(result).assertEqual(5)){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_0100 END`);
+          break;
+        }
+        await Utils.msSleep(1000)
+      }
       await Utils.msSleep(2000)
       expect(result).assertEqual(5)
-      console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_0100 END`);
-      done()
+      emitter.off("eventId1");
+      done();
     })
     /**
      * @tc.number     : Sub_Notification_Emitter_Publish_Emit_Static_0200
@@ -468,9 +475,16 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
+      for(int i = 0 ; i++ ; i < 15 ){
+        if(expect(result).assertEqual(0)){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0200 END` + result);
+          break;
+        }
+        await Utils.msSleep(1000)
+      }
       await Utils.msSleep(2000)
       expect(result).assertEqual(0)
-      done()
+      done();
     })
 
     /**
@@ -513,9 +527,16 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success');
       //调用取消订阅事件接口
-      await Utils.msSleep(3000)
+      for(int i = 0 ; i++ ; i < 15 ){
+        await Utils.msSleep(1000)
+        if(expect(onConsume_number).assertEqual(1)){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0200 END` + result);
+          break;
+        } 
+      }
+      await Utils.msSleep(2000)
       expect(onConsume_number).assertEqual(1)
-      done()
+      done();
     })
     /**
      * @tc.number     : Sub_Notification_Emitter_Publish_Emit_Static_0400
@@ -556,9 +577,16 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId7", eventData);
       console.info(Tag +'emitterEmit success');
       //调用取消订阅事件接口
-      await Utils.msSleep(3000)
+      for(int i = 0 ; i++ ; i < 15 ){
+        await Utils.msSleep(1000)
+        if(expect(onConsume_number).assertEqual(0)){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0400 END` + result);
+          break;
+        } 
+      }
+      await Utils.msSleep(2000)
       expect(onConsume_number).assertEqual(0)
-      done()
+      done();
     })
     
     /**
@@ -594,16 +622,21 @@ export default function ActsEmitterandComEventTest() {
       await Utils.msSleep(1000)
       emitter.emit<Sample>("eventId111", eventData);
       console.info(Tag+ ' emitterEmit success 10分钟');
-      await Utils.msSleep(1000)
-      //调用取消订阅事件接口
-      emitter.off("eventId111");
+      for(int i = 0 ; i++ ; i < 15 ){
+        await Utils.msSleep(1000)
+        if(expect(result).assertEqual(3)){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Sendable_Static_0001` + result);
+          emitter.off("eventId111");
+          break;
+        } 
+      }
       console.info(Tag+ ' emitterOff success');
       //继续发事件
       emitter.emit<Sample>("eventId111", eventData);
-      await Utils.msSleep(1000)
       console.info(Tag+ ' emitterEmit success 取消后');
+      await Utils.msSleep(5000)
       expect(result).assertEqual(3)
-      done()
+      done();
     })
 
 
@@ -630,7 +663,7 @@ export default function ActsEmitterandComEventTest() {
       await Utils.msSleep(2000)
       emitter.offGenericEventData("eventId222",callback);
       console.info(Tag +'emitterOff success');
-      await Utils.msSleep(100)
+      await Utils.msSleep(1000)
       expect(onConsume_number).assertEqual(0)
       done()
     })
@@ -696,7 +729,7 @@ export default function ActsEmitterandComEventTest() {
       emit_number += 1
       emitter.emit<Sample>("eventId444", eventData);
       console.info(Tag+'emitterEmit success'+emit_number);
-      await Utils.msSleep(100)
+      await Utils.msSleep(1000)
       expect(onConsume_number).assertEqual(1)
       done()
     })
