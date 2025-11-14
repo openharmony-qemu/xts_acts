@@ -23,18 +23,18 @@ import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000;
+let tag: string = 'testTag';
 
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
-  public onPrepare: ()=>void = () => {
+  public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
-  public onRun: ()=>void = () => {
+  public onRun: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun');
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();

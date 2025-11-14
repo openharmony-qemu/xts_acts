@@ -17,7 +17,7 @@ import Utils, {
   PageConfig,
   TestValue,
   RectValue,
-  DefaultAlignItems
+  DefaultAlignItems,
 } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
 import { describe, expect, beforeAll } from '../../../../hypium/index'
@@ -35,6 +35,7 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+const uiContext = AppStorage.get<UIContext>('uiContext')!;
 
 export default function alignSelfGridRowTest() {
 
@@ -125,48 +126,46 @@ export default function alignSelfGridRowTest() {
   describe('AlignSelfGridRowTest', () => {
     beforeAll(() => {
       console.info("AlignSelfGridRowTest beforeEach start");
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.003.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
-      
+      //Get component rect and parent component rect
       let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
       let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
-
-      
+      AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
+      //Get viewObj in order to judge attribute is set success
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey as string);
 
-      
-      expect(viewObj.getElement('$attrs').getElement('alignSelf'))
-        .assertEqual(data.testValue.expectValue.expectAlignSelf);
+      //Verify attribute
+      expect(data.viewObj!.getElement('$attrs').getString('alignSelf')).assertEqual(data.testValue.expectValue.expectAlignSelf);
 
-      
+      //When set different value, judge the alignment is correct
       if (data.testValue.describe == 'SetAuto' || data.testValue.describe == 'SetStart') {
-        
+        //When alignSelf : ItemAlign.Auto or ItemAlign.Start
         expect(rect.top).assertEqual(parentRect.top);
         expect(rect.left).assertEqual(parentRect.left);
       } else if (data.testValue.describe == 'SetCenter') {
-        
-        let rectY = Utils.getRectVerticalCenterY(data.pageConfig.componentKey as RectValue);
+        //When alignSelf : ItemAlign.Center
+        const rect = Utils.getComponentRect(data.pageConfig.componentKey)
+        const parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey)
+        let rectY = Utils.getRectVerticalCenterY(rect);
         console.info('[' + data.caseTag + '] rectY : '
           + rectY);
 
-        let parentRectY = Utils.getRectVerticalCenterY(data.pageConfig.parentComponentKey as RectValue);
+        let parentRectY = Utils.getRectVerticalCenterY(parentRect);
         console.info('[' + data.caseTag + '] parentRectY : '
           + parentRectY);
 
         expect(rectY).assertEqual(parentRectY);
       } else if (data.testValue.describe == 'SetEnd') {
-        
+        //When alignSelf : ItemAlign.End
         expect(rect.bottom).assertEqual(parentRect.bottom);
         expect(rect.left).assertEqual(parentRect.left);
       } else if (data.testValue.describe == 'SetStretch') {
-        
-        const uiContext = new UIContext();
-        expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
+        //When alignSelf : ItemAlign.Stretch
+        expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
       }
     })
   })

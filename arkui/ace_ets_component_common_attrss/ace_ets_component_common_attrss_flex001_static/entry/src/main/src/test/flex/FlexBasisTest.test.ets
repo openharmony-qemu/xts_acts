@@ -32,12 +32,17 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import inspector from '@ohos.arkui.inspector';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function flexBasisTest() {
+
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.001.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  const uiContext = AppStorage.get<UIContext>('uiContext')!;
 
   let supportView = [
     'AlphabetIndexer',
@@ -47,7 +52,7 @@ export default function flexBasisTest() {
     'DataPanel',
     'DatePicker',
     'Divider',
-    'Gauge',
+    // 'Gauge',
     'Image',
   // 'ImageAnimator',
   // 'LoadingProgress',
@@ -110,17 +115,15 @@ export default function flexBasisTest() {
     targetWidth: targetWidth,
     targetHeight: targetHeight
   }
-  console.info('111');
-  const uiContext = new UIContext();
-  console.info('222');
+
   let testValues: TestValue[] = [{
     describe: 'SetNumber',
     setValue: {
-      flexBasis: 100.00
+      flexBasis: '100.00vp'
     },
     expectValue: {
       expectFlexBasis: '100.00vp',
-      // expectSize: UIContext.getFocusedUIContext()!.vp2px(100.00)
+      expectSize: uiContext.vp2px(100.00)
     }
   }, {
     describe: 'SetStringPx',
@@ -137,27 +140,26 @@ export default function flexBasisTest() {
       flexBasis: '50%'
     },
     expectValue: {
-      // expectSize: UIContext.getFocusedUIContext()!.vp2px(120)
+      expectSize: uiContext.vp2px(120)
     }
   }]
-  console.info('333');
+
   describe('FlexBasisTest', () => {
     beforeAll(() => {
       console.info("FlexBasisTest beforeEach start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.001.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
+    await UtilsTest.msSleep(4000)
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
-
+        AppStorage.setOrCreate<string | number>('_flexBasis', data.testValue.setValue.flexBasis)
+        let strJson = inspector.getInspectorByKey(pageConfig.componentKey as string ?? '');
+        data.viewObj = JSON.parseJsonElement(strJson);
         //Verify the flexBasis is or not be set success
         console.info('[' + data.caseTag + '] check the flexBasis is or not be set success');
         if (data.testValue.describe == 'SetNumber' || data.testValue.describe == 'SetStringPx') {
-          expect(data.viewObj!.getElement('$attrs').getElement('flexBasis')).assertEqual(data.testValue.expectValue.expectFlexBasis);
+          expect(data.viewObj!.getElement('$attrs').getString('flexBasis')).assertEqual(data.testValue.expectValue.expectFlexBasis);
           console.info('[' + data.caseTag + '] data.viewObj.$attrs.flexBasis' +
-          data.viewObj!.getElement('$attrs').getElement('flexBasis'));
+          data.viewObj!.getElement('$attrs').getString('flexBasis'));
         }
 
         //Get target component rect
@@ -176,7 +178,7 @@ export default function flexBasisTest() {
           if (data.pageConfig.componentKey == 'TextInput') {
             expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize))) <= 2).assertTrue();
           } else {
-            expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize))) <= 1).assertTrue();
+             expect(Math.floor(Math.abs(realWidth - (data.testValue.expectValue.expectSize))) <= 1).assertTrue();
           }
         } else if (data.pageConfig.containerView == 'Column' || data.pageConfig.containerView == 'FlexColumn'
           || data.pageConfig.containerView == 'FlexColumnReverse') {

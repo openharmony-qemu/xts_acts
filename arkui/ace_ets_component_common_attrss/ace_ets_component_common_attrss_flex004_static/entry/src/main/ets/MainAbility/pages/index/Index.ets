@@ -15,7 +15,7 @@
 
 
 import { Entry, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
@@ -27,7 +27,8 @@ struct Index {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('router', router);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
       console.log('error ' + error);
     }
 

@@ -32,7 +32,7 @@ import {
   $r,
   Padding,
   NavigationMode,
-  NavPathStack
+  NavPathStack,
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 

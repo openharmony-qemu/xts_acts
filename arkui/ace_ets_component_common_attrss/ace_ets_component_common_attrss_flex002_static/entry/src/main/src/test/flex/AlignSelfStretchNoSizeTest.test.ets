@@ -36,6 +36,7 @@ import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
+const uiContext = AppStorage.get<UIContext>('uiContext')!;
 
 export default function alignSelfStretchNoSizeTest() {
 
@@ -207,50 +208,47 @@ export default function alignSelfStretchNoSizeTest() {
   describe('AlignSelfStretchNoSizeTest', () => {
     beforeAll(() => {
       console.info("AlignSelfStretchNoSizeTest beforeEach start");
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.002.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
 
-        
+        //Get component rect and parent component rect
         let parentRect = Utils.getComponentRect(data.pageConfig.parentComponentKey as string);
         let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
+        AppStorage.setOrCreate<ItemAlign>('_alignSelf', data.testValue.setValue.alignSelf)
+        //Judge attribute
+        expect(data.viewObj!.getElement('$attrs').getString('alignSelf')).assertEqual(data.testValue.expectValue.expectAlignSelf);
 
-        
-        expect(data.viewObj!.getElement('$attrs').getElement('alignSelf'))
-          .assertEqual(data.testValue.expectValue.expectAlignSelf);
-
-        
+        //When set different value, judge the alignment is correct
         if ('Flex' == data.pageConfig.containerView) {
           let referenceComponentRect = Utils.getComponentRect(data.pageConfig.referenceComponentKey as string);
           if ((data.testValue.describe == 'SetStretchRowWrap')
             || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
             expect(rect.bottom - rect.top).assertEqual(referenceComponentRect.bottom - referenceComponentRect.top);
           } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
             || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.right).assertEqual(parentRect.right);
             expect(rect.top).assertEqual(parentRect.top);
             expect(rect.bottom - rect.top).assertEqual(referenceComponentRect.bottom - referenceComponentRect.top);
           } else if ((data.testValue.describe == 'SetStretchColumnWrap')
             || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
             expect(rect.right - rect.left).assertEqual(referenceComponentRect.right - referenceComponentRect.left);
           } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
             || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.bottom).assertEqual(parentRect.bottom);
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.right - rect.left).assertEqual(referenceComponentRect.right - referenceComponentRect.left);
@@ -259,32 +257,32 @@ export default function alignSelfStretchNoSizeTest() {
           const uiContext = new UIContext();
           if ((data.testValue.describe == 'SetStretchRowWrap')
             || (data.testValue.describe == 'SetStretchRowReverseWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
+            expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
           } else if ((data.testValue.describe == 'SetStretchRowReverseWrap')
             || (data.testValue.describe == 'SetStretchRowWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.right).assertEqual(parentRect.right);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.bottom - rect.top).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentHeight));
+            expect(rect.bottom - rect.top).assertEqual(uiContext.vp2px(parentHeight));
           } else if ((data.testValue.describe == 'SetStretchColumnWrap')
             || (data.testValue.describe == 'SetStretchColumnReverseWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.left).assertEqual(parentRect.left);
             expect(rect.top).assertEqual(parentRect.top);
-            expect(rect.right - rect.left).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentWidth));
+            expect(rect.right - rect.left).assertEqual(uiContext.vp2px(parentWidth));
           } else if ((data.testValue.describe == 'SetStretchColumnReverseWrap')
             || (data.testValue.describe == 'SetStretchColumnWrapReverse')) {
-            
-            
+            //Determine if alignSelf will override the alignItems setting of the parent container
+            //And control the alignment of the component
             expect(rect.bottom).assertEqual(parentRect.bottom);
             expect(rect.left).assertEqual(parentRect.left);
-            expect(rect.right - rect.left).assertEqual(UIContext.getFocusedUIContext()!.vp2px(parentWidth));
+            expect(rect.right - rect.left).assertEqual(uiContext.vp2px(parentWidth));
           }
         }
       })
