@@ -88,7 +88,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -127,7 +127,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -137,7 +137,7 @@ export default function swiperAnimationJsunit() {
         console.error("push circle page error: " + err);
       }
       await CommonFunc.sleep(1000);
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -146,13 +146,13 @@ export default function swiperAnimationJsunit() {
       console.info("swiperAnimationJsunit_static_0024 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = top - bottom;
       let width = right - left;
-      
+      // to swiper
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(1000);
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationEnd');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0024'] component obj is: " +
@@ -190,7 +190,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -199,7 +199,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -209,7 +209,7 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      // to swiper
       let driver2 = Driver.create();
       await CommonFunc.sleep(500);
       await driver2.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
@@ -218,7 +218,7 @@ export default function swiperAnimationJsunit() {
       await driver2.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationStart');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0012'] component obj is: " +
@@ -256,7 +256,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -265,7 +265,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -276,7 +276,7 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      //to autoplay
       const globalMessage =
         AppStorage.get<GlobalMessage<boolean>>('SwiperAnimationExample');
       globalMessage?.message.notify({
@@ -284,12 +284,12 @@ export default function swiperAnimationJsunit() {
       })
       await CommonFunc.sleep(5000);
 
-      
+      //  to press screen
       let driver3 = Driver.create();
       await CommonFunc.sleep(200);
       await driver3.longClick(Math.round(right / 2) as Int, Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationEnd');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0027'] component obj is: " +
@@ -327,7 +327,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -336,7 +336,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -346,7 +346,7 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      //to autoplay
       const globalMessage =
         AppStorage.get<GlobalMessage<boolean>>('SwiperAnimationExample');
       globalMessage?.message.notify({
@@ -354,12 +354,12 @@ export default function swiperAnimationJsunit() {
       })
       await CommonFunc.sleep(500);
 
-      
+      //  to press screen
       let driver = Driver.create();
       await CommonFunc.sleep(200);
       await driver.longClick(Math.round(right / 2) as Int, Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
-      
+      // to swipe for duration
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
@@ -367,7 +367,7 @@ export default function swiperAnimationJsunit() {
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
 
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationStart');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0019'] component obj is: " +
@@ -405,7 +405,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -414,7 +414,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -424,14 +424,14 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      //to autoplay
       const globalMessage =
         AppStorage.get<GlobalMessage<boolean>>('SwiperAnimationExample');
       globalMessage?.message.notify({
         name: 'autoPlay', value: true
       })
       await CommonFunc.sleep(5000);
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationStart');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0022'] component obj is: " +
@@ -469,7 +469,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -478,7 +478,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -488,7 +488,7 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      // click the previous Button
       let driver = Driver.create();
       await CommonFunc.sleep(200);
       let showNext = await driver.findComponent(ON.id('showNext')) as Component;
@@ -500,7 +500,7 @@ export default function swiperAnimationJsunit() {
       await CommonFunc.sleep(1000);
 
 
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationEnd');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0023'] component obj is: " +
@@ -538,7 +538,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -547,7 +547,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -557,7 +557,7 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      // click the previous Button
       let driver = Driver.create();
       await CommonFunc.sleep(200);
       let showNext = await driver.findComponent(ON.id('showNext')) as Component;
@@ -572,7 +572,7 @@ export default function swiperAnimationJsunit() {
       await showNext2.click();
       await CommonFunc.sleep(1000);
 
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationStart');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0011'] component obj is: " +
@@ -608,7 +608,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -617,7 +617,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -627,7 +627,7 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      // click the previous Button
       let driver = Driver.create();
       await CommonFunc.sleep(200);
       let showNext = await driver.findComponent(ON.id('showNext')) as Component;
@@ -642,13 +642,13 @@ export default function swiperAnimationJsunit() {
       await showNext2.click();
       await CommonFunc.sleep(1000);
 
-      
+      // press screen to swipe
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
 
 
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationEnd');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0028'] component obj is: " +
@@ -688,7 +688,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -697,7 +697,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -707,7 +707,7 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      // click the previous Button
       let driver = Driver.create();
       await CommonFunc.sleep(200);
       let showNext = await driver.findComponent(ON.id('showNext')) as Component;
@@ -722,7 +722,7 @@ export default function swiperAnimationJsunit() {
       await showNext2.click();
       await CommonFunc.sleep(1000);
 
-      
+      // press screen to swipe
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(3000);
@@ -731,7 +731,7 @@ export default function swiperAnimationJsunit() {
 
       await CommonFunc.sleep(500);
 
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('animationStart');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0020'] component obj is: " +
@@ -770,7 +770,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -779,7 +779,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -791,15 +791,15 @@ export default function swiperAnimationJsunit() {
       let height = top - bottom;
       let width = right - left;
 
-      
+      // to swiper
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      
+      // getComponentRectOnScreen
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
 
       await CommonFunc.sleep(1000);
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('GestureSwipe');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationGestureJsunit_static_0016] component obj is: " +
@@ -837,7 +837,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -846,7 +846,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -856,13 +856,13 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      // to swiper
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('GestureSwipe');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0017'] component obj2 is: " +
@@ -908,7 +908,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -917,7 +917,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -927,20 +927,20 @@ export default function swiperAnimationJsunit() {
 
       let height = top - bottom;
       let width = right - left;
-      
+      //to autoplay
       const globalMessage =
         AppStorage.get<GlobalMessage<boolean>>('SwiperAnimationExample');
       globalMessage?.message.notify({
         name: 'autoPlay', value: true
       })
       await CommonFunc.sleep(500);
-      
+      // to swiper
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(500);
-      
+      // check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('GestureSwipe');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0019'] component obj2 is: " +
@@ -986,7 +986,7 @@ export default function swiperAnimationJsunit() {
             } as Data2
           } as RouterParams
         }).then(() => {
-          
+          // success
         })
           .catch((err: BusinessError): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -995,7 +995,7 @@ export default function swiperAnimationJsunit() {
       } catch (err) {
         console.error("push circle page error: " + err);
       }
-      
+      // get the rect of swiper
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('swiperAnimation');
       let top = swiperAnimation.top;
       let right = swiperAnimation.right;
@@ -1019,11 +1019,11 @@ export default function swiperAnimationJsunit() {
       await showNext2.click();
       await CommonFunc.sleep(1000);
 
-      
+      // to swiper
       await driver.swipe(Math.round(right - width * 0.4) as Int, Math.round(bottom + height / 2) as Int, 0,
         Math.round(bottom + height / 2) as Int);
       await CommonFunc.sleep(3000);
-      
+      //check the onAnimation triggers
       let strJson = inspector.getInspectorByKey('GestureSwipe');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[swiperAnimationJsunit_static_0020'] component obj2 is: " +

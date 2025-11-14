@@ -69,27 +69,27 @@ struct SwiperItemSpaceTest {
       Swiper() {
         Column() {
           Text('1')
-        }.width('100%').height('100%').backgroundColor(0xF5DEB3).key('itemspacekey01')
+        }.width('100%').height('100%').backgroundColor('0xF5DEB3').key('itemspacekey01')
 
         Column() {
           Text('2')
-        }.width('100%').height('100%').backgroundColor(0xD2B48C).key('itemspacekey02')
+        }.width('100%').height('100%').backgroundColor('0xD2B48C').key('itemspacekey02')
 
         Column() {
           Text('3')
-        }.width('100%').height('100%').backgroundColor(0xF5DEB3).key('itemspacekey03')
+        }.width('100%').height('100%').backgroundColor('0xF5DEB3').key('itemspacekey03')
 
         Column() {
           Text('4')
-        }.width('100%').height('100%').backgroundColor(0xD2B48C).key('itemspacekey04')
+        }.width('100%').height('100%').backgroundColor('0xD2B48C').key('itemspacekey04')
 
         Column() {
           Text('5')
-        }.width('100%').height('100%').backgroundColor(0xF5DEB3).key('itemspacekey05')
+        }.width('100%').height('100%').backgroundColor('0xF5DEB3').key('itemspacekey05')
 
         Column() {
           Text('6')
-        }.width('100%').height('100%').backgroundColor(0xD2B48C).key('itemspacekey06')
+        }.width('100%').height('100%').backgroundColor('0xD2B48C').key('itemspacekey06')
       }
       .key('itemspacekey')
       .index(0)

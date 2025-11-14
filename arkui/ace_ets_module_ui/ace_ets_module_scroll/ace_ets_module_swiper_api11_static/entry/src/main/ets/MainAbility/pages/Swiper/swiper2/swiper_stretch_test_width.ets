@@ -53,7 +53,7 @@ class MyDataSourceT implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -108,21 +108,21 @@ struct SwiperExample {
       .itemSpace(0)
       .displayMode(SwiperDisplayMode.STRETCH)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("targetIndex: " + targetIndex)
         console.info("current offset: " + extraInfo.currentOffset)
         console.info("target offset: " + extraInfo.targetOffset)
         console.info("velocity: " + extraInfo.velocity)
       })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })

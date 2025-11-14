@@ -96,7 +96,7 @@ export default function swiper2() {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0260] START');
       await CommonFunc.sleep(2000);
       let bt = CommonFunc.getComponentRect('swiperTest2');
-      
+      //180,87,540,327
       let btTop = bt.top;
       let btBottom = bt.bottom;
       let btRight = bt.right;

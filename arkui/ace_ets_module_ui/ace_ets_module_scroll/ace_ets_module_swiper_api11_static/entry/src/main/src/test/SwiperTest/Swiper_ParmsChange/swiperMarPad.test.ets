@@ -106,7 +106,7 @@ export default function swiperMarPad() {
       let swiperMarPad04 = CommonFunc.getComponentRectOnScreen('swiperMarPad04');
       let swiperMarPad05 = CommonFunc.getComponentRectOnScreen('swiperMarPad05');
       let swiperMarPad06 = CommonFunc.getComponentRectOnScreen('swiperMarPad06');
-      
+      // Before flipping the page
       const uiContext = new UIContext();
       console.info("Before page turning , swiperMarPad01.left - swiperMarPad.left value is " +
       JSON.stringify(swiperMarPad01.left - swiperMarPad.left));
@@ -118,12 +118,12 @@ export default function swiperMarPad() {
         .assertTrue();
       expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      
+      // Page turning.
       let driver = Driver.create();
-      
-      
-      
-      
+      // await CommonFunc.sleep(500)
+      // //  await driver.swipe(250, 230, 200, 230);
+      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
+      // await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('swiperMarPad')
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`) as Int,
@@ -139,7 +139,7 @@ export default function swiperMarPad() {
       swiperMarPad04 = CommonFunc.getComponentRectOnScreen('swiperMarPad04');
       swiperMarPad05 = CommonFunc.getComponentRectOnScreen('swiperMarPad05');
       swiperMarPad06 = CommonFunc.getComponentRectOnScreen('swiperMarPad06');
-      
+      // After flipping the page.
       console.info("After page turning, swiperMarPad02.left - swiperMarPad.left value is " +
       JSON.stringify(swiperMarPad02.left - swiperMarPad.left));
       expect(Math.abs(Math.round(swiperMarPad02.left - swiperMarPad.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
@@ -151,16 +151,16 @@ export default function swiperMarPad() {
       expect(Math.abs(Math.round(swiperMarPad.bottom - swiperMarPad02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       console.info("The type value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
       console.info("The indicator value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
       console.info("The loop value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
       console.info("The displayCount value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')).assertEqual(1);
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
       console.info('new testSwiperSetPaddingMargin_static END');
       done();
     });

@@ -46,7 +46,7 @@ import { MessageManager, Callback, Message, GlobalMessage } from '../../../commo
 @Entry
 @Component
 struct SwiperIndexTest {
-  @State testSwiperIndex: Int = 0;
+  @State testSwiperIndex: int = 0;
   messageManager: MessageManager<number> = new MessageManager<number>();
 
   onPageShow() {

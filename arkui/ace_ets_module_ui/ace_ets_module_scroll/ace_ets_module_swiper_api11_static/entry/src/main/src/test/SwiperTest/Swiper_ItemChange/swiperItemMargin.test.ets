@@ -72,7 +72,7 @@ export default function swiperItemMargin() {
         await CommonFunc.sleep(1000);
         let pages = router.getState();
         console.info("get swiperItemPadMar state success " + JSON.stringify(pages));
-        if (!("swiperItemPadMar" == pages.name)) {
+        if (!("swiperItemMargin" == pages.name)) {
           console.info("get swiperItemPadMar state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
           console.info("push swiperItemPadMar page success ");
@@ -118,7 +118,7 @@ export default function swiperItemMargin() {
       let swiperItemMargin04: RectValue = CommonFunc.getComponentRect('swiperItemMargin04');
       let swiperItemMargin05: RectValue = CommonFunc.getComponentRect('swiperItemMargin05');
       let swiperItemMargin06: RectValue = CommonFunc.getComponentRect('swiperItemMargin06');
-      
+      // Before flipping the page
       console.info("Before page turningsizepmkey01.left - swiperItemMargin.left value is " +
       JSON.stringify(swiperItemMargin01.left - swiperItemMargin.left));
       const uiContext = new UIContext();
@@ -126,9 +126,9 @@ export default function swiperItemMargin() {
       expect(Math.round(swiperItemMargin.right - swiperItemMargin01.right)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
       expect(Math.round(swiperItemMargin01.top - swiperItemMargin.top)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
       expect(Math.round(swiperItemMargin.bottom - swiperItemMargin01.bottom)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
-      
+      // Page turning.
       let driver = Driver.create();
-      
+      // await driver.swipe(250, 230, 200, 230);
       await CommonFunc.sleep(1000);
       swiperItemMargin = CommonFunc.getComponentRect('swiperItemMargin');
       swiperItemMargin01 = CommonFunc.getComponentRect('swiperItemMargin01');
@@ -137,7 +137,7 @@ export default function swiperItemMargin() {
       swiperItemMargin04 = CommonFunc.getComponentRect('swiperItemMargin04');
       swiperItemMargin05 = CommonFunc.getComponentRect('swiperItemMargin05');
       swiperItemMargin06 = CommonFunc.getComponentRect('swiperItemMargin06');
-      
+      // After flipping the page.
       console.info("After page turning, the swiperItemMargin.left value is " + JSON.stringify(swiperItemMargin.left));
       console.info("After page turning,the swiperItemMargin02.left.left value is " +
       JSON.stringify(swiperItemMargin02.left));
@@ -150,10 +150,10 @@ export default function swiperItemMargin() {
       console.info("The loop value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
       console.info("The displayCount value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('displayCount')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('displayCount')).assertEqual(1);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
       console.info('new testSwiperItemSetMargin_static END');
       done();
     });

@@ -47,7 +47,7 @@ class MyDataSourceSwiper implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -63,7 +63,7 @@ struct SwiperLoopTest {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSourceSwiper = new MyDataSourceSwiper([])
   @State loop: boolean = false
-  @State index: Int = 0
+  @State index: int = 0
   @State autoPlay: boolean = false
   @State swiperValue: string = ''
 
@@ -97,7 +97,7 @@ struct SwiperLoopTest {
       .duration(200)
       .itemSpace(0)
       .displayArrow(true, false)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.swiperValue = 'change'
       })
 

@@ -104,7 +104,7 @@ export default function swiperGroupTest() {
       let btHeight = Math.round(btTop - btBottom);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0040] swiper width " + btWidth + "----" + btHeight);
 
-      
+      // swipe the component of swiper to right by  group
       let driver = Driver.create();
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
@@ -114,7 +114,7 @@ export default function swiperGroupTest() {
         Math.round(winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) as Int,
         Math.round(winTop + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(4800);
-      
+      // get the component of text_6
       let text3: Component = await driver.findComponent(ON.text('6')) as Component;
       let ttContent = await text3.getText();
       expect(ttContent).assertEqual("6")

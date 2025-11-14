@@ -96,16 +96,16 @@ export default function swiperWidthTest() {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0020] START');
       await CommonFunc.sleep(2000);
       let bt = CommonFunc.getComponentRect('swiperTestWidth');
-      
-      let btTop = bt.top; 
+      //180,87,540,327
+      let btTop = bt.top; //327
       let btBottom = bt.bottom;
       let btRight = bt.right;
       let btLeft = bt.left;
-      let btWidth = Math.round(btRight - btLeft); 
-      let btHeight = Math.round(btTop - btBottom); 
+      let btWidth = Math.round(btRight - btLeft); //360
+      let btHeight = Math.round(btTop - btBottom); //240
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0020] swiper width " + btWidth + "----" + btHeight);
 
-      
+      // swipe the component of swiper to right
       let driver = Driver.create();
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
@@ -115,14 +115,14 @@ export default function swiperWidthTest() {
         (winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) as Int,
         Math.round(btBottom / 2) + winTop as Int as Int);
       await CommonFunc.sleep(5000);
-      
+      // get the component of text_3
       let text3: Component = await driver.findComponent(ON.text('3')) as Component;
       let ttContent = await text3.getText();
       expect(ttContent).assertEqual("3")
       let tt = CommonFunc.getComponentRect('itemS3');
       let ttWidth = Math.round(tt.right - tt.left);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0020] text_3 width " + ttWidth);
-      
+      // judge the text component
       expect(Math.abs(ttWidth - btWidth) <= 1).assertTrue();
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0020] END');
       done();

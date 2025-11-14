@@ -58,7 +58,6 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
 
 class MyDataSourceSwiper implements IDataSource<number> {
   private list: number[] = []
@@ -72,7 +71,7 @@ class MyDataSourceSwiper implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -120,48 +119,35 @@ struct SwiperExample3 {
       console.info("key==> page valueChangeCallBack");
       console.info("valueChangeCallBack eventData:" + JSON.stringify(eventData));
       console.info("valueChangeCallBack eventData.data?.['type']:" +
-      JSON.stringify(((eventData.data) as Record<String, RecordData>)?.['type']));
+      JSON.stringify(((eventData.data) as Record<string, undefined|null|Object>)?.['type']));
       if (eventData != null && eventData.data != null) {
-        console.info("swiper page state change called:" + JSON.stringify(eventData));
-        const jsonElementInstance = JSON.parseJsonElement(JSON.stringify(eventData))
-        const jsonElementData = jsonElementInstance.tryGetElement('data')
-        if (((eventData.data) as Record<String, RecordData>)?.['type'] == undefined) {
-          this.arrowStyle = jsonElementData?.tryGetElement('arrowStyle') != null ?
-            (jsonElementData?.tryGetElement('arrowStyle') as ArrowStyle) : {} as ArrowStyle;
-        }
-        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolTrue") {
-          console.info("valueChangeCallBack BoolTrue:" + JSON.stringify(eventData));
+        const data = eventData.data as Record<String,undefined|null|Object>
+        if(data['type'] == "BoolTrue") {
           this.boolFlag = true
           this.bool = true
-          console.info("valueChangeCallBack this.bool:" + JSON.stringify(this.bool));
         }
-        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolFalse") {
-          console.info("valueChangeCallBack BoolFalse:" + JSON.stringify(eventData));
+        if(data['type'] == "BoolFalse") {
           this.boolFlag = true
           this.bool = false
         }
-        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNum") {
-          console.info("valueChangeCallBack BoolErrNum:" + JSON.stringify(eventData));
+        if(data['type'] == "BoolErrNum") {
           this.boolFlag = false
           this.boolIsNum = true
-          this.boolNum = Number(((eventData.data) as Record<String, RecordData>)?.['displayArrow']?.toString() ?? '0')
+          this.boolNum = data['displayArrow'] as number
         }
-        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrStr") {
-          console.info("valueChangeCallBack BoolErrStr:" + JSON.stringify(eventData));
+        if(data['type'] == "BoolErrStr") {
           this.boolFlag = false
           this.boolIsNum = false
           this.boolIsStr = true
-          this.boolStr = ((eventData?.data) as Record<String, RecordData>)?.['displayArrow']?.toString() ?? ''
+          this.boolStr = data['displayArrow'] as string
         }
-        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNull") {
-          console.info("valueChangeCallBack BoolErrNull:" + JSON.stringify(eventData));
+        if(data['type'] == "BoolErrNull") {
           this.boolFlag = false
           this.boolIsNum = false
           this.boolIsStr = false
           this.boolIsNull = true
         }
-        if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrUndefined") {
-          console.info("valueChangeCallBack BoolErrUndefined:" + JSON.stringify(eventData));
+        if(data['type'] == "BoolErrUndefined") {
           this.boolFlag = false
           this.boolIsNum = false
           this.boolIsStr = false
@@ -200,7 +186,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
         .displayArrow(this.arrowStyle, true)
@@ -224,12 +210,12 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
 
-        
-        
+        // .displayArrow((this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
+        //   (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? null : undefined)))), true)
       }
 
       Column() {
@@ -250,12 +236,12 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
 
-        
-        
+        // .displayArrow(true, (this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
+        //   (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? null : undefined)))))
       }
 
       Column() {
@@ -276,12 +262,12 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
 
-        
-        
+        // .displayArrow(true, (this.boolFlag ? this.bool : (this.boolIsNum ? !!this.boolNum :
+        //   (this.boolIsStr ? (this.boolStr == "true") : (this.boolIsNull ? null : undefined)))))
 
       }
 
@@ -291,7 +277,7 @@ struct SwiperExample3 {
             Text(item.toString())
               .width('90%')
               .height('15%')
-              .backgroundColor(0xAFEEEE)
+              .backgroundColor('0xAFEEEE')
               .textAlign(TextAlign.Center)
               .fontSize(20)
           }, (item: number) => item.toString())
@@ -299,12 +285,12 @@ struct SwiperExample3 {
         .key("SwiperD")
         .foregroundColor($r("sys.color.ohos_id_color_primary"))
         .index(0)
-        .indicator(this.indicator) 
+        .indicator(this.indicator) //是否启用导航点指示器。
         .cachedCount(1)
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
         .displayArrow(this.arrowStyle)
@@ -316,7 +302,7 @@ struct SwiperExample3 {
             Text(item.toString())
               .width('90%')
               .height('15%')
-              .backgroundColor(0xAFEEEE)
+              .backgroundColor('0xAFEEEE')
               .textAlign(TextAlign.Center)
               .fontSize(20)
           }, (item: number) => item.toString())
@@ -329,7 +315,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
         .displayArrow(true)
@@ -341,7 +327,7 @@ struct SwiperExample3 {
             Text(item.toString())
               .width('90%')
               .height('15%')
-              .backgroundColor(0xAFEEEE)
+              .backgroundColor('0xAFEEEE')
               .textAlign(TextAlign.Center)
               .fontSize(20)
           }, (item: number) => item.toString())
@@ -353,7 +339,7 @@ struct SwiperExample3 {
         .loop(false)
         .duration(1000)
         .vertical(false)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
       }

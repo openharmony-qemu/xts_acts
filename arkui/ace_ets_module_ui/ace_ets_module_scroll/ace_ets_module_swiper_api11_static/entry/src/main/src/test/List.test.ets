@@ -12,8 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 import swiperJsunit from './SwiperTest/SwiperJsunit.test';
 import SwiperMarginTest from './SwiperTest/SwiperMargin.test'
 import SwiperLoop from './SwiperTest/Swiper/SwiperLoop.test'
@@ -56,9 +54,10 @@ import swiperMaskJsunit from './SwiperTest/swiper3.test';
 import swiperCurveJsunit from './SwiperTest/swiper1.test';
 
 export default function testsuite() {
+  SwiperMarginTest(); //全pass 注释
+
+  // 全pass 注释
   Swiper07Test();
-  swiperJsunit();
-  SwiperMarginTest();
   SwiperLoop()
   SwiperVisibility()
   swiper1()
@@ -67,33 +66,38 @@ export default function testsuite() {
   swiperGroupTest()
   swiperPageTest()
   swiperNextPreTest()
-  swiperDelAddTest()
-  swiperEdgeTest()
-  swipeleftScrollTest()
-  swiperRightScrollTest()
-  swiperTest();
-  swiperTest_1();
-  swiperSecTest();
-  swiperJsunit2();
+
+  swiperDelAddTest() //driver.findComponent(ON.id('showPreviousTT')为null std.core.Null cannot be cast to @ohos.UiTest.Component 已登记
+  swiperEdgeTest() //全pass 注释
+  swipeleftScrollTest() //全pass 注释
+  swiperRightScrollTest()  //driver.findComponent(ON.text('10'))为null std.core.Null cannot be cast to @ohos.UiTest.Component 已登记
+  swiperTest();  //
+  swiperTest_1();   //10.26SDK镜像 白屏
+  swiperJsunit2(); //全pass 注释
   swiperIndex()
   swiperVertical()
   swiperLoopTrue()
-  swiperLoopFalse()
-  swiperItemSpace()
+  swiperLoopFalse() //全pass 注释
+  swiperItemSpace() //expect 0.00px equals 0.00vp
+  // 全pass 注释
   swiperPadding()
   swiperMargin()
   swiperMarPad()
   swiperDisableSwipeTrue()
   swiperDisableSwipeFalse()
   swiperItemSize()
+
   swiperItemSize2()
   swiperItemPadding()
-  swiperItemMargin()
+  swiperItemMargin()  //页面未加载
   swiperItemPadMar()
-  swiperItemVisibility()
-  SwiperMinSize();
-  SwiperNextPrevMarginAddJsunit();
-  swiperAnimationJsunit();
-  swiperMaskJsunit()
-  swiperCurveJsunit()
+
+  swiperItemVisibility() //两个断言失败
+  SwiperMinSize();//全pass 注释
+  SwiperNextPrevMarginAddJsunit();  //app died
+  swiperAnimationJsunit();//全pass 注释
+  swiperMaskJsunit() // 断言失败
+  swiperJsunit(); //emitter传值无法刷新 导致11用例失败
+  swiperCurveJsunit() //expect 1 equals 3
+  swiperSecTest();  //emitter导致大量失败
 }

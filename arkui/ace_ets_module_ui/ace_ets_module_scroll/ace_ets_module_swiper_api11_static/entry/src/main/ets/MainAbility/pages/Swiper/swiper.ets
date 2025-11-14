@@ -49,7 +49,6 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message, GlobalMessage } from '../../common/MessageManager1';
 import events_emitter from '@ohos.events.emitter'
-import { RecordData } from '@ohos.base';
 
 class MyDataSource implements IDataSource<string> {
   private list: string[] = []
@@ -64,7 +63,7 @@ class MyDataSource implements IDataSource<string> {
   }
 
   getData(index: int): string {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -80,18 +79,18 @@ class MyDataSource implements IDataSource<string> {
 struct SwiperExample {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource = new MyDataSource([])
-  @State index: Int = 1
-  @State displayCount: Int = 3
+  @State index: int = 1
+  @State displayCount: int = 3
   @State displayMode: SwiperDisplayMode = SwiperDisplayMode.STRETCH
-  
+  //SwiperDisplayMode.AutoLinear
   @State edgeEffect: EdgeEffect = EdgeEffect.None
   @State autoPlay: boolean = false
-  @State interval: Int = 4000
+  @State interval: int = 4000
   @State indicator: boolean = true
   @State loop: boolean = false
-  @State duration: Int = 1000
+  @State duration: int = 1000
   @State vertical: boolean = false
-  @State itemSpace: double = 0.0
+  @State itemSpace: number = 0
   @State onActionCalledOne: boolean = false;
   @State onActionCalledTwo: boolean = false;
   @State onActionCalledThree: boolean = false;
@@ -128,15 +127,15 @@ struct SwiperExample {
       .displayMode(this.displayMode)
       .displayCount(this.displayCount)
       .effectMode(this.edgeEffect)
-      .indicator(
-        new DotIndicator()
-          .top(20)
-          .right(20)
-          .itemWidth(2)
-          .itemHeight(2)
-          .color(Color.Blue))
+      // .indicator(
+      //   new DotIndicator()
+      //     .top(20)
+      //     .right(20)
+      //     .itemWidth(2)
+      //     .itemHeight(2)
+      //     .color(Color.Blue))  //导致页面白屏 注释掉
       .key('swiper')
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
         this.onActionCalledThree = true;
         console.info('onChange current action state is: ' + this.onActionCalledThree);
@@ -144,7 +143,7 @@ struct SwiperExample {
           let backData: events_emitter.EventData = {
             data: {
               "ACTION": this.onActionCalledThree,
-            } as Record<String, RecordData>
+            } as Record<string, undefined|null|Object>
           }
           let backEvent: events_emitter.InnerEvent = {
             eventId: 204,
@@ -168,7 +167,7 @@ struct SwiperExample {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.onActionCalledOne,
-                } as Record<String, RecordData>
+                } as Record<string, undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 205,
@@ -176,7 +175,7 @@ struct SwiperExample {
               }
               console.info("button1 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err) {
+            } catch (err: Error) {
               console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
             }
           })
@@ -190,7 +189,7 @@ struct SwiperExample {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.onActionCalledTwo,
-                } as Record<String, RecordData>
+                } as Record<string, undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 206,
@@ -198,7 +197,7 @@ struct SwiperExample {
               }
               console.info("button2 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err) {
+            } catch (err: Error) {
               console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
             }
           })
@@ -235,17 +234,31 @@ struct SwiperExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
-      console.info("swiper page state change called:" + JSON.stringify(eventData));
-      const jsonElementInstance = JSON.parseJsonElement(JSON.stringify(eventData))
-      const jsonElementData = jsonElementInstance.tryGetElement('data')
-      this.index = jsonElementData?.tryGetDouble('index')?.toInt() ?? 1;
-      this.autoPlay = jsonElementData?.tryGetBoolean('autoPlay') ?? false;
-      this.interval = jsonElementData?.tryGetDouble('interval')?.toInt() ?? 4000;
-      this.indicator = jsonElementData?.tryGetBoolean('indicator') ?? false;
-      this.loop = jsonElementData?.tryGetBoolean('loop') ?? false;
-      this.duration = jsonElementData?.tryGetDouble('duration')?.toInt() ?? 1000;
-      this.vertical = jsonElementData?.tryGetBoolean('vertical') ?? false;
-      this.itemSpace = jsonElementData?.tryGetDouble('itemSpace') ?? 0;
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if(data['index'] != null) {
+        this.index = data['index'] as int;
+      }
+      if(data['autoPlay'] != null) {
+        this.autoPlay = data['autoPlay'] as boolean;
+      }
+      if(data['interval'] != null) {
+        this.interval = data['interval'] as int;
+      }
+      if(data['indicator'] != null) {
+        this.indicator = data['indicator'] as boolean;
+      }
+      if(data['loop'] != null) {
+        this.loop = data['loop'] as boolean;
+      }
+      if(data['duration'] != null) {
+        this.duration = data['duration'] as int;
+      }
+      if(data['vertical'] != null) {
+        this.vertical = data['vertical'] as boolean;
+      }
+      if(data['itemSpace'] != null) {
+        this.itemSpace = data['itemSpace'] as int;
+      }
     }
   }
 }

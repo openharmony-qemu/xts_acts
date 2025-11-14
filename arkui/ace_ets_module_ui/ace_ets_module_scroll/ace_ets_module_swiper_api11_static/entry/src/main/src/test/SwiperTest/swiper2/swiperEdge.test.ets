@@ -102,7 +102,7 @@ export default function swiperEdgeTest() {
       let btLeft = bt.left;
       let btWidth = Math.round(btRight - btLeft);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0290] swiper width " + btWidth);
-      
+      //[180.00, 87.00],[540.00,327.00]
       let driver = Driver.create();
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
@@ -113,7 +113,7 @@ export default function swiperEdgeTest() {
         (winTop as Int + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(3000);
 
-      
+      // get the component of text_10, scroll distance is to short can not slow
 
       let text10: Component = await driver.findComponent(ON.text('10')) as Component;
       let ttContent = await text10.getText();

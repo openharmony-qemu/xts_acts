@@ -95,56 +95,57 @@ export default function swiperLoopTrue() {
     });
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //保持1.1中注释
+    // /**
+    //  * @tc.number   testSwiperSetLoopTrue_static
+    //  * @tc.name     testSwiperSetLoopTrue_static
+    //  * @tc.desc     testSwiperSetLoopTrue_static
+    //  * @tc.level    0
+    //  */
+    // it('testSwiperSetLoopTrue_static', Level.LEVEL0, async (done: Function) => {
+    //   console.info('new testSwiperSetLoopTrue_static START');
+    //   await CommonFunc.sleep(1000);
+    //   // Page turning.
+    //   let driver = Driver.create();
+    //   await CommonFunc.sleep(500);
+    //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(150), vp2px(100), vp2px(100), vp2px(100));
+    //   //  await driver.swipe(250, 230, 200, 230);
+    //   await CommonFunc.sleep(1000);
+    //   let loopTrue: RectValue = CommonFunc.getComponentRect('loopTrue');
+    //   let strJson = inspector.getInspectorByKey('loopTrue');
+    //
+    //   let loopTrue01: RectValue = CommonFunc.getComponentRect('loopTrue01');
+    //   let loopTrue02: RectValue = CommonFunc.getComponentRect('loopTrue02');
+    //   let loopTrue03: RectValue = CommonFunc.getComponentRect('loopTrue03');
+    //   let loopTrue04: RectValue = CommonFunc.getComponentRect('loopTrue04');
+    //   let loopTrue05: RectValue = CommonFunc.getComponentRect('loopTrue05');
+    //   let loopTrue06: RectValue = CommonFunc.getComponentRect('loopTrue06');
+    //   // After flipping the page
+    //   console.info("After page turning , the loopTrue.left value is " + JSON.stringify(loopTrue.left));
+    //   console.info("After page turning , the loopTrue02.left value is " + JSON.stringify(loopTrue02.left));
+    //   expect(loopTrue.left).assertEqual(loopTrue02.left);
+    //   expect(loopTrue.right).assertEqual(loopTrue02.right);
+    //   expect(loopTrue.top).assertEqual(loopTrue02.top);
+    //   expect(loopTrue.bottom).assertEqual(loopTrue02.bottom);
+    //   console.info("The type value is " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
+    //   console.info("The index value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')));
+    //   console.info("The autoPlay value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')));
+    //   console.info("The loop value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
+    //   console.info("The itemSpace value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')));
+    //   console.info("The displayCount value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+    //   expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')).assertEqual('1');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')).assertEqual('true');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual('0.00vp');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
+    //   console.info('new testSwiperSetLoopTrue_static END');
+    //   done();
+    // });
   })
 }

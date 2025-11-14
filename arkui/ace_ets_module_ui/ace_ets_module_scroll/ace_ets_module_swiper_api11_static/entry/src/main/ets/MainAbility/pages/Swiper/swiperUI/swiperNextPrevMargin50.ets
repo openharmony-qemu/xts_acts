@@ -60,7 +60,7 @@ class MyDataSource50 implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -79,7 +79,7 @@ struct SwiperNextPrevMarginExample50 {
   @State nextMargin: number = 0;
   @State vertical: boolean = false;
   @State itemSpace: number = 0;
-  @State displayCount: Int = 0;
+  @State displayCount: int = 0;
   @State loop: boolean = false;
 
   aboutToAppear(): void {
@@ -110,7 +110,7 @@ struct SwiperNextPrevMarginExample50 {
         this.vertical = message.value ? message.value as boolean : false
       }
       if (message.name == 'itemSpace') {
-        this.itemSpace = Number(message.value?.toString()) ?? 0
+        this.itemSpace = Number(message.value?.toString()).toInt() ?? 0
       }
       if (message.name == 'displayCount') {
         this.displayCount = Number(message.value?.toString()).toInt() ?? 0

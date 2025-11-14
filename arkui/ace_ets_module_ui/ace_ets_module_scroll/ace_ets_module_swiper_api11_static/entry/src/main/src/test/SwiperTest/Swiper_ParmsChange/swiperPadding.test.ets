@@ -107,7 +107,7 @@ export default function swiperPadding() {
       let swiperPadding04: RectValue = CommonFunc.getComponentRectOnScreen('swiperPadding04');
       let swiperPadding05: RectValue = CommonFunc.getComponentRectOnScreen('swiperPadding05');
       let swiperPadding06: RectValue = CommonFunc.getComponentRectOnScreen('swiperPadding06');
-      
+      // Before flipping the page
       const uiContext = new UIContext();
       console.info("Before page turning , swiperPadding01.left - swiperPadding.left value is " +
       JSON.stringify(swiperPadding01.left - swiperPadding.left));
@@ -119,12 +119,12 @@ export default function swiperPadding() {
         .assertTrue();
       expect(Math.abs(Math.round(swiperPadding.bottom - swiperPadding01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
-      
+      // Page turning.
       let driver = Driver.create();
-      
-      
-      
-      
+      // await CommonFunc.sleep(500);
+      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
+      // //  await driver.swipe(250, 230, 200, 230);
+      // await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('swiperPadding')
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`) as Int,
@@ -140,7 +140,7 @@ export default function swiperPadding() {
       swiperPadding04 = CommonFunc.getComponentRectOnScreen('swiperPadding04');
       swiperPadding05 = CommonFunc.getComponentRectOnScreen('swiperPadding05');
       swiperPadding06 = CommonFunc.getComponentRectOnScreen('swiperPadding06');
-      
+      // After flipping the page.
       console.info("After page turning, swiperPadding02.left - swiperPadding.left value is " +
       JSON.stringify(swiperPadding02.left - swiperPadding.left));
       expect(Math.abs(Math.round(swiperPadding02.left - swiperPadding.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
@@ -152,16 +152,16 @@ export default function swiperPadding() {
       expect(Math.abs(Math.round(swiperPadding.bottom - swiperPadding02.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(20))) <= 1)
         .assertTrue();
       console.info("The type value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
       console.info("The indicator value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
       console.info("The loop value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
       console.info("The displayCount value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')).assertEqual(1);
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
       console.info('new testSwiperSetPadding_static END');
       done();
     });

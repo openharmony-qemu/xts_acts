@@ -105,7 +105,7 @@ export default function swiperAutoPlay_2() {
       let autoPlay02_4: RectValue = CommonFunc.getComponentRect('autoPlay02_4');
       let autoPlay02_5: RectValue = CommonFunc.getComponentRect('autoPlay02_5');
       let autoPlay02_6: RectValue = CommonFunc.getComponentRect('autoPlay02_6');
-      
+      // Automatic page flipping failed.
       console.info("Autoplay page turning , the autoPlay02.left value is " + JSON.stringify(autoPlay02.left));
       console.info("Autoplay page turning , the autoPlay02_1.left value is " + JSON.stringify(autoPlay02_1.left));
       expect(autoPlay02.left).assertEqual(autoPlay02_1.left);
@@ -113,25 +113,25 @@ export default function swiperAutoPlay_2() {
       expect(autoPlay02.top).assertEqual(autoPlay02_1.top);
       expect(autoPlay02.bottom).assertEqual(autoPlay02_1.bottom);
       console.info("The type value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
       console.info("The index value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')));
       console.info("The autoPlay value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')));
       console.info("The loop value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
       console.info("The itemSpace value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemSpace')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')));
       console.info("The displayCount value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
       console.info("The interval value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('interval')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Swiper');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')).assertEqual('0');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')).assertEqual('false');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemSpace')).assertEqual('0.00vp');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')).assertEqual(1);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual('0.00vp');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('interval')).assertEqual('1000');
       console.info('new testSwiperAutoPlaySetting_static_2 END');
       done();

@@ -94,122 +94,123 @@ export default function swiperVertical() {
     });
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //保持1.1中注释
+    // /**
+    //  * @tc.number   testSwipeSetVerticalFalse
+    //  * @tc.name     testSwipeSetVerticalFalse
+    //  * @tc.desc     testSwipeSetVerticalFalse
+    //  * @tc.level    0
+    //  */
+    // it('testSwipeSetVerticalFalse', Level.LEVEL0, async (done: Function) => {
+    //   console.info('new testSwipeSetVerticalFalse START');
+    //   let strJson = inspector.getInspectorByKey('verticalkey');
+    //
+    //   let verticalkey: RectValue = CommonFunc.getComponentRect('verticalkey');
+    //   let verticalkey01: RectValue = CommonFunc.getComponentRect('verticalkey01');
+    //   let verticalkey02: RectValue = CommonFunc.getComponentRect('verticalkey02');
+    //   // Before flipping the page.
+    //   console.info("Before page turning , the verticalkey.left value is " + JSON.stringify(verticalkey.left));
+    //   console.info("Before page turning , the verticalkey01.left value is " + JSON.stringify(verticalkey01.left));
+    //   expect(verticalkey.left).assertEqual(verticalkey01.left);
+    //   expect(verticalkey.right).assertEqual(verticalkey01.right);
+    //   expect(verticalkey.top).assertEqual(verticalkey01.top);
+    //   expect(verticalkey.bottom).assertEqual(verticalkey01.bottom);
+    //   // Page turning.
+    //   let driver = Driver.create();
+    //   await CommonFunc.sleep(500);
+    //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(150), vp2px(100), vp2px(100), vp2px(100));
+    //   //  await driver.swipe(250, 230, 200, 230);
+    //   await CommonFunc.sleep(1000);
+    //   verticalkey01: RectValue = CommonFunc.getComponentRect('verticalkey01');
+    //   verticalkey02: RectValue = CommonFunc.getComponentRect('verticalkey02');
+    //   // After flipping the page.
+    //   console.info("After page turning , the verticalkey.left value is " + JSON.stringify(verticalkey.left));
+    //   console.info("After page turning , the verticalkey02.left value is " + JSON.stringify(verticalkey02.left));
+    //   expect(verticalkey.left).assertEqual(verticalkey02.left);
+    //   expect(verticalkey.right).assertEqual(verticalkey02.right);
+    //   expect(verticalkey.top).assertEqual(verticalkey02.top);
+    //   expect(verticalkey.bottom).assertEqual(verticalkey02.bottom);
+    //   console.info("The type value is " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
+    //   console.info("The index value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')));
+    //   console.info("The autoPlay value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')));
+    //   console.info("The vertical value is " + JSON.stringify(JSON.parse(strJson).$attrs.vertical));
+    //   console.info("The loop value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
+    //   console.info("The itemSpace value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')));
+    //   console.info("The displayCount value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+    //   expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')).assertEqual('0');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')).assertEqual('false');
+    //   expect(JSON.parse(strJson).$attrs.vertical).assertEqual('false');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual('0.00vp');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
+    //   console.info('new testSwipeSetVerticalFalse END');
+    //   done();
+    // });
+    //
+    // /**
+    //  * @tc.number   testSwipeSetVerticalTrue
+    //  * @tc.name     testSwipeSetVerticalTrue
+    //  * @tc.desc     testSwipeSetVerticalTrue
+    //  * @tc.level    0
+    //  */
+    // it('testSwipeSetVerticalTrue', Level.LEVEL0, async (done: Function) => {
+    //   console.info('new testSwipeSetVerticalTrue START');
+    //   globalThis.value.message.notify({ name: 'swiperVertical', value: true });
+    //   await CommonFunc.sleep(1000);
+    //   let strJson = inspector.getInspectorByKey('verticalkey');
+    //
+    //   let verticalkey: RectValue = CommonFunc.getComponentRect('verticalkey');
+    //   let verticalkey01: RectValue = CommonFunc.getComponentRect('verticalkey01');
+    //   let verticalkey02: RectValue = CommonFunc.getComponentRect('verticalkey02');
+    //   // Before flipping the page.
+    //   console.info("Before page turning , the verticalkey.left value is " + JSON.stringify(verticalkey.left));
+    //   console.info("Before page turning , the verticalkey01.left value is " + JSON.stringify(verticalkey01.left));
+    //   expect(verticalkey.left).assertEqual(verticalkey01.left);
+    //   expect(verticalkey.right).assertEqual(verticalkey01.right);
+    //   expect(verticalkey.top).assertEqual(verticalkey01.top);
+    //   expect(verticalkey.bottom).assertEqual(verticalkey01.bottom);
+    //   // Page turning.
+    //   let driver = Driver.create();
+    //   await CommonFunc.sleep(500);
+    //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(150), vp2px(100), vp2px(100), vp2px(100));
+    //   //  await driver.swipe(230, 250, 230, 200);
+    //   await CommonFunc.sleep(1000);
+    //   verticalkey01: RectValue = CommonFunc.getComponentRect('verticalkey01');
+    //   verticalkey02: RectValue = CommonFunc.getComponentRect('verticalkey02');
+    //   // After flipping the page.
+    //   console.info("After page turning , the verticalkey.left value is " + JSON.stringify(verticalkey.left));
+    //   console.info("After page turning , the verticalkey02.left value is " + JSON.stringify(verticalkey02.left));
+    //   expect(verticalkey.left).assertEqual(verticalkey02.left);
+    //   expect(verticalkey.right).assertEqual(verticalkey02.right);
+    //   expect(verticalkey.top).assertEqual(verticalkey02.top);
+    //   expect(verticalkey.bottom).assertEqual(verticalkey02.bottom);
+    //   console.info("The type value is " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
+    //   console.info("The index value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')));
+    //   console.info("The autoPlay value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')));
+    //   console.info("The vertical value is " + JSON.stringify(JSON.parse(strJson).$attrs.vertical));
+    //   console.info("The loop value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
+    //   console.info("The itemSpace value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')));
+    //   console.info("The displayCount value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+    //   expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')).assertEqual('0');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')).assertEqual('false');
+    //   expect(JSON.parse(strJson).$attrs.vertical).assertEqual('true');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual('0.00vp');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
+    //   console.info('new testSwipeSetVerticalTrue END');
+    //   done();
+    // });
   })
 }

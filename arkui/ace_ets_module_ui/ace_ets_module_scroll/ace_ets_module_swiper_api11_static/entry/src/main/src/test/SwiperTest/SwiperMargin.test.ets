@@ -46,7 +46,7 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { $r, Resource, ArrowStyle } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
-import { sendEventByKey } from '@kit.ArkUI';
+
 import { UtilsTest, startAbility } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -58,7 +58,7 @@ const uiContext = new UIContext();
 export default function SwiperMarginTest() {
 
   const SUITE: string = 'SwiperMargin'
-  const waitUiReadyMs = 500;
+  const waitUiReadyMs: int = 500;
   describe('SwiperMarginTest', () => {
     beforeAll(() => {
       console.info("SwiperMarginTest beforeAll start");
@@ -83,16 +83,11 @@ export default function SwiperMarginTest() {
             console.error(`${SUITE} router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
 
-    /*
-     *tc.number ArkUI_Swiper_0100
-     *tc.name   Set Swiper's nextMargin and prevMargin with negative
-     *tc.desc   Set Swiper's nextMargin and prevMargin with negative
-     */
     /*
      * @tc.number   ArkUI_Swiper_static_0100
      * @tc.name     ArkUI_Swiper_static_0100
@@ -104,7 +99,7 @@ export default function SwiperMarginTest() {
       console.info(`${SUITE} ${CASE} START`);
 
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await (driver.delayMs(waitUiReadyMs) as Promise<void>)
       let baseKey = 'SwiperMargin_Swiper1'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('0.00vp')
@@ -128,7 +123,7 @@ export default function SwiperMarginTest() {
       let CASE = 'ArkUI_Swiper_static_0200'
       console.info(`${SUITE} ${CASE} START`);
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await (driver.delayMs(waitUiReadyMs) as Promise<void>)
       let baseKey = 'SwiperMargin_Swiper2'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('10.00vp')
@@ -153,7 +148,7 @@ export default function SwiperMarginTest() {
       console.info(`${SUITE} ${CASE} START`);
 
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await (driver.delayMs(waitUiReadyMs) as  Promise<void>)
       let baseKey = 'SwiperMargin_Swiper3'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('11.00vp')
@@ -162,11 +157,6 @@ export default function SwiperMarginTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUI_Swiper_0400
-     *tc.name   Set Swiper's nextMargin and prevMargin with Resource
-     *tc.desc   Set Swiper's nextMargin and prevMargin with Resource
-     */
     /*
      * @tc.number   ArkUI_Swiper_static_0400
      * @tc.name     ArkUI_Swiper_static_0400
@@ -177,7 +167,7 @@ export default function SwiperMarginTest() {
       let CASE = 'ArkUI_Swiper_static_0400'
       console.info(`${SUITE} ${CASE} START`);
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      await (driver.delayMs(waitUiReadyMs) as  Promise<void>)
       let baseKey = 'SwiperMargin_Swiper4'
       let strJson = inspector.getInspectorByKey(baseKey);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('prevMargin')).assertEqual('12.00vp')

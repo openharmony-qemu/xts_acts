@@ -44,7 +44,7 @@ class Swiper222 implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -91,7 +91,7 @@ struct swiper2 {
       .effectMode(EdgeEffect.None)
       .duration(1000)
       .itemSpace(0)
-      .indicator( 
+      .indicator( // 设置圆点导航点样式
         new DotIndicator()
           .itemWidth(15)
           .itemHeight(15)
@@ -99,7 +99,7 @@ struct swiper2 {
           .selectedItemHeight(15)
           .color(Color.Gray)
           .selectedColor(Color.Blue))
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.value = 'change'
       })
     }.width('100%')

@@ -60,7 +60,7 @@ class MyDataSource78 implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -75,7 +75,7 @@ class MyDataSource78 implements IDataSource<number> {
 struct SwiperNextPrevMarginExample78 {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource78 = new MyDataSource78([])
-  @State displayCount: Int = 1;
+  @State displayCount: int = 1;
 
   aboutToAppear(): void {
     let list: number[] = []

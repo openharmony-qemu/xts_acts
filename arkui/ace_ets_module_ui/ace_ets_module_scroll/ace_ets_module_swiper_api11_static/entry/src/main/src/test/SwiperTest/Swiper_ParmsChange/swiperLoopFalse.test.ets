@@ -98,9 +98,9 @@ export default function swiperLoopFalse() {
     it('testSwiperSetLoopFalse_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('new testSwiperSetLoopFalse_static START');
       await CommonFunc.sleep(2000);
-      
-      
-      
+      // Page turning.
+      // let driver = Driver.create();
+      //   await driver.swipe(250, 230, 200, 230);
       let driver = Driver.create()
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('loopFalse')
       await driver.swipe(
@@ -119,7 +119,7 @@ export default function swiperLoopFalse() {
       let loopFalse04: RectValue = CommonFunc.getComponentRect('loopFalse04');
       let loopFalse05: RectValue = CommonFunc.getComponentRect('loopFalse05');
       let loopFalse06: RectValue = CommonFunc.getComponentRect('loopFalse06');
-      
+      // After flipping the page
       console.info("After page turning , the loopFalse.left value is " + JSON.stringify(loopFalse.left));
       console.info("After page turning , the loopFalse06.left value is " + JSON.stringify(loopFalse06.left));
       expect(loopFalse.left).assertEqual(loopFalse06.left);
@@ -127,23 +127,23 @@ export default function swiperLoopFalse() {
       expect(loopFalse.top).assertEqual(loopFalse06.top);
       expect(loopFalse.bottom).assertEqual(loopFalse06.bottom);
       console.info("The type value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
       console.info("The index value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')));
       console.info("The autoPlay value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')));
       console.info("The loop value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
       console.info("The itemSpace value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemSpace')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')));
       console.info("The displayCount value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('index')).assertEqual('5');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('autoPlay')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual('false');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemSpace')).assertEqual('0.00vp');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')).assertEqual(1);
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual('5');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('false');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual('0.00vp');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
       console.info('new testSwiperSetLoopFalse_static END');
       done();
     });
