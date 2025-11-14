@@ -36,6 +36,7 @@
 #include <set>
 #include <algorithm>
 #include <random>
+#include <ohaudiosuite/native_audio_suite_engine.h>
 
 #include "AudioResourceManagerTest.h"
 
@@ -1191,6 +1192,21 @@ static napi_value AudioStreamBuilderSetFrameSizeInCallback(napi_env env, napi_ca
     OH_AudioStreamBuilder_Destroy(builder);
     napi_value res;
     napi_create_int32(env, result, &res);
+    return res;
+}
+
+static napi_value AudioCreateEngine(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuite_Result result1 = OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    LOG("AudioCreateEngine, result %{public}d", result1);
+    if (result1 != AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, result1, &res);
+        return res;
+    }
+    OH_AudioSuite_Result result2 = OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    napi_create_int32(env, result2, &res);
     return res;
 }
 
@@ -7894,6 +7910,8 @@ napi_property_descriptor desc1[] = {
     {"audioRenderGetChannelCount", nullptr, AudioRenderGetChannelCount,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioStreamBuilderSetFrameSizeInCallback", nullptr, AudioStreamBuilderSetFrameSizeInCallback,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioCreateEngine", nullptr, AudioCreateEngine,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioRendererGetVolume_01", nullptr, AudioRendererGetVolume_01,
         nullptr, nullptr, nullptr, napi_default, nullptr},
