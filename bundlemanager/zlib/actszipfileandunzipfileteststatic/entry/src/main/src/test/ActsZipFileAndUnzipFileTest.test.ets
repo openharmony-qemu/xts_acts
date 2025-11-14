@@ -132,12 +132,14 @@ export default function ActsZlibTest() {
           console.info(`beforeAll: filePath data: ${fpath}`);
           await zlib.compressFiles([fpath, pathDir12, pathDir12], "kkk", {}).then(() => {
             expect().assertFail();
+            done();
           }, (err: BusinessError): void => {
             hilog.info(domain, 'bmsTestTag',"005 compressFileOutFileNotExist zipFile fail: %{public}s ", JSON.stringify(err));
             expect(err.code).assertEqual(900002);
           })
           await zlib.compressFiles([""], zippath2, {}).then(() => {
             expect().assertFail();
+            done();
           },(err: BusinessError): void => {
             hilog.info(domain, 'bmsTestTag',`006 errData is errCode:${err.code}  message:${err.message}`);
             expect(err.code).assertEqual(900001);
@@ -145,6 +147,7 @@ export default function ActsZlibTest() {
         } catch (err: BusinessError) {
           console.info('fileio_test_stream_write_sync_000 has failed for ' + err);
           expect().assertFail();
+          done();
         }
         done();
       })
@@ -248,14 +251,17 @@ export default function ActsZlibTest() {
         } catch(error: BusinessError) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
+          done();
         }
       }).catch((err: BusinessError): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
+        done();
       });
       try {
         await zlib.decompressFile(path13, unzipdir1, {}).then(() => {
           expect().assertFail();
+          done();
         }).catch((err: BusinessError): void => {
           hilog.info(domain, 'bmsTestTag',"011 decompressFileInputNotZipPro fail1: " + JSON.stringify(err));
           expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
@@ -263,9 +269,10 @@ export default function ActsZlibTest() {
       } catch (err: BusinessError) {
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
+        done();
       }
-      done();
       console.info("==================decompressFileInputNotZipPro_static end==================");
+      done();
     })
 
     /*
@@ -295,7 +302,7 @@ export default function ActsZlibTest() {
       }).catch((err: BusinessError): void => {
         hilog.info(domain, tag, "compressFile fail " + JSON.stringify(err));
         expect().assertFail();
-        done()
+        done();
       })
       await Utils.msSleep(1000);
       await fileIo.mkdir(unzipdir22).then(() =>{
@@ -377,6 +384,7 @@ export default function ActsZlibTest() {
         } catch(error: BusinessError) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
+          done();
         }
       }).catch((err: BusinessError): void => {
         console.info("fileio mkdir failed with error:" + err);
@@ -391,9 +399,10 @@ export default function ActsZlibTest() {
       } catch (err: BusinessError) {
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
+        done();
       }
-      done();
       console.info("==================decompressFileInputNotZipPro1_static end==================");
+      done();
     })
 
     /*
@@ -414,10 +423,12 @@ export default function ActsZlibTest() {
         } catch(error: BusinessError) {
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
+          done();
         }
       }).catch((err: BusinessError): void => {
         console.info("fileio mkdir failed with error:" + err);
         expect(err).assertFail();
+        done();
       });
       try {
         zlib.decompressFile(path13, unzipdir1, {}, (err: BusinessError | null): void => {
@@ -428,9 +439,10 @@ export default function ActsZlibTest() {
       } catch (err: BusinessError) {
         console.info("decompressFileInputNotZipProcallback catch1 : " + JSON.stringify(err));
         expect().assertFail();
+        done();
       }
-      done();
       console.info("==================decompressFileInputNotZipProcallback_static end==================");
+      done();
     })
   })
 }

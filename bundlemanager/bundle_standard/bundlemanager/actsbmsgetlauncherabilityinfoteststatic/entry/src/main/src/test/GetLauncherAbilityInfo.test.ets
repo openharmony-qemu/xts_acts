@@ -59,8 +59,8 @@ export default function actsGetLauncherAbilityInfoTest() {
         expect(data[0].elementName.abilityName).assertEqual('EntryAbility');
         expect(data[0].elementName.shortName).assertEqual('');
         expect(data[0].elementName.uri).assertEqual('/ohos.acts.bms.getlauncherabilityinfo.test.static/entry/EntryAbility');
-        done();
         hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+        done();
       } catch (errData) {
         // hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getLauncherAbilityInfoSync failed, result is: %{public}s', JSON.stringify(err));
         console.log('getLauncherAbilityInfoSync failed');
@@ -119,8 +119,8 @@ export default function actsGetLauncherAbilityInfoTest() {
           hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case start');
           let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, 111);
           expect().assertFail();
-          done();
           hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+          done();
         } catch (errData) {
           let errMsg = (errData as BusinessError).message;
           let code = (errData as BusinessError).code;

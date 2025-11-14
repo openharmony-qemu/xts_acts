@@ -88,8 +88,8 @@ export default function abilityTest() {
         expect(data![0].elementName.abilityName).assertEqual("EntryAbility");
         expect(data![0].elementName.uri).assertEqual(URI);
         expect(data![0].elementName.shortName).assertEqual("");
-        done();
         hilog.info(domain, tag,"data is " + JSON.stringify(data));
+        done();
       } catch (errData) {
         let code = (errData as BusinessError).code;
         let message = (errData as BusinessError).message;
