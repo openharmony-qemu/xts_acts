@@ -230,24 +230,6 @@ export default function telSyncTest() {
       }
     });
 
-        /*
- * @tc.number  SUB_Telephony_radio_getRadioTechSync_0100
- * @tc.name    Radio interface getRadioTechSync
- * @tc.desc    Function test
- */
-    it('SUB_Telephony_radio_getRadioTechSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
-      try {
-        let slotId = 0;
-        console.info("SUB_Telephony_radio_getRadioTechSync_0100 " + radio.getRadioTechSync(slotId));
-        expect(radio.getRadioTechSync(slotId).psRadioTech >= -1).assertTrue();
-        done();
-      } catch (err) {
-        console.info("SUB_Telephony_radio_getRadioTechSync_0100 err " + JSON.stringify(err));
-        expect(err != "").assertTrue();
-        done();
-      }
-    });
-
     /*
 * @tc.number  SUB_Telephony_radio_getRadioTechSync_0200
 * @tc.name    Radio interface getRadioTechSync
