@@ -91,6 +91,13 @@ let sendLongMessage: string = '创建要上传或下载的任务，并将其排�
 let ws: webSocket.WebSocket;
 let availableWebSocketAddress: string ;
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 export default function WebSocketApiTest() {
   describe('webSocketApiTest', () => {
   
@@ -103,8 +110,9 @@ export default function WebSocketApiTest() {
     })
 
   
-    beforeEach((done: Function) => {
+    beforeEach(async (done: Function) => {
       ws = webSocket.createWebSocket();
+      await sleep(1000);
       done();
     })
 
