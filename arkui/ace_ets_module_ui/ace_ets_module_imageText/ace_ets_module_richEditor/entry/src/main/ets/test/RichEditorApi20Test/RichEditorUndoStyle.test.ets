@@ -22,7 +22,7 @@ export default function RichEditorUndoStyleTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorUndoStyleTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorUndoStyle',
+        url: 'MainAbility/pages/RichEditorApi20/RichEditorUndoStyle',
       }
       try {
         router.clear();

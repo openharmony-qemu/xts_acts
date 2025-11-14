@@ -22,7 +22,7 @@ export default function RichEditorEnableAutoSpacingTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorEnableAutoSpacingTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorEnableAutoSpacing',
+        url: 'MainAbility/pages/RichEditorApi20/RichEditorEnableAutoSpacing',
       }
       try {
         router.clear();

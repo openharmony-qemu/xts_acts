@@ -23,7 +23,7 @@ export default function HapticFeedbackModeTest() {
     beforeEach(async (done: Function) => {
       console.info("HapticFeedbackModeTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/HapticFeedbackMode',
+        url: 'MainAbility/pages/RichEditorApi18/HapticFeedbackMode',
       }
       try {
         router.clear();

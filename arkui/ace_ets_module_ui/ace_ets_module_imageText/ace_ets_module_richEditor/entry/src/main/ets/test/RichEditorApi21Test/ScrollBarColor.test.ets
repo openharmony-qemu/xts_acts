@@ -22,7 +22,7 @@ export default function RichEditorScrollBarColorTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorScrollBarColorTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/ScrollBarColor',
+        url: 'MainAbility/pages/RichEditorApi21/ScrollBarColor',
       }
       try {
         router.clear();

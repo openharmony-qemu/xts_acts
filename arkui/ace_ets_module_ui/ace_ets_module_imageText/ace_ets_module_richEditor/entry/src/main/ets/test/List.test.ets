@@ -179,6 +179,15 @@ import SelectionMenuOptions from './RichEditorApi15Test/SelectionMenuOptions.tes
 
 import RichEditorTextStyle from './RichEditorApi16Test/RichEditorTextStyle.test';
 
+import textBackgroundStyleTest from './RichEditorApi18Test/textBackgroundStyleTest.test';
+import HapticFeedbackModeTest from './RichEditorApi18Test/HapticFeedbackMode.test';
+import RichEditorMaxLinesTest from './RichEditorApi18Test/RichEditorMaxLinesTest.test';
+import RichEditorGetCaretRectTest from './RichEditorApi18Test/RichEditorGetCaretRect.test';
+
+import RichEditorUndoStyleTest from './RichEditorApi20Test/RichEditorUndoStyle.test';
+import RichEditorEnableAutoSpacingTest from './RichEditorApi20Test/RichEditorEnableAutoSpacing.test';
+
+import RichEditorScrollBarColorTest from './RichEditorApi21Test/ScrollBarColor.test';
 
 export default function testsuite() {
   PresetTest();
@@ -314,7 +323,7 @@ export default function testsuite() {
   RichEditorCustomSpan015();
   RichEditorFromStyledStringTest();
 
-  ActsRichEditorTest();   // api11
+  ActsRichEditorTest();        // Api11
   SXrenderingStrategyJsunit();
   SXsymbolSpanStyleJsunit();
   SXsymbolStyleJsunit();
@@ -331,19 +340,29 @@ export default function testsuite() {
   richEditorTest();
   RichEditorReturnValuesTest();
 
-  RichEditorMenuType();   // api13
+  RichEditorMenuType();                // Api13
   RichEditorStyledStringTest();
   BarStateTest();
   BarStateModifierTest();
 
-  RichEditorOnHoverTest();   // api14
+  RichEditorOnHoverTest();             // Api14
   getRectsForRangeTest();
   RichEditorOnWillChangeTest();
   RichEditorOnDoubleClickTest();
 
-  RichEditorKeyboardAppearanceTest();  // api15
+  RichEditorKeyboardAppearanceTest();  // Api15
   RichEditorStopBackPressTest();
   SelectionMenuOptions();
 
-  RichEditorTextStyle();  // api16
+  RichEditorTextStyle();               // Api16
+
+  textBackgroundStyleTest();           // Api18
+  HapticFeedbackModeTest();
+  RichEditorMaxLinesTest();
+  RichEditorGetCaretRectTest();
+
+  RichEditorUndoStyleTest();           // Api20
+  RichEditorEnableAutoSpacingTest();
+
+  RichEditorScrollBarColorTest();      // Api21
 }

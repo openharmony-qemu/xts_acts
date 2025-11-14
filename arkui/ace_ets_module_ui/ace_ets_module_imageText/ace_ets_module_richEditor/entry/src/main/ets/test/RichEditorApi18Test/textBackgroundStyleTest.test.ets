@@ -23,7 +23,7 @@ export default function textBackgroundStyleTest() {
     beforeEach(async (done: Function) => {
       console.info("textBackgroundStyleTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/textBackgroundStyleTest',
+        url: 'MainAbility/pages/RichEditorApi18/textBackgroundStyleTest',
       }
       try {
         router.clear();

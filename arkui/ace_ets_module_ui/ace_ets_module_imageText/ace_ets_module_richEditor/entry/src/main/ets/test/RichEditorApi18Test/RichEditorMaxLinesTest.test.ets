@@ -23,7 +23,7 @@ export default function RichEditorMaxLinesTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorMaxLinesTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorMaxLinesTest',
+        url: 'MainAbility/pages/RichEditorApi18/RichEditorMaxLinesTest',
       }
       try {
         router.clear();

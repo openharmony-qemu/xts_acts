@@ -23,7 +23,7 @@ export default function RichEditorGetCaretRectTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorGetCaretRectTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorGetCaretRect',
+        url: 'MainAbility/pages/RichEditorApi18/RichEditorGetCaretRect',
       }
       try {
         router.clear();

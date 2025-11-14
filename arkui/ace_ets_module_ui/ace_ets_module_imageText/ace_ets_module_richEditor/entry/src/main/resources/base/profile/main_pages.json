@@ -159,6 +159,15 @@
   "MainAbility/pages/RichEditorApi15/RichEditorKeyboardAppearance",
   "MainAbility/pages/RichEditorApi15/RichEditorStopBackPress",
   "MainAbility/pages/RichEditorApi15/SelectionMenuOptions",
-  "MainAbility/pages/RichEditorApi16/RichEditorTextStyle"
+  "MainAbility/pages/RichEditorApi16/RichEditorTextStyle",
+  "MainAbility/pages/RichEditorApi18/textBackgroundStyleTest",
+  "MainAbility/pages/RichEditorApi18/HapticFeedbackMode",
+  "MainAbility/pages/RichEditorApi18/RichEditorMaxLinesTest",
+  "MainAbility/pages/RichEditorApi18/RichEditorGetCaretRect",
+  "MainAbility/pages/RichEditorApi20/RichEditorUndoStyle",
+  "MainAbility/pages/RichEditorApi20/setTypingParagraphStyle",
+  "MainAbility/pages/RichEditorApi20/RichEditorEnableAutoSpacing",
+  "MainAbility/pages/RichEditorApi20/RichEditorTextMenuItemId",
+  "MainAbility/pages/RichEditorApi21/ScrollBarColor"
   ]
 }
