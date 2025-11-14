@@ -638,12 +638,23 @@ export default function ActsCommonEventManagerSupportTest() {
     /*
       * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100
       * @tc.name      : commonEventManager.Support
-      * @tc.desc      : lid state common event
+      * @tc.desc      : tablet changed common event
       */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100', Level.LEVEL0, async function () {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100 START`)
-      expect(commonEventManager.Support.COMMON_EVENT_LID_STATE_CHANGED).assertEqual('usual.event.LID_STATE_CHANGED')
+      expect(commonEventManager.Support.COMMON_EVENT_TABLET_MODE_CHANGED).assertEqual('usual.event.TABLET_MODE_CHANGED')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100 END`)
+    })
+
+    /*
+      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4200
+      * @tc.name      : commonEventManager.Support
+      * @tc.desc      : lid state common event
+      */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4200', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4200 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_LID_STATE_CHANGED).assertEqual('usual.event.LID_STATE_CHANGED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4200 END`)
     })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })
