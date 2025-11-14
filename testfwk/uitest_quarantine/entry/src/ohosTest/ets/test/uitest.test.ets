@@ -563,5 +563,29 @@ export default function UiTest() {
       expect(text == null).assertTrue()
       await stopApplication('com.uitestScene.acts')
     })
+
+    /**
+     * @tc.number uiTest_9056
+     * @tc.name testWindowAttr
+     * @tc.desc set the focused status of this UiWindow.
+     */
+    it('testWindowAttr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let window = await driver.findWindow({bundleName:'com.uitestScene.acts',focused:true,actived:true,title:''})
+      await window.focus()
+      await driver.delayMs(waitUiReadyMs)
+      let isFocused = await window.isFocused()
+      let isActived = await window.isActived()
+      expect(isFocused == true).assertTrue()
+      expect(isActived == true).assertTrue()
+      let focusedWindow = await driver.findWindow({focused: false})
+      let falseFocused = await focusedWindow.isFocused()
+      expect(falseFocused).assertFalse()
+      let activedWindow = await driver.findWindow({actived: false})
+      let falseActived = await activedWindow.isActived()
+      expect(falseActived).assertFalse()
+      await stopApplication('com.uitestScene.acts')
+    })
   })
 }

@@ -4297,12 +4297,6 @@ export default function UiTest() {
             let isActived = await window.isActived()
             expect(isFocused == true).assertTrue()
             expect(isActived == true).assertTrue()
-            let focusedWindow = await driver.findWindow({focused: false})
-            let falseFocused = await focusedWindow.isFocused()
-            expect(falseFocused).assertFalse()
-            let activedWindow = await driver.findWindow({actived: false})
-            let falseActived = await activedWindow.isActived()
-            expect(falseActived).assertFalse()
             await stopApplication('com.uitestScene.acts')
         })
 
