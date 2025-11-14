@@ -95,13 +95,13 @@ export default function swiperDelAddTest() {
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0070] START');
       await CommonFunc.sleep(2000);
-      
+      // click the delete button
       let driver = Driver.create();
       let buttonDele: Component = await driver.findComponent(ON.id('deleteTT')) as Component;
       await buttonDele.click();
       await CommonFunc.sleep(2000);
 
-      
+      // right scroll
       let bt = CommonFunc.getComponentRect('swiperTestWidth5');
       let btBottom = bt.bottom;
       let btRight = bt.right;
@@ -111,16 +111,16 @@ export default function swiperDelAddTest() {
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      
-      
+      await driver.swipe(winLeft + Math.round(btLeft)  + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) )as Int,
+      (winTop  + Math.round(btBottom / 2))as Int, (winLeft + Math.round(btRight)) as Int, (winTop  + Math.round(btBottom / 2))as Int);
       await CommonFunc.sleep(3000);
 
-      
+      // click the Previous button
       let buttonPrevious: Component = await driver.findComponent(ON.id('showPreviousTT')) as Component;
       await (buttonPrevious?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      
+      // get the component of text_2
       let text9: Component = await driver.findComponent(ON.text('8')) as Component;
       let ttContent = await text9.getText();
       expect(ttContent).assertEqual("8")
@@ -138,7 +138,7 @@ export default function swiperDelAddTest() {
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0080] START');
       await CommonFunc.sleep(2000);
-      
+      // click the add button
       let driver = Driver.create();
       let buttonAdd: Component = await driver.findComponent(ON.id('addTT')) as Component;
       await buttonAdd.click();
@@ -148,7 +148,7 @@ export default function swiperDelAddTest() {
       await changeIndex.click();
       await CommonFunc.sleep(2000);
 
-      
+      // left scroll
       let bt = CommonFunc.getComponentRect('swiperTestWidth5');
       let btBottom = bt.bottom;
       let btRight = bt.right;
@@ -158,19 +158,19 @@ export default function swiperDelAddTest() {
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      
+      // right scroll
       await driver.swipe(Math.round(winLeft + Math.round(btRight) - UIContext.getFocusedUIContext()!.vp2px(10)) as Int,
         Math.round(winTop + Math.round(btBottom / 2)) as Int,
         Math.round(winLeft + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int)) as Int,
         Math.round(winTop + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(5000);
 
-      
+      // click the next button
       let buttonNext: Component = await driver.findComponent(ON.id('showNextTT')) as Component;
       await (buttonNext?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      
+      // get the component of text_10
       let text10: Component = await driver.findComponent(ON.text('10')) as Component;
       let ttContent = await text10.getText();
       expect(ttContent).assertEqual("10")

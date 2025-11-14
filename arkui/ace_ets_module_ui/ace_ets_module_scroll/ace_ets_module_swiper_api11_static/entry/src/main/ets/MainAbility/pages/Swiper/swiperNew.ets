@@ -71,7 +71,7 @@ class MyDataSource implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -122,19 +122,19 @@ struct SwiperCurve {
         .index(1)
         .autoPlay(true, undefined)
         .interval(4000)
-        .indicator(true) 
-        .loop(false) 
+        .indicator(true) // 默认开启指示点
+        .loop(false) // 默认开启循环播放
         .duration(1000)
-        .vertical(false) 
+        .vertical(false) // 默认横向切换
         .itemSpace("0px")
-        .curve(Curve.Linear) 
-        .onChange((index: Int): void => {
+        .curve(Curve.Linear) // 动画曲线
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
-        .onAnimationStart((index: Int): void => {
+        .onAnimationStart((index: int): void => {
           console.info(index.toString())
         })
-        .onAnimationEnd((index: Int): void => {
+        .onAnimationEnd((index: int): void => {
           console.info(index.toString())
         })
 

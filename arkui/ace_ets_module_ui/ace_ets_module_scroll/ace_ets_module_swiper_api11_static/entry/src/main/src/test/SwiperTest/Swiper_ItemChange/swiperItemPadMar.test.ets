@@ -101,60 +101,62 @@ export default function swiperItemPadMar() {
       console.info("swiperItemPadMar after each called");
     });
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // 原代码注释
+    // /**
+    //  * @tc.number   testSwiperItemSetPaddingMargin_static
+    //  * @tc.name     testSwiperItemSetPaddingMargin_static
+    //  * @tc.desc     testSwiperItemSetPaddingMargin_static
+    //  * @tc.level    0
+    //  */
+    // it('testSwiperItemSetPaddingMargin_static', Level.LEVEL0, async (done: Function) => {
+    //   console.info('new testSwiperItemSetPaddingMargin_static START');
+    //   await CommonFunc.sleep(1000);
+    //   let strJson = inspector.getInspectorByKey('swiperItemPadMar');
+    //
+    //   let swiperItemPadMar: RectValue = CommonFunc.getComponentRect('swiperItemPadMar');
+    //   let swiperItemPadMar01: RectValue = CommonFunc.getComponentRect('swiperItemPadMar01');
+    //   let swiperItemPadMar02: RectValue = CommonFunc.getComponentRect('swiperItemPadMar02');
+    //   let swiperItemPadMar03: RectValue = CommonFunc.getComponentRect('swiperItemPadMar03');
+    //   let swiperItemPadMar04: RectValue = CommonFunc.getComponentRect('swiperItemPadMar04');
+    //   let swiperItemPadMar05: RectValue = CommonFunc.getComponentRect('swiperItemPadMar05');
+    //   let swiperItemPadMar06: RectValue = CommonFunc.getComponentRect('swiperItemPadMar06');
+    //   // Before flipping the page
+    //   console.info("Before page turning , swiperItemPadMar01.left - swiperItemPadMar.left value is " +
+    //   JSON.stringify(swiperItemPadMar01.left - swiperItemPadMar.left));
+    //   expect(Math.round(swiperItemPadMar01.left - swiperItemPadMar.left)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+    //   expect(Math.round(swiperItemPadMar.right - swiperItemPadMar01.right)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+    //   expect(Math.round(swiperItemPadMar01.top - swiperItemPadMar.top)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+    //   expect(Math.round(swiperItemPadMar.bottom - swiperItemPadMar01.bottom)).assertEqual(UIContext.getFocusedUIContext()!.vp2px(20));
+    //   // Page turning.
+    //   let driver = Driver.create();
+    //   await driver.swipe(250, 230, 200, 230);
+    //   await CommonFunc.sleep(1000);
+    //   swiperItemPadMar: RectValue = CommonFunc.getComponentRect('swiperItemPadMar');
+    //   swiperItemPadMar01: RectValue = CommonFunc.getComponentRect('swiperItemPadMar01');
+    //   swiperItemPadMar02: RectValue = CommonFunc.getComponentRect('swiperItemPadMar02');
+    //   swiperItemPadMar03: RectValue = CommonFunc.getComponentRect('swiperItemPadMar03');
+    //   swiperItemPadMar04: RectValue = CommonFunc.getComponentRect('swiperItemPadMar04');
+    //   swiperItemPadMar05: RectValue = CommonFunc.getComponentRect('swiperItemPadMar05');
+    //   swiperItemPadMar06: RectValue = CommonFunc.getComponentRect('swiperItemPadMar06');
+    //   // After flipping the page.
+    //   console.info("After page turning, the swiperItemPadMar.left value is " + JSON.stringify(swiperItemPadMar.left));
+    //   console.info("After page turning,the swiperItemPadMar02.left.left value is " +
+    //   JSON.stringify(swiperItemPadMar02.left));
+    //   expect(swiperItemPadMar.left).assertEqual(swiperItemPadMar02.left);
+    //   expect(swiperItemPadMar.right).assertEqual(swiperItemPadMar02.right);
+    //   expect(swiperItemPadMar.top).assertEqual(swiperItemPadMar02.top);
+    //   expect(swiperItemPadMar.bottom).assertEqual(swiperItemPadMar02.bottom);
+    //   console.info("The type value is " + JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
+    //   console.info("The loop value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
+    //   console.info("The displayCount value is " +
+    //   JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+    //   expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
+    //   console.info('new testSwiperItemSetPaddingMargin_static END');
+    //   done();
+    // });
+    // 原代码注释
   })
 }

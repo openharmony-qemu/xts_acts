@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -107,12 +107,12 @@ struct SwiperMask {
         .index(1)
         .autoPlay(true, undefined)
         .interval(4000)
-        .indicator(true) 
-        .loop(false) 
+        .indicator(true) // 默认开启指示点
+        .loop(false) // 默认开启循环播放
         .duration(1000)
-        .vertical(false) 
+        .vertical(false) // 默认横向切换
         .itemSpace(0)
-        .curve(Curve.Linear) 
+        .curve(Curve.Linear) // 动画曲线
         .key("maskSwiper")
         .indicator(
           new DotIndicator().mask(false)
@@ -137,7 +137,7 @@ class MyDataSource implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {

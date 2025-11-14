@@ -66,7 +66,7 @@ export class MyDataSource_1 implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -80,12 +80,6 @@ export class MyDataSource_1 implements IDataSource<number> {
 @Entry
 @Component
 struct SwiperTest_1 {
-  aboutToAppear() {
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-  }
 
   @State flag: boolean = false;
   @State selectedItemWidth: number = 12
@@ -109,7 +103,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -122,8 +116,9 @@ struct SwiperTest_1 {
             .key('ArkUX_Stage_Swiper_SelectedDigitFont_0100')
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
-              .selectedDigitFont({ size: 34, weight: '800' }))
-            .onChange((index: Int): void => {
+              .selectedDigitFont({ size: 34, weight: '800' })
+            )
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -134,7 +129,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -148,7 +143,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '20px', weight: 200 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -159,7 +154,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -173,7 +168,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '48%', weight: 900 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -184,7 +179,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -198,7 +193,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '', weight: FontWeight.Bolder }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -209,7 +204,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -223,7 +218,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: -2, weight: 1000 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -234,7 +229,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -247,9 +242,10 @@ struct SwiperTest_1 {
             .key('ArkUX_Stage_Swiper_SelectedDigitFont_0600')
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
-              
+              // .selectedDigitFont({ size: 'abc', weight: null })
+              .selectedDigitFont({ size: 'abc' })
             )
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -260,7 +256,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -274,7 +270,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '1000%', weight: '' }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -285,7 +281,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -299,7 +295,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '100vp', weight: 'adf@$5' }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -310,7 +306,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -326,7 +322,7 @@ struct SwiperTest_1 {
               .selectedDigitFont({ size: 10, weight: 200 }))
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: '40lpx', weight: 500 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -337,7 +333,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -352,9 +348,10 @@ struct SwiperTest_1 {
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: 10, weight: 500 }))
             .indicator(Indicator.digit()
-              
+              // .selectedDigitFont({ size: 'abc', weight: null })
+              .selectedDigitFont({ size: 'abc' })
             )
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -365,7 +362,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -379,9 +376,9 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .selectedDigitFont({ size: 10, weight: 600 }))
-            
-            
-            .onChange((index: Int): void => {
+            // .size(null)
+            // .layoutWeight(null)
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -392,7 +389,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -406,7 +403,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: 34, weight: '800' }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -417,7 +414,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -431,7 +428,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '20px', weight: 200 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -442,7 +439,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -456,7 +453,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '48%', weight: 900 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -467,7 +464,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -481,7 +478,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '', weight: FontWeight.Bolder }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -492,7 +489,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -506,7 +503,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: -2, weight: 1000 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -517,7 +514,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -530,9 +527,10 @@ struct SwiperTest_1 {
             .key('ArkUX_Stage_Swiper_DigitFont_0600')
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
-              
+              // .digitFont({ size: 'abc', weight: null })
+              .digitFont({ size: 'abc' })
             )
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -543,7 +541,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -557,7 +555,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '1000%', weight: '' }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -568,7 +566,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -582,7 +580,7 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: '100vp', weight: 'adf@$5' }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -593,7 +591,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -609,7 +607,7 @@ struct SwiperTest_1 {
               .digitFont({ size: 10, weight: 200 }))
             .indicator(Indicator.digit()
               .digitFont({ size: '40lpx', weight: 500 }))
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -620,7 +618,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -635,9 +633,10 @@ struct SwiperTest_1 {
             .indicator(Indicator.digit()
               .digitFont({ size: 10, weight: 500 }))
             .indicator(Indicator.digit()
-              
+              // .digitFont({ size: 'abc', weight: null })
+              .digitFont({ size: 'abc' })
             )
-            .onChange((index: Int): void => {
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -648,7 +647,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -662,9 +661,9 @@ struct SwiperTest_1 {
             .curve(Curve.Linear)
             .indicator(Indicator.digit()
               .digitFont({ size: 10, weight: 600 }))
-            
-            
-            .onChange((index: Int): void => {
+            // .size(null)
+            // .layoutWeight(null)
+            .onChange((index: int): void => {
               console.info(index.toString())
             })
           }
@@ -675,7 +674,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -690,7 +689,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -705,7 +704,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())
@@ -720,7 +719,7 @@ struct SwiperTest_1 {
                 Text(item.toString())
                   .width('90%')
                   .height(160)
-                  .backgroundColor(0xAFEEEE)
+                  .backgroundColor('0xAFEEEE')
                   .textAlign(TextAlign.Center)
                   .fontSize(30)
               }, (item: number) => item.toString())

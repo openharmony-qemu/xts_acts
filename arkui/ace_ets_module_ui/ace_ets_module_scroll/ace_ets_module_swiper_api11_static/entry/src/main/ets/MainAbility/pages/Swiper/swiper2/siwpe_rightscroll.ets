@@ -53,7 +53,7 @@ class MyDataSourceT7 implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -86,7 +86,7 @@ struct SwiperExampleT7 {
             .width('90%')
             .height(160)
             .key('item7S' + item.toString())
-            .backgroundColor(0xAFEEEE)
+            .backgroundColor('0xAFEEEE')
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }, (item: number) => item.toString())
@@ -109,24 +109,25 @@ struct SwiperExampleT7 {
       .itemSpace(0)
       .displayMode(SwiperDisplayMode.STRETCH)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
-        console.info("index: " + index)
-        console.info("current offset: " + extraInfo.currentOffset)
-      })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
-        console.info("index: " + index)
-        console.info("targetIndex: " + targetIndex)
-        console.info("current offset: " + extraInfo.currentOffset)
-        console.info("target offset: " + extraInfo.targetOffset)
-        console.info("velocity: " + extraInfo.velocity)
-      })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
-        console.info("index: " + index)
-        console.info("current offset: " + extraInfo.currentOffset)
-      })
+      //导致app died 无逻辑 注释
+      // .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
+      //   console.info("index: " + index)
+      //   console.info("current offset: " + extraInfo.currentOffset)
+      // })
+      // .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
+      //   console.info("index: " + index)
+      //   console.info("targetIndex: " + targetIndex)
+      //   console.info("current offset: " + extraInfo.currentOffset)
+      //   console.info("target offset: " + extraInfo.targetOffset)
+      //   console.info("velocity: " + extraInfo.velocity)
+      // })
+      // .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
+      //   console.info("index: " + index)
+      //   console.info("current offset: " + extraInfo.currentOffset)
+      // })
 
       Row({ space: 12 } as RowOptions) {
         Button('showNext')

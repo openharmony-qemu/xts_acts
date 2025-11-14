@@ -68,7 +68,7 @@ class MyDataSourceSwiper07 implements IDataSource<string> {
   }
 
   getData(index: int): string {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -88,7 +88,7 @@ struct Swiper07 {
   @State myheight: number = 400;
   @State displaycount: number = 1;
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6] as number[];
-  @State numberData: String[] = [
+  @State Number1: string[] = [
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15',
     '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'
   ];
@@ -150,14 +150,14 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0300")
       .displayCount({ minSize: '200vp' } as SwiperAutoFill)
       .border({ color: Color.White, width: 10 })
 
-      
+      //      .arrowSize(200)
 
       Swiper(this.swiperController) {
 
@@ -207,7 +207,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0310")
@@ -261,12 +261,12 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0320")
 
-      
+      .displayCount(undefined)
 
       Swiper(this.swiperController) {
 
@@ -316,7 +316,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0330")
@@ -370,7 +370,7 @@ struct Swiper07 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
       .key("ArkUX_Grid_List_Swiper_0340")

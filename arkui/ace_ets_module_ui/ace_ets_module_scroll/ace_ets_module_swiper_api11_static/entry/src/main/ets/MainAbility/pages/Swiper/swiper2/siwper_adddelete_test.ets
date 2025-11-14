@@ -54,7 +54,7 @@ class MyDataSourceT5 implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index]
   }
 
   add() {
@@ -124,7 +124,7 @@ struct SwiperExampleT5 {
             .width('90%')
             .height(160)
             .key('item2S' + item.toString())
-            .backgroundColor(0xAFEEEE)
+            .backgroundColor('0xAFEEEE')
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }, (item: number) => item.toString())
@@ -147,24 +147,25 @@ struct SwiperExampleT5 {
       .itemSpace(0)
       .displayMode(SwiperDisplayMode.STRETCH)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
-        console.info("index: " + index)
-        console.info("current offset: " + extraInfo.currentOffset)
-      })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
-        console.info("index: " + index)
-        console.info("targetIndex: " + targetIndex)
-        console.info("current offset: " + extraInfo.currentOffset)
-        console.info("target offset: " + extraInfo.targetOffset)
-        console.info("velocity: " + extraInfo.velocity)
-      })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
-        console.info("index: " + index)
-        console.info("current offset: " + extraInfo.currentOffset)
-      })
+      //导致app died 无逻辑 暂时注释
+      // .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
+      //   console.info("index: " + index)
+      //   console.info("current offset: " + extraInfo.currentOffset)
+      // })
+      // .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
+      //   console.info("index: " + index)
+      //   console.info("targetIndex: " + targetIndex)
+      //   console.info("current offset: " + extraInfo.currentOffset)
+      //   console.info("target offset: " + extraInfo.targetOffset)
+      //   console.info("velocity: " + extraInfo.velocity)
+      // })
+      // .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
+      //   console.info("index: " + index)
+      //   console.info("current offset: " + extraInfo.currentOffset)
+      // })
 
     }.width('100%')
     .margin({ top: 10 } as Margin).backgroundColor(Color.Brown)

@@ -107,18 +107,18 @@ export default function swiperMargin() {
       let swiperMargin04: RectValue = CommonFunc.getComponentRect('swiperMargin04');
       let swiperMargin05: RectValue = CommonFunc.getComponentRect('swiperMargin05');
       let swiperMargin06: RectValue = CommonFunc.getComponentRect('swiperMargin06');
-      
+      // Before flipping the page
       console.info("Before page turning , the swiperMargin.left value is " + JSON.stringify(swiperMargin.left));
       console.info("Before page turning , the swiperMargin01.left value is " + JSON.stringify(swiperMargin01.left));
       expect(swiperMargin.left).assertEqual(swiperMargin01.left);
       expect(swiperMargin.right).assertEqual(swiperMargin01.right);
       expect(swiperMargin.top).assertEqual(swiperMargin01.top);
       expect(swiperMargin.bottom).assertEqual(swiperMargin01.bottom);
-      
+      // Page turning.
       let driver = Driver.create();
-      
-      
-      
+      // await CommonFunc.sleep(500);
+      // //  await driver.swipe(250, 230, 200, 230);
+      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('swiperMargin')
       await driver.swipe(
@@ -135,7 +135,7 @@ export default function swiperMargin() {
       swiperMargin04 = CommonFunc.getComponentRectOnScreen('swiperMargin04');
       swiperMargin05 = CommonFunc.getComponentRectOnScreen('swiperMargin05');
       swiperMargin06 = CommonFunc.getComponentRectOnScreen('swiperMargin06');
-      
+      // After flipping the page.
       console.info("After page turning , the swiperMargin.left value is " + JSON.stringify(swiperMargin.left));
       console.info("After page turning , the swiperMargin02.left value is " + JSON.stringify(swiperMargin02.left));
       expect(swiperMargin.left).assertEqual(swiperMargin02.left);
@@ -143,16 +143,16 @@ export default function swiperMargin() {
       expect(swiperMargin.top).assertEqual(swiperMargin02.top);
       expect(swiperMargin.bottom).assertEqual(swiperMargin02.bottom);
       console.info("The type value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
       console.info("The indicator value is " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
       console.info("The loop value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
       console.info("The displayCount value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')).assertEqual(1);
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
       console.info('new testSwiperSetMargin_static END');
       done();
     });

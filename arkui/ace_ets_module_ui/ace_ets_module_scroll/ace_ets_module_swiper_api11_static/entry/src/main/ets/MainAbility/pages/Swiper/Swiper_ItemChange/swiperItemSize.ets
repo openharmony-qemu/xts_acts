@@ -48,7 +48,7 @@ import { MessageManager, Callback, Message, GlobalMessage } from '../../../commo
 struct SwiperItemSizeTest {
   @State testHeight: number = 150;
   @State testWidth: number = 150;
-  @State testIndex: Int = 0;
+  @State testIndex: int = 0;
   messageManager: MessageManager<number> = new MessageManager<number>();
 
   onPageShow() {

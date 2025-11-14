@@ -96,7 +96,7 @@ export default function SwiperLoop() {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0270] START');
       await CommonFunc.sleep(2000);
       let bt = CommonFunc.getComponentRect('swiperLoop');
-      
+      //180,87,540,327
       let btTop = bt.top;
       let btBottom = bt.bottom;
       let btRight = bt.right;
@@ -138,7 +138,7 @@ export default function SwiperLoop() {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0280] START');
       await CommonFunc.sleep(2000);
       let bt = CommonFunc.getComponentRect('swiperLoop');
-      
+      //180,87,540,327
       let btTop = bt.top;
       let btBottom = bt.bottom;
       let btRight = bt.right;

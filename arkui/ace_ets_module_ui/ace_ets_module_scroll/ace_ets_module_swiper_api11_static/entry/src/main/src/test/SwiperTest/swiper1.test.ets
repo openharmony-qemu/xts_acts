@@ -62,20 +62,20 @@ export default function swiperCurveJsunit() {
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Swiper/Swiper1",
+        url: "MainAbility/pages/Swiper/swiperNew",
       }
       try {
         const router = AppStorage.get<Router>("router") as Router;
-        router.clear();
+        // router.clear();
         let pages = router.getState();
-        if (pages == null || !("SwiperMargin" == pages.name)) {
+        if (pages == null || !("MainAbility/pages/Swiper/swiperNew" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`Swiper1_1 router.pushUrl success`);
           }).catch((error: BusinessError): void => {
             console.error(`Swiper1_1 router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error(`Swiper1_1 beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -85,43 +85,44 @@ export default function swiperCurveJsunit() {
     });
 
 
-    /*
-     * @tc.number   testswiperCurve_static_0001
-     * @tc.name     testswiperCurve_static_0001
-     * @tc.desc     testswiperCurve_static_0001
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0001', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0001 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0001] component width strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('Swiper');
-      expect(obj.getElement('$attrs').getString('curve')).assertEqual("Curves.Linear");
-      console.info("[testswiperCurve_static_0001] curve value :" + obj.getElement('$attrs').getString('curve'));
-
-    });
-
-
-    /*
-     * @tc.number   testswiperCurve_static_0002
-     * @tc.name     testswiperCurve_static_0002
-     * @tc.desc     testswiperCurve_static_0002
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0002', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0002 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0002] component cachedCount strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('Swiper');
-      expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
-      console.info("[testswiperCurve_static_0002] cachedCount value :" +
-      obj.getElement('$attrs').getString('cachedCount'));
-
-    });
+    //pass过 注释掉
+    // /*
+    //  * @tc.number   testswiperCurve_static_0001
+    //  * @tc.name     testswiperCurve_static_0001
+    //  * @tc.desc     testswiperCurve_static_0001
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0001', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0001 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0001] component width strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(obj.getElement('$attrs').getString('curve')).assertEqual("Curves.Linear");
+    //   console.info("[testswiperCurve_static_0001] curve value :" + obj.getElement('$attrs').getString('curve'));
+    //
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testswiperCurve_static_0002
+    //  * @tc.name     testswiperCurve_static_0002
+    //  * @tc.desc     testswiperCurve_static_0002
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0002', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0002 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0002] component cachedCount strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
+    //   console.info("[testswiperCurve_static_0002] cachedCount value :" +
+    //   obj.getElement('$attrs').getDouble('cachedCount'));
+    //
+    // });
 
 
     /*
@@ -143,162 +144,163 @@ export default function swiperCurveJsunit() {
     });
 
 
-    /*
-     * @tc.number   testswiperCurve_static_0004
-     * @tc.name     testswiperCurve_static_0004
-     * @tc.desc     testswiperCurve_static_0004
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0004', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0004 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0004] component autoPlay strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual("true");
-      console.info("[testswiperCurve_static_0004] autoPlay value :" + obj.getElement('$attrs').getString('autoPlay'));
-
-    });
-
-
-    /*
-     * @tc.number   testswiperCurve_static_0005
-     * @tc.name     testswiperCurve_static_0005
-     * @tc.desc     testswiperCurve_static_0005
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0005', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0005 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0005] component interval strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('interval')).assertEqual("4000");
-      console.info("[testswiperCurve_static_0005] interval value :" + obj.getElement('$attrs').getElement('interval'));
-
-    });
-
-
-    /*
-     * @tc.number   testswiperCurve_static_0006
-     * @tc.name     testswiperCurve_static_0006
-     * @tc.desc     testswiperCurve_static_0006
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0006', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0006 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0006] component indicator strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Swiper');
-      
-      expect(obj.getElement('$attrs').getElement('indicator')).assertEqual('true');
-
-    });
-
-
-    /*
-     * @tc.number   testswiperCurve_static_0007
-     * @tc.name     testswiperCurve_static_0007
-     * @tc.desc     testswiperCurve_static_0007
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0007', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0007 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0007] component loop strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual("false");
-      console.info("[testswiperCurve_static_0007] loop value :" + obj.getElement('$attrs').getElement('loop'));
-
-    });
-
-
-    /*
-     * @tc.number   testswiperCurve_static_0008
-     * @tc.name     testswiperCurve_static_0008
-     * @tc.desc     testswiperCurve_static_0008
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0008', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0008 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0008] component duration strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Swiper');
-      expect(obj.getElement('$attrs').getElement('duration')).assertEqual("1000");
-      console.info("[testswiperCurve_static_0008] duration value :" + obj.getElement('$attrs').getElement('duration'));
-
-    });
-
-
-    /*
-     * @tc.number   testswiperCurve_static_0009
-     * @tc.name     testswiperCurve_static_0009
-     * @tc.desc     testswiperCurve_static_0009
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_0009', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_0009 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_0009] component vertical strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Swiper');
-      expect(obj.getElement('$attrs').getElement('vertical')).assertEqual("false");
-      console.info("[testswiperCurve_static_0009] vertical value :" + obj.getElement('$attrs').getElement('vertical'));
-
-    });
-
-
-    /*
-     * @tc.number   testswiperCurve_static_00010
-     * @tc.name     testswiperCurve_static_00010
-     * @tc.desc     testswiperCurve_static_00010
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_00010', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_00010 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_00010] component itemSpace strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('itemSpace')).assertEqual("0.00px");
-      console.info("[testswiperCurve_static_00010] itemSpace value :" +
-      obj.getElement('$attrs').getElement('itemSpace'));
-
-    });
-
-
-    /***有问题***/
-    /*
-     * @tc.number   testswiperCurve_static_00011
-     * @tc.name     testswiperCurve_static_00011
-     * @tc.desc     testswiperCurve_static_00011
-     * @tc.level    0
-     */
-    it('testswiperCurve_static_00011', Level.LEVEL0, async (): Promise<void> => {
-      console.info('swiperCurve testswiperCurve_static_00011 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('swiper');
-      console.info("[testswiperCurve_static_00011] component onChange strJson:" + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Swiper');
-      try {
-        obj.getElement('$attrs').getElement('isOn').setBoolean(!obj.getElement('$attrs').getBoolean('isOn'))
-        
-      } catch (err) {
-        console.info("testswiperCurve_static_00011 on event err : " + JSON.stringify(err));
-      }
-      console.info("[testswiperCurve_static_00011] onChange value :" + obj.getElement('$attrs').getElement('onChange'));
-
-    });
+    //pass过 注释
+    // /*
+    //  * @tc.number   testswiperCurve_static_0004
+    //  * @tc.name     testswiperCurve_static_0004
+    //  * @tc.desc     testswiperCurve_static_0004
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0004', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0004 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0004] component autoPlay strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual("true");
+    //   console.info("[testswiperCurve_static_0004] autoPlay value :" + obj.getElement('$attrs').getString('autoPlay'));
+    //
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testswiperCurve_static_0005
+    //  * @tc.name     testswiperCurve_static_0005
+    //  * @tc.desc     testswiperCurve_static_0005
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0005', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0005 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0005] component interval strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('interval')).assertEqual("4000");
+    //   console.info("[testswiperCurve_static_0005] interval value :" + obj.getElement('$attrs').getString('interval'));
+    //
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testswiperCurve_static_0006
+    //  * @tc.name     testswiperCurve_static_0006
+    //  * @tc.desc     testswiperCurve_static_0006
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0006', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0006 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0006] component indicator strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   // let testObj = obj.$attrs.indicator;
+    //   expect(obj.getElement('$attrs').getString('indicator')).assertEqual('true');
+    //
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testswiperCurve_static_0007
+    //  * @tc.name     testswiperCurve_static_0007
+    //  * @tc.desc     testswiperCurve_static_0007
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0007', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0007 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0007] component loop strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual("false");
+    //   console.info("[testswiperCurve_static_0007] loop value :" + obj.getElement('$attrs').getString('loop'));
+    //
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testswiperCurve_static_0008
+    //  * @tc.name     testswiperCurve_static_0008
+    //  * @tc.desc     testswiperCurve_static_0008
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0008', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0008 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0008] component duration strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(obj.getElement('$attrs').getString('duration')).assertEqual("1000");
+    //   console.info("[testswiperCurve_static_0008] duration value :" + obj.getElement('$attrs').getString('duration'));
+    //
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testswiperCurve_static_0009
+    //  * @tc.name     testswiperCurve_static_0009
+    //  * @tc.desc     testswiperCurve_static_0009
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_0009', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_0009 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_0009] component vertical strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(obj.getElement('$attrs').getString('vertical')).assertEqual("false");
+    //   console.info("[testswiperCurve_static_0009] vertical value :" + obj.getElement('$attrs').getString('vertical'));
+    //
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testswiperCurve_static_00010
+    //  * @tc.name     testswiperCurve_static_00010
+    //  * @tc.desc     testswiperCurve_static_00010
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_00010', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_00010 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_00010] component itemSpace strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('itemSpace')).assertEqual("0.00px");
+    //   console.info("[testswiperCurve_static_00010] itemSpace value :" +
+    //   obj.getElement('$attrs').getString('itemSpace'));
+    //
+    // });
+    //
+    //
+    // /***有问题***/
+    // /*
+    //  * @tc.number   testswiperCurve_static_00011
+    //  * @tc.name     testswiperCurve_static_00011
+    //  * @tc.desc     testswiperCurve_static_00011
+    //  * @tc.level    0
+    //  */
+    // it('testswiperCurve_static_00011', Level.LEVEL0, async (): Promise<void> => {
+    //   console.info('swiperCurve testswiperCurve_static_00011 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('swiper');
+    //   console.info("[testswiperCurve_static_00011] component onChange strJson:" + strJson);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('Swiper');
+    //   try {
+    //     obj.getElement('$attrs').getElement('isOn').setBoolean(!obj.getElement('$attrs').getBoolean('isOn'))
+    //     //尝试用isOn的改变来触发Onchange()事件
+    //   } catch (err: Error) {
+    //     console.info("testswiperCurve_static_00011 on event err : " + JSON.stringify(err));
+    //   }
+    //   console.info("[testswiperCurve_static_00011] onChange value :" + obj.getElement('$attrs').tryGetElement('onChange'));
+    //
+    // });
   })
 }

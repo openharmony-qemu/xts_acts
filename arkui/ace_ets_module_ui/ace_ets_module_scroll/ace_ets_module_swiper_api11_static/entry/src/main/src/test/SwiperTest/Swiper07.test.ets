@@ -89,7 +89,7 @@ export default function Swiper07Test() {
       console.info('ArkUX_Grid_List_Swiper_static_0300 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0300');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0300');
           console.info('ArkUX_Grid_List_Swiper_static_0300 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Grid_List_Swiper_static_0300 JSON.parse(strJson) is: " +
@@ -98,7 +98,7 @@ export default function Swiper07Test() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("200.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0300 END ');
 
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0300 ERR  ' + JSON.stringify(err));
         }
@@ -116,7 +116,7 @@ export default function Swiper07Test() {
       console.info('ArkUX_Grid_List_Swiper_static_0310 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0310');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0310');
           console.info('ArkUX_Grid_List_Swiper_static_0310 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Grid_List_Swiper_static_0310 JSON.parse(strJson) is: " +
@@ -125,7 +125,7 @@ export default function Swiper07Test() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("100.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0310 END ');
 
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0310 ERR  ' + JSON.stringify(err));
         }
@@ -143,13 +143,13 @@ export default function Swiper07Test() {
       console.info('ArkUX_Grid_List_Swiper_static_0320 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0320');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0320');
           console.info('ArkUX_Grid_List_Swiper_static_0320 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0320 JSON.parse(strJson) is: " +
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0320 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0320 ERR  ' + JSON.stringify(err));
         }
@@ -167,13 +167,13 @@ export default function Swiper07Test() {
       console.info('ArkUX_Grid_List_Swiper_static_0330 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0330');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0330');
           console.info('ArkUX_Grid_List_Swiper_static_0330 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0330 JSON.parse(strJson) is: " +
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("500.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0330 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0330 ERR  ' + JSON.stringify(err));
         }
@@ -191,13 +191,13 @@ export default function Swiper07Test() {
       console.info('ArkUX_Grid_List_Swiper_static_0340 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0340');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0340');
           console.info('ArkUX_Grid_List_Swiper_static_0340 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0340 JSON.parse(strJson) is: " +
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0340 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0340 ERR  ' + JSON.stringify(err));
         }

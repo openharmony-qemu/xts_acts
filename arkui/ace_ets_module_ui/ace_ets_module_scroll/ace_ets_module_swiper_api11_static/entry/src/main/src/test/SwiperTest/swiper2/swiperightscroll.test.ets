@@ -101,7 +101,7 @@ export default function swiperRightScrollTest() {
       let btLeft = bt.left;
       let btWidth = Math.round(btRight - btLeft);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0300] swiper width " + btWidth);
-      
+      // right scroll
       let driver = Driver.create();
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
@@ -110,7 +110,7 @@ export default function swiperRightScrollTest() {
         (winTop as Int + Math.round(btBottom / 2)) as Int, (winTop as Int + Math.round(btBottom / 2)) as Int,
         (winTop as Int + Math.round(btBottom / 2)) as Int);
       await CommonFunc.sleep(3000);
-      
+      // get the component of text_10
       let text10: Component = await driver.findComponent(ON.text('10')) as Component;
       let ttContent = await text10.getText();
       expect(ttContent).assertEqual("10")

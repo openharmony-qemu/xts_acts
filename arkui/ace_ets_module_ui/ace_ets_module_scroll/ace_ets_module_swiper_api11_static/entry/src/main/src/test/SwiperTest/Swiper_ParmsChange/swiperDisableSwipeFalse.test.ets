@@ -106,7 +106,7 @@ export default function swiperDisableSwipeFalse() {
       let disableFalse04 = CommonFunc.getComponentRectOnScreen('disableFalse04');
       let disableFalse05 = CommonFunc.getComponentRectOnScreen('disableFalse05');
       let disableFalse06 = CommonFunc.getComponentRectOnScreen('disableFalse06');
-      
+      // Before flipping the page.
       console.info("Before page turning , the disableFalse.left value is " + JSON.stringify(disableFalse.left));
       console.info("Before page turning , the disableFalse01.left value is " + JSON.stringify(disableFalse01.left));
       expect(disableFalse.left).assertEqual(disableFalse01.left);
@@ -114,10 +114,10 @@ export default function swiperDisableSwipeFalse() {
       expect(disableFalse.top).assertEqual(disableFalse01.top);
       expect(disableFalse.bottom).assertEqual(disableFalse01.bottom);
       let driver = Driver.create();
-      
-      
-      
-      
+      // await CommonFunc.sleep(500);
+      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));
+      // //  await driver.swipe(250, 230, 200, 230);
+      // await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('disableFalse')
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`) as Int,
@@ -126,7 +126,7 @@ export default function swiperDisableSwipeFalse() {
         Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int,
         1000);
       await CommonFunc.sleep(3000);
-      
+      // After flipping the page.
       disableFalse = CommonFunc.getComponentRectOnScreen('disableFalse');
       disableFalse01 = CommonFunc.getComponentRectOnScreen('disableFalse01');
       disableFalse02 = CommonFunc.getComponentRectOnScreen('disableFalse02');
@@ -141,17 +141,17 @@ export default function swiperDisableSwipeFalse() {
       expect(disableFalse.top).assertEqual(disableFalse02.top);
       expect(disableFalse.bottom).assertEqual(disableFalse02.bottom);
       console.info("The type value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getString('$type')));
       console.info("The loop value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')));
       console.info("The disableSwipe value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('disableSwipe')));
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('disableSwipe')));
       console.info("The displayCount value is " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Swiper');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('disableSwipe')).assertEqual('false');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('displayCount')).assertEqual(1);
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('disableSwipe')).assertEqual('false');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('displayCount')).assertEqual(1);
       console.info('new testSwiperDisableSwipeFalse_static END');
       done();
     });

@@ -43,7 +43,8 @@ import {
   SwiperAutoFill,
   Padding,
   Indicator,
-  FontWeight
+  FontWeight,
+  Resource
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message, GlobalMessage } from '../../../common/MessageManager1';
@@ -60,7 +61,7 @@ class MyDataSource implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -77,21 +78,21 @@ struct SwiperNextPrevMarginExample {
   private data: MyDataSource = new MyDataSource([])
   @State prevMargin: number = 0
   @State nextMargin: number = 0
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<number | undefined | Resource | null> = new MessageManager<number | undefined | Resource | null>()
 
   onPageShow() {
     console.info('SwiperNextPrevMargin onPageShow')
-    const globalMessage: GlobalMessage<number> = {
+    const globalMessage: GlobalMessage<number | undefined | Resource | null> = {
       name: 'messageManager', message: this.messageManager
-    } as GlobalMessage<number>;
-    AppStorage.setOrCreate<GlobalMessage<number>>('SwiperNextPrevMarginExample', globalMessage);
-    let callback: Callback<number> = (message: Message<number>) => {
+    } as GlobalMessage<number | undefined | Resource | null>;
+    AppStorage.setOrCreate<GlobalMessage<number | undefined | Resource | null>>('SwiperNextPrevMarginExample', globalMessage);
+    let callback: Callback<number | undefined | Resource | null> = (message: Message<number | undefined | Resource | null>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'prevMargin') {
-        this.prevMargin = message.value
+        this.prevMargin = message.value as number
       }
       if (message.name == 'nextMargin') {
-        this.nextMargin = message.value
+        this.nextMargin = message.value as number
       }
     }
     this.messageManager.registerCallback(callback)

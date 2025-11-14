@@ -47,7 +47,7 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { $r, Resource, ArrowStyle } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
-import { sendEventByKey } from '@kit.ArkUI';
+
 import { UtilsTest, startAbility } from '../Util.test';
 
 let domain: Int = 0x0000;
@@ -66,7 +66,7 @@ function sleep(time: int) {
   })
 }
 
-
+//返回首页
 async function backToIndex() {
   let backToIndexPromise = new Promise<string>((resolve: (value: string) => void) => {
     console.info('afterEach backToIndexPromise ...');
@@ -117,7 +117,7 @@ export default function swiperJsunit2() {
           router.pushUrl(options)
           console.info("push Swiper page success ");
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push Swiper page error " + JSON.stringify(err));
       }
       await sleep(2)

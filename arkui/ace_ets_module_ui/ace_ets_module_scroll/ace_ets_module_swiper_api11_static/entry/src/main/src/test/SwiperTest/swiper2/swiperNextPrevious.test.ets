@@ -94,13 +94,13 @@ export default function swiperNextPreTest() {
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0050] START');
       await CommonFunc.sleep(2000);
-      
+      // click the next button
       let driver = Driver.create();
       let buttonNext: Component = await driver.findComponent(ON.id('showNextT')) as Component;
       await (buttonNext?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      
+      // get the component of text_3
       let text3: Component = await driver.findComponent(ON.text('3')) as Component;
       let ttContent = await text3.getText();
       expect(ttContent).assertEqual("3")
@@ -118,13 +118,13 @@ export default function swiperNextPreTest() {
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[] START');
       await CommonFunc.sleep(2000);
-      
+      // click the next button
       let driver = Driver.create();
       let buttonNext: Component = await driver.findComponent(ON.id('showPreviousT')) as Component;
       await (buttonNext?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      
+      // get the component of text_2
       let text3: Component = await driver.findComponent(ON.text('2')) as Component;
       let ttContent = await text3.getText();
       expect(ttContent).assertEqual("2")

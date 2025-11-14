@@ -65,7 +65,7 @@ class MyDataSource implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -113,7 +113,7 @@ struct SwiperExample2 {
       .vertical(false)
       .disableSwipe(true)
       .itemSpace(0)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
 

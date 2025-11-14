@@ -55,7 +55,7 @@ class MyDataSourceA implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index as int]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -129,15 +129,15 @@ struct SwiperAnimationExample {
         arrowColor: Color.Blue
       } as ArrowStyle, false)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("GestureSwipe index: " + index)
         this.onAnimationGesture = "GestureSwipe index: " + index;
         console.info("current offset: " + extraInfo.currentOffset)
       })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         this.onAnimationS = "Start" + index + "-->" + targetIndex;
         console.info("index: " + index)
         console.info("targetIndex: " + targetIndex)
@@ -145,7 +145,7 @@ struct SwiperAnimationExample {
         console.info("target offset: " + extraInfo.targetOffset)
         console.info("velocity: " + extraInfo.velocity)
       })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
         this.onAnimationE = "End" + index + "-->";
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
