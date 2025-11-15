@@ -1,0 +1,16 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/Progress/LoadingProgressJsunit",
+        "MainAbility/pages/Progress/LoadingProgressJsunit2",
+        "MainAbility/pages/Progress/ProgressJsunit",
+        "MainAbility/pages/Progress/ProgressJsunit1",
+        "MainAbility/pages/TextClock/TextClockApiTest",
+        "MainAbility/pages/TextClock/TextClockJsunit",
+        "MainAbility/pages/TextClock/TextClockJsunit2",
+        "MainAbility/pages/TextClock/TextClockLongJsunit",
+        "MainAbility/pages/TextTimer/TextTimerApi",
+        "MainAbility/pages/TextTimer/TextTimerJsunit",
+        "MainAbility/pages/TextTimer/TextTimerJsunit2"
+    ]
+}
