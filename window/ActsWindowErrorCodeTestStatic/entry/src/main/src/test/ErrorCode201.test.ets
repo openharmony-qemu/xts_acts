@@ -23,9 +23,51 @@ import window from '@ohos.window'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import type { AsyncCallback, Callback} from '@ohos.base'
 import common from '@ohos.app.ability.common';
+import Want from '@ohos.app.ability.Want';
+import bundleManager from '@ohos.bundle.bundleManager';
+import StartOptions from '@ohos.app.ability.StartOptions'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
+    return new Promise<window.WindowStage>((resolve, reject) => {
+        let want: Want = {
+            bundleName: "com.example.helloworld",
+            abilityName: 'StartAbility'
+        };
+        if (options) {
+            context.startAbility(want, options).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        } else {
+            context.startAbility(want).then(() => {
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+            });
+        }
+        await Utils.msSleep(1000)
+        let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+        resolve(windowStageStart);
+    })
+}
+async function terminateAbility(caseName: string) {
+    let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+    try {
+        if (pageContext !== null && pageContext !== undefined) {
+            hilog.info(domain, tag,`${caseName} terminateSelf begin`);
+        }
+        pageContext.terminateSelf().then(() => {
+            hilog.info(domain, tag,`${caseName} terminateSelf success`);
+        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+        });
+    } catch (e: BusinessError) {
+        hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+    }
+    await Utils.msSleep(1000)
+}
 export default function ErrorCode201() {
 
     describe("ErrorCode201", (): void => {
@@ -181,8 +223,71 @@ export default function ErrorCode201() {
                 done()
             }
         })
-
-
+        /**
+         * @tc.number      SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_Static_0200
+         * @tc.name        testSetWindowShadowEnabledwithoutPermission_Static
+         * @tc.desc        testSetWindowShadowEnabledwithoutPermission_Static
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 2
+         */
+        it('testSetWindowShadowEnabledwithoutPermission_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = "testSetWindowShadowEnabledwithoutPermission_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setWindowShadowEnabled(true).then(() => {
+                    hilog.info(domain, tag,`${caseName} Succeeded in calling setWindowShadowEnabled.`);
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(err.message!=null).assertTrue();
+                    if (err.code === 801) {
+                        done();
+                    } else {
+                        expect(err.code).assertEqual(201);
+                        done()
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done();
+            }
+        })
+        /**
+         * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_Static_0700
+         * @tc.name       testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static
+         * @tc.desc       testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 0
+         */
+        it('testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testMainwindowSetWindowContainerColorNoPermissonCorrectParam_Static';
+            hilog.info(domain, tag,caseName + 'begin');
+            let windowStageStart = await startAbility(caseName, context);
+            try {
+                let windowClass = windowStageStart.getMainWindowSync();
+                windowClass.setWindowContainerColor("#0099FF","#CCCCCC");
+                await terminateAbility(caseName);
+                expect(false).assertTrue()
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,caseName + 'Failed. Cause: ' + JSON.stringify(err));
+                await terminateAbility(caseName);
+                if (isPCStatus == '') {
+                    expect(err.code).assertEqual(801);
+                    done()
+                } else {
+                    expect(err.code).assertEqual(201);
+                    done()
+                }
+        
+            }
+        });
 
 
 

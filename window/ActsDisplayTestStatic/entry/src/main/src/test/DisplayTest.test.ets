@@ -1582,6 +1582,196 @@ export default function DisplayTest() {
         done();
       });
 
+      /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0500
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithPositionOutofRange
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口position超出int32报1400004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let displayClass:display.Display = display.getDefaultDisplaySync();
+                hilog.info(domain, tag,`${caseName} displayClass.id: ${displayClass.id}`);
+                const exceedMax = 2147483648;
+                let position: display.Position = {
+                    x: exceedMax,
+                    y: exceedMax
+                };
+                display.convertGlobalToRelativeCoordinate(position, displayClass.id);
+                expect(false).assertTrue();
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                expect(e.code).assertEqual(1400004);
+                expect(e.message!=null).assertTrue();
+                done()
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0600
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口传入displayId<0报1400004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let position: display.Position = {
+                    x: 50,
+                    y: 50
+                };
+                display.convertGlobalToRelativeCoordinate(position, -1);
+                expect(false).assertTrue();
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                expect(e.code).assertEqual(1400004)
+                expect(e.message!=null).assertTrue();
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0800
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口，传入displayId，在除RK外的设备正常调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
+         */
+        it('testConvertGlobalToRelativeCoordinatewithDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithDisplayid_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let result:display.Display = display.getDisplayByIdSync(0);
+                hilog.info(domain, tag,`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
+                let width = result.width / 2;
+                let height = result.height / 2;
+                hilog.info(domain, tag,`${caseName} width: ${width}`);
+                hilog.info(domain, tag,`${caseName} height: ${height}`);
+
+                let position: display.Position = {
+                    x: width,
+                    y: height
+                };
+                let relativePosition = display.convertGlobalToRelativeCoordinate(position, 0);
+                hilog.info(domain, tag,`${caseName} relativePosition: ${JSON.stringify(relativePosition)}`);
+                expect(Math.abs(relativePosition.position.x - width)).assertLargerOrEqual(0)
+                expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
+                expect(relativePosition.displayId).assertEqual(0)
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                if (e.code === 801) {
+                    expect(e.message!=null).assertTrue();
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done()
+                }
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0900
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口，不传入displayId，在除RK外的设备正常调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
+         */
+        it('testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let result:display.Display = display.getDisplayByIdSync(0);
+                hilog.info(domain, tag,`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
+                let width = result.width / 2;
+                let height = result.height / 2;
+                hilog.info(domain, tag,`${caseName} width: ${width}`);
+                hilog.info(domain, tag,`${caseName} height: ${height}`);
+
+                let position: display.Position = {
+                    x: width,
+                    y: height
+                };
+                let relativePosition = display.convertGlobalToRelativeCoordinate(position);
+                hilog.info(domain, tag,`${caseName} relativePosition: ${JSON.stringify(relativePosition)}`);
+                expect(Math.abs(relativePosition.position.x - width)).assertLargerOrEqual(0)
+                expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
+                expect(relativePosition.displayId).assertEqual(0)
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                if (e.code === 801) {
+                    expect(e.message!=null).assertTrue();
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done()
+                }
+            }
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_Static_0100
+         * @tc.name        testGetLiveCreaseRegion_Static
+         * @tc.desc        验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
+         */
+        it('testGetLiveCreaseRegion_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = "testGetLiveCreaseRegion_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let result:boolean = display.isFoldable();
+                hilog.info(domain, tag,`${caseName} isFoldable: ${result}`);
+                let defaultDisplay:display.Display = display.getDefaultDisplaySync();
+                hilog.info(domain, tag,`${caseName} defaultDisplay: ${JSON.stringify(defaultDisplay)}`);
+                let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
+                hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
+                expect(region.displayId).assertEqual(0)
+                if (result) {
+                    if (region.creaseRects.length == 0) {
+                        expect(true).assertTrue();
+                    } else {
+                        for (let i = 0; i < region.creaseRects.length; i++) {
+                            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+                        }
+                    }
+                } else {
+                    expect(region.creaseRects.length).assertEqual(0)
+                }
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                if (e.code === 801) {
+                    expect(e.message!=null).assertTrue();
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done()
+                }
+            }
+        })
+
 
 
 

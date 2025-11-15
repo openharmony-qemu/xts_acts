@@ -714,7 +714,128 @@ export default function WindowLayoutTest() {
                 }
             }
         })
+        /**
+         * @tc.number      SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_Static_0400
+         * @tc.name        testGlobalDisplayToClientwithDestroyedWindow_Static
+         * @tc.desc        验证globalDisplayToClient接口窗口异常状态调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('testGlobalDisplayToClientwithDestroyedWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testGlobalDisplayToClientwithDestroyedWindow_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testGlobalDisplayToClientwithDestroyedWindow')
+            await windowClass.destroyWindow()
+            try {
+                let position:window.Position = windowClass.globalDisplayToClient(100, 100);
+                hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                expect(err.code).assertEqual(1300002);
+                expect(err.message!=null).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_GLOBAL_DISPLAY_TO_CLIENT_WITH_INVAILD_PARAMETERS_Static
+         * @tc.name        testGlobalDisplayToClientwithOutofRange_Static
+         * @tc.desc        验证子窗调用globalDisplayToClient入参超出int值抛1300016错误码
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
+         */
+        it('testGlobalDisplayToClientwithOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testGlobalDisplayToClientwithOutofRange_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testGlobalDisplayToClientwithOutofRange')
+            await Utils.msSleep(200);
+            await windowClass.setUIContent('pages/index2');
+            await windowClass.showWindow();
+            await Utils.msSleep(200)
+            await windowClass.moveWindowTo(-50, -50);
+            await Utils.msSleep(200);
+            try {
+                const maxInt = 2^31 -1;
+                windowClass.globalDisplayToClient(maxInt, maxInt);
+                await windowClass.destroyWindow()
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                await windowClass.destroyWindow();
+                expect(err.message!=null).assertTrue();
+                if (err.code == 801) {
+                    done()
+                } else {
+                    expect(err.code).assertEqual(1300016)
+                    done()
+                }
+            }
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_Static_0200
+         * @tc.name        testClientToGlobalDisplaywithDestoryedWindow_Static
+         * @tc.desc        验证clientToGlobalDisplay接口窗口异常状态调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('testClientToGlobalDisplaywithDestoryedWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testClientToGlobalDisplaywithDestoryedWindow_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testMoveWindowToGlobalDisplaywithDestoryedWindow')
+            await windowClass.destroyWindow();
+            try {
+                let position:window.Position = windowClass.clientToGlobalDisplay(100, 100);
+                hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                expect(err.code).assertEqual(1300002);
+                expect(err.message!=null).assertTrue();
+                done();
+            }
+        })
 
+        /**
+         * @tc.number      SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_Static_0300
+         * @tc.name        testClientToGlobalDisplaywithPositionOutofRange_Static
+         * @tc.desc        验证clientToGlobalDisplay接口入参越界
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('testClientToGlobalDisplaywithPositionOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const caseName :string = 'testClientToGlobalDisplaywithPositionOutofRange_Static';
+            hilog.info(domain, tag,caseName + 'begin.');
+            let windowClass:window.Window = await windowStage.createSubWindow('testClientToGlobalDisplaywithPositionOutofRange')
+            await windowClass.setUIContent('pages/index2');
+            await windowClass.showWindow();
+            windowClass.moveWindowToAsync(50,50);
+            await Utils.msSleep(1000);
+            try {
+                const maxInt = 2^31 -1;
+                let position:window.Position = windowClass.clientToGlobalDisplay(maxInt, maxInt);
+                hilog.info(domain, tag,caseName + ' position: ' + JSON.stringify(position));
+                await windowClass.destroyWindow();
+                expect(false).assertTrue();
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName} failed, err: ${JSON.stringify(err)}`);
+                await windowClass.destroyWindow();
+                expect(err.message!=null).assertTrue();
+                if (err.code == 801) {
+                    done()
+                } else {
+                    expect(err.code).assertEqual(1300016)
+                    done();
+                }
+            }
+        })
 
 
     })
