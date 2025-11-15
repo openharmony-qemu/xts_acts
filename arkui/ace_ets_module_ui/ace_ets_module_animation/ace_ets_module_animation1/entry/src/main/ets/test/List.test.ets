@@ -26,6 +26,8 @@ import animateToTest from './AnimatorResultTest/animateToTest.test'
 import SymbolGlyphTest from './SymbolGlyphTest/SymbolGlyphTest.test'
 import ParticleAnimatorTest from './Particle/ParticleAnimatorTest.test'
 import ParticleAttributeTest from './Particle/ParticleAttributeTest.test'
+import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test'
+import MotionPathJsunit from './MotionPathJsunit.test';
 
 export default function testsuite() {
   FrameNodeAnimation();
@@ -41,4 +43,6 @@ export default function testsuite() {
   SymbolGlyphTest();
   ParticleAnimatorTest();
   ParticleAttributeTest();
+  ParticleJsunit();
+  motionPathJsunit();
 }

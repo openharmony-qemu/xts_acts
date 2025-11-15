@@ -14,6 +14,9 @@
         "MainAbility/pages/Particle/Particle",
         "MainAbility/pages/SymbolGlyph/SymbolGlyph",
         "MainAbility/pages/Particle/particleAnimationTest",
-        "MainAbility/pages/Particle/particleAttributeTest"
+        "MainAbility/pages/Particle/particleAttributeTest",
+        "MainAbility/pages/Particle/ParticleOptions",
+        "MainAbility/pages/Particle/ParticleProperty",
+        "MainAbility/pages/Particle/motionPath"
     ]
 }
