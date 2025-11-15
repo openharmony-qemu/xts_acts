@@ -751,34 +751,6 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
         done();
       });
 
-    // /**
-    //  * @tc.number SUB_Security_CryptoFramework_PriKeyToPubKey_Func_2200
-    //  * @tc.name SUB_Security_CryptoFramework_PriKeyToPubKey_Func_2200
-    //  * @tc.desc generateKey
-    //  * @tc.size Medium
-    //  * @tc.type Func
-    //  * @tc.level Level1
-    //  */
-    // it("SUB_Security_CryptoFramework_PriKeyToPubKey_Func_2200",
-    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //     try {
-    //       let algName: string = "ECC256";
-    //       let priKeyBlob: cryptoFramework.DataBlob = {data: new Uint8Array(ECC_256_PRIVATE_KEY_DER)};
-    //       let keyPair: cryptoFramework.KeyPair = await convertKeyPair(algName, priKeyBlob, null);
-    //       let pubKey: cryptoFramework.PubKey = await getPubKey(keyPair.priKey);
-    //       let certBlob: cert.EncodingBlob = {
-    //         data: stringToUint8Array(ECC_256_PUBLIC_CERT_PEM),
-    //         encodingFormat: cert.EncodingFormat.FORMAT_PEM
-    //       }
-    //       let x509Cert: cert.X509Cert = await cert.createX509Cert(certBlob);
-    //       await x509Cert.verify(pubKey);
-    //     } catch (error: BusinessError) {
-    //       console.error(`[XTS] Func_2200 ${error}, error code: ${error.code}`);
-    //       expect(null).assertFail();
-    //     }
-    //     done();
-    //   });
-
     /**
      * @tc.number SUB_Security_CryptoFramework_PriKeyToPubKey_Func_2200
      * @tc.name SUB_Security_CryptoFramework_PriKeyToPubKey_Func_2200

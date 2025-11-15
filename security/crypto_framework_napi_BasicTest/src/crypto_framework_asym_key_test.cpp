@@ -1910,7 +1910,7 @@ HWTEST_F(OHCryptoFrameworkAsymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_Asy
     EXPECT_EQ(OH_CryptoAsymKeyGeneratorWithSpec_GenKeyPair(generator, &keyPair), CRYPTO_SUCCESS);
     EXPECT_TRUE(keyPair != nullptr);
     OH_CryptoPubKey *pubKey = OH_CryptoKeyPair_GetPubKey(keyPair);
-    EXPECT_TRUE(pubKey == nullptr);
+    EXPECT_TRUE(pubKey != nullptr);
 
     OH_CryptoKeyPair_Destroy(keyPair);
     OH_CryptoAsymKeyGeneratorWithSpec_Destroy(generator);
