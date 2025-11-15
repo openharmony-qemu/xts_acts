@@ -59,7 +59,7 @@ struct RichEditorApi22Com {
                 this.text3 += (item as RichEditorTextSpanResult).symbolSpanStyle?.effectStrategy
               }
             })
-            console.info("[RichEditorApi2_getSpans] click succ");
+            console.info('[RichEditorApi2_getSpans] click succ');
 
         })
 
