@@ -18,6 +18,9 @@ import stageTimePickerDialog from './timePickerTest/stageTimePickerDialog.test';
 import TimePickerJsunit from './timePickerTest/TimePickerJsunit.test';
 import timeStampJsunit from './timePickerTest/TimeStampJsunit.test';
 import timePickerPropertiesModifierTest from './timePickerTest/timePickerPropertiesModifier.test';
+import timePickerLoopTest from './timePickerTest/timePickerLoop.test';
+import timePickerSelectedAreaTest from './timePickerTest/timePickerSelectedArea.test';
+import timePickerStartAndEndTest from './timePickerTest/timePickerStartAndEnd.test';
 
 export default function testsuite() {
   stageTimePickerDialog();
@@ -26,4 +29,7 @@ export default function testsuite() {
   TimePickerJsunit();
   timeStampJsunit();
   timePickerPropertiesModifierTest();
+  timePickerLoopTest();
+  timePickerSelectedAreaTest();
+  timePickerStartAndEndTest();
 }
