@@ -5,6 +5,7 @@
     "MainAbility/pages/timePicker/TimePicker",
     "MainAbility/pages/timePicker/TimePicker1",
     "MainAbility/pages/timePicker/TimePickerPage",
-    "MainAbility/pages/timePicker/timeStamp"
+    "MainAbility/pages/timePicker/timeStamp",
+    "MainAbility/pages/timePicker/timePickerPropertiesModifier"
   ]
 }

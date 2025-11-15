@@ -22,6 +22,7 @@ import datePickerTextStyleTest from './datePickerTest/DatePickerTextStyle.test';
 import datePickerLunarJsunit from './datePickerTest/datePicker3.test';
 import datePickerJsunit from './datePickerTest/DatePickerJsunit.test';
 import datePickerUIJsunit from './datePickerTest/datePickerUIJsunit.test';
+import datePickerPropertiesModifierTest from './datePickerTest/datePickerPropertiesModifier.test';
 
 export default function testsuite() {
   DatePickerCanLoopTest();
@@ -33,4 +34,5 @@ export default function testsuite() {
   datePickerLunarJsunit();
   datePickerJsunit();
   datePickerUIJsunit();
+  datePickerPropertiesModifierTest();
 }

@@ -12,8 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import TextPickerPage from './textPicker/textPickerSelectedBackgroundStyle.test';
+import textPickerSelectedBackgroundStyleTest from './textPicker/textPickerSelectedBackgroundStyle.test';
+import textPickerPropertiesModifierTest from './textPicker/textPickerPropertiesModifier.test';
 
 export default function testsuite() {
-    TextPickerPage();
+    textPickerSelectedBackgroundStyleTest();
+    textPickerPropertiesModifierTest();
 }
