@@ -2339,5 +2339,113 @@ export default function pasteComponentTest() {
         console.info("====>[Test_Security_Button_Paste_2200] clickSecComponent err : " + JSON.stringify(err));
       }
     });
+
+    /**
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Paste_2300
+     * @tc.name Test_Security_Button_Paste_2300
+     * @tc.desc Test SecurityComponent attr focusBox and result in PasteButton Authorization is passed
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 3
+     * @tc.require
+     */
+    it('Test_Security_Button_Paste_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info('====>[Test_Security_Button_Paste_2300] START====');
+      await Utils.sleep(1000);
+      try {
+        let eventData:events_emitter.EventData = {
+          data: {
+            "icon": 0,
+            "textType": 0,
+            "bgType": ButtonType.Normal,
+            "iconSize": 16,
+            "direct": SecurityComponentLayoutDirection.VERTICAL,
+            "positionX": 0,
+            "positionY": 0,
+            "anchorX": 0,
+            "anchorY": 0,
+            "offsetX": 0,
+            "offsetY": 0,
+            "fontSize": 16,
+            "fontStyle": FontStyle.Normal,
+            "fontWeight": FontWeight.Medium,
+            "fontFamily": 'HarmonyOS Sans',
+            "fontColor": 0xffffffff,
+            "iconColor": 0xffffffff,
+            "bgColor": 0xff007dff,
+            "borderSty": BorderStyle.Dashed,
+            "borderWid": 0,
+            "borderCol": 0xffffffff,
+            "borderRad": 0,
+            "left": 12,
+            "right": 12,
+            "top": 4,
+            "bottom": 4,
+            "middle": 4,
+            "strokeMag": 10,
+            "strokeColR": 255,
+            "strokeColG": 0,
+            "strokeColB": 0,
+            "strokeWth": 10
+          }
+        }
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("====>[Test_Security_Button_Paste_2300] start to publish emit");
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.info("====>[Test_Security_Button_Paste_2300] change component data error: " + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJsonNew = getInspectorByKey('keyPaste');
+      let obj : ESObject = JSON.parse(strJsonNew);
+      expect(obj.$attrs.focusBox.margin).assertEqual("10.00vp");
+      expect(obj.$attrs.focusBox.strokeColor).assertEqual("#FFFF0000");
+      expect(obj.$attrs.focusBox.strokeWidth).assertEqual("10.00px");
+      await Utils.sleep(1000);
+      try {
+        let clickCallback = (clickData:events_emitter.EventData) => {
+          if(clickData.data !=undefined){
+            console.info("====>[Test_Security_Button_Paste_2300] get clickEvent result is: " + JSON.stringify(clickEvent));
+            console.info("====>[Test_Security_Button_Paste_2300] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
+            if (clickData.data.clickResult == PasteButtonOnClickResult.SUCCESS) {
+              console.info("====>[Test_Security_Button_Paste_2300] 设置权限成功");
+              expect(clickData.data.clickResult == PasteButtonOnClickResult.SUCCESS).assertTrue();
+              console.info("====>[Test_Security_Button_Paste_2300] END====");
+              done();
+            } else {
+              console.info("====>[Test_Security_Button_Paste_2300] 设置权限失败");
+              expect().assertFail()
+              console.info("====>[Test_Security_Button_Paste_2300] END====");
+              done();
+            }
+          } else {
+            console.info("====>[Test_Security_Button_Paste_2300] ERR CASE 失败");
+            expect().assertFail()
+            console.info("====>[Test_Security_Button_Paste_2300] END====");
+            done();
+          }
+        }
+        let clickEvent:events_emitter.InnerEvent = {
+          eventId: 2,
+          priority: events_emitter.EventPriority.LOW
+        }
+        events_emitter.once(clickEvent, clickCallback);
+      } catch (err) {
+        console.info("====>[Test_Security_Button_Paste_2300] once clickEvent err : " + JSON.stringify(err));
+      }
+      try {
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.type('PasteButton'));
+        await Utils.sleep(500);
+        console.info("====>[Test_Security_Button_Paste_2300] button is:" + JSON.stringify(button));
+        await button.click();
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info("====>[Test_Security_Button_Paste_2300] clickSecComponent err : " + JSON.stringify(err));
+      }
+    });
   })
 }
