@@ -12,8 +12,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import TextPickerPage from './textPickerDialog/textPickerSelectedBackgroundStyle.test';
+import textPickerDialogBGBlurStyleTest from './textPickerDialogTest/textPickerDialogBGBlurStyle.test';
+import textPickerDialogBGColorTest from './textPickerDialogTest/textPickerDialogBGColor.test';
+import textPickerDialogDefaultTextStyleTest from './textPickerDialogTest/textPickerDialogDefaultTextStyle.test';
+import textPickerDialogDisableTextStyleAnimationTest from './textPickerDialogTest/textPickerDialogDisableTextStyleAnimation.test';
+import textPickerDialogDisappearTextStyleTest from './textPickerDialogTest/textPickerDialogDisappearTextStyle.test';
+import textPickerDialogEnableHapticFeedbackTest from './textPickerDialogTest/textPickerDialogEnableHapticFeedback.test';
+import textPickerDialogSelectedAreaTest from './textPickerDialogTest/textPickerDialogSelectedArea.test';
+import textPickerDialogSelectedBgColorTest from './textPickerDialogTest/textPickerDialogSelectedBgColor.test';
+import textPickerDialogSelectedTextStyleTest from './textPickerDialogTest/textPickerDialogSelectedTextStyle.test';
+import textPickerDialogShadowTest from './textPickerDialogTest/textPickerDialogShadow.test';
+import textPickerDialogTextStyleTest from './textPickerDialogTest/textPickerDialogTextStyle.test';
 
 export default function testsuite() {
-
+  textPickerDialogBGBlurStyleTest();
+  textPickerDialogBGColorTest();
+  textPickerDialogDefaultTextStyleTest();
+  textPickerDialogDisableTextStyleAnimationTest();
+  textPickerDialogDisappearTextStyleTest();
+  textPickerDialogEnableHapticFeedbackTest();
+  textPickerDialogSelectedAreaTest();
+  textPickerDialogSelectedBgColorTest();
+  textPickerDialogSelectedTextStyleTest();
+  textPickerDialogShadowTest();
+  textPickerDialogTextStyleTest();
 }
