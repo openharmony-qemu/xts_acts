@@ -57,7 +57,7 @@ export default function ChipAction2() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_CHIP_INTERFACE_0940
+      * @tc.number: ChipAction2_001
       * @tc.name  : ChipAction2_001
       * @tc.desc  : set enabled to false and action event test
       * @tc.level : Level 3

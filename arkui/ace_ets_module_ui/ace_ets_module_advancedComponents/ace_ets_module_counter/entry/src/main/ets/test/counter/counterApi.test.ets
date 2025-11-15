@@ -15,6 +15,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/utils/Common';
+import Utils from '../Utils';
+
 import {
   UiComponent,
   UiDriver,
@@ -44,7 +46,7 @@ export default function counterApi() {
           let result = await router.pushUrl({
             url: "MainAbility/pages/counter/counterApi"
           })
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           console.info("push counterApi page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -54,7 +56,7 @@ export default function counterApi() {
       done();
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("counterApi after each called");
     });
 
@@ -67,17 +69,17 @@ export default function counterApi() {
 
     it('counterApi_001', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_001] START');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       // press tab
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let strJson = getInspectorByKey('counterApiText2');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[counterApi_001] component obj is: " + JSON.stringify(obj));
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       expect(obj.$attrs.content).assertEqual('onFocusDecrease');
       console.info('[counterApi_001] END');
       done();
@@ -93,19 +95,19 @@ export default function counterApi() {
 
     it('counterApi_002', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_002] START');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       // press tab
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let strJson = getInspectorByKey('counterApiText1');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let strJson2 = getInspectorByKey('counterApiText2');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("[counterApi_002] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[counterApi_002] component obj is: " + JSON.stringify(JSON.parse(strJson2)));
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       expect(JSON.parse(strJson).$attrs.content).assertEqual('onFocusIncrease');
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurDecrease');
       console.info('[counterApi_002] END');
@@ -121,16 +123,16 @@ export default function counterApi() {
 
     it('counterApi_003', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_003] START');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       // press tab
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       await await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let strJson2 = getInspectorByKey('counterApiText1');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("[counterApi_003] component obj is: " + JSON.stringify(JSON.parse(strJson2)));
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurIncrease');
       console.info('[counterApi_003] END');
       done();

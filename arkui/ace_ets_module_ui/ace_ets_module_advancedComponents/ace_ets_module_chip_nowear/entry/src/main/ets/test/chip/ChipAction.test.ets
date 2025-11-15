@@ -57,7 +57,7 @@ export default function ChipAction() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_CHIP_INTERFACE_0940
+      * @tc.number: ChipAction_001
       * @tc.name  : ChipAction_001
       * @tc.desc  : action event test
       * @tc.level : Level 3

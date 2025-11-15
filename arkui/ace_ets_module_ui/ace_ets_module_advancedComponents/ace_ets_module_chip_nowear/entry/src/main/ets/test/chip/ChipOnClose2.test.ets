@@ -57,8 +57,8 @@ export default function ChipOnClose2() {
     });
 
     /* *
-      * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_CHIP_INTERFACE_1550
-      * @tc.name  : SearchMaxLength2_001
+      * @tc.number: ChipOnClose2_001
+      * @tc.name  : ChipOnClose2_001
       * @tc.desc  : set enabled to false and action event test
       * @tc.level : Level 3
       */

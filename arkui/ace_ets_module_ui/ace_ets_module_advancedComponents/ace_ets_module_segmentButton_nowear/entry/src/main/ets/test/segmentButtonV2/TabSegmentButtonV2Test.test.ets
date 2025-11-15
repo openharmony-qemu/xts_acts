@@ -49,7 +49,7 @@ export default function TabSegmentButtonV2Test() {
     });
 
     /**
-     * @tc.number SegmentButton single direction
+     * @tc.number TabSegmentButtonV2Test_0100
      * @tc.name TabSegmentButtonV2Test_0100
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
@@ -87,7 +87,7 @@ export default function TabSegmentButtonV2Test() {
 
 
     /**
-     * @tc.number SegmentButton single direction
+     * @tc.number TabSegmentButtonV2Test_0110
      * @tc.name TabSegmentButtonV2Test_0110
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
@@ -113,7 +113,7 @@ export default function TabSegmentButtonV2Test() {
       });
 
     /**
-     * @tc.number SegmentButton single direction
+     * @tc.number TabSegmentButtonV2Test_0120
      * @tc.name TabSegmentButtonV2Test_0120
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
@@ -157,7 +157,7 @@ export default function TabSegmentButtonV2Test() {
       });
 
      /**
-      * @tc.number SegmentButton single direction
+      * @tc.number TabSegmentButtonV2Test_0130
       * @tc.name TabSegmentButtonV2Test_0130
       * @tc.desc Test SegmentButton page
       * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function TabSegmentButtonV2Test() {
 
 
      /**
-      * @tc.number SegmentButton single direction
+      * @tc.number TabSegmentButtonV2Test_0140
       * @tc.name 'TabSegmentButtonV2Test_0140
       * @tc.desc Test SegmentButton page
       * @tc.size MediumTest
@@ -212,7 +212,7 @@ export default function TabSegmentButtonV2Test() {
       });
 
      /**
-      * @tc.number SegmentButton single direction
+      * @tc.number TabSegmentButtonV2Test_0150
       * @tc.name 'TabSegmentButtonV2Test_0150
       * @tc.desc Test SegmentButton page
       * @tc.size MediumTest
@@ -242,7 +242,7 @@ export default function TabSegmentButtonV2Test() {
       });
 
      /**
-      * @tc.number SegmentButton single direction
+      * @tc.number TabSegmentButtonV2Test_0160
       * @tc.name 'TabSegmentButtonV2Test_0160
       * @tc.desc Test SegmentButton page
       * @tc.size MediumTest

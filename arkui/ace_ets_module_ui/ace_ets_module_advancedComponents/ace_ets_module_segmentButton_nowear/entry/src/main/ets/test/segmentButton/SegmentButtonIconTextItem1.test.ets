@@ -49,8 +49,8 @@ export default function SegmentButtonIconTextItem1() {
     });
 
     /**
-     * @tc.number    SegmentButtonItemOptionsArray1_001
-     * @tc.name      SegmentButtonItemOptionsArray1_001
+     * @tc.number    SegmentButtonIconTextItem1_001
+     * @tc.name      SegmentButtonIconTextItem1_001
      * @tc.desc      Frequently updating and modifying the values of parent components
      * @tc.level     Level 0
      * @tc.type

@@ -53,7 +53,7 @@ export default function SegmentBtnItemTest0010() {
     });
 
     /**
-     * @tc.number SegmentButton single direction
+     * @tc.number SegmentBtnItem0010_0100
      * @tc.name SegmentBtnItem0010_0100
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
@@ -92,8 +92,8 @@ export default function SegmentBtnItemTest0010() {
       done();
     });
     /**
-     * @tc.number SegmentButton single direction
-     * @tc.name SegmentBtnItem0010_000
+     * @tc.number SegmentBtnItem0010_0200
+     * @tc.name SegmentBtnItem0010_0200
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
      * @tc.type Function
@@ -144,7 +144,7 @@ export default function SegmentBtnItemTest0010() {
       done();
     });
     /**
-     * @tc.number SegmentButton single direction
+     * @tc.number SegmentBtnItem0010_0300
      * @tc.name SegmentBtnItem0010_0300
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
@@ -193,8 +193,8 @@ export default function SegmentBtnItemTest0010() {
       done();
     });
     /**
-     * @tc.number SegmentButton single direction
-     * @tc.name SegmentBtnItem0010_0300
+     * @tc.number SegmentBtnItem0010_0400
+     * @tc.name SegmentBtnItem0010_0400
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
      * @tc.type Function

@@ -53,7 +53,7 @@ export default function segmentButtonDirectionTest() {
     });
 
     /**
-     * @tc.number SegmentButton single direction
+     * @tc.number testSegmentButtonDirection_0100
      * @tc.name testSegmentButtonDirection_0100
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
@@ -91,7 +91,7 @@ export default function segmentButtonDirectionTest() {
     });
 
     /**
-     * @tc.number SegmentButton multi direction
+     * @tc.number testSegmentButtonDirection_0200
      * @tc.name testSegmentButtonDirection_0200
      * @tc.desc Test SegmentButton page
      * @tc.size MediumTest
