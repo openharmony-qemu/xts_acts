@@ -12,8 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import TimePickerTest from './timePickerDialogTest/TimePicker.test';
+import addEnableCascadeApiTest from './timePickerDialogTest/addEnableCascadeApi.test';
+import timePickerDialogBGBlurStyleTest from './timePickerDialogTest/timePickerDialogBGBlurStyle.test';
+import timePickerDialogBGColorTest from './timePickerDialogTest/timePickerDialogBGColor.test';
+import timePickerDialogEnableHapticFeedbackTest from './timePickerDialogTest/timePickerDialogEnableHapticFeedback.test';
+import timePickerDialogSelectedAreaTest from './timePickerDialogTest/timePickerDialogSelectedArea.test';
+import timePickerDialogShadowTest from './timePickerDialogTest/timePickerDialogShadow.test';
 
 export default function testsuite() {
-
+  addEnableCascadeApiTest();
+  timePickerDialogBGBlurStyleTest();
+  timePickerDialogBGColorTest();
+  timePickerDialogEnableHapticFeedbackTest();
+  timePickerDialogSelectedAreaTest();
+  timePickerDialogShadowTest();
 }
