@@ -9,6 +9,8 @@
     "MainAbility/pages/timePicker/timePickerPropertiesModifier",
     "MainAbility/pages/timePicker/timePickerLoop",
     "MainAbility/pages/timePicker/timePickerSelectedArea",
-    "MainAbility/pages/timePicker/timePickerStartAndEnd"
+    "MainAbility/pages/timePicker/timePickerStartAndEnd",
+    "MainAbility/pages/timePicker/timePickerEnableCascade",
+    "MainAbility/pages/timePicker/timePickerOnChangeModifier"
   ]
 }

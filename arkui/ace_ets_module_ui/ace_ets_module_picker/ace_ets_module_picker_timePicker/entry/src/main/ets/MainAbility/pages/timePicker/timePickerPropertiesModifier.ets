@@ -24,7 +24,7 @@ class timePickerPropertiesModifier implements AttributeModifier<TimePickerAttrib
   
   @Entry
   @Component
-  struct timePickerPropertiesModifierPage {
+  struct TimePickerPropertiesModifierPage {
     @State timePickerModifier: timePickerPropertiesModifier = new timePickerPropertiesModifier()
     private selectedTime: Date = new Date('2022-07-22T08:00:00')
     build() {

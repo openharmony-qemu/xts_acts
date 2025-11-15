@@ -21,6 +21,8 @@ import timePickerPropertiesModifierTest from './timePickerTest/timePickerPropert
 import timePickerLoopTest from './timePickerTest/timePickerLoop.test';
 import timePickerSelectedAreaTest from './timePickerTest/timePickerSelectedArea.test';
 import timePickerStartAndEndTest from './timePickerTest/timePickerStartAndEnd.test';
+import timePickerEnableCascadeTest from './timePickerTest/timePickerEnableCascade.test';
+import timePickerOnChangeModifierTest from './timePickerTest/timePickerOnChangeModifier.test';
 
 export default function testsuite() {
   stageTimePickerDialog();
@@ -32,4 +34,6 @@ export default function testsuite() {
   timePickerLoopTest();
   timePickerSelectedAreaTest();
   timePickerStartAndEndTest();
+  timePickerEnableCascadeTest();
+  timePickerOnChangeModifierTest();
 }
