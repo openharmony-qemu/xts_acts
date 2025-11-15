@@ -21,7 +21,7 @@ import router2 from '@system.router'
 @Component
 struct RouterEnableAlertBeforeBackPage {
   aboutToAppear() {
-    consloe.log(`aboutToAppear RouterEnableAlertBeforeBackPage start`)
+    console.log(`aboutToAppear RouterEnableAlertBeforeBackPage start`)
 
     router1.enableAlertBeforeBackPage({
       message: 'Message Info'
@@ -39,7 +39,7 @@ struct RouterEnableAlertBeforeBackPage {
   }
 
   aboutToDisappear() {
-    consloe.log(`aboutToDisAppear RouterEnableAlertBeforeBackPage end`)
+    console.log(`aboutToDisAppear RouterEnableAlertBeforeBackPage end`)
   }
 
   build() {
