@@ -44,5 +44,5 @@ export default function testsuite() {
   ParticleAnimatorTest();
   ParticleAttributeTest();
   ParticleJsunit();
-  motionPathJsunit();
+  MotionPathJsunit();
 }
