@@ -30,7 +30,7 @@ class textPickerPropertiesModifier implements AttributeModifier<TextPickerAttrib
 
 @Entry
 @Component
-struct textPickerPropertiesModifierPage {
+struct TextPickerPropertiesModifierPage {
   @State textPickerPropertiesModifier: textPickerPropertiesModifier = new textPickerPropertiesModifier()
 
   build() {
