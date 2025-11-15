@@ -857,6 +857,50 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.number: settings_get_value_static_093
+     * @tc.name: settings_get_value_static_093
+     * @tc.desc: check settings.TTS.DEFAULT_TTS_PITCH
+     */
+    it('settings_get_value_static_093',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let str ="settings.tts.default_tts_pitch"
+      expect(str).assertEqual(settings.TTS.DEFAULT_TTS_PITCH);
+      done();
+    });
+
+    /**
+     * @tc.number: settings_get_value_static_094
+     * @tc.name: settings_get_value_static_094
+     * @tc.desc: check settings get value
+     */
+    it('settings_get_value_static_094',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let str ="settings.tts.default_tts_rate"
+      expect(str).assertEqual(settings.TTS.DEFAULT_TTS_RATE);
+      done();
+    });
+
+    /**
+     * @tc.number: settings_get_value_static_095
+     * @tc.name: settings_get_value_static_095
+     * @tc.desc: check settings.TTS.DEFAULT_TTS_SYNTH
+     */
+    it('settings_get_value_static_095',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let str ="settings.tts.default_tts_synth"
+      expect(str).assertEqual(settings.TTS.DEFAULT_TTS_SYNTH);
+      done();
+    });
+
+    /**
+     * @tc.number: settings_get_value_static_096
+     * @tc.name: settings_get_value_static_096
+     * @tc.desc: check settings.TTS.ENABLED_TTS_PLUGINS
+     */
+    it('settings_get_value_static_096',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let str ="settings.tts.enabled_tts_plugins"
+      expect(str).assertEqual(settings.TTS.ENABLED_TTS_PLUGINS);
+      done();
+    });
+
+    /**
      * @tc.number: settings_get_value_static_097
      * @tc.name: settings_get_value_static_097
      * @tc.desc: check settings get value
