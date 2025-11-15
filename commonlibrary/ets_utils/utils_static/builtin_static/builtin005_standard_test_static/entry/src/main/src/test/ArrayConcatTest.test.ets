@@ -383,7 +383,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr1: FixedArray<byte> = [1, 2];
         const arr2: FixedArray<byte> = [3, 4];
         const result = concat(arr1, arr2);
-        expect([...result]).assertDeepEquals([1, 2, 3, 4]);
+        const target: FixedArray<byte> = [1, 2, 3, 4];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -403,7 +404,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr1: FixedArray<byte> = [];
         const arr2: FixedArray<byte> = [5, 6];
         const result = concat(arr1, arr2);
-        expect([...result]).assertDeepEquals([5, 6]);
+        const target: FixedArray<byte> = [5, 6];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -424,7 +426,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr2: FixedArray<byte> = [8];
         const arr3: FixedArray<byte> = [9];
         const result = concat(arr1, arr2, arr3);
-        expect([...result]).assertDeepEquals([7, 8, 9]);
+        const target: FixedArray<byte> = [7, 8, 9];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -443,7 +446,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr1: FixedArray<byte> = [10, 11];
         const result = concat(arr1, arr1);
-        expect([...result]).assertDeepEquals([10, 11, 10, 11]);
+        const target: FixedArray<byte> = [10, 11, 10, 11];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -482,7 +486,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr1: FixedArray<byte> = [12, 13];
         const result = concat(arr1);
-        expect([...result]).assertDeepEquals([12, 13]);
+        const target: FixedArray<byte> = [12, 13];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -502,7 +507,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr1: FixedArray<byte> = [14];
         const arr2: FixedArray<byte> = [15, 16, 17];
         const result = concat(arr1, arr2);
-        expect([...result]).assertDeepEquals([14, 15, 16, 17]);
+        const target: FixedArray<byte> = [14, 15, 16, 17];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -543,7 +549,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr1: FixedArray<byte> = [1, 2];
         const arr2: FixedArray<byte> = [3, 4];
         const result = concat(arr1, arr2);
-        expect([...result]).assertDeepEquals([1, 2, 3, 4]);
+        const target: FixedArray<byte> = [1, 2, 3, 4];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -563,7 +570,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr1: FixedArray<byte> = [];
         const arr2: FixedArray<byte> = [5, 6];
         const result = concat(arr1, arr2);
-        expect([...result]).assertDeepEquals([5, 6]);
+        const target: FixedArray<byte> = [5, 6];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -584,7 +592,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr2: FixedArray<byte> = [8];
         const arr3: FixedArray<byte> = [9];
         const result = concat(arr1, arr2, arr3);
-        expect([...result]).assertDeepEquals([7, 8, 9]);
+        const target: FixedArray<byte> = [7, 8, 9];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -603,7 +612,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr1: FixedArray<byte> = [10, 11];
         const result = concat(arr1, arr1);
-        expect([...result]).assertDeepEquals([10, 11, 10, 11]);
+        const target: FixedArray<byte> = [10, 11, 10, 11];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -643,7 +653,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr1: FixedArray<byte> = [12, 13];
         const arr2: FixedArray<byte> = [14];
         const result = concat(arr1, arr2);
-        expect([...result]).assertDeepEquals([12, 13, 14]);
+        const target: FixedArray<byte> = [12, 13, 14];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -664,7 +675,8 @@ export default function builtinsArrayConcatPrototypebTest(){
         const arr2: FixedArray<byte> = [16, 17, 18];
         const arr3: FixedArray<byte> = [19];
         const result = concat(arr1, arr2, arr3);
-        expect([...result]).assertDeepEquals([15, 16, 17, 18, 19]);
+        const target: FixedArray<byte> = [15, 16, 17, 18, 19];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })

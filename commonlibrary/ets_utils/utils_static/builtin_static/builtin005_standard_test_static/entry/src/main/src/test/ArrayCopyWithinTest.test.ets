@@ -666,7 +666,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 0);
-        expect([...result]).assertDeepEquals([1, 2, 3]);
+        const target: FixedArray<byte> = [1, 2, 3];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -685,7 +686,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 1);
-        expect([...result]).assertDeepEquals([1, 1, 2]);
+        const target: FixedArray<byte> = [1, 1, 2];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -704,7 +706,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 2);
-        expect([...result]).assertDeepEquals([1, 2, 1]);
+        const target: FixedArray<byte> = [1, 2, 1];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -723,7 +726,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [2, 3, 4];
         const result = copyWithin(arr, -66);      //这里 -1  会Out of bounds
-        expect([...result]).assertDeepEquals([2, 3, 4]);
+        const target: FixedArray<byte> = [2, 3, 4];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -742,7 +746,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 3);
-        expect([...result]).assertDeepEquals([1, 2, 3]);
+        const target: FixedArray<byte> = [1, 2, 3];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -780,7 +785,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [5];
         const result = copyWithin(arr, 0);
-        expect([...result]).assertDeepEquals([5]);
+        const target: FixedArray<byte> = [5];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -799,7 +805,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, 0, 0];
         const result = copyWithin(arr, 0);
-        expect([...result]).assertDeepEquals([0, 0, 0]);
+        const target: FixedArray<byte> = [0, 0, 0];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -818,7 +825,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 0, 1);
-        expect([...result]).assertDeepEquals([2, 3, 3]);
+        const target: FixedArray<byte> = [2, 3, 3];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -837,7 +845,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 0, 2);
-        expect([...result]).assertDeepEquals([3, 2, 3]);
+        const target: FixedArray<byte> = [3, 2, 3];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -856,7 +865,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [2, 3, 4];
         const result = copyWithin(arr, 1, 0);
-        expect([...result]).assertDeepEquals([2, 2, 3]);
+        const target: FixedArray<byte> = [2, 2, 3];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -875,7 +885,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 2, 1);
-        expect([...result]).assertDeepEquals([1, 2, 2]);
+        const target: FixedArray<byte> = [1, 2, 2];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -894,7 +905,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [1, 2, 3];
         const result = copyWithin(arr, 3, 0);
-        expect([...result]).assertDeepEquals([1, 2, 3]);
+        const target: FixedArray<byte> = [1, 2, 3];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -932,7 +944,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [5];
         const result = copyWithin(arr, 0, 0);
-        expect([...result]).assertDeepEquals([5]);
+        const target: FixedArray<byte> = [5];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -951,7 +964,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
         console.info(`${caseName}, test start`);
         const arr: FixedArray<byte> = [0, 0, 0];
         const result = copyWithin(arr, 0, 0);
-        expect([...result]).assertDeepEquals([0, 0, 0]);
+        const target: FixedArray<byte> = [0, 0, 0];
+        expect([...result]).assertDeepEquals([...target]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -970,7 +984,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3, 4];
             const result = copyWithin(arr, 1, 0, 2);
-            expect([...result]).assertDeepEquals([1, 1, 2, 4]);
+            const target: FixedArray<byte> = [1, 1, 2, 4];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -989,7 +1004,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3];
             const result = copyWithin(arr, 0, 2, 1);
-            expect([...result]).assertDeepEquals([1, 2, 3]);
+            const target: FixedArray<byte> = [1, 2, 3];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1008,7 +1024,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3, 4];
             const result = copyWithin(arr, 2, 0, 3);
-            expect([...result]).assertDeepEquals([1, 2, 1, 2]);
+            const target: FixedArray<byte> = [1, 2, 1, 2];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1027,7 +1044,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [2, 3, 4];
             const result = copyWithin(arr, 5, 0, 2);
-            expect([...result]).assertDeepEquals([2, 3, 4]);
+            const target: FixedArray<byte> = [2, 3, 4];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1065,7 +1083,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [5];
             const result = copyWithin(arr, 0, 0, 1);
-            expect([...result]).assertDeepEquals([5]);
+            const target: FixedArray<byte> = [5];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1084,7 +1103,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3];
             const result = copyWithin(arr, 0, 5, 10);
-            expect([...result]).assertDeepEquals([1, 2, 3]);
+            const target: FixedArray<byte> = [1, 2, 3];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1103,7 +1123,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [0, 0, 0, 0];
             const result = copyWithin(arr, 1, 0, 3);
-            expect([...result]).assertDeepEquals([0, 0, 0, 0]);
+            const target: FixedArray<byte> = [0, 0, 0, 0];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1122,7 +1143,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3, 4];
             const result = copyWithin(arr, 1, 0, 2);
-            expect([...result]).assertDeepEquals([1, 1, 2, 4]);
+            const target: FixedArray<byte> = [1, 1, 2, 4];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1141,7 +1163,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3];
             const result = copyWithin(arr, 0, 2, 1);
-            expect([...result]).assertDeepEquals([1, 2, 3]);
+            const target: FixedArray<byte> = [1, 2, 3];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1160,7 +1183,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3, 4];
             const result = copyWithin(arr, 2, 0, 3);
-            expect([...result]).assertDeepEquals([1, 2, 1, 2]);
+            const target: FixedArray<byte> = [1, 2, 1, 2];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1179,7 +1203,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [2, 3, 4];
             const result = copyWithin(arr, 5, 0, 2);
-            expect([...result]).assertDeepEquals([2, 3, 4]);
+            const target: FixedArray<byte> = [2, 3, 4];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1217,7 +1242,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [5];
             const result = copyWithin(arr, 0, 0, 1);
-            expect([...result]).assertDeepEquals([5]);
+            const target: FixedArray<byte> = [5];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1236,7 +1262,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [1, 2, 3];
             const result = copyWithin(arr, 0, 5, 10);
-            expect([...result]).assertDeepEquals([1, 2, 3]);
+            const target: FixedArray<byte> = [1, 2, 3];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })
@@ -1255,7 +1282,8 @@ export default function builtinsArrayCopyWithinPrototypebTest(){
             console.info(`${caseName}, test start`);
             const arr: FixedArray<byte> = [0, 0, 0, 0];
             const result = copyWithin(arr, 1, 0, 3);
-            expect([...result]).assertDeepEquals([0, 0, 0, 0]);
+            const target: FixedArray<byte> = [0, 0, 0, 0];
+            expect([...result]).assertDeepEquals([...target]);
             console.info(`${caseName}, test end`);
             Done();
           })

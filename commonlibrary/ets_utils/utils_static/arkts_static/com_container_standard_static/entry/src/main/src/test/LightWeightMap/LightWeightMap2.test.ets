@@ -1739,16 +1739,16 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapValues0001';
-      let arr: Array<number> = new Array<number>();
+      let arr: Array<Int> = new Array<Int>();
       try {
-        let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
+        let lightWeightMap: LightWeightMap<string, Int> = new LightWeightMap<string, Int>();
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
-        let iter: IterableIterator<Number> = lightWeightMap.values();
-        let temp: IteratorResult<Number> = iter.next();
+        let iter: IterableIterator<Int> = lightWeightMap.values();
+        let temp: IteratorResult<Int> = iter.next();
         while (!temp.done) {
           console.log(`${TAG} value: ${temp.value}`);
-          arr.push(temp.value as Number);
+          arr.push(temp.value as Int);
           temp = iter.next();
         }
         expect(arr.sort().toString()).assertDeepEquals("123,356");
