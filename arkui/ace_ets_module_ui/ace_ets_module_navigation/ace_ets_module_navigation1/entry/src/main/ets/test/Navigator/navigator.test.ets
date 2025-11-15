@@ -47,7 +47,7 @@ export default function navigatorTargetJsunit() {
     /*
      * @tc.number       testnavigatorTarget0001
      * @tc.name         testnavigatorTarget0001
-     * @tc.desic        testnavigatorTarget0001
+     * @tc.desc        testnavigatorTarget0001
      */
     it('testnavigatorTarget0001', Level.LEVEL0, async () => {
       console.info('navigatorTarget testnavigatorTarget0001 START');
