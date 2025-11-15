@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import rotateAngleOptionsTest from './transformation/rotateAngleOptions.test';
+import rotateAngleOptionsTest from './transformation/RotateAngleOptions.test';
 import gradientDirectionJsunit from './GradientDirectionJsunit.test';
-import useShadowBatching from './useShadowBatching.test';
-import colorGradientJsunit from './ColorGradientJsunit.test.test';
+import useShadowBatching from './UseShadowBatching.test';
+import colorGradientJsunit from './ColorGradientJsunit.test';
 import transFormJsunit from './TransFormJsunit.test';
 
 export default function testsuite() {
