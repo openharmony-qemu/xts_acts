@@ -47,10 +47,10 @@ export default function pageRouteTest() {
     })
 
     /**
-     * @tc.number    OnNewParamRouter_0100
-     * @tc.name      OnNewParamRouter_0100
-     * @tc.desc      OnNewParamRouter_0100
-     * @tc.level     Level 20
+     * @tc.number    testOnPageHide01
+     * @tc.name      testOnPageHide01
+     * @tc.desc      testOnPageHide01
+     * @tc.level     Level 0
      * @tc.type
      * @tc.size
      */

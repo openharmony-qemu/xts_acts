@@ -18,7 +18,7 @@
 struct NavRouterExample {
   private arr: number[] = [0, 1, 2, 3]
   @State isActive: boolean = false
-  @State dex1: number = 0
+  @State isIndex: number = 0
 
   build() {
     Column() {
@@ -36,7 +36,7 @@ struct NavRouterExample {
                 }
                 .width(180)
                 .height(72)
-                .backgroundColor(this.dex1 === index ? '#ccc' : '#fff')
+                .backgroundColor(this.isIndex === index ? '#ccc' : '#fff')
                 .borderRadius(24)
 
                 NavDestination() {
@@ -50,7 +50,7 @@ struct NavRouterExample {
                 }.backgroundColor('#ccc')
                 .title(`NavDestination${item + 1}`)
               }.onStateChange((isActivated: boolean) => {
-                this.dex1 = index
+                this.isIndex = index
                 console.info('the mode is ' + NavRouteMode.PUSH_WITH_RECREATE);
                 console.info('the mode is ' + NavRouteMode.REPLACE);
               }).mode(NavRouteMode.PUSH)
