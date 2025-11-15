@@ -23,7 +23,7 @@ import ChipOnClick from './chip/ChipOnClick.test.ets'
 import ChipTest0010 from './chip/ChipTest0010.test'; 
 import accessibilitySelectedTypeTest from './chip/accessibilitySelectedTypeTest.test';
 import ChipApi1 from './chip/ChipApi1.test'
-import ChipGroupApi1 from './ChipGroup/ChipGroupApi1.test'
+import ChipGroupApi1 from './ChipGroupTest/ChipGroupApi1.test'
 
 import startSpaceTest from './ChipGroupTest/startSpaceTest.test'
 import endSpaceTest from './ChipGroupTest/endSpaceTest.test'
