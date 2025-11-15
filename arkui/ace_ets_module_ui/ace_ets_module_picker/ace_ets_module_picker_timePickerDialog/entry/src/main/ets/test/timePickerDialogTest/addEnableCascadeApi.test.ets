@@ -40,6 +40,14 @@ export default function enableCascadeTest() {
       done();
     });
 
+    /**
+     * @tc.number: TimePickerDialog_EnableCascade_001
+     * @tc.name  : TimePickerDialog_EnableCascade_001
+     * @tc.desc  : To test the enableCascade interface true
+     * @tc.level : Level 3
+     * @tc.type
+     * @tc.size
+     */
     it('TimePickerDialog_EnableCascade_001', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableCascade_001';
       console.info('[' + tagName + '] START============================');
@@ -67,7 +75,6 @@ export default function enableCascadeTest() {
      * @tc.type
      * @tc.size
      */
-
     it('TimePickerDialog_EnableCascade_002', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableCascade_002';
       console.info('[' + tagName + '] START============================');
@@ -121,7 +128,6 @@ export default function enableCascadeTest() {
      * @tc.type
      * @tc.size
      */
-
     it('TimePickerDialog_EnableCascade_004', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableCascade_004';
       console.info('[' + tagName + '] START============================');

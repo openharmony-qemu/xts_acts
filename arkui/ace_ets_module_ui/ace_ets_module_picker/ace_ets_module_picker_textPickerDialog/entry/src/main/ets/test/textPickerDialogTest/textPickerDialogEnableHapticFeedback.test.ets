@@ -41,7 +41,16 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
       console.info('TextPickerDialogEnableHapticFeedback beforeEach end');
       done();
     });
-     it('TextPickerDialog_EnableHapticFeedback_001', Level.LEVEL1, async (done: Function) => {
+
+    /**
+     * @tc.number: TextPickerDialog_EnableHapticFeedback_001
+     * @tc.name  : TextPickerDialog_EnableHapticFeedback_001
+     * @tc.desc  : To test the enableHapticFeedback
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
+    it('TextPickerDialog_EnableHapticFeedback_001', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TextPickerDialog_EnableHapticFeedback_001';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
@@ -51,7 +60,9 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
       await CommonFunc.sleep(2000);
       let textPicker1 = JSON.stringify(obj1.$children[1].$children[0].$children[0].$children[0])
       console.info('[TextPickerDialog_EnableHapticFeedback_001] obj1 is: ' + textPicker1);
-      console.info('[TextPickerDialog_EnableHapticFeedback_001] obj1 is: ' + JSON.stringify(JSON.parse(textPicker1).$attrs.enableHapticFeedback));
+      console.info('[TextPickerDialog_EnableHapticFeedback_001] obj1 is: ' + JSON.stringify(JSON.parse(textPicker1)
+        .$attrs
+        .enableHapticFeedback));
       expect(JSON.parse(textPicker1).$attrs.enableHapticFeedback).assertEqual(true);
       console.info('[' + tagName + '] END ===========================');
       sendEventByKey('TextPickerDialog1', 10, '')
@@ -59,7 +70,15 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
       done();
     });
 
-   it('TextPickerDialog_EnableHapticFeedback_002', Level.LEVEL1, async (done: Function) => {
+    /**
+     * @tc.number: TextPickerDialog_EnableHapticFeedback_002
+     * @tc.name  : TextPickerDialog_EnableHapticFeedback_002
+     * @tc.desc  : To test the enableHapticFeedback
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
+    it('TextPickerDialog_EnableHapticFeedback_002', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TextPickerDialog_EnableHapticFeedback_002';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
@@ -69,7 +88,9 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
       await CommonFunc.sleep(2000);
       let textPicker2 = JSON.stringify(obj2.$children[1].$children[0].$children[0].$children[0])
       console.info('[TextPickerDialog_EnableHapticFeedback_002] obj2 is: ' + textPicker2);
-      console.info('[TextPickerDialog_EnableHapticFeedback_002] obj2 is: ' + JSON.stringify(JSON.parse(textPicker2).$attrs.enableHapticFeedback));
+      console.info('[TextPickerDialog_EnableHapticFeedback_002] obj2 is: ' + JSON.stringify(JSON.parse(textPicker2)
+        .$attrs
+        .enableHapticFeedback));
       expect(JSON.parse(textPicker2).$attrs.enableHapticFeedback).assertEqual(false);
       console.info('[' + tagName + '] END ===========================');
       sendEventByKey('TextPickerDialog2', 10, '')
@@ -77,41 +98,60 @@ export default function TextPickerDialogEnableHapticFeedbackTest() {
       done();
     });
 
+    /**
+     * @tc.number: TextPickerDialog_EnableHapticFeedback_003
+     * @tc.name  : TextPickerDialog_EnableHapticFeedback_003
+     * @tc.desc  : To test the enableHapticFeedback
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('TextPickerDialog_EnableHapticFeedback_003', Level.LEVEL1, async (done: Function) => {
-        let tagName = 'TextPickerDialog_EnableHapticFeedback_003';
-        console.info('[' + tagName + '] START============================');
-        await CommonFunc.sleep(1000);
-        sendEventByKey('TextPickerDialog3', 10, '')
-        await CommonFunc.sleep(1000);
-        let obj3: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-        await CommonFunc.sleep(2000);
-        let textPicker3 = JSON.stringify(obj3.$children[1].$children[0].$children[0].$children[0])
-        console.info('[TextPickerDialog_EnableHapticFeedback_003] obj3 is: ' + textPicker3);
-        console.info('[TextPickerDialog_EnableHapticFeedback_003] obj3 is: ' + JSON.stringify(JSON.parse(textPicker3).$attrs.enableHapticFeedback));
-        expect(JSON.parse(textPicker3).$attrs.enableHapticFeedback).assertEqual(true);
-        console.info('[' + tagName + '] END ===========================');
-        sendEventByKey('TextPickerDialog3', 10, '')
-        await CommonFunc.sleep(2000);
-        done();
-      });
+      let tagName = 'TextPickerDialog_EnableHapticFeedback_003';
+      console.info('[' + tagName + '] START============================');
+      await CommonFunc.sleep(1000);
+      sendEventByKey('TextPickerDialog3', 10, '')
+      await CommonFunc.sleep(1000);
+      let obj3: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      await CommonFunc.sleep(2000);
+      let textPicker3 = JSON.stringify(obj3.$children[1].$children[0].$children[0].$children[0])
+      console.info('[TextPickerDialog_EnableHapticFeedback_003] obj3 is: ' + textPicker3);
+      console.info('[TextPickerDialog_EnableHapticFeedback_003] obj3 is: ' + JSON.stringify(JSON.parse(textPicker3)
+        .$attrs
+        .enableHapticFeedback));
+      expect(JSON.parse(textPicker3).$attrs.enableHapticFeedback).assertEqual(true);
+      console.info('[' + tagName + '] END ===========================');
+      sendEventByKey('TextPickerDialog3', 10, '')
+      await CommonFunc.sleep(2000);
+      done();
+    });
 
-
-      it('TextPickerDialog_EnableHapticFeedback_004', Level.LEVEL1, async (done: Function) => {
-        let tagName = 'TextPickerDialog_EnableHapticFeedback_004';
-        console.info('[' + tagName + '] START============================');
-        await CommonFunc.sleep(1000);
-        sendEventByKey('TextPickerDialog4', 10, '')
-        await CommonFunc.sleep(1000);
-        let obj4: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-        await CommonFunc.sleep(2000);
-        let textPicker4 = JSON.stringify(obj4.$children[1].$children[0].$children[0].$children[0])
-        console.info('[TextPickerDialog_EnableHapticFeedback_004] obj4 is: ' + textPicker4);
-        console.info('[TextPickerDialog_EnableHapticFeedback_004] obj4 is: ' + JSON.stringify(JSON.parse(textPicker4).$attrs.enableHapticFeedback));
-        expect(JSON.parse(textPicker4).$attrs.enableHapticFeedback).assertEqual(true);
-        console.info('[' + tagName + '] END ===========================');
-        sendEventByKey('TextPickerDialog4', 10, '')
-        await CommonFunc.sleep(2000);
-        done();
-      });
-    })
+    /**
+     * @tc.number: TextPickerDialog_EnableHapticFeedback_004
+     * @tc.name  : TextPickerDialog_EnableHapticFeedback_004
+     * @tc.desc  : To test the enableHapticFeedback
+     * @tc.level : Level 0
+     * @tc.type
+     * @tc.size
+     */
+    it('TextPickerDialog_EnableHapticFeedback_004', Level.LEVEL1, async (done: Function) => {
+      let tagName = 'TextPickerDialog_EnableHapticFeedback_004';
+      console.info('[' + tagName + '] START============================');
+      await CommonFunc.sleep(1000);
+      sendEventByKey('TextPickerDialog4', 10, '')
+      await CommonFunc.sleep(1000);
+      let obj4: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      await CommonFunc.sleep(2000);
+      let textPicker4 = JSON.stringify(obj4.$children[1].$children[0].$children[0].$children[0])
+      console.info('[TextPickerDialog_EnableHapticFeedback_004] obj4 is: ' + textPicker4);
+      console.info('[TextPickerDialog_EnableHapticFeedback_004] obj4 is: ' + JSON.stringify(JSON.parse(textPicker4)
+        .$attrs
+        .enableHapticFeedback));
+      expect(JSON.parse(textPicker4).$attrs.enableHapticFeedback).assertEqual(true);
+      console.info('[' + tagName + '] END ===========================');
+      sendEventByKey('TextPickerDialog4', 10, '')
+      await CommonFunc.sleep(2000);
+      done();
+    });
+  })
 }

@@ -91,38 +91,6 @@
     {
       "name": "module_test_desc",
       "value": "test ability description"
-    },
-    {
-      "name": "Divider_width",
-      "value": "10px"
-    },
-    {
-      "name": "Divider_startMargin",
-      "value": "5px"
-    },
-    {
-      "name": "Divider_endMargin",
-      "value": "5px"
-    },
-    {
-      "name": "Check_Mark_Size_test",
-      "value": "50vp"
-    },
-    {
-      "name": "topLeft",
-      "value": "24vp"
-    },
-    {
-      "name": "bottomLeft",
-      "value": "24vp"
-    },
-    {
-      "name": "topRight",
-      "value": "24vp"
-    },
-    {
-      "name": "bottomRight",
-      "value": "24vp"
     }
   ]
 }

@@ -1132,34 +1132,6 @@ export default function datepicker() {
       expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual('FontWeight.Normal');
       done();
     });
-
-    /**
-     * @tc.number: ArkUI_Stage_datepicker_Dialog_0100
-     * @tc.name  : ArkUI_Stage_datepicker_Dialog_0100
-     * @tc.desc  : Tests the property of the Dialog,get the property of the Dialog
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
-     */
-    it('ArkUI_Stage_datepicker_dialog_0100', Level.LEVEL1, async (done: Function) => {
-      console.info('testDialog START');
-      await Utils.sleep(3000);
-      try {
-        let eventData: events_emitter.EventData = {
-          data: undefined
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 185,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[ArkUI_Stage_datepicker_dialog_0100] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[ArkUI_Stage_datepicker_dialog_0100] change component data error: " + (err as Error).message);
-      }
-      done();
-    });
-
   })
 }
 
