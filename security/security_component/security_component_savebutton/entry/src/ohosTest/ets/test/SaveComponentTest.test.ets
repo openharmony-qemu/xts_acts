@@ -2634,13 +2634,13 @@ export default function saveComponentTest() {
               done();
             } else {
               console.info("====>[Test_Security_Button_Save_3500] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Save_3500] END====");
               done();
             }
           } else {
             console.info("====>[Test_Security_Button_Save_3500] ERR CASE 失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Save_3500] END====");
             done();
           }
@@ -2652,6 +2652,7 @@ export default function saveComponentTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3500] once clickEvent err : " + JSON.stringify(err));
+        expect(false).assertTrue();
       }
       try {
         let driver = Driver.create();
@@ -2662,6 +2663,7 @@ export default function saveComponentTest() {
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_3500] clickSecComponent err : " + JSON.stringify(err));
+        expect(false).assertTrue();
       }
     });
   })

@@ -50,11 +50,11 @@ struct pasteButton {
   @State rowWidth: number = 100
   @State rowHeight: number|undefined = undefined
   @State pbAlign: Alignment = Alignment.Center
-  @State strokeMargin: number | undefined = undefined
-  @State strokeColorR: number | undefined = undefined
-  @State strokeColorG: number | undefined = undefined
-  @State strokeColorB: number | undefined = undefined
-  @State strokeWidth: number | undefined = undefined
+  @State strokeMargin: number = 0
+  @State strokeColorR: number = 0
+  @State strokeColorG: number = 0
+  @State strokeColorB: number = 0
+  @State strokeWidth: number = 0
   private stateChangeCallBack = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       console.debug("====>page_pasteButton page state change called:" + JSON.stringify(eventData));

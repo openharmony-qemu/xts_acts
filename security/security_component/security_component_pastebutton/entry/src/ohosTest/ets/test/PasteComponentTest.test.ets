@@ -2417,13 +2417,13 @@ export default function pasteComponentTest() {
               done();
             } else {
               console.info("====>[Test_Security_Button_Paste_2300] 设置权限失败");
-              expect().assertFail()
+              expect(false).assertTrue();
               console.info("====>[Test_Security_Button_Paste_2300] END====");
               done();
             }
           } else {
             console.info("====>[Test_Security_Button_Paste_2300] ERR CASE 失败");
-            expect().assertFail()
+            expect(false).assertTrue();
             console.info("====>[Test_Security_Button_Paste_2300] END====");
             done();
           }
@@ -2435,6 +2435,7 @@ export default function pasteComponentTest() {
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
         console.info("====>[Test_Security_Button_Paste_2300] once clickEvent err : " + JSON.stringify(err));
+        expect(false).assertTrue();
       }
       try {
         let driver = Driver.create();
@@ -2445,6 +2446,7 @@ export default function pasteComponentTest() {
         await Utils.sleep(1000);
       } catch (err) {
         console.info("====>[Test_Security_Button_Paste_2300] clickSecComponent err : " + JSON.stringify(err));
+        expect(false).assertTrue();
       }
     });
   })
