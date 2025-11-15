@@ -65,7 +65,7 @@ export default function PageInfo1() {
       let strJson1 = getInspectorByKey('PageInfo1_text1');
       await CommonFunc.sleep(1000);
       console.info('[PageInfo1_0100] obj1 is: ' + JSON.stringify(JSON.parse(strJson1)));
-      expect(JSON.parse(strJson1).$attrs.content).assertEqual('MainAbility/pages/PageInfo/PageInfo1');
+      expect(JSON.parse(strJson1).$attrs.content).assertEqual('MainAbility/pages/UIContext/PageInfo1');
       let strJson2 = getInspectorByKey('PageInfo1_text2');
       await CommonFunc.sleep(1000);
       console.info('[PageInfo1_0100] obj2 is: ' + JSON.stringify(JSON.parse(strJson2)));
