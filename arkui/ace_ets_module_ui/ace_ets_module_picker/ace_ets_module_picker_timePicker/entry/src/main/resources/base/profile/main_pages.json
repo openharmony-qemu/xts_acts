@@ -11,6 +11,9 @@
     "MainAbility/pages/timePicker/timePickerSelectedArea",
     "MainAbility/pages/timePicker/timePickerStartAndEnd",
     "MainAbility/pages/timePicker/timePickerEnableCascade",
-    "MainAbility/pages/timePicker/timePickerOnChangeModifier"
+    "MainAbility/pages/timePicker/timePickerOnChangeModifier",
+    "MainAbility/pages/timePicker/TimePickerAddApi",
+    "MainAbility/pages/timePicker/timePickerDateTimeOptions",
+    "MainAbility/pages/timePicker/timePickerEnableHapticFeedback"
   ]
 }
