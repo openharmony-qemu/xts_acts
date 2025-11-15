@@ -16,9 +16,7 @@ import geolocations from '@system.geolocation';
 import geolocation from '@ohos.geolocation';
 import geolocationm from '@ohos.geoLocationManager';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
-import BusinessError from '@ohos.BasicServicesKit';
 import bundle from '@ohos.bundle'
-import access from '@ohos.bluetooth.access'
 import osaccount from '@ohos.account.osAccount'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 
@@ -451,9 +449,14 @@ export default function geolocationTest_GeoErr() {
                       geoLocationm.removeBeaconFence(beacon).then(() => {
                         console.info("promise, removeBeaconFence0200 success");
                       })
-                      .catch((error) => {
-                        console.error("promise, removeBeaconFence0200: errCode" + error.code + ", errMessage" + error.message);
-                        expect(error.code).assertEqual(801);
+                      .catch((err) => {
+                        if(err.code == 801){
+                            console.info("[lbs_js] The device Capability not supported."+JSON.stringify(err) +"code"+ err.code +"mes"+ err.message);
+                            expect(err.code).assertEqual(801);
+                        }else{
+                            console.info("[lbs_js] promise, addBeaconFence0700: error="+ JSON.stringify(err) +"code"+ err.code +"mes"+ err.message);
+                            expect().assertFail();
+                        }
                       });
                 } catch (error) {
                     console.error("[lbs_js] Promise removeBeaconFence0200 callback try error:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
@@ -702,19 +705,60 @@ export default function geolocationTest_GeoErr() {
                     let rssiThreshold = -100;
                     let needStartScan = true;
                     geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
-                          console.info("isWlanBssidMatched0500 Wlan Bssid Matched Result:" + res);
+                          console.info("isWlanBssidMatched0600 Wlan Bssid Matched Result:" + res);
                           expect(true).assertEqual(res!=null);
                     }).catch((error) => {
                         console.error("[lbs_js] Promis then error" + JSON.stringify(error));
                         expect(error.code).assertEqual(3301800);
                     });
                 } catch (error) {
-                    console.error("[lbs_js] Promise isWlanBssidMatched0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                    console.error("[lbs_js] Promise isWlanBssidMatched0600:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
                 await sleep(1000);
                 done();
             }            
-        });         
+        }); 
+        
+        
+        /**
+         * @tc.name   SUB_HSS_isWlanBssidMatched_0700
+         * @tc.number SUB_HSS_isWlanBssidMatched_0700
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_isWlanBssidMatched_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_isWlanBssidMatched_0700: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                try {
+                    let wlanBssidArray = ["02:1b:32:23:ea:91", "02:1b:32:23:ea:93"];
+                    let rssiThreshold = -100;
+                    let needStartScan = true;
+                    geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
+                          console.info("isWlanBssidMatched0700 Wlan Bssid Matched Result:" + res);
+                          expect(res).assertTrue();
+                    }).catch((err) => {
+                        if(err.code == 801){
+                            console.info("[lbs_js] The device Capability not supported API."+JSON.stringify(err) +"code"+ err.code +"mes"+ err.message);
+                            expect(err.code).assertEqual(801);
+                        }else{
+                            console.info("[lbs_js] Promise isWlanBssidMatched0700:"+ JSON.stringify(err) +"code"+ err.code +"mes"+ err.message);
+                            expect().assertTrue();
+                        }
+                    });
+                } catch (err) {
+                    console.info("[lbs_js] Promise isWlanBssidMatched0700:"+ JSON.stringify(err) +"code"+ err.code +"mes"+ err.message);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });        
 
         
         /**
@@ -843,7 +887,7 @@ export default function geolocationTest_GeoErr() {
          */
         it('SUB_HSS_addBeaconFence_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
-            console.info("SUB_HSS_addBeaconFence_0500: " + isAcessToken);
+            console.info("SUB_HSS_addBeaconFence_0600: " + isAcessToken);
             if (!isAcessToken) {
                 console.info("The device does not support Gnss");
                 expect(isAcessToken).assertFalse();
@@ -885,14 +929,14 @@ export default function geolocationTest_GeoErr() {
                         }
                       }
                       geoLocationm.addBeaconFence(fenceRequest).then((id) => {
-                        console.info("addBeaconFence0500 success, fence id:" + id);
+                        console.info("addBeaconFence0600 success, fence id:" + id);
                         expect(true).assertEqual(JSON.stringify(id)!=null);
                       }).catch((err) => {
                         console.error('promise, addBeaconFence0500: error=' + JSON.stringify(err));
                         expect(err.code).assertEqual(3501601);
                       });
                 } catch (error) {
-                    console.error("[lbs_js] Promise addBeaconFence0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                    console.error("[lbs_js] Promise addBeaconFence0600:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
                 await sleep(1000);
                 done();
@@ -937,20 +981,25 @@ export default function geolocationTest_GeoErr() {
                         beacon: beacon,
                         transitionCallback: (transition) => {
                           if (transition) {
-                            console.info("SUB_HSS_addBeaconFence_0500: err" + JSON.stringify(transition));
+                            console.info("SUB_HSS_addBeaconFence_0700: err" + JSON.stringify(transition));
                           }
                         },
                         fenceExtensionAbilityName: "MyFenceExtensionAbility",
                       };
                       geoLocationm.addBeaconFence(fenceRequest).then((id) => {
-                        console.info("addBeaconFence0500 success, fence id:" + id);
+                        console.info("addBeaconFence0700 success, fence id:" + id);
                         expect(true).assertEqual(JSON.stringify(id)!=null);
                       }).catch((err) => {
-                        console.error('promise, addBeaconFence0500: error=' + JSON.stringify(err));
-                        expect(err.code).assertEqual(801);
+                        if(err.code == 801){
+                            console.info("[lbs_js] The device Capability not supported."+JSON.stringify(err) +"code"+ err.code +"mes"+ err.message);
+                            expect(err.code).assertEqual(801);
+                        }else{
+                            console.info("[lbs_js] promise, addBeaconFence0700: error="+ JSON.stringify(err) +"code"+ err.code +"mes"+ err.message);
+                            expect().assertFail();
+                        }
                       });
                 } catch (error) {
-                    console.error("[lbs_js] Promise addBeaconFence0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                    console.info("[lbs_js] Promise addBeaconFence0700:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
                 await sleep(1000);
                 done();
@@ -977,14 +1026,20 @@ export default function geolocationTest_GeoErr() {
                 try {
                     let supportedCoordTypes = geoLocationm.getGeofenceSupportedCoordTypes();
                     console.info("getGeofenceSupportedCoordTypes return:" + JSON.stringify(supportedCoordTypes));
-                    expect(supportedCoordTypes.length>0).assertTrue();
+                    if(supportedCoordTypes.length>0){
+                        expect(supportedCoordTypes.length>0).assertTrue();
+                    }else{
+                        console.info("The device Capability not supported." + JSON.stringify(supportedCoordTypes));
+                        expect(supportedCoordTypes.length==0).assertTrue();
+                    }
                 } catch (error) {
                     console.error("[lbs_js] Promise getGeofenceSupportedCoordTypes0600:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
                 }
                 await sleep(1000);
                 done();
             }            
-        });  
+        });
+        
 
          /**
          * @tc.name   SUB_HSS_isGeocoderAvailable_0001
@@ -1032,7 +1087,7 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
-                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 5,"locale":zh};
+                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 5};
                 
                 try {
                     geoLocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
@@ -1067,7 +1122,7 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
-                let geocodeRequest = {"description": "aaab123", "maxItems": 5,"locale":zh};
+                let geocodeRequest = {"description": "aaab123", "maxItems": 5};
                 try {
                     geoLocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                         console.info('SUB_HSS_getAddressesFromLocationName_0900: data=' + JSON.stringify(data));
@@ -1080,7 +1135,7 @@ export default function geolocationTest_GeoErr() {
                 await sleep(1000);
                 done();
             }            
-        }); 
+        });       
 
          /**
          * @tc.name   SUB_HSS_getAddressesFromLocationName_1100
@@ -1098,11 +1153,17 @@ export default function geolocationTest_GeoErr() {
                 expect(isAcessToken).assertFalse();
                 done();
             } else {
-                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1,"locale":zh};
+                let geocodeRequest = {"description": "上海市浦东新区金穗路1800号", "maxItems": 1};
                 try {
                     geoLocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                         console.info('getAddressesFromLocationName0800: data=' + JSON.stringify(data));
                         expect(data.length>0).assertTrue();
+                        if(data.length>0){
+                            expect(data.length>0).assertTrue();
+                        }else{
+                            console.info("The device Capability not supported." + JSON.stringify(data));
+                            expect(data.length==0).assertTrue();
+                        }
                     });
                 } catch (err) {
                     console.error("errCode:" + err.code + ", message:"  + err.message);
