@@ -46,6 +46,29 @@ export default function RichEditorApi222() {
       console.info("RichEditorApi222 after each called");
     });
 
+    /*
+    * @tc.number      RichEditorApi222_002
+    * @tc.name        RichEditorApi222_002
+    * @tc.desc        RichEditorApi222 RichEditorSymbolSpanStyle test
+    * @tc.level       Level 2
+    */
+    it('RichEditorApi222_002', Level.LEVEL2, async (done: Function) => {
+      console.info('[RichEditorApi222_002] START');
+      await CommonFunc.sleep(1000);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let btn1 = await driver.findComponent(ON.id('RichEditorApi2_getSpans'));
+      await btn1.click()
+      await CommonFunc.sleep(2000);
+
+      let strJson = getInspectorByKey('RichEditorApi2_text2');
+      await CommonFunc.sleep(1000);
+      console.info("[RichEditorApi222_002] obj is: " + JSON.stringify(JSON.parse(strJson)));
+      expect(JSON.parse(strJson).$attrs.content).assertEqual('renderingStrategy:0,effectStrategy:0');
+      console.info('[RichEditorApi222_002] END');
+      done();
+    });
 
     /*
     * @tc.number      RichEditorApi222_001
@@ -75,30 +98,6 @@ export default function RichEditorApi222() {
       console.info("[RichEditorApi222_001] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.content).assertEqual('SelectMenuAppear');
       console.info('[RichEditorApi222_001] END');
-      done();
-    });
-
-    /*
-  * @tc.number      RichEditorApi222_002
-  * @tc.name        RichEditorApi222_002
-  * @tc.desc        RichEditorApi222 RichEditorSymbolSpanStyle test
-  * @tc.level       Level 2
-  */
-    it('RichEditorApi222_002', Level.LEVEL2, async (done: Function) => {
-      console.info('[RichEditorApi222_002] START');
-      await CommonFunc.sleep(1000);
-
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('RichEditorApi2_getSpans'));
-      await btn1.click()
-      await CommonFunc.sleep(2000);
-
-      let strJson = getInspectorByKey('RichEditorApi2_text2');
-      await CommonFunc.sleep(1000);
-      console.info("[RichEditorApi222_002] obj is: " + JSON.stringify(JSON.parse(strJson)));
-      expect(JSON.parse(strJson).$attrs.content).assertEqual('renderingStrategy:0,effectStrategy:0');
-      console.info('[RichEditorApi222_002] END');
       done();
     });
   })
