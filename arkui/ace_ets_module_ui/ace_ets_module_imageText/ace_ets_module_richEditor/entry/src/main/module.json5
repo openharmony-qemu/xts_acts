@@ -32,7 +32,7 @@
     ],
     "abilities": [
       {
-        "name": "com.arkui.ace.imageText.api12.EntryAbility",
+        "name": "com.arkui.ace.richEditor.EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:description_application",
         "icon": "$media:icon",
