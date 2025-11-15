@@ -35,7 +35,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0100===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -106,6 +106,7 @@ export default function graphicTextNewAPI() {
       } catch(err){
         console.info(msg + 'test error' + err);
         expect().assertFail();
+        done();
       }
     })
 
@@ -117,7 +118,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0200===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -147,6 +148,7 @@ export default function graphicTextNewAPI() {
       } catch(err){
         console.info(msg + 'test error' + err);
         expect().assertFail();
+        done()
       }
     })
 
@@ -158,7 +160,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0300===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -188,6 +190,7 @@ export default function graphicTextNewAPI() {
       } catch(err){
         console.info(msg + 'test error' + err);
         expect().assertFail();
+        done();
       }
     })
 
@@ -199,7 +202,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0400===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -237,7 +240,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0500===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -275,7 +278,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0600===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -314,7 +317,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0700===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -396,7 +399,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0800===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -475,7 +478,7 @@ export default function graphicTextNewAPI() {
      * @tc.type      : Function
      * @tc.level     : Level1
      */
-    it('graphicTextNewAPI_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('graphicTextNewAPI_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====graphicTextNewAPI_0900===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -522,7 +525,7 @@ export default function graphicTextNewAPI() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('testTextReturnValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextReturnValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testTextReturnValue_0100===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -562,6 +565,7 @@ export default function graphicTextNewAPI() {
       } catch(err){
         console.info(msg + 'test error' + err);
         expect().assertFail();
+        done();
       }
     })
 
@@ -573,7 +577,7 @@ export default function graphicTextNewAPI() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('testTextReturnValue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextReturnValue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testTextReturnValue_0200===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -598,6 +602,7 @@ export default function graphicTextNewAPI() {
       } catch(err){
         console.info(msg + 'test error' + err);
         expect().assertFail();
+        done();
       }
     })
 
@@ -609,7 +614,7 @@ export default function graphicTextNewAPI() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('testTextReturnValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextReturnValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testTextReturnValue_0300===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -655,7 +660,7 @@ export default function graphicTextNewAPI() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('testTextReturnValue_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextReturnValue_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testTextReturnValue_0400====";
       let fontType:text.SystemFontType = text.SystemFontType.GENERIC;
       let fontTypeNums = await text.getSystemFontFullNamesByType(fontType);
@@ -686,7 +691,7 @@ export default function graphicTextNewAPI() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('testTextReturnValue_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextReturnValue_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testTextReturnValue_0500====";
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -742,7 +747,7 @@ export default function graphicTextNewAPI() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('testTextReturnValue_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextReturnValue_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testTextReturnValue_0600====";
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
@@ -798,7 +803,7 @@ export default function graphicTextNewAPI() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('testTextReturnValue_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextReturnValue_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testTextReturnValue_0700====";
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {
