@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/transformation/rotateAngleOptions",
         "MainAbility/pages/gradientDirection",
-        "MainAbility/pages/useShadowBatching"
+        "MainAbility/pages/useShadowBatching",
+        "MainAbility/pages/colorGradient"
     ]
 }
