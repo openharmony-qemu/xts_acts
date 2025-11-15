@@ -123,7 +123,7 @@ export default function PresetTest() {
         }
       }
       
-      let strJson = getInspectorByKey('textArea1_preset');
+      let strJson = getInspectorByKey('textArea2_preset');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[PresetTest0001] component obj is: " + JSON.stringify(obj));

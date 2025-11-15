@@ -249,8 +249,8 @@
   "MainAbility/pages/RichEditorCustomSpan/RichEditorCustomSpan017",
 
   "MainAbility/pages/RichEditorApi11/RichEditor01",
-  "MainAbility/pages/RichEditorApi11/RichEditorApi2",
   "MainAbility/pages/RichEditorApi11/richEditorApi111",
+  "MainAbility/pages/RichEditorApi11/RichEditorApi222",
   "MainAbility/pages/RichEditorApi11/RichTextPage",
   "MainAbility/pages/RichEditorApi11/richText",
 
@@ -260,7 +260,7 @@
   "MainAbility/pages/RichEditorApi18/TextMenuItemIdApi18",
   "MainAbility/pages/RichEditorApi18/getCaretRect",
   "MainAbility/pages/RichEditorApi18/RichEditorMaxLengthTest",
-  
+
   "MainAbility/pages/RichEditorApi20/RichEditorTextVerticalAlign"
   ]
 }

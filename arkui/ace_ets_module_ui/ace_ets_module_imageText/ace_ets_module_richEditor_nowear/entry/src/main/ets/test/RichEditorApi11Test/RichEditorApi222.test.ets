@@ -21,40 +21,40 @@ import { Driver, ON, MouseButton } from '@ohos.UiTest';
 export default function RichEditorApi222() {
   describe('RichEditorApi222', () => {
     beforeEach(async (done: Function) => {
-      console.info("RichEditorApi2 beforeEach start");
+      console.info("RichEditorApi222 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditorApi2',
+        url: 'MainAbility/pages/RichEditorApi11/RichEditorApi222',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get RichEditorApi2 state success " + JSON.stringify(pages));
-        if (!("RichEditorApi2" == pages.name)) {
-          console.info("get RichEditorApi2 state success " + JSON.stringify(pages.name));
+        console.info("get RichEditorApi222 state success " + JSON.stringify(pages));
+        if (!("RichEditorApi222" == pages.name)) {
+          console.info("get RichEditorApi222 state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info("push RichEditorApi2 page success " + JSON.stringify(result));
+          console.info("push RichEditorApi222 page success " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push RichEditorApi2 page error: " + err);
+        console.error("push RichEditorApi222 page error: " + err);
       }
       done()
     });
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info("RichEditorApi2 after each called");
+      console.info("RichEditorApi222 after each called");
     });
 
 
     /*
-    * @tc.number      RichEditorApi2_001
-    * @tc.name        RichEditorApi2_001
-    * @tc.desc        RichEditorApi2 RichEditorResponseType test
+    * @tc.number      RichEditorApi222_001
+    * @tc.name        RichEditorApi222_001
+    * @tc.desc        RichEditorApi222 RichEditorResponseType test
     * @tc.level       Level 2
     */
-    it('RichEditorApi2_001', Level.LEVEL2, async (done: Function) => {
-      console.info('[RichEditorApi2_001] START');
+    it('RichEditorApi222_001', Level.LEVEL2, async (done: Function) => {
+      console.info('[RichEditorApi222_001] START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -72,20 +72,20 @@ export default function RichEditorApi222() {
 
       let strJson = getInspectorByKey('RichEditorApi2_text1');
       await CommonFunc.sleep(1000);
-      console.info("[RichEditorApi2_001] obj is: " + JSON.stringify(JSON.parse(strJson)));
+      console.info("[RichEditorApi222_001] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.content).assertEqual('SelectMenuAppear');
-      console.info('[RichEditorApi2_001] END');
+      console.info('[RichEditorApi222_001] END');
       done();
     });
 
     /*
-  * @tc.number      RichEditorApi2_002
-  * @tc.name        RichEditorApi2_002
-  * @tc.desc        RichEditorApi2 RichEditorSymbolSpanStyle test
+  * @tc.number      RichEditorApi222_002
+  * @tc.name        RichEditorApi222_002
+  * @tc.desc        RichEditorApi222 RichEditorSymbolSpanStyle test
   * @tc.level       Level 2
   */
-    it('RichEditorApi2_002', Level.LEVEL2, async (done: Function) => {
-      console.info('[RichEditorApi2_002] START');
+    it('RichEditorApi222_002', Level.LEVEL2, async (done: Function) => {
+      console.info('[RichEditorApi222_002] START');
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -96,9 +96,9 @@ export default function RichEditorApi222() {
 
       let strJson = getInspectorByKey('RichEditorApi2_text2');
       await CommonFunc.sleep(1000);
-      console.info("[RichEditorApi2_002] obj is: " + JSON.stringify(JSON.parse(strJson)));
+      console.info("[RichEditorApi222_002] obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.content).assertEqual('renderingStrategy:0,effectStrategy:0');
-      console.info('[RichEditorApi2_002] END');
+      console.info('[RichEditorApi222_002] END');
       done();
     });
   })

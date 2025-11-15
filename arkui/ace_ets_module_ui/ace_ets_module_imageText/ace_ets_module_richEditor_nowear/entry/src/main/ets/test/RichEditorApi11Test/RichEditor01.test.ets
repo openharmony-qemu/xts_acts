@@ -24,7 +24,7 @@ export default function RichEditor01() {
     beforeEach(async (done: Function) => {
       console.info("RichEditor01 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditor/RichEditor01',
+        url: 'MainAbility/pages/RichEditorApi11/RichEditor01',
       }
       try {
         router.clear();

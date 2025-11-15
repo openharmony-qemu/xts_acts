@@ -264,7 +264,7 @@ import RichEditorGetNumber007 from './RichEditorGetNumberTest/RichEditorGetNumbe
 import RichEditorCustomSpan016 from './RichEditorCustomSpanTest/RichEditorCustomSpan016.test'
 import RichEditorCustomSpan017 from './RichEditorCustomSpanTest/RichEditorCustomSpan017.test'
 
-import RichEditor01 from './RichEditorApi11Test/RichEditor01.test.ets';
+import RichEditor01 from './RichEditorApi11Test/RichEditor01.test';
 import richEditorApi111 from './RichEditorApi11Test/richEditorApi111.test'
 import RichEditorApi222 from './RichEditorApi11Test/RichEditorApi222.test';
 
