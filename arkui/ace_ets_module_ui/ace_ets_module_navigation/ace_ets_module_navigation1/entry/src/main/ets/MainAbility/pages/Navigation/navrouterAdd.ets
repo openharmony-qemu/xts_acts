@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -18,7 +18,7 @@
 struct NavRouterExample {
   private arr: number[] = [0, 1, 2, 3]
   @State isActive: boolean = false
-  @State dex: number = 0
+  @State dex1: number = 0
 
   build() {
     Column() {
@@ -26,7 +26,7 @@ struct NavRouterExample {
         List({ space: 12, initialIndex: 0 }) {
           ForEach(this.arr, (item: number, index: number) => {
             ListItem() {
-              NavRouter({name:"",param:""}) {
+              NavRouter({name:'',param:''}) {
                 Row() {
                   Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 })
                   Text(`NavRouter${item + 1}`)
@@ -36,7 +36,7 @@ struct NavRouterExample {
                 }
                 .width(180)
                 .height(72)
-                .backgroundColor(this.dex === index ? '#ccc' : '#fff')
+                .backgroundColor(this.dex1 === index ? '#ccc' : '#fff')
                 .borderRadius(24)
 
                 NavDestination() {
@@ -50,9 +50,9 @@ struct NavRouterExample {
                 }.backgroundColor('#ccc')
                 .title(`NavDestination${item + 1}`)
               }.onStateChange((isActivated: boolean) => {
-                this.dex = index
-                console.info("the mode is " + NavRouteMode.PUSH_WITH_RECREATE);
-                console.info("the mode is " + NavRouteMode.REPLACE);
+                this.dex1 = index
+                console.info('the mode is ' + NavRouteMode.PUSH_WITH_RECREATE);
+                console.info('the mode is ' + NavRouteMode.REPLACE);
               }).mode(NavRouteMode.PUSH)
             }
           }, (item: string) => item)

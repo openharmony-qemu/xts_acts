@@ -32,7 +32,7 @@
     ],
     "abilities": [
       {
-        "name": "com.arkui.ace.RouteManagement1.EntryAbility",
+        "name": "com.arkui.ace.router1.EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:description_application",
         "icon": "$media:icon",

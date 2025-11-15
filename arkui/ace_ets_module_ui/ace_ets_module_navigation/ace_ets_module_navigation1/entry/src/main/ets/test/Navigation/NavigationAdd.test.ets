@@ -53,8 +53,8 @@ export default function NavigationAdd() {
      */
     it('apiCommponentAddJsunit_1000', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_1000 START');
-      ohosrouter.clear();
-      ohosrouter.pushUrl({
+      router.clear();
+      router.pushUrl({
         url: 'MainAbility/pages/Navigation/navigationAdd',
         params: {
           data1: 'message',
@@ -82,8 +82,8 @@ export default function NavigationAdd() {
      */
     it('apiCommponentAddJsunit_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2300] START" );
-      ohosrouter.clear();
-      ohosrouter.pushUrl({
+      router.clear();
+      router.pushUrl({
         url: 'MainAbility/pages/Navigation/navition3',
         params: {
           data1: 'message',
@@ -121,8 +121,8 @@ export default function NavigationAdd() {
      */
     it('apiCommponentAddJsunit_1500', Level.LEVEL1, async (done: Function) => {
        console.info("[apiCommponentAddJsunit_1500] START" );
-       ohosrouter.clear();
-       ohosrouter.pushUrl({
+       router.clear();
+       router.pushUrl({
         url: 'MainAbility/pages/Navigation/navrouterAdd',
         params: {
           data1: 'message',

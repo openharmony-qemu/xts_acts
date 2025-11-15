@@ -15,7 +15,7 @@
 
 {
   "app": {
-    "bundleName": "com.arkui.ace.RouteManagement1",
+    "bundleName": "com.arkui.ace.router1",
     "vendor": "huawei",
     "versionCode": 1000000,
     "versionName": "1.0.0",
