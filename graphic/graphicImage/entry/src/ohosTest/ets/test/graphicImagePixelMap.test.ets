@@ -1083,17 +1083,15 @@ export default function graphicImagePixelMapTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_047
-     * @tc.name      : testCreateScaledPixelMapSync
-     * @tc.desc      :  1.create PixelMap
-                        2.create scaleX/scaleY
-                        3.use createScaledPixelMapSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.number     testCloneSync
+     * @tc.name       testCloneSync
+     * @tc.desc       test cloneSync method
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it("testCreateScaledPixelMapSync", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
-      let msg = '=====testCreateScaledPixelMapSync====='
+    it("testCloneSync", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=>  {
+      let msg = '=====testCloneSync====='
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
       console.log(msg + " Example begin! ")
