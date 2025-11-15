@@ -136,7 +136,7 @@ export default function saveComponentTest() {
         }
       } catch (err) {
         console.info("====>[Test_Security_Button_Save_0100] clickSecComponent err : " + JSON.stringify(err));
-        expect().assertFail()
+        expect(false).assertTrue();
       }
       await Utils.sleep(500);
       done();
@@ -2558,16 +2558,16 @@ export default function saveComponentTest() {
     });
 
     /**
-     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_2500
-     * @tc.name Test_Security_Button_Save_2500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_Save_3500
+     * @tc.name Test_Security_Button_Save_3500
      * @tc.desc Test SecurityComponent attr focusBox and result in SaveButton Authorization is passed
      * @tc.size MEDIUM
      * @tc.type Function
      * @tc.level Level 3
      * @tc.require
      */
-    it('Test_Security_Button_Save_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      console.info('====>[Test_Security_Button_Save_2500] START====');
+    it('Test_Security_Button_Save_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info('====>[Test_Security_Button_Save_3500] START====');
       await Utils.sleep(1000);
       try {
         let eventData:events_emitter.EventData = {
@@ -2610,10 +2610,10 @@ export default function saveComponentTest() {
           eventId: 1,
           priority: events_emitter.EventPriority.LOW
         }
-        console.info("====>[Test_Security_Button_Save_2500] start to publish emit");
+        console.info("====>[Test_Security_Button_Save_3500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
-        console.info("====>[Test_Security_Button_Save_2500] change component data error: " + err.message);
+        console.info("====>[Test_Security_Button_Save_3500] change component data error: " + err.message);
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave');
@@ -2625,23 +2625,23 @@ export default function saveComponentTest() {
       try {
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
-            console.info("====>[Test_Security_Button_Save_2500] get clickEvent result is: " + JSON.stringify(clickEvent));
-            console.info("====>[Test_Security_Button_Save_2500] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
+            console.info("====>[Test_Security_Button_Save_3500] get clickEvent result is: " + JSON.stringify(clickEvent));
+            console.info("====>[Test_Security_Button_Save_3500] get clickData.data.clickResult is: " + JSON.stringify(clickData.data.clickResult));
             if (clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS) {
-              console.info("====>[Test_Security_Button_Save_2500] 设置权限成功");
+              console.info("====>[Test_Security_Button_Save_3500] 设置权限成功");
               expect(clickData.data.clickResult == SaveButtonOnClickResult.SUCCESS).assertTrue();
-              console.info("====>[Test_Security_Button_Save_2500] END====");
+              console.info("====>[Test_Security_Button_Save_3500] END====");
               done();
             } else {
-              console.info("====>[Test_Security_Button_Save_2500] 设置权限失败");
+              console.info("====>[Test_Security_Button_Save_3500] 设置权限失败");
               expect().assertFail()
-              console.info("====>[Test_Security_Button_Save_2500] END====");
+              console.info("====>[Test_Security_Button_Save_3500] END====");
               done();
             }
           } else {
-            console.info("====>[Test_Security_Button_Save_2500] ERR CASE 失败");
+            console.info("====>[Test_Security_Button_Save_3500] ERR CASE 失败");
             expect().assertFail()
-            console.info("====>[Test_Security_Button_Save_2500] END====");
+            console.info("====>[Test_Security_Button_Save_3500] END====");
             done();
           }
         }
@@ -2651,17 +2651,17 @@ export default function saveComponentTest() {
         }
         events_emitter.once(clickEvent, clickCallback);
       } catch (err) {
-        console.info("====>[Test_Security_Button_Save_2500] once clickEvent err : " + JSON.stringify(err));
+        console.info("====>[Test_Security_Button_Save_3500] once clickEvent err : " + JSON.stringify(err));
       }
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
         await Utils.sleep(500);
-        console.info("====>[Test_Security_Button_Save_2500] button is:" + JSON.stringify(button));
+        console.info("====>[Test_Security_Button_Save_3500] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
       } catch (err) {
-        console.info("====>[Test_Security_Button_Save_2500] clickSecComponent err : " + JSON.stringify(err));
+        console.info("====>[Test_Security_Button_Save_3500] clickSecComponent err : " + JSON.stringify(err));
       }
     });
   })
