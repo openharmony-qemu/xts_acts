@@ -33,7 +33,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testGetSystemFontFullNamesByType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetSystemFontFullNamesByType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "====testGetSystemFontFullNamesByType===="
       console.info(msg + ' begin ');
@@ -66,7 +66,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testGetFontDescriptorByFullName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testGetFontDescriptorByFullName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetFontDescriptorByFullName===="
       console.info(msg + ' begin ');
       try{
@@ -98,7 +98,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testMatchFontDescriptors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testMatchFontDescriptors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testMatchFontDescriptors===="
       console.info(msg + ' begin ');
       try{
@@ -130,7 +130,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testWordBreak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testWordBreak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testWordBreak===="
       console.info(msg + ' begin ');
       try {
@@ -153,7 +153,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testWordBreak_write', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testWordBreak_write', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "testWordBreak_write"
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
@@ -224,7 +224,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testSystemFontType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done:Function)=> {
+    it('testSystemFontType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done:Function)=> {
       let msg = "====testSystemFontType===="
       console.info(msg + ' begin ');
       try {
@@ -256,7 +256,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testStrutStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testStrutStyle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testStrutStyle===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
@@ -365,7 +365,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testFontDescriptor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testFontDescriptor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testFontDescriptor===="
       console.info(msg + ' begin');
       try {
@@ -405,7 +405,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testParagraphLayoutErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testParagraphLayoutErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testParagraphLayoutErrorCode===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
@@ -530,7 +530,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testGetLineBreakErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testGetLineBreakErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetLineBreakErrorCode===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
@@ -657,7 +657,7 @@ export default function graphicTextCTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testCreateLineErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function)=> {
+    it('testCreateLineErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testCreateLineErrorCode===="
       console.info(msg + ' begin');
       let myTextShadow: text.TextShadow = {
