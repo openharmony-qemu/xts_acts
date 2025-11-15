@@ -17,6 +17,6 @@
         "MainAbility/pages/Particle/particleAttributeTest",
         "MainAbility/pages/Particle/ParticleOptions",
         "MainAbility/pages/Particle/ParticleProperty",
-        "MainAbility/pages/Particle/motionPath"
+        "MainAbility/pages/motionPath"
     ]
 }
