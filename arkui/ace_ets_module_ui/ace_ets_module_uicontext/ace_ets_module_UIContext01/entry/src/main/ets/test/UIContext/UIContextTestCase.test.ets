@@ -77,7 +77,7 @@ export default function UIContextTestCase() {
       let strJson = getInspectorByKey('getWindowName');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[UIContextTestCase_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertEqual('UIContext120');
+      expect(obj.$attrs.content).assertEqual('uiContext010');
       console.info('[UIContextTestCase_0200] END');
       done();
     });
