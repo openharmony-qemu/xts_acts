@@ -1874,5 +1874,5 @@ export default function VibratorJsTest_misc_9() {
                 expect(false).assertTrue();
                 done();
             }
-        })
+        })  
     })}
