@@ -49,7 +49,6 @@ export default function RenderNodeShadowElevationJsSuit() {
      * @tc.type :
      * @tc.size :
      */
-
     it('RenderNodeShadowElevationJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RenderNodeShadowElevationJsSuit_0100] START');
       let driver = await Driver.create()

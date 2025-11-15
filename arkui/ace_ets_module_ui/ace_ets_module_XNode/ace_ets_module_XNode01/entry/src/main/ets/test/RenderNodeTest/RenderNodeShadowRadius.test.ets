@@ -49,7 +49,6 @@ export default function RenderNodeShadowRadiusJsSuit() {
      * @tc.type :
      * @tc.size :
      */
-
     it('RenderNodeShadowRadiusJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RenderNodeShadowRadiusJsSuit_0100] START');
       let driver = await Driver.create()

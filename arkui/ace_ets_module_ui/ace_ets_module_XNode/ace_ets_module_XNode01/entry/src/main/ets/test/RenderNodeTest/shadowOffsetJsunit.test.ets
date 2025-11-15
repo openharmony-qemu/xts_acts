@@ -49,7 +49,6 @@ export default function shadowOffsetJsunit() {
      * @tc.type :
      * @tc.size :
      */
-
     it('shadowOffsetJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[shadowOffsetJsunit_0100] START');
       let driver = Driver.create();
