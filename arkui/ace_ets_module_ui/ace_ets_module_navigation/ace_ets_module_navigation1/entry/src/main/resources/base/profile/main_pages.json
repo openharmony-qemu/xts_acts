@@ -1,0 +1,13 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/Interception/InterceptionTest",
+        "MainAbility/pages/Navigation/NavigationTest",
+        "MainAbility/pages/Navigation/EnableShowHideWithContentCoverPage",
+        "MainAbility/pages/Navigation/SplitPlaceholder",
+        "MainAbility/pages/UIContext/UIContextNavDestinationUpdate",
+        "MainAbility/pages/Stepper/StepperModifierPage",
+        "MainAbility/pages/Navigation/HomePage",
+        "MainAbility/pages/Stepper/StepperModifierTest"
+    ]
+}

@@ -15,11 +15,13 @@
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webAttribute() {
 
@@ -41,7 +43,7 @@ export default function webAttribute() {
       } catch (err) {
         console.error('push webAttribute page error: ' + err);
       }
-      await waitForComponent("WebAttributeButton");
+      await driver.waitForComponent(ON.id("WebAttributeButton"), 10000);
       done()
     });
 
@@ -65,7 +67,7 @@ export default function webAttribute() {
     it('testJavaScriptAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJavaScriptAccess001", 172160)
       Utils.registerEvent("testJavaScriptAccess001", true, 172170, done);
-      sendEventByKey('WebAttributeButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'WebAttributeButton');
     })
   })
 }
