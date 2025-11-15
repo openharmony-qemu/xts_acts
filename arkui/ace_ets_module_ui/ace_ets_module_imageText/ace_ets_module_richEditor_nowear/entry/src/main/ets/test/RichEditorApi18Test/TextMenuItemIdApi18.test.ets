@@ -56,7 +56,7 @@ export default function TextMenuItemIdApi18() {
     /*
      * @tc.number       TextMenuItemIdApi180001
      * @tc.name         TextMenuItemIdApi180001
-     * @tc.desic        set TextMenuItem for text
+     * @tc.desc        set TextMenuItem for text
      */
     it('TextMenuItemIdApi180001', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180001] start");
@@ -84,7 +84,7 @@ export default function TextMenuItemIdApi18() {
     /*
      * @tc.number       TextMenuItemIdApi180002
      * @tc.name         TextMenuItemIdApi180002
-     * @tc.desic        set TextMenuItem for textArea
+     * @tc.desc        set TextMenuItem for textArea
      */
     it('TextMenuItemIdApi180002', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180002] start");
@@ -112,7 +112,7 @@ export default function TextMenuItemIdApi18() {
     /*
      * @tc.number       TextMenuItemIdApi180003
      * @tc.name         TextMenuItemIdApi180003
-     * @tc.desic        set TextMenuItem for textInput
+     * @tc.desc        set TextMenuItem for textInput
      */
     it('TextMenuItemIdApi180003', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180003] start");
@@ -140,7 +140,7 @@ export default function TextMenuItemIdApi18() {
     /*
      * @tc.number       TextMenuItemIdApi180004
      * @tc.name         TextMenuItemIdApi180004
-     * @tc.desic        set TextMenuItem for richEditor
+     * @tc.desc        set TextMenuItem for richEditor
      */
     it('TextMenuItemIdApi180004', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180004] start");
@@ -168,7 +168,7 @@ export default function TextMenuItemIdApi18() {
     /*
      * @tc.number       TextMenuItemIdApi180005
      * @tc.name         TextMenuItemIdApi180005
-     * @tc.desic        set TextMenuItem for search
+     * @tc.desc        set TextMenuItem for search
      */
     it('TextMenuItemIdApi180005', Level.LEVEL0, async (done: Function) => {
       console.info("[TextMenuItemIdApi180005] start");

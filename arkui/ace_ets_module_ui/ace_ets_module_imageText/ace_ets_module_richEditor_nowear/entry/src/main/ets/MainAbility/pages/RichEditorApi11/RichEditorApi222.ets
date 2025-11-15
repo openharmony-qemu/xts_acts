@@ -67,7 +67,7 @@ struct RichEditorApi22Com {
       RichEditor(this.options2)
         .id('RichEditorApi2_RichEditor2')
         .onReady(() => {
-          this.controller2.addSymbolSpan($r("sys.symbol.ohos_trash"),
+          this.controller2.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
               style:
               {

@@ -44,8 +44,8 @@ export default function RichEditor01() {
     });
 
     /*
-    * @tc.number  Stage_RichEditor_Test_0100
-    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.number  RichEditor01_001
+    * @tc.name    RichEditor01_001
     * @tc.desc    test RichEditor onReady
     * @tc.size    MediumTest
     * @tc.type    Function
@@ -68,8 +68,8 @@ export default function RichEditor01() {
     });
 
     /*
-    * @tc.number  Stage_RichEditor_Test_0100
-    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.number  RichEditor01_002
+    * @tc.name    RichEditor01_002
     * @tc.desc    test RichEditor aboutToIMEInput
     * @tc.size    MediumTest
     * @tc.type    Function
@@ -97,8 +97,8 @@ export default function RichEditor01() {
     });
 
     /*
-    * @tc.number  Stage_RichEditor_Test_0100
-    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.number  RichEditor01_003
+    * @tc.name    RichEditor01_003
     * @tc.desc    test RichEditor onIMEInputComplete
     * @tc.size    MediumTest
     * @tc.type    Function
@@ -123,8 +123,8 @@ export default function RichEditor01() {
     });
 
     /*
-    * @tc.number  Stage_RichEditor_Test_0100
-    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.number  RichEditor01_004
+    * @tc.name    RichEditor01_004
     * @tc.desc    test RichEditor: set setCaretOffset to 6
     * @tc.size    MediumTest
     * @tc.type    Function
@@ -149,8 +149,8 @@ export default function RichEditor01() {
     });
 
     /*
-    * @tc.number  Stage_RichEditor_Test_0100
-    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.number  RichEditor01_005
+    * @tc.name    RichEditor01_005
     * @tc.desc    test RichEditor: set setCaretOffset to 100
     * @tc.size    MediumTest
     * @tc.type    Function
@@ -175,8 +175,8 @@ export default function RichEditor01() {
     });
 
     /*
-    * @tc.number  Stage_RichEditor_Test_0100
-    * @tc.name    Stage_RichEditor_Test_0100
+    * @tc.number  RichEditor01_006
+    * @tc.name    RichEditor01_006
     * @tc.desc    test RichEditor: set setCaretOffset to 100
     * @tc.size    MediumTest
     * @tc.type    Function
