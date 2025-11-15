@@ -1,6 +1,13 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-		"MainAbility/pages/Preset/InputPreset"
+		"MainAbility/pages/Preset/InputPreset",
+
+        "MainAbility/pages/Search/SearchJsunitInfTest",
+        "MainAbility/pages/Search/SearchOnCutTest",
+
+        "MainAbility/pages/TextArea/TextAreaOnCutJsunitTest",
+
+        "MainAbility/pages/TextInput/TextInputOnEditChangeJsunitTest"
     ]
 }
