@@ -26,7 +26,7 @@ struct RichEditorApi22Com {
 
   @Builder
   panel() {
-    Text("Select")
+    Text('Select')
       .borderWidth(1)
   }
 

@@ -191,6 +191,7 @@ import RichEditorScrollBarColorTest from './RichEditorApi21Test/ScrollBarColor.t
 
 export default function testsuite() {
   PresetTest();
+  ActsRichEditorTest();
   RichEditorApi13();
   onSelectionChange2();
   onSelectionChange3();
@@ -323,8 +324,7 @@ export default function testsuite() {
   RichEditorCustomSpan015();
   RichEditorFromStyledStringTest();
 
-  ActsRichEditorTest();        // Api11
-  SXrenderingStrategyJsunit();
+  SXrenderingStrategyJsunit();        // Api11
   SXsymbolSpanStyleJsunit();
   SXsymbolStyleJsunit();
   SXvalueResourceJsunit();

@@ -66,7 +66,7 @@ export default function ActsRichEditorTest() {
           }
         })
 		    await CommonFunc.sleep(1500)
-        console.info('Stage_Font_0100 START  :' + JSON.stringify(res));
+        console.info('Stage_RichEditor_Test_0100 res  :' + JSON.stringify(res));
         expect(typeof (res)).assertEqual('number')
         expect(res).assertEqual(0)
         console.info('Stage_RichEditor_Test_0100 END ');
