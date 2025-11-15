@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct CalendarPickerExample {
+struct CalendarPickerStartEndTestExample {
   build() {
     Column() {
       Column() {

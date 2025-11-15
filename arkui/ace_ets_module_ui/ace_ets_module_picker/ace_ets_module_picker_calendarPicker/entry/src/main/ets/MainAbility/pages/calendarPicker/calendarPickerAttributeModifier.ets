@@ -23,7 +23,7 @@ class CalendarPickerModifier1 implements AttributeModifier<CalendarPickerAttribu
 
 @Entry
 @Component
-struct CalendarPickerExample {
+struct CalendarPickerAttributeModifierExample {
   @State calendarPickerModifier: CalendarPickerModifier1 = new CalendarPickerModifier1()
   private selectedDate: Date = new Date('2026-02-11')
 

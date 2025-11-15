@@ -54,8 +54,8 @@ export default function calendarPickerStartEndTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('CalendarPicker01');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("CalendarPickerStartEndTest_001 " + obj.$attrs.start)
-      console.info("CalendarPickerStartEndTest_001 " + obj.$attrs.end)
+      console.info('CalendarPickerStartEndTest_001 ' + obj.$attrs.start)
+      console.info('CalendarPickerStartEndTest_001 ' + obj.$attrs.end)
       expect(obj.$attrs.start).assertEqual('2024年3月5日星期二')
       expect(obj.$attrs.end).assertEqual('2024年4月5日星期五')
       console.info('CalendarPickerStartEndTest_001 END');
@@ -75,8 +75,8 @@ export default function calendarPickerStartEndTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('CalendarPicker02');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("CalendarPickerStartEndTest_002 " + obj.$attrs.start)
-      console.info("CalendarPickerStartEndTest_002 " + obj.$attrs.end)
+      console.info('CalendarPickerStartEndTest_002 ' + obj.$attrs.start)
+      console.info('CalendarPickerStartEndTest_002 ' + obj.$attrs.end)
       expect(obj.$attrs.start).assertEqual(undefined)
       expect(obj.$attrs.end).assertEqual(undefined)
       console.info('CalendarPickerStartEndTest_002 END');
@@ -96,8 +96,8 @@ export default function calendarPickerStartEndTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('CalendarPicker03');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("CalendarPickerStartEndTest_003 " + obj.$attrs.start)
-      console.info("CalendarPickerStartEndTest_003 " + obj.$attrs.end)
+      console.info('CalendarPickerStartEndTest_003 ' + obj.$attrs.start)
+      console.info('CalendarPickerStartEndTest_003 ' + obj.$attrs.end)
       expect(obj.$attrs.start).assertEqual(undefined)
       expect(obj.$attrs.end).assertEqual(undefined)
       console.info('CalendarPickerStartEndTest_003 END');
@@ -117,8 +117,8 @@ export default function calendarPickerStartEndTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('CalendarPicker04');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("CalendarPickerStartEndTest_004 " + obj.$attrs.start)
-      console.info("CalendarPickerStartEndTest_004 " + obj.$attrs.end)
+      console.info('CalendarPickerStartEndTest_004 ' + obj.$attrs.start)
+      console.info('CalendarPickerStartEndTest_004 ' + obj.$attrs.end)
       expect(obj.$attrs.start).assertEqual(undefined)
       expect(obj.$attrs.end).assertEqual(undefined)
       console.info('CalendarPickerStartEndTest_004 END');
@@ -138,8 +138,8 @@ export default function calendarPickerStartEndTest() {
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('CalendarPicker05');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("CalendarPickerStartEndTest_005 " + obj.$attrs.start)
-      console.info("CalendarPickerStartEndTest_005 " + obj.$attrs.end)
+      console.info('CalendarPickerStartEndTest_005 ' + obj.$attrs.start)
+      console.info('CalendarPickerStartEndTest_005 ' + obj.$attrs.end)
       expect(obj.$attrs.start).assertEqual('2024年3月5日星期二')
       expect(obj.$attrs.end).assertEqual('2024年3月5日星期二')
       console.info('CalendarPickerStartEndTest_005 END');
