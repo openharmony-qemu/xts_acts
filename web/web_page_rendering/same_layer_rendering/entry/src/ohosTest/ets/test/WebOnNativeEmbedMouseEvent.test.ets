@@ -66,7 +66,7 @@ export default function webViewControllerPart2() {
      * @tc.level      : Level 1
      */
     it('testOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 10)
+      Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)
       Utils.registerEvent("testOnNativeEmbedMouseEvent001", true, 153540, done);
       sendEventByKey('WebOnNativeEmbedMouseButton', 10, '');
     })
