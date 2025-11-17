@@ -245,25 +245,27 @@ export default function actslocationTest() {
             */
 
             it ('SUB_HSS_LocationSystem_Geo_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-            async (done: () => void): Promise<void> => {
-                let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
-                    "latitude": 31.265496,
-                    "longitude": 121.62771,
-                    "maxItems": 1,
-                    "locale": "zh",
-                    "country": "CN"
-                };
-                try{
-                    geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-                        expect(Array.isArray(data)).assertTrue;
-                    }).catch((error) => {
-                        expect((error as BusinessError).code).assertEqual(3301300);
-                    })
-                    done();
-                } catch(error){
-                    console.info('[lbs_js] getAddressesFromLocation try err is:' + JSON.stringify(error));
+                async (done: () => void): Promise<void> => {
+                    let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+                        "latitude": 31.265496,
+                        "longitude": 121.62771,
+                        "maxItems": 1,
+                        "locale": "zh",
+                        "country": "CN"
+                    };
+                    try{
+                        geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                            if (data){
+                                expect(Array.isArray(data)).assertTrue();
+                            }
+                        }).catch((error) => {
+                            expect((error as BusinessError).code).assertEqual(3301300);
+                        })
+                        done();
+                    } catch(error){
+                        console.info('[lbs_js] getAddressesFromLocation try err is:' + JSON.stringify(error));
+                    }
                 }
-        
             )
 
             /*
@@ -327,7 +329,7 @@ export default function actslocationTest() {
                                 expect(err.code).assertEqual(3301400);
                                 done();
                             }else{
-                                expect(Array.isArray(result)).assertTrue;
+                                expect(Array.isArray(data)).assertTrue;
                                 done();
                             }
                         })
@@ -410,11 +412,11 @@ export default function actslocationTest() {
                             expect(result == undefined).assertTrue();
                             done();
                         }).catch((error) => {
-                            expect(err.code).assertEqual(401);
+                            expect(error.code).assertEqual(401);
                             done();
                         })
                     }catch (error){
-                        console.info('[lbs_js] sendCommand try err is:' + JSON.stringify(err));
+                        console.info('[lbs_js] sendCommand try err is:' + JSON.stringify(error));
                     }
                 }
             )
@@ -507,17 +509,6 @@ export default function actslocationTest() {
                     expect(error.code).assertEqual(3301000);
                 }
             })
-
-
-
-          
-            
-
-
-
-
-
-
 
     })
 }
