@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsAceEtsModuleAlphabetIndexerTestMain") {
+ohos_app_assist_suite("ActsAceEtsComponentAlphabetIndexerTestMain") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceEtsModuleAlphabetIndexerTestMain"
+  hap_name = "ActsAceEtsComponentAlphabetIndexerTestMain"
   part_name = "ace_engine"
   subsystem_name = "arkui"
 }
 
-ohos_js_app_suite("ActsAceEtsModuleAlphabetIndexerTest") {
+ohos_js_app_suite("ActsAceEtsComponentAlphabetIndexerTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceEtsModuleAlphabetIndexerTest"
+  hap_name = "ActsAceEtsComponentAlphabetIndexerTest"
   part_name = "ace_engine"
   subsystem_name = "arkui"
-  deps = [ ":ActsAceEtsModuleAlphabetIndexerTestMain" ]
+  deps = [ ":ActsAceEtsComponentAlphabetIndexerTestMain" ]
 }

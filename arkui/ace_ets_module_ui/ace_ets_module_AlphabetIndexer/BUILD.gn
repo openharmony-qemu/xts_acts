@@ -14,6 +14,7 @@
 group("ActsAceEtsModuleAlphabetIndexerTest") {
   testonly = true
   deps = [
-    "ace_ets_module_AlphabetIndexer:ActsAceEtsModuleAlphabetIndexerTest",
+    "ace_ets_component_AlphabetIndexer:ActsAceEtsComponentAlphabetIndexerTest",
+    "ace_ets_component_ArcAlphabetindexer:ActsAceEtsComponentArcAlphabetIndexerTest",
   ]
 }
