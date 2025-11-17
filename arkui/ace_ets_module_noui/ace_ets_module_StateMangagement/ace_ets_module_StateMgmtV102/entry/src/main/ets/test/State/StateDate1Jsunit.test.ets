@@ -64,6 +64,14 @@ export default function StateDate1Jsunit() {
       await CommonFunc.sleep(1000);
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0100
+		 * @tc.name      StateDate1Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0100 START');
@@ -76,6 +84,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0200
+		 * @tc.name      StateDate1Jsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0200 START');
@@ -92,6 +108,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0300
+		 * @tc.name      StateDate1Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0300 START');
@@ -108,6 +132,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0400
+		 * @tc.name      StateDate1Jsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0400 START');
@@ -124,6 +156,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0500
+		 * @tc.name      StateDate1Jsunit_0500
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0500 START');
@@ -140,6 +180,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0600
+		 * @tc.name      StateDate1Jsunit_0600
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0600 START');
@@ -156,6 +204,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0700
+		 * @tc.name      StateDate1Jsunit_0700
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0700 START');
@@ -172,6 +228,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0800
+		 * @tc.name      StateDate1Jsunit_0800
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0800 START');
@@ -188,6 +252,14 @@ export default function StateDate1Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateDate1Jsunit_0900
+		 * @tc.name      StateDate1Jsunit_0900
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateDate1Jsunit_0900', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateDate1Jsunit_0900 START');

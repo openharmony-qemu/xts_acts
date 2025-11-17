@@ -64,6 +64,14 @@ export default function LinkSonJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+		/**
+		 * @tc.number    LinkSonJsunit_0100
+		 * @tc.name      LinkSonJsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkSonJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0100 START');
@@ -111,6 +119,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkSonJsunit_0200
+		 * @tc.name      LinkSonJsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkSonJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0200 START');
@@ -158,6 +174,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkSonJsunit_0300
+		 * @tc.name      LinkSonJsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkSonJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0300 START');
@@ -205,6 +229,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkSonJsunit_0400
+		 * @tc.name      LinkSonJsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkSonJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0400 START');
@@ -251,6 +283,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkSonJsunit_0500
+		 * @tc.name      LinkSonJsunit_0500
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkSonJsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0500 START');
@@ -298,6 +338,14 @@ export default function LinkSonJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkSonJsunit_0600
+		 * @tc.name      LinkSonJsunit_0600
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkSonJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkSonJsunit_0600 START');

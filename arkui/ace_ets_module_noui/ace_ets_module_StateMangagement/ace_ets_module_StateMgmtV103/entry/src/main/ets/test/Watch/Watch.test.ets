@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
+
 export default function WatchTest() {
   describe('WatchTest', () => {
     beforeEach(async (done: Function) => {
@@ -41,7 +41,7 @@ export default function WatchTest() {
       done();
     });
     /**
-     * @tc.number    Computed
+     * @tc.number    WatchTest_0100
      * @tc.name      WatchTest_0100
      * @tc.desc      api
      * @tc.level:    Level 0

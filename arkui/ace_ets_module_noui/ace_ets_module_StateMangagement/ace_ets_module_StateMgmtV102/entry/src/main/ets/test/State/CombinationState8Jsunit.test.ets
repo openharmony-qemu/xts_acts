@@ -55,6 +55,14 @@ export default function CombinationState8Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState8Jsunit_0100
+		 * @tc.name      CombinationState8Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState8Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState8Jsunit_0100] START');
       let strJson = getInspectorByKey('SubState1');
@@ -66,6 +74,14 @@ export default function CombinationState8Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState8Jsunit_0200
+		 * @tc.name      CombinationState8Jsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState8Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState8Jsunit_0200] START');
       let strJson = getInspectorByKey('SubProp1');
@@ -77,6 +93,14 @@ export default function CombinationState8Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState8Jsunit_0300
+		 * @tc.name      CombinationState8Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState8Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState8Jsunit_0300] START');
       let strJson = getInspectorByKey('SubProvide1');
@@ -88,6 +112,14 @@ export default function CombinationState8Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState8Jsunit_0400
+		 * @tc.name      CombinationState8Jsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState8Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState8Jsunit_0400] START');
       let strJson = getInspectorByKey('SubLink1');

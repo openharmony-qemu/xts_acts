@@ -24,4 +24,24 @@ export default class CommonFunc {
       console.info(`sleep ${time} over...`)
     })
   }
+
+  // Instead of CommonFunc.getType
+  // Function.call is not supported (arkts-no-func-apply-call)
+  // Prototype assignment is not supported (arkts-no-prototype-assignment)
+  static getType<T>( value: T ):string{
+    let result: string;
+    if ( value === undefined ) {
+        result = '[object Undefined]';
+    } else if ( value === null ) {
+        result = '[object Null]';
+    } else {
+        const o: ObjectWithToString = Object(value);
+        const origin = o.toObjectString;
+        o.toObjectString = (new BaseObject()).toString;
+        result = o.toObjectString() ?? '';
+        o.toObjectString = origin;
+    }
+    return result;
+  }
+  
 }

@@ -63,6 +63,14 @@ export default function ProvideJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0001
+		 * @tc.name      ProvideJsunit_0001
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0001', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0001] START');
       let driver = Driver.create();
@@ -100,6 +108,14 @@ export default function ProvideJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0002
+		 * @tc.name      ProvideJsunit_0002
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0002', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0002] START');
       let driver = Driver.create();
@@ -137,6 +153,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0003
+		 * @tc.name      ProvideJsunit_0003
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0003', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0003] START');
       let driver = Driver.create();
@@ -174,6 +198,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0004
+		 * @tc.name      ProvideJsunit_0004
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0004', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0004] START');
       let driver = Driver.create();
@@ -211,6 +243,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0005
+		 * @tc.name      ProvideJsunit_0005
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0005', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0005] START');
       let driver = Driver.create();
@@ -248,6 +288,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0006
+		 * @tc.name      ProvideJsunit_0006
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0006', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0006] START');
       let driver = Driver.create();
@@ -285,6 +333,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0007
+		 * @tc.name      ProvideJsunit_0007
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0007', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0007] START');
       let driver = Driver.create();
@@ -322,6 +378,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0008
+		 * @tc.name      ProvideJsunit_0008
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0008', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0008] START');
       let driver = Driver.create();
@@ -359,6 +423,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0009
+		 * @tc.name      ProvideJsunit_0009
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0009', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0008] START');
       let driver = Driver.create();
@@ -396,6 +468,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0010
+		 * @tc.name      ProvideJsunit_0010
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0010] START');
       let driver = Driver.create();
@@ -433,6 +513,14 @@ export default function ProvideJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0011
+		 * @tc.name      ProvideJsunit_0011
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0011', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0011] START');
       let driver = Driver.create();
@@ -473,6 +561,14 @@ export default function ProvideJsunit() {
       done()
     });
 
+		/**
+		 * @tc.number    ProvideJsunit_0012
+		 * @tc.name      ProvideJsunit_0012
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ProvideJsunit_0012', Level.LEVEL0, async (done: Function) => {
       console.info('[ProvideJsunit_0012] START');
       let driver = Driver.create();

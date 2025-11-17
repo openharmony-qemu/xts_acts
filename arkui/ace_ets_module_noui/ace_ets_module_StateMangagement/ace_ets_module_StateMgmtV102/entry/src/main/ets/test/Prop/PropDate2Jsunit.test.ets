@@ -55,6 +55,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0010
+		 * @tc.name      PropDate2Jsunit_0010
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PropDate2Jsunit_0010 START');
       let strJson = getInspectorByKey('setTime1');
@@ -66,6 +74,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0020
+		 * @tc.name      PropDate2Jsunit_0020
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0020', Level.LEVEL0, async (done: Function) => {
       console.info('PropDate2Jsunit_0020 START');
       let driver = Driver.create();
@@ -82,6 +98,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0030
+		 * @tc.name      PropDate2Jsunit_0030
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0030', Level.LEVEL0, async (done: Function) => {
 
       let strJson = getInspectorByKey('setUTCFullYear1');
@@ -93,6 +117,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0040
+		 * @tc.name      PropDate2Jsunit_0040
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0040', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0040 START');
@@ -109,6 +141,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0050
+		 * @tc.name      PropDate2Jsunit_0050
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0050', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0050 START');
@@ -121,6 +161,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0060
+		 * @tc.name      PropDate2Jsunit_0060
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0060', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0060 START');
@@ -137,6 +185,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0070
+		 * @tc.name      PropDate2Jsunit_0070
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0070', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0070 START');
@@ -149,6 +205,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0080
+		 * @tc.name      PropDate2Jsunit_0080
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0080', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0080 START');
@@ -164,6 +228,15 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0080] END');
       done();
     });
+
+		/**
+		 * @tc.number    PropDate2Jsunit_0090
+		 * @tc.name      PropDate2Jsunit_0090
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0090', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0090 START');
@@ -175,6 +248,15 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0090] END');
       done();
     });
+
+		/**
+		 * @tc.number    PropDate2Jsunit_0100
+		 * @tc.name      PropDate2Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0100 START');
@@ -191,6 +273,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0110
+		 * @tc.name      PropDate2Jsunit_0110
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0110', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0110 START');
@@ -203,6 +293,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0120
+		 * @tc.name      PropDate2Jsunit_0120
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0120', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0120 START');
@@ -219,6 +317,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0130
+		 * @tc.name      PropDate2Jsunit_0130
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0130', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_01430 START');
@@ -231,6 +337,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0140
+		 * @tc.name      PropDate2Jsunit_0140
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0140', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0140 START');
@@ -246,6 +360,15 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0140] END');
       done();
     });
+
+		/**
+		 * @tc.number    PropDate2Jsunit_0150
+		 * @tc.name      PropDate2Jsunit_0150
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0150', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0150 START');
@@ -262,6 +385,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0160
+		 * @tc.name      PropDate2Jsunit_0160
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0160', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0160 START');
@@ -278,6 +409,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0170
+		 * @tc.name      PropDate2Jsunit_0170
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0170', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0170 START');
@@ -290,6 +429,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0180
+		 * @tc.name      PropDate2Jsunit_0180
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0180', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0180 START');
@@ -306,6 +453,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0190
+		 * @tc.name      PropDate2Jsunit_0190
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0190', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0190 START');
@@ -318,6 +473,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0200
+		 * @tc.name      PropDate2Jsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0200 START');
@@ -334,6 +497,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0210
+		 * @tc.name      PropDate2Jsunit_0210
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0210', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0210 START');
@@ -346,6 +517,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0220
+		 * @tc.name      PropDate2Jsunit_0220
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0220', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0220 START');
@@ -362,6 +541,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0230
+		 * @tc.name      PropDate2Jsunit_0230
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0230', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0230 START');
@@ -374,6 +561,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0240
+		 * @tc.name      PropDate2Jsunit_0240
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0240', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0240 START');
@@ -390,6 +585,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0250
+		 * @tc.name      PropDate2Jsunit_0250
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0250', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0250 START');
@@ -401,6 +604,15 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0250] END');
       done();
     });
+
+		/**
+		 * @tc.number    PropDate2Jsunit_0260
+		 * @tc.name      PropDate2Jsunit_0260
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0260', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0260 START');
@@ -417,6 +629,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0270
+		 * @tc.name      PropDate2Jsunit_0270
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0270', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0270 START');
@@ -429,6 +649,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0280
+		 * @tc.name      PropDate2Jsunit_0280
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0280', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0280 START');
@@ -445,6 +673,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0290
+		 * @tc.name      PropDate2Jsunit_0290
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0290', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0290 START');
@@ -457,6 +693,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0300
+		 * @tc.name      PropDate2Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0300 START');
@@ -473,6 +717,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0310
+		 * @tc.name      PropDate2Jsunit_0310
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0310', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0310 START');
@@ -489,6 +741,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    PropDate2Jsunit_0320
+		 * @tc.name      PropDate2Jsunit_0320
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('PropDate2Jsunit_0320', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0320 START');

@@ -55,7 +55,14 @@ export default function StateArrayNewJsunit() {
       done();
     });
 
-
+		/**
+		 * @tc.number    StateArrayNewJsunit_0200
+		 * @tc.name      StateArrayNewJsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayNewJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0200 START');
@@ -72,6 +79,14 @@ export default function StateArrayNewJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateArrayNewJsunit_0400
+		 * @tc.name      StateArrayNewJsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayNewJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0400 START');
@@ -88,7 +103,14 @@ export default function StateArrayNewJsunit() {
       done();
     });
 
-
+		/**
+		 * @tc.number    StateArrayNewJsunit_0600
+		 * @tc.name      StateArrayNewJsunit_0600
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayNewJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0600 START');
@@ -105,7 +127,14 @@ export default function StateArrayNewJsunit() {
       done();
     });
 
-
+		/**
+		 * @tc.number    StateArrayNewJsunit_0800
+		 * @tc.name      StateArrayNewJsunit_0800
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayNewJsunit_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0800 START');
@@ -122,6 +151,14 @@ export default function StateArrayNewJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateArrayNewJsunit_1000
+		 * @tc.name      StateArrayNewJsunit_1000
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayNewJsunit_1000', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_1000 START');

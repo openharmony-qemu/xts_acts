@@ -64,6 +64,14 @@ export default function LinkClassArrJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+		/**
+		 * @tc.number    LinkClassArrJsunit_0100
+		 * @tc.name      LinkClassArrJsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkClassArrJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkClassArrJsunit_0100 START');
@@ -87,6 +95,14 @@ export default function LinkClassArrJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkClassArrJsunit_0200
+		 * @tc.name      LinkClassArrJsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkClassArrJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkClassArrJsunit_0200 START');
@@ -110,6 +126,14 @@ export default function LinkClassArrJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkClassArrJsunit_0300
+		 * @tc.name      LinkClassArrJsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkClassArrJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkClassArrJsunit_0300 START');
@@ -133,6 +157,14 @@ export default function LinkClassArrJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkClassArrJsunit_0400
+		 * @tc.name      LinkClassArrJsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkClassArrJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkClassArrJsunit_0400 START');
@@ -156,6 +188,14 @@ export default function LinkClassArrJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkClassArrJsunit_0500
+		 * @tc.name      LinkClassArrJsunit_0500
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkClassArrJsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkClassArrJsunit_0500 START');
@@ -179,6 +219,14 @@ export default function LinkClassArrJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    LinkClassArrJsunit_0600
+		 * @tc.name      LinkClassArrJsunit_0600
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LinkClassArrJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('LinkClassArrJsunit_0600 START');

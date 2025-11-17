@@ -60,7 +60,14 @@ export default function CombinationState3Jsunit() {
     //   let driver = await UiDriver.create()
     //   await driver.pressBack();
     // });
-
+		/**
+		 * @tc.number    CombinationState3Jsunit_0100
+		 * @tc.name      CombinationState3Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState3Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState3Jsunit_0100] START');
@@ -83,6 +90,14 @@ export default function CombinationState3Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState3Jsunit_0200
+		 * @tc.name      CombinationState3Jsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState3Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Click and get the value of State component
       console.info('[CombinationState3Jsunit_0200] START');
@@ -106,6 +121,14 @@ export default function CombinationState3Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState3Jsunit_0300
+		 * @tc.name      CombinationState3Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState3Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState3Jsunit_0300] START');
@@ -128,6 +151,14 @@ export default function CombinationState3Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState3Jsunit_0400
+		 * @tc.name      CombinationState3Jsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState3Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState3Jsunit_0400] START');

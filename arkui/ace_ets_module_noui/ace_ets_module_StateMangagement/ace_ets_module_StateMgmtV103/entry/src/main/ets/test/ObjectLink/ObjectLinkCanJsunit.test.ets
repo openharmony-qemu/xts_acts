@@ -64,6 +64,14 @@ export default function ObjectLinkCanJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+		/**
+		 * @tc.number    ObjectLinkCanJsunit_0100
+		 * @tc.name      ObjectLinkCanJsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkCanJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkCanJsunit_0100 START');
@@ -87,6 +95,14 @@ export default function ObjectLinkCanJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkCanJsunit_0200
+		 * @tc.name      ObjectLinkCanJsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkCanJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkCanJsunit_0200 START');
@@ -110,6 +126,14 @@ export default function ObjectLinkCanJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkCanJsunit_0300
+		 * @tc.name      ObjectLinkCanJsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkCanJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkCanJsunit_0300 START');

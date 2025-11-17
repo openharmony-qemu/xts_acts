@@ -55,6 +55,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateArrayJsunit_0100
+		 * @tc.name      StateArrayJsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0100 START');
@@ -67,6 +75,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateArrayJsunit_0200
+		 * @tc.name      StateArrayJsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0200 START');
@@ -83,6 +99,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateArrayJsunit_0300
+		 * @tc.name      StateArrayJsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0300 START');
@@ -94,6 +118,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    StateArrayJsunit_0400
+		 * @tc.name      StateArrayJsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StateArrayJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayJsunit_0400 START');

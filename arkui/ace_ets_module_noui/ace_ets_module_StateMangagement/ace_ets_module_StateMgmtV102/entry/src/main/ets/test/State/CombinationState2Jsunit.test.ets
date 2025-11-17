@@ -55,6 +55,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0100
+		 * @tc.name      CombinationState2Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState2Jsunit_0100] START');
@@ -67,6 +75,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0200
+		 * @tc.name      ApplySynCombinationState2Jsunit_0200c001_001
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       let strJson1 = getInspectorByKey('PropLink47');
@@ -78,6 +94,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0300
+		 * @tc.name      CombinationState2Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       let strJson2 = getInspectorByKey('ChildLink47');
@@ -89,6 +113,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0400
+		 * @tc.name      CombinationState2Jsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       let strJson3 = getInspectorByKey('PropLink7');
@@ -100,6 +132,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0500
+		 * @tc.name      CombinationState2Jsunit_0500
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       // Get the information of the State component
       let strJson4 = getInspectorByKey('ChildLink7');
@@ -111,6 +151,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0600
+		 * @tc.name      CombinationState2Jsunit_0600
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       // Click and get the value of State component
       console.info('[CombinationState2Jsunit_0600] START');
@@ -128,6 +176,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0700
+		 * @tc.name      CombinationState2Jsunit_0700
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0700', Level.LEVEL0, async (done: Function) => {
       // Click and get the value of State component
       console.info('[CombinationState2Jsunit_0700] START');
@@ -145,6 +201,14 @@ export default function CombinationState2Jsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    CombinationState2Jsunit_0800
+		 * @tc.name      CombinationState2Jsunit_0800
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('CombinationState2Jsunit_0800', Level.LEVEL0, async (done: Function) => {
       // Click and get the value of State component
       console.info('[CombinationState2Jsunit_0800] START');

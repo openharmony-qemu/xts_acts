@@ -62,6 +62,14 @@ export default function ObjectLinkNusJsunit() {
       });
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0100
+		 * @tc.name      ObjectLinkNusJsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0100 START');
@@ -74,6 +82,14 @@ export default function ObjectLinkNusJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0200
+		 * @tc.name      ObjectLinkNusJsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0200 START');
@@ -90,6 +106,14 @@ export default function ObjectLinkNusJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0300
+		 * @tc.name      ObjectLinkNusJsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0300 START');
@@ -102,6 +126,14 @@ export default function ObjectLinkNusJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0400
+		 * @tc.name      ObjectLinkNusJsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0400 START');
@@ -118,6 +150,14 @@ export default function ObjectLinkNusJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0500
+		 * @tc.name      ObjectLinkNusJsunit_0500
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0500 START');
@@ -130,6 +170,14 @@ export default function ObjectLinkNusJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0600
+		 * @tc.name      ObjectLinkNusJsunit_0600
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0600 START');
@@ -146,6 +194,14 @@ export default function ObjectLinkNusJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0700
+		 * @tc.name      ObjectLinkNusJsunit_0700
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0700 START');
@@ -158,6 +214,14 @@ export default function ObjectLinkNusJsunit() {
       done();
     });
 
+		/**
+		 * @tc.number    ObjectLinkNusJsunit_0800
+		 * @tc.name      ObjectLinkNusJsunit_0800
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('ObjectLinkNusJsunit_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0800 START');

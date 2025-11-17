@@ -79,6 +79,18 @@
         {
             "name": "string_0",
             "value": "default"
+        },
+        {
+            "name": "number",
+            "value": "200"
+        },
+        {
+            "name": "color",
+            "value": "#FF008000"
+        },
+        {
+            "name": "number_9",
+            "value": "9"
         }
     ]
 }
