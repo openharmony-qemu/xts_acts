@@ -55,7 +55,15 @@ export default function StorageProp26Jsunit() {
       }
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp26Jsunit_0100
+		 * @tc.name      StorageProp26Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp26Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp26Jsunit_0100] START');
       let driver = await UiDriver.create()
@@ -78,7 +86,15 @@ export default function StorageProp26Jsunit() {
       console.info('[StorageProp26Jsunit_0200] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp26Jsunit_0300
+		 * @tc.name      StorageProp26Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp26Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp26Jsunit_0300] START');
       let driver = await UiDriver.create()

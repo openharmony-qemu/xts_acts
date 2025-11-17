@@ -69,7 +69,15 @@ export default function Storage12Jsunit() {
       console.info('[Storage12Jsunit_0100] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    Storage12Jsunit_0200
+		 * @tc.name      Storage12Jsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('Storage12Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage12Jsunit_0200] START');
       let driver = await UiDriver.create()
@@ -83,7 +91,15 @@ export default function Storage12Jsunit() {
       console.info('[Storage12Jsunit_0200] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    Storage12Jsunit_0300
+		 * @tc.name      Storage12Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('Storage12Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage12Jsunit_0300] START');
       let Storage12ContentJson = getInspectorByKey('Storage12Text1');

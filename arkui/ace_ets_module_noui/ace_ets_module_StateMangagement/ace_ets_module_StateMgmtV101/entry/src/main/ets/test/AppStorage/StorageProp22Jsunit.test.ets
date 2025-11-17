@@ -55,7 +55,15 @@ export default function StorageProp22Jsunit() {
       }
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0100
+		 * @tc.name      StorageProp22Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StorageProp22Jsunit_0100 START');
       let strJson = getInspectorByKey('lse1');
@@ -66,7 +74,15 @@ export default function StorageProp22Jsunit() {
       console.info('[StorageProp22Jsunit_0100] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0200
+		 * @tc.name      StorageProp22Jsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StorageProp22Jsunit_0200 START');
       let strJson = getInspectorByKey('text_sp');
@@ -77,7 +93,15 @@ export default function StorageProp22Jsunit() {
       console.info('[StorageProp22Jsunit_0200] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0300
+		 * @tc.name      StorageProp22Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0300 START');
@@ -89,7 +113,15 @@ export default function StorageProp22Jsunit() {
       console.info('[StorageProp22Jsunit_0300] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0400
+		 * @tc.name      StorageProp22Jsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0400 START');
@@ -101,7 +133,15 @@ export default function StorageProp22Jsunit() {
       console.info('[StorageProp22Jsunit_0400] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0500
+		 * @tc.name      StorageProp22Jsunit_0500
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0500 START');
@@ -124,7 +164,15 @@ export default function StorageProp22Jsunit() {
       console.info('[StorageProp22Jsunit_0500] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0600
+		 * @tc.name      StorageProp22Jsunit_0600
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('StorageProp22Jsunit_0600 START');
       let driver = await UiDriver.create()
@@ -146,7 +194,15 @@ export default function StorageProp22Jsunit() {
       console.info('[StorageProp22Jsunit_0600] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0700
+		 * @tc.name      StorageProp22Jsunit_0700
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0700 START');
@@ -169,7 +225,15 @@ export default function StorageProp22Jsunit() {
       console.info('[StorageProp22Jsunit_0700] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp22Jsunit_0800
+		 * @tc.name      StorageProp22Jsunit_0800
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp22Jsunit_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('StorageProp22Jsunit_0800 START');

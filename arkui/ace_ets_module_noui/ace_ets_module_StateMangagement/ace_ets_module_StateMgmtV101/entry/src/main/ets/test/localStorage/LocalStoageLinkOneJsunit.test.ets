@@ -65,8 +65,15 @@ export default function LocalStoageLinkOneJsunit() {
       }
       done();
     });
-
-
+    
+		/**
+		 * @tc.number    LocalStoageLinkOneJsunit_0100
+		 * @tc.name      LocalStoageLinkOneJsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LocalStoageLinkOneJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoageLinkOneJsunit_0100] START');
@@ -83,8 +90,15 @@ export default function LocalStoageLinkOneJsunit() {
       console.info('[LocalStoageLinkOneJsunit_0100] END');
       done();
     });
-
-
+    
+		/**
+		 * @tc.number    LocalStoageLinkOneJsunit_0200
+		 * @tc.name      LocalStoageLinkOneJsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LocalStoageLinkOneJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoageLinkOneJsunit_0200] START');
@@ -101,8 +115,15 @@ export default function LocalStoageLinkOneJsunit() {
       console.info('[LocalStoageLinkOneJsunit_0200] END');
       done();
     });
-
-
+    
+		/**
+		 * @tc.number    LocalStoageLinkOneJsunit_0300
+		 * @tc.name      LocalStoageLinkOneJsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LocalStoageLinkOneJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoageLinkOneJsunit_0300] START');
@@ -119,8 +140,15 @@ export default function LocalStoageLinkOneJsunit() {
       console.info('[LocalStoageLinkOneJsunit_0300] END');
       done();
     });
-
-
+    
+		/**
+		 * @tc.number    LocalStoageLinkOneJsunit_0400
+		 * @tc.name      LocalStoageLinkOneJsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LocalStoageLinkOneJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStoageLinkOneJsunit_0400] START');
       let strJson1 = getInspectorByKey('text_getValue1');

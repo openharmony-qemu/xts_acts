@@ -55,7 +55,15 @@ export default function LocalStoageLinkTwoJsunit() {
       }
       done();
     });
-
+    
+		/**
+		 * @tc.number    LocalStoageLinkTwoJsunit_0100
+		 * @tc.name      LocalStoageLinkTwoJsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('LocalStoageLinkTwoJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoageLinkTwoJsunit_0100] START');

@@ -17,7 +17,7 @@
     "MainAbility/pages/AppStorage/StorageProp25",
     "MainAbility/pages/AppStorage/StorageProp26",
     "MainAbility/pages/AppStorage/SubAbstractPropertyLink",
-    "MainAbility/pages/Storage/AbstractPropertyRef",
+    "MainAbility/pages/AppStorage/AbstractPropertyRef",
     "MainAbility/pages/AppStorage/appStorageRef",
     "MainAbility/pages/AppStorage/AppStorageReturnValue",
     "MainAbility/pages/persistentStorage/PersistentStoragePersistProp",

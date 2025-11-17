@@ -41,7 +41,7 @@ export default function persistStorageATest() {
       done();
     });
     /**
-     * @tc.number    ListScroll
+     * @tc.number    persistStorageATest_0100
      * @tc.name      persistStorageATest_0100
      * @tc.desc      api
      * @tc.level:    Level 2

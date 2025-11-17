@@ -54,7 +54,15 @@ export default function StorageProp20Jsunit() {
       }
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp20Jsunit_0100
+		 * @tc.name      StorageProp20Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp20Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0100] START');
       let strJson1 = getInspectorByKey('text_state');
@@ -64,7 +72,15 @@ export default function StorageProp20Jsunit() {
       console.info('[StorageProp20Jsunit_0100] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp20Jsunit_0200
+		 * @tc.name      StorageProp20Jsunit_0200
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp20Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0200] START');
       let strJson1 = getInspectorByKey('text_Link');
@@ -74,7 +90,15 @@ export default function StorageProp20Jsunit() {
       console.info('[StorageProp20Jsunit_0200] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp20Jsunit_0300
+		 * @tc.name      StorageProp20Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp20Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0300] START');
       let strJson1 = getInspectorByKey('text_Prop');
@@ -84,7 +108,15 @@ export default function StorageProp20Jsunit() {
       console.info('[StorageProp20Jsunit_0300] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    StorageProp20Jsunit_0400
+		 * @tc.name      StorageProp20Jsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('StorageProp20Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[StorageProp20Jsunit_0400] START');
       let strJson1 = getInspectorByKey('text_Provide');

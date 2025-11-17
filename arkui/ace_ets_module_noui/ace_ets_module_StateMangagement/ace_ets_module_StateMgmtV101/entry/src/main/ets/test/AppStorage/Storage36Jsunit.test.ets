@@ -61,7 +61,15 @@ export default function Storage36Jsunit() {
         url: "MainAbility/pages/index/index"
       });
     });
-
+    
+		/**
+		 * @tc.number    Storage36Jsunit_0300
+		 * @tc.name      Storage36Jsunit_0300
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('Storage36Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Storage36Jsunit_0300 START');
       let driver = await UiDriver.create()
@@ -76,7 +84,15 @@ export default function Storage36Jsunit() {
       console.info('[Storage36Jsunit_0300] END');
       done();
     });
-
+    
+		/**
+		 * @tc.number    Storage36Jsunit_0400
+		 * @tc.name      Storage36Jsunit_0400
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('Storage36Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Storage36Jsunit_0400 START');
       let driver = await UiDriver.create()

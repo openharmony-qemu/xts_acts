@@ -41,7 +41,7 @@ export default function useSharedStorageTest() {
       done();
     });
     /**
-     * @tc.number    useSharedStorage
+     * @tc.number    useSharedStorageTest_0100
      * @tc.name      useSharedStorageTest_0100
      * @tc.desc      api
      * @tc.level:    Level 2

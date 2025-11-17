@@ -56,6 +56,14 @@ export default function Storage11Jsunit() {
     });
 
     //link给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
+    /**
+     * @tc.number    Storage11Jsunit_0100
+     * @tc.name      Storage11Jsunit_0100
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('Storage11Jsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[Storage11Jsunit_0100] START');
@@ -70,7 +78,14 @@ export default function Storage11Jsunit() {
       console.info('[Storage11Jsunit_0100] END');
       done();
     });
-
+    /**
+     * @tc.number    Storage11Jsunit_0200
+     * @tc.name      Storage11Jsunit_0200
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     //link给定的键值key不存在，返回undefined
     it('Storage11Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0200] START');
@@ -85,7 +100,14 @@ export default function Storage11Jsunit() {
       console.info('[Storage11Jsunit_0200] END');
       done();
     });
-
+    /**
+     * @tc.number    Storage11Jsunit_0300
+     * @tc.name      Storage11Jsunit_0300
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     //setAndLink给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     it('Storage11Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0300] START');
@@ -100,7 +122,14 @@ export default function Storage11Jsunit() {
       console.info('[Storage11Jsunit_0300] END');
       done();
     });
-
+    /**
+     * @tc.number    Storage11Jsunit_0400
+     * @tc.name      Storage11Jsunit_0400
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     //setAndLink给定的键值key不存在，初始化新的数据 5
     it('Storage11Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0400] START');
@@ -115,7 +144,14 @@ export default function Storage11Jsunit() {
       console.info('[Storage11Jsunit_0400] END');
       done();
     });
-
+    /**
+     * @tc.number    Storage11Jsunit_0500
+     * @tc.name      Storage11Jsunit_0500
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     //prop给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     it('Storage11Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0500] START');
@@ -130,7 +166,14 @@ export default function Storage11Jsunit() {
       console.info('[Storage11Jsunit_0500] END');
       done();
     });
-
+    /**
+     * @tc.number    Storage11Jsunit_0600
+     * @tc.name      Storage11Jsunit_0600
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     //prop给定的键值key存在，返回undefined
     it('Storage11Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0600] START');
@@ -145,7 +188,14 @@ export default function Storage11Jsunit() {
       console.info('[Storage11Jsunit_0600] END');
       done();
     });
-
+    /**
+     * @tc.number    Storage11Jsunit_0700
+     * @tc.name      Storage11Jsunit_0700
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     it('Storage11Jsunit_0700', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0700] START');
@@ -160,7 +210,14 @@ export default function Storage11Jsunit() {
       console.info('[Storage11Jsunit_0700] END');
       done();
     });
-
+    /**
+     * @tc.number    Storage11Jsunit_0800
+     * @tc.name      Storage11Jsunit_0800
+     * @tc.desc      Frequently updating and modifying the values of parent components
+     * @tc.level     Level 0
+     * @tc.type
+     * @tc.size
+     */
     //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数据 5
     it('Storage11Jsunit_0800', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage11Jsunit_0800] START');
