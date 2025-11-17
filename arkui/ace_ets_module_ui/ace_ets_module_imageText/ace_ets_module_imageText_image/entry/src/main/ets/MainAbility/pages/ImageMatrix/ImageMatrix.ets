@@ -16,14 +16,19 @@ import matrix4 from '@ohos.matrix4';
 
 @Entry
 @Component
-struct Test {
+struct ImageMatrixPage {
   private matrix2 = matrix4.identity()
     .translate({ x: 10, y: 10 })
-    .scale({ x: 5, y: 5})
-    .rotate({ x: 2, y: 0.5, z: 3, centerX: 10, centerY: 10, angle: 30 })
-  @State image: (ResourceStr)[] = [
-    $r('app.media.icon')
-  ]
+    .scale({ x: 5, y: 5 })
+    .rotate({
+      x: 2,
+      y: 0.5,
+      z: 3,
+      centerX: 10,
+      centerY: 10,
+      angle: 30
+    })
+  @State image: (ResourceStr)[] = [$r('app.media.icon')]
   @State imageIndex: number = 0;
 
   build() {

@@ -13,29 +13,29 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { Component, Driver, ON } from '@ohos.UiTest';
 
 export default function ImageSupportSvg2Test() {
   describe('ImageSupportSvg2Test', () => {
     beforeEach(async (done: Function) => {
       await router.pushUrl({
-        url:'MainAbility/pages/ImageSvg/ImageSupportSvg2'
+        url: 'MainAbility/pages/ImageSvg/ImageSupportSvg2'
       })
       done();
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0100
-     * @tc.number   Image_SupportSvg2_Test_0100
-     * @tc.desc     To test the supportSvg2 true
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name ImageSupportSvg2Test0100
+     * @tc.number Image_SupportSvg2_Test_0100
+     * @tc.desc To test the supportSvg2 true
+     * @tc.level: 0
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
      */
     it('ImageSupportSvg2Test0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0100 START');
-      let strJson = getInspectorByKey('image1');
+      let strJson = getInspectorByKey('SupportSvg2_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageSupportSvg2Test0100 component obj supportSvg2 is: ' + obj.$attrs.supportSvg2);
       expect(obj.$attrs.supportSvg2).assertEqual('true');
@@ -43,16 +43,16 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0200
-     * @tc.number   Image_SupportSvg2_Test_0200
-     * @tc.desc     To test the supportSvg2 false
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name ImageSupportSvg2Test0200
+     * @tc.number Image_SupportSvg2_Test_0200
+     * @tc.desc To test the supportSvg2 false
+     * @tc.level: 0
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
      */
     it('ImageSupportSvg2Test0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0200 START');
-      let strJson = getInspectorByKey('image2');
+      let strJson = getInspectorByKey('SupportSvg2_image2');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageSupportSvg2Test0200 component obj supportSvg2 is: ' + obj.$attrs.supportSvg2);
       expect(obj.$attrs.supportSvg2).assertEqual('false');
@@ -60,16 +60,16 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0300
-     * @tc.number   Image_SupportSvg2_Test_0300
-     * @tc.desc     To test the supportSvg2 null
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name ImageSupportSvg2Test0300
+     * @tc.number Image_SupportSvg2_Test_0300
+     * @tc.desc To test the supportSvg2 null
+     * @tc.level: 0
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
      */
     it('ImageSupportSvg2Test0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0300 START');
-      let strJson = getInspectorByKey('image3');
+      let strJson = getInspectorByKey('SupportSvg2_image3');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageSupportSvg2Test0300 component obj supportSvg2 is: ' + obj.$attrs.supportSvg2);
       expect(obj.$attrs.supportSvg2).assertEqual('false');
@@ -77,16 +77,16 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0400
-     * @tc.number   Image_SupportSvg2_Test_0400
-     * @tc.desc     To test the supportSvg2 undefined
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name ImageSupportSvg2Test0400
+     * @tc.number Image_SupportSvg2_Test_0400
+     * @tc.desc To test the supportSvg2 undefined
+     * @tc.level: 0
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
      */
     it('ImageSupportSvg2Test0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0400 START');
-      let strJson = getInspectorByKey('image4');
+      let strJson = getInspectorByKey('SupportSvg2_image4');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageSupportSvg2Test0400 component obj supportSvg2 is: ' + obj.$attrs.supportSvg2);
       expect(obj.$attrs.supportSvg2).assertEqual('false');
@@ -94,16 +94,16 @@ export default function ImageSupportSvg2Test() {
     });
 
     /**
-     * @tc.name     ImageSupportSvg2Test0500
-     * @tc.number   Image_SupportSvg2_Test_0500
-     * @tc.desc     To test the supportSvg2 default
-     * @tc.level:   0
-     * @tc.type:    Function
-     * @tc.size:    MEDIUMTEST
+     * @tc.name ImageSupportSvg2Test0500
+     * @tc.number Image_SupportSvg2_Test_0500
+     * @tc.desc To test the supportSvg2 default
+     * @tc.level: 0
+     * @tc.type: Function
+     * @tc.size: MEDIUMTEST
      */
     it('ImageSupportSvg2Test0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageSupportSvg2Test0500 START');
-      let strJson = getInspectorByKey('image5');
+      let strJson = getInspectorByKey('SupportSvg2_image5');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageSupportSvg2Test0500 component obj supportSvg2 is: ' + obj.$attrs.supportSvg2);
       expect(obj.$attrs.supportSvg2).assertEqual('false');

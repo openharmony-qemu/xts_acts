@@ -13,9 +13,9 @@ class FillColorCategory {
   alt?: string
 
   constructor(image: string,
-    colors: (ResourceColor | ColorContent | null | undefined)[],
-    colorDesc: string[],
-    colorIndex: number, alt?: string) {
+              colors: (ResourceColor | ColorContent | null | undefined)[],
+              colorDesc: string[],
+              colorIndex: number, alt?: string) {
     idIndex += 1
     this.imageKey = 'svgFillColorImageKey' + idIndex
     this.buttonID = 'svgFillColorButton' + idIndex
@@ -58,48 +58,48 @@ struct Child {
 export let allCategories: FillColorCategory[] = [
   new FillColorCategory(
     'app.media.comment_area_like', [
-    Color.Red,
-    Color.Green,
-    ColorContent.ORIGIN,],
+  Color.Red,
+  Color.Green,
+  ColorContent.ORIGIN,],
     ['#FFFF0000', '#FF008000', '#FF000000'],
     0),
   new FillColorCategory('app.media.comment_area_like', [
     0xffffff,
     0xffff0000,
-    ColorContent.ORIGIN],
+  ColorContent.ORIGIN],
     ['#FFFFFFFF', '#FFFF0000', '#FF000000'],
     0),
   new FillColorCategory('app.media.comment_area_like', [
     '#ffffff',
     '#ff000000',
     'rgba(255, 100, 255, 0.5)',
-    ColorContent.ORIGIN,],
+  ColorContent.ORIGIN,],
     ['#FFFFFFFF', '#FF000000', '#80FF64FF', '#FF000000'],
     0),
   new FillColorCategory('app.media.comment_area_like', [
     null,
     undefined,
-    ColorContent.ORIGIN,],
+  ColorContent.ORIGIN,],
     ['#FF000000', '#FF000000', '#FF000000'],
     0),
   new FillColorCategory('app.media.comment_area_like', [
     'xxxx',
-    ColorContent.ORIGIN],
+  ColorContent.ORIGIN],
     ['#FF000000', '#FF000000'],
     0),
   new FillColorCategory('app.media.feOffset_2', [
     0xffffff,
-    ColorContent.ORIGIN,],
+  ColorContent.ORIGIN,],
     ['#FFFFFFFF', '#FF000000'],
     0),
   new FillColorCategory('app.media.linearGradient_2', [
     '#ffffff',
-    ColorContent.ORIGIN,],
+  ColorContent.ORIGIN,],
     ['#FFFFFFFF', '#FF000000'],
     0),
   new FillColorCategory('', [
     '#ffffff',
-    ColorContent.ORIGIN,],
+  ColorContent.ORIGIN,],
     ['#FFFFFFFF', '#FF000000'],
     0, 'app.media.logo'),
 ]

@@ -28,7 +28,15 @@ export default function ImageHDRBrightnessTest() {
       console.info("ImageHDRBrightnessTest after each called");
     });
 
-    it('ImageHDRBrightnessTest_001',Level.LEVEL0, async (done: Function) => {
+    /*
+     * @tc.number    ImageHDRBrightnessTest_001
+     * @tc.name      ImageHDRBrightnessTest_001
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_001', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdr00'));
       await button.click();
@@ -41,7 +49,15 @@ export default function ImageHDRBrightnessTest() {
       done();
     })
 
-    it('ImageHDRBrightnessTest_002',Level.LEVEL0, async (done: Function) => {
+    /*
+     * @tc.number    ImageHDRBrightnessTest_002
+     * @tc.name      ImageHDRBrightnessTest_002
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_002', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdr03'));
       await button.click();
@@ -53,7 +69,16 @@ export default function ImageHDRBrightnessTest() {
       expect(hdr.toFixed(1)).assertEqual('0.3');
       done();
     })
-    it('ImageHDRBrightnessTest_003',Level.LEVEL0, async (done: Function) => {
+
+    /*
+     * @tc.number    ImageHDRBrightnessTest_003
+     * @tc.name      ImageHDRBrightnessTest_003
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_003', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdr08'));
       await button.click();
@@ -65,7 +90,16 @@ export default function ImageHDRBrightnessTest() {
       expect(hdr.toFixed(1)).assertEqual('0.8');
       done()
     })
-    it('ImageHDRBrightnessTest_004',Level.LEVEL0, async (done: Function) => {
+
+    /*
+     * @tc.number    ImageHDRBrightnessTest_004
+     * @tc.name      ImageHDRBrightnessTest_004
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_004', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdr10'));
       await button.click();
@@ -77,7 +111,16 @@ export default function ImageHDRBrightnessTest() {
       expect(hdr.toFixed(1)).assertEqual('1.0');
       done()
     })
-    it('ImageHDRBrightnessTest_005',Level.LEVEL0, async (done: Function) => {
+
+    /*
+     * @tc.number    ImageHDRBrightnessTest_005
+     * @tc.name      ImageHDRBrightnessTest_005
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_005', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdr_1'));
       await button.click();
@@ -89,7 +132,16 @@ export default function ImageHDRBrightnessTest() {
       expect(hdr.toFixed(1)).assertEqual('1.0');
       done()
     })
-    it('ImageHDRBrightnessTest_006',Level.LEVEL0, async (done: Function) => {
+
+    /*
+     * @tc.number    ImageHDRBrightnessTest_006
+     * @tc.name      ImageHDRBrightnessTest_006
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_006', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdr20'));
       await button.click();
@@ -101,7 +153,16 @@ export default function ImageHDRBrightnessTest() {
       expect(hdr.toFixed(1)).assertEqual('1.0');
       done()
     })
-    it('ImageHDRBrightnessTest_007',Level.LEVEL0, async (done: Function) => {
+
+    /*
+     * @tc.number    ImageHDRBrightnessTest_007
+     * @tc.name      ImageHDRBrightnessTest_007
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_007', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdr20'));
       await button.click();
@@ -113,7 +174,16 @@ export default function ImageHDRBrightnessTest() {
       expect(hdr.toFixed(1)).assertEqual('1.0');
       done()
     })
-    it('ImageHDRBrightnessTest_008',Level.LEVEL0, async (done: Function) => {
+
+    /*
+     * @tc.number    ImageHDRBrightnessTest_008
+     * @tc.name      ImageHDRBrightnessTest_008
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_008', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdrNull'));
       await button.click();
@@ -125,7 +195,16 @@ export default function ImageHDRBrightnessTest() {
       expect(hdr.toFixed(1)).assertEqual('1.0');
       done()
     })
-    it('ImageHDRBrightnessTest_009',Level.LEVEL0, async (done: Function) => {
+
+    /*
+     * @tc.number    ImageHDRBrightnessTest_009
+     * @tc.name      ImageHDRBrightnessTest_009
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_009', Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('hdrUndefined'));
       await button.click();
@@ -138,7 +217,15 @@ export default function ImageHDRBrightnessTest() {
       done()
     })
 
-    it('ImageHDRBrightnessTest_010',Level.LEVEL0, async (done: Function) => {
+    /*
+     * @tc.number    ImageHDRBrightnessTest_010
+     * @tc.name      ImageHDRBrightnessTest_010
+     * @tc.desc      test the ImageHDRBrightness
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageHDRBrightnessTest_010', Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('noHdrBrightnessImageKey');
       let obj: ESObject = JSON.parse(strJson);
       let hdr: number = obj.$attrs.hdrBrightness

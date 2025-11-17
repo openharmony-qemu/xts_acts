@@ -41,6 +41,12 @@ import ImageContentEmptyTest from './ImageContentTest/ImageContentEmpty.test';
 import ImageContentTransitionEffectTest from './ImageContentTransitionEffectTest/ImageContentTransitionEffect.test';
 import ImageOnErrorTest from './ImageErrorTest/ImageOnError.test';
 import ImageOnErrorCodeTest from './ImageErrorTest/ImageOnErrorCode.test';
+import ImageSvgTest from './ImageSvgTest/ImageSvg.test';
+import ImageSvgFillColorTest from './ImageSvgFillColorTest/ImageSvgFillColor.test';
+import ImageOrientationTest from './ImageOrientationTest/ImageOrientation.test';
+import ImageMatrixTest from './ImageMatrix/ImageMatrix.test';
+import ImageHdrBrightnessTest from './ImageHdrBrightnessTest/ImageHdrBrightness.test';
+import ImageLoaderTest from './ImageLoaderTest/ImageLoader.test';
 
 export default function testsuite() {
   APIClipMaskShapeTest();
@@ -72,4 +78,10 @@ export default function testsuite() {
   ImageContentTransitionEffectTest();
   ImageOnErrorTest();
   ImageOnErrorCodeTest();
+  ImageSvgTest();
+  ImageSvgFillColorTest();
+  ImageOrientationTest();
+  ImageMatrixTest();
+  ImageHdrBrightnessTest();
+  ImageLoaderTest();
 }

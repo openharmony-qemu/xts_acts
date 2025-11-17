@@ -42,10 +42,10 @@ export default function ImageSvgFillColorTest() {
       done();
     })
     /**
-     * @tc.number    ImageSVGFillColorTest_001
-     * @tc.name      ImageSVGFillColorTest_001
-     * @tc.desc      set Image FillColor: #FFFF0000 #FF008000 #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_001
+     * @tc.name ImageSVGFillColorTest_001
+     * @tc.desc set Image FillColor: #FFFF0000 #FF008000 #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -81,10 +81,10 @@ export default function ImageSvgFillColorTest() {
     });
 
     /**
-     * @tc.number    ImageSVGFillColorTest_002
-     * @tc.name      ImageSVGFillColorTest_002
-     * @tc.desc      set Image FillColor: #FFFFFFFF #FFFF0000 #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_002
+     * @tc.name ImageSVGFillColorTest_002
+     * @tc.desc set Image FillColor: #FFFFFFFF #FFFF0000 #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -119,10 +119,10 @@ export default function ImageSvgFillColorTest() {
       done();
     });
     /**
-     * @tc.number    ImageSVGFillColorTest_003
-     * @tc.name      ImageSVGFillColorTest_003
-     * @tc.desc      set Image FillColor: #FFFFFFFF #FF000000 #80FF64FF #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_003
+     * @tc.name ImageSVGFillColorTest_003
+     * @tc.desc set Image FillColor: #FFFFFFFF #FF000000 #80FF64FF #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -166,10 +166,10 @@ export default function ImageSvgFillColorTest() {
     });
 
     /**
-     * @tc.number    ImageSVGFillColorTest_004
-     * @tc.name      ImageSVGFillColorTest_004
-     * @tc.desc      set Image FillColor: #FFFFFFFF #FF000000 #80FF64FF #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_004
+     * @tc.name ImageSVGFillColorTest_004
+     * @tc.desc set Image FillColor: #FFFFFFFF #FF000000 #80FF64FF #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -203,10 +203,10 @@ export default function ImageSvgFillColorTest() {
     });
 
     /**
-     * @tc.number    ImageSVGFillColorTest_005
-     * @tc.name      ImageSVGFillColorTest_005
-     * @tc.desc      set Image FillColor: #FFFFFFFF #FF000000 #80FF64FF #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_005
+     * @tc.name ImageSVGFillColorTest_005
+     * @tc.desc set Image FillColor: #FFFFFFFF #FF000000 #80FF64FF #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -233,10 +233,10 @@ export default function ImageSvgFillColorTest() {
     });
 
     /**
-     * @tc.number    ImageSVGFillColorTest_006
-     * @tc.name      ImageSVGFillColorTest_006
-     * @tc.desc      set Image FillColor: #FFFFFFFF #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_006
+     * @tc.name ImageSVGFillColorTest_006
+     * @tc.desc set Image FillColor: #FFFFFFFF #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -264,10 +264,10 @@ export default function ImageSvgFillColorTest() {
     });
 
     /**
-     * @tc.number    ImageSVGFillColorTest_007
-     * @tc.name      ImageSVGFillColorTest_007
-     * @tc.desc      set Image FillColor: #FFFFFFFF #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_007
+     * @tc.name ImageSVGFillColorTest_007
+     * @tc.desc set Image FillColor: #FFFFFFFF #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -295,10 +295,10 @@ export default function ImageSvgFillColorTest() {
     });
 
     /**
-     * @tc.number    ImageSVGFillColorTest_008
-     * @tc.name      ImageSVGFillColorTest_008
-     * @tc.desc      set Image FillColor: #FFFFFFFF #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTest_008
+     * @tc.name ImageSVGFillColorTest_008
+     * @tc.desc set Image FillColor: #FFFFFFFF #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -326,10 +326,10 @@ export default function ImageSvgFillColorTest() {
     });
 
     /**
-     * @tc.number    ImageSVGFillColorTestModifier_001
-     * @tc.name      ImageSVGFillColorTestModifier_001
-     * @tc.desc      set Image FillColor: #FFFF0000 #FF000000
-     * @tc.level:    Level 1
+     * @tc.number ImageSVGFillColorTestModifier_001
+     * @tc.name ImageSVGFillColorTestModifier_001
+     * @tc.desc set Image FillColor: #FFFF0000 #FF000000
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */

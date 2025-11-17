@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium'
-import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium'
+import { UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
@@ -34,7 +34,7 @@ export default function ImageLoaderTest() {
           const result = await router.replaceUrl(options);
           console.info('push ImageLoaderTest page success ' + JSON.stringify(result));
         }
-        await CommonFunc.sleep(2000); 
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error('push ImageLoaderTest page error:' + err);
       }
@@ -48,10 +48,10 @@ export default function ImageLoaderTest() {
     });
 
     /**
-     * @tc.number    ImageLoaderTest001
-     * @tc.name      ImageLoaderTest001
-     * @tc.desc      test the loadSync
-     * @tc.level:    Level 1
+     * @tc.number ImageLoaderTest001
+     * @tc.name ImageLoaderTest001
+     * @tc.desc test the loadSync
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -79,10 +79,10 @@ export default function ImageLoaderTest() {
     });
 
     /**
-     * @tc.number    ImageLoaderTest002
-     * @tc.name      ImageLoaderTest002
-     * @tc.desc      test the load
-     * @tc.level:    Level 1
+     * @tc.number ImageLoaderTest002
+     * @tc.name ImageLoaderTest002
+     * @tc.desc test the load
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -110,10 +110,10 @@ export default function ImageLoaderTest() {
     });
 
     /**
-     * @tc.number    ImageLoaderTest003
-     * @tc.name      ImageLoaderTest003
-     * @tc.desc      test the loadSync errorCode 111001
-     * @tc.level:    Level 1
+     * @tc.number ImageLoaderTest003
+     * @tc.name ImageLoaderTest003
+     * @tc.desc test the loadSync errorCode 111001
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */
@@ -136,10 +136,10 @@ export default function ImageLoaderTest() {
     });
 
     /**
-     * @tc.number    ImageLoaderTest004
-     * @tc.name      ImageLoaderTest004
-     * @tc.desc      test the load errorCode 111001
-     * @tc.level:    Level 1
+     * @tc.number ImageLoaderTest004
+     * @tc.name ImageLoaderTest004
+     * @tc.desc test the load errorCode 111001
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */

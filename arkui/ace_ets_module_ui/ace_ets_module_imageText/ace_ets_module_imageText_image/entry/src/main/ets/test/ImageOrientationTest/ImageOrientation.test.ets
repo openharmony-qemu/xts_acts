@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
@@ -48,7 +48,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation AUTO 0
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0100 START');
@@ -73,7 +73,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation UP 1
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0200 START');
@@ -98,7 +98,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation DOWN 3
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0300 START');
@@ -123,7 +123,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation RIGHT 2
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0400 START');
@@ -148,7 +148,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation LEFT 4
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0500 START');
@@ -173,7 +173,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation NULL 0
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0600 START');
@@ -198,7 +198,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation UNDEFINED 0
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0700 START');
@@ -223,7 +223,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation LEFT_MIRRORED 8
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0800 START');
@@ -248,7 +248,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation RIGHT_MIRRORED 6
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_0900 START');
@@ -273,7 +273,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation UP_MIRRORED 5
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_1000 START');
@@ -298,7 +298,7 @@ export default function ImageOrientationTest() {
      * @tc.desc  : To test the orientation DOWN_MIRRORED 7
      * @tc.level : Level 0
      * @tc.type
-     * @tc.size
+    * @tc.size
      */
     it('ImageOrientationTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('ImageOrientationTest_1100 START');

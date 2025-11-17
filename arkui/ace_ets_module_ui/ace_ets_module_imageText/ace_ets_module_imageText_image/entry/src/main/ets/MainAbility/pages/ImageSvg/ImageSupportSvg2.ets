@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct SvgPage {
+struct ImageSupportSvg2Page {
   build() {
     Column() {
       Flex({ wrap: FlexWrap.Wrap }) {
@@ -23,28 +23,28 @@ struct SvgPage {
           .width('30%')
           .margin(5)
           .supportSvg2(true)
-          .key('image1')
+          .key('SupportSvg2_image1')
 
         Image($r('app.media.svg1'))
           .width('30%')
           .margin(5)
-          .key('image2')
+          .key('SupportSvg2_image2')
           .supportSvg2(false)
 
         Image($r('app.media.svg1'))
           .width('30%')
           .margin(5)
-          .key('image3')
+          .key('SupportSvg2_image3')
           .supportSvg2(null)
         Image($r('app.media.svg1'))
           .width('30%')
           .margin(5)
-          .key('image4')
+          .key('SupportSvg2_image4')
           .supportSvg2(undefined)
         Image($r('app.media.svg1'))
           .width('30%')
           .margin(5)
-          .key('image5')
+          .key('SupportSvg2_image5')
       }.width('95%')
     }.width('100%').margin({ top: 30 })
   }

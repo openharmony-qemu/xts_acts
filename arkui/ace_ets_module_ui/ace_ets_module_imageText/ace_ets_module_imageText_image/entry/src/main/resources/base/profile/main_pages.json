@@ -54,6 +54,12 @@
         "MainAbility/pages/ImageContent/ImageContentEmpty",
         "MainAbility/pages/ImageContentTransitionEffect/ImageContentTransitionEffect",
         "MainAbility/pages/ImageError/ImageErrorCode",
-        "MainAbility/pages/ImageError/ImageOnError"
+        "MainAbility/pages/ImageError/ImageOnError",
+        "MainAbility/pages/ImageSvg/ImageSupportSvg2",
+        "MainAbility/pages/ImageSvgFillColor/ImageSvgFillColor",
+        "MainAbility/pages/ImageOrientation/ImageOrientation",
+        "MainAbility/pages/ImageMatrix/ImageMatrix",
+        "MainAbility/pages/ImageHdrBrightness/ImageHdrBrightness",
+        "MainAbility/pages/ImageLoader/ImageLoader"
     ]
 }
