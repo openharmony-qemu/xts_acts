@@ -14,40 +14,27 @@
  */
 import {
   Entry,
-  Component,
-  SwiperContentWillScrollResult,
+  Component,SwiperContentWillScrollResult,
   $r,
   Column,
-  ColumnOptions,
-  TextAlign,
-  Text,
-  TabsController,
-  Margin,
-  ClickEvent,
-  SwiperController,
-  Swiper,
-  ForEach,
-  Color,
-  Button,
-  Tabs,
-  TabContent,
-  SubTabBarStyle,
-  BarMode,
-  Alignment,
-  BarPosition,
+  ColumnOptions,TextAlign,
+  Text,TabsController,Margin,ClickEvent,SwiperController,Swiper,ForEach,
+  Color,Button,Tabs,TabContent,SubTabBarStyle,BarMode,Alignment,BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct interceptSwiperExample {
   private swiperController: SwiperController = new SwiperController()
   @State data: number[] = [0, 1, 2, 3, 4] as number[]
-  private currentIndex: Int = 2
-
+  private currentIndex: int = 2
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
@@ -67,7 +54,7 @@ struct interceptSwiperExample {
       .index(this.currentIndex)
       .loop(false)
       .height('60%')
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.currentIndex = index
       })
       .onContentWillScroll((result: SwiperContentWillScrollResult): boolean => {

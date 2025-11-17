@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.arkui.ace.scroll.static",
+    "bundleName": "com.arkui.ace.scroll16.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

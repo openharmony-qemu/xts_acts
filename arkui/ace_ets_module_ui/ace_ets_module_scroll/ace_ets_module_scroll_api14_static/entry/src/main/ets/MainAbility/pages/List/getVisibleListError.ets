@@ -13,27 +13,27 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  BarState,
+  Button,
+  ClickEvent,
+  Column,
+  ColumnOptions,
   Component,
+  EdgeEffect,
+  Entry,
   Flex,
   FlexDirection,
+  ForEach,
   ItemAlign,
-  Column,
+  List,
+  ListItem,
+  ListItemAlign,
+  ListScroller,
+  Margin,
+  NodeContainer,
+  Padding,
   Row,
   Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
-  ListItem,
-  ListScroller,
-  ColumnOptions,
-  Margin,
-  Padding,
-  List,
-  ForEach,
-  ListItemAlign,
-  EdgeEffect,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -55,24 +55,24 @@ struct getVisibleListError {
         .id('getVisibleList_err_text')
         .margin({ top: 5 } as Margin)
       Row() {
-        Button('error: 401')
+        Button('error: 401')//401
           .id('getVisibleList_401')
           .height('5%')
           .onClick((event: ClickEvent) => {
             try {
-              
-            } catch (error) {
+              // this.listScroller.getVisibleListContentInfo(undefined, 10)
+            } catch (error: Error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
           })
-        Button('error: 100004')
+        Button('error: 100004') //100004
           .id('getVisibleList_100004')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
               this.listScroller2.getVisibleListContentInfo(10, 10)
-            } catch (error) {
+            } catch (error: Error) {
               this.textResult = error.code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -83,18 +83,18 @@ struct getVisibleListError {
         .id('closeAllSwipe_err_text')
         .margin({ top: 5 } as Margin)
       Row() {
-        Button('error: 401')
+        Button('error: 401')//401
           .id('closeAllSwipe_401')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
               this.listScroller.closeAllSwipeActions(undefined);
-            } catch (error) {
+            } catch (error: Error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
           })
-        Button('error: 100004')
+        Button('error: 100004') //100004
           .id('closeAllSwipe_100004')
           .height('5%')
           .onClick((e: ClickEvent) => {
@@ -104,7 +104,7 @@ struct getVisibleListError {
                   this.closeButtonContent = 'onFinish'
                 }
               });
-            } catch (error) {
+            } catch (error: Error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -131,11 +131,11 @@ struct getVisibleListError {
       .scrollBar(BarState.On)
       .width('90%')
       .height('60%')
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor('0xFAEEE0')
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .padding({ top: 5 } as Padding)
   }
 }

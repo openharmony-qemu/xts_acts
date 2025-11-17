@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -46,9 +46,8 @@ export default function TabBarComponentContent() {
   describe('TabBarComponentContent', () => {
     beforeAll(() => {
       console.info("TabBarComponentContent beforeEach start");
-
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
@@ -59,7 +58,6 @@ export default function TabBarComponentContent() {
         url: 'MainAbility/pages/Tabs/TabBarComponentContent',
       }
       try {
-        tabBarComponentContent.clear();
         let pages = tabBarComponentContent.getState();
         console.info('get TabBarComponentContent state pages: ' + JSON.stringify(pages));
         if (!('TabBarComponentContent' == pages.name)) {
@@ -75,11 +73,11 @@ export default function TabBarComponentContent() {
 
 
     /*
-     * @tc.number    TabBarComponentContent_static_0100
-     * @tc.name      TabBarComponentContent_static_0100
-     * @tc.desc      TabBarComponentContent_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   TabBarComponentContent_static_0100
+       * @tc.name     TabBarComponentContent_static_0100
+       * @tc.desc     TabBarComponentContent_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('TabBarComponentContent_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       let button1 = await driver.findComponent(ON.id('button1'));
@@ -88,7 +86,7 @@ export default function TabBarComponentContent() {
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('TabContent1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[TabBarComponentContent_static_0100] component obj is: ' + JSON.stringify(obj));
+      console.info('[TabBarComponentContent_static_0100] component obj is: ' + strJson);
       let text = await driver.findComponent(ON.id('TabContent1'));
       let textContent = await (text?.getText() as Promise<String>);
       expect(textContent).assertEqual('tabBar1');
@@ -98,11 +96,11 @@ export default function TabBarComponentContent() {
 
 
     /*
-     * @tc.number    TabBarComponentContent_static_0200
-     * @tc.name      TabBarComponentContent_static_0200
-     * @tc.desc      TabBarComponentContent_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   TabBarComponentContent_static_0200
+       * @tc.name     TabBarComponentContent_static_0200
+       * @tc.desc     TabBarComponentContent_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('TabBarComponentContent_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       let button2 = await driver.findComponent(ON.id('button2'));
@@ -117,11 +115,11 @@ export default function TabBarComponentContent() {
 
 
     /*
-     * @tc.number    TabBarComponentContent_static_0300
-     * @tc.name      TabBarComponentContent_static_0300
-     * @tc.desc      TabBarComponentContent_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   TabBarComponentContent_static_0300
+       * @tc.name     TabBarComponentContent_static_0300
+       * @tc.desc     TabBarComponentContent_static_0300
+       * @tc.level    Level.LEVEL1
+       */
     it('TabBarComponentContent_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       let button3 = await driver.findComponent(ON.id('button3'));

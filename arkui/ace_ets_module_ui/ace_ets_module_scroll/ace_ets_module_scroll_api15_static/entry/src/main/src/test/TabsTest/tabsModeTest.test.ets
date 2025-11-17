@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -45,7 +45,6 @@ export default function tabsModeTest() {
   describe('tabsModeTest', () => {
     beforeAll(() => {
       console.info("tabsModeTest beforeEach start");
-
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -54,18 +53,16 @@ export default function tabsModeTest() {
     beforeEach(async () => {
       console.info("tabsModeTest beforeEach start");
       const tabsMode = AppStorage.get<Router>("router") as Router
+      tabsMode.clear();
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Tabs/tabsMode",
       }
       try {
-        tabsMode.clear();
         let pages = tabsMode.getState();
         console.info("get tabsModeTest state pages:" + JSON.stringify(pages));
         if (!("tabsMode" == pages.name)) {
           console.info("get tabsModeTest pages.name:" + JSON.stringify(pages.name));
           tabsMode.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push tabsModeTest page error:" + err);
@@ -79,17 +76,17 @@ export default function tabsModeTest() {
 
 
     /*
-     * @tc.number    tabsModeTest_0100
-     * @tc.name      tabsModeTest_0100
-     * @tc.desc      tabsModeTest_0100
-     * @tc.level     2
-     */
+       * @tc.number   tabsModeTest_0100
+       * @tc.name     tabsModeTest_0100
+       * @tc.desc     tabsModeTest_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('tabsModeTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[tabsModeTest_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('tabs_animode_content')) as Component;
-      await (btn?.click() as Promise<void>);
+      await btn.click();
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabs_aniMode');
       console.info("[tabsModeTest_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -103,18 +100,18 @@ export default function tabsModeTest() {
 
 
     /*
-     * @tc.number    tabsModeTest_0200
-     * @tc.name      tabsModeTest_0200
-     * @tc.desc      tabsModeTest_0200
-     * @tc.level     2
-     */
+       * @tc.number   tabsModeTest_0200
+       * @tc.name     tabsModeTest_0200
+       * @tc.desc     tabsModeTest_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('tabsModeTest_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[tabsModeTest_0200] START');
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('tabs_animode_first')) as Component;
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(8000);
       let strJson = inspector.getInspectorByKey('tabs_aniMode');
       console.info("[tabsModeTest_0200] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[tabsModeTest_0200] tabsMode1: " +

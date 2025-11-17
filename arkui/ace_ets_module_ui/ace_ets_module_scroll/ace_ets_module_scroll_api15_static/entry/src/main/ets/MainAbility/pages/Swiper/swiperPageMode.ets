@@ -16,50 +16,27 @@ import { MyDataSource } from '../../../MainAbility/pages/data/BasicDataSource'
 import {
   Entry,
   Component,
-  $r,
-  ArrowStyle,
-  Column,
-  TextAlign,
-  SwiperAnimationEvent,
-  PageFlipMode,
-  Curve,
-  LazyForEach,
-  DotIndicator,
-  ColumnOptions,
-  Scroller,
-  SwiperAnimationMode,
-  Row,
-  RowOptions,
-  Repeat,
-  RepeatItem,
-  Text,
-  TabsController,
-  Margin,
-  ClickEvent,
-  SwiperController,
-  Swiper,
-  ForEach,
-  Color,
-  Button,
-  Tabs,
-  TabContent,
-  SubTabBarStyle,
-  BarMode,
-  Alignment,
-  BarPosition,
+  $r,ArrowStyle,
+  Column,TextAlign,SwiperAnimationEvent,PageFlipMode,Curve,LazyForEach,DotIndicator,
+  ColumnOptions,Scroller,SwiperAnimationMode,Row,RowOptions,Repeat,RepeatItem,
+  Text,TabsController,Margin,ClickEvent,SwiperController,Swiper,ForEach,
+  Color,Button,Tabs,TabContent,SubTabBarStyle,BarMode,Alignment,BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct SwiperDemo1 {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource = new MyDataSource();
   @State onChange: number = 0;
-  private currentIndex: Int = 0
+  private currentIndex: int = 0
   @State text1: string = '连续'
   @State PageFlipMode1: PageFlipMode = PageFlipMode.CONTINUOUS
 
@@ -74,20 +51,20 @@ struct SwiperDemo1 {
       Text('PageFlipMode: ' + this.text1)
       Button('单次翻页')
         .id('swiper_PageMode_single')
-        .onClick((e: ClickEvent) => {
+        .onClick((e: ClickEvent)=>{
           this.text1 = 'SINGLE'
           this.PageFlipMode1 == PageFlipMode.SINGLE
         })
       Button('连续翻页')
         .id('swiper_PageMode_continuous')
-        .onClick((e: ClickEvent) => {
+        .onClick((e: ClickEvent)=>{
           this.text1 = 'CONTINUOUS'
           this.PageFlipMode1 == PageFlipMode.CONTINUOUS
         })
 
-      Text('' + this.onChange)
+      Text(this.onChange.toString())
         .id('swiper_PageMode_onChange')
-        .onClick((e: ClickEvent) => {
+        .onClick((e: ClickEvent)=>{
           this.currentIndex = 0
         })
 
@@ -96,7 +73,7 @@ struct SwiperDemo1 {
           Text(item.toString())
             .width('90%')
             .height(160)
-            .backgroundColor(0xAFEEEE)
+            .backgroundColor('0xAFEEEE')
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }, (item: string) => item)
@@ -106,11 +83,11 @@ struct SwiperDemo1 {
       .index(this.currentIndex)
       .pageFlipMode(this.PageFlipMode1)
       .cachedCount(2)
-      
+      .autoPlay(false, undefined)
       .loop(false)
       .indicatorInteractive(true)
       .itemSpace(0)
-      .indicator( 
+      .indicator( // 设置圆点导航点样式
         new DotIndicator()
           .itemWidth(15)
           .itemHeight(15)
@@ -119,7 +96,7 @@ struct SwiperDemo1 {
           .color(Color.Gray)
           .selectedColor(Color.Blue))
       .displayArrow({
-        
+        // 设置导航点箭头样式
         showBackground: true,
         isSidebarMiddle: true,
         backgroundSize: 24,
@@ -128,17 +105,18 @@ struct SwiperDemo1 {
         arrowColor: Color.Blue
       } as ArrowStyle, false)
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
+        console.info('index: ' + index)
         this.onChange = index
       })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         console.info('index: ' + index)
         console.info('targetIndex: ' + targetIndex)
         console.info('current offset: ' + extraInfo.currentOffset)
         console.info('target offset: ' + extraInfo.targetOffset)
         console.info('velocity: ' + extraInfo.velocity)
       })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info('index: ' + index)
         console.info('current offset: ' + extraInfo.currentOffset)
       })

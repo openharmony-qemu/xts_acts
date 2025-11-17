@@ -13,21 +13,25 @@
  * limitations under the License.
  */
 import interceptSwiperTest from './SwiperTest/interceptSwiperTest.test';
-import SwiperChangeIndexTest from './SwiperTest/SwiperChangeIndex.test';
-import swiperModeTest from './SwiperTest/swiperModeTest.test';
-import swiperPageMode from './SwiperTest/swiperPageMode.test';
 import tabBarModifier from './TabsTest/tabBarModifier.test';
-import tabsModeTest from './TabsTest/tabsModeTest.test';
+import getIndicator from './IndicatorComponent/getIndicator.test';
+import swiperModeTest from './SwiperTest/swiperModeTest.test'
+import tabsModeTest from './TabsTest/tabsModeTest.test'
+import swiperPageMode from './SwiperTest/swiperPageMode.test';
 import tabsPageMode from './TabsTest/tabsPageMode.test';
 import getAttributeScroll from './ScrollTest/getAttributeScroll.test';
+import showDotIndicator from './IndicatorComponent/showDotIndicator.test';
+import SwiperChangeIndexTest from './SwiperTest/SwiperChangeIndex.test';
 
 export default function testsuite() {
-  interceptSwiperTest();
-  SwiperChangeIndexTest();
+  interceptSwiperTest()
+  tabBarModifier()
+  getIndicator()
   swiperModeTest();
-  swiperPageMode();
-  tabBarModifier();
   tabsModeTest();
-  tabsPageMode();
-  getAttributeScroll();
+  swiperPageMode()
+  tabsPageMode()
+  getAttributeScroll()  // typeNode没有getAttribute和bindController方法， 开发回复不支持，非问题 2
+  showDotIndicator()
+  SwiperChangeIndexTest();
 }

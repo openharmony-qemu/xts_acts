@@ -16,7 +16,7 @@ export type Callback = (message: ESObject) => void
 
 export class MessageManager {
   callback?: Callback = undefined
-  callbacks: Map<string, Callback> = new Map<string, Callback>()
+  callbacks: Map<string, Callback> =  new Map<string, Callback>()
 
   constructor() {
 

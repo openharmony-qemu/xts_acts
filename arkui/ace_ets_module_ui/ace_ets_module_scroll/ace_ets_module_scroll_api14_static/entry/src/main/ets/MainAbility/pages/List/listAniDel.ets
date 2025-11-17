@@ -13,25 +13,25 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  BarState,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
   Component,
+  Entry,
   Flex,
   FlexDirection,
+  ForEach,
   ItemAlign,
-  Column,
-  Row,
-  Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
+  List,
   ListItem,
   ListScroller,
-  Scroller,
-  List,
+  NodeContainer,
   Padding,
-  Color,
-  ForEach,
+  Row,
+  Scroller,
+  Text,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -83,7 +83,7 @@ struct animationListDelExample {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor(Color.Red)
           }
         }, (item: number) => item.toString())
       }
@@ -115,7 +115,7 @@ struct animationListDelExample {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor(Color.Gray)
     .padding({ top: 5 } as Padding)
   }
 }

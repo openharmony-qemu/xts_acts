@@ -13,29 +13,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Color,
-  Text,
-  LoadingProgress,
-  Scroller,
-  EdgeEffect,
-  Grid,
-  List,
-  Row,
-  Scroll,
-  EffectEdge,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  Button,
-  ButtonType,
-  ClickEvent
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Color, Text,LoadingProgress,Scroller,EdgeEffect,Grid,List,Row,Scroll,EffectEdge,
+  Flex,FlexDirection,ItemAlign,FlexAlign,FontWeight,Button,ButtonType,ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -48,32 +27,32 @@ struct ScrollEffectEdge {
   build() {
     Row() {
       Column() {
-        Scroll(this.listScroller) {
+        Scroll(this.listScroller){
 
         }.edgeEffect(EdgeEffect.Spring, {
           alwaysEnabled: true,
           effectEdge: EffectEdge.START
         }).id('scroll1')
 
-        Scroll(this.listScroller) {
+        Scroll(this.listScroller){
 
         }.edgeEffect(EdgeEffect.Spring, {
           alwaysEnabled: true,
           effectEdge: undefined
         }).id('scroll2')
 
-        List() {
+        List(){
 
         }.edgeEffect(EdgeEffect.Spring, {
           alwaysEnabled: true,
           effectEdge: EffectEdge.END
         }).id('list2')
 
-        Grid() {
+        Grid(){
 
         }.edgeEffect(EdgeEffect.Spring, {
           alwaysEnabled: true,
-          effectEdge: EffectEdge.END | EffectEdge.START
+          effectEdge: EffectEdge.END|EffectEdge.START
         }).id('grid3')
       }
       .width('100%')

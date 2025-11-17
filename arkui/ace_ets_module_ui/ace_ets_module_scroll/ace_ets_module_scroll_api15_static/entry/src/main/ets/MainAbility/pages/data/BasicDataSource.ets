@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { IDataSource, DataChangeListener, DataOperation } from '@ohos.arkui.component';
+// BasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
+import {IDataSource, DataChangeListener, DataOperation} from '@ohos.arkui.component';
 
 abstract class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
@@ -24,10 +24,10 @@ abstract class BasicDataSource implements IDataSource<string> {
   }
 
   public getData(index: int): string {
-    return this.originDataArray[index.toInt()];
+    return this.originDataArray [index.toInt()];
   }
 
-  
+  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       console.info('add listener');
@@ -35,52 +35,52 @@ abstract class BasicDataSource implements IDataSource<string> {
     }
   }
 
-  
+  // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt();
+    const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       console.info('remove listener');
       this.listeners.splice(pos, 1);
     }
   }
 
-  
+  // 通知LazyForEach组件需要重载所有子组件
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     })
   }
 
-  
+  // 通知LazyForEach组件需要在index对应索引处添加子组件
   notifyDataAdd(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
-      
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.ADD, index: index}]);
     })
   }
 
-  
+  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
   notifyDataChange(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
-      
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.CHANGE, index: index}]);
     })
   }
 
-  
+  // 通知LazyForEach组件需要在index对应索引处删除该子组件
   notifyDataDelete(index: int): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
-      
+      // 写法2：listener.onDatasetChange([{type: DataOperationType.DELETE, index: index}]);
     })
   }
 
-  
+  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
   notifyDataMove(from: int, to: int): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
-      
-      
+      // 写法2：listener.onDatasetChange(
+      //         [{type: DataOperationType.EXCHANGE, index: {start: from, end: to}}]);
     })
   }
 
@@ -104,7 +104,7 @@ export class MyDataSource extends BasicDataSource {
   }
 
   public addData(index: int, data: string): void {
-    this.dataArray.splice(index, 0, data);
+    this.dataArray.splice(index.toInt(), 0, data);
     this.notifyDataAdd(index);
   }
 

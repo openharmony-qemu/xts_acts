@@ -12,7 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  Level,
+  afterAll
+} from "../../../../hypium/index";
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -30,8 +40,6 @@ import { UtilsTest, startAbility } from '../Util.test'
 export default function showDotIndicator() {
   describe('showDotIndicator', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -43,14 +51,12 @@ export default function showDotIndicator() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get showDotIndicator state pages:" + JSON.stringify(pages));
-        if (!("showDotIndicator" == pages.name)) {
+        if (!("MainAbility/pages/IndicatorComponent/showDotIndicator" == pages.name)) {
           console.info("get showDotIndicator pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push showDotIndicator page error:" + err);
@@ -58,37 +64,42 @@ export default function showDotIndicator() {
       console.info("showDotIndicator beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    showDotIndicator_static_0100
-     * @tc.name      showDotIndicator_static_0100
-     * @tc.desc      showDotIndicator_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   showDotIndicator_static_0100
+       * @tc.name     showDotIndicator_static_0100
+       * @tc.desc     showDotIndicator_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('showDotIndicator_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[showDotIndicator_static_0100] START');
-        await CommonFunc.sleep(1000);
-        let driver = Driver.create()
-        await driver.assertComponentExist(ON.text('2'));
-        let btn1: Component = await driver.findComponent(ON.id('indicator_showNext')) as Component;
-        await btn1.click();
-        await CommonFunc.sleep(1500);
-        await driver.assertComponentExist(ON.text('3'));
+          await CommonFunc.sleep(1000);
+          let driver = Driver.create()
+          await driver.assertComponentExist(ON.text('2'));
+          let btn1: Component = await driver.findComponent(ON.id('indicator_showNext')) as Component;
+          await btn1.click();
+          await CommonFunc.sleep(1500);
+          await driver.assertComponentExist(ON.text('3'));
 
-        let btn2: Component = await driver.findComponent(ON.id('indicator_showPrevious')) as Component;
-        await btn2.click();
-        await CommonFunc.sleep(1500);
-        await driver.assertComponentExist(ON.text('2'));
+          let btn2: Component = await driver.findComponent(ON.id('indicator_showPrevious')) as Component;
+          await btn2.click();
+          await CommonFunc.sleep(1500);
+          await driver.assertComponentExist(ON.text('2'));
 
-        let btn3: Component = await driver.findComponent(ON.id('indicator_changeIndex')) as Component;
-        await btn3.click();
-        await CommonFunc.sleep(1500);
-        await driver.assertComponentExist(ON.text('4'));
+          let btn3: Component = await driver.findComponent(ON.id('indicator_changeIndex')) as Component;
+          await btn3.click();
+          await CommonFunc.sleep(1500);
+          await driver.assertComponentExist(ON.text('4'));
 
-        console.info('[showDotIndicator_static_0100] END');
-        done();
-      } catch (err) {
+          console.info('[showDotIndicator_static_0100] END');
+          done();
+      } catch (error) {
         expect().assertFail();
       }
     });

@@ -13,27 +13,27 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  Axis,
+  BarState,
+  Button,
+  ClickEvent,
+  Column,
   Component,
+  EdgeEffect,
+  Entry,
   Flex,
   FlexDirection,
+  ForEach,
   ItemAlign,
-  Column,
-  Row,
-  Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
+  List,
   ListItem,
   ListScroller,
-  Axis,
+  NodeContainer,
   Padding,
-  List,
-  ScrollState,
+  Row,
   ScrollSource,
-  ForEach,
-  EdgeEffect,
+  ScrollState,
+  Text,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -54,7 +54,9 @@ struct ListAnimationCallback {
       Button('next page2')
         .id('list_animation_true')
         .onClick((e: ClickEvent) => {
+          console.info('xyb: 222');
           this.scroller.scrollPage({ next: true, animation: true })
+          console.info('xyb: 444');
         })
       List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
         ForEach(this.arr, (item: number, index: int) => {
@@ -65,22 +67,22 @@ struct ListAnimationCallback {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor('0xFFFFFF')
           }
         }, (item: number) => item.toString())
       }
       .width('90%')
       .height('50%')
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical) // 排列方向
       .scrollBar(BarState.Off)
       .friction(0.6)
       .divider({
         strokeWidth: 2,
-        color: 0xFFFFFF,
+        color: '0xFFFFFF',
         startMargin: 20,
         endMargin: 20
-      }) 
-      .edgeEffect(EdgeEffect.Spring) 
+      }) // 每行之间的分界线
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
@@ -89,7 +91,6 @@ struct ListAnimationCallback {
       .onWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
         console.info('scrollSource: ' + scrollSource)
         console.info(`onWillScroll scrollState = ${scrollState[scrollState]}, offset = ${scrollOffset}`)
-        return undefined
       })
       .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {
         console.info(`onDidScroll scrollState = ${scrollState[scrollState]}, offset = ${scrollOffset}`)
@@ -118,7 +119,7 @@ struct ListAnimationCallback {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .padding({ top: 5 } as Padding)
   }
 }

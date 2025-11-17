@@ -24,7 +24,7 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static async sleep(time: int): Promise<int> {
+  static async sleep(time:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         console.info(`sleep ${time} over...`)
@@ -34,36 +34,31 @@ export default class Utils {
   }
 
   static sendEvent(message: string, eventId: number) {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // let eventData: events_emitter.EventData = {
+    //   data: {
+    //     "msg": message
+    //   }
+    // }
+    // let event: events_emitter.InnerEvent = {
+    //   eventId: eventId,
+    //   priority: events_emitter.EventPriority.LOW
+    // }
+    // events_emitter.emit(event, eventData)
   }
 
-  
+  //获取组件所占矩形区域坐标
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     Utils.rect_left = Number(rectInfo[0][0] ?? 0);
     Utils.rect_top = Number(rectInfo[0][1] ?? 0);
     Utils.rect_right = Number(rectInfo[1][0] ?? 0);
     Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return Utils.rect_value = {
-      left: Utils.rect_left,
-      top: Utils.rect_top,
-      right: Utils.rect_right,
-      bottom: Utils.rect_bottom
+      left: Utils.rect_left, top: Utils.rect_top, right: Utils.rect_right, bottom: Utils.rect_bottom
     }
   }
 }

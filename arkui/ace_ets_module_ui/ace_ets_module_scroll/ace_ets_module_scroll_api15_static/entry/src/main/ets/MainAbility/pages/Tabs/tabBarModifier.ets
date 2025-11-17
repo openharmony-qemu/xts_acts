@@ -31,7 +31,7 @@ import {
   Alignment,
   BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
@@ -55,7 +55,7 @@ struct TabsBarModifierExample {
         .margin({ top: 5 } as Margin)
         .onClick((event?: ClickEvent) => {
           this.text1 = 'Alignment.Start'
-          
+          this.tabBarModifier.align(Alignment.Start)
         })
       Button('Alignment.End')
         .id('tabs_barModifier_end')
@@ -64,7 +64,7 @@ struct TabsBarModifierExample {
         .margin({ top: 5 } as Margin)
         .onClick((event?: ClickEvent) => {
           this.text1 = 'Alignment.End'
-          
+          this.tabBarModifier.align(Alignment.End)
         })
       Button('Alignment.Center')
         .id('tabs_barModifier_center')
@@ -73,7 +73,7 @@ struct TabsBarModifierExample {
         .margin({ top: 5 } as Margin)
         .onClick((event?: ClickEvent) => {
           this.text1 = 'Alignment.Center'
-          
+          this.tabBarModifier.align(Alignment.Center)
         })
 
       Tabs({ barPosition: BarPosition.Start, controller: this.controller, /*barModifier: this.tabBarModifier*/ }) {
@@ -94,7 +94,7 @@ struct TabsBarModifierExample {
       .barHeight(60)
       .width(300)
       .height('60%')
-      .backgroundColor(0xf1f3f5)
+      .backgroundColor('0xf1f3f5')
       .barMode(BarMode.Scrollable)
     }
     .width('100%')

@@ -18,31 +18,18 @@ import {
   Component,
   $r,
   Column,
-  ColumnOptions,
-  FlexAlign,
-  DataChangeListener,
-  DataOperation,
-  Text,
-  TabsController,
-  AnimationMode,
-  Builder,
-  BarPosition,
-  ClickEvent,
-  LazyForEach,
-  Color,
-  Button,
-  Tabs,
-  TabContent,
-  SubTabBarStyle,
-  BarMode,
-  Alignment,
-  BarPosition,
+  ColumnOptions,FlexAlign,DataChangeListener,DataOperation,
+  Text,TabsController,AnimationMode,Builder,BarPosition,ClickEvent,LazyForEach,
+  Color,Button,Tabs,TabContent,SubTabBarStyle,BarMode,Alignment,BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct TabsAnimationModeExample {
@@ -51,18 +38,16 @@ struct TabsAnimationModeExample {
   private controller: TabsController = new TabsController()
   private data: MyBasicSource = new MyBasicSource([]) as MyBasicSource
   @State text1: string = 'CONTENT_FIRST'
-
   aboutToAppear(): void {
-    let list: number[] = []
+    let list: number[] = [] as number[]
     for (let i = 0; i < 10; i++) {
       list.push(i);
     }
     this.data = new MyBasicSource(list)
   }
-
   @Builder
-  tabBuilder(title: string, targetIndex: int) {
-    Column() {
+  tabBuilder(title: string,targetIndex: number) {
+    Column(){
       Text(title).fontColor(this.currentIndex === targetIndex ? '#FF0000' : '#6B6B6B')
     }.width('100%')
     .height(50)
@@ -76,7 +61,7 @@ struct TabsAnimationModeExample {
       Button('CONTENT_FIRST_WITH_JUMP')
         .id('tabs_animode_content')
         .height('8%')
-        .onClick((e: ClickEvent) => {
+        .onClick((e: ClickEvent)=>{
           this.controller.changeIndex(3);
           console.log('change Index 3');
 
@@ -86,7 +71,7 @@ struct TabsAnimationModeExample {
       Button('ACTION_FIRST_WITH_JUMP')
         .id('tabs_animode_first')
         .height('8%')
-        .onClick((e: ClickEvent) => {
+        .onClick((e: ClickEvent)=>{
           this.controller.changeIndex(6);
           console.log('change Index 3');
 
@@ -97,15 +82,14 @@ struct TabsAnimationModeExample {
       Tabs({ barPosition: BarPosition.Start, controller: this.controller, index: this.currentIndex }) {
         LazyForEach(this.data, (item: number) => {
           TabContent() {
-            Column() {
+            Column(){
               Text('' + item)
             }.width('100%')
             .height('100%')
             .backgroundColor('#00CB87')
             .justifyContent(FlexAlign.Center)
           }
-
-          
+          .tabBar(() => {this.tabBuilder('P' + item, item)})
         }, (item: number) => String(item))
       }
       .id('tabs_aniMode')

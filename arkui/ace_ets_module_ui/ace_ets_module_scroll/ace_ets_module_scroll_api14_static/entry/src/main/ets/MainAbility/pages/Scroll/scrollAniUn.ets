@@ -13,27 +13,26 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Column,
-  Component,
-  Color,
-  Text,
-  Scroller,
-  ScrollState,
-  OffsetResult,
-  Button,
-  Edge,
-  ColumnOptions,
-  Scroll,
-  ForEach,
-  ScrollDirection,
   BarState,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  Edge,
   EdgeEffect,
-  TextAlign,
+  Entry,
+  Flex,
+  ForEach,
   Margin,
   OffsetResult,
-  Flex,
-  ClickEvent
+  Scroll,
+  ScrollDirection,
+  Scroller,
+  ScrollState,
+  Text,
+  TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -69,10 +68,10 @@ struct scrollAnimationUndefinedExample {
       }
       .width('90%')
       .height('40%')
-      .scrollable(ScrollDirection.Vertical) 
-      .scrollBar(BarState.On) 
-      .scrollBarColor(Color.Gray) 
-      .scrollBarWidth(10) 
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .friction(0.6)
       .edgeEffect(EdgeEffect.None)
       .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState): undefined | OffsetResult => {
@@ -95,7 +94,7 @@ struct scrollAnimationUndefinedExample {
         console.info('onReachEnd !')
       })
 
-      
+      //scrollPage:向下不带动画翻页
       Button('animation: undefined')
         .id('scroll_animation_undefined')
         .onClick((e: ClickEvent) => {

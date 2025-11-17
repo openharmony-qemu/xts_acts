@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -58,14 +58,12 @@ export default function tabBarModifier() {
         url: "MainAbility/pages/Tabs/tabBarModifier",
       }
       try {
-        tabBarModifier.clear();
         let pages = tabBarModifier.getState();
         console.info("get tabBarModifier state pages:" + JSON.stringify(pages));
-        if (!("tabBarModifier" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/tabBarModifier" == pages.name)) {
           console.info("get tabBarModifier pages.name:" + JSON.stringify(pages.name));
           tabBarModifier.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push tabBarModifier page error:" + err);
@@ -77,13 +75,18 @@ export default function tabBarModifier() {
       console.info("tabBarModifier after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    tabBarModifier_static_0100
-     * @tc.name      tabBarModifier_static_0100
-     * @tc.desc      tabBarModifier_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   tabBarModifier_static_0100
+       * @tc.name     tabBarModifier_static_0100
+       * @tc.desc     tabBarModifier_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('tabBarModifier_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[tabBarModifier_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -113,11 +116,11 @@ export default function tabBarModifier() {
 
 
     /*
-     * @tc.number    tabBarModifier_static_0200
-     * @tc.name      tabBarModifier_static_0200
-     * @tc.desc      tabBarModifier_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   tabBarModifier_static_0200
+       * @tc.name     tabBarModifier_static_0200
+       * @tc.desc     tabBarModifier_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('tabBarModifier_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[tabBarModifier_static_0200] START');
       await CommonFunc.sleep(1000);
@@ -141,11 +144,11 @@ export default function tabBarModifier() {
 
 
     /*
-     * @tc.number    tabBarModifier_static_0300
-     * @tc.name      tabBarModifier_static_0300
-     * @tc.desc      tabBarModifier_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   tabBarModifier_static_0300
+       * @tc.name     tabBarModifier_static_0300
+       * @tc.desc     tabBarModifier_static_0300
+       * @tc.level    Level.LEVEL1
+       */
     it('tabBarModifier_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[tabBarModifier_static_0300] START');
       await CommonFunc.sleep(1000);

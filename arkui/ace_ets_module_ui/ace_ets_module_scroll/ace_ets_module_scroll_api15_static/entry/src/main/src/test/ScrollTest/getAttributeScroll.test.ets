@@ -36,7 +36,6 @@ export default function getAttributeScroll() {
   describe('getAttributeScroll', () => {
 
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -49,16 +48,11 @@ export default function getAttributeScroll() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get getAttributeScroll state pages:" + JSON.stringify(pages));
         if (!("getAttributeScroll" == pages.name)) {
           console.info("get getAttributeScroll pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push getAttributeScroll page error:" + err);
@@ -73,11 +67,11 @@ export default function getAttributeScroll() {
 
 
     /*
-     * @tc.number    getAttributeScroll_static_0100
-     * @tc.name      getAttributeScroll_static_0100
-     * @tc.desc      getAttributeScroll_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   getAttributeScroll_static_0100
+       * @tc.name     getAttributeScroll_static_0100
+       * @tc.desc     getAttributeScroll_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('getAttributeScroll_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getAttributeScroll_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -88,7 +82,7 @@ export default function getAttributeScroll() {
       let strJson = inspector.getInspectorByKey('typeNode_scroll');
       console.info("[getAttributeScroll_static_0100] component obj is: " + strJson);
       console.info("[getAttributeScroll_static_0100]: scrollBarWidth: " +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarWidth'));
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarWidth'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarWidth')).assertEqual("30.00vp");
       console.info('[getAttributeScroll_static_0100] END');
       done();
@@ -96,11 +90,11 @@ export default function getAttributeScroll() {
 
 
     /*
-     * @tc.number    getAttributeScroll_static_0200
-     * @tc.name      getAttributeScroll_static_0200
-     * @tc.desc      getAttributeScroll_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   getAttributeScroll_static_0200
+       * @tc.name     getAttributeScroll_static_0200
+       * @tc.desc     getAttributeScroll_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('getAttributeScroll_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getAttributeScroll_static_0200] START');
       await CommonFunc.sleep(1000);
@@ -114,7 +108,7 @@ export default function getAttributeScroll() {
       let strJson = inspector.getInspectorByKey('scroll_fling_text');
       console.info("[getAttributeScroll_static_0200] component obj is: " + strJson);
       console.info("[getAttributeScroll_static_0200]: content: " +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content') !== 'ScrollFling: 0')
         .assertTrue();
       console.info('[getAttributeScroll_static_0200] END');

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -45,7 +45,6 @@ export default function swiperModeTest() {
   describe('swiperModeTest', () => {
     beforeAll(() => {
       console.info("swiperModeTest beforeEach start");
-
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -58,14 +57,11 @@ export default function swiperModeTest() {
         url: "MainAbility/pages/Swiper/swiperMode",
       }
       try {
-        swiperMode.clear();
         let pages = swiperMode.getState();
         console.info("get swiperModeTest state pages:" + JSON.stringify(pages));
-        if (!("swiperMode" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/swiperMode" == pages.name)) {
           console.info("get swiperModeTest pages.name:" + JSON.stringify(pages.name));
           swiperMode.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push swiperModeTest page error:" + err);
@@ -77,13 +73,18 @@ export default function swiperModeTest() {
       console.info("swiperModeTest after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    swiperModeTest_static_0100
-     * @tc.name      swiperModeTest_static_0100
-     * @tc.desc      swiperModeTest_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   swiperModeTest_static_0100
+       * @tc.name     swiperModeTest_static_0100
+       * @tc.desc     swiperModeTest_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('swiperModeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[swiperModeTest_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -108,11 +109,11 @@ export default function swiperModeTest() {
 
 
     /*
-     * @tc.number    swiperModeTest_static_0200
-     * @tc.name      swiperModeTest_static_0200
-     * @tc.desc      swiperModeTest_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   swiperModeTest_static_0200
+       * @tc.name     swiperModeTest_static_0200
+       * @tc.desc     swiperModeTest_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('swiperModeTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[swiperModeTest_static_0200] START');
       await CommonFunc.sleep(1000);
@@ -137,11 +138,11 @@ export default function swiperModeTest() {
 
 
     /*
-     * @tc.number    swiperModeTest_static_0300
-     * @tc.name      swiperModeTest_static_0300
-     * @tc.desc      swiperModeTest_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   swiperModeTest_static_0300
+       * @tc.name     swiperModeTest_static_0300
+       * @tc.desc     swiperModeTest_static_0300
+       * @tc.level    Level.LEVEL1
+       */
     it('swiperModeTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[swiperModeTest_static_0300] START');
       await CommonFunc.sleep(1000);

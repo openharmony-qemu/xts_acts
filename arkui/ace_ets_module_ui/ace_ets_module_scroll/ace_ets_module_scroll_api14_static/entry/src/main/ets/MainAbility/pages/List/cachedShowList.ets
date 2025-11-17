@@ -14,63 +14,42 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import {
-  Entry,
+  BarState,
+  Button,
+  ClickEvent,
+  Column,
   Component,
+  EdgeEffect,
+  Entry,
   Flex,
   FlexDirection,
+  ForEach,
   ItemAlign,
-  Column,
-  Row,
-  Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
+  List,
   ListItem,
   ListScroller,
-  List,
-  VisibleListContentInfo,
-  ScrollState,
+  NodeContainer,
   Padding,
-  ForEach,
+  Row,
+  ScrollState,
+  Text,
   TextAlign,
-  EdgeEffect
+  VisibleListContentInfo
 } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
 struct cachedCountShowListExample {
   private arr: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-  @State clip1: boolean = false
-  @State show1: boolean | null | undefined = true
+  @StoragePropRef('clip1') clip1: boolean = false
+  @StoragePropRef('show1') show1: boolean | undefined = true
 
   onPageShow() {
     console.info('[List] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 125,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangClipShow);
-  }
-
-  private stateChangClipShow: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info('[stateChangClipShow] stateChangeEvent');
-    if (eventData != null) {
-      console.info('[stateChangClipShow] state change called:' + JSON.stringify(eventData));
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    }
+    AppStorage.setOrCreate<boolean>('clip1', false);
+    AppStorage.setOrCreate<boolean>('show1', true);
   }
 
   build() {
@@ -85,20 +64,20 @@ struct cachedCountShowListExample {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor('0xFFFFFF')
           }
         }, (item: string) => item)
       }
       .id('cachedCount_show_list')
       .clip(this.clip1)
-      .cachedCount(2, this.show1 ?? false)
+      .cachedCount(2, this.show1)
       .border({ width: 1 })
       .width('90%')
       .height('40%')
       .friction(0.6)
       .padding('3%')
       .scrollBar(BarState.On)
-      .edgeEffect(EdgeEffect.Spring) 
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)
@@ -118,7 +97,7 @@ struct cachedCountShowListExample {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .padding({ top: 5 } as Padding)
   }
 }

@@ -13,24 +13,26 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   Column,
-  Scroller,
-  GridLayoutOptions,
   ColumnOptions,
-  NodeContainer,
-  Text,
-  Grid,
-  HorizontalAlign,
+  Component,
+  Entry,
   ForEach,
+  Grid,
   GridItem,
   GridItemStyle,
-  TextAlign
+  GridLayoutOptions,
+  HorizontalAlign,
+  NodeContainer,
+  Scroller,
+  Text,
+  TextAlign,
+  Margin,
+  Color
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
-import { UIContext } from "@ohos.arkui.UIContext";
+import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 let scroller: Scroller = new Scroller()
 let layoutOptions1: GridLayoutOptions = {
@@ -38,23 +40,23 @@ let layoutOptions1: GridLayoutOptions = {
   irregularIndexes: [0, 8],
   onGetIrregularSizeByIndex: (index: int) => {
     if (index === 0) {
-      return [1, 5] as [int, int]
+      return [1, 5] as [Int, Int]
     }
-    return [1, index % 6 + 1] as [int, int]
+    return [1, index % 6 + 1] as [Int, Int]
   },
-  onGetRectByIndex: (index: int) => {
+  onGetRectByIndex: (index: Int) => {
     if (index == 0) {
-      return [0, 0, 1, 1] as [int, int, int, int]
+      return [0, 0, 1, 1] as [Int, Int, Int, Int]
     } else if (index == 1) {
-      return [0, 1, 2, 2] as [int, int, int, int]
+      return [0, 1, 2, 2] as [Int, Int, Int, Int]
     } else if (index == 2) {
-      return [0, 3, 3, 3] as [int, int, int, int]
+      return [0, 3, 3, 3] as [Int, Int, Int, Int]
     } else if (index == 3) {
-      return [3, 0, 3, 3] as [int, int, int, int]
+      return [3, 0, 3, 3] as [Int, Int, Int, Int]
     } else if (index == 4) {
-      return [4, 3, 2, 2] as [int, int, int, int]
+      return [4, 3, 2, 2] as [Int, Int, Int, Int]
     } else {
-      return [5, 5, 1, 1] as [int, int, int, int]
+      return [5, 5, 1, 1] as [Int, Int, Int, Int]
     }
   }
 } as GridLayoutOptions
@@ -62,37 +64,40 @@ let layoutOptions1: GridLayoutOptions = {
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-    
-    
-    
-    
-    
+    let col = typeNode.createColumnNode(uiContext)
+    col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
+    let gridCol = typeNode.createColumnNode(uiContext)
+    gridCol.initialize({ space: 5 } as ColumnOptions).width('100%').margin({ top: 5 } as Margin)
+    let grid = typeNode.createGridNode(uiContext)
 
-    
-    
-    
-    
-    
-    
-    
-    
+    grid.initialize()
+    grid.initialize(scroller, layoutOptions1)
+      .width('90%')
+      .height(300)
+      .columnsGap(4)
+      .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
+      .rowsGap(4)
+      .backgroundColor('0xFAEEE0')
+      .padding('4vp')
+      .scrollBarWidth(4)
+      .key('key_ grid_001')
     for (let a = 0; a < 25; a++) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      let gridItem = typeNode.createGridItemNode(uiContext);
+      gridItem.initialize(undefined);
+      gridItem.initialize({ style: GridItemStyle.NONE }).backgroundColor('0xF9CF93');
+      let context = typeNode.createTextNode(uiContext);
+      context.initialize((a % 5).toString())
+        .fontSize(16)
+        .width('100%')
+        .height(80)
+        .textAlign(TextAlign.Center)
+        .focusable(true);
+      gridItem.appendChild(context);
+      grid.appendChild(gridItem);
     }
-    
-    
-    
+    gridCol.appendChild(grid)
+    col.appendChild(gridCol)
+    node.appendChild(col)
     return node
   }
 }
@@ -120,7 +125,7 @@ struct grid {
                 .textAlign(TextAlign.Center)
                 .focusable(true)
                 .key(index + '1')
-            }.backgroundColor(0xF9CF93)
+            }.backgroundColor('0xF9CF93')
           }, (day: string) => day)
         }, (day: string) => day)
       }
@@ -128,7 +133,7 @@ struct grid {
       .columnsGap(4)
       .rowsGap(4)
       .width('90%')
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor('0xFAEEE0')
       .height(300)
       .padding('4vp')
     }.width('100%')

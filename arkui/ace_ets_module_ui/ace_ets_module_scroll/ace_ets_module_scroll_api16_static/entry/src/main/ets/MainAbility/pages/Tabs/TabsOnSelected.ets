@@ -14,43 +14,31 @@
  */
 import {
   Entry,
-  Component,
-  TabContent,
+  Component,TabContent,
   $r,
   Column,
-  ColumnOptions,
-  Builder,
-  Text,
-  Swiper,
-  TabsController,
-  Button,
-  BarMode,
-  BarPosition,
-  Tabs,
-  Color,
-  SwiperController,
-  TextAlign,
-  Direction,
-  Margin,
-  Divider,
+  ColumnOptions,Builder,
+  Text,Swiper,TabsController,Button,BarMode,BarPosition,Tabs,
+  Color,SwiperController,TextAlign,Direction,Margin,Divider,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct TabsExample1 {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: int = 0
-  @State selectedIndex: number = 0
+  @State selectedIndex: int = 0
   @State message: string = ''
   private controller: TabsController = new TabsController()
-
-  @Builder
-  tabBuilder(index: number, name: string) {
+  @Builder tabBuilder(index: number, name: string) {
     Column() {
       Text(name)
         .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
@@ -72,20 +60,17 @@ struct TabsExample1 {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }
-
-        
+        .tabBar(() => {this.tabBuilder(0, 'green')})
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF')
         }
-
-        
+        .tabBar(() => {this.tabBuilder(1, 'blue')})
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFC0CB')
         }
-
-        
+        .tabBar(() => {this.tabBuilder(2, 'pink')})
 
       }
       .vertical(false)

@@ -13,28 +13,28 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  BarState,
+  Builder,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
   Component,
+  Entry,
   Flex,
   FlexDirection,
+  ForEach,
   ItemAlign,
-  Column,
+  List,
+  ListItem,
+  ListItemGroup,
+  ListScroller,
+  NodeContainer,
+  Padding,
   Row,
   Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
-  ListItem,
-  ListScroller,
-  Builder,
-  List,
-  VisibleListContentInfo,
-  Padding,
-  ForEach,
-  ListItemGroup,
   TextAlign,
-  Color
+  VisibleListContentInfo
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -87,19 +87,19 @@ struct ListItemGroupAnimationPage {
 
       List({ space: 5, scroller: this.scroller }) {
         ForEach(this.tableAnimation, (item: TableAnimation) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup({ header: () => {this.itemHead(item.title)}, footer: () => {this.itemFoot(item.projects.length)} }) {
+            ForEach(item.projects, (project: string) => {
+              ListItem() {
+                Text(project)
+                  .width('100%')
+                  .height('20%')
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(0xFFFFFF)
+              }
+            }, (item: string) => item)
+          }
+          .divider({ strokeWidth: 1, color: Color.Blue })
         })
       }
       .scrollBar(BarState.On)

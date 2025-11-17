@@ -13,24 +13,24 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
-  Scroller,
   BarState,
+  Color,
   Column,
-  Visibility,
+  Component,
+  Edges,
+  Entry,
+  ForEach,
+  List,
+  ListItem,
   NestedScrollMode,
   Scroll,
-  List,
   ScrollBar,
-  Text,
-  ListItem,
-  Color,
-  TextAlign,
-  ForEach,
-  Edges,
+  Scroller,
+  ScrollSource,
   ScrollState,
-  ScrollSource
+  Text,
+  TextAlign,
+  Visibility
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 

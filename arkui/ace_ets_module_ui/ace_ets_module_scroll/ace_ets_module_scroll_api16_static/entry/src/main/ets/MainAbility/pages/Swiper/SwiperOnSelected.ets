@@ -18,18 +18,17 @@ import {
   $r,
   Column,
   ColumnOptions,
-  Text,
-  Swiper,
-  Color,
-  SwiperController,
-  TextAlign,
-  Direction,
+  Text,Swiper,
+  Color,SwiperController,TextAlign,Direction,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct SwiperMirroring0010 {
@@ -46,31 +45,27 @@ struct SwiperMirroring0010 {
           .width('100%')
           .height('40%')
           .backgroundColor(Color.Pink)
-          .textAlign(TextAlign.Center)
-          .border({ width: 1 })
+          .textAlign(TextAlign.Center).border({ width: 1 })
 
         Text('2')
           .fontSize(30)
           .width('100%')
           .height('40%')
           .backgroundColor(Color.Pink)
-          .textAlign(TextAlign.Center)
-          .border({ width: 1 })
+          .textAlign(TextAlign.Center).border({ width: 1 })
         Text('3')
           .fontSize(30)
           .width('100%')
           .height('40%')
           .backgroundColor(Color.Pink)
-          .textAlign(TextAlign.Center)
-          .border({ width: 1 })
+          .textAlign(TextAlign.Center).border({ width: 1 })
       }
-      
+      .autoPlay(true, undefined)
       .interval(1000)
       .direction(Direction.Ltr)
-      .onSelected((index: Int): void => {
+      .onSelected((index: int): void => {
         this.onAnimationStart = 'onSelected'
       })
-
       Text(this.onAnimationStart).key('TEXT_0010')
       Swiper(this.swiperController2) {
         Text('1')
@@ -78,31 +73,27 @@ struct SwiperMirroring0010 {
           .width('100%')
           .height('40%')
           .backgroundColor(Color.Pink)
-          .textAlign(TextAlign.Center)
-          .border({ width: 1 })
+          .textAlign(TextAlign.Center).border({ width: 1 })
 
         Text('2')
           .fontSize(30)
           .width('100%')
           .height('40%')
           .backgroundColor(Color.Pink)
-          .textAlign(TextAlign.Center)
-          .border({ width: 1 })
+          .textAlign(TextAlign.Center).border({ width: 1 })
         Text('3')
           .fontSize(30)
           .width('100%')
           .height('40%')
           .backgroundColor(Color.Pink)
-          .textAlign(TextAlign.Center)
-          .border({ width: 1 })
+          .textAlign(TextAlign.Center).border({ width: 1 })
       }
-      
+      .autoPlay(true, undefined)
       .interval(1000)
       .direction(Direction.Rtl)
-      .onSelected((index: Int): void => {
+      .onSelected((index: int): void => {
         this.onAnimationStart2 = 'onSelected'
       })
-
       Text(this.onAnimationStart2).key('TEXT_0020')
     }
   }

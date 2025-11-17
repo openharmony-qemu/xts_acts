@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import events_emitter from '@ohos.events.emitter';
@@ -23,9 +23,9 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test'
+import { startAbility, UtilsTest } from '../Util.test'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -54,9 +54,9 @@ export default function getListVisible() {
           console.info("get getListVisible pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push getListVisible page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push getListVisible page error:" + err);
       }
       console.info("getListVisible beforeEach end");
@@ -65,20 +65,26 @@ export default function getListVisible() {
       await CommonFunc.sleep(1000);
       console.info("getListVisible after each called");
     });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
 
     /*
-     * @tc.number    getListVisible_static_0100
-     * @tc.name      getListVisible_static_0100
-     * @tc.desc      getListVisible_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   getListVisible_static_0100
+       * @tc.name     getListVisible_static_0100
+       * @tc.desc     getListVisible_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('getListVisible_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[getListVisible_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.text('数学')) as Component;
+      console.info('test: 11[getListVisible_static_0100] START');
       await btn.click();
+      console.info('test: 22[getListVisible_static_0100] START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list_getMess');
       console.info("[getListVisible_static_0100] component obj is: " +
@@ -86,7 +92,7 @@ export default function getListVisible() {
       console.info("[getListVisible_static_0100] content: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('Item: index:0 itemIndex:1');
       console.info('[getListVisible_static_0100] END');
       done();

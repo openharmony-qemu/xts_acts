@@ -13,10 +13,17 @@
  * limitations under the License.
  */
 
-import scrollAniFalse from './ScrollTest/scrollAniFalse.test';
-import scrollAniUn from './ScrollTest/scrollAniUn.test';
-import scrollAniTrue from './ScrollTest/scrollAniTrue.test';
 import enableScrollJsunit from './ScrollBarTest/enableScrollJsunit.test';
+import getListVisible from './ListTest/getListVisible.test';
+import itemIndexList from './ListTest/itemIndexList.test';
+import groupAnimation from './ListTest/groupAnimation.test';
+import animationCallback from './ListTest/animationCallback.test';
+import listAniAdd from './ListTest/listAniAdd.test';
+import listAniDel from './ListTest/listAniDel.test';
+import listAnVisible from './ListTest/listAnVisible.test';
+import listHeight from './ListTest/listHeight.test';
+import groupAnVisible from './ListTest/groupAnVisible.test';
+import groupHeight from './ListTest/groupHeight.test';
 import scrollAniFalse from './ScrollTest/scrollAniFalse.test';
 import scrollAniUn from './ScrollTest/scrollAniUn.test';
 import scrollAniTrue from './ScrollTest/scrollAniTrue.test';
@@ -28,38 +35,14 @@ import griditemNode from './GridItemTest/griditemNode.test';
 import nodeTypeGrid from './GridTest/nodeTypeGrid.test';
 import listScrollerBar from './ScrollBarTest/listScrollerBar.test';
 import cachedShowGrid from './GridTest/cachedShowGrid.test';
-import getListVisible from './ListTest/getListVisible.test';
-import itemIndexList from './ListTest/itemIndexList.test';
-import groupAnimation from './ListTest/groupAnimation.test';
-import animationCallback from './ListTest/animationCallback.test';
-import listAniAdd from './ListTest/listAniAdd.test';
-import listAniDel from './ListTest/listAniDel.test';
-import listAnVisible from './ListTest/listAnVisible.test';
-import listHeight from './ListTest/listHeight.test';
-import groupAnVisible from './ListTest/groupAnVisible.test';
-import groupHeight from './ListTest/groupHeight.test';
 import cachedShowList from './ListTest/cachedShowList.test';
 import getItemError from './ListTest/getItemError.test';
 import getVisibleListError from './ListTest/getVisibleListError.test';
 import itemInGroupError from './ListTest/itemInGroupError.test';
 
 export default function testsuite() {
-  scrollAniFalse();
-  scrollAniUn();
-  scrollAniTrue();
-  enableScrollJsunit();
-  scrollAniFalse();
-  scrollAniUn();
-  scrollAniTrue();
-  gridAniTrue();
-  irregularAniGrid();
-  repeatAniGrid();
-  gridNode();
-  griditemNode();
-  nodeTypeGrid();
-  listScrollerBar();
-  cachedShowGrid();
-  getListVisible()
+  enableScrollJsunit()
+  getListVisible()  // VisibleListContentInfo取值itemIndexInGroup错误  1
   itemIndexList()
   groupAnimation()
   animationCallback()
@@ -69,8 +52,19 @@ export default function testsuite() {
   listHeight()
   groupAnVisible()
   groupHeight()
+  scrollAniFalse()
+  scrollAniUn()
+  scrollAniTrue()
+  gridAniTrue()
+  irregularAniGrid()
+  repeatAniGrid()
+  gridNode();
+  griditemNode();
+  nodeTypeGrid()
+  listScrollerBar()
+  cachedShowGrid()
   cachedShowList()
-  getItemError()
-  getVisibleListError()
-  itemInGroupError()
+  getItemError()  // getItemRect getItemIndex 参数不能为undefined  2
+  getVisibleListError() // getVisibleListContentInfo 参数不能为undefined  错误码  4
+  itemInGroupError()  // scrollToItemInGroup 参数不能为undefined  2
 }

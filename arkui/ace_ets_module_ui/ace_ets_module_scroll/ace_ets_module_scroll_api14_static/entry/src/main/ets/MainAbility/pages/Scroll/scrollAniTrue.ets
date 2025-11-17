@@ -13,27 +13,26 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Column,
-  Component,
-  Color,
-  Text,
-  Scroller,
-  ScrollState,
-  OffsetResult,
-  Edge,
-  ColumnOptions,
-  Scroll,
-  ForEach,
-  ScrollDirection,
   BarState,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  Edge,
   EdgeEffect,
-  TextAlign,
+  Entry,
+  Flex,
+  ForEach,
   Margin,
   OffsetResult,
-  Flex,
-  Button,
-  ClickEvent
+  Scroll,
+  ScrollDirection,
+  Scroller,
+  ScrollState,
+  Text,
+  TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -50,7 +49,7 @@ struct animationScrollTrueExample {
         .id('scroll_true_onText')
         .width('90%')
 
-      
+      //scrollPage:向下带动画翻页
       Button('animation: true')
         .id('scroll_animation_true')
         .onClick((e: ClickEvent) => {
@@ -63,7 +62,7 @@ struct animationScrollTrueExample {
             Text(item.toString())
               .width('100%')
               .height('15%')
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor(Color.Red)
               .borderRadius(15)
               .fontSize(16)
               .textAlign(TextAlign.Center)
@@ -73,10 +72,10 @@ struct animationScrollTrueExample {
       }
       .width('90%')
       .height('40%')
-      .scrollable(ScrollDirection.Vertical) 
-      .scrollBar(BarState.On) 
-      .scrollBarColor(Color.Gray) 
-      .scrollBarWidth(10) 
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .friction(0.6)
       .edgeEffect(EdgeEffect.None)
       .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState): undefined | OffsetResult => {
@@ -110,6 +109,6 @@ struct animationScrollTrueExample {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor(Color.Gray)
   }
 }

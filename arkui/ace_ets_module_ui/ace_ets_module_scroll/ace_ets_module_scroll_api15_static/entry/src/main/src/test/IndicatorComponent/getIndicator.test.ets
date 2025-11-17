@@ -30,8 +30,6 @@ import { UtilsTest, startAbility } from '../Util.test'
 export default function getIndicator() {
   describe('getIndicator', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -43,14 +41,13 @@ export default function getIndicator() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get getIndicator state pages:" + JSON.stringify(pages));
-        if (!("getIndicator" == pages.name)) {
+        if (!("MainAbility/pages/IndicatorComponent/getIndicator" == pages.name)) {
           console.info("get getIndicator pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push getIndicator page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getIndicator page error:" + err);
@@ -61,14 +58,18 @@ export default function getIndicator() {
       await CommonFunc.sleep(1000);
       console.info("getIndicator after each called");
     });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
 
     /*
-     * @tc.number    getIndicator_static_0100
-     * @tc.name      getIndicator_static_0100
-     * @tc.desc      getIndicator_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   getIndicator_static_0100
+       * @tc.name     getIndicator_static_0100
+       * @tc.desc     getIndicator_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('getIndicator_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[getIndicator_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -86,13 +87,11 @@ export default function getIndicator() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('vertical')));
       console.info("[getIndicator_static_0100]: loop: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')));
-      console.info("[getIndicator_static_0100]: content: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("IndicatorComponent");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('initialIndex')).assertEqual(0);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('count')).assertEqual(6);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('vertical')).assertEqual("true");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('loop')).assertEqual("false");
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("IndicatorComponent");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('initialIndex')).assertEqual(0);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('count')).assertEqual(6);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("true");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual("false");
       console.info('[getIndicator_static_0100] END');
       done();
     });

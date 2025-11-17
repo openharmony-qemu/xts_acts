@@ -13,23 +13,23 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
-  Column,
-  ScrollState,
-  Scroller,
-  Margin,
-  ScrollSource,
-  ColumnOptions,
-  Text,
-  Button,
-  Grid,
-  ClickEvent,
-  ForEach,
-  EdgeEffect,
   BarState,
+  Button,
+  ClickEvent,
   Color,
+  Column,
+  ColumnOptions,
+  Component,
+  EdgeEffect,
+  Entry,
+  ForEach,
+  Grid,
   GridItem,
+  Margin,
+  Scroller,
+  ScrollSource,
+  ScrollState,
+  Text,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -39,7 +39,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct gridNextAnimationTrueExample {
   @State numbers: String[] = ['0', '1', '2', '3', '4']
   scroller: Scroller = new Scroller()
-  @State gridPosition: number = 0 
+  @State gridPosition: number = 0 //0代表滚动到grid顶部，1代表中间值，2代表滚动到grid底部。
   @State onText: string = 'Grid: '
   @State nextBln: boolean = false
 
@@ -51,7 +51,7 @@ struct gridNextAnimationTrueExample {
 
       Button('next page true')
         .id('grid_next_animation_true')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后滑到下一页
           this.nextBln = true
           this.scroller.scrollPage({ next: this.nextBln, animation: true })
         })

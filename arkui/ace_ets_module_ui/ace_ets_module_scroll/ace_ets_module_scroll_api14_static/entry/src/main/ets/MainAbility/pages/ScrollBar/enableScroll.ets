@@ -13,36 +13,39 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
-  Scroller,
+  BarState,
   Column,
+  Component,
+  EdgeEffect,
+  Edges,
+  Entry,
+  ForEach,
+  List,
+  ListItem,
+  NestedScrollMode,
   Scroll,
   ScrollBar,
+  Scroller,
   Text,
-  List,
-  EdgeEffect,
-  BarState,
-  Edges,
   TextAlign,
-  ForEach,
-  NestedScrollMode,
-  ListItem
+  ListItemAttribute,
+  Color
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+
+function listCard(this: ListItemAttribute): ListItemAttribute{
+  this.backgroundColor(Color.White)
+  this.height(50)
+  this.width('100%')
+  this.borderRadius(12)
+  return this
+}
 
 @Entry
 @Component
 struct StickyNestedScroll {
   listScroller: Scroller = new Scroller();
   @State array: number[] = [] as number[]
-
-  
-  
-  
-  
-  
-  
 
   build() {
     Column() {
@@ -59,8 +62,7 @@ struct StickyNestedScroll {
                 Text('item' + item)
                   .fontSize(16)
               }
-
-              
+              .listCard()
             }, (item: number, index: int) => String(item))
           }
           .scrollBar(BarState.Off)

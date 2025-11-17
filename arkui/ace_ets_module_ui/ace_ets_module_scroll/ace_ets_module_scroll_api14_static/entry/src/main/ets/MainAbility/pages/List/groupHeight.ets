@@ -13,27 +13,27 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  BarState,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
   Component,
+  Entry,
   Flex,
   FlexDirection,
+  ForEach,
   ItemAlign,
-  Column,
+  List,
+  ListItem,
+  ListItemGroup,
+  ListScroller,
+  NodeContainer,
+  Padding,
   Row,
   Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
-  ListItem,
-  ListScroller,
-  List,
-  VisibleListContentInfo,
-  Padding,
-  ForEach,
-  ListItemGroup,
-  Color,
-  TextAlign
+  TextAlign,
+  VisibleListContentInfo
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 

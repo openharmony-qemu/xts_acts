@@ -13,28 +13,31 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  BarState,
+  Builder,
+  Button,
+  ClickEvent,
+  Column,
+  ColumnOptions,
   Component,
+  EdgeEffect,
+  Entry,
   Flex,
   FlexDirection,
   ItemAlign,
-  Column,
+  List,
+  ListItem,
+  ListItemAlign,
+  ListItemGroup,
+  ListScroller,
+  Margin,
+  NodeContainer,
+  Padding,
   Row,
   Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
-  ListItem,
-  ListScroller,
-  ColumnOptions,
-  Padding,
-  Builder,
-  Margin,
-  List,
-  ListItemGroup,
-  ListItemAlign,
-  EdgeEffect
+  ForEach,
+  TextAlign,
+  Color
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -52,7 +55,7 @@ struct getItemRectInGroupError {
   itemHead(text: string) {
     Text(text)
       .fontSize(20)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor(Color.Blue)
       .width('100%')
       .height(50)
   }
@@ -61,7 +64,7 @@ struct getItemRectInGroupError {
   itemFoot(num: number) {
     Text('共' + num + '个')
       .fontSize(20)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor(Color.Green)
       .width('100%')
       .height(50)
   }
@@ -72,24 +75,24 @@ struct getItemRectInGroupError {
         .id('getItemRectInGroup_err_text')
         .margin({ top: 5 } as Margin)
       Row() {
-        Button('error: 401')
+        Button('error: 401')//401
           .id('getItemRectInGroup_401')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
-              
-            } catch (error) {
+              // this.listScroller.getItemRectInGroup(undefined, 10)
+            } catch (error: Error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
           })
-        Button('error: 100004')
+        Button('error: 100004') //100004
           .id('getItemRectInGroup_100004')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
               this.listScroller2.getItemRectInGroup(10, 10)
-            } catch (error) {
+            } catch (error: Error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -99,24 +102,24 @@ struct getItemRectInGroupError {
       Text('scrollToItemInGroup: ' + this.textResult2)
         .id('scrollToItemInGroup_err_text')
       Row() {
-        Button('error: 401')
+        Button('error: 401')//401
           .id('scrollToItemInGroup_401')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
-              
-            } catch (error) {
+              // this.listScroller.scrollToItemInGroup(1, undefined)
+            } catch (error: Error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
           })
-        Button('error: 100004')
+        Button('error: 100004') //100004
           .id('scrollToItemInGroup_100004')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
               this.listScroller2.scrollToItemInGroup(1, 3)
-            } catch (error) {
+            } catch (error: Error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -125,21 +128,21 @@ struct getItemRectInGroupError {
 
 
       List({ initialIndex: 0, scroller: this.listScroller }) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        ListItemGroup({ header: () => {this.itemHead('0')}, footer: () => {this.itemFoot(this.arr.length)} }) {
+          ForEach(this.arr, (item: number, i: int) => {
+            ListItem() {
+              Text('listItemGroup' + item)
+                .width('100%')
+                .height('100%')
+                .fontSize(16)
+                .borderRadius(10)
+                .textAlign(TextAlign.Center)
+                .backgroundColor('#3366CC')
+            }
+            .width('100%')
+            .height('15%')
+          })
+        }
       }
       .alignListItem(ListItemAlign.Center)
       .friction(0.6)
@@ -147,11 +150,11 @@ struct getItemRectInGroupError {
       .scrollBar(BarState.On)
       .width('90%')
       .height('60%')
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor(Color.Red)
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor(Color.Gray)
     .padding({ top: 5 } as Padding)
   }
 }

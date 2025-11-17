@@ -13,22 +13,22 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
-  Column,
-  Scroller,
-  GridLayoutOptions,
-  ColumnOptions,
-  ScrollState,
-  ScrollSource,
-  Text,
-  Button,
-  Grid,
-  Margin,
-  ClickEvent,
-  ForEach,
   BarState,
+  Button,
+  ClickEvent,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  ForEach,
+  Grid,
   GridItem,
+  GridLayoutOptions,
+  Margin,
+  Scroller,
+  ScrollSource,
+  ScrollState,
+  Text,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -41,12 +41,12 @@ struct irregularGridAnimationExample {
   @State onText: string = 'Grid: '
   layoutOptions1: GridLayoutOptions = {
     regularSize: [1, 1],
-    irregularIndexes: [0, 7], 
-    onGetIrregularSizeByIndex: (index: int) => {
+    irregularIndexes: [0, 7], // 索引为0和7的GridItem占用的列数由onGetIrregularSizeByIndex指定
+    onGetIrregularSizeByIndex: (index: Int) => {
       if (index === 0) {
-        return [1, 5] as [int, int]
+        return [1, 5] as [Int, Int]
       }
-      return [1, index % 6 + 1] as [int, int]
+      return [1, index % 6 + 1] as [Int, Int]
     }
   } as GridLayoutOptions
 
@@ -58,7 +58,7 @@ struct irregularGridAnimationExample {
 
       Button('next page true')
         .id('irGrid_next_animation_true')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后滑到下一页
           this.scroller.scrollPage({ next: true, animation: true })
         })
       Grid(this.scroller, this.layoutOptions1) {

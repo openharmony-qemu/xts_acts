@@ -17,40 +17,19 @@ import {
   Entry,
   Component,
   $r,
-  Column,
-  TextAlign,
-  SwiperAnimationEvent,
-  Scroll,
-  DotIndicator,
-  LazyForEach,
-  ColumnOptions,
-  Scroller,
-  SwiperAnimationMode,
-  Row,
-  RowOptions,
-  Repeat,
-  RepeatItem,
-  Text,
-  TabsController,
-  Margin,
-  ClickEvent,
-  SwiperController,
-  Swiper,
-  ForEach,
-  Color,
-  Button,
-  Tabs,
-  TabContent,
-  SubTabBarStyle,
-  BarMode,
-  Alignment,
-  BarPosition,
+  Column,TextAlign,SwiperAnimationEvent,Scroll,DotIndicator,LazyForEach,
+  ColumnOptions,Scroller,SwiperAnimationMode,Row,RowOptions,Repeat,RepeatItem,
+  Text,TabsController,Margin,ClickEvent,SwiperController,Swiper,ForEach,
+  Color,Button,Tabs,TabContent,SubTabBarStyle,BarMode,Alignment,BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct SwiperAnimationModeExample {
@@ -58,13 +37,20 @@ struct SwiperAnimationModeExample {
   private swiperController: SwiperController = new SwiperController()
   private data: MyBasicSource = new MyBasicSource([])
   private list: number[] = [] as number[]
-  @State currentIndex: Int = 0
+  @State currentIndex: number = 0
   @State index: number = 0
   @State text1: string = '0'
   @State autoPlay: boolean = false
   @State isLoop: boolean = false
   @State swipeByGroup: boolean = false
-  @State count: Int = 1
+  @State count: int = 1
+
+  aboutToAppear(): void {
+    for (let i = 0; i < 10; i++) {
+      this.list.push(i);
+    }
+    this.data = new MyBasicSource(this.list)
+  }
 
   build() {
     Scroll(this.scroller) {
@@ -73,21 +59,21 @@ struct SwiperAnimationModeExample {
           .id('swiper_mode_text')
         Button('DEFAULT_ANIMATION')
           .id('swiper_mode_no')
-          .onClick((e: ClickEvent) => {
+          .onClick((e: ClickEvent)=>{
             console.log('change Index 2');
             this.text1 = 'NO_ANIMATION'
             this.swiperController.changeIndex(2, SwiperAnimationMode.NO_ANIMATION)
           })
         Button('DEFAULT_ANIMATION')
           .id('swiper_mode_default')
-          .onClick((e: ClickEvent) => {
+          .onClick((e: ClickEvent)=>{
             console.log('change Index 6');
             this.text1 = 'DEFAULT_ANIMATION'
             this.swiperController.changeIndex(6, SwiperAnimationMode.DEFAULT_ANIMATION)
           })
         Button('FAST_ANIMATION')
           .id('swiper_mode_fast')
-          .onClick((e: ClickEvent) => {
+          .onClick((e: ClickEvent)=>{
             console.log('change Index 9');
             this.text1 = 'FAST_ANIMATION'
             this.swiperController.changeIndex(9, SwiperAnimationMode.FAST_ANIMATION)
@@ -98,10 +84,10 @@ struct SwiperAnimationModeExample {
         Swiper(this.swiperController) {
           LazyForEach(this.data, (item: number) => {
             Text(String(item))
-              .onAppear(() => {
+              .onAppear(()=>{
                 console.info('onAppear ' + String(item))
               })
-              .onDisAppear(() => {
+              .onDisAppear(()=>{
                 console.info('onDisAppear ' + String(item))
               })
               .width('90%')
@@ -112,14 +98,14 @@ struct SwiperAnimationModeExample {
 
           }, (item: number) => String(item))
         }
-        .onChange((currentIndex: Int): void => {
+        .onChange((currentIndex: int): void => {
           console.log('change: ' + currentIndex)
           this.index = currentIndex
         })
         .displayCount(this.count, this.swipeByGroup)
         .prevMargin(10)
         .nextMargin(10)
-        
+        .autoPlay(this.autoPlay, undefined)
         .indicator(
           new DotIndicator()
             .itemWidth(8)
@@ -133,19 +119,19 @@ struct SwiperAnimationModeExample {
         )
         .itemSpace(10)
         .displayArrow(true, false)
-        .onContentDidScroll((selectedIndex: int, index: int, position: double, mainAxisLength: double): void => {
-          
+        .onContentDidScroll((selectedIndex: int, index: int, position: number, mainAxisLength: number): void => {
+          // 监听Swiper页面滑动事件，在该回调中可以实现自定义导航点切换动画等
           console.info('onContentDidScroll selectedIndex: ' + selectedIndex + ', index: ' + index + ', position: ' +
             position + ', mainAxisLength: ' + mainAxisLength)
         })
-        .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+        .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
           console.info('index: ' + index)
           console.info('targetIndex: ' + targetIndex)
           console.info('current offset: ' + extraInfo.currentOffset)
           console.info('target offset: ' + extraInfo.targetOffset)
           console.info('velocity: ' + extraInfo.velocity)
         })
-        .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+        .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
           console.info('index: ' + index)
           console.info('current offset: ' + extraInfo.currentOffset)
         })
