@@ -14,6 +14,11 @@
  */
 import InputPresetTest from './PresetTest/InputPresetTest.test';
 
+import TextMinFontSizeJsunitTest from './TextTest/TextMinFontSizeJsunitTest.test';
+
 export default function testsuite() {
   InputPresetTest()
+
+  //TextTest
+  TextMinFontSizeJsunitTest()
 }

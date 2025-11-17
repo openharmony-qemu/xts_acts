@@ -1,6 +1,8 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-		"MainAbility/pages/Preset/InputPreset"
+		"MainAbility/pages/Preset/InputPreset",
+
+        "MainAbility/pages/Measure/MeasureJsunitTest"
     ]
 }

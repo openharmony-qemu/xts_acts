@@ -14,6 +14,10 @@
  */
 import InputPresetTest from './PresetTest/InputPresetTest.test';
 
+import MeasureJsunitTest from './MeasureTest/MeasureJsunitTest.test';
+
 export default function testsuite() {
   InputPresetTest()
+  // MeasureTest
+  MeasureJsunitTest()
 }
