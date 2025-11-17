@@ -948,8 +948,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-          console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 pixelMap: ${pixelMap}`);
-          console.log('Succeeded in creating pixelmap.');
+          // console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 pixelMap: ${pixelMap}`);
+          // console.log('Succeeded in creating pixelmap.');
         })
 
         let parameters1: Record<String, RecordData> = {
@@ -987,10 +987,10 @@ export default function ActsNotificationSystemLiveViewTest() {
           WantAgent.getWantAgent(wantAgentInfo).then((data) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
-            console.error('getWantAgent failed! ${err.code} ${err.message}');
+            // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
         } catch (err: BusinessError) {
-          console.error('getWantAgent failed! ${err.code} ${err.message}');
+          // console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
 
         let capsule: notificationManager.NotificationCapsule = {
@@ -1037,28 +1037,28 @@ export default function ActsNotificationSystemLiveViewTest() {
           appInstanceKey: undefined,
         }
         try {
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case start`);
+          // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case start`);
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
             if (err) {
-              hilog.info(0x000, `${TAG}`,
-                `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(err));
+              // hilog.info(0x000, `${TAG}`,
+              //   `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(err));
               expect(false).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
               done();
             } else {
-              hilog.info(0x000, `${TAG}`,
-                `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish success+data is %{public}s`);
+              // hilog.info(0x000, `${TAG}`,
+              //   `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish success+data is %{public}s`);
               expect(false).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
               done();
             }
           })
         } catch (error: BusinessError) {
-          hilog.info(0x000, `${TAG}`,
-            `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(error));
+          // hilog.info(0x000, `${TAG}`,
+          //   `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(error));
           let err: BusinessError = error as BusinessError
           expect(err.code).assertEqual(401);
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
+          // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
           done();
         }
 
@@ -1081,8 +1081,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-          console.info(`${TAG} Sub_Notification_Ans_Live_Publish_Static_7600 pixelMap: ${pixelMap}`);
-          console.log('Succeeded in creating pixelmap.');
+          // console.info(`${TAG} Sub_Notification_Ans_Live_Publish_Static_7600 pixelMap: ${pixelMap}`);
+          // console.log('Succeeded in creating pixelmap.');
         })
 
         //wantAgent对象
@@ -1119,10 +1119,10 @@ export default function ActsNotificationSystemLiveViewTest() {
           WantAgent.getWantAgent(wantAgentInfo).then((data) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
-            console.error('getWantAgent failed! ${err.code} ${err.message}');
+            // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
         } catch (err: BusinessError) {
-          console.error('getWantAgent failed! ${err.code} ${err.message}');
+          // console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
         let capsule: notificationManager.NotificationCapsule = {
           title: 'title',
@@ -1176,32 +1176,32 @@ export default function ActsNotificationSystemLiveViewTest() {
           authorizedStatus: undefined
         };
         notificationManager.isNotificationEnabled().then((data: boolean) => {
-          console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
+          // console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
         }).catch((err: BusinessError): void => {
-          console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
+          // console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
         });
         try {
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case start`);
+          // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case start`);
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
             if (err) {
-              hilog.info(0x000, `${TAG}`,
-                `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(err));
+              // hilog.info(0x000, `${TAG}`,
+              //   `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(err));
               expect(false).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
               done();
             } else {
-              hilog.info(0x000, `${TAG}`,
-                `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
+              // hilog.info(0x000, `${TAG}`,
+              //   `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
               expect(false).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
               done();
             }
           })
         } catch (error) {
           let err: BusinessError = error as BusinessError
-          console.error(`${TAG} `+` ${TEST_SUITE_NAME} ` + ` ${TEST_CASE_NAME} ` + 'publish failed! ${err.code} ${err.message}');
+          // console.error(`${TAG} `+` ${TEST_SUITE_NAME} ` + ` ${TEST_CASE_NAME} ` + 'publish failed! ${err.code} ${err.message}');
           expect(err.code).assertEqual(401);
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
+          // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `test case end`);
           done();
         }
       })
@@ -1225,8 +1225,8 @@ export default function ActsNotificationSystemLiveViewTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
 
         await pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
-          console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 pixelMap: ${pixelMap}`);
-          console.log('Succeeded in creating pixelmap.');
+          // console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 pixelMap: ${pixelMap}`);
+          // console.log('Succeeded in creating pixelmap.');
         })
 
         //wantAgent对象
@@ -1263,10 +1263,10 @@ export default function ActsNotificationSystemLiveViewTest() {
           WantAgent.getWantAgent(wantAgentInfo).then((data) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
-            console.error('getWantAgent failed! ${err.code} ${err.message}');
+            // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
         } catch (err: BusinessError) {
-          console.error('getWantAgent failed! ${err.code} ${err.message}');
+          // console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
         let capsule: notificationManager.NotificationCapsule = {
           title: 'title',
@@ -1314,9 +1314,9 @@ export default function ActsNotificationSystemLiveViewTest() {
         // addslot回调
         let addSlotCallBack = (err: BusinessError | null) => {
           if (err) {
-            console.info("addSlot failed " + JSON.stringify(err));
+            // console.info("addSlot failed " + JSON.stringify(err));
           } else {
-            console.info("addSlot success");
+            // console.info("addSlot success");
           }
         }
         // 通知slot对象
@@ -1327,28 +1327,28 @@ export default function ActsNotificationSystemLiveViewTest() {
           authorizedStatus: undefined
         };
         try {
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case start`);
+          // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case start`);
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
             if (err) {
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`,
-                `${TEST_CASE_NAME}` + `publish failed,data is %{public}s`, JSON.stringify(err));
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`,
+              //   `${TEST_CASE_NAME}` + `publish failed,data is %{public}s`, JSON.stringify(err));
               expect(false).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
               done();
             } else {
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`,
-                `${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`,
+              //   `${TEST_CASE_NAME}` + `publish success,data is %{public}s`);
               expect(false).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
+              // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
               done();
             }
           })
         } catch (error) {
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,
-            JSON.stringify(error));
+          // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `publish failed,data is %{public}s`,
+          //   JSON.stringify(error));
           let err: BusinessError = error as BusinessError
           expect(err.code).assertEqual(401);
-          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
+          // hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}`, `${TEST_CASE_NAME}` + `test case end`);
           done();
         }
 
