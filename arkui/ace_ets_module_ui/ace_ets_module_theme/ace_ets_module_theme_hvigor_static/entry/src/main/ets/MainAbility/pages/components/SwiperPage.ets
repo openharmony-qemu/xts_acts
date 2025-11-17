@@ -12,12 +12,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { redCustomTheme } from '../../themes/CustomTheme';
+import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,Swiper,ForEach,
-  Row, ClickEvent, Margin, AlphabetIndexer, WithTheme,  ButtonStyleMode, Margin, ArrowStyle, TextAlign, DotIndicator,
-  DigitIndicator}
-  from '@ohos.arkui.component'
+import {
+  AlphabetIndexer,
+  ArrowStyle,
+  Button,
+  ButtonStyleMode,
+  ClickEvent,
+  Column,
+  Component,
+  DigitIndicator,
+  DotIndicator,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ForEach,
+  ItemAlign,
+  Margin,
+  Row,
+  Swiper,
+  Text,
+  TextAlign,
+  WithTheme
+} from '@ohos.arkui.component'
+import { StorageLink } from '@ohos.arkui.stateManagement'
+
 export const swiperThemeProperty = 'SwiperThemeProperty';
 
 export class SwiperKeys {
@@ -30,9 +52,8 @@ export class SwiperKeys {
 @Entry
 @Component
 struct SwiperPage {
-  // @StorageLink(swiperThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink(swiperThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   value: string = 'Text';
-
   data: Array<string> = new Array<string>('1', '2', '3', '4', '5');
 
   build() {
@@ -52,22 +73,22 @@ struct SwiperPage {
       .margin({ top: '10vp' } as Margin)
       .key(SwiperKeys.dotIndicatorSystem)
 
-      // WithTheme({ theme: this.localTheme }) {
-      //   Swiper() {
-      //     ForEach(this.data, (item: string) => {
-      //       Text(item)
-      //         .width('90%')
-      //         .height('160vp')
-      //         .backgroundColor('#AFEEEE')
-      //         .textAlign(TextAlign.Center)
-      //         .fontSize('30fp')
-      //     })
-      //   }
-      //   .indicator(new DotIndicator())
-      //   .displayArrow({ showBackground: true })
-      //   .margin({ top: '10vp' })
-      //   .key(SwiperKeys.dotIndicatorWithTheme)
-      // }
+      WithTheme({ theme: this.localTheme }) {
+        Swiper() {
+          ForEach(this.data, (item: string) => {
+            Text(item)
+              .width('90%')
+              .height('160vp')
+              .backgroundColor('#AFEEEE')
+              .textAlign(TextAlign.Center)
+              .fontSize('30fp')
+          })
+        }
+        .indicator(new DotIndicator())
+        .displayArrow({ showBackground: true } as ArrowStyle | boolean | undefined)
+        .margin({ top: '10vp' } as Margin)
+        .key(SwiperKeys.dotIndicatorWithTheme)
+      }
 
       Swiper() {
         ForEach(this.data, (item: string) => {
@@ -83,21 +104,21 @@ struct SwiperPage {
       .margin({ top: '10vp' } as Margin)
       .key(SwiperKeys.digitIndicatorSystem)
 
-      // WithTheme({ theme: this.localTheme }) {
-      //   Swiper() {
-      //     ForEach(this.data, (item: string) => {
-      //       Text(item)
-      //         .width('90%')
-      //         .height('160vp')
-      //         .backgroundColor('#AFEEEE')
-      //         .textAlign(TextAlign.Center)
-      //         .fontSize('30fp')
-      //     })
-      //   }
-      //   .indicator(new DigitIndicator())
-      //   .margin({ top: '10vp' })
-      //   .key(SwiperKeys.digitIndicatorWithTheme)
-      // }
+      WithTheme({ theme: this.localTheme }) {
+        Swiper() {
+          ForEach(this.data, (item: string) => {
+            Text(item)
+              .width('90%')
+              .height('160vp')
+              .backgroundColor('#AFEEEE')
+              .textAlign(TextAlign.Center)
+              .fontSize('30fp')
+          })
+        }
+        .indicator(new DigitIndicator())
+        .margin({ top: '10vp' } as Margin)
+        .key(SwiperKeys.digitIndicatorWithTheme)
+      }
     }
     .width('100%')
   }

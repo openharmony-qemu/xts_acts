@@ -1,20 +1,7 @@
-import {  ResourceColor } from '@ohos.arkui.component'
+import { ResourceColor } from '@ohos.arkui.component'
+
 export class Colors {
   public static readonly colors: Map<string, string> = new Map<string, string>([
-    ['brand', 'sys.color.brand'],
-    ['warning', 'sys.color.warning'],
-    ['alert', 'sys.color.alert'],
-    ['confirm', 'sys.color.confirm'],
-    ['fontPrimary', 'sys.color.font_primary'],
-    ['fontSecondary', 'sys.color.font_secondary'],
-    ['fontTertiary', 'sys.color.font_tertiary'],
-    ['fontFourth', 'sys.color.font_fourth'],
-    ['fontEmphasize', 'sys.color.font_emphasize'],
-    ['fontOnPrimary', 'sys.color.font_on_primary'],
-    ['fontOnSecondary', 'sys.color.font_on_secondary'],
-    ['fontOnTertiary', 'sys.color.font_on_tertiary'],
-    ['fontOnFourth',  'sys.color.font_on_fourth'],
-    ['iconPrimary', 'sys.color.icon_primary'],
     ['iconSecondary', 'sys.color.icon_secondary'],
     ['iconTertiary', 'sys.color.icon_tertiary'],
     ['iconFourth', 'sys.color.icon_fourth'],
@@ -54,6 +41,7 @@ export class Colors {
     ['interactiveClick', 'sys.color.interactive_click']
   ]);
 }
+
 export interface DataClass {
   text: string;
   token: ResourceColor;

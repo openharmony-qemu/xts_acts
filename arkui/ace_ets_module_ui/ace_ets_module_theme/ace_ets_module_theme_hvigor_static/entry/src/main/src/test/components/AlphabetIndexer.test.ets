@@ -14,10 +14,10 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -26,17 +26,21 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-import { frameTime, sleep } from '../Utils';
-import { AlphabetIndexerKeys, alphabetIndexerThemeProperty } from '../../../ets/MainAbility/pages/components/AlphabetIndexerPage';
-// import { greenCustomTheme, redCustomTheme } from '../../../ets/MainAbility/themes/CustomTheme';
-import { Theme, CustomTheme } from '@ohos.arkui.theme';
+import { frameTime, sleep } from '../Utils.test';
+import {
+  AlphabetIndexerKeys,
+  alphabetIndexerThemeProperty
+} from '../../../ets/MainAbility/pages/components/AlphabetIndexerPage';
+import { greenCustomTheme, redCustomTheme } from '../../../ets/MainAbility/themes/CustomTheme1';
+import { CustomTheme, Theme } from '@ohos.arkui.theme';
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function alphabetIndexerThemeTest() {
   const SUITE: string = `AlphabetIndexerThemeTest`;
-  let localTheme: Theme | undefined;
+  let localTheme: CustomTheme | undefined;
   let changeTheme: boolean = false;
   let colorValues: Map<string, string> | undefined = new Map<string, string>();
 
@@ -45,6 +49,9 @@ export default function alphabetIndexerThemeTest() {
       console.info("AlphabetIndexerPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
+    });
+
+    beforeEach(() => {
       try {
         const options: router.RouterOptions = {
           url: `MainAbility/pages/components/AlphabetIndexerPage`,
@@ -52,46 +59,35 @@ export default function alphabetIndexerThemeTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `AlphabetIndexerPage`) {
-          await routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<Theme>(alphabetIndexerThemeProperty);
+          routerInstance.pushUrl(options).then(() => {
+            localTheme = AppStorage.get<CustomTheme>(alphabetIndexerThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get<Map<string,string>|undefined>(colorValuesKey);
+        await UtilsTest.msSleep(4000)
+        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey);
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-    });
 
-    beforeEach(() => {
       if (!changeTheme) return;
-      // if ((AppStorage.get<Theme>(alphabetIndexerThemeProperty) as Theme)?.colors?.fontEmphasize
-      //   == redCustomTheme?.colors?.fontEmphasize) {
-        // AppStorage.setOrCreate<Theme>(alphabetIndexerThemeProperty, greenCustomTheme);
-      // } else {
-        // AppStorage.setOrCreate<Theme>(alphabetIndexerThemeProperty, redCustomTheme);
-      // }
-      localTheme = AppStorage.get<Theme>(alphabetIndexerThemeProperty) ;
+      if ((AppStorage.get<Theme>(alphabetIndexerThemeProperty))?.colors?.fontEmphasize
+        == redCustomTheme?.colors?.fontEmphasize) {
+        AppStorage.setOrCreate<CustomTheme>(alphabetIndexerThemeProperty, greenCustomTheme);
+      } else {
+        AppStorage.setOrCreate<CustomTheme>(alphabetIndexerThemeProperty, redCustomTheme);
+      }
+      localTheme = AppStorage.get<CustomTheme>(alphabetIndexerThemeProperty);
       changeTheme = false;
     })
 
     afterAll(() => {
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.back();
-      } catch (err) {
-        console.error(`${SUITE} afterAll error:` + JSON.stringify(err));
-      }
-    })
-    /**
-     * @tc.number    : ActsAlphabetIndexerThemeColors_static_0100
-     * @tc.name      : ActsAlphabetIndexerThemeColors_static_0100
-     * @tc.desc      : Check system colors values of the AlphabetIndexer component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     */
-    it(`ActsAlphabetIndexerThemeColors_static_0100`, Level.LEVEL2, () => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
+    
+    it(`ActsAlphabetIndexerThemeColors_static_0100`, Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsAlphabetIndexerThemeColors_static_0100`;
       console.info(`${SUITE} ${CASE} START`);
       const indexerJSON = inspector.getInspectorByKey(AlphabetIndexerKeys.alphabetIndexerSystem);
@@ -109,16 +105,10 @@ export default function alphabetIndexerThemeTest() {
       const selectedBackgroundColor = indexerAttrs?.getString('selectedBackgroundColor').toString().toUpperCase();
       expect(selectedBackgroundColor).assertEqual(colorValues?.get(`compEmphasizeSecondary`));
       console.info(`${SUITE} ${CASE} END`);
+      done();
     })
-    /**
-     * @tc.number    : ActsAlphabetIndexerThemeColors_static_0200
-     * @tc.name      : ActsAlphabetIndexerThemeColors_static_0200
-     * @tc.desc      : Check custom colors values of the AlphabetIndexer component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     */
-    it(`ActsAlphabetIndexerThemeColors_static_0200`, Level.LEVEL2, () => {
+    
+    it(`ActsAlphabetIndexerThemeColors_static_0200`, Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsAlphabetIndexerThemeColors_static_0200`;
       console.info(`${SUITE} ${CASE} START`);
       const indexerJSON = inspector.getInspectorByKey(AlphabetIndexerKeys.alphabetIndexerWithTheme);
@@ -137,17 +127,10 @@ export default function alphabetIndexerThemeTest() {
       expect(selectedBackgroundColor).assertEqual(localTheme?.colors?.compEmphasizeSecondary);
       changeTheme = true;
       console.info(`${SUITE} ${CASE} END`);
+      done();
     })
-     /**
-     * @tc.number    : ActsAlphabetIndexerThemeColors_static_0300
-     * @tc.name      : ActsAlphabetIndexerThemeColors_static_0300
-     * @tc.desc      : Check system colors values of the AlphabetIndexer component
-     *                 after change theme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     */
-    it(`ActsAlphabetIndexerThemeColors_static_0300`, Level.LEVEL0, async () => {
+    
+    it(`ActsAlphabetIndexerThemeColors_static_0300`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsAlphabetIndexerThemeColors_static_0300`;
       console.info(`${SUITE} ${CASE} START`);
       await sleep(frameTime);
@@ -166,6 +149,7 @@ export default function alphabetIndexerThemeTest() {
       const selectedBackgroundColor = indexerAttrs?.getString('selectedBackgroundColor').toString().toUpperCase();
       expect(selectedBackgroundColor).assertEqual(localTheme?.colors?.compEmphasizeSecondary);
       console.info(`${SUITE} ${CASE} END`);
+      done();
     })
   })
 }

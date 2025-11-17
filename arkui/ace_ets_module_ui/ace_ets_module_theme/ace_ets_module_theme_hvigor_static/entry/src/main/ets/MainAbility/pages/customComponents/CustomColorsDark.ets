@@ -13,27 +13,47 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,ColumnOptions,
-  Row, ClickEvent, Margin, WithTheme, ForEach, Padding, Blank, HorizontalAlign, Color} from '@ohos.arkui.component'
-import { State, PropRef } from '@ohos.arkui.stateManagement'
+import {
+  Blank,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ForEach,
+  HorizontalAlign,
+  ItemAlign,
+  Margin,
+  Padding,
+  Row,
+  Text,
+  WithTheme
+} from '@ohos.arkui.component'
+import { Prop, State } from '@ohos.arkui.stateManagement'
 
 import { postfixDark } from '../themeTokensPages/WithThemeTestPage';
 import { Theme } from '@ohos.arkui.theme';
 import {
   DataClass,
-  setBaseTokens,
-  setFontData,
-  setIconData,
   setBackgroundData,
+  setBaseTokens,
   setCompBackgroundData,
   setCompData,
+  setFontData,
+  setIconData,
   setInteractiveData
-} from '../../../../src/test/Utils';
+} from '../../../../src/test/Utils.test';
 
 export let customButtonDarkTheme: Theme | undefined;
 
 @Component
-export struct  CustomColorsDark {
+export struct CustomColorsDark {
   @State data: Array<DataClass> = new Array<DataClass>();
 
   onWillApplyTheme(theme: Theme) {
@@ -48,21 +68,21 @@ export struct  CustomColorsDark {
   }
 
   build() {
-      Column({ space: '8vp' } as ColumnOptions) {
-        ForEach(this.data, (item: DataClass) => {
-          Row() {
-            Blank()
-              .width('15%')
-              .height('20vp')
-              .backgroundColor(item.token)
-              .key(`${item.text}${postfixDark}`)
-              .borderColor(Color.Black)
-              .borderWidth('1vp')
-            Text(`${item.text}${postfixDark}`)
-              .padding({ left: '8vp' } as Padding)
-          }
-          .padding({ left: '8vp', right: '8vp' } as Padding)
-        }, (item: DataClass) => String((item.token)) + item.text)
-      }.alignItems(HorizontalAlign.Start)
-    }
+    Column({ space: '8vp' } as ColumnOptions) {
+      ForEach(this.data, (item: DataClass) => {
+        Row() {
+          Blank()
+            .width('15%')
+            .height('20vp')
+            .backgroundColor(item.token)
+            .key(`${item.text}${postfixDark}`)
+            .borderColor(Color.Black)
+            .borderWidth('1vp')
+          Text(`${item.text}${postfixDark}`)
+            .padding({ left: '8vp' } as Padding)
+        }
+        .padding({ left: '8vp', right: '8vp' } as Padding)
+      }, (item: DataClass) => String((item.token)) + item.text)
+    }.alignItems(HorizontalAlign.Start)
+  }
 }

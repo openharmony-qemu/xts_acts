@@ -12,13 +12,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { redCustomTheme } from '../../themes/CustomTheme';
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, AlphabetIndexer, WithTheme,  ButtonStyleMode, Margin} from '@ohos.arkui.component'
+import { redCustomTheme } from '../../themes/CustomTheme1';
+import {
+  AlphabetIndexer,
+  Button,
+  ButtonStyleMode,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  Margin,
+  Row,
+  Text,
+  WithTheme
+} from '@ohos.arkui.component'
 import { StorageLink } from '@ohos.arkui.stateManagement'
 import { CustomTheme } from '@ohos.arkui.theme';
+
 export const ifThemeProperty: string = `IfThemeProperty`;
+
 export const ifArgumentProperty: string = `IfArgumentProperty`;
+
 export class IfKeys {
   public static readonly ifSystem: string = `If_System`;
   public static readonly elseSystem: string = `Else_System`;
@@ -29,33 +48,33 @@ export class IfKeys {
 @Entry
 @Component
 struct IfPage {
-  // @StorageLink(ifThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
-  // @StorageLink(ifArgumentProperty) argument: boolean = true
+  @StorageLink(ifThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
+  @StorageLink(ifArgumentProperty) argument: boolean = true
 
   build() {
     Column() {
-      // if (this.argument) {
-      //   Button('If Button')
-      //     .margin({ top: '100vp' } as Margin)
-      //     .key(IfKeys.ifSystem)
-      // } else {
-      //   Button('Else Button')
-      //     .buttonStyle(ButtonStyleMode.NORMAL)
-      //     .margin({ top: '100vp' } as Margin)
-      //     .key(IfKeys.elseSystem)
-      // }
-      // WithTheme({ theme: this.localTheme }) {
-      //   if (this.argument) {
-      //     Button('If Button')
-      //       .margin({ top: '100vp' })
-      //       .key(IfKeys.ifWithTheme)
-      //   } else {
-      //     Button('Else Button')
-      //       .buttonStyle(ButtonStyleMode.NORMAL)
-      //       .margin({ top: '100vp' })
-      //       .key(IfKeys.elseWithTheme)
-      //   }
-      // }
+      if (this.argument) {
+        Button('If Button')
+          .margin({ top: '100vp' } as Margin)
+          .key(IfKeys.ifSystem)
+      } else {
+        Button('Else Button')
+          .buttonStyle(ButtonStyleMode.NORMAL)
+          .margin({ top: '100vp' } as Margin)
+          .key(IfKeys.elseSystem)
+      }
+      WithTheme({ theme: this.localTheme }) {
+        if (this.argument) {
+          Button('If Button')
+            .margin({ top: '100vp' } as Margin)
+            .key(IfKeys.ifWithTheme)
+        } else {
+          Button('Else Button')
+            .buttonStyle(ButtonStyleMode.NORMAL)
+            .margin({ top: '100vp' } as Margin)
+            .key(IfKeys.elseWithTheme)
+        }
+      }
     }
     .width('100%')
   }

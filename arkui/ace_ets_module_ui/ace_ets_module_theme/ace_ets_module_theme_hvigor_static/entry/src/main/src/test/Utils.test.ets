@@ -13,22 +13,24 @@
  * limitations under the License.
  */
 import { Theme } from '@ohos.arkui.theme';
-import {  ResourceColor } from '@ohos.arkui.component'
+import { ResourceColor } from '@ohos.arkui.component'
 
 
 export const frameTime = 1000;
-export function sleep(count:int) : Promise<int> {
+
+export function sleep(count: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
-  setTimeout(() => {
-  resolve(0)
-}, count)
-})
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
 }
 
 
 export function fillMap<T>(map: Map<string, T>, keys: string[], values: T[]) {
   keys.forEach((item, index) => {
-    const value: T = values[index.toInt()];
+    let RealIndex: Int = index.toInt()
+    const value: T = values[RealIndex];
     map.set(item, value);
   })
 }
@@ -39,225 +41,225 @@ export interface DataClass {
 }
 
 export function setBaseTokens(data: DataClass[], theme: Theme) {
- data.push({
+  data.push({
     text: 'brand',
     token: theme.colors.brand,
   });
- data.push({
+  data.push({
     text: 'warning',
     token: theme.colors.warning,
   });
- data.push({
+  data.push({
     text: 'alert',
     token: theme.colors.alert,
   });
- data.push({
+  data.push({
     text: 'confirm',
     token: theme.colors.confirm,
   });
 }
 
-export function setFontData(data: DataClass[], theme: Theme)  {
- data.push({
+export function setFontData(data: DataClass[], theme: Theme) {
+  data.push({
     text: 'fontPrimary',
     token: theme.colors.fontPrimary,
   });
- data.push({
+  data.push({
     text: 'fontSecondary',
     token: theme.colors.fontSecondary,
   });
- data.push({
+  data.push({
     text: 'fontTertiary',
     token: theme.colors.fontTertiary,
   });
- data.push({
+  data.push({
     text: 'fontFourth',
     token: theme.colors.fontFourth,
   });
- data.push({
+  data.push({
     text: 'fontEmphasize',
     token: theme.colors.fontEmphasize,
   });
- data.push({
+  data.push({
     text: 'fontOnPrimary',
     token: theme.colors.fontOnPrimary,
   });
- data.push({
+  data.push({
     text: 'fontOnSecondary',
     token: theme.colors.fontOnSecondary,
   });
- data.push({
+  data.push({
     text: 'fontOnTertiary',
     token: theme.colors.fontOnTertiary,
   });
- data.push({
+  data.push({
     text: 'fontOnFourth',
     token: theme.colors.fontOnFourth,
   });
 }
 
 export function setIconData(data: DataClass[], theme: Theme) {
- data.push({
+  data.push({
     text: 'iconPrimary',
     token: theme.colors.iconPrimary,
   });
- data.push({
+  data.push({
     text: 'iconSecondary',
     token: theme.colors.iconSecondary,
   });
- data.push({
+  data.push({
     text: 'iconTertiary',
     token: theme.colors.iconTertiary,
   });
- data.push({
+  data.push({
     text: 'iconFourth',
     token: theme.colors.iconFourth,
   });
- data.push({
+  data.push({
     text: 'iconEmphasize',
     token: theme.colors.iconEmphasize,
   });
- data.push({
+  data.push({
     text: 'iconSubEmphasize',
     token: theme.colors.iconSubEmphasize,
   });
- data.push({
+  data.push({
     text: 'iconOnPrimary',
     token: theme.colors.iconOnPrimary,
   });
- data.push({
+  data.push({
     text: 'iconOnSecondary',
     token: theme.colors.iconOnSecondary,
   });
- data.push({
+  data.push({
     text: 'iconOnTertiary',
     token: theme.colors.iconOnTertiary,
   });
- data.push({
+  data.push({
     text: 'iconOnFourth',
     token: theme.colors.iconOnFourth,
   });
 }
 
 export function setBackgroundData(data: DataClass[], theme: Theme) {
- data.push({
+  data.push({
     text: 'backgroundPrimary',
     token: theme.colors.backgroundPrimary,
   });
- data.push({
+  data.push({
     text: 'backgroundSecondary',
     token: theme.colors.backgroundSecondary,
   });
- data.push({
+  data.push({
     text: 'backgroundTertiary',
     token: theme.colors.backgroundTertiary,
   });
- data.push({
+  data.push({
     text: 'backgroundFourth',
     token: theme.colors.backgroundFourth,
   });
- data.push({
+  data.push({
     text: 'backgroundEmphasize',
     token: theme.colors.backgroundEmphasize,
   });
 }
 
 export function setCompBackgroundData(data: DataClass[], theme: Theme) {
- data.push({
+  data.push({
     text: 'compBackgroundPrimary',
     token: theme.colors.compBackgroundPrimary,
   });
- data.push({
+  data.push({
     text: 'compBackgroundPrimaryTran',
     token: theme.colors.compBackgroundPrimaryTran,
   });
- data.push({
+  data.push({
     text: 'compBackgroundPrimaryContrary',
     token: theme.colors.compBackgroundPrimaryContrary,
   });
- data.push({
+  data.push({
     text: 'compBackgroundGray',
     token: theme.colors.compBackgroundGray,
   });
- data.push({
+  data.push({
     text: 'compBackgroundSecondary',
     token: theme.colors.compBackgroundSecondary,
   });
- data.push({
+  data.push({
     text: 'compBackgroundTertiary',
     token: theme.colors.compBackgroundTertiary,
   });
- data.push({
+  data.push({
     text: 'compBackgroundEmphasize',
     token: theme.colors.compBackgroundEmphasize,
   });
- data.push({
+  data.push({
     text: 'compBackgroundNeutral',
     token: theme.colors.compBackgroundNeutral,
   });
 }
 
 export function setCompData(data: DataClass[], theme: Theme) {
- data.push({
+  data.push({
     text: 'compForegroundPrimary',
     token: theme.colors.compForegroundPrimary,
   });
- data.push({
+  data.push({
     text: 'compDivider',
     token: theme.colors.compDivider,
   });
- data.push({
+  data.push({
     text: 'compCommonContrary',
     token: theme.colors.compCommonContrary,
   });
- data.push({
+  data.push({
     text: 'compBackgroundFocus',
     token: theme.colors.compBackgroundFocus,
   });
- data.push({
+  data.push({
     text: 'compFocusedPrimary',
     token: theme.colors.compFocusedPrimary,
   });
- data.push({
+  data.push({
     text: 'compFocusedSecondary',
     token: theme.colors.compFocusedSecondary,
   });
- data.push({
+  data.push({
     text: 'compFocusedTertiary',
     token: theme.colors.compFocusedTertiary,
   });
- data.push({
+  data.push({
     text: 'compEmphasizeSecondary',
     token: theme.colors.compEmphasizeSecondary,
   });
- data.push({
+  data.push({
     text: 'compEmphasizeTertiary',
     token: theme.colors.compEmphasizeTertiary,
   });
 }
 
 export function setInteractiveData(data: DataClass[], theme: Theme) {
- data.push({
+  data.push({
     text: 'interactiveHover',
     token: theme.colors.interactiveHover,
   });
- data.push({
+  data.push({
     text: 'interactivePressed',
     token: theme.colors.interactivePressed,
   });
- data.push({
+  data.push({
     text: 'interactiveFocus',
     token: theme.colors.interactiveFocus,
   });
- data.push({
+  data.push({
     text: 'interactiveActive',
     token: theme.colors.interactiveActive,
   });
- data.push({
+  data.push({
     text: 'interactiveSelect',
     token: theme.colors.interactiveSelect,
   });
- data.push({
+  data.push({
     text: 'interactiveClick',
     token: theme.colors.interactiveClick,
   });

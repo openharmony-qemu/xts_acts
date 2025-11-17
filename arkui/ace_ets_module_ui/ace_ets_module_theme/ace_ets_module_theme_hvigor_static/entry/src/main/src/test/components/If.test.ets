@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -25,12 +25,11 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-import { frameTime, sleep } from '../Utils';
+import { frameTime, sleep } from '../Utils.test';
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
 import { ifArgumentProperty, IfKeys, ifThemeProperty } from '../../../ets/MainAbility/pages/components/IfPage';
-// import { greenCustomTheme, redCustomTheme } from '../../../ets/MainAbility/themes/CustomTheme';
-import { frameTime, sleep } from '../Utils';
-import { Theme, CustomTheme } from '@ohos.arkui.theme';
+import { greenCustomTheme, redCustomTheme } from '../../../ets/MainAbility/themes/CustomTheme1';
+import { CustomTheme, Theme } from '@ohos.arkui.theme';
 
 export default function ifThemeTest() {
   const SUITE: string = `IfThemeTest`;
@@ -46,6 +45,9 @@ export default function ifThemeTest() {
       console.info("IfPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
+    });
+
+    beforeEach(() => {
       try {
         const options: router.RouterOptions = {
           url: `MainAbility/pages/components/IfPage`,
@@ -53,48 +55,31 @@ export default function ifThemeTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `IfPage`) {
-          await routerInstance.pushUrl(options).then(() => {
+          routerInstance.pushUrl(options).then(() => {
             localTheme = AppStorage.get<CustomTheme>(ifThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get<Map<string,string>|undefined>(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey);
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-    });
 
-    beforeEach(() => {
       if (!changeTheme) {
         return;
       }
-      // if ((AppStorage.get(ifThemeProperty) as Theme)?.colors?.backgroundEmphasize
-      //   == redCustomTheme?.colors?.backgroundEmphasize) {
-      //   AppStorage.setOrCreate(ifThemeProperty, greenCustomTheme);
-      // } else {
-      //   AppStorage.setOrCreate(ifThemeProperty, redCustomTheme);
-      // }
-      localTheme = AppStorage.get<CustomTheme>(ifThemeProperty) ;
+      if ((AppStorage.get(ifThemeProperty) as CustomTheme | undefined)?.colors?.backgroundEmphasize
+        == redCustomTheme?.colors?.backgroundEmphasize) {
+        AppStorage.setOrCreate(ifThemeProperty, greenCustomTheme);
+      } else {
+        AppStorage.setOrCreate(ifThemeProperty, redCustomTheme);
+      }
+      localTheme = AppStorage.get<CustomTheme>(ifThemeProperty);
       changeTheme = false;
     });
 
-    afterAll(() => {
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.back();
-      } catch (err) {
-        console.error(`${SUITE} afterAll error:` + JSON.stringify(err));
-      }
-    });
-    /**
-      * @tc.number    : ActsIfThemeColors_static_0100
-      * @tc.name      : ActsIfThemeColors_static_0100
-      * @tc.desc      : check system colors values of child component inside if-else body
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsIfThemeColors_static_0100`, Level.LEVEL0, async () => {
+    
+    it(`ActsIfThemeColors_static_0100`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsIfThemeColors_static_0100`;
       console.info(`${SUITE} ${CASE} START`);
       AppStorage.setOrCreate<boolean>(ifArgumentProperty, true);
@@ -118,17 +103,11 @@ export default function ifThemeTest() {
           ?? emptyCheck;
         expect(backgroundColor).assertEqual(checkBackgroundColor);
       }
-      console.info(`${SUITE} ${CASE} END`);
+      console.info(`${SUITE} ${CASE} END`)
+      done();
     });
-    /**
-      * @tc.number    : ActsIfThemeColors_static_0200
-      * @tc.name      : ActsIfThemeColors_static_0200
-      * @tc.desc      : check custom colors values of child component inside if-else body
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsIfThemeColors_static_0200`, Level.LEVEL0, async () => {
+    
+    it(`ActsIfThemeColors_static_0200`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsIfThemeColors_static_0200`;
       console.info(`${SUITE} ${CASE} START`);
 
@@ -154,18 +133,11 @@ export default function ifThemeTest() {
         expect(backgroundColor).assertEqual(checkBackgroundColor);
       }
       changeTheme = true;
-      console.info(`${SUITE} ${CASE} END`);
+      console.info(`${SUITE} ${CASE} END`)
+      done();
     });
-    /**
-      * @tc.number    : ActsIfThemeColors_static_0300
-      * @tc.name      : ActsIfThemeColors_static_0300
-      * @tc.desc      : check custom colors values of child component inside if-else body
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsIfThemeColors_static_0300`, Level.LEVEL0, async () => {
+    
+    it(`ActsIfThemeColors_static_0300`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsIfThemeColors_static_0300`;
       console.info(`${SUITE} ${CASE} START`);
 
@@ -191,7 +163,8 @@ export default function ifThemeTest() {
         expect(backgroundColor).assertEqual(checkBackgroundColor);
       }
       changeTheme = true;
-      console.info(`${SUITE} ${CASE} END`);
+      console.info(`${SUITE} ${CASE} END`)
+      done();
     });
   });
 }

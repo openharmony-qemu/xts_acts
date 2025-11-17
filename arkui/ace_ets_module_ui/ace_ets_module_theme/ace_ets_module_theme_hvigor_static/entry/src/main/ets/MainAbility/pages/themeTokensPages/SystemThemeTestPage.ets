@@ -12,23 +12,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, $r, ResourceColor,  ColumnOptions, ForEach, HorizontalAlign, Padding, Blank, Color} from '@ohos.arkui.component'
 import {
-  State,
-  PropRef
-} from '@ohos.arkui.stateManagement'
-import { Theme } from '@ohos.arkui.theme';
+  $r,
+  Blank,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ForEach,
+  HorizontalAlign,
+  ItemAlign,
+  Margin,
+  Padding,
+  ResourceColor,
+  Row,
+  Text
+} from '@ohos.arkui.component'
+import { Prop, State } from '@ohos.arkui.stateManagement'
+import { CustomTheme, Theme } from '@ohos.arkui.theme';
 import { CustomColorList } from '../customComponents/CustomColorList';
 
-export let systemTheme : Theme | undefined;
+export let systemTheme: Theme | undefined;
 
 @Entry
 @Component
 struct SystemThemeTestPage {
   onWillApplyTheme(theme: Theme) {
+    console.log('xyb111')
     systemTheme = theme;
   }
+
   build() {
     Row() {
       Column() {
@@ -37,5 +57,6 @@ struct SystemThemeTestPage {
       .width('100%')
     }
     .height('100%')
+    .width('100%')
   }
 }

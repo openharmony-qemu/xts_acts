@@ -12,39 +12,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin} from '@ohos.arkui.component'
+import {
+  Button,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  Margin,
+  Row,
+  Text
+} from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import common2D from '@ohos.graphics.displaySync'
-import common from "@ohos.app.ability.common";
+import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector'
-import { State } from '@ohos.arkui.stateManagement'
 import { Colors } from '../../themes/checkSystemTokens/colorValues/ColorsTokens';
 import { colorsForCheck, SystemColorsFromResources } from '../themeTokensPages/SystemColorsForCheck';
+
 export const colorValuesKey: string = 'ColorValues';
 
 @Entry
 @Component
 struct Index {
   @State message: string = 'XTS Tests';
-  private context :  common.UIAbilityContext = this.context as common.UIAbilityContext;
 
-  aboutToAppear(){
+  aboutToAppear() {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
       AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
-      let colorValues : Map <string, undefined|string> = new Map<string, undefined|string>();
-      Colors.colors.forEach((_item, key)=> {
-        const resourceJson : string = inspector.getInspectorByKey(`${key}${colorsForCheck}`);
+      let colorValues: Map<string, undefined | string> = new Map<string, undefined | string>();
+      Colors.colors.forEach((_item, key) => {
+        const resourceJson: string = inspector.getInspectorByKey(`${key}${colorsForCheck}`);
         const checkColor = JSON.parseJsonElement(resourceJson).getElement('$attrs').getString('backgroundColor');
         colorValues.set(key, checkColor?.toString().toUpperCase());
       });
-      AppStorage.setOrCreate<Map <string, undefined|string>>(colorValuesKey, colorValues);
-    } catch (error) {
-      error = error as Error;
+      AppStorage.setOrCreate<Map<string, undefined | string>>(colorValuesKey, colorValues);
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
