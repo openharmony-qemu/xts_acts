@@ -659,6 +659,7 @@ export default function userauthTest() {
             let checkFingerprint = await checkSupportOrNot(userAuthNorth.UserAuthType.FINGERPRINT);
             let authTypeParamError = [0, -1];
             let authType = [userAuthNorth.UserAuthType.FACE, userAuthNorth.UserAuthType.FINGERPRINT, userAuthNorth.UserAuthType.PIN];
+            let permaentLockoutDuration = userAuthNorth.PERMAENT_LOCKOUT_DURATION;
             if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
                 for (let idx0 = 0; idx0 < authTypeParamError.length; idx0++) {
                     try {
