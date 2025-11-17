@@ -35,7 +35,6 @@ export default function webViewControllerPart2() {
         if (!("WebOnNativeEmbedMouseEvent" == pages.name)) {
           console.info("get WebOnNativeEmbedMouseEvent state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push WebOnNativeEmbedMouseEvent page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -52,7 +51,6 @@ export default function webViewControllerPart2() {
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("WebOnNativeEmbedMouseEvent beforeEach start");
       done();
     })
