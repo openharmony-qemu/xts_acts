@@ -52,10 +52,10 @@ export default function timePickerDateTimeOptionsTest() {
       console.info('timePickerDateTimeOptionsTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('timePickerDateTimeOptionsTestXTS'));
+      let button = await driver.findComponent(ON.id('dateTimeOptionsXTS'));
       await button.click();
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('timePickerDateTimeOptionsTestValue');
+      let strJson = getInspectorByKey('dateTimeOptionsValue');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[timePickerDateTimeOptionsTest_0100] component obj is: " + JSON.stringify(obj));
       console.info("[timePickerDateTimeOptionsTest_0100] title: " + JSON.stringify(obj.$attrs.content));

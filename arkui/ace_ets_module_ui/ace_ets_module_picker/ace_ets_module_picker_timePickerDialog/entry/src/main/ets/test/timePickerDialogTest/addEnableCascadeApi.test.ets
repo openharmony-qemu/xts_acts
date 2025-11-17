@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { router } from '@kit.ArkUI';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function enableCascadeTest() {
+export default function TimePickerDialogApiEnableCascadeTest() {
   describe('TimePickerDialogApiEnableCascade', () => {
     beforeEach(async (done: Function) => {
       console.info('TimePickerDialogApiEnableCascade beforeEach start');
@@ -52,7 +52,7 @@ export default function enableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_001';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog1', 10, '')
+      sendEventByKey('TimePickerDialog1', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -60,7 +60,7 @@ export default function enableCascadeTest() {
       console.info('[TimePickerDialog_EnableCascade_001] obj1 is: ' + timePicker);
       console.info('[TimePickerDialog_EnableCascade_001] obj1 is: ' +
       JSON.stringify(JSON.parse(timePicker).$attrs.enableCascade));
-      sendEventByKey('TimePickerDialog1', 10, '')
+      sendEventByKey('TimePickerDialog1', 10, "")
       expect(JSON.parse(timePicker).$attrs.enableCascade).assertEqual(true);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
@@ -79,7 +79,7 @@ export default function enableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_002';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog2', 10, '')
+      sendEventByKey('TimePickerDialog2', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -106,7 +106,7 @@ export default function enableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_003';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog3', 10, '')
+      sendEventByKey('TimePickerDialog3', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -114,7 +114,7 @@ export default function enableCascadeTest() {
       console.info('[TimePickerDialog_EnableCascade_003] obj1 is: ' + timePicker);
       console.info('[TimePickerDialog_EnableCascade_003] obj1 is: ' +
       JSON.stringify(JSON.parse(timePicker).$attrs.enableCascade));
-      sendEventByKey('TimePickerDialog3', 10, '')
+      sendEventByKey('TimePickerDialog3', 10, "")
       expect(JSON.parse(timePicker).$attrs.enableCascade).assertEqual(false);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
@@ -132,7 +132,7 @@ export default function enableCascadeTest() {
       let tagName = 'TimePickerDialog_EnableCascade_004';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('TimePickerDialog4', 10, '')
+      sendEventByKey('TimePickerDialog4', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -140,7 +140,7 @@ export default function enableCascadeTest() {
       console.info('[TimePickerDialog_EnableCascade_004] obj1 is: ' + timePicker);
       console.info('[TimePickerDialog_EnableCascade_004] obj1 is: ' +
       JSON.stringify(JSON.parse(timePicker).$attrs.enableCascade));
-      sendEventByKey('TimePickerDialog4', 10, '')
+      sendEventByKey('TimePickerDialog4', 10, "")
       expect(JSON.parse(timePicker).$attrs.enableCascade).assertEqual(false);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);

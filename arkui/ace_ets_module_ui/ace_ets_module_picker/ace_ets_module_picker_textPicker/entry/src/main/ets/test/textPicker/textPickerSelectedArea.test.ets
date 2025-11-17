@@ -52,7 +52,7 @@ export default function textPickerSelectedAreaTest() {
       console.info('textPickerSelectedAreaTest_001 START');
       let driver = Driver.create();
       await Utils.sleep(2000);
-      let textPicker = await driver.findComponent(ON.id('textPicker'));
+      let textPicker = await driver.findComponent(ON.id('textPickerSec'));
       let rect = await textPicker.getBounds();
       let top = rect.top;
       let left = rect.left;

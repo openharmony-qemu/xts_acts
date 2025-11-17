@@ -54,12 +54,12 @@ export default function textPickerGradientHeightTest() {
      */
     it('textPickerGradientHeightTestTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('textPickerGradientHeightTestText_0100 START');
-      let strJson = getInspectorByKey('textPickerGradientHeightTestXTS');
+      let strJson = getInspectorByKey('gradientHeightXTS');
       console.info("textPickerGradientHeightTestText_0100 component strJson:" + strJson);
       let obj: ESObject = JSON.parse(strJson);
       console.info("textPickerGradientHeightTestText_0100 component obj is: " + JSON.stringify(obj));
-      console.info("[textPickerGradientHeightTestText_0100] title: " + JSON.stringify(obj.$attrs.textPickerGradientHeightTest));
-      expect(obj.$attrs.textPickerGradientHeightTest).assertEqual("100.00vp");
+      console.info("[textPickerGradientHeightTestText_0100] title: " + JSON.stringify(obj.$attrs.gradientHeight));
+      expect(obj.$attrs.gradientHeight).assertEqual("100.00vp");
       console.info('textPickerGradientHeightTestText_0100 END');
       done();
     });

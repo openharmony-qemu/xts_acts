@@ -24,7 +24,8 @@ struct TextPickerSelectedAreaExample {
       TextPicker({
         range: this.apfruits,
         selected: this.select
-      }).id('textPicker')
+      })
+        .id('textPickerSec')
         .width('90%')
         .height('80%')
         .onChange((value: string | string[], index: number | number[]) => {
@@ -37,7 +38,6 @@ struct TextPickerSelectedAreaExample {
           this.textFlag = 'enter'
           console.info('Picker item enter selected area, value: ' + value + ', index: ' + index)
         })
-        .id('textPicker')
     }.alignItems(HorizontalAlign.Center).width('100%').height('90%')
   }
 }
