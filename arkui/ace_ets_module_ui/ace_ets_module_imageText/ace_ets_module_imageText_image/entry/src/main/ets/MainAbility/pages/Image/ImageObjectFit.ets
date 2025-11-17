@@ -41,29 +41,29 @@ class MyNodeController11 extends NodeController {
 }
 @Entry
 @Component
-struct imageAddApi3 {
+struct ImageObjectFitPage {
   build() {
     Column() {
       Image($r('app.media.icon'))
         .height(100)
         .width(100)
         .objectFit(ImageFit.TOP_START)
-        .key('imageAddApi3')
+        .key('ImageObjectFit1')
       Image($r('app.media.icon'))
         .height(100)
         .width(100)
         .objectFit(ImageFit.TOP_END)
-        .key('imageAddApi32')
+        .key('ImageObjectFit2')
       Image($r('app.media.icon'))
         .height(100)
         .width(100)
         .objectFit(ImageFit.BOTTOM_START)
-        .key('imageAddApi33')
+        .key('ImageObjectFit3')
       Image($r('app.media.icon'))
         .height(100)
         .width(100)
         .objectFit(ImageFit.BOTTOM_END)
-        .key('imageAddApi34')
+        .key('ImageObjectFit4')
     }.height(320).width(360).padding({ right: 10, top: 10 })
   }
 }

@@ -14,7 +14,7 @@
  */
 @Entry
 @Component
-struct ImageExample1 {
+struct ImageFitPage {
   private on: string = 'www.example.com';
   @State src: string = this.on;
   @State objectFit: ImageFit = ImageFit.Cover;

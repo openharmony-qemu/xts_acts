@@ -6,6 +6,16 @@
         "MainAbility/pages/Image/ImageBasicAttributes",
         "MainAbility/pages/Image/ImageText",
         "MainAbility/pages/Image/ImageDynamicRangeMode",
-        "MainAbility/pages/Image/ImageEnableAnalyzer"
+        "MainAbility/pages/Image/ImageEnableAnalyzer",
+        "MainAbility/pages/Image/ImageObjectFit",
+        "MainAbility/pages/Image/ImageApi",
+        "MainAbility/pages/Image/ImageAttr",
+        "MainAbility/pages/Image/ImageObscured",
+        "MainAbility/pages/Image/ImageObjectRepeat",
+        "MainAbility/pages/Image/ImageResizable",
+        "MainAbility/pages/Image/ImageMultiAttribute",
+        "MainAbility/pages/Image/ImageEvents",
+        "MainAbility/pages/Image/ImageOhosMatrix4",
+        "MainAbility/pages/Image/shapeClipping"
     ]
 }

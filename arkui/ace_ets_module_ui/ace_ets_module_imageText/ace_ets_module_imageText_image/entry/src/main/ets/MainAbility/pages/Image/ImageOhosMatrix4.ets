@@ -18,7 +18,7 @@ import prompt from '@system.prompt'
 
 @Entry
 @Component
-struct ohosMatrix4 {
+struct ImageOhosMatrix4Page {
   @State rotateValue: RotateOptions = {
     x: 1,
     y: 1,

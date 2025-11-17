@@ -14,11 +14,12 @@
  */
 @Entry
 @Component
-struct ImageExample1 {
+struct ImageAttrPage {
   @State top: number = 10
   @State bottom: number = 10
   @State left: number = 10
   @State right: number = 10
+
   build() {
     Column() {
       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Auto }) {
@@ -54,13 +55,13 @@ struct ImageExample1 {
         }.height('10%')
 
         Row() {
-          Button('changeleft').onClick(() => {
+          Button('changeLeft').onClick(() => {
             this.left = 30
-          }).id('changeleft').width('40%')
+          }).id('changeLeft').width('40%')
 
-          Button('changeright').onClick(() => {
+          Button('changeRight').onClick(() => {
             this.right = 0
-          }).id('changeright').width('40%')
+          }).id('changeRight').width('40%')
         }.height('10%')
 
       }

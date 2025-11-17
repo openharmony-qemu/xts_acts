@@ -1,4 +1,3 @@
-
 /**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +17,11 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 interface msgObj {
   width: number;
   height: number
-} 
+}
 
 @Entry
 @Component
-struct ImageExample3 {
+struct ImageEventsPage {
   @State widthValue: number = 0
   @State heightValue: number = 0
   private on: Resource = $rawfile('bm.jpg')
@@ -30,28 +29,26 @@ struct ImageExample3 {
   private on2off: Resource = $rawfile('bm.jpg')
   private off2on: Resource = $rawfile('test3.png')
   @State src: Resource = this.on
-  @State m1:string = "init"
-  @State m2:string = "init"
-  @State m3:string = "init"
-  @State m4:string = "init"
-  @State imageName:string = "img1.png"
-
-  messageManager:MessageManager = new MessageManager()
+  @State m1: string = "init"
+  @State m2: string = "init"
+  @State m3: string = "init"
+  @State m4: string = "init"
+  @State imageName: string = "img1.png"
+  messageManager: MessageManager = new MessageManager()
 
   onPageShow() {
     console.info('ImageThree onPageShow')
     globalThis.value = {
-      name:'messageManager',message:this.messageManager
+      name: 'messageManager', message: this.messageManager
     }
     let callback: Callback = (message: ESObject) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'imageName') {
-          this.imageName = message.value
+        this.imageName = message.value
       }
     }
     this.messageManager.registerCallback(callback)
   }
-
 
   build() {
     Column() {
@@ -66,8 +63,9 @@ struct ImageExample3 {
             })
             .syncLoad(true)
             .objectFit(ImageFit.Cover)
-            .height('40%').width(180)
-            // 图片加载完成后，获取图片尺寸。
+            .height('40%')
+            .width(180)
+              // 图片加载完成后，获取图片尺寸。
             .onComplete((msg: msgObj) => {
               this.widthValue = msg.width
               this.heightValue = msg.height
@@ -80,38 +78,41 @@ struct ImageExample3 {
             .overlay('\nwidth: ' + String(this.widthValue) + ' height: ' + String(this.heightValue), {
               align: Alignment.Bottom,
               offset: { x: 0, y: 20 }
-            })       
+            })
 
-          Row(){
+          Row() {
             Text(this.m1).key('complete').width('45%')
             Text(this.m2).key('error').width('45%')
           }.height('10%')
-          Row(){
+
+          Row() {
             Text(this.m3).key('click').width('45%')
             Text(this.m4).key('Finish').width('45%')
           }.height('10%')
 
-        // 为图片添加点击事件，点击完成后加载特定图片。
-        Image(this.src)
-          .width(120).height('30%')
-          .onClick(() => {
-            if (this.src == this.on || this.src == this.off2on) {
-              this.src = this.on2off
-              this.m3 = "click"
-            } else {
-              this.src = this.off2on
-              this.m3 = "click"
-            }
-          }).key('image2')
-          .onFinish(() => {
-            if (this.src == this.off2on) {
-              this.src = this.on
-              this.m4 = "Finish"
-            } else {
-              this.src = this.off
-              this.m4 = "Finish"
-            }
-          })
+          // 为图片添加点击事件，点击完成后加载特定图片。
+          Image(this.src)
+            .width(120)
+            .height('30%')
+            .onClick(() => {
+              if (this.src == this.on || this.src == this.off2on) {
+                this.src = this.on2off
+                this.m3 = "click"
+              } else {
+                this.src = this.off2on
+                this.m3 = "click"
+              }
+            })
+            .key('image2')
+            .onFinish(() => {
+              if (this.src == this.off2on) {
+                this.src = this.on
+                this.m4 = "Finish"
+              } else {
+                this.src = this.off
+                this.m4 = "Finish"
+              }
+            })
         }
       }
     }.width('100%').height('100%')

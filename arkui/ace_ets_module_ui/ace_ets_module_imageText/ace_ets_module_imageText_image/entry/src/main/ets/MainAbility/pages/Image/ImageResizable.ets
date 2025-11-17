@@ -13,15 +13,17 @@
  * limitations under the License.
  */
 import { drawing } from '@kit.ArkGraphics2D';
+
 @Entry
 @Component
-struct ImageResizable {
+struct ImageResizablePage {
   @State top: number = 40
   @State bottom: number = 5
   @State left: number = 40
   @State right: number = 10
-  @State xDivs :number[] = [1,2,4]
-  @State yDivs :number[] = [1,2,4]
+  @State xDivs: number[] = [1, 2, 4]
+  @State yDivs: number[] = [1, 2, 4]
+
   build() {
     Column({ space: 5 }) {
       Image($r('app.media.icon'))
@@ -33,9 +35,9 @@ struct ImageResizable {
             top: this.top,
             bottom: this.bottom
           },
-          lattice:drawing.Lattice.createImageLattice(this.xDivs, this.yDivs, 3, 3)
+          lattice: drawing.Lattice.createImageLattice(this.xDivs, this.yDivs, 3, 3)
         })
-        .onAccessibilityHover(()=>{
+        .onAccessibilityHover(() => {
           console.log('onAccessibilityHover')
         })
         .width(200)

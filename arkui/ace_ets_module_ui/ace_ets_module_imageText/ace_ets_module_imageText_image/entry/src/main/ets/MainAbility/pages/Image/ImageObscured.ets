@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct imageObscuredTest {
+struct ImageObscuredPage {
   private scroller: Scroller = new Scroller()
 
   build() {

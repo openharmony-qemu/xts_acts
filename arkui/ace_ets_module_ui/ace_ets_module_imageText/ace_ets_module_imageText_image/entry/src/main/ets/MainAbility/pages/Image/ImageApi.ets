@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct ImageApi {
+struct ImageApiPage {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller }
 
@@ -33,7 +33,6 @@ struct ImageApi {
         .enableAnalyzer(true)
         .id('ImageApi_Image')
 
-
       QRCode('hello')
         .width(100)
         .height(100)
@@ -46,7 +45,6 @@ struct ImageApi {
         .borderWidth(1)
         .borderColor(Color.Green)
         .width('60%')
-
 
       Tabs({ barPosition: BarPosition.Start }) {
         TabContent() {
@@ -62,7 +60,6 @@ struct ImageApi {
             .height('100%')
             .backgroundColor(Color.Blue)
         }.tabBar(new SubTabBarStyle("blue"))
-
       }
       .width(300)
       .height(200)

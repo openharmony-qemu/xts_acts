@@ -16,7 +16,7 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 
 @Entry
 @Component
-struct ImageExample1 {
+struct ImageObjectRepeatPage {
   private on: string = 'www.example.com'
   @State src: string = this.on
   @State imageNamePng:string = 'test3.png'
@@ -51,7 +51,7 @@ struct ImageExample1 {
         Row({ space: 5 }) {
           Image($rawfile(this.imageNamePng))
             .width(110).height(110).border({ width: 1 }).borderStyle(BorderStyle.Dashed)
-            .overlay('png', { align: Alignment.Bottom, offset: { x: 0, y: 20 } }).key('image1')
+            .overlay('png', { align: Alignment.Bottom, offset: { x: 0, y: 20 } }).key('ImageObjectRepeat_image1')
           Image($rawfile(this.imageNamePng))
             .width(110).height(110).border({ width: 1 }).borderStyle(BorderStyle.Dashed)
             .overlay('gif', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })

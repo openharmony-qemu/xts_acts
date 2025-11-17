@@ -1,23 +1,33 @@
 /**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import APIClipMaskShapeTest from "./ImageTest/APIClipMaskShape.test";
-import AboutToRecycleImageJSTest from "./ImageTest/AboutToRecycleImageJS.test";
-import ImageBasicAttributesTest from "./ImageTest/ImageBasicAttributes.test";
-import ImageTextTest from "./ImageTest/ImageText.test";
-import ImageDynamicRangeModeTest from "./ImageTest/ImageDynamicRangeMode.test";
-import ImageEnableAnalyzerTest from "./ImageTest/ImageEnableAnalyzer.test";
+import APIClipMaskShapeTest from './ImageTest/APIClipMaskShape.test';
+import AboutToRecycleImageJSTest from './ImageTest/AboutToRecycleImageJS.test';
+import ImageBasicAttributesTest from './ImageTest/ImageBasicAttributes.test';
+import ImageTextTest from './ImageTest/ImageText.test';
+import ImageDynamicRangeModeTest from './ImageTest/ImageDynamicRangeMode.test';
+import ImageEnableAnalyzerTest from './ImageTest/ImageEnableAnalyzer.test';
+import ImageObjectFitTest from './ImageTest/ImageObjectFit.test';
+import ImageApiTest from './ImageTest/ImageApi.test';
+import ImageAttrTest from './ImageTest/ImageAttr.test';
+import ImageObscuredTest from './ImageTest/ImageObscured.test';
+import ImageObjectRepeatTest from './ImageTest/ImageObjectRepeat.test';
+import ImageResizableTest from './ImageTest/ImageResizable.test';
+import ImageMultiAttributeTest from './ImageTest/ImageMultiAttribute.test';
+import ImageEventsTest from './ImageTest/ImageEvents.test';
+import ImageOhosMatrix4Test from './ImageTest/ImageOhosMatrix4.test';
+import ShapeClippingJsunitTest from './ImageTest/ShapeClippingJsunit.test';
 
 export default function testsuite() {
   APIClipMaskShapeTest();
@@ -26,4 +36,14 @@ export default function testsuite() {
   ImageTextTest();
   ImageDynamicRangeModeTest();
   ImageEnableAnalyzerTest();
+  ImageObjectFitTest();
+  ImageApiTest();
+  ImageAttrTest();
+  ImageObscuredTest();
+  ImageObjectRepeatTest();
+  ImageResizableTest();
+  ImageMultiAttributeTest();
+  ImageEventsTest();
+  ImageOhosMatrix4Test();
+  ShapeClippingJsunitTest();
 }
