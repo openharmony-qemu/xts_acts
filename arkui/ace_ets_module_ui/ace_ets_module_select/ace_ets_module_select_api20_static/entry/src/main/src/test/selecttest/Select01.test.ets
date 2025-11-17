@@ -12,7 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, afterEach, TestType } from '../../../../hypium/index';
+import {
+  describe,
+  beforeEach,
+  it,
+  expect,
+  Level,
+  beforeAll,
+  beforeEach,
+  Size,
+  afterEach,
+  TestType
+} from '../../../../hypium/index';
 import { Color } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -28,46 +39,45 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 
- export default function selectmenuOutline() {
-   describe('selectmenuOutline', () => {
+export default function selectmenuOutline() {
+  describe('selectmenuOutline', () => {
 
-     beforeAll(() => {
-       console.info("selectmenuOutline beforeAll start");
-       await UtilsTest.startAbility("com.arkui.ace.select.api20.static", "EntryAbility")
-       await UtilsTest.msSleep(4000)
-     });
+    beforeAll(() => {
+      console.info("selectmenuOutline beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.select.api20.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
-     beforeEach(async () => {
-       console.info('selectmenuOutline beforeEach start');
-       let options: router.RouterOptions = {
-         url: 'MainAbility/pages/select/select',
-       }
-       try {
-         const routerInstance = AppStorage.get<Router>("router") as Router
-         routerInstance.clear();
-         let pages = routerInstance.getState();
-         console.info('get selectmenuOutline state pages:' + JSON.stringify(pages));
-         if (!('MainAbility/pages/select/select' == pages.name)) {
-           console.info('get selectmenuOutline pages.name:' + JSON.stringify(pages.name));
-           routerInstance.pushUrl(options);
-           await Utils.sleep(2500);
-         }
-       } catch (err) {
-         console.error('push selectmenuOutline page error:' + err);
-       }
-       console.info('selectmenuOutline beforeEach end');
-     });
- 
-     
-    
-/*
+    beforeEach(async () => {
+      console.info('selectmenuOutline beforeEach start');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/select/select',
+      }
+      try {
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info('get selectmenuOutline state pages:' + JSON.stringify(pages));
+        if (!("select" == pages.name)) {
+          console.info('get selectmenuOutline pages.name:' + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options);
+          await Utils.sleep(2500);
+        }
+      } catch (err) {
+        console.error('push selectmenuOutline page error:' + err);
+      }
+      console.info('selectmenuOutline beforeEach end');
+    });
+
+
+    /*
      * @tc.number   menuOutline_static_001
      * @tc.name     menuOutline_static_001
      * @tc.desc     menuOutline_static_001
      * @tc.level    Level.LEVEL0
      */
-it('menuOutline_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try{
+    it('menuOutline_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
         await Utils.sleep(1000);
         let driver: Driver = Driver.create();
         let btn = await driver.findComponent(ON.id('menuOutline'));
@@ -75,13 +85,13 @@ it('menuOutline_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
         let strJson = inspector.getInspectorByKey('menuOutline');
         console.log('menuOutline_static_001')
         await Utils.sleep(1000)
-        let obj= JSON.parseJsonElement(strJson);
+        let obj = JSON.parseJsonElement(strJson);
         await Utils.sleep(1000);
         done();
-      }catch(error){
+      } catch (error) {
         expect().assertFail();
       }
 
     });
- })
+  })
 }
