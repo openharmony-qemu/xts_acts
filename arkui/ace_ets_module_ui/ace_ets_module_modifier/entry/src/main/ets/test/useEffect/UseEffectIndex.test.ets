@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import Utils from '../Utils';
 
 
 export default function UseEffectIndexTest() {
@@ -32,7 +32,7 @@ export default function UseEffectIndexTest() {
         if (!("UseEffectIndexTest" == pages.name)) {
           console.info("get UseEffectIndexTest state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           console.info("push UseEffectIndexTest success: " + JSON.stringify(result));
         }
       } catch (err) {

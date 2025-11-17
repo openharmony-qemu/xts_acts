@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import Utils from '../Utils';
 
 export default function DrawModifierOneTest() {
   describe('DrawModifierOneTest', () => {
@@ -31,7 +31,7 @@ export default function DrawModifierOneTest() {
         if (!("gestureEventTest" == pages.name)) {
           console.info("get DrawModifierOneTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           console.info("push DrawModifierOneTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -42,7 +42,7 @@ export default function DrawModifierOneTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("DrawModifierOneTest after each called");
     });
 
@@ -57,16 +57,16 @@ export default function DrawModifierOneTest() {
     it('DrawModifierOneTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('DrawModifierOneTest_0100 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let button1 = await driver.findComponent(ON.id('btn_clearModifier'));
       await button1.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let button2 = await driver.findComponent(ON.id('btn_modifier'));
       await button2.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let button3 = await driver.findComponent(ON.id('btn_drawCount'));
       await button3.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
 
       let strJson1: string = getInspectorByKey('text_drawCount');
       let obj1: Record<string, ESObject> = JSON.parse(strJson1);

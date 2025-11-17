@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import Utils from '../Utils';
 
 export default function DrawModifierTwoTest() {
   describe('DrawModifierTwoTest', () => {
@@ -31,7 +31,7 @@ export default function DrawModifierTwoTest() {
         if (!("gestureEventTest" == pages.name)) {
           console.info("get DrawModifierTwoTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           console.info("push DrawModifierTwoTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -42,7 +42,7 @@ export default function DrawModifierTwoTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("DrawModifierTwoTest after each called");
     });
 
@@ -57,13 +57,13 @@ export default function DrawModifierTwoTest() {
     it('DrawModifierTwoTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('DrawModifierTwoTest_0100 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let button1 = await driver.findComponent(ON.id('btn_changeModifier'));
       await button1.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       let button2 = await driver.findComponent(ON.id('btn_drawCount'));
       await button2.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
 
       let strJson1: string = getInspectorByKey('text_drawCount');
       let obj1: Record<string, ESObject> = JSON.parse(strJson1);
