@@ -78,6 +78,8 @@ import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
 import GetFrameNodeNullTest from './FrameNodeNewTest/GetFrameNodeNullTest.test';
 import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNullTest.test';
 
+import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
+
 export default function testsuite() {
   APIdisposeTreeTest();
   APImarkNodeGroupTest();
@@ -143,4 +145,6 @@ export default function testsuite() {
 
   GetFrameNodeNullTest();
   GetFrameNodeMethodNullTest();
+
+  frameNodeApi();
 }
