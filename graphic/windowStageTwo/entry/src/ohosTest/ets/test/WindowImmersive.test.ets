@@ -3554,8 +3554,6 @@ export default function windowImmersiveTest() {
             });
           await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
         }
-      } else {
-        done();
       }
     });
     
