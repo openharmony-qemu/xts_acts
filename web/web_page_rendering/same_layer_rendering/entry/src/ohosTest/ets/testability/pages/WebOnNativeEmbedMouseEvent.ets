@@ -154,6 +154,7 @@ struct WebIndex {
   @State heightMap: Map<string, number> = new Map();
   @State emitKey: string = '';
   @State isReceive: number = -1;
+  @State isComplete: number = -1;
   @State str:string = 'emitOnNativeEmbedMouseEvent001'
   aboutToAppear() {
     // 配置Web开启调试模式
@@ -184,6 +185,7 @@ struct WebIndex {
         Button("WebOnNativeEmbedMouseEvent").id('WebOnNativeEmbedMouseButton').onClick(async () => {
           console.info("key==>" + this.str)
           await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(() => this.isComplete, this.str, 0);
           switch (this.str) {
             case "emitOnNativeEmbedMouseEvent001": {
               let value: string;
@@ -215,6 +217,10 @@ struct WebIndex {
               .position(this.edges)
           }, (embedId: string) => embedId)
           Web({ src: $rawfile("test_web.html"), controller: this.browserTabController })
+            .onPageEnd((event) => {
+              console.log('web pageEnd==>' + event.url);
+              this.isComplete = 0;
+            })
             .enableNativeEmbedMode(true)
             .key('onNativeEmbedMouseEventButton')
             .onNativeEmbedLifecycleChange((embed) => {
