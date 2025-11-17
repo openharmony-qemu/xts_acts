@@ -20,6 +20,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
+
 
 const ExpectTrue = (n: boolean) => {
   try {
@@ -70,6 +72,9 @@ let ability = async () => {
   await delegator.startAbility(want);
   await sleep(1000)
 }
+let fileName = 'contactTest.jpg';
+SavePhoto(fileName);
+let uri = GetUri(fileName);
 let contactData: contact.Contact = {
   id: 0,
   key: "0",
@@ -101,7 +106,7 @@ let contactData: contact.Contact = {
     phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
   }],
   portrait: {
-    uri: "content://head/0"
+    uri: uri
   },
   postalAddresses: [{
     city: "南京",
