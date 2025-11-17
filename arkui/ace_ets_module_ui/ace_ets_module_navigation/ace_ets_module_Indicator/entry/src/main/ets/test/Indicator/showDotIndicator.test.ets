@@ -66,6 +66,7 @@ export default function showDotIndicator() {
 
       let btn3: Component = await driver.findComponent(ON.id('indicator_changeIndex'));
       await btn3.click();
+      expect(btn3 !== null).assertTrue();
       await CommonFunc.sleep(1500);
       await driver.assertComponentExist(ON.text('4'));
 
