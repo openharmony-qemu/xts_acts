@@ -1698,5 +1698,64 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
       done();
     });
 
+    /**
+     * @tc.number SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2600
+     * @tc.name SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2600
+     * @tc.desc algorithm is AES
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level3
+     */
+    it("SUB_Security_CryptoFramework_SymEncryptAndDecrypt_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "AES128";
+        let encAlgName: string = "AES128|GCM|PKCS7"
+        let dataLen: int = 128;
+        let dataIv: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let dataAad: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0];
+        let dataTag: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0];
+        let specAlgName: string = "GcmParamsSpec";
+        let blockSize: int = 20;
+        let paramSpec: cryptoFramework.GcmParamsSpec = syncSymEncAndDecUtils.genGcmOrCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
+        let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
+        let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.createSymKeyPromise(algName);
+        let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+        encCipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
+        let cipherText1: cryptoFramework.DataBlob|null = encCipher.doFinalSync(data);
+        if (cipherText1 === null) {
+          throw new Error("[TEST] Data is null.")
+        }
+        paramSpec.authTag = {data: cipherText1.data.subarray(cipherText1.data.length - 16 , cipherText1.data.length)};
+        let plainText1 = new Uint8Array();
+        let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
+        decCipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
+        for(let dataSize = 0; dataSize < dataLen / blockSize + 1; dataSize++) {
+          let tmp: Uint8Array = new Uint8Array();
+          if (dataSize == 6) {
+            tmp = cipherText1.data.subarray(blockSize * dataSize, 128);
+          } else {
+            tmp = cipherText1.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+          }
+          let doFinalText: cryptoFramework.DataBlob = { data:tmp };
+          let decryptCipher: cryptoFramework.DataBlob|null = decCipher.updateSync(doFinalText);
+          if (decryptCipher === null) {
+            throw new Error("[TEST] Data is null.")
+          }
+          let mergeText = new Uint8Array(plainText1.length + decryptCipher.data.length);
+          mergeText.set(plainText1);
+          mergeText.set(decryptCipher.data, plainText1.length);
+          plainText1 = mergeText;
+        }
+        let noData: cryptoFramework.DataBlob|null = decCipher.doFinalSync(null);
+        expect(noData).assertNull();
+        let ret = commonUtils.compareDataBlob({data: plainText1}, data)
+        expect(ret).assertTrue();
+      } catch (error: BusinessError) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
   })
 }
