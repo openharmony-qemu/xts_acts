@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,26 +14,28 @@
  */
 
 import router from '@ohos.router';
-import { AttrsManager, GrowValue } from './AttrsManager';
+import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {
-  TouchType,
-  KeyType,
-  MouseButton,
-  MouseAction,
-  AlignRuleOption,
-  focusControl,
-  KeySource,
-  SourceTool,
-  SourceType
-} from '@ohos.arkui.component';
+import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
-import { jsonx } from "std/core";
+
+export class regObj{
+  flexShrink?:number
+  parentWidth:number
+  parentHeight:number
+  compareFlexShrink?:number
+  standardFlexShrink?:number
+  flexGrow: number
+  compareFlexGrow: number
+}
+export class ExpectValue{
+  flexGrow: number
+}
 
 export class RectValue {
   left: number = 0;
@@ -46,29 +48,11 @@ export class RouterParams {
   view: PageConfig = new PageConfig()
 }
 
-interface FlexGrow {
-  flexGrow: number;
-}
-
-class SetValue {
-  parentWidth: number = 0;
-  parentHeight: number = 0;
-  flexGrow: number = 0;
-  compareFlexGrow: number = 0;
-}
-
 export class TestValue {
   describe: string = '';
-  setValue: GrowValue = {
-    parentWidth: 0,
-    parentHeight: 0,
-    flexGrow: 0,
-    compareFlexGrow: 0,
-  };
-  expectValue: FlexGrow = {
-    flexGrow: 0,
-  };
+  setValue: regObj = new regObj();
   exceptView: string = '';
+  expectValue:ExpectValue={}
 }
 
 export class BasePageConfig {
@@ -83,19 +67,27 @@ export class PageConfig {
   testName: string = '';
   pageName: string = '';
   pageUrl: string = '';
-  compareWidth: number = 0;
-  compareHeight: number = 0;
-  standardWidth: number = 0;
-  standardHeight: number = 0;
-  standardComponentKey: string = '';
-  compareComponentKey: string = '';
-  targetWidth: number = 0;
-  targetHeight: number = 0;
+  parentWidth: number = 0;
+  parentHeight: number = 0;
+  subassemblyWidth: number = 0;
+  subassemblyHeight: number = 0;
+  subassemblyCenter: AlignRuleOption = {};
+  parentComponentKey: string = '';
+  referenceComponentKey: string = '';
   targetView: string = '';
   testValue: TestValue = new TestValue();
   componentKey: string = '';
   sharePage?: boolean;
-  containerView?: string;
+  containerView: string='';
+  compareWidth:number=0;
+  compareHeight:number=0;
+  standardWidth:number=0;
+  standardHeight:number=0;
+  compareComponentKey:string='';
+  standardComponentKey:string='';
+  targetWidth:number=0;
+  targetHeight:number=0
+
 }
 
 export default class Utils {
@@ -129,43 +121,28 @@ export default class Utils {
 
   static async pushPage(obj: PageConfig) {
     try {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      let pages = routerInstance.getState();
-      let pageParams = routerInstance.getParams();
+      const router = AppStorage.get<Router>("router") as Router
+      let pages = router.getState();
+      let pageParams: RouterParams = new RouterParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      
-      
-      
-      
-      
-      
-      
+      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+        console.info('targetView: ' + obj.targetView);
+        await Utils.back();
+        pages = router.getState();
+      }
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        const param1: RouterParams = {
-          view: obj
-        }
-        const routerParams: router.RouterOptions = {
+        router.pushUrl({
           url: obj.pageUrl,
-          params: param1
-        }
-        routerInstance.pushUrl(routerParams)
+          params: {
+            view: obj
+          } as RouterParams
+        });
         await Utils.sleep(2000);
-        
-        console.info('push ' + obj.pageName);
+        console.info('push ' + obj.pageName );
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -174,7 +151,7 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!router.getState().name.endsWith("/Index")) {
+    if (!('Index' == router.getState().name)) {
       router.back()
     }
     AttrsManager.unRegisterDataChange();
@@ -190,14 +167,14 @@ export default class Utils {
 
   static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
     return {
       "left": Number(rectInfo[0][0] ?? 0),
       "top": Number(rectInfo[0][1] ?? 0),
@@ -208,15 +185,14 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
-      left: Number(rectInfo[0][0] ?? 0),
-      top: Number(rectInfo[0][1] ?? 0),
-      right: Number(rectInfo[1][0] ?? 0),
-      bottom: Number(rectInfo[1][1] ?? 0),
+      left:Number(rectInfo[0][0] ?? 0),
+      top:Number(rectInfo[0][1] ?? 0),
+      right:Number(rectInfo[1][0] ?? 0),
+      bottom:Number(rectInfo[1][1] ?? 0),
     };
     console.info(JSON.stringify(rect_value));
     return rect_value;
@@ -333,10 +309,10 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
-      getModifierKeyState: (keys: Array<string>): boolean => {
+      getModifierKeyState:(keys: Array<string>):boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
@@ -373,7 +349,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,
@@ -393,7 +369,7 @@ export default class Utils {
       pressure: 0,
       stopPropagation: () => {
       },
-      getModifierKeyState: (keys: Array<string>): boolean => {
+      getModifierKeyState:(keys: Array<string>):boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }

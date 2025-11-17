@@ -38,8 +38,7 @@ export class AttrsManager {
       data: {
         'src': message
       } as Record<String,undefined|null|Object>
-
-  };
+    };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
 
@@ -81,7 +80,7 @@ export class AttrsManager {
           if (message && message?.value) {
             this.callBack!(message!.value!)
           }
-        } catch (e) {
+        } catch (e: Error) {
           console.error("fail :", e);
         }
       }
