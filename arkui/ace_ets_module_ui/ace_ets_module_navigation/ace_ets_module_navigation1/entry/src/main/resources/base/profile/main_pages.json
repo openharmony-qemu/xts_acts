@@ -8,6 +8,13 @@
         "MainAbility/pages/UIContext/UIContextNavDestinationUpdate",
         "MainAbility/pages/Stepper/StepperModifierPage",
         "MainAbility/pages/Navigation/HomePage",
-        "MainAbility/pages/Stepper/StepperModifierTest"
+        "MainAbility/pages/Stepper/StepperModifierTest",
+        "MainAbility/pages/Navigator/navigator",
+        "MainAbility/pages/Navigator/page_transition",
+        "MainAbility/pages/Navigator/page1",
+        "MainAbility/pages/UIContext/PageInfo1",
+        "MainAbility/pages/Navigation/navigationAdd",
+        "MainAbility/pages/Navigation/navition3",
+        "MainAbility/pages/Navigation/navrouterAdd"
     ]
 }

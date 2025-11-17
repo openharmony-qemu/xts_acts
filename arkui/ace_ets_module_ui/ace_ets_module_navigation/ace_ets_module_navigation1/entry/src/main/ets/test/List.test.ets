@@ -21,7 +21,9 @@ import UIContextNavDestinationUpdate from './UIContext/UIContextNavDestinationUp
 import StepperModifierPage from './Stepper/StepperModifierPage.test'
 import HomePage from './Navigation/HomePage.test'
 import StepperModifierTest from './Stepper/StepperModifierTest.test'
-
+import NavigatorTargetJsunit from './Navigator/navigator.test'
+import PageInfo1 from './UIContext/PageInfo1.test'
+import NavigationAdd from './Navigation/NavigationAdd.test'
 
 export default function testsuite() {
   InterceptionTest();
@@ -32,4 +34,7 @@ export default function testsuite() {
   StepperModifierPage();
   HomePage();
   StepperModifierTest();
+  NavigatorTargetJsunit();
+  PageInfo1();
+  NavigationAdd()
 } 
