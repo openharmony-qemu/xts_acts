@@ -3510,6 +3510,7 @@ export default function windowImmersiveTest() {
         done()
       }
     });
+
     
     /**
      * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_AVOIDAREACHANGE_1000
@@ -3551,8 +3552,7 @@ export default function windowImmersiveTest() {
                 await sleep(3000)
               }
             });
-            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
-          }
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE_INVERTED);
         }
       } else {
         done();

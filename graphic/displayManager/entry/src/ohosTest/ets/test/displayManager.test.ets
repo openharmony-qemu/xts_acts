@@ -2974,7 +2974,7 @@ export default function displayTest() {
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        await subWindowClass.destroyWindow();
+        await subWindowClass?.destroyWindow();
         if (e.code == 801) {
           done()
         } else {
