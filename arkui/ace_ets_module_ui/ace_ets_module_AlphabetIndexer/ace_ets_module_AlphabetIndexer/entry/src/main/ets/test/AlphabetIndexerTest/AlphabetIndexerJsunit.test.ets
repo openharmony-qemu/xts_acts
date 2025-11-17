@@ -77,6 +77,7 @@ export default function AlphabetIndexerJsunit() {
       let strJson = getInspectorByKey('alphabetIndexer1');
       let obj: Record<string, Object> = JSON.parse(strJson);
       console.info('component obj is: ' + JSON.stringify(obj));
+      expect(obj.$type).assertEqual('AlphabetIndexer');
       console.info('AlphabetIndexerTest002 END');
     });
   })
