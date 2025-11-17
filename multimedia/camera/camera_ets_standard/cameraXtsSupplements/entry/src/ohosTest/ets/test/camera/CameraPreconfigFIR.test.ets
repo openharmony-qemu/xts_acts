@@ -200,9 +200,9 @@ async function createVideoOutput() {
   CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
   CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-  console.log(TAG, 'createVideoOutput' + videoProfile,'surfaceID', mVideoSurfaceId);
+  console.log(TAG, 'createVideoOutput' + videoProfile, 'surfaceID', mVideoSurfaceId);
   mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
-  console.log(TAG, 'create preview output' + mPreviewOutput,'createVideoOutput', mVideoOutput);
+  console.log(TAG, 'create preview output' + mPreviewOutput, 'createVideoOutput', mVideoOutput);
 }
 
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
@@ -250,16 +250,16 @@ async function releaseVideoSession() {
 }
 
 async function CameraPreconfigPhoto(done: Function, testName: string, callback: () => void) {
-    if (isEmpty(mCameraDeviceArray)) {
-      console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      return;
-    } else {
-      createPhotoOutput();
-      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-      callback();
-      await releasePhotoSession();
-      done();
-    }
+  if (isEmpty(mCameraDeviceArray)) {
+    console.info(TAG, testName, ' mCameraDeviceArray is null.');
+    return;
+  } else {
+    createPhotoOutput();
+    await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+    callback();
+    await releasePhotoSession();
+    done();
+  }
 }
 
 
@@ -314,12 +314,13 @@ export default function cameraCanPreconfigTest() {
 
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_001';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
           let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -337,12 +338,13 @@ export default function cameraCanPreconfigTest() {
 
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_002';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
           let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -358,12 +360,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_003';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
           let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -381,12 +384,13 @@ export default function cameraCanPreconfigTest() {
 
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_004';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
           let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -402,12 +406,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_005';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
           let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -425,12 +430,13 @@ export default function cameraCanPreconfigTest() {
 
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_006';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
           let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -446,12 +452,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_007';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
           let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -467,12 +474,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_008';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
           let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, 0);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -489,12 +497,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_009';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -510,12 +520,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_010';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -533,12 +545,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_011';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P,
+            camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -554,12 +568,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_012';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P,
+            camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -576,12 +592,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_013';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -597,12 +615,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_014';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -618,12 +638,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_015';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -639,12 +661,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_016';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -662,12 +686,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_017';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -683,12 +709,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_018';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -705,12 +733,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_019';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -726,12 +756,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_020';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -748,12 +780,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_021';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -769,12 +803,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_022';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -792,12 +828,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_023';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -813,12 +851,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_024';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -835,12 +875,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_025';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -856,12 +898,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_026';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result =
+            mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_4K, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -878,12 +922,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_027';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+            camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -899,12 +945,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_028';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+            camera.PreconfigRatio.PRECONFIG_RATIO_4_3);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -922,12 +970,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_029';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+            camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -943,12 +993,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_030';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+            camera.PreconfigRatio.PRECONFIG_RATIO_16_9);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -965,12 +1017,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_031';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
-          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+            camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -986,12 +1040,14 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_032';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
-          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+            camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect().assertFalse();
           done();
         }
@@ -1007,12 +1063,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_033';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
           let result = mPhotoSession.canPreconfig(null, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           done();
         }
@@ -1028,12 +1085,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_034';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
           let result = mVideoSession.canPreconfig(null, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           done();
         }
@@ -1049,12 +1107,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_035';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
           let result = mPhotoSession.canPreconfig(undefined, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           done();
         }
@@ -1070,12 +1129,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_036';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
           let result = mVideoSession.canPreconfig(undefined, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           done();
         }
@@ -1091,12 +1151,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_037';
-      CameraPreconfigPhoto(done,testName,() =>{
+      CameraPreconfigPhoto(done, testName, () => {
         try {
           let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, undefined);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           done();
         }
@@ -1112,12 +1173,13 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_038';
-      CameraPreconfigVideo(done,testName,() =>{
+      CameraPreconfigVideo(done, testName, () => {
         try {
           let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, undefined);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           done();
         }
@@ -1133,19 +1195,19 @@ export default function cameraCanPreconfigTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_039';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         try {
           let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, null);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
         }
       })
     })
-
 
 
   })

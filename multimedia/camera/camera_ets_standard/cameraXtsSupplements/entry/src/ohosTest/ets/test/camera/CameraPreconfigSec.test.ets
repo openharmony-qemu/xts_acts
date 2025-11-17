@@ -200,9 +200,9 @@ async function createVideoOutput() {
   CameraVideoProfile.videoFrameWidth = videoProfile.size.width;
   CameraVideoProfile.videoFrameHeight = videoProfile.size.height;
   mPreviewOutput = mCameraManager.createPreviewOutput(previewProfile, indexSurfaceId);
-  console.log(TAG, 'createVideoOutput' + videoProfile,'surfaceID', mVideoSurfaceId);
+  console.log(TAG, 'createVideoOutput' + videoProfile, 'surfaceID', mVideoSurfaceId);
   mVideoOutput = mCameraManager.createVideoOutput(videoProfile, mVideoSurfaceId);
-  console.log(TAG, 'create preview output' + mPreviewOutput,'createVideoOutput', mVideoOutput);
+  console.log(TAG, 'create preview output' + mPreviewOutput, 'createVideoOutput', mVideoOutput);
 }
 
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
@@ -314,13 +314,14 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_040', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_040';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         try {
           let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, null);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
           done();
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -338,14 +339,16 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_041', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_041';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let preconfigType: camera.PreconfigType  = AppStorage.get('key') as ESObject;
+        let preconfigType: camera.PreconfigType = AppStorage.get('key') as ESObject;
         try {
           let result = mPhotoSession.canPreconfig(preconfigType, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
@@ -362,14 +365,15 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_042', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_042';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let preconfigType: camera.PreconfigType  = AppStorage.get('key') as ESObject;
+        let preconfigType: camera.PreconfigType = AppStorage.get('key') as ESObject;
         try {
           let result = mVideoSession.canPreconfig(preconfigType, camera.PreconfigRatio.PRECONFIG_RATIO_1_1);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -386,14 +390,15 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_043', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_043';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
         try {
           let result = mPhotoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
@@ -410,14 +415,15 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_044', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_044';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
         try {
           let result = mVideoSession.canPreconfig(camera.PreconfigType.PRECONFIG_720P, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -434,14 +440,15 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_045', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_045';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
         try {
           let result = mVideoSession.canPreconfig(null, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -458,14 +465,15 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_046', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_046';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
         try {
           let result = mPhotoSession.canPreconfig(null, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
@@ -482,15 +490,16 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_047', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_047';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
-        let PreconfigType: camera.PreconfigType  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
+        let PreconfigType: camera.PreconfigType = AppStorage.get('key') as ESObject;
         try {
           let result = mVideoSession.canPreconfig(PreconfigType, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -507,15 +516,16 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_048', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_048';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
-        let PreconfigType: camera.PreconfigType  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
+        let PreconfigType: camera.PreconfigType = AppStorage.get('key') as ESObject;
         try {
           let result = mPhotoSession.canPreconfig(PreconfigType, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
@@ -533,14 +543,15 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_049', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_049';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
         try {
           let result = mVideoSession.canPreconfig(undefined, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -557,14 +568,15 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_050', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_050';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         AppStorage.setOrCreate('key', '');
-        let PreconfigRatio: camera.PreconfigRatio  = AppStorage.get('key') as ESObject;
+        let PreconfigRatio: camera.PreconfigRatio = AppStorage.get('key') as ESObject;
         try {
           let result = mPhotoSession.canPreconfig(undefined, PreconfigRatio);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
@@ -582,12 +594,13 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_051', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_051';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         try {
           let result = mVideoSession.canPreconfig(undefined, undefined);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -604,12 +617,13 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_052', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_052';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         try {
           let result = mPhotoSession.canPreconfig(undefined, undefined);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
@@ -626,12 +640,13 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_053', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_053';
-      CameraPreconfigVideo(done,testName, async () =>{
+      CameraPreconfigVideo(done, testName, async () => {
         try {
           let result = mVideoSession.canPreconfig(null, null);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releaseVideoSession();
           done();
@@ -648,12 +663,13 @@ export default function cameraCanPreconfigSecTest() {
      */
     it('SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_054', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_SESSION_PRECONFIG_054';
-      CameraPreconfigPhoto(done,testName, async () =>{
+      CameraPreconfigPhoto(done, testName, async () => {
         try {
           let result = mPhotoSession.canPreconfig(null, null);
-          console.info(TAG,testName,`canPreconfig result is : ${result}`);
-        }catch (error) {
-          console.info(TAG ,testName, error.message, error.code);
+          console.info(TAG, testName, `canPreconfig result is : ${result}`);
+          expect(isEmpty(result)).assertFalse();
+        } catch (error) {
+          console.info(TAG, testName, error.message, error.code);
           expect(error.code).assertEqual('7400101')
           await releasePhotoSession();
           done();
