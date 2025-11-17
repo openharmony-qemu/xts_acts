@@ -186,6 +186,7 @@ struct WebIndex {
           console.info("key==>" + this.str)
           await waitForExist(()=>this.isReceive, this.str, 0);
           await waitForExist(() => this.isComplete, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnNativeEmbedMouseEvent001": {
               let value: string;
