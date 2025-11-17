@@ -15,29 +15,29 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/utils/Common';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function alphabetAlignStyleTest() {
-  describe('alphabetAlignStyleTest', () => {
+   describe('alphabetAlignStyleTest', () => {
     beforeEach(async (done: Function) => {
-      console.info(alphabetAlignStyleTest beforeEach start);
+      console.info("alphabetAlignStyleTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/AlphabetIndexer/alphabetAlignStyle',
+        url: "MainAbility/pages/AlphabetIndexer/alphabetAlignStyle",
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info(get alphabetAlignStyleTest state pages: + JSON.stringify(pages));
-        if (!(alphabetAlignStyle == pages.name)) {
-          console.info(get alphabetAlignStyleTest pages.name: + JSON.stringify(pages.name));
+        console.info("get alphabetAlignStyleTest state pages:" + JSON.stringify(pages));
+        if (!("alphabetAlignStyle" == pages.name)) {
+          console.info("get alphabetAlignStyleTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info(push alphabetAlignStyleTest page result: + JSON.stringify(result));
+          console.info("push alphabetAlignStyleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error(push alphabetAlignStyleTest page error: + err);
+        console.error("push alphabetAlignStyleTest page error:" + err);
       }
-      console.info(alphabetAlignStyleTest beforeEach end);
+      console.info("alphabetAlignStyleTest beforeEach end");
       done();
     });
 

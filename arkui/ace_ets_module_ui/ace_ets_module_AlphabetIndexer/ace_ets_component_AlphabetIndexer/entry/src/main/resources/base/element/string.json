@@ -87,6 +87,14 @@
     {
       "name": "Refresh_Numbers",
       "value": "123456"
+    },
+    {
+      "name": "fontSize",
+      "value": "25px"
+    },
+    {
+      "name": "popupSpace",
+      "value": "10"
     }
     
   ]

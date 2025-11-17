@@ -15,34 +15,34 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/utils/Common';
-import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
+import CommonFunc from '../../MainAbility/common/Common';
+
 export default function alphabetEnableJsunit() {
-  describe('alphabetEnableJsunit', () => {
+describe('alphabetEnableJsunit', () => {
     beforeEach(async (done: Function) => {
-      console.info(alphabetEnableJsunit beforeEach start);
+      console.info("alphabetEnableJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/AlphabetIndexer/alphabetEnable',
+        url: "MainAbility/pages/AlphabetIndexer/alphabetEnable",
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info(get alphabetEnableJsunit state pages: + JSON.stringify(pages));
-        if (!(alphabetEnable == pages.name)) {
-          console.info(get alphabetEnableJsunit pages.name: + JSON.stringify(pages.name));
+        console.info("get alphabetEnableJsunit state pages:" + JSON.stringify(pages));
+        if (!("alphabetEnable" == pages.name)) {
+          console.info("get alphabetEnableJsunit pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info(push alphabetEnableJsunit page result: + JSON.stringify(result));
+          console.info("push alphabetEnableJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error(push alphabetEnableJsunit page error: + err);
+        console.error("push alphabetEnableJsunit page error:" + err);
       }
-      console.info(alphabetEnableJsunit beforeEach end);
+      console.info("alphabetEnableJsunit beforeEach end");
       done();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info(alphabetEnableJsunit after each called);
+      console.info("alphabetEnableJsunit after each called");
     });
 
     /**
@@ -63,7 +63,7 @@ export default function alphabetEnableJsunit() {
 
       let strJson = getInspectorByKey('alphabet_enable');
       let obj: ESObject = JSON.parse(strJson);
-      console.info([alphabetEnableJsunit_001] component obj is:  + JSON.stringify(obj));
+      console.info('[alphabetEnableJsunit_001] component obj is: ' + JSON.stringify(obj));
       expect(obj.$attrs.enableHapticFeedback).assertEqual('true');
       console.info('[alphabetEnableJsunit_001] END');
       done();

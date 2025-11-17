@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import AlphabetTest from './AlphabetIndexerTest/AlphabetTest.test';
+import AlphabetTest from './AlphabetIndexerTest/alphabetTest.test';
 import ActsAlphabetIndexerUxTest from './AlphabetIndexerTest/AlphabetIndexer.test'
 import AlphabetIndexerJsunit from './AlphabetIndexerTest/AlphabetIndexerJsunit.test';
 import AlphabetIndexerOnSelectJsunit from './AlphabetIndexerTest/AlphabetIndexerAPI.test';

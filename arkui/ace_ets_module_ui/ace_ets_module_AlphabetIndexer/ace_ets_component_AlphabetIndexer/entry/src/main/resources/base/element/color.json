@@ -19,6 +19,18 @@
     {
       "name": "color_yellow",
       "value": "#FFFFFF00"
+    },
+    {
+      "name": "popupSelectedColor",
+      "value": "#00C5CD"
+    },
+    {
+      "name": "popupUnselectedColor",
+      "value": "#FFEC8B"
+    },
+    {
+      "name": "popupItemBackground",
+      "value": "#4EEE94"
     }
   ]
 }

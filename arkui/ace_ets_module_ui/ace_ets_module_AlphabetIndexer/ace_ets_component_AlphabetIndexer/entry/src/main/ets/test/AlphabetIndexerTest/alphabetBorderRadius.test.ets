@@ -15,29 +15,29 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/utils/Common';
-import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
+import CommonFunc from '../../MainAbility/common/Common';
+
 export default function alphabetBorderRadiusTest() {
   describe('alphabetBorderRadiusTest', () => {
     beforeEach(async (done: Function) => {
-      console.info(alphabetBorderRadiusTest beforeEach start);
+      console.info("alphabetBorderRadiusTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/AlphabetIndexer/alphabetBorderRadius',
+        url: "MainAbility/pages/AlphabetIndexer/alphabetBorderRadius",
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info(get alphabetBorderRadiusTest state pages: + JSON.stringify(pages));
-        if (!(alphabetBorderRadius == pages.name)) {
-          console.info(get alphabetBorderRadiusTest pages.name: + JSON.stringify(pages.name));
+        console.info("get alphabetBorderRadiusTest state pages:" + JSON.stringify(pages));
+        if (!("alphabetBorderRadius" == pages.name)) {
+          console.info("get alphabetBorderRadiusTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info(push alphabetBorderRadiusTest page result: + JSON.stringify(result));
+          console.info("push alphabetBorderRadiusTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error(push alphabetBorderRadiusTest page error: + err);
+        console.error("push alphabetBorderRadiusTest page error:" + err);
       }
-      console.info(alphabetBorderRadiusTest beforeEach end);
+      console.info("alphabetBorderRadiusTest beforeEach end");
       done();
     });
 
@@ -55,7 +55,7 @@ export default function alphabetBorderRadiusTest() {
 
       let strJson = getInspectorByKey('alphabet_borderRadius');
       let obj: ESObject = JSON.parse(strJson);
-      console.info([alphabetBorderRadiusTest_001] component obj is:  + JSON.stringify(obj));
+      console.info("[alphabetBorderRadiusTest_001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.itemBorderRadius).assertEqual('10.00vp');
       expect(obj.$attrs.indexerBorderRadius).assertEqual('14.00vp');
       console.info('[alphabetBorderRadiusTest_001] END');
@@ -76,7 +76,7 @@ export default function alphabetBorderRadiusTest() {
 
       let strJson = getInspectorByKey('alphabet_borderRadius');
       let obj: ESObject = JSON.parse(strJson);
-      console.info([alphabetBorderRadiusTest_002] component obj is:  + JSON.stringify(obj));
+      console.info("[alphabetBorderRadiusTest_002] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.popupItemBorderRadius).assertEqual('10.00vp');
       expect(obj.$attrs.popupBorderRadius).assertEqual('14.00vp');
       console.info('[alphabetBorderRadiusTest_002] END');
@@ -97,11 +97,11 @@ export default function alphabetBorderRadiusTest() {
       let indexerOffset = CommonFunc.getComponentRectOnScreen('alphabet_borderRadius2');
       let height = indexerOffset.bottom - indexerOffset.top;
       let width = indexerOffset.right - indexerOffset.left;
-      console.info(alphabetBorderRadiusTest_003 value : width is + width +  height is   + height);
+      console.info("alphabetBorderRadiusTest_003 value : width is" + width + " height is "  + height);
 
       let strJson = getInspectorByKey('alphabet_borderRadius2');
       let obj: ESObject = JSON.parse(strJson);
-      console.info([alphabetBorderRadiusTest_003] component obj is:  + JSON.stringify(obj));
+      console.info("[alphabetBorderRadiusTest_003] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.itemBorderRadius).assertEqual('16.00vp');
       console.info('[alphabetBorderRadiusTest_003] END');
       done();
@@ -122,11 +122,11 @@ export default function alphabetBorderRadiusTest() {
       let indexerOffset = CommonFunc.getComponentRectOnScreen('alphabet_borderRadius3');
       let height = indexerOffset.bottom - indexerOffset.top;
       let width = indexerOffset.right - indexerOffset.left;
-      console.info(alphabetBorderRadiusTest_004 value : width is + width +  height is   + height);
+      console.info("alphabetBorderRadiusTest_004 value : width is" + width + " height is "  + height);
 
       let strJson = getInspectorByKey('alphabet_borderRadius3');
       let obj: ESObject = JSON.parse(strJson);
-      console.info([alphabetBorderRadiusTest_004] component obj is:  + JSON.stringify(obj));
+      console.info("[alphabetBorderRadiusTest_004] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.itemBorderRadius).assertEqual('24.00vp');
       console.info('[alphabetBorderRadiusTest_004] END');
       done();
@@ -151,11 +151,11 @@ export default function alphabetBorderRadiusTest() {
       let indexerOffset = CommonFunc.getComponentRectOnScreen('alphabet_borderRadius2');
       let height = indexerOffset.bottom - indexerOffset.top;
       let width = indexerOffset.right - indexerOffset.left;
-      console.info(alphabetBorderRadiusTest_005 value : width is + width +  height is   + height);
+      console.info("alphabetBorderRadiusTest_005 value : width is" + width + " height is "  + height);
 
       let strJson = getInspectorByKey('alphabet_borderRadius2');
       let obj: ESObject = JSON.parse(strJson);
-      console.info([alphabetBorderRadiusTest_005] component obj is:  + JSON.stringify(obj));
+      console.info("[alphabetBorderRadiusTest_005] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.itemBorderRadius).assertEqual('16.00vp');
       console.info('[alphabetBorderRadiusTest_005] END');
       done();
@@ -180,11 +180,11 @@ export default function alphabetBorderRadiusTest() {
       let indexerOffset = CommonFunc.getComponentRectOnScreen('alphabet_borderRadius3');
       let height = indexerOffset.bottom - indexerOffset.top;
       let width = indexerOffset.right - indexerOffset.left;
-      console.info(alphabetBorderRadiusTest_006 value : width is + width +  height is   + height);
+      console.info("alphabetBorderRadiusTest_006 value : width is" + width + " height is "  + height);
 
       let strJson = getInspectorByKey('alphabet_borderRadius3');
       let obj: ESObject = JSON.parse(strJson);
-      console.info([alphabetBorderRadiusTest_006] component obj is:  + JSON.stringify(obj));
+      console.info("[alphabetBorderRadiusTest_006] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.itemBorderRadius).assertEqual('24.00vp');
       console.info('[alphabetBorderRadiusTest_006] END');
       done();

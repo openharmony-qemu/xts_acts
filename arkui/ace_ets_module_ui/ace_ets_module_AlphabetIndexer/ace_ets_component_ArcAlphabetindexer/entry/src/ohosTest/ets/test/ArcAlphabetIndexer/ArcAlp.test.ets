@@ -14,7 +14,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,  Level } from '@ohos/hypium';
 import router from '@system.router';
-import CommonFunc from '../../MainAbility/utils/Common';
+import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 import { resourceManager } from '@kit.LocalizationKit';
 const expectedFamily = 'HarmonyOS Sans';
