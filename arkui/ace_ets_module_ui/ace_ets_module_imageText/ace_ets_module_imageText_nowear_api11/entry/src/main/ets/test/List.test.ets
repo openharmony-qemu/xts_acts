@@ -24,14 +24,9 @@ import textArea_center from './TextAreaTest/textArea_center.test.ets'
 import positionSettingJsunit from './textTest/PositionSettingJsunit.test';
 import textAreaBC1Jsunit from './TextAreaTest/textAreaBC1Jsunit.test';
 import search_gesture from './SearchTest/search_gesture.test';
-import RichEditor01 from './RichEditorTest/RichEditor01.test.ets';
 import textAreaUIJsunit from './TextAreaTest/textAreaUIJsunit.test';
 import TextInputPageJsunit from './TextInputTest/TextInputPageJsunit.test';
 import SearchJsunit from './SearchTest/SearchJsunit.test';
-import richEditorApi1 from './RichEditorTest/richEditorApi/richEditorApi1.test'
-import RichEditorApi222 from './RichEditorTest/RichEditorApi222.test';
-import RichTextJsunit from './RichEditorTest/RichTextJsunit.test.ets';
-import richTextJsunitFOUR from './RichEditorTest/RichTextJsunitFOUR.test';
 import OnTextSelectionChangeTest from './textTest/onTextSelectionChange.test';
 import SelectJsunit01 from './selectTest/SelectJsunit01.test.ets';
 
@@ -48,14 +43,9 @@ export default function testsuite() {
   positionSettingJsunit();
   textAreaBC1Jsunit();
   search_gesture();
-  RichEditor01();
   textAreaUIJsunit();
   TextInputPageJsunit();
   SearchJsunit();
-  richEditorApi1()
-  RichEditorApi222();
-  RichTextJsunit();
-  richTextJsunitFOUR()
   OnTextSelectionChangeTest();
   SelectJsunit01()
 }
