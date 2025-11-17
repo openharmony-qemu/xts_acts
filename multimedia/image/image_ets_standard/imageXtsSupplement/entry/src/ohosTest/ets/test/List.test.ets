@@ -73,6 +73,10 @@ import modifyImagePropertyTest from './image/ModifyImageProperty.test';
 import modifyImagePropertyTests from './image/ModifyImagePropertyKey.test';
 import ImageImagePackerPackingSupp from './image/ImagePackerPackingSupp.test';
 import ImageSourceGetImagePropertyTest from "./image/ImageSourceGetImageProperty.test";
+import ImageSourceCreatePictureGif from './image/ImageSourceCreatePictureGif.test';
+import ImageSourceCreatePictureJpeg from './image/ImageSourceCreatePictureJpeg.test';
+import ImageSourceCreatePictureJpg from './image/ImageSourceCreatePictureJpg.test';
+import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.test';
 
 
 export default function testsuite() {
@@ -136,4 +140,8 @@ export default function testsuite() {
   modifyImagePropertyTests();
   ImageImagePackerPackingSupp();
   ImageSourceGetImagePropertyTest();
+  ImageSourceCreatePictureGif();
+  ImageSourceCreatePictureJpeg();
+  ImageSourceCreatePictureJpg();
+  ImageSourceCreatePictureOrf();
 }
