@@ -17,18 +17,18 @@ import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
 
-export default function datePickerDialogModeTest() {
+export default function DatePickerDialogModeTest() {
   describe('DatePickerDialogMode', () => {
 
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/datePickerDialog/DatePickerDialogMode',
+        url: 'MainAbility/pages/datePickerDialog/datePickerDialogMode',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info('get DatePickerDialog state success ' + JSON.stringify(pages));
-        if (!('DatePickerDialogMode' == pages.name)) {
+        if (!('datePickerDialogMode' == pages.name)) {
           console.info('get DatePickerDialog state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options)
           console.info('push DatePickerDialogMode page success ' + JSON.stringify(result));
