@@ -18,10 +18,10 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
+let driver: Driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webViewControllerPart2() {
-
   describe('WebOnNativeEmbedMouseEventTest', () => {
 
     beforeAll(async (done: Function) => {
@@ -40,7 +40,6 @@ export default function webViewControllerPart2() {
       } catch (err) {
         console.error("push WebOnNativeEmbedMouseEvent page error: " + err);
       }
-      let driver: Driver = Driver.create();
       await driver.waitForComponent(ON.id("WebOnNativeEmbedMouseButton"),10000);
       done()
     });
@@ -55,18 +54,18 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_EMITONNATIVEEMBEDMOUSEEVENT_0100
-     * @tc.name       : testOnNativeEmbedMouseEvent001
-     * @tc.desc       : OnNativeEmbedMouseEvent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)
-      Utils.registerEvent("testOnNativeEmbedMouseEvent001", true, 153540, done);
-      sendEventByKey('WebOnNativeEmbedMouseButton', 10, '');
+   /*
+    * @tc.number     : SUB_WEB_EMITONNATIVEEMBEDMOUSEEVENT_0100
+    * @tc.name       : testOnNativeEmbedMouseEvent001
+    * @tc.desc       : OnNativeEmbedMouseEvent
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+   it('testOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)
+    Utils.registerEvent("testOnNativeEmbedMouseEvent001", true, 153540, done);
+    await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testOnNativeEmbedMouseEvent001');
     })
   })
 }
