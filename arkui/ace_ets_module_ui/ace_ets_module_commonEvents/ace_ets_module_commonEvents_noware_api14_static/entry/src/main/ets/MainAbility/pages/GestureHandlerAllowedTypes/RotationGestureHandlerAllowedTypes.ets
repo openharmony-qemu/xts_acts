@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,63 +13,74 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  Button,
-  ClickEvent,
-  Color,
   Column,
   ColumnOptions,
-  Component,
+  Text,
   DragEvent,
-  Entry,
-  GestureEvent,
-  GestureModifier,
-  HorizontalAlign,
   Image,
+  Button,
+  GestureModifier,
+  UIGestureEvent,
+  SourceTool,
+  GestureEvent,
+  ClickEvent,
   Margin,
   Padding,
-  SourceTool,
-  Text,
-  UIGestureEvent,
+  Color,
+  HorizontalAlign,RotationGestureHandler
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Callback, Message } from '../../common/MessageManager';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+import { Callback } from '@ohos.base';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 class RotationGestureHandlerAllowedTypesModifier implements GestureModifier {
-  toolTypes: Array<SourceTool | undefined | null> = [];
-
-  constructor(types: Array<SourceTool | undefined | null>, callback: Callback<string>) {
+  toolTypes: Array<SourceTool> = [];
+  listener: Callback<string> = (data: string) => {};
+  constructor(types: Array<SourceTool>, callback: Callback<string>) {
     this.toolTypes = types;
     this.listener = callback;
   }
 
-  listener: Callback<string> = (data: Message<string>) => {
-  };
-
   applyGesture(event: UIGestureEvent): void {
-
-
+    event.addGesture(
+      new RotationGestureHandler()
+        .allowedTypes(this.toolTypes)
+        .onActionStart((event: GestureEvent) => {
+          this.listener('allowed types success');
+        })
+        .onActionUpdate((event: GestureEvent) => {
+          this.listener('allowed types success');
+        })
+    )
   }
 }
 
 @Entry
 @Component
 struct RotateGestureHandlerAllowedTypes {
+
   @State result: string = 'allowed types default';
-  @State modifier: RotationGestureHandlerAllowedTypesModifier =
-    new RotationGestureHandlerAllowedTypesModifier([], this.callback);
+  private callback: Callback<string> = (data: string) => {
+    this.result = data;
+  }
+  @State modifier: RotationGestureHandlerAllowedTypesModifier = new RotationGestureHandlerAllowedTypesModifier([], this.callback);
 
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({space: 10} as ColumnOptions) {
       Column() {
         Text('RotationGesture').fontSize(20)
       }
-      .width(160)
-      .height(160)
-      .backgroundColor(Color.Yellow)
-      .key('RotationGestureHandlerAllowedTypes_Text')
+      .width(160).height(160)
+      .backgroundColor(Color.Yellow).key('RotationGestureHandlerAllowedTypes_Text')
       .gestureModifier(this.modifier)
 
       Text(this.result).key('RotationGestureHandlerAllowedTypes_result')
@@ -85,20 +96,10 @@ struct RotateGestureHandlerAllowedTypes {
           this.modifier = new RotationGestureHandlerAllowedTypesModifier([SourceTool.Finger], this.callback);
         })
       Button('Invalid').id('Invalid_type')
-        .onClick((e: ClickEvent) => {
-          this.result = 'allowed types default';
-          this.modifier = new RotationGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
-        })
-    }
-    .padding({ top: 10, left: 40 } as Padding)
-    .alignItems(HorizontalAlign.Start)
-    .width('100%')
-    .height('100%')
-    .backgroundColor('#ffbebaba')
-    .key('RotationGestureHandlerAllowedTypes_Father')
-  }
-
-  private callback: Callback<string> = (data: Message<string>) => {
-    this.result = data.value;
+          .onClick((e: ClickEvent) => {
+            this.result = 'allowed types default';
+            // this.modifier = new RotationGestureHandlerAllowedTypesModifier([null, undefined], this.callback);
+          })
+    }.padding({top: 10, left:40 } as Padding).alignItems(HorizontalAlign.Start).width('100%').height('100%').backgroundColor('#ffbebaba').key('RotationGestureHandlerAllowedTypes_Father')
   }
 }
