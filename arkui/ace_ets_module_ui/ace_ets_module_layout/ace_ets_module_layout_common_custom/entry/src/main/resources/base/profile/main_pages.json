@@ -1,0 +1,11 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/CommonCustom/Calc01",
+        "MainAbility/pages/CommonCustom/Calc02",
+        "MainAbility/pages/CommonCustom/ChainWeight",
+        "MainAbility/pages/CommonCustom/CustomLayoutUniqueidPage",
+        "MainAbility/pages/CommonCustom/ButtonAlign",
+        "MainAbility/pages/CommonCustom/mediaQuery"
+    ]
+}
