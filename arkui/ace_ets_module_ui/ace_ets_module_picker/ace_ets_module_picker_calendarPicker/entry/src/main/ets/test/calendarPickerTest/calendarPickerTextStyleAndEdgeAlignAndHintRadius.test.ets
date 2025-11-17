@@ -17,8 +17,8 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../MainAbility/common/Common';
 import router from '@ohos.router';
 
-export default function calendarpicker() {
-  describe('ActsAceCalendarPickerTest', () => {
+export default function CalendarPickerTextStyleAndEdgeAlignAndHintRadiusTest() {
+  describe('CalendarPickerTextStyleAndEdgeAlignAndHintRadiusTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/calendarPicker/calendarPickerTextStyleAndEdgeAlignAndHintRadius',

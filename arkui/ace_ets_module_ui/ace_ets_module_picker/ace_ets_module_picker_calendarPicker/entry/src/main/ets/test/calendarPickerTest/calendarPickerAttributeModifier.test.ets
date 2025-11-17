@@ -18,10 +18,10 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils/Utils';
 import router from '@ohos.router'
 
-export default function calendarPickerJsunit() {
-  describe('ActsAceCalendarPickerTest', () => {
+export default function CalendarPickerAttributeModifierTest() {
+  describe('CalendarPickerAttributeModifierTest', () => {
     beforeEach(async (done: Function) => {
-      console.info('calendarpicker beforeEach start');
+      console.info('CalendarPickerAttributeModifierTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/calendarPicker/calendarPickerAttributeModifier',
       }
@@ -29,15 +29,15 @@ export default function calendarPickerJsunit() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get calendarpicker state pages: ' + JSON.stringify(pages));
+        console.info('get CalendarPickerAttributeModifierTest state pages: ' + JSON.stringify(pages));
         if (!('calendarPickerAttributeModifier' == pages.name)) {
-          console.info('get calendarpicker state pages.name: ' + JSON.stringify(pages.name));
+          console.info('get CalendarPickerAttributeModifierTest state pages.name: ' + JSON.stringify(pages.name));
           result = await router.push(options);
           await Utils.sleep(5000);
-          console.info('push calendarpicker page result: ' + JSON.stringify(result));
+          console.info('push CalendarPickerAttributeModifierTest page result: ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push calendarpicker page error: ' + err);
+        console.error('push CalendarPickerAttributeModifierTest page error: ' + err);
       }
       done();
     });
