@@ -178,15 +178,15 @@ export default function avRecorderTest() {
 
     let setAVRecorderCallback = (avRecorder: media.AVRecorder, done: () => void) => {
       // 状态机变化回调函数
-      avRecorder.on('stateChange', (state, reason) => {
+      avRecorder.onStateChange((state, reason) => {
         console.info(TAG + 'current state is: ' + state);
       })
       // 录制监听回调函数
-      avRecorder.on('audioCapturerChange', (AudioCapturerChangeInfo) => {
+      avRecorder.onAudioCapturerChange((AudioCapturerChangeInfo) => {
         console.info(TAG + 'audioCapturerChange');
       });
       // 错误上报回调函数
-      avRecorder.on('error', (err: BusinessError|null) => {
+      avRecorder.onError((err: BusinessError|null) => {
         try {
           console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
           // await releaseRecorderPromise(avRecorder, done);
