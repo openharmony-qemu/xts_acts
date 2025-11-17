@@ -219,13 +219,13 @@ class MyAuthenticator extends account.Authenticator {
     }
     if (allLabels == undefined || allLabels.length == 0) {
       authResult!.tokenInfo!.token = 'false';
-      callback.onResult(0, authResult);
+      callback.onResult(0, undefined);
       return;
     }
     for (let i = 0; i < labels.length; ++i) {
       if (allLabels.indexOf(labels[i]) == -1) {
         authResult!.tokenInfo!.token = 'false';
-        callback.onResult(0, authResult);
+        callback.onResult(0, undefined);
         return;
       }
     }
@@ -255,7 +255,7 @@ class MyAuthenticator extends account.Authenticator {
         }
       }
     }
-    callback.onResult(0, authResult);
+    callback.onResult(0, undefined);
   }
 }
 
