@@ -50,7 +50,7 @@ export default function selectmenuTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get SelectMenu state success " + JSON.stringify(pages));
-        if (!("MainAbility/pages/SelectMenu" == pages.name)) {
+        if (!("SelectMenu" == pages.name)) {
           console.info("get SelectMenu state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
         }
@@ -61,13 +61,14 @@ export default function selectmenuTest() {
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0100 start");
       setTimeout(() => {
         try {
@@ -86,13 +87,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0100', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0200 start");
       setTimeout(() => {
         try {
@@ -111,13 +113,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0200', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0300 start");
       setTimeout(() => {
         try {
@@ -136,13 +139,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0300', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0400 start");
       setTimeout(() => {
         try {
@@ -165,13 +169,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0400', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0500 start");
       setTimeout(() => {
         try {
@@ -194,13 +199,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0500', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0600 start");
       setTimeout(() => {
         try {
@@ -223,13 +229,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0600', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0700 start");
       setTimeout(() => {
         try {
@@ -252,13 +259,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0700', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0800
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0800 start");
       setTimeout(() => {
         try {
@@ -281,13 +289,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0800', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_static_0900
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_static_0900 start");
       setTimeout(() => {
         try {
@@ -310,13 +319,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_static_0900', Level.LEVEL0, async (done:
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_1000
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_1000
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_1000
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1000 start");
       setTimeout(() => {
         try {
@@ -339,13 +349,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_1000', Level.LEVEL0, async (done: () => 
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_1100
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_1100
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_1100
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1100 start");
       setTimeout(() => {
         try {
@@ -368,13 +379,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_1100', Level.LEVEL0, async (done: () => 
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_1200
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_1200
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_1200
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1200 start");
       setTimeout(() => {
         try {
@@ -397,13 +409,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_1200', Level.LEVEL0, async (done: () => 
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_1300
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_1300
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_1300
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1300 start");
       setTimeout(() => {
         try {
@@ -426,13 +439,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_1300', Level.LEVEL0, async (done: () => 
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_1400
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_1400
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_1400
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1400 start");
       setTimeout(() => {
         try {
@@ -455,13 +469,14 @@ it('ArkUXII_Stage_Select_Menu_MenuAlign_1400', Level.LEVEL0, async (done: () => 
 
     
     
+    
     /*
      * @tc.number   ArkUXII_Stage_Select_Menu_MenuAlign_1500
      * @tc.name     ArkUXII_Stage_Select_Menu_MenuAlign_1500
      * @tc.desc     ArkUXII_Stage_Select_Menu_MenuAlign_1500
      * @tc.level    Level.LEVEL0
      */
-it('ArkUXII_Stage_Select_Menu_MenuAlign_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_Select_Menu_MenuAlign_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_Select_Menu_MenuAlign_1500 start");
       setTimeout(() => {
         try {
