@@ -7947,17 +7947,16 @@ static napi_value AudioSessionManagerAvailableDevices_004(napi_env env, napi_cal
     napi_create_int32(env, TEST_PASS, &res);
     return res;
 }
-
+const int32_t bluetoothNone = 0;
+const int32_t bluetoothDefault = 1;
+const int32_t bluetoothLatency = 2;
+const int32_t bluetoothQuality = 3;
+const int32_t errorUnsupportedFormat = 4;
+const int32_t streamStateStopped = 3;
+const int32_t streamPrivacyTypeShared = 2;
 static napi_value BluetoothAndNearlinkPreferredRecordCategory_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    const int32_t bluetoothNone = 0;
-    const int32_t bluetoothDefault = 1;
-    const int32_t bluetoothLatency = 2;
-    const int32_t bluetoothQuality = 3;
-    const int32_t errorUnsupportedFormat = 4;
-    const int32_t streamStateStopped = 3;
-    const int32_t streamPrivacyTypeShared = 2;
     OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory preferredNone = PREFERRED_NONE;
     if (preferredNone != bluetoothNone) {
         napi_create_int32(env, TEST_FAIL, &res);
