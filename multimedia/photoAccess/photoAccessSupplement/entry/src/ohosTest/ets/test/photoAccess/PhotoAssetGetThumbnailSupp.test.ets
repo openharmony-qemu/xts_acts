@@ -79,7 +79,6 @@ export default function getThumbnailTestSupp() {
     let createResource = async (context: common.UIAbilityContext, fileNameList: Array<string>) => {
       try {
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-        // let imageUrijpg = 'file:///data/storage/el2/base/haps/entry_test/files/01.mp4';
         let imageUripng = 'file:///data/storage/el2/base/haps/entry_test/files/01.png';
         let imageUrimpeg = 'file:///data/storage/el2/base/haps/entry_test/files/01.mpeg';
         let imageUridng = 'file:///data/storage/el2/base/haps/entry_test/files/stm_RAW.dng';
@@ -89,19 +88,51 @@ export default function getThumbnailTestSupp() {
           let fileName = fileNameList[i];
           let displayName = fileName.substring(0, fileName.lastIndexOf("."));
           console.log(`createResource :: displayName is ${displayName}`);
-          if (fileName.endsWith(".jpg")) {
+          if (fileName.endsWith(".png")) {
             let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-            let extension: string = 'jpg';
+            let extension: string = 'png';
             let options: photoAccessHelper.CreateOptions = {
               title: displayName
             }
             let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
               photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-              // assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUrijpg);
               assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUripng);
-              assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUrimpeg);
-              assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUridng);
-              assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUrigif);
+            await phAccessHelper.applyChanges(assetChangeRequest);
+            console.log(`createResource :: applyChange ${fileName} success !`);
+          }
+          if (fileName.endsWith(".mpeg")) {
+            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+            let extension: string = 'mpeg';
+            let options: photoAccessHelper.CreateOptions = {
+              title: displayName
+            }
+            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+            assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUrimpeg);
+            await phAccessHelper.applyChanges(assetChangeRequest);
+            console.log(`createResource :: applyChange ${fileName} success !`);
+          }
+          if (fileName.endsWith(".gif")) {
+            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+            let extension: string = 'gif';
+            let options: photoAccessHelper.CreateOptions = {
+              title: displayName
+            }
+            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+            assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUrigif);
+            await phAccessHelper.applyChanges(assetChangeRequest);
+            console.log(`createResource :: applyChange ${fileName} success !`);
+          }
+          if (fileName.endsWith(".dng")) {
+            let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+            let extension: string = 'dng';
+            let options: photoAccessHelper.CreateOptions = {
+              title: displayName
+            }
+            let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+              photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+            assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUridng);
             await phAccessHelper.applyChanges(assetChangeRequest);
             console.log(`createResource :: applyChange ${fileName} success !`);
           }
