@@ -72,11 +72,11 @@ export default function fractionStops() {
       console.info('fractionStops_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('fractionStops');
-      console.info('[fractionStops_0100] component obj is: ' + JSON.stringify(JSON.parse(strJson)));
-      console.info('[fractionStops_0100] content obj is: ' + JSON.stringify(JSON.parse(strJson)
+      console.info("[fractionStops_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
+      console.info("[fractionStops_0100] content obj is: " + JSON.stringify(JSON.parse(strJson)
         .$attrs
         .linearGradientBlur));
-      console.info('[fractionStops_0100] content fractionStops is: ' + JSON.stringify(JSON.parse(strJson)
+      console.info("[fractionStops_0100] content fractionStops is: " + JSON.stringify(JSON.parse(strJson)
         .$attrs
         .linearGradientBlur
         .options
@@ -86,7 +86,7 @@ export default function fractionStops() {
         .linearGradientBlur
         .options
         .fractionStops))
-        .assertEqual('['0.000000,0.000000','0.000000,0.330000','1.000000,0.660000','1.000000,1.000000']');
+        .assertEqual('["0.000000,0.000000","0.000000,0.330000","1.000000,0.660000","1.000000,1.000000"]');
       console.info('[fractionStops_0100] END');
       done();
     });

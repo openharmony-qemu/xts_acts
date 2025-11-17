@@ -72,12 +72,12 @@ export default function backgroundBrightness() {
       console.info('backgroundBrightness_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('backgroundBrightness');
-      console.info('[backgroundBrightness_0100] component obj is: ' + JSON.stringify(JSON.parse(strJson)));
-      console.info('[backgroundBrightness_0100] backgroundBrightness obj is: ' + JSON.stringify(JSON.parse(strJson)
+      console.info("[backgroundBrightness_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
+      console.info("[backgroundBrightness_0100] backgroundBrightness obj is: " + JSON.stringify(JSON.parse(strJson)
         .$attrs
         .BackgroundBrightness));
       expect(JSON.stringify(JSON.parse(strJson).$attrs.BackgroundBrightness))
-        .assertEqual('{'dynamicLightUpRate':0.5,'dynamicLightUpDegree':0.5}');
+        .assertEqual('{"dynamicLightUpRate":0.5,"dynamicLightUpDegree":0.5}');
       console.info('[backgroundBrightness_0100] END');
       done();
     });

@@ -75,10 +75,10 @@ export default function backgroundImageOption() {
       console.log('backgroundImageOption_0100 children2 : ', backgroundImage3)
       console.log('backgroundImageOption_0100 children3 : ', backgroundImage4)
       await CommonFunc.sleep(1000);
-      expect(backgroundImage1).assertEqual('', ImageRepeat.XY'');
-      expect(backgroundImage2).assertEqual(''resource:///16777237.png, ImageRepeat.Y''); 
-      expect(backgroundImage3).assertEqual(''resource:///16777237.png, ImageRepeat.X'');
-      expect(backgroundImage4).assertEqual(''resource:///16777237.png, ImageRepeat.NoRepeat'');
+      expect(backgroundImage1).assertEqual('", ImageRepeat.XY"');
+      expect(backgroundImage2).assertEqual('"resource:///16777237.png, ImageRepeat.Y"'); 
+      expect(backgroundImage3).assertEqual('"resource:///16777237.png, ImageRepeat.X"');
+      expect(backgroundImage4).assertEqual('"resource:///16777237.png, ImageRepeat.NoRepeat"');
       console.info('backgroundImageOption_0100 END');
       done();
     });

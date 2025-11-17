@@ -69,7 +69,7 @@ export default function motionBlurTest() {
       let strJson = getInspectorByKey('motionBlur_id');
       console.log('motionBlurTest_0100', JSON.stringify(JSON.parse(strJson).$attrs))
       console.log('motionBlurTest_0100', JSON.stringify(JSON.parse(strJson).$attrs.motionBlur))
-      expect(JSON.stringify(JSON.parse(strJson).$attrs.motionBlur)).assertEqual('{'radius':0,'anchor':{'x':0,'y':0}}');
+      expect(JSON.stringify(JSON.parse(strJson).$attrs.motionBlur)).assertEqual('{"radius":0,"anchor":{"x":0,"y":0}}');
       console.info('motionBlurTest_0100 END');
       done();
     });

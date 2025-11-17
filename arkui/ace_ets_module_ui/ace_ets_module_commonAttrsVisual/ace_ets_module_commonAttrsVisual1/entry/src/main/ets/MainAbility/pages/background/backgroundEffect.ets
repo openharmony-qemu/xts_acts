@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct backgroundEffect1 {
+struct backgroundEffectTest1 {
   @State imageSize: number = 150;
   @State mInactiveColor: ResourceColor = '#FFFF0000'
 
