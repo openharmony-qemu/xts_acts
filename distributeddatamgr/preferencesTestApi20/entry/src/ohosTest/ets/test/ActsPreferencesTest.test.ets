@@ -19,12 +19,13 @@ import preferences from 'libpreferencestest.so'
 export default function ActsPreferencesTest() {
   describe('ActsPreferencesTest', () => {
     /**
-     * @tc.number  : SUB_OH_Preferences_IsStorageTypeSupported_0100
-     * @tc.name    : SUB_OH_Preferences_IsStorageTypeSupported_0100
-     * @tc.desc    : Test the scenario that the parameter of the OH_Preferences_IsStorageTypeSupported interface is illegal.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_OH_Preferences_IsStorageTypeSupported_0100
+     * @tc.number SUB_OH_Preferences_IsStorageTypeSupported_0100
+     * @tc.desc   Test the scenario that the parameter of the OH_Preferences_IsStorageTypeSupported interface is illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_Preferences_IsStorageTypeSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -42,12 +43,13 @@ export default function ActsPreferencesTest() {
       })
 
     /**
-     * @tc.number  : SUB_PREFERENCES_STORAGE_XML_0200
-     * @tc.name    : SUB_PREFERENCES_STORAGE_XML_0200
-     * @tc.desc    : Scenario for testing enumeration value PREFERENCES_STORAGE_XML
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_PREFERENCES_STORAGE_XML_0200
+     * @tc.number SUB_PREFERENCES_STORAGE_XML_0200
+     * @tc.desc   Scenario for testing enumeration value PREFERENCES_STORAGE_XML
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_PREFERENCES_STORAGE_XML_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -65,12 +67,13 @@ export default function ActsPreferencesTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_PreferencesOption_SetStorageType_0300
-     * @tc.name    : SUB_OH_PreferencesOption_SetStorageType_0300
-     * @tc.desc    : Test the scenario that the parameter of the OH_PreferencesOption_SetStorageType interface is illegal.
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:54
+     * @tc.name   SUB_OH_PreferencesOption_SetStorageType_0300
+     * @tc.number SUB_OH_PreferencesOption_SetStorageType_0300
+     * @tc.desc   Test the scenario that the parameter of the OH_PreferencesOption_SetStorageType interface is illegal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_PreferencesOption_SetStorageType_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

@@ -20,12 +20,13 @@ const Success = 0;
 export default function ActsPasteboardErrorTest() {
   describe('ActsPasteboardErrorTest', () => {
     /**
-     * @tc.number  : Sub_PasteboardSubscriber_PasteboardRemoteDC_0100
-     * @tc.name    : Sub_PasteboardSubscriber_PasteboardRemoteDC_0100
-     * @tc.desc    : Test PasteboardRemoteDC
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardRemoteDC_0100
+     * @tc.number Sub_PasteboardSubscriber_PasteboardRemoteDC_0100
+     * @tc.desc   Test PasteboardRemoteDC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_PasteboardSubscriber_PasteboardRemoteDC_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -41,12 +42,13 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_PasteboardSubscriber_PasteboardDestroySuccess_0200
-     * @tc.name    : Sub_PasteboardSubscriber_PasteboardDestroySuccess_0200
-     * @tc.desc    : Test PasteboardDestroySuccess
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardDestroySuccess_0200
+     * @tc.number Sub_PasteboardSubscriber_PasteboardDestroySuccess_0200
+     * @tc.desc   Test PasteboardDestroySuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_PasteboardSubscriber_PasteboardDestroySuccess_0200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -62,12 +64,13 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_PasteboardSubscriber_PasteboardDestroyError_0300
-     * @tc.name    : Sub_PasteboardSubscriber_PasteboardDestroyError_0300
-     * @tc.desc    : Test PasteboardDestroyError
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardDestroyError_0300
+     * @tc.number Sub_PasteboardSubscriber_PasteboardDestroyError_0300
+     * @tc.desc   Test PasteboardDestroyError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_PasteboardSubscriber_PasteboardDestroyError_0300', Level.LEVEL0, async (done: Function) => {
       try {
@@ -83,12 +86,13 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_PasteboardSubscriber_PasteboardGetDataSourceInvalidParameter_0400
-     * @tc.name    : Sub_PasteboardSubscriber_PasteboardGetDataSourceInvalidParameter_0400
-     * @tc.desc    : Test PasteboardGetDataSourceInvalidParameter
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardGetDataSourceInvalidParameter_0400
+     * @tc.number Sub_PasteboardSubscriber_PasteboardGetDataSourceInvalidParameter_0400
+     * @tc.desc   Test PasteboardGetDataSourceInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_PasteboardSubscriber_PasteboardGetDataSourceInvalidParameter_0400', Level.LEVEL0, async (done: Function) => {
       try {
@@ -104,12 +108,13 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_PasteboardSubscriber_PasteboardSetDataInvalidParameter_0500
-     * @tc.name    : Sub_PasteboardSubscriber_PasteboardSetDataInvalidParameter_0500
-     * @tc.desc    : Test PasteboardSetDataInvalidParameter
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardSetDataInvalidParameter_0500
+     * @tc.number Sub_PasteboardSubscriber_PasteboardSetDataInvalidParameter_0500
+     * @tc.desc   Test PasteboardSetDataInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_PasteboardSubscriber_PasteboardSetDataInvalidParameter_0500', Level.LEVEL0, async (done: Function) => {
       try {
@@ -125,12 +130,13 @@ export default function ActsPasteboardErrorTest() {
     });
 
     /**
-     * @tc.number  : Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0600
-     * @tc.name    : Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0600
-     * @tc.desc    : Test PasteboardClearDataInvalidParameter
-     * @tc.level   : LEVEL0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0600
+     * @tc.number Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0600
+     * @tc.desc   Test PasteboardClearDataInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0600', Level.LEVEL0, async (done: Function) => {
       try {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
+import { ColorMetrics, LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -59,6 +60,11 @@ struct saveButton {
   @State alignRule: AlignRuleOption | LocalizedAlignRuleOptions | undefined = undefined
   @State chainDirection: Axis | undefined = undefined
   @State chainStyle: ChainStyle | undefined = undefined
+  @State strokeMargin: number = 0
+  @State strokeColorR: number = 0
+  @State strokeColorG: number = 0
+  @State strokeColorB: number = 0
+  @State strokeWidth: number = 0
   private stateChangeCallBack = (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       console.debug("====>page_saveButton page state change called:" + JSON.stringify(eventData));
@@ -163,6 +169,21 @@ struct saveButton {
       if (eventData.data.columnHeight != null) {
         this.sbAlign = eventData.data.align;
       }
+      if (eventData.data.strokeMag != null) {
+        this.strokeMargin = eventData.data.strokeMag;
+      }
+      if (eventData.data.strokeColR != null) {
+        this.strokeColorR = eventData.data.strokeColR;
+      }
+      if (eventData.data.strokeColG != null) {
+        this.strokeColorG = eventData.data.strokeColG;
+      }
+      if (eventData.data.strokeColB != null) {
+        this.strokeColorB = eventData.data.strokeColB;
+      }
+      if (eventData.data.strokeWth != null) {
+        this.strokeWidth = eventData.data.strokeWth;
+      }
     }
   }
 
@@ -231,6 +252,11 @@ struct saveButton {
             .enabled(this.enable)
             .alignRules(this.alignRule)
             .chainMode(this.chainDirection, this.chainStyle)
+            .focusBox({
+              margin: new LengthMetrics(this.strokeMargin),
+              strokeColor: ColorMetrics.rgba(this.strokeColorR, this.strokeColorG, this.strokeColorB),
+              strokeWidth: LengthMetrics.px(this.strokeWidth)
+            })
             .id("keySave")
         }.width(this.rowWidth).height(this.rowHeight)
       }.width('100%').alignItems(HorizontalAlign.Center)

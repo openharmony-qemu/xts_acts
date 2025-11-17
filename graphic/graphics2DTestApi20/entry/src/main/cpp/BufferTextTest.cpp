@@ -108,7 +108,7 @@ void addBufferTextTest(std::vector<napi_property_descriptor>& descData)
     int32_t res = OH_NativeBuffer_SetColorSpace(buffer, OH_COLORSPACE_DISPLAY_BT2020_PQ);
     OH_NativeBuffer_ColorSpace colorSpace;
     res = OH_NativeBuffer_GetColorSpace(buffer, &colorSpace);
-    napi_create_int32(env, res != NATIVE_ERROR_INVALID_ARGUMENTS, &result);
+    napi_create_int32(env, res == NATIVE_ERROR_OK || res != NATIVE_ERROR_INVALID_ARGUMENTS, &result);
     return result;
 }
 

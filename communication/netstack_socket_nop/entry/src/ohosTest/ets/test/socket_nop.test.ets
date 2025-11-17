@@ -34,13 +34,14 @@ export default function socketNopTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Listen_NetAddress_Promise_Nop
-     * @tc.name: Socket_Listen_NetAddress_Promise_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Listen_NetAddress_Promise_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Listen_NetAddress_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Socket_Listen_NetAddress_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Listen_NetAddress_Promise_Nop begin');
@@ -67,13 +68,14 @@ export default function socketNopTest() {
     });
 
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Listen_NetAddress_Callback_Nop
-     * @tc.name: Socket_Listen_NetAddress_Callback_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Listen_NetAddress_Callback_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Listen_NetAddress_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Socket_Listen_NetAddress_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Listen_NetAddress_Callback_Nop begin');
@@ -101,13 +103,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Close_Callback_Nop
-     * @tc.name: Socket_Close_Callback_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Close_Callback_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Close_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Socket_Close_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Close_Callback_Nop begin');
@@ -130,13 +133,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Bind_NetAddress_Callback_Nop
-     * @tc.name: Socket_Bind_NetAddress_Callback_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Bind_NetAddress_Callback_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Bind_NetAddress_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Socket_Bind_NetAddress_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Bind_NetAddress_Callback_Nop begin');
@@ -164,13 +168,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Bind_NetAddress_Promise_Nop
-     * @tc.name: Socket_Bind_NetAddress_Promise_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Bind_NetAddress_Promise_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Bind_NetAddress_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Socket_Bind_NetAddress_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Bind_NetAddress_Promise_Nop begin');
@@ -197,13 +202,14 @@ export default function socketNopTest() {
     });
 
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Callback_Nop
-     * @tc.name: Socket_GetRemoteAddress_NetAddress_Callback_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Callback_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Callback_Nop begin');
@@ -226,13 +232,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Promise_Nop
-     * @tc.name: Socket_GetRemoteAddress_NetAddress_Promise_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Promise_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_GetRemoteAddress_NetAddress_Promise_Nop begin');
@@ -253,13 +260,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_GetState_SocketStateBase_Promise_Nop
-     * @tc.name: Socket_GetState_SocketStateBase_Promise_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_GetState_SocketStateBase_Promise_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_GetState_SocketStateBase_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Socket_GetState_SocketStateBase_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_GetState_SocketStateBase_Promise_Nop begin');
@@ -280,13 +288,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Close_Promise_Nop
-     * @tc.name: Socket_Close_Promise_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Close_Promise_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Close_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Socket_Close_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Close_Promise_Nop begin');
@@ -307,13 +316,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Callback_Nop
-     * @tc.name: Socket_Listen_TLSConnectOptions_Callback_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Callback_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Callback_Nop begin');
@@ -353,14 +363,15 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-    * @tc.number:SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Promise_Nop
-    * @tc.name: Socket_Listen_TLSConnectOptions_Promise_Nop
-    * @tc.desc:Using the on method without permission
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Promise_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Promise_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Listen_TLSConnectOptions_Promise_Nop begin');
       try {
@@ -400,13 +411,14 @@ export default function socketNopTest() {
 
 
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Callback_Nop
-     * @tc.name: Socket_Send_UDPSendOptions_Callback_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Callback_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Callback_Nop begin');
@@ -436,13 +448,14 @@ export default function socketNopTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Callback_Nop
-     * @tc.name: Socket_SetExtraOptions_UDPSendOptions_Callback_Nop
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @generated.time 2025-11-09 20:49:43
+     * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Callback_Nop
+     * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Callback_Nop
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Callback_Nop begin');
@@ -469,13 +482,14 @@ export default function socketNopTest() {
 
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_Send_TCPSendOptions_Promise_Nop
-   * @tc.name: Socket_Send_TCPSendOptions_Promise_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 0
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_Send_TCPSendOptions_Promise_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_Send_TCPSendOptions_Promise_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('SUB_Communication_NetStack_Socket_Send_TCPSendOptions_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Send_TCPSendOptions_Promise_Nop begin');
@@ -499,13 +513,14 @@ export default function socketNopTest() {
     }
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_GetState_Callback_Nop
-   * @tc.name: Socket_GetState_Callback_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_GetState_Callback_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_GetState_Callback_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_GetState_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_GetState_Callback_Nop begin');
@@ -531,13 +546,14 @@ export default function socketNopTest() {
   });
 
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Promise_Nop
-   * @tc.name: Socket_SetExtraOptions_UDPSendOptions_Promise_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Promise_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Promise_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_SetExtraOptions_UDPSendOptions_Promise_Nop begin');
@@ -565,13 +581,14 @@ export default function socketNopTest() {
     }
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Promise_Nop
-   * @tc.name: Socket_Send_UDPSendOptions_Promise_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Promise_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Promise_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Send_UDPSendOptions_Promise_Nop begin');
@@ -599,13 +616,14 @@ export default function socketNopTest() {
     }
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_Connect_TCPConnectOptions_Callback_Nop
-   * @tc.name: Socket_Connect_TCPConnectOptions_Callback_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_Connect_TCPConnectOptions_Callback_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_Connect_TCPConnectOptions_Callback_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_Connect_TCPConnectOptions_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Connect_TCPConnectOptions_Callback_Nop begin');
@@ -635,13 +653,14 @@ export default function socketNopTest() {
     }
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop
-   * @tc.name: Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Promise_Nop begin');
@@ -674,13 +693,14 @@ export default function socketNopTest() {
     }
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_Send_TCPConnectOptions_Callback_Nop
-   * @tc.name: Socket_Send_TCPConnectOptions_Callback_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_Send_TCPConnectOptions_Callback_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_Send_TCPConnectOptions_Callback_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_Send_TCPConnectOptions_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Send_TCPConnectOptions_Callback_Nop begin');
@@ -706,13 +726,14 @@ export default function socketNopTest() {
     }
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop
-   * @tc.name: Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_SetExtraOptions_TCPConnectOptions_Callback_Nop begin');
@@ -747,13 +768,14 @@ export default function socketNopTest() {
     }
   });
 
-  /*
-   * @tc.number:SUB_Communication_NetStack_Socket_Connect_TCPSendOptions_Promise_Nop
-   * @tc.name: Socket_Connect_TCPSendOptions_Promise_Nop
-   * @tc.desc:Using the on method without permission
-   * @tc.level:Level 3
-   * @tc.type:Function
-   * @tc.size:MediumTest
+  /**
+   * @generated.time 2025-11-09 20:49:43
+   * @tc.name   SUB_Communication_NetStack_Socket_Connect_TCPSendOptions_Promise_Nop
+   * @tc.number SUB_Communication_NetStack_Socket_Connect_TCPSendOptions_Promise_Nop
+   * @tc.desc   Using the on method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('SUB_Communication_NetStack_Socket_Connect_TCPSendOptions_Promise_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     hilog.info(0x0000, 'socketTag', '%{public}s', 'SUB_Communication_NetStack_Socket_Connect_TCPSendOptions_Promise_Nop begin');

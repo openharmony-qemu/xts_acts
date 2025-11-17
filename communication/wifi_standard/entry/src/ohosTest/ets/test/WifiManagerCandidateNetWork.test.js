@@ -117,12 +117,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0001
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0001
-         * @tc.name testAddCandidateConfig
-         * @tc.desc Test add OPEN and WEP CandidateConfig Promise API functionality.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test add OPEN and WEP CandidateConfig Promise API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiDeviceConfig = {
@@ -202,12 +203,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0002
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0002
-         * @tc.name testAddCandidateConfig
-         * @tc.desc Test add PSK CandidateConfig and removeCandidateConfig Promise API functionality.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test add PSK CandidateConfig and removeCandidateConfig Promise API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let EapMethod = {
@@ -298,12 +300,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0003
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0003
-         * @tc.name testAddCandidateConfig
-         * @tc.desc Test add SAE CandidateConfig Promise API functionality.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test add SAE CandidateConfig Promise API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiDeviceConfig = {
@@ -347,12 +350,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0004
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0004
-         * @tc.name testAddCandidateConfig
-         * @tc.desc Test add MAX CandidateConfig and removeall CandidateConfig.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test add MAX CandidateConfig and removeall CandidateConfig.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -419,12 +423,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0005
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0005
-         * @tc.name testAddCandidateConfig
-         * @tc.desc Test add CandidateConfig and removeCandidateConfig callback API functionality.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test add CandidateConfig and removeCandidateConfig callback API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wapiPskType={
@@ -489,12 +494,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0006
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0006
-         * @tc.name testAddCandidateConfig
-         * @tc.desc Test connect To CandidateConfig API functionality.
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test connect To CandidateConfig API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -551,13 +557,14 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
-        * @tc.number SUB_Communication_WiFiManager_WapiPskType_0100
-        * @tc.name testWapiPskType
-        * @tc.desc Test WapiPskType API functionality
-        * @tc.type Function
-        * @tc.size: MediumTest
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFiManager_WapiPskType_0100
+         * @tc.number SUB_Communication_WiFiManager_WapiPskType_0100
+         * @tc.desc   Test WapiPskType API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Communication_WiFiManager_WapiPskType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 let WAPI_PSK_ASCII = wifiMg.WapiPskType.WAPI_PSK_ASCII;
@@ -575,12 +582,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0007
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0007
-         * @tc.name SUB_Communication_WiFi_XTS_CandidateNetWork_0007
-         * @tc.desc Connect to a specified candidate hotspot by networkId, and wait for user respond result
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 0
+         * @tc.desc   Connect to a specified candidate hotspot by networkId, and wait for user respond result
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let wifiDeviceConfig = {
@@ -712,12 +720,13 @@ export default function actsWifiManagerCandidateNetWorkTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_WiFi_XTS_CandidateNetWork_0008
          * @tc.number SUB_Communication_WiFi_XTS_CandidateNetWork_0008
-         * @tc.name SUB_Communication_WiFi_XTS_CandidateNetWork_0008
-         * @tc.desc test connectToCandidateConfigWithUserAction result errorCode 2501007
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 0
+         * @tc.desc   test connectToCandidateConfigWithUserAction result errorCode 2501007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_CandidateNetWork_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await wifiMg.connectToCandidateConfigWithUserAction(-1).then(() => {

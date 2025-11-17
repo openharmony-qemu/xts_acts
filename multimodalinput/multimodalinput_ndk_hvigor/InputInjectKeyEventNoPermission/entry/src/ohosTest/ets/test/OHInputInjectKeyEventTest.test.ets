@@ -20,12 +20,13 @@ export default function ActsInputInjectNoPermissionTest() {
   describe('ActsInputInjectNoPermissionTest', () => {
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0300
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_0300
+     * @tc.number SUB_Input_Inject_No_Permiss_0300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -42,12 +43,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0400
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_0400
+     * @tc.number SUB_Input_Inject_No_Permiss_0400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -64,12 +66,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0500
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_0500
+     * @tc.number SUB_Input_Inject_No_Permiss_0500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -86,12 +89,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0600
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_0600
+     * @tc.number SUB_Input_Inject_No_Permiss_0600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -108,12 +112,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0700
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_0700
+     * @tc.number SUB_Input_Inject_No_Permiss_0700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -130,12 +135,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0800
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_0800
+     * @tc.number SUB_Input_Inject_No_Permiss_0800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -152,12 +158,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_0900
-     * @tc.name    : SUB_Input_Inject_No_Permiss_0900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_0900
+     * @tc.number SUB_Input_Inject_No_Permiss_0900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -174,12 +181,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1000
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1000
+     * @tc.number SUB_Input_Inject_No_Permiss_1000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -196,12 +204,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1100
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1100
+     * @tc.number SUB_Input_Inject_No_Permiss_1100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -218,12 +227,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1200
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1200
+     * @tc.number SUB_Input_Inject_No_Permiss_1200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -240,12 +250,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1300
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1300
+     * @tc.number SUB_Input_Inject_No_Permiss_1300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -262,12 +273,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1400
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1400
+     * @tc.number SUB_Input_Inject_No_Permiss_1400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -284,12 +296,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1500
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1500
+     * @tc.number SUB_Input_Inject_No_Permiss_1500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -306,12 +319,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1600
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1600
+     * @tc.number SUB_Input_Inject_No_Permiss_1600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -328,12 +342,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1700
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1700
+     * @tc.number SUB_Input_Inject_No_Permiss_1700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -350,12 +365,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1800
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1800
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1800
+     * @tc.number SUB_Input_Inject_No_Permiss_1800
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -372,12 +388,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_1900
-     * @tc.name    : SUB_Input_Inject_No_Permiss_1900
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_1900
+     * @tc.number SUB_Input_Inject_No_Permiss_1900
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -394,12 +411,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2000
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2000
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2000
+     * @tc.number SUB_Input_Inject_No_Permiss_2000
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -416,12 +434,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2100
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2100
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2100
+     * @tc.number SUB_Input_Inject_No_Permiss_2100
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -438,12 +457,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2200
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2200
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2200
+     * @tc.number SUB_Input_Inject_No_Permiss_2200
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -460,12 +480,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2300
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2300
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2300
+     * @tc.number SUB_Input_Inject_No_Permiss_2300
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -482,12 +503,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2400
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2400
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2400
+     * @tc.number SUB_Input_Inject_No_Permiss_2400
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -504,12 +526,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2500
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2500
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2500
+     * @tc.number SUB_Input_Inject_No_Permiss_2500
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -526,12 +549,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2600
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2600
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2600
+     * @tc.number SUB_Input_Inject_No_Permiss_2600
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -548,12 +572,13 @@ export default function ActsInputInjectNoPermissionTest() {
     })
 
     /**
-     * @tc.number  : SUB_Input_Inject_No_Permiss_2700
-     * @tc.name    : SUB_Input_Inject_No_Permiss_2700
-     * @tc.desc    : Covering the enumeration value.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_Input_Inject_No_Permiss_2700
+     * @tc.number SUB_Input_Inject_No_Permiss_2700
+     * @tc.desc   Covering the enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Input_Inject_No_Permiss_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

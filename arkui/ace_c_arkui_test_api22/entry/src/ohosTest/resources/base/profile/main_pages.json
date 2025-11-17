@@ -6,6 +6,9 @@
     "MainAbility/pages/list/snapSpeedTest",
     "MainAbility/pages/textMinLines/TextMinLinesTest",
     "MainAbility/pages/hasAxisTest/HasAxisTest",
-    "MainAbility/pages/list/coastingAxisTest"
+    "MainAbility/pages/list/coastingAxisTest",
+    "MainAbility/pages/waterFlow/WaterFlowFillPolicyTest",
+    "MainAbility/pages/image/imageDrawableDescriptorTest",
+    "MainAbility/pages/image/imageErrorTest"
   ]
 }

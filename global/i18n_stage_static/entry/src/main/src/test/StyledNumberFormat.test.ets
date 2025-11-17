@@ -34,13 +34,14 @@ export default function styledNumberFormatTest() {
         });
 
         /**
+         * @generated.time 2025-11-09 20:49:56
+         * @tc.name   SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
          * @tc.number SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
-         * @tc.name SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100
-         * @tc.desc  Check start ability by bundl
-         * @tc.level LEVEL1
-         * @tc.size MEDIUMTEST
-         * @tc.type FUNCTION
-        */
+         * @tc.desc   Check start ability by bundl
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'SUB_GLOBAL_I18N_StyledNumberFormat_static_02_00100 start');
             let driver: Driver = Driver.create();

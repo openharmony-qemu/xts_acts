@@ -237,7 +237,6 @@ struct webSetNetErrorCode2 {
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
                         Utils.emitEvent(false, 100100)
                       }
                       break;
@@ -256,7 +255,6 @@ struct webSetNetErrorCode2 {
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
                         Utils.emitEvent(false, 100110)
                       }
                       break;
@@ -383,7 +381,6 @@ struct webSetNetErrorCode2 {
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                        await Utils.sleep(1000)
                         Utils.emitEvent(false, 100180)
                       }
                       break;

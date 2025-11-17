@@ -110,12 +110,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0100
          * @tc.number SUB_Communication_NFC_nfctage_js_0100
-         * @tc.name Test getTagInfo
-         * @tc.desc Obtains the DsfId value of the taginfo. The error code is 401
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0100', Level.LEVEL1, function ()  {
             let TagInfo ;
@@ -130,12 +131,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0200
          * @tc.number SUB_Communication_NFC_nfctage_js_0200
-         * @tc.name Test getNfcA
-         * @tc.desc Obtains the DsfId value of the taginfo. The error code is 401
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0200', Level.LEVEL1, function ()  {
             let TagInfo ;
@@ -150,12 +152,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0300
          * @tc.number SUB_Communication_NFC_nfctage_js_0300
-         * @tc.name Test getNfcB
-         * @tc.desc Obtains the DsfId value of the taginfo. The error code is 401
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0300', Level.LEVEL1, function ()  {
             let TagInfo ;
@@ -170,12 +173,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0400
          * @tc.number SUB_Communication_NFC_nfctage_js_0400
-         * @tc.name Test getNfcF
-         * @tc.desc Obtains the DsfId value of the taginfo. The error code is 401
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0400', Level.LEVEL1, function ()  {
             let TagInfo ;
@@ -190,12 +194,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0500
          * @tc.number SUB_Communication_NFC_nfctage_js_0500
-         * @tc.name Test getNfcV
-         * @tc.desc Obtains the DsfId value of the taginfo. The error code is 401
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0500', Level.LEVEL1, function ()  {
             let TagInfo ;
@@ -210,12 +215,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0600
          * @tc.number SUB_Communication_NFC_nfctage_js_0600
-         * @tc.name Test getBarcodetag
-         * @tc.desc This interface getBarcodetag The error code is 401
-         * @tc.size since 16
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   This interface getBarcodetag The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0600', Level.LEVEL1, function ()  {
 
@@ -247,12 +253,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0700
          * @tc.number SUB_Communication_NFC_nfctage_js_0700
-         * @tc.name Test registerForegroundDispatch
-         * @tc.desc This interface registerForegroundDispatch The error code is 401
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   This interface registerForegroundDispatch The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0700', Level.LEVEL1, function ()  {
             try {
@@ -266,12 +273,13 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0800
          * @tc.number SUB_Communication_NFC_nfctage_js_0800
-         * @tc.name Test unregisterForegroundDispatch
-         * @tc.desc This interface unregisterForegroundDispatch The error code is 401
-         * @tc.size since 7
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   This interface unregisterForegroundDispatch The error code is 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_NFC_nfctage_js_0800', Level.LEVEL1, function ()  {
             try {

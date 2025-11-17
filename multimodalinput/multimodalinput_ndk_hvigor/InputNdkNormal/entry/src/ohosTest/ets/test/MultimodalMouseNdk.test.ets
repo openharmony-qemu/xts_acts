@@ -35,12 +35,13 @@ export default function MultimodalMouseNdkTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_GetPointerLocation_0100
-     * @tc.name: SUB_MMI_Input_Api_GetPointerLocation_0100
-     * @tc.desc: OH_Input_GetPointerLocation Interface testing.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0100
+     * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0100
+     * @tc.desc   OH_Input_GetPointerLocation Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MMI_Input_Api_GetPointerLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_GetPointerLocation_0100';
@@ -59,12 +60,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_GetPointerLocation_0200
-     * @tc.name: SUB_MMI_Input_Api_GetPointerLocation_0200
-     * @tc.desc: OH_Input_GetPointerLocation Interface testing to set displayId as nullptr.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0200
+     * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0200
+     * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayId as nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_GetPointerLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_GetPointerLocation_0200';
@@ -83,12 +85,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_GetPointerLocation_0300
-     * @tc.name: SUB_MMI_Input_Api_GetPointerLocation_0300
-     * @tc.desc: OH_Input_GetPointerLocation Interface testing to set displayX as nullptr.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0300
+     * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0300
+     * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayX as nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_GetPointerLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_GetPointerLocation_0300';
@@ -107,12 +110,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_GetPointerLocation_0400
-     * @tc.name: SUB_MMI_Input_Api_GetPointerLocation_0400
-     * @tc.desc: OH_Input_GetPointerLocation Interface testing to set displayY as nullptr.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0400
+     * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0400
+     * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayY as nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_GetPointerLocation_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_GetPointerLocation_0400';
@@ -131,12 +135,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_GetPointerLocation_0500
-     * @tc.name: SUB_MMI_Input_Api_GetPointerLocation_0500
-     * @tc.desc: OH_Input_GetPointerLocation Interface testing to set displayId displayX displayY as nullptr.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_GetPointerLocation_0500
+     * @tc.number SUB_MMI_Input_Api_GetPointerLocation_0500
+     * @tc.desc   OH_Input_GetPointerLocation Interface testing to set displayId displayX displayY as nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_GetPointerLocation_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_GetPointerLocation_0500';
@@ -155,12 +160,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_RequestInjection_0100
-     * @tc.name: SUB_MMI_Input_Api_RequestInjection_0100
-     * @tc.desc: OH_Input_RequestInjection Interface test.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_RequestInjection_0100
+     * @tc.number SUB_MMI_Input_Api_RequestInjection_0100
+     * @tc.desc   OH_Input_RequestInjection Interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_RequestInjection_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_RequestInjection_0100';
@@ -179,12 +185,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_QueryAuthorizedStatus_0100
-     * @tc.name: SUB_MMI_Input_Api_QueryAuthorizedStatus_0100
-     * @tc.desc: OH_Input_QueryAuthorizedStatus Interface test.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_QueryAuthorizedStatus_0100
+     * @tc.number SUB_MMI_Input_Api_QueryAuthorizedStatus_0100
+     * @tc.desc   OH_Input_QueryAuthorizedStatus Interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_QueryAuthorizedStatus_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_QueryAuthorizedStatus_0100';
@@ -203,12 +210,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InjectMouseEventGlobal_0100
-     * @tc.name: SUB_MMI_Input_Api_InjectMouseEventGlobal_0100
-     * @tc.desc: OH_Input_InjectMouseEventGlobal Interface testing to set globalX globalY as 100.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_InjectMouseEventGlobal_0100
+     * @tc.number SUB_MMI_Input_Api_InjectMouseEventGlobal_0100
+     * @tc.desc   OH_Input_InjectMouseEventGlobal Interface testing to set globalX globalY as 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_InjectMouseEventGlobal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_InjectMouseEventGlobal_0100';
@@ -227,12 +235,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InjectMouseEventGlobal_0200
-     * @tc.name: SUB_MMI_Input_Api_InjectMouseEventGlobal_0200
-     * @tc.desc: OH_Input_GetMouseEventGlobalX Interface testing to set globalX as 100.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_InjectMouseEventGlobal_0200
+     * @tc.number SUB_MMI_Input_Api_InjectMouseEventGlobal_0200
+     * @tc.desc   OH_Input_GetMouseEventGlobalX Interface testing to set globalX as 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_InjectMouseEventGlobal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_InjectMouseEventGlobal_0200';
@@ -251,12 +260,13 @@ export default function MultimodalMouseNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InjectMouseEventGlobal_0300
-     * @tc.name: SUB_MMI_Input_Api_InjectMouseEventGlobal_0300
-     * @tc.desc: OH_Input_GetMouseEventGlobalY Interface testing to set globalY as 100.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MMI_Input_Api_InjectMouseEventGlobal_0300
+     * @tc.number SUB_MMI_Input_Api_InjectMouseEventGlobal_0300
+     * @tc.desc   OH_Input_GetMouseEventGlobalY Interface testing to set globalY as 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_InjectMouseEventGlobal_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_InjectMouseEventGlobal_0300';

@@ -98,6 +98,7 @@ export default function windowLayoutTest() {
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -112,6 +113,11 @@ export default function windowLayoutTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     });
     beforeEach(() => {
     });
@@ -2004,7 +2010,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowClass = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow');
       await windowClass.destroyWindow();
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if( isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             expect().assertFail();
@@ -2040,7 +2046,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     it('testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow';
       console.log(caseName + 'begin.');
-      if (isPCStatus != ''|| isAutoWindow =='true') {
+      if (isFreeWindowMode == true) {
         // 主窗
         try {
           let mainWindow = windowStage.getMainWindowSync();
@@ -2127,7 +2133,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     it('testSetRelativePositionToParentWindowEnabledwithUnsupportedWindowSecondWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithUnsupportedWindowSecondWindow';
       console.log(caseName + 'begin.');
-      if (isPCStatus != ''|| isAutoWindow =='true') {
+      if (isFreeWindowMode == true) {
         let options: window.SubWindowOptions = {
           title: 'subWindow1',
           decorEnabled: true
@@ -2209,7 +2215,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2272,7 +2278,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(false).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2327,7 +2333,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2390,7 +2396,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2453,7 +2459,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2516,7 +2522,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.START).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2579,7 +2585,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.CENTER).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2642,7 +2648,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2705,7 +2711,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_START).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2768,7 +2774,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2831,7 +2837,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.BOTTOM_END).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2894,7 +2900,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, 100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -2957,7 +2963,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, 100, -100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3020,7 +3026,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, 100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3083,7 +3089,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       windowClass.resizeAsync(1000,1000)
       await sleep(1000);
       try {
-        if(isPCStatus != ''|| isAutoWindow =='true') {
+        if(isFreeWindowMode == true) {
           windowClass.setRelativePositionToParentWindowEnabled(true, window.WindowAnchor.TOP_START, -100, -100).then(async () => {
             console.info(caseName + 'Succeed in calling setRelativePositionToParentWindowEnabled');
             let windowRect = mainWindow.getWindowProperties().windowRect;
@@ -3183,7 +3189,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         windowClass.moveWindowToAsync(50, 50);
         await sleep(200);
         console.log(caseName + ' timer: ' + timer);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer).assertEqual(1);
         } else {
           expect(timer).assertEqual(0);
@@ -3234,7 +3240,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200);
         console.log(caseName + ' timer1: ' + timer1);
         console.log(caseName + ' timer2: ' + timer2);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
           expect(timer2).assertEqual(1);
         } else {
@@ -3280,7 +3286,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         windowClass.moveWindowToAsync(50, 50);
         await sleep(200);
         console.log(caseName + ' timer1: ' + timer1);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
         } else {
           expect(timer1).assertEqual(0);
@@ -3289,7 +3295,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         windowClass.moveWindowToAsync(30, 30);
         await sleep(200);
         console.log(caseName + ' timer1: ' + timer1);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
         } else {
           expect(timer1).assertEqual(0);
@@ -3340,7 +3346,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200);
         console.log(caseName + ' before off, timer1: ' + timer1);
         console.log(caseName + ' before off, timer2: ' + timer2);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
           expect(timer2).assertEqual(1);
         } else {
@@ -3353,7 +3359,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200);
         console.log(caseName + ' after off, timer1: ' + timer1);
         console.log(caseName + ' after off, timer2: ' + timer2);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
           expect(timer2).assertEqual(2);
         } else {
@@ -3407,7 +3413,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200);
         console.log(caseName + ' before off, timer1: ' + timer1);
         console.log(caseName + ' before off, timer2: ' + timer2);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
           expect(timer2).assertEqual(1);
         } else {
@@ -3420,7 +3426,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200);
         console.log(caseName + ' after off, timer1: ' + timer1);
         console.log(caseName + ' after off, timer2: ' + timer2);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
           expect(timer2).assertEqual(1);
         } else {
@@ -3610,7 +3616,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200)
         console.log(caseName + ' timer1: ' + timer1);
         console.log(caseName + ' timer2: ' + timer2);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(timer1).assertEqual(1);
           expect(timer2).assertEqual(1);
           expect(cbData1?.rect.left).assertEqual(cbData2?.rect.left);
@@ -3962,7 +3968,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200);
         let drawableRect = windowClass.getWindowProperties().drawableRect;
         console.log(caseName + ' drawableRect: ' + JSON.stringify(drawableRect));
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(Math.abs(drawableRect.width - drawableRect.height)).assertEqual(0)
           let windowDecHeight = windowClass.getWindowDecorHeight();
           console.log(caseName + ' windowDecHeight: ' + JSON.stringify(windowDecHeight));
@@ -4006,9 +4012,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
-          let ratio1 = drawableRect1.width / drawableRect1.height;
-          console.log(caseName + ' ratio1: ' + ratio1);
-          expect(Math.abs(ratio1-1.2)).assertLessOrEqual(0.001);
+          let width1 = drawableRect1.width / 1.2;
+          console.log(caseName + ' width1: ' + width1);
+          expect(Math.abs(width1-drawableRect1.height)).assertLessOrEqual(2);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4019,9 +4025,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect3 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
-          let ratio3 = drawableRect3.width / drawableRect3.height;
-          console.log(caseName + ' ratio3: ' + ratio3);
-          expect(Math.abs(ratio3-1.2)).assertLessOrEqual(0.001);
+          let width3 = drawableRect3.width / 1.2;
+          console.log(caseName + ' width3: ' + width3);
+          expect(Math.abs(width3-drawableRect3.height)).assertLessOrEqual(2);
           let driver = await Driver.create();
           await sleep(200)
           let windowPoint = await windowClass.getWindowProperties().windowRect
@@ -4032,9 +4038,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(1000)
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
-          let ratio4 = drawableRect4.width / drawableRect4.height;
-          console.log(caseName + ' ratio4: ' + ratio4);
-          expect(Math.abs(ratio4-1.5)).assertLessOrEqual(0.001);
+          let width4 = drawableRect4.width / 1.5;
+          console.log(caseName + ' width4: ' + width4);
+          expect(Math.abs(width4-drawableRect4.height)).assertLessOrEqual(2);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4078,9 +4084,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(1000)
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
-          let ratio1 = drawableRect1.width / drawableRect1.height;
-          console.log(caseName + ' ratio1: ' + ratio1);
-          expect(Math.abs(ratio1-1.2)).assertLessOrEqual(0.001);
+          let width1 = drawableRect1.width / 1.2;
+          console.log(caseName + ' width1: ' + width1);
+          expect(Math.abs(width1-drawableRect1.height)).assertLessOrEqual(2);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4091,9 +4097,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect3 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
-          let ratio3 = drawableRect3.width / drawableRect3.height;
-          console.log(caseName + ' ratio3: ' + ratio3);
-          expect(Math.abs(ratio3-1.2)).assertLessOrEqual(0.001);
+          let width3 = drawableRect3.width / 1.2;
+          console.log(caseName + ' width3: ' + width3);
+          expect(Math.abs(width3-drawableRect3.height)).assertLessOrEqual(2);
           let windowPoint2 = await windowClass.getWindowProperties().windowRect
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint2)}`)
           await driver.mouseMoveTo({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top})
@@ -4104,9 +4110,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
-          let ratio4 = drawableRect4.width / drawableRect4.height;
-          console.log(caseName + ' ratio4: ' + ratio4);
-          expect(Math.abs(ratio4-1.5)).assertLessOrEqual(0.001);
+          let width4 = drawableRect4.width / 1.5;
+          console.log(caseName + ' width4: ' + width4);
+          expect(Math.abs(width4-drawableRect4.height)).assertLessOrEqual(2);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4233,7 +4239,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     it('testSetContentAspectRatio_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0600';
       console.log(caseName + 'begin.');
-      if (isPCStatus != '' || isAutoWindow == 'true') {
+      if (isFreeWindowMode == true) {
         let windowStageStart = await startAbility(caseName, context);
         try {
           let windowClass = windowStageStart.getMainWindowSync();

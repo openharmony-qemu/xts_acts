@@ -123,12 +123,13 @@ describe('relationalStoreResultSetTest', function () {
     }
 
     /**
-     * @tc.name testGetBlob0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetBlob0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0100
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetBlob0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetBlob0001 start *************');
@@ -155,12 +156,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetBlob0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetBlob0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0200
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetBlob0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetBlob0002 start *************');
@@ -188,12 +190,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetBlob0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetBlob0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0300
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetBlob0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetBlob0003 start *************');
@@ -219,12 +222,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsStarted0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsStarted0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0400
-     * @tc.desc resultSet isStarted normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isStarted normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsStarted0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsStarted0001 start *************');
@@ -241,12 +245,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsStarted0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsStarted0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0500
-     * @tc.desc resultSet isStarted normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isStarted normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsStarted0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsStarted0002 start *************');
@@ -264,12 +269,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsStarted0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsStarted0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0600
-     * @tc.desc resultSet isStarted normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isStarted normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsStarted0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + "************* testIsStarted0003 start *************");
@@ -290,12 +296,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsStarted0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsStarted0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0700
-     * @tc.desc resultSet isStarted with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isStarted with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsStarted0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsStarted0004 start *************');
@@ -315,12 +322,13 @@ describe('relationalStoreResultSetTest', function () {
 
 
     /**
-     * @tc.name testIsEnded0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsEnded0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0800
-     * @tc.desc resultSet isEnded normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isEnded normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsEnded0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsEnded0001 start *************');
@@ -338,12 +346,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsEnded0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsEnded0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_0900
-     * @tc.desc resultSet isEnded normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isEnded normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsEnded0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsEnded0002 start *************');
@@ -361,12 +370,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsEnded0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsEnded0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1000
-     * @tc.desc resultSet isEnded normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isEnded normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsEnded0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsEnded0003 start *************');
@@ -384,12 +394,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsEnded0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsEnded0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1100
-     * @tc.desc resultSet isEnded normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isEnded normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsEnded0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsEnded0004 start *************');
@@ -408,12 +419,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testRowCount0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRowCount0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1200
-     * @tc.desc resultSet rowCount normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet rowCount normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRowCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testRowCount0001 start *************');
@@ -430,12 +442,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testRowCount0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRowCount0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1300
-     * @tc.desc resultSet rowCount with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet rowCount with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRowCount0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testRowCount0002 start *************');
@@ -453,12 +466,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testRowCount0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRowCount0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1400
-     * @tc.desc resultSet rowCount test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet rowCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRowCount0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testRowCount0003 start *************');
@@ -476,12 +490,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testRowCount0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRowCount0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1500
-     * @tc.desc resultSet rowCount test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet rowCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRowCount0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testRowCount0004 start *************');
@@ -500,12 +515,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetLong0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetLong0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1600
-     * @tc.desc resultSet getLong test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getLong test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetLong0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetLong0001 start *************');
@@ -530,12 +546,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetLong0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetLong0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1700
-     * @tc.desc resultSet getLong test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getLong test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetLong0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetLong0002 start *************');
@@ -559,12 +576,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetLong0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetLong0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1800
-     * @tc.desc resultSet getLong test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getLong test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetLong0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetLong0003 start *************');
@@ -588,12 +606,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetString0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetString0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_1900
-     * @tc.desc resultSet getString test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetString0001 start *************');
@@ -610,12 +629,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetString0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetString0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2000
-     * @tc.desc resultSet getString test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetString0002 start *************');
@@ -632,12 +652,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetString0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetString0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2100
-     * @tc.desc resultSet getString test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetString0003 start *************');
@@ -655,12 +676,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetString0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetString0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2200
-     * @tc.desc resultSet getString test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getString test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetString0004 start *************');
@@ -683,12 +705,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsClosed0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsClosed0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2300
-     * @tc.desc resultSet isClosed test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isClosed test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsClosed0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsClosed0001 start *************');
@@ -705,12 +728,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsClosed0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsClosed0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2400
-     * @tc.desc resultSet isClosed with not close test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isClosed with not close test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsClosed0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsClosed0002 start *************');
@@ -724,12 +748,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsClosed0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsClosed0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2500
-     * @tc.desc resultSet isClosed with not close test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isClosed with not close test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsClosed0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsClosed0003 start *************');
@@ -744,12 +769,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testColumnCount0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testColumnCount0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2600
-     * @tc.desc resultSet columnCount test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet columnCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testColumnCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testColumnCount0001 start *************');
@@ -764,12 +790,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testColumnCount0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testColumnCount0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2700
-     * @tc.desc resultSet columnCount test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet columnCount test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testColumnCount0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testColumnCount0002 start *************');
@@ -785,12 +812,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testRowIndex0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRowIndex0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2800
-     * @tc.desc resultSet rowIndex test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet rowIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRowIndex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testRowIndex0001 *************');
@@ -809,12 +837,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testRowIndex0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testRowIndex0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_2900
-     * @tc.desc resultSet rowIndex at last row test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet rowIndex at last row test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRowIndex0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testRowIndex0002 *************');
@@ -833,12 +862,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToFirstRow0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToFirstRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3000
-     * @tc.desc resultSet goToFirstRow normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToFirstRow normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToFirstRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToFirstRow0001 start *************');
@@ -857,12 +887,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToFirstRow0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToFirstRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3100
-     * @tc.desc resultSet goToFirstRow with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToFirstRow with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToFirstRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToFirstRow0002 start *************');
@@ -881,12 +912,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToFirstRow0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToFirstRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3200
-     * @tc.desc resultSet goToFirstRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToFirstRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToFirstRow0003 start *************');
@@ -906,12 +938,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToLastRow0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToLastRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3300
-     * @tc.desc resultSet goToFirstRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToLastRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToLastRow0001 start *************');
@@ -928,12 +961,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToLastRow0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToLastRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3400
-     * @tc.desc resultSet goToLastRow with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToLastRow with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToLastRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToLastRow0002 start *************');
@@ -951,12 +985,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToLastRow0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToLastRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3500
-     * @tc.desc resultSet goToLastRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToLastRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToLastRow0003 start *************');
@@ -975,12 +1010,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToNextRow0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToNextRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3600
-     * @tc.desc resultSet goToNextRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToNextRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToNextRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToNextRow0001 start *************');
@@ -997,12 +1033,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToNextRow0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToNextRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3700
-     * @tc.desc resultSet goToNextRow with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToNextRow with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToNextRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToNextRow0002 start *************');
@@ -1020,12 +1057,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToNextRow0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToNextRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3800
-     * @tc.desc resultSet goToNextRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToNextRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToNextRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToNextRow0003 start *************');
@@ -1045,12 +1083,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToNextRow0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToNextRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_3900
-     * @tc.desc resultSet goToNextRow after last row test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToNextRow after last row test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToNextRow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToNextRow0004 start *************');
@@ -1068,12 +1107,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToPreviousRow0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToPreviousRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4000
-     * @tc.desc resultSet goToPreviousRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToPreviousRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToPreviousRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToPreviousRow0001 start *************');
@@ -1090,12 +1130,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToPreviousRow0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToPreviousRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4100
-     * @tc.desc resultSet goToPreviousRow with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToPreviousRow with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToPreviousRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToPreviousRow0002 start *************');
@@ -1113,12 +1154,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToPreviousRow0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToPreviousRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4200
-     * @tc.desc resultSet goToPreviousRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToPreviousRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToPreviousRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToPreviousRow0003 start *************');
@@ -1137,12 +1179,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToPreviousRow0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToPreviousRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4300
-     * @tc.desc resultSet goToPreviousRow after last row test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToPreviousRow after last row test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToPreviousRow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToPreviousRow0004 start *************');
@@ -1160,12 +1203,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoTo0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4400
-     * @tc.desc resultSet goTo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goTo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoTo0001 start *************');
@@ -1184,12 +1228,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoTo0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoTo0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4500
-     * @tc.desc resultSet goTo with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goTo with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoTo0002 start *************');
@@ -1208,12 +1253,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoTo0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoTo0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4600
-     * @tc.desc resultSet goTo test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goTo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoTo0003 start *************');
@@ -1233,12 +1279,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoTo0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoTo0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4700
-     * @tc.desc resultSet goTo after last row test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goTo after last row test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoTo0004 start *************');
@@ -1257,12 +1304,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToRow0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_480
-     * @tc.desc resultSet goToRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToRow0001 start *************');
@@ -1281,12 +1329,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToRow0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_4900
-     * @tc.desc resultSet goToRow with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToRow with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToRow0002 start *************');
@@ -1305,12 +1354,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToRow0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5000
-     * @tc.desc resultSet goToRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToRow0003 start *************');
@@ -1331,12 +1381,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGoToRow0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGoToRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5100
-     * @tc.desc resultSet goToRow after last row test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet goToRow after last row test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGoToRow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGoToRow0004 start *************');
@@ -1355,12 +1406,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtFirstRow0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtFirstRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5200
-     * @tc.desc resultSet isAtFirstRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtFirstRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtFirstRow0001 start *************');
@@ -1378,12 +1430,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtFirstRow0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtFirstRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5300
-     * @tc.desc resultSet isAtFirstRow with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtFirstRow with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtFirstRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtFirstRow0002 start *************');
@@ -1401,12 +1454,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtFirstRow0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtFirstRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5400
-     * @tc.desc resultSet isAtFirstRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtFirstRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtFirstRow0003 start *************');
@@ -1425,12 +1479,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtFirstRow0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtFirstRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5500
-     * @tc.desc resultSet isAtFirstRow after last row test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtFirstRow after last row test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtFirstRow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtFirstRow0004 start *************');
@@ -1448,12 +1503,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtFirstRow0005
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtFirstRow0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5600
-     * @tc.descresultSet isAtFirstRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtFirstRow0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtFirstRow0005 start *************');
@@ -1472,12 +1528,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtFirstRow0006
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtFirstRow0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5700
-     * @tc.descresultSet isAtFirstRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtFirstRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtFirstRow0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtFirstRow0006 start *************');
@@ -1496,12 +1553,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtLastRow0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtLastRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5800
-     * @tc.desc resultSet isAtLastRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtLastRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtLastRow0001 start *************');
@@ -1519,12 +1577,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtLastRow0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtLastRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_5900
-     * @tc.desc resultSet isAtLastRow with no result test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtLastRow with no result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtLastRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtLastRow0002 start *************');
@@ -1542,12 +1601,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtLastRow0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtLastRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6000
-     * @tc.desc resultSet isAtLastRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtLastRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtLastRow0003 start *************');
@@ -1566,12 +1626,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtLastRow0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtLastRow0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6100
-     * @tc.desc resultSet isAtLastRow after last row test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtLastRow after last row test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtLastRow0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtLastRow0004 start *************');
@@ -1589,12 +1650,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsAtLastRow0005
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsAtLastRow0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6200
-     * @tc.desc resultSet isAtLastRow test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isAtLastRow test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsAtLastRow0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsAtLastRow0005 start *************');
@@ -1613,12 +1675,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetDouble0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetDouble0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6300
-     * @tc.desc resultSet getDouble test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetDouble0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetDouble0001 start *************');
@@ -1637,12 +1700,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetDouble0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetDouble0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6400
-     * @tc.desc resultSet getDouble test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetDouble0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetDouble0002 start *************');
@@ -1661,12 +1725,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetDouble0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetDouble0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6500
-     * @tc.desc resultSet getDouble test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetDouble0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetDouble0003 start *************');
@@ -1685,12 +1750,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetDouble0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetDouble0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6600
-     * @tc.desc resultSet getDouble test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getDouble test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetDouble0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetDouble0004 start *************');
@@ -1709,12 +1775,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsColumnNull0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsColumnNull0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6700
-     * @tc.desc resultSet isColumnNull test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isColumnNull test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsColumnNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsColumnNull0001 start *************');
@@ -1735,12 +1802,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsColumnNull0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsColumnNull0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6800
-     * @tc.desc resultSet isColumnNull test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isColumnNull test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsColumnNull0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsColumnNull0002 start *************');
@@ -1761,12 +1829,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testIsColumnNull0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsColumnNull0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_6900
-     * @tc.desc resultSet isColumnNull test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isColumnNull test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsColumnNull0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsColumnNull0003 start *************');
@@ -1785,12 +1854,13 @@ describe('relationalStoreResultSetTest', function () {
         }
     })
     /**
-     * @tc.name testIsColumnNull0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsColumnNull0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7000
-     * @tc.desc resultSet isColumnNull test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet isColumnNull test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsColumnNull0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testIsColumnNull0004 start *************');
@@ -1808,12 +1878,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnIndex0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnIndex0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7100
-     * @tc.desc resultSet getColumnIndex test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnIndex0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnIndex0001 start *************');
@@ -1830,12 +1901,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnIndex0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnIndex0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7200
-     * @tc.desc resultSet getColumnIndex test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnIndex0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnIndex0002 start *************');
@@ -1852,12 +1924,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnIndex0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnIndex0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7300
-     * @tc.desc resultSet getColumnIndex test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnIndex0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnIndex0003 start *************');
@@ -1873,12 +1946,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnIndex0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnIndex0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7400
-     * @tc.desc resultSet getColumnIndex test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnIndex test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnIndex0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnIndex0004 start *************');
@@ -1899,12 +1973,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnName0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnName0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7500
-     * @tc.desc resultSet getColumnName test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnIndex0001 start *************');
@@ -1922,12 +1997,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnName0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnName0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7600
-     * @tc.desc resultSet getColumnName test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnName0002 start *************');
@@ -1946,12 +2022,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnName0003
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnName0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7700
-     * @tc.desc resultSet getColumnName test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnName0003 start *************');
@@ -1968,12 +2045,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testGetColumnName0004
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetColumnName0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7800
-     * @tc.desc resultSet getColumnName test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getColumnName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetColumnName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testGetColumnName0004 start *************');
@@ -1991,12 +2069,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testClose0001
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testClose0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_7900
-     * @tc.desc resultSet close test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet close test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testClose0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testClose0001 start *************');
@@ -2014,12 +2093,13 @@ describe('relationalStoreResultSetTest', function () {
     })
 
     /**
-     * @tc.name testClose0002
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testClose0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_8000
-     * @tc.desc resultSet close test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet close test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testClose0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testClose0002 start *************');
@@ -2036,14 +2116,15 @@ describe('relationalStoreResultSetTest', function () {
         }
     })
 
-    /**
-     * @tc.name testcolumnNames0001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_8100
-     * @tc.desc resultSet columnNames test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:49
+      * @tc.name   testcolumnNames0001
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_8100
+      * @tc.desc   resultSet columnNames test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testcolumnNames0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info(TAG + '************* testcolumnNames0001 start *************');
         {
@@ -2060,14 +2141,15 @@ describe('relationalStoreResultSetTest', function () {
         }
     })
 
-    /**
-     * @tc.name testBigData0001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_8200
-     * @tc.desc big resultSet data test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:49
+      * @tc.name   testBigData0001
+      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsAPITest_8200
+      * @tc.desc   big resultSet data test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('testBigData0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log(TAG + "************* testBigData0001 start *************");
         {

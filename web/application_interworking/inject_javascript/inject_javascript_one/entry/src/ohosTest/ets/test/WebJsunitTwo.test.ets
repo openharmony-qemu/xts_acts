@@ -16,13 +16,13 @@
 import { beforeAll, afterEach, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
-import { Driver,ON } from '@ohos.UiTest'
-let driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 let emitKey = "emitRegisterJavaScriptProxy";
 
@@ -44,7 +44,7 @@ export default function webJsunitTwo() {
       } catch (err) {
         console.error('push webtwo error: ' + err);
       }
-      await waitForComponent("webcomponent");
+      await driver.waitForComponent(ON.id("webtwocomponent"), 10000);
       done()
     });
 
@@ -56,8 +56,7 @@ export default function webJsunitTwo() {
     it('RegisterJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxy", 172610);
       Utils.registerEvent("RegisterJavaScriptProxy", 'Web', 172620, done);
-      let component = await driver.findComponent(ON.id("webcomponent"));
-      await component.click();
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_014                                                                                                                                                           
@@ -67,7 +66,7 @@ export default function webJsunitTwo() {
     it('DeleteJavaScriptRegister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDeleteJavaScriptRegister", 172610);
       Utils.registerEvent("DeleteJavaScriptRegister", "17100008", 172630, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_039                                                                                                                                                           
@@ -77,7 +76,7 @@ export default function webJsunitTwo() {
     it('JsMessExtGetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetString", 172610);
       Utils.registerEvent("JsMessExtGetString", "result type:string", 172640, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_040                                                                                                                                                           
@@ -87,7 +86,7 @@ export default function webJsunitTwo() {
     it('JsMessExtGetNum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetNum", 172610);
       Utils.registerEvent("JsMessExtGetNum", "result type:number", 172650, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_041                                                                                                                                                          
@@ -97,7 +96,7 @@ export default function webJsunitTwo() {
     it('JsMessExtGetBoo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetBoo", 172610);
       Utils.registerEvent("JsMessExtGetBoo", "result type:boolean", 172660, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_042                                                                                                                                                          
@@ -107,7 +106,7 @@ export default function webJsunitTwo() {
     it('JsMessExtGetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetArrayBuffer", 172610);
       Utils.registerEvent("JsMessExtGetArrayBuffer", "result type:object", 172670, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_043                                                                                                                                                         
@@ -117,7 +116,7 @@ export default function webJsunitTwo() {
     it('JsMessExtGetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitJsMessExtGetArray", 172610);
       Utils.registerEvent("JsMessExtGetArray", "result type:object0", 172680, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_044                                                                                                                                                         
@@ -128,7 +127,7 @@ export default function webJsunitTwo() {
       Utils.emitEvent("emitWebMessExtSetString", 172610);
       let result = "String:helloFromEts";
       Utils.registerEvent("WebMessExtSetString", JSON.stringify(result), 172700, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_045                                                                                                                                                        
@@ -138,7 +137,7 @@ export default function webJsunitTwo() {
     it('WebMessExtGetString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetString", 172610);
       Utils.registerEvent("WebMessExtGetString", "result type:string", 172690, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_046                                                                                                                                                        
@@ -149,7 +148,7 @@ export default function webJsunitTwo() {
       Utils.emitEvent("emitWebMessExtSetNumber", 172610);
       let result = "Number:1";
       Utils.registerEvent("WebMessExtSetNumber", JSON.stringify(result), 172710, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_047                                                                                                                                                  
@@ -159,7 +158,7 @@ export default function webJsunitTwo() {
     it('WebMessExtGetNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetNumber", 172610);
       Utils.registerEvent("WebMessExtGetNumber", "result type:number0", 172720, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_048                                                                                                                                                  
@@ -170,7 +169,7 @@ export default function webJsunitTwo() {
       Utils.emitEvent("emitWebMessExtSetBoolean", 172610);
       let result = "Boolean:true";
       Utils.registerEvent("WebMessExtSetBoolean", JSON.stringify(result), 172730, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_049                                                                                                                                                 
@@ -180,7 +179,7 @@ export default function webJsunitTwo() {
     it('WebMessExtGetBoolean', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetBoolean", 172610);
       Utils.registerEvent("WebMessExtGetBoolean", "result type:boolean", 172740, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_050                                                                                                                                                 
@@ -191,7 +190,7 @@ export default function webJsunitTwo() {
       Utils.emitEvent("emitWebMessExtSetArray", 172610);
       let result = "Array len:1, value:apple";
       Utils.registerEvent("WebMessExtSetArray", JSON.stringify(result), 172750, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_051                                                                                                                                                 
@@ -201,7 +200,7 @@ export default function webJsunitTwo() {
     it('WebMessExtGetArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetArray", 172610);
       Utils.registerEvent("WebMessExtGetArray", "result type:object", 172760, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_052                                                                                                                                                 
@@ -212,7 +211,7 @@ export default function webJsunitTwo() {
       Utils.emitEvent("emitWebMessExtSetArrayBuffer", 172610);
       let result = "ArrayBuffer:8";
       Utils.registerEvent("WebMessExtSetArrayBuffer", JSON.stringify(result), 172770, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_053                                                                                                                                                 
@@ -222,7 +221,7 @@ export default function webJsunitTwo() {
     it('WebMessExtGetArrayBuffer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetArrayBuffer", 172610);
       Utils.registerEvent("WebMessExtGetArrayBuffer", "result getArrayBuffer byteLength:8", 172780, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_054                                                                                                                                                 
@@ -233,7 +232,7 @@ export default function webJsunitTwo() {
       Utils.emitEvent("emitWebMessExtSetError", 172610);
       let result = "Error:SyntaxError, msg:";
       Utils.registerEvent("WebMessExtSetError", JSON.stringify(result), 172790, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
     /* 
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_055                                                                                                                                                
@@ -243,7 +242,7 @@ export default function webJsunitTwo() {
     it('WebMessExtGetError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebMessExtGetError", 172610);
       Utils.registerEvent("WebMessExtGetError", "result type:object", 172800, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webtwocomponent');
     })
   })
 }

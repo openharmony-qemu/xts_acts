@@ -59,12 +59,13 @@ export default function relationalStoreEtsTest() {
     });
     console.info(TAG + "*************Unit Test Begin*************");
     /**
-     * @tc.name testRdbStoreGetvalueEtstest0100
+     * @generated.time 2025-11-09 20:49:52
+     * @tc.name   testRdbStoreGetvalueEtstest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_getValueEtsAPI16Test_0100
-     * @tc.desc RelationalStore getValue test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RelationalStore getValue test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreGetvalueEtstest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "************* testRdbStoreGetvalueEtstest0100 start *************");

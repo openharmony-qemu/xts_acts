@@ -41,12 +41,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   disableBluetoothErrCode201Test
          * @tc.number disableBluetoothErrCode201Test
-         * @tc.name disableBluetoothErrCode201Test
-         * @tc.desc Test disableBluetoothErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test disableBluetoothErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("disableBluetoothErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -66,12 +67,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   enableBluetoothErrCode201Test
          * @tc.number enableBluetoothErrCode201Test
-         * @tc.name enableBluetoothErrCode201Test
-         * @tc.desc Test enableBluetoothErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test enableBluetoothErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("enableBluetoothErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -91,12 +93,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getRemoteDeviceNameErrCode201Test
          * @tc.number getRemoteDeviceNameErrCode201Test
-         * @tc.name getRemoteDeviceNameErrCode201Test
-         * @tc.desc Test getRemoteDeviceNameErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getRemoteDeviceNameErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getRemoteDeviceNameErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -117,12 +120,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   getRemoteDeviceNameAliasErrCode201Test
          * @tc.number getRemoteDeviceNameAliasErrCode201Test
-         * @tc.name getRemoteDeviceNameAliasErrCode201Test
-         * @tc.desc Test getRemoteDeviceNameAliasErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getRemoteDeviceNameAliasErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getRemoteDeviceNameAliasErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -143,12 +147,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   setBluetoothScanModeErrCode201Test
          * @tc.number setBluetoothScanModeErrCode201Test
-         * @tc.name setBluetoothScanModeErrCode201Test
-         * @tc.desc Test setBluetoothScanModeErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test setBluetoothScanModeErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("setBluetoothScanModeErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -168,12 +173,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   clientCloseErrCode201Test
          * @tc.number clientCloseErrCode201Test
-         * @tc.name clientCloseErrCode201Test
-         * @tc.desc Test clientCloseErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test clientCloseErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("clientCloseErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -193,12 +199,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   serverCloseErrCode201Test
          * @tc.number serverCloseErrCode201Test
-         * @tc.name serverCloseErrCode201Test
-         * @tc.desc Test serverCloseErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test serverCloseErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("serverCloseErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -219,12 +226,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   clientConnectErrCode201Test
          * @tc.number clientConnectErrCode201Test
-         * @tc.name clientConnectErrCode201Test
-         * @tc.desc Test clientConnectErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test clientConnectErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("clientConnectErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -245,12 +253,13 @@ export default function btNopUiJsunit() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:46
+         * @tc.name   stopBleScanErrCode201Test
          * @tc.number stopBleScanErrCode201Test
-         * @tc.name stopBleScanErrCode201Test
-         * @tc.desc Test stopBleScanErrCode201Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test stopBleScanErrCode201Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("stopBleScanErrCode201Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {

@@ -75,15 +75,16 @@ export default function pasteboardTestNdkTest() {
       done();
     })
 
-    /**
-     * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0100
-     * @tc.name OH_PasteboardSubscriber_Create0100
-     * @tc.desc OH_PasteboardObserver_Create test
-     * @tc.level: Level 0
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
-     */
 
+    /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_PasteboardSubscriber_Create0100
+     * @tc.number OH_PasteboardSubscriber_Create0100
+     * @tc.desc   OH_PasteboardSubscriber_Create0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('OH_PasteboardSubscriber_Create0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data = testndk.OH_PasteboardSubscriber_Create0100();
       console.info(TAG + "OH_PasteboardSubscriber_Create0100 data = " + data );
@@ -92,12 +93,13 @@ export default function pasteboardTestNdkTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_PasteboardObserver_SetData0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0200
-     * @tc.name OH_PasteboardObserver_SetData0100
-     * @tc.desc OH_PasteboardObserver_SetData test invalid
-     * @tc.level: Level 0
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_PasteboardObserver_SetData test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_PasteboardObserver_SetData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
       console.info( TAG + 'OH_PasteboardObserver_SetData0100' );
@@ -107,12 +109,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_PasteboardObserver_SetData0200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0300
-     * @tc.name OH_PasteboardObserver_SetData0200
-     * @tc.desc OH_PasteboardObserver_SetData test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_PasteboardObserver_SetData test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_PasteboardObserver_SetData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_PasteboardObserver_SetData0200' );
@@ -122,12 +125,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_PasteboardObserver_SetData0300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0400
-     * @tc.name OH_PasteboardObserver_SetData0300
-     * @tc.desc OH_PasteboardObserver_SetData test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_PasteboardObserver_SetData test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_PasteboardObserver_SetData0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_PasteboardObserver_SetData0300' );
@@ -137,12 +141,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_PasteboardObserver_SetData0400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0500
-     * @tc.name OH_PasteboardObserver_SetData0400
-     * @tc.desc OH_PasteboardObserver_SetData test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_PasteboardObserver_SetData test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_PasteboardObserver_SetData0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_PasteboardObserver_SetData0400' );
@@ -152,12 +157,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Create0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0600
-     * @tc.name OH_Pasteboard_Create0100
-     * @tc.desc OH_Pasteboard_Subscribe test invalid
-     * @tc.level: Level 0
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Subscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_Pasteboard_Create0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
       console.info( TAG + 'OH_Pasteboard_Create0100' );
@@ -167,12 +173,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Subscribe0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0700
-     * @tc.name OH_PasteboardObserver_SetData0300
-     * @tc.desc OH_Pasteboard_Subscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Subscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Subscribe0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Subscribe0100' );
@@ -182,12 +189,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Subscribe0200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0800
-     * @tc.name OH_Pasteboard_Subscribe0200
-     * @tc.desc OH_Pasteboard_Subscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Subscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Subscribe0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Subscribe0200' );
@@ -197,12 +205,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Subscribe0300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0900
-     * @tc.name OH_Pasteboard_Subscribe0300
-     * @tc.desc OH_Pasteboard_Subscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Subscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Subscribe0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Subscribe0300' );
@@ -212,12 +221,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Subscribe0400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1000
-     * @tc.name OH_Pasteboard_Subscribe0400
-     * @tc.desc OH_Pasteboard_Subscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Subscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Subscribe0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Subscribe0400' );
@@ -227,12 +237,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Subscribe0500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1100
-     * @tc.name OH_Pasteboard_Subscribe0500
-     * @tc.desc OH_Pasteboard_Subscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Subscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Subscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Subscribe0500' );
@@ -242,12 +253,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Subscribe0600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1200
-     * @tc.name OH_Pasteboard_Subscribe0600
-     * @tc.desc OH_Pasteboard_Subscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Subscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Subscribe0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Subscribe0600' );
@@ -257,12 +269,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Unsubcribe0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1300
-     * @tc.name OH_Pasteboard_Unsubcribe0100
-     * @tc.desc OH_Pasteboard_Unsubscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Unsubscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Unsubcribe0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Unsubcribe0100' );
@@ -272,12 +285,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Unsubcribe0200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1400
-     * @tc.name OH_Pasteboard_Unsubcribe0200
-     * @tc.desc OH_Pasteboard_Unsubscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Unsubscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Unsubcribe0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Unsubcribe0200' );
@@ -287,12 +301,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Unsubcribe0300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1500
-     * @tc.name OH_Pasteboard_Unsubcribe0300
-     * @tc.desc OH_Pasteboard_Unsubscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Unsubscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Unsubcribe0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Unsubcribe0300' );
@@ -302,12 +317,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Unsubcribe0400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1600
-     * @tc.name OH_Pasteboard_Unsubcribe0400
-     * @tc.desc OH_Pasteboard_Unsubscribe test invalid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_Unsubscribe test invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Unsubcribe0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Unsubcribe0400' );
@@ -317,12 +333,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_Unsubcribe0500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1700
-     * @tc.name OH_Pasteboard_Unsubcribe0500
-     * @tc.desc OH_PasteboardObserver_Create
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_PasteboardObserver_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_Unsubcribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_Unsubcribe0500' );
@@ -332,12 +349,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_IsRemoteData0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1800
-     * @tc.name OH_Pasteboard_IsRemoteData0100
-     * @tc.desc OH_Pasteboard_IsRemoteData test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_IsRemoteData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_IsRemoteData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_IsRemoteData0100' );
@@ -350,12 +368,13 @@ export default function pasteboardTestNdkTest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetDataSrouce0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_1900
-     * @tc.name OH_Pasteboard_GetDataSrouce0100
-     * @tc.desc OH_Pasteboard_GetDataSrouce test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_GetDataSrouce test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_GetDataSrouce0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_GetDataSrouce0100' );
@@ -365,12 +384,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasType0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2000
-     * @tc.name OH_Pasteboard_HasType0100
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasType0100' );
@@ -380,12 +400,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasData0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2100
-     * @tc.name OH_Pasteboard_HasData0100
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasData0100' );
@@ -395,12 +416,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_ClearData0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2200
-     * @tc.name OH_Pasteboard_ClearData0100
-     * @tc.desc OH_Pasteboard_HasData test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_ClearData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_ClearData0100' );
@@ -410,12 +432,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_SetData0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2300
-     * @tc.name OH_Pasteboard_SetData0100
-     * @tc.desc OH_Pasteboard_SetData test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_SetData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_SetData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_SetData0100' );
@@ -425,12 +448,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetData0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2400
-     * @tc.name OH_Pasteboard_GetData0100
-     * @tc.desc OH_Pasteboard_GetData test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_GetData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_GetData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_GetData0100' );
@@ -440,12 +464,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetData0200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2500
-     * @tc.name OH_Pasteboard_GetData0200
-     * @tc.desc OH_Pasteboard_GetData test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_GetData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_GetData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_GetData0200' );
@@ -455,12 +480,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_GetData0300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2600
-     * @tc.name OH_Pasteboard_GetData0300
-     * @tc.desc OH_Pasteboard_GetData test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_GetData test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_GetData0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_GetData0300' );
@@ -470,12 +496,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_SyncDelayedDataAsyncTest0100
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2700
-     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0100
-     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_SyncDelayedDataAsyncTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0100' );
@@ -485,12 +512,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_SyncDelayedDataAsyncTest0200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2800
-     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0200
-     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_SyncDelayedDataAsyncTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0200' );
@@ -500,12 +528,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_SyncDelayedDataAsyncTest0300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_2900
-     * @tc.name OH_Pasteboard_SyncDelayedDataAsyncTest0300
-     * @tc.desc OH_Pasteboard_SyncDelayedDataAsync test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_SyncDelayedDataAsync test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_SyncDelayedDataAsyncTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_SyncDelayedDataAsyncTest0300' );
@@ -515,12 +544,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasType0200
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3000
-     * @tc.name OH_Pasteboard_HasType0200
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasType0200' );
@@ -530,12 +560,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasType0300
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3100
-     * @tc.name OH_Pasteboard_HasType0300
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasType0300' );
@@ -545,12 +576,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasType0400
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3200
-     * @tc.name OH_Pasteboard_HasType0400
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasType0400' );
@@ -560,12 +592,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasType0500
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3300
-     * @tc.name OH_Pasteboard_HasType0500
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasType0500' );
@@ -575,12 +608,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasType0600
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3400
-     * @tc.name OH_Pasteboard_HasType0600
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasType0600' );
@@ -590,12 +624,13 @@ export default function pasteboardTestNdkTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   OH_Pasteboard_HasType0700
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_3500
-     * @tc.name OH_Pasteboard_HasType0700
-     * @tc.desc OH_Pasteboard_HasType test valid
-     * @tc.level: Level 2
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   OH_Pasteboard_HasType test valid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('OH_Pasteboard_HasType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
       console.info( TAG + 'OH_Pasteboard_HasType0700' );

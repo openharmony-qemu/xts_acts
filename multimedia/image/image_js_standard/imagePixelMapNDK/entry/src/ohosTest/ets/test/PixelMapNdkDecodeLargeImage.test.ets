@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog';
 import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
+import taskpool from '@ohos.taskpool';
 
 const TEST_DECODE_LARGE_IMAGE_JPEG = "big-30118x30118.jpg";
 const TEST_DECODE_LARGE_IMAGE_HEIC = "big-30000x30000.heic";
@@ -45,6 +46,18 @@ let testContext: common.UIAbilityContext;
 let filesDir: string|undefined;
 let cacheDir: string|undefined;
 
+class Logger {
+  testNum: string;
+
+  constructor(testNum: string) {
+    this.testNum = testNum;
+  }
+
+  log(msg: string) {
+    hilog.info(0x0000, "pixelMapNdkDecodeLargeImageTest", 'case: %{public}s msg:%{public}s', this.testNum, msg);
+  }
+}
+
 let sleep = async (delay: number): Promise<void> => {
   return new Promise((resolve, _) => {
     setTimeout(async () => {
@@ -52,6 +65,124 @@ let sleep = async (delay: number): Promise<void> => {
     }, delay);
   });
 };
+
+async function decodeLargeImageTestInTaskPool(
+  logger: Logger,
+  fileName: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions
+): Promise<boolean> {
+  if (!isSupportHdr) {
+    logger.log("device is not support hdr");
+    return true;
+  }
+
+  logger.log("taskpool start");
+  try {
+    let filePath = filesDir + "/" + fileName;
+    let task = new taskpool.Task(DecodeLargeImagePixelTest, filePath, desiredInfo, expectInfo);
+    let ret = (await taskpool.execute(task)) as boolean;
+    logger.log("taskpool ret: " + ret);
+    return ret;
+  } catch (error) {
+    logger.log("taskpool: taskpool execute error is " + error);
+    return false;
+  }
+}
+
+@Concurrent
+async function DecodeLargeImagePixelTest(
+  filePath: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions
+): Promise<boolean> {
+  console.log("start first time");
+  // 模拟异步操作
+  return await new Promise<boolean>((resolve) => {
+    setTimeout(() => {
+      console.log('asynchronous blocking: filePath: ' + filePath);
+
+      let imageInfo = ndkTest.CreatePixelMapAndGetInfo(filePath, desiredInfo);
+      console.log("asynchronous blocking: imageInfo is: " + JSON.stringify(imageInfo));
+
+      if (typeof imageInfo === 'object') {
+        let ret = (imageInfo.width  === expectInfo.width)  &&
+                  (imageInfo.height === expectInfo.height) &&
+                  (imageInfo.pixelFormat === expectInfo.pixelFormat);
+        console.log("asynchronous blocking: 333 " + ret);
+        console.log("end asynchronous blocking");
+        resolve(ret);
+      } else {
+        console.error("createPixelMapAndGetInfo result is not object!");
+        resolve(false);
+      }
+    }, 15000);
+  });
+}
+
+async function decodeLargeImageForDMATestInTaskPool(
+  logger: Logger,
+  fileName: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions,
+  allocatorType: image.AllocatorType = image.AllocatorType.AUTO
+): Promise<boolean> {
+  if (!isSupportHdr) {
+    logger.log("device is not support hdr");
+    return true;
+  }
+
+  logger.log("taskpool start");
+  try {
+    const filePath = filesDir + "/" + fileName;
+    const task = new taskpool.Task(
+      DecodeLargeImageForDMAPixelTest,
+      filePath,
+      desiredInfo,
+      expectInfo,
+      allocatorType
+    );
+    const ret = (await taskpool.execute(task)) as boolean;
+    logger.log("taskpool ret: " + ret);
+    return ret;
+  } catch (error) {
+    logger.log("taskpool: taskpool execute error is " + error);
+    return false;
+  }
+}
+
+@Concurrent
+async function DecodeLargeImageForDMAPixelTest(
+  filePath: string,
+  desiredInfo: ndkTest.decodeOptions,
+  expectInfo: ndkTest.decodeOptions,
+  allocatorType: image.AllocatorType
+): Promise<boolean> {
+  console.log("start first time");
+  // 模拟异步操作
+  return await new Promise<boolean>((resolve) => {
+    setTimeout(() => {
+      console.log('asynchronous blocking: filePath: ' + filePath);
+      console.log('asynchronous blocking: allocatorType: ' + allocatorType);
+      console.log('asynchronous blocking: desiredInfo: ' + JSON.stringify(desiredInfo));
+
+      const imageInfo = ndkTest.CreatePixelMapForDMAAndGetInfo(filePath, allocatorType, desiredInfo);
+      console.log('asynchronous blocking: imageInfo is: ' + JSON.stringify(imageInfo));
+
+      if (typeof imageInfo === 'object') {
+        const ret = (imageInfo.width  === expectInfo.width)  &&
+                    (imageInfo.height === expectInfo.height) &&
+                    (imageInfo.pixelFormat === expectInfo.pixelFormat);
+        console.log('asynchronous blocking: 333 ' + ret);
+        console.log('end asynchronous blocking');
+        resolve(ret);
+      } else {
+        console.error('CreatePixelMapForDMAAndGetInfo result is not object!');
+        resolve(false);
+      }
+    }, 15000);
+  });
+}
 
 export default function pixelMapNdkDecodeLargeImageTest() {
   describe('pixelMapNdkDecodeLargeImageTest', () => {
@@ -68,18 +199,6 @@ export default function pixelMapNdkDecodeLargeImageTest() {
     afterEach(async () => {
       await sleep(2000);
     });
-
-    class Logger {
-      testNum: string;
-  
-      constructor(testNum: string) {
-        this.testNum = testNum;
-      }
-  
-      log(msg: string) {
-        hilog.info(0x0000, "pixelMapNdkDecodeLargeImageTest", 'case: %{public}s msg:%{public}s', this.testNum, msg);
-      }
-    }
 
     const DecodeLargeImageTest = (
       logger: Logger,
@@ -894,7 +1013,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
       expect(ret).assertTrue();
       done();
     });
@@ -924,7 +1043,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGB_565
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, DMA);
       expect(ret).assertTrue();
       done();
     });
@@ -955,7 +1074,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
       expect(ret).assertTrue();
       done();
     });
@@ -986,7 +1105,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: BGRA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, SHARE_MEMORY);
       expect(ret).assertTrue();
       done();
     });
@@ -1015,7 +1134,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageForDMATest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, AUTO);
+      let ret = await decodeLargeImageForDMATestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo, AUTO);
       expect(ret).assertTrue();
       done();
     });
@@ -1795,7 +1914,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
@@ -1825,7 +1944,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGB_565
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
@@ -1856,7 +1975,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
@@ -1887,7 +2006,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: BGRA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });
@@ -1916,7 +2035,7 @@ export default function pixelMapNdkDecodeLargeImageTest() {
         pixelFormat: RGBA_8888
       };
 
-      let ret = DecodeLargeImageTest(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
+      let ret = await decodeLargeImageTestInTaskPool(logger, TEST_DECODE_LARGE_IMAGE_PNG, desiredInfo, expectInfo);
       expect(ret).assertTrue();
       done();
     });

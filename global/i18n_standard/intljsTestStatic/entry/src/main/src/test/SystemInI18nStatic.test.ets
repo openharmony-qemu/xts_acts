@@ -53,33 +53,45 @@ export default function SystemIni18nTest() {
     afterAll(() => {
       console.info("afterAll case");
     });
-    /* *
-    * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0100
-    * @tc.name    i18n_system_test_static_0100
-    * @tc.desc    getDisplayCountry with zh-Hans-CN and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_0100
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0100
+     * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayCountry('zh-Hans-CN', 'en-US', true);
       console.log('i18n_system_test_static_0100 ' + value);
       expect(value).assertEqual('China');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0200
-     * @tc.name    i18n_system_test_static_0200
-     * @tc.desc    getDisplayCountry with zh-Hans-CN and en-US and undefined param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_0200
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0200
+     * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US and undefined param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.getDisplayCountry('zh-Hans-CN', 'en-US', undefined);
       console.log('i18n_system_test_static_0200 ' + value);
       expect(value).assertEqual('China');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0400
-     * @tc.name    i18n_system_test_static_0400
-     * @tc.desc    getDisplayCountry with zh and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_0400
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0400
+     * @tc.desc   getDisplayCountry with zh and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_0400', Level.LEVEL2, async (): Promise<void> => {
       try{
         let value = i18n.System.getDisplayCountry('zh', 'en-US', true);
@@ -93,22 +105,30 @@ export default function SystemIni18nTest() {
       }
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0500
-     * @tc.name    i18n_system_test_static_0500
-     * @tc.desc    getDisplayCountry with zh-CN and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_0500
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0500
+     * @tc.desc   getDisplayCountry with zh-CN and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_0500', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.getDisplayCountry('zh-CN', 'en-US', true);
       console.log('i18n_system_test_static_0500 ' + value);
       expect(value).assertEqual('China');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0600
-     * @tc.name    i18n_system_test_static_0600
-     * @tc.desc    getDisplayCountry with zh-Hans and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_0600
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0600
+     * @tc.desc   getDisplayCountry with zh-Hans and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_0600', Level.LEVEL2, async (): Promise<void> => {
       try{
         let value = i18n.System.getDisplayCountry('zh-Hans', 'en-US', true);
@@ -122,132 +142,180 @@ export default function SystemIni18nTest() {
       }
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0700
-     * @tc.name    i18n_system_test_static_0700
-     * @tc.desc    getDisplayCountry with zh-Hans-CN and en-US and false param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_0700
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0700
+     * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US and false param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_0700', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.getDisplayCountry('zh-Hans-CN', 'en-US', false);
       console.log('i18n_system_test_static_0700 ' + value);
       expect(value).assertEqual('China');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_0800
-     * @tc.name    i18n_system_test_static_0800
-     * @tc.desc    getDisplayCountry with zh-Hans-CN and en-US param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_0800
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_0800
+     * @tc.desc   getDisplayCountry with zh-Hans-CN and en-US param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_0800', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.getDisplayCountry('zh-Hans-CN', 'en-US');
       console.log('i18n_system_test_static_0800 ' + value);
       expect(value).assertEqual('China');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1100
-    * @tc.name    i18n_system_test_static_1100
-    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1100
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1100
+     * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1100', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', true);
       console.log('i18n_system_test_static_1100 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1200
-    * @tc.name    i18n_system_test_static_1200
-    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and undefined param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1200
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1200
+     * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and undefined param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1200', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', undefined);
       console.log('i18n_system_test_static_1200 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1300
-    * @tc.name    i18n_system_test_static_1300
-    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and null param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1300
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1300
+     * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and null param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1300', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', undefined);
       console.log('i18n_system_test_static_1300 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1400
-    * @tc.name    i18n_system_test_static_1400
-    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-GB and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1400
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1400
+     * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-GB and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1400', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-GB', true);
       console.log('i18n_system_test_static_1400 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1500
-    * @tc.name    i18n_system_test_static_1500
-    * @tc.desc    check the language, getDisplayLanguage with zh and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1500
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1500
+     * @tc.desc   check the language, getDisplayLanguage with zh and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1500', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh', 'en-US', true);
       console.log('i18n_system_test_static_1500 ' + value);
       expect(value).assertEqual('Chinese');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1600
-    * @tc.name    i18n_system_test_static_1600
-    * @tc.desc    check the language, getDisplayLanguage with zh-CN and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1600
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1600
+     * @tc.desc   check the language, getDisplayLanguage with zh-CN and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1600', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-CN', 'en-US', true);
       console.log('i18n_system_test_static_1600 ' + value);
       expect(value).assertEqual('Chinese');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1700
-    * @tc.name    i18n_system_test_static_1700
-    * @tc.desc    check the language, getDisplayLanguage with zh-Hans and en-US and true param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1700
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1700
+     * @tc.desc   check the language, getDisplayLanguage with zh-Hans and en-US and true param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1700', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-Hans', 'en-US', true);
       console.log('i18n_system_test_static_1700 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1800
-    * @tc.name    i18n_system_test_static_1800
-    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US and false param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1800
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1800
+     * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US and false param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1800', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US', false);
       console.log('i18n_system_test_static_1800 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
     
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_SYSTEM_JS_static_1900
-    * @tc.name    i18n_system_test_static_1900
-    * @tc.desc    check the language, getDisplayLanguage with zh-Hans-CN and en-US param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_1900
+     * @tc.number SUB_GLOBAL_I18N_SYSTEM_JS_static_1900
+     * @tc.desc   check the language, getDisplayLanguage with zh-Hans-CN and en-US param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_1900', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getDisplayLanguage('zh-Hans-CN', 'en-US');
       console.log('i18n_system_test_static_1900 ' + value);
       expect(value).assertEqual('Simplified Chinese');
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2200
-    * @tc.name i18n_system_test_static_2200
-    * @tc.desc getSystemLanguages test
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_2200
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2200
+     * @tc.desc   getSystemLanguages test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_2200', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.getSystemLanguages(); 
       let len = value.length;
@@ -255,11 +323,15 @@ export default function SystemIni18nTest() {
       expect(len > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2300
-    * @tc.name i18n_system_test_static_2300
-    * @tc.desc getSystemCountries with en param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_2300
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2300
+     * @tc.desc   getSystemCountries with en param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_2300', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.getSystemCountries('en');
       let len = value.length;
@@ -267,65 +339,89 @@ export default function SystemIni18nTest() {
       expect(len > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2600
-    * @tc.name i18n_system_test_static_2600
-    * @tc.desc isSuggested with zh param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_2600
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2600
+     * @tc.desc   isSuggested with zh param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_2600', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.isSuggested('zh');
       console.log('i18n_system_test_static_2600 ' + value);
       expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2700
-    * @tc.name i18n_system_test_static_2700
-    * @tc.desc isSuggested with en param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_2700
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2700
+     * @tc.desc   isSuggested with en param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_2700', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.isSuggested('en');
       console.log('i18n_system_test_static_2700 ' + value);
       expect(value).assertFalse();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2800
-    * @tc.name i18n_system_test_static_2800
-    * @tc.desc isSuggested with zh-CN param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_2800
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2800
+     * @tc.desc   isSuggested with zh-CN param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_2800', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.isSuggested('zh', 'CN');
       console.log('i18n_system_test_static_2800 ' + value);
       expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2900
-    * @tc.name i18n_system_test_static_2900
-    * @tc.desc isSuggested with en-US param
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_2900
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_2900
+     * @tc.desc   isSuggested with en-US param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_2900', Level.LEVEL2, async (): Promise<void> => {
       let value = i18n.System.isSuggested('en', 'US');
       console.log('i18n_system_test_static_2900 ' + value);
       expect(value).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_3200
-    * @tc.name    i18n_system_test_static_3200
-    * @tc.desc    getSystemLanguage
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3200
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3200
+     * @tc.desc   getSystemLanguage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_3200', Level.LEVEL2, (): void => {
       let lang: string = i18n.System.getSystemLanguage();
       hilog.info(domain, tag, '%{public}s', 'i18n_system_test_static_3200 ' + lang);
       expect(lang).assertInstanceOf('String');
     })
 
-    /* *
-     * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_3300
-     * @tc.name    i18n_system_test_static_3300
-     * @tc.desc    check the getSystemRegion
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3300
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3300
+     * @tc.desc   check the getSystemRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_system_test_static_3300', Level.LEVEL0, (): void => {
       let region: string = i18n.System.getSystemRegion();
@@ -333,32 +429,44 @@ export default function SystemIni18nTest() {
       expect(region).assertInstanceOf('String');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_3400
-    * @tc.name    i18n_system_test_static_3400
-    * @tc.desc    check the getSystemLocaleInstance
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3400
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3400
+     * @tc.desc   check the getSystemLocaleInstance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_3400', Level.LEVEL0, (): void => {
       let locale: string = i18n.System.getSystemLocaleInstance().toString();
       hilog.info(domain, tag, '%{public}s', 'i18n_system_test_static_3400 ' + locale);
       expect(locale).assertInstanceOf('String');
     })
-    /* *
-       * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_3500
-       * @tc.name    i18n_system_test_static_3500
-       * @tc.desc    check the is24HourClock
-       */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3500
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3500
+     * @tc.desc   check the is24HourClock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_3500', Level.LEVEL0, (): void => {
       let value: boolean = i18n.System.is24HourClock();
       hilog.info(domain, tag, '%{public}s', 'i18n_system_test_static_3500 ' + value);
       expect(value).assertFalse();
     })
 
-    /* *
-   * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_3600
-   * @tc.name    i18n_system_test_static_3600
-   * @tc.desc    test the getPreferredLanguageList interface with default value
-   */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3600
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3600
+     * @tc.desc   test the getPreferredLanguageList interface with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_3600', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_system_test_static_3600 ' + 'start');
       let value = i18n.System.getPreferredLanguageList();
@@ -366,11 +474,15 @@ export default function SystemIni18nTest() {
       expect(value.length > 0).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_i18n_SYSTEM_JS_static_3700
-    * @tc.name    i18n_system_test_static_3700
-    * @tc.desc    test the getFirstPreferredLanguage interface
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3700
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3700
+     * @tc.desc   test the getFirstPreferredLanguage interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_3700', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_system_test_static_3700 ' + 'start');
       let value = i18n.System.getFirstPreferredLanguage();
@@ -385,11 +497,15 @@ export default function SystemIni18nTest() {
       }
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3800
-    * @tc.name i18n_system_test_static_3800
-    * @tc.desc test the getAppPreferredLanguage interface
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3800
+     * @tc.number SUB_GLOBAL_i18n_SYSTEM_JS_static_3800
+     * @tc.desc   test the getAppPreferredLanguage interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('i18n_system_test_static_3800', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_system_test_static_3800 ' + 'start');
       let value = i18n.System.getAppPreferredLanguage();
@@ -397,11 +513,15 @@ export default function SystemIni18nTest() {
       expect(value).assertContain('zh');
     })
 
-    /* *
-    * @tc.number i18n_system_test_static_3900
-    * @tc.name i18n_system_test_static_3900
-    * @tc.desc get the getUsingLocalDigit value,test getUsingLocalDigit method
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:57
+     * @tc.name   i18n_system_test_static_3900
+     * @tc.number i18n_system_test_static_3900
+     * @tc.desc   get the getUsingLocalDigit value,test getUsingLocalDigit method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_system_test_static_3900', Level.LEVEL0, async (): Promise<void> => {
       let value = i18n.System.getUsingLocalDigit();
       console.log('i18n_system_test_static_3900 ' + value);

@@ -52,13 +52,14 @@ export default function DeviceStatusUnderageModelTest() {
       console.info('callback success, ageGroup:' + data.ageGroup + ', confidence: ' + data.confidence);
     }
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_UnderageModel_0100
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_UnderageModel_0100
-     * @tc.desc       : UnderageModel callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0100
+     * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0100
+     * @tc.desc   UnderageModel callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_UnderageModel_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0100 enter`);
@@ -74,13 +75,14 @@ export default function DeviceStatusUnderageModelTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_UnderageModel_0200
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_UnderageModel_0200
-     * @tc.desc       : UnderageModel callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0200
+     * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0200
+     * @tc.desc   UnderageModel callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_UnderageModel_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0200 enter`);
@@ -101,13 +103,14 @@ export default function DeviceStatusUnderageModelTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_UnderageModel_0300
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_UnderageModel_0300
-     * @tc.desc       : UnderageModel callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0300
+     * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0300
+     * @tc.desc   UnderageModel callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_UnderageModel_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0300 enter`);
@@ -123,13 +126,14 @@ export default function DeviceStatusUnderageModelTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_UnderageModel_0400
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_UnderageModel_0400
-     * @tc.desc       : UnderageModel callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0400
+     * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0400
+     * @tc.desc   UnderageModel callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_UnderageModel_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0400 enter`);
@@ -145,13 +149,14 @@ export default function DeviceStatusUnderageModelTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_UnderageModel_0500
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_UnderageModel_0500
-     * @tc.desc       : UnderageModel callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0500
+     * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0500
+     * @tc.desc   UnderageModel callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_UnderageModel_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0500 enter`);
@@ -172,13 +177,14 @@ export default function DeviceStatusUnderageModelTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_UnderageModel_0600
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_UnderageModel_0600
-     * @tc.desc       : UnderageModel callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_UnderageModel_0600
+     * @tc.number SUB_MSDP_DeviceStatus_API_UnderageModel_0600
+     * @tc.desc   UnderageModel callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_UnderageModel_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_UnderageModel_0600 enter`);

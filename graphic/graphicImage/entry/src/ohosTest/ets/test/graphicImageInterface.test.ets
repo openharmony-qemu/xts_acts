@@ -30,7 +30,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCreatePremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreatePremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreatePremultipliedPixelMap_callback= "
       console.log(" www data 1" + msg + " begin ")
@@ -76,7 +76,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCreatePremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreatePremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreatePremultipliedPixelMap_promise= "
       console.log(" www data 2" + msg + " begin ")
@@ -120,7 +120,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCreateUnpremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateUnpremultipliedPixelMap_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreateUnpremultipliedPixelMap_callback= "
       console.log(" www data 3" + msg + " begin ")
@@ -166,7 +166,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCreateUnpremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateUnpremultipliedPixelMap_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreateUnpremultipliedPixelMap_promise= "
       console.log(" www data 4" + msg + " begin ")
@@ -210,7 +210,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testWriteBufferToPixelsSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testWriteBufferToPixelsSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testWriteBufferToPixelsSync= "
 
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -248,7 +248,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testReadPixelsSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testReadPixelsSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testReadPixelsSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -290,7 +290,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testOpacitySync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testOpacitySync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testOpacitySync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -323,7 +323,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCreateAlphaPixelmapSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateAlphaPixelmapSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = " =testCreateAlphaPixelmapSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
@@ -356,7 +356,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testTranslateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTranslateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testTranslateSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -390,7 +390,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testRotateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testRotateSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testRotateSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -423,7 +423,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testFlipSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testFlipSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testFlipSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -457,7 +457,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCropSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testCropSync_image', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testCropSync_image= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {
@@ -490,7 +490,7 @@ export default function graphicImageInterfaceTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testSrcPixelFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testSrcPixelFormat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testSrcPixelFormat= "
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = {

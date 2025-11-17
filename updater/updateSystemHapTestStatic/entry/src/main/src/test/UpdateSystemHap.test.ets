@@ -63,9 +63,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0001
-     * @tc.name      updateSystemHapTest001
-     * @tc.desc      To test hap is not system hap and  invoke getOnlineUpdater api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest001
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0001
+     * @tc.desc   To test hap is not system hap and  invoke getOnlineUpdater api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateSystemHapTest001', Level.LEVEL1, async  () => {
       console.info('updateSystemHapTest001 START');
@@ -79,9 +83,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0002
-     * @tc.name      updateSystemHapTest002
-     * @tc.desc      To test hap is not system hap and  invoke applyNewVersion api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest002
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0002
+     * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest002', Level.LEVEL2, async  () => {
       console.info('updateSystemHapTest002 START');
@@ -95,9 +103,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0003
-     * @tc.name      updateSystemHapTest003
-     * @tc.desc      To test hap is not system hap and  invoke applyNewVersion api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest003
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0003
+     * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest003', Level.LEVEL2, async  () => {
       console.info('updateSystemHapTest003 START');
@@ -111,9 +123,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0004
-     * @tc.name      updateSystemHapTest004
-     * @tc.desc      To test hap is not system hap and  invoke checkNewVersion api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest004
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0004
+     * @tc.desc   To test hap is not system hap and  invoke checkNewVersion api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest004', Level.LEVEL2, async  (done: () => void) => {
       console.info('updateSystemHapTest004 START');
@@ -131,9 +147,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0005
-     * @tc.name      updateSystemHapTest005
-     * @tc.desc      To test hap is not system hap and  invoke checkNewVersion api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest005
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0005
+     * @tc.desc   To test hap is not system hap and  invoke checkNewVersion api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest005', Level.LEVEL2, async  (done: () => void) => {
       console.info('updateSystemHapTest005 START');
@@ -155,9 +175,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0007
-     * @tc.name      updateSystemHapTest007
-     * @tc.desc      To test hap is not system hap and  invoke getNewVersionInfo api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest007
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0007
+     * @tc.desc   To test hap is not system hap and  invoke getNewVersionInfo api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest007', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest007 START');
@@ -177,9 +201,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0009
-     * @tc.name      updateSystemHapTest009
-     * @tc.desc      To test hap is not system hap and  invoke getNewVersionDescription api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest009
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0009
+     * @tc.desc   To test hap is not system hap and  invoke getNewVersionDescription api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest009', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest009 START');
@@ -206,9 +234,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0006
-     * @tc.name      updateSystemHapTest006
-     * @tc.desc      To test hap is not system hap and  invoke getNewVersionInfo api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest006
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0006
+     * @tc.desc   To test hap is not system hap and  invoke getNewVersionInfo api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest006', Level.LEVEL2, async  (done: () => void) => {
       console.info('updateSystemHapTest006 START');
@@ -226,9 +258,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0008
-     * @tc.name      updateSystemHapTest008
-     * @tc.desc      To test hap is not system hap and  invoke getNewVersionDescription api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest008
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0008
+     * @tc.desc   To test hap is not system hap and  invoke getNewVersionDescription api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest008', Level.LEVEL2, async  (done: () => void) => {
       console.info('updateSystemHapTest008 START');
@@ -253,9 +289,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0010
-     * @tc.name      updateSystemHapTest010
-     * @tc.desc      To test hap is not system hap and  invoke getCurrentVersionInfo api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest010
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0010
+     * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionInfo api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest010', Level.LEVEL2, async  (done: () => void) => {
       console.info('updateSystemHapTest007 START');
@@ -273,9 +313,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0011
-     * @tc.name      updateSystemHapTest011
-     * @tc.desc      To test hap is not system hap and  invoke getCurrentVersionInfo api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest011
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0011
+     * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionInfo api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest011', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest011 START');
@@ -295,9 +339,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0012
-     * @tc.name      updateSystemHapTest012
-     * @tc.desc      To test hap is not system hap and  invoke getCurrentVersionDescription api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest012
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0012
+     * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionDescription api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest012', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest012 START');
@@ -318,9 +366,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0013
-     * @tc.name      updateSystemHapTest013
-     * @tc.desc      To test hap is not system hap and  invoke getCurrentVersionDescription api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest013
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0013
+     * @tc.desc   To test hap is not system hap and  invoke getCurrentVersionDescription api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest013', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest013 START');
@@ -345,9 +397,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0014
-     * @tc.name      updateSystemHapTest014
-     * @tc.desc      To test hap is not system hap and  invoke getTaskInfo api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest014
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0014
+     * @tc.desc   To test hap is not system hap and  invoke getTaskInfo api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest014', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest014 START');
@@ -364,9 +420,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0015
-     * @tc.name      updateSystemHapTest015
-     * @tc.desc      To test hap is not system hap and  invoke getTaskInfo api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest015
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0015
+     * @tc.desc   To test hap is not system hap and  invoke getTaskInfo api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('updateSystemHapTest015', Level.LEVEL1, async () => {
       console.info('updateSystemHapTest015 START');
@@ -387,9 +447,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0016
-     * @tc.name      updateSystemHapTest016
-     * @tc.desc      To test hap is not system hap and  invoke download api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest016
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0016
+     * @tc.desc   To test hap is not system hap and  invoke download api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest016', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest016 START');
@@ -413,9 +477,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0017
-     * @tc.name      updateSystemHapTest017
-     * @tc.desc      To test hap is not system hap and  invoke download api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest017
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0017
+     * @tc.desc   To test hap is not system hap and  invoke download api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest017', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest017 START');
@@ -443,9 +511,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0018
-     * @tc.name      updateSystemHapTest018
-     * @tc.desc      To test hap is not system hap and  invoke resumeDownload api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest018
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0018
+     * @tc.desc   To test hap is not system hap and  invoke resumeDownload api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest018', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest018 START');
@@ -468,9 +540,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0019
-     * @tc.name      updateSystemHapTest019
-     * @tc.desc      To test hap is not system hap and  invoke resumeDownload api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest019
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0019
+     * @tc.desc   To test hap is not system hap and  invoke resumeDownload api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest019', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest019 START');
@@ -497,9 +573,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0020
-     * @tc.name      updateSystemHapTest020
-     * @tc.desc      To test hap is not system hap and  invoke pauseDownload api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest020
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0020
+     * @tc.desc   To test hap is not system hap and  invoke pauseDownload api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest020', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest020 START');
@@ -522,9 +602,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0021
-     * @tc.name      updateSystemHapTest021
-     * @tc.desc      To test hap is not system hap and  invoke pauseDownload api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest021
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0021
+     * @tc.desc   To test hap is not system hap and  invoke pauseDownload api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest021', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest021 START');
@@ -551,9 +635,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0022
-     * @tc.name      updateSystemHapTest022
-     * @tc.desc      To test hap is not system hap and  invoke upgrade api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest022
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0022
+     * @tc.desc   To test hap is not system hap and  invoke upgrade api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest022', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest022 START');
@@ -577,9 +665,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0023
-     * @tc.name      updateSystemHapTest023
-     * @tc.desc      To test hap is not system hap and  invoke upgrade api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest023
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0023
+     * @tc.desc   To test hap is not system hap and  invoke upgrade api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest023', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest023 START');
@@ -606,9 +698,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0024
-     * @tc.name      updateSystemHapTest024
-     * @tc.desc      To test hap is not system hap and  invoke clearError api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest024
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0024
+     * @tc.desc   To test hap is not system hap and  invoke clearError api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest024', Level.LEVEL2, (): void => {
       console.info('updateSystemHapTest024 START');
@@ -632,9 +728,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0025
-     * @tc.name      updateSystemHapTest025
-     * @tc.desc      To test hap is not system hap and  invoke clearError api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest025
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0025
+     * @tc.desc   To test hap is not system hap and  invoke clearError api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest025', Level.LEVEL2, async () => {
       try {
@@ -660,9 +760,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0026
-     * @tc.name      updateSystemHapTest026
-     * @tc.desc      To test hap is not system hap and  invoke getUpgradePolicy api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest026
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0026
+     * @tc.desc   To test hap is not system hap and  invoke getUpgradePolicy api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest026', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest026 START');
@@ -679,9 +783,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0027
-     * @tc.name      updateSystemHapTest027
-     * @tc.desc      To test hap is not system hap and  invoke getUpgradePolicy api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest027
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0027
+     * @tc.desc   To test hap is not system hap and  invoke getUpgradePolicy api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest027', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest027 START');
@@ -702,9 +810,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0028
-     * @tc.name      updateSystemHapTest028
-     * @tc.desc      To test hap is not system hap and  invoke setUpgradePolicy api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest028
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0028
+     * @tc.desc   To test hap is not system hap and  invoke setUpgradePolicy api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest028', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest025 START');
@@ -726,9 +838,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0029
-     * @tc.name      updateSystemHapTest029
-     * @tc.desc      To test hap is not system hap and  invoke setUpgradePolicy api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest029
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0029
+     * @tc.desc   To test hap is not system hap and  invoke setUpgradePolicy api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest029', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest029 START');
@@ -754,9 +870,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0030
-     * @tc.name      updateSystemHapTest030
-     * @tc.desc      To test hap is not system hap and  invoke terminateUpgrade api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest030
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0030
+     * @tc.desc   To test hap is not system hap and  invoke terminateUpgrade api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest030', Level.LEVEL2, async (done: () => void) : Promise<void> => {
       console.info('updateSystemHapTest030 START');
@@ -774,9 +894,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0031
-     * @tc.name      updateSystemHapTest031
-     * @tc.desc      To test hap is not system hap and  invoke terminateUpgrade api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest031
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0031
+     * @tc.desc   To test hap is not system hap and  invoke terminateUpgrade api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest031', Level.LEVEL2, async  (done: () => void) => {
       console.info('updateSystemHapTest031 START');
@@ -798,9 +922,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0032
-     * @tc.name      updateSystemHapTest032
-     * @tc.desc      To test hap is not system hap and  invoke on api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest032
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0032
+     * @tc.desc   To test hap is not system hap and  invoke on api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest032', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest032 START');
@@ -821,9 +949,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0033
-     * @tc.name      updateSystemHapTest033
-     * @tc.desc      To test hap is not system hap and  invoke off api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest033
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0033
+     * @tc.desc   To test hap is not system hap and  invoke off api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest033', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest033 START');
@@ -844,9 +976,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0034
-     * @tc.name      updateSystemHapTest034
-     * @tc.desc      To test hap is not system hap and  invoke factoryReset api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest034
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0034
+     * @tc.desc   To test hap is not system hap and  invoke factoryReset api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest034', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest034 START');
@@ -863,9 +999,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0035
-     * @tc.name      updateSystemHapTest035
-     * @tc.desc      To test hap is not system hap and  invoke factoryReset api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest035
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0035
+     * @tc.desc   To test hap is not system hap and  invoke factoryReset api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest035', Level.LEVEL2, async  (done: () => void) => {
       console.info('updateSystemHapTest035 START');
@@ -888,9 +1028,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0036
-     * @tc.name      updateSystemHapTest036
-     * @tc.desc      To test hap is not system hap and  invoke verifyUpgradePackage api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest036
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0036
+     * @tc.desc   To test hap is not system hap and  invoke verifyUpgradePackage api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest036', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest036 START');
@@ -911,9 +1055,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0037
-     * @tc.name      updateSystemHapTest037
-     * @tc.desc      To test hap is not system hap and  invoke verifyUpgradePackage api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest037
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0037
+     * @tc.desc   To test hap is not system hap and  invoke verifyUpgradePackage api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest037', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest037 START');
@@ -938,9 +1086,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0038
-     * @tc.name      updateSystemHapTest038
-     * @tc.desc      To test hap is not system hap and  invoke applyNewVersion api(callback).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest038
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0038
+     * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest038', Level.LEVEL2, async () : Promise<void> => {
       console.info('updateSystemHapTest038 START');
@@ -961,9 +1113,13 @@ export default function updateSystemHapTest() {
     });
 
     /**
-     * @tc.number    SUB_UPDATE_SYSTEM_HAP_TEST_0039
-     * @tc.name      updateSystemHapTest039
-     * @tc.desc      To test hap is not system hap and  invoke applyNewVersion api(promise).
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   updateSystemHapTest039
+     * @tc.number SUB_UPDATE_SYSTEM_HAP_TEST_0039
+     * @tc.desc   To test hap is not system hap and  invoke applyNewVersion api(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateSystemHapTest039', Level.LEVEL2, async () => {
       console.info('updateSystemHapTest039 START');

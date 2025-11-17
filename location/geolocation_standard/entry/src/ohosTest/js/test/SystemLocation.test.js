@@ -84,14 +84,15 @@ export default function geolocationTest_geo2() {
         })
 
 
-    /**
-     * @tc.number SUB_HSS_LocationSystem_systemapi_0100
-     * @tc.name Test getLocation
-     * @tc.desc Obtains the geographical location of a device..
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
-    */
+     /**
+      * @generated.time 2025-11-09 20:53:27
+      * @tc.name   SUB_HSS_LocationSystem_systemapi_0100
+      * @tc.number SUB_HSS_LocationSystem_systemapi_0100
+      * @tc.desc   Obtains the geographical location of a device..
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_HSS_LocationSystem_systemapi_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         geolocations.getLocation({
             timeout:30000,
@@ -133,13 +134,14 @@ export default function geolocationTest_geo2() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_HSS_LocationSystem_systemapi_0200
      * @tc.number SUB_HSS_LocationSystem_systemapi_0200
-     * @tc.name Test subscribe and unsubscribe
-     * @tc.desc Test subscribe api .
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
-    */
+     * @tc.desc   Test subscribe api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_HSS_LocationSystem_systemapi_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         geolocations.subscribe({
             coordType:'wgs84',
@@ -158,13 +160,14 @@ export default function geolocationTest_geo2() {
     })
 
     /**
-      * @tc.number SUB_HSS_LocationSystem_systemapi_0300
-      * @tc.name test getLocationType
-      * @tc.desc Subscribing to geographical location information .
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 2
-      */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_HSS_LocationSystem_systemapi_0300
+     * @tc.number SUB_HSS_LocationSystem_systemapi_0300
+     * @tc.desc   Subscribing to geographical location information .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_HSS_LocationSystem_systemapi_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         geolocations.getLocationType({
             success: function(data) {
@@ -188,13 +191,14 @@ export default function geolocationTest_geo2() {
     })
 
     /**
-      * @tc.number SUB_HSS_LocationSystem_systemapi_0400
-      * @tc.name Test getSupportedCoordTypes
-      * @tc.desc Obtains the geographical location of a device..
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 2
-      */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_HSS_LocationSystem_systemapi_0400
+     * @tc.number SUB_HSS_LocationSystem_systemapi_0400
+     * @tc.desc   Obtains the geographical location of a device..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_HSS_LocationSystem_systemapi_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         let types = geolocations.getSupportedCoordTypes();
         console.info('[lbs_js] getSupportedCoordTypes result: ' + JSON.stringify(types));

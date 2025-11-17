@@ -27,7 +27,7 @@ export default class EntryAbility1 extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
 
-  onDestroy(): void{
+  async onDestroy(): Promise<void>{
     hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbilityStage onDestroy begin');
     let startTime = new Date().getTime();
     let commonEventDataStart: commonEvent.CommonEventPublishData = {
@@ -38,7 +38,7 @@ export default class EntryAbility1 extends UIAbility {
     commonEvent.publish(actsEntryOnDestroyBegin, commonEventDataStart, (err) => {
       hilog.info(0x0000, tag, '%{public}s', `Acts_EntryOnDestroyBegin publish err:  ${JSON.stringify(err)}`);
     })
-    this.sleep(1000);
+
     let endTime = new Date().getTime();
     let commonEventDataEnd: commonEvent.CommonEventPublishData = {
       parameters: {
@@ -49,6 +49,7 @@ export default class EntryAbility1 extends UIAbility {
       hilog.info(0x0000, tag, '%{public}s', `Acts_EntryOnDestroyEnd publish err:  ${JSON.stringify(err)}`);
     })
 
+    await this.sleep(1000);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void{

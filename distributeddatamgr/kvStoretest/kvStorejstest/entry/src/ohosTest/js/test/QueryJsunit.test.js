@@ -19,12 +19,13 @@ export default function queryTest(){
 describe('queryTest', function() {
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testReset001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0960
-     * @tc.name testReset001
-     * @tc.desc Test Js Api Query.Reset() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Reset() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -46,12 +47,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testReset002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0970
-     * @tc.name testReset002
-     * @tc.desc Test Js Api Query.Reset() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Reset() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -78,12 +80,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testReset003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0980
-     * @tc.name testReset003
-     * @tc.desc Test Js Api Query.Reset() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Reset() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReset003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -105,12 +108,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testReset004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0990
-     * @tc.name testReset004
-     * @tc.desc Test Js Api Query.Reset() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Reset() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testReset004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -130,12 +134,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEqaulTo001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0170
-     * @tc.name testEqaulTo001
-     * @tc.desc Test Js Api Query.EqaulTo() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EqaulTo() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqaulTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -157,12 +162,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEqualTo002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0180
-     * @tc.name testEqualTo002
-     * @tc.desc Test Js Api Query.EqualTo() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EqualTo() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -181,12 +187,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEqualTo003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0190
-     * @tc.name testEqualTo003
-     * @tc.desc Test Js Api Query.EqualTo() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EqualTo() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -204,12 +211,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEqualTo004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0200
-     * @tc.name testEqualTo004
-     * @tc.desc Test Js Api Query.EqualTo() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EqualTo() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEqualTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -228,12 +236,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotEqualTo001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0680
-     * @tc.name testNotEqualTo001
-     * @tc.desc Test Js Api Query.NotEqualTo() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotEqualTo() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -255,12 +264,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotEqualTo002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0690
-     * @tc.name testNotEqualTo002
-     * @tc.desc Test Js Api Query.NotEqualTo() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotEqualTo() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -281,12 +291,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotEqualTo003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0700
-     * @tc.name testNotEqualTo003
-     * @tc.desc Test Js Api Query.NotEqualTo() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotEqualTo() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -304,12 +315,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotEqualTo004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0710
-     * @tc.name testNotEqualTo004
-     * @tc.desc Test Js Api Query.NotEqualTo() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotEqualTo() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotEqualTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -326,12 +338,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreaterThan001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0250
-     * @tc.name testGreaterThan001
-     * @tc.desc Test Js Api Query.GreaterThan() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreaterThan() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -353,12 +366,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreatThan002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0300
-     * @tc.name testGreatThan002
-     * @tc.desc Test Js Api Query.GreatThan() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreatThan() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreatThan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -379,12 +393,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreatThan003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0310
-     * @tc.name testGreatThan003
-     * @tc.desc Test Js Api Query.GreatThan() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreatThan() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreatThan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -402,12 +417,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreatThan004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0320
-     * @tc.name testGreatThan004
-     * @tc.desc Test Js Api Query.GreatThan() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreatThan() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreatThan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -425,12 +441,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThan001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0510
-     * @tc.name testLessThan001
-     * @tc.desc Test Js Api Query.LessThan() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThan() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -451,12 +468,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThan002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0520
-     * @tc.name testLessThan002
-     * @tc.desc Test Js Api Query.LessThan() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThan() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -477,12 +495,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThan003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0530
-     * @tc.name testLessThan003
-     * @tc.desc Test Js Api Query.LessThan() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThan() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -499,12 +518,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThan004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0540
-     * @tc.name testLessThan004
-     * @tc.desc Test Js Api Query.LessThan() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThan() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -522,12 +542,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreaterThanOrEqualTo001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0260
-     * @tc.name testGreaterThanOrEqualTo001
-     * @tc.desc Test Js Api Query.GreaterThanOrEqualTo() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreaterThanOrEqualTo() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -549,12 +570,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreaterThanOrEqualTo002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0270
-     * @tc.name testGreaterThanOrEqualTo002
-     * @tc.desc Test Js Api Query.GreaterThanOrEqualTo() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreaterThanOrEqualTo() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -577,12 +599,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreaterThanOrEqualTo003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0280
-     * @tc.name testGreaterThanOrEqualTo003
-     * @tc.desc Test Js Api Query.GreaterThanOrEqualTo() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreaterThanOrEqualTo() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -600,12 +623,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGreaterThanOrEqualTo004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0290
-     * @tc.name testGreaterThanOrEqualTo004
-     * @tc.desc Test Js Api Query.GreaterThanOrEqualTo() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GreaterThanOrEqualTo() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGreaterThanOrEqualTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -623,12 +647,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThanOrEqualTo001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0550
-     * @tc.name testLessThanOrEqualTo001
-     * @tc.desc Test Js Api Query.LessThanOrEqualTo() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThanOrEqualTo() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -650,12 +675,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThanOrEqualTo002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0560
-     * @tc.name testLessThanOrEqualTo002
-     * @tc.desc Test Js Api Query.LessThanOrEqualTo() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThanOrEqualTo() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -676,12 +702,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThanOrEqualTo003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0570
-     * @tc.name testLessThanOrEqualTo003
-     * @tc.desc Test Js Api Query.LessThanOrEqualTo() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThanOrEqualTo() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -698,12 +725,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLessThanOrEqualTo004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0580
-     * @tc.name testLessThanOrEqualTo004
-     * @tc.desc Test Js Api Query.LessThanOrEqualTo() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.LessThanOrEqualTo() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLessThanOrEqualTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -721,12 +749,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNull001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0470
-     * @tc.name testIsNull001
-     * @tc.desc Test Js Api Query.IsNull() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNull() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -746,12 +775,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNull002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0480
-     * @tc.name testIsNull002
-     * @tc.desc Test Js Api Query.IsNull() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNull() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -770,12 +800,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNull003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0490
-     * @tc.name testIsNull003
-     * @tc.desc Test Js Api Query.IsNull() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNull() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -793,12 +824,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNull004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0500
-     * @tc.name testIsNull004
-     * @tc.desc Test Js Api Query.IsNull() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNull() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNull004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -833,12 +865,13 @@ describe('queryTest', function() {
     */
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInNumber001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0330
-     * @tc.name testInNumber001
-     * @tc.desc Test Js Api Query.InNumber() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InNumber() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -886,12 +919,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInNumber002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0340
-     * @tc.name testInNumber002
-     * @tc.desc Test Js Api Query.InNumber() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InNumber() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInNumber002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -913,12 +947,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInNumber003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0350
-     * @tc.name testInNumber003
-     * @tc.desc Test Js Api Query.InNumber() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InNumber() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInNumber003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -936,12 +971,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInNumber004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0360
-     * @tc.name testInNumber004
-     * @tc.desc Test Js Api Query.InNumber() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InNumber() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInNumber004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -959,12 +995,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInNumber005
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0370
-     * @tc.name testInNumber005
-     * @tc.desc Test Js Api Query.InNumber() testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InNumber() testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInNumber005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -985,12 +1022,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInNumber006
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0380
-     * @tc.name testInNumber006
-     * @tc.desc Test Js Api Query.InNumber() testcase 006
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InNumber() testcase 006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInNumber006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1024,12 +1062,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInString001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0390
-     * @tc.name testInString001
-     * @tc.desc Test Js Api Query.InString() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InString() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1049,12 +1088,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInString002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0400
-     * @tc.name testInString002
-     * @tc.desc Test Js Api Query.InString() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InString() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1075,12 +1115,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInString003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0410
-     * @tc.name testInString003
-     * @tc.desc Test Js Api Query.InString() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InString() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1098,12 +1139,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testInString004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0420
-     * @tc.name testInString004
-     * @tc.desc Test Js Api Query.InString() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.InString() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1121,12 +1163,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInNumber001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0720
-     * @tc.name testNotInNumber001
-     * @tc.desc Test Js Api Query.NotInNumber() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInNumber() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1146,12 +1189,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInNumber002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0730
-     * @tc.name testNotInNumber002
-     * @tc.desc Test Js Api Query.NotInNumber() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInNumber() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInNumber002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1170,12 +1214,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInNumber003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0740
-     * @tc.name testNotInNumber003
-     * @tc.desc Test Js Api Query.NotInNumber() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInNumber() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInNumber003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1193,12 +1238,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInNumber004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0750
-     * @tc.name testNotInNumber004
-     * @tc.desc Test Js Api Query.NotInNumber() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInNumber() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInNumber004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1217,12 +1263,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInString001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0760
-     * @tc.name testNotInString001
-     * @tc.desc Test Js Api Query.NotInString() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInString() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1242,12 +1289,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInString002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0770
-     * @tc.name testNotInString002
-     * @tc.desc Test Js Api Query.NotInString() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInString() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1266,12 +1314,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInString003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0780
-     * @tc.name testNotInString003
-     * @tc.desc Test Js Api Query.NotInString() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInString() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1289,12 +1338,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testNotInString004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0790
-     * @tc.name testNotInString004
-     * @tc.desc Test Js Api Query.NotInString() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.NotInString() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNotInString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1312,12 +1362,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLike001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0590
-     * @tc.name testLike001
-     * @tc.desc Test Js Api Query.Like() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Like() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1337,12 +1388,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLike002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0600
-     * @tc.name testLike002
-     * @tc.desc Test Js Api Query.Like() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Like() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1361,12 +1413,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLike003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0610
-     * @tc.name testLike003
-     * @tc.desc Test Js Api Query.Like() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Like() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1384,12 +1437,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLike004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0620
-     * @tc.name testLike004
-     * @tc.desc Test Js Api Query.Like() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Like() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLike004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1407,12 +1461,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testUnlike001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1040
-     * @tc.name testUnlike001
-     * @tc.desc Test Js Api Query.Unlike() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Unlike() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUnlike001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1431,12 +1486,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testUnlike002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1050
-     * @tc.name testUnlike002
-     * @tc.desc Test Js Api Query.Unlike() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Unlike() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUnlike002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1455,12 +1511,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testUnlike003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1060
-     * @tc.name testUnlike003
-     * @tc.desc Test Js Api Query.Unlike() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Unlike() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUnlike003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1478,12 +1535,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testUnlike004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1070
-     * @tc.name testUnlike004
-     * @tc.desc Test Js Api Query.Unlike() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Unlike() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUnlike004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1501,12 +1559,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testAnd001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0010
-     * @tc.name testAnd001
-     * @tc.desc Test Js Api Query.And() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.And() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1527,12 +1586,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testAnd002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0020
-     * @tc.name testAnd002
-     * @tc.desc Test Js Api Query.And() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.And() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1551,12 +1611,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testAnd003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0030
-     * @tc.name testAnd003
-     * @tc.desc Test Js Api Query.And() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.And() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1575,12 +1636,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testAnd004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0040
-     * @tc.name testAnd004
-     * @tc.desc Test Js Api Query.And() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.And() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAnd004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1598,12 +1660,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOr001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0800
-     * @tc.name testOr001
-     * @tc.desc Test Js Api Query.Or() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Or() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1624,12 +1687,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOr002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0810
-     * @tc.name testOr002
-     * @tc.desc Test Js Api Query.Or() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Or() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1649,12 +1713,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOr003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0820
-     * @tc.name testOr003
-     * @tc.desc Test Js Api Query.Or() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Or() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1675,12 +1740,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOr004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0830
-     * @tc.name testOr004
-     * @tc.desc Test Js Api Query.Or() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Or() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOr004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1698,12 +1764,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByAsc001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0840
-     * @tc.name testOrderByAsc001
-     * @tc.desc Test Js Api Query.OrderByAsc() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByAsc() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByAsc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1723,12 +1790,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByAsc002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0850
-     * @tc.name testOrderByAsc002
-     * @tc.desc Test Js Api Query.OrderByAsc() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByAsc() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByAsc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1747,12 +1815,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByAsc003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0860
-     * @tc.name testOrderByAsc003
-     * @tc.desc Test Js Api Query.OrderByAsc() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByAsc() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByAsc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1770,12 +1839,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByAsc004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0870
-     * @tc.name testOrderByAsc004
-     * @tc.desc Test Js Api Query.OrderByAsc() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByAsc() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByAsc004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1793,12 +1863,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByDesc001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0880
-     * @tc.name testOrderByDesc001
-     * @tc.desc Test Js Api Query.OrderByDesc() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByDesc() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByDesc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1818,12 +1889,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByDesc002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0890
-     * @tc.name testOrderByDesc002
-     * @tc.desc Test Js Api Query.OrderByDesc() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByDesc() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByDesc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1842,12 +1914,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByDesc003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0900
-     * @tc.name testOrderByDesc003
-     * @tc.desc Test Js Api Query.OrderByDesc() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByDesc() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByDesc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1865,12 +1938,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testOrderByDesc004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0910
-     * @tc.name testOrderByDesc004
-     * @tc.desc Test Js Api Query.OrderByDesc() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.OrderByDesc() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOrderByDesc004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1888,12 +1962,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLimit001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0630
-     * @tc.name testLimit001
-     * @tc.desc Test Js Api Query.Limit() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Limit() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1913,12 +1988,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLimit002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0640
-     * @tc.name testLimit002
-     * @tc.desc Test Js Api Query.Limit() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Limit() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1938,12 +2014,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLimit003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0650
-     * @tc.name testLimit003
-     * @tc.desc Test Js Api Query.Limit() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Limit() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1962,12 +2039,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLimit004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0660
-     * @tc.name testLimit004
-     * @tc.desc Test Js Api Query.Limit() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Limit() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -1985,12 +2063,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testLimit005
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0670
-     * @tc.name testLimit005
-     * @tc.desc Test Js Api Query.Limit() testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.Limit() testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLimit005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2009,12 +2088,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNotNull001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0430
-     * @tc.name testIsNotNull001
-     * @tc.desc Test Js Api Query.IsNotNull() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNotNull() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2033,12 +2113,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNotNull002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0440
-     * @tc.name testIsNotNull002
-     * @tc.desc Test Js Api Query.IsNotNull() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNotNull() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2057,12 +2138,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNotNull003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0450
-     * @tc.name testIsNotNull003
-     * @tc.desc Test Js Api Query.IsNotNull() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNotNull() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2080,12 +2162,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testIsNotNull004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0460
-     * @tc.name testIsNotNull004
-     * @tc.desc Test Js Api Query.IsNotNull() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.IsNotNull() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testIsNotNull004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2103,12 +2186,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testBeginGroup001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0050
-     * @tc.name testBeginGroup001
-     * @tc.desc Test Js Api Query.BeginGroup() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.BeginGroup() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2129,12 +2213,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testBeginGroup002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0060
-     * @tc.name testBeginGroup002
-     * @tc.desc Test Js Api Query.BeginGroup() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.BeginGroup() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2157,12 +2242,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testBeginGroup003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0070
-     * @tc.name testBeginGroup003
-     * @tc.desc Test Js Api Query.BeginGroup() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.BeginGroup() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginGroup003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2180,12 +2266,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testBeginGroup004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0080
-     * @tc.name testBeginGroup004
-     * @tc.desc Test Js Api Query.BeginGroup() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.BeginGroup() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testBeginGroup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2203,12 +2290,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEndGroup001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0130
-     * @tc.name testEndGroup001
-     * @tc.desc Test Js Api Query.EndGroup() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EndGroup() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2228,12 +2316,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEndGroup002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0140
-     * @tc.name testEndGroup002
-     * @tc.desc Test Js Api Query.EndGroup() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EndGroup() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2254,12 +2343,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEndGroup003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0150
-     * @tc.name testEndGroup003
-     * @tc.desc Test Js Api Query.EndGroup() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EndGroup() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndGroup003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2277,12 +2367,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testEndGroup004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0160
-     * @tc.name testEndGroup004
-     * @tc.desc Test Js Api Query.EndGroup() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.EndGroup() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEndGroup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2300,12 +2391,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPrefixKey001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0920
-     * @tc.name testPrefixKey001
-     * @tc.desc Test Js Api Query.PrefixKey() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.PrefixKey() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPrefixKey001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2324,12 +2416,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPrefixKey002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0930
-     * @tc.name testPrefixKey002
-     * @tc.desc Test Js Api Query.PrefixKey() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.PrefixKey() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPrefixKey002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2347,12 +2440,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPrefixKey003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0940
-     * @tc.name testPrefixKey003
-     * @tc.desc Test Js Api Query.PrefixKey() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.PrefixKey() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPrefixKey003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2370,12 +2464,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testPrefixKey004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0950
-     * @tc.name testPrefixKey004
-     * @tc.desc Test Js Api Query.PrefixKey() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.PrefixKey() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPrefixKey004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2393,12 +2488,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testSetSuggestIndex001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1000
-     * @tc.name testSetSuggestIndex001
-     * @tc.desc Test Js Api Query.SetSuggestIndex() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.SetSuggestIndex() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetSuggestIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2417,12 +2513,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testSetSuggestIndex002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1010
-     * @tc.name testSetSuggestIndex002
-     * @tc.desc Test Js Api Query.SetSuggestIndex() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.SetSuggestIndex() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetSuggestIndex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2440,12 +2537,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testSetSuggestIndex003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1020
-     * @tc.name testSetSuggestIndex003
-     * @tc.desc Test Js Api Query.SetSuggestIndex() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.SetSuggestIndex() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetSuggestIndex003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2463,12 +2561,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testSetSuggestIndex004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_1030
-     * @tc.name testSetSuggestIndex004
-     * @tc.desc Test Js Api Query.SetSuggestIndex() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.SetSuggestIndex() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetSuggestIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2486,12 +2585,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceId001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0090
-     * @tc.name testDeviceId001
-     * @tc.desc Test Js Api Query.DeviceId() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.DeviceId() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2511,12 +2611,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceId002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0100
-     * @tc.name testDeviceId002
-     * @tc.desc Test Js Api Query.DeviceId() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.DeviceId() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2535,12 +2636,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceId003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0110
-     * @tc.name testDeviceId003
-     * @tc.desc Test Js Api Query.DeviceId() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.DeviceId() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceId003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2558,12 +2660,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testDeviceId004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0120
-     * @tc.name testDeviceId004
-     * @tc.desc Test Js Api Query.DeviceId() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.DeviceId() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeviceId004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2581,12 +2684,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetSqlLike001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0210
-     * @tc.name testGetSqlLike001
-     * @tc.desc Test Js Api Query.GetSqlLike() testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GetSqlLike() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetSqlLike001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2607,12 +2711,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetSqlLike002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0220
-     * @tc.name testGetSqlLike002
-     * @tc.desc Test Js Api Query.GetSqlLike() testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GetSqlLike() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetSqlLike002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2637,12 +2742,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetSqlLike003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0230
-     * @tc.name testGetSqlLike003
-     * @tc.desc Test Js Api Query.GetSqlLike() testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GetSqlLike() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetSqlLike003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;
@@ -2661,12 +2767,13 @@ describe('queryTest', function() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:49
+     * @tc.name   testGetSqlLike004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreQueryJsApiTest_0240
-     * @tc.name testGetSqlLike004
-     * @tc.desc Test Js Api Query.GetSqlLike() testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Api Query.GetSqlLike() testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetSqlLike004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
         var query = null;

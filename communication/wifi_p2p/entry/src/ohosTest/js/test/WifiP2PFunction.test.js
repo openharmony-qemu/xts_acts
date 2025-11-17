@@ -66,12 +66,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0003
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup and getCurrentGroup API Function
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0003
+         * @tc.number Communication_WiFi_XTS_P2P_0003
+         * @tc.desc   Test createGroup and getCurrentGroup API Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             let wifiP2PConfig = {
                 deviceAddress : "00:00:00:00:00:00",
@@ -144,12 +146,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0004
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup-Setting a 7-bit Key Function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0004
+         * @tc.number Communication_WiFi_XTS_P2P_0004
+         * @tc.desc   Test createGroup-Setting a 7-bit Key Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -192,12 +196,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0104
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup-Key setting: Chinese, English, and characters Function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0104
+         * @tc.number Communication_WiFi_XTS_P2P_0104
+         * @tc.desc   Test createGroup-Key setting: Chinese, English, and characters Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -237,12 +243,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0204
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup-Key setting 64 bit Function.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0204
+         * @tc.number Communication_WiFi_XTS_P2P_0204
+         * @tc.desc   Test createGroup-Key setting 64 bit Function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -282,12 +290,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0304
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup-Key setting 65 bitsFunction.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0304
+         * @tc.number Communication_WiFi_XTS_P2P_0304
+         * @tc.desc   Test createGroup-Key setting 65 bitsFunction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -330,12 +340,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0007
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup-2.4 GHz frequency band setting Function
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0007
+         * @tc.number Communication_WiFi_XTS_P2P_0007
+         * @tc.desc   Test createGroup-2.4 GHz frequency band setting Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -375,12 +387,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0107
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup-5 GHz frequency band setting Function
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0107
+         * @tc.number Communication_WiFi_XTS_P2P_0107
+         * @tc.desc   Test createGroup-5 GHz frequency band setting Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -423,12 +437,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0207
-        * @tc.name testCreateGroup
-        * @tc.desc Test createGroup-Auto frequency band setting Function
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0207
+         * @tc.number Communication_WiFi_XTS_P2P_0207
+         * @tc.desc   Test createGroup-Auto frequency band setting Function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -468,12 +484,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0009
-        * @tc.name testP2pCancelConnect
-        * @tc.desc Test p2pCancelConnect Group API functionality.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0009
+         * @tc.number Communication_WiFi_XTS_P2P_0009
+         * @tc.desc   Test p2pCancelConnect Group API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let wifiP2PConfig = {
                 deviceAddress : "11:22:33:44:55:66",
@@ -508,12 +526,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0011
-        * @tc.name testRemoveGroup
-        * @tc.desc Test remove a nonexistent group.
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0011
+         * @tc.number Communication_WiFi_XTS_P2P_0011
+         * @tc.desc   Test remove a nonexistent group.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let removeGroupResult = wifi.removeGroup(10000);
             console.info("[wifi_test]removeGroup(10000) result : " + JSON.stringify(removeGroupResult));
@@ -535,12 +555,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0010
-        * @tc.name testGetP2pLinkedInfo
-        * @tc.desc Test getP2pLinkedInfo API functionality
-        * @tc.type Function
-        * @tc.level Level 2
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0010
+         * @tc.number Communication_WiFi_XTS_P2P_0010
+         * @tc.desc   Test getP2pLinkedInfo API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             let P2pConnectState = {
                 DISCONNECTED :0,
@@ -576,12 +598,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0001
-        * @tc.name testGetP2pPeerDevices
-        * @tc.desc Test getP2pPeerDevices promise API functionality
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0001
+         * @tc.number Communication_WiFi_XTS_P2P_0001
+         * @tc.desc   Test getP2pPeerDevices promise API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done){
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -603,12 +627,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_0101
-        * @tc.name testGetP2pPeerDevices
-        * @tc.desc Test getP2pPeerDevices callback API functionality
-        * @tc.type Function
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_0101
+         * @tc.number Communication_WiFi_XTS_P2P_0101
+         * @tc.desc   Test getP2pPeerDevices callback API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done){
             console.log("[wifi_test]check the state of wifi: " + wifi.isWifiActive());
             expect(wifi.isWifiActive()).assertTrue();
@@ -660,13 +686,14 @@ export default function actsWifiFunctionTest() {
         })
 
         /**
-        * @tc.number Communication_WiFi_XTS_P2P_P2pConnectState_0100
-        * @tc.name testP2pConnectState
-        * @tc.desc Test P2pConnectState API functionality
-        * @tc.type Function
-        * @tc.size: MediumTest
-        * @tc.level Level 0
-        */
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   Communication_WiFi_XTS_P2P_P2pConnectState_0100
+         * @tc.number Communication_WiFi_XTS_P2P_P2pConnectState_0100
+         * @tc.desc   Test P2pConnectState API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Communication_WiFi_XTS_P2P_P2pConnectState_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             try {
                 let DISCONNECTED = wifi.P2pConnectState.DISCONNECTED;

@@ -79,13 +79,14 @@ export default function DeviceStatusMotionTest() {
       console.info('msdp motion test afterEach called')
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0100
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0100
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0100
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0100
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0100 enter`);
@@ -101,13 +102,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0200
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0200
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0200
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0200
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0200 enter`);
@@ -123,13 +125,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0300
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0300
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0300
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0300
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0300 enter`);
@@ -148,13 +151,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0400
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0400
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0400
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0400
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0400 enter`);
@@ -170,13 +174,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0500
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0500
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0500
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0500
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0500 enter`);
@@ -192,13 +197,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0600
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0600
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0600
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0600
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0600 enter`);
@@ -219,13 +225,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0700
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0700
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0700
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0700
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0700 enter`);
@@ -243,13 +250,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0800
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0800
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0800
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0800
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0800 enter`);
@@ -273,13 +281,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_0900
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_0900
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_0900
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_0900
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_0900 enter`);
@@ -298,13 +307,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_1000
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_1000
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1000
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1000
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_1000 enter`);
@@ -320,13 +330,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_1100
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_1100
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1100
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1100
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_1100 enter`);
@@ -342,13 +353,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_1200
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_1200
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1200
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1200
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_1200 enter`);
@@ -374,13 +386,14 @@ export default function DeviceStatusMotionTest() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_MSDP_DeviceStatus_API_Motion_1300
-     * @tc.name       : SUB_MSDP_DeviceStatus_API_Motion_1300
-     * @tc.desc       : motion callback interface test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_MSDP_DeviceStatus_API_Motion_1300
+     * @tc.number SUB_MSDP_DeviceStatus_API_Motion_1300
+     * @tc.desc   motion callback interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MSDP_DeviceStatus_API_Motion_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info(`SUB_MSDP_DeviceStatus_API_Motion_1300 enter`);

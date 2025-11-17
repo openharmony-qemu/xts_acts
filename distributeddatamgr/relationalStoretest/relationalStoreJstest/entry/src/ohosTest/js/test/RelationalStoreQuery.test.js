@@ -149,15 +149,16 @@ export default function relationalStoreQueryTest(){
             console.info(TAG + 'afterAll')
         })
 
-        /**
-         * @tc.name RdbRemoteQueryPromiseTest0010
-         * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0100
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
-         */
         
+        /**
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryPromiseTest0010
+         * @tc.number RdbRemoteQueryPromiseTest0010
+         * @tc.desc   RdbRemoteQueryPromiseTest0010
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('RdbRemoteQueryPromiseTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryPromiseTest0010 start")
             let predicates = new data_Rdb.RdbPredicates("test");
@@ -180,12 +181,13 @@ export default function relationalStoreQueryTest(){
             console.info(TAG + "RdbRemoteQueryPromiseTest0010 end")
         })
         /**
-         * @tc.name RdbRemoteQueryPromiseTest0020
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryPromiseTest0020
          * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0200
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore remotequery function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('RdbRemoteQueryPromiseTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryPromiseTest0020 start")
@@ -207,12 +209,13 @@ export default function relationalStoreQueryTest(){
         })
 
         /**
-         * @tc.name RdbRemoteQueryPromiseTest0030
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryPromiseTest0030
          * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0300
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore remotequery function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('RdbRemoteQueryPromiseTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryPromiseTest0030 start")
@@ -234,12 +237,13 @@ export default function relationalStoreQueryTest(){
         })
 
         /**
-         * @tc.name RdbRemoteQueryPromiseTest0040
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryPromiseTest0040
          * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0400
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore remotequery function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('RdbRemoteQueryPromiseTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryPromiseTest0040 start")
@@ -261,12 +265,13 @@ export default function relationalStoreQueryTest(){
         })
 
         /**
-         * @tc.name RdbRemoteQueryCallbackTest0010
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryCallbackTest0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0500
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore remotequery function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('RdbRemoteQueryCallbackTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryCallbackTest0010 start")
@@ -290,12 +295,13 @@ export default function relationalStoreQueryTest(){
         })
 
         /**
-         * @tc.name RdbRemoteQueryCallbackTest0020
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryCallbackTest0020
          * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0600
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore remotequery function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('RdbRemoteQueryCallbackTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryCallbackTest0020 start")
@@ -319,12 +325,13 @@ export default function relationalStoreQueryTest(){
         })
 
         /**
-         * @tc.name RdbRemoteQueryCallbackTest0030
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryCallbackTest0030
          * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0700
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore remotequery function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('RdbRemoteQueryCallbackTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryCallbackTest0020 start")
@@ -348,12 +355,13 @@ export default function relationalStoreQueryTest(){
         })
 
         /**
-         * @tc.name RdbRemoteQueryCallbackTest0040
+         * @generated.time 2025-11-09 20:49:50
+         * @tc.name   RdbRemoteQueryCallbackTest0040
          * @tc.number SUB_DistributedData_RelationalStore_SDK_QueryJsAPITest_0800
-         * @tc.desc RelationalStore remotequery function test
-         * @tc.size   : MediumTest
-         * @tc.type   : Function
-         * @tc.level  : Level 2
+         * @tc.desc   RelationalStore remotequery function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('RdbRemoteQueryCallbackTest0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.info(TAG + "RdbRemoteQueryCallbackTest0040 start")

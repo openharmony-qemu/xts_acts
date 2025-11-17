@@ -132,7 +132,7 @@ export default function SaveToExistingContactViaUITest() {
       name: {
         familyName: "familyName",
         familyNamePhonetic: "familyNamePhonetic",
-        fullName: "小李",
+        fullName: "奥迪",
         givenName: "givenName",
         givenNamePhonetic: "givenNamePhonetic",
         middleName: "middleName",
@@ -218,7 +218,7 @@ export default function SaveToExistingContactViaUITest() {
                 try {
                     if (deviceInfo.deviceType !== 'wearable') {
                       let driver: Driver = Driver.create();
-                      let onType2: On = ON.text('小李');
+                      let onType2: On = ON.text('奥迪');
                       await getComponent(driver, onType2);
                       await delay(500);
                       let onType: On = ON.id('save_click_btn');
@@ -285,7 +285,7 @@ export default function SaveToExistingContactViaUITest() {
                 try {
                     if (deviceInfo.deviceType !== 'wearable') {
                       let driver: Driver = Driver.create();
-                      let onType2: On = ON.text('小李');
+                      let onType2: On = ON.text('奥迪');
                       await getComponent(driver, onType2);
                       await delay(500);
                       let onType: On = ON.id('cancel_btn');

@@ -107,9 +107,13 @@ export default function UsbManagerEnumTest() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostMgr_JS_enum_0100
-     * @tc.name     testUsbSubmitTransfer001
-     * @tc.desc     enum UsbTransferStatus and UsbTransferFlags.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbSubmitTransfer001
+     * @tc.number SUB_USB_HostMgr_JS_enum_0100
+     * @tc.desc   enum UsbTransferStatus and UsbTransferFlags.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUsbSubmitTransfer001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -168,9 +172,13 @@ export default function UsbManagerEnumTest() {
       })
 
     /**
-     * @tc.number   SUB_USB_HostMgr_JS_enum_0200
-     * @tc.name     testUsbSubmitTransfer002
-     * @tc.desc     enum TRANSFER_TYPE_ISOCHRONOUS.
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   testUsbSubmitTransfer002
+     * @tc.number SUB_USB_HostMgr_JS_enum_0200
+     * @tc.desc   enum TRANSFER_TYPE_ISOCHRONOUS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testUsbSubmitTransfer002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
