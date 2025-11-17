@@ -176,6 +176,7 @@ export default function SegBtnItemTest0010() {
       expect(icon1.$attrs.src).assertEqual('resource:///125830170.svg');
       expect(icon1.$attrs.accessibilityText).assertEqual('notSelect');
       console.info('[SegBtnItemTest0010_002] END');
+      await CommonFunc.sleep(500);
       done();
     });
   })

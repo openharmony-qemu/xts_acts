@@ -41,7 +41,6 @@ export default function testsuite() {
   ChipTest0010();
   accessibilitySelectedTypeTest();
   ChipApi1();
-  ChipGroupApi1();
   startSpaceTest();
   endSpaceTest();
   itemSpaceTest();

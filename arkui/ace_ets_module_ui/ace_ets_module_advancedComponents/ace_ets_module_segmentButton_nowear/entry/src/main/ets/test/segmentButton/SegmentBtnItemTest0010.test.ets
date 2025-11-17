@@ -31,7 +31,7 @@ export default function SegmentBtnItemTest0010() {
         router.clear();
         let pages = router.getState();
         console.info("get SegmentBtnItem0010 state pages: " + JSON.stringify(pages));
-        if (!('SegBtnItem0010' == pages.name)) {
+        if (!('SegmentBtnItem0010' == pages.name)) {
           console.info("get SegmentBtnItem0010 pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
