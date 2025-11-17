@@ -40,16 +40,7 @@ class AbilityStartCallbackExt implements common.AbilityStartCallback {
     console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
   }
 
-  completionHandler?: CompletionHandlerForAbilityStartCallback = {
-    onRequestSuccess: (name: string): void => {
-      console.log(`CompletionHandlerForAbilityStartCallback onRequestSuccess:` + name);
-    },
-
-    onRequestFailure: (name: string, failureCode: AbilityStartFailureCode, failureMessage: string): void => {
-      console.log(`CompletionHandlerForAbilityStartCallback onRequestFailure:` + name);
-      console.log(`CompletionHandlerForAbilityStartCallback failureCode:` + failureCode + `failureMessage:` + failureMessage);
-    }
-  }
+  completionHandler?: CompletionHandlerForAbilityStartCallback = undefined
 
 }
 
