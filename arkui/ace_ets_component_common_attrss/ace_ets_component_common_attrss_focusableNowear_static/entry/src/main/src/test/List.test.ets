@@ -16,5 +16,4 @@ import focusableTest from './focusable/FocusableTest.test';
 
 export default function testsuite() {
   focusableTest();
-
 }

@@ -42,7 +42,7 @@ export struct NavRouterView {
   private componentKey: string = '';
 
   build() {
-    
+    // NavRouter() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)
@@ -65,10 +65,10 @@ export struct NavRouterView {
         }
       }.backgroundColor('#ccc')
       .title(`NavDestination`)
-    
-    
-    
-    
-    
+    // }.onStateChange((isActivated: boolean) => {
+    //   console.info('isActivated = ' + isActivated);
+    // })
+    // .position(this._position)
+    // .key(this.componentKey)
   }
 }

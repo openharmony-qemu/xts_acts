@@ -19,7 +19,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 class EntryAbility extends UIAbility {
@@ -53,24 +53,22 @@ class EntryAbility extends UIAbility {
             AppStorage.setOrCreate<number>('winTop', wRect?.top ?? 0);
             hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
-            hilog.error(0x0000, 'testTag',
-              'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+            hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
-          
+          // Obtain a UIContext instance.
           if (windowClass !== null) {
             AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e) {
+    } catch (e: Error) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined;
   }
 
   onWindowStageDestroy() {

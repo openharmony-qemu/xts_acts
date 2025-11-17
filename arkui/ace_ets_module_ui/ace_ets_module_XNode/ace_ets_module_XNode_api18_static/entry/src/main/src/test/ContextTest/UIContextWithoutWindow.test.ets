@@ -56,10 +56,11 @@ export default function UIContextWithoutWindowTest() {
         router.clear();
         let pages = router.getState();
         console.info("get UIContextWithoutWindowTest state pages:" + JSON.stringify(pages));
-        if (!("gestureEventTest" == pages.name)) {
+        if (!("UIContextWithoutWindowTest" == pages.name)) {
           console.info("get UIContextWithoutWindowTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push UIContextWithoutWindowTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push UIContextWithoutWindowTest page error:" + err);
@@ -74,13 +75,14 @@ export default function UIContextWithoutWindowTest() {
 
 
 
+    
     /*
      * @tc.number   UIContextWithoutWindowTest_static_0100
      * @tc.name     UIContextWithoutWindowTest_static_0100
      * @tc.desc     UIContextWithoutWindowTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('UIContextWithoutWindowTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('UIContextWithoutWindowTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('UIContextWithoutWindowTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -106,12 +108,11 @@ export default function UIContextWithoutWindowTest() {
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[UIContextWithoutWindowTest_static_0100] component obj3 is: " + JSON.stringifyJsonElement(obj3));
       console.info("[UIContextWithoutWindowTest_static_0100] content obj3 is: " + JSON.stringifyJsonElement(obj3.getElement('$attrs').getElement('content')));
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('{"instanceId_":900000}');
-      expect(obj2.getElement('$attrs').getElement('content')).assertEqual('401');
-      expect(obj3.getElement('$attrs').getElement('content')).assertEqual('UIContext destroyed');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('{"instanceId_":900000}');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('401');
+      expect(obj3.getElement('$attrs').getString('content')).assertEqual('UIContext destroyed');
       console.info('[UIContextWithoutWindowTest_static_0100] END');
       done();
     });
-
   })
 }

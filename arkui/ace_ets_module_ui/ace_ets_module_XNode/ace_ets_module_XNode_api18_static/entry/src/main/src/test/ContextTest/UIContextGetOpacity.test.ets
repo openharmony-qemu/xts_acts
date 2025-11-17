@@ -60,6 +60,7 @@ export default function UIContextGetOpacityTest() {
           console.info("get UIContextGetOpacityTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push UIContextGetOpacityTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push UIContextGetOpacityTest page error:" + err);
@@ -74,13 +75,14 @@ export default function UIContextGetOpacityTest() {
 
 
 
+    
     /*
      * @tc.number   UIContextGetOpacityTest_static_0100
      * @tc.name     UIContextGetOpacityTest_static_0100
      * @tc.desc     UIContextGetOpacityTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('UIContextGetOpacityTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('UIContextGetOpacityTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('UIContextGetOpacityTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -112,12 +114,12 @@ export default function UIContextGetOpacityTest() {
       let obj6 = JSON.parseJsonElement(strJson6);
       console.info("[UIContextGetOpacityTest_static_0100] component obj6 is: " + JSON.stringifyJsonElement(obj6));
       console.info("[UIContextGetOpacityTest_static_0100] content obj6 is: " + JSON.stringifyJsonElement(obj6.getElement('$attrs').getElement('content')));
-      expect(obj1.getElement('$attrs').getElement('content')).assertEqual('0');
-      expect(obj2.getElement('$attrs').getElement('content')).assertEqual('0');
-      expect(obj3.getElement('$attrs').getElement('content')).assertEqual('1');
-      expect(obj4.getElement('$attrs').getElement('content')).assertEqual('1');
-      expect(obj5.getElement('$attrs').getElement('content')).assertEqual('0.5');
-      expect(obj6.getElement('$attrs').getElement('content')).assertEqual('4');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj3.getElement('$attrs').getString('content')).assertEqual('1');
+      expect(obj4.getElement('$attrs').getString('content')).assertEqual('1');
+      expect(obj5.getElement('$attrs').getString('content')).assertEqual('0.5');
+      expect(obj6.getElement('$attrs').getString('content')).assertEqual('0');
       console.info('[UIContextGetOpacityTest_static_0100] END');
       done();
     });

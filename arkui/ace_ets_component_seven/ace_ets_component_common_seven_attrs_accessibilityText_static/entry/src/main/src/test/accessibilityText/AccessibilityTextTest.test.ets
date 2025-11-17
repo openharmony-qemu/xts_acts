@@ -42,12 +42,12 @@ let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext();
 
 export default function AccessibilityTextTest() {
-  
+  //A list of components that support the position attribute, which is required.
   let supportView: Array<string> = new Array<string>(
     'Button',
   )
 
-  
+  //Custom params.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -89,9 +89,9 @@ beforeAll(() => {
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
   await UtilsTest.msSleep(4000)
 });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       AppStorage.setOrCreate<SetV>('_zIndexButtonModifier',data.testValue.setValue)
       console.error('[' + data.caseTag + '] accessibilityTextTest');
       AttrsManager.change(data.caseTag, data.testValue.setValue);

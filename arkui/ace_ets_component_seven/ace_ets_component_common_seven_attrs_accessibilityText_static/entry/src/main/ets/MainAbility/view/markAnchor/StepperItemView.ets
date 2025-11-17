@@ -48,8 +48,8 @@ function superFancyText(this: TextAttribute): this {
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: Int = 0
-  @State currentIndex: Int = 0
+  @State prevIndex: number = 0
+  @State currentIndex: number = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @Link _markAnchor!: Position;
@@ -71,7 +71,7 @@ export struct StepperItemView {
 
   build() {
     Stepper({
-      index: this.currentIndex
+      index: this.currentIndex.toInt()
     }) {
       StepperItem() {
         Column() {
@@ -116,7 +116,7 @@ export struct StepperItemView {
     .onSkip(() => {
       console.info('onSkip')
     })
-    .onChange((prevIndex: Int, index: Int) => {
+    .onChange((prevIndex: int, index: int) => {
       this.currentIndex = index
       this.prevIndex = prevIndex
     })

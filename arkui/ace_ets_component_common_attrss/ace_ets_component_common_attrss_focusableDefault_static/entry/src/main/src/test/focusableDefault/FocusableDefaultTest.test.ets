@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function FocusableDefaultTest() {
-    
+    //A list of components that support the position attribute, which is required.
     let supportView = [
         "Button",
         "TextInput",
@@ -72,14 +72,14 @@ export default function FocusableDefaultTest() {
         "Tabs",
     ]
 
-    
+    //Page config, this param is required.
     let pageConfig: PageConfig = {
         testName: "testFocusableDefault",
         pageName: "FocusableDefaultPage",
         pageUrl: "MainAbility/pages/focusableDefault/FocusableDefaultPage",
         referenceComponentKey: "referenceComponentKey",
     }
-    
+    //Test values, looped to create cases, this param is required.
     let testValues: TestValue[] = [
         {
             describe: "InitialValue",
@@ -97,13 +97,13 @@ export default function FocusableDefaultTest() {
             await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
             await UtilsTest.msSleep(4000)
         });
-        
+        //Generate test cases (it) through a loop based on the support view * test values.
 CommonTest.initTest(
             pageConfig,
             supportView,
             testValues,
             async (data: BasePageConfig): Promise<void> => {
-                
+                //Focus the target component
                 let res = Utils.requestFocus(
                     data.pageConfig.componentKey??''
                 )
@@ -124,12 +124,12 @@ CommonTest.initTest(
                     "Image" == data.pageConfig.targetView ||
                     "ImageAnimator" == data.pageConfig.targetView
                 ) {
-                    
+                    //Confirm focus shift
                     expect(res).assertEqual(false)
                     console.info(
                         "[" + data.caseTag + "] FocusControlCallback is " + res
                     )
-                    
+                    //Confirm reference component text
                     let referenceComponent = Utils.getComponentByKey(
                         data.pageConfig.referenceComponentKey??''
                     )
@@ -140,18 +140,18 @@ CommonTest.initTest(
                             referenceComponent.getElement('$attrs').getString('label')
                     )
                     expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual("")
-                    
+                    //Confirm target component properties
                     let viewObj = Utils.getComponentByKey(
                         data.pageConfig.componentKey??''
                     )
                     expect(viewObj.getElement('$attrs').getBoolean('focusable')).assertEqual(false)
                 } else {
-                    
+                    //Confirm focus shift
                     expect(res).assertEqual(true)
                     console.info(
                         "[" + data.caseTag + "] FocusControlCallback is " + res
                     )
-                    
+                    //Confirm reference component text
                     let referenceComponent = Utils.getComponentByKey(
                         data.pageConfig.referenceComponentKey??''
                     )
@@ -164,7 +164,7 @@ CommonTest.initTest(
                     expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual(
                         "onFocus"
                     )
-                    
+                    //Confirm target component properties
                     let viewObj = Utils.getComponentByKey(
                         data.pageConfig.componentKey??''
                     )

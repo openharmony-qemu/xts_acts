@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import {Color,$r} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -26,16 +25,16 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-interface Attrs{
-  $attrs: SetValue
-}
+
 export default function layoutWeightTest() {
-  let supportView: Array<string> = new Array<string>(
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  let supportView = [
     'AlphabetIndexer',
     'Button',
     'Blank',
@@ -92,7 +91,7 @@ export default function layoutWeightTest() {
     'Rect',
     'Shape',
     'Line'
-  )
+  ]
   let childWidth = 100;
   let childHeight = 100;
   let parentWidth = 400;
@@ -115,8 +114,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      // height: UIContext.getFocusedUIContext()!.vp2px(400)
-      height: 400
+      height: UIContext.getFocusedUIContext()!.vp2px(400)
     }
   }, {
     describe: 'SetNumberDecimal',
@@ -125,8 +123,7 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 1.5,
-      // height: UIContext.getFocusedUIContext()!.vp2px(360)
-      height: 360
+      height: UIContext.getFocusedUIContext()!.vp2px(360)
     }
   }, {
     describe: 'SetString',
@@ -135,30 +132,26 @@ export default function layoutWeightTest() {
     },
     expectValue: {
       layoutWeight: 2,
-      // height: UIContext.getFocusedUIContext()!.vp2px(400)
-      height: 400
+      height: UIContext.getFocusedUIContext()!.vp2px(400)
     }
   }]
 
   describe('LayoutWeightTest', () => {
     beforeAll(() => {
       console.info("layoutWeightTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       //Component width and height calculation
       let height = rect.bottom - rect.top;
-      let attrs = data.viewObj as Attrs
+      let attrs = data.viewObj
       console.info('[' + data.caseTag + ']' + 'rect.bottom is:' + JSON.stringify(rect.bottom));
       console.info('[' + data.caseTag + ']' + 'rect.top is:' + JSON.stringify(rect.top));
       console.info('[' + data.caseTag + ']' + 'getComponentRect is height:' + JSON.stringify(height));
-      console.info('[' + data.caseTag + ']' + 'layoutWeight is:' + attrs?.$attrs.layoutWeight);
+      console.info('[' + data.caseTag + ']' + 'layoutWeight is:' + attrs?.getElement('$attrs').getDouble('layoutWeight'));
       console.info('[' + data.caseTag + ']' + 'expectHeight is:' + data.testValue.expectValue.height);
-      expect(attrs?.$attrs.layoutWeight).assertEqual(data.testValue.expectValue.layoutWeight);
+      expect(attrs?.getElement('$attrs').getDouble('layoutWeight')).assertEqual(data.testValue.expectValue.layoutWeight);
       expect(Math.floor(Math.abs(height - (data.testValue.expectValue.height as number))) <= 1).assertTrue();
     });
   })
