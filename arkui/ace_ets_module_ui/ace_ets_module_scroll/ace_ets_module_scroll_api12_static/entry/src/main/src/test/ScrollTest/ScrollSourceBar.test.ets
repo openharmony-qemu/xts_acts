@@ -47,8 +47,6 @@ const waitUiReadyMs = 1000;
 export default function ScrollSourceBar() {
   describe('ScrollSourceBar', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -73,14 +71,15 @@ export default function ScrollSourceBar() {
       }
     });
 
-
-    /*
-     * @tc.number    ScrollSourceBar_0100
-     * @tc.name      ScrollSourceBar_0100
-     * @tc.desc      ScrollSourceBar_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   ScrollSourceBar_0100
+     * @tc.name     ScrollSourceBar_0100
+     * @tc.desc     ScrollSourceBar_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollSourceBar_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSourceBar_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSourceBar_0100 START');
       let driver = Driver.create();
       let swiperScroll = CommonFunc.getComponentRectOnScreen('scroller_scrollbar_bar');
@@ -104,7 +103,7 @@ export default function ScrollSourceBar() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollSourceBar_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[ScrollSourceBar_0100] content obj is: " + obj.getElement('$attrs').getString('label'));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('ScrollSource.SCROLL_BAR'); 
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('ScrollSource.SCROLL_BAR'); //SCROLL_BAR
 
       let strJson2 = inspector.getInspectorByKey('scrollSource_5');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -112,7 +111,7 @@ export default function ScrollSourceBar() {
       console.info("[ScrollSourceBar_0100] content obj2 is: " +
       JSON.stringify(obj2.getElement('$attrs').getString('label')));
       expect(obj2.getElement('$attrs').getString('label'))
-        .assertEqual('ScrollSource.SCROLL_BAR_FLING'); 
+        .assertEqual('ScrollSource.SCROLL_BAR_FLING'); //SCROLL_BAR_FLING
       console.info('[ScrollSourceBar_0100] END');
       done();
     });

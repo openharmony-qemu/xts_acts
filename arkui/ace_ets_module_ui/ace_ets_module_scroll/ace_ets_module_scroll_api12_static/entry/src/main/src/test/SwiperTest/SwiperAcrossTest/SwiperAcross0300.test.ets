@@ -44,7 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAcross0300() {
   describe('SwiperAcross0300', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,10 +52,9 @@ export default function SwiperAcross0300() {
       console.info("SwiperAcross0300 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperAcross0300 state pages:" + JSON.stringify(pages));
-        if (!("SwiperAcross0300" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAcross/SwiperAcross0300" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAcross/SwiperAcross0300"
@@ -74,34 +72,39 @@ export default function SwiperAcross0300() {
     });
 
 
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300', Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300 START");
-        await CommonFunc.sleep(3000);
-        let driver: Driver = Driver.create();
-        let btn = await driver.findComponent(ON.id('btnswiper_across0030'));
-        await (btn?.click() as Promise<void>);
-        let swiperArrow = await driver.findComponent(ON.id("swiperacr_static_0030"));
-        let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
-        await driver.fling({
-          x: point2.x + 200, y: point2.y
-        }, {
-          x: point2.x - 210, y: point2.y
-        }, 5, 5000);
-        await CommonFunc.sleep(1000);
-        let strJson2: string = inspector.getInspectorByKey('swiper_across_static_0300');
-        let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
-        expect(marq2).assertEqual("6");
-        await CommonFunc.sleep(1000);
-        console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300 END');
-        done();
-      });
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300 START");
+      await CommonFunc.sleep(3000);
+      let driver: Driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('btnswiper_across0030'));
+      await (btn?.click() as Promise<void>);
+      let swiperArrow = await driver.findComponent(ON.id("swiperacr_0030"));
+      let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
+      await driver.fling({
+        x: point2.x + 200, y: point2.y
+      }, {
+        x: point2.x - 210, y: point2.y
+      }, 5, 5000);
+      await CommonFunc.sleep(1000);
+      let strJson2: string = inspector.getInspectorByKey('swiper_across_0300');
+      let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
+      expect(marq2).assertEqual("6");
+      await CommonFunc.sleep(1000);
+      console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_static_0300 END');
+      done();
+    });
 
   })
 }

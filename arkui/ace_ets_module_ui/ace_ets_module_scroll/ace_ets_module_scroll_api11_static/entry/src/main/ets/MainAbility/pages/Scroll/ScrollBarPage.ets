@@ -32,12 +32,14 @@ import {
   ScrollBar,
   Row,
   Margin,
-  TextAlign
+  TextAlign,
+  ScrollSource,
+  ScrollState
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-type messageType = Scroller | ScrollBarDirection | BarState | Color | ScrollDirection
+type messageType = Scroller | ScrollBarDirection | BarState | Color | ScrollDirection | string
 
 @Entry
 @Component
@@ -54,6 +56,15 @@ struct ScrollBarPage {
     console.info('ScrollBarPage onPageShow')
     AppStorage.setOrCreate<MessageManager<messageType>>('messageManager', this.messageManager);
     let callback: Callback<messageType> = (message: Message<messageType>) => {
+
+      if ( message.value instanceof string) {
+        /// 用例异常值处理
+        this.scrollBarDirection = ScrollBarDirection.Vertical
+        this.state = BarState.Auto
+        this.backColor = Color.Grey
+        return
+      }
+
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'scroller') {
         this.scroller = message.value as Scroller
@@ -65,6 +76,7 @@ struct ScrollBarPage {
         this.state = message.value as BarState
       }
       if (message.name == 'backgroundColor') {
+        this.backColor = message.value as Color
       }
       if (message.name == 'ScrollDirection') {
         this.ScrollDirection = message.value as ScrollDirection

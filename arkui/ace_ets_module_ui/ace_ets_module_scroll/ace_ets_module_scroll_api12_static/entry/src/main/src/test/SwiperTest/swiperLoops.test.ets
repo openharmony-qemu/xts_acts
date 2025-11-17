@@ -33,7 +33,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function swiperLoops() {
   describe('swiperLoops', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -45,10 +44,9 @@ export default function swiperLoops() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get swiperLoops state pages:" + JSON.stringify(pages));
-        if (!("swiperLoops" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/swiperLoops" == pages.name)) {
           console.info("get swiperLoops pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -63,14 +61,20 @@ export default function swiperLoops() {
       console.info("swiperLoops after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    swiperLoops_static_0100
-     * @tc.name      swiperLoops_static_0100
-     * @tc.desc      swiperLoops_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   swiperLoops_static_0100
+     * @tc.name     swiperLoops_static_0100
+     * @tc.desc     swiperLoops_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('swiperLoops_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('swiperLoops_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[swiperLoops_static_0100] START');
       let strJson = inspector.getInspectorByKey('swiperLoops');
       console.info("[swiperLoops_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

@@ -49,7 +49,6 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
-import { RecordData } from '@ohos.base'; 
 
 const TAG = 'ets_apiLack_add';
 
@@ -57,7 +56,7 @@ const TAG = 'ets_apiLack_add';
 @Component
 struct ListLanes {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[]
-  @State listPosition: number = 0 
+  @State listPosition: number = 0
   @State edgeEffect: EdgeEffect = EdgeEffect.None;
   @State alwaysEnabled: boolean = true
   private scroller: Scroller = new Scroller()
@@ -72,10 +71,11 @@ struct ListLanes {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("list page state change called:" + JSON.stringify(eventData));
-    if (eventData != null) {
-      
-      
-      
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['alwaysEnabled'] != null) {
+        this.alwaysEnabled = data['alwaysEnabled'] as boolean;
+      }
     }
   }
 
@@ -150,7 +150,6 @@ struct ListLanes {
           .key("list1")
           .height(300)
           .width("90%")
-          
           .alignListItem(ListItemAlign.Start)
           .border({ width: 3, color: Color.Red })
           .edgeEffect(this.edgeEffect, { alwaysEnabled: this.alwaysEnabled })
@@ -167,7 +166,7 @@ struct ListLanes {
               let backData: events_emitter.EventData = {
                 data: {
                   "result": "success"
-                } as Record<String, RecordData>
+                } as Record<String,undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60216,
@@ -196,18 +195,18 @@ struct ListLanes {
 
         Button('scroll 100')
 
-          .onClick((e: ClickEvent) => { 
+          .onClick((e: ClickEvent) => {
             this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset()!.yOffset + 100 })
           })
           .margin({ top: 10, left: 20 } as Margin)
         Button('back top')
-          .onClick((e: ClickEvent) => { 
+          .onClick((e: ClickEvent) => {
             this.scroller.scrollEdge(Edge.Top)
           })
           .margin({ top: 60, left: 20 } as Margin)
         Button('next page')
           .key("onScrollBegin")
-          .onClick((e: ClickEvent) => { 
+          .onClick((e: ClickEvent) => {
             this.scroller.scrollPage({ next: true })
           })
           .margin({ top: 110, left: 20 } as Margin)

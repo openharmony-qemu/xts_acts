@@ -44,18 +44,14 @@ import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
-  /*
-   * 合并行测试
-   * */
-
 struct ScrollToIndexForGrid03 {
   private scrollerForGrid: Scroller = new Scroller()
   @State numbers: string[] = ['']
-  @State numberData: String[] = ['0', '1', '2', '3', '4']
+  @State Number1: String[] = ['0', '1', '2', '3', '4']
   @State isSmooth: boolean = false
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
-    irregularIndexes: [0, 7, 9], 
+    irregularIndexes: [0, 7, 9], // 索引为0和7的GridItem占用的列数由onGetIrregularSizeByIndex指定
     onGetIrregularSizeByIndex: (index: int) => {
       if (index === 0) {
         return [1, 5] as [int, int]
@@ -86,7 +82,7 @@ struct ScrollToIndexForGrid03 {
           direction: FlexDirection.Row,
           wrap: FlexWrap.Wrap,
           justifyContent: FlexAlign.SpaceBetween
-        }) { 
+        }) { // 子组件在容器主轴上行布局
           Button('10-true-end', { type: ButtonType.Normal, stateEffect: true })
             .width('35%')
             .height('5%')
@@ -152,8 +148,10 @@ struct ScrollToIndexForGrid03 {
         }
       }
 
-      Text('scroll').fontColor(0xCCCCCC).fontSize(9).width('90%')
-      
+      Text('scroll')
+        .fontColor(0xCCCCCC)
+        .fontSize(9).width('90%')
+      // 不使用scroll，需要undefined占位
       Grid(this.scrollerForGrid, this.layoutOptions2) {
         ForEach(this.numbers, (day: string) => {
           GridItem() {

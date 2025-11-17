@@ -32,7 +32,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -47,7 +47,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function listJsunit() {
   describe('listTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -67,9 +66,9 @@ export default function listJsunit() {
           console.info("get list state pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push list page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push list page error:" + err);
       }
     });
@@ -79,12 +78,13 @@ export default function listJsunit() {
       console.info("list after each called");
     });
 
+
     /*
-     * @tc.number    testList_static_01
-     * @tc.name      testList_static_01
-     * @tc.desc      testList_static_01
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_01
+       * @tc.name     testList_static_01
+       * @tc.desc     testList_static_01
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_01', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_01] START');
       await CommonFunc.sleep(1000);
@@ -92,389 +92,246 @@ export default function listJsunit() {
 
       console.info("[testList_static_01] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('listDirection'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('listDirection'))
         .assertEqual('Axis.Vertical');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode')).assertFalse();
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertFalse();
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
         .assertEqual('EdgeEffect.None');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('chainAnimation')).assertFalse();
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('strokeWidth'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('chainAnimation')).assertFalse();
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('strokeWidth'))
         .assertEqual("2.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('color'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('color'))
         .assertEqual("#FFFFFFFF");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('startMargin'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
         .assertEqual("20.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('endMargin'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('endMargin'))
         .assertEqual("20.00vp");
       console.info('[testList_static_01] END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_02
-     * @tc.name      testList_static_02
-     * @tc.desc      testList_static_02
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_02
+       * @tc.name     testList_static_02
+       * @tc.desc     testList_static_02
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_02', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_02] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "listDirection": Axis.Horizontal
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 124,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_02] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_02] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<Axis>('listDirection', Axis.Horizontal);
       await CommonFunc.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_02] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('listDirection'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('listDirection'))
         .assertEqual('Axis.Horizontal');
       console.info('testList_static_02 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_03
-     * @tc.name      testList_static_03
-     * @tc.desc      testList_static_03
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_03
+       * @tc.name     testList_static_03
+       * @tc.desc     testList_static_03
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_03', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_03] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "editMode": true
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 124,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_03] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_03] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<boolean>('editMode', true);
       await CommonFunc.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_03] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode')).assertTrue();
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
       console.info('testList_static_03 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_04
-     * @tc.name      testList_static_04
-     * @tc.desc      testList_static_04
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_04
+       * @tc.name     testList_static_04
+       * @tc.desc     testList_static_04
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_04', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_04] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "edgeEffect": EdgeEffect.Spring
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 124,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_04] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_04] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<EdgeEffect>('edgeEffect', EdgeEffect.Spring);
       await CommonFunc.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_04] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
         .assertEqual('EdgeEffect.Spring');
       console.info('testList_static_04 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_05
-     * @tc.name      testList_static_05
-     * @tc.desc      testList_static_05
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_05
+       * @tc.name     testList_static_05
+       * @tc.desc     testList_static_05
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_05', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_05] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "chainAnimation": true
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 124,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_05] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_05] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<boolean>('chainAnimation', true);
       await CommonFunc.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_05] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('chainAnimation')).assertTrue();
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('chainAnimation')).assertTrue();
       console.info('testList_static_05 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_06
-     * @tc.name      testList_static_06
-     * @tc.desc      testList_static_06
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_06
+       * @tc.name     testList_static_06
+       * @tc.desc     testList_static_06
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_06', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_06] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "strokeWidth": "3.000000vp"
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_06] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_06] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<number | string>('strokeWidth', '3.000000vp');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_06] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('strokeWidth'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('strokeWidth'))
         .assertEqual("3.00vp");
       console.info('testList_static_06 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_07
-     * @tc.name      testList_static_07
-     * @tc.desc      testList_static_07
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_07
+       * @tc.name     testList_static_07
+       * @tc.desc     testList_static_07
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_07', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_07] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "color": "#FF0000FF"
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_07] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_07] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<string>('color', "#FF0000FF");
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_07] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('color'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('color'))
         .assertEqual("#FF0000FF");
       console.info('testList_static_07 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_08
-     * @tc.name      testList_static_08
-     * @tc.desc      testList_static_08
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_08
+       * @tc.name     testList_static_08
+       * @tc.desc     testList_static_08
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_08', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_08] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "startMargin": "30.000000vp"
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_08] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_08] change component data error: " + err.message);
-      }
-      await CommonFunc.sleep(1000);
+      AppStorage.setOrCreate('startMargin', "30.000000vp");
+      await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_08] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('startMargin'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
         .assertEqual("30.00vp");
       console.info('testList_static_08 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_09
-     * @tc.name      testList_static_09
-     * @tc.desc      testList_static_09
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_09
+       * @tc.name     testList_static_09
+       * @tc.desc     testList_static_09
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_09', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_09] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "endMargin": "30.000000vp"
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_09] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_09] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<number | string>('endMargin', "30.000000vp");
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_09] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('endMargin'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('endMargin'))
         .assertEqual("30.00vp");
       console.info('testList_static_09 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_10
-     * @tc.name      testList_static_10
-     * @tc.desc      testList_static_10
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_10
+       * @tc.name     testList_static_10
+       * @tc.desc     testList_static_10
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_10', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_10] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "editMode": "true123"
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 901,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_10] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_10] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<boolean | string>('editMode', "true123");
       await CommonFunc.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_10] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode')).assertTrue();
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
       console.info('testList_static_10 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_11
-     * @tc.name      testList_static_11
-     * @tc.desc      testList_static_11
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_11
+       * @tc.name     testList_static_11
+       * @tc.desc     testList_static_11
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_11', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_11] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "editMode": "39000000"
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 902,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_11] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_11] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<boolean | string>('editMode', "39000000");
       await CommonFunc.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_11] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode')).assertTrue();
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
       console.info('testList_static_11 END');
       done()
     });
 
+
     /*
-     * @tc.number    testList_static_12
-     * @tc.name      testList_static_12
-     * @tc.desc      testList_static_12
-     * @tc.level     2
-     */
+       * @tc.number   testList_static_12
+       * @tc.name     testList_static_12
+       * @tc.desc     testList_static_12
+       * @tc.level    Level.LEVEL1
+       */
     it('testList_static_12', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testList_static_12] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "chainAnimation": "true123"
-          } as Record<String, RecordData>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 903,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testList_static_12] start to publish emit:" + JSON.stringify(eventData.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[testList_static_12] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<boolean | string>('chainAnimation', "true123");
       await CommonFunc.sleep(4000);
       let strJson: string = inspector.getInspectorByKey('list');
 
       console.info("[testList_static_12] JSON.parse(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('chainAnimation')).assertTrue();
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('chainAnimation')).assertTrue();
       console.info('testList_static_12 END');
       done()
     });

@@ -55,8 +55,7 @@ struct SwiperInterface02 {
       .id('SWIPER_INTERFACE_1300')
       .loop(false)
       .autoPlay(true, undefined)
-
-      
+      .curve(curves.springCurve(100, 1, 228, 30))
 
       Swiper(this.swiperController2) {
         Text('1')
@@ -78,8 +77,7 @@ struct SwiperInterface02 {
       .id('SWIPER_INTERFACE_1310')
       .loop(false)
       .autoPlay(true, undefined)
-
-      
+      .curve(curves.springMotion(0.5, 0.6, 0))
 
       Swiper(this.swiperController3) {
         Text('1')
@@ -101,8 +99,7 @@ struct SwiperInterface02 {
       .id('SWIPER_INTERFACE_1320')
       .loop(false)
       .autoPlay(true, undefined)
-
-      
+      .curve(curves.stepsCurve(9,true))
     }
   }
 }

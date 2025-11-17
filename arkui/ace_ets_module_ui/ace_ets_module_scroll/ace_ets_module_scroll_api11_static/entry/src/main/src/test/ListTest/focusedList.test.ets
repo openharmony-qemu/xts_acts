@@ -65,7 +65,7 @@ export default function focusedList() {
           console.info("get focusedList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push focusedList page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push focusedList page error:" + err);
@@ -80,11 +80,11 @@ export default function focusedList() {
 
 
     /*
-     * @tc.number    focusedList_static_0100
-     * @tc.name      focusedList_static_0100
-     * @tc.desc      focusedList_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   focusedList_static_0100
+       * @tc.name     focusedList_static_0100
+       * @tc.desc     focusedList_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('focusedList_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[focusedList_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -101,8 +101,7 @@ export default function focusedList() {
       console.info("[scrollAniFalse_0100] backgroundColor: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor')));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor'))
-        .assertEqual('#FFFF0000');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFF0000');
       console.info('[focusedList_static_0100] item-1 isFocused');
 
       console.info('[focusedList_static_0100] END');

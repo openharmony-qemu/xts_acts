@@ -47,7 +47,7 @@ struct UIComponentScrollSwiperDrag0280 {
       .height(250)
       .curve(Curve.LinearOutSlowIn)
       .backgroundColor(Color.Gray)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.index = index.toString()
       })
       .key('UIComponentScrollSwiperDrag0280_swiper')

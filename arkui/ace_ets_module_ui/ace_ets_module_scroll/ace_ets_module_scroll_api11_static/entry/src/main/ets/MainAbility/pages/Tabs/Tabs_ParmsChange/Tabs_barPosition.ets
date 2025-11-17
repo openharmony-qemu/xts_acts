@@ -39,12 +39,12 @@ struct Tabs_barPosition {
   @State setBarWidth: number = 330;
   @State setBarHeight: number = 56;
   private controller: TabsController = new TabsController();
-  messageManager: MessageManager<number | boolean> = new MessageManager<number | boolean>();
+  messageManager: MessageManager<number | boolean | BarPosition> = new MessageManager<number | boolean | BarPosition>();
 
   onPageShow() {
     console.info('Tabs_barPosition onPageShow');
-    AppStorage.setOrCreate<MessageManager<number | boolean>>('messageManager', this.messageManager);
-    let callback: Callback<number | boolean> = (message: Message<number | boolean>) => {
+    AppStorage.setOrCreate<MessageManager<number | boolean | BarPosition>>('messageManager', this.messageManager);
+    let callback: Callback<number | boolean | BarPosition> = (message: Message<number | boolean | BarPosition>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'changeVertical') {
         this.changeVertical = message.value as boolean;
@@ -65,31 +65,31 @@ struct Tabs_barPosition {
     this.messageManager.registerCallback(callback);
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  @Builder
+  TabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.currentIndex === index ? 500 : 400)
+        .lineHeight(40)
+    }.width('100%').height('100%').key('Tabs_barPosition_' + name)
+  }
 
   build() {
     Column() {
       Tabs({ barPosition: this.changeBarPosition, index: this.currentIndex }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87').key("Tabs_barPosition_001")
-        } 
+        } .tabBar(() => {this.TabBuilder(0, 'green')}).key("Tabs_barPosition_011")
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF').key("Tabs_barPosition_002")
-        } 
+        } .tabBar(() => {this.TabBuilder(1, 'blue')}).key("Tabs_barPosition_012")
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00').key("Tabs_barPosition_003")
-        } 
+        } .tabBar(() => {this.TabBuilder(2, 'yellow')}).key("Tabs_barPosition_013")
       }
       .key("Tabs_barPosition_01")
       .vertical(this.changeVertical)

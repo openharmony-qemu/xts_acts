@@ -44,7 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperInterfaceMix0220() {
   describe('SwiperInterfaceMix0220', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,12 +52,11 @@ export default function SwiperInterfaceMix0220() {
       console.info("SwiperInterfaceMix0220 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperInterfaceMix0220 state pages:" + JSON.stringify(pages));
-        if (!("SwiperInterfaceMix0220" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperInterfaceMix/SwiperInterfaceMix0220" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperInterfaceMix/SwiperInterfaceMix0220'
           })
           await CommonFunc.sleep(2000);
@@ -73,34 +71,37 @@ export default function SwiperInterfaceMix0220() {
       await CommonFunc.sleep(1000);
       console.info("SwiperInterfaceMix0220 after each called");
     });
-
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220', Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220 START");
-        await CommonFunc.sleep(3000);
-        let driver: Driver = Driver.create();
-        let swiperArrow = await driver.findComponent(ON.id("swiperinterfacemix0220"));
-        let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
-        await driver.fling({
-          x: point2.x + 200, y: point2.y
-        }, {
-          x: point2.x - 210, y: point2.y
-        }, 5, 5000);
-        await CommonFunc.sleep(1000);
-        let strJson2: string = inspector.getInspectorByKey('swiper_interfacemix_static_0220');
-        let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
-        expect(marq2).assertEqual("1");
-        await CommonFunc.sleep(1000);
-        console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220 END');
-        done();
-      });
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220 START");
+      await CommonFunc.sleep(3000);
+      let driver: Driver = Driver.create();
+      let swiperArrow = await driver.findComponent(ON.id("swiperinterfacemix0220"));
+      let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
+      await driver.fling({
+        x: point2.x + 200, y: point2.y
+      }, {
+        x: point2.x - 210, y: point2.y
+      }, 5, 5000);
+      await CommonFunc.sleep(1000);
+      let strJson2: string = inspector.getInspectorByKey('swiper_interfacemix_0220');
+      let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
+      expect(marq2).assertEqual("1");
+      await CommonFunc.sleep(1000);
+      console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACEMIX_static_0220 END');
+      done();
+    });
 
   })
 }

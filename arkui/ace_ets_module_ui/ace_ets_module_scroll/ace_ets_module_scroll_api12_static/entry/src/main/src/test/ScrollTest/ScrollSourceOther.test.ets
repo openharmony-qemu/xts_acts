@@ -46,8 +46,6 @@ const waitUiReadyMs = 1000;
 export default function ScrollSourceOther() {
   describe('ScrollSourceOther', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -81,14 +79,15 @@ export default function ScrollSourceOther() {
       console.info("column after each called");
     });
 
-
-    /*
-     * @tc.number    ScrollSourceOther_0100
-     * @tc.name      ScrollSourceOther_0100
-     * @tc.desc      ScrollSourceOther_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   ScrollSourceOther_0100
+     * @tc.name     ScrollSourceOther_0100
+     * @tc.desc     ScrollSourceOther_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollSourceOther_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSourceOther_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSourceOther_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -102,19 +101,20 @@ export default function ScrollSourceOther() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollSourceOther_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[ScrollSourceOther_0100] content obj is: " + obj.getElement('$attrs').getString('label'));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('EDGE_EFFECT'); 
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('EDGE_EFFECT'); //EDGE_EFFECT
       console.info('[ScrollSourceOther_0100] END');
       done();
     });
 
-
-    /*
-     * @tc.number    ScrollSourceOther_0200
-     * @tc.name      ScrollSourceOther_0200
-     * @tc.desc      ScrollSourceOther_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   ScrollSourceOther_0200
+     * @tc.name     ScrollSourceOther_0200
+     * @tc.desc     ScrollSourceOther_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSourceOther_0200 START');
       let driver = Driver.create();
       let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
@@ -129,24 +129,24 @@ export default function ScrollSourceOther() {
       await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.6)).toInt(),
         (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt());
       await CommonFunc.sleep(2000);
-
       let strJson = inspector.getInspectorByKey('EDGE_EFFECT');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollSourceOther_0200] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[ScrollSourceOther_0200] content obj is: " + obj.getElement('$attrs').getString('label'));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('FLING'); 
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('FLING'); //FLING
       console.info('[ScrollSourceOther_0200] END');
       done();
     });
 
-
-    /*
-     * @tc.number    ScrollSourceOther_0300
-     * @tc.name      ScrollSourceOther_0300
-     * @tc.desc      ScrollSourceOther_0300
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   ScrollSourceOther_0300
+     * @tc.name     ScrollSourceOther_0300
+     * @tc.desc     ScrollSourceOther_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollSourceOther_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSourceOther_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSourceOther_0300 START');
       let driver = Driver.create();
       let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
@@ -160,18 +160,21 @@ export default function ScrollSourceOther() {
       await CommonFunc.sleep(1000);
 
       await driver.mouseScroll({
-        x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.3)).toInt()
+        x: (Math.round(left + width / 2)).toInt(),
+        y: (Math.round(top + height * 0.3)).toInt()
       }, false, 20)
+      await CommonFunc.sleep(3000);
       await driver.mouseScroll({
-        x: (Math.round(left + width / 2)).toInt(), y: (Math.round(top + height * 0.3)).toInt()
+        x: (Math.round(left + width / 2)).toInt(),
+        y: (Math.round(top + height * 0.3)).toInt()
       }, true, 20)
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
 
       let strJson = inspector.getInspectorByKey('SCROLLER_ANIMATION');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollSourceOther_0300] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[ScrollSourceOther_0300] content obj is: " + obj.getElement('$attrs').getString('label'));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('OTHER_USER_INPUT'); 
+      expect(obj.getElement('$attrs').getString('label')).assertEqual('OTHER_USER_INPUT'); //OTHER_USER_INPUT
       console.info('[ScrollSourceOther_0300] END');
       done();
     });

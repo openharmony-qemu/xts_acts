@@ -75,14 +75,15 @@ export default function scrollDidJsunit() {
       console.info("scrollDidJsunit after each called");
     });
 
-
-    /*
-     * @tc.number    scrollDidJsunit_0100
-     * @tc.name      scrollDidJsunit_0100
-     * @tc.desc      scrollDidJsunit_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   scrollDidJsunit_0100
+     * @tc.name     scrollDidJsunit_0100
+     * @tc.desc     scrollDidJsunit_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('scrollDidJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('scrollDidJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[scrollDidJsunit_0100] START');
       let scrollRect = CommonFunc.getComponentRectOnScreen('scrollSource_scroll')
       let driver = Driver.create()
@@ -100,7 +101,7 @@ export default function scrollDidJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[scrollDidJsunit_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[scrollDidJsunit_0100] content: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(JSON.stringify(obj.getElement('$attrs').getString('content'))).assertEqual('scrollState: 0');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('scrollState: 0');
       console.info('[scrollDidJsunit_0100] END');
       done();
     });

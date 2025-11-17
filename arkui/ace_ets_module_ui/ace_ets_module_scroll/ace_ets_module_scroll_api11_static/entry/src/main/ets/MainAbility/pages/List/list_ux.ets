@@ -214,29 +214,29 @@ struct listUx {
         .key("ArkUX_Stage_List_LimitAnimation_0400")
         .scrollSnapAlign(ScrollSnapAlign.END)
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        List() {
+        }
+        .key("ArkUX_Stage_List_LimitAnimation_0500")
+        // .scrollSnapAlign(null)
+        //
+        List() {
+        }
+        .key("ArkUX_Stage_List_LimitAnimation_0600")
+        // .scrollSnapAlign(ScrollSnapAlign[""])
+        //
+        List() {
+        }
+        .key("ArkUX_Stage_List_LimitAnimation_0700")
+        // .scrollSnapAlign(undefined)
 
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_0800")
 
-        
-        
-        
-        
+        List() {
+        }
+        .key("ArkUX_Stage_List_LimitAnimation_0900")
+        // .scrollSnapAlign(ScrollSnapAlign[""])
 
         List() {
         }
@@ -255,28 +255,28 @@ struct listUx {
         .key("ArkUX_Stage_List_LimitAnimation_1200")
         .scrollSnapAlign(ScrollSnapAlign.START)
 
-        
+        // .scrollSnapAlign(ScrollSnapAlign[""])
 
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_1300")
-        
+        // .scrollSnapAlign(ScrollSnapAlign[""])
         .scrollSnapAlign(ScrollSnapAlign.START)
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        List() {
+        }
+        .key("ArkUX_Stage_List_LimitAnimation_1400")
+        // .scrollSnapAlign(0)
+        //
+        List() {
+        }
+        .key("ArkUX_Stage_List_LimitAnimation_1500")
+        // .scrollSnapAlign(1)
+        //
+        List() {
+        }
+        .key("ArkUX_Stage_List_LimitAnimation_1600")
+        // .scrollSnapAlign(6)
       }
       .width('100%')
     }

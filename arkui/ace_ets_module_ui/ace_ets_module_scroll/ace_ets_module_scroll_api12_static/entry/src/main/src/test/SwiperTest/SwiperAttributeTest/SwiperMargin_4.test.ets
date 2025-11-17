@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, it, expect, afterAll, Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON, Component } from '@ohos.UiTest';
@@ -32,8 +32,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperMargin_4() {
   describe('SwiperMargin_4', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -41,16 +39,13 @@ export default function SwiperMargin_4() {
       console.info("SwiperMargin_4 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperMargin_4 state pages:" + JSON.stringify(pages));
-        if (!("SwiperMargin_4" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_4" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_4"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperMargin_4 page result:");
         }
       } catch (err) {
         console.error("push SwiperMargin_4 page error:" + err);
@@ -62,13 +57,18 @@ export default function SwiperMargin_4() {
       console.info("SwiperMargin_4 after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    testSwiperPrevMargin_static_0100
-     * @tc.name      testSwiperPrevMargin_static_0100
-     * @tc.desc      testSwiperPrevMargin_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   testSwiperPrevMargin_static_0100
+       * @tc.name     testSwiperPrevMargin_static_0100
+       * @tc.desc     testSwiperPrevMargin_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('testSwiperPrevMargin_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testSwiperPrevMargin_static_0100] START");
       const driver = Driver.create();
@@ -95,12 +95,13 @@ export default function SwiperMargin_4() {
       done();
     });
 
+
     /*
-     * @tc.number    testSwiperPrevMargin_static_0200
-     * @tc.name      testSwiperPrevMargin_static_0200
-     * @tc.desc      testSwiperPrevMargin_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   testSwiperPrevMargin_static_0200
+       * @tc.name     testSwiperPrevMargin_static_0200
+       * @tc.desc     testSwiperPrevMargin_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('testSwiperPrevMargin_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testSwiperPrevMargin_static_0200] START");
       const driver = Driver.create();
@@ -125,12 +126,13 @@ export default function SwiperMargin_4() {
       done();
     });
 
+
     /*
-     * @tc.number    testSwiperNextMargin_static_0100
-     * @tc.name      testSwiperNextMargin_static_0100
-     * @tc.desc      testSwiperNextMargin_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   testSwiperNextMargin_static_0100
+       * @tc.name     testSwiperNextMargin_static_0100
+       * @tc.desc     testSwiperNextMargin_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('testSwiperNextMargin_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testSwiperNextMargin_static_0100] START");
       const driver = Driver.create();
@@ -155,12 +157,13 @@ export default function SwiperMargin_4() {
       done();
     });
 
+
     /*
-     * @tc.number    testSwiperNextMargin_static_0200
-     * @tc.name      testSwiperNextMargin_static_0200
-     * @tc.desc      testSwiperNextMargin_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   testSwiperNextMargin_static_0200
+       * @tc.name     testSwiperNextMargin_static_0200
+       * @tc.desc     testSwiperNextMargin_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('testSwiperNextMargin_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testSwiperNextMargin_static_0200] START");
       const driver = Driver.create();
@@ -187,12 +190,13 @@ export default function SwiperMargin_4() {
       done();
     });
 
+
     /*
-     * @tc.number    testSwiperShowNext_static_0100
-     * @tc.name      testSwiperShowNext_static_0100
-     * @tc.desc      testSwiperShowNext_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   testSwiperShowNext_static_0100
+       * @tc.name     testSwiperShowNext_static_0100
+       * @tc.desc     testSwiperShowNext_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('testSwiperShowNext_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testSwiperShowNext_static_0100] START");
       const driver = Driver.create();
@@ -213,12 +217,13 @@ export default function SwiperMargin_4() {
       done();
     });
 
+
     /*
-     * @tc.number    testSwiperShowPrevious_static_0100
-     * @tc.name      testSwiperShowPrevious_static_0100
-     * @tc.desc      testSwiperShowPrevious_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   testSwiperShowPrevious_static_0100
+       * @tc.name     testSwiperShowPrevious_static_0100
+       * @tc.desc     testSwiperShowPrevious_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('testSwiperShowPrevious_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testSwiperShowPrevious_static_0100] START");
       const driver = Driver.create();

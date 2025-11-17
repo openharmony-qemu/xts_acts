@@ -45,8 +45,6 @@ const waitUiReadyMs = 1000;
 export default function offsetRemain() {
   describe('offsetRemain', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -61,7 +59,7 @@ export default function offsetRemain() {
         router.clear();
         let pages = router.getState();
         console.info("get offsetRemain state pages: " + JSON.stringify(pages));
-        if (!("offsetRemain" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/offsetRemain" == pages.name)) {
           console.info("get offsetRemain state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -72,14 +70,15 @@ export default function offsetRemain() {
       }
     });
 
-
-    /*
-     * @tc.number    offsetRemain_0100
-     * @tc.name      offsetRemain_0100
-     * @tc.desc      offsetRemain_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   offsetRemain_0100
+     * @tc.name     offsetRemain_0100
+     * @tc.desc     offsetRemain_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('offsetRemain_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('offsetRemain_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('offsetRemain_0100 START');
       let driver = Driver.create();
       let swiperScroll = CommonFunc.getComponentRectOnScreen('list_offsetRemain');
@@ -98,8 +97,8 @@ export default function offsetRemain() {
       let strJson = inspector.getInspectorByKey('offsetRemain');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[offsetRemain_0100] component obj is: " + JSON.stringifyJsonElement(obj));
-      console.info("[offsetRemain_0100] content obj is: " + obj.getElement('$attrs').getInteger('content'));
-      expect(obj.getElement('$attrs').getInteger('content') > 0).assertEqual(true);
+      console.info("[offsetRemain_0100] content obj is: " + obj.getElement('$attrs').getString('content'));
+      expect(Number(obj.getElement('$attrs').getString('content')) > 0).assertEqual(true);
       console.info('[offsetRemain_0100] END');
       done();
     });

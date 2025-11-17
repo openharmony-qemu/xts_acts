@@ -52,12 +52,11 @@ export default function SwiperImplicitanimation0050() {
       console.info("SwiperImplicitanimation0050 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperImplicitanimation0050 state pages:" + JSON.stringify(pages));
-        if (!("SwiperImplicitanimation0050" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0050" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0050'
           })
           await CommonFunc.sleep(2000);
@@ -73,12 +72,16 @@ export default function SwiperImplicitanimation0050() {
       console.info("SwiperImplicitanimation0050 after each called");
     });
 
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050
-     * @tc.level     2
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050
+     * @tc.level    Level.LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0050', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,7 +91,7 @@ export default function SwiperImplicitanimation0050() {
         let btn = await driver.findComponent(ON.id('btnswiper0050'));
         await (btn?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
-        let strJson2: string = inspector.getInspectorByKey('implicitanimation_static_0050');
+        let strJson2: string = inspector.getInspectorByKey('implicitanimation_0050');
         let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
         expect(marq2).assertEqual("1");
         await CommonFunc.sleep(1000);

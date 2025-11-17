@@ -46,14 +46,12 @@ export default function tabsTransition() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get tabsTransition state pages:" + JSON.stringify(pages));
-        if (!("tabsTransition" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/tabsTransition" == pages.name)) {
           console.info("get tabsTransition pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push tabsTransition page result:");
         }
       } catch (err) {
         console.error("push tabsTransition page error:" + err);
@@ -66,13 +64,19 @@ export default function tabsTransition() {
     });
 
 
-    /*
-     * @tc.number    tabsTransition_static_0100
-     * @tc.name      tabsTransition_static_0100
-     * @tc.desc      tabsTransition_static_0100
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   tabsTransition_static_0100
+     * @tc.name     tabsTransition_static_0100
+     * @tc.desc     tabsTransition_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('tabsTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabsTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsTransition_static_0100] START');
       let swiperTabs = CommonFunc.getComponentRectOnScreen('callback_tabs_tran');
       let top = swiperTabs.top;
@@ -95,14 +99,15 @@ export default function tabsTransition() {
       done();
     });
 
-
-    /*
-     * @tc.number    tabsTransition_static_0200
-     * @tc.name      tabsTransition_static_0200
-     * @tc.desc      tabsTransition_static_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   tabsTransition_static_0200
+     * @tc.name     tabsTransition_static_0200
+     * @tc.desc     tabsTransition_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('tabsTransition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabsTransition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsTransition_static_0200] START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.text('3'));

@@ -32,7 +32,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -46,7 +46,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function listItemJsunit2() {
   describe('listItemJsunit2', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -66,9 +65,9 @@ export default function listItemJsunit2() {
           console.info("get listItem state pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push listItem page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push listItem page error:" + err);
       }
     });
@@ -78,36 +77,38 @@ export default function listItemJsunit2() {
       console.info("listItem after each called");
     });
 
-    /*
-     * @tc.number    testListItem_static_01
-     * @tc.name      testListItem_static_01
-     * @tc.desc      testListItem_static_01
-     * @tc.level     2
+      
+  /*
+     * @tc.number   testListItem_static_01
+     * @tc.name     testListItem_static_01
+     * @tc.desc     testListItem_static_01
+     * @tc.level    Level.LEVEL1
      */
-    it('testListItem_static_01', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testListItem_static_01', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testListItem_static_01] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ListItem');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testListItem_static_01] obj is: " + JSON.stringifyJsonElement(obj));
-      expect(obj.getElement('$attrs').getElement('sticky')).assertEqual('Sticky.Normal');
+      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('Sticky.Normal');
       console.info('testListItem_static_01 END');
       done();
     });
 
-    /*
-     * @tc.number    testListItem_static_02
-     * @tc.name      testListItem_static_02
-     * @tc.desc      testListItem_static_02
-     * @tc.level     2
+      
+  /*
+     * @tc.number   testListItem_static_02
+     * @tc.name     testListItem_static_02
+     * @tc.desc     testListItem_static_02
+     * @tc.level    Level.LEVEL1
      */
-    it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testListItem_static_02', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testListItem_static_02] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "sticky": StickyStyle.None
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 122,
@@ -115,48 +116,50 @@ export default function listItemJsunit2() {
         }
         console.info("[testListItem_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[testListItem_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ListItem');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testListItem_static_02] obj is: " + JSON.stringifyJsonElement(obj));
-      expect(obj.getElement('$attrs').getElement('sticky')).assertEqual('Sticky.None');
+      expect(obj.getElement('$attrs').getString('sticky')).assertEqual('Sticky.None');
       console.info('testListItem_static_02 END');
       done();
     });
 
-    /*
-     * @tc.number    testListItem_static_03
-     * @tc.name      testListItem_static_03
-     * @tc.desc      testListItem_static_03
-     * @tc.level     2
+      
+  /*
+     * @tc.number   testListItem_static_03
+     * @tc.name     testListItem_static_03
+     * @tc.desc     testListItem_static_03
+     * @tc.level    Level.LEVEL1
      */
-    it('testListItem_static_03', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testListItem_static_03', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testListItem_static_03] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('List');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testListItem_static_03] obj is: " + JSON.stringifyJsonElement(obj));
-      expect(obj.getElement('$attrs').getElement('editMode')).assertTrue();
+      expect(obj.getElement('$attrs').getBoolean('editMode')).assertTrue();
       console.info('testListItem_static_03 END');
       done();
     });
 
-    /*
-     * @tc.number    testListItem_static_04
-     * @tc.name      testListItem_static_04
-     * @tc.desc      testListItem_static_04
-     * @tc.level     2
+      
+  /*
+     * @tc.number   testListItem_static_04
+     * @tc.name     testListItem_static_04
+     * @tc.desc     testListItem_static_04
+     * @tc.level    Level.LEVEL1
      */
-    it('testListItem_static_04', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[testEllipse03] START');
+it('testListItem_static_04', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[testListItem_static_04] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "editMode": false
-          } as Record<String, RecordData>
+          } as Record<String,undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 123,
@@ -164,14 +167,15 @@ export default function listItemJsunit2() {
         }
         console.info("[testListItem_static_04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[testListItem_static_04] change component data error: " + err.message);
       }
+      console.info("[testListItem_static_04] xyb000");
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('List');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testListItem_static_04] obj is: " + JSON.stringifyJsonElement(obj));
-      expect(obj.getElement('$attrs').getElement('editMode')).assertFalse();
+      expect(obj.getElement('$attrs').getBoolean('editMode')).assertFalse();
       console.info('testListItem_static_04 END');
       done();
     });

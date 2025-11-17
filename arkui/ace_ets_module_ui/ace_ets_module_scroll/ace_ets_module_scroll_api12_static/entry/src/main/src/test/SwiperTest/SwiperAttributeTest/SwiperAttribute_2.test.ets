@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAttribute_2() {
   describe('SwiperAttribute_2', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -58,11 +56,10 @@ export default function SwiperAttribute_2() {
         console.info("get SwiperAttribute_2 state pages:" + JSON.stringify(pages));
         if (!("SwiperAttribute_2" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperAttribute_2"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperAttribute_2 page result:");
+          await UtilsTest.msSleep(2000)
         }
       } catch (err) {
         console.error("push SwiperAttribute_2 page error:" + err);
@@ -74,14 +71,15 @@ export default function SwiperAttribute_2() {
       console.info("SwiperAttribute_2 after each called");
     });
 
-
-    /*
-     * @tc.number    SwiperAttribute_static_0090
-     * @tc.name      SwiperAttribute_static_0090
-     * @tc.desc      SwiperAttribute_static_0090
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperAttribute_static_0090
+     * @tc.name     SwiperAttribute_static_0090
+     * @tc.desc     SwiperAttribute_static_0090
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperAttribute_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperAttribute_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperAttribute_static_0090] START');
 
       let parentColumnRect = CommonFunc.getComponentRectOnScreen('swiperAttributeParentColumn_2');
@@ -112,20 +110,20 @@ export default function SwiperAttribute_2() {
         expect(Math.abs(Math.round(columnRect.right - rect.right)) <= 1).assertTrue();
         expect(Math.abs(Math.round(columnRect.left - rect.left)) <= 1).assertTrue();
         expect(Math.abs(Math.round(columnRect.bottom - rect.bottom)) <= 1).assertTrue();
-        const uiContext = new UIContext();
+        const uiContext = AppStorage.get<UIContext>('uiContext')!;
         console.info("SwiperAttribute_static_0090 abs rect top vp is " +
-        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectTop - columnRect.top))));
+        uiContext.px2vp(Math.abs(Math.round(parentColumnRectTop - columnRect.top))));
         console.info("SwiperAttribute_static_0090 abs rect right vp is " +
-        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectRight - columnRect.right))));
+        uiContext.px2vp(Math.abs(Math.round(parentColumnRectRight - columnRect.right))));
         console.info("SwiperAttribute_static_0090 abs rect left vp is " +
-        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))));
+        uiContext.px2vp(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))));
         console.info("SwiperAttribute_static_0090 abs rect bottom vp is " +
-        UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))));
+        uiContext.px2vp(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))));
 
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectTop - columnRect.top))) - 20 <= 1).assertTrue();
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectRight - columnRect.right))) - 20 <= 1).assertTrue();
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))) - 20 <= 1).assertTrue();
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))) - 20 <= 1)
+        expect(uiContext.px2vp(Math.abs(Math.round(parentColumnRectTop - columnRect.top))) - 20 <= 1).assertTrue();
+        expect(uiContext.px2vp(Math.abs(Math.round(parentColumnRectRight - columnRect.right))) - 20 <= 1).assertTrue();
+        expect(uiContext.px2vp(Math.abs(Math.round(parentColumnRectLeft - columnRect.left))) - 20 <= 1).assertTrue();
+        expect(uiContext.px2vp(Math.abs(Math.round(parentColumnRectBottom - columnRect.bottom))) - 20 <= 1)
           .assertTrue();
       }
 

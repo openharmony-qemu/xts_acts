@@ -52,7 +52,7 @@ struct SwiperAdd0510 {
       }
       .autoPlay(true, undefined)
       .loop(false)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.onAnimationStart = '' + index
       })
 

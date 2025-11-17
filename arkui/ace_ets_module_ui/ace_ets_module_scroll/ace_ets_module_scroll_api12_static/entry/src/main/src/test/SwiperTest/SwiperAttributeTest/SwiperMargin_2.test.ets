@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperMargin_2() {
   describe('SwiperMargin_2', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -54,16 +52,14 @@ export default function SwiperMargin_2() {
       console.info("SwiperMargin_2 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperMargin_2 state pages:" + JSON.stringify(pages));
-        if (!("SwiperMargin_2" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_2" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_2"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperMargin_2 page result:");
+          await UtilsTest.msSleep(4000)
         }
       } catch (err) {
         console.error("push SwiperMargin_2 page error:" + err);
@@ -75,14 +71,20 @@ export default function SwiperMargin_2() {
       console.info("SwiperMargin_2 after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    SwiperMargin_static_0040
-     * @tc.name      SwiperMargin_static_0040
-     * @tc.desc      SwiperMargin_static_0040
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperMargin_static_0040
+     * @tc.name     SwiperMargin_static_0040
+     * @tc.desc     SwiperMargin_static_0040
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperMargin_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperMargin_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperMargin_static_0040] START');
 
       let strJson = inspector.getInspectorByKey('swiperMargin_2');
@@ -101,21 +103,22 @@ export default function SwiperMargin_2() {
 
       let spaceMargin = swiperRight - textRight;
       console.info("[SwiperMargin_static_0040] The spaceMargin value is " + spaceMargin);
-      const uiContext = new UIContext();
-      console.info("[SwiperMargin_static_0040] The vp2px value is " + UIContext.getFocusedUIContext()!.vp2px(30));
-      expect(Math.abs(Math.round(spaceMargin)) - UIContext.getFocusedUIContext()!.vp2px(30) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      console.info("[SwiperMargin_static_0040] The vp2px value is " + uiContext.vp2px(30));
+      expect(Math.abs(Math.round(spaceMargin)) - uiContext.vp2px(30) <= 1).assertTrue();
       console.info('[SwiperMargin_static_0040] END');
       done();
     });
 
-
-    /*
-     * @tc.number    SwiperMargin_static_0170
-     * @tc.name      SwiperMargin_static_0170
-     * @tc.desc      SwiperMargin_static_0170
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperMargin_static_0170
+     * @tc.name     SwiperMargin_static_0170
+     * @tc.desc     SwiperMargin_static_0170
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperMargin_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperMargin_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperMargin_static_0170] START');
       let rect = CommonFunc.getComponentRectOnScreen('swiperMargin_2')
       console.info("SwiperMargin_static_0170 swiper rect is " + rect.left + " --" + rect.right + "--" + rect.top +
@@ -138,8 +141,8 @@ export default function SwiperMargin_2() {
 
       let spaceMargin = swiperLeft - textLeft;
       console.info("[SwiperMargin_static_0170] The spaceMargin value is " + spaceMargin);
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(spaceMargin)) - UIContext.getFocusedUIContext()!.vp2px(30) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      expect(Math.abs(Math.round(spaceMargin)) - uiContext.vp2px(30) <= 1).assertTrue();
 
       console.info('[SwiperMargin_static_0170] END');
       done();

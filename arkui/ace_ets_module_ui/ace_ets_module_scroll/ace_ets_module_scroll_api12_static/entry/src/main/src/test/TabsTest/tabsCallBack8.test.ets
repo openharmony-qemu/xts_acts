@@ -61,14 +61,15 @@ export default function tabsCallBack8() {
       console.info("tabsCallBack8 beforeEach end");
     });
 
-
-    /*
-     * @tc.number    tabsCallBack8_static_0100
-     * @tc.name      tabsCallBack8_static_0100
-     * @tc.desc      tabsCallBack8_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   tabsCallBack8_static_0100
+     * @tc.name     tabsCallBack8_static_0100
+     * @tc.desc     tabsCallBack8_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('tabsCallBack8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabsCallBack8_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsCallBack8_static_0100] START');
       let driver = Driver.create()
       let btn = await driver.findComponent(ON.text('Yellow'));

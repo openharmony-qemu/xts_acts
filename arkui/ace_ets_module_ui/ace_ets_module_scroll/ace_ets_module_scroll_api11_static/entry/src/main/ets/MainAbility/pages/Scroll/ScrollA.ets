@@ -41,7 +41,9 @@ import {
   FontWeight,
   Button,
   ButtonType,
-  ClickEvent
+  ClickEvent,
+  ScrollSource,
+  ScrollState
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -96,12 +98,12 @@ struct scroll_testcase {
       .key('scroll')
       .width(400)
       .height(200)
-      
-      
-      
-      
-      
-      
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
+        console.info(` current offset is ${xOffset} ${yOffset}`)
+      })
+      .onScrollStop(() => {
+        console.info(` now on  scroll end`)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info(`To the edge`)
       })
@@ -221,7 +223,6 @@ struct scroll_testcase {
         }
       }
       .padding(10)
-      
       .scrollBar(BarState.Off)
       .scrollBarColor(Color.Red)
       .scrollBarWidth(5)

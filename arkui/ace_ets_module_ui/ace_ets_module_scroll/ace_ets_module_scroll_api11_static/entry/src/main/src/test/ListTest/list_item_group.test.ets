@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -46,7 +46,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function list_item_groupJsunit() {
   describe('list_item_groupJsunit', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -59,14 +58,14 @@ export default function list_item_groupJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
+        router.clear()
         let pages = router.getState();
         console.info("get list_item_group state success " + JSON.stringify(pages));
-        if (!("list_item" == pages.name)) {
+        if (!("list_item_group" == pages.name)) {
           console.info("get list_item_group state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push list_item_group page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push list_item_group page error: " + err);
@@ -80,17 +79,17 @@ export default function list_item_groupJsunit() {
 
 
     /*
-     * @tc.number    testlist_item_group_static_0001
-     * @tc.name      testlist_item_group_static_0001
-     * @tc.desc      testlist_item_group_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   testlist_item_group_static_0001
+       * @tc.name     testlist_item_group_static_0001
+       * @tc.desc     testlist_item_group_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_item_group_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testcase testlist_item_group_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Mon');
       console.info("[testlist_item_group_static_0001] component state strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('ListItemGroup');
       console.info("[testlist_item_group_static_0001] editable value :" +
       JSON.parseJsonElement(strJson).getElement('$type'));
       done();
@@ -98,17 +97,17 @@ export default function list_item_groupJsunit() {
 
 
     /*
-     * @tc.number    testlist_item_group_static_0002
-     * @tc.name      testlist_item_group_static_0002
-     * @tc.desc      testlist_item_group_static_0002
-     * @tc.level     2
-     */
+       * @tc.number   testlist_item_group_static_0002
+       * @tc.name     testlist_item_group_static_0002
+       * @tc.desc     testlist_item_group_static_0002
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_item_group_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testcase testlist_item_group_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Tues');
       console.info("[testlist_item_group_static_0002] component border strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('ListItemGroup');
       console.info("[testlist_item_group_static_0002] selectable value :" +
       JSON.parseJsonElement(strJson).getElement('$type'));
       done();
@@ -116,39 +115,41 @@ export default function list_item_groupJsunit() {
 
 
     /*
-     * @tc.number    testlist_item_group_static_0003
-     * @tc.name      testlist_item_group_static_0003
-     * @tc.desc      testlist_item_group_static_0003
-     * @tc.level     2
-     */
+       * @tc.number   testlist_item_group_static_0003
+       * @tc.name     testlist_item_group_static_0003
+       * @tc.desc     testlist_item_group_static_0003
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_item_group_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testcase testlist_item_group_static_0003 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Wens');
       console.info("[testlist_item_group_static_0003] component border strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('header') !== undefined).assertTrue();
+      console.info("[testlist_item_group_static_0003] Header:" +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('header')));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('ListItemGroup');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('header') !== undefined).assertTrue();
       console.info("[testlist_itemOnSelect0003] hear value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('header'));
+      JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('header'));
       done();
     });
 
 
     /*
-     * @tc.number    testlist_item_group_static_0004
-     * @tc.name      testlist_item_group_static_0004
-     * @tc.desc      testlist_item_group_static_0004
-     * @tc.level     2
-     */
+       * @tc.number   testlist_item_group_static_0004
+       * @tc.name     testlist_item_group_static_0004
+       * @tc.desc     testlist_item_group_static_0004
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_item_group_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testcase testlist_item_group_static_0004 START');
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Thurs');
       console.info("[testlist_item_group_static_0004] component border strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('ListItemGroup');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rooter') !== undefined).assertTrue();
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('ListItemGroup');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('rooter') !== undefined).assertTrue();
       console.info("[testlist_item_group_static_0004] hear value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rooter'));
+      JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('rooter'));
       done();
     });
   })

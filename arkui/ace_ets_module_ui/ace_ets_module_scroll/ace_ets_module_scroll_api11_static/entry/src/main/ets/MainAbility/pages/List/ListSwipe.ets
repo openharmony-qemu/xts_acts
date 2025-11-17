@@ -35,7 +35,9 @@ import {
   SwipeActionState,
   Axis,
   TextAlign,
-  SwipeEdgeEffect
+  SwipeEdgeEffect,
+  TransitionEffect,
+  Curve
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import MyUtils from '../../common/Utils';
@@ -77,15 +79,14 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList1_ListItem0')
-        
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           end: {
             builder: (): void => this.itemEnd(),
-            
+            // without onAction, no deleteArea
             onStateChange: (state: SwipeActionState): void => {
               if (state == SwipeActionState.COLLAPSED) {
                 console.info('MyList1_ListItem0 swipe action state COLLAPSED')
@@ -121,14 +122,14 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList1_ListItem1')
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           end: {
             builder: (): void => this.itemEnd(),
-            
+            // without onAction, no deleteArea
           },
           edgeEffect: SwipeEdgeEffect.Spring,
           onOffsetChange: (offset: number): void => {
@@ -155,10 +156,10 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList2_ListItem0')
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           start: {
             builder: (): void => this.itemStart(),
@@ -196,15 +197,15 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList2_ListItem1')
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           start: {
             builder: (): void => this.itemEnd(),
             actionAreaDistance: 5,
-            
+            // with onAction
             onAction: (): void => {
             },
             onStateChange: (state: SwipeActionState): void => {
@@ -235,7 +236,7 @@ struct ListSwipe {
       }
       .divider({
         strokeWidth: 2,
-        color: 0xFF,
+        color: '0xFF',
         startMargin: 20,
         endMargin: 20
       })
@@ -260,25 +261,25 @@ struct ListSwipe {
         .key('swipe0100')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
       Text(this.list2Item0State)
         .key('swipe0300')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
       Text(this.closeButtonContent)
         .key('swipe0400')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
       Text(this.list1Item1Offset)
         .key('swipe0500')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
     }
     .padding(10)
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .width('100%')
     .height('100%')
   }

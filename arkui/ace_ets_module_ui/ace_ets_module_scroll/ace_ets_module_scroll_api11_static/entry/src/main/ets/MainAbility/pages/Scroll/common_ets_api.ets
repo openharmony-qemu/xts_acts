@@ -26,7 +26,14 @@ import {
   TextOverflow,
   ClickEvent
 } from '@ohos.arkui.component'
-import { State, StorageLink, LocalStorage } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  StorageLink,
+  LocalStorage,
+  Environment,
+  PersistentStorage,
+  LocalStorage
+} from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -52,7 +59,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("labelAAd")
         .onClick((e: ClickEvent) => {
-          
+          Environment.envProp("test", 200);
         })
       Text(`${this.label}: ${this.varA}`)
         .width(320)
@@ -68,7 +75,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("labelB")
         .onClick((e: ClickEvent) => {
-          
+          Environment.envProps([]);
         })
       Text(`${this.label}: ${this.varA}`)
         .width(320)
@@ -84,7 +91,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("labelC")
         .onClick((e: ClickEvent) => {
-          
+          PersistentStorage.persistProp("delete", 0);
         })
       Text(`${this.label}: ${this.varA}`)
         .width(320)
@@ -100,7 +107,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("labelD")
         .onClick((e: ClickEvent) => {
-          
+          PersistentStorage.deleteProp("delete");
         })
       Text(`${this.label}: ${this.varA}`)
         .width(320)
@@ -116,7 +123,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("labelE")
         .onClick((e: ClickEvent) => {
-          
+          // PersistentStorage.persistProps(null);
         })
       Text(`${this.label}: ${this.varA}`)
         .width(320)
@@ -132,7 +139,7 @@ struct Common_ts_ets_apiStaticClear {
         .textOverflow({ overflow: TextOverflow.None })
         .key("labelF")
         .onClick((e: ClickEvent) => {
-          
+          this.getUIContext().getSharedLocalStorage();
         })
 
 

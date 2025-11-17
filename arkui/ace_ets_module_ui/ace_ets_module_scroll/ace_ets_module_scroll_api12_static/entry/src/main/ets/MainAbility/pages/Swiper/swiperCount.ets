@@ -85,7 +85,7 @@ struct maxDisplayCountExample {
       .id('maxDisplayCount_mess')
       .index(1)
       .indicatorInteractive(true)
-      .indicator( 
+      .indicator( // 设置圆点导航点样式
         new DotIndicator()
           .itemWidth(15)
           .itemHeight(15)
@@ -94,10 +94,10 @@ struct maxDisplayCountExample {
           .color(Color.Gray)
           .selectedColor(Color.Blue)
           .maxDisplayCount(5)
-          .end(LengthMetrics.vp(30))
+          // .end(LengthMetrics.vp(30))
       )
       .displayArrow({
-        
+        // 设置导航点箭头样式
         showBackground: true,
         isSidebarMiddle: true,
         backgroundSize: 24,
@@ -105,21 +105,21 @@ struct maxDisplayCountExample {
         arrowSize: 18,
         arrowColor: Color.Blue
       } as ArrowStyle, false)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         console.info(index.toString())
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("targetIndex: " + targetIndex)
         console.info("current offset: " + extraInfo.currentOffset)
         console.info("target offset: " + extraInfo.targetOffset)
         console.info("velocity: " + extraInfo.velocity)
       })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })

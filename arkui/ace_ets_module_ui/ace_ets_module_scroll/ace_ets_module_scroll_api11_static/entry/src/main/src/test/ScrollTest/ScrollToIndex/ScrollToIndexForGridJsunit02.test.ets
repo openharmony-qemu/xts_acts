@@ -62,10 +62,9 @@ export default function ScrollToIndexForGridJsunit02() {
         console.info("get ScrollToIndexForGrid02 state pages: " + JSON.stringify(pages));
         if (!("ScrollToIndexForGrid02" == pages.name)) {
           console.info("get ScrollToIndexForGrid02 state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await router.pushUrl(options);
           routerAlp.pushUrl(options);
-          let driver = Driver.create();
-          await driver.delayMs(2000)
+          await UtilsTest.msSleep(4000)
         }
       } catch (err) {
         console.error("push ScrollToIndexForGrid02 page error: " + err);
@@ -73,12 +72,13 @@ export default function ScrollToIndexForGridJsunit02() {
       }
     });
 
+
     /*
-     * @tc.number    ScrollToIndexForGridJsunit02_static_0100
-     * @tc.name      ScrollToIndexForGridJsunit02_static_0100
-     * @tc.desc      ScrollToIndexForGridJsunit02_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit02_static_0100
+       * @tc.name     ScrollToIndexForGridJsunit02_static_0100
+       * @tc.desc     ScrollToIndexForGridJsunit02_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit02_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit02_static_0100] START');
 
@@ -95,12 +95,12 @@ export default function ScrollToIndexForGridJsunit02() {
       await driver.delayMs(1000);
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid02"));
       await driver.delayMs(1000);
-      
+      // 当前GridItem元素距离顶部的距离
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
       await driver.delayMs(1000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid02"));
-      
+      // Grid中心距离顶部的距离
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
       let centerDistanceTop = boundsCenter.y;
 
@@ -114,11 +114,11 @@ export default function ScrollToIndexForGridJsunit02() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit02_static_0200
-     * @tc.name      ScrollToIndexForGridJsunit02_static_0200
-     * @tc.desc      ScrollToIndexForGridJsunit02_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit02_static_0200
+       * @tc.name     ScrollToIndexForGridJsunit02_static_0200
+       * @tc.desc     ScrollToIndexForGridJsunit02_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit02_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit02_static_0200] START');
       let driver = Driver.create();
@@ -146,11 +146,11 @@ export default function ScrollToIndexForGridJsunit02() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit02_static_0300
-     * @tc.name      ScrollToIndexForGridJsunit02_static_0300
-     * @tc.desc      ScrollToIndexForGridJsunit02_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit02_static_0300
+       * @tc.name     ScrollToIndexForGridJsunit02_static_0300
+       * @tc.desc     ScrollToIndexForGridJsunit02_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit02_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit02_static_0300] START');
       let driver = Driver.create();
@@ -181,11 +181,11 @@ export default function ScrollToIndexForGridJsunit02() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit02_static_0400
-     * @tc.name      ScrollToIndexForGridJsunit02_static_0400
-     * @tc.desc      ScrollToIndexForGridJsunit02_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit02_static_0400
+       * @tc.name     ScrollToIndexForGridJsunit02_static_0400
+       * @tc.desc     ScrollToIndexForGridJsunit02_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit02_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit02_static_0400] START');
       let driver = Driver.create();

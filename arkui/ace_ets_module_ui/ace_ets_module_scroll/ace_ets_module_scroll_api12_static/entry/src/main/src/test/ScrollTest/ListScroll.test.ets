@@ -39,7 +39,6 @@ import inspector from '@ohos.arkui.inspector'
 import { UtilsTest } from '../Util.test';
 
 let testAbilityContext: common.UIAbilityContext;
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 const waitUiReadyMs = 1000;
@@ -49,20 +48,41 @@ export default function ListScrollTest1() {
   describe('ListScrollTest1', () => {
 
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
+    beforeEach(async (): Promise<void> => {
+      console.info("ListScrollTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/Scroll/ListScroll',
+      }
+      try {
+        const router = AppStorage.get<Router>("router") as Router
+        router.clear();
+        let pages = router.getState();
+        console.info("get ListScrollTest state pages: " + JSON.stringify(pages));
+        if (!("MainAbility/pages/Scroll/ListScroll" == pages.name)) {
+          console.info("get ListScrollTest state pages.name: " + JSON.stringify(pages.name));
+          router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
+      } catch (err) {
+        console.error("push ListScrollTest page error: " + err);
+        expect().assertFail();
+      }
+    });
 
-    /*
-     * @tc.number    ListScrollTest1_0100
-     * @tc.name      ListScrollTest1_0100
-     * @tc.desc      ListScrollTest1_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   ListScrollTest1_0100
+     * @tc.name     ListScrollTest1_0100
+     * @tc.desc     ListScrollTest1_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ListScrollTest1_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ListScrollTest1_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ListScrollTest_0100 START');
       let swiperAnimation = CommonFunc.getComponentRectOnScreen('listScroll_4');
       let top = swiperAnimation.top;
@@ -74,8 +94,7 @@ export default function ListScrollTest1() {
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      driver.swipe((Math.round(left + width * 0.2)).toInt(), (Math.round(bottom - height / 4)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(bottom - height / 2)).toInt());
+      await driver.swipe((Math.round(left + width*0.2)).toInt(),(Math.round(bottom - height/4)).toInt(),(Math.round(left + width*0.2)).toInt(),(Math.round(bottom - height/2)).toInt());
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('listScroll_1');
       let strJson1 = inspector.getInspectorByKey('listScroll_2');

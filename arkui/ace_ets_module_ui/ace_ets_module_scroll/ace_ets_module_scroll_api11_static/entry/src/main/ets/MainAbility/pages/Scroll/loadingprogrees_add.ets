@@ -20,7 +20,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct LoadingProgressExampleAdd {
   build() {
     Column({ space: 5 } as ColumnOptions) {
-      Text('Orbital LoadingProgress ').fontSize(9).fontColor(0xCCCCCC).width('90%')
+      Text('Orbital LoadingProgress ').fontSize(9).fontColor('0xCCCCCC').width('90%')
       LoadingProgress().key('loadingAdd')
         .color(Color.Blue)
         .enableLoading(false)

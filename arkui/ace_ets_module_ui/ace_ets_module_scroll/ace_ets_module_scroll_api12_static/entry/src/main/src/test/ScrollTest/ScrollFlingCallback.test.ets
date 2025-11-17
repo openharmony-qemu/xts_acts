@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, it, expect, beforeAll, afterAll, Level } from "../../../../hypium/index";
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
@@ -49,10 +49,9 @@ export default function ScrollFlingCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info('get ScrollFlingCallback state pages:' + JSON.stringify(pages));
-        if (!('ScrollFlingCallback' == pages.name)) {
+        if (!('MainAbility/pages/Scroll/ScrollFlingCallback' == pages.name)) {
           console.info('get ScrollFlingCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -67,13 +66,18 @@ export default function ScrollFlingCallbackJsunit() {
       console.info('ScrollFlingCallback after each called');
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    ScrollFlingCallbackTest_0100
-     * @tc.name      ScrollFlingCallbackTest_0100
-     * @tc.desc      ScrollFlingCallbackTest_0100
-     * @tc.level     2
-     */
+       * @tc.number   ScrollFlingCallbackTest_0100
+       * @tc.name     ScrollFlingCallbackTest_0100
+       * @tc.desc     ScrollFlingCallbackTest_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollFlingCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollFlingCallbackTest_0100 START');
       let driver1 = Driver.create();
@@ -89,11 +93,11 @@ export default function ScrollFlingCallbackJsunit() {
 
 
     /*
-     * @tc.number    ScrollFlingCallbackTest_0200
-     * @tc.name      ScrollFlingCallbackTest_0200
-     * @tc.desc      ScrollFlingCallbackTest_0200
-     * @tc.level     2
-     */
+       * @tc.number   ScrollFlingCallbackTest_0200
+       * @tc.name     ScrollFlingCallbackTest_0200
+       * @tc.desc     ScrollFlingCallbackTest_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollFlingCallbackTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollFlingCallbackTest_0200 START');
       let driver1 = Driver.create();

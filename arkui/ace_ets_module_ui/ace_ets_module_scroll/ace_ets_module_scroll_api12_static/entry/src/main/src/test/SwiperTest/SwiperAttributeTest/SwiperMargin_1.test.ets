@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperMargin_1() {
   describe('SwiperMargin_1', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -53,16 +51,14 @@ export default function SwiperMargin_1() {
       console.info("SwiperMargin_1 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperMargin_1 state pages:" + JSON.stringify(pages));
-        if (!("SwiperMargin_1" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_1" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_1"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperMargin_1 page result:");
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push SwiperMargin_1 page error:" + err);
@@ -74,14 +70,20 @@ export default function SwiperMargin_1() {
       console.info("SwiperMargin_1 after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    SwiperMargin_static_0070
-     * @tc.name      SwiperMargin_static_0070
-     * @tc.desc      SwiperMargin_static_0070
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperMargin_static_0070
+     * @tc.name     SwiperMargin_static_0070
+     * @tc.desc     SwiperMargin_static_0070
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperMargin_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperMargin_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperMargin_static_0070] START');
 
       let swiperRect = CommonFunc.getComponentRect('swiperMargin_1');
@@ -92,20 +94,21 @@ export default function SwiperMargin_1() {
 
       let spaceMargin = swiperLeft - textLeft;
       console.info("[SwiperMargin_static_0070] The spaceMargin value is " + spaceMargin);
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(swiperLeft - textLeft)) - UIContext.getFocusedUIContext()!.vp2px(10) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      expect(Math.abs(Math.round(swiperLeft - textLeft)) - uiContext.vp2px(10) <= 1).assertTrue();
       console.info('[SwiperMargin_static_0070] END');
       done();
     });
 
-
-    /*
-     * @tc.number    SwiperMargin_static_0200
-     * @tc.name      SwiperMargin_static_0200
-     * @tc.desc      SwiperMargin_static_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperMargin_static_0200
+     * @tc.name     SwiperMargin_static_0200
+     * @tc.desc     SwiperMargin_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperMargin_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperMargin_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperMargin_static_0200] START');
 
       let rect = CommonFunc.getComponentRectOnScreen('swiperMargin_1')
@@ -129,8 +132,8 @@ export default function SwiperMargin_1() {
 
       let spaceMargin = swiperRight - columnLeft;
       console.info("[SwiperMargin_static_0200] The spaceMargin value is " + JSON.stringify(spaceMargin));
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(spaceMargin)) - UIContext.getFocusedUIContext()!.vp2px(20) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      expect(Math.abs(Math.round(spaceMargin)) - uiContext.vp2px(20) <= 1).assertTrue();
 
       console.info('[SwiperMargin_static_0200] END');
       done();

@@ -36,94 +36,35 @@ import {
   Alignment,
   ForEach,
   ListItem,
-  TextAlign
+  TextAlign,
 } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, StorageLink, AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
 struct ListExample {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[];
-  @State listDirection: Axis = Axis.Vertical;
-  @State editMode: boolean = false;
-  @State edgeEffect: EdgeEffect = EdgeEffect.None;
-  @State chainAnimation: boolean = false;
-  @State strokeWidth: number = 2.000000;
-  @State color: string = '#FFFFFF';
-  @State startMargin: number = 20.000000;
-  @State endMargin: number = 20.000000;
+  @StorageLink('listDirection') listDirection: Axis = Axis.Vertical;
+  @StorageLink('editMode') editMode: boolean = false;
+  @StorageLink('edgeEffect') edgeEffect: EdgeEffect = EdgeEffect.None;
+  @StorageLink('chainAnimation') chainAnimation: boolean = false;
+  @StorageLink('strokeWidth') strokeWidth: number | string = 2.000000;
+  @StorageLink('color') color: string = '#FFFFFF';
+  @StorageLink('startMargin') startMargin: number | string = 20.000000;
+  @StorageLink('endMargin') endMargin: number | string = 20.000000;
 
   onPageShow() {
     console.info('[list] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 124,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 125,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBackTwo);
-
-    let stateChangeEvent3: events_emitter.InnerEvent = {
-      eventId: 901,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent3, this.stateChangCallBackTwo);
-
-    let stateChangeEvent4: events_emitter.InnerEvent = {
-      eventId: 902,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent4, this.stateChangCallBackTwo);
-
-    let stateChangeEvent5: events_emitter.InnerEvent = {
-      eventId: 903,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent5, this.stateChangCallBackTwo);
+    AppStorage.setOrCreate<Axis>('listDirection', Axis.Vertical);
+    AppStorage.setOrCreate<boolean>('editMode', false);
+    AppStorage.setOrCreate<EdgeEffect>('edgeEffect', EdgeEffect.None);
+    AppStorage.setOrCreate<boolean>('chainAnimation', false);
+    AppStorage.setOrCreate<number | string>('strokeWidth', 2.000000);
+    AppStorage.setOrCreate<string>('color', '#FFFFFF');
+    AppStorage.setOrCreate('startMargin', 20.000000);
+    AppStorage.setOrCreate<number | string>('endMargin', 20.000000);
   }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info("[stateChangCallBack] stateChangCallBack");
-    if (eventData != null) {
-      console.info("[stateChangCallBack] state change called:" + JSON.stringify(eventData));
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    }
-  }
-  private stateChangCallBackTwo: (eventData: events_emitter.EventData) => void =
-    (eventData: events_emitter.EventData) => {
-      console.info("[stateChangCallBackTwo] stateChangCallBack");
-      if (eventData != null) {
-        console.info("[stateChangCallBackTwo] state change called:" + JSON.stringify(eventData));
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-      }
-    }
 
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
@@ -139,8 +80,6 @@ struct ListExample {
                 .borderRadius(10)
                 .backgroundColor(0xFFFFFF)
             }
-
-            
           }, (item: number) => item.toString())
         }
         .key('list')
@@ -162,13 +101,6 @@ struct ListExample {
           console.info('scrollOffset:' + scrollOffset)
           console.info('scrollState:' + scrollState)
         })
-        
-        
-        
-        
-        
-        
-        
         .width('90%')
       }.width('100%')
 

@@ -50,7 +50,7 @@ struct AlphabetIndexerSample {
           .selectedFont({ size: 16, weight: FontWeight.Bolder })
           .popupFont({ size: 30, weight: FontWeight.Bolder })
           .itemSize(28)
-          .alignStyle(IndexerAlign.Left)
+          // .alignStyle(IndexerAlign.Left)
           .popupSelectedColor(0x00FF00)
           .popupUnselectedColor(0x0000FF)
           .popupItemFont({ size: 30, style: FontStyle.Normal })

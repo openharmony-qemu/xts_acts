@@ -39,11 +39,12 @@ export default function GridTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get grid state success " + JSON.stringify(pages));
-        if (!("GridTestPage" == pages.name)) {
+        if (!("MainAbility/pages/grid/GridTestPage" == pages.name)) {
           console.info("get grid state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
-          
+          await UtilsTest.msSleep(2000)
+          // console.info("push grid page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push grid page error " + JSON.stringify(err));
@@ -55,12 +56,13 @@ export default function GridTest() {
      *tc.name   Test Grid with GridItemStyle.NONE
      *tc.desc   Test Grid with GridItemStyle.NONE
      */
+
     /*
-     * @tc.number    ArkUX_Grid_api_static_0001
-     * @tc.name      ArkUX_Grid_api_static_0001
-     * @tc.desc      ArkUX_Grid_api_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_api_static_0001
+       * @tc.name     ArkUX_Grid_api_static_0001
+       * @tc.desc     ArkUX_Grid_api_static_0001
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_api_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUX_Grid_api_static_0001'
       console.info(`${SUITE} ${CASE} START`);
@@ -80,12 +82,13 @@ export default function GridTest() {
      *tc.name   Test Grid with GridItemStyle.PLAIN
      *tc.desc   Test Grid with GridItemStyle.PLAIN
      */
+
     /*
-     * @tc.number    ArkUX_Grid_api_static_0002
-     * @tc.name      ArkUX_Grid_api_static_0002
-     * @tc.desc      ArkUX_Grid_api_static_0002
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_api_static_0002
+       * @tc.name     ArkUX_Grid_api_static_0002
+       * @tc.desc     ArkUX_Grid_api_static_0002
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_api_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUX_Grid_api_static_0002'
       console.info(`${SUITE} ${CASE} START`);
@@ -105,12 +108,13 @@ export default function GridTest() {
      *tc.name   Test Grid with exceptional value
      *tc.desc   Test Grid with exceptional value
      */
+
     /*
-     * @tc.number    ArkUX_Grid_api_static_0003
-     * @tc.name      ArkUX_Grid_api_static_0003
-     * @tc.desc      ArkUX_Grid_api_static_0003
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_api_static_0003
+       * @tc.name     ArkUX_Grid_api_static_0003
+       * @tc.desc     ArkUX_Grid_api_static_0003
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_api_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUX_Grid_api_static_0003'
       console.info(`${SUITE} ${CASE} START`);
@@ -139,12 +143,13 @@ export default function GridTest() {
      *tc.name   Test Grid with value not set
      *tc.desc   Test Grid with value not set
      */
+
     /*
-     * @tc.number    ArkUX_Grid_api_static_0004
-     * @tc.name      ArkUX_Grid_api_static_0004
-     * @tc.desc      ArkUX_Grid_api_static_0004
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_api_static_0004
+       * @tc.name     ArkUX_Grid_api_static_0004
+       * @tc.desc     ArkUX_Grid_api_static_0004
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_api_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUX_Grid_api_static_0004'
       console.info(`${SUITE} ${CASE} START`);
@@ -164,12 +169,13 @@ export default function GridTest() {
      *tc.name   Test Grid with exceptional value
      *tc.desc   Test Grid with exceptional value
      */
+
     /*
-     * @tc.number    ArkUX_Grid_api_static_0005
-     * @tc.name      ArkUX_Grid_api_static_0005
-     * @tc.desc      ArkUX_Grid_api_static_0005
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_api_static_0005
+       * @tc.name     ArkUX_Grid_api_static_0005
+       * @tc.desc     ArkUX_Grid_api_static_0005
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_api_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUX_Grid_api_static_0005'
       console.info(`${SUITE} ${CASE} START`);

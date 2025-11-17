@@ -35,7 +35,8 @@ import {
   OnScrollFrameBeginHandlerResult,
   Margin,
   BarState,
-  Color
+  Color,
+  ScrollSource
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -62,11 +63,12 @@ struct ScrollOnScrollBegin {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("scroll page state change called:" + JSON.stringify(eventData));
-    
-    
-    
-    
-    
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['alwaysEnabled'] != null) {
+        this.alwaysEnabled = data['alwaysEnabled'] as boolean;
+      }
+    }
   }
 
   onPageShow() {
@@ -117,15 +119,15 @@ struct ScrollOnScrollBegin {
       .scrollBarColor(Color.Gray)
       .scrollBarWidth(30)
       .edgeEffect(this.edgeEffect, { alwaysEnabled: this.alwaysEnabled })
-      
-      
-      
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info('To the edge')
       })
-      
-      
-      
+      .onScrollStop(() => {
+        console.info('Scroll Stop')
+      })
       .key("Scroll")
       .width("100%")
       .height("100%")

@@ -52,10 +52,10 @@ export default function TabsApi() {
         console.info("get TabsApi state success " + JSON.stringify(pages));
         if (!("TabsApi" == pages.name)) {
           console.info("get TabsApi state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await Utils.sleep(2000);
-          
+          // console.info("push TabsApi page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TabsApi page error: " + err);
@@ -69,11 +69,11 @@ export default function TabsApi() {
 
 
     /*
-     * @tc.number    TabsApi_static_001
-     * @tc.name      TabsApi_static_001
-     * @tc.desc      TabsApi_static_001
-     * @tc.level     2
-     */
+       * @tc.number   TabsApi_static_001
+       * @tc.name     TabsApi_static_001
+       * @tc.desc     TabsApi_static_001
+       * @tc.level    Level.LEVEL0
+       */
     it('TabsApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TabsApi_static_001] START');
       await Utils.sleep(1000);

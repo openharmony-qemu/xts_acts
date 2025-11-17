@@ -51,12 +51,11 @@ export default function SwiperAdd0510() {
       console.info("SwiperAdd0510 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperAdd0510 state pages:" + JSON.stringify(pages));
-        if (!("SwiperAdd0510" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperAdd/SwiperAdd0510" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperAdd/SwiperAdd0510'
           })
           await CommonFunc.sleep(2000);
@@ -72,17 +71,22 @@ export default function SwiperAdd0510() {
       console.info("SwiperAdd0510 after each called");
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ADD_static_0510 START");
       await CommonFunc.sleep(5000);
-      let strJson2: string = inspector.getInspectorByKey('swiper_add_static_0510');
+      let strJson2: string = inspector.getInspectorByKey('swiper_add_0510');
       let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
       expect(marq).assertEqual("1");
       await CommonFunc.sleep(1000);

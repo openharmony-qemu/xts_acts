@@ -61,11 +61,11 @@ export default function singleHozList() {
         router.clear();
         let pages = router.getState();
         console.info("get singleHozList state pages:" + JSON.stringify(pages));
-        if (!("singleHozList" == pages.name)) {
+        if (!("MainAbility/pages/List/singleHozList" == pages.name)) {
           console.info("get singleHozList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push singleHozList page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push singleHozList page error:" + err);
@@ -80,11 +80,11 @@ export default function singleHozList() {
 
 
     /*
-     * @tc.number    singleHozList_static_0100
-     * @tc.name      singleHozList_static_0100
-     * @tc.desc      singleHozList_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   singleHozList_static_0100
+       * @tc.name     singleHozList_static_0100
+       * @tc.desc     singleHozList_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('singleHozList_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[singleHozList_static_0100] START');
       await CommonFunc.sleep(1000);

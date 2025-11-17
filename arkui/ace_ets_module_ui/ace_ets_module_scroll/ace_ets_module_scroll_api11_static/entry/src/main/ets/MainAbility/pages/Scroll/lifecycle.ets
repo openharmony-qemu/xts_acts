@@ -42,7 +42,7 @@ struct lifeCycle {
 
 @Builder
 function ColumnChildren() {
-  ForEach([1, 2, 3], (item: Int, index: int) => { 
+  ForEach([1, 2, 3], (item: Int, index: int) => { //暂不支持lazyForEach的写法
     Text('S' + index)
       .fontSize(30)
       .width(100)
@@ -77,15 +77,14 @@ struct CustomLayout {
   onMeasureSize(selfLayoutInfo: GeometryInfo, children: Array<Measurable>, constraint: ConstraintSizeOptions) {
     let size = 100;
     children.forEach((child) => {
-      let res: MeasureResult | undefined = child.measure({
+      let result1: MeasureResult = child.measure({
         minHeight: size,
         minWidth: size,
         maxWidth: size,
         maxHeight: size
-      })
-      if (res) {
-        size += res.width / 2;
-      }
+      }) as MeasureResult
+      size += result1.width / 2
+      ;
     })
     this.result.width = 100;
     this.result.height = 400;

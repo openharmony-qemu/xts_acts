@@ -43,8 +43,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function swiperCountJsunit() {
   describe('swiperCountJsunit', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -75,14 +73,15 @@ export default function swiperCountJsunit() {
       console.info(" swiperCountJsunit after each called");
     });
 
-
-    /*
-     * @tc.number    swiperCountJsunit_static_0100
-     * @tc.name      swiperCountJsunit_static_0100
-     * @tc.desc      swiperCountJsunit_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   swiperCountJsunit_static_0100
+     * @tc.name     swiperCountJsunit_static_0100
+     * @tc.desc     swiperCountJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('swiperCountJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('swiperCountJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('swiperCountJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('maxDisplayCount_mess');

@@ -62,32 +62,30 @@ struct ListExample {
                 .borderRadius(10)
                 .backgroundColor(0xFFFFFF)
             }
-
-            
           }, (item: number) => item.toString())
         }
         .key('list')
-        .listDirection(Axis.Vertical) 
+        .listDirection(Axis.Vertical) // 排列方向
         .divider({
           strokeWidth: 2,
           color: 0xFFFFFF,
           startMargin: 20,
           endMargin: 20
-        }) 
-        .edgeEffect(this.edgeEffect) 
-        .chainAnimation(false) 
+        }) // 每行之间的分界线
+        .edgeEffect(this.edgeEffect) // 滑动到边缘无效果
+        .chainAnimation(false) // 联动特效关闭
         .onScrollIndex((firstIndex: int, lastIndex: int, center: int): void => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
         })
-        
-        
-        
-        
-        
-        
-        
-        
+        // .editMode(this.editFlag)
+        // .onItemDelete((index: number) => {
+        //   console.info(this.arr[index] + 'Delete')
+        //   this.arr.splice(index, 1)
+        //   console.info(JSON.stringify(this.arr))
+        //   this.editFlag = false
+        //   return true
+        // })
         .width('90%')
       }.width('100%')
 

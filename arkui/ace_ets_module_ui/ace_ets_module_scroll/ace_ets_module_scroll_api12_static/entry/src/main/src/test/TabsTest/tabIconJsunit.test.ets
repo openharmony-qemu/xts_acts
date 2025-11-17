@@ -45,7 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabIconJsunit() {
   describe('tabIconJsunit', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -57,10 +56,9 @@ export default function tabIconJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get tabIconJsunit state pages: " + JSON.stringify(pages));
-        if (!("tabIcon" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/tabIcon" == pages.name)) {
           console.info("get tabIconJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -72,21 +70,27 @@ export default function tabIconJsunit() {
       }
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
-    /*
-     * @tc.number    tabIconJsunit_static_0100
-     * @tc.name      tabIconJsunit_static_0100
-     * @tc.desc      tabIconJsunit_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   tabIconJsunit_static_0100
+     * @tc.name     tabIconJsunit_static_0100
+     * @tc.desc     tabIconJsunit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('tabIconJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabIconJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabIconJsunit_static_0100 START');
 
       let strJson = inspector.getInspectorByKey('tabBar_iconStyle');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[tabIconJsunit_static_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[tabIconJsunit_static_0100] component obj is: " + strJson);
       console.info("[tabIconJsunit_static_0100] iconStyle: " +
-      JSON.stringify(obj.getElement('$attrs').getElement('iconStyle')));
+      JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('tabBar').getElement('iconStyle')));
       expect(obj.getElement('$attrs').getElement('tabBar').getElement('iconStyle').getString('unselectedColor'))
         .assertEqual("#FFFF0000");
       expect(obj.getElement('$attrs').getElement('tabBar').getElement('iconStyle').getString('selectedColor'))
@@ -94,14 +98,15 @@ export default function tabIconJsunit() {
       console.info('[tabIconJsunit_static_0100] END');
       done();
     });
-
-    /*
-     * @tc.number    tabIconJsunit_static_0200
-     * @tc.name      tabIconJsunit_static_0200
-     * @tc.desc      tabIconJsunit_static_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   tabIconJsunit_static_0200
+     * @tc.name     tabIconJsunit_static_0200
+     * @tc.desc     tabIconJsunit_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('tabIconJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabIconJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabIconJsunit_static_0200 START');
       let swiperTabs = CommonFunc.getComponentRectOnScreen('tabs_iconStyle');
       let top = swiperTabs.top;

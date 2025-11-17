@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import {
   Entry,
   Component,
@@ -27,7 +26,9 @@ import {
   TextAlign,
   Builder,
   List,
-  ForEach
+  ForEach,
+  ListItem,
+  TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -62,22 +63,22 @@ struct constraintSizeListItemGroup2 {
     Column() {
       List() {
         ForEach(this.conTable2, (item: CONTable2) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup({ header: () => { this.itemHead(item.title) } }) {
+            ForEach(item.projects, (project: string) => {
+              ListItem() {
+                Text(project)
+                  .width('100%')
+                  .height(100)
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(0xFFFFFF)
+              }
+            }, (item: string) => item)
+          }
+          .id('group_constraintSize_2')
+          .height(200)
+          .constraintSize({minHeight:100, maxHeight:300})
+          .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
         })
       }
       .width('100%')

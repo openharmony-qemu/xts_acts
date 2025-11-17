@@ -49,12 +49,10 @@ export default function tabsOnContentWillChangeIndex09JsunitTest() {
         console.info("get tabsOnContentWillChangeIndex09JsunitTest state pages:" + JSON.stringify(pages));
         if (!("tabs_onContentWillChangeIndex09" == pages.name)) {
           console.info("tabsOnContentWillChangeIndex06JsunitTest  pages.name:" + JSON.stringify(pages.name));
-          
-          routerAlp.pushUrl({
-            url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex09"
-          })
+          // let result = await routerAlp.pushUrl({url:"MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex09"})
+          routerAlp.pushUrl({ url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex09" })
           await CommonFunc.sleep(2000);
-          
+          // console.info("push tabsOnContentWillChangeIndex09JsunitTest result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push tabsOnContentWillChangeIndex09JsunitTest page error:" + err);
@@ -68,15 +66,15 @@ export default function tabsOnContentWillChangeIndex09JsunitTest() {
 
 
     /*
-     * @tc.number    tabsOnContentWillChangeJsunitTest_static_0090
-     * @tc.name      tabsOnContentWillChangeJsunitTest_static_0090
-     * @tc.desc      tabsOnContentWillChangeJsunitTest_static_0090
-     * @tc.level     2
-     */
+       * @tc.number   tabsOnContentWillChangeJsunitTest_static_0090
+       * @tc.name     tabsOnContentWillChangeJsunitTest_static_0090
+       * @tc.desc     tabsOnContentWillChangeJsunitTest_static_0090
+       * @tc.level    Level.LEVEL0
+       */
     it('tabsOnContentWillChangeJsunitTest_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabsOnContentWillChangeJsunitTest_static_0090 START');
 
-      
+      // click the index tab it chan change
       let driver = Driver.create();
       let button01 = await driver.findComponent(ON.text("推荐"));
       await (button01?.click() as Promise<void>);
@@ -88,7 +86,7 @@ export default function tabsOnContentWillChangeIndex09JsunitTest() {
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('2');
 
 
-      
+      // it can  response when click the index 3
 
       let button02 = await driver.findComponent(ON.text("我的"));
       await (button02?.click() as Promise<void>);

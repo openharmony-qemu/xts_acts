@@ -16,14 +16,13 @@ import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '.
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
 import inspector from '@ohos.arkui.inspector'
 import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { GlobalContext } from '../../../ets/MainAbility/common/GlobalContext.ets'
@@ -34,27 +33,29 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 let emitKey = "emitUserAgent";
 
+function spliceColor(sysColor: Resource) {
+  const context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
+  let resourceColor = context?.resourceManager.getColorSync(sysColor.id)
+  let newArgb: string = '#' + resourceColor?.toString(16).toUpperCase()
+  return newArgb;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+function alphabetDefaultPopupSize(sysWidth: Resource) {
+  const context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
+  let resourcePopupSize = context?.resourceManager.getDouble(sysWidth.id)
+  const uiContext = AppStorage.get<UIContext>('uiContext');
+  let newPopupSize: string = Math.round(uiContext!.px2vp(resourcePopupSize ?? 0)) + '.00vp'
+  return newPopupSize;
+}
 
 export default function ActsAlphabetIndexerUxTest() {
   describe('ActsAlphabetIndexerUxTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
+
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/AlphabetIndexer/alphabetIndexerux",
@@ -66,13 +67,10 @@ export default function ActsAlphabetIndexerUxTest() {
         console.info("get AlphabetIndexer state success " + JSON.stringify(pages));
         if (!("alphabetIndexerux" == pages.name)) {
           console.info("get AlphabetIndexer state success " + JSON.stringify(pages.name));
-
           routerAlp.pushUrl(options)
           await CommonFunc.sleep(2000);
-
         }
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.error("push AlphabetIndexer page error " + JSON.stringify(err));
       }
     });
@@ -108,7 +106,7 @@ export default function ActsAlphabetIndexerUxTest() {
             "nullFlag3": false,
             "nullFlag4": false,
             "nullFlag5": false
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -116,19 +114,19 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
     })
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_0100
-     * @tc.name      ArkUI_AlphabetIndexer_static_0100
-     * @tc.desc      ArkUI_AlphabetIndexer_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_0100
+       * @tc.name     ArkUI_AlphabetIndexer_static_0100
+       * @tc.desc     ArkUI_AlphabetIndexer_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0100 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest1');
@@ -138,18 +136,20 @@ export default function ActsAlphabetIndexerUxTest() {
       expect(obj.getElement('$attrs').getString('popupUnselectedColor'))
         .assertEqual(obj.getElement('$attrs').getString('backgroundColor'));
       expect(obj.getElement('$attrs').getString('popupItemBackground')).assertEqual("#00000000");
-
+      expect(obj.getElement('$attrs').getString('popupItemFontSize'))
+        .assertEqual(alphabetDefaultPopupSize($r('sys.float.ohos_id_text_size_headline7')));
       expect(obj.getElement('$attrs').getString('popupItemFontWeight')).assertEqual("FontWeight.Medium");
       expect(obj.getElement('$attrs').getString('popupHorizontalSpace')).assertEqual("-1.00vp");
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_0600
-     * @tc.name      ArkUI_AlphabetIndexer_static_0600
-     * @tc.desc      ArkUI_AlphabetIndexer_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_0600
+       * @tc.name     ArkUI_AlphabetIndexer_static_0600
+       * @tc.desc     ArkUI_AlphabetIndexer_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0600 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest6');
@@ -159,12 +159,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_0700
-     * @tc.name      ArkUI_AlphabetIndexer_static_0700
-     * @tc.desc      ArkUI_AlphabetIndexer_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_0700
+       * @tc.name     ArkUI_AlphabetIndexer_static_0700
+       * @tc.desc     ArkUI_AlphabetIndexer_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0700 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest7');
@@ -173,12 +174,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_0800
-     * @tc.name      ArkUI_AlphabetIndexer_static_0800
-     * @tc.desc      ArkUI_AlphabetIndexer_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_0800
+       * @tc.name     ArkUI_AlphabetIndexer_static_0800
+       * @tc.desc     ArkUI_AlphabetIndexer_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0800 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest2');
@@ -186,7 +188,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -194,8 +196,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -206,12 +207,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_0900
-     * @tc.name      ArkUI_AlphabetIndexer_static_0900
-     * @tc.desc      ArkUI_AlphabetIndexer_static_0900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_0900
+       * @tc.name     ArkUI_AlphabetIndexer_static_0900
+       * @tc.desc     ArkUI_AlphabetIndexer_static_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0900 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest2');
@@ -219,7 +221,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -227,8 +229,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -239,12 +240,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1000
-     * @tc.name      ArkUI_AlphabetIndexer_static_1000
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1000
+       * @tc.name     ArkUI_AlphabetIndexer_static_1000
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1000 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest2');
@@ -252,7 +254,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -260,8 +262,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -271,49 +272,46 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1100
-     * @tc.name      ArkUI_AlphabetIndexer_static_1100
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1100
+       * @tc.name     ArkUI_AlphabetIndexer_static_1100
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_AlphabetIndexer_static_1100 start");
+      let strJson = inspector.getInspectorByKey('alphabetIndexerTest2');
       try {
-        console.info("ArkUI_AlphabetIndexer_static_1100 start");
-        let strJson = inspector.getInspectorByKey('alphabetIndexerTest2');
-        try {
-          let eventData: events_emitter.EventData = {
-            data: {
-              "nullFlag4": true,
-            } as Record<String, RecordData>
-          }
-          let innerEvent: events_emitter.InnerEvent = {
-            eventId: 183,
-            priority: events_emitter.EventPriority.LOW
-          }
-          console.info("[ArkUI_AlphabetIndexer_static_1100] start to publish emit");
-          events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
-          err = err as BusinessError;
-          console.log("[ArkUI_AlphabetIndexer_static_1100] change component data error: " + err.message);
+        let eventData: events_emitter.EventData = {
+          data: {
+            "nullFlag4": true,
+          } as Record<String, undefined | null | Object>
         }
-        await CommonFunc.sleep(2000);
-        let newJson = inspector.getInspectorByKey('alphabetIndexerTest2');
-        let obj = JSON.parseJsonElement(newJson);
-
-        done();
-      } catch (ERROR) {
-        expect().assertFail();
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 183,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("[ArkUI_AlphabetIndexer_static_1100] start to publish emit");
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
+        console.log("[ArkUI_AlphabetIndexer_static_1100] change component data error: " + err.message);
       }
-
+      await CommonFunc.sleep(2000);
+      let newJson = inspector.getInspectorByKey('alphabetIndexerTest2');
+      let obj = JSON.parseJsonElement(newJson);
+      expect(obj.getElement('$attrs').getString('popupItemFontSize'))
+        .assertEqual(alphabetDefaultPopupSize($r('sys.float.ohos_id_text_size_headline7')));
+      done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1200
-     * @tc.name      ArkUI_AlphabetIndexer_static_1200
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1200
+       * @tc.name     ArkUI_AlphabetIndexer_static_1200
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1200 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest2');
@@ -321,7 +319,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -329,8 +327,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -340,12 +337,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1300
-     * @tc.name      ArkUI_AlphabetIndexer_static_1300
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1300
+       * @tc.name     ArkUI_AlphabetIndexer_static_1300
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1300 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest2');
@@ -353,7 +351,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -361,8 +359,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -372,12 +369,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1400
-     * @tc.name      ArkUI_AlphabetIndexer_static_1400
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1400
+       * @tc.name     ArkUI_AlphabetIndexer_static_1400
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1400 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest3');
@@ -385,7 +383,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -393,8 +391,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -405,12 +402,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1500
-     * @tc.name      ArkUI_AlphabetIndexer_static_1500
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1500
+       * @tc.name     ArkUI_AlphabetIndexer_static_1500
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1500
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1500 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest3');
@@ -418,7 +416,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -426,8 +424,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -438,12 +435,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1600
-     * @tc.name      ArkUI_AlphabetIndexer_static_1600
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1600
+       * @tc.name     ArkUI_AlphabetIndexer_static_1600
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1600 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest3');
@@ -451,7 +449,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -459,8 +457,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -470,49 +467,46 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1700
-     * @tc.name      ArkUI_AlphabetIndexer_static_1700
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1700
+       * @tc.name     ArkUI_AlphabetIndexer_static_1700
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_AlphabetIndexer_static_1700 start");
+      let strJson = inspector.getInspectorByKey('alphabetIndexerTest3');
       try {
-        console.info("ArkUI_AlphabetIndexer_static_1700 start");
-        let strJson = inspector.getInspectorByKey('alphabetIndexerTest3');
-        try {
-          let eventData: events_emitter.EventData = {
-            data: {
-              "nullFlag4": true,
-            } as Record<String, RecordData>
-          }
-          let innerEvent: events_emitter.InnerEvent = {
-            eventId: 183,
-            priority: events_emitter.EventPriority.LOW
-          }
-          console.info("[ArkUI_AlphabetIndexer_static_1700] start to publish emit");
-          events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
-          err = err as BusinessError;
-          console.log("[ArkUI_AlphabetIndexer_static_1700] change component data error: " + err.message);
+        let eventData: events_emitter.EventData = {
+          data: {
+            "nullFlag4": true,
+          } as Record<String, undefined | null | Object>
         }
-        await CommonFunc.sleep(2000);
-        let newJson = inspector.getInspectorByKey('alphabetIndexerTest3');
-        let obj = JSON.parseJsonElement(newJson);
-
-        done();
-      } catch (ERROR) {
-        expect().assertFail();
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 183,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("[ArkUI_AlphabetIndexer_static_1700] start to publish emit");
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
+        console.log("[ArkUI_AlphabetIndexer_static_1700] change component data error: " + err.message);
       }
-
+      await CommonFunc.sleep(2000);
+      let newJson = inspector.getInspectorByKey('alphabetIndexerTest3');
+      let obj = JSON.parseJsonElement(newJson);
+      expect(obj.getElement('$attrs').getString('popupItemFontSize'))
+        .assertEqual(alphabetDefaultPopupSize($r('sys.float.ohos_id_text_size_headline7')));
+      done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1800
-     * @tc.name      ArkUI_AlphabetIndexer_static_1800
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1800
+       * @tc.name     ArkUI_AlphabetIndexer_static_1800
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1800 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest3');
@@ -520,7 +514,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -528,8 +522,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -539,12 +532,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_1900
-     * @tc.name      ArkUI_AlphabetIndexer_static_1900
-     * @tc.desc      ArkUI_AlphabetIndexer_static_1900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_1900
+       * @tc.name     ArkUI_AlphabetIndexer_static_1900
+       * @tc.desc     ArkUI_AlphabetIndexer_static_1900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_1900 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest3');
@@ -552,7 +546,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -560,8 +554,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_1900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -571,12 +564,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     })
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_2600
-     * @tc.name      ArkUI_AlphabetIndexer_static_2600
-     * @tc.desc      ArkUI_AlphabetIndexer_static_2600
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_2600
+       * @tc.name     ArkUI_AlphabetIndexer_static_2600
+       * @tc.desc     ArkUI_AlphabetIndexer_static_2600
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_2600 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest4');
@@ -584,7 +578,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag1": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -592,8 +586,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_2600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -604,12 +597,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_2700
-     * @tc.name      ArkUI_AlphabetIndexer_static_2700
-     * @tc.desc      ArkUI_AlphabetIndexer_static_2700
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_2700
+       * @tc.name     ArkUI_AlphabetIndexer_static_2700
+       * @tc.desc     ArkUI_AlphabetIndexer_static_2700
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_2700 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest4');
@@ -617,7 +611,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag2": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -625,8 +619,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_2700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -637,12 +630,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_2800
-     * @tc.name      ArkUI_AlphabetIndexer_static_2800
-     * @tc.desc      ArkUI_AlphabetIndexer_static_2800
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_2800
+       * @tc.name     ArkUI_AlphabetIndexer_static_2800
+       * @tc.desc     ArkUI_AlphabetIndexer_static_2800
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_2800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_2800 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest4');
@@ -650,7 +644,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag3": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -658,8 +652,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_2800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_2800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -669,49 +662,46 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_2900
-     * @tc.name      ArkUI_AlphabetIndexer_static_2900
-     * @tc.desc      ArkUI_AlphabetIndexer_static_2900
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_2900
+       * @tc.name     ArkUI_AlphabetIndexer_static_2900
+       * @tc.desc     ArkUI_AlphabetIndexer_static_2900
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("ArkUI_AlphabetIndexer_static_2900 start");
+      let strJson = inspector.getInspectorByKey('alphabetIndexerTest4');
       try {
-        console.info("ArkUI_AlphabetIndexer_static_2900 start");
-        let strJson = inspector.getInspectorByKey('alphabetIndexerTest4');
-        try {
-          let eventData: events_emitter.EventData = {
-            data: {
-              "nullFlag4": true,
-            } as Record<String, RecordData>
-          }
-          let innerEvent: events_emitter.InnerEvent = {
-            eventId: 183,
-            priority: events_emitter.EventPriority.LOW
-          }
-          console.info("[ArkUI_AlphabetIndexer_static_2900] start to publish emit");
-          events_emitter.emit(innerEvent, eventData);
-        } catch (err) {
-          err = err as BusinessError;
-          console.log("[ArkUI_AlphabetIndexer_static_2900] change component data error: " + err.message);
+        let eventData: events_emitter.EventData = {
+          data: {
+            "nullFlag4": true,
+          } as Record<String, undefined | null | Object>
         }
-        await CommonFunc.sleep(2000);
-        let newJson = inspector.getInspectorByKey('alphabetIndexerTest4');
-        let obj = JSON.parseJsonElement(newJson);
-
-        done();
-      } catch (ERROR) {
-        expect().assertFail();
+        let innerEvent: events_emitter.InnerEvent = {
+          eventId: 183,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info("[ArkUI_AlphabetIndexer_static_2900] start to publish emit");
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err: BusinessError) {
+        console.log("[ArkUI_AlphabetIndexer_static_2900] change component data error: " + err.message);
       }
-
+      await CommonFunc.sleep(2000);
+      let newJson = inspector.getInspectorByKey('alphabetIndexerTest4');
+      let obj = JSON.parseJsonElement(newJson);
+      expect(obj.getElement('$attrs').getString('popupItemFontSize'))
+        .assertEqual(alphabetDefaultPopupSize($r('sys.float.ohos_id_text_size_headline7')));
+      done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_3000
-     * @tc.name      ArkUI_AlphabetIndexer_static_3000
-     * @tc.desc      ArkUI_AlphabetIndexer_static_3000
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_3000
+       * @tc.name     ArkUI_AlphabetIndexer_static_3000
+       * @tc.desc     ArkUI_AlphabetIndexer_static_3000
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_3000 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest4');
@@ -719,7 +709,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag4": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -727,8 +717,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_3000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_3000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -738,12 +727,13 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+
     /*
-     * @tc.number    ArkUI_AlphabetIndexer_static_3100
-     * @tc.name      ArkUI_AlphabetIndexer_static_3100
-     * @tc.desc      ArkUI_AlphabetIndexer_static_3100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_AlphabetIndexer_static_3100
+       * @tc.name     ArkUI_AlphabetIndexer_static_3100
+       * @tc.desc     ArkUI_AlphabetIndexer_static_3100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_AlphabetIndexer_static_3100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_3100 start");
       let strJson = inspector.getInspectorByKey('alphabetIndexerTest4');
@@ -751,7 +741,7 @@ export default function ActsAlphabetIndexerUxTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "nullFlag5": true,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -759,8 +749,7 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_3100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err: BusinessError) {
         console.log("[ArkUI_AlphabetIndexer_static_3100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

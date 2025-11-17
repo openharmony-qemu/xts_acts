@@ -63,17 +63,16 @@ struct ListItemExample2 {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("[ListItem] page stateChangCallBack");
-    if (eventData != null) {
+    if (eventData != null && eventData.data != null) {
       console.info("[ListItem] page state change called:" + JSON.stringify(eventData));
-      
-      
-      
-    }
-    if (eventData != null) {
-      console.info("[ListItem] page state change called:" + JSON.stringify(eventData));
-      
-      
-      
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['sticky'] != null) {
+        this.sticky = data['sticky'] as StickyStyle;
+      }
+
+      if (data['editMode'] != null) {
+        this.editMode = data['editMode'] as boolean;
+      }
     }
   }
 
@@ -103,19 +102,10 @@ struct ListItemExample2 {
               .borderRadius(10)
               .backgroundColor(0xFFFFFF)
           }
-
-          
         }, (item: number) => item.toString())
       }
       .sticky(this.sticky)
       .key('List')
-      
-      
-      
-      
-      
-      
-      
       .width('90%')
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 } as Padding)
   }

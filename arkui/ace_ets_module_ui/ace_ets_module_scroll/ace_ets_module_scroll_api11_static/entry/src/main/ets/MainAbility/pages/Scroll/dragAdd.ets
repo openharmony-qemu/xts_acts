@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import udmf from '@ohos.data.unifiedDataChannel';
+import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import udmfType from '@ohos.data.uniformTypeDescriptor';
 import { PromptAction } from "@ohos.arkui.UIContext";
 import {
@@ -48,12 +48,12 @@ struct Index {
   @State imageWidth: number = 100;
   @State imageHeight: number = 100;
   @State imgState: Visibility = Visibility.Visible;
-  @State videoSrc: string = 'resource://RAWFILE/02.mp4'
+  @State videoSrc: string = 'resource://RAWFILE/02.mp4';
   @State abstractContent: string = "abstract";
   @State textContent: string = "";
 
   getDataFromUdmfRetry(event: DragEvent, callback: (data: DragEvent) => void) {
-    let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
+    let records: Array<unifiedDataChannel.UnifiedRecord> = event.getData()!.getRecords()!;
     if (records.length !== 0) {
       callback(event);
       return;
@@ -108,10 +108,10 @@ struct Index {
         }.draggable(true)
         .onDragStart((event: DragEvent, extraParams?: string): () => void => {
 
-          
-          
-          
-          
+          let video: unifiedDataChannel.Video = new unifiedDataChannel.Video();
+          video.videoUri = 'resource://RAWFILE/01.mp4';
+          let data: unifiedDataChannel.UnifiedData = new unifiedDataChannel.UnifiedData(video);
+          event.setData(data);
         })
 
         Column() {
@@ -122,10 +122,10 @@ struct Index {
         .width('100%')
         .height(100)
         .onDragStart((event: DragEvent, extraParams?: string): () => void => {
-          
-          
-          
-          
+          let data: unifiedDataChannel.PlainText = new unifiedDataChannel.PlainText();
+          data.textAbstract = 'this is abstract';
+          data.textContent = 'this is content this is content';
+          event.setData(new unifiedDataChannel.UnifiedData(data));
         })
       }.width('45%')
       .height('100%')
@@ -146,11 +146,11 @@ struct Index {
           .allowDrop([udmfType.UniformDataType.IMAGE])
           .onDrop((dragEvent: DragEvent): void => {
             this.getDataFromUdmfRetry(dragEvent, (event) => {
-              let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
+              let records: Array<unifiedDataChannel.UnifiedRecord> = event.getData()!.getRecords()!;
               let rect: Rectangle = event.getPreviewRect();
               this.imageWidth = rect.width as number;
               this.imageHeight = rect.height as number;
-              
+              this.targetImage = (records[0] as unifiedDataChannel.Image).imageUri;
               event.useCustomDropAnimation = false;
               animateTo({ duration: 1000 }, () => {
                 this.imageWidth = 100;
@@ -177,12 +177,12 @@ struct Index {
             console.info("the getVelocityY " + dragEvent.getVelocityY());
             console.info("the getVelocity " + dragEvent.getVelocity());
             this.getDataFromUdmfRetry(dragEvent, event => {
-              let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
+              let records: Array<unifiedDataChannel.UnifiedRecord> = event.getData()!.getRecords()!;
               if (records[0]) {
-                
-                
-                
-                
+                let record = (records[0] as unifiedDataChannel.Text)
+                if (record.details) {
+                  this.targetText = record.details!['value'] ?? ""
+                }
               }
             })
           })
@@ -204,10 +204,10 @@ struct Index {
         .allowDrop([udmfType.UniformDataType.PLAIN_TEXT])
         .onDrop((dragEvent: DragEvent): void => {
           this.getDataFromUdmfRetry(dragEvent, event => {
-            let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
-            
-            
-            
+            let records: Array<unifiedDataChannel.UnifiedRecord> = event.getData()!.getRecords()!;
+            let plainText: unifiedDataChannel.PlainText = records[0] as unifiedDataChannel.PlainText;
+            this.abstractContent = plainText.textAbstract ?? "";
+            this.textContent = plainText.textContent;
           })
         })
       }.width('45%')

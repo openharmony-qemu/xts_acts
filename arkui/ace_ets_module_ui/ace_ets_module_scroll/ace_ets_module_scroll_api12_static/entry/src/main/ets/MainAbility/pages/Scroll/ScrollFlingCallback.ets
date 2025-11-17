@@ -53,7 +53,7 @@ struct ScrollFlingCallback {
         .fontSize(16).width('90%')
       Button('更换速度 1000')
         .id('btn_scroll_fling_01')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 这里
           this.scroller.fling(1000)
           console.info('ScrollFlingCallback_0100 start to emit action state')
           this.scroller_fling_1 = '1000'
@@ -65,7 +65,7 @@ struct ScrollFlingCallback {
         .fontSize(16).width('90%').key('key_scroll_fling_text2')
       Button('更换速度 -1000')
         .id('btn_scroll_fling_02')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 这里
           this.scroller.fling(-1000)
           console.info('ScrollFlingCallback_0200 start to emit action state')
           this.scroller_fling_2 = '-1000'
@@ -85,10 +85,10 @@ struct ScrollFlingCallback {
           }, (item: number) => item.toString())
         }.width('100%')
       }
-      .scrollable(ScrollDirection.Vertical) 
-      .scrollBar(BarState.On) 
-      .scrollBarColor(Color.Gray) 
-      .scrollBarWidth(10) 
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .friction(0.6)
       .height('70%')
       .edgeEffect(EdgeEffect.None)

@@ -51,12 +51,11 @@ export default function SwiperInterface01() {
       console.info("SwiperInterface01 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperInterface01 state pages:" + JSON.stringify(pages));
-        if (!("SwiperInterface01" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperInterface/SwiperInterface" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperInterface/SwiperInterface'
           })
           await CommonFunc.sleep(2000);
@@ -71,15 +70,19 @@ export default function SwiperInterface01() {
       await CommonFunc.sleep(1000);
       console.info("SwiperInterface01 after each called");
     });
-
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070 START");
       await CommonFunc.sleep(5000);
       let strJson2: string = inspector.getInspectorByKey('swiperinterface1070');
@@ -91,13 +94,15 @@ export default function SwiperInterface01() {
     });
 
 
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090 START");
       await CommonFunc.sleep(5000);
       let strJson2: string = inspector.getInspectorByKey('swiperinterface1090');
@@ -108,14 +113,15 @@ export default function SwiperInterface01() {
       done();
     });
 
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110 START");
       await CommonFunc.sleep(6000);
       let strJson2: string = inspector.getInspectorByKey('swiperinterface1110');

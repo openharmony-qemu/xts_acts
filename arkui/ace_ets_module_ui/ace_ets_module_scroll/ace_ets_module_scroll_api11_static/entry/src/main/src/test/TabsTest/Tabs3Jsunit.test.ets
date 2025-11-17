@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
@@ -33,7 +33,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabsJsunit() {
   describe('tabsTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -50,12 +49,12 @@ export default function tabsJsunit() {
         console.info("get tabs state pages:" + JSON.stringify(pages));
         if (!("tabs" == pages.name)) {
           console.info("get tabs state pages.name:" + JSON.stringify(pages.name));
-
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push tabs page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push tabs page error:" + err);
       }
     });
@@ -65,18 +64,19 @@ export default function tabsJsunit() {
       console.info("tabs after each called");
     });
 
+
     /*
-     * @tc.number    testTabs_static_0100
-     * @tc.name      testTabs_static_0100
-     * @tc.desc      testTabs_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0100
+       * @tc.name     testTabs_static_0100
+       * @tc.desc     testTabs_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0100 START');
       let strJson = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0100 component strJson:" + strJson);
       console.info("testTabs_static_0100 component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
         .assertEqual('BarPosition.Start');
@@ -84,126 +84,132 @@ export default function tabsJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0200
-     * @tc.name      testTabs_static_0200
-     * @tc.desc      testTabs_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0200
+       * @tc.name     testTabs_static_0200
+       * @tc.desc     testTabs_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0200 START');
       let strJson = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0200 component strJson:" + strJson);
       console.info("testTabs_static_0200 component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual('0');
       console.info('testTabs_static_0200 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0300
-     * @tc.name      testTabs_static_0300
-     * @tc.desc      testTabs_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0300
+       * @tc.name     testTabs_static_0300
+       * @tc.desc     testTabs_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0300 START');
       let strJson = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0300 component strJson:" + strJson);
       console.info("testTabs_static_0300 component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual('true');
       console.info('testTabs_static_0300 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0400
-     * @tc.name      testTabs_static_0400
-     * @tc.desc      testTabs_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0400
+       * @tc.name     testTabs_static_0400
+       * @tc.desc     testTabs_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0400 START');
       let strJson = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0400 component strJson:" + strJson);
       console.info("testTabs_static_0400 component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
       console.info('testTabs_static_0400 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0500
-     * @tc.name      testTabs_static_0500
-     * @tc.desc      testTabs_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0500
+       * @tc.name     testTabs_static_0500
+       * @tc.desc     testTabs_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0500 START');
       let strJson = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0500 component strJson:" + strJson);
       console.info("testTabs_static_0500 component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
       console.info('testTabs_static_0500 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0600
-     * @tc.name      testTabs_static_0600
-     * @tc.desc      testTabs_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0600
+       * @tc.name     testTabs_static_0600
+       * @tc.desc     testTabs_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0600 START');
       let strJson = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0600 component strJson:" + strJson);
-      console.info("testTabs_static_0600 component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("testTabs_static_0600 component JSON.parseJsonElement(strJson) is: " + strJson);
 
-      expect(Math.abs(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('barWidth')) - 70.000000) <=
+      expect(Math.abs(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barWidth')) - 70.000000) <=
         1).assertTrue();
 
       console.info('testTabs_static_0600 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0700
-     * @tc.name      testTabs_static_0700
-     * @tc.desc      testTabs_static_0700
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0700
+       * @tc.name     testTabs_static_0700
+       * @tc.desc     testTabs_static_0700
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0700 START');
       let strJson = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0700 component strJson:" + strJson);
       console.info("testTabs_static_0700 component JSON.parseJsonElement(strJson) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(Math.abs(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('barHeight')) -
+      JSON.stringify(JSON.parseJsonElement(strJson)));
+      expect(Math.abs(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barHeight')) -
         150.000000) <= 1).assertTrue();
 
       console.info('testTabs_static_0700 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0800
-     * @tc.name      testTabs_static_0800
-     * @tc.desc      testTabs_static_0800
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0800
+       * @tc.name     testTabs_static_0800
+       * @tc.desc     testTabs_static_0800
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0800 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "false",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -211,31 +217,32 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_0800 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("testTabs_static_0800 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0800 component JSON.parseJsonElement(strJsonNew) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('vertical')).assertEqual('false');
       console.info('testTabs_static_0800 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_0900
-     * @tc.name      testTabs_static_0900
-     * @tc.desc      testTabs_static_0900
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_0900
+       * @tc.name     testTabs_static_0900
+       * @tc.desc     testTabs_static_0900
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_0900 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "false",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -243,31 +250,32 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_0900 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("testTabs_static_0900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_0900 component JSON.parseJsonElement(strJsonNew) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getBoolean('scrollable')).assertEqual(false);
       console.info('testTabs_static_0900 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_1000
-     * @tc.name      testTabs_static_1000
-     * @tc.desc      testTabs_static_1000
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_1000
+       * @tc.name     testTabs_static_1000
+       * @tc.desc     testTabs_static_1000
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_1000 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "false53",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -275,31 +283,32 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1000 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("testTabs_static_1000 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_1000 component JSON.parseJsonElement(strJsonNew) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getBoolean('scrollable')).assertEqual(false);
       console.info('testTabs_static_1000 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_1100
-     * @tc.name      testTabs_static_1100
-     * @tc.desc      testTabs_static_1100
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_1100
+       * @tc.name     testTabs_static_1100
+       * @tc.desc     testTabs_static_1100
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_1100 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "39284",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 213,
@@ -307,31 +316,32 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1100 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("testTabs_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_1100 component JSON.parseJsonElement(strJsonNew) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getBoolean('scrollable')).assertEqual(false);
       console.info('testTabs_static_1100 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_1200
-     * @tc.name      testTabs_static_1200
-     * @tc.desc      testTabs_static_1200
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_1200
+       * @tc.name     testTabs_static_1200
+       * @tc.desc     testTabs_static_1200
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_1200 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "vertical": "abc123",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 214,
@@ -339,31 +349,32 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("testTabs_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_1200 component JSON.parseJsonElement(strJsonNew) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('vertical')).assertEqual('false');
       console.info('testTabs_static_1200 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_1300
-     * @tc.name      testTabs_static_1300
-     * @tc.desc      testTabs_static_1300
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_1300
+       * @tc.name     testTabs_static_1300
+       * @tc.desc     testTabs_static_1300
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testTabs_static_1300 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "scrollable": "avc12321",
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 215,
@@ -371,51 +382,49 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1300 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("testTabs_static_1300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('tabs');
       console.info("testTabs_static_1300 component JSON.parseJsonElement(strJsonNew) is: " +
-        JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getBoolean('scrollable')).assertEqual(false);
       console.info('testTabs_static_1300 END');
       done();
     });
 
+
     /*
-     * @tc.number    testTabs_static_1400
-     * @tc.name      testTabs_static_1400
-     * @tc.desc      testTabs_static_1400
-     * @tc.level     2
-     */
+       * @tc.number   testTabs_static_1400
+       * @tc.name     testTabs_static_1400
+       * @tc.desc     testTabs_static_1400
+       * @tc.level    Level.LEVEL0
+       */
     it('testTabs_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('testTabs_static_1400 START');
-        await CommonFunc.sleep(1500);
-        let callback = (indexEvent: events_emitter.EventData) => {
-          console.info("testTabs_static_1400 get state result is: " + JSON.stringify(indexEvent));
-
-          done();
+      console.info('testTabs_static_1400 START');
+      await CommonFunc.sleep(1500);
+      let callback = (indexEvent: events_emitter.EventData) => {
+        console.info("testTabs_static_1400 get state result is: " + JSON.stringify(indexEvent));
+        if (indexEvent.data != null) {
+          expect((indexEvent.data as Record<String, undefined | null | Object>)['ACTION']).assertEqual(true);
         }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 212,
-          priority: events_emitter.EventPriority.LOW
-        }
-        try {
-          events_emitter.on(indexEvent, callback);
-        } catch (err) {
-          console.info("testTabs_static_1400 on events_emitter err : " + JSON.stringify(err));
-        }
-        console.info("testTabs_static_1400 click result is: " +
-          JSON.stringify(inspector.sendEventByKey('tabContent1', 10, "")));
-        await CommonFunc.sleep(1000);
-        console.info('testTabs_static_1400 END');
         done();
-      } catch (ERROR) {
-        expect().assertFail();
       }
-
+      let indexEvent: events_emitter.InnerEvent = {
+        eventId: 212,
+        priority: events_emitter.EventPriority.LOW
+      }
+      try {
+        events_emitter.on(indexEvent, callback);
+      } catch (err: Error) {
+        console.info("testTabs_static_1400 on events_emitter err : " + JSON.stringify(err));
+      }
+      console.info("testTabs_static_1400 click result is: " +
+      JSON.stringify(inspector.sendEventByKey('tabContent1', 10, "")));
+      await CommonFunc.sleep(1000);
+      console.info('testTabs_static_1400 END');
+      done();
     });
   })
 }

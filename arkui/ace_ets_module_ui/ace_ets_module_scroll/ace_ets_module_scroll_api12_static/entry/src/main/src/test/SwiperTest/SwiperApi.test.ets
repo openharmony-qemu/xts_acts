@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperApi() {
   describe('SwiperApi', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -57,11 +55,9 @@ export default function SwiperApi() {
         router.clear();
         let pages = router.getState();
         console.info("get SwiperApi state pages:" + JSON.stringify(pages));
-        if (!("SwiperApi" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperApi" == pages.name)) {
           console.info("get  Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
-            url: "MainAbility/pages/Swiper/SwiperApi"
-          })
+          router.pushUrl({ url: "MainAbility/pages/Swiper/SwiperApi" })
           await CommonFunc.sleep(2000);
           console.info("push SwiperApi page result:");
         }
@@ -75,14 +71,16 @@ export default function SwiperApi() {
       console.info("SwiperApi after each called");
     });
 
+    
 
-    /*
-     * @tc.number    SwiperApi_static_001
-     * @tc.name      SwiperApi_static_001
-     * @tc.desc      SwiperApi_static_001
-     * @tc.level     2
+      
+  /*
+     * @tc.number   SwiperApi_static_001
+     * @tc.name     SwiperApi_static_001
+     * @tc.desc     SwiperApi_static_001
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperApi_static_001] START');
 
       await CommonFunc.sleep(1000);

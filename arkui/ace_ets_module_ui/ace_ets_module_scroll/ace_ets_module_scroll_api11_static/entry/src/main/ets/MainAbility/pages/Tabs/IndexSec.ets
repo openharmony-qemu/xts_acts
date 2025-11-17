@@ -38,17 +38,35 @@ import { State } from '@ohos.arkui.stateManagement';
 struct TabsExampleSec {
   private controller: TabsController = new TabsController()
   @State barOverlap: boolean = false
-  @State barBackgroundColorColor: Color = Color.Red
-  @State barBackgroundColorNumber: int = 0
+  @State barBackgroundColorColor: Color | string = Color.Red
+  @State barBackgroundColorNumber: number = 0 as number
   @State barBackgroundColorString: string = "#00000000"
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("tabs page state change called:" + JSON.stringify(eventData));
-    
-    
-    
-    
-    
-    
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>;
+      if (data['barOverlap'] != null && data['barOverlap'] != undefined) {
+        this.barOverlap = data['barOverlap'] as boolean;
+      } else {
+        this.barOverlap = false
+      }
+      if (data['barBackgroundColorColor'] != null && data['barBackgroundColorColor'] != undefined) {
+        if (data['barBackgroundColorColor'] instanceof string) {
+          this.barBackgroundColorColor = data['barBackgroundColorColor'] as string;
+        } else {
+          this.barBackgroundColorColor = data['barBackgroundColorColor'] as Color;
+        }
+      } else {
+        // null  undefined
+        this.barBackgroundColorColor = '#00000000';
+      }
+      if (data['barBackgroundColorNumber'] != null && data['barBackgroundColorNumber'] != undefined) {
+        this.barBackgroundColorNumber = data['barBackgroundColorNumber'] as number;
+      }
+      if (data['barBackgroundColorString'] != null && data['barBackgroundColorString'] != undefined) {
+        this.barBackgroundColorString = data['barBackgroundColorString'] as string;
+      }
+    }
   }
 
   aboutToAppear() {
@@ -155,7 +173,7 @@ struct TabsExampleSec {
       .height('90%')
       .width('90%')
       .backgroundColor("#F5F5F5")
-      .barBackgroundColor(this.barBackgroundColorNumber)
+      .barBackgroundColor(this.barBackgroundColorNumber.toInt())
       .key('BarBackgroundColorNumber')
 
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {

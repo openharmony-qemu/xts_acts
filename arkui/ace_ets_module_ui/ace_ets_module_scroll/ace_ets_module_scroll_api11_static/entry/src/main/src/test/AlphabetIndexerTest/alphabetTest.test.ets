@@ -62,10 +62,10 @@ export default function alphabetTest() {
         console.info("get alphabetTest state pages: " + JSON.stringify(pages));
         if (!("alphabet" == pages.name)) {
           console.info("get alphabetTest state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push alphabetTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push alphabetTest page error: " + err);
@@ -73,12 +73,13 @@ export default function alphabetTest() {
       }
     });
 
+
     /*
-     * @tc.number    alphabetTest_static_0100
-     * @tc.name      alphabetTest_static_0100
-     * @tc.desc      alphabetTest_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   alphabetTest_static_0100
+       * @tc.name     alphabetTest_static_0100
+       * @tc.desc     alphabetTest_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('alphabetTest_static_0100 START');
       let driver = Driver.create()

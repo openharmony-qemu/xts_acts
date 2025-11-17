@@ -27,7 +27,8 @@ import {
   $$,
   SheetSize,
   Color,
-  ProgressType
+  ProgressType,
+  ContentCoverOptions
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -61,14 +62,45 @@ struct ModalTransitionExample {
         .fontSize(20)
         .onClick((e: ClickEvent) => {
           this.isShow2 = true;
-        }) 
-      
+        })
+        .bindSheet($$(this.isShow), () => {this.myBuilder}, {
+          height: SheetSize.MEDIUM,
+          dragBar: this.showDragBar,
+          backgroundColor: Color.Green,
+          onAppear: () => {
+            console.log("BindSheet onAppear.")
+          },
+          onDisappear: () => {
+            console.log("BindSheet onDisappear.")
+          }
+        })
+        .bindSheet($$(this.isShow), () => {this.myBuilder}, {
+          height: SheetSize.LARGE,
+          dragBar: this.showDragBar,
+          backgroundColor: Color.Green,
+          onAppear: () => {
+            console.log("BindSheet onAppear.")
+          },
+          onDisappear: () => {
+            console.log("BindSheet onDisappear.")
+          }
+        })
       Button("transition modal 2")
         .margin(10)
         .fontSize(20)
         .onClick((e: ClickEvent) => {
           this.isShow2 = true;
-        }) 
+        })
+        .bindContentCover($$(this.isShow2), () => {this.myBuilder2}, {
+          modalTransition: ModalTransition.NONE,
+          backgroundColor: Color.Orange,
+          onAppear: () => {
+            console.log("BindContentCover onAppear.")
+          },
+          onDisappear: () => {
+            console.log("BindContentCover onDisappear.")
+          }
+        } as ContentCoverOptions)
 
       Button("close modal 1")
         .margin(10)
@@ -80,7 +112,7 @@ struct ModalTransitionExample {
         .style({
           borderColor: Color.Blue,
           borderWidth: 1,
-          
+          content: 'Installing...',
           enableSmoothEffect: false,
           font: { size: 13, style: FontStyle.Normal },
           fontColor: Color.Gray,
@@ -102,16 +134,35 @@ struct ModalTransitionExample {
         .key('buttonAdd')
         .fontSize(20)
         .margin(10)
-      
-      
+        .bindContentCover($$(this.isShow), () => {this.myBuilder},
+          { modalTransition: ModalTransition.NONE } as ContentCoverOptions)
+        .bindContentCover($$(this.isShow), () => {this.myBuilder}, {
+          modalTransition: ModalTransition.NONE,
+          backgroundColor: Color.Pink,
+          onAppear: () => {
+            console.log("BindContentCover onAppear.")
+          },
+          onDisappear: () => {
+            console.log("BindContentCover onDisappear.")
+          }
+        } as ContentCoverOptions)
       Button("transition modal 2")
         .onClick((e: ClickEvent) => {
           this.isShow = true
         })
         .fontSize(20)
         .margin(10)
-      
-
+        .bindSheet($$(this.isShow), () => {this.myBuilder}, {
+          height: this.sheetHeight,
+          dragBar: this.showDragBar,
+          backgroundColor: Color.Green,
+          onAppear: () => {
+            console.log("BindSheet onAppear.")
+          },
+          onDisappear: () => {
+            console.log("BindSheet onDisappear.")
+          }
+        })
     }
     .justifyContent(FlexAlign.Center)
     .backgroundColor("#ff49c8ab")

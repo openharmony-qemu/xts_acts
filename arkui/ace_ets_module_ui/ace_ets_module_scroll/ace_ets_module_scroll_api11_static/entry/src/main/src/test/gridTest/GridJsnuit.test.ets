@@ -50,11 +50,11 @@ export default function gridJsunit1() {
         await sleep(1);
         let pages = routerAlp.getState();
         console.info("get Grid state success " + JSON.stringify(pages));
-        if (!("Grid" == pages.name)) {
+        if (!("MainAbility/pages/grid/Grid" == pages.name)) {
           console.info("get Grid state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
-          
+          // console.info("push Grid page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Grid page error " + JSON.stringify(err));
@@ -69,11 +69,11 @@ export default function gridJsunit1() {
 
 
     /*
-     * @tc.number    gridTest001_static_01
-     * @tc.name      gridTest001_static_01
-     * @tc.desc      gridTest001_static_01
-     * @tc.level     2
-     */
+       * @tc.number   gridTest001_static_01
+       * @tc.name     gridTest001_static_01
+       * @tc.desc     gridTest001_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('gridTest001_static_01', Level.LEVEL0, async () => {
       console.info('gridTest001_static_01 START');
       await sleep(1)

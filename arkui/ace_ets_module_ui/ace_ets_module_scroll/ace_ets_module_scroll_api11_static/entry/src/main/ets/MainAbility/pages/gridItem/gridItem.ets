@@ -34,14 +34,13 @@ import { State } from '@ohos.arkui.stateManagement';
 
 import events_emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
-import { RecordData } from '@ohos.base'; 
 
 const TAG = 'ets_apiLack_add';
 
 @Entry
 @Component
 struct GridItemOnSelect {
-  @State numberData: String[] = ['5', '6', '7', '8', '9']
+  @State Number1: String[] = ['5', '6', '7', '8', '9']
   @State isSelect: boolean = false;
 
   aboutToAppear() {
@@ -71,8 +70,8 @@ struct GridItemOnSelect {
 
       Column({ space: 5 } as ColumnOptions) {
         Grid() {
-          ForEach(this.numberData, (day: string) => {
-            ForEach(this.numberData, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
+            ForEach(this.Number1, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)
@@ -83,13 +82,12 @@ struct GridItemOnSelect {
                   .key("onSelected")
               }.onSelect((isSelect: boolean) => {
                 console.info("Select:" + isSelect)
-                
                 this.isSelect = true;
                 try {
                   let backData: events_emitter.EventData = {
                     data: {
                       "STATUS": this.isSelect
-                    } as Record<String, RecordData>
+                    } as Record<String,undefined|null|Object>
                   }
                   let backEvent: events_emitter.InnerEvent = {
                     eventId: 60207,

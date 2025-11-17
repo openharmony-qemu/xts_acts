@@ -39,23 +39,24 @@ export default function ActsGridTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get grid state success " + JSON.stringify(pages));
-        if (!("GridJC" == pages.name)) {
+        if (!("MainAbility/pages/grid/GridJC" == pages.name)) {
           console.info("get grid state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
-          
+          // console.info("push grid page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push grid page error: " + err);
       }
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0200
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0200
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0200
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0200
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_List_Swiper_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0200 START');
       setTimeout(() => {
@@ -77,12 +78,13 @@ export default function ActsGridTest() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0210
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0210
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0210
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0210
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0210
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0210
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_List_Swiper_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0210 START');
       setTimeout(() => {
@@ -104,12 +106,13 @@ export default function ActsGridTest() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0220
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0220
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0220
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0220
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0220
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0220
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_List_Swiper_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0220 START');
       setTimeout(() => {
@@ -128,12 +131,13 @@ export default function ActsGridTest() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0230
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0230
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0230
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0230
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0230
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0230
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_List_Swiper_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0230 START');
       setTimeout(() => {
@@ -154,12 +158,13 @@ export default function ActsGridTest() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0240
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0240
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0240
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0240
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0240
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0240
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_List_Swiper_static_0240', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0240 START');
       setTimeout(() => {
@@ -180,12 +185,13 @@ export default function ActsGridTest() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_0350
-     * @tc.name      ArkUX_Grid_List_Swiper_0350
-     * @tc.desc      ArkUX_Grid_List_Swiper_0350
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_0350
+       * @tc.name     ArkUX_Grid_List_Swiper_0350
+       * @tc.desc     ArkUX_Grid_List_Swiper_0350
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_List_Swiper_0350', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_0350 START');
       setTimeout(() => {
@@ -206,12 +212,13 @@ export default function ActsGridTest() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_0360
-     * @tc.name      ArkUX_Grid_List_Swiper_0360
-     * @tc.desc      ArkUX_Grid_List_Swiper_0360
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_0360
+       * @tc.name     ArkUX_Grid_List_Swiper_0360
+       * @tc.desc     ArkUX_Grid_List_Swiper_0360
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUX_Grid_List_Swiper_0360', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_0360 START');
       setTimeout(() => {

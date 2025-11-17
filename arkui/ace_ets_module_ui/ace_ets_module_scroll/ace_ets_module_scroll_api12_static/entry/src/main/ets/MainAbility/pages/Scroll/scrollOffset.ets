@@ -52,7 +52,7 @@ import Curves from '@ohos.curves'
 @Component
 struct scrollOffsetExample {
   scroller: Scroller = new Scroller;
-  private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+  private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] as number[]
   @State message1: string = 'scroll1'
   @State message2: string = 'scroll2'
 
@@ -61,8 +61,8 @@ struct scrollOffsetExample {
       Text(this.message1).id('scroll_mess1')
       Text(this.message2).id('scroll_mess2')
       Button('scroll 100').id('canOver_scroll')
-        .onClick((e: ClickEvent) => { 
-          let curve = Curves.interpolatingSpring(10, 1, 228, 30) as ICurve 
+        .onClick((e: ClickEvent) => { // 点击后滑动到指定位置，即下滑100.0vp的距离，滑动过程配置有动画
+          let curve = Curves.interpolatingSpring(10, 1, 228, 30) //创建一个阶梯曲线
           const yOffset: number = this.scroller.currentOffset()!.yOffset;
           this.scroller.scrollTo({
             xOffset: 0,

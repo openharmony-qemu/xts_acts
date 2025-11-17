@@ -36,8 +36,6 @@ const waitUiReadyMs = 1000;
 export default function scrollSourceDrag() {
   describe('scrollSourceDrag', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -51,7 +49,7 @@ export default function scrollSourceDrag() {
         router.clear();
         let pages = router.getState();
         console.info("get scrollSourceDrag state pages:" + JSON.stringify(pages));
-        if (!("scrollSourceDrag" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/scrollSourceDrag" == pages.name)) {
           console.info("get scrollSourceDrag pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -62,14 +60,15 @@ export default function scrollSourceDrag() {
       console.info("scrollSourceDrag beforeEach end");
     });
 
-
-    /*
-     * @tc.number    scrollSourceDrag_0100
-     * @tc.name      scrollSourceDrag_0100
-     * @tc.desc      scrollSourceDrag_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   scrollSourceDrag_0100
+     * @tc.name     scrollSourceDrag_0100
+     * @tc.desc     scrollSourceDrag_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('scrollSourceDrag_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('scrollSourceDrag_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[scrollSourceDrag_0100] START');
       let swiperDrag = CommonFunc.getComponentRectOnScreen('scrollSource_drag');
       let top = swiperDrag.top;

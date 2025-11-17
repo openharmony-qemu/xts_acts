@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -62,11 +62,11 @@ export default function gridColXlJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get gridCol state success " + JSON.stringify(pages));
-        if (!("gridCol" == pages.name)) {
+        if (!("MainAbility/pages/gridCol" == pages.name)) {
           console.info("get gridCol state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await Utils.sleep(2000);
-          
+          // console.info("push gridCol page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gridCol page error: " + err);
@@ -80,18 +80,18 @@ export default function gridColXlJsunit() {
 
 
     /*
-     * @tc.number    testgridColXl_static_0001
-     * @tc.name      testgridColXl_static_0001
-     * @tc.desc      testgridColXl_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   testgridColXl_static_0001
+       * @tc.name     testgridColXl_static_0001
+       * @tc.desc     testgridColXl_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('testgridColXl_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('gridColXl testgridColXl_static_0001 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('GridCol');
       console.info("[testgridColXl_static_0001] component order strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('GridCol');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('order')).assertEqual("{xl: 10}");
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('GridCol');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('order')).assertEqual("{xl: 10}");
       console.info("[testgridColXl_static_0001] order value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('order'));
       done();
@@ -99,18 +99,18 @@ export default function gridColXlJsunit() {
 
 
     /*
-     * @tc.number    testgridColXl_static_0002
-     * @tc.name      testgridColXl_static_0002
-     * @tc.desc      testgridColXl_static_0002
-     * @tc.level     2
-     */
+       * @tc.number   testgridColXl_static_0002
+       * @tc.name     testgridColXl_static_0002
+       * @tc.desc     testgridColXl_static_0002
+       * @tc.level    Level.LEVEL1
+       */
     it('testgridColXl_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('gridColXl testgridColXl_static_0002 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('GridCol');
       console.info("[testgridColXl_static_0002] component backgroundColor strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Color.Green');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor'))
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Color.Green');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor'))
         .assertEqual("Color.Green");
       console.info("[testgridColXl_static_0002] backgroundColor value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor'));

@@ -32,12 +32,13 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest } from '../Util.test'
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -46,8 +47,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function refreshString() {
   describe('refreshString', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -61,31 +60,31 @@ export default function refreshString() {
         router.clear();
         let pages = router.getState();
         console.info("get refresh state pages:" + JSON.stringify(pages));
-        if (!("refresh" == pages.name)) {
+        if (!("refreshLevel1" == pages.name)) {
           console.info("get refresh state pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push refresh page result:");
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push refresh page error:" + err);
       }
     });
 
+    
 
-    /*
-     * @tc.number    refreshString_static_0100
-     * @tc.name      refreshString_static_0100
-     * @tc.desc      refreshString_static_0100
-     * @tc.level     2
+      
+  /*
+     * @tc.number   refreshString_static_0100
+     * @tc.name     refreshString_static_0100
+     * @tc.desc     refreshString_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshString_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshString_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[refreshString_static_0100] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "*&^%$#@!~..."
-          } as Record<String, RecordData>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -93,7 +92,7 @@ export default function refreshString() {
         }
         console.info("[refreshString_static_0100] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[refreshString_static_0100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -106,20 +105,22 @@ export default function refreshString() {
       done();
     });
 
+    
 
-    /*
-     * @tc.number    refreshString_static_0200
-     * @tc.name      refreshString_static_0200
-     * @tc.desc      refreshString_static_0200
-     * @tc.level     2
+      
+  /*
+     * @tc.number   refreshString_static_0200
+     * @tc.name     refreshString_static_0200
+     * @tc.desc     refreshString_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshString_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshString_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[refreshString_static_0200] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "*&#123swq..."
-          } as Record<String, RecordData>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -127,7 +128,7 @@ export default function refreshString() {
         }
         console.info("[refreshString_static_0200] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[refreshString_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -140,20 +141,22 @@ export default function refreshString() {
       done();
     });
 
+    
 
-    /*
-     * @tc.number    refreshString_static_0300
-     * @tc.name      refreshString_static_0300
-     * @tc.desc      refreshString_static_0300
-     * @tc.level     2
+      
+  /*
+     * @tc.number   refreshString_static_0300
+     * @tc.name     refreshString_static_0300
+     * @tc.desc     refreshString_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshString_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshString_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[refreshString_static_0300] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "下拉刷新。。。"
-          } as Record<String, RecordData>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -161,7 +164,7 @@ export default function refreshString() {
         }
         console.info("[refreshString_static_0300] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[refreshString_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -174,20 +177,22 @@ export default function refreshString() {
       done();
     });
 
+    
 
-    /*
-     * @tc.number    refreshString_static_0400
-     * @tc.name      refreshString_static_0400
-     * @tc.desc      refreshString_static_0400
-     * @tc.level     2
+      
+  /*
+     * @tc.number   refreshString_static_0400
+     * @tc.name     refreshString_static_0400
+     * @tc.desc     refreshString_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshString_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshString_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[refreshString_static_0400] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "123123"
-          } as Record<String, RecordData>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -195,7 +200,7 @@ export default function refreshString() {
         }
         console.info("[refreshString_static_0400] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[refreshString_static_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -208,20 +213,22 @@ export default function refreshString() {
       done();
     });
 
+    
 
-    /*
-     * @tc.number    refreshString_static_0500
-     * @tc.name      refreshString_static_0500
-     * @tc.desc      refreshString_static_0500
-     * @tc.level     2
+      
+  /*
+     * @tc.number   refreshString_static_0500
+     * @tc.name     refreshString_static_0500
+     * @tc.desc     refreshString_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshString_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshString_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[refreshString_static_0500] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "abcabc"
-          } as Record<String, RecordData>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -229,7 +236,7 @@ export default function refreshString() {
         }
         console.info("[refreshString_static_0500] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[refreshString_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -242,20 +249,22 @@ export default function refreshString() {
       done();
     });
 
+    
 
-    /*
-     * @tc.number    refreshString_static_0600
-     * @tc.name      refreshString_static_0600
-     * @tc.desc      refreshString_static_0600
-     * @tc.level     2
+      
+  /*
+     * @tc.number   refreshString_static_0600
+     * @tc.name     refreshString_static_0600
+     * @tc.desc     refreshString_static_0600
+     * @tc.level    Level.LEVEL0
      */
-    it('refreshString_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('refreshString_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[refreshString_static_0600] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "promptText": "    "
-          } as Record<String, RecordData>
+          } as Record<string, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 180,
@@ -263,7 +272,7 @@ export default function refreshString() {
         }
         console.info("[refreshString_static_0600] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log("[refreshString_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

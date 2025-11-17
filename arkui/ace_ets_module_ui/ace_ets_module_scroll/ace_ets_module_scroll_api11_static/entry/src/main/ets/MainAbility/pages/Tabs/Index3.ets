@@ -49,7 +49,7 @@ struct TabsExample {
   @State endMarginStr: string = '5px'
   @State nullFlag: boolean = false
   @State strokeWidthNum: number = 10
-  @State dividerColorNum: int = 0xFF0000
+  @State dividerColorNum: number = 0xFF0000
   @State startMarginNum: number = 5
   @State endMarginNum: number = 5
   @State strokeWidthRes: Resource = $r("app.string.Divider_Stroke_Width")
@@ -79,107 +79,108 @@ struct TabsExample {
   @State selfSelectedMode: SelectedMode = SelectedMode.INDICATOR
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("tabs page state change called:" + JSON.stringify(eventData));
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      if (data['dividerColorStr'] != null) {
+        this.dividerColorStr = data['dividerColorStr'] as string;
+      }
+      if (data['strokeWidthStr'] != null) {
+        this.strokeWidthStr = data['strokeWidthStr'] as string;
+      }
+      if (data['startMarginStr'] != null) {
+        this.startMarginStr = data['startMarginStr'] as string;
+      }
+      if (data['endMarginStr'] != null) {
+        this.endMarginStr = data['endMarginStr'] as string;
+      }
+      if (data['nullFlag'] != null) {
+        this.nullFlag = data['nullFlag'] as boolean;
+      }
+      if (data['dividerColor'] != null) {
+        this.dividerColor = data['dividerColor'] as Color;
+      }
+      if (data['strokeWidthNum'] != null) {
+        this.strokeWidthNum = data['strokeWidthNum'] as number;
+      }
+      if (data['startMarginNum'] != null) {
+        this.startMarginNum = data['startMarginNum'] as number;
+      }
+      if (data['endMarginNum'] != null) {
+        this.endMarginNum = data['endMarginNum'] as number;
+      }
+
+      if (data['dividerColorRes'] != null) {
+        this.dividerColorRes = data['dividerColorRes'] as Resource;
+      }
+      if (data['strokeWidthRes'] != null) {
+        this.strokeWidthRes = data['strokeWidthRes'] as Resource;
+      }
+      if (data['startMarginRes'] != null) {
+        this.startMarginRes = data['startMarginRes'] as Resource;
+      }
+      if (data['endMarginRes'] != null) {
+        this.endMarginRes = data['endMarginRes'] as Resource;
+      }
+
+      if (data['overflowFlag'] != null) {
+        this.overflowFlag = data['overflowFlag'] as boolean;
+      }
+
+      if (data['selfIndicatorColor'] != null) {
+        this.selfIndicatorColor = data['selfIndicatorColor'] as Color;
+      }
+
+      if (data['selfIndicatorHeight'] != null) {
+        this.selfIndicatorHeight = data['selfIndicatorHeight'] as number;
+      }
+
+      if (data['selfIndicatorWidth'] != null) {
+        this.selfIndicatorWidth = data['selfIndicatorWidth'] as number;
+      }
+
+      if (data['selfIndicatorBorderRadius'] != null) {
+        this.selfIndicatorBorderRadius = data['selfIndicatorBorderRadius'] as number;
+      }
+
+      if (data['selfSelectedMode'] != null) {
+        this.selfSelectedMode = data['selfSelectedMode'] as SelectedMode;
+      }
+
+      if (data['selfSubTabBorderRadius'] != null) {
+        this.selfSubTabBorderRadius = data['selfSubTabBorderRadius'] as number;
+      }
+
+      if (data['selfMarginTop'] != null) {
+        this.selfMarginTop = data['selfMarginTop'] as number;
+      }
+
+      if (data['selfIndicatorColorStr'] != null) {
+        this.selfIndicatorColorStr = data['selfIndicatorColorStr'] as string;
+      }
+
+      if (data['selfIndicatorHeightStr'] != null) {
+        this.selfIndicatorHeightStr = data['selfIndicatorHeightStr'] as string;
+      }
+
+      if (data['selfIndicatorWidthStr'] != null) {
+        this.selfIndicatorWidthStr = data['selfIndicatorWidthStr'] as string;
+      }
+
+      if (data['selfIndicatorBorderRadiusStr'] != null) {
+        this.selfIndicatorBorderRadiusStr = data['selfIndicatorBorderRadiusStr'] as string;
+      }
+
+      if (data['selfSubTabBorderRadiusStr'] != null) {
+        this.selfSubTabBorderRadiusStr = data['selfSubTabBorderRadiusStr'] as string;
+      }
+
+      if (data['selfMarginTopStr'] != null) {
+        this.selfMarginTopStr = data['selfMarginTopStr'] as string;
+      }
+    }
   }
 
-  aboutToAppear() {
+  onPageShow() {
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 183,
       priority: events_emitter.EventPriority.LOW
@@ -312,11 +313,12 @@ struct TabsExample {
       })
       .height('200vp')
       .width('90%')
-      
-      
-      
-      
-      
+      .divider(this.nullFlag ? null : {
+        strokeWidth: this.strokeWidthStr,
+        color: this.dividerColorStr,
+        startMargin: this.startMarginStr,
+        endMargin: this.endMarginStr
+      } as DividerStyle)
 
       .fadingEdge(this.overflowFlag)
       .key('tabsTest')
@@ -347,7 +349,7 @@ struct TabsExample {
       .width('90%')
       .divider({
         strokeWidth: this.strokeWidthNum,
-        color: this.dividerColorNum,
+        color: this.dividerColorNum.toInt(),
         startMargin: this.startMarginNum,
         endMargin: this.endMarginNum
       })

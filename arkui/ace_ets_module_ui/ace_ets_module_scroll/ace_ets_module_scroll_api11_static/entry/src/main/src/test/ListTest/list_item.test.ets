@@ -62,11 +62,11 @@ export default function list_itemOnSelectJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get list_item state success " + JSON.stringify(pages));
-        if (!("list_item" == pages.name)) {
+        if (!("MainAbility/pages/List/list_item" == pages.name)) {
           console.info("get list_item state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push list_item page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push list_item page error: " + err);
@@ -80,76 +80,77 @@ export default function list_itemOnSelectJsunit() {
 
 
     /*
-     * @tc.number    testlist_itemOnSelect_static_0001
-     * @tc.name      testlist_itemOnSelect_static_0001
-     * @tc.desc      testlist_itemOnSelect_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   testlist_itemOnSelect_static_0001
+       * @tc.name     testlist_itemOnSelect_static_0001
+       * @tc.desc     testlist_itemOnSelect_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_itemOnSelect_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ListItem');
       console.info("[testlist_itemOnSelect_static_0001] component border strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('ListItem');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editable')).assertTrue();
+      expect(obj.getString('$type')).assertEqual('ListItem');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editable')).assertTrue();
       console.info("[testlist_itemOnSelect_static_0001] editable value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editable'));
-
+      done()
     });
 
 
     /*
-     * @tc.number    testlist_itemOnSelect_static_0002
-     * @tc.name      testlist_itemOnSelect_static_0002
-     * @tc.desc      testlist_itemOnSelect_static_0002
-     * @tc.level     2
-     */
+       * @tc.number   testlist_itemOnSelect_static_0002
+       * @tc.name     testlist_itemOnSelect_static_0002
+       * @tc.desc     testlist_itemOnSelect_static_0002
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_itemOnSelect_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ListItem');
       console.info("[testlist_itemOnSelect_static_0002] component border strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('ListItem');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('selectable')).assertFalse();
+      expect(obj.getString('$type')).assertEqual('ListItem');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('selectable')).assertFalse();
       console.info("[testlist_itemOnSelect_static_0002] selectable value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('selectable'));
-
+      done()
     });
 
 
     /*
-     * @tc.number    testlist_itemOnSelect_static_0003
-     * @tc.name      testlist_itemOnSelect_static_0003
-     * @tc.desc      testlist_itemOnSelect_static_0003
-     * @tc.level     2
-     */
+       * @tc.number   testlist_itemOnSelect_static_0003
+       * @tc.name     testlist_itemOnSelect_static_0003
+       * @tc.desc     testlist_itemOnSelect_static_0003
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_itemOnSelect_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect_static_0003 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ListItem');
       console.info("[testlist_itemOnSelect_static_0003] component border strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('ListItem');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sticky')).assertEqual("Sticky.None");
+      expect(obj.getString('$type')).assertEqual('ListItem');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sticky')).assertEqual("Sticky.None");
       console.info("[testlist_itemOnSelect_static_0003] sticky value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sticky'));
-
+      done()
     });
 
 
     /*
-     * @tc.number    testlist_itemSwipeAction_static_0004
-     * @tc.name      testlist_itemSwipeAction_static_0004
-     * @tc.desc      testlist_itemSwipeAction_static_0004
-     * @tc.level     2
-     */
+       * @tc.number   testlist_itemSwipeAction_static_0004
+       * @tc.name     testlist_itemSwipeAction_static_0004
+       * @tc.desc     testlist_itemSwipeAction_static_0004
+       * @tc.level    Level.LEVEL1
+       */
     it('testlist_itemSwipeAction_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('selectOnSelect testlist_itemSwipeAction_static_0004 START');
       await CommonFunc.sleep(2000);
       let obj = JSON.stringify(inspector.sendEventByKey('Del', 10, ""))
       expect(obj).assertEqual('true');
+      done()
     });
   })
 }

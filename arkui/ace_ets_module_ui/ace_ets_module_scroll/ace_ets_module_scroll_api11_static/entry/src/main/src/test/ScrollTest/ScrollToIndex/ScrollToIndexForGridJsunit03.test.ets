@@ -44,7 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ScrollToIndexForGridJsunit03() {
   describe('ScrollToIndexForGridJsunit03', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -61,7 +60,7 @@ export default function ScrollToIndexForGridJsunit03() {
         console.info("get ScrollToIndexForGrid03 state pages: " + JSON.stringify(pages));
         if (!("ScrollToIndexForGrid03" == pages.name)) {
           console.info("get ScrollToIndexForGridJsunit03 state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await router.pushUrl(options);
           routerAlp.pushUrl(options);
           let driver = Driver.create();
           await driver.delayMs(2000)
@@ -74,11 +73,11 @@ export default function ScrollToIndexForGridJsunit03() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit03_static_0100
-     * @tc.name      ScrollToIndexForGridJsunit03_static_0100
-     * @tc.desc      ScrollToIndexForGridJsunit03_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit03_static_0100
+       * @tc.name     ScrollToIndexForGridJsunit03_static_0100
+       * @tc.desc     ScrollToIndexForGridJsunit03_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit03_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit03_static_0100] START');
 
@@ -107,11 +106,11 @@ export default function ScrollToIndexForGridJsunit03() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit03_static_0200
-     * @tc.name      ScrollToIndexForGridJsunit03_static_0200
-     * @tc.desc      ScrollToIndexForGridJsunit03_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit03_static_0200
+       * @tc.name     ScrollToIndexForGridJsunit03_static_0200
+       * @tc.desc     ScrollToIndexForGridJsunit03_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit03_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit03_static_0200] START');
       let driver = Driver.create();
@@ -129,12 +128,13 @@ export default function ScrollToIndexForGridJsunit03() {
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
       await driver.delayMs(1000);
-      let GridCom = await driver.findComponent(ON.id("GridID_Grid03"));
-      let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
+      let GridCom = await driver.findComponent(ON.id("GridID_Grid03")) as Component;
+      let boundsCenter = await GridCom.getBoundsCenter();
       let centerDistanceTop = boundsCenter.y;
-
+      console.info('[ScrollToIndexForGridJsunit03_static_0200] smoothTextObj type is ' + smoothTextObj);
       expect(distanceTop).assertLess(centerDistanceTop);
       expect(gridItemID).assertEqual("gridIndex03_98");
+
       expect(smoothTextObj).assertInstanceOf("Object");
 
       console.info('[ScrollToIndexForGridJsunit03_static_0200] END');
@@ -143,11 +143,11 @@ export default function ScrollToIndexForGridJsunit03() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit03_static_0300
-     * @tc.name      ScrollToIndexForGridJsunit03_static_0300
-     * @tc.desc      ScrollToIndexForGridJsunit03_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit03_static_0300
+       * @tc.name     ScrollToIndexForGridJsunit03_static_0300
+       * @tc.desc     ScrollToIndexForGridJsunit03_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit03_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit03_static_0300] START');
       let driver = Driver.create();
@@ -178,11 +178,11 @@ export default function ScrollToIndexForGridJsunit03() {
 
 
     /*
-     * @tc.number    ScrollToIndexForGridJsunit03_static_0400
-     * @tc.name      ScrollToIndexForGridJsunit03_static_0400
-     * @tc.desc      ScrollToIndexForGridJsunit03_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ScrollToIndexForGridJsunit03_static_0400
+       * @tc.name     ScrollToIndexForGridJsunit03_static_0400
+       * @tc.desc     ScrollToIndexForGridJsunit03_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollToIndexForGridJsunit03_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ScrollToIndexForGridJsunit03_static_0400] START');
       let driver = Driver.create();
@@ -197,16 +197,16 @@ export default function ScrollToIndexForGridJsunit03() {
       let smoothTextObj = await driver.findComponent(ON.id("isHaveSmooth_Grid03"));
       await driver.delayMs(1000);
 
-      
+      // 当前GridItem元素距离顶部的距离
       let bounds = await (gridItem?.getBoundsCenter() as Promise<Point>);
       let distanceTop = bounds.y;
       await driver.delayMs(1000);
       let GridCom = await driver.findComponent(ON.id("GridID_Grid03"));
-      
+      // Grid中心距离顶部的距离
       let boundsCenter = await (GridCom?.getBoundsCenter() as Promise<Point>);
       let centerDistanceTop = boundsCenter.y;
 
-      
+      // 当前GridItem元素距离顶部的距离小于Grid中心距离顶部的距离
       expect(distanceTop).assertLarger(centerDistanceTop);
       expect(gridItemID).assertEqual("gridIndex03_10");
       expect(smoothTextObj).assertInstanceOf("Object");

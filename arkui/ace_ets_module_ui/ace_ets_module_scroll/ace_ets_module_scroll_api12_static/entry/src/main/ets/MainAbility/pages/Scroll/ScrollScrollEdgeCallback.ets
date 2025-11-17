@@ -57,7 +57,7 @@ struct ScrollScrollEdgeCallback {
       Text(this.text1).id('ScrollTextByScrollEdge01')
       Button('点我滚动')
         .id('ScrollScrollEdgeCallback01')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 这里
           this.scroller.scrollEdge(Edge.Bottom, { velocity: 0 })
           this.text1 = 'ScrollEdgeSuccess'
         })
@@ -76,10 +76,10 @@ struct ScrollScrollEdgeCallback {
           }, (item: number) => item.toString())
         }.width('100%')
       }
-      .scrollable(ScrollDirection.Vertical) 
-      .scrollBar(BarState.On) 
-      .scrollBarColor(Color.Gray) 
-      .scrollBarWidth(10) 
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .friction(0.6)
       .height('70%')
       .edgeEffect(EdgeEffect.None)

@@ -42,7 +42,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperInterface02() {
   describe('SwiperInterface02', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -56,7 +55,7 @@ export default function SwiperInterface02() {
         console.info("get SwiperInterface02 state pages:" + JSON.stringify(pages));
         if (!("SwiperInterface02" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperInterface/SwiperInterface02'
           })
           await CommonFunc.sleep(2000);
@@ -71,15 +70,15 @@ export default function SwiperInterface02() {
       await CommonFunc.sleep(1000);
       console.info("SwiperInterface02 after each called");
     });
-
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300 START");
       await CommonFunc.sleep(6000);
       let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_1300');
@@ -89,14 +88,15 @@ export default function SwiperInterface02() {
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1300 END');
       done();
     });
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310 START");
       await CommonFunc.sleep(6000);
       let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_1310');
@@ -106,14 +106,15 @@ export default function SwiperInterface02() {
       console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1310 END');
       done();
     });
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1320 START");
       await CommonFunc.sleep(6000);
       let strJson: string = inspector.getInspectorByKey('SWIPER_INTERFACE_1320');

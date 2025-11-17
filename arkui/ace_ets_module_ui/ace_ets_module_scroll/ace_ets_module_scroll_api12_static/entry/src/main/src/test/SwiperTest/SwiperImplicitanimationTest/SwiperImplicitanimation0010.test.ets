@@ -52,12 +52,11 @@ export default function SwiperImplicitanimation0010() {
       console.info("SwiperImplicitanimation0010 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperImplicitanimation0010 state pages:" + JSON.stringify(pages));
-        if (!("SwiperImplicitanimation0010" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0010" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperImplicitanimation/SwiperImplicitanimation0010'
           })
           await CommonFunc.sleep(2000);
@@ -73,15 +72,18 @@ export default function SwiperImplicitanimation0010() {
       console.info("SwiperImplicitanimation0010 after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010
-     * @tc.level     2
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010', Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_static_0010 START");
         await CommonFunc.sleep(6000);
         let swiperOffset = CommonFunc.getComponentRectOnScreen('swiper0010');
@@ -96,7 +98,7 @@ export default function SwiperImplicitanimation0010() {
         await driver.drag((Math.round(left + width * 0.8)).toInt(), (Math.round(bottom - height / 2)).toInt(),
           (Math.round(left + width * 0.1)).toInt(), (Math.round(bottom - height / 2)).toInt());
         await CommonFunc.sleep(3000);
-        let strJson2: string = inspector.getInspectorByKey('implicitanimation_static_0010');
+        let strJson2: string = inspector.getInspectorByKey('implicitanimation_0010');
         let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
         expect(marq2).assertEqual("1");
         await CommonFunc.sleep(1000);

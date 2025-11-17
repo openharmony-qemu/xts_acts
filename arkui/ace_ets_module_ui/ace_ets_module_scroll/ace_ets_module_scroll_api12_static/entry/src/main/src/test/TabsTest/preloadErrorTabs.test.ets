@@ -35,8 +35,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function preloadErrorTabs() {
   describe('preloadErrorTabs', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -53,8 +51,6 @@ export default function preloadErrorTabs() {
         if (!("preloadErrorTabs" == pages.name)) {
           console.info("get preloadErrorTabs pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push preloadErrorTabs page result:");
         }
       } catch (err) {
         console.error("push preloadErrorTabs page error:" + err);
@@ -62,14 +58,15 @@ export default function preloadErrorTabs() {
       console.info("preloadErrorTabs beforeEach end");
     });
 
-
-    /*
-     * @tc.number    preloadErrorTabs_static_0100
-     * @tc.name      preloadErrorTabs_static_0100
-     * @tc.desc      preloadErrorTabs_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   preloadErrorTabs_static_0100
+     * @tc.name     preloadErrorTabs_static_0100
+     * @tc.desc     preloadErrorTabs_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('preloadErrorTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('preloadErrorTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[preloadErrorTabs_static_0100] START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('preloadItems_btn_401'));

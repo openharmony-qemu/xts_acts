@@ -65,7 +65,7 @@ export default function offsetEdgeTop() {
           console.info("get offsetEdgeTop pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push offsetEdgeTop page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push offsetEdgeTop page error:" + err);
@@ -80,11 +80,11 @@ export default function offsetEdgeTop() {
 
 
     /*
-     * @tc.number    offsetEdgeTop_static_0100
-     * @tc.name      offsetEdgeTop_static_0100
-     * @tc.desc      offsetEdgeTop_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   offsetEdgeTop_static_0100
+       * @tc.name     offsetEdgeTop_static_0100
+       * @tc.desc     offsetEdgeTop_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('offsetEdgeTop_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[offsetEdgeTop_static_0100] START');
       let swiperList = CommonFunc.getComponentRectOnScreen('edge_endOffset_top');
@@ -111,7 +111,8 @@ export default function offsetEdgeTop() {
       console.info('[offsetEdgeTop_static_0100] list.top: ' + list.top);
       console.info('[offsetEdgeTop_static_0100] listItem.top: ' + listItem.top);
       await CommonFunc.sleep(1000);
-      expect(Math.abs(Math.round(listItem.top - list.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      expect(Math.abs(Math.round(listItem.top - list.top) - Math.round(uiContext!.vp2px(10))) <= 1).assertTrue();
       console.info('[offsetEdgeTop_static_0100] END');
       done();
     });

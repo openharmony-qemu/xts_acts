@@ -40,7 +40,9 @@ import {
   FontWeight,
   Button,
   ButtonType,
-  ClickEvent
+  ClickEvent,
+  ScrollState,
+  ScrollSource
 } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import Curves from '@ohos.curves'
@@ -84,16 +86,16 @@ struct Index {
       .scrollBarWidth(10)
       .friction(0.6)
       .edgeEffect(EdgeEffect.None)
-      
-      
-      
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info('To the edge')
       })
 
-      
-      
-      
+      .onScrollStop(() => {
+        console.info('Scroll Stop')
+      })
 
       Button('scroll 150')
         .height('5%')

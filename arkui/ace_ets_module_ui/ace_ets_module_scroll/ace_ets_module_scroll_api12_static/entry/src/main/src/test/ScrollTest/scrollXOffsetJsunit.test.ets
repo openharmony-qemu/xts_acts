@@ -48,8 +48,6 @@ const waitUiReadyMs = 1000;
 export default function scrollXOffsetJsunit() {
   describe('scrollXOffsetJsunit', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -63,7 +61,7 @@ export default function scrollXOffsetJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get scrollXOffsetJsunit state pages: " + JSON.stringify(pages));
-        if (!("scrollXOffset" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/scrollXOffset" == pages.name)) {
           console.info("get scrollXOffsetJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -74,14 +72,15 @@ export default function scrollXOffsetJsunit() {
       }
     });
 
-
-    /*
-     * @tc.number    scrollXOffsetJsunit_0100
-     * @tc.name      scrollXOffsetJsunit_0100
-     * @tc.desc      scrollXOffsetJsunit_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   scrollXOffsetJsunit_0100
+     * @tc.name     scrollXOffsetJsunit_0100
+     * @tc.desc     scrollXOffsetJsunit_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('scrollXOffsetJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('scrollXOffsetJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('scrollXOffsetJsunit_0100 START');
 
       let driver = Driver.create();

@@ -58,6 +58,7 @@ struct TouchStrategyExample {
             .height(40)
             .margin(5)
             .backgroundColor(Color.Green)
+            // 通过设置ratios为[0.0, 1.0]，实现当组件完全显示或完全消失在屏幕中时触发回调
             .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number): void => {
               console.info('Test Text isVisible: ' + isVisible + ', currentRatio:' + currentRatio)
               if (isVisible && currentRatio >= 1.0) {
@@ -84,8 +85,8 @@ struct TouchStrategyExample {
               }
             }, (item: number, index: int) => String(item))
           }
-          .listDirection(Axis.Vertical) 
-          .edgeEffect(EdgeEffect.Spring) 
+          .listDirection(Axis.Vertical) // 排列方向
+          .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
         }
       }
       .scrollable(ScrollDirection.Vertical)

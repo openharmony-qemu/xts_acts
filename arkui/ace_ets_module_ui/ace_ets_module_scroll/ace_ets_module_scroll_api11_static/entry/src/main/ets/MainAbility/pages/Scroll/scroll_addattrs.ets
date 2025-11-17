@@ -34,7 +34,9 @@ import {
   ClickEvent,
   Text,
   ICurve,
-  TextAlign
+  TextAlign,
+  ScrollSource,
+  ScrollState
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -61,10 +63,10 @@ struct ScrollExample {
           }, (item: number, index: int) => String(item))
         }.width('100%')
       }
-      .scrollable(ScrollDirection.Vertical) 
-      .scrollBar(BarState.On) 
-      .scrollBarColor(Color.Gray) 
-      .scrollBarWidth(10) 
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .edgeEffect(EdgeEffect.None)
       .enableScrollInteraction(true)
       .key('scrollAdd')
@@ -78,33 +80,32 @@ struct ScrollExample {
         scrollForward: NestedScrollMode.SELF_ONLY,
         scrollBackward: NestedScrollMode.PARALLEL
       })
-      
-      
-      
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info('To the edge')
       })
-
-      
-      
-      
+      .onScrollStop(() => {
+        console.info('Scroll Stop')
+      })
 
       Button('scroll 150')
         .height('5%')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后下滑指定距离150.0vp
           this.scroller.scrollBy(0, 150)
         })
         .margin({ top: 10, left: 20 } as Margin)
       Button('scroll 100')
         .height('5%')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后滑动到指定位置，即下滑100.0vp的距离
           this.scroller.scrollTo({ xOffset: 0, yOffset: this.scroller.currentOffset()!.yOffset + 100 })
         })
         .margin({ top: 60, left: 20 } as Margin)
       Button('scroll 100')
         .height('5%')
-        .onClick((e: ClickEvent) => { 
-          let curve = Curves.interpolatingSpring(100, 1, 228, 30) as ICurve 
+        .onClick((e: ClickEvent) => { // 点击后滑动到指定位置，即下滑100.0vp的距离，滑动过程配置有动画
+          let curve = Curves.interpolatingSpring(100, 1, 228, 30) as ICurve //创建一个阶梯曲线
           this.scroller.scrollTo({
             xOffset: 0,
             yOffset: this.scroller.currentOffset()!.yOffset + 100,
@@ -114,14 +115,14 @@ struct ScrollExample {
         .margin({ top: 110, left: 20 } as Margin)
       Button('back top')
         .height('5%')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后回到顶部
           this.scroller.scrollEdge(Edge.Top)
 
         })
         .margin({ top: 160, left: 20 } as Margin)
       Button('next page')
         .height('5%')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后滑到下一页
           this.scroller.scrollPage({ next: true })
         })
         .margin({ top: 210, left: 20 } as Margin)
@@ -129,7 +130,7 @@ struct ScrollExample {
 
       Button('back top')
         .height('5%')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后回到顶部
           this.scroller.scrollEdge(Edge.Top)
 
         })
@@ -137,7 +138,7 @@ struct ScrollExample {
       Button('isScrollEnd')
         .height('5%')
         .key('isScrollEnd')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后滑到下一页
           this.scroller.isAtEnd();
         })
         .margin({ top: 210, left: 20 } as Margin)

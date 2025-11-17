@@ -37,6 +37,9 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import {
+  ScrollBarDirection, Color, ScrollDirection,
+} from '@ohos.arkui.component'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -62,10 +65,10 @@ export default function ScrollBarJsunit() {
         console.info("get ScrollBarJsunit state pages: " + JSON.stringify(pages));
         if (!("ScrollBarPage" == pages.name)) {
           console.info("get ScrollBarJsunit state pages.name: " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ScrollBarJsunit page result: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ScrollBarJsunit page error: " + err);
@@ -73,14 +76,15 @@ export default function ScrollBarJsunit() {
       }
     });
 
+
     /*
-     * @tc.number    ScrollBarJsunit_static_0100
-     * @tc.name      ScrollBarJsunit_static_0100
-     * @tc.desc      ScrollBarJsunit_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ScrollBarJsunit_static_0100
+       * @tc.name     ScrollBarJsunit_static_0100
+       * @tc.desc     ScrollBarJsunit_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollBarJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Get the information of the ScrollBar component
       console.info('[ScrollBarJsunit_static_0100] START');
       let strJson = inspector.getInspectorByKey('scrollBar');
       let obj = JSON.parseJsonElement(strJson);
@@ -93,20 +97,22 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    ScrollBarJsunit_static_0200
-     * @tc.name      ScrollBarJsunit_static_0200
-     * @tc.desc      ScrollBarJsunit_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ScrollBarJsunit_static_0200
+       * @tc.name     ScrollBarJsunit_static_0200
+       * @tc.desc     ScrollBarJsunit_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollBarJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Modify the direction of the ScrollBar component
       console.info('[ScrollBarJsunit_static_0200] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'scrollBarDirection', value: 'ScrollBarDirection.Horizontal'
+      AppStorage.get<MessageManager<ScrollBarDirection | string>>('messageManager')?.notify({
+        name: 'scrollBarDirection',
+        value: 'ScrollBarDirection.Horizontal'
       })
       await CommonFunc.sleep(2000);
-      
+      // Get the direction of the ScrollBar component
       let strJson = inspector.getInspectorByKey('scrollBar');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollBarJsunit_static_0200] component obj is: " + JSON.stringify(obj));
@@ -115,20 +121,19 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    ScrollBarJsunit_static_0300
-     * @tc.name      ScrollBarJsunit_static_0300
-     * @tc.desc      ScrollBarJsunit_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ScrollBarJsunit_static_0300
+       * @tc.name     ScrollBarJsunit_static_0300
+       * @tc.desc     ScrollBarJsunit_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollBarJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Modify the state of the ScrollBar component
       console.info('[ScrollBarJsunit_static_0300] START');
-      AppStorage.get<MessageManager<BarState>>('messageManager')?.notify({
-        name: 'state', value: BarState.Auto
-      })
+      AppStorage.get<MessageManager<BarState>>('messageManager')?.notify({ name: 'state', value: BarState.Auto })
       await CommonFunc.sleep(1500);
-      
+      // Get the state value of the ScrollBar component
       let strJson = inspector.getInspectorByKey('scrollBar');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollBarJsunit_static_0300] component obj is: " + JSON.stringify(obj));
@@ -137,20 +142,19 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    ScrollBarJsunit_static_0400
-     * @tc.name      ScrollBarJsunit_static_0400
-     * @tc.desc      ScrollBarJsunit_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ScrollBarJsunit_static_0400
+       * @tc.name     ScrollBarJsunit_static_0400
+       * @tc.desc     ScrollBarJsunit_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollBarJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Modify the backgroundColor of the ScrollBar component
       console.info('[ScrollBarJsunit_static_0400] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'backColor', value: 'Color.Blue'
-      })
+      AppStorage.get<MessageManager<Color>>('messageManager')?.notify({ name: 'backColor', value: Color.Blue })
       await CommonFunc.sleep(2000);
-      
+      // Get the backgroundColor of the ScrollBar component
       let strJson = inspector.getInspectorByKey('scrollBar');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollBarJsunit_static_0400] component obj is: " + JSON.stringify(obj));
@@ -159,28 +163,23 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    ScrollBarJsunit_static_0500
-     * @tc.name      ScrollBarJsunit_static_0500
-     * @tc.desc      ScrollBarJsunit_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ScrollBarJsunit_static_0500
+       * @tc.name     ScrollBarJsunit_static_0500
+       * @tc.desc     ScrollBarJsunit_static_0500
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollBarJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Illegal modification of attribute value of the ScrollBar component
       console.info('[ScrollBarJsunit_static_0500] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'scrollBarDirection', value: '1'
-      })
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'scrollBarDirection', value: '1' })
       await CommonFunc.sleep(800);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'state', value: '1'
-      })
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'state', value: '1' })
       await CommonFunc.sleep(800);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'backColor', value: '1'
-      })
+      AppStorage.get<MessageManager<string>>('messageManager')?.notify({ name: 'backColor', value: '1' })
       await CommonFunc.sleep(800);
-      
+      // Get the attribute value of the ScrollBar component
       let strJson = inspector.getInspectorByKey('scrollBar');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollBarJsunit_static_0500] component obj is: " + JSON.stringify(obj));
@@ -191,24 +190,27 @@ export default function ScrollBarJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    ScrollBarJsunit_static_0600
-     * @tc.name      ScrollBarJsunit_static_0600
-     * @tc.desc      ScrollBarJsunit_static_0600
-     * @tc.level     2
-     */
+       * @tc.number   ScrollBarJsunit_static_0600
+       * @tc.name     ScrollBarJsunit_static_0600
+       * @tc.desc     ScrollBarJsunit_static_0600
+       * @tc.level    Level.LEVEL0
+       */
     it('ScrollBarJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Modify the direction of the Scroll component and ScrollBar component
       console.info('[ScrollBarJsunit_static_0600] START');
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'ScrollDirection', value: 'ScrollDirection.Horizontal'
+      AppStorage.get<MessageManager<ScrollDirection | string>>('messageManager')?.notify({
+        name: 'ScrollDirection',
+        value: 'ScrollDirection.Horizontal'
       })
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'scrollBarDirection', value: 'ScrollBarDirection.Horizontal'
+      AppStorage.get<MessageManager<ScrollBarDirection | string>>('messageManager')?.notify({
+        name: 'scrollBarDirection',
+        value: 'ScrollBarDirection.Horizontal'
       })
       await CommonFunc.sleep(2000);
-      
+      // Get the direction of the ScrollBar component
       let strJson = inspector.getInspectorByKey('scrollBar');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ScrollBarJsunit_static_0600] component obj is: " + JSON.stringify(obj));

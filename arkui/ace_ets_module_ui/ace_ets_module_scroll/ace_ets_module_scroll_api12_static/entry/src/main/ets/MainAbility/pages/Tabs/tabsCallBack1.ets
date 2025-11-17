@@ -98,7 +98,7 @@ struct tabsCallBack1Example {
           console.info(index.toString())
         })
         .width('100%')
-        .backgroundColor(0xF1F3F5)
+        .backgroundColor('0xF1F3F5')
       }
       .width('100%')
       .height('40%')

@@ -20,7 +20,6 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { RecordData } from '@ohos.base'; 
 
 export default function gridJsunit() {
   describe('grid3Test', () => {
@@ -42,10 +41,10 @@ export default function gridJsunit() {
         console.info('beforeEach get prompt state pages:' + JSON.stringify(pages));
         if (!('gridPage' == pages.name)) {
           console.info('beforeEach get prompt state pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info('beforeEach push prompt page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('beforeEach push prompt page error:' + err);
@@ -57,12 +56,13 @@ export default function gridJsunit() {
       console.info('[ afterEach ] ===================grid test after each called===================');
     });
 
+
     /*
-     * @tc.number    gridTest01_static_01
-     * @tc.name      gridTest01_static_01
-     * @tc.desc      gridTest01_static_01
-     * @tc.level     2
-     */
+       * @tc.number   gridTest01_static_01
+       * @tc.name     gridTest01_static_01
+       * @tc.desc     gridTest01_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('gridTest01_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gridTest01_static_01==================== start');
       await CommonFunc.sleep(1000)
@@ -76,7 +76,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "columnsGap": '3px'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 110,
@@ -84,7 +84,7 @@ export default function gridJsunit() {
         }
         console.info('gridTest01 start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err) {
+      } catch (err: Error) {
         console.log('gridTest01 change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -99,12 +99,13 @@ export default function gridJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    gridTest02_static_02
-     * @tc.name      gridTest02_static_02
-     * @tc.desc      gridTest02_static_02
-     * @tc.level     2
-     */
+       * @tc.number   gridTest02_static_02
+       * @tc.name     gridTest02_static_02
+       * @tc.desc     gridTest02_static_02
+       * @tc.level    Level.LEVEL0
+       */
     it('gridTest02_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ gridTest02_static_02 ] ==================== start');
       await CommonFunc.sleep(1000)
@@ -118,7 +119,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rowsGap": '3px'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 111,
@@ -126,7 +127,7 @@ export default function gridJsunit() {
         }
         console.info('[ gridTest02 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[ gridTest02 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -140,12 +141,13 @@ export default function gridJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    gridTest03_static_03
-     * @tc.name      gridTest03_static_03
-     * @tc.desc      gridTest03_static_03
-     * @tc.level     2
-     */
+       * @tc.number   gridTest03_static_03
+       * @tc.name     gridTest03_static_03
+       * @tc.desc     gridTest03_static_03
+       * @tc.level    Level.LEVEL0
+       */
     it('gridTest03_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ gridTest03_static_03 ] ==================== start');
       await CommonFunc.sleep(1000)
@@ -161,7 +163,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "columnsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 112,
@@ -169,7 +171,7 @@ export default function gridJsunit() {
         }
         console.info('[ gridTest03 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[ gridTest03 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -184,12 +186,13 @@ export default function gridJsunit() {
       done();
     });
 
+
     /*
-     * @tc.number    gridTest04_static_04
-     * @tc.name      gridTest04_static_04
-     * @tc.desc      gridTest04_static_04
-     * @tc.level     2
-     */
+       * @tc.number   gridTest04_static_04
+       * @tc.name     gridTest04_static_04
+       * @tc.desc     gridTest04_static_04
+       * @tc.level    Level.LEVEL0
+       */
     it('gridTest04_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ gridTest04_static_04 ] ==================== start');
       await CommonFunc.sleep(1000)
@@ -205,7 +208,7 @@ export default function gridJsunit() {
         let eventData: events_emitter.EventData = {
           data: {
             "rowsTemplate": '1fr 1fr 1fr 1fr'
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 113,
@@ -213,7 +216,7 @@ export default function gridJsunit() {
         }
         console.info('[ gridTest04 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[ gridTest04 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)

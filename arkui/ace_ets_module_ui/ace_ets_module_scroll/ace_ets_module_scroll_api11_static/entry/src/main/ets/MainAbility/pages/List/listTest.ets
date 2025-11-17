@@ -59,13 +59,13 @@ struct ListExample {
           }
         }, (item: number) => item.toString())
       }
-      .listDirection(Axis.Vertical) 
+      .listDirection(Axis.Vertical) // 排列方向
       .scrollBar(BarState.Off)
       .friction(0.6)
       .key("listTestCon")
       .contentStartOffset(10)
       .contentEndOffset(10)
-      .edgeEffect(EdgeEffect.Spring) 
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)

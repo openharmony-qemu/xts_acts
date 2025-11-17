@@ -65,14 +65,15 @@ export default function tabsCallBack1() {
       console.info("tabsCallBack1 after each called");
     });
 
-
-    /*
-     * @tc.number    tabsCallBack1_static_0100
-     * @tc.name      tabsCallBack1_static_0100
-     * @tc.desc      tabsCallBack1_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   tabsCallBack1_static_0100
+     * @tc.name     tabsCallBack1_static_0100
+     * @tc.desc     tabsCallBack1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('tabsCallBack1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('tabsCallBack1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tabsCallBack1_static_0100] START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.text('Yellow'));

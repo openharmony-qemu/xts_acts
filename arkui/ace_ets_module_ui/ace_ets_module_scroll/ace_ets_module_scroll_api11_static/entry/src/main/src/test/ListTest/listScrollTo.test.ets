@@ -65,7 +65,7 @@ export default function listScrollTo() {
           console.info("get listScrollTo pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push listScrollTo page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push listScrollTo page error:" + err);
@@ -80,11 +80,11 @@ export default function listScrollTo() {
 
 
     /*
-     * @tc.number    listScrollTo_static_0100
-     * @tc.name      listScrollTo_static_0100
-     * @tc.desc      listScrollTo_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   listScrollTo_static_0100
+       * @tc.name     listScrollTo_static_0100
+       * @tc.desc     listScrollTo_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('listScrollTo_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listScrollTo_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -98,8 +98,8 @@ export default function listScrollTo() {
       let listItem2 = CommonFunc.getComponentRectOnScreen('list_scroll_100_2');
       console.info('[listScrollTo_static_0100] listItem2.bottom: ' + listItem2.bottom);
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext()
-      expect(Math.abs(Math.round(listItem1.bottom - listItem2.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      const uiContext = AppStorage.get<UIContext>('uiContext');
+      expect(Math.abs(Math.round(listItem1.bottom - listItem2.bottom) - Math.round(uiContext!.vp2px(100))) <= 1)
         .assertTrue();
       console.info('[listScrollTo_static_0100] END');
       done();

@@ -34,7 +34,7 @@ import {
   ButtonType
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -43,7 +43,8 @@ struct Index {
     try {
       let router = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

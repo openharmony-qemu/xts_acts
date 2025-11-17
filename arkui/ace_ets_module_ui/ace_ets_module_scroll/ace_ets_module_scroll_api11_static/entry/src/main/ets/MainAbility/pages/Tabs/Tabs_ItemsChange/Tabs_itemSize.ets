@@ -56,31 +56,31 @@ struct Tabs_itemSize {
     this.messageManager.registerCallback(callback);
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  @Builder
+  TabBuilder(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.currentIndex === index ? 500 : 400)
+        .lineHeight(40)
+    }.width('100%').height('100%').key('Tabs_itemSize_' + name)
+  }
 
   build() {
     Column() {
       Tabs({ index: this.currentIndex }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87').key("Tabs_itemSize_001")
-        } 
+        } .tabBar(() => {this.TabBuilder(0, 'green')}).key("Tabs_itemSize_011").width(this.dadWeight).height(this.dadHeight)
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF').key("Tabs_itemSize_002")
-        } 
+        } .tabBar(() => {this.TabBuilder(1, 'blue')}).key("Tabs_itemSize_012")
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00').key("Tabs_itemSize_003")
-        } 
+        }.tabBar(() => {this.TabBuilder(2, 'yellow')}).key("Tabs_itemSize_013")
       }
       .key("Tabs_itemSize_01")
       .vertical(false)

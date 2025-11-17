@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAttribute_7() {
   describe('SwiperAttribute_7', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -58,11 +56,10 @@ export default function SwiperAttribute_7() {
         console.info("get SwiperAttribute_7 state pages:" + JSON.stringify(pages));
         if (!("SwiperAttribute_7" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperAttribute_7"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperAttribute_7 page result:");
+          await UtilsTest.msSleep(2000)
         }
       } catch (err) {
         console.error("push SwiperAttribute_7 page error:" + err);
@@ -74,14 +71,15 @@ export default function SwiperAttribute_7() {
       console.info("SwiperAttribute_7 after each called");
     });
 
-
-    /*
-     * @tc.number    SwiperAttribute_static_0010
-     * @tc.name      SwiperAttribute_static_0010
-     * @tc.desc      SwiperAttribute_static_0010
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperAttribute_static_0010
+     * @tc.name     SwiperAttribute_static_0010
+     * @tc.desc     SwiperAttribute_static_0010
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperAttribute_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperAttribute_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperAttribute_static_0010] START');
 
       let rect = CommonFunc.getComponentRectOnScreen('swiperAttribute_7')
@@ -105,16 +103,16 @@ export default function SwiperAttribute_7() {
       console.info("SwiperAttribute_static_0010 first column text rect is" + ftLeft + " --" + ftRight + "--" + ftTop +
         "--" +
         ftBottom);
-      const uiContext = new UIContext();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.top - fTop))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.right - fRight))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.left - fLeft))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.bottom - fBottom))) - 20 <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      expect(uiContext.px2vp(Math.abs(Math.round(rect.top - fTop))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(rect.right - fRight))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(rect.left - fLeft))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(rect.bottom - fBottom))) - 20 <= 1).assertTrue();
 
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftTop - fTop))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftRight - fRight))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftLeft - fLeft))) - 20 <= 1).assertTrue();
-      expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(ftBottom - fBottom))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(ftTop - fTop))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(ftRight - fRight))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(ftLeft - fLeft))) - 20 <= 1).assertTrue();
+      expect(uiContext.px2vp(Math.abs(Math.round(ftBottom - fBottom))) - 20 <= 1).assertTrue();
 
       let driver = Driver.create()
       for (let i = 2; i <= 6; i++) {

@@ -13,46 +13,46 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Color } from '@ohos.arkui.component'
+import { Entry, Component, Column, Color, ColumnOptions, Grid, ForEach, GridItem, Text, TextAlign, Margin } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct grid_testcase {
-  @State numberData: String[] = ['0', '1', '2', '3', '4']
+  @State Number1: String[] = ['0', '1', '2', '3', '4']
   @State active: boolean = false
 
   build() {
     Column() {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // Navigator({ target: "pages/index", type: NavigationType.Back }) {
+        Column({ space: 5 } as ColumnOptions) {
+          Grid() {
+            ForEach(this.Number1, (day: string) => {
+              ForEach(this.Number1, (day: string) => {
+                GridItem() {
+                  Text(day)
+                    .fontSize(16)
+                    .backgroundColor(0xF9CF93)
+                    .width('100%')
+                    .height('100%')
+                    .textAlign(TextAlign.Center)
+                }
+              }, (day: string) => day)
+            }, (day: string) => day)
+          }
+          .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
+          .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
+          .columnsGap(10)
+          .rowsGap(10)
+          .width('90%')
+          .backgroundColor(0xFAEEE0)
+          .height(300)
+          .key('Grid')
+        }.width('100%').margin({ top: 5 } as Margin)
+      // }.active(this.active)
+      // .params({
+      //   data: 19
+      // })
     }.width(300)
     .height(350)
     .borderColor(Color.Pink)

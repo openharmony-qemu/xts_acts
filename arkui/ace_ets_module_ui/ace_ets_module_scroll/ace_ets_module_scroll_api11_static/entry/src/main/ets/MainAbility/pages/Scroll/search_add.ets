@@ -43,19 +43,19 @@ struct SearchExample {
   @State value1: string = ''
   @State value2: string = ''
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // 自定义键盘组件
+  @Builder CustomKeyboardBuilder() {
+    Column() {
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: int | string, index: int) => {
+          GridItem() {
+            Button(item + "")
+              .width(110)
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor(Color.Gray)
+  }
 
   build() {
     Column() {
@@ -73,9 +73,10 @@ struct SearchExample {
         .enableKeyboardOnFocus(true)
         .selectionMenuHidden(this.isHidden)
         .placeholderFont({ size: 14, weight: 400 } as Font)
-        .onContentScroll((totalOffsetX: double, totalOffsetY: double): void => {
+        .customKeyboard(this.CustomKeyboardBuilder)
+        .onContentScroll((totalOffsetX: number, totalOffsetY: number): void => {
         })
-        .onTextSelectionChange((selectionStart: int, selectionEnd: int): void => {
+        .onTextSelectionChange((selectionStart: Int, selectionEnd: Int): void => {
           this.value1 = selectionStart + "";
           this.value2 = selectionEnd + "";
           this.controller.getTextContentLineCount();
@@ -90,7 +91,7 @@ struct SearchExample {
         .margin(20)
       Button('Set caretPosition 1')
         .onClick((e: ClickEvent) => {
-          
+          // 设置光标位置到输入的第一个字符后
           this.controller.caretPosition(1)
         })
 

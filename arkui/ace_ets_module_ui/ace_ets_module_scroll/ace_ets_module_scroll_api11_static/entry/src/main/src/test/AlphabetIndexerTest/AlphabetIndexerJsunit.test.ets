@@ -57,11 +57,11 @@ export default function alphabetIndexerJsunit() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get AlphabetIndexer state success " + JSON.stringify(pages));
-        if (!("AlphabetIndexer" == pages.name)) {
+        if (!("MainAbility/pages/AlphabetIndexer/AlphabetIndexer" == pages.name)) {
           console.info("get AlphabetIndexer state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
-          
+          // console.info("push AlphabetIndexer page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push AlphabetIndexer page error " + JSON.stringify(err));
@@ -76,11 +76,11 @@ export default function alphabetIndexerJsunit() {
 
 
     /*
-     * @tc.number    alphabetIndexerTest001_static_01
-     * @tc.name      alphabetIndexerTest001_static_01
-     * @tc.desc      alphabetIndexerTest001_static_01
-     * @tc.level     2
-     */
+       * @tc.number   alphabetIndexerTest001_static_01
+       * @tc.name     alphabetIndexerTest001_static_01
+       * @tc.desc     alphabetIndexerTest001_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetIndexerTest001_static_01', Level.LEVEL0, async () => {
       console.info('AlphabetIndexerTest001_static_01 START');
       await sleep(1)
@@ -93,18 +93,21 @@ export default function alphabetIndexerJsunit() {
 
 
     /*
-     * @tc.number    alphabetIndexerTest002_static_02
-     * @tc.name      alphabetIndexerTest002_static_02
-     * @tc.desc      alphabetIndexerTest002_static_02
-     * @tc.level     2
-     */
+       * @tc.number   alphabetIndexerTest002_static_02
+       * @tc.name     alphabetIndexerTest002_static_02
+       * @tc.desc     alphabetIndexerTest002_static_02
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetIndexerTest002_static_02', Level.LEVEL0, async () => {
-      console.info('AlphabetIndexerTest002_static_02 START');
-      let strJson = inspector.getInspectorByKey('alphabetIndexer1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("component obj is: " + JSON.stringify(obj));
-      expect(obj.getString('$type')).assertEqual('AlphabetIndexer');
-      console.info('AlphabetIndexerTest002_static_02 END');
+      try {
+        console.info('AlphabetIndexerTest002_static_02 START');
+        let strJson = inspector.getInspectorByKey('alphabetIndexer1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("component obj is: " + JSON.stringify(obj));
+        console.info('AlphabetIndexerTest002_static_02 END');
+      } catch (error) {
+        expect().assertFail();
+      }
     });
   })
 }

@@ -61,11 +61,11 @@ export default function conSizeGroup2() {
         router.clear();
         let pages = router.getState();
         console.info("get conSizeGroup2 state pages:" + JSON.stringify(pages));
-        if (!("conSizeGroup2" == pages.name)) {
+        if (!("MainAbility/pages/List/conSizeGroup2" == pages.name)) {
           console.info("get conSizeGroup2 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push conSizeGroup2 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push conSizeGroup2 page error:" + err);
@@ -80,11 +80,11 @@ export default function conSizeGroup2() {
 
 
     /*
-     * @tc.number    conSizeGroup2_static_0100
-     * @tc.name      conSizeGroup2_static_0100
-     * @tc.desc      conSizeGroup2_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   conSizeGroup2_static_0100
+       * @tc.name     conSizeGroup2_static_0100
+       * @tc.desc     conSizeGroup2_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('conSizeGroup2_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[conSizeGroup2_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -94,8 +94,7 @@ export default function conSizeGroup2() {
       console.info("[conSizeGroup2_static_0100] height: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height')));
       await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height')))
-        .assertEqual('200.00vp');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('200.00vp');
       console.info('[conSizeGroup2_static_0100] END');
       done();
     });

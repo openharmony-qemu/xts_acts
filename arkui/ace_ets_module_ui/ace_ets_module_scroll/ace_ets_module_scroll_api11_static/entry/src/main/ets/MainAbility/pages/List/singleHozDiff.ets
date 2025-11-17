@@ -33,7 +33,9 @@ import {
   Axis,
   BarState,
   EdgeEffect,
-  ListItemGroup
+  ListItemGroup,
+  ListItem,
+  TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -55,29 +57,29 @@ struct singleListHorizontalDiffHeight {
         })
       List({ scroller: this.scroller }) {
         ForEach(this.arr, (item0: number, groupIndex: int) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup() {
+            ForEach(this.arr2, (item: number, itemIndex:int) => {
+              ListItem() {
+                Text('Group:' + (groupIndex + 1) + ', Item:' + item)
+                  .width('100%')
+                  .height(itemIndex % 2 == 0 ? this.mheight[0] : this.mheight[1])
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(Color.Pink)
+              }
+              .id('group_hoz_diff_item')
+            }, (item: number) => item.toString())
+          }
         })
       }
       .id('group_hoz_diff_list')
       .width('90%')
       .height('40%')
-      .listDirection(Axis.Horizontal) 
+      .listDirection(Axis.Horizontal) // 横向排列方向
       .scrollBar(BarState.Off)
       .friction(0.6)
       .backgroundColor(0xDCDCDC)
-      .edgeEffect(EdgeEffect.Spring) 
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)

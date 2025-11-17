@@ -32,6 +32,7 @@ import {
   SubTabBarStyle
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { BusinessError } from '@ohos.base';
 
 @Entry
 @Component
@@ -43,13 +44,14 @@ struct preloadItemsErrorTabsExample {
 
   build() {
     Column() {
-      Text('preloadItemsError: ' + this.textResult)
+      Text('preloadItemsError: ' + this.textResult)//“401”
         .id('preloadItems_tabs_401')
         .margin({ top: 10 } as Margin)
 
       Button('preload items: [-1]')
         .id('preloadItems_btn_401')
         .onClick((e: ClickEvent) => {
+          console.info('xyb: preloadItems [-1] start');
           this.controller.preloadItems([-1])
             .then(() => {
               console.info('preloadItems [-1] success.')
@@ -60,6 +62,7 @@ struct preloadItemsErrorTabsExample {
               console.error('preloadItems [-1] failed, error code: ' + error.code + ', error message: ' +
               error.message)
             })
+          console.info('xyb: preloadItems [-1] end');
         })
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {

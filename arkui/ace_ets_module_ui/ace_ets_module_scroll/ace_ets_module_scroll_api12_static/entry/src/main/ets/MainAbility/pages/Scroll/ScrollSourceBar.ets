@@ -76,28 +76,28 @@ struct ScrollSourceBARExample {
       .scrollBar(BarState.On)
       .scrollBarColor(Color.Gray)
       .friction(0.6)
-      .edgeEffect(EdgeEffect.Spring)
+      // .edgeEffect(EdgeEffect.Spring)
       .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState,
         scrollSource: ScrollSource): undefined | OffsetResult => {
         console.info('xOffset: ' + xOffset + ' ' + 'yOffset: ' + yOffset)
         console.info('scrollState: ' + scrollState)
-        if (scrollSource === 0) { 
+        if (scrollSource === 0) { //拖拽事件
           console.info('scrollSource ScrollSource.FLING success')
-        } else if (scrollSource === 1) { 
+        } else if (scrollSource === 1) { //拖曳以速度结束后甩动
           console.info('scrollSource ScrollSource.FLING success')
-        } else if (scrollSource === 2) { 
+        } else if (scrollSource === 2) { //使用EdgeEffect.Spring进行滚动
           console.info('scrollSource ScrollSource.EDGE_EFFECT success')
-        } else if (scrollSource === 3) { 
+        } else if (scrollSource === 3) { //除拖动以外的其他用户输入，如鼠标滚轮、按键事件
           console.info('scrollSource ScrollSource.OTHER_USER_INPUT success')
-        } else if (scrollSource === ScrollSource.SCROLL_BAR) { 
+        } else if (scrollSource === ScrollSource.SCROLL_BAR) { //滚动条的拖动事件
           this.SCROLL_BAR = 'ScrollSource.SCROLL_BAR'
           console.info('scrollSource ScrollSource.SCROLL_BAR success')
-        } else if (scrollSource === ScrollSource.SCROLL_BAR_FLING) { 
+        } else if (scrollSource === ScrollSource.SCROLL_BAR_FLING) { //滚动条拖拽结束后的滑动速度
           this.SCROLL_BAR_FLING = 'ScrollSource.SCROLL_BAR_FLING'
           console.info('scrollSource ScrollSource.SCROLL_BAR_FLING success')
-        } else if (scrollSource === 6) { 
+        } else if (scrollSource === 6) { //不带动画的Scroller的成员方法
           console.info('scrollSource ScrollSource.SCROLLER success')
-        } else if (scrollSource === 7) { 
+        } else if (scrollSource === 7) { //带动画的Scroller的成员方法
           console.info('scrollSource ScrollSource.SCROLLER_ANIMATION success')
         }
       })

@@ -44,7 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperDrag0710() {
   describe('SwiperDrag0710', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -53,12 +52,11 @@ export default function SwiperDrag0710() {
       console.info("SwiperDrag0710 beforeEach start");
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get SwiperDrag0710 state pages:" + JSON.stringify(pages));
-        if (!("SwiperDrag0710" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/SwiperDrag/SwiperDrag0710" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: 'MainAbility/pages/Swiper/SwiperDrag/SwiperDrag0710'
           })
           await CommonFunc.sleep(2000);
@@ -73,28 +71,28 @@ export default function SwiperDrag0710() {
       await CommonFunc.sleep(1000);
       console.info("SwiperDrag0710 after each called");
     });
-
-
-    /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710
+     * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710
+     * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710
+     * @tc.level    Level.LEVEL0
      */
-    it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_static_0710 START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let swiperArrow = await driver.findComponent(ON.id("swiperdrag0710"));
       let point2 = await (swiperArrow?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(1000);
-      await driver.fling({
-        x: point2.x + 200, y: point2.y
-      }, {
-        x: point2.x - 210, y: point2.y
-      }, 5, 1000);
+      await driver.fling({ x: point2.x + 200, y: point2.y }, { x: point2.x - 210, y: point2.y }, 5, 1000);
       await CommonFunc.sleep(1000);
-      let strJson2: string = inspector.getInspectorByKey('swiper_drag_static_0710');
+      let strJson2: string = inspector.getInspectorByKey('swiper_drag_0710');
       let marq = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
       expect(marq).assertEqual("1");
       await CommonFunc.sleep(1000);

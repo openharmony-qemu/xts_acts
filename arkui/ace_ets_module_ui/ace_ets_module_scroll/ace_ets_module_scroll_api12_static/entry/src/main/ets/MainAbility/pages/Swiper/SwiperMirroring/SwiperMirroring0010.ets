@@ -64,7 +64,7 @@ struct SwiperMirroring0010 {
       .autoPlay(true, undefined)
       .interval(1000)
       .direction(Direction.Ltr)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.onAnimationStart = 'onChange'
       })
 
@@ -99,7 +99,7 @@ struct SwiperMirroring0010 {
       .autoPlay(true, undefined)
       .interval(1000)
       .direction(Direction.Rtl)
-      .onChange((index: Int): void => {
+      .onChange((index: int): void => {
         this.onAnimationStart2 = 'onChange'
       })
 

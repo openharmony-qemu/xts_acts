@@ -61,7 +61,7 @@ struct GridFlingCallback {
 
       Button('更换速度 1000')
         .id('btn_grid_fling_01')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 这里
           this.scroller.fling(1000)
           console.info('GridFlingCallbackTest_0100 start to emit action state')
           this.scroller_fling_1 = '1000'
@@ -71,7 +71,7 @@ struct GridFlingCallback {
         .fontSize(16).width('90%').key('key_grid_fling_text1')
       Button('更换速度 -1000')
         .id('btn_grid_fling_02')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 这里
           this.scroller.fling(-1000)
           console.info('GridFlingCallbackTest_0200 start to emit action state')
           this.scroller_fling_2 = '-1000'

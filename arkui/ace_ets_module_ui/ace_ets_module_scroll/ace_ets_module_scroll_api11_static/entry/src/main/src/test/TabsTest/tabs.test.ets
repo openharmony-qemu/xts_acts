@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 
+import { Color, SelectedMode, $r } from '@ohos.arkui.component'
+import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import events_emitter from '@ohos.events.emitter';
 import Utils from '../../../ets/MainAbility/common/Utils'
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -38,232 +40,232 @@ export default function tabsBarPositionJsunit() {
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
+    });
 
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Tabs/tabs2',
       }
       try {
-        const routerAlp = AppStorage.get<Router>("router") as Router
-        routerAlp.clear();
-        let pages = routerAlp.getState();
+        const router = AppStorage.get<Router>("router") as Router
+        router.clear();
+        let pages = router.getState();
         console.info("get tabs state success " + JSON.stringify(pages));
-        if (!("tabs2" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/tabs2" == pages.name)) {
           console.info("get tabs state success " + JSON.stringify(pages.name));
-          
-          routerAlp.pushUrl(options);
+          router.pushUrl(options);
           await Utils.sleep(2000);
-          
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push tabs page error: " + err);
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("tabsBarPosition after each called");
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0001_static_01
-     * @tc.name      testtabsBarPosition0001_static_01
-     * @tc.desc      testtabsBarPosition0001_static_01
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0001_static_01', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0001_static_01 START');
+       * @tc.number   testtabsBarPosition_static_0001
+       * @tc.name     testtabsBarPosition_static_0001
+       * @tc.desc     testtabsBarPosition_static_0001
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0001', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition_static_0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0001_static_01] component width strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("100.00vp");
-      console.info("[testtabsBarPosition0001_static_01] width value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
+      console.info("[testtabsBarPosition_static_0001] width value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0002_static_02
-     * @tc.name      testtabsBarPosition0002_static_02
-     * @tc.desc      testtabsBarPosition0002_static_02
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0002_static_02', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0002_static_02 START');
+       * @tc.number   testtabsBarPosition_static_0002
+       * @tc.name     testtabsBarPosition_static_0002
+       * @tc.desc     testtabsBarPosition_static_0002
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0002', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition_static_0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0002_static_02] component height strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual("70.00vp");
-      console.info("[testtabsBarPosition0002_static_02] height value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
+      console.info("[testtabsBarPosition_static_0002] height value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0003_static_03
-     * @tc.name      testtabsBarPosition0003_static_03
-     * @tc.desc      testtabsBarPosition0003_static_03
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0003_static_03', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0003_static_03 START');
+       * @tc.number   testtabsBarPosition_static_0003
+       * @tc.name     testtabsBarPosition_static_0003
+       * @tc.desc     testtabsBarPosition_static_0003
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0003', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition_static_0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0003_static_03] component fontSize strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual("20.00fp");
-      console.info("[testtabsBarPosition0003_static_03] fontSize value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+      console.info("[testtabsBarPosition_static_0003] fontSize value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('fontSize'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0004_static_04
-     * @tc.name      testtabsBarPosition0004_static_04
-     * @tc.desc      testtabsBarPosition0004_static_04
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0004_static_04', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0004_static_04 START');
+       * @tc.number   testtabsBarPosition_static_0004
+       * @tc.name     testtabsBarPosition_static_0004
+       * @tc.desc     testtabsBarPosition_static_0004
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0004', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition_static_0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0004_static_04] component opacity strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity')).assertEqual(1);
-      console.info("[testtabsBarPosition0004_static_04] opacity value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity')).assertEqual(1);
+      console.info("[testtabsBarPosition_static_0004] opacity value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('opacity'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0005_static_05
-     * @tc.name      testtabsBarPosition0005_static_05
-     * @tc.desc      testtabsBarPosition0005_static_05
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0005_static_05', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0005_static_05 START');
+       * @tc.number   testtabsBarPosition_static_0005
+       * @tc.name     testtabsBarPosition_static_0005
+       * @tc.desc     testtabsBarPosition_static_0005
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0005', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition_static_0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0005_static_05] component align strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.TopStart");
-      console.info("[testtabsBarPosition0005_static_05] align value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('align'));
+      console.info("[testtabsBarPosition_static_0005] align value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('align'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0006_static_06
-     * @tc.name      testtabsBarPosition0006_static_06
-     * @tc.desc      testtabsBarPosition0006_static_06
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0006_static_06', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0006_static_06 START');
+       * @tc.number   testtabsBarPosition_static_0006
+       * @tc.name     testtabsBarPosition_static_0006
+       * @tc.desc     testtabsBarPosition_static_0006
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0006', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition_static_0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0006_static_06] component fontColor strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual("#FFCCCCCC");
-      console.info("[testtabsBarPosition0006_static_06] fontColor value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
+      console.info("[testtabsBarPosition_static_0006] fontColor value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('fontColor'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0007_static_07
-     * @tc.name      testtabsBarPosition0007_static_07
-     * @tc.desc      testtabsBarPosition0007_static_07
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0007_static_07', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0007_static_07 START');
+       * @tc.number   testtabsBarPosition_static_0007
+       * @tc.name     testtabsBarPosition_static_0007
+       * @tc.desc     testtabsBarPosition_static_0007
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0007', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition_static_0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0007_static_07] component lineHeight strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight')).assertEqual("25.00fp");
-      console.info("[testtabsBarPosition0007_static_07] lineHeight value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight'));
+      console.info("[testtabsBarPosition_static_0007] lineHeight value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lineHeight'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0009_static_09
-     * @tc.name      testtabsBarPosition0009_static_09
-     * @tc.desc      testtabsBarPosition0009_static_09
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0009_static_09', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0009_static_09 START');
+       * @tc.number   testtabsBarPosition_static_0009
+       * @tc.name     testtabsBarPosition_static_0009
+       * @tc.desc     testtabsBarPosition_static_0009
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition_static_0009', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0009_static_09] component padding strJson:" + strJson);
+      console.info("[testtabsBarPosition_static_0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("10.00vp");
-      console.info("[testtabsBarPosition0009_static_09] padding value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding'));
+      console.info("[testtabsBarPosition_static_0009] padding value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('padding'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0010_static_10
-     * @tc.name      testtabsBarPosition0010_static_10
-     * @tc.desc      testtabsBarPosition0010_static_10
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0010_static_10', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0010_static_10 START');
+       * @tc.number   testtabsBarPosition0010
+       * @tc.name     testtabsBarPosition0010
+       * @tc.desc     testtabsBarPosition0010
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition0010', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionText');
-      console.info("[testtabsBarPosition0010_static_10] component textAlign strJson:" + strJson);
+      console.info("[testtabsBarPosition0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign'))
         .assertEqual("TextAlign.Center");
-      console.info("[testtabsBarPosition0010_static_10] textAlign value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign'));
+      console.info("[testtabsBarPosition0010] textAlign value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('textAlign'));
 
     });
 
 
     /*
-     * @tc.number    testtabsBarPosition0011_static_11
-     * @tc.name      testtabsBarPosition0011_static_11
-     * @tc.desc      testtabsBarPosition0011_static_11
-     * @tc.level     2
-     */
-    it('testtabsBarPosition0011_static_11', Level.LEVEL0, async () => {
-      console.info('tabsBarPosition testtabsBarPosition0011_static_11 START');
+       * @tc.number   testtabsBarPosition0011
+       * @tc.name     testtabsBarPosition0011
+       * @tc.desc     testtabsBarPosition0011
+       * @tc.level    Level.LEVEL1
+       */
+    it('testtabsBarPosition0011', Level.LEVEL1, async () => {
+      console.info('tabsBarPosition testtabsBarPosition0011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('barPositionTabs');
-      console.info("[testtabsBarPosition0011_static_11] component barPosition strJson:" + strJson);
+      console.info("[testtabsBarPosition0011] component barPosition strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Tabs');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
         .assertEqual("BarPosition.Start");
-      console.info("[testtabsBarPosition0011_static_11] barPosition value :" +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'));
+      console.info("[testtabsBarPosition0011] barPosition value :" +
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('barPosition'));
 
     });
   })

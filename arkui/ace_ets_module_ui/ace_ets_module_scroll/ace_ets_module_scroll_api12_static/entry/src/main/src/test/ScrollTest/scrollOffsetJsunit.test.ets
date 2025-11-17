@@ -46,8 +46,6 @@ const waitUiReadyMs = 1000;
 export default function scrollOffsetJsunit() {
   describe('scrollOffsetJsunit', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -58,10 +56,9 @@ export default function scrollOffsetJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get scrollOffsetJsunit state pages: " + JSON.stringify(pages));
-        if (!("scrollOffset" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/scrollOffset" == pages.name)) {
           console.info("get scrollOffsetJsunit state pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -73,13 +70,20 @@ export default function scrollOffsetJsunit() {
     });
 
 
-    /*
-     * @tc.number    scrollOffsetJsunit_0100
-     * @tc.name      scrollOffsetJsunit_0100
-     * @tc.desc      scrollOffsetJsunit_0100
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
+    
+      
+  /*
+     * @tc.number   scrollOffsetJsunit_0100
+     * @tc.name     scrollOffsetJsunit_0100
+     * @tc.desc     scrollOffsetJsunit_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('scrollOffsetJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('scrollOffsetJsunit_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('scrollOffsetJsunit_0100 START');
       let strJson = inspector.getInspectorByKey('Scroll_Offset');
       let obj = JSON.parseJsonElement(strJson);
@@ -91,14 +95,15 @@ export default function scrollOffsetJsunit() {
       console.info('[scrollOffsetJsunit_0100] END');
       done();
     });
-
-    /*
-     * @tc.number    scrollOffsetJsunit_0200
-     * @tc.name      scrollOffsetJsunit_0200
-     * @tc.desc      scrollOffsetJsunit_0200
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   scrollOffsetJsunit_0200
+     * @tc.name     scrollOffsetJsunit_0200
+     * @tc.desc     scrollOffsetJsunit_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('scrollOffsetJsunit_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('scrollOffsetJsunit_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('scrollOffsetJsunit_0200 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

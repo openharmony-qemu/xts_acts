@@ -32,7 +32,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
@@ -65,9 +65,9 @@ export default function GridColJsunit() {
           console.info("get gridColstate pages.name: " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push gridCol page result: " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push gridCol page error: " + err);
       }
     });
@@ -77,12 +77,13 @@ export default function GridColJsunit() {
       console.info("gridcol after each called");
     })
 
+
     /*
-     * @tc.number    testGridColOffset_static_01
-     * @tc.name      testGridColOffset_static_01
-     * @tc.desc      testGridColOffset_static_01
-     * @tc.level     2
-     */
+       * @tc.number   testGridColOffset_static_01
+       * @tc.name     testGridColOffset_static_01
+       * @tc.desc     testGridColOffset_static_01
+       * @tc.level    Level.LEVEL1
+       */
     it('testGridColOffset_static_01', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'testGridColOffset_static_01';
       console.info('[' + tagName + '] START============================');
@@ -91,14 +92,14 @@ export default function GridColJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[' + tagName + '] component obj is: ' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('gridColOffset')));
-      expect(obj.getElement('$type')).assertEqual('GridCol');
-      expect(obj.getElement('$attrs').getElement('gridColOffset')).assertEqual("0");
+      expect(obj.getString('$type')).assertEqual('GridCol');
+      expect(obj.getElement('$attrs').getString('gridColOffset')).assertEqual("0");
 
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "gridColOffsetNum": 1,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 181,
@@ -106,7 +107,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -114,14 +115,14 @@ export default function GridColJsunit() {
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
 
-      expect(objNew.getElement('$type')).assertEqual('GridCol');
-      expect(objNew.getElement('$attrs').getElement('gridColOffset')).assertEqual("1");
+      expect(objNew.getString('$type')).assertEqual('GridCol');
+      expect(objNew.getElement('$attrs').getString('gridColOffset')).assertEqual("1");
 
       try {
         let eventData3: events_emitter.EventData = {
           data: {
             "gridColOffsetNum": 2,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent3: events_emitter.InnerEvent = {
           eventId: 182,
@@ -129,7 +130,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -137,19 +138,19 @@ export default function GridColJsunit() {
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info('[' + tagName + '] component strJson3 is: ' + strJson3);
 
-      expect(obj3.getElement('$type')).assertEqual('GridCol');
-      expect(obj3.getElement('$attrs').getElement('gridColOffset')).assertEqual("2");
+      expect(obj3.getString('$type')).assertEqual('GridCol');
+      expect(obj3.getElement('$attrs').getString('gridColOffset')).assertEqual("2");
       console.info('[' + tagName + '] END ===========================');
       done();
     });
 
 
     /*
-     * @tc.number    testGridColSpan_static_02
-     * @tc.name      testGridColSpan_static_02
-     * @tc.desc      testGridColSpan_static_02
-     * @tc.level     2
-     */
+       * @tc.number   testGridColSpan_static_02
+       * @tc.name     testGridColSpan_static_02
+       * @tc.desc     testGridColSpan_static_02
+       * @tc.level    Level.LEVEL1
+       */
     it('testGridColSpan_static_02', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'testGridColSpan_static_02';
       console.info('[' + tagName + '] START============================');
@@ -158,14 +159,14 @@ export default function GridColJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info('[' + tagName + '] component obj is: ' +
       JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('span')));
-      expect(obj.getElement('$type')).assertEqual('GridCol');
-      expect(obj.getElement('$attrs').getElement('span')).assertEqual("1");
+      expect(obj.getString('$type')).assertEqual('GridCol');
+      expect(obj.getElement('$attrs').getString('span')).assertEqual("1");
 
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "spanNum": 0,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 183,
@@ -173,7 +174,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -181,14 +182,14 @@ export default function GridColJsunit() {
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringifyJsonElement(objNew));
 
-      expect(objNew.getElement('$type')).assertEqual('GridCol');
-      expect(objNew.getElement('$attrs').getElement('span')).assertEqual("1");
+      expect(objNew.getString('$type')).assertEqual('GridCol');
+      expect(objNew.getElement('$attrs').getString('span')).assertEqual("1");
 
       try {
         let eventData3: events_emitter.EventData = {
           data: {
             "spanNum": 1,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent3: events_emitter.InnerEvent = {
           eventId: 184,
@@ -196,7 +197,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit3');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -204,19 +205,19 @@ export default function GridColJsunit() {
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info('[' + tagName + '] component strJson3 is: ' + strJson3);
 
-      expect(obj3.getElement('$type')).assertEqual('GridCol');
-      expect(obj3.getElement('$attrs').getElement('span')).assertEqual("2");
+      expect(obj3.getString('$type')).assertEqual('GridCol');
+      expect(obj3.getElement('$attrs').getString('span')).assertEqual("2");
       console.info('[' + tagName + '] END ===========================');
       done();
     });
 
 
     /*
-     * @tc.number    testGridColOrder_static_03
-     * @tc.name      testGridColOrder_static_03
-     * @tc.desc      testGridColOrder_static_03
-     * @tc.level     2
-     */
+       * @tc.number   testGridColOrder_static_03
+       * @tc.name     testGridColOrder_static_03
+       * @tc.desc     testGridColOrder_static_03
+       * @tc.level    Level.LEVEL1
+       */
     it('testGridColOrder_static_03', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'testGridColOrder_static_03';
       console.info('[' + tagName + '] START============================');
@@ -225,20 +226,20 @@ export default function GridColJsunit() {
       let objOrder1 = JSON.parseJsonElement(strJsonOrder1);
       console.info('[' + tagName + '] component objOrder1 is: ' +
       JSON.stringifyJsonElement(objOrder1.getElement('$attrs').getElement('order')));
-      expect(objOrder1.getElement('$type')).assertEqual('GridCol');
-      expect(objOrder1.getElement('$attrs').getElement('order')).assertEqual("1");
+      expect(objOrder1.getString('$type')).assertEqual('GridCol');
+      expect(objOrder1.getElement('$attrs').getString('order')).assertEqual("1");
       let strJsonOrder2 = inspector.getInspectorByKey('keykeyorder2');
       let objOrder2 = JSON.parseJsonElement(strJsonOrder2);
       console.info('[' + tagName + '] component objOrder2 is: ' +
       JSON.stringifyJsonElement(objOrder2.getElement('$attrs').getElement('order')));
-      expect(objOrder2.getElement('$type')).assertEqual('GridCol');
-      expect(objOrder2.getElement('$attrs').getElement('order')).assertEqual("2");
+      expect(objOrder2.getString('$type')).assertEqual('GridCol');
+      expect(objOrder2.getElement('$attrs').getString('order')).assertEqual("2");
 
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "orderNum": 1,
-          } as Record<String, RecordData>
+          } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 185,
@@ -246,7 +247,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err: Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -254,14 +255,14 @@ export default function GridColJsunit() {
       let objNewOrder1 = JSON.parseJsonElement(strJsonNewOrder1);
       console.info('[' + tagName + '] component objNewOrder1 is: ' +
       JSON.stringifyJsonElement(objNewOrder1.getElement('$attrs').getElement('order')));
-      expect(objNewOrder1.getElement('$type')).assertEqual('GridCol');
-      expect(objNewOrder1.getElement('$attrs').getElement('order')).assertEqual("2");
+      expect(objNewOrder1.getString('$type')).assertEqual('GridCol');
+      expect(objNewOrder1.getElement('$attrs').getString('order')).assertEqual("2");
       let strJsonNewOrder2 = inspector.getInspectorByKey('keykeyorder2');
       let objNewOrder2 = JSON.parseJsonElement(strJsonNewOrder2);
       console.info('[' + tagName + '] component objNewOrder2 is: ' +
       JSON.stringifyJsonElement(objNewOrder2.getElement('$attrs').getElement('order')));
-      expect(objNewOrder2.getElement('$type')).assertEqual('GridCol');
-      expect(objNewOrder2.getElement('$attrs').getElement('order')).assertEqual("1");
+      expect(objNewOrder2.getString('$type')).assertEqual('GridCol');
+      expect(objNewOrder2.getElement('$attrs').getString('order')).assertEqual("1");
 
 
       console.info('[' + tagName + '] END ===========================');

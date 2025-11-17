@@ -16,7 +16,6 @@ import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
 import hilog from '@ohos.hilog';
-
 import {
   Entry,
   Component,
@@ -121,15 +120,15 @@ struct GridTestPage {
         }
         .key('GridItemStyle_EXCEPTION_UNDEFINED')
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        GridItem() {
+          Text('11').fontSize(25).width('100%').height('100%')
+        }
+        .key('GridItemStyle_EXCEPTION_MINUS_ONE')
+
+        GridItem() {
+          Text('11').fontSize(25).width('100%').height('100%')
+        }
+        .key('GridItemStyle_EXCEPTION_TWO')
       }
       .columnsGap('8vp')
       .rowsGap('8vp')

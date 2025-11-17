@@ -29,10 +29,11 @@ import {
   ForEach,
   Margin,
   Text,
-  TextAlign
+  TextAlign,
+  ScrollSource,
+  ScrollState
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { RecordData } from '@ohos.base'; 
 
 @Entry
 @Component
@@ -44,43 +45,56 @@ struct scrollCode {
   scroller: Scroller = new Scroller()
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as number[]
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      console.info("scrollCode page state change called:" + JSON.stringify(eventData));
+      let scrollableValue = data['scrollable'];
+      console.info("scrollableValue:" + scrollableValue);
+      if (scrollableValue != null) {
+        if (scrollableValue == "Vertical") {
+          this.scrollable = ScrollDirection.Vertical;
+        } else if (scrollableValue == "Horizontal") {
+          this.scrollable = ScrollDirection.Horizontal;
+        } else {
+          this.scrollable = ScrollDirection.None;
+        }
+        console.info("this.scrollable:" + this.scrollable);
+      } else {
+        console.info("scrollableValue is null or empty " + scrollableValue);
+      }
+      let scrollBarValue = data['scrollBar'];
+      console.info("scrollBarValue:" + scrollBarValue);
+      if (scrollBarValue != null) {
+        if (scrollBarValue == "Off") {
+          this.scrollBar = BarState.Off;
+        } else if (scrollBarValue == "On") {
+          this.scrollBar = BarState.On;
+        } else {
+          this.scrollBar = BarState.Auto;
+        }
+        console.info("this.scrollBar:" + this.scrollBar);
+      } else {
+        console.info("scrollBarValue is null or empty " + scrollBarValue);
+      }
+      let scrollBarColorValue = data['scrollBarColor'];
+      console.info("scrollBarColorValue:" + scrollBarColorValue);
+      if (scrollBarColorValue != null) {
+        this.scrollBarColor = scrollBarColorValue as string;
+        console.info("this.scrollBarColor:" + this.scrollBarColor);
+      } else {
+        console.info("scrollBarColorValue is null or empty " + scrollBarColorValue);
+      }
+      let scrollBarWidthValue = data['scrollBarWidth'];
+      console.info("scrollBarWidthValue:" + scrollBarWidthValue);
+      if (scrollBarWidthValue != null) {
+        this.scrollBarWidth = scrollBarWidthValue as Int;
+        console.info("this.scrollBarWidth:" + this.scrollBarWidth);
+      } else {
+        console.info("scrollBarWidthValue is null or empty " + scrollBarWidthValue);
+      }
+    } else {
+      console.info("scrollCode page color not change called:" + JSON.stringify(eventData));
+    }
   }
 
   onPageShow() {
@@ -131,16 +145,15 @@ struct scrollCode {
       .scrollBar(this.scrollBar)
       .scrollBarColor(this.scrollBarColor)
       .scrollBarWidth(this.scrollBarWidth)
-      
-      
-      
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info('To the edge')
       })
-
-      
-      
-      
+      .onScrollStop(() => {
+        console.info('Scroll Stop')
+      })
 
       Button('scroll 100')
         .onClick((e: ClickEvent) => {
@@ -159,7 +172,7 @@ struct scrollCode {
             let backData: events_emitter.EventData = {
               data: {
                 "scrollToIndex": 10,
-              } as Record<String, RecordData>
+              } as Record<String,undefined|null|Object>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 189,

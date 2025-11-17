@@ -61,21 +61,22 @@ export default function APITabsBarBackgroundBlurStyleJsunit() {
         console.info("get APITabsBarBackgroundBlurStyleJsunit state pages:" + JSON.stringify(pages));
         if (!("APITabsBarBackgroundBlurStyle" == pages.name)) {
           console.info("get APITabsBarBackgroundBlurStyleJsunit state pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
-          
+          // console.info("push APITabsBarBackgroundBlurStyleJsunit success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APITabsBarBackgroundBlurStyleJsunit page error:" + err);
         expect().assertFail();
       }
     });
+
     /*
-     * @tc.number    APITabsBarBackgroundBlurStyleJsunit_static_0100
-     * @tc.name      APITabsBarBackgroundBlurStyleJsunit_static_0100
-     * @tc.desc      APITabsBarBackgroundBlurStyleJsunit_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   APITabsBarBackgroundBlurStyleJsunit_static_0100
+       * @tc.name     APITabsBarBackgroundBlurStyleJsunit_static_0100
+       * @tc.desc     APITabsBarBackgroundBlurStyleJsunit_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('APITabsBarBackgroundBlurStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('APITabsBarBackgroundBlurStyleJsunit_static_0100 START');

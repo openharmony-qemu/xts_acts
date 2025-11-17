@@ -53,7 +53,7 @@ struct Tabs_scrollable {
   }
 
   @Builder
-  TabBuilder(index: int, name: string) {
+  TabBuilder(index: number, name: string) {
     Column() {
       Text(name)
         .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
@@ -63,31 +63,31 @@ struct Tabs_scrollable {
     }.width('100%').height('100%').key('Tabs_scrollable_' + name)
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  @Builder
+  TabBuilderTwo(index: number, name: string) {
+    Column() {
+      Text(name)
+        .fontColor(this.currentIndexTwo === index ? this.selectedFontColor : this.fontColor)
+        .fontSize(16)
+        .fontWeight(this.currentIndexTwo === index ? 500 : 400)
+        .lineHeight(40)
+    }.width('100%').height('100%').key('Tabs_scrollable_' + name)
+  }
 
   build() {
     Column() {
       Tabs({ index: this.currentIndex }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87').key("Tabs_scrollable_001")
-        } 
+        } .tabBar(() => {this.TabBuilder(0, 'green')}).key("Tabs_scrollable_011")
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF').key("Tabs_scrollable_002")
-        } 
+        } .tabBar(() => {this.TabBuilder(1, 'blue')}).key("Tabs_scrollable_012")
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00').key("Tabs_scrollable_003")
-        } 
+        } .tabBar(() => {this.TabBuilder(2, 'yellow')}).key("Tabs_scrollable_013")
       }
       .key("Tabs_scrollable_01")
       .vertical(false)
@@ -105,15 +105,15 @@ struct Tabs_scrollable {
       Tabs({ index: this.currentIndexTwo }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87').key("Tabs_scrollable_004")
-        } 
+        } .tabBar(() => {this.TabBuilderTwo(0, 'greenTwo')}).key("Tabs_scrollable_041")
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF').key("Tabs_scrollable_005")
-        } 
+        } .tabBar(() => {this.TabBuilderTwo(1, 'blueTwo')}).key("Tabs_scrollable_042")
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00').key("Tabs_scrollable_006")
-        } 
+        } .tabBar(() => {this.TabBuilderTwo(2, 'yellowTwo')}).key("Tabs_scrollable_043")
       }
       .key("Tabs_scrollable_02")
       .vertical(false)

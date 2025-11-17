@@ -40,7 +40,9 @@ import {
   FontWeight,
   Button,
   ButtonType,
-  ClickEvent
+  ClickEvent,
+  ScrollSource,
+  ScrollState
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
@@ -55,9 +57,6 @@ struct ScrollFrictionPage {
 
   onPageShow() {
     console.info('Scroll_lanes page show called');
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager)
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -101,20 +100,20 @@ struct ScrollFrictionPage {
       }
       .width('90%')
       .height('60%')
-      .scrollable(ScrollDirection.Vertical) 
-      .scrollBar(BarState.On) 
-      .scrollBarColor(Color.Gray) 
-      .scrollBarWidth(10) 
+      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
+      .scrollBar(BarState.On) // 滚动条常驻显示
+      .scrollBarColor(Color.Gray) // 滚动条颜色
+      .scrollBarWidth(10) // 滚动条宽度
       .edgeEffect(EdgeEffect.None)
-      
-      
-      
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
+        console.info(xOffset + ' ' + yOffset)
+      })
       .onScrollEdge((side: Edge): void => {
         console.info('To the edge')
       })
-      
-      
-      
+      .onScrollStop(() => {
+        console.info('Scroll Stop')
+      })
       .friction(this.friction)
       .key('Scroll_ScrollFriction')
     }.width('100%').height('100%').backgroundColor(0xDCDCDC)

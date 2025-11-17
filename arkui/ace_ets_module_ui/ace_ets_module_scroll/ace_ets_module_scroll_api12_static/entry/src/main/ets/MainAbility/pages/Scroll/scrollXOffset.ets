@@ -57,7 +57,7 @@ struct scrollXOffsetExample {
     Column() {
       Text(this.message1).id('scroll_mess')
       Button('scroll x:10').id('scroll_x')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 点击后滑动到指定位置，即下滑100.0vp的距离，滑动过程配置有动画
           const xOffset: number = this.scroller.currentOffset()!.xOffset;
           this.scroller.scrollTo({
             xOffset: xOffset + 10,

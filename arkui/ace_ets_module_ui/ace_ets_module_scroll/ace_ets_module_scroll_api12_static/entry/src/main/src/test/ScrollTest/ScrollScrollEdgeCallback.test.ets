@@ -58,10 +58,9 @@ export default function ScrollScrollEdgeCallbackJsunit() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info('get ScrollScrollEdgeCallback state pages:' + JSON.stringify(pages));
-        if (!('ScrollScrollEdgeCallback' == pages.name)) {
+        if (!('MainAbility/pages/Scroll/ScrollScrollEdgeCallback' == pages.name)) {
           console.info('get ScrollScrollEdgeCallback state pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -77,14 +76,19 @@ export default function ScrollScrollEdgeCallbackJsunit() {
       console.info('ScrollScrollEdgeCallback after each called');
     });
 
-
-    /*
-     * @tc.number    ScrollScrollEdgeCallbackTest_0100
-     * @tc.name      ScrollScrollEdgeCallbackTest_0100
-     * @tc.desc      ScrollScrollEdgeCallbackTest_0100
-     * @tc.level     2
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
+      
+  /*
+     * @tc.number   ScrollScrollEdgeCallbackTest_0100
+     * @tc.name     ScrollScrollEdgeCallbackTest_0100
+     * @tc.desc     ScrollScrollEdgeCallbackTest_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ScrollScrollEdgeCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollScrollEdgeCallbackTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollScrollEdgeCallbackTest_0100 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('ScrollScrollEdgeCallback01'));

@@ -43,19 +43,19 @@ struct TextInputExample {
   @State value1: string = ''
   @State value2: string = ''
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  //自定义键盘组件
+  @Builder CustomKeyboardBuilder() {
+    Column() {
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: Int|String, index: int) => {
+          GridItem() {
+            Button(item + "")
+              .width(110)
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor(Color.Gray)
+  }
 
   build() {
     Column() {
@@ -71,9 +71,10 @@ struct TextInputExample {
         .barState(BarState.On)
         .key('textInputAdd')
         .fontSize(14)
-        .onContentScroll((totalOffsetX: double, totalOffsetY: double): void => {
+        .customKeyboard(() => {this.CustomKeyboardBuilder()})
+        .onContentScroll((totalOffsetX: number, totalOffsetY: number): void => {
         })
-        .onTextSelectionChange((selectionStart: int, selectionEnd: int): void => {
+        .onTextSelectionChange((selectionStart: Int, selectionEnd: Int): void => {
           this.value1 = selectionStart + "";
           this.value2 = selectionEnd + "";
           this.controller.getTextContentLineCount();
@@ -91,14 +92,14 @@ struct TextInputExample {
       Button('Set caretPosition 1')
         .margin(15)
         .onClick((e: ClickEvent) => {
-          
+          // 将光标移动至第一个字符后
           this.controller.caretPosition(1)
         })
       Button('stopEditing')
         .onClick((e: ClickEvent) => {
           this.controller.stopEditing();
         }).margin({ top: 20 } as Margin)
-      
+      // 密码输入框
       TextInput({ placeholder: 'input your password...' })
         .width(400)
         .height(40)
@@ -106,7 +107,7 @@ struct TextInputExample {
         .type(InputType.Password)
         .maxLength(9)
         .showPasswordIcon(true)
-      
+      // 内联风格输入框
       TextInput({ placeholder: 'inline style' })
         .width(400)
         .height(50)

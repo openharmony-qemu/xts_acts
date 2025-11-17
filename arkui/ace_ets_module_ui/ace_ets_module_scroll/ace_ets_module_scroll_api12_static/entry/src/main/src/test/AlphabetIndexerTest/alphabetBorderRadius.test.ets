@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function alphabetBorderRadiusTest() {
   describe('alphabetBorderRadiusTest', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -64,7 +62,6 @@ export default function alphabetBorderRadiusTest() {
           console.info("get alphabetBorderRadiusTest pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push alphabetBorderRadiusTest page result:");
         }
       } catch (err) {
         console.error("push alphabetBorderRadiusTest page error:" + err);
@@ -74,11 +71,11 @@ export default function alphabetBorderRadiusTest() {
 
 
     /*
-     * @tc.number    alphabetBorderRadiusTest_static_001
-     * @tc.name      alphabetBorderRadiusTest_static_001
-     * @tc.desc      alphabetBorderRadiusTest_static_001
-     * @tc.level     2
-     */
+       * @tc.number   alphabetBorderRadiusTest_static_001
+       * @tc.name     alphabetBorderRadiusTest_static_001
+       * @tc.desc     alphabetBorderRadiusTest_static_001
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetBorderRadiusTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alphabetBorderRadiusTest_static_001] START');
       await CommonFunc.sleep(1000);
@@ -94,11 +91,11 @@ export default function alphabetBorderRadiusTest() {
 
 
     /*
-     * @tc.number    alphabetBorderRadiusTest_static_002
-     * @tc.name      alphabetBorderRadiusTest_static_002
-     * @tc.desc      alphabetBorderRadiusTest_static_002
-     * @tc.level     2
-     */
+       * @tc.number   alphabetBorderRadiusTest_static_002
+       * @tc.name     alphabetBorderRadiusTest_static_002
+       * @tc.desc     alphabetBorderRadiusTest_static_002
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetBorderRadiusTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alphabetBorderRadiusTest_static_002] START');
       await CommonFunc.sleep(1000);
@@ -112,12 +109,13 @@ export default function alphabetBorderRadiusTest() {
       done();
     });
 
+
     /*
-     * @tc.number    alphabetBorderRadiusTest_static_003
-     * @tc.name      alphabetBorderRadiusTest_static_003
-     * @tc.desc      alphabetBorderRadiusTest_static_003
-     * @tc.level     2
-     */
+       * @tc.number   alphabetBorderRadiusTest_static_003
+       * @tc.name     alphabetBorderRadiusTest_static_003
+       * @tc.desc     alphabetBorderRadiusTest_static_003
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetBorderRadiusTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alphabetBorderRadiusTest_static_003] START');
       await CommonFunc.sleep(1000);
@@ -137,11 +135,11 @@ export default function alphabetBorderRadiusTest() {
 
 
     /*
-     * @tc.number    alphabetBorderRadiusTest_static_004
-     * @tc.name      alphabetBorderRadiusTest_static_004
-     * @tc.desc      alphabetBorderRadiusTest_static_004
-     * @tc.level     2
-     */
+       * @tc.number   alphabetBorderRadiusTest_static_004
+       * @tc.name     alphabetBorderRadiusTest_static_004
+       * @tc.desc     alphabetBorderRadiusTest_static_004
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetBorderRadiusTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alphabetBorderRadiusTest_static_004] START');
       await CommonFunc.sleep(1000);
@@ -161,11 +159,11 @@ export default function alphabetBorderRadiusTest() {
 
 
     /*
-     * @tc.number    alphabetBorderRadiusTest_static_005
-     * @tc.name      alphabetBorderRadiusTest_static_005
-     * @tc.desc      alphabetBorderRadiusTest_static_005
-     * @tc.level     2
-     */
+       * @tc.number   alphabetBorderRadiusTest_static_005
+       * @tc.name     alphabetBorderRadiusTest_static_005
+       * @tc.desc     alphabetBorderRadiusTest_static_005
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetBorderRadiusTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alphabetBorderRadiusTest_static_005] START');
       await CommonFunc.sleep(1000);
@@ -189,11 +187,11 @@ export default function alphabetBorderRadiusTest() {
 
 
     /*
-     * @tc.number    alphabetBorderRadiusTest_static_006
-     * @tc.name      alphabetBorderRadiusTest_static_006
-     * @tc.desc      alphabetBorderRadiusTest_static_006
-     * @tc.level     2
-     */
+       * @tc.number   alphabetBorderRadiusTest_static_006
+       * @tc.name     alphabetBorderRadiusTest_static_006
+       * @tc.desc     alphabetBorderRadiusTest_static_006
+       * @tc.level    Level.LEVEL0
+       */
     it('alphabetBorderRadiusTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alphabetBorderRadiusTest_static_006] START');
       await CommonFunc.sleep(1000);

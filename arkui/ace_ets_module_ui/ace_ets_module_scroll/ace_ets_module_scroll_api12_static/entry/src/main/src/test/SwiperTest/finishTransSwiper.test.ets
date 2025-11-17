@@ -51,11 +51,9 @@ export default function finishTransSwiper() {
         router.clear();
         let pages = router.getState();
         console.info("get finishTransSwiper state pages:" + JSON.stringify(pages));
-        if (!("finishTransSwiper" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/finishTransSwiper" == pages.name)) {
           console.info("get finishTransSwiper pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push finishTransSwiper page result:");
         }
       } catch (err) {
         console.error("push finishTransSwiper page error:" + err);
@@ -63,14 +61,15 @@ export default function finishTransSwiper() {
       console.info("finishTransSwiper beforeEach end");
     });
 
-
-    /*
-     * @tc.number    finishTransSwiper_static_0100
-     * @tc.name      finishTransSwiper_static_0100
-     * @tc.desc      finishTransSwiper_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   finishTransSwiper_static_0100
+     * @tc.name     finishTransSwiper_static_0100
+     * @tc.desc     finishTransSwiper_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('finishTransSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('finishTransSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[finishTransSwiper_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

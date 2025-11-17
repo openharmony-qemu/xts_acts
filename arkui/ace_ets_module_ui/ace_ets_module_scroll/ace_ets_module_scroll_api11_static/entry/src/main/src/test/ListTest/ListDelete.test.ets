@@ -38,15 +38,12 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
 import events_emitter from '@ohos.events.emitter';
 
-
-
+// import config from '@ohos.accessibility.config'
+// import accessibility from '@ohos.accessibility';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
-
-
 
 export default function ListDeleteTest() {
 
@@ -62,11 +59,6 @@ export default function ListDeleteTest() {
     });
 
     beforeEach(async (): Promise<void> => {
-      
-      
-      
-      
-      
 
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListDelete",
@@ -75,8 +67,8 @@ export default function ListDeleteTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages: router.RouterState = router.getState();
-        if (pages == null || !("ListDelete" == pages.name)) {
-          await router.pushUrl(options).then(() => {
+        if (pages == null || !('ListDelete' == pages.name)) {
+          router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
@@ -90,12 +82,13 @@ export default function ListDeleteTest() {
      *tc.name   Set swipeAction.end by CustomBuilder
      *tc.desc   Set swipeAction.end by CustomBuilder and edgeEffect is SwipeEdgeEffect.None
      */
+
     /*
-     * @tc.number    ArkUI_List_Delete_static_0100
-     * @tc.name      ArkUI_List_Delete_static_0100
-     * @tc.desc      ArkUI_List_Delete_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Delete_static_0100
+       * @tc.name     ArkUI_List_Delete_static_0100
+       * @tc.desc     ArkUI_List_Delete_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Delete_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_List_Delete_static_0100'
       console.info(`${SUITE} ${CASE} START`);
@@ -104,9 +97,9 @@ export default function ListDeleteTest() {
       let strJson: string = inspector.getInspectorByKey(baseKey);
       console.info("the rect json is " + strJson);
 
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('startDeleteAreaDistance'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startDeleteAreaDistance'))
         .assertEqual("0.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('endDeleteAreaDistance'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
         .assertEqual("0.00vp");
 
       let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
@@ -119,11 +112,11 @@ export default function ListDeleteTest() {
       await sleep(3000);
       let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
 
-      expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getElement('visibility'))
+      expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getString('visibility'))
         .assertEqual("Visibility.Visible");
       let strJsonButtonSet: string = inspector.getInspectorByKey(baseKey + '_Button_Set');
 
-      expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getElement('visibility'))
+      expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getString('visibility'))
         .assertEqual("Visibility.Visible");
 
       console.info(`${SUITE} ${CASE} END`);
@@ -135,21 +128,22 @@ export default function ListDeleteTest() {
      *tc.name   Set swipeAction.start by CustomBuilder
      *tc.desc   Set swipeAction.start by CustomBuilder and edgeEffect is SwipeEdgeEffect.None
      */
+
     /*
-     * @tc.number    ArkUI_List_Delete_static_0200
-     * @tc.name      ArkUI_List_Delete_static_0200
-     * @tc.desc      ArkUI_List_Delete_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Delete_static_0200
+       * @tc.name     ArkUI_List_Delete_static_0200
+       * @tc.desc     ArkUI_List_Delete_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Delete_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_List_Delete_static_0200'
       console.info(`${SUITE} ${CASE} START`);
 
       let baseKey: string = 'MyList2_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('startDeleteAreaDistance'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startDeleteAreaDistance'))
         .assertEqual("0.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('endDeleteAreaDistance'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
         .assertEqual("0.00vp");
 
       let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
@@ -163,11 +157,11 @@ export default function ListDeleteTest() {
         (Math.round(rectCenter[1] + winTop)).toInt())
       await sleep(3000);
       let strJsonButtonDel: string = inspector.getInspectorByKey(baseKey + '_Button_Del');
-      expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getElement('visibility'))
+      expect(JSON.parseJsonElement(strJsonButtonDel).getElement('$attrs').getString('visibility'))
         .assertEqual("Visibility.Visible");
       let strJsonButtonSet: string = inspector.getInspectorByKey(baseKey + '_Button_Set');
 
-      expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getElement('visibility'))
+      expect(JSON.parseJsonElement(strJsonButtonSet).getElement('$attrs').getString('visibility'))
         .assertEqual("Visibility.Visible");
 
       console.info(`${SUITE} ${CASE} END`);
@@ -179,12 +173,13 @@ export default function ListDeleteTest() {
      *tc.name   Set swipeAction.end by SwipeActionItem
      *tc.desc   Set swipeAction.end by SwipeActionItem and edgeEffect is SwipeEdgeEffect.Spring
      */
+
     /*
-     * @tc.number    ArkUI_List_Delete_static_0500
-     * @tc.name      ArkUI_List_Delete_static_0500
-     * @tc.desc      ArkUI_List_Delete_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Delete_static_0500
+       * @tc.name     ArkUI_List_Delete_static_0500
+       * @tc.desc     ArkUI_List_Delete_static_0500
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Delete_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_List_Delete_static_0500'
       console.info(`${SUITE} ${CASE} START`);
@@ -197,9 +192,9 @@ export default function ListDeleteTest() {
       let baseKey: string = 'MyList5_ListItem0'
       let strJson: string = inspector.getInspectorByKey(baseKey);
 
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('startDeleteAreaDistance'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startDeleteAreaDistance'))
         .assertEqual("0.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('endDeleteAreaDistance'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endDeleteAreaDistance'))
         .assertEqual("5.00vp");
 
       let rectCenter: number[] = getRectCenter(JSON.parseJsonElement(strJson).getString('$rect'))
@@ -241,9 +236,9 @@ function getRectCenterVp(rect: string) {
   let rtn = rect.replace(regexp, '').replace(regexp, '').split(',')
   const uiContext = new UIContext()
   return [
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) +
+    uiContext.px2vp(Number.parseFloat(rtn[0].trim()) +
       (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) +
+    uiContext.px2vp(Number.parseFloat(rtn[1].trim()) +
       (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
   ]
 }

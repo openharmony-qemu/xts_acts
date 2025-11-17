@@ -48,12 +48,10 @@ export default function gridIndexTest() {
         console.info("get gridIndexTest  state pages:" + JSON.stringify(pages));
         if (!("gridte" == pages.name)) {
           console.info("get gridIndexTest pages.name:" + JSON.stringify(pages.name));
-          
-          routerAlp.pushUrl({
-            url: "MainAbility/pages/grid/gridte"
-          })
+          // let result = await routerAlp.pushUrl({url:"MainAbility/pages/grid/gridte"})
+          routerAlp.pushUrl({ url: "MainAbility/pages/grid/gridte" })
           await CommonFunc.sleep(2000);
-          
+          // console.info("push gridIndexTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gridIndexTest page error:" + err);
@@ -67,11 +65,11 @@ export default function gridIndexTest() {
 
 
     /*
-     * @tc.number    gridIndexTest_static_0100
-     * @tc.name      gridIndexTest_static_0100
-     * @tc.desc      gridIndexTest_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   gridIndexTest_static_0100
+       * @tc.name     gridIndexTest_static_0100
+       * @tc.desc     gridIndexTest_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('gridIndexTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[gridIndexTest_static_0100] START');
       await CommonFunc.sleep(2000);

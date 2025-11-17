@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperMargin_3() {
   describe('SwiperMargin_3', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -59,11 +57,10 @@ export default function SwiperMargin_3() {
         console.info("get SwiperMargin_3 state pages:" + JSON.stringify(pages));
         if (!("SwiperMargin_3" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_3"
           })
           await CommonFunc.sleep(2000);
-          console.info("push SwiperMargin_3 page result:");
         }
       } catch (err) {
         console.error("push SwiperMargin_3 page error:" + err);
@@ -75,14 +72,15 @@ export default function SwiperMargin_3() {
       console.info("SwiperMargin_3 after each called");
     });
 
-
-    /*
-     * @tc.number    SwiperMargin_static_0060
-     * @tc.name      SwiperMargin_static_0060
-     * @tc.desc      SwiperMargin_static_0060
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperMargin_static_0060
+     * @tc.name     SwiperMargin_static_0060
+     * @tc.desc     SwiperMargin_static_0060
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperMargin_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperMargin_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperMargin_static_0060] START');
 
       let strJson = inspector.getInspectorByKey('swiperMargin_3');
@@ -108,21 +106,22 @@ export default function SwiperMargin_3() {
       let rightSpaceMargin = swiperRight - textRight;
       console.info("[SwiperMargin_static_0060] The leftSpaceMargin value is " + leftSpaceMargin);
       console.info("[SwiperMargin_static_0060] The rightSpaceMargin value is " + rightSpaceMargin);
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(leftSpaceMargin)) - UIContext.getFocusedUIContext()!.vp2px(10) <= 1).assertTrue();
-      expect(Math.abs(Math.round(rightSpaceMargin)) - UIContext.getFocusedUIContext()!.vp2px(20) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      expect(Math.abs(Math.round(leftSpaceMargin)) - uiContext.vp2px(10) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rightSpaceMargin)) - uiContext.vp2px(20) <= 1).assertTrue();
       console.info('[SwiperMargin_static_0060] END');
       done();
     });
 
-
-    /*
-     * @tc.number    SwiperMargin_static_0190
-     * @tc.name      SwiperMargin_static_0190
-     * @tc.desc      SwiperMargin_static_0190
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperMargin_static_0190
+     * @tc.name     SwiperMargin_static_0190
+     * @tc.desc     SwiperMargin_static_0190
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperMargin_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperMargin_static_0190', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperMargin_static_0190] START');
 
       let strJson = inspector.getInspectorByKey('swiperMargin_3');
@@ -156,8 +155,8 @@ export default function SwiperMargin_3() {
 
       let spaceMargin = swiperRight - textRight;
       console.info("[SwiperMargin_static_0190] The spaceMargin value is " + JSON.stringify(spaceMargin));
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(spaceMargin)) - UIContext.getFocusedUIContext()!.vp2px(20) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      expect(Math.abs(Math.round(spaceMargin)) - uiContext.vp2px(20) <= 1).assertTrue();
 
       console.info('[SwiperMargin_static_0190] END');
       done();

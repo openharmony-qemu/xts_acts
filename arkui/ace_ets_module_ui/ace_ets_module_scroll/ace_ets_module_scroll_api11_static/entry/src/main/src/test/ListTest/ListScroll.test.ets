@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ListScrollTest() {
 
   const SUITE: string = 'ListScroll'
-  const waitUiReadyMs = 500;
+  const waitUiReadyMs: int = 500;
   describe('ListScrollTest', () => {
 
     beforeAll(() => {
@@ -63,7 +63,7 @@ export default function ListScrollTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages: router.RouterState = router.getState();
-        if (pages == null || !("ListScroll" == pages.name)) {
+        if (pages == null || !("MainAbility/pages/List/ListScroll" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           }).catch((err: Error) => {
@@ -71,7 +71,7 @@ export default function ListScrollTest() {
           })
           await CommonFunc.sleep(2500);
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -81,33 +81,31 @@ export default function ListScrollTest() {
      *tc.name   Scroller.scrollToIndex(List) support animation
      *tc.desc   Scroller.scrollToIndex(List) support animation
      */
+
     /*
-     * @tc.number    ArkUI_List_Scroll_static_0100
-     * @tc.name      ArkUI_List_Scroll_static_0100
-     * @tc.desc      ArkUI_List_Scroll_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_static_0100
+       * @tc.name     ArkUI_List_Scroll_static_0100
+       * @tc.desc     ArkUI_List_Scroll_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let CASE: string = 'ArkUI_List_Scroll_static_0100'
-        console.info(`${SUITE} ${CASE} START`)
-        let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
-
-          done();
+      let CASE: string = 'ArkUI_List_Scroll_static_0100'
+      console.info(`${SUITE} ${CASE} START`)
+      let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
+        if (event.data != null) {
+          expect((event.data as Record<String, undefined | null | Object>)['start']).assertEqual(14);
         }
-        let event: events_emitter.InnerEvent = {
-          eventId: 60000,
-          priority: events_emitter.EventPriority.LOW
-        }
-        events_emitter.on(event, callback);
-        let driver = Driver.create()
-        await driver.delayMs(waitUiReadyMs)
-        inspector.sendEventByKey('ListScroll_Button_To_14', 10, "")
-        console.info(`${SUITE} ${CASE} END`)
-      } catch (ERROR) {
-        expect().assertFail();
+        done();
       }
-
+      let event: events_emitter.InnerEvent = {
+        eventId: 60000,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let driver = Driver.create()
+      await driver.delayMs(waitUiReadyMs)
+      inspector.sendEventByKey('ListScroll_Button_To_14', 10, "")
+      console.info(`${SUITE} ${CASE} END`)
     });
 
     /*
@@ -115,33 +113,31 @@ export default function ListScrollTest() {
      *tc.name   Scroller.scrollToIndex(List) support animation
      *tc.desc   Scroller.scrollToIndex(List) support animation
      */
+
     /*
-     * @tc.number    ArkUI_List_Scroll_static_0200
-     * @tc.name      ArkUI_List_Scroll_static_0200
-     * @tc.desc      ArkUI_List_Scroll_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_static_0200
+       * @tc.name     ArkUI_List_Scroll_static_0200
+       * @tc.desc     ArkUI_List_Scroll_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let CASE: string = 'ArkUI_List_Scroll_static_0200'
-        console.info(`${SUITE} ${CASE} START`)
-        let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
-
-          done();
+      let CASE: string = 'ArkUI_List_Scroll_static_0200'
+      console.info(`${SUITE} ${CASE} START`)
+      let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
+        if (event.data != null) {
+          expect((event.data as Record<String, undefined | null | Object>)['start']).assertEqual(15);
         }
-        let event: events_emitter.InnerEvent = {
-          eventId: 60001,
-          priority: events_emitter.EventPriority.LOW
-        }
-        events_emitter.on(event, callback);
-        let driver = Driver.create()
-        await driver.delayMs(waitUiReadyMs)
-        inspector.sendEventByKey('ListScroll_Button_To_15', 10, "")
-        console.info(`${SUITE} ${CASE} END`)
-      } catch (ERROR) {
-        expect().assertFail();
+        done();
       }
-
+      let event: events_emitter.InnerEvent = {
+        eventId: 60001,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let driver = Driver.create()
+      await driver.delayMs(waitUiReadyMs)
+      inspector.sendEventByKey('ListScroll_Button_To_15', 10, "")
+      console.info(`${SUITE} ${CASE} END`)
     });
 
     /*
@@ -149,33 +145,31 @@ export default function ListScrollTest() {
      *tc.name   Scroller.scrollToIndex(List) support animation
      *tc.desc   Scroller.scrollToIndex(List) support animation
      */
+
     /*
-     * @tc.number    ArkUI_List_Scroll_static_0300
-     * @tc.name      ArkUI_List_Scroll_static_0300
-     * @tc.desc      ArkUI_List_Scroll_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_static_0300
+       * @tc.name     ArkUI_List_Scroll_static_0300
+       * @tc.desc     ArkUI_List_Scroll_static_0300
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let CASE: string = 'ArkUI_List_Scroll_static_0300'
-        console.info(`${SUITE} ${CASE} START`)
-        let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
-
-          done();
+      let CASE: string = 'ArkUI_List_Scroll_static_0300'
+      console.info(`${SUITE} ${CASE} START`)
+      let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
+        if (event.data != null) {
+          expect((event.data as Record<String, undefined | null | Object>)['start']).assertEqual(0);
         }
-        let event: events_emitter.InnerEvent = {
-          eventId: 60002,
-          priority: events_emitter.EventPriority.LOW
-        }
-        events_emitter.on(event, callback);
-        let driver = Driver.create()
-        await driver.delayMs(waitUiReadyMs)
-        inspector.sendEventByKey('ListScroll_Button_To_0', 10, "")
-        console.info(`${SUITE} ${CASE} END`)
-      } catch (ERROR) {
-        expect().assertFail();
+        done();
       }
-
+      let event: events_emitter.InnerEvent = {
+        eventId: 60002,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let driver = Driver.create()
+      await driver.delayMs(waitUiReadyMs)
+      inspector.sendEventByKey('ListScroll_Button_To_0', 10, "")
+      console.info(`${SUITE} ${CASE} END`)
     });
 
     /*
@@ -183,33 +177,31 @@ export default function ListScrollTest() {
      *tc.name   Scroller.scrollToIndex(List) support animation
      *tc.desc   Scroller.scrollToIndex(List) support animation
      */
+
     /*
-     * @tc.number    ArkUI_List_Scroll_static_0400
-     * @tc.name      ArkUI_List_Scroll_static_0400
-     * @tc.desc      ArkUI_List_Scroll_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_List_Scroll_static_0400
+       * @tc.name     ArkUI_List_Scroll_static_0400
+       * @tc.desc     ArkUI_List_Scroll_static_0400
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_List_Scroll_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let CASE: string = 'ArkUI_List_Scroll_static_0400'
-        console.info(`${SUITE} ${CASE} START`)
-        let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
-
-          done();
+      let CASE: string = 'ArkUI_List_Scroll_static_0400'
+      console.info(`${SUITE} ${CASE} START`)
+      let callback: (event: events_emitter.EventData) => void = (event: events_emitter.EventData) => {
+        if (event.data != null) {
+          expect((event.data as Record<String, undefined | null | Object>)['end']).assertEqual(59);
         }
-        let event: events_emitter.InnerEvent = {
-          eventId: 60003,
-          priority: events_emitter.EventPriority.LOW
-        }
-        events_emitter.on(event, callback);
-        let driver: Driver = Driver.create()
-        await driver.delayMs(waitUiReadyMs)
-        inspector.sendEventByKey('ListScroll_Button_To_max', 10, "")
-        console.info(`${SUITE} ${CASE} END`)
-      } catch (ERROR) {
-        expect().assertFail();
+        done();
       }
-
+      let event: events_emitter.InnerEvent = {
+        eventId: 60003,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let driver: Driver = Driver.create()
+      await driver.delayMs(waitUiReadyMs)
+      inspector.sendEventByKey('ListScroll_Button_To_max', 10, "")
+      console.info(`${SUITE} ${CASE} END`)
     });
   })
 }

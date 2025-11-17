@@ -30,13 +30,13 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridExample {
-  @State numberData: String[] = ['0', '1', '2', '3', '4'];
+  @State Number1: String[] = ['0', '1', '2', '3', '4'];
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid() {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -62,8 +62,8 @@ struct GridExample {
       .supportAnimation(true)
 
       Grid() {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -85,8 +85,8 @@ struct GridExample {
       .layoutDirection(GridDirection.ColumnReverse)
 
       Grid() {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)
@@ -112,8 +112,8 @@ struct GridExample {
         .fontSize(9)
         .width('90%')
       Grid() {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number1, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

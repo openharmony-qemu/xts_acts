@@ -46,7 +46,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function listNewJsunit() {
   describe('listNewJsunit', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -62,13 +61,13 @@ export default function listNewJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get list state success " + JSON.stringify(pages));
-        if (!("list1" == pages.name)) {
+        if (!("MainAbility/pages/List/listNew" == pages.name)) {
           console.info("get list state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push list page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push list page error: " + err);
       }
     });
@@ -80,161 +79,157 @@ export default function listNewJsunit() {
 
 
     /*
-     * @tc.number    testListNew_static_0001
-     * @tc.name      testListNew_static_0001
-     * @tc.desc      testListNew_static_0001
-     * @tc.level     2
-     */
+       * @tc.number   testListNew_static_0001
+       * @tc.name     testListNew_static_0001
+       * @tc.desc     testListNew_static_0001
+       * @tc.level    Level.LEVEL1
+       */
     it('testListNew_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('listNe testListNew_static_0001 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
       console.info("[testListNew_static_0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width')).assertEqual("90.00%");
+      expect(obj.getString('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("90.00%");
       console.info("[testListNew_static_0001] width value :" +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
-
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('width'));
+      done()
     });
 
 
     /*
-     * @tc.number    testListNe_static_0002
-     * @tc.name      testListNe_static_0002
-     * @tc.desc      testListNe_static_0002
-     * @tc.level     2
-     */
+       * @tc.number   testListNe_static_0002
+       * @tc.name     testListNe_static_0002
+       * @tc.desc     testListNe_static_0002
+       * @tc.level    Level.LEVEL1
+       */
     it('testListNe_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('listNe testListNe_static_0002 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
       console.info("[testListNe_static_0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height')).assertEqual("300.00vp");
+      expect(obj.getString('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual("300.00vp");
       console.info("[testListNe_static_0002] height value :" +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
-
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('height'));
+      done()
     });
 
 
     /*
-     * @tc.number    testListNe_static_0003
-     * @tc.name      testListNe_static_0003
-     * @tc.desc      testListNe_static_0003
-     * @tc.level     2
-     */
+       * @tc.number   testListNe_static_0003
+       * @tc.name     testListNe_static_0003
+       * @tc.desc     testListNe_static_0003
+       * @tc.level    Level.LEVEL1
+       */
     it('testListNe_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('listNe testListNe_static_0003 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
       console.info("[testListNe_static_0003] component editMode strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode')).assertTrue();
+      expect(obj.getString('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
       console.info("[testListNe_static_0003] editMode value :" +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode'));
-
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode'));
+      done()
     });
 
 
     /*
-     * @tc.number    testListNe_static_0004
-     * @tc.name      testListNe_static_0004
-     * @tc.desc      testListNe_static_0004
-     * @tc.level     2
-     */
+       * @tc.number   testListNe_static_0004
+       * @tc.name     testListNe_static_0004
+       * @tc.desc     testListNe_static_0004
+       * @tc.level    Level.LEVEL1
+       */
     it('testListNe_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('listNe testListNe_static_0004 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
       console.info("[testListNe_static_0004] component alignListItem strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('alignListItem'))
+      expect(obj.getString('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignListItem'))
         .assertEqual("ListItemAlign.Start");
       console.info("[testListNe_static_0004] alignListItem value :" +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getElement('alignListItem'));
-
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('alignListItem'));
+      done()
     });
 
 
     /*
-     * @tc.number    testListNe_static_0005
-     * @tc.name      testListNe_static_0005
-     * @tc.desc      testListNe_static_0005
-     * @tc.level     2
-     */
+       * @tc.number   testListNe_static_0005
+       * @tc.name     testListNe_static_0005
+       * @tc.desc     testListNe_static_0005
+       * @tc.level    Level.LEVEL1
+       */
     it('testListNe_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('listNe testListNe_static_0005 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
       console.info("[testListNe_static_0005] component lanes strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lanes')).assertEqual('4');
+      expect(obj.getString('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('lanes')).assertEqual('4');
       console.info("[testListNe_static_0005] lanes value :" +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lanes'));
-
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lanes'));
+      done()
     });
 
 
     /*
-     * @tc.number    testListNe_static_0006
-     * @tc.name      testListNe_static_0006
-     * @tc.desc      testListNe_static_0006
-     * @tc.level     2
-     */
+       * @tc.number   testListNe_static_0006
+       * @tc.name     testListNe_static_0006
+       * @tc.desc     testListNe_static_0006
+       * @tc.level    Level.LEVEL1
+       */
     it('testListNe_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('listNe testListNe_static_0006 START');
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('list1');
       console.info("[testListNe_static_0006] component lanes strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lanes')).assertEqual('4');
+      expect(obj.getString('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('lanes')).assertEqual('4');
       console.info("[testListNe_static_0006] lanes value :" +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lanes'));
-
+      JSON.parseJsonElement(strJson).getElement('$attrs').getElement('lanes'));
+      done()
     });
 
 
     /*
-     * @tc.number    testListNe_static_0007
-     * @tc.name      testListNe_static_0007
-     * @tc.desc      testListNe_static_0007
-     * @tc.level     2
-     */
+       * @tc.number   testListNe_static_0007
+       * @tc.name     testListNe_static_0007
+       * @tc.desc     testListNe_static_0007
+       * @tc.level    Level.LEVEL1
+       */
     it('testListNe_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        console.info('listNe testListNe_static_0007 START');
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 60216,
-          priority: events_emitter.EventPriority.LOW
-        }
-        let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-          try {
-            console.info("callback success");
-
-
-            console.info("testListNe_static_0007 end");
-          } catch (err) {
-            console.info("testListNe_static_0007 on events_emitter err : " + JSON.stringify(err));
-          }
-        }
+      console.info('listNe testListNe_static_0007 START');
+      let innerEvent: events_emitter.InnerEvent = {
+        eventId: 60216,
+        priority: events_emitter.EventPriority.LOW
+      }
+      let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         try {
-          console.info("testListNe_static_0007 click result is: " +
-            JSON.stringify(inspector.sendEventByKey('onScrollBegin', 10, "")));
-          events_emitter.on(innerEvent, callback);
-        } catch (err) {
+          const data = eventData.data as Record<String, undefined | null | Object>
+          console.info("callback success");
+          console.info("testListNe_static_0007 eventData.data?.['result'] result is: " + data['result']);
+          expect(data['result']).assertEqual("success");
+          console.info("testListNe_static_0007 end");
+        } catch (err: Error) {
           console.info("testListNe_static_0007 on events_emitter err : " + JSON.stringify(err));
         }
-      } catch (ERROR) {
-        expect().assertFail();
       }
-
-
+      try {
+        console.info("testListNe_static_0007 click result is: " +
+        JSON.stringify(inspector.sendEventByKey('onScrollBegin', 10, "")));
+        events_emitter.on(innerEvent, callback);
+      } catch (err: Error) {
+        console.info("testListNe_static_0007 on events_emitter err : " + JSON.stringify(err));
+      }
+      done()
     });
   })
 }

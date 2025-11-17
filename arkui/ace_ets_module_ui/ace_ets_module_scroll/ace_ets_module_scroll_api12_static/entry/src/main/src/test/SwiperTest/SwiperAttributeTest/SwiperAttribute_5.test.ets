@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAttribute_5() {
   describe('SwiperAttribute_5', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -58,11 +56,10 @@ export default function SwiperAttribute_5() {
         console.info("get SwiperAttribute_5 state pages:" + JSON.stringify(pages));
         if (!("SwiperAttribute_5" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperAttribute_5"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperAttribute_5 page result:");
+          await UtilsTest.msSleep(2000)
         }
       } catch (err) {
         console.error("push SwiperAttribute_5 page error:" + err);
@@ -74,14 +71,15 @@ export default function SwiperAttribute_5() {
       console.info("SwiperAttribute_5 after each called");
     });
 
-
-    /*
-     * @tc.number    SwiperAttribute_static_0050
-     * @tc.name      SwiperAttribute_static_0050
-     * @tc.desc      SwiperAttribute_static_0050
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperAttribute_static_0050
+     * @tc.name     SwiperAttribute_static_0050
+     * @tc.desc     SwiperAttribute_static_0050
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperAttribute_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperAttribute_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperAttribute_static_0050] START');
 
       let driver = Driver.create()

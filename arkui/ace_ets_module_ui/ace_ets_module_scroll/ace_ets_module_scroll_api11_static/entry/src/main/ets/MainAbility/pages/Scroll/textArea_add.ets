@@ -43,19 +43,19 @@ struct TextAreaExample {
   @State value1: string = ''
   @State value2: string = ''
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // 自定义键盘组件
+  @Builder CustomKeyboardBuilder() {
+    Column() {
+      Grid() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: int | string, index: int) => {
+          GridItem() {
+            Button(item + "")
+              .width(110)
+          }
+        })
+      }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
+    }.backgroundColor(Color.Gray)
+  }
 
   build() {
     Column() {
@@ -72,16 +72,17 @@ struct TextAreaExample {
         .enableKeyboardOnFocus(true)
         .selectionMenuHidden(false)
         .margin(20)
+        .customKeyboard(this.CustomKeyboardBuilder)
         .barState(BarState.On)
         .style(TextContentStyle.INLINE)
         .key('textAreaAdd')
         .fontSize(16)
-        .onTextSelectionChange((selectionStart: int, selectionEnd: int) => {
+        .onTextSelectionChange((selectionStart: Int, selectionEnd: Int) => {
           this.value1 = selectionStart + "";
           this.value2 = selectionEnd + "";
           this.controller.getTextContentLineCount();
         })
-        .onContentScroll((totalOffsetX: double, totalOffsetY: double) => {
+        .onContentScroll((totalOffsetX: number, totalOffsetY: number) => {
         })
         .fontColor('#182431')
         .backgroundColor('#FFFFFF')
@@ -93,7 +94,7 @@ struct TextAreaExample {
         .backgroundColor('#007DFF')
         .margin(15)
         .onClick((e: ClickEvent) => {
-          
+          // 设置光标位置到第一个字符后
           this.controller.caretPosition(1)
         })
 

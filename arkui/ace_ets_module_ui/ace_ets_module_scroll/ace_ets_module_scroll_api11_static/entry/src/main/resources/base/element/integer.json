@@ -1,8 +1,8 @@
 {
-  "integer": [
-    {
-      "name": "Caretwidth",
-      "value": 10
-    }
-  ]
+    "integer":[
+      {
+        "name": "Caretwidth",
+        "value": 10
+      }
+    ]
 }

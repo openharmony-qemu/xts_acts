@@ -34,7 +34,12 @@ import {
   Color,
   TextAlign,
   ListItem,
-  Swiper
+  Swiper,
+  Builder,
+  LoadingProgress,
+  Margin,
+  VerticalAlign,
+  Alignment
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -53,29 +58,29 @@ struct RefreshOffsetOffsetExample {
   @State refreshValue: number = 0
   @State arr: String[] = ['0', '1', '2', '3', '4', '5', '6']
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  @Builder
+  customRefreshComponent() {
+    Stack() {
+      Row() {
+        LoadingProgress().height(32)
+        Text('Refreshing...').fontSize(16).margin({ left: 20 } as Margin)
+      }
+      .alignItems(VerticalAlign.Center)
+    }
+    .align(Alignment.Center)
+    .clip(true)
+    .constraintSize({ minHeight: 32 }) // 设置最小高度约束保证自定义组件高度随刷新区域高度变化时自定义组件高度不会低于minHeight
+    .width('100%')
+  }
 
   private changeOrientation() {
-    
-    
-    
-    
-    
-    
-    
+    // 获取UIAbility实例的上下文信息
+    let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+    // 调用该接口手动改变设备横竖屏状态
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setPreferredOrientation(this.isFullScreen ? window.Orientation.PORTRAIT : window.Orientation.LANDSCAPE)
+      this.isFullScreen = !this.isFullScreen
+    });
   }
 
   build() {
@@ -85,7 +90,7 @@ struct RefreshOffsetOffsetExample {
           Text(this.message1).id('refresh_mess1_1')
           Text(this.message2).id('refresh_mess1_2')
           Text(this.message3).id('refresh_mess1_3')
-          Refresh({ refreshing: $$(this.isRefreshing3).value }) {
+          Refresh({ refreshing: $$(this.isRefreshing3) }) {
             Scroll() {
               Column() {
                 ForEach(this.arr, (item: string) => {
@@ -131,7 +136,7 @@ struct RefreshOffsetOffsetExample {
 
         Column() {
           Text(this.message4).id('refresh_mess2')
-          Refresh({ refreshing: $$(this.isRefreshing2).value }) {
+          Refresh({ refreshing: $$(this.isRefreshing2) }) {
             List() {
               ForEach(this.arr, (item: string) => {
                 ListItem() {
@@ -177,7 +182,7 @@ struct RefreshOffsetOffsetExample {
 
         Column() {
           Text(this.message5).id('refresh_mess3')
-          Refresh({ refreshing: $$(this.isRefreshing).value } /*, builder: this.customRefreshComponent() }*/) {
+          Refresh({ refreshing: $$(this.isRefreshing) } /*, builder: this.customRefreshComponent() }*/) {
             Swiper() {
               ForEach(this.arr, (item: string, index: int) => {
                 Text('' + item)

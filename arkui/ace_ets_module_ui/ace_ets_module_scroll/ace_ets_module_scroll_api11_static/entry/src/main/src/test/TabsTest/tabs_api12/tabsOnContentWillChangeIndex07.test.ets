@@ -49,12 +49,10 @@ export default function tabsOnContentWillChangeIndex07JsunitTest() {
         console.info("get tabsOnContentWillChangeIndex07JsunitTest state pages:" + JSON.stringify(pages));
         if (!("tabs_onContentWillChangeIndex07" == pages.name)) {
           console.info("tabsOnContentWillChangeIndex06JsunitTest  pages.name:" + JSON.stringify(pages.name));
-          
-          routerAlp.pushUrl({
-            url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex07"
-          })
+          // let result = await routerAlp.pushUrl({url:"MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex07"})
+          routerAlp.pushUrl({ url: "MainAbility/pages/Tabs/tabs_api12/tabs_onContentWillChangeIndex07" })
           await CommonFunc.sleep(2000);
-          
+          // console.info("push tabsOnContentWillChangeIndex07JsunitTest result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push tabsOnContentWillChangeIndex07JsunitTest page error:" + err);
@@ -68,15 +66,15 @@ export default function tabsOnContentWillChangeIndex07JsunitTest() {
 
 
     /*
-     * @tc.number    tabsOnContentWillChangeJsunitTest_static_0070
-     * @tc.name      tabsOnContentWillChangeJsunitTest_static_0070
-     * @tc.desc      tabsOnContentWillChangeJsunitTest_static_0070
-     * @tc.level     2
-     */
+       * @tc.number   tabsOnContentWillChangeJsunitTest_static_0070
+       * @tc.name     tabsOnContentWillChangeJsunitTest_static_0070
+       * @tc.desc     tabsOnContentWillChangeJsunitTest_static_0070
+       * @tc.level    Level.LEVEL0
+       */
     it('tabsOnContentWillChangeJsunitTest_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('tabsOnContentWillChangeJsunitTest_static_0070 START');
 
-      
+      // change index it can change index 3
       let driver = Driver.create();
       let button01 = await driver.findComponent(ON.id("changeIndex7"));
       await (button01?.click() as Promise<void>);

@@ -61,11 +61,11 @@ export default function focusedCardList() {
         router.clear();
         let pages = router.getState();
         console.info("get focusedCardList state pages:" + JSON.stringify(pages));
-        if (!("focusedCardList" == pages.name)) {
+        if (!("MainAbility/pages/List/focusedCardList" == pages.name)) {
           console.info("get focusedCardList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push focusedCardList page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push focusedCardList page error:" + err);
@@ -80,11 +80,11 @@ export default function focusedCardList() {
 
 
     /*
-     * @tc.number    focusedCardList_static_0100
-     * @tc.name      focusedCardList_static_0100
-     * @tc.desc      focusedCardList_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   focusedCardList_static_0100
+       * @tc.name     focusedCardList_static_0100
+       * @tc.desc     focusedCardList_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('focusedCardList_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[focusedCardList_static_0100] START');
       await CommonFunc.sleep(1000);

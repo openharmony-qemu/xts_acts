@@ -33,7 +33,10 @@ import {
   BarState,
   StickyStyle,
   EdgeEffect,
-  ListItemGroup
+  ListItemGroup,
+  ListItem,
+  TextAlign,
+  ListItemGroupOptions
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -66,19 +69,19 @@ struct headerStartOffsetExample {
     Column() {
       List({ space: 5, scroller: this.scroller }) {
         ForEach(this.arr, (item0: number, groupIndex: int) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup({ header: () => {this.itemHead('第' + item0 + '个ListItemGroup')} } as ListItemGroupOptions) {
+            ForEach(this.arr2, (item: number, itemIndex:int) => {
+              ListItem() {
+                Text('Group:' + (groupIndex + 1) + ', Item:' + item)
+                  .width('100%')
+                  .height(100)
+                  .fontSize(20)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(Color.Pink)
+              }
+              .id('group_item_startOffset_' + (groupIndex + 1) + '_' + item)
+            }, (item: number) => item.toString())
+          }
         })
       }
       .id('group_list_startOffset')
@@ -89,7 +92,7 @@ struct headerStartOffsetExample {
       .sticky(StickyStyle.Header)
       .contentStartOffset(10)
       .contentEndOffset(10)
-      .edgeEffect(EdgeEffect.Spring) 
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)
         console.info('last' + lastIndex)

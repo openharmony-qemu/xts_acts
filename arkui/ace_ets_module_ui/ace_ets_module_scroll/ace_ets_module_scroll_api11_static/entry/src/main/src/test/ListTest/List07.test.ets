@@ -61,35 +61,37 @@ export default function List07Test() {
         router.clear();
         let pages = router.getState();
         console.info("get list state success " + JSON.stringify(pages));
-        if (!("List07" == pages.name)) {
+        if (!("MainAbility/pages/List/List07" == pages.name)) {
           console.info("get list state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
-          
+          await UtilsTest.msSleep(4000)
+          // console.info("push list page success " + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error("push list page error: " + err);
       }
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0250
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0250
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0250
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0250
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0250
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0250
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUX_Grid_List_Swiper_static_0250', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0250 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0250');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0250');
           console.info('ArkUX_Grid_List_Swiper_static_0250 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0250 JSON.parse(strJson) is: " +
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
 
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("20.00vp");
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('laneGutter')).assertEqual("20.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0250 END ');
 
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0250 ERR  ' + JSON.stringify(err));
         }
@@ -97,23 +99,24 @@ export default function List07Test() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0260
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0260
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0260
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0260
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0260
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0260
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUX_Grid_List_Swiper_static_0260', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0260 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0260');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0260');
           console.info('ArkUX_Grid_List_Swiper_static_0260 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0260 JSON.parse(strJson) is: " +
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("100.00vp");
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('laneGutter')).assertEqual("100.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0260 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0260 ERR  ' + JSON.stringify(err));
         }
@@ -121,23 +124,24 @@ export default function List07Test() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0270
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0270
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0270
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0270
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0270
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0270
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUX_Grid_List_Swiper_static_0270', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0270 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0270');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0270');
           console.info('ArkUX_Grid_List_Swiper_static_0270 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0270 JSON.parse(strJson) is: " +
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("0.00vp");
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('laneGutter')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0270 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0270 ERR  ' + JSON.stringify(err));
         }
@@ -145,23 +149,24 @@ export default function List07Test() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0280
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0280
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0280
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0280
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0280
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0280
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUX_Grid_List_Swiper_static_0280', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0280 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0280');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0280');
           console.info('ArkUX_Grid_List_Swiper_static_0280 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0280 JSON.parse(strJson) is: " +
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("500.00vp");
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('laneGutter')).assertEqual("500.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0280 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0280 ERR  ' + JSON.stringify(err));
         }
@@ -169,23 +174,24 @@ export default function List07Test() {
       }, 500)
     });
 
+
     /*
-     * @tc.number    ArkUX_Grid_List_Swiper_static_0290
-     * @tc.name      ArkUX_Grid_List_Swiper_static_0290
-     * @tc.desc      ArkUX_Grid_List_Swiper_static_0290
-     * @tc.level     2
-     */
+       * @tc.number   ArkUX_Grid_List_Swiper_static_0290
+       * @tc.name     ArkUX_Grid_List_Swiper_static_0290
+       * @tc.desc     ArkUX_Grid_List_Swiper_static_0290
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUX_Grid_List_Swiper_static_0290', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Grid_List_Swiper_static_0290 START');
       setTimeout(() => {
         try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_static_0290');
+          let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0290');
           console.info('ArkUX_Grid_List_Swiper_static_0290 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0290 JSON.parse(strJson) is: " +
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("250.00vp");
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('laneGutter')).assertEqual("250.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0290 END ');
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0290 ERR  ' + JSON.stringify(err));
         }

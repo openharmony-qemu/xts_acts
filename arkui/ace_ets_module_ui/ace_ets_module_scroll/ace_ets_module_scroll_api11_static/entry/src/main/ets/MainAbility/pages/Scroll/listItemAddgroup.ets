@@ -59,40 +59,42 @@ struct ListItemGroupExample {
     } as TimeTable
   ]
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  @Builder
+  itemHead(text: string) {
+    Text(text)
+      .fontSize(20)
+      .backgroundColor(0xAABBCC)
+      .width("100%")
+      .padding(10)
+  }
+
+  @Builder
+  itemFoot(num: number) {
+    Text('共' + num + "节课")
+      .fontSize(16)
+      .backgroundColor(0xAABBCC)
+      .width("100%")
+      .padding(5)
+  }
 
   build() {
     Column() {
       List({ space: 2 }) {
         ForEach(this.timetable, (item: TimeTable) => {
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          ListItemGroup({ header: () => {this.itemHead(item.title)}, footer: () => {this.itemFoot(item.projects.length)} ,style:ListItemGroupStyle.CARD}) {
+            ForEach(item.projects, (project: string) => {
+              ListItem() {
+                Text(project)
+                  .width("100%").height('10%').fontSize(20)
+                  .textAlign(TextAlign.Center).backgroundColor(0xFFFFFF)
+              }
+            }, (item: string) => item)
+          }
+          .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
         })
       }
       .width('90%')
-      
+      //.sticky(StickyStyle.Header | StickyStyle.Footer)
       .scrollBar(BarState.Off)
       .key('listattrs')
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 } as Padding)

@@ -45,8 +45,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function TabsAp1() {
   describe('TabsAp1', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -64,24 +62,22 @@ export default function TabsAp1() {
           console.info("get TabsAp1 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TabsAp1 page result:");
         }
       } catch (err) {
         console.error("push TabsAp1 page error:" + err);
       }
       console.info("TabsAp1 beforeEach end");
     });
-    afterEach(async () => {
-    });
 
-
-    /*
-     * @tc.number    TabsAp1_static_0100
-     * @tc.name      TabsAp1_static_0100
-     * @tc.desc      TabsAp1_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   TabsAp1_static_0100
+     * @tc.name     TabsAp1_static_0100
+     * @tc.desc     TabsAp1_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('TabsAp1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TabsAp1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TabsAp1_static_0100 START');
       await CommonFunc.sleep(1000);
 

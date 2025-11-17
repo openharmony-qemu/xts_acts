@@ -49,7 +49,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct scrollReachExample {
-  scroller: Scroller = new Scroller;
+  scroller: Scroller = new Scroller();
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
   @State onReachStartText: string = 'onReachStart'
   @State onReachEndText: string = 'onReachEnd'
@@ -105,7 +105,7 @@ struct scrollReachExample {
 
       Button('scroll Bottom')
         .id('scrollEdge_btn')
-        .onClick((e: ClickEvent) => { 
+        .onClick((e: ClickEvent) => { // 滑动到底部
           console.log('scrollTo Bottom')
           this.scroller.scrollEdge(Edge.Bottom, { velocity: 700 })
         })

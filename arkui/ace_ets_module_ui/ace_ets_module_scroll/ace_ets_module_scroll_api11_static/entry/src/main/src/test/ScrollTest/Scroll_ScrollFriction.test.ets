@@ -49,12 +49,12 @@ export default function scroll_ScrollFrictionTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get ScrollFrictionPage state pages:" + JSON.stringify(pages));
-        if (!("ScrollFrictionPage" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/ScrollFrictionPage" == pages.name)) {
           console.info("get Scroll_ScrollInitialIndex1 pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push ScrollFrictionPage page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ScrollFrictionPage page error:" + err);
@@ -66,12 +66,13 @@ export default function scroll_ScrollFrictionTest() {
       console.info("ScrollFrictionPage after each called");
     });
 
+
     /*
-     * @tc.number    testScrollFriction_static_0100
-     * @tc.name      testScrollFriction_static_0100
-     * @tc.desc      testScrollFriction_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   testScrollFriction_static_0100
+       * @tc.name     testScrollFriction_static_0100
+       * @tc.desc     testScrollFriction_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollFriction_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollFriction_static_0100] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
@@ -93,11 +94,11 @@ export default function scroll_ScrollFrictionTest() {
 
 
     /*
-     * @tc.number    testScrollFriction_static_0200
-     * @tc.name      testScrollFriction_static_0200
-     * @tc.desc      testScrollFriction_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   testScrollFriction_static_0200
+       * @tc.name     testScrollFriction_static_0200
+       * @tc.desc     testScrollFriction_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('testScrollFriction_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollFriction_static_0200] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
@@ -111,6 +112,4 @@ export default function scroll_ScrollFrictionTest() {
       done();
     });
   })
-
-
 }

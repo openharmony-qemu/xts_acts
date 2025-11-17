@@ -56,7 +56,7 @@ struct UIComponentScrollSwiperAnimated0260 {
             .height('100%')
             .fontSize(50)
             .textAlign(TextAlign.Center)
-            .backgroundColor(backgroundColor)
+            .backgroundColor(backgroundColor)// 自定义动画变化透明度、缩放页面、抵消系统默认位移、渲染层级等
             .opacity(this.opacityList[index.toInt()])
             .scale({ x: this.scaleList[index.toInt()], y: this.scaleList[index.toInt()] })
             .translate({ x: this.translateList[index.toInt()] })
@@ -82,8 +82,9 @@ struct UIComponentScrollSwiperAnimated0260 {
               this.opacityList[proxy.index.toInt()] = 1 - proxy.position / this.DISPLAY_COUNT
               this.scaleList[proxy.index.toInt()] =
                 this.MIN_SCALE + (1 - this.MIN_SCALE) * (1 - proxy.position / this.DISPLAY_COUNT)
-              this.translateList[proxy.index.toInt()] = -proxy.position * proxy.mainAxisLength +
-                (1 - this.scaleList[proxy.index.toInt()]) * proxy.mainAxisLength / 2.0
+              this.translateList[proxy.index.toInt()] =
+                -proxy.position * proxy.mainAxisLength +
+                  (1 - this.scaleList[proxy.index.toInt()]) * proxy.mainAxisLength / 2.0
             } else {
               this.opacityList[proxy.index.toInt()] = 1 - (proxy.position - 1) / this.DISPLAY_COUNT
               this.scaleList[proxy.index.toInt()] =
@@ -95,7 +96,7 @@ struct UIComponentScrollSwiperAnimated0260 {
           }
         }
       })
-      .onContentDidScroll((selectedIndex: int, index: int, position: double, mainAxisLength: double): void => {
+      .onContentDidScroll((selectedIndex: int, index: int, position: number, mainAxisLength: number): void => {
         this.strindex = 'ContentDidScroll'
       })
 

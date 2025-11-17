@@ -80,28 +80,28 @@ struct ScrollExample {
         console.info("xOffset: " + xOffset + ' ' + "yOffset: " + yOffset)
         console.info("scrollState: " + scrollState)
 
-        if (scrollSource === 0) { 
+        if (scrollSource === 0) { //拖拽事件
           this.scrollStateValue = 'ScrollSource.DRAG'
           console.info('scrollSource ScrollSource.FLING success')
-        } else if (scrollSource === 1) { 
+        } else if (scrollSource === 1) { //拖曳以速度结束后甩动
           this.scrollStateValue = 'ScrollSource.FLING'
           console.info('scrollSource ScrollSource.FLING success')
-        } else if (scrollSource === 2) { 
+        } else if (scrollSource === 2) { //使用EdgeEffect.Spring进行滚动
           this.scrollStateValue = 'ScrollSource.EDGE_EFFECT'
           console.info('scrollSource ScrollSource.EDGE_EFFECT success')
-        } else if (scrollSource === 3) { 
+        } else if (scrollSource === 3) { //除拖动以外的其他用户输入，如鼠标滚轮、按键事件
           this.scrollStateValue = 'ScrollSource.OTHER_USER_INPUT'
           console.info('scrollSource ScrollSource.OTHER_USER_INPUT success')
-        } else if (scrollSource === 4) { 
+        } else if (scrollSource === 4) { //滚动条的拖动事件
           this.scrollStateValue = 'ScrollSource.SCROLL_BAR'
           console.info('scrollSource ScrollSource.SCROLL_BAR success')
-        } else if (scrollSource === 5) { 
+        } else if (scrollSource === 5) { //滚动条拖拽结束后的滑动速度
           this.scrollStateValue = 'ScrollSource.SCROLL_BAR_FLING'
           console.info('scrollSource ScrollSource.SCROLL_BAR_FLING success')
-        } else if (scrollSource === 6) { 
+        } else if (scrollSource === 6) { //不带动画的Scroller的成员方法
           this.scrollStateValue = 'ScrollSource.SCROLLER'
           console.info('scrollSource ScrollSource.SCROLLER success')
-        } else if (scrollSource === 7) { 
+        } else if (scrollSource === 7) { //带动画的Scroller的成员方法
           this.scrollStateValue = 'ScrollSource.SCROLLER_ANIMATION'
           console.info('scrollSource ScrollSource.SCROLLER_ANIMATION success')
         }

@@ -63,12 +63,12 @@ export default function ListReboundTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages: router.RouterState = router.getState();
-        if (pages == null || !("ListRebound" == pages.name)) {
+        if (pages == null || !("MainAbility/pages/List/ListRebound" == pages.name)) {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-      } catch (err) {
+      } catch (err: Error) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -78,12 +78,13 @@ export default function ListReboundTest() {
      *tc.name   Grid with EdgeEffect.Spring
      *tc.desc   Grid with EdgeEffect.Spring
      */
+
     /*
-     * @tc.number    ArkUI_Rebound_static_0100
-     * @tc.name      ArkUI_Rebound_static_0100
-     * @tc.desc      ArkUI_Rebound_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Rebound_static_0100
+       * @tc.name     ArkUI_Rebound_static_0100
+       * @tc.desc     ArkUI_Rebound_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_Rebound_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Rebound_static_0100'
       console.info(`${SUITE} ${CASE} START`);
@@ -92,10 +93,10 @@ export default function ListReboundTest() {
       setTimeout(async () => {
         try {
           let strJson: string = inspector.getInspectorByKey(baseKey);
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
             .assertEqual('EdgeEffect.Spring')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }
@@ -108,12 +109,13 @@ export default function ListReboundTest() {
      *tc.name   Grid with EdgeEffect.Fade
      *tc.desc   Grid with EdgeEffect.Fade
      */
+
     /*
-     * @tc.number    ArkUI_Rebound_static_0200
-     * @tc.name      ArkUI_Rebound_static_0200
-     * @tc.desc      ArkUI_Rebound_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Rebound_static_0200
+       * @tc.name     ArkUI_Rebound_static_0200
+       * @tc.desc     ArkUI_Rebound_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_Rebound_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Rebound_static_0200'
       console.info(`${SUITE} ${CASE} START`);
@@ -123,10 +125,10 @@ export default function ListReboundTest() {
         try {
           let strJson: string = inspector.getInspectorByKey(baseKey);
 
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
             .assertEqual('EdgeEffect.Fade')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }
@@ -139,12 +141,13 @@ export default function ListReboundTest() {
      *tc.name   Grid with EdgeEffect.None
      *tc.desc   Grid with EdgeEffect.None
      */
+
     /*
-     * @tc.number    ArkUI_Rebound_static_0300
-     * @tc.name      ArkUI_Rebound_static_0300
-     * @tc.desc      ArkUI_Rebound_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Rebound_static_0300
+       * @tc.name     ArkUI_Rebound_static_0300
+       * @tc.desc     ArkUI_Rebound_static_0300
+       * @tc.level    Level.LEVEL1
+       */
     it('ArkUI_Rebound_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Rebound_static_0300'
       console.info(`${SUITE} ${CASE} START`);
@@ -152,10 +155,10 @@ export default function ListReboundTest() {
       setTimeout(async () => {
         try {
           let strJson: string = inspector.getInspectorByKey(baseKey);
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('edgeEffect'))
             .assertEqual('EdgeEffect.None')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err) {
+        } catch (err: Error) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }
@@ -168,11 +171,11 @@ export default function ListReboundTest() {
 function getRectCenter(rect: string) {
   let regexp: RegExp = new RegExp('\\[', 'g');
   let rtn: string[] = rect.replace(regexp, '').replace(regexp, ',').split(',')
-  const uiContext = new UIContext()
+  const uiContext = AppStorage.get<UIContext>('uiContext');
   return [
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) +
+    uiContext!.px2vp(Number.parseFloat(rtn[0].trim()) +
       (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) +
+    uiContext!.px2vp(Number.parseFloat(rtn[1].trim()) +
       (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
   ]
 }

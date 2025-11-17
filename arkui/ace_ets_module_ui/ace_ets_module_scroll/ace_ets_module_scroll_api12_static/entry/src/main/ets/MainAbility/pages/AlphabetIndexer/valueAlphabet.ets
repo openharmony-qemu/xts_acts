@@ -96,9 +96,9 @@ struct AlphabetIndexerValueIndex {
 
           AlphabetIndexer({ arrayValue: this.value, selected: -2 })
             .key('alp_outliers_value')
-            .usingPopup(true)
-            .itemSize(28)
-            .alignStyle(IndexerAlign.Left)
+            .usingPopup(true) // 是否显示弹出框
+            .itemSize(28) // 每一项的尺寸大小
+            .alignStyle(IndexerAlign.Left) // 弹出框在索引条右侧弹出
             .itemBorderRadius(-10)
             .onSelect((index: int): void => {
               console.info(this.value[index.toInt()] + ' Selected!')
@@ -115,7 +115,7 @@ struct AlphabetIndexerValueIndex {
               } else if (this.value[index.toInt()] == 'L') {
                 return this.arrayL
               } else {
-                return [''] 
+                return [] as string[] // 选中其余子母项时，提示文本列表为空
               }
             })
             .onPopupSelect((index: int): void => {

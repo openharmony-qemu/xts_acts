@@ -87,23 +87,23 @@ struct AlphabetIndexerEnable {
 
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
           .id('alphabet_enable')
-          .autoCollapse(false)
-          .selectedColor(0xFFFFFF)
-          .popupColor(0xFFFAF0)
-          .usingPopup(true)
-          .selectedFont({ size: 16, weight: FontWeight.Bolder })
-          .popupFont({ size: 30, weight: FontWeight.Bolder })
-          .itemSize(28)
-          .alignStyle(IndexerAlign.Left)
-          .popupItemBorderRadius(24)
-          .itemBorderRadius(14)
+          .autoCollapse(false) // 关闭自适应折叠模式
+          .selectedColor(0xFFFFFF) // 选中项文本颜色
+          .popupColor(0xFFFAF0) // 弹出框文本颜色
+          .usingPopup(true) // 是否显示弹出框
+          .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项字体样式
+          .popupFont({ size: 30, weight: FontWeight.Bolder }) // 弹出框内容的字体样式
+          .itemSize(28) // 每一项的尺寸大小
+          // .alignStyle(IndexerAlign.Left) // 弹出框在索引条右侧弹出
+          .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
+          .itemBorderRadius(14) // 设置索引项背板圆角半径
           .enableHapticFeedback(true)
           .onSelect((index: int): void => {
             console.info(this.value[index.toInt()] + ' Selected!')
           })
           .onRequestPopupData((index: int): string[] => {
             if (this.value[index.toInt()] == 'A') {
-              return this.arrayA 
+              return this.arrayA // 当选中A时，弹出框里面的提示文本列表显示A对应的列表arrayA，选中B、C、L时也同样
             } else if (this.value[index.toInt()] == 'B') {
               return this.arrayB
             } else if (this.value[index.toInt()] == 'C') {
@@ -111,7 +111,7 @@ struct AlphabetIndexerEnable {
             } else if (this.value[index.toInt()] == 'L') {
               return this.arrayL
             } else {
-              return [''] 
+              return [''] // 选中其余子母项时，提示文本列表为空
             }
           })
           .onPopupSelect((index: int): void => {

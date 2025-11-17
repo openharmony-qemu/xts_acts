@@ -44,8 +44,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAttribute_6() {
   describe('SwiperAttribute_6', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -58,11 +56,10 @@ export default function SwiperAttribute_6() {
         console.info("get SwiperAttribute_6 state pages:" + JSON.stringify(pages));
         if (!("SwiperAttribute_6" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-         router.pushUrl({
+          router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperAttribute_6"
           })
-          await CommonFunc.sleep(2000);
-          console.info("push SwiperAttribute_6 page result:");
+          await UtilsTest.msSleep(2000)
         }
       } catch (err) {
         console.error("push SwiperAttribute_6 page error:" + err);
@@ -74,14 +71,15 @@ export default function SwiperAttribute_6() {
       console.info("SwiperAttribute_6 after each called");
     });
 
-
-    /*
-     * @tc.number    SwiperAttribute_static_0100
-     * @tc.name      SwiperAttribute_static_0100
-     * @tc.desc      SwiperAttribute_static_0100
-     * @tc.level     2
+    
+      
+  /*
+     * @tc.number   SwiperAttribute_static_0100
+     * @tc.name     SwiperAttribute_static_0100
+     * @tc.desc     SwiperAttribute_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('SwiperAttribute_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SwiperAttribute_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SwiperAttribute_static_0100] START');
 
       let rect = CommonFunc.getComponentRectOnScreen('swiperAttribute_6')
@@ -102,11 +100,11 @@ export default function SwiperAttribute_6() {
         let columnRect = CommonFunc.getComponentRectOnScreen('swiperAttribute_60' + i);
         console.info("SwiperAttribute_static_0100 column rect is " + columnRect.left + " --" + columnRect.right + "--" +
         columnRect.top + "--" + columnRect.bottom);
-        const uiContext = new UIContext();
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.top - columnRect.top))) - 20 <= 1).assertTrue();
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.right - columnRect.right))) - 20 <= 1).assertTrue();
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.left - columnRect.left))) - 20 <= 1).assertTrue();
-        expect(UIContext.getFocusedUIContext()!.vp2px(Math.abs(Math.round(rect.bottom - columnRect.bottom))) - 20 <= 1).assertTrue();
+        const uiContext = AppStorage.get<UIContext>('uiContext')!;
+        expect(uiContext.px2vp(Math.abs(Math.round(rect.top - columnRect.top))) - 20 <= 1).assertTrue();
+        expect(uiContext.px2vp(Math.abs(Math.round(rect.right - columnRect.right))) - 20 <= 1).assertTrue();
+        expect(uiContext.px2vp(Math.abs(Math.round(rect.left - columnRect.left))) - 20 <= 1).assertTrue();
+        expect(uiContext.px2vp(Math.abs(Math.round(rect.bottom - columnRect.bottom))) - 20 <= 1).assertTrue();
       }
 
       console.info('[SwiperAttribute_static_0100] END');

@@ -65,11 +65,11 @@ struct alignItemsGridIndex {
       Text('Grid alignItems DEFAULT')
       Grid() {
         ForEach(this.data, (item: number) => {
-          
+          // GridItem和Column不设置高度，默认会自适应子组件大小。
           GridItem() {
             Column() {
               Column().height(100).backgroundColor('#D5D5D5').width('100%')
-              
+              // 中间的Text设置flexGrow(1)来自适应填满父组件的空缺
               Text('这是一段文字。'.repeat(this.items[item.toInt()]))
                 .flexGrow(1)
                 .width('100%')
@@ -87,18 +87,18 @@ struct alignItemsGridIndex {
       .columnsTemplate('1fr 1fr')
       .width('80%')
       .height('30%')
-      
+      // Grid设置alignItems为DEFAULT，使用Grid的默认对齐方式。
       .alignItems(GridItemAlignment.DEFAULT)
       .scrollBar(BarState.Off)
 
       Text('Grid alignItems STRETCH')
       Grid() {
         ForEach(this.data, (item: number) => {
-          
+          // GridItem和Column不设置高度，设置STRETCH的场景下，会变成与当前行最高节点同高。
           GridItem() {
             Column() {
               Column().height(100).backgroundColor('#D5D5D5').width('100%')
-              
+              // 中间的Text设置flexGrow(1)来自适应填满父组件的空缺
               Text('这是一段文字。'.repeat(this.items[item.toInt()]))
                 .flexGrow(1)
                 .width('100%')
@@ -116,7 +116,7 @@ struct alignItemsGridIndex {
       .columnsTemplate('1fr 1fr')
       .width('80%')
       .height('30%')
-      
+      // Grid设置alignItems为STRETCH，以当前行最高的GridItem的高度为其他GridItem的高度。
       .alignItems(GridItemAlignment.STRETCH)
       .scrollBar(BarState.Off)
     }

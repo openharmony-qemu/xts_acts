@@ -23,7 +23,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function gridScrollbarUpdateTest() {
   describe('gridScrollbarUpdateTest', () => {
-    
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
@@ -40,32 +40,33 @@ export default function gridScrollbarUpdateTest() {
         routerAlp.clear();
         let pages = routerAlp.getState();
         console.info("get gridScrollBar state success " + JSON.stringify(pages));
-        if (!("gridScrollBar" == pages.name)) {
+        if (!("MainAbility/pages/grid/gridScrollBar" == pages.name)) {
           console.info("get gridScrollBar state success " + JSON.stringify(pages.name));
-          
+          // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
-          
+          // console.info("push gridScrollBar page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push gridScrollBar page error: " + err);
       }
     });
     afterEach(() => {
-      
-      
-      
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      
-      
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
     })
 
+
     /*
-     * @tc.number    Grid_scrollbarUpdate_static_0801
-     * @tc.name      Grid_scrollbarUpdate_static_0801
-     * @tc.desc      Grid_scrollbarUpdate_static_0801
-     * @tc.level     2
-     */
+       * @tc.number   Grid_scrollbarUpdate_static_0801
+       * @tc.name     Grid_scrollbarUpdate_static_0801
+       * @tc.desc     Grid_scrollbarUpdate_static_0801
+       * @tc.level    Level.LEVEL0
+       */
     it('Grid_scrollbarUpdate_static_0801', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Grid_scrollbarUpdate_static_0801 START');
       setTimeout(() => {
@@ -88,12 +89,13 @@ export default function gridScrollbarUpdateTest() {
       }, 500)
     })
 
+
     /*
-     * @tc.number    Grid_scrollbarUpdate_static_0802
-     * @tc.name      Grid_scrollbarUpdate_static_0802
-     * @tc.desc      Grid_scrollbarUpdate_static_0802
-     * @tc.level     2
-     */
+       * @tc.number   Grid_scrollbarUpdate_static_0802
+       * @tc.name     Grid_scrollbarUpdate_static_0802
+       * @tc.desc     Grid_scrollbarUpdate_static_0802
+       * @tc.level    Level.LEVEL0
+       */
     it('Grid_scrollbarUpdate_static_0802', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Grid_scrollbarUpdate_static_0802 START');
       setTimeout(() => {
