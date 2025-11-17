@@ -167,6 +167,9 @@ struct WebIndex {
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
+  onPageHide() {	
+    events_emitter.off(153530)
+  }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
