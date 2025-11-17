@@ -77,7 +77,7 @@ export default function RelativeChain5() {
           // console.info("push RelativeChain5 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeChain5 page error:" + err);
       }
       console.info("RelativeChain5 foreEach end");
@@ -88,10 +88,9 @@ export default function RelativeChain5() {
       console.info("RelativeChain5 after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeChain5_static_001
      * @tc.name     RelativeChain5_static_001
      * @tc.desc     RelativeChain5_static_001
@@ -116,10 +115,9 @@ it('RelativeChain5_static_001', Level.LEVEL3, async (done: () => void): Promise<
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeChain5_static_002
      * @tc.name     RelativeChain5_static_002
      * @tc.desc     RelativeChain5_static_002

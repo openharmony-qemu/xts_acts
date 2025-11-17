@@ -50,7 +50,7 @@ struct scrollBarMarginGrid {
             GridItem() {
               Text(day)
                 .fontSize(16)
-                .backgroundColor(0xF9CF93)
+                .backgroundColor('0xF9CF93')
                 .width('80%')
                 .height('23%')
                 .textAlign(TextAlign.Center)
@@ -67,16 +67,16 @@ struct scrollBarMarginGrid {
       .scrollBarWidth(20)
       .width('90%')
       .height('50%')
-      
-      
-      
-      
+      // .scrollBarMargin({
+      //   start: LengthMetrics.px(40),
+      //   end: LengthMetrics.vp(20)
+      // })
       .edgeEffect(EdgeEffect.Spring)
       .direction(Direction.Ltr)
       .border({
         color: Color.Red,
         width: 4
       })
-    }.backgroundColor(0xDCDCDC)
+    }.backgroundColor('0xDCDCDC')
   }
 }

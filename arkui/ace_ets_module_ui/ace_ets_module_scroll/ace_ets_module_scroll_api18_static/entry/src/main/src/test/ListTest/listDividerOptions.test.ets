@@ -12,32 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
   Button,
   ButtonAttribute,
   ClickEvent,
+  Column,
+  Entry,
   Image,
   ImageFit,
   Scroller,
+  Text,
+  TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test.ets';
+import { startAbility, UtilsTest } from '../Util.test.ets';
 
 export default function listDividerOptions() {
   describe('listDividerOptions', () => {
@@ -62,8 +61,6 @@ export default function listDividerOptions() {
         if (!("listDividerOptions" == pages.name)) {
           console.info("get listDividerOptions pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push listDividerOptions page error:" + err);
@@ -72,14 +69,14 @@ export default function listDividerOptions() {
 
     });
 
-
+    
     /*
-     * @tc.number    listDividerOptions_static_0100
-     * @tc.name      listDividerOptions_static_0100
-     * @tc.desc      listDividerOptions_static_0100
-     * @tc.level     2
+     * @tc.number   listDividerOptions_static_0100
+     * @tc.name     listDividerOptions_static_0100
+     * @tc.desc     listDividerOptions_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('listDividerOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('listDividerOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[listDividerOptions_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -94,14 +91,14 @@ export default function listDividerOptions() {
       console.info("[listDividerOptions_static_0100] divider: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider')));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("List");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('strokeWidth'))
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("List");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('strokeWidth'))
         .assertEqual("2.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('startMargin'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
         .assertEqual("10.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('endMargin'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('endMargin'))
         .assertEqual("10.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getElement('color'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('color'))
         .assertEqual("#FF0000FF");
       console.info('[listDividerOptions_static_0100] END');
       done();

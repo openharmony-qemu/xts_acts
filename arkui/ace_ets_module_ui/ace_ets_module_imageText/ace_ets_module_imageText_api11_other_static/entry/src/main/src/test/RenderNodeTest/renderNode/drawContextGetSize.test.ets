@@ -67,16 +67,15 @@ export default function drawContextGetSizeTest() {
           // console.info("push drawContextGetSizeTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push drawContextGetSizeTest page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   drawContextGetSizeTest_static_0100
      * @tc.name     drawContextGetSizeTest_static_0100
      * @tc.desc     drawContextGetSizeTest_static_0100

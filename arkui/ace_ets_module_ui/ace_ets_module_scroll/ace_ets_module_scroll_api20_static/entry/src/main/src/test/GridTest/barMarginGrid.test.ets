@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -53,14 +53,13 @@ export default function barMarginGrid() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get barMarginGrid state pages:" + JSON.stringify(pages));
-        if (!("barMarginGrid" == pages.name)) {
+        if (!("MainAbility/pages/Grid/barMarginGrid" == pages.name)) {
           console.info("get barMarginGrid pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push barMarginGrid page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push barMarginGrid page error:" + err);
@@ -68,36 +67,28 @@ export default function barMarginGrid() {
       console.info("barMarginGrid beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
+    
     /*
-     * @tc.number    barMarginGrid_static_0100
-     * @tc.name      barMarginGrid_static_0100
-     * @tc.desc      barMarginGrid_static_0100
-     * @tc.level     2
+     * @tc.number   barMarginGrid_static_0100
+     * @tc.name     barMarginGrid_static_0100
+     * @tc.desc     barMarginGrid_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('barMarginGrid_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barMarginGrid_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barMarginGrid_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('grid_bar_margin');
-      console.info("[barMarginGrid_static_0100] $type: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$type')));
-      console.info("[barMarginGrid_static_0100] $attrs: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
+      console.info("[barMarginGrid_static_0100] $type: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$type')));
+      console.info("[barMarginGrid_static_0100] $attrs: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[barMarginGrid_static_0100] scrollBarMargin: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarMargin')));
-      console.info("[barMarginGrid_static_0100] start: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('scrollBarMargin')
-        .getElement('start')));
-      console.info("[barMarginGrid_static_0100] end: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('scrollBarMargin')
-        .getElement('end')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("Grid");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarMargin'))
-        .assertEqual("ScrollBarMargin start: 40.00px, end: 20.00vp");
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Grid");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarMargin')).assertEqual("ScrollBarMargin start: 40.00px, end: 20.00vp");
       console.info('[barMarginGrid_static_0100] END');
       done();
     });

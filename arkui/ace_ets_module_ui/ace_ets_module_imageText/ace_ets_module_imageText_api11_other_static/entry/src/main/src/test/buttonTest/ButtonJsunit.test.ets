@@ -62,7 +62,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Color, FontWeight, ButtonType, FontStyle } from '@ohos.arkui.component';
+import { Color, FontWeight, ButtonType, FontStyle, $r } from '@ohos.arkui.component';
 
 
 let domain: Int = 0x0000;
@@ -98,15 +98,14 @@ export default function buttonJsunit() {
           // console.info("push buttonJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push buttonJsunit page error:" + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   buttonJsunit_static_0100
      * @tc.name     buttonJsunit_static_0100
      * @tc.desc     buttonJsunit_static_0100
@@ -130,8 +129,7 @@ it('buttonJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonJsunit_static_0200
      * @tc.name     buttonJsunit_static_0200
      * @tc.desc     buttonJsunit_static_0200
@@ -150,8 +148,26 @@ it('buttonJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<v
     });
 
 
-    
-/*
+    /*
+     * @tc.number   buttonJsunit_static_0300
+     * @tc.name     buttonJsunit_static_0300
+     * @tc.desc     buttonJsunit_static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('buttonJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('buttonJsunitUITest_0300 START');
+      await CommonFunc.sleep(1000);
+      // 动态修改Button组件的属性,设置为非法值
+      AppStorage.get<MessageManager<ButtonType | boolean | string | Color | FontStyle | FontWeight>>("messageManager")!.notify({ name: 'bttype', value: '5' });
+      await CommonFunc.sleep(500);
+      let strJson = inspector.getInspectorByKey('btok');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[buttonJsunit_static_0300'] component obj is: " + obj.getElement('$attrs').getString('type'));
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('ButtonType.ROUNDED_RECTANGLE');
+      done();
+    });
+
+    /*
      * @tc.number   buttonJsunit_static_0400
      * @tc.name     buttonJsunit_static_0400
      * @tc.desc     buttonJsunit_static_0400
@@ -168,9 +184,8 @@ it('buttonJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<v
       expect(isClick).assertFalse();
       done();
     });
-    
-    
-/*
+
+    /*
      * @tc.number   buttonJsunit_static_0500
      * @tc.name     buttonJsunit_static_0500
      * @tc.desc     buttonJsunit_static_0500
@@ -191,8 +206,7 @@ it('buttonJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<v
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonJsunit_static_0600
      * @tc.name     buttonJsunit_static_0600
      * @tc.desc     buttonJsunit_static_0600
@@ -223,10 +237,42 @@ it('buttonJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<v
       done();
     });
 
-    
+    /*
+     * @tc.number   buttonJsunit_static_0700
+     * @tc.name     buttonJsunit_static_0700
+     * @tc.desc     buttonJsunit_static_0700
+     * @tc.level    Level.LEVEL1
+     */
+it('buttonJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      // buton 通用字体非法属性判断
+      console.info('buttonJsunitUITest_0700 START');
+      await CommonFunc.sleep(1000);
+      AppStorage.get<MessageManager<ButtonType | boolean | string | Color | FontStyle | FontWeight>>("messageManager")!.notify({ name: 'fontSize', value: '-200' });
+      await CommonFunc.sleep(200);
+      AppStorage.get<MessageManager<ButtonType | boolean | string | Color | FontStyle | FontWeight>>("messageManager")!.notify({ name: 'fontColor', value: "#ff" });
+      await CommonFunc.sleep(200);
+      AppStorage.get<MessageManager<ButtonType | boolean | string | Color | FontStyle | FontWeight>>("messageManager")!.notify({ name: 'fontFamily', value: '233' });
+      await CommonFunc.sleep(200);
+      AppStorage.get<MessageManager<ButtonType | boolean | string | Color | FontStyle | FontWeight>>("messageManager")!.notify({ name: 'fontStyle', value: '4444' });
+      await CommonFunc.sleep(200);
+      AppStorage.get<MessageManager<ButtonType | boolean | string | Color | FontStyle | FontWeight>>("messageManager")!.notify({ name: 'fontWeight', value: '-20' });
+      await CommonFunc.sleep(200);
+      let strJson = inspector.getInspectorByKey('btok');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[buttonJsunit_static_0700'] component obj is: " + obj.getElement('$attrs').getString("fontSize") + obj.getElement('$attrs').getString('fontColor') +
+      obj.getElement('$attrs').getString('fontFamily') + obj.getElement('$attrs').getString('fontStyle') + obj.getElement('$attrs').getString('fontWeight'));
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      let resourceSize = uiContext.getHostContext()!.resourceManager.getDouble($r('sys.float.ohos_id_text_size_body1').id)
+      console.info("[TextInputPageJsunit_0200] size: " + uiContext.px2fp(resourceSize));
+      expect(obj.getElement('$attrs').getString("fontSize")).assertEqual('' + uiContext.px2fp(resourceSize) + '.00fp');
+      expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFFFF');
+      expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual('233');
+      expect(obj.getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Normal');
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Normal');
+      done();
+    });
 
-    
-/*
+    /*
      * @tc.number   buttonJsunit_static_0800
      * @tc.name     buttonJsunit_static_0800
      * @tc.desc     buttonJsunit_static_0800

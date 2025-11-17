@@ -74,7 +74,7 @@ export default function progressJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get progress state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Progress/progress3" == pages.name)) {
+        if (!("progress3" == pages.name)) {
           console.info("get progress pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -82,7 +82,7 @@ export default function progressJsunit() {
           // console.info("push progress page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push progress page error " + err);
       }
 
@@ -93,8 +93,7 @@ export default function progressJsunit() {
       console.info("progress after each called");
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_100
      * @tc.name     testProgress_static_100
      * @tc.desc     testProgress_static_100
@@ -106,18 +105,8 @@ it('testProgress_static_100', Level.LEVEL1, async (done: () => void): Promise<vo
       let strJson1 = inspector.getInspectorByKey('LPValue');
       console.info("testProgress_static_100 component objLP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": 100
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 164,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_100 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value', 100);
+      } catch (err:Error) {
         console.log("testProgress_static_100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -129,8 +118,8 @@ it('testProgress_static_100', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info('testProgress_static_100 END');
       done();
     });
-    
-/*
+
+    /*
      * @tc.number   testProgress_static_200
      * @tc.name     testProgress_static_200
      * @tc.desc     testProgress_static_200
@@ -146,8 +135,7 @@ it('testProgress_static_200', Level.LEVEL1, async (done: () => void): Promise<vo
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_300
      * @tc.name     testProgress_static_300
      * @tc.desc     testProgress_static_300
@@ -159,18 +147,8 @@ it('testProgress_static_300', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info("testProgress_static_300 component objEP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": 100
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 165,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_300 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value', 100);
+      } catch (err:Error) {
         console.log("testProgress_static_300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -181,8 +159,8 @@ it('testProgress_static_300', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info('testProgress_static_300 END');
       done();
     });
-    
-/*
+
+    /*
      * @tc.number   testProgress_static_400
      * @tc.name     testProgress_static_400
      * @tc.desc     testProgress_static_400
@@ -198,8 +176,7 @@ it('testProgress_static_400', Level.LEVEL1, async (done: () => void): Promise<vo
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_500
      * @tc.name     testProgress_static_500
      * @tc.desc     testProgress_static_500
@@ -211,18 +188,8 @@ it('testProgress_static_500', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info("testProgress_static_500 component objCP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": 100
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 166,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_500 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value', 100);
+      } catch (err:Error) {
         console.log("testProgress_static_500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -233,8 +200,8 @@ it('testProgress_static_500', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info('testProgress_static_500 END');
       done();
     });
-    
-/*
+
+    /*
      * @tc.number   testProgress_static_600
      * @tc.name     testProgress_static_600
      * @tc.desc     testProgress_static_600
@@ -250,8 +217,7 @@ it('testProgress_static_600', Level.LEVEL1, async (done: () => void): Promise<vo
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_700
      * @tc.name     testProgress_static_700
      * @tc.desc     testProgress_static_700
@@ -263,18 +229,8 @@ it('testProgress_static_700', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info("testProgress_static_700 component objLP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": 0
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 167,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_700 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value', 0);
+      } catch (err:Error) {
         console.log("testProgress_static_700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -286,8 +242,7 @@ it('testProgress_static_700', Level.LEVEL1, async (done: () => void): Promise<vo
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_800
      * @tc.name     testProgress_static_800
      * @tc.desc     testProgress_static_800
@@ -299,18 +254,8 @@ it('testProgress_static_800', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info("testProgress_static_800 component objEP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": 0
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 168,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_800 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value', 0);
+      } catch (err:Error) {
         console.log("testProgress_static_800 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -322,8 +267,7 @@ it('testProgress_static_800', Level.LEVEL1, async (done: () => void): Promise<vo
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_900
      * @tc.name     testProgress_static_900
      * @tc.desc     testProgress_static_900
@@ -335,18 +279,8 @@ it('testProgress_static_900', Level.LEVEL1, async (done: () => void): Promise<vo
       console.info("testProgress_static_900 component objCP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": 0
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 169,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_900 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value', 0);
+      } catch (err:Error) {
         console.log("testProgress_static_900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -358,8 +292,7 @@ it('testProgress_static_900', Level.LEVEL1, async (done: () => void): Promise<vo
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_1000
      * @tc.name     testProgress_static_1000
      * @tc.desc     testProgress_static_1000
@@ -371,18 +304,8 @@ it('testProgress_static_1000', Level.LEVEL1, async (done: () => void): Promise<v
       console.info("testProgress_static_1000 component objLP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": -5
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1021,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_1000 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value', -5);
+      } catch (err:Error) {
         console.log("testProgress_static_1000 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -395,8 +318,7 @@ it('testProgress_static_1000', Level.LEVEL1, async (done: () => void): Promise<v
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testProgress_static_1100
      * @tc.name     testProgress_static_1100
      * @tc.desc     testProgress_static_1100
@@ -408,18 +330,8 @@ it('testProgress_static_1100', Level.LEVEL1, async (done: () => void): Promise<v
       console.info("testProgress_static_1100 component objLP is: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('value'));
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "value": 121212121
-          }as Record<string, undefined|null|Object>
-        }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1022,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("testProgress_static_1100 start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+        AppStorage.setOrCreate<number>('value',121212121);
+      } catch (err:Error) {
         console.log("testProgress_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

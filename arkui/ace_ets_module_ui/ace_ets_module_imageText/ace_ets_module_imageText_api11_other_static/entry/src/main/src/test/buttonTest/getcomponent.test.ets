@@ -96,7 +96,7 @@ export default function ActsgetcomponentTest() {
           // console.info("push getcomponent page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push getcomponent page error: " + err);
       }
 
@@ -111,8 +111,7 @@ export default function ActsgetcomponentTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    
-/*
+    /*
      * @tc.number   ArkUX_Get_component_static_0010
      * @tc.name     ArkUX_Get_component_static_0010
      * @tc.desc     ArkUX_Get_component_static_0010

@@ -15,16 +15,16 @@
 import { LengthMetrics } from '@ohos.arkui.node'
 import { MyDataSource } from '../MyDataSource'
 import {
-  Entry,
-  Text,
-  LazyForEach,
+  ClickEvent,
+  Color,
   Column,
   Component,
+  Entry,
+  LazyForEach,
   LazyVGridLayout,
-  ClickEvent,
-  WaterFlow,
+  Text,
   TextAlign,
-  Color
+  WaterFlow
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 

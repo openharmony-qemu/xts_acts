@@ -96,16 +96,15 @@ export default function transformTest() {
           // console.info("push transformTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push transformTest page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   transformTest_static_0100
      * @tc.name     transformTest_static_0100
      * @tc.desc     transformTest_static_0100

@@ -84,10 +84,8 @@ export default function buttonTest() {
       console.info("select beforeEach start");
     })
 
-    //pass过 全注释
     
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0100
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0100
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0100
@@ -115,10 +113,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0100', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-  
+
     
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0200
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0200
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0200
@@ -146,10 +143,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0200', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-  
+
     
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0300
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0300
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0300
@@ -177,10 +173,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0300', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0400
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0400
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0400
@@ -208,10 +203,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0400', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0500
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0500
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0500
@@ -239,10 +233,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0500', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0600
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0600
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0600
@@ -270,10 +263,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0600', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0700
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0700
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0700
@@ -301,10 +293,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0700', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0800
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0800
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0800
@@ -332,10 +323,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0800', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_0900
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_0900
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_0900
@@ -363,10 +353,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_0900', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1000
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1000
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1000
@@ -394,10 +383,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1000', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1100
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1100
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1100
@@ -425,10 +413,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1100', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1200
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1200
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1200
@@ -456,10 +443,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1200', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1300
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1300
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1300
@@ -487,10 +473,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1300', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1400
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1400
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1400
@@ -518,10 +503,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1400', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1500
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1500
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1500
@@ -549,10 +533,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1500', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1600
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1600
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1600
@@ -580,10 +563,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1600', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1700
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1700
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1700
@@ -612,10 +594,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1700', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1800
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1800
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1800
@@ -643,10 +624,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1800', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-	
-/*
+	/*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_1900
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_1900
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_1900
@@ -674,10 +654,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_1900', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-	
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2000
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2000
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2000
@@ -707,8 +686,7 @@ it('ArkUX_Stage_Button_LabelStyle_static_2000', Level.LEVEL1, async (done: () =>
     });
 	
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2100
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2100
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2100
@@ -738,8 +716,7 @@ it('ArkUX_Stage_Button_LabelStyle_static_2100', Level.LEVEL1, async (done: () =>
     });
 
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2200
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2200
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2200
@@ -767,10 +744,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_2200', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-    
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2300
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2300
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2300
@@ -798,10 +774,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_2300', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-    
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2400
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2400
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2400
@@ -829,10 +804,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_2400', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-    
+
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2500
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2500
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2500
@@ -860,10 +834,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_2500', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-    
+
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2600
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2600
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2600
@@ -893,8 +866,7 @@ it('ArkUX_Stage_Button_LabelStyle_static_2600', Level.LEVEL1, async (done: () =>
     });
 	
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2700
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2700
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2700
@@ -924,8 +896,7 @@ it('ArkUX_Stage_Button_LabelStyle_static_2700', Level.LEVEL1, async (done: () =>
     });
 	
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2800
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2800
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2800
@@ -955,8 +926,7 @@ it('ArkUX_Stage_Button_LabelStyle_static_2800', Level.LEVEL1, async (done: () =>
     });
 
 	  
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_2900
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_2900
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_2900
@@ -984,10 +954,9 @@ it('ArkUX_Stage_Button_LabelStyle_static_2900', Level.LEVEL1, async (done: () =>
         done();
       },500)
     });
-    
+
   	
-    
-/*
+    /*
      * @tc.number   ArkUX_Stage_Button_LabelStyle_static_3000
      * @tc.name     ArkUX_Stage_Button_LabelStyle_static_3000
      * @tc.desc     ArkUX_Stage_Button_LabelStyle_static_3000

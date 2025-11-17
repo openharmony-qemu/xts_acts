@@ -67,16 +67,15 @@ export default function keyframeTest() {
           // console.info("push keyframeTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push keyframeTest page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   keyframeTest_static_0100
      * @tc.name     keyframeTest_static_0100
      * @tc.desc     keyframeTest_static_0100

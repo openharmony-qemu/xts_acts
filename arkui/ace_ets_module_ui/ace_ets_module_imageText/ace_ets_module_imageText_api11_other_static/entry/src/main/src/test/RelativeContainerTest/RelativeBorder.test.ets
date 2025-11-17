@@ -77,7 +77,7 @@ export default function RelativeBorder() {
           // console.info("push RelativeBorder page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeBorder page error:" + err);
       }
       console.info("RelativeBorder foreEach end");
@@ -88,10 +88,9 @@ export default function RelativeBorder() {
       console.info("RelativeBorder after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeBorder_static_001
      * @tc.name     RelativeBorder_static_001
      * @tc.desc     RelativeBorder_static_001

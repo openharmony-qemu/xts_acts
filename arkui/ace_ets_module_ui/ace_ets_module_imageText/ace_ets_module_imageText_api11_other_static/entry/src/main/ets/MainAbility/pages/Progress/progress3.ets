@@ -42,77 +42,19 @@ import {
   RowOptions,
   ProgressType
 } from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ProgressExample {
-  @State value: number = 20
-  @State total: number = 100
+  @StoragePropRef('value') value: number = 20
+  @StoragePropRef('total') total: number = 100
   @State style: ProgressStyle = ProgressStyle.Linear
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info("progress page stateChangCallBack");
-    if (eventData != null) {
-      console.info("progress page state change called:" + JSON.stringify(eventData));
-      if ((eventData.data as ESObject)?.getProperty('value') != null) {
-        console.log('value============' + (eventData.data as ESObject).getProperty('value').toNumber())
-        this.value = (eventData.data as ESObject).getProperty('value').toNumber();
-      }
-      if ((eventData.data as ESObject)?.getProperty('total') != null) {
-        this.total = (eventData.data as ESObject).getProperty('total').toNumber();
-      }
-    }
-  }
 
   onPageShow() {
     console.info('progress page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 164,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 165,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack)
-
-    let stateChangeEventThree: events_emitter.InnerEvent = {
-      eventId: 166,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventThree, this.stateChangCallBack)
-
-    let stateChangeEventFour: events_emitter.InnerEvent = {
-      eventId: 167,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventFour, this.stateChangCallBack)
-
-    let stateChangeEventFive: events_emitter.InnerEvent = {
-      eventId: 168,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventFive, this.stateChangCallBack)
-
-    let stateChangeEventSix: events_emitter.InnerEvent = {
-      eventId: 169,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventSix, this.stateChangCallBack)
-    let stateChangeEventseven: events_emitter.InnerEvent = {
-      eventId: 1021,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventseven, this.stateChangCallBack)
-    let stateChangeEventeight: events_emitter.InnerEvent = {
-      eventId: 1022,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventeight, this.stateChangCallBack)
   }
 
   build() {

@@ -89,7 +89,7 @@ export default function buttonControlTest() {
           // console.info("push buttonControlTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push buttonControlSize page error:" + err);
       }
       console.info("buttonControlSize beforeEach end");
@@ -102,8 +102,7 @@ export default function buttonControlTest() {
 
     
 
-    
-/*
+    /*
      * @tc.number   buttonControlSize_static_0100
      * @tc.name     buttonControlSize_static_0100
      * @tc.desc     buttonControlSize_static_0100

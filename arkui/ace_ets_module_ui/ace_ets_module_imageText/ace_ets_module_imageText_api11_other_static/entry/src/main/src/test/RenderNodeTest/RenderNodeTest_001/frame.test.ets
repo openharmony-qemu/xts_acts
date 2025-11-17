@@ -67,15 +67,14 @@ export default function frame() {
           // console.info("push frame page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push frame page error: " + err);
         expect().assertFail();
       }
 
     });
-
     
-/*
+    /*
      * @tc.number   frame_static_0100
      * @tc.name     frame_static_0100
      * @tc.desc     frame_static_0100
@@ -96,9 +95,8 @@ it('frame_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =>
       console.info('[frame_0100] END');
       done();
     });
-
     
-/*
+    /*
      * @tc.number   frame_static_0200
      * @tc.name     frame_static_0200
      * @tc.desc     frame_static_0200

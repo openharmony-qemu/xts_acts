@@ -64,12 +64,9 @@ import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AnimationStatus, FillMode } from '@ohos.arkui.component';
 
-
-
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
 
 const waitUiReadyMs = 1000;
 
@@ -99,14 +96,14 @@ export default function imageAniamtorJsunit() {
           // console.info("push imageAniamtorJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push imageAniamtorJsunit page error:" + err);
         expect().assertFail();
       }
 
     });
-    
-/*
+
+    /*
      * @tc.number   imageAniamtorJsunit_static_0100
      * @tc.name     imageAniamtorJsunit_static_0100
      * @tc.desc     imageAniamtorJsunit_static_0100
@@ -138,8 +135,7 @@ it('imageAniamtorJsunit_static_0100', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAniamtorJsunit_static_0200
      * @tc.name     imageAniamtorJsunit_static_0200
      * @tc.desc     imageAniamtorJsunit_static_0200
@@ -149,21 +145,19 @@ it('imageAniamtorJsunit_static_0200', Level.LEVEL1, async (done: () => void): Pr
       console.info('[imageAniamtorJsunit_static_0200] START');
       // test the enum of state of animator
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'state', value: AnimationStatus.Running })
+      AppStorage.setOrCreate<AnimationStatus>('state', AnimationStatus.Running);
       await CommonFunc.sleep(800);
       let strJson = inspector.getInspectorByKey('imageAnimator');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[imageAniamtorJsunit_static_0200] component obj is: ' + obj.getElement('$attrs').getString('state'));
       expect(obj.getElement('$attrs').getString('state')).assertEqual('AnimationStatus.Running');
-
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'state', value: AnimationStatus.Paused })
+      AppStorage.setOrCreate<AnimationStatus>('state', AnimationStatus.Paused);
       await CommonFunc.sleep(800);
       let strJson2 = inspector.getInspectorByKey('imageAnimator');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('[imageAniamtorJsunit_static_0200] component obj2 is: ' + obj2.getElement('$attrs').getString('state'));
       expect(obj2.getElement('$attrs').getString('state')).assertEqual('AnimationStatus.Paused');
-
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'state', value: AnimationStatus.Stopped })
+      AppStorage.setOrCreate<AnimationStatus>('state', AnimationStatus.Stopped);
       await CommonFunc.sleep(800);
       let strJson3 = inspector.getInspectorByKey('imageAnimator');
       let obj3 = JSON.parseJsonElement(strJson3);
@@ -173,8 +167,7 @@ it('imageAniamtorJsunit_static_0200', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAniamtorJsunit_static_0300
      * @tc.name     imageAniamtorJsunit_static_0300
      * @tc.desc     imageAniamtorJsunit_static_0300
@@ -184,7 +177,8 @@ it('imageAniamtorJsunit_static_0300', Level.LEVEL1, async (done: () => void): Pr
       console.info('imageAniamtorJsunit_static_0300 START');
       // test the illegal value of imageAnimator
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'state', value: 4 })
+      //1.2强类型，不能赋值state数字
+      AppStorage.setOrCreate<AnimationStatus>('state', AnimationStatus.Initial);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('imageAnimator');
       let obj = JSON.parseJsonElement(strJson);
@@ -193,8 +187,7 @@ it('imageAniamtorJsunit_static_0300', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAniamtorJsunit_static_0400
      * @tc.name     imageAniamtorJsunit_static_0400
      * @tc.desc     imageAniamtorJsunit_static_0400
@@ -204,21 +197,19 @@ it('imageAniamtorJsunit_static_0400', Level.LEVEL1, async (done: () => void): Pr
       console.info('imageAniamtorJsunit_static_0400 START');
       // test the value of FillMode
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'fillMode', value: FillMode.Forwards })
+      AppStorage.setOrCreate<FillMode>('fillMode', FillMode.Forwards);
       await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('imageAnimator');
       let obj = JSON.parseJsonElement(strJson);
       console.info('imageAniamtorJsunit_static_0400 component obj is: ' + obj.getElement('$attrs').getString('fillMode'));
       expect(obj.getElement('$attrs').getString('fillMode')).assertEqual('FillMode.Forwards');
-
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'fillMode', value: FillMode.Backwards })
+      AppStorage.setOrCreate<FillMode>('fillMode', FillMode.Backwards);
       await CommonFunc.sleep(5000);
       let strJson2 = inspector.getInspectorByKey('imageAnimator');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('imageAniamtorJsunit_static_0400 component obj2 is: ' + obj2.getElement('$attrs').getString('fillMode'));
       expect(obj2.getElement('$attrs').getString('fillMode')).assertEqual('FillMode.Backwards');
-
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'fillMode', value: FillMode.Both })
+      AppStorage.setOrCreate<FillMode>('fillMode', FillMode.Both);
       await CommonFunc.sleep(5000);
       let strJson3 = inspector.getInspectorByKey('imageAnimator');
       let obj3 = JSON.parseJsonElement(strJson3);
@@ -227,8 +218,7 @@ it('imageAniamtorJsunit_static_0400', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAniamtorJsunit_static_0500
      * @tc.name     imageAniamtorJsunit_static_0500
      * @tc.desc     imageAniamtorJsunit_static_0500
@@ -238,7 +228,8 @@ it('imageAniamtorJsunit_static_0500', Level.LEVEL1, async (done: () => void): Pr
       console.info('imageAniamtorJsunit_static_0500 START');
       // test the illegal value of imageAnimator
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'fillMode', value: 8 })
+      //1.2强类型，不能赋值state数字
+      AppStorage.setOrCreate<FillMode>('fillMode', FillMode.Forwards);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('imageAnimator');
       let obj = JSON.parseJsonElement(strJson);
@@ -247,8 +238,7 @@ it('imageAniamtorJsunit_static_0500', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAniamtorJsunit_static_0600
      * @tc.name     imageAniamtorJsunit_static_0600
      * @tc.desc     imageAniamtorJsunit_static_0600
@@ -258,13 +248,13 @@ it('imageAniamtorJsunit_static_0600', Level.LEVEL1, async (done: () => void): Pr
       console.info('[imageAniamtorJsunit_static_0600] START');
       // test the boolean attribute  of imageAnimator
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'duration', value: 700 })
+      AppStorage.setOrCreate<int>('duration', 700);
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'reverse', value: true })
+      AppStorage.setOrCreate<boolean>('reverse', true);
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'fixedSize', value: false })
+      AppStorage.setOrCreate<boolean>('fixedSize', false);
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager")!.notify({ name: 'iterations', value: 2 })
+      AppStorage.setOrCreate<int>('iterations', 2);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('imageAnimator');
       let obj = JSON.parseJsonElement(strJson);
@@ -279,8 +269,7 @@ it('imageAniamtorJsunit_static_0600', Level.LEVEL1, async (done: () => void): Pr
     });
 
 
-    
-/*
+    /*
      * @tc.number   imageAniamtorJsunit_static_0700
      * @tc.name     imageAniamtorJsunit_static_0700
      * @tc.desc     imageAniamtorJsunit_static_0700
@@ -311,8 +300,7 @@ it('imageAniamtorJsunit_static_0700', Level.LEVEL1, async (done: () => void): Pr
     });
 
 
-    
-/*
+    /*
      * @tc.number   imageAniamtorJsunit_static_0800
      * @tc.name     imageAniamtorJsunit_static_0800
      * @tc.desc     imageAniamtorJsunit_static_0800

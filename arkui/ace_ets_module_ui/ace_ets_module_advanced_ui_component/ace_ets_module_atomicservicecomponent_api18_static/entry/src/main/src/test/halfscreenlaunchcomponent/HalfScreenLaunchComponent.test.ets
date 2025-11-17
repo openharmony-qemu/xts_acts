@@ -62,15 +62,14 @@ export default function halfscreenlaunchcomponentTest() {
       console.info('chipDirectionTest after each called');
     });
 
-    /**
-     * @tc.number halfscreenlaunchcomponen
-     * @tc.name halfscreenlaunchcomponenTest_0100
-     * @tc.desc Test halfscreenlaunchcomponen
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   halfscreenlaunchcomponenTest_0100
+     * @tc.name     halfscreenlaunchcomponenTest_0100
+     * @tc.desc     halfscreenlaunchcomponenTest_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('halfscreenlaunchcomponenTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('halfscreenlaunchcomponenTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[halfscreenlaunchcomponenTest_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

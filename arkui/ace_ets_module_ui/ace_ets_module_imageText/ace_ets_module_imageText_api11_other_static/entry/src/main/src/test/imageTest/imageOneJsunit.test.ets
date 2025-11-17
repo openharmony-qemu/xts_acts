@@ -96,7 +96,7 @@ export default function imageOneJsunit() {
           // console.info("push imageOneJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push imageOneJsunit page error:" + err);
         expect().assertFail();
       }
@@ -104,8 +104,7 @@ export default function imageOneJsunit() {
     });
 
 
-    
-/*
+    /*
      * @tc.number   imageOneJsunit_static_0100
      * @tc.name     imageOneJsunit_static_0100
      * @tc.desc     imageOneJsunit_static_0100
@@ -132,8 +131,7 @@ it('imageOneJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageOneJsunit_static_0200
      * @tc.name     imageOneJsunit_static_0200
      * @tc.desc     imageOneJsunit_static_0200
@@ -174,8 +172,7 @@ it('imageOneJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
     });
 
 
-    
-/*
+    /*
      * @tc.number   imageOneJsunit_static_0300
      * @tc.name     imageOneJsunit_static_0300
      * @tc.desc     imageOneJsunit_static_0300
@@ -194,8 +191,7 @@ it('imageOneJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageOneJsunit_static_0400
      * @tc.name     imageOneJsunit_static_0400
      * @tc.desc     imageOneJsunit_static_0400
@@ -249,8 +245,7 @@ it('imageOneJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageOneJsunit_static_0500
      * @tc.name     imageOneJsunit_static_0500
      * @tc.desc     imageOneJsunit_static_0500
@@ -270,8 +265,7 @@ it('imageOneJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageOneJsunit_static_0600
      * @tc.name     imageOneJsunit_static_0600
      * @tc.desc     imageOneJsunit_static_0600
@@ -313,5 +307,24 @@ it('imageOneJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
+    //异常参数undefined 注释掉
+    /*
+     * @tc.number   imageOneJsunit_static_0700
+     * @tc.name     imageOneJsunit_static_0700
+     * @tc.desc     imageOneJsunit_static_0700
+     * @tc.level    Level.LEVEL1
+     */
+it('imageOneJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('imageOneJsunit_static_0700 START');
+      await CommonFunc.sleep(1000);
+      // test the illegal enum of ImageRepeat
+      AppStorage.get<MessageManager<string | ImageFit | ImageRepeat | undefined>>("messageManager")!.notify({ name: 'objectRepeat', value: undefined })
+      await CommonFunc.sleep(3000);
+      let strJson = inspector.getInspectorByKey('repeat');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('textimageOneJsunit_static_0700 component obj is: ' + obj.getElement('$attrs').getString("objectRepeat"));
+      expect(obj.getElement('$attrs').getString("objectRepeat")).assertEqual('ImageRepeat.NoRepeat');
+      done();
+    });
   })
 }

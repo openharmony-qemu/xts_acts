@@ -96,16 +96,15 @@ export default function translationTest() {
           // console.info("push translationTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push translationTest page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   translationTest_static_0100
      * @tc.name     translationTest_static_0100
      * @tc.desc     translationTest_static_0100

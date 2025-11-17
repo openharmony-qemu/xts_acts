@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -53,29 +53,31 @@ export default function barMarginScroll() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get barMarginScroll state pages:" + JSON.stringify(pages));
-        if (!("barMarginScroll" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/barMarginScroll" == pages.name)) {
           console.info("get barMarginScroll pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push barMarginScroll page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push barMarginScroll page error:" + err);
       }
       console.info("barMarginScroll beforeEach end");
     });
-
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    barMarginScroll_static_0100
-     * @tc.name      barMarginScroll_static_0100
-     * @tc.desc      barMarginScroll_static_0100
-     * @tc.level     2
+     * @tc.number   barMarginScroll_static_0100
+     * @tc.name     barMarginScroll_static_0100
+     * @tc.desc     barMarginScroll_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('barMarginScroll_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barMarginScroll_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barMarginScroll_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('scroll_bar_margin');
@@ -93,8 +95,8 @@ export default function barMarginScroll() {
         .getElement('$attrs')
         .getElement('scrollBarMargin')
         .getElement('end')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("Scroll");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarMargin'))
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Scroll");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarMargin'))
         .assertEqual("ScrollBarMargin start: 40.00px, end: 20.00vp");
       console.info('[barMarginScroll_static_0100] END');
       done();

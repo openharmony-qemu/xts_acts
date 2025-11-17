@@ -94,7 +94,7 @@ export default function ButtonHoverTest() {
           // console.info("push hover page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push hover page error: " + err);
       }
 
@@ -109,8 +109,7 @@ export default function ButtonHoverTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    
-/*
+    /*
      * @tc.number   ArkUX_Hover_stoppropagation_static_0100
      * @tc.name     ArkUX_Hover_stoppropagation_static_0100
      * @tc.desc     ArkUX_Hover_stoppropagation_static_0100
@@ -124,7 +123,7 @@ it('ArkUX_Hover_stoppropagation_static_0100', Level.LEVEL0, async (done: () => v
           console.info('ArkUX_Hover_stoppropagation_0100 START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getElement("$type").asString()).assertEqual('Button');
           console.info('ArkUX_Hover_stoppropagation_0100 END ');
-        } catch (err) {
+        } catch (err:Error) {
           expect().assertFail()
           console.info('ArkUX_Hover_stoppropagation_0100 ERR  ' + JSON.stringify(err));
         }

@@ -98,15 +98,14 @@ export default function imageTwoJsunit() {
           // console.info("push imageTwoJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push imageTwoJsunit page error:" + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   imageTwoJsunit_static_0100
      * @tc.name     imageTwoJsunit_static_0100
      * @tc.desc     imageTwoJsunit_static_0100
@@ -135,8 +134,7 @@ it('imageTwoJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageTwoJsunit_static_0200
      * @tc.name     imageTwoJsunit_static_0200
      * @tc.desc     imageTwoJsunit_static_0200
@@ -155,9 +153,27 @@ it('imageTwoJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
+    //异常参数undefined 注释
+    /*
+     * @tc.number   imageTwoJsunit_static_0300
+     * @tc.name     imageTwoJsunit_static_0300
+     * @tc.desc     imageTwoJsunit_static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('imageTwoJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('imageTwoJsunit_0300 START');
+      await CommonFunc.sleep(1000);
+      // modify the image rendermode
+      AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined>>("messageManager")!.notify({ name: 'renderMode', value: undefined })
+      await CommonFunc.sleep(200);
+      let strJson = inspector.getInspectorByKey('image1');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('imageTwoJsunit_0300 component obj is: ' + obj.getElement('$attrs').getString("renderMode"));
+      expect(obj.getElement('$attrs').getString("renderMode")).assertEqual('ImageRenderMode.Original');
+      done();
+    });
 
-    
-/*
+    /*
      * @tc.number   imageTwoJsunit_static_0400
      * @tc.name     imageTwoJsunit_static_0400
      * @tc.desc     imageTwoJsunit_static_0400
@@ -199,9 +215,27 @@ it('imageTwoJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
+    // 异常参数undefined
+    /*
+     * @tc.number   imageTwoJsunit_static_0500
+     * @tc.name     imageTwoJsunit_static_0500
+     * @tc.desc     imageTwoJsunit_static_0500
+     * @tc.level    Level.LEVEL1
+     */
+it('imageTwoJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('imageTwoJsunit_0500 START');
+      await CommonFunc.sleep(1000);
+      // test the enum of interpolation
+      AppStorage.get<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined>>("messageManager")!.notify({ name: 'interpolation', value: undefined })
+      await CommonFunc.sleep(200);
+      let strJson = inspector.getInspectorByKey('image1');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info('imageTwoJsunit_0500  component obj is: ' + obj.getElement('$attrs').getString("interpolation"));
+      expect(obj.getElement('$attrs').getString("interpolation")).assertEqual('ImageInterpolation.None');
+      done();
+    });
 
-    
-/*
+    /*
      * @tc.number   imageTwoJsunit_static_0600
      * @tc.name     imageTwoJsunit_static_0600
      * @tc.desc     imageTwoJsunit_static_0600

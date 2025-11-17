@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType, afterAll } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -35,7 +35,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -45,7 +45,6 @@ export default function iconTabs() {
   describe('iconTabs', () => {
     beforeAll(() => {
       console.info("iconTabs beforeEach start");
-
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -58,29 +57,29 @@ export default function iconTabs() {
         url: "MainAbility/pages/Tabs/iconTabs",
       }
       try {
-        iconTabs.clear();
         let pages = iconTabs.getState();
         console.info("get iconTabs state pages:" + JSON.stringify(pages));
-        if (!("iconTabs" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/iconTabs" == pages.name)) {
           console.info("get iconTabs pages.name:" + JSON.stringify(pages.name));
           iconTabs.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push iconTabs page error:" + err);
       }
       console.info("iconTabs beforeEach end");
     });
-
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    iconTabs_static_0100
-     * @tc.name      iconTabs_static_0100
-     * @tc.desc      iconTabs_static_0100
-     * @tc.level     2
+     * @tc.number   iconTabs_static_0100
+     * @tc.name     iconTabs_static_0100
+     * @tc.desc     iconTabs_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('iconTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('iconTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[iconTabs_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -92,7 +91,7 @@ export default function iconTabs() {
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedMaxCount')));
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedMaxCount').getString('count'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedMaxCount').getDouble('count'))
         .assertEqual(2);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedMaxCount').getString('mode'))
         .assertEqual("TabsCacheMode.CACHE_BOTH_SIDE");
@@ -102,9 +101,9 @@ export default function iconTabs() {
       console.info("[iconTabs_static_0100] TabContent: " +
       JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs')));
       console.info("[iconTabs_static_0100] text: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('text')));
+      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('text')));
       console.info("[iconTabs_static_0100] tabBar: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('tabBar')));
+      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('tabBar')));
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('TabContent');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('text')).assertEqual('green');
@@ -117,7 +116,7 @@ export default function iconTabs() {
       JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs')));
       console.info("[iconTabs_static_0100] cachedMaxCount2: " +
       JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getElement('cachedMaxCount')));
-      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getElement('cachedMaxCount').getString('count'))
+      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getElement('cachedMaxCount').getInteger('count'))
         .assertEqual(2);
       expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getElement('cachedMaxCount').getString('mode'))
         .assertEqual("TabsCacheMode.CACHE_LATEST_SWITCHED");

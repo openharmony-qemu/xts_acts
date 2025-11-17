@@ -77,7 +77,7 @@ export default function RelativeGuideLine2() {
           // console.info("push RelativeGuideLine2 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeGuideLine2 page error:" + err);
       }
       console.info("RelativeGuideLine2 foreEach end");
@@ -88,10 +88,9 @@ export default function RelativeGuideLine2() {
       console.info("RelativeGuideLine2 after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine2_static_001
      * @tc.name     RelativeGuideLine2_static_001
      * @tc.desc     RelativeGuideLine2_static_001
@@ -113,10 +112,9 @@ it('RelativeGuideLine2_static_001', Level.LEVEL3, async (done: () => void): Prom
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine2_static_002
      * @tc.name     RelativeGuideLine2_static_002
      * @tc.desc     RelativeGuideLine2_static_002
@@ -141,10 +139,9 @@ it('RelativeGuideLine2_static_002', Level.LEVEL3, async (done: () => void): Prom
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine2_static_003
      * @tc.name     RelativeGuideLine2_static_003
      * @tc.desc     RelativeGuideLine2_static_003
@@ -173,10 +170,9 @@ it('RelativeGuideLine2_static_003', Level.LEVEL3, async (done: () => void): Prom
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine2_static_004
      * @tc.name     RelativeGuideLine2_static_004
      * @tc.desc     RelativeGuideLine2_static_004

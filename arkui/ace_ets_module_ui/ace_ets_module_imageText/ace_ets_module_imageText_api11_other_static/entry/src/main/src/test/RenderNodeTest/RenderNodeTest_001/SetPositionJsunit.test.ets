@@ -66,7 +66,7 @@ export default function SetPositionJsunit() {
           // console.info("push SetPositionJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push SetPositionJsunit page error:" + err);
       }
       console.info("SetPositionJsunit beforeEach end");
@@ -79,9 +79,8 @@ export default function SetPositionJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   SetPositionJsunit_static_001
      * @tc.name     SetPositionJsunit_static_001
      * @tc.desc     SetPositionJsunit_static_001

@@ -96,15 +96,14 @@ export default function buttonEnabledJsunit() {
           // console.info("push buttonEnabledJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push buttonEnabledJsunit page error: " + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   buttonEnabledJsunit_static_0100
      * @tc.name     buttonEnabledJsunit_static_0100
      * @tc.desc     buttonEnabledJsunit_static_0100
@@ -126,8 +125,7 @@ it('buttonEnabledJsunit_static_0100', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonEnabledJsunit_static_0200
      * @tc.name     buttonEnabledJsunit_static_0200
      * @tc.desc     buttonEnabledJsunit_static_0200
@@ -149,8 +147,7 @@ it('buttonEnabledJsunit_static_0200', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonEnabledJsunit_static_0300
      * @tc.name     buttonEnabledJsunit_static_0300
      * @tc.desc     buttonEnabledJsunit_static_0300
@@ -172,8 +169,7 @@ it('buttonEnabledJsunit_static_0300', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonEnabledJsunit_static_0400
      * @tc.name     buttonEnabledJsunit_static_0400
      * @tc.desc     buttonEnabledJsunit_static_0400
@@ -195,8 +191,7 @@ it('buttonEnabledJsunit_static_0400', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonEnabledJsunit_static_0500
      * @tc.name     buttonEnabledJsunit_static_0500
      * @tc.desc     buttonEnabledJsunit_static_0500
@@ -218,8 +213,7 @@ it('buttonEnabledJsunit_static_0500', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonEnabledJsunit_static_0600
      * @tc.name     buttonEnabledJsunit_static_0600
      * @tc.desc     buttonEnabledJsunit_static_0600
@@ -241,8 +235,7 @@ it('buttonEnabledJsunit_static_0600', Level.LEVEL1, async (done: () => void): Pr
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   buttonEnabledJsunit_static_0700
      * @tc.name     buttonEnabledJsunit_static_0700
      * @tc.desc     buttonEnabledJsunit_static_0700

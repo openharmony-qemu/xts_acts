@@ -50,11 +50,11 @@ struct scrollBarMarginList {
   }
 
   build() {
-    Column() {
+    Column(){
       List({ scroller: this.listScroller }) {
-        ForEach(this.arr, (item1: string, index: int) => {
+        ForEach(this.arr, (item1: string,index:int) => {
           ListItem() {
-            Text('item' + item1)
+            Text('item'  + item1)
               .fontSize(16)
               .width('80%')
               .height('20%')
@@ -68,18 +68,18 @@ struct scrollBarMarginList {
       .scrollBarWidth(20)
       .width('90%')
       .height('50%')
-      
-      
-      
-      
+      // .scrollBarMargin({
+      //   start: LengthMetrics.px(40),
+      //   end: LengthMetrics.vp(20)
+      // })
       .listDirection(Axis.Vertical)
       .edgeEffect(EdgeEffect.Spring)
       .direction(Direction.Ltr)
       .border({
-        color: Color.Red,
-        width: 4
+        color:Color.Red,
+        width:4
       })
-    }.backgroundColor(0xDCDCDC)
+    }.backgroundColor('0xDCDCDC')
 
   }
 }

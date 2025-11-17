@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -53,14 +53,13 @@ export default function canOverGrid() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get canOverGrid state pages:" + JSON.stringify(pages));
-        if (!("canOverGrid" == pages.name)) {
+        if (!("MainAbility/pages/Grid/canOverGrid" == pages.name)) {
           console.info("get canOverGrid pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push canOverGrid page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push canOverGrid page error:" + err);
@@ -68,14 +67,19 @@ export default function canOverGrid() {
       console.info("canOverGrid beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
+    
     /*
-     * @tc.number    canOverGrid_static_0100
-     * @tc.name      canOverGrid_static_0100
-     * @tc.desc      canOverGrid_static_0100
-     * @tc.level     2
+     * @tc.number   canOverGrid_static_0100
+     * @tc.name     canOverGrid_static_0100
+     * @tc.desc     canOverGrid_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverGrid_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverGrid_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverGrid_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -85,27 +89,27 @@ export default function canOverGrid() {
       await CommonFunc.sleep(5000);
       let grid = CommonFunc.getComponentRectOnScreen('canOverScroll_grid');
       let gridItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_grid_0');
-
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[canOverGrid_static_0100] grid.top=
         ${grid.top}`);
       console.info(`[canOverGrid_static_0100] gridItem0.top=
         ${gridItem0.top}`);
-      const uiContext = new UIContext()
-      console.info(`[canOverGrid_static_0100] gridItem0.top - UIContext.getFocusedUIContext()!.vp2px(30)=
-        ${gridItem0.top - UIContext.getFocusedUIContext()!.vp2px(30)}`);
-      expect(Math.floor(Math.abs(gridItem0.top - UIContext.getFocusedUIContext()!.vp2px(30) - grid.top)) <= 1).assertTrue();
+
+      console.info(`[canOverGrid_static_0100] gridItem0.top - vp2px(30)=
+        ${gridItem0.top - uiContext.vp2px(30)}`);
+      expect(Math.floor(Math.abs(gridItem0.top - uiContext.vp2px(30) - grid.top)) <= 1).assertTrue();
       console.info('[canOverGrid_static_0100] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    canOverGrid_static_0200
-     * @tc.name      canOverGrid_static_0200
-     * @tc.desc      canOverGrid_static_0200
-     * @tc.level     2
+     * @tc.number   canOverGrid_static_0200
+     * @tc.name     canOverGrid_static_0200
+     * @tc.desc     canOverGrid_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverGrid_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverGrid_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverGrid_static_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -124,14 +128,14 @@ export default function canOverGrid() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    canOverGrid_static_0300
-     * @tc.name      canOverGrid_static_0300
-     * @tc.desc      canOverGrid_static_0300
-     * @tc.level     2
+     * @tc.number   canOverGrid_static_0300
+     * @tc.name     canOverGrid_static_0300
+     * @tc.desc     canOverGrid_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverGrid_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverGrid_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverGrid_static_0300] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -150,14 +154,14 @@ export default function canOverGrid() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    canOverGrid_static_0400
-     * @tc.name      canOverGrid_static_0400
-     * @tc.desc      canOverGrid_static_0400
-     * @tc.level     2
+     * @tc.number   canOverGrid_static_0400
+     * @tc.name     canOverGrid_static_0400
+     * @tc.desc     canOverGrid_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverGrid_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverGrid_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverGrid_static_0400] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

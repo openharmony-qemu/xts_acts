@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType, afterAll } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -35,7 +35,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -45,8 +45,6 @@ export default function onSelectedTabs() {
   describe('onSelectedTabs', () => {
     beforeAll(() => {
       console.info("onSelectedTabs beforeEach start");
-
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -58,14 +56,12 @@ export default function onSelectedTabs() {
         url: "MainAbility/pages/Tabs/onSelectedTabs",
       }
       try {
-        onSelectedTabs.clear();
         let pages = onSelectedTabs.getState();
         console.info("get onSelectedTabs state pages:" + JSON.stringify(pages));
-        if (!("onSelectedTabs" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/onSelectedTabs" == pages.name)) {
           console.info("get onSelectedTabs pages.name:" + JSON.stringify(pages.name));
           onSelectedTabs.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push onSelectedTabs page error:" + err);
@@ -73,14 +69,18 @@ export default function onSelectedTabs() {
       console.info("onSelectedTabs beforeEach end");
     });
 
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    onSelectedTabs_static_0100
-     * @tc.name      onSelectedTabs_static_0100
-     * @tc.desc      onSelectedTabs_static_0100
-     * @tc.level     2
+     * @tc.number   onSelectedTabs_static_0100
+     * @tc.name     onSelectedTabs_static_0100
+     * @tc.desc     onSelectedTabs_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('onSelectedTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onSelectedTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onSelectedTabs_static_0100] START');
       let swipeTabs = CommonFunc.getComponentRectOnScreen('tabs_onSelected');
       let top = swipeTabs.top;

@@ -41,57 +41,33 @@ import {
   ImageAnimator,
   $rawfile
 } from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ImageAnimatorExample {
-  @State state: AnimationStatus = AnimationStatus.Initial
-  @State reverse: boolean = false
-  @State iterations: int = 1
-  @State fixedSize: boolean = true
-  @State fillMode: FillMode = FillMode.None
-  @State duration: int = 2000
-  @State duration1: int = 0
+  @StoragePropRef('state') state: AnimationStatus = AnimationStatus.Initial
+  @StoragePropRef('reverse') reverse: boolean = false
+  @StoragePropRef('iterations') iterations: int = 1
+  @StoragePropRef('fixedSize') fixedSize: boolean = true
+  @StoragePropRef('fillMode') fillMode: FillMode = FillMode.None
+  @StoragePropRef('duration') duration: int = 2000
+  @StoragePropRef('duration1') duration1: int = 0
   // ImageFrameIno constructor parameter
-  @State widthT: number = 20;
-  @State heightT: number = 20;
-  @State top: number = 20;
-  @State left: number = 20;
-  @State message1: string = "ani"
-  @State message2: string = "ani"
-  @State message3: string = "ani"
-  @State message4: string = "ani"
-  @State message5: string = "ani"
-  messageManager: MessageManager<number | string | boolean | AnimationStatus | FillMode> = new MessageManager<number | string | boolean | AnimationStatus | FillMode>()
+  @StoragePropRef('widthT') widthT: number = 20;
+  @StoragePropRef('heightT') heightT: number = 20;
+  @StoragePropRef('top') top: number = 20;
+  @StoragePropRef('left') left: number = 20;
+  @StoragePropRef('message1') message1: string = "ani"
+  @StoragePropRef('message2') message2: string = "ani"
+  @StoragePropRef('message3') message3: string = "ani"
+  @StoragePropRef('message4') message4: string = "ani"
+  @StoragePropRef('message5') message5: string = "ani"
 
   onPageShow() {
     console.info('imageAnimator onPageShow')
-    AppStorage.setOrCreate<MessageManager<number | string | boolean | AnimationStatus | FillMode>>("messageManager", this.messageManager);
-    let callback: Callback<number | string | boolean | AnimationStatus | FillMode> = (message: Message<number | string | boolean | AnimationStatus | FillMode>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'state') {
-          this.state = message.value as AnimationStatus
-      }
-      if (message.name == 'reverse') {
-          this.reverse = message.value as Boolean
-      }
-      if (message.name == 'iterations') {
-          this.iterations = message.value as int
-      }
-      if (message.name == 'fixedSize') {
-          this.fixedSize = message.value as Boolean
-      }
-      if (message.name == 'fillMode') {
-          this.fillMode = message.value as FillMode
-      }
-      if (message.name == 'duration') {
-          this.duration = message.value as int
-      }
-    }
-    this.messageManager.registerCallback(callback)
   }
 
   build() {

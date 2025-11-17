@@ -13,39 +13,38 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   $r,
-  Column,
-  TabsController,
-  ColumnOptions,
-  AnimationMode,
-  TabsCacheMode,
-  BarPosition,
-  TabBarOptions,
-  TabsAnimationEvent,
-  Text,
-  Stack,
-  Tabs,
-  TabContent,
-  Image,
-  BlurStyle,
-  ThemeColorMode,
   AdaptiveColor,
+  AnimationMode,
+  BarPosition,
+  BlurStyle,
   BlurStyleActivePolicy,
-  Color,
   Button,
-  Swiper,
-  ForEach,
   ClickEvent,
-  Margin,
-  SwiperController,
-  TextAlign,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
   EdgeEffect,
+  Entry,
+  ForEach,
+  Image,
+  Margin,
+  Stack,
+  Swiper,
+  SwiperController,
+  TabBarOptions,
+  TabContent,
+  Tabs,
+  TabsAnimationEvent,
+  TabsCacheMode,
+  TabsController,
+  Text,
+  TextAlign,
+  ThemeColorMode,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { BusinessError } from '@ohos.base';
 

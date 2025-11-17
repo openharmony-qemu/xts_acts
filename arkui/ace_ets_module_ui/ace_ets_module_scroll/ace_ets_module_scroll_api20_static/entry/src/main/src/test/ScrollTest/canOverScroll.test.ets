@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -41,7 +41,6 @@ import { UtilsTest, startAbility } from '../Util.test';
 export default function canOverScroll() {
   describe('canOverScroll', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll.api20.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -53,29 +52,31 @@ export default function canOverScroll() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get canOverScroll state pages:" + JSON.stringify(pages));
-        if (!("canOverScroll" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/canOverScroll" == pages.name)) {
           console.info("get canOverScroll pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push canOverScroll page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push canOverScroll page error:" + err);
       }
       console.info("canOverScroll beforeEach end");
     });
-
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    canOverScroll_static_0100
-     * @tc.name      canOverScroll_static_0100
-     * @tc.desc      canOverScroll_static_0100
-     * @tc.level     2
+     * @tc.number   canOverScroll_static_0100
+     * @tc.name     canOverScroll_static_0100
+     * @tc.desc     canOverScroll_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverScroll_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverScroll_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverScroll_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -84,26 +85,26 @@ export default function canOverScroll() {
       await CommonFunc.sleep(1500);
       let scroll = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll');
       let scrollItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll_0');
-
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
       console.info(`[canOverScroll_static_0100] scroll.top=
         ${scroll.top}`);
       console.info(`[canOverScroll_static_0100] scrollItem0.top=
         ${scrollItem0.top}`);
-      console.info(`[canOverList_0100] UIContext.getFocusedUIContext()!.vp2px(30)=
-        ${UIContext.getFocusedUIContext()!.vp2px(30)}`);
-      expect(Math.floor(Math.abs(scrollItem0.top - UIContext.getFocusedUIContext()!.vp2px(30) - scroll.top)) <= 1).assertTrue();
+      console.info(`[canOverList_0100] vp2px(30)=
+        ${uiContext.vp2px(30)}`);
+      expect(Math.floor(Math.abs(scrollItem0.top - uiContext.vp2px(30) - scroll.top)) <= 1).assertTrue();
       console.info('[canOverScroll_static_0100] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    canOverScroll_static_0200
-     * @tc.name      canOverScroll_static_0200
-     * @tc.desc      canOverScroll_static_0200
-     * @tc.level     2
+     * @tc.number   canOverScroll_static_0200
+     * @tc.name     canOverScroll_static_0200
+     * @tc.desc     canOverScroll_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverScroll_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverScroll_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverScroll_static_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -122,14 +123,14 @@ export default function canOverScroll() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    canOverScroll_static_0300
-     * @tc.name      canOverScroll_static_0300
-     * @tc.desc      canOverScroll_static_0300
-     * @tc.level     2
+     * @tc.number   canOverScroll_static_0300
+     * @tc.name     canOverScroll_static_0300
+     * @tc.desc     canOverScroll_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverScroll_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverScroll_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverScroll_static_0300] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -148,14 +149,14 @@ export default function canOverScroll() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    canOverScroll_static_0400
-     * @tc.name      canOverScroll_static_0400
-     * @tc.desc      canOverScroll_static_0400
-     * @tc.level     2
+     * @tc.number   canOverScroll_static_0400
+     * @tc.name     canOverScroll_static_0400
+     * @tc.desc     canOverScroll_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('canOverScroll_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('canOverScroll_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[canOverScroll_static_0400] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

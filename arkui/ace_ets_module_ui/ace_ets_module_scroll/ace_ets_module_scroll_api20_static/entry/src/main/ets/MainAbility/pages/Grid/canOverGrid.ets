@@ -59,8 +59,7 @@ struct canOverScrollGrid {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: { duration: 1000, curve: curve, canOverScroll: true },
-              
-              
+              // canOverScroll: true
             })
           })
         Button('COS:false')
@@ -73,11 +72,10 @@ struct canOverScrollGrid {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: { duration: 1000, curve: curve, canOverScroll: true },
-              
+              // canOverScroll: false
             })
           })
-      }
-
+        }
       Row() {
         Button('null')
           .id('canOver_grid_null')
@@ -89,7 +87,7 @@ struct canOverScrollGrid {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: { duration: 1000, curve: curve, canOverScroll: true },
-              
+              // canOverScroll: null
             })
           })
         Button('undefined')
@@ -102,7 +100,7 @@ struct canOverScrollGrid {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: true,
-              
+              // canOverScroll: undefined
             })
           })
       }
@@ -113,7 +111,8 @@ struct canOverScrollGrid {
             Text(item.toString())
               .id('canOverScroll_grid_' + item)
               .fontSize(16)
-              .backgroundColor(0xF9CF93)
+
+              .backgroundColor('0xF9CF93')
               .width('100%')
               .height('23%')
               .textAlign(TextAlign.Center)
@@ -129,14 +128,14 @@ struct canOverScrollGrid {
       .enableScrollInteraction(true)
       .supportAnimation(false)
       .multiSelectable(false)
-      .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true, effectEdge: EffectEdge.START }) 
-      .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) }) 
+      .edgeEffect(EdgeEffect.Spring, {alwaysEnabled: true, effectEdge:EffectEdge.START}) //设置边缘效果
+      .fadingEdge(true,{fadingEdgeLength:LengthMetrics.vp(80)}) //设置边缘渐隐效果
       .scrollBar(BarState.On)
       .scrollBarColor(Color.Grey)
       .scrollBarWidth(4)
       .width('90%')
       .height('50%')
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor('0xFAEEE0')
       .onScrollIndex((first: int, last: int) => {
         console.info(first.toString())
         console.info(last.toString())

@@ -28,16 +28,14 @@ import {
   ClickEvent,
   NodeContainer,
   TapGesture,
-  Text
+  Text,
+  wrapBuilder,
+  CustomBuilderT
 } from "@ohos.arkui.component"
 import { GestureEvent, TouchEvent } from '@ohos.arkui.component'
 
 class Params {
   text: string = "this is a text"
-
-  constructor(text: string) {
-    this.text = text;
-  }
 }
 
 @Builder
@@ -61,15 +59,13 @@ function ButtonBuilder(params: Params) {
   .backgroundColor(Color.Gray)
 }
 
-//todo 待修改 已上报
 class MyNodeController extends NodeController {
-  private rootNode: BuilderNode<[Params]> | null = null;
-
-  // private wrapBuilder: WrappedBuilder<[Params]> = this.wrapBuilder(ButtonBuilder);
+  private rootNode: BuilderNode<Params> | null = null;
+  private wrapBuilder = wrapBuilder<CustomBuilderT<Params>>(ButtonBuilder);
 
   makeNode(uiContext: UIContext): FrameNode | null {
-    this.rootNode = new BuilderNode<[Params]>(uiContext, { type: NodeRenderType.RENDER_TYPE_DISPLAY });
-    // this.rootNode?.build(this.wrapBuilder, { text: "this is a string" })
+    this.rootNode = new BuilderNode<Params>(uiContext, { type: NodeRenderType.RENDER_TYPE_DISPLAY });
+    this.rootNode?.build(this.wrapBuilder, { text: "this is a string" })
     return this.rootNode?.getFrameNode() ?? null;
   }
 

@@ -96,15 +96,14 @@ export default function TextClockJsunit() {
           // console.info("push TextClock page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push TextClock page error: " + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   TextClock_static_0100
      * @tc.name     TextClock_static_0100
      * @tc.desc     TextClock_static_0100
@@ -132,8 +131,7 @@ it('TextClock_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   TextClock_static_0200
      * @tc.name     TextClock_static_0200
      * @tc.desc     TextClock_static_0200
@@ -142,9 +140,9 @@ it('TextClock_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
 it('TextClock_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Modify the attribute of TextClock component
       console.info('[TextClock_0200] START');
-      AppStorage.get<MessageManager<int>>("messageManager")!.notify({ name: 'timeZoneOffset', value: 8 })
+      AppStorage.get<MessageManager<int | string | long | number>>("messageManager")!.notify({ name: 'timeZoneOffset', value: 8 as number})
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<int | string | long | double>>("messageManager")!.notify({ name: 'format', value: 'yyyyMMddHms' })
+      AppStorage.get<MessageManager<int | string | long | number>>("messageManager")!.notify({ name: 'format', value: 'yyyyMMddHms' })
       await CommonFunc.sleep(1000);
       // Get the attribute of TextClock component
       let strJson = inspector.getInspectorByKey('textClock');
@@ -157,8 +155,7 @@ it('TextClock_static_0200', Level.LEVEL2, async (done: () => void): Promise<void
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   TextClock_static_0300
      * @tc.name     TextClock_static_0300
      * @tc.desc     TextClock_static_0300

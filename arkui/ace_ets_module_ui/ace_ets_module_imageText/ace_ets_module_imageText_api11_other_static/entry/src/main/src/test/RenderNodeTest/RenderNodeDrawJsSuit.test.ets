@@ -95,7 +95,7 @@ export default function RenderNodeDrawJsSuit() {
           // console.info("push RenderNodeDrawJsSuit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RenderNodeDrawJsSuit page error:" + err);
       }
 
@@ -107,9 +107,8 @@ export default function RenderNodeDrawJsSuit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   RenderNodeDrawJsSuit_static_0100
      * @tc.name     RenderNodeDrawJsSuit_static_0100
      * @tc.desc     RenderNodeDrawJsSuit_static_0100

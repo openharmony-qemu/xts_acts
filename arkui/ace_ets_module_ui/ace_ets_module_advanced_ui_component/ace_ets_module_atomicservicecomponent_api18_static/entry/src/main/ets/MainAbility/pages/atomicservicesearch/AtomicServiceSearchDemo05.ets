@@ -54,7 +54,7 @@ export struct Demo05 {
       //     // })
       //     divider: null
       //   }
-      // })
+      //})
 
       // 30 测试Select-字体及背景色
       Text('-------测试Select-字体及背景色-------').fontColor(Color.Red).fontWeight(700);

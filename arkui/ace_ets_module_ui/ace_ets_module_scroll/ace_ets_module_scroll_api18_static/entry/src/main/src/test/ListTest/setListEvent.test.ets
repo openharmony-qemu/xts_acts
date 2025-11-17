@@ -12,32 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
   Button,
   ButtonAttribute,
   ClickEvent,
+  Column,
+  Entry,
   Image,
   ImageFit,
   Scroller,
+  Text,
+  TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test.ets';
+import { startAbility, UtilsTest } from '../Util.test.ets';
 
 export default function setListEvent() {
   describe('setListEvent', () => {
@@ -63,7 +62,7 @@ export default function setListEvent() {
           console.info("get setListEvent pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push setListEvent page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setListEvent page error:" + err);
@@ -71,14 +70,14 @@ export default function setListEvent() {
       console.info("setListEvent beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    setListEvent_static_0100
-     * @tc.name      setListEvent_static_0100
-     * @tc.desc      setListEvent_static_0100
-     * @tc.level     2
+     * @tc.number   setListEvent_static_0100
+     * @tc.name     setListEvent_static_0100
+     * @tc.desc     setListEvent_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('setListEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('setListEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[setListEvent_static_0100] START');
       let driver = Driver.create()
       let btnEvent: Component = await driver.findComponent(ON.id('List_addCommonEvent_02')) as Component;

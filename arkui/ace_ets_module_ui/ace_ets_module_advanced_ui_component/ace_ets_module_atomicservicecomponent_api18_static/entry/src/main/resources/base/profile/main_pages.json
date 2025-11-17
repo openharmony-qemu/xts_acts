@@ -1,6 +1,6 @@
 {
   "src": [
-    "MainAbility/pages/index/Index",
+    "MainAbility/pages/index/index",
     "MainAbility/pages/atomicservicenavigation/AtomicServiceNavigationTest",
     "MainAbility/pages/atomicservicesearch/AtomicServiceSearchTest",
     "MainAbility/pages/atomicservicetabs/AtomicServiceTabsTest",

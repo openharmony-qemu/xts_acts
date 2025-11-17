@@ -14,27 +14,26 @@
  */
 import { LengthMetrics } from '@ohos.arkui.node'
 import {
-  Entry,
-  Component,
   $r,
+  ArrowStyle,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  ArrowStyle,
-  Color,
-  Button,
-  Swiper,
-  ForEach,
-  ClickEvent,
-  Margin,
-  SwiperController,
-  TextAlign,
+  Component,
   DotIndicator,
+  Entry,
+  ForEach,
+  Margin,
+  Swiper,
   SwiperAnimationEvent,
+  SwiperController,
+  Text,
+  TextAlign,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { BusinessError } from '@ohos.base';
 
@@ -44,7 +43,7 @@ struct onUnselectedSwiperExample {
   private swiperController: SwiperController = new SwiperController()
   private data: number[] = [] as number[];
   @State autoPlay: boolean = false
-  @State displayCount: Int = 1
+  @State displayCount: int = 1
   @State hideIndex: number = -1
   @State backColor: Color = Color.Gray
   @State selectedIndex: number = -1
@@ -71,7 +70,7 @@ struct onUnselectedSwiperExample {
           Text(String(item))
             .width('90%')
             .height(160)
-            .backgroundColor(0xAFEEEE)
+            .backgroundColor('0xAFEEEE')
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }, (item: number) => String(item))
@@ -80,9 +79,10 @@ struct onUnselectedSwiperExample {
       .index(1)
       .backgroundColor(this.backColor)
       .displayCount(this.displayCount)
-      
+      .autoPlay(this.autoPlay, undefined)
       .indicator(new DotIndicator()
         .space(LengthMetrics.vp(5))
+        // .bottom(LengthMetrics.vp(0), this.ignoreSize)
         .itemWidth(15)
         .itemHeight(15)
         .selectedItemWidth(15)
@@ -97,21 +97,21 @@ struct onUnselectedSwiperExample {
         arrowSize: 18,
         arrowColor: Color.Blue
       } as ArrowStyle, false)
-      .onSelected((index: Int): void => {
+      .onSelected((index: int): void => {
         console.log('onSelected index:' + index);
         this.selectedIndex = index
       })
-      .onUnselected((index: Int): void => {
+      .onUnselected((index: int): void => {
         this.hideIndex = index
         console.log('onUnselected: ' + index)
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info('onGestureSwipe index: ' + index)
         console.info('onGestureSwipe current offset: ' + extraInfo.currentOffset)
         console.info('onGestureSwipe target offset: ' + extraInfo.targetOffset)
         console.info('onGestureSwipe velocity: ' + extraInfo.velocity)
       })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         console.info('onAnimationStart index: ' + index)
         console.info('onAnimationStart targetIndex: ' + targetIndex)
         console.info('onAnimationStart current offset: ' + extraInfo.currentOffset)
@@ -122,7 +122,7 @@ struct onUnselectedSwiperExample {
         }
         this.selectedIndex = targetIndex
       })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info(String(index))
         console.info('onAnimationEnd index: ' + index)
         console.info('onAnimationEnd current offset: ' + extraInfo.currentOffset)

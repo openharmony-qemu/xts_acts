@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -38,15 +38,11 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
 
-const TAB_HEIGHT_PX = Math.round(UIContext.getFocusedUIContext()!.vp2px(13));
-const TAB_HEIGHT_DEFAULT_PX = Math.round(UIContext.getFocusedUIContext()!.vp2px(56));
 const MULTI_DEVICE_DEVIATION = 1;
-const uiContext = new UIContext()
 
 export default function barHeightNoMinHeightLimit() {
   describe('barHeightNoMinHeightLimit', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll.api20.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -61,11 +57,11 @@ export default function barHeightNoMinHeightLimit() {
         router.clear();
         let pages = router.getState();
         console.info('get barHeightNoMinHeightLimit state pages:' + JSON.stringify(pages));
-        if (!('barHeightNoMinHeightLimit' === pages.name)) {
+        if (!('MainAbility/pages/Tabs/barHeightNoMinHeightLimit' === pages.name)) {
           console.info('get barHeightNoMinHeightLimit pages.name:' + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info('push barHeightNoMinHeightLimit page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push barHeightNoMinHeightLimit page error:' + err);
@@ -73,108 +69,94 @@ export default function barHeightNoMinHeightLimit() {
       console.info('barHeightNoMinHeightLimit beforeEach end');
     });
 
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    barHeightNoMinHeightLimit_static_0100
-     * @tc.name      barHeightNoMinHeightLimit_static_0100
-     * @tc.desc      barHeightNoMinHeightLimit_static_0100
-     * @tc.level     2
+     * @tc.number   barHeightNoMinHeightLimit_static_0100
+     * @tc.name     barHeightNoMinHeightLimit_static_0100
+     * @tc.desc     barHeightNoMinHeightLimit_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('barHeightNoMinHeightLimit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barHeightNoMinHeightLimit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barHeightNoMinHeightLimit_static_0100] START');
-      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent'))
-        .getElement('$attrs')
-        .getElement('height')
-        .asString();
-      let tabs: string =
-        JSON.parseJsonElement(inspector.getInspectorByKey('Tabs')).getElement('$attrs').getElement('height').asString();
+      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent')).getElement('$attrs').getElement('height').asString();
+      let tabs: string = JSON.parseJsonElement(inspector.getInspectorByKey('Tabs')).getElement('$attrs').getElement('height').asString();
       console.info('[barHeightNoMinHeightLimit_static_0100] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0100] value:' + tabs);
-      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0100] value:' + JSON.stringify(num2 - num1));
-      expect((num2 - num1 - TAB_HEIGHT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
+      expect((num2 - num1 - Math.round(uiContext.vp2px(13))) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0100] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    barHeightNoMinHeightLimit_static_0200
-     * @tc.name      barHeightNoMinHeightLimit_static_0200
-     * @tc.desc      barHeightNoMinHeightLimit_static_0200
-     * @tc.level     2
+     * @tc.number   barHeightNoMinHeightLimit_static_0200
+     * @tc.name     barHeightNoMinHeightLimit_static_0200
+     * @tc.desc     barHeightNoMinHeightLimit_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('barHeightNoMinHeightLimit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barHeightNoMinHeightLimit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barHeightNoMinHeightLimit_static_0200] START');
-      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent2'))
-        .getElement('$attrs')
-        .getElement('height')
-        .asString();
-      let tabs: string = JSON.parseJsonElement(inspector.getInspectorByKey('Tabs2'))
-        .getElement('$attrs')
-        .getElement('height')
-        .asString();
+      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent2')).getElement('$attrs').getElement('height').asString();
+      let tabs: string = JSON.parseJsonElement(inspector.getInspectorByKey('Tabs2')).getElement('$attrs').getElement('height').asString();
       console.info('[barHeightNoMinHeightLimit_static_0200] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0200] value:' + tabs);
-      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0200] value:' + JSON.stringify(num2 - num1));
-      expect((num2 - num1 - TAB_HEIGHT_DEFAULT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
+      expect((num2 - num1 - Math.round(uiContext.vp2px(56))) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0200] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    barHeightNoMinHeightLimit_static_0300
-     * @tc.name      barHeightNoMinHeightLimit_static_0300
-     * @tc.desc      barHeightNoMinHeightLimit_static_0300
-     * @tc.level     2
+     * @tc.number   barHeightNoMinHeightLimit_static_0300
+     * @tc.name     barHeightNoMinHeightLimit_static_0300
+     * @tc.desc     barHeightNoMinHeightLimit_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('barHeightNoMinHeightLimit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barHeightNoMinHeightLimit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barHeightNoMinHeightLimit_static_0300] START');
-      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent3'))
-        .getElement('$attrs')
-        .getElement('height')
-        .asString();
-      let tabs: string = JSON.parseJsonElement(inspector.getInspectorByKey('Tabs3'))
-        .getElement('$attrs')
-        .getElement('height')
-        .asString();
+      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent3')).getElement('$attrs').getElement('height').asString();
+      let tabs: string = JSON.parseJsonElement(inspector.getInspectorByKey('Tabs3')).getElement('$attrs').getElement('height').asString();
       console.info('[barHeightNoMinHeightLimit_static_0300] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0300] value:' + tabs);
-      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0300] value:' + JSON.stringify(num2 - num1));
-      expect((num2 - num1 - TAB_HEIGHT_DEFAULT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
+      expect((num2 - num1 - Math.round(uiContext.vp2px(56))) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0300] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    barHeightNoMinHeightLimit_static_0400
-     * @tc.name      barHeightNoMinHeightLimit_static_0400
-     * @tc.desc      barHeightNoMinHeightLimit_static_0400
-     * @tc.level     2
+     * @tc.number   barHeightNoMinHeightLimit_static_0400
+     * @tc.name     barHeightNoMinHeightLimit_static_0400
+     * @tc.desc     barHeightNoMinHeightLimit_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('barHeightNoMinHeightLimit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barHeightNoMinHeightLimit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barHeightNoMinHeightLimit_static_0400] START');
-      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent4'))
-        .getElement('$attrs')
-        .getElement('height')
-        .asString();
-      let tabs: string = JSON.parseJsonElement(inspector.getInspectorByKey('Tabs4'))
-        .getElement('$attrs')
-        .getElement('height')
-        .asString();
+      let tabContent: string = JSON.parseJsonElement(inspector.getInspectorByKey('TabContent4')).getElement('$attrs').getElement('height').asString();
+      let tabs: string = JSON.parseJsonElement(inspector.getInspectorByKey('Tabs4')).getElement('$attrs').getElement('height').asString();
       console.info('[barHeightNoMinHeightLimit_static_0400] value:' + tabContent);
       console.info('[barHeightNoMinHeightLimit_static_0400] value:' + tabs);
-      let num1: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabContent.split('.')[0]))));
-      let num2: number = Math.abs(Math.round(UIContext.getFocusedUIContext()!.vp2px(parseFloat(tabs.split('.')[0]))));
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      let num1: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabContent.split('.')[0]))));
+      let num2: number = Math.abs(Math.round(uiContext.vp2px(parseFloat(tabs.split('.')[0]))));
       console.info('[barHeightNoMinHeightLimit_static_0400] value:' + JSON.stringify(num2 - num1));
-      expect((num2 - num1 - TAB_HEIGHT_DEFAULT_PX) <= MULTI_DEVICE_DEVIATION).assertTrue();
+      expect((num2 - num1 - Math.round(uiContext.vp2px(56))) <= MULTI_DEVICE_DEVIATION).assertTrue();
       console.info('[barHeightNoMinHeightLimit_static_0400] END');
       done();
     });

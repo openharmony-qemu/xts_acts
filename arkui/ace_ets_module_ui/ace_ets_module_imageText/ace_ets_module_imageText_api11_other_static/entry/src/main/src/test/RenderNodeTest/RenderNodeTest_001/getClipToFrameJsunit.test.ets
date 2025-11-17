@@ -66,7 +66,7 @@ export default function getClipToFrameJsunit() {
           // console.info("push getClipToFrameJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push getClipToFrameJsunit page error:" + err);
       }
       console.info("getClipToFrameJsunit beforeEach end");
@@ -79,9 +79,8 @@ export default function getClipToFrameJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   getClipToFrameJsunit_static_001
      * @tc.name     getClipToFrameJsunit_static_001
      * @tc.desc     getClipToFrameJsunit_static_001

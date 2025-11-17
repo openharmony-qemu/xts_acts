@@ -67,7 +67,7 @@ export default function arkuiNodeTest() {
           // console.info("push arkuinode page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push arkuinode page error:" + err);
       }
       console.info("arkuinode beforeEach end");
@@ -78,9 +78,8 @@ export default function arkuiNodeTest() {
       console.info("arkuinode after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   arkuinode_static_0100
      * @tc.name     arkuinode_static_0100
      * @tc.desc     arkuinode_static_0100

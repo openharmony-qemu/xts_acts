@@ -77,7 +77,7 @@ export default function RelativeGuideLine() {
           // console.info("push RelativeGuideLine page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeGuideLine page error:" + err);
       }
       console.info("RelativeGuideLine foreEach end");
@@ -88,9 +88,8 @@ export default function RelativeGuideLine() {
       console.info("RelativeGuideLine after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeGuideLine_static_001
      * @tc.name     RelativeGuideLine_static_001
      * @tc.desc     RelativeGuideLine_static_001
@@ -111,9 +110,8 @@ it('RelativeGuideLine_static_001', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeGuideLine_static_002
      * @tc.name     RelativeGuideLine_static_002
      * @tc.desc     RelativeGuideLine_static_002
@@ -138,9 +136,8 @@ it('RelativeGuideLine_static_002', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeGuideLine_static_003
      * @tc.name     RelativeGuideLine_static_003
      * @tc.desc     RelativeGuideLine_static_003
@@ -167,9 +164,8 @@ it('RelativeGuideLine_static_003', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeGuideLine_static_004
      * @tc.name     RelativeGuideLine_static_004
      * @tc.desc     RelativeGuideLine_static_004
@@ -194,9 +190,8 @@ it('RelativeGuideLine_static_004', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeGuideLine_static_005
      * @tc.name     RelativeGuideLine_static_005
      * @tc.desc     RelativeGuideLine_static_005
@@ -221,9 +216,8 @@ it('RelativeGuideLine_static_005', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeGuideLine_static_006
      * @tc.name     RelativeGuideLine_static_006
      * @tc.desc     RelativeGuideLine_static_006
@@ -248,10 +242,9 @@ it('RelativeGuideLine_static_006', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine_static_007
      * @tc.name     RelativeGuideLine_static_007
      * @tc.desc     RelativeGuideLine_static_007
@@ -277,10 +270,9 @@ it('RelativeGuideLine_static_007', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine_static_008
      * @tc.name     RelativeGuideLine_static_008
      * @tc.desc     RelativeGuideLine_static_008
@@ -305,10 +297,9 @@ it('RelativeGuideLine_static_008', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine_static_009
      * @tc.name     RelativeGuideLine_static_009
      * @tc.desc     RelativeGuideLine_static_009
@@ -334,10 +325,9 @@ it('RelativeGuideLine_static_009', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine_static_010
      * @tc.name     RelativeGuideLine_static_010
      * @tc.desc     RelativeGuideLine_static_010
@@ -363,10 +353,9 @@ it('RelativeGuideLine_static_010', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine_static_011
      * @tc.name     RelativeGuideLine_static_011
      * @tc.desc     RelativeGuideLine_static_011
@@ -392,10 +381,9 @@ it('RelativeGuideLine_static_011', Level.LEVEL3, async (done: () => void): Promi
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine_static_012
      * @tc.name     RelativeGuideLine_static_012
      * @tc.desc     RelativeGuideLine_static_012

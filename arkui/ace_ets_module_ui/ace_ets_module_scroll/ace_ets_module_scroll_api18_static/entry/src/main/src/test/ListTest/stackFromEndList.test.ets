@@ -12,40 +12,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
   Button,
   ButtonAttribute,
   ClickEvent,
+  Column,
+  Entry,
   Image,
   ImageFit,
   Scroller,
+  Text,
+  TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test.ets';
+import { startAbility, UtilsTest } from '../Util.test.ets';
 
 export default function stackFromEndList() {
 
   describe('stackFromEndList', () => {
     beforeAll(() => {
       console.info("stackFromEndList beforeEach start");
-
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -57,59 +54,57 @@ export default function stackFromEndList() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get   state pages:" + JSON.stringify(pages));
-        if (!("stackFromEndList" == pages.name)) {
+        if (!("MainAbility/pages/List/stackFromEndList" == pages.name)) {
           console.info("get stackFromEndList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push stackFromEndList page error:" + err);
       }
       console.info("stackFromEndList beforeEach end");
     });
-
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    stackFromEndList_static_0100
-     * @tc.name      stackFromEndList_static_0100
-     * @tc.desc      stackFromEndList_static_0100
-     * @tc.level     2
+     * @tc.number   stackFromEndList_static_0100
+     * @tc.name     stackFromEndList_static_0100
+     * @tc.desc     stackFromEndList_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('stackFromEndList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('stackFromEndList_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[stackFromEndList_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('list_stackFromEnd');
       console.info("[stackFromEndList_static_0100] component obj1 is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[stackFromEndList_static_0100] stackFromEnd: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('stackFromEnd')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('List');
 
       let list1 = CommonFunc.getComponentRectOnScreen('list_stackFromEnd');
       console.info('[stackFromEndList_static_0100] list1.top: ' + list1.top);
       let listItem1 = CommonFunc.getComponentRectOnScreen('stackFromEnd_1');
       console.info('[stackFromEndList_static_0100] listItem1.top: ' + listItem1.top);
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext()
-      console.info(`[stackFromEndList_static_0100] listItem1.top - UIContext.getFocusedUIContext()!.vp2px(2) - list1.top=
-      ${(listItem1.top - UIContext.getFocusedUIContext()!.vp2px(2) - list1.top)}`);
-      expect(Math.abs(Math.floor(listItem1.top - UIContext.getFocusedUIContext()!.vp2px(2) - list1.top)) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      console.info(`[stackFromEndList_static_0100] listItem1.top - vp2px(2) - list1.top=
+      ${(listItem1.top - uiContext.vp2px(2) - list1.top)}`);
+      expect(Math.abs(Math.floor(listItem1.top - uiContext.vp2px(2) - list1.top)) <= 1).assertTrue();
       console.info('[stackFromEndList_static_0100] END');
       done();
     });
 
-
+    
     /*
-     * @tc.number    stackFromEndList_static_0200
-     * @tc.name      stackFromEndList_static_0200
-     * @tc.desc      stackFromEndList_static_0200
-     * @tc.level     2
+     * @tc.number   stackFromEndList_static_0200
+     * @tc.name     stackFromEndList_static_0200
+     * @tc.desc     stackFromEndList_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('stackFromEndList_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('stackFromEndList_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[stackFromEndList_static_0200] START');
       let driver = Driver.create()
       let btn1: Component = await driver.findComponent(ON.id('list_stackFromEnd_true')) as Component;
@@ -118,19 +113,17 @@ export default function stackFromEndList() {
       let strJson = inspector.getInspectorByKey('list_stackFromEnd');
       console.info("[stackFromEndList_static_0200] component obj1 is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[stackFromEndList_static_0200] stackFromEnd: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('stackFromEnd')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('List');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('List');
 
       let list1 = CommonFunc.getComponentRectOnScreen('list_stackFromEnd');
       console.info('[stackFromEndList_static_0200] list1.bottom: ' + list1.bottom);
       let listItem5 = CommonFunc.getComponentRectOnScreen('stackFromEnd_5');
       console.info('[stackFromEndList_static_0200] listItem5.bottom: ' + listItem5.bottom);
       await CommonFunc.sleep(1000);
-      const uiContext = new UIContext()
-      console.info(`[stackFromEndList_static_0200] list1.bottom - UIContext.getFocusedUIContext()!.vp2px(2) - listItem5.bottom=
-      ${(list1.bottom - UIContext.getFocusedUIContext()!.vp2px(2) - listItem5.bottom)}`);
-      expect(Math.abs(Math.floor(list1.bottom - UIContext.getFocusedUIContext()!.vp2px(2) - listItem5.bottom)) <= 1).assertTrue();
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      console.info(`[stackFromEndList_static_0200] list1.bottom - vp2px(2) - listItem5.bottom=
+      ${(list1.bottom - uiContext.vp2px(2) - listItem5.bottom)}`);
+      expect(Math.abs(Math.floor(list1.bottom - uiContext.vp2px(2) - listItem5.bottom)) <= 1).assertTrue();
       console.info('[stackFromEndList_static_0200] END');
       done();
     });

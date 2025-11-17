@@ -29,7 +29,9 @@ import {
   TouchEvent,
   Text,
   Margin,
-  FontWeight
+  FontWeight,
+  CustomBuilderT,
+  wrapBuilder
 } from "@ohos.arkui.component"
 
 class Params {
@@ -53,7 +55,7 @@ function buildText(params: Params) {
 //todo 待修改 已上报
 class TextNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
-  private textNode: BuilderNode<[Params]> | null = null;
+  private textNode: BuilderNode<Params> | null = null;
   private message: string = "DEFAULT";
 
   constructor(message: string) {
@@ -64,9 +66,9 @@ class TextNodeController extends NodeController {
   makeNode(context: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(context);
 
-    this.textNode = new BuilderNode<[Params]>(context,
+    this.textNode = new BuilderNode<Params>(context,
       { selfIdealSize: { width: 150, height: 150 }, type: NodeRenderType.RENDER_TYPE_TEXTURE });
-    //this.textNode.build(wrapBuilder<[Params]>(buildText), new Params(this.message));
+    this.textNode?.build(new WrappedBuilder<CustomBuilderT<Params>>(buildText) , new Params(this.message), {useParallel: false});
     const textRenderNode = this.textNode?.getFrameNode()?.getRenderNode();
 
     const rootRenderNode = this.rootNode?.getRenderNode();

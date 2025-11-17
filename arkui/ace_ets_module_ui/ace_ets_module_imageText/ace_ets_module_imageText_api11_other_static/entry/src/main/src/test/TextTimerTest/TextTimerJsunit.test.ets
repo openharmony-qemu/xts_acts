@@ -97,7 +97,7 @@ export default function TextTimerJsunit() {
           // console.info("push TextTimer page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push TextTimer page error: " + err);
         expect().assertFail();
       }
@@ -105,8 +105,7 @@ export default function TextTimerJsunit() {
     });
 
 
-    
-/*
+    /*
      * @tc.number   TextTimerJsunit_static_0100
      * @tc.name     TextTimerJsunit_static_0100
      * @tc.desc     TextTimerJsunit_static_0100
@@ -141,8 +140,7 @@ it('TextTimerJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   TextTimerJsunit_static_0200
      * @tc.name     TextTimerJsunit_static_0200
      * @tc.desc     TextTimerJsunit_static_0200
@@ -151,11 +149,11 @@ it('TextTimerJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promis
 it('TextTimerJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Modify the attribute of TextTimer component
       console.info('[TextTimerJsunit_0200] START');
-      AppStorage.get<MessageManager<boolean>>("messageManagerBoolean")!.notify({ name: 'isCountDown', value: false })
+      AppStorage.get<MessageManager<number | string | long | int | boolean>>("messageManager")!.notify({ name: 'isCountDown', value: false })
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<int>>("messageManager")!.notify({ name: 'count', value: 30000 })
+      AppStorage.get<MessageManager<number | string | long | int | boolean>>("messageManager")!.notify({ name: 'count', value: new Long(30000) })
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number | string | long>>("messageManager")!.notify({ name: 'format', value: 'HH:mm:ss.SS' })
+      AppStorage.get<MessageManager<number | string | long | int | boolean>>("messageManager")!.notify({ name: 'format', value: 'HH:mm:ss.SS' })
       await CommonFunc.sleep(2000);
 
       // Get the attribute of TextTimer component
@@ -167,14 +165,13 @@ it('TextTimerJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0200] format: " + JSON.stringify(obj.getElement('$attrs').getString('format')));
       await CommonFunc.sleep(1000);
       //expect(obj.getElement('$attrs').getString('isCountDown')).assertEqual('false');
-      //expect(obj.getElement('$attrs').getString('count')).assertEqual('30000.000000');
+      expect(obj.getElement('$attrs').getString('count')).assertEqual('30000.000000');
       expect(obj.getElement('$attrs').getString('format')).assertEqual('HH:mm:ss.SS');
       console.info('[TextTimerJsunit_0200] END');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   TextTimerJsunit_static_0300
      * @tc.name     TextTimerJsunit_static_0300
      * @tc.desc     TextTimerJsunit_static_0300
@@ -210,8 +207,7 @@ it('TextTimerJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   TextTimerJsunit_static_0400
      * @tc.name     TextTimerJsunit_static_0400
      * @tc.desc     TextTimerJsunit_static_0400
@@ -222,7 +218,6 @@ it('TextTimerJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promis
       console.info('[TextTimerJsunit_0400] START');
       let driver = Driver.create()
       let pauseButton = await driver.findComponent(ON.text('pause'));
-      await CommonFunc.sleep(2000);
       await (pauseButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -243,7 +238,7 @@ it('TextTimerJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0400] time1: " + JSON.stringify(time1));
       expect(time == time1).assertTrue();
 
-      let startButton = await driver.findComponent(ON.id('start'));
+      let startButton = await driver.findComponent(ON.id('start1'));
       await (startButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -259,8 +254,7 @@ it('TextTimerJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   TextTimerJsunit_static_0500
      * @tc.name     TextTimerJsunit_static_0500
      * @tc.desc     TextTimerJsunit_static_0500
@@ -276,7 +270,7 @@ it('TextTimerJsunit_static_0500', Level.LEVEL2, async (done: () => void): Promis
       console.info("[TextTimerJsunit_0300] utcText: " + JSON.stringify(utcText));
       await CommonFunc.sleep(1000);
 
-      let resetButton = await driver.findComponent(ON.text('reset'));
+      let resetButton = await driver.findComponent(ON.id('reset1'));
       await (resetButton?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('reset'));
@@ -303,6 +297,35 @@ it('TextTimerJsunit_static_0500', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
+    /*
+     * @tc.number   TextTimerJsunit_static_0600
+     * @tc.name     TextTimerJsunit_static_0600
+     * @tc.desc     TextTimerJsunit_static_0600
+     * @tc.level    Level.LEVEL2
+     */
+it('TextTimerJsunit_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      // Illegal modification of properties of TextTimer component
+      console.info('[TextTimerJsunit_0600] START');
+      AppStorage.get<MessageManager<number | string | long | int | boolean>>("messageManager")!.notify({ name: 'isCountDown', value: 123 as number })
+      await CommonFunc.sleep(1000);
+      AppStorage.get<MessageManager<number | string | long | int | boolean>>("messageManager")!.notify({ name: 'count', value: 'abc'})
+      await CommonFunc.sleep(1000);
+      AppStorage.get<MessageManager<number | string | long | int | boolean>>("messageManager")!.notify({ name: 'format', value: 123 as long })
+      await CommonFunc.sleep(2000);
 
+      // Get the attribute of TextTimer component
+      let strJson = inspector.getInspectorByKey('textTimer');
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[TextTimerJsunit_0600] component obj is: " + JSON.stringify(obj));
+      console.info("[TextTimerJsunit_0600] isCountDown: " + JSON.stringify(obj.getElement('$attrs').getString('isCountDown')));
+      console.info("[TextTimerJsunit_0600] count: " + JSON.stringify(obj.getElement('$attrs').getString('count')));
+      console.info("[TextTimerJsunit_0600] format: " + JSON.stringify(obj.getElement('$attrs').getString('format')));
+      await CommonFunc.sleep(1000);
+      expect(obj.getElement('$attrs').getString('isCountDown')).assertEqual('true');
+      expect(obj.getElement('$attrs').getString('count')).assertEqual('50000.000000');
+      expect(obj.getElement('$attrs').getString('format')).assertEqual('HH:mm:ss.SS');
+      console.info('[TextTimerJsunit_0600] END');
+      done();
+    });
   })
 }

@@ -96,16 +96,15 @@ export default function rotationTest() {
           // console.info("push rotationTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push rotationTest page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   rotationTest_static_0100
      * @tc.name     rotationTest_static_0100
      * @tc.desc     rotationTest_static_0100

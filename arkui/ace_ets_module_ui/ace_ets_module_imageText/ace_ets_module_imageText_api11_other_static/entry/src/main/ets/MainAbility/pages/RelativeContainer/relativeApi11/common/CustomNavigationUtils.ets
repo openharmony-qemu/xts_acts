@@ -63,7 +63,7 @@ export class CustomTransition {
     endCallback: (operation: boolean, isExit: boolean) => void, timeout: number): void {
 
     if (customTransitionMap.has(name)) {
-      let param = customTransitionMap.get(name);
+      let param = customTransitionMap.get(name)!;
       param.start = startCallback;
       param.finish = endCallback;
       param.timeout = timeout;
@@ -79,9 +79,9 @@ export class CustomTransition {
 
   getAnimateParam(name: string): AnimateCallback {
     let result: AnimateCallback = {
-      start: customTransitionMap.get(name).start,
-      finish: customTransitionMap.get(name).finish,
-      timeout: customTransitionMap.get(name).timeout
+      start: customTransitionMap.get(name)!.start,
+      finish: customTransitionMap.get(name)!.finish,
+      timeout: customTransitionMap.get(name)!.timeout
     };
     return result;
   }

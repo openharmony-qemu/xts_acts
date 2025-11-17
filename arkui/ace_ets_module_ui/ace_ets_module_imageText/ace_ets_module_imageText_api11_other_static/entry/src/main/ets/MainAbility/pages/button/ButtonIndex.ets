@@ -493,23 +493,22 @@ struct textInputTest {
               })
               .key("ArkUX_Stage_Button_LabelStyle_2700")
 
-            // undefined导致unknow 注释掉
-            // Text('ArkUX_Stage_Button_LabelStyle_2800').fontSize(15).margin({ top: 20 } as Margin)
-            // Button(this.txtb)
-            //   .width(this.widthShortSize)
-            //   .labelStyle({
-            //     overflow: 0 as TextOverflow | undefined,
-            //     maxLines: 1,
-            //     minFontSize: 5,
-            //     heightAdaptivePolicy: TextHeightAdaptivePolicy.MAX_LINES_FIRST,
-            //     font: {
-            //       size: 15,
-            //       weight: FontWeight.Bolder,
-            //       family: 'cursive',
-            //       style: FontStyle.Italic
-            //     }
-            //   })
-            //   .key("ArkUX_Stage_Button_LabelStyle_2800")
+            Text('ArkUX_Stage_Button_LabelStyle_2800').fontSize(15).margin({ top: 20 } as Margin)
+            Button(this.txtb)
+              .width(this.widthShortSize)
+              .labelStyle({
+                overflow: TextOverflow.None,
+                maxLines: 1,
+                minFontSize: 5,
+                heightAdaptivePolicy: TextHeightAdaptivePolicy.MAX_LINES_FIRST,
+                font: {
+                  size: 15,
+                  weight: FontWeight.Bolder,
+                  family: 'cursive',
+                  style: FontStyle.Italic
+                }
+              })
+              .key("ArkUX_Stage_Button_LabelStyle_2800")
 
             Text('ArkUX_Stage_Button_LabelStyle_2900').fontSize(15).margin({ top: 20 } as Margin)
             Button(this.txtc, { type: ButtonType.Capsule, stateEffect: false }).opacity(0.4)

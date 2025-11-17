@@ -12,32 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
   Button,
   ButtonAttribute,
   ClickEvent,
+  Column,
+  Entry,
   Image,
   ImageFit,
   Scroller,
+  Text,
+  TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test.ets';
+import { startAbility, UtilsTest } from '../Util.test.ets';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -48,8 +47,6 @@ export default function setGridEvent() {
 
     beforeAll(() => {
       console.info("SearchTypeTest beforeEach start");
-
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -64,12 +61,12 @@ export default function setGridEvent() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextClockApiTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("setGridEvent" == pages.name)) {
           console.info("get TextClockApiTest pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push TextClockApiTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push TextClockApiTest page error:" + err);
@@ -77,14 +74,14 @@ export default function setGridEvent() {
       console.info("TextClockApiTest beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    setGridEvent_static_0100
-     * @tc.name      setGridEvent_static_0100
-     * @tc.desc      setGridEvent_static_0100
-     * @tc.level     2
+     * @tc.number   setGridEvent_static_0100
+     * @tc.name     setGridEvent_static_0100
+     * @tc.desc     setGridEvent_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('setGridEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('setGridEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[setGridEvent_static_0100] START');
       let driver = Driver.create()
       let btnEvent: Component = await driver.findComponent(ON.id('Grid_addCommonEvent_01')) as Component;

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { IDataSource, DataChangeListener, DataOperation, DataChangeListener } from '@ohos.arkui.component'
+import { DataChangeListener, DataOperation, IDataSource } from '@ohos.arkui.component'
 
 export class BasicDataSource<T> implements IDataSource<T> {
   private listeners: DataChangeListener[] = [];
@@ -23,7 +23,7 @@ export class BasicDataSource<T> implements IDataSource<T> {
   }
 
   public getData(index: int): T {
-    return this.dataArray[index.toInt()];
+    return this.dataArray[index];
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {

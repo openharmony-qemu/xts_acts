@@ -20,49 +20,35 @@ import {
   Column,
   ColumnOptions,
   Text,
-  Color,
-  Row,
-  Swiper,
-  LazyForEach,
-  Margin,
-  TextAlign,
-  SwiperController,
-  Button,
-  ClickEvent,
+  Color,Row,Swiper,LazyForEach,Margin,TextAlign,
+  SwiperController, Button,ClickEvent,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct maintainContentPositionSwiper {
   private swiperController: SwiperController = new SwiperController()
   private data: MyDataSource = new MyDataSource()
   @State maintainContentPosition: boolean = false
-  @State index: Int = 5
-
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('maintainPosition', router);
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+  @State index: int = 5
 
   build() {
     Column() {
       Button('maintainVisibleContentPosition ' + this.maintainContentPosition)
         .id('maintain_swiper_true')
         .height('5%')
-        .margin({ top: 5 } as Margin)
+        .margin({top:5} as Margin)
         .onClick((e: ClickEvent) => {
           this.maintainContentPosition = true
         })
-      Row() {
+      Row(){
         Button('addData')
           .id('maintain_swiper_add')
           .height('5%')
@@ -76,21 +62,20 @@ struct maintainContentPositionSwiper {
             this.data.deleteData(1)
           })
       }
-
       Text('Swiper: ' + this.index).id('swiper_maintain_index')
       Swiper(this.swiperController) {
         LazyForEach(this.data, (item: string) => {
           Text(item)
             .width('90%')
             .height('40%')
-            .backgroundColor(0xAFEEEE)
+            .backgroundColor('0xAFEEEE')
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }, (item: string) => item)
       }
       .index(this.index)
-      
-      .onChange((index: Int): void => {
+      // .maintainVisibleContentPosition(this.maintainContentPosition)
+      .onChange((index: int): void => {
         this.index = index
         console.error('Swiper onChange ' + index)
       })

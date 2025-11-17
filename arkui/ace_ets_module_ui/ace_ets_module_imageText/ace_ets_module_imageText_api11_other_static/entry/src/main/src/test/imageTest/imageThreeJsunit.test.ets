@@ -97,15 +97,14 @@ export default function imageThreeJsunit() {
           // console.info("push imageThreeJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push imageThreeJsunit page error:" + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   imageThreeJsunit_static_0100
      * @tc.name     imageThreeJsunit_static_0100
      * @tc.desc     imageThreeJsunit_static_0100
@@ -123,8 +122,7 @@ it('imageThreeJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageThreeJsunit_static_0200
      * @tc.name     imageThreeJsunit_static_0200
      * @tc.desc     imageThreeJsunit_static_0200
@@ -141,8 +139,7 @@ it('imageThreeJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promi
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageThreeJsunit_static_0300
      * @tc.name     imageThreeJsunit_static_0300
      * @tc.desc     imageThreeJsunit_static_0300
@@ -163,8 +160,8 @@ it('imageThreeJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
       done();
     });
 
-    
-/*
+
+    /*
      * @tc.number   imageThreeJsunit_static_0400
      * @tc.name     imageThreeJsunit_static_0400
      * @tc.desc     imageThreeJsunit_static_0400

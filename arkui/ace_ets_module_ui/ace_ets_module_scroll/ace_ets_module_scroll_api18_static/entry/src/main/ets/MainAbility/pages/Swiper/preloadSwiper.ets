@@ -13,24 +13,23 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   $r,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  Color,
-  Button,
-  Swiper,
+  Component,
+  Entry,
   ForEach,
-  ClickEvent,
   Margin,
+  Swiper,
   SwiperController,
+  Text,
   TextAlign,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { BusinessError } from '@ohos.base';
 
@@ -54,6 +53,7 @@ struct swiperPreloadItems {
         .height('5%')
         .onClick((e: ClickEvent) => {
           try {
+            console.info('preloadItems [2, 3] success after.')
             this.swiperController.preloadItems([2, 3])
               .then(() => {
                 this.textResult = 'success'
@@ -62,8 +62,7 @@ struct swiperPreloadItems {
               .catch((error: Error) => {
                 console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
               })
-          } catch (error) {
-            error = error as BusinessError;
+          } catch (error: BusinessError) {
             console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
           }
 
@@ -72,19 +71,19 @@ struct swiperPreloadItems {
         .id('preloadItems_swiper_401')
         .height('5%')
         .onClick((e: ClickEvent) => {
+          console.info('preloadItems 401 success after.')
           try {
             this.swiperController.preloadItems([-1])
               .then(() => {
                 console.info('preloadItems [-1] success.')
               })
               .catch((error: Error) => {
-                this.textResult = JSON.stringify(error.code) 
+                this.textResult = JSON.stringify(error.code) //'401'
                 console.info('Get error code: %{public}s', JSON.stringify(error.code));
                 console.error('error preloadItems [-1] failed, error code: ' + error.code + ', error message: ' +
                 error.message)
               })
-          } catch (error) {
-            error = error as BusinessError;
+          } catch (error: BusinessError) {
             console.error('error preloadItems [-1] failed, error code: ' + error.code + ', error message: ' +
             error.message)
           }
@@ -102,9 +101,8 @@ struct swiperPreloadItems {
               .catch((error: Error) => {
                 console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
               })
-          } catch (error) {
-            error = error as BusinessError;
-            this.textResult = JSON.stringify(error.code) 
+          } catch (error: BusinessError) {
+            this.textResult = JSON.stringify(error.code) //'100004'
             console.info('Get error code: %{public}s', JSON.stringify(error.code));
             console.error('error preloadItems [2, 3] failed, error code: ' + error.code + ', error message: ' +
             error.message)
@@ -117,14 +115,14 @@ struct swiperPreloadItems {
           Text(item.toString())
             .width('90%')
             .height(160)
-            .backgroundColor(0xAFEEEE)
+            .backgroundColor('0xAFEEEE')
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }, (item: string) => item)
       }
       .cachedCount(2)
       .index(1)
-      
+      .autoPlay(false, undefined)
       .interval(4000)
       .loop(true)
       .indicatorInteractive(true)

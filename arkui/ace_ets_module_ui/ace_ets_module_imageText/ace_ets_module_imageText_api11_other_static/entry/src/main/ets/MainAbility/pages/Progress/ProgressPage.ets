@@ -45,54 +45,24 @@ import {
   ProgressStyleOptions,
   ScaleRingStyleOptions
 } from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct ProgressPage {
-  @State value: number = 20
-  @State total: number = 100
-  @State type: ProgressType = ProgressType.Linear
-  @State color: Color = Color.Grey
-  @State backColor: Color = Color.Red
-  @State strokeWidth: number = 15
-  @State scaleCount: int = 15
-  @State scaleWidth: number = 5
-  messageManager: MessageManager<number | ProgressType | Color> = new MessageManager<number | ProgressType | Color>()
+  @StoragePropRef('value') value: number = 20
+  @StoragePropRef('total') total: number = 100
+  @StoragePropRef('type') type: ProgressType = ProgressType.Linear
+  @StoragePropRef('color') color: Color = Color.Grey
+  @StoragePropRef('backColor') backColor: Color = Color.Red
+  @StoragePropRef('strokeWidth') strokeWidth: number = 15
+  @StoragePropRef('scaleCount') scaleCount: int = 15
+  @StoragePropRef('scaleWidth') scaleWidth: number = 5
 
   onPageShow() {
     console.info('ProgressPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<number | ProgressType | Color>>("messageManager", this.messageManager);
-    let callback: Callback<number | ProgressType | Color> = (message: Message<number | ProgressType | Color>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'progressValue') {
-        this.value = message.value as Double
-      }
-      if (message.name == 'progressTotal') {
-        this.total = message.value as Double
-      }
-      if (message.name == 'ProgressType') {
-        this.type = message.value as ProgressType
-      }
-      if (message.name == 'progressColor') {
-        this.color = message.value as Color
-      }
-      if (message.name == 'backgroundColor') {
-        this.backColor = message.value as Color
-      }
-      if (message.name == 'strokeWidth') {
-        this.strokeWidth = message.value as Double
-      }
-      if (message.name == 'scaleCount') {
-        this.scaleCount = message.value as int
-      }
-      if (message.name == 'scaleWidth') {
-        this.scaleWidth = message.value as Double
-      }
-    }
-    this.messageManager.registerCallback(callback)
   }
 
   build() {

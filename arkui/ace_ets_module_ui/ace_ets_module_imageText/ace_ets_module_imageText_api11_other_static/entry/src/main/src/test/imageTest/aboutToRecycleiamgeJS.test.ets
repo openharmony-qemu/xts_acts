@@ -95,7 +95,7 @@ export default function aboutToRecycleiamge() {
           // console.info("push aboutToRecycleiamge page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push aboutToRecycleiamge page error:" + err);
       }
 
@@ -106,8 +106,7 @@ export default function aboutToRecycleiamge() {
       console.info("aboutToRecycleiamge after each called");
     });
 
-    
-/*
+    /*
      * @tc.number   aboutToRecycleiamge_static_0100
      * @tc.name     aboutToRecycleiamge_static_0100
      * @tc.desc     aboutToRecycleiamge_static_0100

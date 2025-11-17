@@ -45,6 +45,7 @@ import {
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
+import { RectShape, CircleShape, RectShapeOptions } from '@ohos.arkui.shape';
 
 
 
@@ -53,21 +54,23 @@ import { UIContext } from '@ohos.arkui.UIContext';
 struct ClipAndMaskExample {
   @State isMaskRect: boolean = true;
   @State isClipCircle: boolean = true;
-  // @State maskType: CircleAttribute = new Rect({ width: 280, height: 280 });
-  // @State clipType: CircleAttribute = new Circle({ width: 280, height: 280 });
+  @State maskType: RectShape | CircleShape = new RectShape({ width: 280, height: 280 } as RectShapeOptions);
+  @State clipType: RectShape | CircleShape = new CircleShape({ width: 280, height: 280 } as RectShapeOptions);
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
+    if (eventData != null && eventData.data != null) {
       console.info("shapeClipping page state change called:" + JSON.stringify(eventData));
-      if ((eventData.data as ESObject)?.getProperty('maskValue') != null) {
-        //this.maskType = new Circle({ width: 280, height: 280 });
+      const data = eventData.data! as Record<string, object | undefined | null>
+      if (data['maskValue'] != null) {
+        this.maskType = new CircleShape({ width: 280, height: 280 } as RectShapeOptions);
       }
     }
   }
   private shapeChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data! as Record<string, object | undefined | null>
       console.info("shapeClipping page shape change called:" + JSON.stringify(eventData));
-      if ((eventData.data as ESObject)?.getProperty('clipValue') != null) {
-        //this.clipType = new Rect({ width: 280, height: 280 });
+      if (data['clipValue'] != null) {
+        this.clipType = new RectShape({ width: 280, height: 280 } as RectShapeOptions);
       }
     }
   }
@@ -95,7 +98,7 @@ struct ClipAndMaskExample {
         .fontColor(0xCCCCCC)
 
       Image('/images/clip.png')
-      // .clip(this.clipType )
+      .clipShape(this.clipType )
         .width('500px')
         .height('280px')
         .key('image_clip')
@@ -115,7 +118,7 @@ struct ClipAndMaskExample {
         .fontColor(0xCCCCCC)
 
       Image('/images/clip.png')
-      // .mask(this.maskType )
+      .maskShape(this.maskType )
         .width('500px').height('280px')
         .key('image_mask')
     }

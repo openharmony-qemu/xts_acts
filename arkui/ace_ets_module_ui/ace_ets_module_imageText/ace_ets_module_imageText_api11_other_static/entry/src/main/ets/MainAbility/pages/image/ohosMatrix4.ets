@@ -62,7 +62,7 @@ struct ohosMatrix4 {
     perspective:0
   } as RotateOptions
   @State scaleValue: ScaleOptions = { x: 2, y: 0.5 } as ScaleOptions
-  @State transformValue: object = Matrix4.identity().translate({ x: 100, y: 100, z: 30 })
+  @State transformValue: TranslateOptions = { x: 100, y: 100, z: 30 } as TranslateOptions
   @State transformValue1: object = Matrix4.identity().translate({ x: 100, y: 100, z: 30 })
   @State matrix1: object = Matrix4.identity().transformPoint([100, 10])
   @State matrix2: Matrix4.Matrix4Transit = Matrix4.identity().translate({ x: 300 }).copy()
@@ -89,22 +89,22 @@ struct ohosMatrix4 {
   @State onClickValue: boolean = false;
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("transFormExample page state change called:" + JSON.stringify(eventData));
-    if (eventData != null) {
-      console.info("eventData value is");
-      if ((eventData.data as ESObject)?.getProperty('matrix2') != null && (eventData.data as ESObject)?.getProperty('matrix3') != null) {
-        let matrixV = Matrix4.identity().translate((eventData.data as ESObject).getProperty('matrix2').toStaticObject() as Matrix4.TranslateOption);
-        if (matrixV != null) {
-          this.matrix2 = Matrix4.identity().translate((eventData.data as ESObject).getProperty('matrix2').toStaticObject() as Matrix4.TranslateOption).copy();
-          this.matrix3 = Matrix4.identity().scale((eventData.data as ESObject).getProperty('matrix3').toStaticObject() as Matrix4.ScaleOption).copy();
+    if (eventData != null && eventData.data != null) {
+      const data = eventData.data as Record<string, undefined|null|Object>
+      if (data['matrix2'] != null && data['matrix2'] != null) {
+        let matrixV = Matrix4.identity().translate(data['matrix2'] as Matrix4.TranslateOption)
+        if (matrixV && data['matrix3'] != null && data['matrix3']) {
+          this.matrix2 = Matrix4.identity().translate(data['matrix2'] as Matrix4.TranslateOption).copy();
+          this.matrix3 = Matrix4.identity().scale(data['matrix3'] as Matrix4.ScaleOption).copy();
         }
       } else {
         console.info("this.matrix value is not");
       }
-      if ((eventData.data as ESObject)?.getProperty('rotateValue') != null) {
-        this.rotateValue = (eventData.data as ESObject).getProperty('rotateValue').toStaticObject() as RotateOptions;
+      if (data['rotateValue'] != null) {
+        this.rotateValue = data['rotateValue'] as RotateOptions;
       }
-      if ((eventData.data as ESObject)?.getProperty('scaleValue') != null) {
-        this.scaleValue = (eventData.data as ESObject).getProperty('scaleValue').toStaticObject() as ScaleOptions;
+      if (data['scaleValue'] != null) {
+        this.scaleValue = data['scaleValue'] as ScaleOptions;
       }
     }
   }
@@ -139,7 +139,7 @@ struct ohosMatrix4 {
         .padding(5)
         .fontSize(5)
       Row()
-        .translate(this.transformValue as TranslateOptions | undefined)
+        .translate(this.transformValue)
         .width(10)
         .height(10)
         .backgroundColor('0xAFEEEE')
@@ -171,7 +171,7 @@ struct ohosMatrix4 {
         .key('rotate4')
       Button("get Point").padding(40)
         .onClick((e: ClickEvent) => {
-          prompt.showToast({ message: JSON.stringify(this.matrix1), duration: 200 })
+          // prompt.showToast({ message: JSON.stringify(this.matrix1), duration: 200 })
           this.onClickValue = true;
           try {
             let backData: events_emitter.EventData = {

@@ -95,7 +95,7 @@ export default function shadowAlphaJsunit() {
           // console.info("push shadowAlphaJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push shadowAlphaJsunit page error:" + err);
       }
 
@@ -107,9 +107,8 @@ export default function shadowAlphaJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   shadowAlphaJsunit_static_0100
      * @tc.name     shadowAlphaJsunit_static_0100
      * @tc.desc     shadowAlphaJsunit_static_0100

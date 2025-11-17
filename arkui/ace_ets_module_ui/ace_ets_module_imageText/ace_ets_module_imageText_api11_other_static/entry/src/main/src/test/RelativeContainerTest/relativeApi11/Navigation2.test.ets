@@ -67,16 +67,15 @@ export default function Navigation2() {
           // console.info("push Navigation2 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push Navigation2 page error: " + err);
         expect().assertFail();
       }
     });
 
 
-
     
-/*
+    /*
      * @tc.number   Navigation2_static_0100
      * @tc.name     Navigation2_static_0100
      * @tc.desc     Navigation2_static_0100

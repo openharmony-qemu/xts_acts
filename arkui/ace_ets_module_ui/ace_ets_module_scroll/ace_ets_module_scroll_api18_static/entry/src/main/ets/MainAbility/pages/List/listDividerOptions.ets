@@ -14,27 +14,27 @@
  */
 import { MyDataSource } from '../MyDataSource'
 import {
-  Entry,
-  Text,
-  LazyForEach,
+  Axis,
+  BarState,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   Component,
-  LazyVGridLayout,
-  ClickEvent,
-  WaterFlow,
-  TextAlign,
-  Button,
-  Axis,
-  ScrollState,
-  VisibleListContentInfo,
-  BarState,
   EdgeEffect,
-  List,
-  Scroller,
-  ListDividerOptions,
+  Entry,
   ForEach,
+  LazyForEach,
+  LazyVGridLayout,
+  List,
+  ListDividerOptions,
   ListItem,
-  Color
+  Scroller,
+  ScrollState,
+  Text,
+  TextAlign,
+  VisibleListContentInfo,
+  WaterFlow
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -78,7 +78,7 @@ struct ListDividerOptionsExample {
       .listDirection(Axis.Vertical)
       .scrollBar(BarState.Off)
       .friction(0.6)
-      .divider(this.mDivider) 
+      .divider(this.mDivider) // 每行之间的分界线
       .edgeEffect(EdgeEffect.Spring)
       .onScrollIndex((firstIndex: int, lastIndex: int, centerIndex: int) => {
         console.info('first' + firstIndex)

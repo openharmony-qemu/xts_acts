@@ -95,7 +95,7 @@ export default function shadowColorJsunit() {
           // console.info("push shadowColorJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push shadowColorJsunit page error:" + err);
       }
 
@@ -107,9 +107,8 @@ export default function shadowColorJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   shadowColorJsunit_static_0100
      * @tc.name     shadowColorJsunit_static_0100
      * @tc.desc     shadowColorJsunit_static_0100
@@ -125,7 +124,7 @@ it('shadowColorJsunit_static_0100', Level.LEVEL2, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('render_shadowColor');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[shadowColorJsunit_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('shadowColor:4278255360');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('shadowColor:-16711936');
       console.info('[shadowColorJsunit_0100] END');
       done();
     });

@@ -12,20 +12,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import setScrollEvent from './ScrollTest/setScrollEvent.test';
-import preloadSwiper from './SwiperTest/preloadSwiper.test';
-import selectedSwiper from './SwiperTest/selectedSwiper.test';
-import IndexTest from './SwiperTest/SwiperIndicatorDistanceTest.test';
-import barBackground from './TabsTest/barBackground.test';
 import iconTabs from './TabsTest/iconTabs.test';
 import onSelectedTabs from './TabsTest/onSelectedTabs.test';
+import preloadSwiper from './SwiperTest/preloadSwiper.test';
+import selectedSwiper from './SwiperTest/selectedSwiper.test';
+import SwiperIndicatorDistanceTest from './SwiperTest/SwiperIndicatorDistanceTest.test'
+import barBackground from './TabsTest/barBackground.test';
+import setGridEvent from './GridTest/setGridEvent.test';
+import setListEvent from './ListTest/setListEvent.test';
+import setScrollEvent from './ScrollTest/setScrollEvent.test';
+import listDividerOptions from './ListTest/listDividerOptions.test';
+import stackFromEndList from './ListTest/stackFromEndList.test';
+import LazyVGridLayout from './LazyVGridLayout/LazyVGridLayout.test';
 
 export default function testsuite() {
-  setScrollEvent();
-  preloadSwiper();
-  selectedSwiper();
-  IndexTest();
-  barBackground();
-  iconTabs();
-  onSelectedTabs();
+  iconTabs()
+  onSelectedTabs()
+  preloadSwiper() // preloadItems 捕获错误码 1
+  selectedSwiper() // bottom 导致Swiper不显示 1
+  SwiperIndicatorDistanceTest() // // bottom不能传值null 1
+  barBackground()
+  setGridEvent()  // UIGridEvent尚未支持  1
+  setListEvent()  // UIListEvent尚未支持  1
+  setScrollEvent()  // UIScrollEvent尚未支持 1
+  listDividerOptions()
+  stackFromEndList()
+  LazyVGridLayout()
 }

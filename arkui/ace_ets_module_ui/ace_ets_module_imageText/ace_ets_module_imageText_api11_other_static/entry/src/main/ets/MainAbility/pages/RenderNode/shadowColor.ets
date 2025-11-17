@@ -77,7 +77,6 @@ struct getShadowColor {
       Text('shadowColor:' + this.sColor).key('render_shadowColor').height('5%')
       Button('set get shadowColor').height('5%')
         .key('getSet_shadowColor')
-        .id('getSet_shadowColor')
         .onClick((e: ClickEvent) => {
           this.sColor = renderNode.shadowColor
         })

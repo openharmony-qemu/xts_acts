@@ -13,27 +13,26 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Text,
-  LazyForEach,
+  Axis,
+  BarState,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   Component,
-  LazyVGridLayout,
-  ClickEvent,
-  WaterFlow,
-  TextAlign,
-  Button,
-  Axis,
-  ScrollState,
-  VisibleListContentInfo,
-  BarState,
   EdgeEffect,
+  Entry,
+  ForEach,
+  LazyForEach,
+  LazyVGridLayout,
   List,
   ListItem,
-  Color,
   Margin,
-  ForEach,
-  BarState
+  ScrollState,
+  Text,
+  TextAlign,
+  VisibleListContentInfo,
+  WaterFlow
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -80,7 +79,6 @@ struct stackFromEndListExample {
       .lanes(5)
       .scrollBar(BarState.Off)
       .stackFromEnd(this.stackFromEnd1)
-
     }.width('100%')
     .height('100%')
     .backgroundColor(0xDCDCDC)

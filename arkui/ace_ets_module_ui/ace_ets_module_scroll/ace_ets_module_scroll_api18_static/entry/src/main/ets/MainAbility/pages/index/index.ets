@@ -14,44 +14,42 @@
  */
 import router from '@ohos.router';
 import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
+  BarState,
   Button,
   ButtonAttribute,
+  ButtonType,
   ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Scroll,
+  Color,
+  Column,
+  Component,
+  EdgeEffect,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
   FontWeight,
-  TextArea,
-  ScrollState,
-  ScrollSource,
   ForEach,
-  NodeContainer,
   Grid,
   GridItem,
-  Search,
-  Flex,
-  ButtonType,
-  SafeAreaType,
-  ItemAlign,
-  ScrollDirection,
-  FlexAlign,
-  BarState,
-  FlexDirection,
-  Margin,
-  Color,
-  EdgeEffect,
   HorizontalAlign,
-  FlexAlign
+  Image,
+  ImageFit,
+  ItemAlign,
+  Margin,
+  NodeContainer,
+  SafeAreaType,
+  Scroll,
+  ScrollDirection,
+  Scroller,
+  ScrollSource,
+  ScrollState,
+  Search,
+  Text,
+  TextArea,
+  TextAttribute
 } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -60,7 +58,8 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext())
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

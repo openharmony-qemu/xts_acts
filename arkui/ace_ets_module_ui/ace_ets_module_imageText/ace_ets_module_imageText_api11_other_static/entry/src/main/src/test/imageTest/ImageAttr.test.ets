@@ -76,7 +76,7 @@ export default function ImageAttr() {
           // console.info("push ImageAttr page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push ImageAttr page error: " + err);
       }
 
@@ -87,9 +87,8 @@ export default function ImageAttr() {
       console.info("ImageAttr after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   ImageAttr_static_001
      * @tc.name     ImageAttr_static_001
      * @tc.desc     ImageAttr_static_001
@@ -119,9 +118,8 @@ it('ImageAttr_static_001', Level.LEVEL2, async (done: () => void): Promise<void>
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   ImageAttr_static_002
      * @tc.name     ImageAttr_static_002
      * @tc.desc     ImageAttr_static_002

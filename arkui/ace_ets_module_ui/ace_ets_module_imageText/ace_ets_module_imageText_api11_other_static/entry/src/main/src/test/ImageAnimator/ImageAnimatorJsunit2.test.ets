@@ -84,7 +84,7 @@ export default function imageAnimatorJsunitt() {
           // console.info("push imageAnimator page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push imageAnimator page error: " + err);
       }
 
@@ -95,8 +95,7 @@ export default function imageAnimatorJsunitt() {
       console.info("imageAnimator after each called");
     })
 
-    
-/*
+    /*
      * @tc.number   imageAnimatorTest_static_0100
      * @tc.name     imageAnimatorTest_static_0100
      * @tc.desc     imageAnimatorTest_static_0100
@@ -116,7 +115,7 @@ it('imageAnimatorTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("imageAnimatorTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button_0', 10, "")));
@@ -125,8 +124,7 @@ it('imageAnimatorTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAnimatorTest_static_0200
      * @tc.name     imageAnimatorTest_static_0200
      * @tc.desc     imageAnimatorTest_static_0200
@@ -147,7 +145,7 @@ it('imageAnimatorTest_static_0200', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("imageAnimatorTest_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
@@ -156,8 +154,7 @@ it('imageAnimatorTest_static_0200', Level.LEVEL1, async (done: () => void): Prom
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAnimatorTest_static_0300
      * @tc.name     imageAnimatorTest_static_0300
      * @tc.desc     imageAnimatorTest_static_0300
@@ -178,7 +175,7 @@ it('imageAnimatorTest_static_0300', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("imageAnimatorTest_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
@@ -187,8 +184,7 @@ it('imageAnimatorTest_static_0300', Level.LEVEL1, async (done: () => void): Prom
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAnimatorTest_static_0400
      * @tc.name     imageAnimatorTest_static_0400
      * @tc.desc     imageAnimatorTest_static_0400
@@ -208,7 +204,7 @@ it('imageAnimatorTest_static_0400', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("imageAnimatorTest_static_0400 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0400 click result is: " + JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
@@ -217,8 +213,7 @@ it('imageAnimatorTest_static_0400', Level.LEVEL1, async (done: () => void): Prom
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAnimatorTest_static_0500
      * @tc.name     imageAnimatorTest_static_0500
      * @tc.desc     imageAnimatorTest_static_0500
@@ -238,7 +233,7 @@ it('imageAnimatorTest_static_0500', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("imageAnimatorTest_static_0500 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0500 click result is: " + JSON.stringify(inspector.sendEventByKey('button4', 10, "")));
@@ -247,8 +242,7 @@ it('imageAnimatorTest_static_0500', Level.LEVEL1, async (done: () => void): Prom
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAnimatorTest_static_0600
      * @tc.name     imageAnimatorTest_static_0600
      * @tc.desc     imageAnimatorTest_static_0600
@@ -267,7 +261,7 @@ it('imageAnimatorTest_static_0600', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("imageAnimatorTest_static_0600 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0600 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -276,8 +270,7 @@ it('imageAnimatorTest_static_0600', Level.LEVEL1, async (done: () => void): Prom
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageAnimatorTest_static_0700
      * @tc.name     imageAnimatorTest_static_0700
      * @tc.desc     imageAnimatorTest_static_0700
@@ -297,7 +290,7 @@ it('imageAnimatorTest_static_0700', Level.LEVEL1, async (done: () => void): Prom
         }
         console.info("imageAnimatorTest_static_0700 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("imageAnimatorTest_static_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1500);
@@ -312,7 +305,7 @@ it('imageAnimatorTest_static_0700', Level.LEVEL1, async (done: () => void): Prom
       }
       try {
         events_emitter.on(indexEventOne, callbackOne);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("imageAnimatorTest_static_0700 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("imageAnimatorTest_static_0700 click result is: " + JSON.stringify(inspector.sendEventByKey('button5', 10, "")));

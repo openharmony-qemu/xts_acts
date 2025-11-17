@@ -77,7 +77,7 @@ export default function RelativeChain3() {
           // console.info("push RelativeChain3 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeChain3 page error:" + err);
       }
       console.info("RelativeChain3 foreEach end");
@@ -88,10 +88,9 @@ export default function RelativeChain3() {
       console.info("RelativeChain3 after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeChain3_static_001
      * @tc.name     RelativeChain3_static_001
      * @tc.desc     RelativeChain3_static_001
@@ -119,9 +118,8 @@ it('RelativeChain3_static_001', Level.LEVEL3, async (done: () => void): Promise<
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeChain3_static_002
      * @tc.name     RelativeChain3_static_002
      * @tc.desc     RelativeChain3_static_002

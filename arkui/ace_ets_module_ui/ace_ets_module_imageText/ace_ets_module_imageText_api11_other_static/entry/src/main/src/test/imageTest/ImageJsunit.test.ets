@@ -85,7 +85,7 @@ export default function imageJsunit() {
           // console.info("push Image page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push image page error " + JSON.stringify(err));
       }
       await sleep(1);
@@ -97,9 +97,8 @@ export default function imageJsunit() {
       console.info("Image after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   testGetImageAttr_static_010
      * @tc.name     testGetImageAttr_static_010
      * @tc.desc     testGetImageAttr_static_010
@@ -132,9 +131,8 @@ it('testGetImageAttr_static_010', Level.LEVEL1, async (done: () => void): Promis
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   testGetImageAttr_static_020
      * @tc.name     testGetImageAttr_static_020
      * @tc.desc     testGetImageAttr_static_020
@@ -155,9 +153,8 @@ it('testGetImageAttr_static_020', Level.LEVEL1, async (done: () => void): Promis
       console.info('testGetImageAttr2 END');
       done();
     });
-
     
-/*
+    /*
      * @tc.number   testGetImageAttr_static_030
      * @tc.name     testGetImageAttr_static_030
      * @tc.desc     testGetImageAttr_static_030
@@ -177,9 +174,8 @@ it('testGetImageAttr_static_030', Level.LEVEL1, async (done: () => void): Promis
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   testGetImageAttr_static_040
      * @tc.name     testGetImageAttr_static_040
      * @tc.desc     testGetImageAttr_static_040
@@ -199,9 +195,8 @@ it('testGetImageAttr_static_040', Level.LEVEL1, async (done: () => void): Promis
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   testGetImageAttr_static_050
      * @tc.name     testGetImageAttr_static_050
      * @tc.desc     testGetImageAttr_static_050

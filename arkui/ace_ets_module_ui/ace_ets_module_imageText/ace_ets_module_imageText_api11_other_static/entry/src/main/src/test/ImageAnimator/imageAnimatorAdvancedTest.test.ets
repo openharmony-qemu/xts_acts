@@ -86,7 +86,7 @@ export default function ImageAnimatorAdvancedTest() {
           // console.info(`push ${target} page result:` + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error(`push ${target} page error:` + err);
       }
     }
@@ -100,9 +100,8 @@ export default function ImageAnimatorAdvancedTest() {
       console.info("after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0120
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0120
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0120
@@ -122,9 +121,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0120', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0130
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0130
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0130
@@ -141,9 +139,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0130', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0140
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0140
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0140
@@ -160,9 +157,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0140', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0150
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0150
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0150
@@ -179,9 +175,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0150', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0160
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0160
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0160
@@ -201,7 +196,7 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0160', Level.LEVEL
 
 
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0170
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0170
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0170
@@ -219,9 +214,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0170', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0180
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0180
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0180
@@ -238,9 +232,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0180', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0190
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0190
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0190
@@ -257,9 +250,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0190', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0200
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0200
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0200
@@ -276,9 +268,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0200', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0210
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0210
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0210
@@ -295,9 +286,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0210', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0220
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0220
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0220
@@ -314,9 +304,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0220', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0230
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0230
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0230
@@ -334,9 +323,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0230', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0240
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0240
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0240
@@ -353,9 +341,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0240', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0250
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0250
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0250
@@ -372,9 +359,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0250', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0260
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0260
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0260
@@ -391,9 +377,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0260', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0270
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0270
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0270
@@ -410,9 +395,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0270', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0280
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0280
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0280
@@ -431,9 +415,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0280', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0290
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0290
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0290
@@ -453,9 +436,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0290', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0300
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0300
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0300
@@ -474,9 +456,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0300', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0310
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0310
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0310
@@ -499,9 +480,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0310', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0330
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0330
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0330
@@ -548,9 +528,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0330', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0380
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0380
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0380
@@ -570,9 +549,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0380', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0390
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0390
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0390
@@ -591,9 +569,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_INTERFACE_static_0390', Level.LEVEL
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_static_0010
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_static_0010
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGEANIMATOR_LAYOUT_static_0010

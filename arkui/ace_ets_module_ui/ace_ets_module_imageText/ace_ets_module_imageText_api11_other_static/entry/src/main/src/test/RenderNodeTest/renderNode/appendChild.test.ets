@@ -67,16 +67,15 @@ export default function appendChildTest() {
           // console.info("push appendChildTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push appendChildTest page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   appendChildTest_static_0100
      * @tc.name     appendChildTest_static_0100
      * @tc.desc     appendChildTest_static_0100
@@ -97,9 +96,8 @@ it('appendChildTest_static_0100', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   appendChildTest_static_0200
      * @tc.name     appendChildTest_static_0200
      * @tc.desc     appendChildTest_static_0200
@@ -120,9 +118,8 @@ it('appendChildTest_static_0200', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   appendChildTest_static_0300
      * @tc.name     appendChildTest_static_0300
      * @tc.desc     appendChildTest_static_0300
@@ -145,9 +142,8 @@ it('appendChildTest_static_0300', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   appendChildTest_static_0400
      * @tc.name     appendChildTest_static_0400
      * @tc.desc     appendChildTest_static_0400

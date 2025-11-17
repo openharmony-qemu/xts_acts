@@ -15,39 +15,38 @@
 
 import { LengthMetrics } from '@ohos.arkui.node'
 import {
-  Entry,
-  Component,
   $r,
+  ArrowStyle,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   ColumnOptions,
+  Component,
   Curve,
+  DataChangeListener,
+  DotIndicator,
   EdgeEffect,
+  Entry,
+  FontWeight,
+  ForEach,
+  IDataSource,
   Indicator,
+  Length,
+  Margin,
   Row,
   RowOptions,
-  FontWeight,
-  Text,
-  ArrowStyle,
-  IDataSource,
-  DataChangeListener,
   Scroll,
-  SwiperNestedScrollMode,
-  SwiperDisplayMode,
-  Length,
-  Color,
-  Button,
   Swiper,
-  ForEach,
-  ClickEvent,
-  Margin,
-  SwiperController,
-  TextAlign,
-  DotIndicator,
   SwiperAnimationEvent,
+  SwiperController,
+  SwiperDisplayMode,
+  SwiperNestedScrollMode,
+  Text,
+  TextAlign,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { BusinessError } from '@ohos.base';
 
@@ -63,7 +62,7 @@ class MyDataSource implements IDataSource<number> {
   }
 
   getData(index: int): number {
-    return this.list[index.toInt()]
+    return this.list[index]
   }
 
   registerDataChangeListener(listener: DataChangeListener): void {
@@ -78,9 +77,9 @@ class MyDataSource implements IDataSource<number> {
 struct SwiperExample {
   public isLandScape: boolean = false;
   @State autoPlay: boolean = false
-  @State indexNumber: Int = 1
+  @State indexNumber: int = 1
   @State space: LengthMetrics | null | undefined = LengthMetrics.vp(8)
-  @State maxDisplayCount: Int = 9
+  @State maxDisplayCount: int = 9
   @State loop: boolean = true
   @State list1item: number = 10
   @State bottom: LengthMetrics | Length | null | undefined = LengthMetrics.vp(3)
@@ -127,7 +126,7 @@ struct SwiperExample {
   build() {
     Scroll() {
       Column({ space: 5 } as ColumnOptions) {
-        
+        // 第一个 Swiper
         Swiper(this.swiperController1) {
           ForEach(this.list1, (item: number) => {
             Text(String(item))
@@ -143,7 +142,7 @@ struct SwiperExample {
         .nestedScroll(SwiperNestedScrollMode.SELF_ONLY)
         .displayMode(SwiperDisplayMode.STRETCH)
         .index(this.indexNumber)
-        
+        .autoPlay(this.autoPlay, undefined)
         .loop(this.loop)
         .duration(1000)
         .itemSpace(0)
@@ -152,7 +151,8 @@ struct SwiperExample {
         .indicator(new DotIndicator()
           .maxDisplayCount(this.maxDisplayCount)
           .mask(this.maskType)
-            
+          .space(this.space!)
+          // .bottom(this.bottom, this.ignoreSize)
           .itemWidth(15)
           .itemHeight(15)
           .selectedItemWidth(15)
@@ -168,11 +168,11 @@ struct SwiperExample {
           arrowColor: Color.Blue
         } as ArrowStyle, false)
         .curve(Curve.Linear)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
 
-        
+        // 第二个 Swiper
         Swiper(this.swiperController2) {
           ForEach(this.list2, (item: number) => {
             Text(String(item))
@@ -189,23 +189,25 @@ struct SwiperExample {
         .index(1)
         .id('Swiper2')
         .key('Swiper_DigitIndicator')
-        
+        .autoPlay(this.autoPlay, undefined)
         .loop(this.loop)
         .duration(1000)
         .itemSpace(0)
         .effectMode(EdgeEffect.None)
         .indicator(Indicator.digit()
+          // .bottom(this.bottom, this.ignoreSize)
           .fontColor(Color.Gray)
           .selectedFontColor(Color.Blue)
           .digitFont({ size: 20, weight: FontWeight.Bold })
-          .selectedDigitFont({ size: 20, weight: FontWeight.Normal }))
+          .selectedDigitFont({ size: 20, weight: FontWeight.Normal })
+          )
         .displayArrow({ isSidebarMiddle: false } as ArrowStyle, false)
         .curve(Curve.Linear)
-        .onChange((index: Int): void => {
+        .onChange((index: int): void => {
           console.info(index.toString())
         })
 
-        
+        // 按钮组
         Column() {
           Row({ space: 2 } as RowOptions) {
             Button('Space:' + this.spaceIndex).onClick((e: ClickEvent) => {

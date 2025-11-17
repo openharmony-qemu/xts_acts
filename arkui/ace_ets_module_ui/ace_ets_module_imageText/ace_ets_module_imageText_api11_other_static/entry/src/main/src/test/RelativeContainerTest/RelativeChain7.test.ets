@@ -77,7 +77,7 @@ export default function RelativeChain7() {
           // console.info("push RelativeChain7 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeChain7 page error:" + err);
       }
       console.info("RelativeChain7 foreEach end");
@@ -88,10 +88,9 @@ export default function RelativeChain7() {
       console.info("RelativeChain7 after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeChain7_static_001
      * @tc.name     RelativeChain7_static_001
      * @tc.desc     RelativeChain7_static_001

@@ -66,7 +66,7 @@ export default function getSizeJsunit() {
           // console.info("push getSizeJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push getSizeJsunit page error:" + err);
       }
       console.info("getSizeJsunit beforeEach end");
@@ -79,9 +79,8 @@ export default function getSizeJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   getSizeJsunit_static_001
      * @tc.name     getSizeJsunit_static_001
      * @tc.desc     getSizeJsunit_static_001

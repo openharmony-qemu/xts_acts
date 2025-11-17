@@ -38,55 +38,21 @@ import {
   TextOverflow,
   ButtonType
 } from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct Button3Example {
-  @State buttonTypeValue: ButtonType = ButtonType.Normal;
-  @State fontSizeValue: string = '20px';
-  @State fontColorValue: Color = Color.Black;
-  @State text: string = '';
-  @State onClickValue: boolean = false;
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("Button page state change called:" + JSON.stringify(eventData));
-      if ((eventData.data as ESObject)?.getProperty('fontSizeValue') != null) {
-        this.fontSizeValue = (eventData.data as ESObject).getProperty('fontSizeValue').toString();
-      }
-      if ((eventData.data as ESObject)?.getProperty('fontColorValue') != null) {
-        this.fontColorValue = (eventData.data as ESObject).getProperty('fontColorValue').toStaticObject() as Color;
-      }
-      if ((eventData.data as ESObject)?.getProperty('buttonTypeValue') != null) {
-        this.buttonTypeValue = (eventData.data as ESObject).getProperty('buttonTypeValue').toStaticObject() as ButtonType;
-      }
-    }
-  }
+  @StoragePropRef('buttonTypeValue') buttonTypeValue: ButtonType | undefined = ButtonType.Normal;
+  @StoragePropRef('fontSizeValue') fontSizeValue: string | number = '20px';
+  @StoragePropRef('fontColorValue') fontColorValue: Color | string | int = Color.Black;
+  @StoragePropRef('text') text: string = '';
+  @StoragePropRef('onClickValue') onClickValue: boolean = false;
 
   onPageShow() {
     console.info('Button page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 70,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-    let stateChangeEventOne: events_emitter.InnerEvent = {
-      eventId: 74,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventOne, this.stateChangCallBack);
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 75,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack);
-    let stateChangeEventThree: events_emitter.InnerEvent = {
-      eventId: 76,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventThree, this.stateChangCallBack);
   }
 
   build() {
