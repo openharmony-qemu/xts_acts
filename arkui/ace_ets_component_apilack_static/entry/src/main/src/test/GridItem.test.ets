@@ -65,13 +65,13 @@ export default function gridItemOnSelectJsunit() {
 
 
     
-/*
+    /*
      * @tc.number   testgridItemOnSelect_static_0001
      * @tc.name     testgridItemOnSelect_static_0001
      * @tc.desc     testgridItemOnSelect_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testgridItemOnSelect_static_0001', Level.LEVEL0, async () => {
+    it('testgridItemOnSelect_static_0001', Level.LEVEL0, async () => {
       console.info('testgridItemOnSelect testgridItemOnSelect0001 START');
       await Utils.sleep(2000);
       let callback: (eventData: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {

@@ -65,13 +65,13 @@ export default function textMinFontSizeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0001
      * @tc.name     testtextMinFontSize_static_0001
      * @tc.desc     testtextMinFontSize_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0001', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0001', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -85,13 +85,13 @@ it('testtextMinFontSize_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0002
      * @tc.name     testtextMinFontSize_static_0002
      * @tc.desc     testtextMinFontSize_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0002', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0002', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -105,13 +105,13 @@ it('testtextMinFontSize_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0003
      * @tc.name     testtextMinFontSize_static_0003
      * @tc.desc     testtextMinFontSize_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0003', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0003', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -126,13 +126,13 @@ it('testtextMinFontSize_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0004
      * @tc.name     testtextMinFontSize_static_0004
      * @tc.desc     testtextMinFontSize_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0004', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0004', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -146,13 +146,13 @@ it('testtextMinFontSize_static_0004', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0005
      * @tc.name     testtextMinFontSize_static_0005
      * @tc.desc     testtextMinFontSize_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0005', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0005', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -166,13 +166,13 @@ it('testtextMinFontSize_static_0005', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0006
      * @tc.name     testtextMinFontSize_static_0006
      * @tc.desc     testtextMinFontSize_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0006', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0006', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -185,13 +185,13 @@ it('testtextMinFontSize_static_0006', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0007
      * @tc.name     testtextMinFontSize_static_0007
      * @tc.desc     testtextMinFontSize_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0007', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0007', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -204,13 +204,13 @@ it('testtextMinFontSize_static_0007', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0009
      * @tc.name     testtextMinFontSize_static_0009
      * @tc.desc     testtextMinFontSize_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0009', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0009', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -224,13 +224,13 @@ it('testtextMinFontSize_static_0009', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0010
      * @tc.name     testtextMinFontSize_static_0010
      * @tc.desc     testtextMinFontSize_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0010', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0010', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -243,13 +243,13 @@ it('testtextMinFontSize_static_0010', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testtextMinFontSize_static_0011
      * @tc.name     testtextMinFontSize_static_0011
      * @tc.desc     testtextMinFontSize_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testtextMinFontSize_static_0011', Level.LEVEL0, async () => {
+    it('testtextMinFontSize_static_0011', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('minFontSizeText');
@@ -262,13 +262,13 @@ it('testtextMinFontSize_static_0011', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testtextCopyOptionText_static_0001
      * @tc.name     testtextCopyOptionText_static_0001
      * @tc.desc     testtextCopyOptionText_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextCopyOptionText_static_0001', Level.LEVEL0, async () => {
+    it('testtextCopyOptionText_static_0001', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextCopyOptionText0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('copyOptionText');

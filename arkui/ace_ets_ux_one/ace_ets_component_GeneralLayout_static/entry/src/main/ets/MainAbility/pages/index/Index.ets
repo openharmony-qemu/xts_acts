@@ -13,11 +13,8 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { Hypium } from '../../../../../hypium/index'
-import testsuite from '../../../../src/test/List.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
 import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges } from '@ohos.arkui.component'
 
@@ -28,17 +25,10 @@ struct Index {
     try {
       let router = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
       console.log('error ' + error);
     }
-
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
   }
 
   build() {
@@ -79,7 +69,7 @@ struct Index {
       }).key("0700_TextC")
         .width('20%')
         .position({ start: undefined, top: undefined } as LocalizedEdges)
-      Button('0800_ButtonC').onClick((e: ClickEvent) => {
+      Button('0800_ButtonC').onClick(() => {
       }).width(100)
         .key("0800_ButtonC")
         .position({ start: undefined, top: undefined } as LocalizedEdges)

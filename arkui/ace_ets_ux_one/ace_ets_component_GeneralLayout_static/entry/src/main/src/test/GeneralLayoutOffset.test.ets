@@ -21,7 +21,8 @@ import { UtilsTest, startAbility } from './Util.test'
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-const uiContext = new UIContext();
+import Utils from '../../ets/MainAbility/common/Utils';
+const uiContext = AppStorage.get<UIContext>("uiContext");
 
 export default function GeneralLayoutOffsetTest() {
   describe('GeneralLayoutOffsetTest', () => {
@@ -45,7 +46,7 @@ export default function GeneralLayoutOffsetTest() {
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'TestAbility/pages/IndexOff',
+        url: 'MainAbility/pages/IndexOff',
       };
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -63,13 +64,13 @@ export default function GeneralLayoutOffsetTest() {
       }
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_1900
-     *@tc.name       : ArkUIHDS_General_Layout_1900
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_1900
+     * @tc.name     ArkUIHDS_General_Layout_static_1900
+     * @tc.desc     ArkUIHDS_General_Layout_static_1900
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_1900 START');
@@ -77,37 +78,29 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0100_Text');
       console.info('0100_Text START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0100_Text')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0100_Text');
       console.info('0100_Text START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0100_Text')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       let strJson3 = inspector.getInspectorByKey('bottom_off');
-      let obj3: Record<string, Object> =
-        JSON.parse<Object>(strJson3, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo3: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj3["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let right: number = rectInfo3[0][0] ?? 0;
+      let obj3 = JSON.parseJsonElement(strJson3);
+      let rectInfo3 = Utils.getComponentRect('bottom_off')
+      let right: number = rectInfo3.left;
       left = Number.parseInt(left.toFixed(0));
       right = Math.floor(right);
       let width = right - left;
@@ -123,13 +116,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2000
-     *@tc.name       : ArkUIHDS_General_Layout_2000
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2000
+     * @tc.name     ArkUIHDS_General_Layout_static_2000
+     * @tc.desc     ArkUIHDS_General_Layout_static_2000
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2000 START');
@@ -137,61 +130,54 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0200_Button');
       console.info('0200_Button START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0200_Button')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0200_Button');
       console.info('0200_Button START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0200_Button')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       let strJson3 = inspector.getInspectorByKey('bottom_off');
-      let obj3: Record<string, Object> =
-        JSON.parse<Object>(strJson3, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo3: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj3["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let right: number = rectInfo3[0][0] ?? 0;
+      let obj3 = JSON.parseJsonElement(strJson3);
+      let rectInfo3 = Utils.getComponentRect('bottom_off')
+      let right: number = rectInfo3.left;
       left = Number.parseInt(left.toFixed(0));
       right = Math.floor(right);
       let width = right - left;
+      const uiContext = AppStorage.get<UIContext>("uiContext");
       expect(mirror_rect_right - left).assertLargerOrEqual(width - (original_rect_left - left) - 1);
       expect(mirror_rect_right - left).assertLessOrEqual(width - (original_rect_left - left) + 1);
-      expect(original_rect_top - top - 30).assertLargerOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) - 1);
-      expect(original_rect_top - top - 30).assertLessOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) + 1);
-      expect(mirror_rect_top - top - 30).assertLargerOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) - 1);
-      expect(mirror_rect_top - top - 30).assertLessOrEqual(UIContext.getFocusedUIContext()!.vp2px(120) + 1);
+      expect(original_rect_top - top - 30).assertLargerOrEqual(uiContext!.vp2px(120) - 1);
+      expect(original_rect_top - top - 30).assertLessOrEqual(uiContext!.vp2px(120) + 1);
+      expect(mirror_rect_top - top - 30).assertLargerOrEqual(uiContext!.vp2px(120) - 1);
+      expect(mirror_rect_top - top - 30).assertLessOrEqual(uiContext!.vp2px(120) + 1);
       expect(((mirror_rect_left - left) + (mirror_rect_right - left)) / 2 - width / 2)
-        .assertLargerOrEqual(UIContext.getFocusedUIContext()!.vp2px(100) - 1);
+        .assertLargerOrEqual(uiContext!.vp2px(100) - 1);
       expect(((mirror_rect_left - left) + (mirror_rect_right - left)) / 2 - width / 2)
-        .assertLessOrEqual(UIContext.getFocusedUIContext()!.vp2px(100) + 1);
+        .assertLessOrEqual(uiContext!.vp2px(100) + 1);
       console.info('ArkUIHDS_General_Layout_static_2000 END');
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2100
-     *@tc.name       : ArkUIHDS_General_Layout_2100
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2100
+     * @tc.name     ArkUIHDS_General_Layout_static_2100
+     * @tc.desc     ArkUIHDS_General_Layout_static_2100
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2100 START');
@@ -199,61 +185,54 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0300_Image');
       console.info('0300_Image START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0300_Image')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0300_Image');
       console.info('0300_Image START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0300_Image')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       let strJson3 = inspector.getInspectorByKey('bottom_off');
-      let obj3: Record<string, Object> =
-        JSON.parse<Object>(strJson3, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo3: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj3["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let right: number = rectInfo3[0][0] ?? 0;
+      let obj3 = JSON.parseJsonElement(strJson3);
+      let rectInfo3 = Utils.getComponentRect('bottom_off')
+      let right: number = rectInfo3.left;
       left = Number.parseInt(left.toFixed(0));
       right = Math.floor(right);
       let width = right - left;
+      const uiContext = AppStorage.get<UIContext>("uiContext");
       expect(mirror_rect_left - left).assertLargerOrEqual(width - (original_rect_right - left) - 1);
       expect(mirror_rect_left - left).assertLessOrEqual(width - (original_rect_right - left) + 1);
-      expect(original_rect_top - top - 60).assertLargerOrEqual(uiContext.fp2px(200) - 1);
-      expect(original_rect_top - top - 60).assertLessOrEqual(uiContext.fp2px(200) + 1);
-      expect(mirror_rect_top - top - 60).assertLargerOrEqual(uiContext.fp2px(200) - 1);
-      expect(mirror_rect_top - top - 60).assertLessOrEqual(uiContext.fp2px(200) + 1);
+      expect(original_rect_top - top - 60).assertLargerOrEqual(uiContext!.fp2px(200) - 1);
+      expect(original_rect_top - top - 60).assertLessOrEqual(uiContext!.fp2px(200) + 1);
+      expect(mirror_rect_top - top - 60).assertLargerOrEqual(uiContext!.fp2px(200) - 1);
+      expect(mirror_rect_top - top - 60).assertLessOrEqual(uiContext!.fp2px(200) + 1);
       expect(width / 2 - ((mirror_rect_left - left) + (mirror_rect_right - left)) / 2)
-        .assertLargerOrEqual(uiContext.fp2px(100) - 1);
+        .assertLargerOrEqual(uiContext!.fp2px(100) - 1);
       expect(width / 2 - ((mirror_rect_left - left) + (mirror_rect_right - left)) / 2)
-        .assertLessOrEqual(uiContext.fp2px(100) + 1);
+        .assertLessOrEqual(uiContext!.fp2px(100) + 1);
       console.info('ArkUIHDS_General_Layout_static_2100 END');
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2200
-     *@tc.name       : ArkUIHDS_General_Layout_2200
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2200
+     * @tc.name     ArkUIHDS_General_Layout_static_2200
+     * @tc.desc     ArkUIHDS_General_Layout_static_2200
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2200 START');
@@ -261,37 +240,29 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0400_Text');
       console.info('0400_Text START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0400_Text')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0400_Text');
       console.info('0400_Text START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0400_Text')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       let strJson3 = inspector.getInspectorByKey('bottom_off');
-      let obj3: Record<string, Object> =
-        JSON.parse<Object>(strJson3, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo3: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj3["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let right: number = rectInfo3[0][0] ?? 0;
+      let obj3 = JSON.parseJsonElement(strJson3);
+      let rectInfo3 = Utils.getComponentRect('bottom_off')
+      let right: number = rectInfo3.left;
       left = Number.parseInt(left.toFixed(0));
       right = Math.floor(right);
       mirror_rect_left = Number.parseInt(mirror_rect_left.toFixed(0));
@@ -299,8 +270,9 @@ export default function GeneralLayoutOffsetTest() {
       original_rect_top = Math.floor(original_rect_top);
       mirror_rect_top = Math.floor(mirror_rect_top);
       original_rect_right = Math.floor(original_rect_right);
-      let lpx400 = Math.floor(uiContext.lpx2px(400));
-      let lpx100 = Number.parseInt(uiContext.lpx2px(100).toFixed(0));
+      const uiContext = AppStorage.get<UIContext>("uiContext");
+      let lpx400 = Math.floor(uiContext!.lpx2px(400));
+      let lpx100 = Number.parseInt(uiContext!.lpx2px(100).toFixed(0));
       let width = right - left;
       expect(mirror_rect_left - left).assertLargerOrEqual(width - (original_rect_right - left) - 1);
       expect(mirror_rect_left - left).assertLessOrEqual(width - (original_rect_right - left) + 1);
@@ -316,13 +288,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2300
-     *@tc.name       : ArkUIHDS_General_Layout_2300
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2300
+     * @tc.name     ArkUIHDS_General_Layout_static_2300
+     * @tc.desc     ArkUIHDS_General_Layout_static_2300
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2300 START');
@@ -330,37 +302,29 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0500_Button');
       console.info('0500_Button START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0500_Button')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0500_Button');
       console.info('0500_Button START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0500_Button')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       let strJson3 = inspector.getInspectorByKey('bottom_off');
-      let obj3: Record<string, Object> =
-        JSON.parse<Object>(strJson3, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo3: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj3["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let right: number = rectInfo3[0][0] ?? 0;
+      let obj3 = JSON.parseJsonElement(strJson3);
+      let rectInfo3 = Utils.getComponentRect('bottom_off')
+      let right: number = rectInfo3.left;
       left = Number.parseInt(left.toFixed(0));
       right = Math.floor(right);
       let width = right - left;
@@ -376,13 +340,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2400
-     *@tc.name       : ArkUIHDS_General_Layout_2400
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2400
+     * @tc.name     ArkUIHDS_General_Layout_static_2400
+     * @tc.desc     ArkUIHDS_General_Layout_static_2400
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2400 START');
@@ -390,38 +354,30 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0600_Image');
       console.info('0600_Image START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0600_Image')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0600_Image');
       console.info('0600_Image START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0600_Image')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       let strJson3 = inspector.getInspectorByKey('bottom_off');
-      let obj3: Record<string, Object> =
-        JSON.parse<Object>(strJson3, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo3: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj3["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let right: number = rectInfo3[0][0] ?? 0;
-      let bottom: number = rectInfo3[0][1] ?? 0;
+      let obj3 = JSON.parseJsonElement(strJson3);
+      let rectInfo3 = Utils.getComponentRect('bottom_off')
+      let right: number = rectInfo3.left;
+      let bottom: number = rectInfo3.top;
       left = Number.parseInt(left.toFixed(0));
       right = Math.floor(right);
       bottom = Math.floor(bottom);
@@ -446,13 +402,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2500
-     *@tc.name       : ArkUIHDS_General_Layout_2500
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2500
+     * @tc.name     ArkUIHDS_General_Layout_static_2500
+     * @tc.desc     ArkUIHDS_General_Layout_static_2500
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2500 START');
@@ -460,31 +416,25 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0700_Image');
       console.info('0700_Image START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0700_Image')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0700_Image');
       console.info('0700_Image START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0700_Image')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       left = Number.parseInt(left.toFixed(0));
       expect(mirror_rect_left - left).assertLargerOrEqual(original_rect_left - left - 1);
       expect(mirror_rect_left - left).assertLessOrEqual(original_rect_left - left + 1);
@@ -496,13 +446,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2600
-     *@tc.name       : ArkUIHDS_General_Layout_2600
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2600
+     * @tc.name     ArkUIHDS_General_Layout_static_2600
+     * @tc.desc     ArkUIHDS_General_Layout_static_2600
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2600 START');
@@ -510,31 +460,25 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0800_Button');
       console.info('0800_Button START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0800_Button')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0800_Button');
       console.info('0800_Button START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0800_Button')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       expect(mirror_rect_left - left).assertLargerOrEqual(original_rect_left - left - 1);
       expect(mirror_rect_left - left).assertLessOrEqual(original_rect_left - left + 1);
       expect(original_rect_top - top - 210).assertLargerOrEqual(-1);
@@ -545,13 +489,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
+    
+    
     /*
-     *@tc.number     : ArkUIHDS_General_Layout_2700
-     *@tc.name       : ArkUIHDS_General_Layout_2700
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+     * @tc.number   ArkUIHDS_General_Layout_static_2700
+     * @tc.name     ArkUIHDS_General_Layout_static_2700
+     * @tc.desc     ArkUIHDS_General_Layout_static_2700
+     * @tc.level    Level.LEVEL1
      */
     it('ArkUIHDS_General_Layout_static_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ArkUIHDS_General_Layout_static_2700 START');
@@ -559,31 +503,25 @@ export default function GeneralLayoutOffsetTest() {
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('0900_Text');
       console.info('0900_Text START  :' + JSON.stringify(strJson));
-      let obj: Record<string, Object> =
-        JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      original_rect_left = rectInfo[0][0] ?? 0;
-      original_rect_top = rectInfo[0][1] ?? 0;
-      original_rect_right = rectInfo[1][0] ?? 0;
+      let obj = JSON.parseJsonElement(strJson);
+      let rectInfo = Utils.getComponentRect('0900_Text')
+      original_rect_left = rectInfo.left;
+      original_rect_top = rectInfo.top;
+      original_rect_right = rectInfo.right;
       i18n.System.setAppPreferredLanguage("ar-EG");
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('0900_Text');
       console.info('0900_Text START  :' + JSON.stringify(strJson1));
-      let obj1: Record<string, Object> =
-        JSON.parse<Object>(strJson1, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo1: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj1["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      mirror_rect_left = rectInfo1[0][0] ?? 0;
-      mirror_rect_top = rectInfo1[0][1] ?? 0;
-      mirror_rect_right = rectInfo1[1][0] ?? 0;
+      let obj1 = JSON.parseJsonElement(strJson1);
+      let rectInfo1 = Utils.getComponentRect('0900_Text')
+      mirror_rect_left = rectInfo1.left;
+      mirror_rect_top = rectInfo1.top;
+      mirror_rect_right = rectInfo1.right;
       let strJson2 = inspector.getInspectorByKey('top_off');
-      let obj2: Record<string, Object> =
-        JSON.parse<Object>(strJson2, Type.of(new String() as Object)) as Record<string, Object>;
-      let rectInfo2: Array<Array<number>> =
-        JSON.parse<Object>('[' + obj2["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-      let top: number = rectInfo2[0][1] ?? 0;
-      let left: number = rectInfo2[0][0] ?? 0;
+      let obj2 = JSON.parseJsonElement(strJson2);
+      let rectInfo2 = Utils.getComponentRect('top_off')
+      let top: number = rectInfo2.top;
+      let left: number = rectInfo2.left;
       expect(mirror_rect_left - left).assertLargerOrEqual(original_rect_left - left - 1);
       expect(mirror_rect_left - left).assertLessOrEqual(original_rect_left - left + 1);
       expect(original_rect_top - top - 240).assertLargerOrEqual(-1);

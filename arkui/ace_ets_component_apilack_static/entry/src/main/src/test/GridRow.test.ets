@@ -65,13 +65,13 @@ export default function grid_rowOnBreakpointChangeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testgrid_rowOnBreakpointChange_static_001
      * @tc.name     testgrid_rowOnBreakpointChange_static_001
      * @tc.desc     testgrid_rowOnBreakpointChange_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_rowOnBreakpointChange_static_001', Level.LEVEL0, async () => {
+    it('testgrid_rowOnBreakpointChange_static_001', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('GridRow');
@@ -85,13 +85,13 @@ it('testgrid_rowOnBreakpointChange_static_001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testgrid_rowOnBreakpointChange_static_002
      * @tc.name     testgrid_rowOnBreakpointChange_static_002
      * @tc.desc     testgrid_rowOnBreakpointChange_static_002
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_rowOnBreakpointChange_static_002', Level.LEVEL0, async () => {
+    it('testgrid_rowOnBreakpointChange_static_002', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('GridRow');
@@ -105,13 +105,13 @@ it('testgrid_rowOnBreakpointChange_static_002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testgrid_rowOnBreakpointChange_static_003
      * @tc.name     testgrid_rowOnBreakpointChange_static_003
      * @tc.desc     testgrid_rowOnBreakpointChange_static_003
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_rowOnBreakpointChange_static_003', Level.LEVEL0, async () => {
+    it('testgrid_rowOnBreakpointChange_static_003', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('GridRow');

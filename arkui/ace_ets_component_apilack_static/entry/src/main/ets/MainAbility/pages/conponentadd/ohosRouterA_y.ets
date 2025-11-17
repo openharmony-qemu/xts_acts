@@ -133,7 +133,7 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error) {
+          } catch (error: Error) {
             console.error(`pushUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
 
@@ -158,7 +158,7 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error) {
+          } catch (error: Error) {
             console.error(`pushUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
           ;
@@ -181,7 +181,7 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error) {
+          } catch (error: Error) {
             console.error(`replaceUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
           ;
@@ -203,7 +203,7 @@ struct OhosRouterA {
               .then(() => {
                 // success
               })
-          } catch (error) {
+          } catch (error: Error) {
             console.info(`replaceUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
           
@@ -262,7 +262,7 @@ struct OhosRouterA {
             routerInstance.showAlertBeforeBackPage({
               message: 'Message Info'
             });
-          } catch (error) {
+          } catch (error: Error) {
             console.error(`enableBackPageAlert failed, code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
           }
         });

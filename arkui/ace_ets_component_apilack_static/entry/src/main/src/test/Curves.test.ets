@@ -82,13 +82,13 @@ export default function curvesStepsJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testcurvesSteps_static_0001
      * @tc.name     testcurvesSteps_static_0001
      * @tc.desc     testcurvesSteps_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcurvesSteps_static_0001', Level.LEVEL0, async () => {
+    it('testcurvesSteps_static_0001', Level.LEVEL0, async () => {
       console.info('curvesSteps testcurvesSteps0001 START');
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 60229,

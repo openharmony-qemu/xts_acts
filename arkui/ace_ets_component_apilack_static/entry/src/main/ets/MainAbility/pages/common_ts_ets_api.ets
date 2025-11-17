@@ -118,8 +118,8 @@ struct Common_ts_ets_apiStaticClear {
             }
             console.info("PersistProp start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (error) {
-            // console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
+          } catch (err: Error) {
+            console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
           }
 
         })
@@ -151,8 +151,8 @@ struct Common_ts_ets_apiStaticClear {
             }
             console.info("PersistProp start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (error) {
-            // console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
+          } catch (err: Error) {
+            console.info("PersistProp emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
       Text("common_ts_ets_api-clear")

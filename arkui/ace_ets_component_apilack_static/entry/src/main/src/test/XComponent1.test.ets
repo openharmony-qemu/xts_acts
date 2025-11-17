@@ -65,13 +65,13 @@ export default function xcomponentGetXComponentContextJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testxcomponentGetXComponentContext_static_0010
      * @tc.name     testxcomponentGetXComponentContext_static_0010
      * @tc.desc     testxcomponentGetXComponentContext_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testxcomponentGetXComponentContext_static_0010', Level.LEVEL0, async () => {
+    it('testxcomponentGetXComponentContext_static_0010', Level.LEVEL0, async () => {
       console.info('xcomponentGetXComponentContext testxcomponentGetXComponentContext0010 START');
       await Utils.sleep(1000);
       try {
@@ -97,13 +97,13 @@ it('testxcomponentGetXComponentContext_static_0010', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testxcomponentSetXComponentSurfaceSize_static_0001
      * @tc.name     testxcomponentSetXComponentSurfaceSize_static_0001
      * @tc.desc     testxcomponentSetXComponentSurfaceSize_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testxcomponentSetXComponentSurfaceSize_static_0001', Level.LEVEL0, async () => {
+    it('testxcomponentSetXComponentSurfaceSize_static_0001', Level.LEVEL0, async () => {
       console.info('xcomponentSetXComponentContext testxcomponentSetXComponentSurfaceSize0001 START');
       await Utils.sleep(2000);
       console.info("setXComponentSurfaceSize0001 click result is: " +
@@ -120,13 +120,13 @@ it('testxcomponentSetXComponentSurfaceSize_static_0001', Level.LEVEL0, async () 
 
     
     
-/*
+    /*
      * @tc.number   testxcomponentSetXComponentSurfaceSize_static_0002
      * @tc.name     testxcomponentSetXComponentSurfaceSize_static_0002
      * @tc.desc     testxcomponentSetXComponentSurfaceSize_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testxcomponentSetXComponentSurfaceSize_static_0002', Level.LEVEL0, async () => {
+    it('testxcomponentSetXComponentSurfaceSize_static_0002', Level.LEVEL0, async () => {
       console.info('xcomponentSetXComponentContext testxcomponentSetXComponentSurfaceSize0002 START');
       await Utils.sleep(2000);
       console.info("testxcomponentSetXComponentSurfaceSize0002 click result is: " +

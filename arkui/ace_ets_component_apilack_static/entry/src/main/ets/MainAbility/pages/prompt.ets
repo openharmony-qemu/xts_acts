@@ -76,8 +76,8 @@ struct PromptShowDialog {
             }
             console.info("showDialog start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (error) {
-            // console.info("showDialog emit action state err: " + JSON.stringify((err as Error)?.message))
+          } catch (err: Error) {
+            console.info("showDialog emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
 
@@ -107,8 +107,8 @@ struct PromptShowDialog {
             }
             console.info("showActionMenu start to emit action state")
             events_emitter.emit(backEvent1, backData1)
-          } catch (error) {
-            // console.info("showActionMenu emit action state err: " + JSON.stringify((err as Error)?.message))
+          } catch (err: Error) {
+            console.info("showActionMenu emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
 

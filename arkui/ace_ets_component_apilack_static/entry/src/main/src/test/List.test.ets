@@ -52,7 +52,7 @@ import textAreaOnCutJsunit from './TextArea.test';
 import textInputOnEditChangeJsunit from './TextInput.test';
 import videoOnFullscreenChangeJsunit from './Video.test';
 import webGetTitleJsunit from './Web.test';
-import xcomponentGetXComponentContextJsunit from './Xcomponent.test';
+import xcomponentGetXComponentContextJsunit from './XComponent1.test';
 
 export default function testsuite() {
   lazyForEachOnDataAddJsunit()
@@ -90,6 +90,6 @@ export default function testsuite() {
   textAreaOnCutJsunit()
   textInputOnEditChangeJsunit()
   videoOnFullscreenChangeJsunit()
-  // webGetTitleJsunit() //  Web组件  9
+  webGetTitleJsunit() //  Web组件  9
   xcomponentGetXComponentContextJsunit()
 }

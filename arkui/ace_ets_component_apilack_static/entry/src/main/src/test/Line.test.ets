@@ -65,13 +65,13 @@ export default function lineNeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testlineNe_static_0001
      * @tc.name     testlineNe_static_0001
      * @tc.desc     testlineNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0001', Level.LEVEL0, async () => {
+    it('testlineNe_static_0001', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line1');
@@ -85,13 +85,13 @@ it('testlineNe_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlineNe_static_0002
      * @tc.name     testlineNe_static_0002
      * @tc.desc     testlineNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0002', Level.LEVEL0, async () => {
+    it('testlineNe_static_0002', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line1');
@@ -105,13 +105,13 @@ it('testlineNe_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlineNe_static_0005
      * @tc.name     testlineNe_static_0005
      * @tc.desc     testlineNe_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0005', Level.LEVEL0, async () => {
+    it('testlineNe_static_0005', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line2');
@@ -125,13 +125,13 @@ it('testlineNe_static_0005', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlineNe_static_0006
      * @tc.name     testlineNe_static_0006
      * @tc.desc     testlineNe_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testlineNe_static_0006', Level.LEVEL0, async () => {
+    it('testlineNe_static_0006', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('line2');

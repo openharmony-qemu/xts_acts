@@ -66,8 +66,8 @@ export default function commonBackgroundBlurStyleJsunits() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (error) {
-        console.error("push common page error: " + error);
+      } catch (err: Error) {
+        console.error("push common page error: " + err);
       }
     });
 
@@ -78,12 +78,12 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonBackgroundBlurStyle_static_0011
-         * @tc.name     testcommonBackgroundBlurStyle_static_0011
-         * @tc.desc     testcommonBackgroundBlurStyle_static_0011
-         * @tc.level    Level.LEVEL0
-         */
-    it('testcommonBackgroundBlurStyle_static_0011', Level.LEVEL0, async () => {
+     * @tc.number   testcommonBackgroundBlurStyle_static_001
+     * @tc.name     testcommonBackgroundBlurStyle_static_001
+     * @tc.desc     testcommonBackgroundBlurStyle_static_001
+     * @tc.level    Level.LEVEL0
+     */
+    it('testcommonBackgroundBlurStyle_static_001', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('borderImageText');
@@ -113,11 +113,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonBackgroundBlurStyle_static_002
-         * @tc.name     testcommonBackgroundBlurStyle_static_002
-         * @tc.desc     testcommonBackgroundBlurStyle_static_002
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonBackgroundBlurStyle_static_002
+     * @tc.name     testcommonBackgroundBlurStyle_static_002
+     * @tc.desc     testcommonBackgroundBlurStyle_static_002
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonBackgroundBlurStyle_static_002', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle002 START');
       await Utils.sleep(2000);
@@ -132,11 +132,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonBackgroundBlurStyle_static_003
-         * @tc.name     testcommonBackgroundBlurStyle_static_003
-         * @tc.desc     testcommonBackgroundBlurStyle_static_003
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonBackgroundBlurStyle_static_003
+     * @tc.name     testcommonBackgroundBlurStyle_static_003
+     * @tc.desc     testcommonBackgroundBlurStyle_static_003
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonBackgroundBlurStyle_static_003', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle003 START');
       await Utils.sleep(2000);
@@ -150,11 +150,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonBackgroundBlurStyle_static_004
-         * @tc.name     testcommonBackgroundBlurStyle_static_004
-         * @tc.desc     testcommonBackgroundBlurStyle_static_004
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonBackgroundBlurStyle_static_004
+     * @tc.name     testcommonBackgroundBlurStyle_static_004
+     * @tc.desc     testcommonBackgroundBlurStyle_static_004
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonBackgroundBlurStyle_static_004', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle004 START');
       await Utils.sleep(2000);
@@ -177,11 +177,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonBackgroundBlurStyle_static_005
-         * @tc.name     testcommonBackgroundBlurStyle_static_005
-         * @tc.desc     testcommonBackgroundBlurStyle_static_005
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonBackgroundBlurStyle_static_005
+     * @tc.name     testcommonBackgroundBlurStyle_static_005
+     * @tc.desc     testcommonBackgroundBlurStyle_static_005
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonBackgroundBlurStyle_static_005', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle005 START');
       await Utils.sleep(2000);
@@ -195,11 +195,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonBackgroundBlurStyle_static_006
-         * @tc.name     testcommonBackgroundBlurStyle_static_006
-         * @tc.desc     testcommonBackgroundBlurStyle_static_006
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonBackgroundBlurStyle_static_006
+     * @tc.name     testcommonBackgroundBlurStyle_static_006
+     * @tc.desc     testcommonBackgroundBlurStyle_static_006
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonBackgroundBlurStyle_static_006', Level.LEVEL0, async () => {
       try {
         console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle006 START');
@@ -212,11 +212,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonHoverEffectHighlight_static_0001
-         * @tc.name     testcommonHoverEffectHighlight_static_0001
-         * @tc.desc     testcommonHoverEffectHighlight_static_0001
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonHoverEffectHighlight_static_0001
+     * @tc.name     testcommonHoverEffectHighlight_static_0001
+     * @tc.desc     testcommonHoverEffectHighlight_static_0001
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonHoverEffectHighlight_static_0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectHighlight testcommonHoverEffectHighlight0001 START');
       await Utils.sleep(2000);
@@ -230,11 +230,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonHoverEffectScale_static_0001
-         * @tc.name     testcommonHoverEffectScale_static_0001
-         * @tc.desc     testcommonHoverEffectScale_static_0001
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonHoverEffectScale_static_0001
+     * @tc.name     testcommonHoverEffectScale_static_0001
+     * @tc.desc     testcommonHoverEffectScale_static_0001
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonHoverEffectScale_static_0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectScale testcommonHoverEffectScale0001 START');
       await Utils.sleep(2000);
@@ -248,11 +248,11 @@ export default function commonBackgroundBlurStyleJsunits() {
 
 
     /*
-         * @tc.number   testcommonhitTestBehavior_static_0001
-         * @tc.name     testcommonhitTestBehavior_static_0001
-         * @tc.desc     testcommonhitTestBehavior_static_0001
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcommonhitTestBehavior_static_0001
+     * @tc.name     testcommonhitTestBehavior_static_0001
+     * @tc.desc     testcommonhitTestBehavior_static_0001
+     * @tc.level    Level.LEVEL0
+     */
     it('testcommonhitTestBehavior_static_0001', Level.LEVEL0, async () => {
       console.info('commonhitTestBehavior testcommonhitTestBehavior0001 START');
       await Utils.sleep(2000);

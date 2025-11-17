@@ -66,13 +66,13 @@ export default function panelBackgroundMaskJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testpanelBackgroundMask_static_0001
      * @tc.name     testpanelBackgroundMask_static_0001
      * @tc.desc     testpanelBackgroundMask_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async () => {
+    it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async () => {
       console.info('panelBackgroundMask testpanelBackgroundMask0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('panel');
@@ -87,13 +87,13 @@ it('testpanelBackgroundMask_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testpanelOnHeightChange_static_0002
      * @tc.name     testpanelOnHeightChange_static_0002
      * @tc.desc     testpanelOnHeightChange_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async () => {
+    it('testpanelOnHeightChange_static_0002', Level.LEVEL0, async () => {
       console.info('panelBackgroundMask testpanelOnHeightChange0002 START');
       let panelOnHeightChangeEvent: events_emitter.InnerEvent = {
         eventId: 10111,

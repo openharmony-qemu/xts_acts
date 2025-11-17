@@ -133,8 +133,9 @@ struct PanelBackgroundMask {
               }
               console.info("onHeightChange start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (error) {
-              // console.info("testpanelOnHeightChange0002 emit action state err: " + JSON.stringify((err as Error)?.message))
+            } catch (err: Error) {
+              console.info("testpanelOnHeightChange0002 emit action state err: " +
+              JSON.stringify((err as Error)?.message))
             }
           }
         })

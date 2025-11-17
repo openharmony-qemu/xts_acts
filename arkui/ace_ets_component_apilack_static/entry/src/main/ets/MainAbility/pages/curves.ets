@@ -72,8 +72,8 @@ struct CurvesSteps {
             let curve = Curves.stepsCurve(1, true)
             console.info("curve is" + curve)
             this.curveApi = "callBackSuccess"
-          } catch (error) {
-            // console.info("curve onClick err: " + JSON.stringify((err as Error)?.message))
+          } catch (err: Error) {
+            console.info("curve onClick err: " + JSON.stringify((err as Error)?.message))
             this.curveApi = "callBackFail"
           }
           try {
@@ -90,8 +90,8 @@ struct CurvesSteps {
             }
             console.info("curveApi onClick start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (error) {
-            // console.info("curveApi onClick emit action state err: " + JSON.stringify((err as Error)?.message))
+          } catch (err: Error) {
+            console.info("curveApi onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
     }.width("100%").height("100%")

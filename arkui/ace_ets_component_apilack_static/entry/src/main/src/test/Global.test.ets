@@ -47,7 +47,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 import { sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 
-import RectValue from './Rect1.test';
+import RectValue from './RectValue.test';
 
 export default function globalJsunit() {
   describe('globalJsunit', () => {
@@ -82,13 +82,13 @@ export default function globalJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testglobal_getInspectorTree_static_0001
      * @tc.name     testglobal_getInspectorTree_static_0001
      * @tc.desc     testglobal_getInspectorTree_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testglobal_getInspectorTree_static_0001', Level.LEVEL0, async () => {
+    it('testglobal_getInspectorTree_static_0001', Level.LEVEL0, async () => {
       console.info('testglobal_getInspectorTree0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorTree();
@@ -99,13 +99,13 @@ it('testglobal_getInspectorTree_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testglobal_sendKeyEvent_static_0002
      * @tc.name     testglobal_sendKeyEvent_static_0002
      * @tc.desc     testglobal_sendKeyEvent_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testglobal_sendKeyEvent_static_0002', Level.LEVEL0, async () => {
+    it('testglobal_sendKeyEvent_static_0002', Level.LEVEL0, async () => {
       console.info('testglobal_sendKeyEvent0002 START');
       await Utils.sleep(2000);
       let KeyEvent: KeyEvent = {
@@ -132,13 +132,13 @@ it('testglobal_sendKeyEvent_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testglobal_sendMouseEvent_static_0003
      * @tc.name     testglobal_sendMouseEvent_static_0003
      * @tc.desc     testglobal_sendMouseEvent_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testglobal_sendMouseEvent_static_0003', Level.LEVEL0, async () => {
+    it('testglobal_sendMouseEvent_static_0003', Level.LEVEL0, async () => {
       console.info('testglobal_sendMouseEvent0003 START');
       await Utils.sleep(2000);
       let rect = Utils.getComponentRect('ListItem');

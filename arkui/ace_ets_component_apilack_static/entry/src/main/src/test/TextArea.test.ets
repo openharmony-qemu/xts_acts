@@ -64,13 +64,13 @@ export default function textAreaOnCutJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0001
      * @tc.name     testtextAreaOnCut_static_0001
      * @tc.desc     testtextAreaOnCut_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0001', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0001', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -84,13 +84,13 @@ it('testtextAreaOnCut_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0002
      * @tc.name     testtextAreaOnCut_static_0002
      * @tc.desc     testtextAreaOnCut_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0002', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0002', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -104,13 +104,13 @@ it('testtextAreaOnCut_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0003
      * @tc.name     testtextAreaOnCut_static_0003
      * @tc.desc     testtextAreaOnCut_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0003', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0003', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -124,13 +124,13 @@ it('testtextAreaOnCut_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0004
      * @tc.name     testtextAreaOnCut_static_0004
      * @tc.desc     testtextAreaOnCut_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0004', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0004', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -144,13 +144,13 @@ it('testtextAreaOnCut_static_0004', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0005
      * @tc.name     testtextAreaOnCut_static_0005
      * @tc.desc     testtextAreaOnCut_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0005', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0005', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -164,13 +164,13 @@ it('testtextAreaOnCut_static_0005', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0006
      * @tc.name     testtextAreaOnCut_static_0006
      * @tc.desc     testtextAreaOnCut_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0006', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0006', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -185,13 +185,13 @@ it('testtextAreaOnCut_static_0006', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0009
      * @tc.name     testtextAreaOnCut_static_0009
      * @tc.desc     testtextAreaOnCut_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0009', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0009', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -205,13 +205,13 @@ it('testtextAreaOnCut_static_0009', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaOnCut_static_0010
      * @tc.name     testtextAreaOnCut_static_0010
      * @tc.desc     testtextAreaOnCut_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaOnCut_static_0010', Level.LEVEL0, async () => {
+    it('testtextAreaOnCut_static_0010', Level.LEVEL0, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -225,13 +225,13 @@ it('testtextAreaOnCut_static_0010', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testtextAreaCopyOption_static_0011
      * @tc.name     testtextAreaCopyOption_static_0011
      * @tc.desc     testtextAreaCopyOption_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testtextAreaCopyOption_static_0011', Level.LEVEL0, async () => {
+    it('testtextAreaCopyOption_static_0011', Level.LEVEL0, async () => {
       console.info('textAreaCopyOption testtextAreaCopyOption0011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('textAreaCopyOptionText');

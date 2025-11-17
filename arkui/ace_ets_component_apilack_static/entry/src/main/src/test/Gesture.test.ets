@@ -65,13 +65,13 @@ export default function gestureSetDirectionJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testgestureSetDirection_static_0001
      * @tc.name     testgestureSetDirection_static_0001
      * @tc.desc     testgestureSetDirection_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testgestureSetDirection_static_0001', Level.LEVEL0, async () => {
+    it('testgestureSetDirection_static_0001', Level.LEVEL0, async () => {
       console.info('gestureSetDirection testgestureSetDirection0001 START');
       await Utils.sleep(2000);
       try {
@@ -95,13 +95,13 @@ it('testgestureSetDirection_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testgestureSetDistance_static_0002
      * @tc.name     testgestureSetDistance_static_0002
      * @tc.desc     testgestureSetDistance_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testgestureSetDistance_static_0002', Level.LEVEL0, async () => {
+    it('testgestureSetDistance_static_0002', Level.LEVEL0, async () => {
       console.info('gestureSetDistance testgestureSetDistance0002 START');
       await Utils.sleep(2000);
       try {
@@ -124,13 +124,13 @@ it('testgestureSetDistance_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testgestureSetFingers_static_0003
      * @tc.name     testgestureSetFingers_static_0003
      * @tc.desc     testgestureSetFingers_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testgestureSetFingers_static_0003', Level.LEVEL0, async () => {
+    it('testgestureSetFingers_static_0003', Level.LEVEL0, async () => {
       console.info('gestureSetFingers testgestureSetFingers0003 START');
       await Utils.sleep(2000);
       try {

@@ -68,13 +68,13 @@ export default function common_ts_ets_apiStaticClearJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testcommon_ts_ets_apiPersistProp_static_0001
      * @tc.name     testcommon_ts_ets_apiPersistProp_static_0001
      * @tc.desc     testcommon_ts_ets_apiPersistProp_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcommon_ts_ets_apiPersistProp_static_0001', Level.LEVEL0, async () => {
+    it('testcommon_ts_ets_apiPersistProp_static_0001', Level.LEVEL0, async () => {
       console.info('common_ts_ets_apiPersistProp testcommon_ts_ets_apiPersistProp0001 START');
       await Utils.sleep(2000);
       try {
@@ -95,13 +95,13 @@ it('testcommon_ts_ets_apiPersistProp_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testcommon_ts_ets_apiEnvProp_static_0001
      * @tc.name     testcommon_ts_ets_apiEnvProp_static_0001
      * @tc.desc     testcommon_ts_ets_apiEnvProp_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL0, async () => {
+    it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL0, async () => {
       console.info('common_ts_ets_apiEnvProp testcommon_ts_ets_apiEnvProp0001 START');
       await Utils.sleep(2000);
       try {
@@ -122,13 +122,13 @@ it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   test_font_registerFont_static_0001
      * @tc.name     test_font_registerFont_static_0001
      * @tc.desc     test_font_registerFont_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('test_font_registerFont_static_0001', Level.LEVEL0, async () => {
+    it('test_font_registerFont_static_0001', Level.LEVEL0, async () => {
       console.info('test_font_registerFont_0001 Register a customized font in the FontManagerSTART');
       await Utils.sleep(2000);
       let fontOptions: font.FontOptions = {

@@ -66,13 +66,13 @@ export default function rectNeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testrectNe_static_0001
      * @tc.name     testrectNe_static_0001
      * @tc.desc     testrectNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testrectNe_static_0001', Level.LEVEL0, async () => {
+    it('testrectNe_static_0001', Level.LEVEL0, async () => {
       console.info('rectNe testrectNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Rect');
@@ -86,13 +86,13 @@ it('testrectNe_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testrectNe_static_0002
      * @tc.name     testrectNe_static_0002
      * @tc.desc     testrectNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testrectNe_static_0002', Level.LEVEL0, async () => {
+    it('testrectNe_static_0002', Level.LEVEL0, async () => {
       console.info('rectNe testrectNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Rect');

@@ -64,7 +64,7 @@ struct MediaQueryOff {
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear MediaQueryOff start`)
     let portraitFunc = (mediaQueryResult: mediaquery.MediaQueryResult): void => this.onPortrait(mediaQueryResult)
-    // this.listener.onChange(portraitFunc)
+    this.listener.onChange(portraitFunc)
   }
 
   aboutToDisappear() {

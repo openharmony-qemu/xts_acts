@@ -69,8 +69,8 @@ export default function positionSettingJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (error) {
-        console.error("push positionSetting page error:" + error);
+      } catch (err: Error) {
+        console.error("push positionSetting page error:" + err);
       }
     });
 
@@ -80,13 +80,13 @@ export default function positionSettingJsunit() {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_001
      * @tc.name     testPositionSetting_static_001
      * @tc.desc     testPositionSetting_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_001', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_001', Level.LEVEL0, async () => {
       console.info('[testPositionSetting001] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textAlign');
@@ -98,13 +98,13 @@ it('testPositionSetting_static_001', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_002
      * @tc.name     testPositionSetting_static_002
      * @tc.desc     testPositionSetting_static_002
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_002', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_002', Level.LEVEL0, async () => {
       console.info('[testPositionSetting002] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('rowDirection');
@@ -116,13 +116,13 @@ it('testPositionSetting_static_002', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_003
      * @tc.name     testPositionSetting_static_003
      * @tc.desc     testPositionSetting_static_003
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_003', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_003', Level.LEVEL0, async () => {
       console.info('[testPositionSetting003] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -136,8 +136,8 @@ it('testPositionSetting_static_003', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting003] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (error) {
-        console.log("[testPositionSetting003] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testPositionSetting003] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
       let strJson = inspector.getInspectorByKey('textAlign');
@@ -149,13 +149,13 @@ it('testPositionSetting_static_003', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_004
      * @tc.name     testPositionSetting_static_004
      * @tc.desc     testPositionSetting_static_004
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_004', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_004', Level.LEVEL0, async () => {
       console.info('[testPositionSetting004] START');
       await Utils.sleep(1000);
       try {
@@ -170,8 +170,8 @@ it('testPositionSetting_static_004', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting004] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (error) {
-        console.log("[testPositionSetting004] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testPositionSetting004] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('rowDirection');
@@ -183,13 +183,13 @@ it('testPositionSetting_static_004', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_005
      * @tc.name     testPositionSetting_static_005
      * @tc.desc     testPositionSetting_static_005
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_005', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_005', Level.LEVEL0, async () => {
       console.info('[testPositionSetting005] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('position1');
@@ -210,13 +210,13 @@ it('testPositionSetting_static_005', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_006
      * @tc.name     testPositionSetting_static_006
      * @tc.desc     testPositionSetting_static_006
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_006', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_006', Level.LEVEL0, async () => {
       console.info('[testPositionSetting006] START');
       await Utils.sleep(1000);
       try {
@@ -238,8 +238,8 @@ it('testPositionSetting_static_006', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting006] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (error) {
-        console.log("[testPositionSetting006] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testPositionSetting006] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('position1');
@@ -261,13 +261,13 @@ it('testPositionSetting_static_006', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_007
      * @tc.name     testPositionSetting_static_007
      * @tc.desc     testPositionSetting_static_007
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_007', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_007', Level.LEVEL0, async () => {
       console.info('[testPositionSetting007] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('markAnchor');
@@ -282,13 +282,13 @@ it('testPositionSetting_static_007', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_008
      * @tc.name     testPositionSetting_static_008
      * @tc.desc     testPositionSetting_static_008
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_008', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_008', Level.LEVEL0, async () => {
       console.info('[testPositionSetting008] START');
       await Utils.sleep(1000);
       try {
@@ -306,8 +306,8 @@ it('testPositionSetting_static_008', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting008] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (error) {
-        console.log("[testPositionSetting008] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testPositionSetting008] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('markAnchor');
@@ -322,13 +322,13 @@ it('testPositionSetting_static_008', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_009
      * @tc.name     testPositionSetting_static_009
      * @tc.desc     testPositionSetting_static_009
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_009', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_009', Level.LEVEL0, async () => {
       console.info('[testPositionSetting009] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('offset');
@@ -344,13 +344,13 @@ it('testPositionSetting_static_009', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_010
      * @tc.name     testPositionSetting_static_010
      * @tc.desc     testPositionSetting_static_010
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_010', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_010', Level.LEVEL0, async () => {
       console.info('[testPositionSetting010] START');
       await Utils.sleep(1000);
       try {
@@ -368,8 +368,8 @@ it('testPositionSetting_static_010', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting010] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (error) {
-        console.log("[testPositionSetting010] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testPositionSetting010] change component data error: " + err.message);
       }
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('offset');
@@ -383,13 +383,13 @@ it('testPositionSetting_static_010', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_011
      * @tc.name     testPositionSetting_static_011
      * @tc.desc     testPositionSetting_static_011
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_011', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_011', Level.LEVEL0, async () => {
       console.info('[testPositionSetting011] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('opacity');
@@ -401,13 +401,13 @@ it('testPositionSetting_static_011', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testPositionSetting_static_012
      * @tc.name     testPositionSetting_static_012
      * @tc.desc     testPositionSetting_static_012
      * @tc.level    Level.LEVEL0
      */
-it('testPositionSetting_static_012', Level.LEVEL0, async () => {
+    it('testPositionSetting_static_012', Level.LEVEL0, async () => {
       console.info('[testPositionSetting012] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -421,8 +421,8 @@ it('testPositionSetting_static_012', Level.LEVEL0, async () => {
         }
         console.info("[testPositionSetting012] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (error) {
-        console.log("[testPositionSetting012] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testPositionSetting012] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('opacity');

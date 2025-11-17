@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import RectValue from './Rect1.test';
+import RectValue from './RectValue.test';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../ets/MainAbility/common/Common';

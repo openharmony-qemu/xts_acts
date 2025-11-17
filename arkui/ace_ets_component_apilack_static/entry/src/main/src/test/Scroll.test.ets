@@ -66,13 +66,13 @@ export default function scrollOnScrollBeginJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0001
      * @tc.name     testscrollOnScrollBegin_static_0001
      * @tc.desc     testscrollOnScrollBegin_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0001', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0001', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -86,13 +86,13 @@ it('testscrollOnScrollBegin_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0002
      * @tc.name     testscrollOnScrollBegin_static_0002
      * @tc.desc     testscrollOnScrollBegin_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0002', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0002', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -106,13 +106,13 @@ it('testscrollOnScrollBegin_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0003
      * @tc.name     testscrollOnScrollBegin_static_0003
      * @tc.desc     testscrollOnScrollBegin_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0003', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0003', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -126,13 +126,13 @@ it('testscrollOnScrollBegin_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0004
      * @tc.name     testscrollOnScrollBegin_static_0004
      * @tc.desc     testscrollOnScrollBegin_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0004', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0004', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -147,13 +147,13 @@ it('testscrollOnScrollBegin_static_0004', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0005
      * @tc.name     testscrollOnScrollBegin_static_0005
      * @tc.desc     testscrollOnScrollBegin_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0005', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0005', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -168,13 +168,13 @@ it('testscrollOnScrollBegin_static_0005', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0006
      * @tc.name     testscrollOnScrollBegin_static_0006
      * @tc.desc     testscrollOnScrollBegin_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0006', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0006', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0006 START');
       await Utils.sleep(2000);
 
@@ -198,13 +198,13 @@ it('testscrollOnScrollBegin_static_0006', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0007
      * @tc.name     testscrollOnScrollBegin_static_0007
      * @tc.desc     testscrollOnScrollBegin_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0007', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0007', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -218,13 +218,13 @@ it('testscrollOnScrollBegin_static_0007', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testscrollOnScrollBegin_static_0008
      * @tc.name     testscrollOnScrollBegin_static_0008
      * @tc.desc     testscrollOnScrollBegin_static_0008
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0008', Level.LEVEL0, async () => {
+    it('testscrollOnScrollBegin_static_0008', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testscrollOnScrollBegin0008 START');
       await Utils.sleep(2000);
       AppStorage.setOrCreate('alwaysEnabled', true);
