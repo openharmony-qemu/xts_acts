@@ -45,19 +45,19 @@ struct AnimationControllerPage {
       if (imageSource1) {
         imageSource1.createPixelMapList().then((pixelMaps: Array<PixelMap>) => {
           this.animatedDrawable1 =
-            new AnimatedDrawableDescriptor(pixelMaps, { iterations: -1, duration: 3000, autoPlay: false })
+          new AnimatedDrawableDescriptor(pixelMaps, { iterations: -1, duration: 3000, autoPlay: false })
         })
       }
       if (imageSource2) {
         imageSource2.createPixelMapList().then((pixelMaps: Array<PixelMap>) => {
           this.animatedDrawable2 =
-            new AnimatedDrawableDescriptor(pixelMaps, { iterations: -1, duration: 3000, autoPlay: true })
+          new AnimatedDrawableDescriptor(pixelMaps, { iterations: -1, duration: 3000, autoPlay: true })
         })
       }
       if (imageSource3) {
         imageSource3.createPixelMapList().then((pixelMaps: Array<PixelMap>) => {
           this.animatedDrawable3 =
-            new AnimatedDrawableDescriptor(pixelMaps, { iterations: 1, duration: 3000, autoPlay: true })
+          new AnimatedDrawableDescriptor(pixelMaps, { iterations: 1, duration: 3000, autoPlay: true })
         })
       }
     }
@@ -112,7 +112,9 @@ struct AnimationControllerPage {
       Row({ space: 4 }) {
         Button('c1 start')
           .id('c1start')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
@@ -121,7 +123,9 @@ struct AnimationControllerPage {
           })
         Button('c1 stop')
           .id('c1stop')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
@@ -130,7 +134,9 @@ struct AnimationControllerPage {
           })
         Button('c1 pause')
           .id('c1pause')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
@@ -139,7 +145,9 @@ struct AnimationControllerPage {
           })
         Button('c1 resume')
           .id('c1resume')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
@@ -151,7 +159,9 @@ struct AnimationControllerPage {
       Row({ space: 4 }) {
         Button('c2 start')
           .id('c2start')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -160,7 +170,9 @@ struct AnimationControllerPage {
           })
         Button('c2 stop')
           .id('c2stop')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -169,7 +181,9 @@ struct AnimationControllerPage {
           })
         Button('c2 pause')
           .id('c2pause')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -178,7 +192,9 @@ struct AnimationControllerPage {
           })
         Button('c2 resume')
           .id('c2resume')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -190,7 +206,9 @@ struct AnimationControllerPage {
       Row({ space: 4 }) {
         Button('c3 start')
           .id('c3start')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -199,7 +217,9 @@ struct AnimationControllerPage {
           })
         Button('c3 stop')
           .id('c3stop')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -208,7 +228,9 @@ struct AnimationControllerPage {
           })
         Button('c3 pause')
           .id('c3pause')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -217,7 +239,9 @@ struct AnimationControllerPage {
           })
         Button('c3 resume')
           .id('c3resume')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -229,7 +253,9 @@ struct AnimationControllerPage {
       Row({ space: 4 }) {
         Button('c1 status')
           .id('c1status')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable1 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable1 as AnimatedDrawableDescriptor
@@ -247,7 +273,9 @@ struct AnimationControllerPage {
           })
         Button('c2 status')
           .id('c2status')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor
@@ -264,7 +292,9 @@ struct AnimationControllerPage {
           })
         Button('c3 status')
           .id('c3status')
-          .height('6%').fontSize(10).padding({ left: 5, right: 5 })
+          .height('6%')
+          .fontSize(10)
+          .padding({ left: 5, right: 5 })
           .onClick(() => {
             if (this.animatedDrawable2 instanceof AnimatedDrawableDescriptor) {
               let drawable = this.animatedDrawable2 as AnimatedDrawableDescriptor

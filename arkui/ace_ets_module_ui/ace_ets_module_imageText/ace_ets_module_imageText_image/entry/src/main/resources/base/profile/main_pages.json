@@ -31,6 +31,13 @@
         "MainAbility/pages/ImageAdvanced/image15",
         "MainAbility/pages/ImageAdvanced/image16",
         "MainAbility/pages/ImageAdvanced/imageAltBase64",
-        "MainAbility/pages/ImageAdvanced/imageBase64"
+        "MainAbility/pages/ImageAdvanced/imageBase64",
+        "MainAbility/pages/ImageAlt/ImageAltTest",
+        "MainAbility/pages/ImageAnalyzerController/ImageAnalyzerController",
+        "MainAbility/pages/ImageAnimationController/ImageAnimationController",
+        "MainAbility/pages/ImageAnimator/fillMode",
+        "MainAbility/pages/ImageAnimator/ImageAnimatorBasicAttributes",
+        "MainAbility/pages/ImageAnimator/ImageAnimatorEventData",
+        "MainAbility/pages/ImageAnimator/monitorInvisibleArea"
     ]
 }

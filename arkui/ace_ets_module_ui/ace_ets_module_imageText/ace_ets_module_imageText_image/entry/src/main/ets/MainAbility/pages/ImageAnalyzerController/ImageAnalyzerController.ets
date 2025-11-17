@@ -35,17 +35,18 @@ struct ImageAnalyzerControllerPage {
         .enableAnalyzer(true)
         .width('40%')
         .height('40%')
-        .margin({bottom:10})
+        .margin({ bottom: 10 })
       Button('getTypes')
         .height('6%')
         .id('getTypes')
         .onClick(() => {
           let res = this.aiController.getImageAnalyzerSupportTypes();
           let resArr = JSON.stringify(res)
-          AppStorage.setOrCreate('ImageAnalyzerControllerTypeArr',resArr)
+          AppStorage.setOrCreate('ImageAnalyzerControllerTypeArr', resArr)
         })
     }
   }
+
   private async getPixmapFromMedia(resource: Resource) {
     let unit8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
     let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength));

@@ -16,7 +16,7 @@ import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
-struct fillModeExample {
+struct ImageAnimatorFillModeExample {
   @State state: AnimationStatus = AnimationStatus.Initial;
   @State preDecode: number = 0;
   @State fillMode: FillMode = FillMode.None;
@@ -151,22 +151,22 @@ struct fillModeExample {
           .width(100)
           .padding(5)
           .onClick(() => {
-          this.reverse = !this.reverse
-        })
+            this.reverse = !this.reverse
+          })
         Button('once')
           .key('button4')
           .width(100)
           .padding(5)
           .onClick(() => {
-          this.iterations = 1
-        })
+            this.iterations = 1
+          })
         Button('iteration')
           .key('button5')
           .width(100)
           .padding(5)
           .onClick(() => {
-          this.iterations = -1
-        })
+            this.iterations = -1
+          })
       }
     }
     .width('100%')

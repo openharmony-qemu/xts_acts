@@ -1,13 +1,13 @@
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -19,35 +19,35 @@ import CommonFunc from '../../MainAbility/common/Common'
 
 const SLEEP_TIME = 1000;
 
-export default function imageAltTest() {
-  describe('imageAltTest', () => {
+export default function ImageAltTest() {
+  describe('ImageAltTest', () => {
     beforeEach(async (done: Function) => {
-      console.info('imageAltTest beforeEach start');
+      console.info('ImageAltTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Image/imageAltTest',
+        url: 'MainAbility/pages/ImageAlt/ImageAltTest',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get imageAltTest state success ' + JSON.stringify(pages));
+        console.info('get ImageAltTest state success ' + JSON.stringify(pages));
         let result = await router.replaceUrl(options);
-        if (!("imageAltTest" == pages.name)) {
-          console.info('get imageAltTest state success ' + JSON.stringify(pages.name));
+        if (!('ImageAltTest' == pages.name)) {
+          console.info('get ImageAltTest state success ' + JSON.stringify(pages.name));
           await CommonFunc.sleep(SLEEP_TIME);
-          console.info('push imageAltTest page success ' + JSON.stringify(result));
+          console.info('push ImageAltTest page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push imageAltTest page error: ' + err);
+        console.error('push ImageAltTest page error: ' + err);
       }
       done();
     });
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info('imageAltTest after each called');
+      console.info('ImageAltTest after each called');
     });
 
-    /**
+    /*
      * @tc.number: image_altTest_0101
      * @tc.name  : image_altTest_0101
      * @tc.desc  : Test the alt interface to set normal values
@@ -70,7 +70,7 @@ export default function imageAltTest() {
       done();
     });
 
-    /**
+    /*
      * @tc.number: image_altTest_0102
      * @tc.name  : image_altTest_0102
      * @tc.desc  : Test the alt interface to set undefined
@@ -93,7 +93,7 @@ export default function imageAltTest() {
       done();
     });
 
-    /**
+    /*
      * @tc.number: image_altTest_0103
      * @tc.name  : image_altTest_0103
      * @tc.desc  : Test the alt interface to set null

@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct ImageExample {
+struct ImageAltTestPage {
   build() {
     Column() {
       Image('common/pages/apple')

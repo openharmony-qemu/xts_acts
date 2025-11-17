@@ -16,7 +16,7 @@ import events_emitter from '@ohos.events.emitter'
 
 @Entry
 @Component
-struct ImageAnimatorExample {
+struct ImageAnimatorEventDataPage {
   @State state: AnimationStatus = AnimationStatus.Initial
   @State preDecode: number = 0
   @State fillMode: FillMode = FillMode.None

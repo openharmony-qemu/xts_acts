@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium'
-import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium'
+import { UiComponent, UiDriver, Component, Driver, ON, BY } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
@@ -46,10 +46,10 @@ export default function ImageAnalyzerControllerTest() {
     });
 
     /**
-     * @tc.number    ImageAnalyzerControllerTest001
-     * @tc.name      ImageAnalyzerControllerTest001
-     * @tc.desc      test the ImageAnalyzerController  Array.length
-     * @tc.level:    Level 1
+     * @tc.number ImageAnalyzerControllerTest001
+     * @tc.name ImageAnalyzerControllerTest001
+     * @tc.desc test the ImageAnalyzerController  Array.length
+     * @tc.level: Level 1
      * @tc.type :
      * @tc.size :
      */

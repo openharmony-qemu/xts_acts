@@ -29,6 +29,13 @@ import ImageEventsTest from './ImageTest/ImageEvents.test';
 import ImageOhosMatrix4Test from './ImageTest/ImageOhosMatrix4.test';
 import ShapeClippingJsunitTest from './ImageTest/ShapeClippingJsunit.test';
 import ImageAdvancedTest from './ImageAdvancedTest/ImageAdvancedTest.test';
+import ImageAltTest from './ImageAlt/ImageAltTest.test';
+import ImageAnalyzerControllerTest from './ImageAnalyzerControllerTest/ImageAnalyzerController.test';
+import ImageAnimationControllerTest from './ImageAnimationControllerTest/ImageAnimationController.test';
+import ImageAnimatorFillModeJsunitTest from './ImageAnimator/FillModeJsunit.test';
+import ImageAnimatorBasicAttributesTest from './ImageAnimator/ImageAnimatorBasicAttributes.test';
+import ImageAnimatorEventDataTest from './ImageAnimator/ImageAnimatorEventData.test';
+import monitorInvisibleAreaTest from './ImageAnimator/monitorInvisibleArea.test';
 
 export default function testsuite() {
   APIClipMaskShapeTest();
@@ -48,4 +55,11 @@ export default function testsuite() {
   ImageOhosMatrix4Test();
   ShapeClippingJsunitTest();
   ImageAdvancedTest();
+  ImageAltTest();
+  ImageAnalyzerControllerTest();
+  ImageAnimationControllerTest();
+  ImageAnimatorFillModeJsunitTest();
+  ImageAnimatorBasicAttributesTest();
+  ImageAnimatorEventDataTest();
+  monitorInvisibleAreaTest();
 }

@@ -13,54 +13,53 @@
  * limitations under the License.
  */
 import { MessageManager, Callback } from '../../common/MessageManager';
+
 @Entry
 @Component
-struct ImageAnimatorExample {
+struct ImageAnimatorBasicAttributesPage {
   @State state: AnimationStatus = AnimationStatus.Initial
   @State reverse: boolean = false
   @State iterations: number = 1
-  @State fixedSize:boolean = true
-  @State fillMode:FillMode = FillMode.None
-  @State duration:number = 2000
-  @State duration1:number = 0
+  @State fixedSize: boolean = true
+  @State fillMode: FillMode = FillMode.None
+  @State duration: number = 2000
+  @State duration1: number = 0
   // ImageFrameIno constructor parameter
-  @State widthT:number = 20;
-  @State heightT:number = 20;
-  @State top:number = 20;
-  @State left:number = 20;
-
-  @State message1:string = "ani"
-  @State message2:string = "ani"
-  @State message3:string = "ani"
-  @State message4:string = "ani"
-  @State message5:string = "ani"
-
-  messageManager:MessageManager = new MessageManager()
+  @State widthT: number = 20;
+  @State heightT: number = 20;
+  @State top: number = 20;
+  @State left: number = 20;
+  @State message1: string = "ani"
+  @State message2: string = "ani"
+  @State message3: string = "ani"
+  @State message4: string = "ani"
+  @State message5: string = "ani"
+  messageManager: MessageManager = new MessageManager()
 
   onPageShow() {
     console.info('imageAnimator onPageShow')
     globalThis.value = {
-      name:'messageManager',message:this.messageManager
+      name: 'messageManager', message: this.messageManager
     }
     let callback: Callback = (message: ESObject) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'state') {
-          this.state = message.value
+        this.state = message.value
       }
       if (message.name == 'reverse') {
-          this.reverse = message.value
+        this.reverse = message.value
       }
       if (message.name == 'iterations') {
-          this.iterations = message.value
+        this.iterations = message.value
       }
       if (message.name == 'fixedSize') {
-          this.fixedSize = message.value
+        this.fixedSize = message.value
       }
       if (message.name == 'fillMode') {
-          this.fillMode = message.value
+        this.fillMode = message.value
       }
       if (message.name == 'duration') {
-          this.duration = message.value
+        this.duration = message.value
       }
     }
     this.messageManager.registerCallback(callback)
@@ -72,30 +71,35 @@ struct ImageAnimatorExample {
         .images([
           {
             src: $rawfile('img1.png'),
-            width:this.widthT,
-            height:this.heightT,
-            top:this.top,
-            left:this.left,
-            duration:this.duration1
+            width: this.widthT,
+            height: this.heightT,
+            top: this.top,
+            left: this.left,
+            duration: this.duration1
           },
           {
             src: $rawfile('img2.png'),
-            width:30,
-            height:20,
-            top:20,
-            left:20
+            width: 30,
+            height: 20,
+            top: 20,
+            left: 20
           },
           {
             src: $rawfile('img3.png'),
-            width:20,
-            height:20,
-            top:20,
-            left:20
+            width: 20,
+            height: 20,
+            top: 20,
+            left: 20
           }
         ])
         .duration(this.duration)
-        .state(this.state).reverse(this.reverse).fixedSize(this.fixedSize)
-        .fillMode(this.fillMode).iterations(this.iterations).width(340).height('50%')
+        .state(this.state)
+        .reverse(this.reverse)
+        .fixedSize(this.fixedSize)
+        .fillMode(this.fillMode)
+        .iterations(this.iterations)
+        .width(340)
+        .height('50%')
         .key('imageAnimator')
         .onStart(() => {
           console.info('Start123456')
@@ -118,17 +122,18 @@ struct ImageAnimatorExample {
           this.state = AnimationStatus.Stopped
           this.message5 = 'onFinish'
         })
-        .width('100%').height('50%')
+        .width('100%')
+        .height('50%')
 
       Row() {
         Button('start').width('30%').onClick(() => {
           this.state = AnimationStatus.Running
         }).key('start')
         Button('pause').width('30%').onClick(() => {
-          this.state = AnimationStatus.Paused     // 显示当前帧图片
+          this.state = AnimationStatus.Paused // 显示当前帧图片
         }).key('pause')
         Button('stop').width('30%').onClick(() => {
-          this.state = AnimationStatus.Stopped    // 显示动画的起始帧图片
+          this.state = AnimationStatus.Stopped // 显示动画的起始帧图片
         })
       }.height('5%')
 
@@ -144,11 +149,12 @@ struct ImageAnimatorExample {
         }).key('infinite')
       }.height('5%')
 
-      Row(){
+      Row() {
         Text(this.message1).key('t1').width('45%')
         Text(this.message2).key('t2').width('45%')
       }.height('5%')
-      Row(){
+
+      Row() {
         Text(this.message3).key('t3').width('45%')
         Text(this.message4).key('t4').width('45%')
       }.height('5%')
