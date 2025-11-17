@@ -7952,52 +7952,52 @@ static napi_value BluetoothAndNearlinkPreferredRecordCategory_001(napi_env env, 
 {
     napi_value res;
     
-    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory p_none = PREFERRED_NONE;
-    if (p_none != 0) {
+    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory preferredNone = PREFERRED_NONE;
+    if (preferredNone != 0) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("PREFERRED_NONE fail, result is: %{public}d", p_none);
+        LOG("PREFERRED_NONE fail, result is: %{public}d", preferredNone);
         return res;
     }
 
-    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory p_default = PREFERRED_DEFAULT;
-    if (p_default != 1) {
+    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory preferredDefault = PREFERRED_DEFAULT;
+    if (preferredDefault != 1) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("PREFERRED_DEFAULT fail, result is: %{public}d", p_default);
+        LOG("PREFERRED_DEFAULT fail, result is: %{public}d", preferredDefault);
         return res;
     }
 
-    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory p_low_latency = PREFERRED_LOW_LATENCY;
-    if (p_low_latency != 2) {
+    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory preferredLowLatency = PREFERRED_LOW_LATENCY;
+    if (preferredLowLatency != 2) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("PREFERRED_LOW_LATENCY fail, result is: %{public}d", p_low_latency);
+        LOG("PREFERRED_LOW_LATENCY fail, result is: %{public}d", preferredLowLatency);
         return res;
     }
 
-    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory p_higt_quality = PREFERRED_HIGH_QUALITY;
-    if (p_higt_quality != 3) {
+    OH_AudioSession_BluetoothAndNearlinkPreferredRecordCategory preferredHighQuality = PREFERRED_HIGH_QUALITY;
+    if (preferredHighQuality != 3) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("PREFERRED_HIGH_QUALITY fail, result is: %{public}d", p_higt_quality);
+        LOG("PREFERRED_HIGH_QUALITY fail, result is: %{public}d", preferredHighQuality);
         return res;
     }
 
-    OH_AudioStream_Result format = AUDIOSTREAM_ERROR_UNSUPPORTED_FORMAT;
-    if (format != 4) {
+    OH_AudioStream_Result unsupportedFormat = AUDIOSTREAM_ERROR_UNSUPPORTED_FORMAT;
+    if (unsupportedFormat != 4) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AUDIOSTREAM_ERROR_UNSUPPORTED_FORMAT fail, result is: %{public}d", format);
+        LOG("AUDIOSTREAM_ERROR_UNSUPPORTED_FORMAT fail, result is: %{public}d", unsupportedFormat);
         return res;
     }
 
-    OH_AudioStream_State stopped = AUDIOSTREAM_STATE_STOPPED;
-    if (stopped != 3) {
+    OH_AudioStream_State stateStopped = AUDIOSTREAM_STATE_STOPPED;
+    if (stateStopped != 3) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AUDIOSTREAM_STATE_STOPPED fail, result is: %{public}d", stopped);
+        LOG("AUDIOSTREAM_STATE_STOPPED fail, result is: %{public}d", stateStopped);
         return res;
     }
 
-    OH_AudioStream_PrivacyType shared = AUDIO_STREAM_PRIVACY_TYPE_SHARED;
-    if (shared != 2) {
+    OH_AudioStream_PrivacyType typeShared = AUDIO_STREAM_PRIVACY_TYPE_SHARED;
+    if (typeShared != 2) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AUDIO_STREAM_PRIVACY_TYPE_SHARED fail, result is: %{public}d", shared);
+        LOG("AUDIO_STREAM_PRIVACY_TYPE_SHARED fail, result is: %{public}d", typeShared);
         return res;
     }
 
