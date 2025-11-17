@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-class datePickerPropertiesModifier implements AttributeModifier<DatePickerAttribute> {
+class DatePickerPropertiesModifier implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance
       .selectedTextStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
@@ -25,8 +25,8 @@ class datePickerPropertiesModifier implements AttributeModifier<DatePickerAttrib
 
 @Entry
 @Component
-struct datePickerPropertiesModifier {
-  @State datePickerPropertiesModifier: datePickerPropertiesModifier = new datePickerPropertiesModifier();
+struct DatePickerPropertiesModifierPage {
+  @State DatePickerPropertiesModifier: DatePickerPropertiesModifier = new DatePickerPropertiesModifier();
   private selectedDate: Date = new Date('2021-08-08')
 
   build() {
@@ -37,7 +37,7 @@ struct datePickerPropertiesModifier {
         selected: this.selectedDate
       })
       .key('DatePicker')
-      .attributeModifier(this.datePickerPropertiesModifier)
+      .attributeModifier(this.DatePickerPropertiesModifier)
     }
     .width('100%')
     .height('100%')

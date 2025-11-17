@@ -48,7 +48,7 @@ export default function EnableHapticFeedback() {
      * @tc.number    DatePickerDialog_EnableHapticFeedback_001
      * @tc.name      testBack
      * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
+     * @tc.level     Level 1
      * @tc.type
      * @tc.size
      */
@@ -56,14 +56,14 @@ export default function EnableHapticFeedback() {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_001';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('DatePickerDialog1', 10, '')
+      sendEventByKey('DatePickerDialog1', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
       let datePicker1 = JSON.stringify(obj1.$children[1].$children[0].$children[0].$children[1].$children[0])
       console.info('[DatePickerDialog_EnableHapticFeedback_001] obj1 is: ' + datePicker1);
       console.info('[DatePickerDialog_EnableHapticFeedback_001] obj1 is: ' + JSON.stringify(JSON.parse(datePicker1).$attrs.enableHapticFeedback));
-      sendEventByKey('DatePickerDialog1', 10, '')
+      sendEventByKey('DatePickerDialog1', 10, "")
       expect(JSON.parse(datePicker1).$attrs.enableHapticFeedback).assertEqual(true);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
@@ -74,7 +74,7 @@ export default function EnableHapticFeedback() {
      * @tc.number    DatePickerDialog_EnableHapticFeedback_002
      * @tc.name      testBack
      * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
+     * @tc.level     Level 1
      * @tc.type
      * @tc.size
      */
@@ -82,14 +82,14 @@ export default function EnableHapticFeedback() {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_002';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('DatePickerDialog2', 10, '')
+      sendEventByKey('DatePickerDialog2', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
       let datePicker1 = JSON.stringify(obj1.$children[1].$children[0].$children[0].$children[1].$children[0])
       console.info('[DatePickerDialog_EnableHapticFeedback_002] obj1 is: ' + datePicker1);
       console.info('[DatePickerDialog_EnableHapticFeedback_002] obj1 is: ' + JSON.stringify(JSON.parse(datePicker1).$attrs.enableHapticFeedback));
-      sendEventByKey('DatePickerDialog2', 10, '')
+      sendEventByKey('DatePickerDialog2', 10, "")
       expect(JSON.parse(datePicker1).$attrs.enableHapticFeedback).assertEqual(false);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
@@ -100,7 +100,7 @@ export default function EnableHapticFeedback() {
      * @tc.number    DatePickerDialog_EnableHapticFeedback_003
      * @tc.name      testBack
      * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
+     * @tc.level     Level 1
      * @tc.type
      * @tc.size
      */
@@ -108,7 +108,7 @@ export default function EnableHapticFeedback() {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_003';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('DatePickerDialog3', 10, '')
+      sendEventByKey('DatePickerDialog3', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -126,7 +126,7 @@ export default function EnableHapticFeedback() {
      * @tc.number    DatePickerDialog_EnableHapticFeedback_004
      * @tc.name      testBack
      * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
+     * @tc.level     Level 1
      * @tc.type
      * @tc.size
      */
@@ -134,14 +134,14 @@ export default function EnableHapticFeedback() {
       let tagName = 'DatePickerDialog_EnableHapticFeedback_004';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
-      sendEventByKey('DatePickerDialog4', 10, '')
+      sendEventByKey('DatePickerDialog4', 10, "")
       await CommonFunc.sleep(1000);
       let obj1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(2000);
       let datePicker1 = JSON.stringify(obj1.$children[1].$children[0].$children[0].$children[1].$children[0])
       console.info('[DatePickerDialog_EnableHapticFeedback_004] obj1 is: ' + datePicker1);
       console.info('[DatePickerDialog_EnableHapticFeedback_004] obj1 is: ' + JSON.stringify(JSON.parse(datePicker1).$attrs.enableHapticFeedback));
-      sendEventByKey('DatePickerDialog4', 10, '')
+      sendEventByKey('DatePickerDialog4', 10, "")
       expect(JSON.parse(datePicker1).$attrs.enableHapticFeedback).assertEqual(true);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
