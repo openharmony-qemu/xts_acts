@@ -374,26 +374,27 @@ export default function ImageReceiver() {
         console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
-      }
-      globalReceiver1 = receiver1;
-      globalReceiver2 = receiver2;
+      } else {
+        globalReceiver1 = receiver1;
+        globalReceiver2 = receiver2;
 
-      try {
-        let surfaceId1 = await receiver1.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 surfaceId1[${surfaceId1}]`);
-        let surfaceId2 = await receiver2.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 surfaceId2[${surfaceId2}]`);
+        try {
+          let surfaceId1 = await receiver1.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          let surfaceId2 = await receiver2.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1.on('imageArrival', () => {
-          console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 on [ENTER]!");
+          receiver1.onImageArrival(() => {
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 on [ENTER]!");
+            done();
+          });
+
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+        } catch (error: BusinessError) {
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          expect(false).assertTrue();
           done();
-        });
-
-        initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
-        console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
-        expect(false).assertTrue();
-        done();
+        }
       }
     });
 
@@ -414,16 +415,17 @@ export default function ImageReceiver() {
         console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
-      }
-      globalReceiver1 = receiver;
+      } else {
+        globalReceiver1 = receiver;
 
-      try {
-        receiver.off('imageArrival');
-        done();
-      } catch (error: BusinessError) {
-        console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
-        expect(false).assertTrue();
-        done();
+        try {
+          receiver.offImageArrival();
+          done();
+        } catch (error: BusinessError) {
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 
@@ -447,36 +449,37 @@ export default function ImageReceiver() {
         console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
-      }
-      globalReceiver1 = receiver1;
-      globalReceiver2 = receiver2;
+      } else {
+        globalReceiver1 = receiver1;
+        globalReceiver2 = receiver2;
 
-      try {
-        let surfaceId1 = await receiver1.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 surfaceId1[${surfaceId1}]`);
-        let surfaceId2 = await receiver2.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
+        try {
+          let surfaceId1 = await receiver1.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          let surfaceId2 = await receiver2.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1.on('imageArrival', () => {
-          console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-          let latestImage: image.Image = await receiver1.readLatestImage();
-          globalImg = latestImage;
-          if (latestImage != undefined) {
-            console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
-            expect(latestImage != undefined).assertTrue();
-            done();
-          } else {
-            console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 readLatestImage failed");
-            expect(false).assertTrue();
-            done();
-          }
-        });
+          receiver1.onImageArrival(() => {
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
+            let latestImage: image.Image = await receiver1.readLatestImage();
+            globalImg = latestImage;
+            if (latestImage != undefined) {
+              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
+              expect(latestImage != undefined).assertTrue();
+              done();
+            } else {
+              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 readLatestImage failed");
+              expect(false).assertTrue();
+              done();
+            }
+          });
 
-        initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
-        console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
-        expect(false).assertTrue();
-        done();
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+        } catch (error: BusinessError) {
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 
@@ -500,38 +503,39 @@ export default function ImageReceiver() {
         console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
-      }
-      globalReceiver1 = receiver1;
-      globalReceiver2 = receiver2;
+      } else {
+        globalReceiver1 = receiver1;
+        globalReceiver2 = receiver2;
 
-      try {
-        let surfaceId1 = await receiver1.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 surfaceId1[${surfaceId1}]`);
-        let surfaceId2 = await receiver2.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
+        try {
+          let surfaceId1 = await receiver1.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          let surfaceId2 = await receiver2.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1.on('imageArrival', () => {
-          console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
-          receiver1.readLatestImage((err: BusinessError | null, latestImage: image.Image | undefined) => {
-            globalImg = latestImage!;
-            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 readLatestImage [ENTER]!");
-            if ((err && err.code) || latestImage === undefined) {
-              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 readLatestImage failed");
-              expect(false).assertTrue();
-              done();
-            } else {
-              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
-              expect(latestImage != undefined).assertTrue();
-              done();
-            }
+          receiver1.onImageArrival(() => {
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
+            receiver1.readLatestImage((err: BusinessError | null, latestImage: image.Image | undefined) => {
+              globalImg = latestImage!;
+              console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 readLatestImage [ENTER]!");
+              if ((err && err.code) || latestImage === undefined) {
+                console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 readLatestImage failed");
+                expect(false).assertTrue();
+                done();
+              } else {
+                console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
+                expect(latestImage != undefined).assertTrue();
+                done();
+              }
+            });
           });
-        });
 
-        initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
-        console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
-        expect(false).assertTrue();
-        done();
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+        } catch (error: BusinessError) {
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 
@@ -555,36 +559,37 @@ export default function ImageReceiver() {
         console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
-      }
-      globalReceiver1 = receiver1;
-      globalReceiver2 = receiver2;
+      } else {
+        globalReceiver1 = receiver1;
+        globalReceiver2 = receiver2;
 
-      try {
-        let surfaceId1 = await receiver1.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 surfaceId1[${surfaceId1}]`);
-        let surfaceId2 = await receiver2.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
+        try {
+          let surfaceId1 = await receiver1.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          let surfaceId2 = await receiver2.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1.on('imageArrival', () => {
-          console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
-          let nextImage: image.Image = await receiver1.readNextImage();
-          globalImg = nextImage;
-          if (nextImage != undefined) {
-            console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
-            expect(nextImage != undefined).assertTrue();
-            done();
-          } else {
-            console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 readNextImage failed");
-            expect(false).assertTrue();
-            done();
-          }
-        });
+          receiver1.onImageArrival(() => {
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
+            let nextImage: image.Image = await receiver1.readNextImage();
+            globalImg = nextImage;
+            if (nextImage != undefined) {
+              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
+              expect(nextImage != undefined).assertTrue();
+              done();
+            } else {
+              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 readNextImage failed");
+              expect(false).assertTrue();
+              done();
+            }
+          });
 
-        initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
-        console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
-        expect(false).assertTrue();
-        done();
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+        } catch (error: BusinessError) {
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 
@@ -608,38 +613,39 @@ export default function ImageReceiver() {
         console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
-      }
-      globalReceiver1 = receiver1;
-      globalReceiver2 = receiver2;
+      } else {
+        globalReceiver1 = receiver1;
+        globalReceiver2 = receiver2;
 
-      try {
-        let surfaceId1 = await receiver1.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 surfaceId1[${surfaceId1}]`);
-        let surfaceId2 = await receiver2.getReceivingSurfaceId();
-        console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
+        try {
+          let surfaceId1 = await receiver1.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          let surfaceId2 = await receiver2.getReceivingSurfaceId();
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
 
-        receiver1.on('imageArrival', () => {
-          console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
-          receiver1.readNextImage((err: BusinessError | null, nextImage: image.Image | undefined) => {
-            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 readNextImage [ENTER]!");
-            if ((err && err.code) || nextImage === undefined) {
-              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 readNextImage failed");
-              expect(false).assertTrue();
-              done();
-            } else {
-              globalImg = nextImage;
-              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
-              expect(nextImage != undefined).assertTrue();
-              done();
-            }
+          receiver1.onImageArrival(() => {
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
+            receiver1.readNextImage((err: BusinessError | null, nextImage: image.Image | undefined) => {
+              console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 readNextImage [ENTER]!");
+              if ((err && err.code) || nextImage === undefined) {
+                console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 readNextImage failed");
+                expect(false).assertTrue();
+                done();
+              } else {
+                globalImg = nextImage;
+                console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
+                expect(nextImage != undefined).assertTrue();
+                done();
+              }
+            });
           });
-        });
 
-        initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
-        console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
-        expect(false).assertTrue();
-        done();
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
+        } catch (error: BusinessError) {
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          expect(false).assertTrue();
+          done();
+        }
       }
     });
 

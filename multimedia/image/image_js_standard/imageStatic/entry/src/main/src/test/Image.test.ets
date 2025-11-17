@@ -383,11 +383,17 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.jpg');
-        const imageSourceApi = image.createImageSource(filePath);
-        globalimageSource = imageSourceApi;
-        expect(imageSourceApi != undefined).assertTrue();
-        console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100 success');
-        done();
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        if (imageSourceApi == undefined) {
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100 create image source failed');
+          expect(false).assertTrue();
+          done();
+        } else {
+          globalimageSource = imageSourceApi;
+          expect(imageSourceApi != undefined).assertTrue();
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100 success');
+          done();
+        }
       } catch (error) {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0100 error: ' + error);
         expect(false).assertTrue();
@@ -409,11 +415,17 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.bmp');
-        const imageSourceApi = image.createImageSource(filePath);
-        globalimageSource = imageSourceApi;
-        expect(imageSourceApi != undefined).assertTrue();
-        console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 success');
-        done();
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        if (imageSourceApi == undefined) {
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 create image source failed');
+          expect(false).assertTrue();
+          done();
+        } else {
+          globalimageSource = imageSourceApi;
+          expect(imageSourceApi != undefined).assertTrue();
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 success');
+          done();
+        }
       } catch (error) {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0200 error: ' + error);
         expect(false).assertTrue();
@@ -435,11 +447,17 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.gif');
-        const imageSourceApi = image.createImageSource(filePath);
-        globalimageSource = imageSourceApi;
-        expect(imageSourceApi != undefined).assertTrue();
-        console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300 success');
-        done();
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        if (imageSourceApi == undefined) {
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300 create image source failed');
+          expect(false).assertTrue();
+          done();
+        } else {
+          globalimageSource = imageSourceApi;
+          expect(imageSourceApi != undefined).assertTrue();
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300 success');
+          done();
+        }
       } catch (error) {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0300 error: ' + error);
         expect(false).assertTrue();
@@ -461,11 +479,17 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         getFd('test.png');
-        const imageSourceApi = image.createImageSource(filePath);
-        globalimageSource = imageSourceApi;
-        expect(imageSourceApi != undefined).assertTrue();
-        console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400 success');
-        done();
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
+        if (imageSourceApi == undefined) {
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400 create image source failed');
+          expect(false).assertTrue();
+          done();
+        } else {
+          globalimageSource = imageSourceApi;
+          expect(imageSourceApi != undefined).assertTrue();
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400 success');
+          done();
+        }
       } catch (error) {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_STATIC_0400 error: ' + error);
         expect(false).assertTrue();
@@ -488,7 +512,7 @@ export default function imageJsTest() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_SUFFIXFILE_STATIC_0100");
       try {
         getFd('test.123');
-        let imageSourceApi = image.createImageSource(filePath);
+        let imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();
@@ -530,11 +554,17 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_STATIC_0100");
       try {
-        const imageSourceApi = image.createImageSource('file:///multimedia/test.jpg');
-        globalimageSource = imageSourceApi;
-        expect(imageSourceApi == undefined).assertTrue();
-        logger.log('success');
-        done();
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource('file:///multimedia/test.jpg');
+        if (imageSourceApi != undefined) {
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_STATIC_0100 create image source success');
+          globalimageSource = imageSourceApi;
+          expect(false).assertTrue();
+          done();
+        } else {
+          expect(imageSourceApi == undefined).assertTrue();
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_URI_ERROR_URI_STATIC_0100 failed');
+          done();
+        }
       } catch (error) {
         logger.log('error: ' + JSON.stringify(error));
         done();
@@ -557,7 +587,7 @@ export default function imageJsTest() {
       try {
         let fd: int = getFd('test.jpg');
         logger.log("fd is: " + fd);
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         logger.log("create image source end");
         if (imageSourceApi == undefined) {
           logger.log('create image source failed!');
@@ -600,11 +630,17 @@ export default function imageJsTest() {
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        const imageSourceApi = image.createImageSource(-2);
-        globalimageSource = imageSourceApi;
-        expect(imageSourceApi == undefined).assertTrue();
-        console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_STATIC_0200 success');
-        done();
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(-2);
+        if (imageSourceApi != undefined) {
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_STATIC_0200 create image source success');
+          globalimageSource = imageSourceApi;
+          expect(false).assertTrue();
+          done();
+        } else {
+          expect(imageSourceApi == undefined).assertTrue();
+          console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_STATIC_0200 failed');
+          done();
+        }
       } catch (error) {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_STATIC_0200 error: ' + JSON.stringify(error));
         done();
@@ -654,10 +690,17 @@ export default function imageJsTest() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATEIMAGESOURCE_STATIC_0400");
       try {
         const data = new ArrayBuffer(0);
-        const imageSourceApi = image.createImageSource(data);
-        globalimageSource = imageSourceApi;
-        expect(imageSourceApi == undefined).assertTrue();
-        logger.log('success');
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(data);
+        if (imageSourceApi != undefined) {
+          logger.log('create image source success');
+          globalimageSource = imageSourceApi;
+          expect(false).assertTrue();
+          done();
+        } else {
+          expect(imageSourceApi == undefined).assertTrue();
+          logger.log('success');
+          done();
+        }
       } catch (error) {
         logger.log('error: ' + error);
       }
@@ -685,11 +728,17 @@ export default function imageJsTest() {
           sourcePixelFormat: image.PixelMapFormat.RGBA_8888,
           sourceSize: opt_size
         };
-        const imageSourceApi = image.createImageSource(filePath, opts);
-        globalimageSource = imageSourceApi;
-        logger.log("createImageSource result is: " + (imageSourceApi != undefined));
-        expect(imageSourceApi != undefined).assertTrue();
-        done();
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath, opts);
+        if (imageSourceApi == undefined) {
+          logger.log('create image source failed');
+          expect(false).assertTrue();
+          done();
+        } else {
+          globalimageSource = imageSourceApi;
+          logger.log("createImageSource result is: " + (imageSourceApi != undefined));
+          expect(imageSourceApi != undefined).assertTrue();
+          done();
+        }
       } catch (error) {
         logger.log("createImageSource error is: " + error);
         expect(false).assertTrue();
@@ -718,7 +767,7 @@ export default function imageJsTest() {
           sourcePixelFormat: image.PixelMapFormat.RGBA_8888,
           sourceSize: opt_size
         };
-        const imageSourceApi = image.createImageSource(fd, opts);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd, opts);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();
@@ -751,7 +800,7 @@ export default function imageJsTest() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_JPG_STATIC_0100");
       try {
         let fd: int = getFd('test.jpg');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();
@@ -785,7 +834,7 @@ export default function imageJsTest() {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_JPG_STATIC_0100");
       try {
         let fd: int = getFd('test.jpg');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           logger.log('create image source failed');
           expect(false).assertTrue();
@@ -818,7 +867,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.jpg');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0100 create image source failed');
                 expect(false).assertTrue();
@@ -868,7 +917,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.bmp');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0200 create image source failed');
                 expect(false).assertTrue();
@@ -876,12 +925,23 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
+                  if (err && err.code) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0200 error' + err);
+                      done();
+                  }
+                  if (imageInfo == undefined || imageInfo == null) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0200 failed');
+                      done();
+                  } else {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0200 imageInfo.size.height:' +
                     imageInfo!.size.height);
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0200 imageInfo.size.width:' +
                     imageInfo!.size.width);
                     done();
+                  }
                 });
             }
         } catch (error) {
@@ -905,7 +965,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.png');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0300 create image source failed');
                 expect(false).assertTrue();
@@ -913,12 +973,23 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 imageSourceApi.getImageInfo((err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
+                  if (err && err.code) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0300 error' + err);
+                      done();
+                  }
+                  if (imageInfo == undefined || imageInfo == null) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0300 failed');
+                      done();
+                  } else {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0300 imageInfo.size.height:' +
                     imageInfo!.size.height);
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0300 imageInfo.size.width:' +
                     imageInfo!.size.width);
                     done();
+                  }
                 });
             }
         } catch (error) {
@@ -942,7 +1013,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.gif');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0400 create image source failed');
                 expect(false).assertTrue();
@@ -992,7 +1063,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.jpg');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0500 create image source failed');
                 expect(false).assertTrue();
@@ -1000,12 +1071,23 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
+                  if (err && err.code) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0500 error' + err);
+                      done();
+                  }
+                  if (imageInfo == undefined || imageInfo == null) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0500 failed');
+                      done();
+                  } else {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0500 imageInfo.size.height:' +
                     imageInfo!.size.height);
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0500 imageInfo.size.width:' +
                     imageInfo!.size.width);
                     done();
+                  }
                 });
             }
         } catch (error) {
@@ -1029,7 +1111,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.bmp');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0600 create image source failed');
                 expect(false).assertTrue();
@@ -1037,12 +1119,23 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
+                  if (err && err.code) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0600 error' + err);
+                      done();
+                  }
+                  if (imageInfo == undefined || imageInfo == null) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0600 failed');
+                      done();
+                  } else {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0600 imageInfo.size.height:' +
                     imageInfo!.size.height);
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0600 imageInfo.size.width:' +
                     imageInfo!.size.width);
                     done();
+                  }
                 });
             }
         } catch (error) {
@@ -1066,7 +1159,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.png');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0700 create image source failed');
                 expect(false).assertTrue();
@@ -1074,12 +1167,23 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 imageSourceApi.getImageInfo(0, (err: BusinessError | null, imageInfo: image.ImageInfo | undefined) => {
+                  if (err && err.code) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0700 error' + err);
+                      done();
+                  }
+                  if (imageInfo == undefined || imageInfo == null) {
+                      expect(false).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0700 failed');
+                      done();
+                  } else {
                     expect(imageInfo != undefined).assertTrue();
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0700 imageInfo.size.height:' +
                     imageInfo!.size.height);
                     console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0700 imageInfo.size.width:' +
                     imageInfo!.size.width);
                     done();
+                  }
                 });
             }
         } catch (error)  {
@@ -1103,7 +1207,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.gif');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_CALLBACK_STATIC_0800 create image source failed');
                 expect(false).assertTrue();
@@ -1153,7 +1257,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.jpg');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0100 create image source failed');
                 expect(false).assertTrue();
@@ -1161,13 +1265,20 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 try {
-                    let imageInfo = await imageSourceApi.getImageInfo(0);
-                    expect(imageInfo != undefined).assertTrue();
-                    console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0100 imageInfo');
-                    console.info('imageInfo.size.height:' + imageInfo.size.height);
-                    console.info('imageInfo.size.width:' + imageInfo.size.width);
-                    done();
-                } catch(error: BusinessError) {
+                    let imageInfo: image.ImageInfo | undefined = await imageSourceApi.getImageInfo(0);
+                    if (imageInfo == undefined || imageInfo == null) {
+                        expect(false).assertTrue();
+                        console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0100 failed');
+                        done();
+                    } else {
+                      expect(imageInfo != undefined).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0100 imageInfo');
+                      console.info('imageInfo.size.height:' + imageInfo!.size.height);
+                      console.info('imageInfo.size.width:' + imageInfo!.size.width);
+                      done();
+                    }
+                } catch(error) {
+                    error = error as BusinessError;
                     console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0100 error: ' + error);
                     expect().assertFail();
                     done();
@@ -1194,7 +1305,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.bmp');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 create image source failed');
                 expect(false).assertTrue();
@@ -1202,16 +1313,24 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 try {
-                    let imageInfo = await imageSourceApi.getImageInfo(0)
-                    expect(imageInfo != undefined).assertTrue();
-                    console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 imageInfo');
-                    console.info('imageInfo.size.height:' + imageInfo.size.height);
-                    console.info('imageInfo.size.width:' + imageInfo.size.width);
-                    done();
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 error: ' + error);
-                    expect().assertFail();
-                    done();
+                    let imageInfo: image.ImageInfo | undefined = await imageSourceApi.getImageInfo(0)
+                    if (imageInfo == undefined || imageInfo == null) {
+                        expect(false).assertTrue();
+                        console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 failed');
+                        done();
+                    } else {
+                      expect(imageInfo != undefined).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 imageInfo');
+                      console.info('imageInfo.size.height:' + imageInfo!.size.height);
+                      console.info('imageInfo.size.width:' + imageInfo!.size.width);
+                      done();
+                    }
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1235,7 +1354,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.png');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 create image source failed');
                 expect(false).assertTrue();
@@ -1243,16 +1362,24 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 try {
-                    let imageInfo = await imageSourceApi.getImageInfo(0);
-                    expect(imageInfo != undefined).assertTrue();
-                    console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 imageInfo');
-                    console.info('imageInfo.size.height:' + imageInfo.size.height);
-                    console.info('imageInfo.size.width:' + imageInfo.size.width);
-                    done();
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 error: ' + error);
-                    expect().assertFail();
-                    done();
+                    let imageInfo: image.ImageInfo | undefined = await imageSourceApi.getImageInfo(0);
+                    if (imageInfo == undefined || imageInfo == null) {
+                        expect(false).assertTrue();
+                        console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 failed');
+                        done();
+                    } else {
+                      expect(imageInfo != undefined).assertTrue();
+                      console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 imageInfo');
+                      console.info('imageInfo.size.height:' + imageInfo!.size.height);
+                      console.info('imageInfo.size.width:' + imageInfo!.size.width);
+                      done();
+                    }
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1276,7 +1403,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.gif');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 create image source failed');
                 expect(false).assertTrue();
@@ -1284,7 +1411,7 @@ export default function imageJsTest() {
             } else {
                 globalimageSource = imageSourceApi;
                 try{
-                  let imageInfo = await imageSourceApi.getImageInfo(0)
+                  let imageInfo: image.ImageInfo | undefined = await imageSourceApi.getImageInfo(0)
                     if (imageInfo != undefined && imageInfo != null) {
                         expect(imageInfo != undefined).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 imageInfo.size.height:' +
@@ -1324,7 +1451,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.gif');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_STATIC_0100 create image source failed');
                 expect(false).assertTrue();
@@ -1362,7 +1489,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.gif');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_INDEX_PROMISE_GIF_STATIC_0200 create image source failed');
                 expect(false).assertTrue();
@@ -1402,7 +1529,7 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_JPG_STATIC_0100');
       try {
         let fd: int = getFd('test.jpg');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
@@ -1410,11 +1537,17 @@ export default function imageJsTest() {
         } else {
           globalimageSource = imageSourceApi;
           try {
-            let pixelMap = await imageSourceApi.createPixelMap();
-            globalpixelmap = pixelMap;
-            logger.log("createPixelMap success;");
-            expect(pixelMap != undefined).assertTrue();
-            done();
+            let pixelMap: image.PixelMap | undefined = await imageSourceApi.createPixelMap();
+            if (pixelMap == undefined) {
+              logger.log('createPixelMap failed');
+              expect(false).assertTrue();
+              done();
+            } else {
+              globalpixelmap = pixelMap;
+              logger.log("createPixelMap success;");
+              expect(pixelMap != undefined).assertTrue();
+              done();
+            }
           } catch (error) {
             logger.log("createPixelMap error: " + error);
             expect(false).assertTrue();
@@ -1444,7 +1577,7 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_JPG_STATIC_0100');
       try {
         let fd: int = getFd('test.jpg');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
@@ -1458,10 +1591,16 @@ export default function imageJsTest() {
               done();
               return;
             }
-            expect(pixelmap != undefined).assertTrue();
-            globalpixelmap = pixelmap!;
-            logger.log("createPixelMap success;");
-            done();
+            if (pixelmap == undefined) {
+              logger.log("createPixelMap failed");
+              expect(false).assertTrue();
+              done();
+            } else {
+              expect(pixelmap != undefined).assertTrue();
+              globalpixelmap = pixelmap!;
+              logger.log("createPixelMap success;");
+              done();
+            }
           });
         }
       } catch (error) {
@@ -1488,8 +1627,7 @@ export default function imageJsTest() {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 0003 ' + testimagebuffer.byteLength);
         let bufferSize = testimagebuffer.byteLength;
         let offset: int = 0;
-        const incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
-        globalimageSource = incSouce;
+        const incSouce: image.ImageSource | undefined = image.createIncrementalSource(new ArrayBuffer(1));
         let ret: boolean;
         let isFinished: boolean = false;
         while (offset < testimagebuffer.byteLength) {
@@ -1500,22 +1638,29 @@ export default function imageJsTest() {
             isFinished = true;
           }
           try {
-            await incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
-            offset = offset + oneStep.byteLength as int;
-            console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 0011 ' + offset);
-            ret = true;
+            if (incSouce == undefined) {
+              console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 incSouce is undefined');
+              expect(false).assertTrue();
+              done();
+            } else {
+              globalimageSource = incSouce;
+              await incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
+              offset = offset + oneStep.byteLength as int;
+              console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 0011 ' + offset);
+              ret = true;
+            }
           } catch (error) {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 updateData failed');
             expect(false).assertTrue();
             ret = false;
           }
         }
-        if (ret) {
+        if (ret && incSouce != undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 updateData success ');
           let decodingOptions: image.DecodingOptions = {
             sampleSize: 1
           };
-          incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
+          incSouce.createPixelMap(decodingOptions, (err, pixelmap) => {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0100 0014' + pixelmap);
             expect(pixelmap != undefined).assertTrue();
             done();
@@ -1546,8 +1691,7 @@ export default function imageJsTest() {
         console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0200 0003 ' + testimagebuffer.byteLength);
         let bufferSize = testimagebuffer.byteLength;
         let offset: int = 0;
-        const incSouce = image.CreateIncrementalSource(new ArrayBuffer(1));
-        globalimageSource = incSouce;
+        const incSouce = image.createIncrementalSource(new ArrayBuffer(1));
         let ret: boolean;
         let isFinished: boolean = false;
         while (offset < testimagebuffer.byteLength) {
@@ -1558,22 +1702,29 @@ export default function imageJsTest() {
             isFinished = true;
           }
           try {
-            await incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
-            offset = offset + oneStep.byteLength as int;
-            console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0200 0011 ' + offset);
-            ret = true;
+            if (incSouce == undefined) {
+              console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0200 incSouce is undefined');
+              expect(false).assertTrue();
+              done();
+            } else {
+              globalimageSource = incSouce;
+              await incSouce.updateData(oneStep, isFinished, 0, oneStep.byteLength as int);
+              offset = offset + oneStep.byteLength as int;
+              console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0200 0011 ' + offset);
+              ret = true;
+            }
           } catch (error) {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0200 updateData failed');
             expect(false).assertTrue();
             ret = false;
           }
         }
-        if (ret) {
+        if (ret && incSouce != undefined) {
           console.info('SUB_MULTIMEDIA_IMAGE_CREATEINCREMENTALSOURCE_UPDATEDATA_STATIC_0200 updateData success ');
           let decodingOptions: image.DecodingOptions = {
             sampleSize: 1
           };
-          incSouce.createPixelMap(decodingOptions, (err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
+          incSouce.createPixelMap(decodingOptions, (err, pixelmap) => {
             expect(pixelmap != undefined).assertTrue();
             done();
           });
@@ -1600,7 +1751,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.png');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100 create image source failed');
                 expect(false).assertTrue();
@@ -1611,10 +1762,12 @@ export default function imageJsTest() {
                     await imageSourceApi.release();
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100 success');
                     done();
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100 error: ' + error);
-                    expect().assertFail();
-                    done();
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1638,7 +1791,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.png');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0100 create image source failed');
                 expect(false).assertTrue();
@@ -1677,7 +1830,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.bmp');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 create image source failed');
                 expect(false).assertTrue();
@@ -1715,7 +1868,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.bmp');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0200 create image source failed');
                 expect(false).assertTrue();
@@ -1748,7 +1901,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.gif');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 create image source failed');
                 expect(false).assertTrue();
@@ -1786,7 +1939,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.gif');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_CALLBACK_STATIC_0300 create image source failed');
                 expect(false).assertTrue();
@@ -1822,7 +1975,7 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_STATIC_0800');
       try {
         let fd: int = getFd('moving_test.gif');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
@@ -1830,11 +1983,17 @@ export default function imageJsTest() {
         } else {
           globalimageSource = imageSourceApi;
           try {
-            let pixelMap = await imageSourceApi.createPixelMap();
-            globalpixelmap = pixelMap;
-            logger.log("createPixelMap success;");
-            expect(pixelMap != undefined).assertTrue();
-            done();
+            let pixelMap: image.PixelMap | undefined = await imageSourceApi.createPixelMap();
+            if (pixelMap == undefined) {
+              logger.log('createPixelMap failed');
+              expect(false).assertTrue();
+              done();
+            } else {
+              globalpixelmap = pixelMap;
+              logger.log("createPixelMap success;");
+              expect(pixelMap != undefined).assertTrue();
+              done();
+            }
           } catch (error) {
             logger.log("createPixelMap error: " + error);
             expect(false).assertTrue();
@@ -1864,7 +2023,7 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_STATIC_1200');
       try {
         let fd: int = getFd('moving_test.gif');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
@@ -1872,10 +2031,21 @@ export default function imageJsTest() {
         } else {
           globalimageSource = imageSourceApi;
           imageSourceApi.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
-            expect(pixelmap !== undefined).assertTrue();
-            globalpixelmap = pixelmap!;
-            logger.log("createPixelMap success;");
-            done();
+            if (err && err.code) {
+              logger.log("createPixelMap error: " + err);
+              expect(false).assertTrue();
+              done();
+            }
+            if (pixelmap == undefined) {
+              logger.log("createPixelMap failed");
+              expect(false).assertTrue();
+              done();
+            } else {
+              expect(pixelmap !== undefined).assertTrue();
+              globalpixelmap = pixelmap!;
+              logger.log("createPixelMap success;");
+              done();
+            }
           });
         }
       } catch (error) {
@@ -1901,7 +2071,7 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_STATIC_0900');
       try {
         let fd: int = getFd('test.bmp');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
@@ -1909,11 +2079,17 @@ export default function imageJsTest() {
         } else {
           globalimageSource = imageSourceApi;
           try {
-            let pixelMap = await imageSourceApi.createPixelMap();
-            globalpixelmap = pixelMap;
-            logger.log("createPixelMap success;");
-            expect(pixelMap != undefined).assertTrue();
-            done();
+            let pixelMap: image.PixelMap | undefined = await imageSourceApi.createPixelMap();
+            if (pixelMap == undefined) {
+              logger.log('createPixelMap failed');
+              expect(false).assertTrue();
+              done();
+            } else {
+              globalpixelmap = pixelMap;
+              logger.log("createPixelMap success;");
+              expect(pixelMap != undefined).assertTrue();
+              done();
+            }
           } catch (error) {
             logger.log("createPixelMap error: " + error);
             expect(false).assertTrue();
@@ -1943,7 +2119,7 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_STATIC_1300');
       try {
         let fd: int = getFd('test.bmp');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
@@ -1951,10 +2127,21 @@ export default function imageJsTest() {
         } else {
           globalimageSource = imageSourceApi;
           imageSourceApi.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
-            expect(pixelmap != undefined).assertTrue();
-            globalpixelmap = pixelmap!;
-            logger.log("createPixelMap success;");
-            done();
+            if (err && err.code) {
+              logger.log("createPixelMap error: " + err);
+              expect(false).assertTrue();
+              done();
+            } 
+            if (pixelmap == undefined) {
+              logger.log("createPixelMap failed");
+              expect(false).assertTrue();
+              done();
+            } else {
+              expect(pixelmap != undefined).assertTrue();
+              globalpixelmap = pixelmap!;
+              logger.log("createPixelMap success;");
+              done();
+            }
           });
         }
       } catch (error) {
@@ -1980,7 +2167,7 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_PROMISE_STATIC_1000');
       try {
         let fd: int = getFd('test.png');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
@@ -1988,11 +2175,17 @@ export default function imageJsTest() {
         } else {
           globalimageSource = imageSourceApi;
           try {
-            let pixelMap = await imageSourceApi.createPixelMap();
-            globalpixelmap = pixelMap;
-            logger.log("createPixelMap success;");
-            expect(pixelMap != undefined).assertTrue();
-            done();
+            let pixelMap: image.PixelMap | undefined = await imageSourceApi.createPixelMap();
+            if (pixelMap == undefined) {
+              logger.log('createPixelMap failed');
+              expect(false).assertTrue();
+              done();
+            } else {
+              globalpixelmap = pixelMap;
+              logger.log("createPixelMap success;");
+              expect(pixelMap != undefined).assertTrue();
+              done();
+            }
           } catch (error) {
             logger.log("createPixelMap error: " + error);
             expect(false).assertTrue();
@@ -2022,18 +2215,29 @@ export default function imageJsTest() {
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_CREATEPIXELMAP_CALLBACK_STATIC_1400');
       try {
         let fd: int = getFd('test.png');
-        const imageSourceApi = image.createImageSource(fd);
+        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
         if (imageSourceApi == undefined) {
           expect(false).assertTrue();
           logger.log('create image source failed');
           done();
         } else {
           globalimageSource = imageSourceApi;
-          imageSourceApi.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
-            expect(pixelmap != undefined).assertTrue();
-            globalpixelmap = pixelmap!;
-            logger.log("createPixelMap success;");
-            done();
+          imageSourceApi!.createPixelMap((err: BusinessError | null, pixelmap: image.PixelMap | undefined) => {
+            if (err && err.code) {
+              logger.log("createPixelMap error: " + err);
+              expect(false).assertTrue();
+              done();
+            }
+            if (pixelmap == undefined) {
+              logger.log("createPixelMap failed");
+              expect(false).assertTrue();
+              done();
+            } else {
+              expect(pixelmap != undefined).assertTrue();
+              globalpixelmap = pixelmap!;
+              logger.log("createPixelMap success;");
+              done();
+            }
           });
         }
       } catch (error) {
@@ -2056,7 +2260,7 @@ export default function imageJsTest() {
     it('SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_SUPPORTEDFORMATS_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
             getFd('test.jpg');
-            const imageSourceApi = image.createImageSource(fdNumber);
+            const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fdNumber);
             if (imageSourceApi == undefined) {
                 console.info('SUB_MULTIMEDIA_IMAGE_IMAGESOURCE_SUPPORTEDFORMATS_STATIC_0100 create image source failed');
                 expect(false).assertTrue();
