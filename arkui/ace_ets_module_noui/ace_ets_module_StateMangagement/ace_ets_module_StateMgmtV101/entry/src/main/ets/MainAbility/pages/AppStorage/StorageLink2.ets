@@ -14,9 +14,9 @@
  */
 AppStorage.clear()
 AppStorage.setOrCreate('Prop1', 47);
-let para: Record<string, number> = { 'PropA': 47 }
+let paraStorageLink2: Record<string, number> = { 'PropA': 47 }
 let storageLink2 = new LocalStorage();
-let storage_1 = new LocalStorage(para);
+let storage_1 = new LocalStorage(paraStorageLink2);
 storageLink2['Prop1'] = 47;
 
 @Entry

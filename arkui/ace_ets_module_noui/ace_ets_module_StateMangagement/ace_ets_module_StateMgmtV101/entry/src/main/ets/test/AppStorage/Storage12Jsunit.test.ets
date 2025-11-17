@@ -56,6 +56,14 @@ export default function Storage12Jsunit() {
     });
 
     //Size获取AppStorage中存在键值对的个数
+    /**
+		 * @tc.number    Storage12Jsunit_0100
+		 * @tc.name      Storage12Jsunit_0100
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
+		 */
     it('Storage12Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[Storage12Jsunit_0100] START');
       let driver = await UiDriver.create()

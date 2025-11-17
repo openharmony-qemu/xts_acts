@@ -17,12 +17,12 @@ let storageLink0310 = new LocalStorage()
 storageLink0310.setOrCreate('LocalStorageLink0310Set', new Set<number>([0, 0, 0]))
 let storageLink0310Map: Map<string, string> = new Map()
 storageLink0310Map.set('key', 'value')
-let para: Record<string, number> = { 'propA': 47 };
+let paraLocalStorageLink0310: Record<string, number> = { 'propA': 47 };
 storageLink0310.setOrCreate('LocalStorageLink0310Map', storageLink0310Map)
 storageLink0310.setOrCreate('LocalStorageLink0310Date', new Date(2024, 1, 1, 8, 9, 30))
 storageLink0310.setOrCreate('LocalStorageLink0310Undefined', undefined)
 storageLink0310.setOrCreate('LocalStorageLink0310Null', null)
-storageLink0310.setOrCreate('LocalStorageLink0310Array', [0, false, para])
+storageLink0310.setOrCreate('LocalStorageLink0310Array', [0, false, paraLocalStorageLink0310])
 
 @Component
 struct ChildLocalStorageLink0310 {
