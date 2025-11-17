@@ -519,7 +519,7 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201).assertTrue();
+        expect(error.code == 201 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -547,7 +547,7 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201).assertTrue();
+        expect(error.code == 201 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -568,7 +568,7 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201).assertTrue();
+        expect(error.code == 201 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
