@@ -55,23 +55,23 @@ export default function blendModeTest() {
       done();
     });
     /**
-     * @tc.number blendModeTest_0100
-     * @tc.name blendModeTest_0100
+     * @tc.number blendModeTest_0010
+     * @tc.name blendModeTest_0010
      * @tc.desc api
      * @tc.level: Level 2
      * @tc.type :
      * @tc.size :
      */
-    it('blendModeTest_0100', Level.LEVEL2, async (done: Function) => {
-      console.info('blendModeTest_0100 START');
+    it('blendModeTest_0010', Level.LEVEL2, async (done: Function) => {
+      console.info('blendModeTest_0010 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('blend_column0');
-      console.info('[blendModeTest_0100] component JSON.parse(strJson) is: ' + JSON.stringify(JSON.parse(strJson)));
-      console.info('[blendModeTest_0100] component JSON.parse(strJson).$attrs is: ' + JSON.stringify(JSON.parse(strJson).$attrs));
-      console.info('[blendModeTest_0100] text: ' + JSON.stringify(JSON.parse(strJson).$attrs.blendMode));
+      console.info('[blendModeTest_0010] component JSON.parse(strJson) is: ' + JSON.stringify(JSON.parse(strJson)));
+      console.info('[blendModeTest_0010] component JSON.parse(strJson).$attrs is: ' + JSON.stringify(JSON.parse(strJson).$attrs));
+      console.info('[blendModeTest_0010] text: ' + JSON.stringify(JSON.parse(strJson).$attrs.blendMode));
       expect(JSON.parse(strJson).$attrs.blendMode).assertEqual(0);
-      console.info('[blendModeTest_0100] END');
+      console.info('[blendModeTest_0010] END');
       done();
     });
     /**
