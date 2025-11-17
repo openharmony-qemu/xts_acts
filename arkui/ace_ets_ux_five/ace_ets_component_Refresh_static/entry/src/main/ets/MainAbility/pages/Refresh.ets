@@ -28,11 +28,11 @@ import { State } from '@ohos.arkui.stateManagement';
 struct Index {
   @State isRefreshingText: boolean = false
   @State counterText: number = 0
-  @State promptText1: string  = "pull down and refresh : 0"
-  @State promptText2: string  = "*************************"
-  @State promptText3: string  = "1234567890987654321"
-  @State promptText4: string = " "
-  @State promptText5: string = "测试是否可以显示汉字"
+  @State promptText1: string | undefined = "pull down and refresh : 0"
+  @State promptText2: string | undefined = "*************************"
+  @State promptText3: string | undefined = "1234567890987654321"
+  @State promptText4: string | undefined = " "
+  @State promptText5: string | undefined = "测试是否可以显示汉字"
   @State isRefreshing: boolean = false
   @State counter: number = 0
   timeout: int = 5000

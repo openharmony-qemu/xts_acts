@@ -65,25 +65,22 @@ struct SelectExample {
       const data = eventData.data as Record<String,undefined|null|Object>
 
       if (data['spaceValue']) {
-        console.info("select page state change called after spaceValue befor:" + this.spaceValue);
-        console.info("select page state change called after spaceValue  emitter before:" + this.spaceValue);
         this.spaceValue = Number(data['spaceValue']!.toString())
-        console.info("select page state change called after spaceValue:" + this.spaceValue);
       }
 
-      this.arrowPosition =
-        ((eventData.data) as ESObject)!.getProperty('arrowPosition').toStaticObject() as ArrowPosition;
-      console.info("select page eventData:" + this.arrowPosition);
-
-      if (((eventData.data) as ESObject)?.getProperty('spaceValueString').toString() != null) {
-        this.spaceValueString = ((eventData.data) as ESObject)?.getProperty('spaceValueString').toString() as string;
-        console.info("select page state change called after spaceValue:" + this.spaceValueString);
+      console.info('test : ' + data['arrowPosition'])
+      if (data['arrowPosition'] && data['arrowPosition'] == ArrowPosition.START) {
+        this.arrowPosition =ArrowPosition.START
+      } else {
+        this.arrowPosition =ArrowPosition.END
       }
 
-      if (((eventData.data) as ESObject)?.getProperty('spaceValueResource').toStaticObject() as Resource != null) {
-        this.spaceValueResource = ((eventData.data) as ESObject)?.getProperty('spaceValueResource')
-          .toStaticObject() as Resource;
-        console.info("select page state change called after spaceValue:" + this.spaceValueResource);
+      if (data['spaceValueString']) {
+        this.spaceValueString = data['spaceValueString'] as string
+      }
+
+      if (data['spaceValueResource']) {
+        this.spaceValueResource = data['spaceValueResource'] as Resource
       }
     }
   }
@@ -92,7 +89,7 @@ struct SelectExample {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
 

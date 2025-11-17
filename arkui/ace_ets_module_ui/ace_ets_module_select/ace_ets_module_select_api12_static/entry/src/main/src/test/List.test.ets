@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import select from './Select.test'
+import select from './Select01.test'
 import selectmenuTest from './SelectMenu.test'
 import selectOnSelectJsunit from './Select.test';
 

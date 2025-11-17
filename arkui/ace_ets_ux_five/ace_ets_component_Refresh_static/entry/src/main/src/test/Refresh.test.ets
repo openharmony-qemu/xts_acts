@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { UtilsTest, startAbility, stopApplication } from './Util.test';
@@ -56,12 +56,15 @@ export default function RefreshTest() {
       }
     });
 
+    
+    
     /*
-      *@tc.number ArkUX_Refresh_Visual_0010
-      *@tc.name   ArkUX_Refresh_Visual_static_0010
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
-    it('ArkUX_Refresh_Visual_static_0010', 0, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUX_Refresh_Visual_static_0010
+     * @tc.name     ArkUX_Refresh_Visual_static_0010
+     * @tc.desc     ArkUX_Refresh_Visual_static_0010
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUX_Refresh_Visual_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0010 START');
       setTimeout(() => {
         try {
@@ -81,12 +84,15 @@ export default function RefreshTest() {
       }, 5000)
     });
 
+    
+    
     /*
-      *@tc.number ArkUX_Refresh_Visual_0020
-      *@tc.name   ArkUX_Refresh_Visual_static_0020
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
-    it('ArkUX_Refresh_Visual_static_0020', 0, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUX_Refresh_Visual_static_0020
+     * @tc.name     ArkUX_Refresh_Visual_static_0020
+     * @tc.desc     ArkUX_Refresh_Visual_static_0020
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUX_Refresh_Visual_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0020 START');
       setTimeout(() => {
         try {
@@ -106,12 +112,15 @@ export default function RefreshTest() {
       }, 5000)
     });
 
+    
+    
     /*
-      *@tc.number ArkUX_Refresh_Visual_0030
-      *@tc.name   ArkUX_Refresh_Visual_static_0030
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
-    it('ArkUX_Refresh_Visual_static_0030', 0, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUX_Refresh_Visual_static_0030
+     * @tc.name     ArkUX_Refresh_Visual_static_0030
+     * @tc.desc     ArkUX_Refresh_Visual_static_0030
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUX_Refresh_Visual_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0030 START');
       setTimeout(() => {
         try {
@@ -131,12 +140,15 @@ export default function RefreshTest() {
       }, 5000)
     });
 
+    
+    
     /*
-      *@tc.number ArkUX_Refresh_Visual_0040
-      *@tc.name   ArkUX_Refresh_Visual_static_0040
-      *@tc.desc   Sets the promptText property parameter to different text
-      */
-    it('ArkUX_Refresh_Visual_static_0040', 0, async (done: () => void): Promise<void> => {
+     * @tc.number   ArkUX_Refresh_Visual_static_0040
+     * @tc.name     ArkUX_Refresh_Visual_static_0040
+     * @tc.desc     ArkUX_Refresh_Visual_static_0040
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUX_Refresh_Visual_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0040 START');
       setTimeout(() => {
         try {
@@ -156,12 +168,15 @@ export default function RefreshTest() {
       }, 5000)
     });
 
+    
+    
     /*
-     *@tc.number ArkUX_Refresh_Visual_0050
-     *@tc.name   ArkUX_Refresh_Visual_static_0050
-     *@tc.desc   Sets the promptText property parameter to different text
+     * @tc.number   ArkUX_Refresh_Visual_static_0050
+     * @tc.name     ArkUX_Refresh_Visual_static_0050
+     * @tc.desc     ArkUX_Refresh_Visual_static_0050
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Refresh_Visual_static_0050', 0, async (done: () => void): Promise<void> => {
+    it('ArkUX_Refresh_Visual_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Refresh_Visual_static_0050 START');
       setTimeout(() => {
         try {
