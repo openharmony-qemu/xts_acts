@@ -191,8 +191,324 @@ export default function actslocationTest() {
                     await Utils.msSleep(1000)
                     done();
                 })
+            
+
+            /*
+            * @tc.number: SUB_HSS_LocationSystem_Geo_0001
+            * @tc.name: SUB_HSS_LocationSystem_Geo_0001
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it ('SUB_HSS_LocationSystem_Geo_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+                async (done: () => void): Promise<void> => {
+                    let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+                        "latitude": 31.265496,
+                        "longitude": 121.62771,
+                        "maxItems": 1,
+                        "locale": "zh",
+                        "country": "CN"
+                    };
+                    try{
+                        expect(typeof reverseGeocodeRequest.latitude).assertEqual("number");
+                        expect(typeof reverseGeocodeRequest.longitude).assertEqual("number");
+                        expect(typeof reverseGeocodeRequest.maxItems).assertEqual("int");
+                        expect(typeof reverseGeocodeRequest.locale).assertEqual("string");
+                        expect(typeof reverseGeocodeRequest.country).assertEqual("string");
+                        geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest,(err, data) => {
+                            if(err){
+                                hilog.info(domain, tag, '[lbs_js] getAddressesFromLocation callback err is:' + JSON.stringify(err));
+                                expect(err.code).assertEqual(3301300);
+                            } else{
+                                hilog.info(domain, tag, '[lbs_js] getAddressesFromLocation callback data is:' + JSON.stringify(data));
+                                expect((JSON.stringify(data)) != null).assertTrue();
+                            }
+                        })
+
+                    }catch(error: BusinessError){
+                        hilog.error(domain, tag, '[lbs_js] getAddressesFromLocation callback try err is:' + error);
+                    }
+                    await Utils.msSleep(1000)
+                    done()
+                }
+            )
+
+            /*
+            * @tc.number: SUB_HSS_LocationSystem_Geo_2900
+            * @tc.name: SUB_HSS_LocationSystem_Geo_2900
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it ('SUB_HSS_LocationSystem_Geo_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+                async (done: () => void): Promise<void> => {
+                    let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
+                        "latitude": 31.265496,
+                        "longitude": 121.62771,
+                        "maxItems": 1,
+                        "locale": "zh",
+                        "country": "CN"
+                    };
+                    try{
+                        geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                            if (data){
+                                expect(Array.isArray(data)).assertTrue();
+                            }
+                        }).catch((error) => {
+                            expect((error as BusinessError).code).assertEqual(3301300);
+                        })
+                        done();
+                    } catch(error){
+                        console.info('[lbs_js] getAddressesFromLocation try err is:' + JSON.stringify(error));
+                    }
+                }
+            )
+
+            /*
+            * @tc.number: SUB_HSS_LocationSystem_Geo_1200
+            * @tc.name: SUB_HSS_LocationSystem_Geo_1200
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it ('SUB_HSS_LocationSystem_Geo_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+                async (done: () => void): Promise<void> => {
+                    let geoCodeRequest: geoLocationManager.GeoCodeRequest = {
+                        "description": "上海金穗路1800号",
+                        "maxItems": 1,
+                        "minLatitude": 31.3082812847,
+                        "minLongitude": 121.5782001832,
+                        "maxLatitude": 31.1537977881,
+                        "maxLongitude": 121.8026736943,
+                        "country": "CN"
+                    };
+                    try{
+                        geoLocationManager.getAddressesFromLocationName(geoCodeRequest).then((result:Array<geoLocationManager.GeoAddress>) => {
+                            expect(Array.isArray(result)).assertTrue;
+                            done();
+                        }).catch((error) => {
+                            expect((error as BusinessError).code).assertEqual(3301400);
+                            done();
+                        });
+                    }catch(error){
+                            console.info('[lbs_js] getAddressesFromLocationName try err is:' + JSON.stringify(error));
+                    }
+                }
+            )
 
 
+            /*
+            * @tc.number: SUB_HSS_LocationSystem_Geo_1300
+            * @tc.name: SUB_HSS_LocationSystem_Geo_1300
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it ('SUB_HSS_LocationSystem_Geo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+                async (done: () => void): Promise<void> => {
+                    let geoCodeRequest: geoLocationManager.GeoCodeRequest = {
+                        "description": "上海金穗路1800号",
+                        "maxItems": 1,
+                        "minLatitude": 31.3082812847,
+                        "minLongitude": 121.5782001832,
+                        "maxLatitude": 31.1537977881,
+                        "maxLongitude": 121.8026736943,
+                        "country": "CN"
+                    };
+                    try{
+                        geoLocationManager.getAddressesFromLocationName(geoCodeRequest,(err, data) => {
+                            if(err){
+                                expect(err.code).assertEqual(3301400);
+                                done();
+                            }else{
+                                expect(Array.isArray(data)).assertTrue;
+                                done();
+                            }
+                        })
+                    }catch(error){
+                            console.info('[lbs_js] getAddressesFromLocationName try err is:' + JSON.stringify(error));
+                    }
+                }
+            )
+
+            /*
+            * @tc.number: SUB_Location_isGeocoderAvailabel_0100
+            * @tc.name: SUB_Location_isGeocoderAvailabel_0100
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it('SUB_Location_isGeocoderAvailabel_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+                try{
+                    let geocoderAvailable = geoLocationManager.isGeocoderAvailable();
+                    if (geocoderAvailable != null){
+                        expect(typeof geocoderAvailable).assertEqual('boolean');
+                    }  
+                } catch (error){
+                    expect().assertFail;
+                }
+            })
+            
+            /*
+            * @tc.number: SUB_Location_sendCommand_0100
+            * @tc.name: SUB_Location_sendCommand_0100
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it('SUB_Location_sendCommand_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+                async (done:() => void): Promise<void> => {
+                    let locationCommand: geoLocationManager.LocationCommand ={
+                        "scenario": geoLocationManager.LocationRequestScenario.UNSET,
+                        "command": "del_all"
+                    };
+                    geoLocationManager.sendCommand(locationCommand,
+                        (err:BusinessError | null, result: geoLocationManager.Location | undefined) => {
+                            try{
+                                if(err != null){
+                                    expect(err.code).assertEqual(401);
+                                    done();
+                                }else{
+                                    expect(result == undefined).assertTrue();
+                                    done();
+                                }
+                            }catch (err: BusinessError){
+                                console.info('[lbs_js] sendCommand try err is:' + JSON.stringify(err));
+                            }
+                        }
+                    )
+                }
+            )
+
+            /*
+            * @tc.number: SUB_Location_sendCommand_0200
+            * @tc.name: SUB_Location_sendCommand_0200
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it('SUB_Location_sendCommand_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+                async (done:() => void): Promise<void> => {
+                    let locationCommand: geoLocationManager.LocationCommand ={
+                        "scenario": geoLocationManager.LocationRequestScenario.UNSET,
+                        "command": "del_all"
+                    };
+                    try{
+                        geoLocationManager.sendCommand(locationCommand).then((result) => {
+                            expect(result == undefined).assertTrue();
+                            done();
+                        }).catch((error) => {
+                            expect(error.code).assertEqual(401);
+                            done();
+                        })
+                    }catch (error){
+                        console.info('[lbs_js] sendCommand try err is:' + JSON.stringify(error));
+                    }
+                }
+            )
+
+            /*
+            * @tc.number: SUB_Location_isLocationEnabled_0100
+            * @tc.name: SUB_Location_sendCommand_0200
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it('SUB_Location_isLocationEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+                try{
+                    let location = geoLocationManager.isLocationEnabled();
+                    expect(typeof location).assertEqual('boolean');
+                }catch (error: BusinessError){
+                    expect(error.code).assertEqual(3301000);
+                }
+            })
+
+            /*
+            * @tc.number: SUB_Location_getCountryCode_0100
+            * @tc.name: SUB_Location_getCountryCode_0100
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it('SUB_Location_getCountryCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+                async (done: () => void): Promise<void> => {
+                    try{
+                        geoLocationManager.getCountryCode((err, data) => {
+                            if(err != null){
+                                expect(err.code).assertEqual(401);
+                                done();
+                            }else{
+                                expect(data != null).assertTrue();
+                                done();
+                            }
+                        })
+                    }catch(error){
+                        console.info('[lbs_js] getCountryCode try err is:' + JSON.stringify(error));
+                    }
+                }
+            )
+
+
+            /*
+            * @tc.number: SUB_Location_getCountryCode_0200
+            * @tc.name: SUB_Location_getCountryCode_0200
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+            
+            it('SUB_Location_getCountryCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+                async (done: () => void): Promise<void> => {
+                    try{
+                        geoLocationManager.getCountryCode().then((result) => {
+                            expect(result != null).assertTrue();
+                            done();
+                        }).catch((error) => {
+                            expect((error as BusinessError).code).assertEqual(401);
+                            done();
+                        })
+                    }catch(error){
+                        console.info('[lbs_js] getCountryCode try err is:' + JSON.stringify(error));
+                    }
+                }
+            )
+
+            /*
+            * @tc.number: SUB_Location_getGeofenceSupportedCoordTypes_0100
+            * @tc.name: SUB_Location_getGeofenceSupportedCoordTypes_0100
+            * @tc.desc: Test Location API functionality
+            * @tc.level: Level 2
+            * @tc.type: Function
+            * @tc.size: MEDIUMTEST
+            */
+
+            it('SUB_Location_getGeofenceSupportedCoordTypes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
+                try{
+                    let supportedCoordTypes: Array<geoLocationManager.CoordinateSystemType> = geoLocationManager.getGeofenceSupportedCoordTypes();
+                    expect(supportedCoordTypes != null).assertTrue();
+                }catch(error: BusinessError){
+                    expect(error.code).assertEqual(3301000);
+                }
+            })
 
     })
 }
