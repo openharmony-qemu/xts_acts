@@ -664,8 +664,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest3300';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [c'a', c'b', c'c'];
-        let result = lowerBoundSearch(arr, c'd');
+        let arr: FixedArray<byte> = [c'a'.toByte(), c'b'.toByte(), c'c'.toByte()];
+        let result = lowerBoundSearch(arr, c'd'.toByte());
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -683,8 +683,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest3400';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [c'd', c'e', c'f'];
-        let result = lowerBoundSearch(arr, c'b');
+        let arr: FixedArray<byte> = [c'd'.toByte(), c'e'.toByte(), c'f'.toByte()];
+        let result = lowerBoundSearch(arr, c'b'.toByte());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -702,8 +702,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest3500';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [c'a', c'c', c'e', c'g'];
-        let result = lowerBoundSearch(arr, c'e');
+        let arr: FixedArray<byte> = [c'a'.toByte(), c'c'.toByte(), c'e'.toByte(), c'g'.toByte()];
+        let result = lowerBoundSearch(arr, c'e'.toByte());
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -721,8 +721,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest3600';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [c'a', c'c', c'e', c'g'];
-        let result = lowerBoundSearch(arr, c'd');
+        let arr: FixedArray<byte> = [c'a'.toByte(), c'c'.toByte(), c'e'.toByte(), c'g'.toByte()];
+        let result = lowerBoundSearch(arr, c'd'.toByte());
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -740,8 +740,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest3700';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [c'b', c'b', c'b'];
-        let result = lowerBoundSearch(arr, c'b');
+        let arr: FixedArray<byte> = [c'b'.toByte(), c'b'.toByte(), c'b'.toByte()];
+        let result = lowerBoundSearch(arr, c'b'.toByte());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -759,8 +759,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest3800';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [c'c'];
-        let result = lowerBoundSearch(arr, c'c');
+        let arr: FixedArray<byte> = [c'c'.toByte()];
+        let result = lowerBoundSearch(arr, c'c'.toByte());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -778,8 +778,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest3900';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [c'a'];
-        let result = lowerBoundSearch(arr, c'b');
+        let arr: FixedArray<byte> = [c'a'.toByte()];
+        let result = lowerBoundSearch(arr, c'b'.toByte());
         expect(result).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
@@ -797,8 +797,8 @@ export default function builtinsArrayLowerBoundSearchPrototypebTest(){
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsArrayLowerBoundSearchPrototypebTest4000';
         console.info(`${caseName}, test start`);
-        let arr: FixedArray<char> = [];
-        let result = lowerBoundSearch(arr, c'a');
+        let arr: FixedArray<byte> = [];
+        let result = lowerBoundSearch(arr, c'a'.toByte());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
