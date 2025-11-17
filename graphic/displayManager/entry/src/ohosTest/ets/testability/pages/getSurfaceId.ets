@@ -15,14 +15,6 @@
 import { display } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 
-class VirtualScreenOptions {
-    name: string = '';
-    width: number = 0;
-    height: number = 0;
-    density: number = 0;
-    surfaceId: string = '';
-}
-
 @Entry
 @Component
 struct GetSurfaceId {
