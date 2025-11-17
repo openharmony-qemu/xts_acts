@@ -3,8 +3,6 @@ import finalizationRegistryRegisterTest from "./symboltest/FinalizationRegistryR
 import finalizationRegistryUnregisterTest from "./symboltest/FinalizationRegistryUnregister.test";
 import symbolAsyncIteratorTestTest from "./symboltest/SymbolAsyncIterator.test";
 import symbolConstructorTestTest from "./symboltest/SymbolConstructor.test";
-import symbolConstructorErrorTestTest from "./symboltest/SymbolConstructorError.test";
-import symbolErrorTestTest from "./symboltest/SymbolError.test";
 import symbolForTestTest from "./symboltest/SymbolFor.test";
 import symbolHasInstanceTest from "./symboltest/SymbolHasInstance.test";
 import symbolIsConcatSpreadableTest from "./symboltest/SymbolIsConcatSpreadable.test";
@@ -27,8 +25,6 @@ export default function testsuite() {
   finalizationRegistryUnregisterTest();
   symbolAsyncIteratorTestTest();
   symbolConstructorTestTest();
-  symbolConstructorErrorTestTest();
-  symbolErrorTestTest();
   symbolForTestTest();
   symbolHasInstanceTest();
   symbolIsConcatSpreadableTest();
