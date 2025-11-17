@@ -14,7 +14,7 @@
  */
 @Entry
 @Component
-struct ImageOnErrorExample {
+struct ImageOnErrorCodeExample {
   @State image_code1: number | undefined = 0;
   @State image_code2: number | undefined = 0;
   @State image_code3: number | undefined = 0;

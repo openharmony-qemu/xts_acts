@@ -20,7 +20,7 @@ struct ImageContentExample {
       Image(ImageContent.EMPTY)
         .width(100)
         .height(100)
-        .id('image')
+        .id('ImageContentImage')
     }.width('100%')
     .padding(20)
   }

@@ -38,6 +38,22 @@
         "MainAbility/pages/ImageAnimator/fillMode",
         "MainAbility/pages/ImageAnimator/ImageAnimatorBasicAttributes",
         "MainAbility/pages/ImageAnimator/ImageAnimatorEventData",
-        "MainAbility/pages/ImageAnimator/monitorInvisibleArea"
+        "MainAbility/pages/ImageAnimator/monitorInvisibleArea",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator01",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator02",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator03",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator04",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator05",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator06",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator07",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator08",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator09",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator14",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator15",
+        "MainAbility/pages/ImageAnimatorAdvanced/imageAnimator16",
+        "MainAbility/pages/ImageContent/ImageContentEmpty",
+        "MainAbility/pages/ImageContentTransitionEffect/ImageContentTransitionEffect",
+        "MainAbility/pages/ImageError/ImageErrorCode",
+        "MainAbility/pages/ImageError/ImageOnError"
     ]
 }

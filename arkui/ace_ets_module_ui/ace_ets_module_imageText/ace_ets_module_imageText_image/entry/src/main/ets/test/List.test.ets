@@ -36,6 +36,11 @@ import ImageAnimatorFillModeJsunitTest from './ImageAnimator/FillModeJsunit.test
 import ImageAnimatorBasicAttributesTest from './ImageAnimator/ImageAnimatorBasicAttributes.test';
 import ImageAnimatorEventDataTest from './ImageAnimator/ImageAnimatorEventData.test';
 import monitorInvisibleAreaTest from './ImageAnimator/monitorInvisibleArea.test';
+import ImageAnimatorAdvancedTest from './ImageAnimatorAdvancedTest/ImageAnimatorAdvancedTest.test';
+import ImageContentEmptyTest from './ImageContentTest/ImageContentEmpty.test';
+import ImageContentTransitionEffectTest from './ImageContentTransitionEffectTest/ImageContentTransitionEffect.test';
+import ImageOnErrorTest from './ImageErrorTest/ImageOnError.test';
+import ImageOnErrorCodeTest from './ImageErrorTest/ImageOnErrorCode.test';
 
 export default function testsuite() {
   APIClipMaskShapeTest();
@@ -62,4 +67,9 @@ export default function testsuite() {
   ImageAnimatorBasicAttributesTest();
   ImageAnimatorEventDataTest();
   monitorInvisibleAreaTest();
+  ImageAnimatorAdvancedTest();
+  ImageContentEmptyTest();
+  ImageContentTransitionEffectTest();
+  ImageOnErrorTest();
+  ImageOnErrorCodeTest();
 }
