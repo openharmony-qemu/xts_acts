@@ -42,12 +42,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0100
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0100
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0100
-         * @tc.desc Initializes the active label chip.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Initializes the active label chip.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0100', Level.LEVEL0, function (done)  {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -64,12 +65,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0200
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0200
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0200
-         * @tc.desc Reads the content of the active tag.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Reads the content of the active tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0200', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -90,12 +92,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0300
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0300
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0300
-         * @tc.desc Reads the content of the active tag.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Reads the content of the active tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0300', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -119,12 +122,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0400
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0400
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0400
-         * @tc.desc Write Content to Active Tags
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Write Content to Active Tags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0400', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -148,12 +152,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0500
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0500
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0500
-         * @tc.desc Write Content to Active Tags
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Write Content to Active Tags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0500', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -177,12 +182,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0600
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0600
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0600
-         * @tc.desc Registers and cancels the NFC field strength status event.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Registers and cancels the NFC field strength status event.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0600', Level.LEVEL0, function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -207,12 +213,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0700
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0700
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0700
-         * @tc.desc Unloads active label chip resources.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Unloads active label chip resources.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0700', Level.LEVEL0, function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -232,14 +239,15 @@ export default function ConnectedTagTest() {
             done();
         })
 
-        /**
-         * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0800
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0800
-         * @tc.desc Initializes the active label chip.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
-         */
+         /**
+          * @generated.time 2025-11-09 20:49:44
+          * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0800
+          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0800
+          * @tc.desc   Initializes the active label chip.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('SUB_Communication_NFC_nfcConnectedTag_js_0800', Level.LEVEL0, function (done)  {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
             console.info("testSysCaps08 test.syscap.param.001 : " + isAccessToken);
@@ -261,12 +269,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_0900
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_0900
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_0900
-         * @tc.desc uninitialize active label chip resources.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   uninitialize active label chip resources.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_0900', Level.LEVEL0, function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -289,12 +298,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1000
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1000
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1000
-         * @tc.desc Reads the content of the active tag.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Reads the content of the active tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_1000', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -323,12 +333,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1100
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1100
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1100
-         * @tc.desc Reads the content of the active tag.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Reads the content of the active tag.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_1100', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -361,13 +372,14 @@ export default function ConnectedTagTest() {
             done();
         })
 
-       /**
+        /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1200
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1200
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1200
-         * @tc.desc Write Content to Active Tags
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Write Content to Active Tags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_1200', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -396,12 +408,13 @@ export default function ConnectedTagTest() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1300
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1300
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1300
-         * @tc.desc Write Content to Active Tags
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Write Content to Active Tags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_1300', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -434,12 +447,13 @@ export default function ConnectedTagTest() {
             done();
         })
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1400
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1400
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1400
-         * @tc.desc NfcRfType value.
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   NfcRfType value.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_1400', Level.LEVEL0,function (done)  {
             try{
@@ -454,12 +468,13 @@ export default function ConnectedTagTest() {
           done();
         })
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1500
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1500
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1500
-         * @tc.desc read Content to Active Tags
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   read Content to Active Tags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_1500', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
@@ -493,12 +508,13 @@ export default function ConnectedTagTest() {
             done();
         })
         /**
+         * @generated.time 2025-11-09 20:49:44
+         * @tc.name   SUB_Communication_NFC_nfcConnectedTag_js_1600
          * @tc.number SUB_Communication_NFC_nfcConnectedTag_js_1600
-         * @tc.name SUB_Communication_NFC_nfcConnectedTag_js_1600
-         * @tc.desc Write Content to Active Tags
-         * @tc.size since 8
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Write Content to Active Tags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_nfcConnectedTag_js_1600', Level.LEVEL0, async function (done) {
             var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");

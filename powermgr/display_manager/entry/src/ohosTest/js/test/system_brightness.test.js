@@ -24,12 +24,13 @@ export default async function SystemBrightnessTest() {
     console.log("System SystemBrightness Test Begin");
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   get_value_success
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0010
-     * @tc.name testget_value_success
-     * @tc.desc Get brightness success
-     * @tc.level: Level 1
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_value_success', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let currValue = 100;
@@ -44,12 +45,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   get_status_test_success_not_must
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0020
-     * @tc.name testget_status_test_success_not_must
-     * @tc.desc Get brightness
-     * @tc.level: Level 1
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_status_test_success_not_must', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       brightness.getValue({
@@ -66,12 +68,13 @@ export default async function SystemBrightnessTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   get_value_fail_not_must_test
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0030
-     * @tc.name testget_value_fail_not_must_test
-     * @tc.desc Get brightness
-     * @tc.level: Level 1
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_value_fail_not_must_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       brightness.getValue({
@@ -84,12 +87,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   get_status_test_fail_not_must
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0040
-     * @tc.name testget_status_test_fail_not_must
-     * @tc.desc Get brightness
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Get brightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_status_test_fail_not_must', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.getValue();
@@ -98,12 +102,13 @@ export default async function SystemBrightnessTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   set_value_success_value
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0050
-     * @tc.name testset_value_success_value
-     * @tc.desc Set brightness success
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Set brightness success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('set_value_success_value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.setKeepScreenOn({
@@ -135,12 +140,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   set_value_fail
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0060
-     * @tc.name testset_value_fail
-     * @tc.desc Set brightness fail
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Set brightness fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('set_value_fail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let setValue = "50";
@@ -161,12 +167,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   set_value_undefined
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0070
-     * @tc.name testset_value_undefined
-     * @tc.desc Check undefined as input of setValue
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Check undefined as input of setValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('set_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.setKeepScreenOn({
@@ -189,12 +196,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   get_mode_success
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0080
-     * @tc.name testget_mode_success
-     * @tc.desc Get mode success
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Get mode success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_mode_success', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.getMode({
@@ -207,12 +215,13 @@ export default async function SystemBrightnessTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   get_mode_success_null
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0090
-     * @tc.name testget_mode_success_null
-     * @tc.desc Get mode success is null
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   Get mode success is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('get_mode_success_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.getMode({
@@ -229,12 +238,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   set_mode_success
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0100
-     * @tc.name testset_mode_success
-     * @tc.desc set mode success
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   set mode success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('set_mode_success', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.setMode({
@@ -256,12 +266,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   set_mode_fail
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0110
-     * @tc.name testset_mode_fail
-     * @tc.desc set mode fail
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   set mode fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('set_mode_fail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.setMode({
@@ -283,12 +294,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   set_keep_screen_on_true
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0120
-     * @tc.name testset_keep_screen_on_true
-     * @tc.desc set keep screen on true
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   set keep screen on true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('set_keep_screen_on_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.setKeepScreenOn({
@@ -309,12 +321,13 @@ export default async function SystemBrightnessTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   set_keep_screen_on_false
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0130
-     * @tc.name testset_keep_screen_on_false
-     * @tc.desc set keep screen on false
-     * @tc.level: Level 3
-     * @tc.type: Functiontion
-     * @tc.size: MediumTest
+     * @tc.desc   set keep screen on false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('set_keep_screen_on_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       brightness.setKeepScreenOn({

@@ -14,16 +14,18 @@
  */
 import { beforeAll,afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webJsunit() {
   describe('ActsAceWebDevTest', () => {
     beforeAll(async (done: Function) => {
-      await waitForComponent("webcomponent");
+      await driver.waitForComponent(ON.id("webcomponent"), 10000);
       done()
     });
     beforeEach(async (done: Function) => {
@@ -44,7 +46,7 @@ export default function webJsunit() {
     it('registerJavaScriptProxy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterJavaScriptProxy", 172240)
       Utils.registerEvent("registerJavaScriptProxy", "backToEts", 172250, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webcomponent');
     })
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_059
@@ -54,7 +56,7 @@ export default function webJsunit() {
     it('deleteJavaScriptRegister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDeleteJavaScriptRegister", 172240)
       Utils.registerEvent("deleteJavaScriptRegister", true, 172260, done);
-      sendEventByKey('webcomponent', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webcomponent');
     })
   })
 }

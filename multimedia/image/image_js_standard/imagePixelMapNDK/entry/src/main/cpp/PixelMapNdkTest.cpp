@@ -151,6 +151,21 @@ namespace PixelMapNdk {
         return IMAGE_SUCCESS;
     }
 
+    static Image_ErrorCode SetDynamicRange(napi_env env, napi_value optionsObj, OH_DecodingOptions *options)
+    {
+        int32_t dynamicRange;
+        if (getUint32Property(env, optionsObj, "dynamicRange", reinterpret_cast<uint32_t*>(&dynamicRange)) == napi_ok) {
+            OH_LOG_INFO(LOG_APP, "Parsed dynamicRange: %{public}d", dynamicRange);
+            if (OH_DecodingOptions_SetDesiredDynamicRange(options, dynamicRange) != IMAGE_SUCCESS) {
+                LogError("Failed to set dynamicRange", IMAGE_BAD_PARAMETER);
+                return IMAGE_BAD_PARAMETER;
+            }
+        } else {
+            OH_LOG_INFO(LOG_APP, "dynamicRange not provided or invalid, skipping.");
+        }
+        return IMAGE_SUCCESS;
+    }
+
     static bool CreateAndSetDecodingOptions(napi_env env, napi_value optionsObj, OH_DecodingOptions *&options)
     {
         if (OH_DecodingOptions_Create(&options) != IMAGE_SUCCESS) {
@@ -159,7 +174,8 @@ namespace PixelMapNdk {
         if (SetDesiredSize(env, optionsObj, options) != IMAGE_SUCCESS ||
             SetPixelFormat(env, optionsObj, options) != IMAGE_SUCCESS ||
             SetDesiredRegion(env, optionsObj, options) != IMAGE_SUCCESS ||
-            SetCropAndScaleStrategy(env, optionsObj, options) != IMAGE_SUCCESS) {
+            SetCropAndScaleStrategy(env, optionsObj, options) != IMAGE_SUCCESS ||
+            SetDynamicRange(env, optionsObj, options) != IMAGE_SUCCESS) {
             OH_DecodingOptions_Release(options);
             return false;
         }

@@ -66,12 +66,13 @@ describe('dataSharePredicatesTest', () => {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.name       : testOrderByAsc0001
-     * @tc.number     : SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0010
-     * @tc.desc       : predicates orderByAsc normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testOrderByAsc0001
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0010
+     * @tc.desc   predicates orderByAsc normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOrderByAsc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
         let u8 = new Uint8Array([4, 5, 6]);
@@ -98,12 +99,13 @@ describe('dataSharePredicatesTest', () => {
     })
 
     /**
-     * @tc.name       : testOrderByDesc0001
-     * @tc.number     : SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0020
-     * @tc.desc       : predicates orderByDesc normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testOrderByDesc0001
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0020
+     * @tc.desc   predicates orderByDesc normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOrderByDesc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
         let u8 = new Uint8Array([4, 5, 6]);
@@ -131,12 +133,13 @@ describe('dataSharePredicatesTest', () => {
 
 
     /**
-     * @tc.name       : testAnd0001
-     * @tc.number     : SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0030
-     * @tc.desc       : predicates and normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testAnd0001
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0030
+     * @tc.desc   predicates and normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
         let u8 = new Uint8Array([4, 5, 6]);
@@ -164,12 +167,13 @@ describe('dataSharePredicatesTest', () => {
     })
 
     /**
-     * @tc.name       : testIn0001
-     * @tc.number     : SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0040
-     * @tc.desc       : predicates in normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testIn0001
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0040
+     * @tc.desc   predicates in normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIn0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
         let u8 = new Uint8Array([4, 5, 6]);
@@ -196,12 +200,13 @@ describe('dataSharePredicatesTest', () => {
 
 
     /**
-     * @tc.name       : testLimit0001
-     * @tc.number     : SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0050
-     * @tc.desc       : predicates limit normal test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @generated.time 2025-11-09 20:49:55
+     * @tc.name   testLimit0001
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0050
+     * @tc.desc   predicates limit normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLimit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
         let u8 = new Uint8Array([4, 5, 6]);

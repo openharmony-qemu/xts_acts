@@ -167,6 +167,21 @@ export default function audioNDK() {
     })
 
     /* *
+        * @tc.number    : SUB_MULTIMEDIA_AUDIO_CREATE_ENGINE_0100
+        * @tc.name      : start audioCapturer
+        * @tc.desc      : test OH_AudioCapturer_Start
+        * @tc.size      : MediumTest
+        * @tc.type      : Function
+        * @tc.level     : Level 0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_CREATE_ENGINE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioCreateEngine();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_CREATE_ENGINE_0100 : ${result}`);
+      expect(result).assertEqual(0)
+      done()
+    })
+
+    /* *
         * @tc.number    : SUB_MULTIMEDIA_AUDIO_NDK_CAPTURER_START_ERR_0100
         * @tc.name      : start audioCapture twice
         * @tc.desc      : test OH_AudioCapturer_Start twice

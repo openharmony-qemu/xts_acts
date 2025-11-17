@@ -77,7 +77,7 @@ export default function windowTitleBarTest() {
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    let isFreeWindowMode = false;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -92,6 +92,11 @@ export default function windowTitleBarTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     });
     beforeEach(() => {
     });
@@ -2180,7 +2185,7 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300016)
         } else {
           expect(error.code).assertEqual(801)
@@ -2199,7 +2204,7 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300016)
         } else {
           expect(error.code).assertEqual(801)
@@ -2218,7 +2223,7 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300016)
         } else {
           expect(error.code).assertEqual(801)
@@ -2303,7 +2308,7 @@ export default function windowTitleBarTest() {
         windowClass.moveWindowToAsync(windowRect.left,windowRect.top);
         await windowStageStart.setSupportedWindowModes([ bundleManager.SupportWindowMode.FLOATING], true);
         await sleep(200);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           // let test = await assertMaximizeComponentExist();
           let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
           await sleep(200);
@@ -2327,7 +2332,7 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300002)
         } else {
           expect(error.code).assertEqual(801)
@@ -2335,20 +2340,20 @@ export default function windowTitleBarTest() {
         done();
       }
     })
-
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0400
-     * @tc.name      : testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen
-     * @tc.desc      : 验证setSupportedWindowModes接口配置([FLOATING，SPLIT], false)，最大化按钮不显示
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number : SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_0400
+     * @tc.name : testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen
+     * @tc.desc : 验证setSupportedWindowModes接口配置([FLOATING，SPLIT], false)，最大化按钮不显示
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
      */
     it("testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithGrayOutMaximizeButtonFalseNotSupportFullScreen";
       console.log(caseName + "begin");
       let driver = Driver.create();
       let test = true;
+      let mainWindow = windowStage.getMainWindowSync();
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -2361,13 +2366,13 @@ export default function windowTitleBarTest() {
         await sleep(200);
         await windowStageStart.setSupportedWindowModes([ bundleManager.SupportWindowMode.FLOATING, bundleManager.SupportWindowMode.SPLIT], false);
         await sleep(200);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
-          let mainWindow = windowStage.getMainWindowSync();
+        if (isFreeWindowMode == true) {
+          mainWindow.setWindowTitleButtonVisible(false,true,true);
           let windowClass = windowStageStart.getMainWindowSync();
           let windowRect = mainWindow.getWindowProperties().windowRect;
           console.log(`${caseName} windowRect: ${JSON.stringify(windowRect)}`);
           windowClass.moveWindowToAsync(windowRect.left,windowRect.top);
-          await sleep(200);
+          await sleep(1000);
           let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
           await sleep(200);
           console.log(`${caseName} button: ${button}`);
@@ -2381,15 +2386,16 @@ export default function windowTitleBarTest() {
           await windowClass.maximize();
           await sleep(200);
           console.log(`${caseName} maximize success`);
-
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
           await terminateAbility(caseName);
           expect(false).assertTrue();
           done();
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
+        mainWindow.setWindowTitleButtonVisible(true,true,true);
         await terminateAbility(caseName);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300002)
         } else {
           expect(error.code).assertEqual(801)
@@ -2409,6 +2415,7 @@ export default function windowTitleBarTest() {
     it("testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen";
       console.log(caseName + "begin");
+      let mainWindow = windowStage.getMainWindowSync();
       let test = true;
       let driver = Driver.create();
       let options: StartOptions = {
@@ -2421,14 +2428,14 @@ export default function windowTitleBarTest() {
       try {
         let windowStageStart = await startAbility(caseName, context, options);
         await sleep(200);
-        let mainWindow = windowStage.getMainWindowSync();
+        mainWindow.setWindowTitleButtonVisible(false,true,true);
         let windowClass = windowStageStart.getMainWindowSync();
         let windowRect = mainWindow.getWindowProperties().windowRect;
         console.log(`${caseName} windowRect: ${JSON.stringify(windowRect)}`);
         windowClass.moveWindowToAsync(windowRect.left,windowRect.top);
-        await sleep(200);
         windowClass.setWindowTitleButtonVisible(false,true,true);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        await sleep(1000);
+        if (isFreeWindowMode == true) {
           let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
           await sleep(200);
           console.log(`${caseName} button: ${button}`);
@@ -2442,7 +2449,7 @@ export default function windowTitleBarTest() {
         }
         await windowStageStart.setSupportedWindowModes([ bundleManager.SupportWindowMode.FLOATING, bundleManager.SupportWindowMode.SPLIT], true);
         await sleep(200);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
           await sleep(200);
           console.log(`${caseName} button: ${button}`);
@@ -2456,15 +2463,17 @@ export default function windowTitleBarTest() {
           await windowClass.maximize();
           await sleep(200);
           console.log(`${caseName} maximize success`);
-
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
           await terminateAbility(caseName);
           expect(false).assertTrue();
+
           done();
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
+        mainWindow.setWindowTitleButtonVisible(true,true,true);
         await terminateAbility(caseName);
-        if (isPCStatus != '' || isAutoWindow == 'true') {
+        if (isFreeWindowMode == true) {
           expect(error.code).assertEqual(1300002)
         } else {
           expect(error.code).assertEqual(801)

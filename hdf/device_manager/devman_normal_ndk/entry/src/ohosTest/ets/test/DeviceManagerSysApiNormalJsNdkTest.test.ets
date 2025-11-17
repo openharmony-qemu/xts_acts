@@ -57,12 +57,13 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DevManSysApiNormal_0100
-     * @tc.name       : testSystemApiQueryDeviceInfoNormal001
-     * @tc.desc       : verify SystemApi of queryDeviceInfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testSystemApiQueryDeviceInfoNormal001
+     * @tc.number SUB_Driver_Ext_DevManSysApiNormal_0100
+     * @tc.desc   verify SystemApi of queryDeviceInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSystemApiQueryDeviceInfoNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       console.info('----------------------testSystemApiQueryDeviceInfoNormal001---------------------------');
@@ -82,12 +83,13 @@ export default function DeviceManagerSysApiNormalJsNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DevManSysApiNormal_0100
-     * @tc.name       : testSystemApiQueryDriverInfoNormal001
-     * @tc.desc       : verify SystemApi of queryDriverInfo
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testSystemApiQueryDriverInfoNormal001
+     * @tc.number SUB_Driver_Ext_DevManSysApiNormal_0100
+     * @tc.desc   verify SystemApi of queryDriverInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSystemApiQueryDriverInfoNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       console.info('----------------------testSystemApiQueryDriverInfoNormal001---------------------------');

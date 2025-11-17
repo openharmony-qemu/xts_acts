@@ -15,10 +15,28 @@
 import {describe, it, expect, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertThrowError', function () {
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertThrowErrorFail001
+     * @tc.number assertThrowErrorFail001
+     * @tc.desc   assertThrowErrorFail001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertThrowErrorFail001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = 12;
         expect(a).assertThrowError()
     })
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertThrowErrorSuccess
+     * @tc.number assertThrowErrorSuccess
+     * @tc.desc   assertThrowErrorSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertThrowErrorSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = test
         function test() {
@@ -26,6 +44,15 @@ describe('assertThrowError', function () {
         }
         expect(a).assertThrowError("exception");
     })
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertThrowErrorFail002
+     * @tc.number assertThrowErrorFail002
+     * @tc.desc   assertThrowErrorFail002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertThrowErrorFail002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = test
         function test() {

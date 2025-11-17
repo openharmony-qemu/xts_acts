@@ -16,9 +16,14 @@
 #include "RelationalStoreTest.h"
 #include "napi/native_api.h"
 #include <database/data/data_asset.h>
+#include <database/rdb/relational_store.h>
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
 #include <database/rdb/relational_store_error_code.h>
+#include <sys/stat.h>
+
+#define DIRMODE 0770
+static const char *RDB_TEST_PATH = "/data/storage/el2/database/com.acts.actsrelationalstoretest/entry/";
 
 void AddRelationalStoreTest(std::vector<napi_property_descriptor>& descData)
 {
@@ -33,6 +38,8 @@ void AddRelationalStoreTest(std::vector<napi_property_descriptor>& descData)
         {"getStatusSuccess", nullptr, GetStatusSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back(
         {"getDestroyOneSuccess", nullptr, GetDestroyOneSuccess, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back(
+        {"OHRdbExecuteByTrxId", nullptr, OHRdbExecuteByTrxId, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 napi_value GetURISuccess(napi_env env, napi_callback_info info)
@@ -124,4 +131,35 @@ napi_value GetDestroyOneSuccess(napi_env env, napi_callback_info info)
 
     napi_create_int32(env, ret == OH_Rdb_ErrCode::RDB_OK ? 0 : 1, &result);
     return result;
+}
+
+static void InitRdbConfigV2(OH_Rdb_ConfigV2 *configV2)
+{
+    OH_Rdb_SetDatabaseDir(configV2, RDB_TEST_PATH);
+    OH_Rdb_SetStoreName(configV2, "rdb_store_test.db");
+    OH_Rdb_SetBundleName(configV2, "com.acts.actsrelationalstoretest");
+    OH_Rdb_SetModuleName(configV2, "module");
+    OH_Rdb_SetEncrypted(configV2, false);
+    OH_Rdb_SetSecurityLevel(configV2, OH_Rdb_SecurityLevel::S1);
+    OH_Rdb_SetArea(configV2, RDB_SECURITY_AREA_EL1);
+    OH_Rdb_SetDbType(configV2, RDB_SQLITE);
+}
+
+napi_value OHRdbExecuteByTrxId(napi_env env, napi_callback_info info)
+{
+    int errCode = OH_Rdb_ErrCode::RDB_OK;
+    OH_Rdb_ConfigV2 *config = OH_Rdb_CreateConfig();
+    InitRdbConfigV2(config);
+    mkdir(RDB_TEST_PATH, DIRMODE);
+    auto store = OH_Rdb_CreateOrOpen(config, &errCode);
+    int64_t trxId = 0;
+    errCode = OH_Rdb_BeginTransWithTrxId(store, &trxId);
+    char createTableSql[] = "CREATE TABLE t1(id INT PRIMARY KEY, repr floatvector(4));";
+    errCode = OH_Rdb_ExecuteByTrxId(store, trxId, createTableSql);
+    napi_value ret;
+    napi_create_int32(env, errCode, &ret);
+    errCode = OH_Rdb_CloseStore(store);
+    errCode = OH_Rdb_DeleteStoreV2(config);
+    errCode = OH_Rdb_DestroyConfig(config);
+    return ret;
 }

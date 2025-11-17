@@ -56,7 +56,6 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
           }).catch((err: object) => {
           console.error(`failed to enable, ${err}`);
         })
-        await Utils.sleep(2000);
         done();
     })
 

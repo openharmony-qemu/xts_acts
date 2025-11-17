@@ -121,6 +121,7 @@ export default function WindowLifecycle() {
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
     let windowclassArr:Array<window.Window>;
+    let isFreeWindowMode = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -135,6 +136,11 @@ export default function WindowLifecycle() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       await getPermision();
       await sleep(300);
       await ClickButtonDriver();

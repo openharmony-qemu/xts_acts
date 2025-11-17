@@ -47,12 +47,13 @@ export default function btConnectionNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: testIsBluetoothDiscoveringNop
-     * @tc.name: testIsBluetoothDiscovering
-     * @tc.desc: test isBluetoothDiscovering without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testIsBluetoothDiscoveringNop
+     * @tc.number testIsBluetoothDiscoveringNop
+     * @tc.desc   test isBluetoothDiscovering without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testIsBluetoothDiscoveringNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -66,12 +67,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testSetDevicePinCodeAsyncCallbackNop
-     * @tc.name: testSetDevicePinCode
-     * @tc.desc: test setDevicePinCode by async callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testSetDevicePinCodeAsyncCallbackNop
+     * @tc.number testSetDevicePinCodeAsyncCallbackNop
+     * @tc.desc   test setDevicePinCode by async callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSetDevicePinCodeAsyncCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -96,12 +98,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetBluetoothScanModeNop
-     * @tc.name: testGetBluetoothScanMode
-     * @tc.desc: test getBluetoothScanMode without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetBluetoothScanModeNop
+     * @tc.number testGetBluetoothScanModeNop
+     * @tc.desc   test getBluetoothScanMode without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetBluetoothScanModeNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -115,12 +118,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testSetBluetoothScanModeNop
-     * @tc.name: testSetBluetoothScanMode
-     * @tc.desc: test setBluetoothScanMode without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testSetBluetoothScanModeNop
+     * @tc.number testSetBluetoothScanModeNop
+     * @tc.desc   test setBluetoothScanMode without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSetBluetoothScanModeNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -134,12 +138,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetLocalNameNop
-     * @tc.name: testGetLocalName
-     * @tc.desc: test getLocalName without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetLocalNameNop
+     * @tc.number testGetLocalNameNop
+     * @tc.desc   test getLocalName without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetLocalNameNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -153,12 +158,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetProfileConnectionStateNop
-     * @tc.name: testGetProfileConnectionState
-     * @tc.desc: test getProfileConnectionState without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetProfileConnectionStateNop
+     * @tc.number testGetProfileConnectionStateNop
+     * @tc.desc   test getProfileConnectionState without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetProfileConnectionStateNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -172,12 +178,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testSetDevicePinCodeNop
-     * @tc.name: testSetDevicePinCode
-     * @tc.desc: test setDevicePinCode by promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testSetDevicePinCodeNop
+     * @tc.number testSetDevicePinCodeNop
+     * @tc.desc   test setDevicePinCode by promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSetDevicePinCodeNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -190,12 +197,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testEnableBluetoothNop
-     * @tc.name: testEnableBluetooth
-     * @tc.desc: test enableBluetooth without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testEnableBluetoothNop
+     * @tc.number testEnableBluetoothNop
+     * @tc.desc   test enableBluetooth without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testEnableBluetoothNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -208,12 +216,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testDisableBluetoothNop
-     * @tc.name: testDisableBluetooth
-     * @tc.desc: test disableBluetooth without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testDisableBluetoothNop
+     * @tc.number testDisableBluetoothNop
+     * @tc.desc   test disableBluetooth without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testDisableBluetoothNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -226,12 +235,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetPersistentDeviceIdsNop
-     * @tc.name: testGetPersistentDeviceIds
-     * @tc.desc: test getPersistentDeviceIds without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetPersistentDeviceIdsNop
+     * @tc.number testGetPersistentDeviceIdsNop
+     * @tc.desc   test getPersistentDeviceIds without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetPersistentDeviceIdsNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -250,12 +260,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testIsValidRandomDeviceIdNop
-     * @tc.name: testIsValidRandomDeviceId
-     * @tc.desc: test isValidRandomDeviceId without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testIsValidRandomDeviceIdNop
+     * @tc.number testIsValidRandomDeviceIdNop
+     * @tc.desc   test isValidRandomDeviceId without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testIsValidRandomDeviceIdNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -274,12 +285,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testAddPersistentDeviceIdNop
-     * @tc.name: testAddPersistentDeviceId
-     * @tc.desc: test addPersistentDeviceId without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testAddPersistentDeviceIdNop
+     * @tc.number testAddPersistentDeviceIdNop
+     * @tc.desc   test addPersistentDeviceId without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testAddPersistentDeviceIdNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -299,12 +311,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testDeletePersistentDeviceIdNop
-     * @tc.name: testDeletePersistentDeviceId
-     * @tc.desc: test deletePersistentDeviceId without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testDeletePersistentDeviceIdNop
+     * @tc.number testDeletePersistentDeviceIdNop
+     * @tc.desc   test deletePersistentDeviceId without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testDeletePersistentDeviceIdNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -324,12 +337,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testConnectAllowedProfilesCallbackNop
-     * @tc.name: testConnectAllowedProfilesCallback
-     * @tc.desc: test connectAllowedProfiles callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testConnectAllowedProfilesCallbackNop
+     * @tc.number testConnectAllowedProfilesCallbackNop
+     * @tc.desc   test connectAllowedProfiles callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testConnectAllowedProfilesCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -358,12 +372,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testConnectAllowedProfilesPromiseNop
-     * @tc.name: testConnectAllowedProfilesPromise
-     * @tc.desc: test connectAllowedProfiles promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testConnectAllowedProfilesPromiseNop
+     * @tc.number testConnectAllowedProfilesPromiseNop
+     * @tc.desc   test connectAllowedProfiles promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testConnectAllowedProfilesPromiseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -383,12 +398,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testPairDeviceCallbackNop
-     * @tc.name: testPairDeviceCallback
-     * @tc.desc: test pairdevice callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testPairDeviceCallbackNop
+     * @tc.number testPairDeviceCallbackNop
+     * @tc.desc   test pairdevice callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testPairDeviceCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -412,12 +428,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testPairDevicePromiseNop
-     * @tc.name: testPairDevicePromise
-     * @tc.desc: test pairdevice promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testPairDevicePromiseNop
+     * @tc.number testPairDevicePromiseNop
+     * @tc.desc   test pairdevice promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testPairDevicePromiseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -432,12 +449,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetRemoteDeviceNameNop
-     * @tc.name: testGetRemoteDeviceName
-     * @tc.desc: test getRemoteDeviceName without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetRemoteDeviceNameNop
+     * @tc.number testGetRemoteDeviceNameNop
+     * @tc.desc   test getRemoteDeviceName without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemoteDeviceNameNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -450,12 +468,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetRemoteDeviceNameAliasNop
-     * @tc.name: testGetRemoteDeviceName use alias
-     * @tc.desc: test getRemoteDeviceName without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetRemoteDeviceNameAliasNop
+     * @tc.number testGetRemoteDeviceNameAliasNop
+     * @tc.desc   test getRemoteDeviceName without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemoteDeviceNameAliasNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -468,12 +487,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetPairedDevicesNop
-     * @tc.name: testGetPairedDevices
-     * @tc.desc: test getPairedDevices without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetPairedDevicesNop
+     * @tc.number testGetPairedDevicesNop
+     * @tc.desc   test getPairedDevices without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetPairedDevicesNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -485,12 +505,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetPairStateNop
-     * @tc.name: testGetPairState
-     * @tc.desc: test getPairState without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetPairStateNop
+     * @tc.number testGetPairStateNop
+     * @tc.desc   test getPairState without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetPairStateNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -503,12 +524,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testSetDevicePairingConfirmationNop
-     * @tc.name: testSetDevicePairingConfirmation
-     * @tc.desc: test setDevicePairingConfirmation without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testSetDevicePairingConfirmationNop
+     * @tc.number testSetDevicePairingConfirmationNop
+     * @tc.desc   test setDevicePairingConfirmation without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSetDevicePairingConfirmationNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -521,12 +543,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testStartBluetoothDiscoveryNop
-     * @tc.name: testStartBluetoothDiscovery
-     * @tc.desc: test startBluetoothDiscovery without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testStartBluetoothDiscoveryNop
+     * @tc.number testStartBluetoothDiscoveryNop
+     * @tc.desc   test startBluetoothDiscovery without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStartBluetoothDiscoveryNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -539,12 +562,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testStopBluetoothDiscoveryNop
-     * @tc.name: testStopBluetoothDiscovery
-     * @tc.desc: test stopBluetoothDiscovery without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testStopBluetoothDiscoveryNop
+     * @tc.number testStopBluetoothDiscoveryNop
+     * @tc.desc   test stopBluetoothDiscovery without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testStopBluetoothDiscoveryNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -557,12 +581,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetRemoteProfileUuidsCallbackNop
-     * @tc.name: testGetRemoteProfileUuidsCallback
-     * @tc.desc: test getRemoteProfileUuids callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetRemoteProfileUuidsCallbackNop
+     * @tc.number testGetRemoteProfileUuidsCallbackNop
+     * @tc.desc   test getRemoteProfileUuids callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemoteProfileUuidsCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -585,12 +610,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetRemoteProfileUuidsPromiseNop
-     * @tc.name: testGetRemoteProfileUuidsPromise
-     * @tc.desc: test getRemoteProfileUuids promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetRemoteProfileUuidsPromiseNop
+     * @tc.number testGetRemoteProfileUuidsPromiseNop
+     * @tc.desc   test getRemoteProfileUuids promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemoteProfileUuidsPromiseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -604,12 +630,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetRemoteDeviceBatteryInfoNop
-     * @tc.name: testGetRemoteDeviceBatteryInfo
-     * @tc.desc: test getRemoteDeviceBatteryInfo without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testGetRemoteDeviceBatteryInfoNop
+     * @tc.number testGetRemoteDeviceBatteryInfoNop
+     * @tc.desc   test getRemoteDeviceBatteryInfo without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetRemoteDeviceBatteryInfoNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -624,12 +651,13 @@ export default function btConnectionNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testSetRemoteDeviceNameNop
-     * @tc.name: testSetRemoteDeviceName
-     * @tc.desc: test setRemoteDeviceName without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testSetRemoteDeviceNameNop
+     * @tc.number testSetRemoteDeviceNameNop
+     * @tc.desc   test setRemoteDeviceName without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSetRemoteDeviceNameNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -645,12 +673,13 @@ export default function btConnectionNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testDisableBluetoothAsyncNop
-     * @tc.name: testDisableBluetoothAsyncNop
-     * @tc.desc: test disableBluetoothAsync without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testDisableBluetoothAsyncNop
+     * @tc.number testDisableBluetoothAsyncNop
+     * @tc.desc   test disableBluetoothAsync without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testDisableBluetoothAsyncNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -666,12 +695,13 @@ export default function btConnectionNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testEnableBluetoothAsyncNop
-     * @tc.name: testEnableBluetoothAsyncNop
-     * @tc.desc: test enableBluetoothAsync without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   testEnableBluetoothAsyncNop
+     * @tc.number testEnableBluetoothAsyncNop
+     * @tc.desc   test enableBluetoothAsync without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testEnableBluetoothAsyncNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {

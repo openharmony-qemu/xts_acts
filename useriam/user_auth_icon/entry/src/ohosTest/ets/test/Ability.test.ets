@@ -38,12 +38,13 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @generated.time 2025-11-09 20:57:56
+     * @tc.name   SUB_Security_IAM_authWidget_Func_0330
      * @tc.number SUB_Security_IAM_authWidget_Func_0330
-     * @tc.name kit interface UserAuthIcon
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_IAM_authWidget_Func_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
       console.log("SUB_Security_IAM_authWidget_Func_0330: started ");

@@ -83,10 +83,13 @@ export default function inputMethodTest() {
 
 
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_updateAttribute_Async_0100
      * @tc.number SUB_Misc_inputMethod_updateAttribute_Async_0100
-     * @tc.name When calling the updateAttribute interface in Async mode, the parameter attribute=
-     *             {textInputType: 0, enterKeyType: 0} must be passed in
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateAttribute_Async_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateAttribute_Async_0100';
@@ -115,10 +118,13 @@ export default function inputMethodTest() {
     });
     
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_updateAttribute_Promise_0100
      * @tc.number SUB_Misc_inputMethod_updateAttribute_Promise_0100
-     * @tc.name When calling the updateAttribute interface in Promise mode, the parameter
-     *             attribute={textInputType: 0, enterKeyType: 0} must be passed in
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateAttribute_Promise_0100', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateAttribute_Promise_0100';
@@ -138,9 +144,13 @@ export default function inputMethodTest() {
     });
     
     /**
+     * @generated.time 2025-11-09 20:53:26
+     * @tc.name   SUB_Misc_inputMethod_updateAttribute_Promise_0700
      * @tc.number SUB_Misc_inputMethod_updateAttribute_Promise_0700
-     * @tc.name Call the updateAttribute interface in Promise mode, and pass in an invalid input parameter
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_inputMethod_updateAttribute_Promise_0700', Level.LEVEL2, async (done: Function) => {
       const CASE_NAME = 'SUB_Misc_inputMethod_updateAttribute_Promise_0700';

@@ -12,6 +12,7 @@
 # limitations under the License.
 import("//build/ohos_var.gni")
 import("//foundation/arkui/ace_engine/ace_config.gni")
+import("//test/testfwk/arkxtest/arkxtest_config.gni")
 
 group("testfwk") {
   testonly = true
@@ -23,6 +24,8 @@ group("testfwk") {
     ]
   } else {
     deps = [
+      "perftest:ActsPerfTestTest",
+      "perftestScene:ActsPerfTestScene",
       "uitest:ActsUiTest",
       "uitestScene:ActsUiTestScene",
       "uitestStatic:ActsUiStaticTest",
@@ -30,8 +33,12 @@ group("testfwk") {
       "uitest_errorcode_static:ActsUiTestErrorCodeStaticTest",
       "uitest_quarantine:ActsUiTestQuarTest",
       "uitest_quarantine_static:ActsUiTestQuarStaticTest",
-      "perftest:ActsPerfTestTest",
-      "perftestScene:ActsPerfTestScene",
+    ]
+  }
+  if (arkxtest_product_feature == "pc") {
+    deps += [
+      "uitestScene:ActsUiTestScene",
+      "uitest_pc:ActsUiPCTest",
     ]
   }
 }

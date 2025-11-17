@@ -26,6 +26,7 @@ const domain = 0x0000;
 const testTag = 'PixelmapNdkTest';
 const twoParametersFile = "test_DMA_1801_4041.jpg";
 const test_DMA_3071_4095 = "test_DMA_3071_4095.jpg";
+const test_wbmp = "test.wbmp";
 const PARAMETER_ERROR = 401;
 const UNSUPPORTED_ALLOCATOR_TYPE = 7700201;
 const DECODE_FAILED = 7700301;
@@ -180,6 +181,30 @@ export default function pixelmapNdkForDMATest() {
       }
       logger.log("compare imageInfo result is: " + ret);
       return ret;
+    }
+
+    const DecodeWbmpImageTest = (
+      logger: Logger,
+      fileName: string,
+      expectInfo: ndkTest.decodeOptions,
+      allocatorType: image.AllocatorType = AUTO
+    ): boolean => {
+      let filePath = filesDir + "/" + fileName;
+      let imageInfo: ndkTest.decodeOptions | number;
+      logger.log("filePath is: " + filePath);
+      imageInfo = ndkTest.CreatePixelMapForDMAAndGetInfo(filePath, allocatorType, expectInfo);
+      if (typeof imageInfo == 'object') {
+        let ret = (imageInfo.width == expectInfo.width) &&
+                  (imageInfo.height == expectInfo.height) &&
+                  (imageInfo.mimeType == expectInfo.mimeType);
+        logger.log("check result is: " + ret);
+        logger.log("expect info: " + JSON.stringify(expectInfo));
+        logger.log("Actual info: " + JSON.stringify(imageInfo));
+        return ret;
+      } else {
+        logger.log("CreatePixelMapForDMAAndGetInfo result is not object!");
+        return false;
+      }
     }
 
     /**
@@ -1242,6 +1267,156 @@ export default function pixelmapNdkForDMATest() {
       const result: number = ndkTest.CreatePixelMapUsingAllocator(path, AUTO, size, RGBA_8888);
       logger.log("create pixelmap error code is: " + result);
       expect(result == DECODE_FAILED).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     *                 2.set DecodingOptions
+     *                       desiredSize: {width: 99, height: 200},
+     *                       desiredPixelFormat: RGB_565
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0100");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 99,
+        height: 200,
+        pixelFormat: RGB_565,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, AUTO);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     *                 2.set DecodingOptions
+     *                       desiredSize: {width: 512, height: 512},
+     *                       desiredPixelFormat: RGB_565
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0200");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 512,
+        height: 512,
+        pixelFormat: BGRA_8888,
+        dynamicRange: RANGE_HDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, AUTO);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions
+     *                       desiredSize: {width: 4001, height: 4096},
+     *                       desiredPixelFormat: NV21
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0300");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 4001,
+        height: 4096,
+        pixelFormat: NV21,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     *                 2.set DecodingOptions
+     *                       desiredSize: {width: 99, height: 200},
+     *                       desiredPixelFormat: NV12
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0400");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 99,
+        height: 200,
+        pixelFormat: NV12,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, SHARE_MEMORY);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions
+     *                       desiredSize: {width: 512, height: 512},
+     *                       desiredPixelFormat: YCBCR_P010
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0500");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 512,
+        height: 512,
+        pixelFormat: YCBCR_P010,
+        dynamicRange: RANGE_SDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, DMA);
+      expect(ret).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600
+     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
+     *                 2.set DecodingOptions
+     *                       desiredSize: {width: 3072, height: 4096},
+     *                       desiredPixelFormat: YCRCB_P010
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_NATIVE_0600");
+      let expectInfo: ndkTest.decodeOptions = {
+        width: 3072,
+        height: 4096,
+        pixelFormat: YCRCB_P010,
+        dynamicRange: RANGE_HDR,
+        mimeType: "image/wbmp"
+      };
+      let ret = DecodeWbmpImageTest(logger, test_wbmp, expectInfo, DMA);
+      expect(ret).assertTrue();
       done();
     })
   })

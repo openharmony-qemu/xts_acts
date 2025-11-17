@@ -400,7 +400,7 @@ export function avVideoRecorderTestOne() {
           console.error('Failed to createCameraInput errorCode = ' + error);
         }
         // 监听cameraInput错误信息
-        cameraInput.on('error', cameraDevice, (error: BusinessError|null) => {
+        cameraInput.onError(cameraDevice, (error: BusinessError|null) => {
           console.log(`Camera input error code: ${error!!.code}`);
         })
 
@@ -415,7 +415,7 @@ export function avVideoRecorderTestOne() {
           console.error('Failed to create the videoOutput instance. errorCode = ' + error);
         }
         // 监听视频输出错误信息
-        videoOutput.on('error', (error: BusinessError|null) => {
+        videoOutput.onError((error: BusinessError|null) => {
           console.log(`Preview output error code: ${error!!.code}`);
         })
 
@@ -442,7 +442,7 @@ export function avVideoRecorderTestOne() {
         }
 
         // 监听session错误信息
-        captureSession?.on('error', (error: BusinessError|null) => {
+        captureSession?.onError((error: BusinessError|null) => {
           console.log(`Capture session error code: ${error!!.code}`);
         })
 

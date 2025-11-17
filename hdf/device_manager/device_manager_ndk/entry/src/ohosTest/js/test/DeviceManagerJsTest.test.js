@@ -98,10 +98,14 @@ describe("DeviceManagerJsTest", function () {
     const SERVICE_EXCEPTION_CODE_NEW = 26300001
     const SERVICE_NOT_BOUND = 26300003
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0100
-     * @tc.name       : testQueryDevices001
-     * @tc.desc       : verify queryDevice result
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0100
+     * @tc.desc   verify queryDevice result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testQueryDevices001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         console.info(TAG, '----------------------testQueryDevices001---------------------------');
@@ -125,10 +129,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0200
-     * @tc.name       : testQueryDevices002
-     * @tc.desc       : verify queryDevice no param result
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0200
+     * @tc.desc   verify queryDevice no param result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, '----------------------testQueryDevices002---------------------------');
@@ -147,10 +155,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_2000
-     * @tc.name       : testQueryDevices004
-     * @tc.desc       : verify queryDevice param is 12345
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices004
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_2000
+     * @tc.desc   verify queryDevice param is 12345
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryDevices004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, '----------------------testQueryDevices004---------------------------');
@@ -168,10 +180,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_2100
-     * @tc.name       : testQueryDevices005
-     * @tc.desc       : verify queryDevice errcode 22900001
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testQueryDevices005
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_2100
+     * @tc.desc   verify queryDevice errcode 22900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testQueryDevices005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
         console.info(TAG, '----------------------testQueryDevices005---------------------------');
@@ -189,10 +205,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0300
-     * @tc.name       : testBindDevicesCallBack001
-     * @tc.desc       : verify bindDevice invalid param
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDevicesCallBack001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0300
+     * @tc.desc   verify bindDevice invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDevicesCallBack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDevicesCallBack001---------------------------');
@@ -218,10 +238,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0400
-     * @tc.name       : testBindDevicesCallBack002
-     * @tc.desc       : verify bindDevice any device
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDevicesCallBack002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0400
+     * @tc.desc   verify bindDevice any device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDevicesCallBack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDevicesCallBack002---------------------------');
@@ -247,10 +271,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0500
-     * @tc.name       : testBindDeviceDriverCallBack001
-     * @tc.desc       : verify bindDeviceDriver any device
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDeviceDriverCallBack001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0500
+     * @tc.desc   verify bindDeviceDriver any device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBindDeviceDriverCallBack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------testBindDeviceDriverCallBack001---------------------------');
@@ -276,10 +304,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1700
-     * @tc.name       : testBindDeviceDriverCallBack002
-     * @tc.desc       : verify bindDeviceDriver param is string
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDeviceDriverCallBack002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1700
+     * @tc.desc   verify bindDeviceDriver param is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDeviceDriverCallBack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDeviceDriverCallBack002---------------------------');
@@ -305,10 +337,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0600
-     * @tc.name       : testBindDevicesPromise001
-     * @tc.desc       : verify bindDevice invalid param count
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDevicesPromise001
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0600
+     * @tc.desc   verify bindDevice invalid param count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBindDevicesPromise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------testBindDevicesPromise001---------------------------');
@@ -329,10 +365,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0700
-     * @tc.name       : testBindDevicesPromise002
-     * @tc.desc       : verify bindDevice invalid param
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDevicesPromise002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0700
+     * @tc.desc   verify bindDevice invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDevicesPromise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDevicesPromise002---------------------------');
@@ -353,10 +393,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0800
-     * @tc.name       : testBindDevicesPromise003
-     * @tc.desc       : verify bindDevice invalid param
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDevicesPromise003
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0800
+     * @tc.desc   verify bindDevice invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDevicesPromise003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDevicesPromise003---------------------------');
@@ -377,10 +421,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_0900
-     * @tc.name       : testBindDevicesPromise004
-     * @tc.desc       : verify bindDevice promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDevicesPromise004
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_0900
+     * @tc.desc   verify bindDevice promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDevicesPromise004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDevicesPromise004---------------------------');
@@ -408,10 +456,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1000
-     * @tc.name       : testBindDevicesPromise005
-     * @tc.desc       : verify bindDevice promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDevicesPromise005
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1000
+     * @tc.desc   verify bindDevice promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDevicesPromise005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDevicesPromise005---------------------------');
@@ -439,11 +491,15 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1100
-     * @tc.name       : testBindDeviceDriverPromise001
-     * @tc.desc       : verify bindDeviceDriver promise
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:58
+      * @tc.name   testBindDeviceDriverPromise001
+      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1100
+      * @tc.desc   verify bindDeviceDriver promise
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('testBindDeviceDriverPromise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------testBindDeviceDriverPromise001---------------------------');
         if (!isDeviceConnected) {
@@ -475,10 +531,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1800
-     * @tc.name       : testBindDeviceDriverPromise002
-     * @tc.desc       : verify bindDeviceDriver promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDeviceDriverPromise002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1800
+     * @tc.desc   verify bindDeviceDriver promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDeviceDriverPromise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDeviceDriverPromise002---------------------------');
@@ -506,10 +566,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1900
-     * @tc.name       : testBindDeviceDriverPromise003
-     * @tc.desc       : verify bindDeviceDriver promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testBindDeviceDriverPromise003
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1900
+     * @tc.desc   verify bindDeviceDriver promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testBindDeviceDriverPromise003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testBindDeviceDriverPromise003---------------------------');
@@ -537,11 +601,15 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1200
-     * @tc.name       : testUnbindDevicesCallBack001
-     * @tc.desc       : verify unbindDevice any device
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:58
+      * @tc.name   testUnbindDevicesCallBack001
+      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1200
+      * @tc.desc   verify unbindDevice any device
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('testUnbindDevicesCallBack001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------testUnbindDevicesCallBack001---------------------------');
         if (!isDeviceConnected) {
@@ -562,10 +630,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1300
-     * @tc.name       : testUnbindDevicesCallBack002
-     * @tc.desc       : verify unbindDevice any device
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   testUnbindDevicesCallBack002
+     * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1300
+     * @tc.desc   verify unbindDevice any device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUnbindDevicesCallBack002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testUnbindDevicesCallBack002---------------------------');
@@ -587,11 +659,15 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1400
-     * @tc.name       : testUnbindDevicesPromise001
-     * @tc.desc       : verify unbindDevice invalid param
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:58
+      * @tc.name   testUnbindDevicesPromise001
+      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1400
+      * @tc.desc   verify unbindDevice invalid param
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('testUnbindDevicesPromise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------testUnbindDevicesPromise001---------------------------');
         if (!isDeviceConnected) {
@@ -611,11 +687,15 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_DeviceManagerAPIFunc_1500
-     * @tc.name       : testUnbindDevicesPromise002
-     * @tc.desc       : verify unbindDevice promise
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:58
+      * @tc.name   testUnbindDevicesPromise002
+      * @tc.number SUB_Driver_Ext_DeviceManagerAPIFunc_1500
+      * @tc.desc   verify unbindDevice promise
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testUnbindDevicesPromise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info(TAG, '----------------------testUnbindDevicesPromise002---------------------------');
         if (!isDeviceConnected) {
@@ -640,10 +720,14 @@ describe("DeviceManagerJsTest", function () {
     })
 
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0100
-     * @tc.name       : DeviceManager_bindDriverWithDeviceId_001
-     * @tc.desc       : verify bindDriverWithDeviceId invalid param count
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_bindDriverWithDeviceId_001
+     * @tc.number SUB_Driver_Ext_Mchanism_0100
+     * @tc.desc   verify bindDriverWithDeviceId invalid param count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_bindDriverWithDeviceId_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_bindDriverWithDeviceId_001---------------------------');
@@ -657,10 +741,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0200
-     * @tc.name       : DeviceManager_bindDriverWithDeviceId_002
-     * @tc.desc       : verify bindDriverWithDeviceId invalid param
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_bindDriverWithDeviceId_002
+     * @tc.number SUB_Driver_Ext_Mchanism_0200
+     * @tc.desc   verify bindDriverWithDeviceId invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_bindDriverWithDeviceId_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_bindDriverWithDeviceId_002---------------------------');
@@ -674,10 +762,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0300
-     * @tc.name       : DeviceManager_bindDriverWithDeviceId_003
-     * @tc.desc       : verify bindDriverWithDeviceId invalid param
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_bindDriverWithDeviceId_003
+     * @tc.number SUB_Driver_Ext_Mchanism_0300
+     * @tc.desc   verify bindDriverWithDeviceId invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_bindDriverWithDeviceId_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_bindDriverWithDeviceId_003---------------------------');
@@ -691,10 +783,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0400
-     * @tc.name       : DeviceManager_bindDriverWithDeviceId_004
-     * @tc.desc       : verify bindDriverWithDeviceId promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_bindDriverWithDeviceId_004
+     * @tc.number SUB_Driver_Ext_Mchanism_0400
+     * @tc.desc   verify bindDriverWithDeviceId promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_bindDriverWithDeviceId_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_bindDriverWithDeviceId_004---------------------------');
@@ -717,10 +813,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0500
-     * @tc.name       : DeviceManager_bindDriverWithDeviceId_005
-     * @tc.desc       : verify bindDriverWithDeviceId promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_bindDriverWithDeviceId_005
+     * @tc.number SUB_Driver_Ext_Mchanism_0500
+     * @tc.desc   verify bindDriverWithDeviceId promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_bindDriverWithDeviceId_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_bindDriverWithDeviceId_005---------------------------');
@@ -743,10 +843,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0600
-     * @tc.name       : DeviceManager_unbindDriverWithDeviceId_001
-     * @tc.desc       : verify unbindDriverWithDeviceId invalid param
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_unbindDriverWithDeviceId_001
+     * @tc.number SUB_Driver_Ext_Mchanism_0600
+     * @tc.desc   verify unbindDriverWithDeviceId invalid param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_unbindDriverWithDeviceId_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_unbindDriverWithDeviceId_001---------------------------');
@@ -760,10 +864,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0700
-     * @tc.name       : DeviceManager_unbindDriverWithDeviceId_002
-     * @tc.desc       : verify unbindDriverWithDeviceId promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_unbindDriverWithDeviceId_002
+     * @tc.number SUB_Driver_Ext_Mchanism_0700
+     * @tc.desc   verify unbindDriverWithDeviceId promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_unbindDriverWithDeviceId_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_unbindDriverWithDeviceId_002---------------------------');
@@ -783,10 +891,14 @@ describe("DeviceManagerJsTest", function () {
         }
     })
 
-    /*
-     * @tc.number     : SUB_Driver_Ext_Mchanism_0800
-     * @tc.name       : DeviceManager_unbindDriverWithDeviceId_003
-     * @tc.desc       : verify unbindDriverWithDeviceId promise
+    /**
+     * @generated.time 2025-11-09 20:49:58
+     * @tc.name   DeviceManager_unbindDriverWithDeviceId_003
+     * @tc.number SUB_Driver_Ext_Mchanism_0800
+     * @tc.desc   verify unbindDriverWithDeviceId promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("DeviceManager_unbindDriverWithDeviceId_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info(TAG, '----------------------DeviceManager_unbindDriverWithDeviceId_003---------------------------');

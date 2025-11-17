@@ -54,8 +54,8 @@ struct webSafeBrowsing {
   build() {
       Column() {
           Row() {
-              Button('web click')
-              .key('webViewSdkSchemeHandler')
+              Button('webSafeBrowsingButton')
+              .key('webSafeBrowsing')
               .onClick(async () => {
                 await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                 await waitForExist(() => this.isReceive, this.emitKey, 0);

@@ -50,12 +50,13 @@ export default function preferencesFlushTest(){
             await dataPreferences.deletePreferences(context, NAME);
         })
         /**
-         * @tc.name testPreferences_put_flush_remove_get_0100
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPreferences_put_flush_remove_get_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0100
-         * @tc.desc put get flush removePreferencesFromCache get promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put get flush removePreferencesFromCache get promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferences_put_flush_remove_get_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log(TAG + "start_test_0100");
@@ -98,12 +99,13 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @tc.name testPreferences_put_flush_remove_get_0200
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPreferences_put_flush_remove_get_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0200
-         * @tc.desc put get flush removePreferencesFromCache get promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put get flush removePreferencesFromCache get promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferences_put_flush_remove_get_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.log(TAG + "start_test_0200");
@@ -145,12 +147,13 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @tc.name testPreferences_put_flush_remove_get_0300
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPreferences_put_flush_remove_get_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0300
-         * @tc.desc put get flush removePreferencesFromCache get promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put get flush removePreferencesFromCache get promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferences_put_flush_remove_get_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.log(TAG + "start_test_0300");
@@ -192,12 +195,13 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @tc.name testPreferences_put_flush_remove_get_0400
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPreferences_put_flush_remove_get_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0400
-         * @tc.desc put get flush removePreferencesFromCache get promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put get flush removePreferencesFromCache get promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferences_put_flush_remove_get_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.log(TAG + "start_test_0400");
@@ -239,12 +243,13 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @tc.name testPreferences_put_flush_remove_get_0500
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPreferences_put_flush_remove_get_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0500
-         * @tc.desc put get flush removePreferencesFromCacheget get promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   put get flush removePreferencesFromCacheget get promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testPreferences_put_flush_remove_get_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.log(TAG + "start_test_0500");
@@ -286,15 +291,16 @@ export default function preferencesFlushTest(){
             })
         })
 
-        /**
-         * @tc.name testPreferences_put_flush_remove_get_0600
-         * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0600
-         * @tc.desc put getAll flush removePreferencesFromCache getAll promise interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
-         */
 
+        /**
+         * @generated.time 2025-11-09 20:49:55
+         * @tc.name   testPreferences_put_flush_remove_get_0600
+         * @tc.number testPreferences_put_flush_remove_get_0600
+         * @tc.desc   testPreferences_put_flush_remove_get_0600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testPreferences_put_flush_remove_get_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
             console.log(TAG + "start_test_0600");
             await mPreferences.clear();

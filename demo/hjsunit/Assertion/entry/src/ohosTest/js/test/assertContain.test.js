@@ -15,21 +15,57 @@
 import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertContain', function () {
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertContainSuccessOnString
+     * @tc.number assertContainSuccessOnString
+     * @tc.desc   assertContainSuccessOnString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertContainSuccessOnString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = 'abc';
         let b = 'b'
         expect(a).assertContain(b)
     })
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertContainSuccessOnArray
+     * @tc.number assertContainSuccessOnArray
+     * @tc.desc   assertContainSuccessOnArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertContainSuccessOnArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = ['a', 'b', 'c'];
         let b = 'b'
         expect(a).assertContain(b)
     })
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertContainFailOnString
+     * @tc.number assertContainFailOnString
+     * @tc.desc   assertContainFailOnString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertContainFailOnString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = 'abc';
         let b = 'd'
         expect(a).assertContain(b)
     })
+    /**
+     * @generated.time 2025-11-09 20:49:47
+     * @tc.name   assertContainFailOnArray
+     * @tc.number assertContainFailOnArray
+     * @tc.desc   assertContainFailOnArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertContainFailOnArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = ['a', 'b', 'c'];
         let b = 'd'

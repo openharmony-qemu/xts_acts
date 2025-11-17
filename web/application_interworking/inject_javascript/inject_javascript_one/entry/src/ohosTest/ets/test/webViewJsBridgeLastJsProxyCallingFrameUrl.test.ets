@@ -16,11 +16,13 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = "emitJsBridgeLastJsProxyCallingFrameUrl"
 
@@ -44,7 +46,7 @@ export default function webViewJsBridgeLastJsProxyCallingFrameUrl() {
         } catch (err) {
             console.error('push webViewJsBridgeLastJsProxyCallingFrameUrl page error:' + err);
         }
-        await waitForComponent("webViewJsBridgeLastJsProxyCallingFrameUrl");
+        await driver.waitForComponent(ON.id("webViewJsBridgeLastJsProxyCallingFrameUrl"), 10000);
         done()
     });
     
@@ -69,7 +71,7 @@ export default function webViewJsBridgeLastJsProxyCallingFrameUrl() {
       let emitKey = "emitJsBridgeGetLastJavascriptProxyCallingFrameUrl";
       Utils.emitEvent(emitKey, 172370)
       Utils.registerEvent("testJsBridgeGetLastJavascriptProxyCallingFrameUrl", "success", 172380, done);
-      sendEventByKey('webViewJsBridgeLastJsProxyCallingFrameUrl', 10, '');
+      await Utils.waitAndClickComponent(driver, 'webViewJsBridgeLastJsProxyCallingFrameUrl');
     })
   })
 }

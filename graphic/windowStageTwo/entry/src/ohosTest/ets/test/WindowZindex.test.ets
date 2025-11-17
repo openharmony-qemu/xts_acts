@@ -28,6 +28,7 @@ export default function windowZindexTest() {
     let windowStage: window.WindowStage;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -42,6 +43,11 @@ export default function windowZindexTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     });
     beforeEach(() => {
     });
@@ -966,7 +972,7 @@ export default function windowZindexTest() {
     it('test_shiftAppWindowPointerEvent_subWindow_to_mainwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_subWindow_to_mainwindow';
       console.log(caseName + 'begin');
-      if(isPCStatus != '' || isAutoWindow == 'true'){
+      if(isFreeWindowMode == true){
         let mainWindow = windowStage.getMainWindowSync();
       let driver = Driver.create();
       try{
@@ -1038,7 +1044,7 @@ export default function windowZindexTest() {
     it('test_shiftAppWindowPointerEvent_mainwindow_to_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_mainwindow_to_subWindow';
       console.log(caseName + 'begin');
-      if(isPCStatus != '' || isAutoWindow == 'true'){
+      if(isFreeWindowMode == true){
         let mainWindow = windowStage.getMainWindowSync();
       let driver = Driver.create();
       try{

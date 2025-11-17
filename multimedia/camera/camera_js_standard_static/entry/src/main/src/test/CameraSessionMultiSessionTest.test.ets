@@ -58,8 +58,8 @@ export default function cameraSessionMultiSessionTest() {
     beforeAll(() => {
       Utils.msSleep(100);
       getCameraManagerInstance();
-      mCameraManager.off('cameraStatus');
-      mCameraManager.off('torchStatusChange');
+      mCameraManager.offCameraStatus();
+      mCameraManager.offTorchStatusChange();
       getCameraSupportDevicesArray();
       console.info('beforeAll case');
       await Utils.msSleep(500);
@@ -144,7 +144,7 @@ export default function cameraSessionMultiSessionTest() {
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100--------------");
       let isTriggerStatusCallback = false;
-      mCameraManager.on('cameraStatus', (err: BusinessError | null, data: cameraObj.CameraStatusInfo | undefined) => {
+      mCameraManager.onCameraStatus((err: BusinessError | null, data: cameraObj.CameraStatusInfo | undefined) => {
         if (!err || err!.code == 0) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_CAMERA_STATUS_STATIC_0100 camera:" +
           JSON.stringify(data!.camera));
@@ -158,7 +158,7 @@ export default function cameraSessionMultiSessionTest() {
         }
       })
       await Utils.msSleep(500);
-      mCameraManager.off('cameraStatus');
+      mCameraManager.offCameraStatus();
       expect(isTriggerStatusCallback).assertTrue();
       done();
     })
@@ -174,7 +174,7 @@ export default function cameraSessionMultiSessionTest() {
     it('SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100--------------");
       let isTriggerTorchStatusCallback = false;
-      mCameraManager.on('torchStatusChange', (err: BusinessError | null, data: cameraObj.TorchStatusInfo | undefined) => {
+      mCameraManager.onTorchStatusChange((err: BusinessError | null, data: cameraObj.TorchStatusInfo | undefined) => {
         if (!err || err!.code == 0) {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MANAGER_LISTENER_CALLBACK_REGISTER_TORCH_STATUS_STATIC_0100 status:" +
           JSON.stringify(data));
@@ -186,7 +186,7 @@ export default function cameraSessionMultiSessionTest() {
         }
       })
       await Utils.msSleep(500);
-      mCameraManager.off('torchStatusChange');
+      mCameraManager.offTorchStatusChange();
       expect(isTriggerTorchStatusCallback).assertTrue();
       done();
     })

@@ -219,8 +219,9 @@ export default function hidebughiperfTest() {
           testNapi.start(100, 1000);
           await asyncSleep(1000);
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 record end");
+        }else{
+          done();
         }
-        done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();

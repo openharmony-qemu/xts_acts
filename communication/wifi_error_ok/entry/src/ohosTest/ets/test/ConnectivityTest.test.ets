@@ -21,13 +21,14 @@ const KEY_CODE_EVENT_OK = 0;
 export default function ConnectivityTest() {
   describe('ConnectivityTest', () => {
 
-    /*
-     * @tc.number     : SUB_ConnectivityKit_GetWifiStatus_0100
-     * @tc.name       : testConnectivityKitGetWifiStatus0100
-     * @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testConnectivityKitGetWifiStatus0100
+     * @tc.number SUB_ConnectivityKit_GetWifiStatus_0100
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConnectivityKitGetWifiStatus0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -41,14 +42,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
- * @tc.number     : SUB_ConnectivityKit_GetWifiStatus_0101
- * @tc.name       : testConnectivityKitGetWifiStatus0101
- * @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
- * @tc.size       : MediumTest
- * @tc.type       : Function
- * @tc.level      : Level 1
- */
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testConnectivityKitGetWifiStatus0101
+     * @tc.number SUB_ConnectivityKit_GetWifiStatus_0101
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectivityKitGetWifiStatus0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -62,14 +64,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_ConnectivityKit_GetWifiStatus_0102
-* @tc.name       : testConnectivityKitGetWifiStatus0102
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testConnectivityKitGetWifiStatus0102
+     * @tc.number SUB_ConnectivityKit_GetWifiStatus_0102
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectivityKitGetWifiStatus0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -83,14 +86,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_ConnectivityKit_GetWifiStatus_0103
-* @tc.name       : testConnectivityKitGetWifiStatus0103
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testConnectivityKitGetWifiStatus0103
+     * @tc.number SUB_ConnectivityKit_GetWifiStatus_0103
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testConnectivityKitGetWifiStatus0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -104,14 +108,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0100
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0100
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -125,14 +130,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0101
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0101
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0101
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0101
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -146,14 +152,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0102
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0102
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0102
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0102
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -167,14 +174,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0103
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0103
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0103
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0103
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -188,14 +196,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0104
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0104
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0104
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0104
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -209,14 +218,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0105
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0105
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0105
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0105
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -230,14 +240,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0106
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0106
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0106
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0106
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -251,14 +262,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0107
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0107
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0107
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0107
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -272,14 +284,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-* @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0108
-* @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0108
-* @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0108
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0108
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -293,14 +306,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-  * @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0109
-  * @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0109
-  * @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 1
-  */
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0109
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0109
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -314,14 +328,15 @@ export default function ConnectivityTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_OK);
         }
       })
-    /*
-  * @tc.number     : SUB_COMMUNICATION_BLUETOOTH_NAPI_0110
-  * @tc.name       : testCOMMUNICATION_BLUETOOTH_NAPI_0110
-  * @tc.desc       : testing OH_Wifi_IsWifiEnabled interface
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 1
-  */
+    /**
+     * @generated.time 2025-11-09 20:49:44
+     * @tc.name   testCOMMUNICATION_BLUETOOTH_NAPI_0110
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_NAPI_0110
+     * @tc.desc   testing OH_Wifi_IsWifiEnabled interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCOMMUNICATION_BLUETOOTH_NAPI_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

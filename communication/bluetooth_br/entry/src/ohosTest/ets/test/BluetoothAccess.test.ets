@@ -100,14 +100,15 @@ describe('btAccessTest', () => {
         console.info('afterAll called')
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0100
-     * @tc.name testEnableBluetooth
-     * @tc.desc Test enableBluetooth api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0100
+      * @tc.desc   Test enableBluetooth api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) =>  {
         let state = bluetooth.getState();
         console.info('[bluetooth_js] bluetooth state = '+ JSON.stringify(state));
@@ -151,14 +152,15 @@ describe('btAccessTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0200
-     * @tc.name testDisableBluetooth
-     * @tc.desc Test disableBluetooth api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0200
+      * @tc.desc   Test disableBluetooth api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) =>  {
         let state = bluetooth.getState();
         console.info('[bluetooth_js] bluetooth state = '+ JSON.stringify(state));
@@ -191,14 +193,15 @@ describe('btAccessTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0300
-     * @tc.name testGetState
-     * @tc.desc Test getState api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0300
+      * @tc.desc   Test getState api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) =>  {
         try {
             let state = bluetooth.getState();
@@ -217,12 +220,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0400
-     * @tc.name testOnStateChange
-     * @tc.desc Test on 'stateChange' api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test on 'stateChange' api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) =>  {
     try {
@@ -252,12 +256,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0500
-     * @tc.name testOnStateChange
-     * @tc.desc Test off 'stateChange' api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.desc   Test off 'stateChange' api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) =>  {
     try {
@@ -296,14 +301,15 @@ describe('btAccessTest', () => {
     done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0600
-     * @tc.name testBluetoothState
-     * @tc.desc Test BluetoothState api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:45
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0600
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0600
+      * @tc.desc   Test BluetoothState api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
         let STATE_ON = bluetooth.BluetoothState.STATE_ON;
         console.info("[bluetooth_js]STATE_ON : " + JSON.stringify(STATE_ON));
@@ -330,12 +336,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_GETPERSISTENTDEVICEIDS_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_GETPERSISTENTDEVICEIDS_0100
-     * @tc.name testGetPersistentDeviceIds
-     * @tc.desc Test getPersistentDeviceIds api16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test getPersistentDeviceIds api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_GETPERSISTENTDEVICEIDS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
     try {
@@ -355,12 +362,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0100
-     * @tc.name testIsValidRandomDeviceId
-     * @tc.desc Test isValidRandomDeviceId api16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test isValidRandomDeviceId api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
     try {
@@ -380,12 +388,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0200
-     * @tc.name testIsValidRandomDeviceId
-     * @tc.desc Test isValidRandomDeviceId api16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test isValidRandomDeviceId api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISVALIDRANDOMDEVICEID_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
     try {
@@ -400,12 +409,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100
-     * @tc.name testAddPersistentDeviceId
-     * @tc.desc Test addPersistentDeviceId api16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test addPersistentDeviceId api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_ADDPERSISTENTDEVICEID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
     try {
@@ -426,12 +436,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_0100
-     * @tc.name testDeletePersistentDeviceId
-     * @tc.desc Test deletePersistentDeviceId api16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test deletePersistentDeviceId api16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_ACCESS_DELETEPERSISTENTDEVICEID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
     try {
@@ -452,12 +463,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700
-     * @tc.name testOnStateChange
-     * @tc.desc Test on 'stateChange' 401
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test on 'stateChange' 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
     try {
@@ -471,12 +483,13 @@ describe('btAccessTest', () => {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:45
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800
-     * @tc.name testOnStateChange
-     * @tc.desc Test off 'stateChange' 401
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test off 'stateChange' 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHACCESS_STATECHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
     try {
@@ -489,14 +502,15 @@ describe('btAccessTest', () => {
     done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLUETOOTHASYNC_0001
-     * @tc.name SUB_COMMUNICATION_BLUETOOTH_BLUETOOTHASYNC_0001
-     * @tc.desc Test Asynchronous interface for enables/disables Bluetooth on a device
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 0
-     */
+        /**
+         * @generated.time 2025-11-09 20:49:45
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLUETOOTHASYNC_0001
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLUETOOTHASYNC_0001
+         * @tc.desc   Test Asynchronous interface for enables/disables Bluetooth on a device
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_COMMUNICATION_BLUETOOTH_BLUETOOTHASYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
             try {
                 let isNotSupport = false;

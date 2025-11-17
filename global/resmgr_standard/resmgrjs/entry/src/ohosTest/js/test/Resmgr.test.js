@@ -19,11 +19,15 @@ export default function resMgrTest() {
 describe('resMgrTest', function () {
     console.log('*************start ResmgrTest*************');
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0100
-    * @tc.name    test getResourceManager method in callback mode
-    * @tc.desc    get the resource manager in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getResourceManager_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0100
+     * @tc.desc   get the resource manager in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getResourceManager_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             expect(mgr !== null).assertTrue();
@@ -31,11 +35,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0200
-    * @tc.name    test getResourceManager method in callback mode with bundlename
-    * @tc.desc    get the resource manager in callback mode with bundlename
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getResourceManager_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0200
+     * @tc.desc   get the resource manager in callback mode with bundlename
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getResourceManager_test_002', Level.LEVEL0, async function (done) {
         console.log('getResourceManager_test_002 0');
         resmgr.getResourceManager('ohos.resmgr.test', (error, mgr) => {
@@ -45,11 +53,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0300
-    * @tc.name    test getResourceManager method in promise mode
-    * @tc.desc    get the resource manager in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getResourceManager_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0300
+     * @tc.desc   get the resource manager in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getResourceManager_test_003', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager().then(mgr => {
             expect(mgr !== null).assertTrue();
@@ -57,11 +69,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0400
-    * @tc.name    test getResourceManager method in promise mode with bundlename
-    * @tc.desc    get the resource manager in promise mode with bundlename
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getResourceManager_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0400
+     * @tc.desc   get the resource manager in promise mode with bundlename
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getResourceManager_test_004', Level.LEVEL0, async function (done) {
         console.log('getResourceManager_test_004 0');
         resmgr.getResourceManager('ohos.resmgr.test').then(mgr => {
@@ -71,11 +87,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0500
-    * @tc.name    test getString method in callback mode
-    * @tc.desc    get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getString_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0500
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getString_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getString(0x2000008, (err, value) => {
@@ -87,11 +107,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0600
-    * @tc.name    test getString method in promise mode
-    * @tc.desc    get the string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getString_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0600
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getString_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getString(0x2000008).then(value => {
@@ -103,11 +127,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1900
-    * @tc.name    test getString method in callback mode
-    * @tc.desc    get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getString_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1900
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getString_test_003', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getString(0x2000009, (err, value) => {
@@ -119,11 +147,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0500
-    * @tc.name    test getString method in callback mode
-    * @tc.desc    get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0500
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringValue_test_003', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringValue(0x2000008, (err, value) => {
@@ -135,11 +167,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0600
-    * @tc.name    test getString method in promise mode
-    * @tc.desc    get the string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0600
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringValue_test_004', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringValue(0x2000008).then(value => {
@@ -151,11 +187,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0500
-    * @tc.name test getString method in callback mode
-    * @tc.desc get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_005
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0500
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_005', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -180,11 +220,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0500
-    * @tc.name test getString method in callback mode
-    * @tc.desc get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_006
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0500
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_006', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -208,11 +252,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0500
-    * @tc.name test getString method in callback mode
-    * @tc.desc get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_007
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0500
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_007', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -236,11 +284,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0500
-    * @tc.name test getString method in callback mode
-    * @tc.desc get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_008
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0500
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_008', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -265,11 +317,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0600
-    * @tc.name test getString method in promise mode
-    * @tc.desc get the string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_009
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0600
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_009', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -293,11 +349,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0600
-    * @tc.name test getString method in promise mode
-    * @tc.desc get the string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_010
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0600
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_010', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -325,11 +385,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0600
-    * @tc.name test getString method in promise mode
-    * @tc.desc get the string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_011
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0600
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_011', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -353,11 +417,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number SUB_GLOBAL_RESMGR_JS_0600
-    * @tc.name test getString method in promise mode
-    * @tc.desc get the string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringValue_test_012
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0600
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringValue_test_012', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -381,11 +449,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0700
-    * @tc.name    test getStringArray method in callback mode
-    * @tc.desc    get the string array in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArray_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0700
+     * @tc.desc   get the string array in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArray_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringArray(0x200000A, (err, value) => {
@@ -403,11 +475,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0800
-    * @tc.name    test getStringArray method in promise mode
-    * @tc.desc    get the string array in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArray_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0800
+     * @tc.desc   get the string array in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArray_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringArray(0x200000A).then(value => {
@@ -425,11 +501,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0700
-    * @tc.name    test getStringArray method in callback mode
-    * @tc.desc    get the string array in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0700
+     * @tc.desc   get the string array in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArrayValue_test_003', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringArrayValue(0x200000A, (err, value) => {
@@ -447,11 +527,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0800
-    * @tc.name    test getStringArray method in promise mode
-    * @tc.desc    get the string array in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayValue_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0800
+     * @tc.desc   get the string array in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArrayValue_test_004', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringArrayValue(0x200000A).then(value => {
@@ -469,11 +553,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0900
-    * @tc.name    test getMedia method in callback mode
-    * @tc.desc    get the media in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMedia_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0900
+     * @tc.desc   get the media in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMedia_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMedia(0x200001C, (err, value) => {
@@ -485,11 +573,15 @@ describe('resMgrTest', function () {
 
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1000
-    * @tc.name    test getMedia method in promise mode
-    * @tc.desc    get the media in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMedia_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1000
+     * @tc.desc   get the media in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMedia_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMedia(0x200001C).then(value => {
@@ -500,11 +592,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_0900
-    * @tc.name    test getMedia method in callback mode
-    * @tc.desc    get the media in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_0900
+     * @tc.desc   get the media in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_003', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContent(0x200001C, (err, value) => {
@@ -515,11 +611,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1000
-    * @tc.name    test getMedia method in promise mode
-    * @tc.desc    get the media in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1000
+     * @tc.desc   get the media in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_004', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContent(0x200001C).then(value => {
@@ -530,11 +630,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1100
-    * @tc.name    test getMediaBase64 method in callback mode
-    * @tc.desc    get the media base64 in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1100
+     * @tc.desc   get the media base64 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaBase64(0x200001C, (err, value) => {
@@ -545,11 +649,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1200
-    * @tc.name    test getMediaBase64 method in promise mode
-    * @tc.desc    get the media base64 in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1200
+     * @tc.desc   get the media base64 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaBase64(0x200001C).then(value => {
@@ -560,11 +668,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1100
-    * @tc.name    test getMediaBase64 method in callback mode
-    * @tc.desc    get the media base64 in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1100
+     * @tc.desc   get the media base64 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_003', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContentBase64(0x200001C, (err, value) => {
@@ -575,11 +687,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1200
-    * @tc.name    test getMediaBase64 method in promise mode
-    * @tc.desc    get the media base64 in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1200
+     * @tc.desc   get the media base64 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_004', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContentBase64(0x200001C).then(value => {
@@ -590,11 +706,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1300
-    * @tc.name    test getConfiguration method in callback mode
-    * @tc.desc    get the configuration in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getConfiguration_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1300
+     * @tc.desc   get the configuration in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getConfiguration_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             console.log('getConfiguration_test_001 0');
@@ -615,11 +735,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1400
-    * @tc.name    test getConfiguration method in promise mode
-    * @tc.desc    get the configuration in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getConfiguration_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1400
+     * @tc.desc   get the configuration in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getConfiguration_test_002', Level.LEVEL2, async function (done) {
         console.log('getConfiguration_test_002 0');
         expect(resmgr.Direction.DIRECTION_HORIZONTAL).assertEqual(1);
@@ -627,11 +751,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1400
-    * @tc.name    test getConfiguration method in promise mode
-    * @tc.desc    get the configuration in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getConfiguration_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1400
+     * @tc.desc   get the configuration in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getConfiguration_test_003', Level.LEVEL2, async function (done) {
         console.log('getConfiguration_test_003 0');
         expect(resmgr.Direction.DIRECTION_VERTICAL).assertEqual(0);
@@ -639,11 +767,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-        * @tc.number  SUB_GLOBAL_RESMGR_JS_1300
-        * @tc.name    test getConfiguration method in promise mode
-        * @tc.desc    get the configuration in promise mode
-        */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getConfiguration_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1300
+     * @tc.desc   get the configuration in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getConfiguration_test_004', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getConfiguration().then(cfg => {
@@ -660,11 +792,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1500
-    * @tc.name    test getDeviceCapability method in callback mode
-    * @tc.desc    get the device capability in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1500
+     * @tc.desc   get the device capability in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDeviceCapability_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getDeviceCapability((error, dc) => {
@@ -688,11 +824,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDeviceCapability_test_002', Level.LEVEL0, async function (done) {
         console.log('getDeviceCapability_test_002 0');
         expect(resmgr.DeviceType.DEVICE_TYPE_PHONE).assertEqual(0);
@@ -700,11 +840,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_003', Level.LEVEL2, async function (done) {
         console.log('getDeviceCapability_test_003 0');
         expect(resmgr.DeviceType.DEVICE_TYPE_TABLET).assertEqual(1);
@@ -712,11 +856,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_004', Level.LEVEL2, async function (done) {
         console.log('getDeviceCapability_test_004 0');
         expect(resmgr.DeviceType.DEVICE_TYPE_CAR).assertEqual(2);
@@ -724,11 +872,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_005
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_005', Level.LEVEL2, async function (done) {
         console.log('getDeviceCapability_test_005 0');
         expect(resmgr.DeviceType.DEVICE_TYPE_PC).assertEqual(3);
@@ -736,11 +888,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_006
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_006', Level.LEVEL2, async function (done) {
         console.log('getDeviceCapability_test_006 0');
         expect(resmgr.DeviceType.DEVICE_TYPE_TV).assertEqual(4);
@@ -748,11 +904,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_007
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_007', Level.LEVEL2, async function (done) {
         console.log('getDeviceCapability_test_007 0');
         expect(resmgr.DeviceType.DEVICE_TYPE_WEARABLE).assertEqual(6);
@@ -760,11 +920,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1601
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_017
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1601
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getDeviceCapability_test_017', Level.LEVEL2, async function (done) {
         console.log('getDeviceCapability_test_017 0');
         expect(resmgr.DeviceType.DEVICE_TYPE_2IN1).assertEqual(7);
@@ -772,11 +936,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-        * @tc.number  SUB_GLOBAL_RESMGR_JS_1500
-        * @tc.name    test getDeviceCapability method in callback mode
-        * @tc.desc    get the device capability in callback mode
-        */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDeviceCapability_test_008
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1500
+     * @tc.desc   get the device capability in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getDeviceCapability_test_008', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getDeviceCapability().then(dc => {
@@ -793,11 +961,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1500
-    * @tc.name    test getDeviceCapability method in callback mode
-    * @tc.desc    get the device capability in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getScreenDensity_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1500
+     * @tc.desc   get the device capability in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_001', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getDeviceCapability((error, dc) => {
@@ -821,11 +993,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getScreenDensity_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_002', Level.LEVEL2, async function (done) {
         console.log('getScreenDensity_test_002 0');
         expect(resmgr.ScreenDensity.SCREEN_SDPI).assertEqual(120);
@@ -833,11 +1009,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getScreenDensity_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_003', Level.LEVEL2, async function (done) {
         console.log('getScreenDensity_test_003 0');
         expect(resmgr.ScreenDensity.SCREEN_MDPI).assertEqual(160);
@@ -845,11 +1025,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getScreenDensity_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_004', Level.LEVEL2, async function (done) {
         console.log('getScreenDensity_test_004 0');
         expect(resmgr.ScreenDensity.SCREEN_LDPI).assertEqual(240);
@@ -857,11 +1041,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getScreenDensity_test_005
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_005', Level.LEVEL2, async function (done) {
         console.log('getScreenDensity_test_005 0');
         expect(resmgr.ScreenDensity.SCREEN_XLDPI).assertEqual(320);
@@ -869,11 +1057,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getScreenDensity_test_006
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_006', Level.LEVEL2, async function (done) {
         console.log('getScreenDensity_test_006 0');
         expect(resmgr.ScreenDensity.SCREEN_XXLDPI).assertEqual(480);
@@ -881,11 +1073,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1600
-    * @tc.name    test getDeviceCapability method in promise mode
-    * @tc.desc    get the device capability in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getScreenDensity_test_007
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1600
+     * @tc.desc   get the device capability in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getScreenDensity_test_007', Level.LEVEL2, async function (done) {
         console.log('getScreenDensity_test_007 0');
         expect(resmgr.ScreenDensity.SCREEN_XXXLDPI).assertEqual(640);
@@ -893,11 +1089,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1700
-    * @tc.name    test getPluralString method in callback mode
-    * @tc.desc    get the plural string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralString_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1700
+     * @tc.desc   get the plural string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getPluralString_test_001', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getPluralString(0x2000017, 1, (error, value) => {
@@ -909,11 +1109,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1800
-    * @tc.name    test getPluralString method in promise mode
-    * @tc.desc    get the plural string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralString_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1800
+     * @tc.desc   get the plural string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getPluralString_test_002', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getPluralString(0x2000017, 1).then(value => {
@@ -925,11 +1129,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1700
-    * @tc.name    test getPluralString method in callback mode
-    * @tc.desc    get the plural string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1700
+     * @tc.desc   get the plural string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getPluralStringValue_test_003', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getPluralStringValue(0x2000017, 1, (error, value) => {
@@ -941,11 +1149,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1800
-    * @tc.name    test getPluralString method in promise mode
-    * @tc.desc    get the plural string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringValue_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1800
+     * @tc.desc   get the plural string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('getPluralStringValue_test_004', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getPluralStringValue(0x2000017, 1).then(value => {
@@ -957,11 +1169,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1700
-    * @tc.name    test getRawFile method in callback mode
-    * @tc.desc    get the getRawFile in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFile_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1700
+     * @tc.desc   get the getRawFile in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFile_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFile('rawfile/rawfiletest.xml', (error, value) => {
@@ -972,11 +1188,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1800
-    * @tc.name    test getRawFile method in promise mode
-    * @tc.desc    get the getRawFile in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFile_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1800
+     * @tc.desc   get the getRawFile in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFile_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFile('rawfile/rawfiletest.xml').then(value => {
@@ -987,11 +1207,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1700
-    * @tc.name    test getRawFile method in callback mode
-    * @tc.desc    get the getRawFile in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileContent_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1700
+     * @tc.desc   get the getRawFile in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFileContent_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFileContent('rawfile/rawfiletest.xml', (error, value) => {
@@ -1002,11 +1226,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1800
-    * @tc.name    test getRawFile method in promise mode
-    * @tc.desc    get the getRawFile in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileContent_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1800
+     * @tc.desc   get the getRawFile in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFileContent_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFileContent('rawfile/rawfiletest.xml').then(value => {
@@ -1017,11 +1245,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_1900
-    * @tc.name    test release method
-    * @tc.desc    get the release function
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   release_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_1900
+     * @tc.desc   get the release function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('release_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getString(0x2000008, (err, value) => {
@@ -1032,11 +1264,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2000
-    * @tc.name    test getRawFileDescriptor method in callback mode
-    * @tc.desc    get the RawFileDescriptor in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileDescriptor_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2000
+     * @tc.desc   get the RawFileDescriptor in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFileDescriptor_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFileDescriptor('rawfiletest.xml', (error, rawfile) => {
@@ -1059,11 +1295,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2100
-    * @tc.name    test getRawFileDescriptor method in promise mode
-    * @tc.desc    get the RawFileDescriptor in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileDescriptor_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2100
+     * @tc.desc   get the RawFileDescriptor in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFileDescriptor_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFileDescriptor('rawfiletest.xml').then(rawfile => {
@@ -1087,11 +1327,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2200
-    * @tc.name    test closeRawFileDescriptor method in callback mode
-    * @tc.desc    get the closeRawFileDescriptor in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   closeRawFileDescriptor_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2200
+     * @tc.desc   get the closeRawFileDescriptor in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('closeRawFileDescriptor_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.closeRawFileDescriptor('rawfiletest.xml', (error, value) => {
@@ -1102,11 +1346,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2000
-    * @tc.name    test getRawFileDescriptor method in callback mode
-    * @tc.desc    get the RawFileDescriptor in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFd_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2000
+     * @tc.desc   get the RawFileDescriptor in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFd_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFd('rawfiletest.xml', (error, rawfile) => {
@@ -1123,11 +1371,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2100
-    * @tc.name    test getRawFileDescriptor method in promise mode
-    * @tc.desc    get the RawFileDescriptor in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFd_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2100
+     * @tc.desc   get the RawFileDescriptor in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getRawFd_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getRawFd('rawfiletest.xml').then(rawfile => {
@@ -1145,11 +1397,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2200
-    * @tc.name    test closeRawFileDescriptor method in callback mode
-    * @tc.desc    get the closeRawFileDescriptor in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   closeRawFd_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2200
+     * @tc.desc   get the closeRawFileDescriptor in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('closeRawFd_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -1172,11 +1428,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2300
-    * @tc.name    test closeRawFd method in promise mode throw 9001005 error code
-    * @tc.desc    get the closeRawFd in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   closeRawFd_test_005
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2300
+     * @tc.desc   get the closeRawFd in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('closeRawFd_test_005', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try {
@@ -1198,11 +1458,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2300
-    * @tc.name    test closeRawFd method in promise mode throw 401 error code
-    * @tc.desc    get the closeRawFd in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   closeRawFd_test_006
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2300
+     * @tc.desc   get the closeRawFd in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('closeRawFd_test_006', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try {
@@ -1224,11 +1488,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2400
-    * @tc.name    test getStringByName method in callback mode
-    * @tc.desc    get the string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2400
+     * @tc.desc   get the string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringByName('app_name', (err, value) => {
@@ -1240,11 +1508,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2500
-    * @tc.name    test getString method in promise mode
-    * @tc.desc    get the string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByName_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2500
+     * @tc.desc   get the string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringByName_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringByName('app_name').then(value => {
@@ -1256,11 +1528,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2600
-    * @tc.name    test getStringArrayByName method in callback mode
-    * @tc.desc    get the string array in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2600
+     * @tc.desc   get the string array in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArrayByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringArrayByName('sizeList', (err, value) => {
@@ -1278,11 +1554,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2700
-    * @tc.name    test getStringArrayByName method in promise mode
-    * @tc.desc    get the string array in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringArrayByName_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2700
+     * @tc.desc   get the string array in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringArrayByName_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getStringArrayByName('sizeList').then(value => {
@@ -1300,11 +1580,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2800
-    * @tc.name    test getMediaByName method in callback mode
-    * @tc.desc    get the media in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2800
+     * @tc.desc   get the media in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaByName('icon', (err, value) => {
@@ -1314,11 +1598,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_2900
-    * @tc.name    test getMediaByName method in promise mode
-    * @tc.desc    get the media in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_2900
+     * @tc.desc   get the media in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaByName_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaByName('icon').then(value => {
@@ -1328,11 +1616,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3000
-    * @tc.name    test getMediaBase64ByName method in callback mode
-    * @tc.desc    get the media base64 in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3000
+     * @tc.desc   get the media base64 in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64ByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaBase64ByName('icon', (err, value) => {
@@ -1343,11 +1635,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3100
-    * @tc.name    test getMediaBase64ByName method in promise mode
-    * @tc.desc    get the media base64 in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3100
+     * @tc.desc   get the media base64 in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64ByName_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaBase64ByName('icon').then(value => {
@@ -1358,11 +1654,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3200
-    * @tc.name    test getPluralStringByName method in callback mode
-    * @tc.desc    get the plural string in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3200
+     * @tc.desc   get the plural string in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getPluralStringByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getPluralStringByName('plural_name', 1, (error, value) => {
@@ -1374,11 +1674,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3300
-    * @tc.name    test getPluralStringByName method in promise mode
-    * @tc.desc    get the plural string in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getPluralStringByName_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3300
+     * @tc.desc   get the plural string in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getPluralStringByName_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getPluralStringByName('plural_name', 1).then(value => {
@@ -1390,11 +1694,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3400
-    * @tc.name    test getStringSync method
-    * @tc.desc    get the string in sync mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringSync_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3400
+     * @tc.desc   get the string in sync mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringSync_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getStringSync(0x2000008);
@@ -1405,11 +1713,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3500
-    * @tc.name    test getStringByNameSync method
-    * @tc.desc    get the string in sync mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByNameSync_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3500
+     * @tc.desc   get the string in sync mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getStringByNameSync_test_001', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -1427,11 +1739,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3500
-    * @tc.name    test getStringByNameSync method
-    * @tc.desc    get the string in sync mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getStringByNameSync_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3500
+     * @tc.desc   get the string in sync mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getStringByNameSync_test_002', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getStringByNameSync('app_name');
@@ -1442,11 +1758,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3600
-    * @tc.name    test getBoolean method
-    * @tc.desc    get the boolean value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBoolean_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3600
+     * @tc.desc   get the boolean value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getBoolean_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getBoolean(0x200000C);
@@ -1456,11 +1776,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3700
-    * @tc.name    test getBooleanByName method
-    * @tc.desc    get the boolean value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getBooleanByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3700
+     * @tc.desc   get the boolean value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getBooleanByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getBooleanByName('boolean_1');
@@ -1470,11 +1794,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3800
-    * @tc.name    test getNumber method with interger id
-    * @tc.desc    get the interger value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getinteger_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3800
+     * @tc.desc   get the interger value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getinteger_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             console.log('getinteger_test_001 0');
@@ -1486,11 +1814,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_3900
-    * @tc.name    test getNumberByName with interger
-    * @tc.desc    get the interger value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getintegerByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_3900
+     * @tc.desc   get the interger value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getintegerByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getNumberByName('integer_1');
@@ -1500,11 +1832,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_4000
-    * @tc.name    test getNumber with float id
-    * @tc.desc    get the float value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getfloat_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_4000
+     * @tc.desc   get the float value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getfloat_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getNumber(0x200001A);
@@ -1514,11 +1850,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_JS_4100
-    * @tc.name    test getNumberByName with float
-    * @tc.desc    get the float value
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getfloatByName_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_JS_4100
+     * @tc.desc   get the float value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getfloatByName_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getNumberByName('float_1');
@@ -1528,11 +1868,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /**
-     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0100
-     * @tc.name getDrawableDescriptor with normal pic
-     * @tc.desc test the getDrawableDescriptor method
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:56
+      * @tc.name   getDrawableDescriptor_test_0100
+      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0100
+      * @tc.desc   test the getDrawableDescriptor method
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('getDrawableDescriptor_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -1547,11 +1891,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /**
-     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0120
-     * @tc.name getDrawableDescriptor with undefined density
-     * @tc.desc test the getDrawableDescriptor method
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:56
+      * @tc.name   getDrawableDescriptor_test_0120
+      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0120
+      * @tc.desc   test the getDrawableDescriptor method
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('getDrawableDescriptor_test_0120', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -1566,11 +1914,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /**
-     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0140
-     * @tc.name getDrawableDescriptor with null density
-     * @tc.desc test the getDrawableDescriptor method
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:56
+      * @tc.name   getDrawableDescriptor_test_0140
+      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0140
+      * @tc.desc   test the getDrawableDescriptor method
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('getDrawableDescriptor_test_0140', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -1586,9 +1938,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0200
-     * @tc.name getDrawableDescriptor with normal pic and density
-     * @tc.desc test the getDrawableDescriptor method
+     * @tc.desc   test the getDrawableDescriptor method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_0200', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1605,9 +1961,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0300
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0300
-     * @tc.name getDrawableDescriptor with json style pic
-     * @tc.desc test the getDrawableDescriptor method
+     * @tc.desc   test the getDrawableDescriptor method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_0300', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1624,9 +1984,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0400
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0400
-     * @tc.name getDrawableDescriptor with json style pic and density
-     * @tc.desc test the getDrawableDescriptor method
+     * @tc.desc   test the getDrawableDescriptor method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_0400', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1643,9 +2007,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0500
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0500
-     * @tc.name getDrawableDescriptor with string param
-     * @tc.desc test the getDrawableDescriptor method return 401
+     * @tc.desc   test the getDrawableDescriptor method return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_0500', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1663,9 +2031,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0600
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0600
-     * @tc.name getDrawableDescriptor with not exist resource id
-     * @tc.desc test the getDrawableDescriptor method return 9001001
+     * @tc.desc   test the getDrawableDescriptor method return 9001001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_0600', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1683,9 +2055,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0700
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0700
-     * @tc.name getDrawableDescriptor with string resource id
-     * @tc.desc test the getDrawableDescriptor method return 9001002
+     * @tc.desc   test the getDrawableDescriptor method return 9001002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_0700', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1703,9 +2079,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0800
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0800
-     * @tc.name getDrawableDescriptor with not exist density
-     * @tc.desc test the getDrawableDescriptor method return 401
+     * @tc.desc   test the getDrawableDescriptor method return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_0800', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1723,9 +2103,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_0900
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_0900
-     * @tc.name getDrawableDescriptor with string type density
-     * @tc.desc test the getDrawableDescriptor method return 401
+     * @tc.desc   test the getDrawableDescriptor method return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_0900', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1743,9 +2127,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1000
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1000
-     * @tc.name getDrawableDescriptor with 0 density
-     * @tc.desc test the getDrawableDescriptor method
+     * @tc.desc   test the getDrawableDescriptor method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_1000', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1762,9 +2150,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1100
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1100
-     * @tc.name getDrawableDescriptorByName with normal pic
-     * @tc.desc test the getDrawableDescriptorByName method
+     * @tc.desc   test the getDrawableDescriptorByName method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDrawableDescriptor_test_1100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1780,11 +2172,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /**
-     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1120
-     * @tc.name getDrawableDescriptorByName with undefined density
-     * @tc.desc test the getDrawableDescriptorByName method
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:56
+      * @tc.name   getDrawableDescriptor_test_1120
+      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1120
+      * @tc.desc   test the getDrawableDescriptorByName method
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('getDrawableDescriptor_test_1120', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -1799,11 +2195,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /**
-     * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1140
-     * @tc.name getDrawableDescriptorByName with null density
-     * @tc.desc test the getDrawableDescriptorByName method
-     */
+     /**
+      * @generated.time 2025-11-09 20:49:56
+      * @tc.name   getDrawableDescriptor_test_1140
+      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1140
+      * @tc.desc   test the getDrawableDescriptorByName method
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('getDrawableDescriptor_test_1140', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -1819,9 +2219,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1200
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1200
-     * @tc.name getDrawableDescriptorByName with normal pic and density
-     * @tc.desc test the getDrawableDescriptorByName method
+     * @tc.desc   test the getDrawableDescriptorByName method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_1200', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1838,9 +2242,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1300
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1300
-     * @tc.name getDrawableDescriptorByName with json style pic
-     * @tc.desc test the getDrawableDescriptorByName method
+     * @tc.desc   test the getDrawableDescriptorByName method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_1300', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1857,9 +2265,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1400
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1400
-     * @tc.name getDrawableDescriptorByName with json style pic and density
-     * @tc.desc test the getDrawableDescriptorByName method
+     * @tc.desc   test the getDrawableDescriptorByName method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_1400', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1876,9 +2288,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1500
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1500
-     * @tc.name getDrawableDescriptorByName with number param
-     * @tc.desc test the getDrawableDescriptorByName method return 401
+     * @tc.desc   test the getDrawableDescriptorByName method return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_1500', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1896,9 +2312,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1600
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1600
-     * @tc.name getDrawableDescriptorByName with not exist pic name
-     * @tc.desc test the getDrawableDescriptorByName method return 9001003
+     * @tc.desc   test the getDrawableDescriptorByName method return 9001003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_1600', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1916,9 +2336,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1800
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1800
-     * @tc.name getDrawableDescriptorByName with not exist density
-     * @tc.desc test the getDrawableDescriptorByName method return 401
+     * @tc.desc   test the getDrawableDescriptorByName method return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_1800', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1936,9 +2360,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_1900
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_1900
-     * @tc.name getDrawableDescriptorByName with string type density
-     * @tc.desc test the getDrawableDescriptorByName method return 401
+     * @tc.desc   test the getDrawableDescriptorByName method return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getDrawableDescriptor_test_1900', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1956,9 +2384,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getDrawableDescriptor_test_2000
      * @tc.number SUB_GLOBAL_RESMGR_DRAWABLE_JS_2000
-     * @tc.name getDrawableDescriptorByName with 0 density
-     * @tc.desc test the getDrawableDescriptorByName method
+     * @tc.desc   test the getDrawableDescriptorByName method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getDrawableDescriptor_test_2000', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -1975,9 +2407,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileList_test_0100
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0100
-     * @tc.name getRawFileList with callback method
-     * @tc.desc test the getRawFileList method
+     * @tc.desc   test the getRawFileList method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getRawFileList_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -2001,9 +2437,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileList_test_0110
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0110
-     * @tc.name getRawFileList with callback method
-     * @tc.desc test the getRawFileList method
+     * @tc.desc   test the getRawFileList method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getRawFileList_test_0110', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -2028,9 +2468,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileList_test_0120
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0120
-     * @tc.name getRawFileList with callback method
-     * @tc.desc test the getRawFileList method
+     * @tc.desc   test the getRawFileList method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileList_test_0120', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -2055,9 +2499,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileList_test_0200
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0200
-     * @tc.name getRawFileList with promise method
-     * @tc.desc test the getRawFileList method
+     * @tc.desc   test the getRawFileList method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getRawFileList_test_0200', Level.LEVEL2, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -2080,9 +2528,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileList_test_0210
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0210
-     * @tc.name getRawFileList with promise method
-     * @tc.desc test the getRawFileList method
+     * @tc.desc   test the getRawFileList method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileList_test_0210', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -2106,9 +2558,13 @@ describe('resMgrTest', function () {
     })
 
     /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getRawFileList_test_0220
      * @tc.number SUB_GLOBAL_RESMGR_RAWFILELIST_JS_0220
-     * @tc.name getRawFileList with promise method
-     * @tc.desc test the getRawFileList method
+     * @tc.desc   test the getRawFileList method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getRawFileList_test_0220', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
@@ -2132,10 +2588,14 @@ describe('resMgrTest', function () {
     })
 
     /**
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0100
-    * @tc.name    test getMediaByName method in callback mode with density
-    * @tc.desc    get the media in callback mode
-    */
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_0100
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0100
+     * @tc.desc   get the media in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaByName_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaByName('icon', 0 , (err, value) => {
@@ -2146,11 +2606,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0200
-    * @tc.name    test getMediaByName method in promise mode with density
-    * @tc.desc    get the media in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaByName_test_0200
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0200
+     * @tc.desc   get the media in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaByName_test_0200', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaByName('icon', 0).then(value => {
@@ -2161,11 +2625,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0300
-    * @tc.name    test getMediaBase64ByName method in callback mode with density
-    * @tc.desc    get the media in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_0100
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0300
+     * @tc.desc   get the media in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64ByName_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaBase64ByName('icon', 0 , (err, value) => {
@@ -2176,11 +2644,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0400
-    * @tc.name    test getMediaBase64ByName method in promise mode with density
-    * @tc.desc    get the media in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaBase64ByName_test_0200
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0400
+     * @tc.desc   get the media in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaBase64ByName_test_0200', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaBase64ByName('icon', 0).then(value => {
@@ -2191,11 +2663,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0500
-    * @tc.name    test getMediaContent method in callback mode with density
-    * @tc.desc    get the media in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_test_0100
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0500
+     * @tc.desc   get the media in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContent(0x200001C, 0 , (err, value) => {
@@ -2206,11 +2682,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0600
-    * @tc.name    test getMediaContent method in promise mode with density
-    * @tc.desc    get the media in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContent_test_0200
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0600
+     * @tc.desc   get the media in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContent_test_0200', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContent(0x200001C, 0).then(value => {
@@ -2221,11 +2701,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0700
-    * @tc.name    test getMediaContentBase64 method in callback mode with density
-    * @tc.desc    get the media in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_test_0100
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0700
+     * @tc.desc   get the media in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContentBase64(0x200001C, 0 , (err, value) => {
@@ -2236,11 +2720,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_DENSITY_JS_0800
-    * @tc.name    test getMediaContentBase64 method in promise mode with density
-    * @tc.desc    get the media in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getMediaContentBase64_test_0200
+     * @tc.number SUB_GLOBAL_RESMGR_DENSITY_JS_0800
+     * @tc.desc   get the media in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getMediaContentBase64_test_0200', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getMediaContentBase64(0x200001C, 0).then(value => {
@@ -2251,11 +2739,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETSYSTEMRESOURCEMANAGER_JS_0100
-    * @tc.name    test getSystemResourceManager method
-    * @tc.desc    get the SystemResourceManager
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getSystemResourceManager_test_0100
+     * @tc.number SUB_GLOBAL_RESMGR_GETSYSTEMRESOURCEMANAGER_JS_0100
+     * @tc.desc   get the SystemResourceManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getSystemResourceManager_test_0100', Level.LEVEL0, async function (done) {
         let value = resmgr.getSystemResourceManager();
         console.log('getSystemResourceManager_test_0100 ' + value);
@@ -2263,11 +2755,15 @@ describe('resMgrTest', function () {
         done();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0100
-    * @tc.name    test getColor method in callback mode
-    * @tc.desc    get the color in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0100
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0100
+     * @tc.desc   get the color in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColor_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getColor(0x2000010, (err, value) => {
@@ -2279,11 +2775,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0110
-    * @tc.name    test getColor method in callback mode
-    * @tc.desc    get the color in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0110
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0110
+     * @tc.desc   get the color in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0110', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2300,11 +2800,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0120
-    * @tc.name    test getColor method in callback mode
-    * @tc.desc    get the color in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0120
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0120
+     * @tc.desc   get the color in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0120', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2322,11 +2826,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0130
-    * @tc.name    test getColor method in callback mode
-    * @tc.desc    get the color in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0130
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0130
+     * @tc.desc   get the color in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0130', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2344,11 +2852,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0140
-    * @tc.name    test getColor method in callback mode
-    * @tc.desc    get the color in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0140
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0140
+     * @tc.desc   get the color in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0140', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2366,11 +2878,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0150
-    * @tc.name    test getColor method in callback mode
-    * @tc.desc    get the color in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0150
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0150
+     * @tc.desc   get the color in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0150', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2388,11 +2904,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0200
-    * @tc.name    test getColor method in promise mode
-    * @tc.desc    get the color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0200
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0200
+     * @tc.desc   get the color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColor_test_0200', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getColor(0x2000010).then(value => {
@@ -2404,11 +2924,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0210
-    * @tc.name    test getColor method in promise mode
-    * @tc.desc    get the color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0210
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0210
+     * @tc.desc   get the color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0210', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2425,11 +2949,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0220
-    * @tc.name    test getColor method in promise mode
-    * @tc.desc    get the color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0220
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0220
+     * @tc.desc   get the color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0220', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2448,11 +2976,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0230
-    * @tc.name    test getColor method in promise mode
-    * @tc.desc    get the color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0230
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0230
+     * @tc.desc   get the color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0230', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2471,11 +3003,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0240
-    * @tc.name    test getColor method in promise mode
-    * @tc.desc    get the color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0240
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0240
+     * @tc.desc   get the color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0240', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2494,11 +3030,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLOR_JS_0250
-    * @tc.name    test getColor method in promise mode
-    * @tc.desc    get the color in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColor_test_0250
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLOR_JS_0250
+     * @tc.desc   get the color in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColor_test_0250', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2517,11 +3057,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0100
-    * @tc.name    test getColorSync method
-    * @tc.desc    get the sync color
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorSync_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0100
+     * @tc.desc   get the sync color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorSync_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getColorSync(0x2000010);
@@ -2532,11 +3076,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0200
-    * @tc.name    test getColorSync method
-    * @tc.desc    get the sync color
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorSync_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0200
+     * @tc.desc   get the sync color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_002', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2551,11 +3099,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0300
-    * @tc.name    test getColorSync method
-    * @tc.desc    get the sync color
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorSync_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0300
+     * @tc.desc   get the sync color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_003', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2569,11 +3121,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0400
-    * @tc.name    test getColorSync method
-    * @tc.desc    get the sync color
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorSync_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0400
+     * @tc.desc   get the sync color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_004', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2588,11 +3144,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0500
-    * @tc.name    test getColorSync method
-    * @tc.desc    get the sync color
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorSync_test_005
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0500
+     * @tc.desc   get the sync color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_005', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2607,11 +3167,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0600
-    * @tc.name    test getColorSync method
-    * @tc.desc    get the sync color
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorSync_test_006
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORSYNC_JS_0600
+     * @tc.desc   get the sync color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorSync_test_006', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2626,11 +3190,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0100
-    * @tc.name    test getColorByName method in callback mode
-    * @tc.desc    get the color by name in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0100
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0100
+     * @tc.desc   get the color by name in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorByName_test_0100', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getColorByName('color_test1', (err, value) => {
@@ -2642,11 +3210,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0110
-    * @tc.name    test getColorByName method in callback mode
-    * @tc.desc    get the color by name in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0110
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0110
+     * @tc.desc   get the color by name in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0110', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2663,11 +3235,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0120
-    * @tc.name    test getColorByName method in callback mode
-    * @tc.desc    get the color by name in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0120
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0120
+     * @tc.desc   get the color by name in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0120', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2685,11 +3261,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0130
-    * @tc.name    test getColorByName method in callback mode
-    * @tc.desc    get the color by name in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0130
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0130
+     * @tc.desc   get the color by name in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0130', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2707,11 +3287,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0140
-    * @tc.name    test getColorByName method in callback mode
-    * @tc.desc    get the color by name in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0140
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0140
+     * @tc.desc   get the color by name in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0140', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2729,11 +3313,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0150
-    * @tc.name    test getColorByName method in callback mode
-    * @tc.desc    get the color by name in callback mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0150
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0150
+     * @tc.desc   get the color by name in callback mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0150', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2751,11 +3339,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0200
-    * @tc.name    test getColorByName method in promise mode
-    * @tc.desc    get the color by name in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0200
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0200
+     * @tc.desc   get the color by name in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorByName_test_0200', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             mgr.getColorByName('color_test1').then(value => {
@@ -2767,11 +3359,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0210
-    * @tc.name    test getColorByName method in promise mode
-    * @tc.desc    get the color by name in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0210
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0210
+     * @tc.desc   get the color by name in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0210', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2788,11 +3384,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0220
-    * @tc.name    test getColorByName method in promise mode
-    * @tc.desc    get the color by name in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0220
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0220
+     * @tc.desc   get the color by name in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0220', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2811,11 +3411,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0230
-    * @tc.name    test getColorByName method in promise mode
-    * @tc.desc    get the color by name in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0230
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0230
+     * @tc.desc   get the color by name in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0230', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2834,11 +3438,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0240
-    * @tc.name    test getColorByName method in promise mode
-    * @tc.desc    get the color by name in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0240
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0240
+     * @tc.desc   get the color by name in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0240', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2857,11 +3465,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0250
-    * @tc.name    test getColorByName method in promise mode
-    * @tc.desc    get the color by name in promise mode
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByName_test_0250
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAME_JS_0250
+     * @tc.desc   get the color by name in promise mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByName_test_0250', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2880,11 +3492,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0100
-    * @tc.name    test getColorByNameSync method
-    * @tc.desc    get the sync color by name
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByNameSync_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0100
+     * @tc.desc   get the sync color by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getColorByNameSync_test_001', Level.LEVEL0, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             let value = mgr.getColorByNameSync('color_test1');
@@ -2895,11 +3511,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0200
-    * @tc.name    test getColorByNameSync method
-    * @tc.desc    get the sync color by name
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByNameSync_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0200
+     * @tc.desc   get the sync color by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByNameSync_test_002', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2914,11 +3534,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0300
-    * @tc.name    test getColorByNameSync method
-    * @tc.desc    get the sync color by name
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByNameSync_test_003
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0300
+     * @tc.desc   get the sync color by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByNameSync_test_003', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2933,11 +3557,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0400
-    * @tc.name    test getColorByNameSync method
-    * @tc.desc    get the sync color by name
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByNameSync_test_004
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0400
+     * @tc.desc   get the sync color by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByNameSync_test_004', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2952,11 +3580,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0500
-    * @tc.name    test getColorByNameSync method
-    * @tc.desc    get the sync color by name
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByNameSync_test_005
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0500
+     * @tc.desc   get the sync color by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByNameSync_test_005', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2971,11 +3603,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0600
-    * @tc.name    test getColorByNameSync method
-    * @tc.desc    get the sync color by name
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   getColorByNameSync_test_006
+     * @tc.number SUB_GLOBAL_RESMGR_GETCOLORBYNAMESYNC_JS_0600
+     * @tc.desc   get the sync color by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getColorByNameSync_test_006', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -2990,11 +3626,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_0100
-    * @tc.name    test addResource method with int param
-    * @tc.desc    addResource
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   addResource_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_0100
+     * @tc.desc   addResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('addResource_test_001', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -3009,11 +3649,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_0200
-    * @tc.name    test addResource method with not exist path
-    * @tc.desc    addResource
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   addResource_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_ADDRESOURCE_JS_0200
+     * @tc.desc   addResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('addResource_test_002', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -3028,11 +3672,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_0100
-    * @tc.name    test removeResource method with int param
-    * @tc.desc    removeResource
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   removeResource_test_001
+     * @tc.number SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_0100
+     * @tc.desc   removeResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('removeResource_test_001', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{
@@ -3047,11 +3695,15 @@ describe('resMgrTest', function () {
         })
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_0200
-    * @tc.name    test removeResource method with not exist path
-    * @tc.desc    removeResource
-    */
+    /**
+     * @generated.time 2025-11-09 20:49:56
+     * @tc.name   removeResource_test_002
+     * @tc.number SUB_GLOBAL_RESMGR_REMOVERESOURCE_JS_0200
+     * @tc.desc   removeResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('removeResource_test_002', Level.LEVEL3, async function (done) {
         resmgr.getResourceManager((error, mgr) => {
             try{

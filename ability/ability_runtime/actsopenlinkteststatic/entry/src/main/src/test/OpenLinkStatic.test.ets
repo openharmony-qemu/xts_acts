@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, aft
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
@@ -30,17 +30,17 @@ let linkNotExist = 'demo://www.example.com';
 let invalidParamErrNo = 401;
 let componentNotExistErrNo = 16000019;
 let resultCode = 111;
-let trueparameters: Record<String,Object> = {"demo_key": "demo_value"};
+let trueparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let trueParamOptions: OpenLinkOptions = {
   appLinkingOnly: true,
   parameters: trueparameters
 };
-let falseparameters: Record<String,Object> = {"demo_key": "demo_value"};
+let falseparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let falseParamOptions: OpenLinkOptions = {
   appLinkingOnly: false,
   parameters: falseparameters
 };
-let parameters: Record<String,Object> = {"demo_key": "demo_value", "demo_num": 111}
+let parameters: Record<String, RecordData> = {"demo_key": "demo_value", "demo_num": 111}
 let paramOptions: OpenLinkOptions = {
   parameters: parameters
 };

@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
@@ -116,7 +116,7 @@ export default function UIAbilityContextteststatic() {
           'type': 'FD',
           'value': -1
         }
-        let parameters: Record<String,Object> = {
+        let parameters: Record<String,RecordData> = {
           'keyFd': Fd
         }
         let want: Want = {
@@ -219,7 +219,7 @@ export default function UIAbilityContextteststatic() {
           'type': 'FD',
           'value': -1
         }
-        let parameters: Record<String,Object> = {
+        let parameters: Record<String,RecordData> = {
           'keyFd': Fd
         }
         let want: Want = {
@@ -338,7 +338,7 @@ export default function UIAbilityContextteststatic() {
           'type': 'FD',
           'value': -1
         }
-        let parameters: Record<String,Object> = {
+        let parameters: Record<String,RecordData> = {
           'keyFd': Fd
         }
         let want: Want = {
@@ -423,7 +423,7 @@ export default function UIAbilityContextteststatic() {
           'type': 'FD',
           'value': -1
         }
-        let parameters: Record<String,Object> = {
+        let parameters: Record<String,RecordData> = {
           'keyFd': Fd
         }
         let want: Want = {

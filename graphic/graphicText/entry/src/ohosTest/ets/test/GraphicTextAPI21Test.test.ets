@@ -21,7 +21,9 @@ import { text, drawing, common2D } from "@kit.ArkGraphics2D"
 
 export default function GraphicTextAPI21Test() {
   describe('GraphicTextAPI21Test', () => {
-    beforeEach(async (done: Function) => {});
+    beforeEach(async (done: Function) => {
+      done();
+    });
 
     /**
      * @tc.number    graphicTextAPI21Test_0100
@@ -74,6 +76,7 @@ export default function GraphicTextAPI21Test() {
       } catch(err){
         console.info(msg + 'test error' + err);
         expect().assertFail();
+        done();
       }
     })
 
