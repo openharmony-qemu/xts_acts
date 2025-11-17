@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct image16 {
+struct ImageAdvancedImage16 {
   @State imageLoadingResult: string = 'loading failed';
 
   build() {

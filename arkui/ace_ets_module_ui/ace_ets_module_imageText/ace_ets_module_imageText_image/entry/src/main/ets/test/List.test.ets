@@ -28,6 +28,7 @@ import ImageMultiAttributeTest from './ImageTest/ImageMultiAttribute.test';
 import ImageEventsTest from './ImageTest/ImageEvents.test';
 import ImageOhosMatrix4Test from './ImageTest/ImageOhosMatrix4.test';
 import ShapeClippingJsunitTest from './ImageTest/ShapeClippingJsunit.test';
+import ImageAdvancedTest from './ImageAdvancedTest/ImageAdvancedTest.test';
 
 export default function testsuite() {
   APIClipMaskShapeTest();
@@ -46,4 +47,5 @@ export default function testsuite() {
   ImageEventsTest();
   ImageOhosMatrix4Test();
   ShapeClippingJsunitTest();
+  ImageAdvancedTest();
 }

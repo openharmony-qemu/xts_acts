@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct image10 {
+struct ImageAdvancedImage10 {
   @State imageLoadingResult: string = 'loading failed';
   @State src: Resource = $r('app.media.icon');
 

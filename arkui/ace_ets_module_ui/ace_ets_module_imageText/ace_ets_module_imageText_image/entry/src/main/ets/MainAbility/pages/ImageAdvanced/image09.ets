@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct image09 {
+struct ImageAdvancedImage09 {
   @State imageLoadingResult: string = 'loading failed';
   @State src: Resource = $rawfile('yyy.png')
 

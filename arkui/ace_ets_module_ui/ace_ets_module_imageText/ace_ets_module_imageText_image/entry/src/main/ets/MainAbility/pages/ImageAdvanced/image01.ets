@@ -15,14 +15,14 @@
 
 @Entry
 @Component
-struct image01 {
+struct ImageAdvancedImage01 {
   @State imageLoadingResult: string = 'loading failed';
   @State src: Resource = $r('app.media.icon50_50');
-  @State loadingStatus:number = 1
-  @State contentWidth:number = 1
-  @State contentHeight:number = 1
-  @State contentOffsetX:number = 1
-  @State contentOffsetY:number = 1
+  @State loadingStatus: number = 1
+  @State contentWidth: number = 1
+  @State contentHeight: number = 1
+  @State contentOffsetX: number = 1
+  @State contentOffsetY: number = 1
 
   build() {
     Row() {
@@ -42,19 +42,19 @@ struct image01 {
           .height(100)
           .aspectRatio(1.5)
           .borderWidth(1)
-          .onComplete((event)=>{
-            if(event!=undefined){
+          .onComplete((event) => {
+            if (event != undefined) {
               this.imageLoadingResult = 'loading success'
-              console.log('onComplete:event.loadingStatus ' + event.loadingStatus )
-              console.log('onComplete:event.contentWidth ' + event.contentWidth )
-              console.log('onComplete:event.contentHeight ' + event.contentHeight )
-              console.log('onComplete:event.contentOffsetX ' + event.contentOffsetX )
-              console.log('onComplete:event.contentOffsetY ' + event.contentOffsetY )
-              this.loadingStatus =  event.loadingStatus
-              this.contentWidth =  event.contentWidth
-              this.contentHeight =  event.contentHeight
-              this.contentOffsetX =  event.contentOffsetX
-              this.contentOffsetY =  event.contentOffsetY
+              console.log('onComplete:event.loadingStatus ' + event.loadingStatus)
+              console.log('onComplete:event.contentWidth ' + event.contentWidth)
+              console.log('onComplete:event.contentHeight ' + event.contentHeight)
+              console.log('onComplete:event.contentOffsetX ' + event.contentOffsetX)
+              console.log('onComplete:event.contentOffsetY ' + event.contentOffsetY)
+              this.loadingStatus = event.loadingStatus
+              this.contentWidth = event.contentWidth
+              this.contentHeight = event.contentHeight
+              this.contentOffsetX = event.contentOffsetX
+              this.contentOffsetY = event.contentOffsetY
             }
           })
       }

@@ -16,6 +16,21 @@
         "MainAbility/pages/Image/ImageMultiAttribute",
         "MainAbility/pages/Image/ImageEvents",
         "MainAbility/pages/Image/ImageOhosMatrix4",
-        "MainAbility/pages/Image/shapeClipping"
+        "MainAbility/pages/Image/shapeClipping",
+        "MainAbility/pages/ImageAdvanced/image01",
+        "MainAbility/pages/ImageAdvanced/image02",
+        "MainAbility/pages/ImageAdvanced/image03",
+        "MainAbility/pages/ImageAdvanced/image04",
+        "MainAbility/pages/ImageAdvanced/image05",
+        "MainAbility/pages/ImageAdvanced/image06",
+        "MainAbility/pages/ImageAdvanced/image07",
+        "MainAbility/pages/ImageAdvanced/image08",
+        "MainAbility/pages/ImageAdvanced/image09",
+        "MainAbility/pages/ImageAdvanced/image10",
+        "MainAbility/pages/ImageAdvanced/image14",
+        "MainAbility/pages/ImageAdvanced/image15",
+        "MainAbility/pages/ImageAdvanced/image16",
+        "MainAbility/pages/ImageAdvanced/imageAltBase64",
+        "MainAbility/pages/ImageAdvanced/imageBase64"
     ]
 }
