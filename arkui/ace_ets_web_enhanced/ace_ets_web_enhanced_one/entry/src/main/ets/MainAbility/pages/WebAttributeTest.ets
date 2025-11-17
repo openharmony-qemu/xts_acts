@@ -549,7 +549,7 @@ struct WebAttributeTest {
                 try {
                   this.blockNetwork = false;
                   await Utils.sleep(1000)
-                  this.controller.loadUrl('https://openharmony.cn/');
+                  this.controller.loadUrl('https://www.example.com/');
                   await Utils.sleep(4000)
                   let testTitle = this.controller.getTitle();
                   console.log(`testTitle is: ${testTitle}`);
