@@ -1,5 +1,11 @@
 {
     "src": [
-        "MainAbility/pages/index/index"
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/Image/APIClipMaskShape",
+        "MainAbility/pages/Image/AboutToRecycleImage",
+        "MainAbility/pages/Image/ImageBasicAttributes",
+        "MainAbility/pages/Image/ImageText",
+        "MainAbility/pages/Image/ImageDynamicRangeMode",
+        "MainAbility/pages/Image/ImageEnableAnalyzer"
     ]
 }

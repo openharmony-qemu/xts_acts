@@ -12,6 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import APIClipMaskShapeTest from "./ImageTest/APIClipMaskShape.test";
+import AboutToRecycleImageJSTest from "./ImageTest/AboutToRecycleImageJS.test";
+import ImageBasicAttributesTest from "./ImageTest/ImageBasicAttributes.test";
+import ImageTextTest from "./ImageTest/ImageText.test";
+import ImageDynamicRangeModeTest from "./ImageTest/ImageDynamicRangeMode.test";
+import ImageEnableAnalyzerTest from "./ImageTest/ImageEnableAnalyzer.test";
 
 export default function testsuite() {
+  APIClipMaskShapeTest();
+  AboutToRecycleImageJSTest();
+  ImageBasicAttributesTest();
+  ImageTextTest();
+  ImageDynamicRangeModeTest();
+  ImageEnableAnalyzerTest();
 }
