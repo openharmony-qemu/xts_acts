@@ -64,8 +64,8 @@ export default function shapeClippingJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (error) {
-        console.error("push shapeClipping page error:" + error);
+      } catch (err: Error) {
+        console.error("push shapeClipping page error:" + err);
       }
     });
 
@@ -75,13 +75,13 @@ export default function shapeClippingJsunit() {
     });
 
     
-/*
+    /*
      * @tc.number   testShapeClipping_static_001
      * @tc.name     testShapeClipping_static_001
      * @tc.desc     testShapeClipping_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_001', Level.LEVEL0, async () => {
+    it('testShapeClipping_static_001', Level.LEVEL0, async () => {
       console.info('[testShapeClipping001] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('image_clip');
@@ -98,13 +98,13 @@ it('testShapeClipping_static_001', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testShapeClipping_static_002
      * @tc.name     testShapeClipping_static_002
      * @tc.desc     testShapeClipping_static_002
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_002', Level.LEVEL0, async () => {
+    it('testShapeClipping_static_002', Level.LEVEL0, async () => {
       console.info('[testShapeClipping002] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('image_mask');
@@ -117,13 +117,13 @@ it('testShapeClipping_static_002', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testShapeClipping_static_003
      * @tc.name     testShapeClipping_static_003
      * @tc.desc     testShapeClipping_static_003
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_003', Level.LEVEL0, async () => {
+    it('testShapeClipping_static_003', Level.LEVEL0, async () => {
       console.info('[testShapeClipping003] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -137,8 +137,8 @@ it('testShapeClipping_static_003', Level.LEVEL0, async () => {
         }
         console.info("[testShapeClipping003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (error) {
-        console.log("[testShapeClipping003] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testShapeClipping003] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('image_mask');
@@ -151,13 +151,13 @@ it('testShapeClipping_static_003', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testShapeClipping_static_004
      * @tc.name     testShapeClipping_static_004
      * @tc.desc     testShapeClipping_static_004
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_004', Level.LEVEL0, async () => {
+    it('testShapeClipping_static_004', Level.LEVEL0, async () => {
       console.info('[testShapeClipping004] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -171,8 +171,8 @@ it('testShapeClipping_static_004', Level.LEVEL0, async () => {
         }
         console.info("[testShapeClipping004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (error) {
-        console.log("[testShapeClipping004] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testShapeClipping004] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('image_clip');
@@ -185,13 +185,13 @@ it('testShapeClipping_static_004', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testShapeClipping_static_005
      * @tc.name     testShapeClipping_static_005
      * @tc.desc     testShapeClipping_static_005
      * @tc.level    Level.LEVEL0
      */
-it('testShapeClipping_static_005', Level.LEVEL0, async () => {
+    it('testShapeClipping_static_005', Level.LEVEL0, async () => {
       console.info('[testShapeClipping004] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -205,8 +205,8 @@ it('testShapeClipping_static_005', Level.LEVEL0, async () => {
         }
         console.info("[testShapeClipping004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (error) {
-        console.log("[testShapeClipping004] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testShapeClipping004] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('shapeType_clip');

@@ -66,13 +66,13 @@ export default function pathNewTest() {
 
     
     
-/*
+    /*
      * @tc.number   testpathNe_static_0001
      * @tc.name     testpathNe_static_0001
      * @tc.desc     testpathNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testpathNe_static_0001', Level.LEVEL0, async () => {
+    it('testpathNe_static_0001', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');
@@ -86,13 +86,13 @@ it('testpathNe_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testpathNe_static_0002
      * @tc.name     testpathNe_static_0002
      * @tc.desc     testpathNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpathNe_static_0002', Level.LEVEL0, async () => {
+    it('testpathNe_static_0002', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');
@@ -106,13 +106,13 @@ it('testpathNe_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testpathNe_static_0003
      * @tc.name     testpathNe_static_0003
      * @tc.desc     testpathNe_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testpathNe_static_0003', Level.LEVEL0, async () => {
+    it('testpathNe_static_0003', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Path');

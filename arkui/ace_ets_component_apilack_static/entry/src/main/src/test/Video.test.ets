@@ -65,13 +65,13 @@ export default function videoOnFullscreenChangeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0001
      * @tc.name     testvideoOnFullscreenChange_static_0001
      * @tc.desc     testvideoOnFullscreenChange_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0001', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0001', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -85,13 +85,13 @@ it('testvideoOnFullscreenChange_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0002
      * @tc.name     testvideoOnFullscreenChange_static_0002
      * @tc.desc     testvideoOnFullscreenChange_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0002', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0002', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -105,13 +105,13 @@ it('testvideoOnFullscreenChange_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0003
      * @tc.name     testvideoOnFullscreenChange_static_0003
      * @tc.desc     testvideoOnFullscreenChange_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0003', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0003', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -126,13 +126,13 @@ it('testvideoOnFullscreenChange_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0004
      * @tc.name     testvideoOnFullscreenChange_static_0004
      * @tc.desc     testvideoOnFullscreenChange_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0004', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0004', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -146,13 +146,13 @@ it('testvideoOnFullscreenChange_static_0004', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0005
      * @tc.name     testvideoOnFullscreenChange_static_0005
      * @tc.desc     testvideoOnFullscreenChange_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0005', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0005', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -166,13 +166,13 @@ it('testvideoOnFullscreenChange_static_0005', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0006
      * @tc.name     testvideoOnFullscreenChange_static_0006
      * @tc.desc     testvideoOnFullscreenChange_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0006', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0006', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -187,13 +187,13 @@ it('testvideoOnFullscreenChange_static_0006', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0007
      * @tc.name     testvideoOnFullscreenChange_static_0007
      * @tc.desc     testvideoOnFullscreenChange_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0007', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0007', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -208,13 +208,13 @@ it('testvideoOnFullscreenChange_static_0007', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0009
      * @tc.name     testvideoOnFullscreenChange_static_0009
      * @tc.desc     testvideoOnFullscreenChange_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0009', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0009', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -228,13 +228,13 @@ it('testvideoOnFullscreenChange_static_0009', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0010
      * @tc.name     testvideoOnFullscreenChange_static_0010
      * @tc.desc     testvideoOnFullscreenChange_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0010', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0010', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onFullscreenChangeText');
@@ -248,13 +248,13 @@ it('testvideoOnFullscreenChange_static_0010', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testvideoOnFullscreenChange_static_0011
      * @tc.name     testvideoOnFullscreenChange_static_0011
      * @tc.desc     testvideoOnFullscreenChange_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testvideoOnFullscreenChange_static_0011', Level.LEVEL0, async () => {
+    it('testvideoOnFullscreenChange_static_0011', Level.LEVEL0, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0011 START');
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 60227,

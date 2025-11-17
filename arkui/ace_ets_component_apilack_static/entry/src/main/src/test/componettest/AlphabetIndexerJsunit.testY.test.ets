@@ -65,8 +65,8 @@ export default function alphabetIndexerJsunit() {
           console.info("get AlphabetIndexer state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
         }
-      } catch (error) {
-        console.error("push AlphabetIndexer page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("push AlphabetIndexer page error " + JSON.stringify(err));
       }
       await Utils.sleep(2000);
     });
@@ -78,11 +78,11 @@ export default function alphabetIndexerJsunit() {
 
 
     /*
-         * @tc.number   alphabetIndexerTest_static_001
-         * @tc.name     alphabetIndexerTest_static_001
-         * @tc.desc     alphabetIndexerTest_static_001
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   alphabetIndexerTest_static_001
+     * @tc.name     alphabetIndexerTest_static_001
+     * @tc.desc     alphabetIndexerTest_static_001
+     * @tc.level    Level.LEVEL0
+     */
     it('alphabetIndexerTest_static_001', Level.LEVEL0, async () => {
       console.info('AlphabetIndexerTest001 START');
       await Utils.sleep(1000);
@@ -95,14 +95,14 @@ export default function alphabetIndexerJsunit() {
 
 
     /*
-         * @tc.number   alphabetIndexerTest_static_002
-         * @tc.name     alphabetIndexerTest_static_002
-         * @tc.desc     alphabetIndexerTest_static_002
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   alphabetIndexerTest_static_002
+     * @tc.name     alphabetIndexerTest_static_002
+     * @tc.desc     alphabetIndexerTest_static_002
+     * @tc.level    Level.LEVEL0
+     */
     it('alphabetIndexerTest_static_002', Level.LEVEL0, async () => {
-      console.info('AlphabetIndexerTest002 START');
       try {
+        console.info('AlphabetIndexerTest002 START');
         let strJson = inspector.getInspectorByKey('alphabetIndexer1');
         let obj = JSON.parseJsonElement(strJson);
         console.info("component obj is: " + JSON.stringify(obj));

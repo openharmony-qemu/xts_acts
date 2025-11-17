@@ -68,13 +68,13 @@ export default function ellipseNeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testellipseNe_static_0001
      * @tc.name     testellipseNe_static_0001
      * @tc.desc     testellipseNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testellipseNe_static_0001', Level.LEVEL0, async () => {
+    it('testellipseNe_static_0001', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('ellipse');
@@ -88,13 +88,13 @@ it('testellipseNe_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testellipseNe_static_0002
      * @tc.name     testellipseNe_static_0002
      * @tc.desc     testellipseNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testellipseNe_static_0002', Level.LEVEL0, async () => {
+    it('testellipseNe_static_0002', Level.LEVEL0, async () => {
       console.info('ellipseNe testellipseNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('ellipse');

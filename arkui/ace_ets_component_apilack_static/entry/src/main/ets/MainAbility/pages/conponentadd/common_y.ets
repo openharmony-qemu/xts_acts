@@ -78,15 +78,13 @@ struct CommonBackgroundBlurStyle {
   onMeasureSize(selfLayoutInfo: GeometryInfo, children: Array<Measurable>,
     constraint: ConstraintSizeOptions): SizeResult {
     let size = 100;
-    let result: MeasureResult | undefined = children[0].measure({
+    let result: MeasureResult = children[0].measure({
       minHeight: size,
       minWidth: size,
       maxWidth: size,
       maxHeight: size
-    })
-    if (result) {
-      size += result.width / 2;
-    }
+    }) as MeasureResult
+    size += result.width / 2;
     this.result.width = 100;
     this.result.height = 400;
     return this.result;

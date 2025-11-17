@@ -66,15 +66,14 @@ export default function commonBackgroundBlurStyleJsunit() {
       console.info("commonBackgroundBlurStyle after each called");
     });
 
-    
-    
-/*
-     * @tc.number   testcommonBackgroundBlurStyle_static_001
-     * @tc.name     testcommonBackgroundBlurStyle_static_001
-     * @tc.desc     testcommonBackgroundBlurStyle_static_001
+
+    /*
+     * @tc.number   testcommonBackgroundBlurStyle_static_0011
+     * @tc.name     testcommonBackgroundBlurStyle_static_0011
+     * @tc.desc     testcommonBackgroundBlurStyle_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testcommonBackgroundBlurStyle_static_001', Level.LEVEL0, async () => {
+    it('testcommonBackgroundBlurStyle_static_0011', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('borderImageText');
@@ -88,15 +87,14 @@ it('testcommonBackgroundBlurStyle_static_001', Level.LEVEL0, async () => {
 
     });
 
-    
-    
-/*
+
+    /*
      * @tc.number   testcommonBackgroundBlurStyle_static_0021
      * @tc.name     testcommonBackgroundBlurStyle_static_0021
      * @tc.desc     testcommonBackgroundBlurStyle_static_0021
      * @tc.level    Level.LEVEL0
      */
-it('testcommonBackgroundBlurStyle_static_0021', Level.LEVEL0, async () => {
+    it('testcommonBackgroundBlurStyle_static_0021', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('tabIndexText');
@@ -109,15 +107,14 @@ it('testcommonBackgroundBlurStyle_static_0021', Level.LEVEL0, async () => {
 
     });
 
-    
-    
-/*
+
+    /*
      * @tc.number   testcommonBackgroundBlurStyle_static_0031
      * @tc.name     testcommonBackgroundBlurStyle_static_0031
      * @tc.desc     testcommonBackgroundBlurStyle_static_0031
      * @tc.level    Level.LEVEL0
      */
-it('testcommonBackgroundBlurStyle_static_0031', Level.LEVEL0, async () => {
+    it('testcommonBackgroundBlurStyle_static_0031', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('sepiaText');
@@ -129,15 +126,14 @@ it('testcommonBackgroundBlurStyle_static_0031', Level.LEVEL0, async () => {
 
     });
 
-    
-    
-/*
+
+    /*
      * @tc.number   testcommonBackgroundBlurStyle_static_0041
      * @tc.name     testcommonBackgroundBlurStyle_static_0041
      * @tc.desc     testcommonBackgroundBlurStyle_static_0041
      * @tc.level    Level.LEVEL0
      */
-it('testcommonBackgroundBlurStyle_static_0041', Level.LEVEL0, async () => {
+    it('testcommonBackgroundBlurStyle_static_0041', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alignRulesText');
@@ -150,51 +146,50 @@ it('testcommonBackgroundBlurStyle_static_0041', Level.LEVEL0, async () => {
 
     });
 
-    
-    
-/*
+
+    /*
      * @tc.number   testcommonBackgroundBlurStyle_static_0051
      * @tc.name     testcommonBackgroundBlurStyle_static_0051
      * @tc.desc     testcommonBackgroundBlurStyle_static_0051
      * @tc.level    Level.LEVEL0
      */
-it('testcommonBackgroundBlurStyle_static_0051', Level.LEVEL0, async () => {
+    it('testcommonBackgroundBlurStyle_static_0051', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('backgroundBlurStyleText');
       console.info("[testcommonBackgroundBlurStyle005] component backgroundBlurStyle strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('backgroundBlurStyle').getString('value')).assertEqual("BlurStyle.Thick"); //value也可能是Thick
+      expect(obj.getElement('$attrs').getElement('backgroundBlurStyle').getString('value'))
+        .assertEqual("BlurStyle.Thick"); //value也可能是Thick
       console.info("[testcommonBackgroundBlurStyle005] backgroundBlurStyle value :" +
       obj.getElement('$attrs').getElement('backgroundBlurStyle').getString('value'));
     });
 
-    
-    
-/*
+
+    /*
      * @tc.number   testcommonBackgroundBlurStyle_static_0061
      * @tc.name     testcommonBackgroundBlurStyle_static_0061
      * @tc.desc     testcommonBackgroundBlurStyle_static_0061
      * @tc.level    Level.LEVEL0
      */
-it('testcommonBackgroundBlurStyle_static_0061', Level.LEVEL0, async () => {
-  try {
-    console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle006 START');
-    console.info("common onKeyEvent click result is: " + JSON.stringify(inspector.sendEventByKey('onKeyEventButton', 10, "")));
-  } catch(error) {
-    expect().assertFail();
-  }
+    it('testcommonBackgroundBlurStyle_static_0061', Level.LEVEL0, async () => {
+      try {
+        console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle006 START');
+        console.info("common onKeyEvent click result is: " +
+        JSON.stringify(inspector.sendEventByKey('onKeyEventButton', 10, "")));
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
-    
-    
-/*
+
+    /*
      * @tc.number   testcommonHoverEffectHighlight_static_00011
      * @tc.name     testcommonHoverEffectHighlight_static_00011
      * @tc.desc     testcommonHoverEffectHighlight_static_00011
      * @tc.level    Level.LEVEL0
      */
-it('testcommonHoverEffectHighlight_static_00011', Level.LEVEL0, async () => {
+    it('testcommonHoverEffectHighlight_static_00011', Level.LEVEL0, async () => {
       console.info('commonHoverEffectHighlight testcommonHoverEffectHighlight0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('hoverEffectText');
@@ -206,15 +201,14 @@ it('testcommonHoverEffectHighlight_static_00011', Level.LEVEL0, async () => {
 
     });
 
-    
-    
-/*
+
+    /*
      * @tc.number   testcommonHoverEffectScale_static_00011
      * @tc.name     testcommonHoverEffectScale_static_00011
      * @tc.desc     testcommonHoverEffectScale_static_00011
      * @tc.level    Level.LEVEL0
      */
-it('testcommonHoverEffectScale_static_00011', Level.LEVEL0, async () => {
+    it('testcommonHoverEffectScale_static_00011', Level.LEVEL0, async () => {
       console.info('commonHoverEffectScale testcommonHoverEffectScale0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('hoverEffectScaleText');

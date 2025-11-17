@@ -77,12 +77,13 @@ export default function circleNewJsunit() {
     });
 
 
+
     /*
-         * @tc.number   testcircleNew_static_001
-         * @tc.name     testcircleNew_static_001
-         * @tc.desc     testcircleNew_static_001
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcircleNew_static_001
+     * @tc.name     testcircleNew_static_001
+     * @tc.desc     testcircleNew_static_001
+     * @tc.level    Level.LEVEL0
+     */
     it('testcircleNew_static_001', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew0011 START');
       await Utils.sleep(2000);
@@ -96,12 +97,13 @@ export default function circleNewJsunit() {
     });
 
 
+
     /*
-         * @tc.number   testcircleNew_static_002
-         * @tc.name     testcircleNew_static_002
-         * @tc.desc     testcircleNew_static_002
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testcircleNew_static_002
+     * @tc.name     testcircleNew_static_002
+     * @tc.desc     testcircleNew_static_002
+     * @tc.level    Level.LEVEL0
+     */
     it('testcircleNew_static_002', Level.LEVEL0, async () => {
       console.info('circleNew testcircleNew002 START');
       await Utils.sleep(2000);
@@ -115,18 +117,18 @@ export default function circleNewJsunit() {
     });
 
     /*
-             * @tc.number   ACE_global_console_debug_static_0100
-             * @tc.name     ACE_global_console_debug_static_0100
-             * @tc.desc     ACE_global_console_debug_static_0100
-             * @tc.level    Level.LEVEL0
-             */
+     * @tc.number   ACE_global_console_debug_static_0100
+     * @tc.name     ACE_global_console_debug_static_0100
+     * @tc.desc     ACE_global_console_debug_static_0100
+     * @tc.level    Level.LEVEL0
+     */
     it("ACE_global_console_debug_static_0100", Level.LEVEL0, async () => {
       let casename: string = "ACE_global_003";
       console.log("-----------------------ACE_global_console_debug Test is starting-----------------------");
       try {
         console.debug("ACE_global_console_debug test ok");
         expect(true).assertTrue();
-      } catch (error) {
+      } catch (error: Error) {
         console.log(casename + "errorcode: " + casename);
         expect().assertFail();
 
@@ -136,18 +138,18 @@ export default function circleNewJsunit() {
     });
 
     /*
-             * @tc.number   ACE_global_console_error_static_0200
-             * @tc.name     ACE_global_console_error_static_0200
-             * @tc.desc     ACE_global_console_error_static_0200
-             * @tc.level    Level.LEVEL0
-             */
+     * @tc.number   ACE_global_console_error_static_0200
+     * @tc.name     ACE_global_console_error_static_0200
+     * @tc.desc     ACE_global_console_error_static_0200
+     * @tc.level    Level.LEVEL0
+     */
     it("ACE_global_console_error_static_0200", Level.LEVEL0, async () => {
       let casename: string = "ACE_global_004";
       console.log("-----------------------ACE_global_console_error Test is starting-----------------------");
       try {
         console.error("ACE_global_console_warn test ok");
         expect(true).assertTrue();
-      } catch (error) {
+      } catch (error: Error) {
         console.log(casename + "errorcode: " + casename);
         expect().assertFail();
 
@@ -157,11 +159,11 @@ export default function circleNewJsunit() {
     });
 
     /*
-         * @tc.number   ACE_pushUrl_callback_static_0100
-         * @tc.name     ACE_pushUrl_callback_static_0100
-         * @tc.desc     ACE_pushUrl_callback_static_0100
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   ACE_pushUrl_callback_static_0100
+     * @tc.name     ACE_pushUrl_callback_static_0100
+     * @tc.desc     ACE_pushUrl_callback_static_0100
+     * @tc.level    Level.LEVEL0
+     */
     it("ACE_pushUrl_callback_static_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_pushUrl_callback_0100 start-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
@@ -187,11 +189,11 @@ export default function circleNewJsunit() {
     });
 
     /*
-             * @tc.number   ACE_pushUrl_callback_static_0200
-             * @tc.name     ACE_pushUrl_callback_static_0200
-             * @tc.desc     ACE_pushUrl_callback_static_0200
-             * @tc.level    Level.LEVEL0
-             */
+     * @tc.number   ACE_pushUrl_callback_static_0200
+     * @tc.name     ACE_pushUrl_callback_static_0200
+     * @tc.desc     ACE_pushUrl_callback_static_0200
+     * @tc.level    Level.LEVEL0
+     */
     it("ACE_pushUrl_callback_static_0200", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_pushUrl_promise_0200 start-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
@@ -215,11 +217,11 @@ export default function circleNewJsunit() {
     });
 
     /*
-             * @tc.number   ACE_showAlertBeforeBackPage_static_0100
-             * @tc.name     ACE_showAlertBeforeBackPage_static_0100
-             * @tc.desc     ACE_showAlertBeforeBackPage_static_0100
-             * @tc.level    Level.LEVEL0
-             */
+     * @tc.number   ACE_showAlertBeforeBackPage_static_0100
+     * @tc.name     ACE_showAlertBeforeBackPage_static_0100
+     * @tc.desc     ACE_showAlertBeforeBackPage_static_0100
+     * @tc.level    Level.LEVEL0
+     */
     it("ACE_showAlertBeforeBackPage_static_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0100-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
@@ -228,7 +230,7 @@ export default function circleNewJsunit() {
           message: 'Message Info'
         });
         expect(true).assertTrue();
-      } catch (error) {
+      } catch (error: Error) {
         console.error(`showAlertBeforeBackPage_0100 failed, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -236,11 +238,11 @@ export default function circleNewJsunit() {
     });
 
     /*
-             * @tc.number   ACE_showAlertBeforeBackPage_static_0200
-             * @tc.name     ACE_showAlertBeforeBackPage_static_0200
-             * @tc.desc     ACE_showAlertBeforeBackPage_static_0200
-             * @tc.level    Level.LEVEL0
-             */
+     * @tc.number   ACE_showAlertBeforeBackPage_static_0200
+     * @tc.name     ACE_showAlertBeforeBackPage_static_0200
+     * @tc.desc     ACE_showAlertBeforeBackPage_static_0200
+     * @tc.level    Level.LEVEL0
+     */
     it("ACE_showAlertBeforeBackPage_static_0200", Level.LEVEL0, async () => { //异常参数undefined
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
@@ -249,7 +251,7 @@ export default function circleNewJsunit() {
         //   message: undefined
         // });
         expect(true).assertTrue();
-      } catch (error) {
+      } catch (error: Error) {
         console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect((error as BusinessError)?.code == 401).assertTrue();
       }
@@ -257,18 +259,18 @@ export default function circleNewJsunit() {
     });
 
     /*
-             * @tc.number   ACE_hideAlertBeforeBackPage_static_0100
-             * @tc.name     ACE_hideAlertBeforeBackPage_static_0100
-             * @tc.desc     ACE_hideAlertBeforeBackPage_static_0100
-             * @tc.level    Level.LEVEL0
-             */
+     * @tc.number   ACE_hideAlertBeforeBackPage_static_0100
+     * @tc.name     ACE_hideAlertBeforeBackPage_static_0100
+     * @tc.desc     ACE_hideAlertBeforeBackPage_static_0100
+     * @tc.level    Level.LEVEL0
+     */
     it("ACE_hideAlertBeforeBackPage_static_0100", Level.LEVEL0, async () => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.hideAlertBeforeBackPage();
         expect(true).assertTrue();
-      } catch (error) {
+      } catch (error: Error) {
         console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -276,12 +278,13 @@ export default function circleNewJsunit() {
     });
 
 
+
     /*
-         * @tc.number   testGlobal_attribute_static_0100
-         * @tc.name     testGlobal_attribute_static_0100
-         * @tc.desc     testGlobal_attribute_static_0100
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   testGlobal_attribute_static_0100
+     * @tc.name     testGlobal_attribute_static_0100
+     * @tc.desc     testGlobal_attribute_static_0100
+     * @tc.level    Level.LEVEL0
+     */
     it('testGlobal_attribute_static_0100', Level.LEVEL0, async () => {
       console.info('testGlobal_attribute_0100 START');
       await Utils.sleep(1000);
@@ -302,7 +305,7 @@ export default function circleNewJsunit() {
               expect(value).assertEqual('ohosProject');
             }
           });
-      } catch (error) {
+      } catch (error: Error) {
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);

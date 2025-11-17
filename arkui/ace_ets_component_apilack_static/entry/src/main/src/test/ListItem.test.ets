@@ -65,13 +65,13 @@ export default function list_itemOnSelectJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testlist_itemOnSelect_static_0001
      * @tc.name     testlist_itemOnSelect_static_0001
      * @tc.desc     testlist_itemOnSelect_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemOnSelect_static_0001', Level.LEVEL0, async () => {
+    it('testlist_itemOnSelect_static_0001', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('ListItem');
@@ -85,13 +85,13 @@ it('testlist_itemOnSelect_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlist_itemOnSelect_static_0002
      * @tc.name     testlist_itemOnSelect_static_0002
      * @tc.desc     testlist_itemOnSelect_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemOnSelect_static_0002', Level.LEVEL0, async () => {
+    it('testlist_itemOnSelect_static_0002', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('ListItem');
@@ -106,13 +106,13 @@ it('testlist_itemOnSelect_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlist_itemOnSelect_static_0003
      * @tc.name     testlist_itemOnSelect_static_0003
      * @tc.desc     testlist_itemOnSelect_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemOnSelect_static_0003', Level.LEVEL0, async () => {
+    it('testlist_itemOnSelect_static_0003', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('ListItem');
@@ -126,13 +126,13 @@ it('testlist_itemOnSelect_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlist_itemSwipeAction_static_0004
      * @tc.name     testlist_itemSwipeAction_static_0004
      * @tc.desc     testlist_itemSwipeAction_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemSwipeAction_static_0004', Level.LEVEL0, async () => {
+    it('testlist_itemSwipeAction_static_0004', Level.LEVEL0, async () => {
       console.info('selectOnSelect testlist_itemSwipeAction0004 START');
       await Utils.sleep(2000);
       let obj = JSON.stringify(inspector.sendEventByKey('Del', 10, ""))

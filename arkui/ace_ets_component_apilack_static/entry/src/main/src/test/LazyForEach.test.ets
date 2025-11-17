@@ -65,13 +65,13 @@ export default function lazyForEachOnDataAddJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testlazyForEachOnDataAdd_static_0001
      * @tc.name     testlazyForEachOnDataAdd_static_0001
      * @tc.desc     testlazyForEachOnDataAdd_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
+    it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0001 START');
 
       let innerEvent1: events_emitter.InnerEvent = {
@@ -102,13 +102,13 @@ it('testlazyForEachOnDataAdd_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlazyForEachOnDataAdd_static_0002
      * @tc.name     testlazyForEachOnDataAdd_static_0002
      * @tc.desc     testlazyForEachOnDataAdd_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
+    it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0002 START');
 
       let innerEvent2: events_emitter.InnerEvent = {
@@ -139,13 +139,13 @@ it('testlazyForEachOnDataAdd_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlazyForEachOnDataAdd_static_0003
      * @tc.name     testlazyForEachOnDataAdd_static_0003
      * @tc.desc     testlazyForEachOnDataAdd_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
+    it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0003 START');
 
       let innerEvent3: events_emitter.InnerEvent = {
@@ -176,13 +176,13 @@ it('testlazyForEachOnDataAdd_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testlazyForEachOnDataAdd_static_0004
      * @tc.name     testlazyForEachOnDataAdd_static_0004
      * @tc.desc     testlazyForEachOnDataAdd_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testlazyForEachOnDataAdd_static_0004', Level.LEVEL0, async () => {
+    it('testlazyForEachOnDataAdd_static_0004', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0004 START');
 
       let innerEvent4: events_emitter.InnerEvent = {

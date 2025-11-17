@@ -64,13 +64,13 @@ export default function focusControlJsunit() {
     })
 
     
-/*
+    /*
      * @tc.number   testFocusOnTouch_static_01
      * @tc.name     testFocusOnTouch_static_01
      * @tc.desc     testFocusOnTouch_static_01
      * @tc.level    Level.LEVEL0
      */
-it('testFocusOnTouch_static_01', Level.LEVEL0, async () => {
+    it('testFocusOnTouch_static_01', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch01] START');
       await Utils.sleep(1000);
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
@@ -93,13 +93,13 @@ it('testFocusOnTouch_static_01', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testFocusOnTouch_static_02
      * @tc.name     testFocusOnTouch_static_02
      * @tc.desc     testFocusOnTouch_static_02
      * @tc.level    Level.LEVEL0
      */
-it('testFocusOnTouch_static_02', Level.LEVEL0, async () => {
+    it('testFocusOnTouch_static_02', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch02] START');
       await Utils.sleep(1000);
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
@@ -122,13 +122,13 @@ it('testFocusOnTouch_static_02', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testFocusOnTouch_static_03
      * @tc.name     testFocusOnTouch_static_03
      * @tc.desc     testFocusOnTouch_static_03
      * @tc.level    Level.LEVEL0
      */
-it('testFocusOnTouch_static_03', Level.LEVEL0, async () => {
+    it('testFocusOnTouch_static_03', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch03] START');
       await Utils.sleep(1000);
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
@@ -151,13 +151,13 @@ it('testFocusOnTouch_static_03', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testFocusOnTouch_static_04
      * @tc.name     testFocusOnTouch_static_04
      * @tc.desc     testFocusOnTouch_static_04
      * @tc.level    Level.LEVEL0
      */
-it('testFocusOnTouch_static_04', Level.LEVEL0, async () => {
+    it('testFocusOnTouch_static_04', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch04] START');
       await Utils.sleep(1000);
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
@@ -180,13 +180,13 @@ it('testFocusOnTouch_static_04', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testFocusOnTouch_static_05
      * @tc.name     testFocusOnTouch_static_05
      * @tc.desc     testFocusOnTouch_static_05
      * @tc.level    Level.LEVEL0
      */
-it('testFocusOnTouch_static_05', Level.LEVEL0, async () => {
+    it('testFocusOnTouch_static_05', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch05] START');
       await Utils.sleep(1000);
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
@@ -209,13 +209,13 @@ it('testFocusOnTouch_static_05', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testDefaultFocus_static_06
      * @tc.name     testDefaultFocus_static_06
      * @tc.desc     testDefaultFocus_static_06
      * @tc.level    Level.LEVEL0
      */
-it('testDefaultFocus_static_06', Level.LEVEL0, async () => {
+    it('testDefaultFocus_static_06', Level.LEVEL0, async () => {
       console.info('[testDefaultFocus06] START');
       await Utils.sleep(1000);
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {

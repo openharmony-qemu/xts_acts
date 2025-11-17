@@ -65,8 +65,8 @@ export default function hitTestModeJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (error) {
-        console.error("push hitTestMode page error: " + error);
+      } catch (err: Error) {
+        console.error("push hitTestMode page error: " + err);
       }
     });
 
@@ -77,13 +77,13 @@ export default function hitTestModeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testhitTestMode_static_0002
      * @tc.name     testhitTestMode_static_0002
      * @tc.desc     testhitTestMode_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testhitTestMode_static_0002', Level.LEVEL0, async () => {
+    it('testhitTestMode_static_0002', Level.LEVEL0, async () => {
       console.info('hitTestMode testhitTestMode0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Block');

@@ -66,13 +66,13 @@ export default function searchOnCutJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0001
      * @tc.name     testsearchOnCut_static_0001
      * @tc.desc     testsearchOnCut_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0001', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0001', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -86,13 +86,13 @@ it('testsearchOnCut_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0002
      * @tc.name     testsearchOnCut_static_0002
      * @tc.desc     testsearchOnCut_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0002', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0002', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -106,13 +106,13 @@ it('testsearchOnCut_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0003
      * @tc.name     testsearchOnCut_static_0003
      * @tc.desc     testsearchOnCut_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0003', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0003', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -126,13 +126,13 @@ it('testsearchOnCut_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0004
      * @tc.name     testsearchOnCut_static_0004
      * @tc.desc     testsearchOnCut_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0004', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0004', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -146,13 +146,13 @@ it('testsearchOnCut_static_0004', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0005
      * @tc.name     testsearchOnCut_static_0005
      * @tc.desc     testsearchOnCut_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0005', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0005', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -166,13 +166,13 @@ it('testsearchOnCut_static_0005', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0006
      * @tc.name     testsearchOnCut_static_0006
      * @tc.desc     testsearchOnCut_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0006', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0006', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -186,13 +186,13 @@ it('testsearchOnCut_static_0006', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0007
      * @tc.name     testsearchOnCut_static_0007
      * @tc.desc     testsearchOnCut_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0007', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0007', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -206,13 +206,13 @@ it('testsearchOnCut_static_0007', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0009
      * @tc.name     testsearchOnCut_static_0009
      * @tc.desc     testsearchOnCut_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0009', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0009', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');
@@ -226,13 +226,13 @@ it('testsearchOnCut_static_0009', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testsearchOnCut_static_0010
      * @tc.name     testsearchOnCut_static_0010
      * @tc.desc     testsearchOnCut_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testsearchOnCut_static_0010', Level.LEVEL0, async () => {
+    it('testsearchOnCut_static_0010', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('onCutText');

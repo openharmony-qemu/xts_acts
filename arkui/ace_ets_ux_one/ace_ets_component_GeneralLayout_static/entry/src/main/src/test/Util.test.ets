@@ -17,7 +17,7 @@ import  hilog  from '@ohos.hilog'
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: int = 0x0000;
-let tag: string = 'ActsAceEtsModuleXNodeApi12StaticTest';
+let tag: string = 'ActsGeneralLayoutStaticTest';
 
 class UtilsTest{
   static isloadAndSetUpUiTest = false;

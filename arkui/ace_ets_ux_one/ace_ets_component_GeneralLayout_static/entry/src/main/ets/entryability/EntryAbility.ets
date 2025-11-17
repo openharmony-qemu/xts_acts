@@ -30,7 +30,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
+      windowStage.loadContent('MainAbility/pages/index/Index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();
         if (err?.code) {
@@ -62,14 +62,13 @@ class EntryAbility extends UIAbility {
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e) {
+    } catch (e: Error) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined;
   }
 
   onWindowStageDestroy() {

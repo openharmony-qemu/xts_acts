@@ -40,7 +40,7 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct GridMaxCount {
-  @State numberData: String[] = ['5', '6', '7', '8', '9']
+  @State Number1: String[] = ['5', '6', '7', '8', '9']
   @State edgeEffect: EdgeEffect = EdgeEffect.None;
   @StorageLink('alwaysEnabled') alwaysEnabled: boolean = true
 
@@ -77,8 +77,8 @@ struct GridMaxCount {
 
       Column({ space: 5 } as ColumnOptions) {
         Grid() {
-          ForEach(this.numberData, (day: string) => {
-            ForEach(this.numberData, (day: string) => {
+          ForEach(this.Number1, (day: string) => {
+            ForEach(this.Number1, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

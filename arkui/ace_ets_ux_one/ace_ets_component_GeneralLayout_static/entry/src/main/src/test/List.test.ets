@@ -15,9 +15,11 @@
 import GeneralLayoutPositionTest from './GeneralLayoutPosition.test'
 import GeneralLayoutMarkAnchorTest from './GeneralLayoutMarkAnchor.test'
 import GeneralLayoutOffsetTest from './GeneralLayoutOffset.test'
+import GeneralLayoutOriginalTest from './GeneralLayoutOriginal.test'
 
 export default function testsuite() {
-  GeneralLayoutPositionTest()
+  GeneralLayoutPositionTest()   // 1
   GeneralLayoutMarkAnchorTest()
   GeneralLayoutOffsetTest()
+  GeneralLayoutOriginalTest()
 }

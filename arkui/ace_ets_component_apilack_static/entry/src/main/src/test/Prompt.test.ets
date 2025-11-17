@@ -66,13 +66,13 @@ export default function promptShowDialogJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testpromptShowDialog_static_001
      * @tc.name     testpromptShowDialog_static_001
      * @tc.desc     testpromptShowDialog_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testpromptShowDialog_static_001', Level.LEVEL0, async () => {
+    it('testpromptShowDialog_static_001', Level.LEVEL0, async () => {
       console.info('promptShowDialog testpromptShowDialog001 START');
       await Utils.sleep(1000);
       try {
@@ -95,13 +95,13 @@ it('testpromptShowDialog_static_001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testshowActionMenu_static_0001
      * @tc.name     testshowActionMenu_static_0001
      * @tc.desc     testshowActionMenu_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testshowActionMenu_static_0001', Level.LEVEL0, async () => {
+    it('testshowActionMenu_static_0001', Level.LEVEL0, async () => {
       console.info('promptShowDialog testshowActionMenu0001 START');
       await Utils.sleep(1000);
       try {

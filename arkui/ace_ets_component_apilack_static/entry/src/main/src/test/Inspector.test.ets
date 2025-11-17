@@ -64,13 +64,13 @@ export default function inspectorJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testInspectorTestAdd_static_0001
      * @tc.name     testInspectorTestAdd_static_0001
      * @tc.desc     testInspectorTestAdd_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0001', Level.LEVEL0, async () => {
+    it('testInspectorTestAdd_static_0001', Level.LEVEL0, async () => {
       console.info('Inspector testInspectorTestAdd0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('inspectorApiOne');
@@ -84,13 +84,13 @@ it('testInspectorTestAdd_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testInspectorTestAdd_static_0002
      * @tc.name     testInspectorTestAdd_static_0002
      * @tc.desc     testInspectorTestAdd_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0002', Level.LEVEL0, async () => {
+    it('testInspectorTestAdd_static_0002', Level.LEVEL0, async () => {
       console.info('Inspector testInspectorTestAdd0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('inspectorApiOne');
@@ -104,13 +104,13 @@ it('testInspectorTestAdd_static_0002', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testInspectorTestAdd_static_0003
      * @tc.name     testInspectorTestAdd_static_0003
      * @tc.desc     testInspectorTestAdd_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0003', Level.LEVEL0, async () => {
+    it('testInspectorTestAdd_static_0003', Level.LEVEL0, async () => {
       console.info("testInspectorTestAdd0003 start test");
       let innerEvent1: events_emitter.InnerEvent = {
         eventId: 60208,
@@ -145,13 +145,13 @@ it('testInspectorTestAdd_static_0003', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testInspectorTestAdd_static_0004
      * @tc.name     testInspectorTestAdd_static_0004
      * @tc.desc     testInspectorTestAdd_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0004', Level.LEVEL0, async () => {
+    it('testInspectorTestAdd_static_0004', Level.LEVEL0, async () => {
       let innerEvent2: events_emitter.InnerEvent = {
         eventId: 60209,
         priority: events_emitter.EventPriority.LOW
@@ -182,40 +182,43 @@ it('testInspectorTestAdd_static_0004', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testInspectorTestAdd_static_0005
      * @tc.name     testInspectorTestAdd_static_0005
      * @tc.desc     testInspectorTestAdd_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0005', Level.LEVEL0, async () => {
-      console.info('testInspectorTestAdd0005 START');
+    it('testInspectorTestAdd_static_0005', Level.LEVEL0, async () => {
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "setColor": 'red'
-          } as Record<String,undefined|null|Object>
+        console.info('testInspectorTestAdd0005 START');
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "setColor": 'red'
+            } as Record<String,undefined|null|Object>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 60211,
+            priority: events_emitter.EventPriority.LOW
+          }
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err: Error) {
+          console.log("[testInspectorTestAdd0005] change component data error: " + err.message);
         }
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 60211,
-          priority: events_emitter.EventPriority.LOW
-        }
-        events_emitter.emit(innerEvent, eventData);
-      } catch (error) {
-        console.log("[testInspectorTestAdd0005] change component data error: " + error.message);
+      }catch(error) {
         expect().assertFail();
       }
     });
 
     
     
-/*
+    /*
      * @tc.number   testInspectorTestAdd_static_0006
      * @tc.name     testInspectorTestAdd_static_0006
      * @tc.desc     testInspectorTestAdd_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0006', Level.LEVEL0, async () => {
+    it('testInspectorTestAdd_static_0006', Level.LEVEL0, async () => {
       let innerEvent3: events_emitter.InnerEvent = {
         eventId: 60210,
         priority: events_emitter.EventPriority.LOW

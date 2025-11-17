@@ -65,13 +65,13 @@ export default function grid_colSpanJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testgrid_colSpan_static_0001
      * @tc.name     testgrid_colSpan_static_0001
      * @tc.desc     testgrid_colSpan_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_colSpan_static_0001', Level.LEVEL0, async () => {
+    it('testgrid_colSpan_static_0001', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_colSpan0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('gridContainer');

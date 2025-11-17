@@ -65,8 +65,8 @@ export default function ohosPromptJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
         }
-      } catch (error) {
-        console.error("push OhosPrompt  page error:" + error);
+      } catch (err: Error) {
+        console.error("push OhosPrompt  page error:" + err);
       }
     });
 
@@ -76,13 +76,13 @@ export default function ohosPromptJsunit() {
     });
 
     
-/*
+    /*
      * @tc.number   test_OhosPrompt_static_001
      * @tc.name     test_OhosPrompt_static_001
      * @tc.desc     test_OhosPrompt_static_001
      * @tc.level    Level.LEVEL0
      */
-it('test_OhosPrompt_static_001', Level.LEVEL0, async () => {
+    it('test_OhosPrompt_static_001', Level.LEVEL0, async () => {
       await Utils.sleep(1000)
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[test_OhosPrompt_001] get event state result is: " + JSON.stringify(eventData));
@@ -94,8 +94,8 @@ it('test_OhosPrompt_static_001', Level.LEVEL0, async () => {
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (error) {
-        console.info("[test_OhosPrompt_001] on events_emitter err : " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("[test_OhosPrompt_001] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[test_OhosPrompt_001] inspector.sendEventByKey ' + JSON.stringify(inspector.sendEventByKey('rotate5', 10, "")));
       await Utils.sleep(1000)

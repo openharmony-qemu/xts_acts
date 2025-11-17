@@ -89,8 +89,8 @@ struct Inspector {
                 }
                 console.info("inspector_101 onClick start to emit action state")
                 events_emitter.emit(backEvent, backData)
-              } catch (error) {
-                // console.info("inspector_101 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
+              } catch (err: Error) {
+                console.info("inspector_101 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
           Text("inspectorApiTwo")
@@ -114,8 +114,8 @@ struct Inspector {
                 }
                 console.info("inspector_102 onClick start to emit action state")
                 events_emitter.emit(backEvent1, backData1)
-              } catch (error) {
-                // console.info("inspector_102 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
+              } catch (err: Error) {
+                console.info("inspector_102 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
 
@@ -138,8 +138,8 @@ struct Inspector {
                 });
                 Profiler.unregisterVsyncCallback();
                 this.catchStatus = "callBackSuccess"
-              } catch (error) {
-                // console.info("inspector_103 onClick err: " + JSON.stringify((err as Error)?.message))
+              } catch (err: Error) {
+                console.info("inspector_103 onClick err: " + JSON.stringify((err as Error)?.message))
                 this.catchStatus = "callBackFail"
               }
               try {
@@ -154,8 +154,8 @@ struct Inspector {
                 }
                 console.info("inspector_103 onClick start to emit action state")
                 events_emitter.emit(backEvent2, backData2)
-              } catch (error) {
-                // console.info("inspector_103 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
+              } catch (err: Error) {
+                console.info("inspector_103 onClick emit action state err: " + JSON.stringify((err as Error)?.message))
               }
             })
         }

@@ -66,13 +66,13 @@ export default function stackAlignContentJsunit() {
 
     
     
-/*
-     * @tc.number   teststackAlignContent_static_00011
-     * @tc.name     teststackAlignContent_static_00011
-     * @tc.desc     teststackAlignContent_static_00011
+    /*
+     * @tc.number   teststackAlignContent_static_0001
+     * @tc.name     teststackAlignContent_static_0001
+     * @tc.desc     teststackAlignContent_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('teststackAlignContent_static_00011', Level.LEVEL0, async () => {
+    it('teststackAlignContent_static_0001', Level.LEVEL0, async () => {
       console.info('stackAlignContent teststackAlignContent0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Stack');
@@ -86,13 +86,13 @@ it('teststackAlignContent_static_00011', Level.LEVEL0, async () => {
 
     
     
-/*
-     * @tc.number   teststackAlignContent_static_00021
-     * @tc.name     teststackAlignContent_static_00021
-     * @tc.desc     teststackAlignContent_static_00021
+    /*
+     * @tc.number   teststackAlignContent_static_0002
+     * @tc.name     teststackAlignContent_static_0002
+     * @tc.desc     teststackAlignContent_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('teststackAlignContent_static_00021', Level.LEVEL0, async () => {
+    it('teststackAlignContent_static_0002', Level.LEVEL0, async () => {
       console.info('stackAlignContent teststackAlignContent0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Stack');

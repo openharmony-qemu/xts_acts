@@ -66,13 +66,13 @@ export default function pageRouteTest() {
     })
 
     
-/*
+    /*
      * @tc.number   testOnPageHide_static_01
      * @tc.name     testOnPageHide_static_01
      * @tc.desc     testOnPageHide_static_01
      * @tc.level    Level.LEVEL0
      */
-it('testOnPageHide_static_01', Level.LEVEL0, async () => {
+    it('testOnPageHide_static_01', Level.LEVEL0, async () => {
       console.info('[testOnPageHide01] START');
       let callback: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[testOnPageHide01] get event state result is: " + JSON.stringify(eventData));

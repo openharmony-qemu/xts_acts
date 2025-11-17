@@ -71,12 +71,11 @@ export default function webJsunit1() {
         }
         console.info("start send emitKey");
         events_emitter.emit(backEvent, backData);
-      } catch (error) {
-        console.info("emit emitKey  err: " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("emit emitKey  err: " + JSON.stringify(err));
       }
       await Utils.sleep(2000);
     })
-
 
     /*
      * @tc.number   storeWebArchive_static
@@ -87,13 +86,12 @@ export default function webJsunit1() {
     it('storeWebArchive_static', Level.LEVEL0, async () => {
       try {
         emitKey = "emitAllowGeolocation";
-        //Utils.registerContainEvent("storeWebArchive", "/data/storage/el2/base/", 400);
+        // //Utils.registerContainEvent("storeWebArchive", "/data/storage/el2/base/", 400);
         inspector.sendEventByKey('webcomponent', 10, '');
       } catch (error) {
         expect().assertFail();
       }
     })
-
 
     /*
      * @tc.number   allowGeolocation_static
@@ -111,7 +109,6 @@ export default function webJsunit1() {
       }
     })
 
-
     /*
      * @tc.number   deletGeolocation_static
      * @tc.name     deletGeolocation_static
@@ -128,7 +125,6 @@ export default function webJsunit1() {
       }
     })
 
-
     /*
      * @tc.number   deletAllGeolocation_static
      * @tc.name     deletAllGeolocation_static
@@ -144,7 +140,6 @@ export default function webJsunit1() {
         expect().assertFail();
       }
     })
-
 
     /*
      * @tc.number   isCookieAllowed_static
@@ -178,7 +173,6 @@ export default function webJsunit1() {
       }
     })
 
-
     /*
      * @tc.number   isThirdPartyCookieAllowed_static
      * @tc.name     isThirdPartyCookieAllowed_static
@@ -195,7 +189,6 @@ export default function webJsunit1() {
       }
     })
 
-
     /*
      * @tc.number   existCookie_static
      * @tc.name     existCookie_static
@@ -207,7 +200,7 @@ export default function webJsunit1() {
         emitKey = "emitOnConsole";
         //Utils.registerEvent("existCookie", false, 414);
         inspector.sendEventByKey('webcomponent', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     })
@@ -227,7 +220,6 @@ export default function webJsunit1() {
         expect().assertFail();
       }
     })
-
 
     /*
      * @tc.number   getSourceId_static
@@ -293,7 +285,6 @@ export default function webJsunit1() {
       }
     })
 
-
     /*
      * @tc.number   getHttpAuthCredentials_static
      * @tc.name     getHttpAuthCredentials_static
@@ -321,11 +312,10 @@ export default function webJsunit1() {
         emitKey = "emitSearchAllAsync";
         //Utils.registerEvent("deleteHttpAuthCredentials", false, 446);
         inspector.sendEventByKey('webcomponent', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     })
-
 
     /*
      * @tc.number   searchAllAsync_static
@@ -423,7 +413,7 @@ export default function webJsunit1() {
         emitKey = "emitgetOringinUsage";
         //Utils.registerEvent("getOriginUsage", 1, 424);
         inspector.sendEventByKey('webcomponent', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     })
@@ -447,12 +437,12 @@ export default function webJsunit1() {
 
 
     /*
-     * @tc.number   postMessageEvent_static1
-     * @tc.name     postMessageEvent_static1
-     * @tc.desc     postMessageEvent_static1
+     * @tc.number   postMessageEvent_static_01
+     * @tc.name     postMessageEvent_static_01
+     * @tc.desc     postMessageEvent_static_01
      * @tc.level    Level.LEVEL0
      */
-    it('postMessageEvent_static1', Level.LEVEL0, async () => {
+    it('postMessageEvent_static_01', Level.LEVEL0, async () => {
       try {
         emitKey = "emitpostMessageEvent";
         //Utils.registerEvent("postMessageEvent", 'index', 424);
@@ -490,7 +480,7 @@ export default function webJsunit1() {
         emitKey = "emitgetUserAgent";
         //Utils.registerEvent("getUserAgent", 1, 424);
         inspector.sendEventByKey('webcomponent', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     })
@@ -586,7 +576,7 @@ export default function webJsunit1() {
         emitKey = "emitgetUrl";
         //Utils.registerEvent("getUrl", 1, 424);
         inspector.sendEventByKey('webcomponent', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     })
@@ -656,12 +646,12 @@ export default function webJsunit1() {
     })
 
     /*
-     * @tc.number   getPorts_static1
-     * @tc.name     getPorts_static1
-     * @tc.desc     getPorts_static1
+     * @tc.number   getPorts_static_01
+     * @tc.name     getPorts_static_01
+     * @tc.desc     getPorts_static_01
      * @tc.level    Level.LEVEL0
      */
-    it('getPorts_static1', Level.LEVEL0, async () => {
+    it('getPorts_static_01', Level.LEVEL0, async () => {
       try {
         emitKey = "emitgetPorts";
         //Utils.registerEvent("getPorts", 1, 424);
@@ -681,10 +671,10 @@ export default function webJsunit1() {
       try {
         emitKey = "emitexitfullscreen";
         //Utils.registerEvent("exitfullscreen", 1, 424);
-        inspector.sendEventByKey('webcomponent', 10, '')
+        inspector.sendEventByKey('webcomponent', 10, '');
       } catch (error) {
         expect().assertFail();
-      };
+      }
     })
 
     /*
@@ -704,12 +694,12 @@ export default function webJsunit1() {
     })
 
     /*
-     * @tc.number   constructor_static1
-     * @tc.name     constructor_static1
-     * @tc.desc     constructor_static1
+     * @tc.number   constructor_static_01
+     * @tc.name     constructor_static_01
+     * @tc.desc     constructor_static_01
      * @tc.level    Level.LEVEL0
      */
-    it('constructor_static1', Level.LEVEL0, async () => {
+    it('constructor_static_01', Level.LEVEL0, async () => {
       try {
         emitKey = "emitAsyncControllerconstructor";
         //Utils.registerEvent("constructor", 1, 424);
@@ -737,12 +727,12 @@ export default function webJsunit1() {
 
 
     /*
-     * @tc.number   constructor_static2
-     * @tc.name     constructor_static2
-     * @tc.desc     constructor_static2
+     * @tc.number   constructor_static_02
+     * @tc.name     constructor_static_02
+     * @tc.desc     constructor_static_02
      * @tc.level    Level.LEVEL0
      */
-    it('constructor_static2', Level.LEVEL0, async () => {
+    it('constructor_static_02', Level.LEVEL0, async () => {
       try {
         emitKey = "emitonFullScreenExitconstructor";
         //Utils.registerEvent("constructor", 1, 424);
@@ -754,12 +744,12 @@ export default function webJsunit1() {
 
 
     /*
-     * @tc.number   constructor_static
-     * @tc.name     constructor_static
-     * @tc.desc     constructor_static
+     * @tc.number   constructor_static_03
+     * @tc.name     constructor_static_03
+     * @tc.desc     constructor_static_03
      * @tc.level    Level.LEVEL0
      */
-    it('constructor_static', Level.LEVEL0, async () => {
+    it('constructor_static_03', Level.LEVEL0, async () => {
       try {
         emitKey = "emitWebMessageEventconstructor";
         //Utils.registerEvent("constructor", 1, 424);

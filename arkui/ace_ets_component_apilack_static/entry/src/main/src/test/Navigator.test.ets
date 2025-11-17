@@ -66,13 +66,13 @@ export default function navigatorTargetJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testnavigatorTarget_static_0001
      * @tc.name     testnavigatorTarget_static_0001
      * @tc.desc     testnavigatorTarget_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testnavigatorTarget_static_0001', Level.LEVEL0, async () => {
+    it('testnavigatorTarget_static_0001', Level.LEVEL0, async () => {
       console.info('navigatorTarget testnavigatorTarget0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Navigator');

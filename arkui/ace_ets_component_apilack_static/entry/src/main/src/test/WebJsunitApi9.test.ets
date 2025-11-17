@@ -85,7 +85,6 @@ export default function webJsunit() {
 
     });
 
-
     /*
      * @tc.number   testonWindowExit_static_02
      * @tc.name     testonWindowExit_static_02
@@ -96,7 +95,7 @@ export default function webJsunit() {
       try {
         //Utils.registerContainEvent("WindowExit", true, 800);
         inspector.sendEventByKey('multiwindow', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     })
@@ -111,11 +110,11 @@ export default function webJsunit() {
       try {
         //Utils.registerContainEvent("onWindowNew", true, 801,);
         inspector.sendEventByKey('onWindowNew', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
-    })
 
+    })
 
     /*
      * @tc.number   tesweb_static_04
@@ -132,7 +131,6 @@ export default function webJsunit() {
       }
     })
 
-
     /*
      * @tc.number   tesweb_static_05
      * @tc.name     tesweb_static_05
@@ -147,7 +145,6 @@ export default function webJsunit() {
         expect().assertFail();
       }
     })
-
 
     /*
      * @tc.number   testweb_static_06
@@ -165,8 +162,6 @@ export default function webJsunit() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('atio')).assertEqual(150);
       console.info("[testmultiWindow0016]  value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('atio'));
-
-
     });
 
 
@@ -351,7 +346,7 @@ export default function webJsunit() {
         emitKey = "emitexistCookie";
         //Utils.registerContainEvent("existCookie", true, 820,);
         inspector.sendEventByKey('webcomponentapi9', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     });
@@ -453,7 +448,7 @@ export default function webJsunit() {
         emitKey = "emitisFileURICookieAllowed";
         //Utils.registerContainEvent("isFileURICookieAllowed", false, 825,);
         inspector.sendEventByKey('webcomponentapi9', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     });
@@ -500,12 +495,11 @@ export default function webJsunit() {
      * @tc.level    Level.LEVEL0
      */
     it('testweb_static_26', Level.LEVEL0, async () => {
-
       try {
         emitKey = "setNetworkAvailable";
         //Utils.registerContainEvent("hasImage", true, 829,);
         inspector.sendEventByKey('webcomponentapi9', 10, '');
-      } catch(error) {
+      } catch (error) {
         expect().assertFail();
       }
     });

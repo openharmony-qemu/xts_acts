@@ -30,7 +30,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
-import RectValue from './Rect1.test';
+import RectValue from './RectValue.test';
 
 export default function gridMaxCountJsunit() {
   describe('gridMaxCountTest', () => {
@@ -65,13 +65,13 @@ export default function gridMaxCountJsunit() {
     });
 
     
-/*
+    /*
      * @tc.number   testcheckgridMaxCount_static_0001
      * @tc.name     testcheckgridMaxCount_static_0001
      * @tc.desc     testcheckgridMaxCount_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcheckgridMaxCount_static_0001', Level.LEVEL0, async () => {
+    it('testcheckgridMaxCount_static_0001', Level.LEVEL0, async () => {
       console.info('testcheckgridMaxCount testcheckgridMaxCount0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('maxCountTest');
@@ -84,13 +84,13 @@ it('testcheckgridMaxCount_static_0001', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testEdgeEffectOptions_static_0002
      * @tc.name     testEdgeEffectOptions_static_0002
      * @tc.desc     testEdgeEffectOptions_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testEdgeEffectOptions_static_0002', Level.LEVEL0, async () => {
+    it('testEdgeEffectOptions_static_0002', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('maxCountTest');
@@ -101,19 +101,19 @@ it('testEdgeEffectOptions_static_0002', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   testEdgeEffectOptions_static_0003
      * @tc.name     testEdgeEffectOptions_static_0003
      * @tc.desc     testEdgeEffectOptions_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testEdgeEffectOptions_static_0003', Level.LEVEL0, async () => {
+    it('testEdgeEffectOptions_static_0003', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0003 START');
       await Utils.sleep(2000);
       try {
         AppStorage.setOrCreate<boolean>('alwaysEnabled', false);
-      } catch (error) {
-        console.log("[testEdgeEffectOptions0003] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testEdgeEffectOptions0003] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('maxCountTest');

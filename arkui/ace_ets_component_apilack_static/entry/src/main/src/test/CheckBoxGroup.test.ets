@@ -68,13 +68,13 @@ export default function checkBoxGroupSelectAllJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testcheckBoxGroupSelectAll_static_0001
      * @tc.name     testcheckBoxGroupSelectAll_static_0001
      * @tc.desc     testcheckBoxGroupSelectAll_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcheckBoxGroupSelectAll_static_0001', Level.LEVEL0, async () => {
+    it('testcheckBoxGroupSelectAll_static_0001', Level.LEVEL0, async () => {
       console.info('checkBoxGroupSelectAll testcheckBoxGroupSelectAll0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('CheckboxGroup');
@@ -89,13 +89,13 @@ it('testcheckBoxGroupSelectAll_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testcheckBoxGroupSelectAll_static_0002
      * @tc.name     testcheckBoxGroupSelectAll_static_0002
      * @tc.desc     testcheckBoxGroupSelectAll_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testcheckBoxGroupSelectAll_static_0002', Level.LEVEL0, async () => {
+    it('testcheckBoxGroupSelectAll_static_0002', Level.LEVEL0, async () => {
       console.info('checkBoxGroupSelectAll testcheckBoxGroupSelectAll0002 START');
       try {
         let eventData: events_emitter.EventData = {
@@ -109,8 +109,8 @@ it('testcheckBoxGroupSelectAll_static_0002', Level.LEVEL0, async () => {
         }
         console.info("[testcheckBoxGroupSelectAll0002] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (error) {
-        console.log("[testcheckBoxGroupSelectAll0002] change component data error: " + error.message);
+      } catch (err: Error) {
+        console.log("[testcheckBoxGroupSelectAll0002] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
 

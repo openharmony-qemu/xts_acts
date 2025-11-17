@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/Index",
     "MainAbility/pages/IndexMark",
-    "MainAbility/pages/IndexOff"
+    "MainAbility/pages/IndexOff",
+    "MainAbility/pages/IndexOrig"
   ]
 }

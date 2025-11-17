@@ -65,13 +65,13 @@ export default function polygonNewJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testpolygonNe_static_0001
      * @tc.name     testpolygonNe_static_0001
      * @tc.desc     testpolygonNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testpolygonNe_static_0001', Level.LEVEL0, async () => {
+    it('testpolygonNe_static_0001', Level.LEVEL0, async () => {
       console.info('polygonNe testpolygonNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polygon');
@@ -85,13 +85,13 @@ it('testpolygonNe_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testpolygonNe_static_0002
      * @tc.name     testpolygonNe_static_0002
      * @tc.desc     testpolygonNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpolygonNe_static_0002', Level.LEVEL0, async () => {
+    it('testpolygonNe_static_0002', Level.LEVEL0, async () => {
       console.info('polygonNe testpolygonNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polygon');

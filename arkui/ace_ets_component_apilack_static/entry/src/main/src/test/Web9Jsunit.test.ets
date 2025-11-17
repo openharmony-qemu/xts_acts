@@ -66,7 +66,7 @@ export default function web9Jsunit() {
         let backData: events_emitter.EventData = {
           data: {
             "ACTION": emitKey
-          } as Record<String, undefined | null | Object>
+          } as Record<String,undefined|null|Object>
         }
         let backEvent: events_emitter.InnerEvent = {
           eventId: 10,
@@ -80,50 +80,49 @@ export default function web9Jsunit() {
       await Utils.sleep(2000);
 
     })
-
+    
     /*
-         * @tc.number   webContextMenuResultTest_static_001
-         * @tc.name     webContextMenuResultTest_static_001
-         * @tc.desc     webContextMenuResultTest_static_001
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   webContextMenuResultTest_static_001
+     * @tc.name     webContextMenuResultTest_static_001
+     * @tc.desc     webContextMenuResultTest_static_001
+     * @tc.level    Level.LEVEL0
+     */
     it('webContextMenuResultTest_static_001', Level.LEVEL0, async () => {
       try {
         emitKey = "emitwebContextMenuResult";
         //Utils.registerContainEvent("webContextMenuResult", true, 1101);
-      } catch (error) {
+      } catch(error) {
         expect().assertFail();
       }
     })
-
-
+    
     /*
-         * @tc.number   setWebControllerTest_static_002
-         * @tc.name     setWebControllerTest_static_002
-         * @tc.desc     setWebControllerTest_static_002
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   setWebControllerTest_static_002
+     * @tc.name     setWebControllerTest_static_002
+     * @tc.desc     setWebControllerTest_static_002
+     * @tc.level    Level.LEVEL0
+     */
     it('setWebControllerTest_static_002', Level.LEVEL0, async () => {
       try {
         emitKey = "emitsetWebController";
         //Utils.registerContainEvent("setWebController", true, 1102);
-      } catch (error) {
+      } catch(error) {
         expect().assertFail();
       }
     })
-
+    
     /*
-         * @tc.number   setWebControllerTest_static_003
-         * @tc.name     setWebControllerTest_static_003
-         * @tc.desc     setWebControllerTest_static_003
-         * @tc.level    Level.LEVEL0
-         */
+     * @tc.number   setWebControllerTest_static_003
+     * @tc.name     setWebControllerTest_static_003
+     * @tc.desc     setWebControllerTest_static_003
+     * @tc.level    Level.LEVEL0
+     */
     it('setWebControllerTest_static_003', Level.LEVEL0, async () => {
       try {
         emitKey = "emitHitTestValue";
         //Utils.registerContainEvent("HitTestValue", true, 1103);
         inspector.sendEventByKey('web2', 10, '');
-      } catch (error) {
+      } catch(error) {
         expect().assertFail();
       }
     })

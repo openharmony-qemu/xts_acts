@@ -66,13 +66,13 @@ export default function polyLineNeJsunit() {
 
     
     
-/*
+    /*
      * @tc.number   testpolyLineNe_static_0001
      * @tc.name     testpolyLineNe_static_0001
      * @tc.desc     testpolyLineNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testpolyLineNe_static_0001', Level.LEVEL0, async () => {
+    it('testpolyLineNe_static_0001', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polyline');
@@ -86,13 +86,13 @@ it('testpolyLineNe_static_0001', Level.LEVEL0, async () => {
 
     
     
-/*
+    /*
      * @tc.number   testpolyLineNe_static_0002
      * @tc.name     testpolyLineNe_static_0002
      * @tc.desc     testpolyLineNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testpolyLineNe_static_0002', Level.LEVEL0, async () => {
+    it('testpolyLineNe_static_0002', Level.LEVEL0, async () => {
       console.info('polyLineNe testpolyLineNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Polyline');

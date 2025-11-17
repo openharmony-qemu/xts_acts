@@ -64,8 +64,8 @@ export default function OhosRouterJsunit() {
           routerInstance.pushUrl(options);
           await Utils.sleep(4000);
         }
-      } catch (error) {
-        console.error("push ohosRouter page error " + error);
+      } catch (err: Error) {
+        console.error("push ohosRouter page error " + err);
       }
     });
 
@@ -75,13 +75,13 @@ export default function OhosRouterJsunit() {
     });
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_001
      * @tc.name     ohosRouterTest_static_001
      * @tc.desc     ohosRouterTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_001', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_001', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest001] START');
       let options: router.RouterOptions = {
         url: 'pages/ohosRouterA',
@@ -94,21 +94,21 @@ it('ohosRouterTest_static_001', Level.LEVEL0, async () => {
         expect(pages.index).assertEqual(3);
         expect(pages.name).assertEqual('ohosRouterA');
         expect(pages.path).assertEqual('pages/');
-      } catch (error) {
-        console.error("[ohosRouterTest001] push page error: " + error);
+      } catch (err: Error) {
+        console.error("[ohosRouterTest001] push page error: " + err);
       }
       await Utils.sleep(2000);
 
     });
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_002
      * @tc.name     ohosRouterTest_static_002
      * @tc.desc     ohosRouterTest_static_002
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest002] START');
       let options: router.RouterOptions = {
         url: 'pages/ohosRouterA'
@@ -116,8 +116,8 @@ it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.pushUrl(options);
-      } catch (error) {
-        console.error("[ohosRouterTest002] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest002] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1500);
       let callback = (paramsEvent: events_emitter.EventData) => {
@@ -130,8 +130,8 @@ it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
       }
       try {
         events_emitter.on(paramsEvent, callback);
-      } catch (error) {
-        console.info("[ohosRouterTest002] on events_emitter err : " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("[ohosRouterTest002] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest002] click push button result is: "
         + JSON.stringify(inspector.sendEventByKey('pushButtonA', 10, "")));
@@ -142,13 +142,13 @@ it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_003
      * @tc.name     ohosRouterTest_static_003
      * @tc.desc     ohosRouterTest_static_003
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_003', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_003', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       console.info('[ohosRouterTest003] START');
       await Utils.sleep(1000);
@@ -162,13 +162,13 @@ it('ohosRouterTest_static_003', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_004
      * @tc.name     ohosRouterTest_static_004
      * @tc.desc     ohosRouterTest_static_004
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       console.info('[ohosRouterTest004] START');
       routerInstance.clear();
@@ -178,8 +178,8 @@ it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
       }
       try {
         routerInstance.pushUrl(options);
-      } catch (error) {
-        console.error("[ohosRouterTest004] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest004] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1000);
       let optionsB: router.RouterOptions = {
@@ -187,8 +187,8 @@ it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
       }
       try {
         routerInstance.replaceUrl(optionsB);
-      } catch (error) {
-        console.error("[ohosRouterTest004] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest004] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1500);
       let size = routerInstance.getLength();
@@ -197,13 +197,13 @@ it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_005
      * @tc.name     ohosRouterTest_static_005
      * @tc.desc     ohosRouterTest_static_005
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest005] START');
       let options: router.RouterOptions = {
         url: 'pages/ohosRouterA'
@@ -211,8 +211,8 @@ it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.pushUrl(options);
-      } catch (error) {
-        console.error("[ohosRouterTest005] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest005] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1000);
       routerInstance.clear();
@@ -227,8 +227,8 @@ it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
       }
       try {
         events_emitter.on(paramsEvent, callback);
-      } catch (error) {
-        console.info("[ohosRouterTest005] on events_emitter err : " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("[ohosRouterTest005] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest005] click replace button result is: "
         + JSON.stringify(inspector.sendEventByKey('ReplaceButtonA', 10, "")));
@@ -237,13 +237,13 @@ it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
 
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_006
      * @tc.name     ohosRouterTest_static_006
      * @tc.desc     ohosRouterTest_static_006
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest006] START');
       let options: router.RouterOptions = {
         url: 'pages/ohosRouterA'
@@ -251,8 +251,8 @@ it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.pushUrl(options);
-      } catch (error) {
-        console.error("[ohosRouterTest006] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest006] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1000);
       routerInstance.clear();
@@ -267,8 +267,8 @@ it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
       }
       try {
         events_emitter.on(paramsEvent, callback);
-      } catch (error) {
-        console.info("[ohosRouterTest006] on events_emitter err : " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("[ohosRouterTest006] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest006] click replace button result is: "
         + JSON.stringify(inspector.sendEventByKey('pushurlButton1', 10, "")));
@@ -276,13 +276,13 @@ it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_008
      * @tc.name     ohosRouterTest_static_008
      * @tc.desc     ohosRouterTest_static_008
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest008] START');
       let options: router.RouterOptions = {
         url: 'pages/ohosRouterA'
@@ -290,8 +290,8 @@ it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.pushUrl(options);
-      } catch (error) {
-        console.error("[ohosRouterTest008] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest008] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1000);
       routerInstance.clear();
@@ -306,8 +306,8 @@ it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
       }
       try {
         events_emitter.on(paramsEvent, callback);
-      } catch (error) {
-        console.info("[ohosRouterTest008] on events_emitter err : " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("[ohosRouterTest008] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest008] click replace button result is: "
         + JSON.stringify(inspector.sendEventByKey('pushurlButton1A', 10, "")));
@@ -315,13 +315,13 @@ it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
     });
 
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_007
      * @tc.name     ohosRouterTest_static_007
      * @tc.desc     ohosRouterTest_static_007
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest007] START');
       let options: router.RouterOptions = {
         url: 'pages/ohosRouterA'
@@ -329,8 +329,8 @@ it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.replaceUrl(options);
-      } catch (error) {
-        console.error("[ohosRouterTest007] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest007] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1000);
       routerInstance.clear();
@@ -345,21 +345,21 @@ it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
       }
       try {
         events_emitter.on(paramsEvent, callback);
-      } catch (error) {
-        console.info("[ohosRouterTest007] on events_emitter err : " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("[ohosRouterTest007] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest007] click replace button result is: "
         + JSON.stringify(inspector.sendEventByKey('ReplaceButtonA', 10, "")));
 
     });
     
-/*
+    /*
      * @tc.number   ohosRouterTest_static_009
      * @tc.name     ohosRouterTest_static_009
      * @tc.desc     ohosRouterTest_static_009
      * @tc.level    Level.LEVEL0
      */
-it('ohosRouterTest_static_009', Level.LEVEL0, async () => {
+    it('ohosRouterTest_static_009', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest009] START');
       let options: router.RouterOptions = {
         url: 'pages/ohosRouterA'
@@ -367,8 +367,8 @@ it('ohosRouterTest_static_009', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.replaceUrl(options);
-      } catch (error) {
-        console.error("[ohosRouterTest009] push page error " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.error("[ohosRouterTest009] push page error " + JSON.stringify(err));
       }
       await Utils.sleep(1000);
       routerInstance.clear();
@@ -383,8 +383,8 @@ it('ohosRouterTest_static_009', Level.LEVEL0, async () => {
       }
       try {
         events_emitter.on(paramsEvent, callback);
-      } catch (error) {
-        console.info("[ohosRouterTest009] on events_emitter err : " + JSON.stringify(error));
+      } catch (err: Error) {
+        console.info("[ohosRouterTest009] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest009] click replace button result is: "
         + JSON.stringify(inspector.sendEventByKey('replaceurl1', 10, "")));
