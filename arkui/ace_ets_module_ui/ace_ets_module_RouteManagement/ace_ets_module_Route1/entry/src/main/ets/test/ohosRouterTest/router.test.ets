@@ -46,6 +46,14 @@ export default function routerStandardJsunit() {
       console.info("routerStandard after each called");
     });
 
+    /**
+     * @tc.number    testrouterStandard0011
+     * @tc.name      testrouterStandard0011
+     * @tc.desc      testrouterStandard0011
+     * @tc.level     Level 2
+     * @tc.type
+     * @tc.size
+     */
     it('testrouterStandard0011', Level.LEVEL2, async (done: Function) => {
       console.info('routerStandard testrouterStandard0011 START');
       await Utils.sleep(2000);
@@ -71,6 +79,14 @@ export default function routerStandardJsunit() {
       done();
     });
 
+    /**
+     * @tc.number    testrouterSingle0001
+     * @tc.name      testrouterSingle0001
+     * @tc.desc      testrouterSingle0001
+     * @tc.level     Level 2
+     * @tc.type
+     * @tc.size
+     */
     it('testrouterSingle0001', Level.LEVEL2, async (done: Function) => {
       console.info('routerSingle testrouterSingle0001 START');
       await Utils.sleep(2000);

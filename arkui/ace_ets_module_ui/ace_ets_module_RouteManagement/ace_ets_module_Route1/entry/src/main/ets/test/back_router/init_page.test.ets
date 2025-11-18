@@ -62,8 +62,8 @@ export default function aboutToAppearRouterTest() {
       console.info("aboutToAppearRouterTest after each called");
     });
     /**
-     * @tc.number SUB_ACE_RICHEDITOR_aboutToAppearRouterTest_0100
-     * @tc.name aboutToAppearRouterTest
+     * @tc.number aboutToAppearRouterTest_0100
+     * @tc.name aboutToAppearRouterTest_0100
      * @tc.desc set api
      * @tc.level Level 2
      * @tc.type
@@ -132,7 +132,7 @@ export default function aboutToAppearRouterTest() {
     });
 
     /**
-     * @tc.number SUB_ACE_RICHEDITOR_aboutToAppearRouterTest_0100
+     * @tc.number aboutToAppearRouterTest_0200
      * @tc.name aboutToAppearRouterTest
      * @tc.desc set api
      * @tc.level Level 2

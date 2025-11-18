@@ -62,8 +62,8 @@ export default function aboutToAppearRouterTest2() {
       console.info("aboutToAppearRouterTest2 after each called");
     });
     /**
-     * @tc.number SUB_ACE_RICHEDITOR_aboutToAppearRouterTest_0100
-     * @tc.name aboutToAppearRouterTest
+     * @tc.number aboutToAppearRouterTest2_0100
+     * @tc.name aboutToAppearRouterTest2_0100
      * @tc.desc set api
      * @tc.level Level 2
      * @tc.type
