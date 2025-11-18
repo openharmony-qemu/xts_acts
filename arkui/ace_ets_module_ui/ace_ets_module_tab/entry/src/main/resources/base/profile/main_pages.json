@@ -62,6 +62,7 @@
         "MainAbility/pages/Tabs/onSelectedTabs",
         "MainAbility/pages/Tabs/barBackground",
         "MainAbility/pages/Tabs/curvesTabs",
+        "MainAbility/pages/text/TextApi/tabsDemo",
         "MainAbility/pages/Tabs/barHeightNoMinHeightLimit",
         "MainAbility/pages/Tabs/animationCurve"
     ]
