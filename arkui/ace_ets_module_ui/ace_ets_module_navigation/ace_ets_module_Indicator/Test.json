@@ -10,8 +10,8 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsAceEtsModuleIndicatorTestTest.hap",
-            "ActsAceEtsModuleIndicatorTestTestMain.hap"
+            "ActsAceEtsModuleIndicatorTest.hap",
+            "ActsAceEtsModuleIndicatorTestMain.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
