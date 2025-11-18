@@ -57,7 +57,7 @@ export default function atomicsWaitTest() {
       let finish = false;
       let finish2 = false;
 
-      const waitResult = new Promise<string>((resolve) => {
+      const waitResult = new Promise<string>(async (resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker01.ets");
         workerInstance.postMessage({ ta, index: 0, value: 0 } as typeWait01)
         workerInstance.onmessage = (e) => {
@@ -68,6 +68,7 @@ export default function atomicsWaitTest() {
           finish = true
         }
 
+        await sleep(200)
         const workerInstance2 = new worker.ThreadWorker("./workers/Worker02.ets");
         workerInstance2.postMessage({ ta, index: 0 } as typeWait02)
         workerInstance2.onmessage = (e) => {
@@ -167,7 +168,7 @@ export default function atomicsWaitTest() {
       let finish = false;
       let finish2 = false;
 
-      const waitResult = new Promise<string>((resolve) => {
+      const waitResult = new Promise<string>(async (resolve) => {
         const workerInstance = new worker.ThreadWorker("./workers/Worker04.ets");
         workerInstance.postMessage({ ta, index: 0, value: 0n } as typeWait04)
         workerInstance.onmessage = (e) => {
@@ -177,7 +178,7 @@ export default function atomicsWaitTest() {
         workerInstance.onexit = () => {
           finish = true
         }
-
+        await sleep(200)
         const workerInstance2 = new worker.ThreadWorker("./workers/Worker05.ets");
         workerInstance2.postMessage({ ta, index: 0 } as typeWait05)
         workerInstance2.onmessage = (e) => {
