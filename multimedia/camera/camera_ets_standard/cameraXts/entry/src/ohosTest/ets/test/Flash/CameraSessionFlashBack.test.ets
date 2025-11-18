@@ -624,7 +624,7 @@ async function hasFlashPreConfigPhoto(done: Function, testName: string, type: ca
       await getPreConfigPhotoSession(mPreviewOutput, mPhotoOutput);
       let photoStatus = mPhotoSession.hasFlash();
       console.info(TAG, testName + ' photo mode, status: ' + photoStatus);
-      expect(typeof photoStatus).assertTrue();
+      expect(typeof photoStatus == 'boolean').assertTrue();
       await releasePhotoSession();
     }
     done();
@@ -702,7 +702,7 @@ async function getPhotoFlashSupportedModeStatusWithPreConfig(done: Function, tes
       await getPreConfigPhotoSession(mPreviewOutput, mPhotoOutput);
       let photoStatus = mPhotoSession.isFlashModeSupported(flashMode);
       console.info(TAG, testName + ' photo mode, status: ' + photoStatus);
-      expect(typeof photoStatus).assertTrue();
+      expect(typeof photoStatus == 'boolean').assertTrue();
       await releasePhotoSession();
     }
     done();
