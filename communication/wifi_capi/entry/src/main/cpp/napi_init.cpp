@@ -24,7 +24,7 @@
 #define LOG_TAG "MY_TAG"   // 全局tag宏，标识模块日志tag
 #define MAC_LEN 20
 
-napi_value getWifiSwitchState(napi_env env, napi_callback_info info)
+napi_value GetWifiSwitchState(napi_env env, napi_callback_info info)
 {
     bool state = false;
     Wifi_ResultCode code = OH_Wifi_IsWifiEnabled(&state);
@@ -40,7 +40,7 @@ napi_value getWifiSwitchState(napi_env env, napi_callback_info info)
 }
 
 // 新增：获取MAC地址的NAPI函数
-napi_value getWifiMacAddress(napi_env env, napi_callback_info info)
+napi_value GetWifiMacAddress(napi_env env, napi_callback_info info)
 {
     // 1. 定义MAC地址缓冲区（长度17字节足够，预留20字节防溢出）
     char macAddr[MAC_LEN] = {0}; // 初始化缓冲区，避免脏数据
@@ -74,9 +74,9 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "GetWifiSwitchState", nullptr, getWifiSwitchState,
+        { "GetWifiSwitchState", nullptr, GetWifiSwitchState,
           nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "GetWifiMacAddress", nullptr, getWifiMacAddress, // 导出新增函数
+        { "GetWifiMacAddress", nullptr, GetWifiMacAddress, // 导出新增函数
           nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     
