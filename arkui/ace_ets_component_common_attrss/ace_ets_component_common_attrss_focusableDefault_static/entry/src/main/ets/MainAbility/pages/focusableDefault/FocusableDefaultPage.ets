@@ -65,7 +65,7 @@ import {
   ExpectedFrameRateRange,
   Scroll,
   Margin,
-
+// Styles,
   Web,
   WebviewController,
   AlphabetIndexer,
@@ -152,8 +152,8 @@ interface ViewRouter {
 @Entry
 @Component
 struct FocusableDefaultPage {
-  private scroller: Scroller = new Scroller() 
-  private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) 
+  private scroller: Scroller = new Scroller() //For Scroll and Scroll
+  private arr: number[] = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15) //For Scroll
   @State callback: string = '';
   @State targetView: string | undefined = ''
   @State componentKey: string | undefined = ''

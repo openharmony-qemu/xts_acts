@@ -213,7 +213,7 @@ export default class Utils {
 
   static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     console.info('[getInspectorByKey] current component is: ' + obj.getElement("$type"));
-    
+    // let rectInfo = JSON.parseJsonElement('[' + obj.getElement('$rect') + ']');
     let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     let rect_value: RectValue = {
@@ -337,7 +337,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -377,7 +377,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

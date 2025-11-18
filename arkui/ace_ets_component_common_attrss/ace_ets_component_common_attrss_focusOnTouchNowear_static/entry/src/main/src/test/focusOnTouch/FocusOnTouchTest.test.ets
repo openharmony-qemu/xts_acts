@@ -14,7 +14,7 @@
  */
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {  Color, $r } from '@ohos.arkui.component'
+import { Color, $r } from '@ohos.arkui.component'
 import Utils, {
   CurrentRatio,
   BasePageConfig,

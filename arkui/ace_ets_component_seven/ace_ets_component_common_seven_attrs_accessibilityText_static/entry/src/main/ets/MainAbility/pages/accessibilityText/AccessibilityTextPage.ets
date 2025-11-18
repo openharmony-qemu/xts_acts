@@ -230,10 +230,11 @@ import {
   SliderStyle,
   BadgeParamWithNumber,
   CommonMethod,
-  applyStyles
+  applyStyles,
+  AlignRuleOption
 } from '@ohos.arkui.component'
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 import { attrsManager } from '../../common/AttrsManager';
@@ -827,7 +828,7 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 @Entry
 @Component
 struct accessibilityTextTestDropPage {
-  @StoragePropRef('_zIndexButtonModifier') _accessibilityTextButtton: SetV = {
+  @StorageProp('_zIndexButtonModifier') _accessibilityTextButtton: SetV = {
     accessibilityText:''
   }
   @State _accessibilityTextAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
@@ -907,14 +908,14 @@ struct accessibilityTextTestDropPage {
   @State _accessibilityTextXComponentMod: XComponentModifier = new XComponentModifier()
   @State targetView: string = ''
   @State componentKey: string =  ''
-  @State parentWidth: double = 0
-  @State parentHeight: double = 0
-  @State columns: int =  0
-  @State gutter: int =  0
+  @State parentWidth: number = 0
+  @State parentHeight: number = 0
+  @State columns: number =  0
+  @State gutter: number =  0
   @State parentComponentKey: string = ''
   @State isShow:boolean = false
   pathStack: NavPathStack = new NavPathStack()
-  
+  //controller: webview.WebviewController = new webview.WebviewController();
 
   @Builder PanelBuilder(){
     Text('Panel')
@@ -927,8 +928,8 @@ struct accessibilityTextTestDropPage {
     this.componentKey = routerParamOptions.view.componentKey as string
     this.parentWidth = routerParamOptions.view.parentWidth
     this.parentHeight = routerParamOptions.view.parentHeight
-    this.columns = routerParamOptions.view.columns as int
-    this.gutter = routerParamOptions.view.gutter as int
+    this.columns = routerParamOptions.view.columns
+    this.gutter = routerParamOptions.view.gutter
     this.parentComponentKey = routerParamOptions.view.parentComponentKey
     console.log('aboutToAppear routerParamOptions success' + this.targetView)
     attrsManager.registerDataChange((value:SetV) => {
@@ -1012,7 +1013,14 @@ struct accessibilityTextTestDropPage {
     })
   }
 
-
+  // @Styles commonStyle(){
+  //   .accessibilityGroup(true)
+  //   .accessibilityLevel("yes")
+  //   .accessibilityText("分组")
+  //   .height('100%')
+  //   .gridSpan(1)
+  //   .key(this.componentKey)
+  // }
 
   fancy(instance: CommonMethod) {
     instance.accessibilityGroup(true);
@@ -1023,7 +1031,7 @@ struct accessibilityTextTestDropPage {
   }
 
   build() {
-    GridCol({ span: this.columns, offset: this.gutter, order: 0 }) {
+    GridCol({ span: this.columns.toInt(), offset: this.gutter.toInt(), order: 0 }) {
     Row() {
       if (this.targetView == 'Button') {
         Button('button1')
@@ -1180,8 +1188,8 @@ struct accessibilityTextTestDropPage {
         Toggle({ type: ToggleType.Switch, isOn: false })
           .applyStyles(this.fancy).attributeModifier(this._accessibilityTextToggleMod)
       } else if (this.targetView == 'Web') {
-        
-        
+        // Web({ src: 'www.example.com', controller: this.controller }).applyStyles(this.fancy)
+        // .attributeModifier(this._accessibilityTextWebMod)
       } else if (this.targetView == 'Circle') {
         Circle()
 .applyStyles(this.fancy)
@@ -1330,8 +1338,8 @@ struct accessibilityTextTestDropPage {
             .height(100)
             .backgroundColor('#FF3333')
             .alignRules({
-              top: { anchor: '__container__', align: VerticalAlign.Top },
-              left: { anchor: '__container__', align: HorizontalAlign.Start }
+                top: { anchor: '__container__', align: VerticalAlign.Top },
+                left: { anchor: '__container__', align: HorizontalAlign.Start }
             } as AlignRuleOption)
             .id('constraintSize')
         }

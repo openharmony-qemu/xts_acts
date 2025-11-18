@@ -12,52 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  TabsController,
-  BarPosition,
-  BarMode,
-  TabContent,
-  Tabs,
-  Divider,
-  FlexDirection,
-  FlowItem,
-  WaterFlow,
-  ColumnOptions,
-  IndexerAlign,
-  FontWeight,
-  AlphabetIndexer,
-  Margin,
-  StickyStyle,
-  Color,
-  TextAlign,
-  Builder,
-  ForEach,
-  ListItem,
-  ListItemGroup,
-  List,
-  Position,
-  Button,
-  Stepper,
-  AlignRuleOption,
-  ItemState,
-  Component,
-  StepperItem,
-  ClickEvent,
-  Column,
-
-  VerticalAlign,
-  Text
-} from '@ohos.arkui.component'
-import { State, Link } from '@ohos.arkui.stateManagement'
-
+import {TabsController,BarPosition,BarMode,TabContent,Tabs,Divider,FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,Position,Button, Stepper,AlignRuleOption,ItemState,Component,StepperItem,ClickEvent,Column,VerticalAlign,Text } from '@ohos.arkui.component'
+import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct TabsView {
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
-  @State currentIndex: number = 0
+  @State currentIndex: Int = 0
   private controller: TabsController = new TabsController()
-  @Link _position: Position = { x: 0, y: 0 };
-  private componentKey: string = '';
+  @Link _position: Position={x:0,y:0};
+  private componentKey: string='';
 
   @Builder
   TabBuilder(index: number, name: string) {
@@ -80,33 +44,29 @@ export struct TabsView {
       TabContent() {
         Column().width('100%').height('100%').backgroundColor('#00CB87')
       }
-
-      
+      // .tabBar(this.TabBuilder(0, 'green'))
 
       TabContent() {
         Column().width('100%').height('100%').backgroundColor('#007DFF')
       }
-
-      
+      // .tabBar(this.TabBuilder(1, 'blue'))
 
       TabContent() {
         Column().width('100%').height('100%').backgroundColor('#FFBF00')
       }
-
-      
+      // .tabBar(this.TabBuilder(2, 'yellow'))
 
       TabContent() {
         Column().width('100%').height('100%').backgroundColor('#E67C92')
       }
-
-      
+      // .tabBar(this.TabBuilder(3, 'pink'))
     }
     .vertical(false)
     .barMode(BarMode.Fixed)
     .barWidth(360)
     .barHeight(56)
     .animationDuration(400)
-    .onChange((index: int): void => {
+    .onChange((index: Int): void => {
       this.currentIndex = index
     })
     .width(360)

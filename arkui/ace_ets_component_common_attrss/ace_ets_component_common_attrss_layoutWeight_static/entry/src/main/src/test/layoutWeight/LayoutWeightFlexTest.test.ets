@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import {Color,$r} from '@ohos.arkui.component'
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
@@ -25,17 +24,17 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-interface Attrs{
-  $attrs: SetValue
-}
+
 export default function layoutWeightFlexTest() {
-  let supportView: Array<string> = new Array<string>(
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  let supportView = [
     'AlphabetIndexer',
     'Button',
     'Checkbox',
@@ -91,7 +90,7 @@ export default function layoutWeightFlexTest() {
     'Rect',
     'Shape',
     'Line'
-  )
+  ]
   let childWidth = 100;
   let childHeight = 100;
   let parentWidth = 400;
@@ -114,29 +113,26 @@ export default function layoutWeightFlexTest() {
     },
     expectValue: {
       layoutWeight: 1,
-      // width: UIContext.getFocusedUIContext()!.vp2px(200)
-      width: 200
+      width: UIContext.getFocusedUIContext()!.vp2px(200)
     }
   }]
   describe('LayoutWeightFlexTest', () => {
     beforeAll(() => {
       console.info("layoutWeightFlexTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       let rect = Utils.getComponentRect(data.pageConfig.componentKey??'');
       // //Component width and height calculation
       let width = rect.right - rect.left;
-      let attrs = data.viewObj as Attrs
+      let attrs = data.viewObj
       console.info('[' + data.caseTag + ']' + 'rect.right is:' + JSON.stringify(rect.right));
       console.info('[' + data.caseTag + ']' + 'rect.left is:' + JSON.stringify(rect.left));
       console.info('[' + data.caseTag + ']' + 'width is:' + JSON.stringify(width));
-      console.info('[' + data.caseTag + ']' + 'layoutWeight is:' + attrs?.$attrs.layoutWeight);
+      console.info('[' + data.caseTag + ']' + 'layoutWeight is:' + attrs?.getElement('$attrs').getInteger('layoutWeight'));
       console.info('[' + data.caseTag + ']' + 'expectWidth is:' + data.testValue.expectValue.width);
-      expect(attrs?.$attrs.layoutWeight).assertEqual(data.testValue.expectValue.layoutWeight);
+      expect(attrs?.getElement('$attrs').getInteger('layoutWeight')).assertEqual(data.testValue.expectValue.layoutWeight);
+      console.log("========================" + Math.floor(Math.abs(width - (data.testValue.expectValue.width as number))))
       if (data.pageConfig.componentKey == 'TextInput') {
         expect(Math.floor(Math.abs(width - (data.testValue.expectValue.width as number))) <= 2).assertTrue();
       } else {

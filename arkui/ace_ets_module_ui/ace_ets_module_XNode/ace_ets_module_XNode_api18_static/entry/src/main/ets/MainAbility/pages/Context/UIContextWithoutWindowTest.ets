@@ -89,7 +89,7 @@ class MyNodeController extends NodeController {
       uiContext = UIContext.createUIContextWithoutWindow(context);
       console.log('sally----- content1', JSON.stringify(uiContext)) //{"instanceId_":900000}
       resultStr = JSON.stringify(uiContext);
-    } catch (e) {
+    } catch (e: Error) {
       resultStr = e.code + '';
     }
     return resultStr
@@ -98,6 +98,7 @@ class MyNodeController extends NodeController {
   createUIContextWithoutWindow401(): string {
     let errorStr: string = '';
     try {
+      // UIContext.createUIContextWithoutWindow(null);
     } catch (e) {
       errorStr = (e as BusinessError).code + '';
     }
@@ -106,7 +107,9 @@ class MyNodeController extends NodeController {
 
   destroyUIContextWithoutWindow(): string {
     let resultStr: string = '';
+    console.log('click 07')
     UIContext.destroyUIContextWithoutWindow();
+    console.log('click 08')
     resultStr = 'UIContext destroyed'
     return resultStr;
   }
@@ -129,17 +132,23 @@ struct UIContextWithoutWindowTest {
       Button('create UIContext').height('5%')
         .id('create_context_id')
         .onClick((e: ClickEvent) => {
+          console.log('click 01')
           this.createStr = this.myNodeController.createUIContextWithoutWindow();
+          console.log('click 02')
         })
       Button('checkError').height('5%')
         .id('check_error_id')
         .onClick((e: ClickEvent) => {
+          console.log('click 03')
           this.errorStr = this.myNodeController.createUIContextWithoutWindow401();
+          console.log('click 04')
         })
       Button('destroy UIContext').height('5%')
         .id('destroy_context_id')
         .onClick((e: ClickEvent) => {
+          console.log('click 05')
           this.destroyStr = this.myNodeController.destroyUIContextWithoutWindow();
+          console.log('click 06')
         })
     }
     .height('100%')

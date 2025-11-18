@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import {  Color, $r } from '@ohos.arkui.component'
+import { Color, $r } from '@ohos.arkui.component'
 import Utils, {
   CurrentRatio,
   BasePageConfig,
@@ -39,7 +39,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function FocusableTest() {
 
-  
+  //A list of components that support the position attribute, which is required.
   let supportView = [
     "Button",
     "TextInput",
@@ -69,14 +69,14 @@ export default function FocusableTest() {
     "Swiper",
   ]
 
-  
+  //Page config, this param is required.
   let pageConfig: PageConfig = {
     testName: 'testFocusable',
     pageName: 'FocusablePage',
     pageUrl: 'MainAbility/pages/focusable/FocusablePage',
     referenceComponentKey: 'referenceComponentKey'
   }
-  
+  //Test values, looped to create cases, this param is required.
   let testValues: TestValue[] = [{
     describe: 'SetTrue',
     setValue: true
@@ -96,14 +96,14 @@ export default function FocusableTest() {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(
       pageConfig,
       supportView,
       testValues,
       async (data: BasePageConfig): Promise<void> => {
         console.info("FocusableTest beforeEach start" + '  ' + data.testValue.setValue);
-        
+        //Focus the target component
         let res = Utils.requestFocus(
           data.pageConfig.componentKey ?? ''
         )
@@ -120,9 +120,9 @@ export default function FocusableTest() {
         )
 
         if ("SetTrue" == data.testValue.describe) {
-          
+          //Confirm focus shift
           expect(res).assertEqual(true)
-          
+          //Confirm reference component text
           let referenceComponent = Utils.getComponentByKey(
             data.pageConfig.referenceComponentKey ?? ''
           )
@@ -135,7 +135,7 @@ export default function FocusableTest() {
           expect(referenceComponent.getElement('$attrs').getString('label')).assertContain(
             "onFocus"
           )
-          
+          //Confirm target component properties
           let viewObj = Utils.getComponentByKey(
             data.pageConfig.componentKey ?? ''
           )
@@ -147,9 +147,9 @@ export default function FocusableTest() {
           )
           expect(viewObj.getElement('$attrs').getBoolean('focusable')).assertEqual(true)
         } else if ("SetFalse" == data.testValue.describe) {
-          
+          //Confirm focus shift
           expect(res).assertEqual(false)
-          
+          //Confirm reference component text
           let referenceComponent = Utils.getComponentByKey(
             data.pageConfig.referenceComponentKey ?? ''
           )
@@ -160,7 +160,7 @@ export default function FocusableTest() {
             referenceComponent.getElement('$attrs').getString('label')
           )
           expect(referenceComponent.getElement('$attrs').getString('label')).assertEqual("")
-          
+          //Confirm target component properties
           let viewObj = Utils.getComponentByKey(
             data.pageConfig.componentKey ?? ''
           )
