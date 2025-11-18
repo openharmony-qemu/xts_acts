@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@ohos.arkui.Test";
