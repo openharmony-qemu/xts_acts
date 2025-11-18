@@ -232,7 +232,6 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
       AppStorage.setOrCreate('test', [])
     });
 
