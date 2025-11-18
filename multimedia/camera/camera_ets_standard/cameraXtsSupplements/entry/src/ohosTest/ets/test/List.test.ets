@@ -53,7 +53,6 @@ export default function testsuite() {
   CameraSessionHasSuppTest();
   getSupportedSceneModesTest();
   CameraSessionPreviewRotationTest();
-  CameraDeviceTest();
   cameraCaptureSessionIsExposureModeAndIsFocusModeAb();
   CameraSetMeterPointSuppTest();
   cameraSetFocusPointSuppTest();
@@ -61,4 +60,5 @@ export default function testsuite() {
   CameraInputPhysicalCameraOrientationTest();
   cameraCanPreconfigTest();
   cameraCanPreconfigSecTest();
+  CameraDeviceTest();
 }
