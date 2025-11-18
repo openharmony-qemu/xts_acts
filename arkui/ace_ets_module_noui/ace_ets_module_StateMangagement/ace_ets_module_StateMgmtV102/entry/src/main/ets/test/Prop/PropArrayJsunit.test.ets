@@ -42,7 +42,7 @@ export default function PropArrayJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get PropArrayJsunit state pages: " + JSON.stringify(pages));
-        if (!("PropArray" == pages.name)) {
+        if (!("PropArray001" == pages.name)) {
           console.info("get PropArrayJsunit state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -56,89 +56,89 @@ export default function PropArrayJsunit() {
     });
 
 		/**
-		 * @tc.number    StateArrayJsunit_0100
-		 * @tc.name      StateArrayJsunit_0100
+		 * @tc.number    PropArrayJsunit_0100
+		 * @tc.name      PropArrayJsunit_0100
 		 * @tc.desc      Frequently updating and modifying the values of parent components
 		 * @tc.level     Level 0
 		 * @tc.type
 		 * @tc.size
 		 */
-    it('StateArrayJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('PropArrayJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
-      console.info('StateArrayJsunit_0100 START');
+      console.info('PropArrayJsunit_0100 START');
       let strJson = getInspectorByKey('initial_Array');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[StateArrayJsunit_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[StateArrayJsunit_0100] title: " + JSON.stringify(obj.$attrs.content));
+      console.info("[PropArrayJsunit_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[PropArrayJsunit_0100] title: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('title：[{"value":1},{"value":2},{"value":3}]');
-      console.info('[StateArrayJsunit_0100] END');
+      console.info('[PropArrayJsunit_0100] END');
       done();
     });
 
 		/**
-		 * @tc.number    StateArrayJsunit_0200
-		 * @tc.name      StateArrayJsunit_0200
+		 * @tc.number    PropArrayJsunit_0200
+		 * @tc.name      PropArrayJsunit_0200
 		 * @tc.desc      Frequently updating and modifying the values of parent components
 		 * @tc.level     Level 0
 		 * @tc.type
 		 * @tc.size
 		 */
-    it('StateArrayJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropArrayJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
-      console.info('StateArrayJsunit_0200 START');
+      console.info('PropArrayJsunit_0200 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('parent_Array'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('initial_Array');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[StateArrayJsunit_0200] component obj is: " + JSON.stringify(obj));
-      console.info("[StateArrayJsunit_0200] title: " + JSON.stringify(obj.$attrs.content));
+      console.info("[PropArrayJsunit_0200] component obj is: " + JSON.stringify(obj));
+      console.info("[PropArrayJsunit_0200] title: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('title：[{"value":8},{"value":2},{"value":3}]');
-      console.info('[StateArrayJsunit_0200] END');
+      console.info('[PropArrayJsunit_0200] END');
       done();
     });
 
 		/**
-		 * @tc.number    StateArrayJsunit_0300
-		 * @tc.name      StateArrayJsunit_0300
+		 * @tc.number    PropArrayJsunit_0300
+		 * @tc.name      PropArrayJsunit_0300
 		 * @tc.desc      Frequently updating and modifying the values of parent components
 		 * @tc.level     Level 0
 		 * @tc.type
 		 * @tc.size
 		 */
-    it('StateArrayJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('PropArrayJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
-      console.info('StateArrayJsunit_0300 START');
+      console.info('PropArrayJsunit_0300 START');
       let strJson = getInspectorByKey('sub_prop');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[StateArrayJsunit_0300] component obj is: " + JSON.stringify(obj));
-      console.info("[StateArrayJsunit_0300] title: " + JSON.stringify(obj.$attrs.label));
+      console.info("[PropArrayJsunit_0300] component obj is: " + JSON.stringify(obj));
+      console.info("[PropArrayJsunit_0300] title: " + JSON.stringify(obj.$attrs.label));
       expect(obj.$attrs.label).assertEqual('子组件Prop:[{"value":8},{"value":2},{"value":3}]');
       done();
     });
 
 		/**
-		 * @tc.number    StateArrayJsunit_0400
-		 * @tc.name      StateArrayJsunit_0400
+		 * @tc.number    PropArrayJsunit_0400
+		 * @tc.name      PropArrayJsunit_0400
 		 * @tc.desc      Frequently updating and modifying the values of parent components
 		 * @tc.level     Level 0
 		 * @tc.type
 		 * @tc.size
 		 */
-    it('StateArrayJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('PropArrayJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
-      console.info('StateArrayJsunit_0400 START');
+      console.info('PropArrayJsunit_0400 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('sub_prop'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('sub_prop');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[StateArrayJsunit_0400] component obj is: " + JSON.stringify(obj));
-      console.info("[StateArrayJsunit_0400] title: " + JSON.stringify(obj.$attrs.label));
+      console.info("[PropArrayJsunit_0400] component obj is: " + JSON.stringify(obj));
+      console.info("[PropArrayJsunit_0400] title: " + JSON.stringify(obj.$attrs.label));
       expect(obj.$attrs.label).assertEqual('子组件Prop:[{"value":7},{"value":2},{"value":3}]');
-      console.info('[StateArrayJsunit_0400] END');
+      console.info('[PropArrayJsunit_0400] END');
       done();
     });
   })

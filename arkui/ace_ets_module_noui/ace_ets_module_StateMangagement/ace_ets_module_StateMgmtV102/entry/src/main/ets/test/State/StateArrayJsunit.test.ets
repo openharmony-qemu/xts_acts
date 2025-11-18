@@ -43,7 +43,7 @@ export default function StateArrayJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get StateArrayJsunit state pages: " + JSON.stringify(pages));
-        if (!("StateArray" == pages.name)) {
+        if (!("StateArray010" == pages.name)) {
           console.info("get StateArrayJsunit state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);

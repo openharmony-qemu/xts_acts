@@ -42,7 +42,7 @@ export default function PropNumberJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get PropNumberJsunit state pages: " + JSON.stringify(pages));
-        if (!("PropNumber" == pages.name)) {
+        if (!("PropNumber001" == pages.name)) {
           console.info("get PropNumberJsunit state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
