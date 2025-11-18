@@ -37,7 +37,7 @@ struct StateArray {
 
   build() {
     Column() {
-      Button('Reset').id('StateArray_reset').height('5%')
+      Button('Reset').key('StateArray_reset').height('5%')
         .onClick(() => {
           this.title = [new SArrModel(11), new SArrModel(1)]
           this.classA = new SArrClassA('Hello', new SArrModel(6))

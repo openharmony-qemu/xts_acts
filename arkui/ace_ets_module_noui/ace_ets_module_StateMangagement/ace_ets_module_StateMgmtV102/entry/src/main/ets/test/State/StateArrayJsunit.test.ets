@@ -101,7 +101,7 @@ export default function StateArrayJsunit() {
       console.info("[StateArrayJsunit_0200] title: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('title：[{"value":8},{"value":1}]');
       await CommonFunc.sleep(500);
-      let button002 = await driver.findComponent(ON.id('StateArray_reset'));
+      let button002 = await driver.findComponent(BY.key('StateArray_reset'));
       await button002.click();
       await CommonFunc.sleep(500);
       console.info('[StateArrayJsunit_0200] END');
@@ -129,7 +129,7 @@ export default function StateArrayJsunit() {
       console.info("[StateArrayJsunit_0300] title: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('title：[{"value":11}]');
       await CommonFunc.sleep(500);
-      let button002 = await driver.findComponent(ON.id('StateArray_reset'));
+      let button002 = await driver.findComponent(BY.key('StateArray_reset'));
       await button002.click();
       await CommonFunc.sleep(500);
       console.info('[StateArrayJsunit_0300] END');
@@ -157,7 +157,7 @@ export default function StateArrayJsunit() {
       console.info("[StateArrayJsunit_0400] title: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('title：[{"value":11},{"value":1},{"value":12}]');
       await CommonFunc.sleep(500);
-      let button002 = await driver.findComponent(ON.id('StateArray_reset'));
+      let button002 = await driver.findComponent(BY.key('StateArray_reset'));
       await button002.click();
       await CommonFunc.sleep(500);
       console.info('[StateArrayJsunit_0400] END');
@@ -205,7 +205,7 @@ export default function StateArrayJsunit() {
       console.info("[StateArrayJsunit_0600] ClassA: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('ClassA：{"value":"World","data":{"value":6}}');
       await CommonFunc.sleep(500);
-      let button002 = await driver.findComponent(ON.id('StateArray_reset'));
+      let button002 = await driver.findComponent(BY.key('StateArray_reset'));
       await button002.click();
       await CommonFunc.sleep(500);
       console.info('[StateArrayJsunit_0600] END');
@@ -233,7 +233,7 @@ export default function StateArrayJsunit() {
       console.info("[StateArrayJsunit_0700] ClassA: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertEqual('ClassA：{"value":"Hello","data":{"value":8}}');
       await CommonFunc.sleep(500);
-      let button002 = await driver.findComponent(ON.id('StateArray_reset'));
+      let button002 = await driver.findComponent(BY.key('StateArray_reset'));
       await button002.click();
       await CommonFunc.sleep(500);
       console.info('[StateArrayJsunit_0700] END');
