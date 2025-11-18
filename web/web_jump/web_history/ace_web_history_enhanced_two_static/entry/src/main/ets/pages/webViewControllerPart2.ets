@@ -15,7 +15,7 @@
 
 import webview from '@ohos.web.webview'
 import { JsProxyObject } from '../../src/test/Interfaces';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import {
   __memo_context_type,
   __memo_id_type,
@@ -88,7 +88,7 @@ struct webViewControllerPart2 {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION vaclue: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);
