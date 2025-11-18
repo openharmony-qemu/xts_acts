@@ -63,27 +63,16 @@ export default class CommonFunc {
   }
 
   static setScreenOrientation(orientation: number) {
-    // 1 -- 2 |
-    let screenClass: screen.Screen | null = null;
     screen.getAllScreens().then(data => {
-      screenClass = data[0];
-      console.log('Succeeded in getting all screens. Data:' + JSON.stringify(data));
-
+        console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
+        return data[0];
+    }).then(screenClass => {
+        return screenClass.setOrientation(orientation);
+    }).then(() => {
+        console.log('Succeeded in setting the vertical orientation.');
     }).catch((err: BusinessError) => {
-      console.log('Failed to get all screens. Cause: ' + JSON.stringify(err));
+        console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
     });
-    try {
-      screenClass?.setOrientation(orientation, (err: BusinessError) => {
-        const errCode: number = err.code;
-        if (errCode) {
-          console.error('Failed to set the vertical orientation. Code: ' + JSON.stringify(err));
-          return;
-        }
-        console.info('Succeeded in setting the vertical orientation.');
-      });
-    } catch (exception) {
-      console.error('Failed to set the vertical orientation. Code: ' + JSON.stringify(exception));
-    }
   }
 }
 
