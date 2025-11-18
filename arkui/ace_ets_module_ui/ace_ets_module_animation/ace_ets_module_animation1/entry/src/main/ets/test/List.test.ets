@@ -28,6 +28,20 @@ import ParticleAnimatorTest from './Particle/ParticleAnimatorTest.test'
 import ParticleAttributeTest from './Particle/ParticleAttributeTest.test'
 import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test'
 import MotionPathJsunit from './MotionPathJsunit.test';
+import geometryTransition from './geometryTransitionTest/geometryTransition.test';
+import animateToTest from './animateto.test';
+import animationCurveTest from './animationCurve.test';
+import geometryTransitionJsunit from './geometryTransitionTest/GeometryTransitionJsunit.test';
+import animatorOnframeJsunit from './Animation/animator.test';
+import remoteWindowJsunit from './RemoteWindowTest/remoteWindow.test'
+import AnimationJsunit from './AnimationTest/AnimationJsunit.test';
+import animateJsunit from './AnimationTest/AnimateJsunit.test';
+import animationStatusJsunit from './AnimationTest/AnimationStatusJsunit.test';
+import pageTransitionJsunit from './Animation/PageTransitionJsunit.test';
+import curvesJsunit from './CurvesJsunit.test';
+import WorkerUseCurvesTest from './WorkerUseCurves.test';
+import MotionPathExample from './MotionPathExample.test';
+import animationAdd from './Animation/animationAdd.test';
 
 export default function testsuite() {
   FrameNodeAnimation();
@@ -45,4 +59,18 @@ export default function testsuite() {
   ParticleAttributeTest();
   ParticleJsunit();
   MotionPathJsunit();
+  animateToTest();
+  animationCurveTest();
+  geometryTransition()
+  geometryTransitionJsunit()
+  animatorOnframeJsunit()
+  remoteWindowJsunit()
+  AnimationJsunit();
+  animateJsunit();
+  animationStatusJsunit();
+  curvesJsunit();
+  pageTransitionJsunit();
+  WorkerUseCurvesTest();
+  MotionPathExample();
+  animationAdd();
 }
