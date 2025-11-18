@@ -175,7 +175,7 @@ export default function CameraDeviceTest() {
      * @tc.type       FUNCTION
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_005', 0, async () => {
+    it('SUB_MEDIA_CAMERA_GET_CAMERA_DEVICE_005', Level.LEVEL1, async () => {
       const testName = 'test005_getAvailableCameras'
       try {
         let position = camera.CameraPosition.CAMERA_POSITION_UNSPECIFIED;
