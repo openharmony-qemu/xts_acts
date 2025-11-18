@@ -60,4 +60,5 @@ export default function testsuite() {
   RouterMode();
   RouterModeCall();
   RouterCall();
+  routerStandardJsunit()
 }

@@ -110,6 +110,20 @@ import pushNamedRoute20 from './router/pushNamedRoute/pushNamedRoute20.test'
 import pushNamedRoute22 from './router/pushNamedRoute/pushNamedRoute22.test'
 import pushNamedRoute23 from './router/pushNamedRoute/pushNamedRoute23.test'
 import pushNamedRoute24 from './router/pushNamedRoute/pushNamedRoute24.test'
+import pushPageInit from './supplementRouterTest/pushPageInit.test'
+import router_back1 from './router10/router_back1.test'
+import router_push1 from './router10/router_push1.test'
+import aboutToAppearRouterTest from './back_router/init_page.test';
+import aboutToAppearRouterTest2 from './back_router/init_page2.test';
+import goWithParams from './back_router/A_page.test'
+import RouterPushUrlJsunit from './State/RouterPushUrlJsunit.test';
+import RouterWithParamJsunit from './State/RouterWithParamJsunit.test';
+import RouterUrlErrorJsunit from './State/RouterUrlErrorJsunit.test';
+import routerStandardJsunit from './ohosRouterTest/router.test';
+import RouterBackAlert from './back_router/RouterBackAlert.test';
+import RouterMode from './ohosRouterTest/RouterMode.test';
+import RouterModeCall from './ohosRouterTest/RouterModeCall.test';
+import RouterCall from './ohosRouterTest/RouterCall.test';
 
 export default function testsuite() {
   OnNewParamRouter();
@@ -210,4 +224,18 @@ export default function testsuite() {
   pushNamedRoute22();
   pushNamedRoute23();
   pushNamedRoute24();
+  pushPageInit();
+  router_back1();
+  router_push1();
+  aboutToAppearRouterTest();
+  aboutToAppearRouterTest2();
+  goWithParams();
+  RouterPushUrlJsunit();
+  RouterWithParamJsunit();
+  RouterUrlErrorJsunit();
+  routerStandardJsunit();
+  RouterBackAlert();
+  RouterMode();
+  RouterModeCall();
+  RouterCall();
 }
