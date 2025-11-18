@@ -29,7 +29,7 @@ struct ImageOnErrorExample {
           this.componentWidthValue = err.componentWidth
           this.componentHeightValue = err.componentHeight
         })
-        .id('image')
+        .id('imageOnError')
     }.width('100%')
     .padding(20)
   }

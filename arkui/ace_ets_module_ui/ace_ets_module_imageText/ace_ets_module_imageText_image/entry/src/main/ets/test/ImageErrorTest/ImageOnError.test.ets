@@ -51,7 +51,7 @@ export default function ImageOnErrorTest() {
     it('ImageOnErrorTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('ImageOnErrorTest_001 START');
       await Utils.sleep(1000);
-      let strJson = getInspectorByKey('image');
+      let strJson = getInspectorByKey('imageOnError');
       let obj: ESObject = JSON.parse(strJson);
       await Utils.sleep(1000);
 
