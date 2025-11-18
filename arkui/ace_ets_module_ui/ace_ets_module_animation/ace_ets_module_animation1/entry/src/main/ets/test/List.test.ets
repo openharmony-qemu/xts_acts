@@ -44,6 +44,7 @@ import MotionPathExample from './MotionPathExample.test';
 import animationAdd from './Animation/animationAdd.test';
 
 export default function testsuite() {
+  animateJsunit();
   FrameNodeAnimation();
   ParticleEmitter();
   Vector2TTest();
@@ -58,7 +59,6 @@ export default function testsuite() {
   ParticleAnimatorTest();
   ParticleAttributeTest();
   ParticleJsunit();
-  MotionPathJsunit();
   animateToJunits();
   animationCurveTest();
   geometryTransition()
@@ -66,11 +66,11 @@ export default function testsuite() {
   animatorOnframeJsunit()
   remoteWindowJsunit()
   AnimationJsunit();
-  animateJsunit();
   animationStatusJsunit();
   curvesJsunit();
   pageTransitionJsunit();
   WorkerUseCurvesTest();
   MotionPathExample();
   animationAdd();
+  MotionPathJsunit();
 }
