@@ -17,6 +17,15 @@ import TimePicker1Test from './timePickerTest/TimePicker1.test';
 import stageTimePickerDialog from './timePickerTest/stageTimePickerDialog.test';
 import TimePickerJsunit from './timePickerTest/TimePickerJsunit.test';
 import timeStampJsunit from './timePickerTest/TimeStampJsunit.test';
+import timePickerPropertiesModifierTest from './timePickerTest/timePickerPropertiesModifier.test';
+import timePickerLoopTest from './timePickerTest/timePickerLoop.test';
+import timePickerSelectedAreaTest from './timePickerTest/timePickerSelectedArea.test';
+import timePickerStartAndEndTest from './timePickerTest/timePickerStartAndEnd.test';
+import timePickerEnableCascadeTest from './timePickerTest/timePickerEnableCascade.test';
+import timePickerOnChangeModifierTest from './timePickerTest/timePickerOnChangeModifier.test';
+import timePickerAddApiTest from './timePickerTest/TimePickerAddApi.test';
+import timePickerDateTimeOptionsTest from './timePickerTest/timePickerDateTimeOptions.test';
+import timePickerEnableHapticFeedbackTest from './timePickerTest/timePickerEnableHapticFeedbackTest.test';
 
 export default function testsuite() {
   stageTimePickerDialog();
@@ -24,4 +33,13 @@ export default function testsuite() {
   TimePickerTest();
   TimePickerJsunit();
   timeStampJsunit();
+  timePickerPropertiesModifierTest();
+  timePickerLoopTest();
+  timePickerSelectedAreaTest();
+  timePickerStartAndEndTest();
+  timePickerEnableCascadeTest();
+  timePickerOnChangeModifierTest();
+  timePickerAddApiTest();
+  timePickerDateTimeOptionsTest();
+  timePickerEnableHapticFeedbackTest();
 }

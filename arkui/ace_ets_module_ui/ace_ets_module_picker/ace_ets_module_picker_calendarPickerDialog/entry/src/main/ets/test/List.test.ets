@@ -12,9 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import calendarPickerDialogBackgroundBlurStyleTest from './calendarPickerDialogTest/calendarPickerDialogBackgroundBlurStyle.test'
+import calendarPickerDialogBackgroundColorTest from './calendarPickerDialogTest/calendarPickerDialogBackgroundColor.test'
+import calendarPickerDialogBackgroundShadowTest from './calendarPickerDialogTest/calendarPickerDialogBackgroundShadow.test'
+import calendarPickerDialogStartEndTest from './calendarPickerDialogTest/calendarPickerDialogStartEndTest.test'
 import dialogDisableDateRangeAndMarkTodayTest from './calendarPickerDialogTest/dialogDisableDateRangeAndMarkToday.test'
 
 export default function testsuite() {
+    calendarPickerDialogBackgroundBlurStyleTest();
+    calendarPickerDialogBackgroundColorTest();
+    calendarPickerDialogBackgroundShadowTest();
+    calendarPickerDialogStartEndTest();
     dialogDisableDateRangeAndMarkTodayTest();
 }

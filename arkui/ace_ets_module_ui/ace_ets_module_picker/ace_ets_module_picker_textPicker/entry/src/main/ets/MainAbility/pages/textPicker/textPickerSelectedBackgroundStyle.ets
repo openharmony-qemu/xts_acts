@@ -16,7 +16,7 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 
 @Entry
 @Component
-struct TextPickerPage {
+struct TextPickerSelectedBackgroundStylePage {
   @State selectedIndex: number = 0;
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4'];
