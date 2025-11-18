@@ -2,6 +2,6 @@
     "src": [
         "MainAbility/pages/index/index",
         "MainAbility/pages/Indicator/getIndicator",
-        "MainAbility/pages/Indicator/showDotIndicator",
+        "MainAbility/pages/Indicator/showDotIndicator"
     ]
 }
