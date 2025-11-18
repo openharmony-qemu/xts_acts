@@ -81,7 +81,7 @@ export default function imageJsunit55() {
           // console.info("push image page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push image page error:" + err);
       }
 
@@ -92,8 +92,7 @@ export default function imageJsunit55() {
       console.info("image after each called");
     });
 
-    
-/*
+    /*
      * @tc.number   imageTest_static_0100
      * @tc.name     imageTest_static_0100
      * @tc.desc     imageTest_static_0100
@@ -111,8 +110,7 @@ it('imageTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   imageTest_static_0200
      * @tc.name     imageTest_static_0200
      * @tc.desc     imageTest_static_0200

@@ -54,7 +54,6 @@ interface itemType {
   text: string,
   backgroundColor: Color
 }
-
 @Entry
 @Component
 struct TabsCustomAnimationExample1 {
@@ -71,10 +70,11 @@ struct TabsCustomAnimationExample1 {
       text: 'Blue',
       backgroundColor: Color.Blue
     } as itemType]
+
   private timeoutList: int[] = [] as int[]
   @State opacityListOri: number[] = [] as number[]
   @State scaleListOri: number[] = [] as number[]
-  private durationListOri: number[] = [] as number[]
+  private durationListOri: int[] = [] as int[]
   private customTransitionOri: (from: int, to: int) => TabContentAnimatedTransition =
     (from: int, to: int) => {
       let tabContentAnimatedTransition = {
@@ -85,7 +85,7 @@ struct TabsCustomAnimationExample1 {
           this.opacityListOri[from.toInt()] = 1.0
           this.opacityListOri[to.toInt()] = 0.5
           animateTo({
-            duration: this.durationListOri[from.toInt()].toInt(),
+            duration: this.durationListOri[from.toInt()],
             onFinish: () => {
               proxy.finishTransition()
             }
@@ -107,12 +107,11 @@ struct TabsCustomAnimationExample1 {
     Column() {
       Text('index: ' + this.currentIndexOri)
         .id('tabs_text1_curve')
-        .margin({ top: 10 } as Margin)
+        .margin({top: 10} as Margin)
 
       Tabs({ index: this.currentIndexOri, controller: this.controllerOri }) {
         ForEach(this.data, (item: itemType, index: int) => {
-          TabContent() {
-          }
+          TabContent() {}
           .tabBar(item.text)
           .backgroundColor(item.backgroundColor)
           .opacity(this.opacityListOri[index.toInt()])
@@ -126,8 +125,8 @@ struct TabsCustomAnimationExample1 {
       .barHeight('auto')
       .width('90%')
       .height('40%')
-      .backgroundColor(0xf1f3f5)
-      
+      .backgroundColor('0xf1f3f5')
+      // .animationCurve(curves.cubicBezierCurve(0.25, 0.1, 0.25, 1.0))
       .customContentTransition(this.customTransitionOri)
       .onChange((index: int): void => {
         this.currentIndexOri = index

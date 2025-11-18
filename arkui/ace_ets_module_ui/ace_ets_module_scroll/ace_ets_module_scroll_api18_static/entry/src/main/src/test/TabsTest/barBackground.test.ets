@@ -12,18 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType, afterAll } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -34,7 +34,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -57,29 +57,30 @@ export default function barBackground() {
         url: "MainAbility/pages/Tabs/barBackground",
       }
       try {
-        barBackground.clear();
         let pages = barBackground.getState();
         console.info("get barBackground state pages:" + JSON.stringify(pages));
-        if (!("barBackground" == pages.name)) {
+        if (!("MainAbility/pages/Tabs/barBackground" == pages.name)) {
           console.info("get barBackground pages.name:" + JSON.stringify(pages.name));
           barBackground.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push barBackground page error:" + err);
       }
       console.info("barBackground beforeEach end");
     });
-
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    barBackground_static_0100
-     * @tc.name      barBackground_static_0100
-     * @tc.desc      barBackground_static_0100
-     * @tc.level     2
+     * @tc.number   barBackground_static_0100
+     * @tc.name     barBackground_static_0100
+     * @tc.desc     barBackground_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('barBackground_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barBackground_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barBackground_static_0100] START');
       let strJson = inspector.getInspectorByKey('tabs_bar_back_style');
       console.info("[barBackground_static_0100] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -91,14 +92,14 @@ export default function barBackground() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    barBackground_static_0200
-     * @tc.name      barBackground_static_0200
-     * @tc.desc      barBackground_static_0200
-     * @tc.level     2
+     * @tc.number   barBackground_static_0200
+     * @tc.name     barBackground_static_0200
+     * @tc.desc     barBackground_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('barBackground_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barBackground_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barBackground_static_0200] START');
       let strJson = inspector.getInspectorByKey('tabs_bar_back_effect');
       console.info("[barBackEffect_0100] component obj is: " +
@@ -108,26 +109,26 @@ export default function barBackground() {
       console.info("[barBackEffect_0100] radius: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('barBackgroundEffect')
-        .getString('radius')));
+        .getElement('radius')));
       console.info("[barBackEffect_0100] saturation: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('barBackgroundEffect')
-        .getString('saturation')));
+        .getElement('saturation')));
       console.info("[barBackEffect_0100] brightness: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('barBackgroundEffect')
-        .getString('brightness')));
+        .getElement('brightness')));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('barBackgroundEffect').getString('radius'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('barBackgroundEffect').getInteger('radius'))
         .assertEqual(20);
       expect(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('barBackgroundEffect')
-        .getString('saturation')).assertEqual(15);
-      expect(JSON.parseJsonElement(strJson)
+        .getInteger('saturation')).assertEqual(15);
+      expect(Number(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('barBackgroundEffect')
-        .getString('brightness')).assertEqual(0.6);
+        .getDouble('brightness').toFixed(1))).assertEqual(0.6);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('barBackgroundEffect').getString('color'))
         .assertEqual("#8044A4B5");
       expect(JSON.parseJsonElement(strJson)

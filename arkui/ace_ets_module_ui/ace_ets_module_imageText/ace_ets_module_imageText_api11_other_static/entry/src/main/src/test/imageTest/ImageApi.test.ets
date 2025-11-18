@@ -77,7 +77,7 @@ export default function ImageApi() {
           // console.info("push ImageApi page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push ImageApi page error: " + err);
       }
 
@@ -88,9 +88,8 @@ export default function ImageApi() {
       console.info("ImageApi after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   ImageApi_static_001
      * @tc.name     ImageApi_static_001
      * @tc.desc     ImageApi_static_001

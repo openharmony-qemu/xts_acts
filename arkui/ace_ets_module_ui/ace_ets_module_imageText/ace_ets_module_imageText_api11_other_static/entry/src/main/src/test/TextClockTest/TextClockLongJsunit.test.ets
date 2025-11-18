@@ -68,16 +68,15 @@ export default function TextClockLongJsunit() {
           // console.info("push TextClock page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push TextClock page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   TextClockLongJsunit_static_0100
      * @tc.name     TextClockLongJsunit_static_0100
      * @tc.desc     TextClockLongJsunit_static_0100
@@ -107,9 +106,8 @@ it('TextClockLongJsunit_static_0100', Level.LEVEL2, async (done: () => void): Pr
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   TextClockLongJsunit_static_0200
      * @tc.name     TextClockLongJsunit_static_0200
      * @tc.desc     TextClockLongJsunit_static_0200
@@ -133,9 +131,8 @@ it('TextClockLongJsunit_static_0200', Level.LEVEL2, async (done: () => void): Pr
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   TextClockLongJsunit_static_0300
      * @tc.name     TextClockLongJsunit_static_0300
      * @tc.desc     TextClockLongJsunit_static_0300

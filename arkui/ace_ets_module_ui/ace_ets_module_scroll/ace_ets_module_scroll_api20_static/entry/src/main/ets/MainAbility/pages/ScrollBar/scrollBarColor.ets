@@ -51,7 +51,7 @@ import { State } from '@ohos.arkui.stateManagement';
 struct ScrollBarColorExample {
   private scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] as number[];
-  @State scrollBarColor: ColorMetrics = ColorMetrics.rgba(24, 35, 48, 0.4);
+  @State scrollBarColor:ColorMetrics = ColorMetrics.rgba(24, 35, 48, 0.4);
 
   build() {
     Column() {
@@ -69,19 +69,15 @@ struct ScrollBarColorExample {
                   .textAlign(TextAlign.Center)
                   .margin({ top: 5 } as Margin)
               }
-            }, (item: number) => item.toString())
+            }, (item:number) => item.toString())
           }.margin({ right: 15 } as Margin)
         }
         .width('90%')
         .height('60%')
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
-
-        ScrollBar({
-          scroller: this.scroller,
-          direction: ScrollBarDirection.Vertical,
-          state: BarState.Auto
-        })
+        ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical,state: BarState.Auto })
+          // .scrollBarColor(this.scrollBarColor)
           .id('scrollBar_color_text')
       }
     }

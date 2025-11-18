@@ -54,7 +54,7 @@ struct ButtonExample {
   @State bttype: ButtonType = ButtonType.Normal
   @State stateEffect: boolean = true
   @State str: string = "Disable1"
-  @State fontColor: Color = Color.Red
+  @State fontColor: Color | string = Color.Red
   @State fontFamily: string = "123"
   @State fontStyle: FontStyle = FontStyle.Italic
   @State fontWeight: FontWeight = FontWeight.Lighter
@@ -67,7 +67,12 @@ struct ButtonExample {
     let callback: Callback<ButtonType | boolean | string | Color | FontStyle | FontWeight> = (message: Message<ButtonType | boolean | string | Color | FontStyle | FontWeight>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'bttype') {
-        this.bttype = message.value as ButtonType
+        if (!(message.value instanceof string)) {
+          this.bttype = message.value as ButtonType
+        } else {
+          // 异常值
+          this.bttype = ButtonType.ROUNDED_RECTANGLE
+        }
       }
       if (message.name == 'stateEffect') {
         this.stateEffect = message.value as Boolean
@@ -77,21 +82,30 @@ struct ButtonExample {
         this.fontSize = message.value as String
       }
       if (message.name == 'fontColor') {
-        this.fontColor = message.value as Color
+        if (message.value instanceof string) {
+          this.fontColor = message.value as string
+        } else {
+          this.fontColor = message.value as Color
+        }
       }
       if (message.name == 'fontFamily') {
         this.fontFamily = message.value as String
       }
       if (message.name == 'fontStyle') {
-        this.fontStyle = message.value as FontStyle
+        if (!(message.value instanceof string)) {
+          this.fontStyle = message.value as FontStyle
+        }
       }
       if (message.name == 'fontWeight') {
-        this.fontWeight = message.value as FontWeight
+        if (!(message.value instanceof string)) {
+          this.fontWeight = message.value as FontWeight
+        } else {
+          // 异常值
+          this.fontWeight =  FontWeight.Normal
+        }
       }
-
     }
     this.messageManager.registerCallback(callback)
-
   }
 
   build() {

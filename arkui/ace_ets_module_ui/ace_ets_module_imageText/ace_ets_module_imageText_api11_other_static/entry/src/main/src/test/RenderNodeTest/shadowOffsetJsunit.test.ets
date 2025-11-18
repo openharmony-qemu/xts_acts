@@ -95,7 +95,7 @@ export default function shadowOffsetJsunit() {
           // console.info("push shadowOffsetJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push shadowOffsetJsunit page error:" + err);
       }
 
@@ -107,10 +107,9 @@ export default function shadowOffsetJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
-
     
-/*
+
+    /*
      * @tc.number   shadowOffsetJsunit_static_0100
      * @tc.name     shadowOffsetJsunit_static_0100
      * @tc.desc     shadowOffsetJsunit_static_0100

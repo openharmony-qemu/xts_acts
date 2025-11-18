@@ -16,6 +16,6 @@ import CustomSelectionPage from './CustomSelect/CustomSelect.test';
 import ModifierPage from './ModifierSelect/ModifierSelect.test';
 
 export default function testsuite() {
-  CustomSelectionPage(); //The key 'avoidance' was not found in the JSON object10.13SDK
-  ModifierPage(); //The key 'avoidance' was not found in the JSON object10.13SDK
+  CustomSelectionPage();
+  ModifierPage();
 }

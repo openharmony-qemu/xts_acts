@@ -66,7 +66,7 @@ export default function SetOpacityJsunit() {
           // console.info("push SetOpacityJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push SetOpacityJsunit page error:" + err);
       }
       console.info("SetOpacityJsunit beforeEach end");
@@ -79,9 +79,8 @@ export default function SetOpacityJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   SetOpacityJsunit_static_001
      * @tc.name     SetOpacityJsunit_static_001
      * @tc.desc     SetOpacityJsunit_static_001

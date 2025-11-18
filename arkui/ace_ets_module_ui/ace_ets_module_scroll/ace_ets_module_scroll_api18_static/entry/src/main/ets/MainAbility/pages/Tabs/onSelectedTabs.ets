@@ -13,38 +13,37 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   $r,
-  Column,
-  TabsAnimationEvent,
-  ColumnOptions,
-  BarPosition,
-  EdgeEffect,
+  AdaptiveColor,
   AnimationMode,
+  BarPosition,
+  BlurStyle,
+  BlurStyleActivePolicy,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  EdgeEffect,
+  Entry,
+  ForEach,
+  Image,
+  Margin,
+  Stack,
+  Swiper,
+  SwiperController,
+  TabContent,
+  Tabs,
+  TabsAnimationEvent,
   TabsCacheMode,
   TabsController,
   Text,
-  Stack,
-  Tabs,
-  TabContent,
-  Image,
-  BlurStyle,
-  ThemeColorMode,
-  AdaptiveColor,
-  BlurStyleActivePolicy,
-  Color,
-  Button,
-  Swiper,
-  ForEach,
-  ClickEvent,
-  Margin,
-  SwiperController,
   TextAlign,
+  ThemeColorMode,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { BusinessError } from '@ohos.base';
 
@@ -53,8 +52,8 @@ import { BusinessError } from '@ohos.base';
 struct onSelectTabsExample {
   @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
-  @State selectedIndex: number = -1
-  @State tIndex: number = -1
+  @State selectedIndex: int = -1
+  @State tIndex: int = -1
 
   build() {
     Column() {

@@ -79,7 +79,7 @@ export default function RelativeChain12() {
           // console.info("push RelativeChain12 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeChain12 page error:" + err);
       }
       console.info("RelativeChain12 foreEach end");
@@ -90,10 +90,9 @@ export default function RelativeChain12() {
       console.info("RelativeChain12 after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeChain12_static_001
      * @tc.name     RelativeChain12_static_001
      * @tc.desc     RelativeChain12_static_001
@@ -127,10 +126,9 @@ it('RelativeChain12_static_001', Level.LEVEL3, async (done: () => void): Promise
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeChain12_static_002
      * @tc.name     RelativeChain12_static_002
      * @tc.desc     RelativeChain12_static_002

@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -35,7 +35,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -45,8 +45,6 @@ export default function IndexTest() {
   describe('SwiperIndicatorDistance', () => {
     beforeAll(() => {
       console.info("SwiperIndicatorDistance beforeEach start");
-
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -60,23 +58,25 @@ export default function IndexTest() {
       try {
         swiperIndicatorDistanceTest.clear();
         let pages: router.RouterState = swiperIndicatorDistanceTest.getState();
-        if (pages == null || !("DigitIndicator" == pages.name)) {
-          await swiperIndicatorDistanceTest.pushUrl(options).then(() => {
+        console.info("before push " + JSON.stringify(pages));
+        if (pages == null || !("SwiperIndicatorDistanceTest" == pages.name)) {
+          swiperIndicatorDistanceTest.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           })
+          console.info("after push " + JSON.stringify(pages));
+          await sleep(1000)
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
 
-
     /*
-     * @tc.number    SwiperIndicatorDistance_static_0100
-     * @tc.name      SwiperIndicatorDistance_static_0100
-     * @tc.desc      SwiperIndicatorDistance_static_0100
-     * @tc.level     2
-     */
+    * @tc.number   SwiperIndicatorDistance_static_0100
+    * @tc.name     SwiperIndicatorDistance_static_0100
+    * @tc.desc     SwiperIndicatorDistance_static_0100
+    * @tc.level    Level.LEVEL0
+    */
     it('SwiperIndicatorDistance_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('Swiper_DigitIndicator START');
@@ -94,6 +94,7 @@ export default function IndexTest() {
         let obj1Digit = JSON.parseJsonElement(strJson1Digit);
         let objDigit1 = JSON.parseJsonElement(obj1Digit.getElement('$attrs').getString('indicator'));
         let obj1Dot = JSON.parseJsonElement(strJson1Dot);
+        console.info("Swiper_Indicator indicator" + obj1Dot.getElement('$attrs').getString('indicator'))
         let objDot1 = JSON.parseJsonElement(obj1Dot.getElement('$attrs').getString('indicator'));
         expect(Number.parseFloat(objDigit1.getString('bottom'))).assertEqual(3);
         expect(Number.parseFloat(objDot1.getString('space'))).assertEqual(8);

@@ -98,15 +98,14 @@ export default function checkBoxGroupUIJsunit() {
           // console.info("push checkBoxGroupUIJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push checkBoxGroupUI page error:" + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxGroupUIJsunit_static_0100
      * @tc.name     checkBoxGroupUIJsunit_static_0100
      * @tc.desc     checkBoxGroupUIJsunit_static_0100
@@ -130,8 +129,7 @@ it('checkBoxGroupUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxGroupUIJsunit_static_0200
      * @tc.name     checkBoxGroupUIJsunit_static_0200
      * @tc.desc     checkBoxGroupUIJsunit_static_0200
@@ -142,7 +140,7 @@ it('checkBoxGroupUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): 
       await CommonFunc.sleep(1000);
       // modify the attribute normal value of checkbox dynamically
       await CommonFunc.sleep(2000);
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: '#EEAAFF' })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: '#EEAAFF' })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('allck');
@@ -157,8 +155,7 @@ it('checkBoxGroupUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxGroupUIJsunit_static_0300
      * @tc.name     checkBoxGroupUIJsunit_static_0300
      * @tc.desc     checkBoxGroupUIJsunit_static_0300
@@ -168,7 +165,7 @@ it('checkBoxGroupUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): 
       console.info('checkBoxGroupUIJsunit_static_0300 START');
       await CommonFunc.sleep(1000);
       // modify the attribute illegal value of checkbox dynamically
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: '#eaf' })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: '#eaf' })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('allck');
@@ -178,8 +175,7 @@ it('checkBoxGroupUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxGroupUIJsunit_static_0400
      * @tc.name     checkBoxGroupUIJsunit_static_0400
      * @tc.desc     checkBoxGroupUIJsunit_static_0400
@@ -189,7 +185,7 @@ it('checkBoxGroupUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): 
       console.info('checkBoxGroupUIJsunit_static_0400 START');
       await CommonFunc.sleep(1000);
       // modify the .getString("selectedColor")
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: 'rgb(238, 130, 238)' })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: 'rgb(238, 130, 238)' })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('allck');
@@ -199,8 +195,7 @@ it('checkBoxGroupUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxGroupUIJsunit_static_0500
      * @tc.name     checkBoxGroupUIJsunit_static_0500
      * @tc.desc     checkBoxGroupUIJsunit_static_0500
@@ -210,7 +205,7 @@ it('checkBoxGroupUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): 
       console.info('checkBoxGroupUIJsunit_static_0500 START');
       await CommonFunc.sleep(1000);
       // modify the .getString("selectedColor")
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: Color.Green })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: Color.Green })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('allck');
@@ -220,8 +215,7 @@ it('checkBoxGroupUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxGroupUIJsunit_static_0600
      * @tc.name     checkBoxGroupUIJsunit_static_0600
      * @tc.desc     checkBoxGroupUIJsunit_static_0600
@@ -252,8 +246,7 @@ it('checkBoxGroupUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxGroupUIJsunit_static_0700
      * @tc.name     checkBoxGroupUIJsunit_static_0700
      * @tc.desc     checkBoxGroupUIJsunit_static_0700

@@ -82,7 +82,7 @@ export default function imageObscuredTest() {
           // console.info("push imageObscuredTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push imageObscuredTest page error: " + err);
       }
 
@@ -97,8 +97,7 @@ export default function imageObscuredTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    
-/*
+    /*
      * @tc.number   ArkUX_Redacted_Image_static_0150
      * @tc.name     ArkUX_Redacted_Image_static_0150
      * @tc.desc     ArkUX_Redacted_Image_static_0150
@@ -120,7 +119,7 @@ it('ArkUX_Redacted_Image_static_0150', Level.LEVEL1, async (done: () => void): P
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius')).assertEqual("20.00vp");
           expect(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('obscured')[0].asString())).assertEqual(Number(ObscuredReasons.PLACEHOLDER));
           console.info('ArkUX_Redacted_Image_0150 END ');
-        } catch (err) {
+        } catch (err:Error) {
           expect().assertFail()
           console.info('ArkUX_Redacted_Image_0150 ERR  ' + JSON.stringify(err));
         }
@@ -128,8 +127,7 @@ it('ArkUX_Redacted_Image_static_0150', Level.LEVEL1, async (done: () => void): P
       }, 500)
     });
 
-    
-/*
+    /*
      * @tc.number   ArkUX_Redacted_Image_static_0160
      * @tc.name     ArkUX_Redacted_Image_static_0160
      * @tc.desc     ArkUX_Redacted_Image_static_0160
@@ -146,7 +144,7 @@ it('ArkUX_Redacted_Image_static_0160', Level.LEVEL1, async (done: () => void): P
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('obscured').length).assertEqual(0);
           console.info('ArkUX_Redacted_Image_0020 END ');
-        } catch (err) {
+        } catch (err:Error) {
           expect().assertFail()
           console.info('ArkUX_Redacted_Image_0160 ERR  ' + JSON.stringify(err));
         }
@@ -154,8 +152,7 @@ it('ArkUX_Redacted_Image_static_0160', Level.LEVEL1, async (done: () => void): P
       }, 500)
     });
 
-    
-/*
+    /*
      * @tc.number   ArkUX_Redacted_Image_static_0170
      * @tc.name     ArkUX_Redacted_Image_static_0170
      * @tc.desc     ArkUX_Redacted_Image_static_0170
@@ -174,7 +171,7 @@ it('ArkUX_Redacted_Image_static_0170', Level.LEVEL1, async (done: () => void): P
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual("200.00px");
           expect(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getArray("obscured")[0].asString())).assertEqual(Number(ObscuredReasons.PLACEHOLDER));
           console.info('ArkUX_Redacted_Image_0170 END ');
-        } catch (err) {
+        } catch (err:Error) {
           expect().assertFail()
           console.info('ArkUX_Redacted_Image_0170 ERR  ' + JSON.stringify(err));
         }
@@ -182,8 +179,7 @@ it('ArkUX_Redacted_Image_static_0170', Level.LEVEL1, async (done: () => void): P
       }, 500)
     });
 
-    
-/*
+    /*
      * @tc.number   ArkUX_Redacted_Image_static_0180
      * @tc.name     ArkUX_Redacted_Image_static_0180
      * @tc.desc     ArkUX_Redacted_Image_static_0180
@@ -200,7 +196,7 @@ it('ArkUX_Redacted_Image_static_0180', Level.LEVEL1, async (done: () => void): P
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
           expect(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getArray("obscured")[0].asString())).assertEqual(Number(ObscuredReasons.PLACEHOLDER));
           console.info('ArkUX_Redacted_Image_0180 END ');
-        } catch (err) {
+        } catch (err:Error) {
           expect().assertFail()
           console.info('ArkUX_Redacted_Image_0180 ERR  ' + JSON.stringify(err));
         }
@@ -208,8 +204,7 @@ it('ArkUX_Redacted_Image_static_0180', Level.LEVEL1, async (done: () => void): P
       }, 500)
     });
 
-    
-/*
+    /*
      * @tc.number   ArkUX_Redacted_Image_static_0190
      * @tc.name     ArkUX_Redacted_Image_static_0190
      * @tc.desc     ArkUX_Redacted_Image_static_0190
@@ -226,7 +221,7 @@ it('ArkUX_Redacted_Image_static_0190', Level.LEVEL1, async (done: () => void): P
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
           expect(Number(JSON.parseJsonElement(strJson).getElement('$attrs').getArray("obscured")[0].asString())).assertEqual(Number(ObscuredReasons.PLACEHOLDER));
           console.info('ArkUX_Redacted_Image_0190 END ');
-        } catch (err) {
+        } catch (err:Error) {
           expect().assertFail()
           console.info('ArkUX_Redacted_Image_0190 ERR  ' + JSON.stringify(err));
         }

@@ -49,6 +49,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { ScaleOptions } from '@ohos.arkui.component';
 
 
 let domain: Int = 0x0000;
@@ -90,7 +91,7 @@ export default function ohosMatrix4Jsunit() {
           // console.info("push ohosMatrix4 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push ohosMatrix4  page error:" + err);
       }
 
@@ -101,8 +102,7 @@ export default function ohosMatrix4Jsunit() {
       console.info("OhosMatrix4 each called");
     });
 
-    
-/*
+    /*
      * @tc.number   test_OhosMatrix4_static_001
      * @tc.name     test_OhosMatrix4_static_001
      * @tc.desc     test_OhosMatrix4_static_001
@@ -113,17 +113,15 @@ it('test_OhosMatrix4_static_001', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('rotate7');
       console.info("[test_OhosMatrix4_001] component strJson:" + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getDouble("$type")).assertEqual('Image');
+      expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Image');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getString("type"))
         .assertEqual('matrix')
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getString('matrix'))
-        .assertEqual('');
-        //.assertNotNull;
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getString('matrix') !== null)
+        .assertTrue();
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   test_OhosMatrix4_static_002
      * @tc.name     test_OhosMatrix4_static_002
      * @tc.desc     test_OhosMatrix4_static_002
@@ -134,16 +132,15 @@ it('test_OhosMatrix4_static_002', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('rotate8');
       console.info("[test_OhosMatrix4_001] component strJson:" + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getDouble("$type")).assertEqual('Image');
+      expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Image');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getString("type"))
         .assertEqual('matrix')
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getElement('matrix'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getString('matrix'))
         .assertEqual('5.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,-200.000000,0.000000,0.000000,1.000000,')
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   test_OhosMatrix4_static_003
      * @tc.name     test_OhosMatrix4_static_003
      * @tc.desc     test_OhosMatrix4_static_003
@@ -154,16 +151,15 @@ it('test_OhosMatrix4_static_003', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('rotate9');
       console.info("[test_OhosMatrix4_003] component strJson:" + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getDouble("$type")).assertEqual('Image');
+      expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Image');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getString("type"))
         .assertEqual('matrix')
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getElement('matrix'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('transform').getString('matrix'))
         .assertEqual('1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,100.000000,200.000000,30.000000,1.000000,')
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   test_OhosMatrix4_static_004
      * @tc.name     test_OhosMatrix4_static_004
      * @tc.desc     test_OhosMatrix4_static_004
@@ -172,14 +168,13 @@ it('test_OhosMatrix4_static_003', Level.LEVEL1, async (done: () => void): Promis
 it('test_OhosMatrix4_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[test_OhosMatrix4_004] START');
       await CommonFunc.sleep(1000);
-      let scaleValue: ScaleValue = {
-        x: 1, y: 1
-      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "scaleValue": JSON.stringify(scaleValue)
-          }as Record<string, undefined|null|Object>
+            "scaleValue": {
+              x: 1, y: 1
+            } as ScaleOptions
+          } as Record<string, undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 140,
@@ -187,19 +182,19 @@ it('test_OhosMatrix4_static_004', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info("[test_OhosMatrix4_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[test_OhosMatrix4_004] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew: string = inspector.getInspectorByKey('rotate3');
       console.info("[test_OhosMatrix4_004] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      await CommonFunc.sleep(2000);
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('scale').getString('x')).assertEqual('1.000000');
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('scale').getString('y')).assertEqual('1.000000');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   test_OhosMatrix4_static_005
      * @tc.name     test_OhosMatrix4_static_005
      * @tc.desc     test_OhosMatrix4_static_005
@@ -209,7 +204,8 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
       await CommonFunc.sleep(1000)
       let callback:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("[test_OhosMatrix4_005] get event state result is: " + JSON.stringify(eventData));
-        expect((eventData.data as ESObject)?.getProperty('matrix1').toString()).assertEqual("[100, 10]")
+        const data = eventData.data as Record<string, undefined|null|Object>
+        expect(data['matrix1']).assertEqual("[100, 10]")
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: 141,
@@ -217,7 +213,7 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err) {
+      } catch (err:Error) {
         console.info("[test_OhosMatrix4_005] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[test_OhosMatrix4_005] sendEventByKey ' + JSON.stringify(inspector.sendEventByKey('rotate5', 10, "")));
@@ -226,8 +222,7 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   test_OhosMatrix4_static_006
      * @tc.name     test_OhosMatrix4_static_006
      * @tc.desc     test_OhosMatrix4_static_006
@@ -236,17 +231,15 @@ it('test_OhosMatrix4_static_005', Level.LEVEL1, async (done: () => void): Promis
 it('test_OhosMatrix4_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[test_OhosMatrix4_006] START');
       await CommonFunc.sleep(1000);
-      let matrix2: Matrix = {
-        x: 400
-      }
-      let matrix3: Matrix = {
-        x: 2
-      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "matrix2": JSON.stringify(matrix2),
-            "matrix3": JSON.stringify(matrix3)
+            "matrix2":{
+              x: 400
+            } as Matrix,
+            "matrix3": {
+              x: 2
+            } as Matrix
           }as Record<string, undefined|null|Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -255,14 +248,14 @@ it('test_OhosMatrix4_static_006', Level.LEVEL1, async (done: () => void): Promis
         }
         console.info("[test_OhosMatrix4_006] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[test_OhosMatrix4_006] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew: string = inspector.getInspectorByKey('rotate6');
-      console.info("[test_OhosMatrix4_006] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      console.info("[test_OhosMatrix4_006] component transform is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('transform')));
-      expect(JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('transform')))
+      console.info("[test_OhosMatrix4_006] component objNew is: " + strJsonNew);
+      console.info("[test_OhosMatrix4_006] component transform is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('transform')));
+      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('transform')))
         .assertEqual('{"type":"matrix","matrix":"3.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,900.000000,0.000000,0.000000,1.000000,"}');
       done();
     });

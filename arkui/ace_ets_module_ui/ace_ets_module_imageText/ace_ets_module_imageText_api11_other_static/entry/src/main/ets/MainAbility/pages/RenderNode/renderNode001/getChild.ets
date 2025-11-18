@@ -35,6 +35,7 @@ import {
   Alignment,
   TextAlign,
   TextOverflow,
+  FrameNode,
   NodeContainer,
   DragPreviewMode
 } from '@ohos.arkui.component';
@@ -92,7 +93,6 @@ struct getChild1 {
       NodeContainer(this.MyNodeController).height('20%')
       Button('添加子节点').height('5%')
         .key('getChild_0')
-        .id('getChild_0')
         .onClick((e: ClickEvent) => {
           const child = new RenderNode()
           const sibling = renderNode.getChild(this.index)
@@ -102,13 +102,11 @@ struct getChild1 {
         })
       Button('改变子节点的位置').height('5%')
         .key('getChild_1')
-        .id('getChild_1')
         .onClick((e: ClickEvent) => {
           this.index++
         })
       Button('获取RenderNode的getChild接口').height('5%')
         .key('getChild_2')
-        .id('getChild_2')
         .onClick((e: ClickEvent) => {
           const child0 = renderNode.getChild(this.index)
           if (child0 != null) {
@@ -123,7 +121,6 @@ struct getChild1 {
       }
       Button('获取RenderNode的getFirstChild接口').height('5%')
         .key('getChild_3')
-        .id('getChild_3')
         .onClick((e: ClickEvent) => {
           const child1 = renderNode.getFirstChild()
           if (child1 != null) {
@@ -138,7 +135,6 @@ struct getChild1 {
       }
       Button('获取RenderNode的getNextSibling接口').height('5%')
         .key('getChild_4')
-        .id('getChild_4')
         .onClick((e: ClickEvent) => {
           const child2 = renderNode.getChild(this.index)
           if (child2 != null) {
@@ -159,7 +155,6 @@ struct getChild1 {
       }
       Button('获取RenderNode的getPreviousSibling接口').height('5%')
         .key('getChild_5')
-        .id('getChild_5')
         .onClick((e: ClickEvent) => {
           const child3 = renderNode.getChild(this.index)
           if (child3 != null) {

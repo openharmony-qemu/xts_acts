@@ -97,15 +97,14 @@ export default function checkBoxJsunit() {
           // console.info("push checkBoxJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push checkBoxJsunit page error:" + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxJsunit_static_0100
      * @tc.name     checkBoxJsunit_static_0100
      * @tc.desc     checkBoxJsunit_static_0100
@@ -129,8 +128,7 @@ it('checkBoxJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxJsunit_static_0200
      * @tc.name     checkBoxJsunit_static_0200
      * @tc.desc     checkBoxJsunit_static_0200
@@ -148,7 +146,7 @@ it('checkBoxJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
       let checkBox = await driver.findComponent(ON.id('chek1'));
       let isChecked = await (checkBox?.isChecked() as Promise<boolean>);
       expect(isChecked).assertFalse();
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: '#ecaaff' })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: '#ecaaff' })
       await CommonFunc.sleep(4000);
       // check the value of changed attribute
       let strJson2 = inspector.getInspectorByKey('chek1');
@@ -158,8 +156,7 @@ it('checkBoxJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxJsunit_static_0300
      * @tc.name     checkBoxJsunit_static_0300
      * @tc.desc     checkBoxJsunit_static_0300
@@ -169,7 +166,7 @@ it('checkBoxJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       console.info('checkBoxJsunit_static_0300 START');
       await CommonFunc.sleep(2000);
       // modify the attribute illegal value of checkbox dynamically
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: '#ecaf' })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: '#ecaf' })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('chek1');
@@ -179,8 +176,7 @@ it('checkBoxJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxJsunit_static_0400
      * @tc.name     checkBoxJsunit_static_0400
      * @tc.desc     checkBoxJsunit_static_0400
@@ -201,11 +197,11 @@ it('checkBoxJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       let obj = JSON.parseJsonElement(strJson);
       console.info("[blankJsunit_0400'] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString("selectedColor")).assertEqual('#FFFFFF21');
+      await (checkbox1?.click() as Promise<void>)
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxJsunit_static_0500
      * @tc.name     checkBoxJsunit_static_0500
      * @tc.desc     checkBoxJsunit_static_0500
@@ -215,7 +211,7 @@ it('checkBoxJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
       console.info('checkBoxJsunit_static_0300 START');
       await CommonFunc.sleep(2000);
       // verify the enum color
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: Color.Green })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: Color.Green })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('chek1');
@@ -225,8 +221,7 @@ it('checkBoxJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxJsunit_static_0600
      * @tc.name     checkBoxJsunit_static_0600
      * @tc.desc     checkBoxJsunit_static_0600
@@ -236,7 +231,7 @@ it('checkBoxJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
       console.info('checkBoxJsunit_static_0600 START');
       await CommonFunc.sleep(2000);
       // verify the enum color of rgb
-      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: '.getString("selectedColor")', value: 'rgb(238, 130, 238)' })
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectedColor', value: 'rgb(238, 130, 238)' })
       await CommonFunc.sleep(2000);
       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('chek1');
@@ -246,8 +241,7 @@ it('checkBoxJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   checkBoxJsunit_static_0700
      * @tc.name     checkBoxJsunit_static_0700
      * @tc.desc     checkBoxJsunit_static_0700

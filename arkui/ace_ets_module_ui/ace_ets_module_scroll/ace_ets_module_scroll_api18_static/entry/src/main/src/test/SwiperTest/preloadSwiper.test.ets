@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -35,7 +35,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -45,8 +45,6 @@ export default function preloadSwiper() {
   describe('preloadSwiper', () => {
     beforeAll(() => {
       console.info("preloadSwiper beforeEach start");
-
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -54,6 +52,7 @@ export default function preloadSwiper() {
     beforeEach(async (): Promise<void> => {
       console.info("preloadSwiper beforeEach start");
       const preloadSwiper = AppStorage.get<Router>("router") as Router
+      preloadSwiper.clear();
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Swiper/preloadSwiper",
       }
@@ -64,8 +63,7 @@ export default function preloadSwiper() {
         if (!("preloadSwiper" == pages.name)) {
           console.info("get preloadSwiper pages.name:" + JSON.stringify(pages.name));
           preloadSwiper.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(1500);
         }
       } catch (err) {
         console.error("push preloadSwiper page error:" + err);
@@ -73,17 +71,17 @@ export default function preloadSwiper() {
       console.info("preloadSwiper beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    preloadSwiper_static_0100
-     * @tc.name      preloadSwiper_static_0100
-     * @tc.desc      preloadSwiper_static_0100
-     * @tc.level     2
+     * @tc.number   preloadSwiper_static_0100
+     * @tc.name     preloadSwiper_static_0100
+     * @tc.desc     preloadSwiper_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('preloadSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('preloadSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[preloadSwiper_static_0100] START');
       let driver = Driver.create()
-      let btn1: Component = await driver.findComponent(ON.id('preloadItems_swiper_succ')) as Component;
+      let btn1 = await driver.findComponent(ON.id('preloadItems_swiper_succ')) as Component;
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       let strJson = inspector.getInspectorByKey('preloadItems_swiper_text');
@@ -94,7 +92,7 @@ export default function preloadSwiper() {
         .assertEqual('preloadItems: success');
       await CommonFunc.sleep(1000);
 
-      let btn2: Component = await driver.findComponent(ON.id('preloadItems_swiper_401')) as Component;
+      let btn2 = await driver.findComponent(ON.id('preloadItems_swiper_401')) as Component;
       await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       let strJson2 = inspector.getInspectorByKey('preloadItems_swiper_text');
@@ -103,7 +101,7 @@ export default function preloadSwiper() {
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
         .assertEqual('preloadItems: "401"');
 
-      let btn3: Component = await driver.findComponent(ON.id('preloadItems_swiper_1004')) as Component;
+      let btn3 = await driver.findComponent(ON.id('preloadItems_swiper_1004')) as Component;
       await (btn3.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       let strJson3 = inspector.getInspectorByKey('preloadItems_swiper_text');

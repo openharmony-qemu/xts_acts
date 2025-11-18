@@ -63,7 +63,7 @@ export default function relativeCTest() {
           // console.info("push relativeCTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push relativeCTest page error:" + err);
       }
       console.info("relativeCTest beforeEach end");
@@ -73,9 +73,8 @@ export default function relativeCTest() {
       console.info("relativeCTest after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   relativeCTest_static_0100
      * @tc.name     relativeCTest_static_0100
      * @tc.desc     relativeCTest_static_0100

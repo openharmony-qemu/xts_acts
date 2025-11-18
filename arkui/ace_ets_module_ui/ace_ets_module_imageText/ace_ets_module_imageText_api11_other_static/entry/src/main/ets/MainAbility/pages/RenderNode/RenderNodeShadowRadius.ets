@@ -37,7 +37,7 @@ import {
   Alignment,
   TextAlign,
   TextOverflow,
-  NodeContainer
+    NodeContainer
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';

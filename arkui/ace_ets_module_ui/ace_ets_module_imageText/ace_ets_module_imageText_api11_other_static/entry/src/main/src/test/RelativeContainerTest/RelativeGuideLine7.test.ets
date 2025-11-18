@@ -77,7 +77,7 @@ export default function RelativeGuideLine7() {
           // console.info("push RelativeGuideLine7 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeGuideLine7 page error:" + err);
       }
       console.info("RelativeGuideLine7 foreEach end");
@@ -88,10 +88,9 @@ export default function RelativeGuideLine7() {
       console.info("RelativeGuideLine7 after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine7_static_001
      * @tc.name     RelativeGuideLine7_static_001
      * @tc.desc     RelativeGuideLine7_static_001
@@ -112,10 +111,9 @@ it('RelativeGuideLine7_static_001', Level.LEVEL3, async (done: () => void): Prom
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine7_static_002
      * @tc.name     RelativeGuideLine7_static_002
      * @tc.desc     RelativeGuideLine7_static_002

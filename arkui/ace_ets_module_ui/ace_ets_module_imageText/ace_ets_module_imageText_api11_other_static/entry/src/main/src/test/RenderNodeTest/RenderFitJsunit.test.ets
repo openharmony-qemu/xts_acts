@@ -96,15 +96,14 @@ export default function RenderFitJsunit() {
           // console.info("push RenderFitJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RenderFitJsunit page error: " + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0100
      * @tc.name     RenderFitJsunit_static_0100
      * @tc.desc     RenderFitJsunit_static_0100
@@ -122,8 +121,7 @@ it('RenderFitJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0200
      * @tc.name     RenderFitJsunit_static_0200
      * @tc.desc     RenderFitJsunit_static_0200
@@ -141,8 +139,7 @@ it('RenderFitJsunit_static_0200', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0300
      * @tc.name     RenderFitJsunit_static_0300
      * @tc.desc     RenderFitJsunit_static_0300
@@ -160,8 +157,7 @@ it('RenderFitJsunit_static_0300', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0400
      * @tc.name     RenderFitJsunit_static_0400
      * @tc.desc     RenderFitJsunit_static_0400
@@ -179,8 +175,7 @@ it('RenderFitJsunit_static_0400', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0500
      * @tc.name     RenderFitJsunit_static_0500
      * @tc.desc     RenderFitJsunit_static_0500
@@ -198,8 +193,7 @@ it('RenderFitJsunit_static_0500', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0600
      * @tc.name     RenderFitJsunit_static_0600
      * @tc.desc     RenderFitJsunit_static_0600
@@ -217,8 +211,7 @@ it('RenderFitJsunit_static_0600', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0700
      * @tc.name     RenderFitJsunit_static_0700
      * @tc.desc     RenderFitJsunit_static_0700
@@ -236,8 +229,7 @@ it('RenderFitJsunit_static_0700', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0800
      * @tc.name     RenderFitJsunit_static_0800
      * @tc.desc     RenderFitJsunit_static_0800
@@ -255,8 +247,7 @@ it('RenderFitJsunit_static_0800', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_0900
      * @tc.name     RenderFitJsunit_static_0900
      * @tc.desc     RenderFitJsunit_static_0900
@@ -274,8 +265,7 @@ it('RenderFitJsunit_static_0900', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_1000
      * @tc.name     RenderFitJsunit_static_1000
      * @tc.desc     RenderFitJsunit_static_1000
@@ -293,8 +283,7 @@ it('RenderFitJsunit_static_1000', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_1100
      * @tc.name     RenderFitJsunit_static_1100
      * @tc.desc     RenderFitJsunit_static_1100
@@ -312,8 +301,7 @@ it('RenderFitJsunit_static_1100', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_1200
      * @tc.name     RenderFitJsunit_static_1200
      * @tc.desc     RenderFitJsunit_static_1200
@@ -331,8 +319,7 @@ it('RenderFitJsunit_static_1200', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_1300
      * @tc.name     RenderFitJsunit_static_1300
      * @tc.desc     RenderFitJsunit_static_1300
@@ -350,8 +337,7 @@ it('RenderFitJsunit_static_1300', Level.LEVEL2, async (done: () => void): Promis
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   RenderFitJsunit_static_1400
      * @tc.name     RenderFitJsunit_static_1400
      * @tc.desc     RenderFitJsunit_static_1400

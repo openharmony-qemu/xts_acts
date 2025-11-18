@@ -12,32 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
   Button,
   ButtonAttribute,
   ClickEvent,
+  Column,
+  Entry,
   Image,
   ImageFit,
   Scroller,
+  Text,
+  TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test.ets';
+import { startAbility, UtilsTest } from '../Util.test.ets';
 
 export default function LazyVGridLayout() {
 
@@ -62,9 +61,7 @@ export default function LazyVGridLayout() {
         console.info("get LazyVGridLayout state pages:" + JSON.stringify(pages));
         if (!("LazyVGridLayout" == pages.name)) {
           console.info("get LazyVGridLayout pages.name:" + JSON.stringify(pages.name));
-          await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          router.pushUrl(options);
         }
       } catch (err) {
         console.error("push LazyVGridLayout page error:" + err);
@@ -72,14 +69,14 @@ export default function LazyVGridLayout() {
       console.info("LazyVGridLayout beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    LazyVGridLayout_static_0100
-     * @tc.name      LazyVGridLayout_static_0100
-     * @tc.desc      LazyVGridLayout_static_0100
-     * @tc.level     2
+     * @tc.number   LazyVGridLayout_static_0100
+     * @tc.name     LazyVGridLayout_static_0100
+     * @tc.desc     LazyVGridLayout_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('LazyVGridLayout_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('LazyVGridLayout_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[LazyVGridLayout_static_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LazyVGridLayout_key');
@@ -94,9 +91,9 @@ export default function LazyVGridLayout() {
       console.info("[LazyVGridLayout_static_0100] columnsGap: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('ColumnsGap')));
       await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("LazyVGridLayout");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('columnsTemplate')).assertEqual("1fr 1fr");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('rowsGap')).assertEqual("10.00vp");
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("LazyVGridLayout");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate')).assertEqual("1fr 1fr");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('rowsGap')).assertEqual("10.00vp");
       console.info('[LazyVGridLayout_static_0100] END');
       done();
     });

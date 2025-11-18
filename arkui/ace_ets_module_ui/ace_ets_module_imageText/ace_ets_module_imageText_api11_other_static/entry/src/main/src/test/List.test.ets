@@ -116,19 +116,17 @@ import ImageAdvancedTest from './imageTest/ImageAdvancedTest.test.ets'
 import ImageAnimatorAdvancedTest from './ImageAnimator/imageAnimatorAdvancedTest.test.ets'
 
 export default function testsuite() {
-  ImageAdvancedTest() //1个断言失败loading failed do not have  success IDE打包相对路径资源打不进去
-  ImageAnimatorAdvancedTest() //全pass 注释
-  ToggleJsunit(); //一个用例failed已知问题 ToggleType DTS2025080833765
-  arkuiNodeTest();  //注释导致页面未加载inspector.getInspectorByKey为null
-  arkuiNodeEventTest(); //页面有注释 白屏 2个用例报空指针
-  arkuiNodeRenderTest();  //注释导致页面未加载inspector.getInspectorByKey为null
-  buttonControlTest();//pass过 全注释
-  RelativeGuideLine()  //全pass 注释
-  RelativeGuideLine2() //全pass 注释
-  RelativeGuideLine3() //全pass 注释
-  RelativeGuideLine4() //全pass 注释
-  
-  //pass过 全注释
+  ImageAdvancedTest() //1个断言失败loading failed do not have  success IDE打包相对路径资源打不进去  1 网络加载图片
+  ImageAnimatorAdvancedTest()
+  ToggleJsunit(); //ToggleType.Switch equals ToggleType.Checkbox  DTS2025080833765  1
+  arkuiNodeTest();
+  arkuiNodeEventTest();
+  arkuiNodeRenderTest();
+  buttonControlTest();
+  RelativeGuideLine()
+  RelativeGuideLine2()
+  RelativeGuideLine3()
+  RelativeGuideLine4()
   RelativeGuideLine5()
   RelativeGuideLine6()
   RelativeGuideLine7()
@@ -154,59 +152,44 @@ export default function testsuite() {
   RelativeBarrier8()
   RelativePadding()
   RelativeBorder()
-  
-  Navigation1()  //无注释 页面加载失败create page failed, name: LinkerUnresolvedClassError message: entry.src.main.ets.MainAbility.pages.RelativeContainer.relativeApi11.common.CustomNavigationUtils.CustomTransition
-  Navigation2()  //无注释 页面加载失败create page failed, name: LinkerUnresolvedClassError message: entry.src.main.ets.MainAbility.pages.RelativeContainer.relativeApi11.common.CustomNavigationUtils.CustomTransition
-  Navigation3()  //pass 注释
-  Navigation4()  //pass 注释
-  
-  //pass过 全注释
+  Navigation1()
+  Navigation2()
+  Navigation3()
+  Navigation4()
   relativeCTest()
   ImageAttr()
   imageJsunit()
-  
-  ohosMatrix4Jsunit();  // 无注释 页面未加载 getInspectorByKey为空
-  fillModeJsunit();//pass过 全注释
-  ShapeClippingJsunit(); //因为注释导致属性取不到 4个用例注释
-  
-  
-  imageOneJsunit();  //pass 注释
-  imageTwoJsunit(); //pass 注释
-  imageThreeJsunit(); //pass 注释
-  buttonJsunit();  //2个断言失败 vp != fp
-  buttonEnabledJsunit();//pass过 全注释
-  checkBoxGroupUIJsunit(); //五个MessageManager相关问题断言失败  1个未知原因断言失败
-  CheckBoxJsunit(); //六个颜色断言失败 MessageManager相关问题断言失败
+  ohosMatrix4Jsunit();
+  fillModeJsunit();
+  ShapeClippingJsunit();
+  imageOneJsunit();
+  imageTwoJsunit();
+  imageThreeJsunit();
+  buttonJsunit();
+  buttonEnabledJsunit();
+  checkBoxGroupUIJsunit();
+  CheckBoxJsunit();
   TextClockJsunit();
-  TextClockLongJsunit();//pass过 全注释
-  loadingProgressJsunit();  //全pass 注释
-  TextTimerJsunit();  // 2个断言失败
-  
-  //pass过 全注释
+  TextClockLongJsunit();
+  loadingProgressJsunit();
+  TextTimerJsunit();  // DTS20251111387 count二次设置变默认值了 1
   aboutToRecycleiamge();
   imageJsunit55()
   playModeJsunit()
   ImageApi()
-  
-  
-  progress3Jsunit();  //emitter导致8个用例failed
-  button3Jsunit();  //emitter导致6个用例failed
-  
-  //pass过 全注释
+  progress3Jsunit();
+  button3Jsunit();
   imageAnimatorJsunitt();
   ButtonHoverTest();
   ActsgetcomponentTest();
   imageObscuredTest();
   loadingProgressJsunit2();
-  
-  // renderNode相关未适配 923 王丽莉 DTS2025092011133 涉及51个用例 App died
   appendChildTest()
   drawContextGetSizeTest()
   keyframeTest()
   pixelRoundTest()
-  
   frame()
-  getChildTest()
+  getChildTest() // RenderNode的相关api：getChild，getFirstChild等获取值为空  王丽莉 DTS2025092011133 4
   getClipToFrameJsunit()
   getColorTest()
   getOpacityJsunit()
@@ -218,7 +201,6 @@ export default function testsuite() {
   SetOpacityJsunit()
   SetPositionJsunit()
   SetSizeJsunit()
-  
   RenderFitJsunit();
   RenderNodeDrawJsSuit()
   RenderNodeInvalidateJsSuit()
@@ -230,14 +212,10 @@ export default function testsuite() {
   shadowOffsetJsunit()
   transformTest()
   translationTest()
-  // renderNode相关未适配
-  
-  
   buttonTest();
-  PatternLockJsunit(); //emitter传值 State未刷新
+  PatternLockJsunit();
   focusJsunit();
-  
-  imageAnimatorJsunit(); //MessageManager 5个断言失败 类型转换问题
-  ProgressJsunit();  //MessageManager 5个断言失败 类型转换问题
-  stageAnimatorTest(); //pass过 全注释
+  imageAnimatorJsunit();
+  ProgressJsunit();  // Progress 背景色 3
+  stageAnimatorTest();
 }

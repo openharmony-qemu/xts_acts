@@ -62,15 +62,14 @@ export default function atomicservicetabsTest() {
       console.info('chipDirectionTest after each called');
     });
 
-    /**
-     * @tc.number atomicservicetabs
-     * @tc.name atomicservicetabsTest_0100
-     * @tc.desc Test atomicservicetabs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   atomicservicetabsTest_0100
+     * @tc.name     atomicservicetabsTest_0100
+     * @tc.desc     atomicservicetabsTest_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('atomicservicetabsTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('atomicservicetabsTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[atomicservicetabsTest_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

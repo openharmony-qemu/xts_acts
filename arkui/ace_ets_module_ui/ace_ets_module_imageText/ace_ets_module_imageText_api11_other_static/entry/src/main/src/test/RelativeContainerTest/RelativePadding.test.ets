@@ -77,7 +77,7 @@ export default function RelativePadding() {
           // console.info("push RelativePadding page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativePadding page error:" + err);
       }
       console.info("RelativePadding foreEach end");
@@ -88,10 +88,9 @@ export default function RelativePadding() {
       console.info("RelativePadding after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativePadding_static_001
      * @tc.name     RelativePadding_static_001
      * @tc.desc     RelativePadding_static_001

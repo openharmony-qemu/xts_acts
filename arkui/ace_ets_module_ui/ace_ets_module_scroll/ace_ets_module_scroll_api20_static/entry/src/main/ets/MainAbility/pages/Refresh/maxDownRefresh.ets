@@ -64,7 +64,7 @@ struct maxPullDownRefresh {
         Text(this.onState)
           .id('onState_text')
           .margin(5)
-        Row() {
+        Row(){
           Button('64')
             .id('maxPull_text_z')
             .height('5%')
@@ -80,8 +80,7 @@ struct maxPullDownRefresh {
               this.maxPullDownDistanceList = -1
             })
         }
-
-        Row() {
+        Row(){
           Button('null')
             .id('maxPull_text_null')
             .height('5%')
@@ -109,18 +108,18 @@ struct maxPullDownRefresh {
                   .margin(10)
                   .textAlign(TextAlign.Center)
                   .borderRadius(10)
-                  .backgroundColor(0xFFFFFF)
+                  .backgroundColor('0xFFFFFF')
               }
             }, (item: string) => item)
           }
-          .onScrollIndex((start: int, end: int, center: int) => {
+          .onScrollIndex((start: Int, end: Int, center: Int) => {
             console.info(start.toString())
           })
           .alignListItem(ListItemAlign.Center)
           .scrollBar(BarState.Off)
         }
         .id('maxPull_down_refresh')
-        
+        // .maxPullDownDistance(this.maxPullDownDistanceList)
         .onStateChange((refreshStatus: RefreshStatus) => {
           console.info('Refresh onStatueChange state is ' + refreshStatus)
         })
@@ -136,7 +135,7 @@ struct maxPullDownRefresh {
         })
         .width('80%')
         .height('70%')
-        .backgroundColor(0x89CFF0)
+        .backgroundColor('0x89CFF0')
         .refreshOffset(64)
         .pullDownRatio(1)
         .pullToRefresh(true)

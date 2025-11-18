@@ -13,32 +13,31 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   $r,
+  AdaptiveColor,
+  BlurStyle,
+  BlurStyleActivePolicy,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   ColumnOptions,
-  Text,
-  Stack,
-  Tabs,
-  TabContent,
-  Image,
-  BlurStyle,
-  ThemeColorMode,
-  AdaptiveColor,
-  BlurStyleActivePolicy,
-  Color,
-  Button,
-  Swiper,
+  Component,
+  Entry,
   ForEach,
-  ClickEvent,
+  Image,
   Margin,
+  Stack,
+  Swiper,
   SwiperController,
+  TabContent,
+  Tabs,
+  Text,
   TextAlign,
+  ThemeColorMode,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { BusinessError } from '@ohos.base';
 
@@ -47,7 +46,7 @@ import { BusinessError } from '@ohos.base';
 struct barBackgroundTabsExample {
   build() {
     Column() {
-      
+      // barBackgroundBlurStyle 可以通过枚举值的方式设置模糊参数
       Stack() {
         Image($r('app.media.icon'))
         Tabs() {
@@ -75,7 +74,7 @@ struct barBackgroundTabsExample {
       .height('40%')
       .margin(5)
 
-      
+      // barBackgroundEffect 可以自定义设置tabBar页签栏的模糊半径、亮度、饱和度等参数
       Stack() {
         Image($r('app.media.icon'))
         Tabs() {
@@ -97,15 +96,15 @@ struct barBackgroundTabsExample {
         }
         .id('tabs_bar_back_effect')
         .barBackgroundEffect({
-          
-          radius: 20, 
-          saturation: 15, 
-          blurOptions: { grayscale: [20, 20] }, 
-          brightness: 0.6, 
-          color: '#8044a4b5', 
-          adaptiveColor: AdaptiveColor.DEFAULT, 
+          //页面效果显示=》模糊程度
+          radius: 20, //模糊半径
+          saturation: 15, //饱和度
+          blurOptions: { grayscale: [20, 20] }, //灰阶模糊参数，默认为[0,0]。
+          brightness: 0.6, //亮度
+          color: '#8044a4b5', //颜色
+          adaptiveColor: AdaptiveColor.DEFAULT, //背景模糊效果使用的取色模式
           inactiveColor: $r('app.color.color_red'),
-          policy: BlurStyleActivePolicy.ALWAYS_ACTIVE
+          policy: BlurStyleActivePolicy.ALWAYS_ACTIVE//一直有模糊效果。
         })
       }
       .width('90%')

@@ -67,16 +67,15 @@ export default function Navigation4() {
           // console.info("push Navigation4 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push Navigation4 page error: " + err);
         expect().assertFail();
       }
     });
 
 
-
     
-/*
+    /*
      * @tc.number   Navigation4_static_0100
      * @tc.name     Navigation4_static_0100
      * @tc.desc     Navigation4_static_0100

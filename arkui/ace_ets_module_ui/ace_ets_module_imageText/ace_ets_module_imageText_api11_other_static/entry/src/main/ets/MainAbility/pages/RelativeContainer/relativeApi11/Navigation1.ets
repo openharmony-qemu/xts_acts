@@ -86,7 +86,8 @@ struct NavigationApi1 {
     .onReady((ctx: NavDestinationContext) => {
       try {
         //pageOne
-        this.text2 = JSON.parseJsonElement(JSON.stringify(ctx.pathInfo)).getString('name')
+        console.info('test: onReady' + ctx.pathInfo.name)
+        this.text2 = ctx.pathInfo.name
       } catch (e) {
       }
     })
@@ -103,12 +104,14 @@ struct NavigationApi1 {
     }
   }
 
-  aboutToAppear() {
+  onPageShow() {
     CustomTransition.getInstance().registerNavParam('pageOne', (isPush: boolean, isExit: boolean) => {
       this.x = isExit ? 0 : 300;
     }, (isPush: boolean, isExit: boolean) => {
       this.x = isExit ? -300 : 0;
     }, 200);
+
+    // 页面未加载,导航还未显示,无法push.时机问题,修改为
     if (this.pageInfos === undefined) {
       this.pageInfos = new NavPathStack();
     }
@@ -139,7 +142,6 @@ struct NavigationApi1 {
       Navigation(this.pageInfos) {
       }.title('NavIndex').navDestination(this.PageMap)
       .hideNavBar(true)
-
     }
   }
 }

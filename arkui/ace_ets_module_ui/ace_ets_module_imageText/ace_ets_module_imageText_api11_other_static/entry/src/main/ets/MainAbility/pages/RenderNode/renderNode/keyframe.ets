@@ -37,6 +37,7 @@ import {
   Alignment,
   TextAlign,
   TextOverflow,
+  FrameNode,
   NodeContainer,
   DragPreviewMode,
   Circle

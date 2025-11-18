@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -53,14 +53,11 @@ export default function maxDownRefresh() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get maxDownRefresh state pages:" + JSON.stringify(pages));
-        if (!("maxDownRefresh" == pages.name)) {
+        if (!("MainAbility/pages/Refresh/maxDownRefresh" == pages.name)) {
           console.info("get maxDownRefresh pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push maxDownRefresh page error:" + err);
@@ -68,14 +65,19 @@ export default function maxDownRefresh() {
       console.info("maxDownRefresh beforeEach end");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
+    
     /*
-     * @tc.number    maxDownRefresh_static_0100
-     * @tc.name      maxDownRefresh_static_0100
-     * @tc.desc      maxDownRefresh_static_0100
-     * @tc.level     2
+     * @tc.number   maxDownRefresh_static_0100
+     * @tc.name     maxDownRefresh_static_0100
+     * @tc.desc     maxDownRefresh_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('maxDownRefresh_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('maxDownRefresh_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[maxDownRefresh_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -98,7 +100,7 @@ export default function maxDownRefresh() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       console.info("[maxDownRefresh_static_0100] content: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')).assertEqual('onRefreshing');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onRefreshing');
       let btn_reset = await driver.findComponent(ON.id('maxPull_text_reset')) as Component;
       await btn_reset.click();
       await CommonFunc.sleep(1500);
@@ -106,14 +108,14 @@ export default function maxDownRefresh() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    maxDownRefresh_static_0200
-     * @tc.name      maxDownRefresh_static_0200
-     * @tc.desc      maxDownRefresh_static_0200
-     * @tc.level     2
+     * @tc.number   maxDownRefresh_static_0200
+     * @tc.name     maxDownRefresh_static_0200
+     * @tc.desc     maxDownRefresh_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('maxDownRefresh_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('maxDownRefresh_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[maxDownRefresh_static_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -136,7 +138,7 @@ export default function maxDownRefresh() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       console.info("[maxDownRefresh_static_0200] content: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')).assertEqual('start');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('start');
       let btn_reset = await driver.findComponent(ON.id('maxPull_text_reset')) as Component;
       await btn_reset.click();
       await CommonFunc.sleep(1500);
@@ -144,14 +146,14 @@ export default function maxDownRefresh() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    maxDownRefresh_static_0300
-     * @tc.name      maxDownRefresh_static_0300
-     * @tc.desc      maxDownRefresh_static_0300
-     * @tc.level     2
+     * @tc.number   maxDownRefresh_static_0300
+     * @tc.name     maxDownRefresh_static_0300
+     * @tc.desc     maxDownRefresh_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('maxDownRefresh_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('maxDownRefresh_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[maxDownRefresh_static_0300] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -174,7 +176,7 @@ export default function maxDownRefresh() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       console.info("[maxDownRefresh_static_0300] content: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')).assertEqual('onRefreshing');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onRefreshing');
       let btn_reset = await driver.findComponent(ON.id('maxPull_text_reset')) as Component;
       await btn_reset.click();
       await CommonFunc.sleep(1500);
@@ -182,14 +184,14 @@ export default function maxDownRefresh() {
       done();
     });
 
-
+    
     /*
-     * @tc.number    maxDownRefresh_static_0400
-     * @tc.name      maxDownRefresh_static_0400
-     * @tc.desc      maxDownRefresh_static_0400
-     * @tc.level     2
+     * @tc.number   maxDownRefresh_static_0400
+     * @tc.name     maxDownRefresh_static_0400
+     * @tc.desc     maxDownRefresh_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('maxDownRefresh_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('maxDownRefresh_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[maxDownRefresh_static_0400] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -212,7 +214,7 @@ export default function maxDownRefresh() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       console.info("[maxDownRefresh_static_0400] content: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')).assertEqual('onRefreshing');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onRefreshing');
       let btn_reset = await driver.findComponent(ON.id('maxPull_text_reset')) as Component;
       await btn_reset.click();
       await CommonFunc.sleep(1500);

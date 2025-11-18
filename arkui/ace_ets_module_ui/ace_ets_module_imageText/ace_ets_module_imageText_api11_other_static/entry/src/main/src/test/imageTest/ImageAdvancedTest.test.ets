@@ -82,7 +82,7 @@ export default function ImageAdvancedTest() {
           // console.info(`push ${target} page result:` + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error(`push ${target} page error:` + err);
       }
     }
@@ -96,10 +96,8 @@ export default function ImageAdvancedTest() {
       console.info("after each called");
     });
 
-    //pass过 全注释
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0050
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0050
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0050
@@ -119,9 +117,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0050', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280
@@ -152,9 +149,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0280', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0290
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0290
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0290
@@ -173,9 +169,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0290', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300
@@ -205,9 +200,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0300', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310
@@ -233,9 +227,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0310', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320
@@ -265,9 +258,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0320', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330
@@ -293,9 +285,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0330', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340
@@ -320,9 +311,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0340', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0350
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0350
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0350
@@ -346,9 +336,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0350', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0360
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0360
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0360
@@ -367,9 +356,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0360', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0370
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0370
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0370
@@ -388,9 +376,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0370', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0380
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0380
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0380
@@ -409,9 +396,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0380', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0420
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0420
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0420
@@ -450,9 +436,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0420', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0430
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0430
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0430
@@ -471,9 +456,8 @@ it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0430', Level.LEVEL3, async (don
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0440
      * @tc.name     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0440
      * @tc.desc     SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_static_0440

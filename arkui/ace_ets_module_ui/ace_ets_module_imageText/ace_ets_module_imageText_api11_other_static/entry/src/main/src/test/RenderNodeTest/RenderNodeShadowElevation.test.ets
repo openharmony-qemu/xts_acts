@@ -97,7 +97,7 @@ export default function RenderNodeShadowElevationJsSuit() {
           // console.info("push RenderNodeShadowElevationJsSuit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RenderNodeShadowElevationJsSuit page error:" + err);
       }
 
@@ -109,10 +109,9 @@ export default function RenderNodeShadowElevationJsSuit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
-
     
-/*
+
+    /*
      * @tc.number   RenderNodeShadowElevationJsSuit_static_0100
      * @tc.name     RenderNodeShadowElevationJsSuit_static_0100
      * @tc.desc     RenderNodeShadowElevationJsSuit_static_0100

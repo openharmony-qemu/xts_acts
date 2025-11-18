@@ -95,7 +95,7 @@ struct PatternLockPage {
         this.pathColor = message.value as String
       }
       if (message.name == 'pathStrokeWidth') {
-        this.pathStrokeWidth = message.value as Number
+        this.pathStrokeWidth = parseFloat(message.value.toString())
       }
       if (message.name == 'autoReset') {
         this.autoReset = message.value as Boolean

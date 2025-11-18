@@ -40,7 +40,6 @@ import {
   Direction
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct scrollBarMarginScroll {
@@ -54,7 +53,7 @@ struct scrollBarMarginScroll {
   }
 
   build() {
-    Column() {
+    Column(){
       Scroll(this.scroller) {
         Column() {
           ForEach(this.arr, (item: string, i: int) => {
@@ -75,17 +74,17 @@ struct scrollBarMarginScroll {
       .scrollable(ScrollDirection.Vertical)
       .scrollBarColor(Color.Blue)
       .scrollBarWidth(20)
-      
-      
-      
-      
+      // .scrollBarMargin({
+      //   start: LengthMetrics.px(40),
+      //   end: LengthMetrics.vp(20)
+      // })
       .edgeEffect(EdgeEffect.Spring)
       .direction(Direction.Ltr)
       .border({
-        color: Color.Red,
-        width: 4
+        color:Color.Red,
+        width:4
       })
-    }.backgroundColor(0xDCDCDC)
+    }.backgroundColor('0xDCDCDC')
 
   }
 }

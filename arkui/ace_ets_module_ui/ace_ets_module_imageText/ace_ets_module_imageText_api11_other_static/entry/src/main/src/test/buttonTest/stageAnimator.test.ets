@@ -55,10 +55,6 @@ import { AnimatorOptions } from '@ohos.animator';
 export default function stageAnimatorTest() {
   describe('stageAnimatorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
     beforeAll(async () => {
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
@@ -83,7 +79,7 @@ export default function stageAnimatorTest() {
           // console.info("push stageAnimator page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push stageAnimator page error: " + err);
       }
 
@@ -98,8 +94,7 @@ export default function stageAnimatorTest() {
       // This API supports only one parameter: clear action function.
     })
     //pass过 全注释
-    
-/*
+    /*
      * @tc.number   testanimatorstage_static_0001
      * @tc.name     testanimatorstage_static_0001
      * @tc.desc     testanimatorstage_static_0001
@@ -116,7 +111,7 @@ it('testanimatorstage_static_0001', Level.LEVEL1, async (done: () => void): Prom
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("width")).assertEqual("100.00vp");
           console.info("[testanimatorstage_static_0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString("width"));
           console.info('testanimatorstage_static_0001 END ');
-        } catch (err) {
+        } catch (err:Error) {
           expect().assertFail()
           console.info('testanimatorstage_static_0001 ERR  ' + JSON.stringify(err));
         }
@@ -124,8 +119,7 @@ it('testanimatorstage_static_0001', Level.LEVEL1, async (done: () => void): Prom
       }, 500)
     });
 
-    
-/*
+    /*
      * @tc.number   testanimatorstage_static_0002
      * @tc.name     testanimatorstage_static_0002
      * @tc.desc     testanimatorstage_static_0002
@@ -147,15 +141,14 @@ it('testanimatorstage_static_0002', Level.LEVEL1, async (done: () => void): Prom
         };
         let result = animator.createAnimator(options)
         expect(typeof (result)).assertEqual('object');
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0002 END');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testanimatorstage_static_0003
      * @tc.name     testanimatorstage_static_0003
      * @tc.desc     testanimatorstage_static_0003
@@ -177,15 +170,14 @@ it('testanimatorstage_static_0003', Level.LEVEL1, async (done: () => void): Prom
         };
         let result = animator.createAnimator(options)
         expect(typeof (result)).assertEqual('object');
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0003 END');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testanimatorstage_static_0004
      * @tc.name     testanimatorstage_static_0004
      * @tc.desc     testanimatorstage_static_0004
@@ -197,15 +189,14 @@ it('testanimatorstage_static_0004', Level.LEVEL1, async (done: () => void): Prom
       try {
         // let options = animator.createAnimator(null)
         // expect(typeof (options)).assertEqual('object');
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0004 END');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testanimatorstage_static_0005
      * @tc.name     testanimatorstage_static_0005
      * @tc.desc     testanimatorstage_static_0005
@@ -226,15 +217,14 @@ it('testanimatorstage_static_0005', Level.LEVEL1, async (done: () => void): Prom
           end: 1
         } as AnimatorOptions)
         expect(typeof (options)).assertEqual('object');
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0005 END');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testanimatorstage_static_0006
      * @tc.name     testanimatorstage_static_0006
      * @tc.desc     testanimatorstage_static_0006
@@ -255,7 +245,7 @@ it('testanimatorstage_static_0006', Level.LEVEL1, async (done: () => void): Prom
           end: 1
         } as AnimatorOptions)
         expect(typeof (options)).assertEqual('object');
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0006 END');

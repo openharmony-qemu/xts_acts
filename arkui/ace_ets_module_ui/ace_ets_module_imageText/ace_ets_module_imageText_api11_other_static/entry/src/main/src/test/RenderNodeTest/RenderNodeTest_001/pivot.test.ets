@@ -67,16 +67,15 @@ export default function pivot() {
           // console.info("push pivot page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push pivot page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   pivot_static_0100
      * @tc.name     pivot_static_0100
      * @tc.desc     pivot_static_0100
@@ -98,9 +97,8 @@ it('pivot_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =>
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   pivot_static_0200
      * @tc.name     pivot_static_0200
      * @tc.desc     pivot_static_0200

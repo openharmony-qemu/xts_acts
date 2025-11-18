@@ -14,18 +14,18 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
@@ -36,7 +36,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -66,7 +66,6 @@ export default function selectedSwiper() {
           console.info("get selectedSwiper pages.name:" + JSON.stringify(pages.name));
           selectedSwiper.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push selectedSwiper page error:" + err);
@@ -74,14 +73,14 @@ export default function selectedSwiper() {
       console.info("selectedSwiper beforeEach end");
     });
 
-
+    
     /*
-     * @tc.number    selectedSwiper_static_0100
-     * @tc.name      selectedSwiper_static_0100
-     * @tc.desc      selectedSwiper_static_0100
-     * @tc.level     2
+     * @tc.number   selectedSwiper_static_0100
+     * @tc.name     selectedSwiper_static_0100
+     * @tc.desc     selectedSwiper_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('selectedSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('selectedSwiper_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[selectedSwiper_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -94,8 +93,8 @@ export default function selectedSwiper() {
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width * 0.8)).toInt(), (Math.round(top + height / 2)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height / 2)).toInt());
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(), Math.round(left + width * 0.2).toInt(),
+        Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('onUnselected_swiper_index');
       console.info("[selectedSwiper_static_0100] component obj1 is: " +

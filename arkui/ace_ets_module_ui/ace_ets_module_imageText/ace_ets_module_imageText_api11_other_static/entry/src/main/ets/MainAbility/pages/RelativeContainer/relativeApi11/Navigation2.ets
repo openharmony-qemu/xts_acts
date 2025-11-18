@@ -72,8 +72,8 @@ struct NavigationApi3 {
     })
     .onReady((ctx: NavDestinationContext) => {
       try {
-        //NavPathStack
-        this.text2 = JSON.parseJsonElement(JSON.stringify(ctx.pathStack)).getString('type')
+        //NavPathStack 没有 type属性
+        this.text2 = ctx.pathStack instanceof NavPathStack ? 'NavPathStack' : this.text2
       } catch (e) {
       }
     })
@@ -90,7 +90,7 @@ struct NavigationApi3 {
     }
   }
 
-  aboutToAppear() {
+  onPageShow() {
     CustomTransition.getInstance().registerNavParam('pageOne', (isPush: boolean, isExit: boolean) => {
       this.x = isExit ? 0 : 300;
     }, (isPush: boolean, isExit: boolean) => {

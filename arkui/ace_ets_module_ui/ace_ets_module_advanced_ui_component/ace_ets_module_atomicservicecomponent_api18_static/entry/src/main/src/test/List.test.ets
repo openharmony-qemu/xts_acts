@@ -19,8 +19,8 @@ import atomicservicetabsTest from './atomicservicetabs/AtomicServiceTabs.test';
 import halfscreenlaunchcomponentTest from './halfscreenlaunchcomponent/HalfScreenLaunchComponent.test';
 
 export default function testsuite() {
-  atomicservicenavigationTest();
-  atomicservicesearchTest();
-  atomicservicetabsTest();
-  halfscreenlaunchcomponentTest();
+  atomicservicenavigationTest(); // 高级组件 AtomicServiceNavigation 1
+  atomicservicesearchTest(); // 高级组件 AtomicServiceSearch 1
+  atomicservicetabsTest();  // 高级组件AtomicServiceTabs  1
+  halfscreenlaunchcomponentTest(); // 启动元服务组件 HalfScreenLaunchComponent 1
 }

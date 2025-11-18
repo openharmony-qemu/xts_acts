@@ -89,7 +89,7 @@ export default function ProgressJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ProgressJsunit state pages:" + JSON.stringify(pages));
-        if (!("ProgressJsunit" == pages.name)) {
+        if (!("ProgressPage" == pages.name)) {
           console.info("get ProgressJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -97,15 +97,14 @@ export default function ProgressJsunit() {
           // console.info("push ProgressJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push ProgressJsunit page error: " + err);
         expect().assertFail();
       }
 
     });
 
-    
-/*
+    /*
      * @tc.number   ProgressJsunit_static_0100
      * @tc.name     ProgressJsunit_static_0100
      * @tc.desc     ProgressJsunit_static_0100
@@ -135,8 +134,7 @@ it('ProgressJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   ProgressJsunit_static_0200
      * @tc.name     ProgressJsunit_static_0200
      * @tc.desc     ProgressJsunit_static_0200
@@ -145,7 +143,7 @@ it('ProgressJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
 it('ProgressJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the total value of the Progress component
       console.info('[ProgressJsunit_static_0200] START');
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'progressTotal', value: 200 })
+      AppStorage.setOrCreate<number>('total', 200);
       await CommonFunc.sleep(2000);
       // Get the total value of the Progress component
       let strJson = inspector.getInspectorByKey('pro1');
@@ -158,8 +156,7 @@ it('ProgressJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
     });
 
 
-    
-/*
+    /*
      * @tc.number   ProgressJsunit_static_0300
      * @tc.name     ProgressJsunit_static_0300
      * @tc.desc     ProgressJsunit_static_0300
@@ -168,7 +165,7 @@ it('ProgressJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
 it('ProgressJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the type of the Progress component
       console.info('[ProgressJsunit_static_0300] START');
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'ProgressType', value: ProgressStyle.Capsule })
+      AppStorage.setOrCreate<ProgressType>('type', ProgressType.Capsule);
       await CommonFunc.sleep(2000);
       // Get the type of the Progress component
       let strJson = inspector.getInspectorByKey('pro1');
@@ -179,8 +176,7 @@ it('ProgressJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   ProgressJsunit_static_0400
      * @tc.name     ProgressJsunit_static_0400
      * @tc.desc     ProgressJsunit_static_0400
@@ -189,7 +185,7 @@ it('ProgressJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
 it('ProgressJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the color of the Progress component
       console.info('[ProgressJsunit_static_0400] START');
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'ProgressColor', value: Color.Blue })
+      AppStorage.setOrCreate<Color>('color', Color.Blue);
       await CommonFunc.sleep(2000);
       // Get the color of the Progress component
       let strJson = inspector.getInspectorByKey('pro1');
@@ -201,8 +197,7 @@ it('ProgressJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   ProgressJsunit_static_0500
      * @tc.name     ProgressJsunit_static_0500
      * @tc.desc     ProgressJsunit_static_0500
@@ -211,7 +206,7 @@ it('ProgressJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
 it('ProgressJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the backgroundColor of the Progress component
       console.info('[ProgressJsunit_static_0500] START');
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'backgroundColor', value: Color.Black })
+      AppStorage.setOrCreate<Color>('backColor', Color.Black);
       await CommonFunc.sleep(2000);
       // Get the backgroundColor of the Progress component
       let strJson = inspector.getInspectorByKey('pro1');
@@ -222,8 +217,7 @@ it('ProgressJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   ProgressJsunit_static_0600
      * @tc.name     ProgressJsunit_static_0600
      * @tc.desc     ProgressJsunit_static_0600
@@ -232,7 +226,7 @@ it('ProgressJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
 it('ProgressJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the style of the Progress component
       console.info('[ProgressJsunit_static_0600] START');
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'ProgressType', value: ProgressStyle.ScaleRing })
+      AppStorage.setOrCreate<ProgressType>('type', ProgressType.ScaleRing);
       await CommonFunc.sleep(2000);
 
       // Get the value of the modified style attribute
@@ -243,8 +237,8 @@ it('ProgressJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
       console.info('[ProgressJsunit_static_0600] END');
       done();
     });
-    
-/*
+
+    /*
      * @tc.number   ProgressJsunit_static_0700
      * @tc.name     ProgressJsunit_static_0700
      * @tc.desc     ProgressJsunit_static_0700
@@ -253,7 +247,7 @@ it('ProgressJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise
 it('ProgressJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the value of the Progress component
       console.info('[ProgressJsunit_static_0700] START');
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'progressValue', value: 20 })
+      AppStorage.setOrCreate<number>('value', 20);
       await CommonFunc.sleep(2000);
       // Get the value of the Progress component
       let strJson = inspector.getInspectorByKey('pro1');
@@ -264,8 +258,7 @@ it('ProgressJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   ProgressJsunit_static_0800
      * @tc.name     ProgressJsunit_static_0800
      * @tc.desc     ProgressJsunit_static_0800
@@ -274,15 +267,14 @@ it('ProgressJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise
 it('ProgressJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Illegal modification of the value of the Progress component
       console.info('[ProgressJsunit_static_0800] START');
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'progressValue', value: -20 })
+      AppStorage.setOrCreate<number>('value', -20);
       await CommonFunc.sleep(1500);
       // Get the value of Progress component after illegal modification
       let strJson = inspector.getInspectorByKey('pro1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ProgressJsunit_static_0800] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('value')).assertEqual('0.000000');
-
-      AppStorage.get<MessageManager<number | ProgressType | Color>>("messageManager")!.notify({ name: 'progressValue', value: 400 })
+      AppStorage.setOrCreate<number>('value', 400);
       await CommonFunc.sleep(1500);
       // Get the value of the Progress component after illegal modification again
       let strJson1 = inspector.getInspectorByKey('pro1');
@@ -292,8 +284,8 @@ it('ProgressJsunit_static_0800', Level.LEVEL1, async (done: () => void): Promise
       console.info('[ProgressJsunit_static_0800] END');
       done();
     });
-    
-/*
+
+    /*
      * @tc.number   ProgressJsunit_static_0900
      * @tc.name     ProgressJsunit_static_0900
      * @tc.desc     ProgressJsunit_static_0900

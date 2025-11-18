@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -53,14 +53,13 @@ export default function barMarginList() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get barMarginList state pages:" + JSON.stringify(pages));
-        if (!("barMarginList" == pages.name)) {
+        if (!("MainAbility/pages/List/barMarginList" == pages.name)) {
           console.info("get barMarginList pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push barMarginList page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push barMarginList page error:" + err);
@@ -68,14 +67,18 @@ export default function barMarginList() {
       console.info("barMarginList beforeEach end");
     });
 
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    barMarginList_0100
-     * @tc.name      barMarginList_0100
-     * @tc.desc      barMarginList_0100
-     * @tc.level     2
+     * @tc.number   barMarginList_0100
+     * @tc.name     barMarginList_0100
+     * @tc.desc     barMarginList_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('barMarginList_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('barMarginList_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[barMarginList_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('list_bar_margin');
@@ -84,17 +87,9 @@ export default function barMarginList() {
       console.info("[barMarginList_0100] $attrs: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[barMarginList_0100] scrollBarMargin: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarMargin')));
-      console.info("[barMarginList_0100] start: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('scrollBarMargin')
-        .getElement('start')));
-      console.info("[barMarginList_0100] end: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getElement('scrollBarMargin')
-        .getElement('end')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("List");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarMargin'))
+      JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarMargin'));
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("List");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarMargin'))
         .assertEqual("ScrollBarMargin start: 40.00px, end: 20.00vp");
       console.info('[barMarginList_0100] END');
       done();

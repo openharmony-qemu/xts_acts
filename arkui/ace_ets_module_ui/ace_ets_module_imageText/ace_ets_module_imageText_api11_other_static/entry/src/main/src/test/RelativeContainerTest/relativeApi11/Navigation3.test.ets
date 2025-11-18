@@ -67,16 +67,15 @@ export default function Navigation3() {
           // console.info("push Navigation3 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push Navigation3 page error: " + err);
         expect().assertFail();
       }
     });
 
 
-
     
-/*
+    /*
      * @tc.number   Navigation3_static_0200
      * @tc.name     Navigation3_static_0200
      * @tc.desc     Navigation3_static_0200

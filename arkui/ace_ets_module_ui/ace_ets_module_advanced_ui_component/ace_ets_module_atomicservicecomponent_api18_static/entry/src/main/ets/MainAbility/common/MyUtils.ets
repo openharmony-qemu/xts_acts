@@ -24,8 +24,8 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static async sleep(time:int) : Promise<int> {
-    return new Promise<int>((resolve, reject) => {
+  static async sleep(time:Int) : Promise<Int> {
+    return new Promise<Int>((resolve, reject) => {
       setTimeout(() => {
         console.info(`sleep ${time} over...`)
         resolve(0)

@@ -67,7 +67,7 @@ export default function getColorTest() {
           // console.info("push getColorTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push getColorTest page error: " + err);
         expect().assertFail();
       }
@@ -80,9 +80,8 @@ export default function getColorTest() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   getColorTest_static_0100
      * @tc.name     getColorTest_static_0100
      * @tc.desc     getColorTest_static_0100
@@ -103,9 +102,8 @@ it('getColorTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   getColorTest_static_0200
      * @tc.name     getColorTest_static_0200
      * @tc.desc     getColorTest_static_0200
@@ -121,7 +119,7 @@ it('getColorTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       let strJson = inspector.getInspectorByKey('render_color');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getColorTest_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('color:4278255360');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('color:-16711936');
       console.info('[getColorTest_0200] END');
       done();
     });

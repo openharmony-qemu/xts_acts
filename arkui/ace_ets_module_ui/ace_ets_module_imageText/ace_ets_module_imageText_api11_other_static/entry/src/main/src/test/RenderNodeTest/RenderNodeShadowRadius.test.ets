@@ -95,7 +95,7 @@ export default function RenderNodeShadowRadiusJsSuit() {
           // console.info("push RenderNodeShadowRadiusJsSuit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RenderNodeShadowRadiusJsSuit page error:" + err);
       }
 
@@ -107,10 +107,9 @@ export default function RenderNodeShadowRadiusJsSuit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
-
     
-/*
+
+    /*
      * @tc.number   RenderNodeShadowRadiusJsSuit_static_0100
      * @tc.name     RenderNodeShadowRadiusJsSuit_static_0100
      * @tc.desc     RenderNodeShadowRadiusJsSuit_static_0100

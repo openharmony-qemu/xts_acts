@@ -67,16 +67,15 @@ export default function scale() {
           // console.info("push scale page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push scale page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   scale_static_0100
      * @tc.name     scale_static_0100
      * @tc.desc     scale_static_0100
@@ -98,9 +97,8 @@ it('scale_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> =>
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   scale_static_0200
      * @tc.name     scale_static_0200
      * @tc.desc     scale_static_0200

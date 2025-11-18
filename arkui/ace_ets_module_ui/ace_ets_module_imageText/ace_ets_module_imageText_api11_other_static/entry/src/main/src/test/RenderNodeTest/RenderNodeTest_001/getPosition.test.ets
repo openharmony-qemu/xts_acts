@@ -67,16 +67,15 @@ export default function getPosition() {
           // console.info("push getPosition page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push getPosition page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   getPosition_static_0100
      * @tc.name     getPosition_static_0100
      * @tc.desc     getPosition_static_0100

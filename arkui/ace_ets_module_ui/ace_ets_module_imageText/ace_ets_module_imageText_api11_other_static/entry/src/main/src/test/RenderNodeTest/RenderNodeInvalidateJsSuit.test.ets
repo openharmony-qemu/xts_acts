@@ -72,7 +72,7 @@ export default function RenderNodeInvalidateJsSuit() {
           await CommonFunc.sleep(2000);
           // console.info("push MarqueeDynamicSyncSceneTest page result:" + JSON.stringify(result));
         }
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push MarqueeDynamicSyncSceneTest page error:" + err);
       }
       console.info("MarqueeDynamicSyncSceneTest beforeEach end");
@@ -85,9 +85,8 @@ export default function RenderNodeInvalidateJsSuit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   RenderNodeInvalidateJsSuit_static_0100
      * @tc.name     RenderNodeInvalidateJsSuit_static_0100
      * @tc.desc     RenderNodeInvalidateJsSuit_static_0100

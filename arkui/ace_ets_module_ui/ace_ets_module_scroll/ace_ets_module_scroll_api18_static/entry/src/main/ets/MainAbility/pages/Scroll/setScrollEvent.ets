@@ -14,53 +14,51 @@
  */
 
 import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ClickEvent,
-  Scroller,
-  Color,
   Alignment,
-  Stack,
-  WaterFlow,
-  OnScrollFrameBeginHandlerResult,
-  LazyForEach,
-  FlowItem,
-  Image,
-  TextAlign,
-  ImageFit,
-  ScrollState,
-  ScrollSource,
-  Scroll,
-  NodeContainer,
-  OffsetResult,
-  EdgeEffect,
-  ItemAlign,
-  FlexAlign,
-  Text,
+  BorderStyle,
   Button,
-  FontWeight,
   ButtonType,
   ClickEvent,
+  Color,
+  Column,
+  Component,
+  EdgeEffect,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FlowItem,
+  FontWeight,
+  Image,
+  ImageFit,
+  ItemAlign,
+  LazyForEach,
   Margin,
-  BorderStyle,
-  Search
+  NodeContainer,
+  OffsetResult,
+  OnScrollFrameBeginHandlerResult,
+  Scroll,
+  Scroller,
+  ScrollSource,
+  ScrollState,
+  Search,
+  Stack,
+  Text,
+  TextAlign,
+  WaterFlow
 } from '@ohos.arkui.component'
 import { LocalStorage, State } from '@ohos.arkui.stateManagement'
-import { NodeController, FrameNode, typeNode } from '@ohos.arkui.node';
+import { FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
 import { UIContext } from '@ohos.arkui.UIContext'
 
 let para: Record<string, string> = { 'Scroll_setOnWillScroll': 'start', 'Scroll_setOnDidScroll': 'start' };
-
+let storage: LocalStorage = new LocalStorage(para);
 let para1: Record<string, string> = { 'Scroll_setOnReachStart': 'start', 'Scroll_setOnReachEnd': 'start' };
-
+let storage1: LocalStorage = new LocalStorage(para1);
 let para2: Record<string, string> = { 'Scroll_setOnScrollStart': 'start', 'Scroll_setOnScrollStop': 'start' };
-
+let storage2: LocalStorage = new LocalStorage(para2);
 let para3: Record<string, string> = { 'Scroll_setOnScrollFrameBegin': 'start' };
-
-
+let storage3: LocalStorage = new LocalStorage(para3);
 
 class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
@@ -74,38 +72,38 @@ class MyNodeController extends NodeController {
   }
 
   addCommonEvent(frameNode: FrameNode) {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // let listEvent: UIScrollEvent | undefined = typeNode.getEvent(frameNode, 'Scroll');
+    // listEvent?.setOnWillScroll((scrollOffx: number, scrollOffy: number,
+    //   scrollState: ScrollState, scrollSource: ScrollSource)=>{
+    // storage.set('Scroll_setOnWillScroll', 'setOnWillScroll');
+    // console.log(`Scroll:: onWillScroll scrollOffx=${scrollOffx}, scrollOffy=${scrollOffy},
+    //   scrollState=${scrollState}, scrollSource=${scrollSource}`)
+    // })
+    // listEvent?.setOnDidScroll((xOffset: number, yOffset: number, scrollState: ScrollState)=>{
+    // storage.set('Scroll_setOnDidScroll', 'setOnDidScroll');
+    // console.log(`Scroll:: setOnDidScroll xOffset=${xOffset}, yOffset=${yOffset}, scrollState=${scrollState}`)
+    // })
+    // listEvent?.setOnReachStart(()=>{
+    // storage1.set('Scroll_setOnReachStart', 'setOnReachStart');
+    // console.log(`Scroll:: setOnReachStart`)
+    // })
+    // listEvent?.setOnReachEnd(()=>{
+    // storage1.set('Scroll_setOnReachEnd', 'setOnReachEnd');
+    // console.log(`Scroll:: setOnReachEnd`)
+    // })
+    // listEvent?.setOnScrollStart(()=>{
+    // storage2.set('Scroll_setOnScrollStart', 'setOnScrollStart');
+    // console.log(`Scroll:: setOnScrollStart`)
+    // })
+    // listEvent?.setOnScrollStop(()=>{
+    // storage2.set('Scroll_setOnScrollStop', 'setOnScrollStop');
+    // console.log(`Scroll:: setOnScrollStop`)
+    // })
+    // listEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
+    // storage3.set('Scroll_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
+    // console.log(`Scroll:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
+    // return undefined;
+    // })
   }
 }
 
@@ -125,7 +123,7 @@ struct setOnScrollIndex03 {
         .id('Scroll_addCommonEvent_03')
         .height('5%')
         .onClick((e: ClickEvent) => {
-          this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
+          // this.myNodeController!.addCommonEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling()!)
         })
       Text(this.text)
         .id('Scroll_setOnWill_03')
@@ -133,7 +131,7 @@ struct setOnScrollIndex03 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text = storage.get<string>('Scroll_setOnWillScroll') as string + '_' + storage.get<string>('Scroll_setOnDidScroll') as string + '';
         })
       Text(this.text1)
         .id('Scroll_setOnReach_03')
@@ -141,7 +139,7 @@ struct setOnScrollIndex03 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text1 = storage1.get<string>('Scroll_setOnReachStart') as string + '_' + storage1.get<string>('Scroll_setOnReachEnd') as string + '';
         })
       Text(this.text2)
         .id('Scroll_setOnScroll_03')
@@ -149,7 +147,7 @@ struct setOnScrollIndex03 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text2 = storage2.get<string>('Scroll_setOnScrollStart') as string + '_' + storage2.get<string>('Scroll_setOnScrollStop') as string;
         })
       Text(this.text3)
         .id('Scroll_setOnFrameBegin_03')
@@ -157,7 +155,7 @@ struct setOnScrollIndex03 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text3 = storage3.get<string>('Scroll_setOnScrollFrameBegin') as string
         })
       Scroll() {
         Column() {
@@ -202,7 +200,7 @@ struct setOnScrollIndex03 {
         return { offsetRemain: offset };
       })
 
-      NodeContainer(this.myNodeController)
+      // NodeContainer(this.myNodeController)
     }.width('100%')
   }
 }

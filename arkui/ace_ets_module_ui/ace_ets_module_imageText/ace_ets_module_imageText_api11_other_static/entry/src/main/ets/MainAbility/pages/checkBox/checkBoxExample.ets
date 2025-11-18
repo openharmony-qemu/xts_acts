@@ -71,6 +71,9 @@ struct CheckboxExample {
       Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
         .select(this.select)
         .selectedColor(this.selectedColor)
+        .onClick(() => {
+          this.select = !this.select
+        })
         .onChange((value: boolean) => {
           if (value) {
             this.selectedColor = "#ffff21"

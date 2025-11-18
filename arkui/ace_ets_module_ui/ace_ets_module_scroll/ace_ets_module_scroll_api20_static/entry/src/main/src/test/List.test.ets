@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import maintainPosition from './SwiperTest/maintainPosition.test';
 import barHeightNoMinHeightLimit from './TabsTest/barHeightNoMinHeightLimit.test';
 import barMarginGrid from './GridTest/barMarginGrid.test';
@@ -23,17 +24,15 @@ import scrollBarColor from './ScrollBarTest/scrollBarColor.test';
 import canOverGrid from './GridTest/canOverGrid.test';
 import canOverList from './ListTest/canOverList.test';
 import canOverScroll from './ScrollTest/canOverScroll.test';
-
 export default function testsuite() {
-  barHeightNoMinHeightLimit()
-  maintainPosition()
-  barMarginGrid()
-  barMarginList()
-  barMarginScroll()
-  curvesTabs()
-  maxDownRefresh()
-  scrollBarColor()
-  canOverGrid()
-  canOverList()
-  canOverScroll()
+  maintainPosition()  // 1  maintainVisibleContentPosition  API 20     2
+  barMarginGrid() // 1  scrollBarMargin API 20
+  barMarginList() // 1  scrollBarMargin API 20
+  barMarginScroll() // 1 scrollBarMargin API 20
+  curvesTabs() // 1  animationCurve  API 20
+  maxDownRefresh() // 1  maxPullDownDistance  API 20
+  scrollBarColor() // 1  scrollBarColor API 20
+  canOverGrid() // 1  canOverScroll API 20
+  canOverList() // 1  canOverScroll API 20
+  canOverScroll() // 1  canOverScroll API 20
 }

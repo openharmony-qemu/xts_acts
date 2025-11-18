@@ -61,7 +61,7 @@ struct canOverScrollList {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: false,
-              
+              // canOverScroll: true
             })
           })
         Button('COS:false')
@@ -74,11 +74,10 @@ struct canOverScrollList {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: { duration: 1000, curve: curve, canOverScroll: true },
-              
+              // canOverScroll: false
             })
           })
       }
-
       Row() {
         Button('null')
           .id('canOver_list_null')
@@ -91,7 +90,7 @@ struct canOverScrollList {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: { duration: 1000, curve: curve, canOverScroll: true },
-              
+              // canOverScroll: null
             })
           })
         Button('undefined')
@@ -104,12 +103,12 @@ struct canOverScrollList {
               xOffset: xOffset - 30,
               yOffset: yOffset - 30,
               animation: true,
-              
+              // canOverScroll: undefined
             })
           })
       }
 
-      List({ space: 10, initialIndex: 0, scroller: this.scroller }) {
+      List({ space: 10, initialIndex: 0, scroller:this.scroller }) {
         ForEach(this.arr, (item: number, i: int) => {
           ListItem() {
             Text('' + item)
@@ -129,7 +128,7 @@ struct canOverScrollList {
       .friction(0.6)
       .listDirection(Axis.Vertical)
       .edgeEffect(EdgeEffect.Spring)
-      .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
+      .fadingEdge(true,{fadingEdgeLength:LengthMetrics.vp(80)})
       .scrollBar(BarState.On)
       .backgroundColor('#DCDCDC')
       .onDidScroll((scrollOffset: number, scrollState: ScrollState) => {

@@ -77,7 +77,7 @@ export default function RelativeBarrier2() {
           // console.info("push RelativeBarrier2 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeBarrier2 page error:" + err);
       }
       console.info("RelativeBarrier2 foreEach end");
@@ -88,9 +88,8 @@ export default function RelativeBarrier2() {
       console.info("RelativeBarrier2 after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   RelativeBarrier2_static_001
      * @tc.name     RelativeBarrier2_static_001
      * @tc.desc     RelativeBarrier2_static_001

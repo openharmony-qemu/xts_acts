@@ -68,16 +68,15 @@ export default function pixelRoundTest() {
           // console.info("push pixelRoundTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push pixelRoundTest page error: " + err);
         expect().assertFail();
       }
 
     });
 
-
     
-/*
+    /*
      * @tc.number   pixelRoundTest_static_001
      * @tc.name     pixelRoundTest_static_001
      * @tc.desc     pixelRoundTest_static_001

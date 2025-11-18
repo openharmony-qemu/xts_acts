@@ -63,7 +63,7 @@ export default function arkuiNodeEventTest() {
           // console.info("push arkuiNodeEventTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push arkuiNodeEventTest page error:" + err);
       }
       console.info("arkuiNodeEventTest beforeEach end");
@@ -74,9 +74,8 @@ export default function arkuiNodeEventTest() {
       console.info("arkuiNodeEventTest after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   arkuinodeevent_static_0100
      * @tc.name     arkuinodeevent_static_0100
      * @tc.desc     arkuinodeevent_static_0100
@@ -102,9 +101,8 @@ it('arkuinodeevent_static_0100', Level.LEVEL2, async (done: () => void): Promise
       done();
     });
 
-
     
-/*
+    /*
      * @tc.number   arkuinodeevent_static_0200
      * @tc.name     arkuinodeevent_static_0200
      * @tc.desc     arkuinodeevent_static_0200

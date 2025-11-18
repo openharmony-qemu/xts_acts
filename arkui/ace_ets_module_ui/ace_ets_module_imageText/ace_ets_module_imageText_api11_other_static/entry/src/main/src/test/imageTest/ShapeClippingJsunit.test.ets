@@ -81,7 +81,7 @@ export default function shapeClippingJsunit() {
           // console.info("push shapeClipping page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push shapeClipping page error:" + err);
       }
 
@@ -92,9 +92,7 @@ export default function shapeClippingJsunit() {
       console.info("shapeClipping after each called");
     });
 
-
-    
-/*
+    /*
      * @tc.number   testShapeClipping_static_001
      * @tc.name     testShapeClipping_static_001
      * @tc.desc     testShapeClipping_static_001
@@ -104,7 +102,7 @@ it('testShapeClipping_static_001', Level.LEVEL1, async (done: () => void): Promi
       console.info('[testShapeClipping_static_001] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('image_clip');
-      console.info("[testShapeClipping_static_001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[testShapeClipping_static_001] component obj is: " + strJson);
       console.log("attrs.clip====" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('clip'))
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('clip')).getString('shape')).assertEqual('Circle');
       let strJson1: string = inspector.getInspectorByKey('image_clip_true');
@@ -114,8 +112,7 @@ it('testShapeClipping_static_001', Level.LEVEL1, async (done: () => void): Promi
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testShapeClipping_static_002
      * @tc.name     testShapeClipping_static_002
      * @tc.desc     testShapeClipping_static_002
@@ -125,17 +122,16 @@ it('testShapeClipping_static_002', Level.LEVEL1, async (done: () => void): Promi
       console.info('[testShapeClipping_static_002] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('image_mask');
-      console.info("[testShapeClipping_static_002] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[testShapeClipping_static_002] component obj is: " + strJson);
       console.info("[testShapeClipping_static_002] component mask obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mask')));
-      console.info("[testShapeClipping_static_002] component mask obj is: " + JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mask'))));
-      expect(JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mask'))).getString('shape')).assertEqual('Rect');
+      console.info("[testShapeClipping_static_002] component mask obj is: " + JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('mask'))));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('mask').getString('shape')).assertEqual('Rect');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('clip')).assertEqual('false');
       console.info('[testShapeClipping_static_002] END');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testShapeClipping_static_003
      * @tc.name     testShapeClipping_static_003
      * @tc.desc     testShapeClipping_static_003
@@ -155,7 +151,7 @@ it('testShapeClipping_static_003', Level.LEVEL1, async (done: () => void): Promi
         }
         console.info("[testShapeClipping_static_003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[testShapeClipping_static_003] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -164,13 +160,12 @@ it('testShapeClipping_static_003', Level.LEVEL1, async (done: () => void): Promi
       console.info("[testShapeClipping_static_003] component mask obj is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')
         .getElement('mask')));
-      expect(JSON.parseJsonElement(JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('mask'))).getString('shape')).assertEqual('Circle');
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('mask').getString('shape')).assertEqual('Circle');
       console.info('[testShapeClipping_static_003] END');
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   testShapeClipping_static_004
      * @tc.name     testShapeClipping_static_004
      * @tc.desc     testShapeClipping_static_004
@@ -190,12 +185,12 @@ it('testShapeClipping_static_004', Level.LEVEL1, async (done: () => void): Promi
         }
         console.info("[testShapeClipping_static_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[testShapeClipping_static_004] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('image_clip');
-      console.info("[testShapeClipping_static_004] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
+      console.info("[testShapeClipping_static_004] component objNew is: " + strJsonNew);
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('clip')).getString('shape')).assertEqual('Rect');
       console.info('[testShapeClipping_static_004] END');
       done();

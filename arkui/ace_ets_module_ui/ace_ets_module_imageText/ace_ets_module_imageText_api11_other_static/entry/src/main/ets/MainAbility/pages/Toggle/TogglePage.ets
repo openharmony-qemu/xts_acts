@@ -48,26 +48,30 @@ import { UIContext } from '@ohos.arkui.UIContext';
 struct TogglePage {
   @State type: ToggleType = ToggleType.Checkbox
   @State isOn: boolean = true
-  @State selectedColor: string = '#FFFF0000'
+  @State selectedColor: string | int = '#FFFF0000'
   @State switchPointColor: string = '#FF008000'
   @State text: string = 'no change'
-  messageManager: MessageManager<ToggleType | boolean | string> = new MessageManager<ToggleType | boolean | string>()
+  messageManager: MessageManager<ToggleType | boolean | string | number> = new MessageManager<ToggleType | boolean | string | number>()
 
   onPageShow() {
     console.info('Toggle onPageShow')
-    AppStorage.setOrCreate<MessageManager<ToggleType | boolean | string>>("messageManager", this.messageManager);
-    let callback: Callback<ToggleType | boolean | string> = (message: Message<ToggleType | boolean | string>) => {
+    AppStorage.setOrCreate<MessageManager<ToggleType | boolean | string | number>>("messageManager", this.messageManager);
+    let callback: Callback<ToggleType | boolean | string | number> = (message: Message<ToggleType | boolean | string | number>) => {
       console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'type') {
+      if (message.name == 'type' && !(message.value instanceof number)) {
         this.type = message.value as ToggleType
       }
-      if (message.name == 'isOn') {
+      if (message.name == 'isOn' && !(message.value instanceof string)) {
         this.isOn = message.value as Boolean
       }
       if (message.name == 'selectedColor') {
-        this.selectedColor = message.value as String
+        if (message.value instanceof string) {
+          this.selectedColor = message.value as String
+        } else {
+          this.selectedColor = (message.value as number).toInt()
+        }
       }
-      if (message.name == 'switchPointColor') {
+      if (message.name == 'switchPointColor' ) {
         console.log('switchPointColor=====' + message.value)
         this.switchPointColor = message.value as String
       }
@@ -97,11 +101,10 @@ struct TogglePage {
           })
       }
 
-      Text('type: Checkbox').fontSize(12).fontColor('0xcccccc').width('90%')
+      Text('type: Checkbox' + this.type).fontSize(12).fontColor('0xcccccc').width('90%')
       Flex({ justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center }) {
         Toggle({ type: this.type, isOn: this.isOn })
           .key('toggleCheckbox')
-          .id('toggleCheckbox')
           .size({ width: 20, height: 20 })
           .selectedColor(this.selectedColor)
           .onChange((isOn: boolean) => {

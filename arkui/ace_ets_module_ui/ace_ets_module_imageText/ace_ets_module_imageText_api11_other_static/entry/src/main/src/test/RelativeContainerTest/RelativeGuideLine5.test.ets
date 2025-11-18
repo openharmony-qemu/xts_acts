@@ -77,7 +77,7 @@ export default function RelativeGuideLine5() {
           // console.info("push RelativeGuideLine5 page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push RelativeGuideLine5 page error:" + err);
       }
       console.info("RelativeGuideLine5 foreEach end");
@@ -88,10 +88,9 @@ export default function RelativeGuideLine5() {
       console.info("RelativeGuideLine5 after each called");
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   RelativeGuideLine5_static_001
      * @tc.name     RelativeGuideLine5_static_001
      * @tc.desc     RelativeGuideLine5_static_001

@@ -29,16 +29,16 @@
       "value": "label"
     },
     {
-      "name": "string_hello",
-      "value": "Hello"
+      "name":"string_hello",
+      "value":"Hello"
     },
     {
-      "name": "string_world",
-      "value": "World"
+      "name":"string_world",
+      "value":"World"
     },
     {
-      "name": "message_arrive",
-      "value": "We will arrive at %s."
+      "name":"message_arrive",
+      "value":"We will arrive at %s."
     },
     {
       "name": "phone_entry_dsc",
@@ -85,12 +85,12 @@
       "value": "50vp"
     },
     {
-      "name": "block_size_width_test",
-      "value": "50vp"
+      "name":"block_size_width_test",
+      "value":"50vp"
     },
     {
-      "name": "block_size_height_test",
-      "value": "50vp"
+      "name":"block_size_height_test",
+      "value":"50vp"
     },
     {
       "name": "sliderTest",

@@ -47,7 +47,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 @Component
 struct TextTimerPage {
   @State isCountDown: boolean = true
-  @State count: long = 50000
+  @State count: long | undefined = 50000
   @State format: string = 'mm:ss.SS'
   @State start: string = ''
   @State pause: string = ''
@@ -55,19 +55,27 @@ struct TextTimerPage {
   @State utc: number = 0
   @State elapsedTime: number = 0
   textTimerController: TextTimerController = new TextTimerController()
-  messageManager: MessageManager<number | string | long> = new MessageManager<number | string | long>()
+  messageManager: MessageManager<number | string | long | int | boolean> = new MessageManager<number | string | long | int | boolean>()
   messageManagerBoolean: MessageManager<boolean> = new MessageManager<boolean>()
 
   onPageShow() {
     console.info('TextTimer onPageShow')
-    AppStorage.setOrCreate<MessageManager<number | string | long >>("messageManager", this.messageManager);
-    let callback: Callback<number | string | long> = (message: Message<number | string | long>) => {
+    AppStorage.setOrCreate<MessageManager<number | string | long | int | boolean >>("messageManager", this.messageManager);
+    let callback: Callback<number | string | long | int | boolean> = (message: Message<number | string | long | int | boolean>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'count') {
-        this.count = message.value as long
+        if (!(message.value instanceof string)) {
+          console.log('test: count is ' + message.value)
+          this.count = message.value as long
+          console.log('test: count is 111 ' + this.count)
+        } else {
+          // 异常值
+          console.log('test1: count is ' + message.value)
+          // this.count = undefined
+        }
       }
       if (message.name == 'format') {
-        this.format = message.value as String
+        this.format = message.value.toString()
       }
       if (message.name == 'start') {
         this.start = message.value as String
@@ -78,17 +86,16 @@ struct TextTimerPage {
       if (message.name == 'reset') {
         this.reset = message.value as String
       }
-    }
-    this.messageManager.registerCallback(callback)
-
-    AppStorage.setOrCreate<MessageManager<boolean>>("messageManagerBoolean", this.messageManagerBoolean);
-    let callback1: Callback<boolean> = (message: Message<boolean>) => {
-      console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'isCountDown') {
-        this.isCountDown = message.value
+        if (message.value instanceof boolean) {
+          this.isCountDown = message.value as boolean
+        } else {
+          // 异常值处理
+          this.isCountDown = true
+        }
       }
     }
-    this.messageManagerBoolean.registerCallback(callback1)
+    this.messageManager.registerCallback(callback)
   }
 
   build() {
@@ -96,7 +103,6 @@ struct TextTimerPage {
       TextTimer({ controller: this.textTimerController })
         .fontColor(Color.Black)
         .key('default')
-        .id('default')
         .fontSize(40)
         .onTimer((utc: long, elapsedTime: long) => {
           console.info('textTimer notCountDown utc is：' + utc + ', elapsedTime: ' + elapsedTime)
@@ -106,7 +112,6 @@ struct TextTimerPage {
         .format(this.format)
         .fontColor(Color.Black)
         .key('textTimer')
-        .id('textTimer')
         .fontSize(50)
         .onTimer((utc: long, elapsedTime: long) => {
           this.utc = utc
@@ -130,17 +135,17 @@ struct TextTimerPage {
           console.log('start===========')
           this.start = 'succ'
           this.textTimerController.start()
-        })
+        }).key('start1')
         Button("pause").onClick((e: ClickEvent) => {
           console.log('pause===========')
           this.pause = 'succ'
           this.textTimerController.pause()
-        })
+        }).key('pause1')
         Button("reset").onClick((e: ClickEvent) => {
           console.log('reset===========')
           this.reset = 'succ'
           this.textTimerController.reset()
-        })
+        }).key('reset1')
       }.height('10%')
     }.width('100%').height('100%')
   }

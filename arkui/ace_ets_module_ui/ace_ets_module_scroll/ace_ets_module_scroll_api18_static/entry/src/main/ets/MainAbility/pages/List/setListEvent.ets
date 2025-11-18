@@ -12,45 +12,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { NodeController, FrameNode, typeNode } from '@ohos.arkui.node';
+import { FrameNode, NodeController } from '@ohos.arkui.node';
 import {
-  Entry,
-  Text,
-  LazyForEach,
+  Button,
+  ClickEvent,
+  Color,
   Column,
   Component,
-  LazyVGridLayout,
-  ClickEvent,
-  WaterFlow,
-  TextAlign,
-  Button,
-  Axis,
-  ScrollState,
-  VisibleListContentInfo,
-  BarState,
   EdgeEffect,
+  Entry,
   List,
+  ListItem,
   NodeContainer,
-  Color,
+  OnScrollFrameBeginHandlerResult,
   ScrollResult,
   ScrollSource,
-  ListItem,
-  OnScrollFrameBeginHandlerResult
-} from '@ohos.arkui.component'
-import { State, LocalStorage } from '@ohos.arkui.stateManagement'
-import { FrameNode, typeNode } from '@ohos.arkui.node'
+  ScrollState,
+  Text,
+  VisibleListContentInfo
+} from '@ohos.arkui.component';
+import { State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-
-
-
-
-
-
-
-
-
-
+let para: Record<string, string> = { 'List_setOnWillScroll': 'start', 'List_setOnDidScroll': 'start' };
+let storage: LocalStorage = new LocalStorage(para);
+let para1: Record<string, string> = { 'List_setOnReachStart': 'start', 'List_setOnReachEnd': 'start' };
+let storage1: LocalStorage = new LocalStorage(para1);
+let para2: Record<string, string> = { 'List_setOnScrollStart': 'start', 'List_setOnScrollStop': 'start' };
+let storage2: LocalStorage = new LocalStorage(para2);
+let para3: Record<string, string> = { 'List_setOnScrollFrameBegin': 'start', 'List_setOnScrollIndex': 'start' };
+let storage3: LocalStorage = new LocalStorage(para3);
+let para4: Record<string, string> = { 'List_setOnVisibleContentChange': 'start' };
+let storage4: LocalStorage = new LocalStorage(para4);
 
 class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
@@ -64,57 +57,57 @@ class MyNodeController extends NodeController {
   }
 
   addCommonEvent(frameNode: FrameNode) {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // let listEvent: UIListEvent | undefined = typeNode.getEvent(frameNode, 'List');
+    // listEvent?.setOnWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource)=>{
+    //   // storage.set('List_setOnWillScroll', 'setOnWillScroll');
+    //   console.log(`List:: setOnWillScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
+    // })
+    // listEvent?.setOnDidScroll((scrollOffset: number, scrollState: ScrollState)=>{
+    //   // storage.set('List_setOnDidScroll', 'setOnDidScroll');
+    //   console.log(`List:: setOnDidScroll scrollOffset=${scrollOffset}, scrollState=${scrollState}`)
+    // })
+    // listEvent?.setOnReachStart(()=>{
+    //   // storage1.set('List_setOnReachStart', 'setOnReachStart');
+    //   console.log(`List:: setOnReachStart`)
+    // })
+    // listEvent?.setOnReachEnd(()=>{
+    //   // storage1.set('List_setOnReachEnd', 'setOnReachEnd');
+    //   console.log(`List:: setOnReachEnd`)
+    // })
+    // listEvent?.setOnScrollStart(()=>{
+    //   // storage2.set('List_setOnScrollStart', 'setOnScrollStart');
+    //   console.log(`List:: setOnScrollStart`)
+    // })
+    // listEvent?.setOnScrollStop(()=>{
+    //   // storage2.set('List_setOnScrollStop', 'setOnScrollStop');
+    //   console.log(`List:: setOnScrollStop`)
+    // })
+    // listEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
+    //   // storage3.set('List_setOnScrollFrameBegin', 'setOnScrollFrameBegin');
+    //   console.log(`List:: setOnScrollFrameBegin offset=${offset}, state=${state}`)
+    //   return undefined;
+    // })
+    // listEvent?.setOnScrollIndex((start: number, end: number, center: number)=>{
+    //   // storage3.set('List_setOnScrollIndex', 'setOnScrollIndex');
+    //   console.log(`List:: setOnScrollIndex start=${start}, end=${end}, center=${center}`)
+    // })
+    // listEvent?.setOnScrollVisibleContentChange((start: VisibleListContentInfo, end: VisibleListContentInfo)=>{
+    //   // storage4.set('List_setOnVisibleContentChange', 'setOnScrollVisibleContentChange');
+    //   console.log(`List:: setOnScrollVisibleContentChange start=${JSON.stringify(start)}, end=${JSON.stringify(end)}`)
+    // })
   }
 
   resetEvent(frameNode: FrameNode) {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    // let listEvent: UIListEvent | undefined = typeNode.getEvent(frameNode, 'List');
+    // listEvent?.setOnWillScroll(undefined)
+    // listEvent?.setOnDidScroll(undefined)
+    // listEvent?.setOnReachStart(undefined)
+    // listEvent?.setOnReachEnd(undefined)
+    // listEvent?.setOnScrollStart(undefined)
+    // listEvent?.setOnScrollStop(undefined)
+    // listEvent?.setOnScrollFrameBegin(undefined)
+    // listEvent?.setOnScrollIndex(undefined)
+    // listEvent?.setOnScrollVisibleContentChange(undefined)
   }
 }
 
@@ -134,7 +127,7 @@ struct setOnListIndex02 {
       Button('reset CommonEvent to List')
         .height('5%')
         .onClick((e: ClickEvent) => {
-          
+          this.myNodeController!.resetEvent(this.myNodeController!.rootNode!.getParent()!.getPreviousSibling() !)
         })
       Button('add CommonEvent to List')
         .id('List_addCommonEvent_02')
@@ -148,7 +141,7 @@ struct setOnListIndex02 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text = storage.get<string>('List_setOnWillScroll') as string + '_' + storage.get<string>('List_setOnDidScroll') as string + '';
         })
       Text(this.text1)
         .id('List_setOnReach_02')
@@ -156,7 +149,7 @@ struct setOnListIndex02 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text1 = storage1.get<string>('List_setOnReachStart') as string + '_' + storage1.get<string>('List_setOnReachEnd') as string + '';
         })
       Text(this.text2)
         .id('List_setOnScroll_02')
@@ -164,7 +157,7 @@ struct setOnListIndex02 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text2 = storage2.get<string>('List_setOnScrollStart') as string + '_' + storage2.get<string>('List_setOnScrollStop') as string;
         })
       Text(this.text3)
         .id('List_setOnScrollIndex_02')
@@ -172,7 +165,7 @@ struct setOnListIndex02 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text3 = storage3.get<string>('List_setOnScrollFrameBegin') as string + '_' + storage3.get<string>('List_setOnScrollIndex') as string;
         })
       Text(this.text4)
         .id('Scroll_VisibleChange_02')
@@ -180,7 +173,7 @@ struct setOnListIndex02 {
         .fontWeight(700)
         .fontColor(Color.Green)
         .onClick((e: ClickEvent) => {
-          
+          this.text4 = storage4.get<string>('List_setOnVisibleContentChange') as string
         })
       List() {
         ListItem()

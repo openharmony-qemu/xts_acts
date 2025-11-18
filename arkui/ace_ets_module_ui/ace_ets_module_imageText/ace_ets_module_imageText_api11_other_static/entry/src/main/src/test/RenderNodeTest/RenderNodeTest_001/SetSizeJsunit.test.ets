@@ -66,7 +66,7 @@ export default function SetSizeJsunit() {
           // console.info("push SetSizeJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push SetSizeJsunit page error:" + err);
       }
       console.info("SetSizeJsunit beforeEach end");
@@ -78,9 +78,8 @@ export default function SetSizeJsunit() {
     //   await UtilsTest.msSleep(1000)
     // })
 
-
     
-/*
+    /*
      * @tc.number   SetSizeJsunit_static_001
      * @tc.name     SetSizeJsunit_static_001
      * @tc.desc     SetSizeJsunit_static_001

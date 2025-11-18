@@ -98,7 +98,7 @@ export default function loadingProgressJsunit() {
           // console.info("push loadingProgressJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push loadingProgressJsunit page error:" + err);
         expect().assertFail();
       }
@@ -106,8 +106,7 @@ export default function loadingProgressJsunit() {
     });
 
 
-    
-/*
+    /*
      * @tc.number   loadingProgressJsunit_static_0100
      * @tc.name     loadingProgressJsunit_static_0100
      * @tc.desc     loadingProgressJsunit_static_0100
@@ -124,8 +123,7 @@ it('loadingProgressJsunit_static_0100', Level.LEVEL2, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   loadingProgressJsunit_static_0200
      * @tc.name     loadingProgressJsunit_static_0200
      * @tc.desc     loadingProgressJsunit_static_0200
@@ -145,8 +143,7 @@ it('loadingProgressJsunit_static_0200', Level.LEVEL2, async (done: () => void): 
       done();
     });
 
-    
-/*
+    /*
      * @tc.number   loadingProgressJsunit_static_0300
      * @tc.name     loadingProgressJsunit_static_0300
      * @tc.desc     loadingProgressJsunit_static_0300

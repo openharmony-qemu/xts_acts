@@ -87,5 +87,37 @@ export default function focusJsunit() {
       await CommonFunc.sleep(1000);
       console.info("focus after each called");
     });
+
+    /*
+     * @tc.number   focusTest_0100
+     * @tc.name     focusTest_0100
+     * @tc.desc     focusTest_0100
+     * @tc.level    Level.LEVEL1
+     */
+    it('focusTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        console.info('focusTest_0100 START');
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "focusable": true
+            } as Record<string, Object | undefined | null>
+          }
+          let indexEventOne: events_emitter.InnerEvent = {
+            eventId: 101,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("focusTest_0100 start to publish emit");
+          events_emitter.emit(indexEventOne, eventData);
+        } catch (err: Error) {
+          console.log("focusTest_0100 change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        console.info('focusTest_0100 END');
+        done();
+      } catch (error) {
+        expect().assertFail();
+      }
+    });
   })
 }

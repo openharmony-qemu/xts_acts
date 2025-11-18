@@ -63,20 +63,20 @@ export default function arkuiNodeRenderTest() {
           // console.info("push arkuiNodeRenderTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err) {
+      } catch (err:Error) {
         console.error("push arkuiNodeRenderTest page error:" + err);
       }
       console.info("arkuiNodeRenderTest beforeEach end");
 
     });
+
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       console.info("arkuiNodeRenderTest after each called");
     });
 
-
     
-/*
+    /*
      * @tc.number   arkuiNodeRenderTest_static_0100
      * @tc.name     arkuiNodeRenderTest_static_0100
      * @tc.desc     arkuiNodeRenderTest_static_0100
@@ -91,6 +91,5 @@ it('arkuiNodeRenderTest_static_0100', Level.LEVEL2, async (done: () => void): Pr
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('hello');
       done();
     });
-
   })
 }

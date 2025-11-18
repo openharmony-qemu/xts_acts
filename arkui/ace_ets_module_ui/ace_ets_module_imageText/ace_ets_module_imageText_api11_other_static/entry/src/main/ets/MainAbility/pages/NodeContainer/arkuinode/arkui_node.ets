@@ -26,7 +26,8 @@ import {
   Row,
   ClickEvent,
   NodeContainer,
-  TouchEvent
+  TouchEvent,
+  CustomBuilderT
 } from "@ohos.arkui.component"
 
 import { ClickEvent } from '@ohos.arkui.component';
@@ -46,15 +47,15 @@ function buttonBuilder(params: Params) {
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
-  private buttonNode: BuilderNode<Params[]> | null = null;
+  private buttonNode: BuilderNode<Params> | null = null;
 
-  //private wrapBuilder = new WrappedBuilder<Params[]>(buttonBuilder);
+  private wrapBuilder = new WrappedBuilder<CustomBuilderT<Params>>(buttonBuilder);
 
   makeNode(uiContext: UIContext): FrameNode {
     if (this.rootNode == null) {
       this.rootNode = new FrameNode(uiContext);
-      this.buttonNode = new BuilderNode<Params[]>(uiContext!);
-      // this.buttonNode?.build(this.wrapBuilder!, { text: "this is a string" })
+      this.buttonNode = new BuilderNode<Params>(uiContext!);
+      this.buttonNode?.build(this.wrapBuilder, { text: "this is a string" })
 
       const rootRenderNode = this.rootNode?.getRenderNode();
       if (rootRenderNode !== null) {
@@ -80,7 +81,7 @@ class MyNodeController extends NodeController {
     if (this.rootNode == null) {
       return;
     }
-    // this.rebuild();
+    this.rebuild();
   }
 
   onTouchEvent(event: TouchEvent) {

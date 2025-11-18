@@ -39,7 +39,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct AtomicServiceSearchTest {
-  @State arr: double[] | int[] = [1, 2, 3]
+  @State arr: double[] | Int[] = [1, 2, 3]
   @State current: number = 1
   @State selectWhich: number = 1;
   @State simpleList: Array<string> = [

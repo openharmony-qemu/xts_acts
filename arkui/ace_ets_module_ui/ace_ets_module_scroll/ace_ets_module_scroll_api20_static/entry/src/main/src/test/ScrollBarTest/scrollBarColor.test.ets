@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -53,29 +53,31 @@ export default function scrollBarColor() {
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
-        router.clear();
         let pages = router.getState();
         console.info("get scrollBarColor state pages:" + JSON.stringify(pages));
-        if (!("scrollBarColor" == pages.name)) {
+        if (!("MainAbility/pages/ScrollBar/scrollBarColor" == pages.name)) {
           console.info("get scrollBarColor pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push scrollBarColor page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollBarColor page error:" + err);
       }
       console.info("scrollBarColor beforeEach end");
     });
-
-
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+    
     /*
-     * @tc.number    scrollBarColor_0100
-     * @tc.name      scrollBarColor_0100
-     * @tc.desc      scrollBarColor_0100
-     * @tc.level     2
+     * @tc.number   scrollBarColor_0100
+     * @tc.name     scrollBarColor_0100
+     * @tc.desc     scrollBarColor_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('scrollBarColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('scrollBarColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[scrollBarColor_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('scrollBar_color_text');
@@ -85,8 +87,8 @@ export default function scrollBarColor() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
       console.info("[scrollBarColor_0100] scrollBarColor: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarColor')));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("ScrollBar");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('scrollBarColor')).assertEqual("#66182330");
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("ScrollBar");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollBarColor')).assertEqual("#66182330");
       console.info('[scrollBarColor_0100] END');
       done();
     });
