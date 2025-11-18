@@ -40,6 +40,15 @@ export default function assemblyCallbackTest() {
       done()
     });
 
+    /*
+     * @tc.number       ArkUX_Callback_notification_0210
+     * @tc.name         ArkUX_Callback_notification_0210021
+     * @tc.desc         ArkUX_Callback_notification_001
+     * tc.size    :MediumTest
+     * tc.type     :Function
+     * tc.level    :level 0
+     */
+
     it('ArkUX_Callback_notification_0210', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Callback_notification_0210 START');
       setTimeout(() => {
@@ -56,6 +65,15 @@ export default function assemblyCallbackTest() {
         done();
       }, 500)
     });
+
+    /*
+     * @tc.number       ArkUX_Callback_notification_0220
+     * @tc.name         ArkUX_Callback_notification_02200220
+     * @tc.desc         ArkUX_Callback_notification_002
+     * tc.size    :MediumTest
+     * tc.type     :Function
+     * tc.level    :level 0
+     */
 
     it('ArkUX_Callback_notification_0220', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Callback_notification_0220 START');
@@ -74,6 +92,15 @@ export default function assemblyCallbackTest() {
       }, 500)
     });
 
+    /*
+     * @tc.number       ArkUX_Callback_notification_0230
+     * @tc.name         ArkUX_Callback_notification_02300230
+     * @tc.desc         ArkUX_Callback_notification_003
+     * tc.size    :MediumTest
+     * tc.type     :Function
+     * tc.level    :level 0
+     */
+
     it('ArkUX_Callback_notification_0230', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Callback_notification_0230 START');
       setTimeout(() => {
@@ -90,6 +117,15 @@ export default function assemblyCallbackTest() {
         done();
       }, 500)
     });
+
+    /*
+     * @tc.number       ArkUX_Callback_notification_0240
+     * @tc.name         ArkUX_Callback_notification_02400240
+     * @tc.desc         ArkUX_Callback_notification_004
+     * tc.size    :MediumTest
+     * tc.type     :Function
+     * tc.level    :level 0
+     */
 
     it('ArkUX_Callback_notification_0240', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Callback_notification_0240 START');
@@ -108,6 +144,15 @@ export default function assemblyCallbackTest() {
       }, 500)
     });
 
+    /*
+     * @tc.number       ArkUX_Callback_notification_0250
+     * @tc.name         ArkUX_Callback_notification_02500250
+     * @tc.desc         ArkUX_Callback_notification_005
+     * tc.size    :MediumTest
+     * tc.type     :Function
+     * tc.level    :level 0
+     */
+
     it('ArkUX_Callback_notification_0250', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Callback_notification_0250 START');
       setTimeout(() => {
@@ -124,6 +169,15 @@ export default function assemblyCallbackTest() {
         done();
       }, 500)
     });
+
+    /*
+     * @tc.number       ArkUX_Callback_notification_0260
+     * @tc.name         ArkUX_Callback_notification_02600260
+     * @tc.desc         ArkUX_Callback_notification_006
+     * tc.size    :
+     * tc.type     :Function
+     * tc.level    :level 0
+     */
 
     it('ArkUX_Callback_notification_0260', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Callback_notification_0260 START');
