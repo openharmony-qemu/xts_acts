@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -76,17 +76,17 @@ struct ImageAnimatorEventDataPage {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "string": "Repeat"
+                'string': 'Repeat'
               }
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 114,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("onRepeat start to emit action state")
+            console.info('onRepeat start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
         .onCancel(() => {
@@ -101,17 +101,17 @@ struct ImageAnimatorEventDataPage {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "state": this.state
+                'state': this.state
               }
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 1150,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("imageAnimator 115 button start to emit action state")
+            console.info('imageAnimator 115 button start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
         Button('pause').key('button1').width(100).padding(5).onClick(() => {
@@ -119,18 +119,18 @@ struct ImageAnimatorEventDataPage {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "state": this.state,
-                "fixedSize": this.fixedSize
+                'state': this.state,
+                'fixedSize': this.fixedSize
               }
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 116,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("button1 start to emit action state")
+            console.info('button1 start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button1 emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
         Button('stop').key('button2').width(100).padding(5).onClick(() => {
@@ -138,18 +138,18 @@ struct ImageAnimatorEventDataPage {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "state": this.state,
-                "preDecode": this.preDecode
+                'state': this.state,
+                'preDecode': this.preDecode
               }
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 117,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("button2 start to emit action state")
+            console.info('button2 start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button2 emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
       }
@@ -159,17 +159,17 @@ struct ImageAnimatorEventDataPage {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "fillMode": this.fillMode
+                'fillMode': this.fillMode
               }
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 118,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("button3 start to emit action state")
+            console.info('button3 start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button3 emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button3 emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
         Button('once').key('button4').width(100).padding(5).onClick(() => {
@@ -177,17 +177,17 @@ struct ImageAnimatorEventDataPage {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "iterations": this.iterations
+                'iterations': this.iterations
               }
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 119,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("button4 start to emit action state")
+            console.info('button4 start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button4 emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button4 emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
         Button('iteration').key('button5').width(100).padding(5).onClick(() => {
@@ -195,17 +195,17 @@ struct ImageAnimatorEventDataPage {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "preDecode": this.preDecode
+                'preDecode': this.preDecode
               }
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 120,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("button5 start to emit action state")
+            console.info('button5 start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button5 emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button5 emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
       }
@@ -222,7 +222,7 @@ struct ImageAnimatorEventDataPage {
 
   private stateChangCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
-      console.info("imageAnimator page state change called:" + JSON.stringify(eventData));
+      console.info('imageAnimator page state change called:' + JSON.stringify(eventData));
       if (eventData.data?.preDecode != null) {
         this.preDecode = eventData.data?.preDecode;
       }

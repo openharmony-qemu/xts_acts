@@ -19,33 +19,37 @@ import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
 export default function monitorInvisibleAreaTest() {
-    describe('monitorInvisibleAreaTest', () => {
-      beforeEach(async (done: Function) => {
-        console.info("monitorInvisibleAreaTest beforeEach start");
-        let options: router.RouterOptions = {
-          url: 'MainAbility/pages/ImageAnimator/monitorInvisibleArea',
+  describe('monitorInvisibleAreaTest', () => {
+    beforeEach(async (done: Function) => {
+      console.info("monitorInvisibleAreaTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/ImageAnimator/monitorInvisibleArea',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get monitorInvisibleAreaTest state pages: " + JSON.stringify(pages));
+        if (!("monitorInvisibleArea" == pages.name)) {
+          console.info("get monitorInvisibleAreaTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          console.info("push monitorInvisibleAreaTest page result: " + JSON.stringify(result));
+          await CommonFunc.sleep(2000);
         }
-        try {
-          router.clear();
-          let pages = router.getState();
-          console.info("get monitorInvisibleAreaTest state pages: " + JSON.stringify(pages));
-          if (!("monitorInvisibleArea" == pages.name)) {
-            console.info("get monitorInvisibleAreaTest state pages.name: " + JSON.stringify(pages.name));
-            let result = await router.push(options);
-            console.info("push monitorInvisibleAreaTest page result: " + JSON.stringify(result));
-            await CommonFunc.sleep(2000);
-          }
-        } catch (err) {
-          console.error("push monitorInvisibleAreaTest page error: " + err);
-          expect().assertFail();
-        }
-        done();
-      });
+      } catch (err) {
+        console.error("push monitorInvisibleAreaTest page error: " + err);
+        expect().assertFail();
+      }
+      done();
+    });
+
 
     /*
-     * @tc.number       monitorInvisibleAreaTest_001
-     * @tc.name         monitorInvisibleAreaTest_001
-     * @tc.desic        monitorInvisibleArea(monitorInvisibleArea: boolean):true
+     * @tc.number  monitorInvisibleAreaTest_001
+     * @tc.name    monitorInvisibleAreaTest_001
+     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):true
+     * @tc.level   Level 1
+     * @tc.type
+     * @tc.size
      */
     it('monitorInvisibleAreaTest_001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -86,9 +90,12 @@ export default function monitorInvisibleAreaTest() {
     });
 
     /*
-     * @tc.number       monitorInvisibleAreaTest_002
-     * @tc.name         monitorInvisibleAreaTest_002
-     * @tc.desic        monitorInvisibleArea(monitorInvisibleArea: boolean):false
+     * @tc.number  monitorInvisibleAreaTest_002
+     * @tc.name    monitorInvisibleAreaTest_002
+     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):false
+     * @tc.level   Level 1
+     * @tc.type
+     * @tc.size
      */
     it('monitorInvisibleAreaTest_002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -100,7 +107,7 @@ export default function monitorInvisibleAreaTest() {
       let left = rect.left;
       let right = rect.right;
       let bottom = rect.bottom;
-     
+
       await driver.swipe(
         Math.round(left + (right - left) * 0.5),
         Math.round(top + (bottom - top) * 0.25),
@@ -134,9 +141,12 @@ export default function monitorInvisibleAreaTest() {
     });
 
     /*
-     * @tc.number       monitorInvisibleAreaTest_003
-     * @tc.name         monitorInvisibleAreaTest_003
-     * @tc.desic        monitorInvisibleArea(monitorInvisibleArea: boolean):undefined
+     * @tc.number  monitorInvisibleAreaTest_003
+     * @tc.name    monitorInvisibleAreaTest_003
+     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):undefined
+     * @tc.level   Level 1
+     * @tc.type
+     * @tc.size
      */
     it('monitorInvisibleAreaTest_003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -148,7 +158,7 @@ export default function monitorInvisibleAreaTest() {
       let left = rect.left;
       let right = rect.right;
       let bottom = rect.bottom;
-      
+
       await driver.swipe(
         Math.round(left + (right - left) * 0.5),
         Math.round(top + (bottom - top) * 0.25),
@@ -181,9 +191,12 @@ export default function monitorInvisibleAreaTest() {
     });
 
     /*
-     * @tc.number       monitorInvisibleAreaTest_004
-     * @tc.name         monitorInvisibleAreaTest_004
-     * @tc.desic        monitorInvisibleArea(monitorInvisibleArea: boolean):null
+     * @tc.number  monitorInvisibleAreaTest_004
+     * @tc.name    monitorInvisibleAreaTest_004
+     * @tc.desc    monitorInvisibleArea(monitorInvisibleArea: boolean):null
+     * @tc.level   Level 1
+     * @tc.type
+     * @tc.size
      */
     it('monitorInvisibleAreaTest_004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

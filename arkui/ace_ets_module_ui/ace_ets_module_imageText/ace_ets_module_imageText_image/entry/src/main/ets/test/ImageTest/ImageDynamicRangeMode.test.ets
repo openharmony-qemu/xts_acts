@@ -67,8 +67,8 @@ export default function ImageAddApiTest() {
     });
 
     /**
-     * @tc.number: ImageAddApiTest_001
-     * @tc.name  : ImageAddApiTest_001
+     * @tc.number: ImageAddApiTest_002
+     * @tc.name  : ImageAddApiTest_002
      * @tc.desc  : dynamicRangeMode test of image
      * @tc.level : Level 0
      * @tc.type
@@ -89,8 +89,8 @@ export default function ImageAddApiTest() {
     });
 
     /**
-     * @tc.number: ImageAddApiTest_001
-     * @tc.name  : ImageAddApiTest_001
+     * @tc.number: ImageAddApiTest_003
+     * @tc.name  : ImageAddApiTest_003
      * @tc.desc  : dynamicRangeMode test of image
      * @tc.level : Level 0
      * @tc.type

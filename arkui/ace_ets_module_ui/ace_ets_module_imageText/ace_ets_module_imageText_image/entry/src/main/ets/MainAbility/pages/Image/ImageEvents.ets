@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -29,11 +29,11 @@ struct ImageEventsPage {
   private on2off: Resource = $rawfile('bm.jpg')
   private off2on: Resource = $rawfile('test3.png')
   @State src: Resource = this.on
-  @State m1: string = "init"
-  @State m2: string = "init"
-  @State m3: string = "init"
-  @State m4: string = "init"
-  @State imageName: string = "img1.png"
+  @State m1: string = 'init'
+  @State m2: string = 'init'
+  @State m3: string = 'init'
+  @State m4: string = 'init'
+  @State imageName: string = 'img1.png'
   messageManager: MessageManager = new MessageManager()
 
   onPageShow() {
@@ -42,7 +42,7 @@ struct ImageEventsPage {
       name: 'messageManager', message: this.messageManager
     }
     let callback: Callback = (message: ESObject) => {
-      console.error('message = ' + message.name + "--" + message.value)
+      console.error('message = ' + message.name + '--' + message.value)
       if (message.name == 'imageName') {
         this.imageName = message.value
       }
@@ -69,11 +69,11 @@ struct ImageEventsPage {
             .onComplete((msg: msgObj) => {
               this.widthValue = msg.width
               this.heightValue = msg.height
-              this.m1 = "complete"
+              this.m1 = 'complete'
             })
             .onError(() => {
               console.log('load image fail')
-              this.m2 = "error"
+              this.m2 = 'error'
             })
             .overlay('\nwidth: ' + String(this.widthValue) + ' height: ' + String(this.heightValue), {
               align: Alignment.Bottom,
@@ -97,20 +97,20 @@ struct ImageEventsPage {
             .onClick(() => {
               if (this.src == this.on || this.src == this.off2on) {
                 this.src = this.on2off
-                this.m3 = "click"
+                this.m3 = 'click'
               } else {
                 this.src = this.off2on
-                this.m3 = "click"
+                this.m3 = 'click'
               }
             })
             .key('image2')
             .onFinish(() => {
               if (this.src == this.off2on) {
                 this.src = this.on
-                this.m4 = "Finish"
+                this.m4 = 'Finish'
               } else {
                 this.src = this.off
-                this.m4 = "Finish"
+                this.m4 = 'Finish'
               }
             })
         }

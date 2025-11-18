@@ -18,7 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function shapeClippingJsunit() {
-  describe('borderTest_five_4', () => {
+  describe('shapeClippingJsunit', () => {
     beforeEach(async (done: Function) => {
       console.info('shapeClipping beforeEach start');
       let options: router.RouterOptions = {
@@ -45,6 +45,14 @@ export default function shapeClippingJsunit() {
       console.info('shapeClipping after each called');
     });
 
+    /*
+     * @tc.number testShapeClipping001
+     * @tc.name   testShapeClipping001
+     * @tc.desc   Image test
+     * @tc.level  Level 1
+     * @tc.type
+     * @tc.size
+     */
     it('testShapeClipping001', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping001] START');
       await CommonFunc.sleep(1000);
@@ -58,6 +66,14 @@ export default function shapeClippingJsunit() {
       done();
     });
 
+    /*
+     * @tc.number testShapeClipping002
+     * @tc.name   testShapeClipping002
+     * @tc.desc   Image test
+     * @tc.level  Level 1
+     * @tc.type
+     * @tc.size
+     */
     it('testShapeClipping002', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping002] START');
       await CommonFunc.sleep(1000);
@@ -70,6 +86,14 @@ export default function shapeClippingJsunit() {
       done();
     });
 
+    /*
+     * @tc.number testShapeClipping003
+     * @tc.name   testShapeClipping003
+     * @tc.desc   Image test
+     * @tc.level  Level 1
+     * @tc.type
+     * @tc.size
+     */
     it('testShapeClipping003', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping003] START');
       try {
@@ -98,6 +122,14 @@ export default function shapeClippingJsunit() {
       done();
     });
 
+    /*
+     * @tc.number testShapeClipping004
+     * @tc.name   testShapeClipping004
+     * @tc.desc   Image test
+     * @tc.level  Level 1
+     * @tc.type
+     * @tc.size
+     */
     it('testShapeClipping004', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping004] START');
       try {

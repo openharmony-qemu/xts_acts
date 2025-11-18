@@ -25,7 +25,7 @@ struct imageAnimator08 {
       ImageAnimator()
         .images([
           {
-            src: $r('yyy.jpg')
+            src: $r('app.media.yyy')
           }
         ])
         .fillMode(FillMode.None)
