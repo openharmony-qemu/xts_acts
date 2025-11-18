@@ -16,7 +16,7 @@
 import inspectorTestJsunit from './inspectorTest/inspector.test';
 import onTerminatedJsunit from './EmbeddedComponentTest/onTerminated.test';
 import LayoutInspectorTest from './layoutInspector/layoutInspector.test';
-import assemblyCallbackTest from './assemblycallback.test';
+import assemblyCallbackTest from './assemblycallback/assemblycallback.test';
 
 
 export default function testsuite() {
