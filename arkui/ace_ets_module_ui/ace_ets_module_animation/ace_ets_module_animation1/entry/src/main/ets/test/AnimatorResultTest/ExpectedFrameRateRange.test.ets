@@ -65,10 +65,10 @@ export default function ExpectedFrameRateRange() {
      * @tc.type
      * @tc.size
      */
-    it('ExpectedFrameRateRange', Level.LEVEL3, async (done: Function) => {
+    it('ExpectedFrameRateRange_001', Level.LEVEL3, async (done: Function) => {
       console.info('[ExpectedFrameRateRange_001] START');
       let indexEvent: events_emitter.InnerEvent = {
-        eventId: 51,
+        eventId: 60,
         priority: events_emitter.EventPriority.LOW
       }
       let callback = (indexEvent: events_emitter.EventData) => {
