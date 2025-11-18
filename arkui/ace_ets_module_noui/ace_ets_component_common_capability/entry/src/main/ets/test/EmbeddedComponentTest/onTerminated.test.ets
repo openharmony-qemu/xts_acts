@@ -28,7 +28,7 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
+import CommonFunc from '../../MainAbility/common/Common1';
 
 
 export default function onTerminatedJsunit() {
