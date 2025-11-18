@@ -42,7 +42,7 @@ export default function remoteWindowJsunit() {
       console.info("remoteWindow after each called");
     });
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+     * @tc.number       testRemoteWindow0001
      * @tc.name         testremoteWindow0001
      * @tc.desc        acesremoteWindowEtsTest0001
      */

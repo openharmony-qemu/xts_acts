@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
 export type Callback = (message: ESObject) => void
 
 export class MessageManager {
-  callback: Callback
+  callback?: Callback = undefined
   callbacks: Map<string, Callback> = new Map()
 
   constructor() {
@@ -33,11 +33,13 @@ export class MessageManager {
 
   notify(message: ESObject, type?: string) {
     if (type == undefined) {
-      this.callback(message)
+      if (this.callback !== undefined) {
+        this.callback(message)
+      }
       return
     }
 
-    let tmpCallback: Callback = this.callbacks.get(type)
+    let tmpCallback: Callback | undefined = this.callbacks.get(type)
     if (tmpCallback === undefined) {
       console.error('callbacks has no callback for type ' + type)
       return
@@ -47,6 +49,6 @@ export class MessageManager {
 
   clear() {
     this.callbacks.clear()
-    this.callback = null
+    this.callback = undefined
   }
 }

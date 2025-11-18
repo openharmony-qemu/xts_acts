@@ -43,7 +43,7 @@ export default function animatorOnframeJsunit() {
       console.info("animatorOnframe after each called");
     });
     /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+     * @tc.number       testanimatorOnframe0001
      * @tc.name         testanimatorOnframe0001
      * @tc.desc         aceanimatorOnframeEtsTest0001
      */

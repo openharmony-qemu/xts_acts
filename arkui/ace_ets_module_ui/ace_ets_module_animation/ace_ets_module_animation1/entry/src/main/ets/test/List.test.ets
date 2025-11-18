@@ -29,7 +29,7 @@ import ParticleAttributeTest from './Particle/ParticleAttributeTest.test'
 import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test'
 import MotionPathJsunit from './MotionPathJsunit.test';
 import geometryTransition from './geometryTransitionTest/geometryTransition.test';
-import animateToJunits from './animateto.test';
+import animateToJunits from './Animateto.test';
 import animationCurveTest from './animationCurve.test';
 import geometryTransitionJsunit from './geometryTransitionTest/GeometryTransitionJsunit.test';
 import animatorOnframeJsunit from './Animation/animator.test';

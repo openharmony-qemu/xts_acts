@@ -42,7 +42,7 @@ export default function playModeReverseJsunit() {
       console.info("playModeReverse after each called");
     });
     /*
- * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+ * @tc.number       testPlayModeReverse0001
  * @tc.name         testPlayModeReverse0001
  * @tc.desc         acePlayModeReverseEtsTest0001
  */
@@ -63,7 +63,7 @@ export default function playModeReverseJsunit() {
       done();
     });
     /*
- * @tc.number       SUB_ACE_BASIC_ETS_API_0001
+ * @tc.number       testPlayModeAlternate0001
  * @tc.name         testPlayModeAlternate0001
  * @tc.desc         acePlayModeAlternateEtsTest0009
  */
