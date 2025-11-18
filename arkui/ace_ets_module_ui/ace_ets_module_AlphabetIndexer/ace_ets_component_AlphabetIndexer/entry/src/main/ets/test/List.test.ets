@@ -26,7 +26,6 @@ import PopupAlphaTest from './AlphabetIndexerTest/PopupAlpha.test';
 export default function testsuite() {
     AlphabetTest();
     ActsAlphabetIndexerUxTest();
-    AlphabetIndexerJsunit();
     AlphabetIndexerOnSelectJsunit();
     alphabetEnableJsunit();
     alphabetBorderRadiusTest();
@@ -34,4 +33,5 @@ export default function testsuite() {
     outliersAlphabet();
     valueAlphabet();
     PopupAlphaTest();
+    AlphabetIndexerJsunit();
 }
