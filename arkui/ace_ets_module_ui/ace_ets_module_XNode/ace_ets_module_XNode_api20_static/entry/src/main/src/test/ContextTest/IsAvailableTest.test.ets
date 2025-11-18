@@ -63,14 +63,14 @@ export default function IsAvailableTest() {
     });
 
     
-    
-/*
+        
+        /*
      * @tc.number   IsAvailableTest_static_0100
      * @tc.name     IsAvailableTest_static_0100
      * @tc.desc     IsAvailableTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('IsAvailableTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('IsAvailableTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IsAvailableTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

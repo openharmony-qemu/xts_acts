@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -25,11 +25,10 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
-import { frameTime, sleep } from '../Utils';
-import { Theme, CustomTheme } from '@ohos.arkui.theme';
+import { frameTime, sleep } from '../Utils.test';
+import { CustomTheme, Theme } from '@ohos.arkui.theme';
 import { BadgeKeys, badgeThemeProperty } from '../../../ets/MainAbility/pages/components/BadgePage';
-// import { greenCustomTheme, redCustomTheme } from '../../../ets/MainAbility/themes/CustomTheme';
-import { frameTime, sleep } from '../Utils';
+import { greenCustomTheme, redCustomTheme } from '../../../ets/MainAbility/themes/CustomTheme1';
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
 
 export default function badgeThemeTest() {
@@ -46,6 +45,9 @@ export default function badgeThemeTest() {
       console.info("BadgePage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
+    });
+
+    beforeEach(() => {
       try {
         const options: router.RouterOptions = {
           url: `MainAbility/pages/components/BadgePage`,
@@ -53,48 +55,30 @@ export default function badgeThemeTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `BadgePage`) {
-          await routerInstance.pushUrl(options).then(() => {
+          routerInstance.pushUrl(options).then(() => {
             localTheme = AppStorage.get<CustomTheme>(badgeThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get<Map<string,string>|undefined>(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey);
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-    });
 
-    beforeEach(() => {
-      if (!changeTheme) {
-        return;
-      }
-      // if ((AppStorage.get(badgeThemeProperty) as Theme)?.colors?.fontOnPrimary
-      //   == redCustomTheme?.colors?.fontOnPrimary) {
-      //   AppStorage.setOrCreate(badgeThemeProperty, greenCustomTheme);
-      // } else {
-      //   AppStorage.setOrCreate(badgeThemeProperty, redCustomTheme);
-      // }
-      localTheme = AppStorage.get<CustomTheme>(badgeThemeProperty) ;
-      changeTheme = false;
-    });
-
-    afterAll(() => {
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.back();
-      } catch (err) {
-        console.error(`${SUITE} afterAll error:` + JSON.stringify(err));
+      if (changeTheme) {
+        if ((AppStorage.get(badgeThemeProperty) as CustomTheme | undefined)?.colors?.fontOnPrimary
+          == redCustomTheme?.colors?.fontOnPrimary) {
+          AppStorage.setOrCreate(badgeThemeProperty, greenCustomTheme);
+        } else {
+          AppStorage.setOrCreate(badgeThemeProperty, redCustomTheme);
+        }
+        localTheme = AppStorage.get<CustomTheme>(badgeThemeProperty);
+        changeTheme = false;
       }
     });
-    /**
-     * @tc.number    : ActsBadgeThemeTest_static_0100
-     * @tc.name      : ActsBadgeThemeTest_static_0100
-     * @tc.desc      : Check system colors values of Badge component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     */
-    it(`ActsBadgeThemeTest_static_0100`, Level.LEVEL0, async () => {
+
+    
+    it(`ActsBadgeThemeTest_static_0100`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsBadgeThemeTest_static_0100`;
       console.info(`${SUITE} ${CASE} START`);
       await sleep(frameTime);
@@ -110,23 +94,18 @@ export default function badgeThemeTest() {
       expect(badgeColor).assertEqual(CheckBadgeColor);
       expect(borderColor).assertEqual(CheckBorderColor);
       console.info(`${SUITE} ${CASE} END`);
+      done();
     });
-    /**
-      * @tc.number    : ActsBadgeThemeTest_static_0200
-      * @tc.name      : ActsBadgeThemeTest_static_0200
-      * @tc.desc      : Check custom colors values of Badge component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsBadgeThemeTest_static_0200`, Level.LEVEL2, () => {
+    
+    it(`ActsBadgeThemeTest_static_0200`, Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsBadgeThemeTest_static_0200`;
       console.info(`${SUITE} ${CASE} START`);
       const badgeJson = inspector.getInspectorByKey(BadgeKeys.badgeKeysWithTheme)
       const badgeStyleJson = JSON.parseJsonElement(badgeJson).getElement('$attrs').getString('style').toString();
       const color: string = JSON.parseJsonElement(badgeStyleJson).getString('color').toString().toUpperCase();
       const badgeColor: string = JSON.parseJsonElement(badgeStyleJson).getString('badgeColor').toString().toUpperCase();
-      const borderColor: string = JSON.parseJsonElement(badgeStyleJson).getString('borderColor').toString().toUpperCase();
+      const borderColor: string =
+        JSON.parseJsonElement(badgeStyleJson).getString('borderColor').toString().toUpperCase();
       const checkColor: string = localTheme?.colors?.fontOnPrimary?.toString().toUpperCase() ?? emptyCheck;
       const CheckBadgeColor: string = localTheme?.colors?.warning?.toString().toUpperCase() ?? emptyCheck;
       const CheckBorderColor: string = localTheme?.colors?.warning?.toString().toUpperCase() ?? emptyCheck;
@@ -135,18 +114,11 @@ export default function badgeThemeTest() {
       expect(borderColor).assertEqual(CheckBorderColor);
       changeTheme = true;
       console.info(`${SUITE} ${CASE} END`);
+      done();
     });
 
-    /**
-      * @tc.number    : ActsBadgeThemeTest_static_0300
-      * @tc.name      : ActsBadgeThemeTest_static_0300
-      * @tc.desc      : Check custom colors values of Badge component
-     *                  after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsBadgeThemeTest_static_0300`, Level.LEVEL0, async () => {
+    
+    it(`ActsBadgeThemeTest_static_0300`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsBadgeThemeTest_static_0300`;
       console.info(`${SUITE} ${CASE} START`);
       await sleep(frameTime);
@@ -154,7 +126,8 @@ export default function badgeThemeTest() {
       const badgeStyleJson = JSON.parseJsonElement(badgeJson).getElement('$attrs').getString('style').toString();
       const color: string = JSON.parseJsonElement(badgeStyleJson).getString('color').toString().toUpperCase();
       const badgeColor: string = JSON.parseJsonElement(badgeStyleJson).getString('badgeColor').toString().toUpperCase();
-      const borderColor: string = JSON.parseJsonElement(badgeStyleJson).getString('borderColor').toString().toUpperCase();
+      const borderColor: string =
+        JSON.parseJsonElement(badgeStyleJson).getString('borderColor').toString().toUpperCase();
       const checkColor: string = localTheme?.colors?.fontOnPrimary?.toString().toUpperCase() ?? emptyCheck;
       const CheckBadgeColor: string = localTheme?.colors?.warning?.toString().toUpperCase() ?? emptyCheck;
       const CheckBorderColor: string = localTheme?.colors?.warning?.toString().toUpperCase() ?? emptyCheck;
@@ -163,6 +136,7 @@ export default function badgeThemeTest() {
       expect(borderColor).assertEqual(CheckBorderColor);
       changeTheme = true;
       console.info(`${SUITE} ${CASE} END`);
+      done();
     });
   });
 }

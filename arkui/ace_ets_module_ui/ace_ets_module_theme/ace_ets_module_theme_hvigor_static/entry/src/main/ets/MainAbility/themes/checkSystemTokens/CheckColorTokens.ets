@@ -14,7 +14,7 @@
  */
 export class ColorsValues {
   public readonly brand: string = 'sys.color.brand';
-  public readonly warning: string = 'sys.color.warning' ;
+  public readonly warning: string = 'sys.color.warning';
   public readonly alert: string = 'sys.color.alert';
   public readonly confirm: string = 'sys.color.confirm';
   public readonly fontPrimary: string = 'sys.color.font_primary';
@@ -65,4 +65,5 @@ export class ColorsValues {
   public readonly interactiveSelect: string = 'sys.color.interactive_select';
   public readonly interactiveClick: string = 'sys.color.interactive_click';
 }
+
 export const checkColorTokens = new ColorsValues();

@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -26,9 +26,9 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import { SwiperKeys, swiperThemeProperty } from '../../../ets/MainAbility/pages/components/SwiperPage'
-// import { greenCustomTheme, redCustomTheme } from '../../MainAbility/themes/CustomTheme'
-import { frameTime, sleep } from '../Utils'
-import { Theme, CustomTheme } from '@ohos.arkui.theme'
+import { greenCustomTheme, redCustomTheme } from '../../../ets/MainAbility/themes/CustomTheme1'
+import { frameTime, sleep } from '../Utils.test'
+import { CustomTheme, Theme } from '@ohos.arkui.theme'
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
 
 export default function swiperThemeTest() {
@@ -45,6 +45,9 @@ export default function swiperThemeTest() {
       console.info("SwiperPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
+    });
+
+    beforeEach(() => {
       try {
         let options: router.RouterOptions = {
           url: `MainAbility/pages/components/SwiperPage`,
@@ -52,63 +55,57 @@ export default function swiperThemeTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         let pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `SwiperPage`) {
-          await routerInstance.pushUrl(options).then(() => {
+          routerInstance.pushUrl(options).then(() => {
             localTheme = AppStorage.get<CustomTheme>(swiperThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get<Map<string,string>|undefined>(colorValuesKey)
+        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey)
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-    });
 
-    beforeEach(() => {
-      if (!changeTheme) return
-      // if ((AppStorage.get(swiperThemeProperty) as Theme)?.colors?.fontEmphasize
-      //   == redCustomTheme?.colors?.fontEmphasize) {
-      //   AppStorage.setOrCreate(swiperThemeProperty, greenCustomTheme);
-      // } else {
-      //   AppStorage.setOrCreate(swiperThemeProperty, redCustomTheme);
-      // }
+      if (!changeTheme) {
+        return
+      }
+      if ((AppStorage.get(swiperThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        == redCustomTheme?.colors?.fontEmphasize) {
+        AppStorage.setOrCreate(swiperThemeProperty, greenCustomTheme);
+      } else {
+        AppStorage.setOrCreate(swiperThemeProperty, redCustomTheme);
+      }
       localTheme = AppStorage.get<CustomTheme>(swiperThemeProperty);
       changeTheme = false;
     });
 
-    afterAll(() => {
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.back();
-      } catch (err) {
-        console.error(`${SUITE} afterAll error:` + JSON.stringify(err));
-      }
-    });
-
-    /**
-      * @tc.number    : ActsSwiperThemeColors_static_0100 
-      * @tc.name      : ActsSwiperThemeColors_static_0100
-      * @tc.desc      : Check system colors values of Swiper component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsSwiperThemeColors_static_0100`, Level.LEVEL2, () => {
+    
+    it(`ActsSwiperThemeColors_static_0100`, Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsSwiperThemeColors_static_0100`;
       console.info(`${SUITE} ${CASE} START`);
       {
         const json = inspector.getInspectorByKey(SwiperKeys.dotIndicatorSystem);
-        const indicatorJson= JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
-        const indicatorColor= JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
-        const indicatorSelectedColor= JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
-          ?? EMPTY_ATTR;
-        const arrowColor= JSON.parseJsonElement(json).getElement('$attrs').getString('selectedColor').toString().toUpperCase() ?? EMPTY_ATTR;
-        const arrowBackgroundColor= JSON.parseJsonElement(json).getElement('$attrs').getString('arrowBackgroundColor').toString().toUpperCase()
+        const indicatorJson = JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
+        const indicatorColor =
+          JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
+        const indicatorSelectedColor =
+          JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
+            ?? EMPTY_ATTR;
+        const arrowColor = JSON.parseJsonElement(json)
+          .getElement('$attrs')
+          .getString('selectedColor')
+          .toString()
+          .toUpperCase() ?? EMPTY_ATTR;
+        const arrowBackgroundColor = JSON.parseJsonElement(json)
+          .getElement('$attrs')
+          .getString('arrowBackgroundColor')
+          .toString()
+          .toUpperCase()
           ?? EMPTY_ATTR;
 
         const checkIndicatorColor: string = colorValues?.get(`compBackgroundSecondary`)?.toString().toUpperCase()
           ?? EMPTY_CHECK;
         const checkIndicatorSelectedColor: string = colorValues?.get(`compBackgroundEmphasize`)?.
-          toString().toUpperCase() ?? EMPTY_CHECK;
+        toString().toUpperCase() ?? EMPTY_CHECK;
         const checkArrowColor: string = colorValues?.get(`iconPrimary`)?.toString().toUpperCase() ?? EMPTY_CHECK;
         const checkArrowBackgroundColor: string = colorValues?.get(`compBackgroundSecondary`)?.toString().toUpperCase()
           ?? EMPTY_CHECK;
@@ -121,9 +118,11 @@ export default function swiperThemeTest() {
 
       {
         const json = inspector.getInspectorByKey(SwiperKeys.digitIndicatorSystem);
-        const indicatorJson= JSON.parseJsonElement(json).getElement('$attrs').getString('indicator');
-        const fontColor= JSON.parseJsonElement(indicatorJson).getString('fontColor').toString().toUpperCase() ?? EMPTY_ATTR;
-        const selectedFontColor= JSON.parseJsonElement(indicatorJson).getString('selectedFontColor').toString().toUpperCase() ?? EMPTY_ATTR;
+        const indicatorJson = JSON.parseJsonElement(json).getElement('$attrs').getString('indicator');
+        const fontColor =
+          JSON.parseJsonElement(indicatorJson).getString('fontColor').toString().toUpperCase() ?? EMPTY_ATTR;
+        const selectedFontColor =
+          JSON.parseJsonElement(indicatorJson).getString('selectedFontColor').toString().toUpperCase() ?? EMPTY_ATTR;
 
         const checkFontColor: string = colorValues?.get(`fontPrimary`)?.toString().toUpperCase() ?? EMPTY_CHECK;
         const checkSelectedFontColor: string = colorValues?.get(`fontPrimary`)?.toString().toUpperCase()
@@ -134,33 +133,37 @@ export default function swiperThemeTest() {
       }
 
       console.info(`${SUITE} ${CASE} END`)
+      done();
     });
 
-    /**
-      * @tc.number    : ActsSwiperThemeColors_static_0200 
-      * @tc.name      : ActsSwiperThemeColors_static_0200
-      * @tc.desc      : Check custom colors values of Swiper component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsSwiperThemeColors_static_0200`, Level.LEVEL2, () => {
+    
+    it(`ActsSwiperThemeColors_static_0200`, Level.LEVEL2, async (done: () => void): Promise<void> => {
       let CASE: string = `ActsSwiperThemeColors_static_0200`;
       console.info(`${SUITE} ${CASE} START`);
       {
         const json = inspector.getInspectorByKey(SwiperKeys.dotIndicatorWithTheme);
-        const indicatorJson= JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
-        const indicatorColor= JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
-        const indicatorSelectedColor= JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
-          ?? EMPTY_ATTR;
-        const arrowColor= JSON.parseJsonElement(json).getElement('$attrs').getString('selectedColor').toString().toUpperCase() ?? EMPTY_ATTR;
-        const arrowBackgroundColor= JSON.parseJsonElement(json).getElement('$attrs').getString('arrowBackgroundColor').toString().toUpperCase()
+        const indicatorJson = JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
+        const indicatorColor =
+          JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
+        const indicatorSelectedColor =
+          JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
+            ?? EMPTY_ATTR;
+        const arrowColor = JSON.parseJsonElement(json)
+          .getElement('$attrs')
+          .getString('selectedColor')
+          .toString()
+          .toUpperCase() ?? EMPTY_ATTR;
+        const arrowBackgroundColor = JSON.parseJsonElement(json)
+          .getElement('$attrs')
+          .getString('arrowBackgroundColor')
+          .toString()
+          .toUpperCase()
           ?? EMPTY_ATTR;
 
         const checkIndicatorColor: string = localTheme?.colors?.compBackgroundSecondary?.toString().toUpperCase()
           ?? EMPTY_CHECK;
         const checkIndicatorSelectedColor: string = localTheme?.colors?.compBackgroundEmphasize?.
-          toString().toUpperCase() ?? EMPTY_CHECK;
+        toString().toUpperCase() ?? EMPTY_CHECK;
         const checkArrowColor: string = localTheme?.colors?.iconPrimary?.toString().toUpperCase() ?? EMPTY_CHECK;
         const checkArrowBackgroundColor: string = localTheme?.colors?.compBackgroundSecondary?.toString().toUpperCase()
           ?? EMPTY_CHECK;
@@ -173,10 +176,12 @@ export default function swiperThemeTest() {
 
       {
         const json = inspector.getInspectorByKey(SwiperKeys.digitIndicatorWithTheme);
-        const indicatorJson= JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
-        const fontColor= JSON.parseJsonElement(indicatorJson).getString('fontColor').toString().toUpperCase() ?? EMPTY_ATTR;
-        const selectedFontColor= JSON.parseJsonElement(indicatorJson).getString('selectedFontColor').toString().toUpperCase()
-          ?? EMPTY_ATTR;
+        const indicatorJson = JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
+        const fontColor =
+          JSON.parseJsonElement(indicatorJson).getString('fontColor').toString().toUpperCase() ?? EMPTY_ATTR;
+        const selectedFontColor =
+          JSON.parseJsonElement(indicatorJson).getString('selectedFontColor').toString().toUpperCase()
+            ?? EMPTY_ATTR;
 
         const checkFontColor: string = localTheme?.colors?.fontPrimary?.toString().toUpperCase() ?? EMPTY_CHECK;
         const checkSelectedFontColor: string = localTheme?.colors?.fontPrimary?.toString().toUpperCase()
@@ -188,61 +193,64 @@ export default function swiperThemeTest() {
 
       changeTheme = true;
       console.info(`${SUITE} ${CASE} END`);
+      done();
     });
 
-    /**
-      * @tc.number    : ActsSwiperThemeColors_static_0300 
-      * @tc.name      : ActsSwiperThemeColors_static_0300
-      * @tc.desc      : Check custom colors values of Swiper component
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
-    it(`ActsSwiperThemeColors_static_0300`, Level.LEVEL0, async () => {
+    
+    it(`ActsSwiperThemeColors_static_0300`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsSwiperThemeColors_static_0300`;
       console.info(`${SUITE} ${CASE} START`);
       await sleep(frameTime);
       {
         const json = inspector.getInspectorByKey(SwiperKeys.dotIndicatorWithTheme)
-        const indicatorJson= JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString()
-        const indicatorColor= JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
-        const indicatorSelectedColor= JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
-          ?? EMPTY_ATTR;
-        const arrowColor= JSON.parseJsonElement(json).getElement('$attrs').getString('selectedColor').toString().toUpperCase() ?? EMPTY_ATTR;
-        const arrowBackgroundColor= JSON.parseJsonElement(json).getElement('$attrs').getString('arrowBackgroundColor').toString().toUpperCase()
+        const indicatorJson = JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString()
+        const indicatorColor =
+          JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
+        const indicatorSelectedColor =
+          JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
+            ?? EMPTY_ATTR;
+        const arrowColor = JSON.parseJsonElement(json)
+          .getElement('$attrs')
+          .getString('selectedColor')
+          .toString()
+          .toUpperCase() ?? EMPTY_ATTR;
+        const arrowBackgroundColor = JSON.parseJsonElement(json)
+          .getElement('$attrs')
+          .getString('arrowBackgroundColor')
+          .toString()
+          .toUpperCase()
           ?? EMPTY_ATTR;
 
         const checkIndicatorColor: string = localTheme?.colors?.compBackgroundSecondary?.toString().toUpperCase()
           ?? EMPTY_CHECK;
         const checkIndicatorSelectedColor: string = localTheme?.colors?.compBackgroundEmphasize?.
-          toString().toUpperCase() ?? EMPTY_CHECK;
+        toString().toUpperCase() ?? EMPTY_CHECK;
         const checkArrowColor: string = localTheme?.colors?.iconPrimary?.toString().toUpperCase() ?? EMPTY_CHECK;
         const checkArrowBackgroundColor: string = localTheme?.colors?.compBackgroundSecondary?.toString().toUpperCase()
           ?? EMPTY_CHECK;
 
         expect(indicatorColor).assertEqual(checkIndicatorColor);
         expect(indicatorSelectedColor).assertEqual(checkIndicatorSelectedColor);
-        // expect(arrowColor, checkArrowColor);
-        // expect(arrowBackgroundColor, checkArrowBackgroundColor);
+        expect(arrowColor).assertEqual(checkArrowColor);
+        expect(arrowBackgroundColor).assertEqual(checkArrowBackgroundColor);
       }
 
       {
         const json = inspector.getInspectorByKey(SwiperKeys.digitIndicatorWithTheme);
-        const indicatorJson= JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
-        const fontColor= JSON.parseJsonElement(indicatorJson).getString('fontColor').toString();
-        const selectedFontColor= JSON.parseJsonElement(indicatorJson).getString('selectedFontColor').toString();
+        const indicatorJson = JSON.parseJsonElement(json).getElement('$attrs').getString('indicator').toString();
+        const fontColor = JSON.parseJsonElement(indicatorJson).getString('fontColor').toString();
+        const selectedFontColor = JSON.parseJsonElement(indicatorJson).getString('selectedFontColor').toString();
 
         const checkFontColor: string = localTheme?.colors?.fontPrimary?.toString().toUpperCase() ?? EMPTY_CHECK;
         const checkSelectedFontColor: string = localTheme?.colors?.fontPrimary?.toString().toUpperCase()
           ?? EMPTY_CHECK;
-
-        // expect(fontColor, checkFontColor);
-        // expect(selectedFontColor, checkSelectedFontColor);
+        expect(fontColor).assertEqual(checkFontColor);
+        expect(selectedFontColor).assertEqual(checkSelectedFontColor);
       }
 
       changeTheme = true;
       console.info(`${SUITE} ${CASE} END`);
+      done();
     });
   });
 }

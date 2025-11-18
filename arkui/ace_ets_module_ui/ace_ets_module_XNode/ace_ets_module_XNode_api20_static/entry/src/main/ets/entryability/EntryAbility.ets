@@ -66,8 +66,8 @@ class EntryAbility extends UIAbility {
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (error) {
-      hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + error.message);
+    } catch (e: Error) {
+      hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 

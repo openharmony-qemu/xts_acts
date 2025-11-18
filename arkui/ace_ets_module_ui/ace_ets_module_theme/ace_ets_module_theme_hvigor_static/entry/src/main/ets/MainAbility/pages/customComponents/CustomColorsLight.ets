@@ -12,21 +12,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,ColumnOptions,
-  Row, ClickEvent, Margin, WithTheme, ForEach, HorizontalAlign, Padding,Blank, Color} from '@ohos.arkui.component'
-import { State, PropRef } from '@ohos.arkui.stateManagement'
+import {
+  Blank,
+  Button,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ForEach,
+  HorizontalAlign,
+  ItemAlign,
+  Margin,
+  Padding,
+  Row,
+  Text,
+  WithTheme
+} from '@ohos.arkui.component'
+import { Prop, State } from '@ohos.arkui.stateManagement'
 import { postfixLight } from '../themeTokensPages/WithThemeTestPage';
 import { Theme } from '@ohos.arkui.theme';
 import {
   DataClass,
-  setBaseTokens,
-  setFontData,
-  setIconData,
   setBackgroundData,
+  setBaseTokens,
   setCompBackgroundData,
   setCompData,
+  setFontData,
+  setIconData,
   setInteractiveData
-} from '../../../../src/test/Utils';
+} from '../../../../src/test/Utils.test';
 
 export let customButtonLightTheme: Theme | undefined;
 
@@ -46,7 +66,7 @@ export struct CustomColorsLight {
   }
 
   build() {
-    Column({ space: '8vp' }  as ColumnOptions) {
+    Column({ space: '8vp' } as ColumnOptions) {
       ForEach(this.data, (item: DataClass) => {
         Row() {
           Blank()

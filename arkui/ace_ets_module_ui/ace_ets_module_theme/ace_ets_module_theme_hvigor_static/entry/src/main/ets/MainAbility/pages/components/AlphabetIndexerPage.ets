@@ -12,9 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, AlphabetIndexer, WithTheme} from '@ohos.arkui.component'
-// import { redCustomTheme } from '../../themes/CustomTheme1';
+import {
+  AlphabetIndexer,
+  Button,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  Margin,
+  Row,
+  Text,
+  WithTheme,
+  $r,
+  ThemeColorMode
+} from '@ohos.arkui.component'
+import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
 import { StorageLink } from '@ohos.arkui.stateManagement'
 
@@ -28,9 +45,9 @@ export class AlphabetIndexerKeys {
 @Entry
 @Component
 struct AlphabetIndexerPage {
-  // @StorageLink(alphabetIndexerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink(alphabetIndexerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
   isCustomTheme: boolean = false;
-  private values:Array<string> = new Array<string>(
+  private values: Array<string> = new Array<string>(
     'a', 'b', 'c', 'd', 'i', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
   );
@@ -42,16 +59,16 @@ struct AlphabetIndexerPage {
         selected: 1
       })
         .key(AlphabetIndexerKeys.alphabetIndexerSystem)
-      // WithTheme({ theme: this.localTheme }) {
-      //   Column() {
-      //     AlphabetIndexer({
-      //       arrayValue: this.values,
-      //       selected: 1
-      //     })
-      //       .key(AlphabetIndexerKeys.alphabetIndexerWithTheme)
-      //   }
-      //   .width('100%')
-      // }
+      WithTheme({ theme: this.localTheme }) {
+        Column() {
+          AlphabetIndexer({
+            arrayValue: this.values,
+            selected: 1
+          })
+            .key(AlphabetIndexerKeys.alphabetIndexerWithTheme)
+        }
+        .width('100%')
+      }
     }
     .height('100%')
   }

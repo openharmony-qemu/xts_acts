@@ -13,11 +13,34 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,Margin,
-  Row, ClickEvent, Margin, AlphabetIndexer, WithTheme,Badge, BadgePosition, ListItem, List, BadgeParamWithString} from '@ohos.arkui.component'
+import {
+  AlphabetIndexer,
+  Badge,
+  BadgeParamWithNumber,
+  BadgeParamWithString,
+  BadgePosition,
+  BadgeStyle,
+  Button,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  List,
+  ListItem,
+  Margin,
+  Row,
+  Text,
+  WithTheme
+} from '@ohos.arkui.component'
 import { StorageLink } from '@ohos.arkui.stateManagement'
 import { CustomTheme } from '@ohos.arkui.theme';
-// import { redCustomTheme } from '../../themes/CustomTheme';
+import { redCustomTheme } from '../../themes/CustomTheme1';
+
 export const badgeThemeProperty = 'badgeThemeProperty';
 
 export class BadgeKeys {
@@ -28,7 +51,7 @@ export class BadgeKeys {
 @Entry
 @Component
 struct BadgePage {
-  // @StorageLink(badgeThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink(badgeThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
 
   build() {
     Column() {
@@ -50,19 +73,19 @@ struct BadgePage {
         .height(56)
 
         ListItem() {
-          // WithTheme({theme:this.localTheme}){
-          //   Badge({
-          //     value: 'New',
-          //     position: BadgePosition.Right,
-          //     style: { badgeSize: 16 }
-          //   }) {
-          //     Text('list2')
-          //   }
-          //   .key(BadgeKeys.badgeKeysWithTheme)
-          //   .width(49.5)
-          //   .height(19)
-          //   .margin({ left: 12 })
-          // }
+          WithTheme({ theme: this.localTheme }) {
+            Badge({
+              value: 'New',
+              position: BadgePosition.Right,
+              style: { badgeSize: 16 } as BadgeStyle
+            } as BadgeParamWithString) {
+              Text('list2')
+            }
+            .key(BadgeKeys.badgeKeysWithTheme)
+            .width(49.5)
+            .height(19)
+            .margin({ left: 12 } as Margin)
+          }
         }
         .width('100%')
         .height(56)

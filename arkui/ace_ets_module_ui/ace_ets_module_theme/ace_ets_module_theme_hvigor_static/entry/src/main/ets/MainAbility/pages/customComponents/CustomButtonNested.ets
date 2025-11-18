@@ -12,15 +12,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, WithTheme, ForEach} from '@ohos.arkui.component'
-import { State, PropRef } from '@ohos.arkui.stateManagement'
+import {
+  Button,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ForEach,
+  ItemAlign,
+  Margin,
+  Row,
+  Text,
+  WithTheme
+} from '@ohos.arkui.component'
+import { Prop, State } from '@ohos.arkui.stateManagement'
 import { Theme } from '@ohos.arkui.theme';
+
 export let customButtonNestedTheme: Theme | undefined;
 
 @Component
 export struct CustomButtonNested {
-  @PropRef btnText: string = 'nested';
+  @Prop btnText: string = 'nested';
 
   onWillApplyTheme(theme: Theme) {
     customButtonNestedTheme = theme;

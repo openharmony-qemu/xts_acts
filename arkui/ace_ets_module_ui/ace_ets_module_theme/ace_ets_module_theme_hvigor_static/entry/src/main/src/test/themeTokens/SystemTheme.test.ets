@@ -13,13 +13,13 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import {  ResourceColor, Resource } from '@ohos.arkui.component'
+import { Resource, ResourceColor } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -27,11 +27,12 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import { systemTheme } from '../../../ets/MainAbility/pages/themeTokensPages/SystemThemeTestPage';
-import { frameTime, sleep } from '../Utils'
+import { frameTime, sleep } from '../Utils.test'
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
 import { checkColorTokens } from '../../../ets/MainAbility/themes/checkSystemTokens/CheckColorTokens.ets';
 import { colorTheme } from '../../../ets/MainAbility/pages/customComponents/CustomColorList';
-import { Theme } from '@ohos.arkui.theme';
+import { CustomTheme, Theme } from '@ohos.arkui.theme';
+import { fillMap } from '../Utils.test';
 
 export default function systemThemeTest() {
   const SUITE: string = 'SystemTokens';
@@ -42,7 +43,9 @@ export default function systemThemeTest() {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
+    });
 
+    beforeEach(() => {
       try {
         const options: router.RouterOptions = {
           url: "MainAbility/pages/themeTokensPages/SystemThemeTestPage",
@@ -50,72 +53,73 @@ export default function systemThemeTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== "SystemThemeTestPage") {
-          await routerInstance.pushUrl(options).then(() => {
+          routerInstance.pushUrl(options).then(() => {
             themeLocal = systemTheme;
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get<Map<string,string>|undefined>(colorValuesKey)
+        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey)
+        await UtilsTest.msSleep(4000)
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-    });
+    })
+
     afterAll(() => {
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.back();
-      } catch (err) {
-        console.error(`${SUITE} afterAll error:` + JSON.stringify(err));
-      }
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
     });
-    /**
-     * @tc.number    : ActsSystemThemeColors_static_0100
-     * @tc.name      : ActsSystemThemeColors_static_0100
-     * @tc.desc      : Check system light / dark theme colors values
-     * @tc.level     ：Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+
+    
+        
+        /*
+     * @tc.number   ActsSystemThemeColors_static_0100
+     * @tc.name     ActsSystemThemeColors_static_0100
+     * @tc.desc     ActsSystemThemeColors_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('ActsSystemThemeColors_static_0100', Level.LEVEL2, () => {
+    it('ActsSystemThemeColors_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = 'ActsSystemThemeColors_static_0100';
       console.info(`${SUITE} ${CASE} START`);
       expect(colorValues?.size).assertLarger(0); // ensure that colorValues is not empty
       colorValues?.forEach((value, key): void => {
         const strJson = inspector.getInspectorByKey(`${key}${colorTheme}`);
-        const backgroundColor = (JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor') as ResourceColor)
-          .toString().toUpperCase();
+        const backgroundColor =
+          (JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor') as ResourceColor)
+            .toString().toUpperCase();
         const checkColor = value;
         expect(backgroundColor).assertEqual(checkColor);
       })
       console.info(`${SUITE} ${CASE} END`);
+      done();
     });
-    /**
-     * @tc.number    ：ActsSystemThemeColors_static_0200
-     * @tc.name      ：ActsSystemThemeColors_static_0200
-     * @tc.desc      : Check system light / dark theme tokens values
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+    
+        
+        /*
+     * @tc.number   ActsSystemThemeColors_static_0200
+     * @tc.name     ActsSystemThemeColors_static_0200
+     * @tc.desc     ActsSystemThemeColors_static_0200
+     * @tc.level    Level.LEVEL2
      */
-    it('ActsSystemThemeColors_static_0200', Level.LEVEL2, () => {
-      const CASE: string = 'ActsSystemThemeColors_static_0200';
-      const checkKeys: Array<string> = Object.keys(checkColorTokens);
-      const checkValues = (Object.values(checkColorTokens) as Array<Any>);
-      const themeKeys: Array<string> = themeLocal?.colors === undefined ?
-        new Array<string>() : Object.keys(themeLocal?.colors as Object);
-      const themeValues = themeLocal?.colors === undefined ?
-        new Array<Resource>() : (Object.values(themeLocal?.colors as Object) as  Array<Any>);
+    it('ActsSystemThemeColors_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const CASE: string = 'ActsSystemThemeColors_0200';
+      const checkKeys: string[] = Object.keys(checkColorTokens);
+      const checkValues = (Object.values(checkColorTokens) as Object as string[]);
+      const themeKeys: string[] = themeLocal?.colors === undefined ?
+        [] : Object.keys(themeLocal!.colors!);
+      const themeValues: Resource[] = themeLocal?.colors === undefined ?
+        [] : (Object.values(themeLocal!.colors!) as Object as Resource[]);
       const checkMap: Map<string, string> = new Map<string, string>();
       const themeMap: Map<string, Resource> = new Map<string, Resource>();
-      // fillMap<string>(checkMap, checkKeys, checkValues);
-      // fillMap<Resource>(themeMap, themeKeys, themeValues);
+      fillMap<string>(checkMap, checkKeys, checkValues);
+      fillMap<Resource>(themeMap, themeKeys, themeValues);
       themeMap.forEach(((value, key) => {
-        // let themeToken: Resource;
         let themeToken = (value as Resource)?.params?.[0] ?? "";
         const checkToken = checkMap.get(key);
         expect(themeToken).assertEqual(checkToken);
       }));
       console.info(`${SUITE} ${CASE} END`);
+      done();
     });
   })
 }

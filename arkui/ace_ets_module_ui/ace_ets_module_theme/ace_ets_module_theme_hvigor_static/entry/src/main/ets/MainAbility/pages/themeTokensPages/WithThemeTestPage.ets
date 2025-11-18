@@ -13,10 +13,26 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, WithTheme} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-// import { brownCustomTheme, greenCustomTheme } from '../../themes/CustomTheme';
+import {
+  Button,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  Margin,
+  Row,
+  Text,
+  ThemeColorMode,
+  VerticalAlign,
+  WithTheme
+} from '@ohos.arkui.component'
+import { State, StorageLink } from '@ohos.arkui.stateManagement'
+import { brownCustomTheme, greenCustomTheme } from '../../themes/CustomTheme1';
 import { CustomButton } from '../customComponents/CustomButton';
 import { CustomColorsDark } from '../customComponents/CustomColorsDark';
 import { CustomColorsLight } from '../customComponents/CustomColorsLight';
@@ -26,44 +42,49 @@ import { SystemColorsFromResources } from './SystemColorsForCheck';
 import { CustomTheme } from '@ohos.arkui.theme';
 
 export const withThemeProperty = 'ChangedTheme';
+
 export const postfixLight = 'Light';
+
 export const postfixDark = 'Dark';
 
 @Entry
 @Component
 struct WithThemeTestPage {
   @State message: string = 'Custom Component Theme Test';
-  // @StorageLink(withThemeProperty) localTheme: CustomTheme | undefined = greenCustomTheme;
+  @StorageLink(withThemeProperty) localTheme: CustomTheme | undefined
 
   build() {
-    // WithTheme({ theme: this.localTheme }) {
-    //   Row() {
-    //     CustomButton({
-    //       btnText : this.message
-    //     })
-    //     // WithTheme({ theme : brownCustomTheme }) {
-    //     //   CustomButtonNested({
-    //     //     btnText : this.message
-    //     //   })
-    //     // }
-    //     WithTheme({ colorMode: ThemeColorMode.SYSTEM }) {
-    //       CustomButtonSystem({ btnText : 'System Tokens' })
-    //     }
-    //     WithTheme({ colorMode: ThemeColorMode.DARK }) {
-    //       Column() {
-    //         CustomColorsDark()
-    //         SystemColorsFromResources({postfix: postfixDark})
-    //       }
-    //     }
-    //     WithTheme({ colorMode: ThemeColorMode.LIGHT }) {
-    //       Column() {
-    //         CustomColorsLight()
-    //         SystemColorsFromResources({postfix: postfixLight})
-    //       }
-    //     }
-    //   }.alignItems(VerticalAlign.Center)
-    //   .width('100%')
-    //   .height('100%')
-    // }
+    WithTheme({ theme: this.localTheme }) {
+      Row() {
+        CustomButton({
+          btnText: this.message
+        })
+        WithTheme({ theme: brownCustomTheme }) {
+          CustomButtonNested({
+            btnText: this.message
+          })
+        }
+
+        WithTheme({ colorMode: ThemeColorMode.SYSTEM }) {
+          CustomButtonSystem({ btnText: 'System Tokens' })
+        }
+
+        WithTheme({ colorMode: ThemeColorMode.DARK }) {
+          Column() {
+            CustomColorsDark()
+            SystemColorsFromResources({ postfix: postfixDark })
+          }
+        }
+
+        WithTheme({ colorMode: ThemeColorMode.LIGHT }) {
+          Column() {
+            CustomColorsLight()
+            SystemColorsFromResources({ postfix: postfixLight })
+          }
+        }
+      }.alignItems(VerticalAlign.Center)
+      .width('100%')
+      .height('100%')
+    }
   }
 }
