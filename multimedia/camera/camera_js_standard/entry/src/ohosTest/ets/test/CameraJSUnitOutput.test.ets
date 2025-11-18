@@ -3506,19 +3506,33 @@ export default function cameraJSUnitOutput() {
      * @tc.level     : Level 2
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300';
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300--------------");
+      let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
+      let previewProfiles: cameraObj.Profile = cameraOutputCap.previewProfiles[0];
+      console.info(`${testNum} cameraOutputCap.videoProfiles length is ${cameraOutputCap.videoProfiles.length}`);
+      console.info(`${testNum} cameraOutputCap.previewProfiles length is ${cameraOutputCap.previewProfiles.length}`);
+      let videoProfile = cameraOutputCap.videoProfiles.find((videoProfile: cameraObj.Profile) => {
+        for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
+          console.info(`${testNum} ${i} previewProfiles w is ${cameraOutputCap.previewProfiles[i].size.width} h is ${cameraOutputCap.previewProfiles[i].size.height}`);
+          console.info(`${testNum} ${i} videoProfile w is ${videoProfile.size.width} h is ${videoProfile.size.height}`);
+          if (cameraOutputCap.previewProfiles[i].size.width * videoProfile.size.height == cameraOutputCap.previewProfiles[i].size.height * videoProfile.size.width) {
+            previewProfiles = cameraOutputCap.previewProfiles[i]
+            console.info(`${testNum} success pw: ${cameraOutputCap.previewProfiles[i].size.width} ph: ${cameraOutputCap.previewProfiles[i].size.height}`);
+            console.info(`${testNum} success vw: ${videoProfile.size.width} vh: ${videoProfile.size.height}`);
+            return videoProfile
+          }
+        }
+        return undefined;
+      });
       // 创建相机
       getCameraDevices()
       // 创建输出流
-      createOutput(0, cameraObj.SceneMode.NORMAL_VIDEO)
+      createOutputByProfiles(testNum, 0, cameraObj.SceneMode.NORMAL_VIDEO, previewProfiles)
       // 配置录制参数, 获取 videoSurfaceId
       await getVideoSurface();
       console.info('videoSurfaceId: ' + videoSurfaceId)
       // 创建2个VideoOutput对象
-      let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
-      let videoProfile = cameraOutputCap.videoProfiles.find((videoProfile: cameraObj.Profile) => {
-        return Math.abs((cameraOutputCap.previewProfiles[0].size.width / cameraOutputCap.previewProfiles[0].size.height) - (videoProfile.size.width / videoProfile.size.height)) < Number.EPSILON;
-      });
       videoOutput = cameraManager.createVideoOutput(videoProfile, videoSurfaceId);
       let videoOutput2 = cameraManager.createVideoOutput(videoProfile, videoSurfaceId);
       //创建会话
