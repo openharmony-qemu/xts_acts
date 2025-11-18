@@ -33,8 +33,6 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage):void{
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-    private para:Record<string, number> = { 'propAM': 42 ,'propBM':40};
-    private storage: LocalStorage = new LocalStorage(this.para);
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
 
