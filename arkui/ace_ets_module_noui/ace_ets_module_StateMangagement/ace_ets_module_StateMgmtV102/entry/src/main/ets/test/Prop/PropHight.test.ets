@@ -36,7 +36,7 @@ export default function PropHight() {
     beforeEach(async (done: Function) => {
       console.info("PropHight beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/@state/PropHight',
+        url: 'MainAbility/pages/Prop/PropHight',
       }
       try {
         router.clear();

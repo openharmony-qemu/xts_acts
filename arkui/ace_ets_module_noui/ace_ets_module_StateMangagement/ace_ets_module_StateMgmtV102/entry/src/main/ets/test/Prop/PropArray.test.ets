@@ -35,7 +35,7 @@ export default function PropArray() {
     beforeEach(async (done: Function) => {
       console.info("PropArray beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/@state/PropArray',
+        url: 'MainAbility/pages/Prop/PropArray',
       }
       try {
         router.clear();

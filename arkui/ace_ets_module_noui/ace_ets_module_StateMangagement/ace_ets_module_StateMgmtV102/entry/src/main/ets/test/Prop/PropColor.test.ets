@@ -36,7 +36,7 @@ export default function PropColor() {
     beforeEach(async (done: Function) => {
       console.info("PropColor beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/@state/PropColor',
+        url: 'MainAbility/pages/Prop/PropColor',
       }
       try {
         router.clear();

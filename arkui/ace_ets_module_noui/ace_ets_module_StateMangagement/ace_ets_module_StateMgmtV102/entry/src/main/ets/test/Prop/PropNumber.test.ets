@@ -35,7 +35,7 @@ export default function PropNumber() {
     beforeEach(async (done: Function) => {
       console.info("PropNumber beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/@state/PropNumber',
+        url: 'MainAbility/pages/Prop/PropNumber',
       }
       try {
         router.clear();
