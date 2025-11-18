@@ -24,7 +24,7 @@ export default function VideoReset7() {
     beforeEach(async (done: Function) => {
       console.info("VideoReset7 beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Video/VideoReset/VideoReset7',
+        url: 'MainAbility/pages/Video/VideoReset7',
       }
       try {
         router.clear();
