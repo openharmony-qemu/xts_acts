@@ -35,7 +35,7 @@ export default function GraphicTextAPI22() {
      * @tc.type       Function
      * @tc.level      Level1
      */
-    it('GraphicTextAPI22Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('GraphicTextAPI22Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let fontCollection = text.FontCollection.getLocalInstance();
       fontCollection.loadFontSync('Clock_01', 'file:///system/fonts/HarmonyClock_01.ttf')
       let fontFamilies: Array<string> = ["Clock_01"]

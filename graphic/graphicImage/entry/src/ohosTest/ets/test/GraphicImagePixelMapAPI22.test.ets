@@ -30,7 +30,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
@@ -71,7 +71,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
@@ -124,7 +124,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
@@ -150,7 +150,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
@@ -177,7 +177,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: 8, size: { height: 4, width: 6 } 
@@ -203,7 +203,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
@@ -251,7 +251,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
@@ -276,7 +276,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } 
@@ -306,7 +306,7 @@ export default function graphicImagePixelMapAPI22() {
      * @tc.type       Function
      * @tc.level      Level0
      */
-    it("graphicImagePixelMapAPI22_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("graphicImagePixelMapAPI22_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: 8, size: { height: 4, width: 6 } 

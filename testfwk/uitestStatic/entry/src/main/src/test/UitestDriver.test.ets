@@ -1461,7 +1461,7 @@ export default function uitestDriverTest() {
      * @tc.name: testInjectMultiPointerAction_static
      * @tc.desc: inject multi-pointer action on the device display.
      */
-    it('testInjectMultiPointerAction_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): Promise<void> => {
+    it('testInjectMultiPointerAction_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testInjectMultiPointerAction_static start !!!!");
       try {
         let driver = Driver.create();
@@ -1517,7 +1517,7 @@ export default function uitestDriverTest() {
      * @tc.name: testInjectMultiPointerAction_speed_static
      * @tc.desc: inject multi-pointer action on the device display.
      */
-    it('testInjectMultiPointerAction_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): Promise<void> => {
+    it('testInjectMultiPointerAction_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testInjectMultiPointerAction_speed_static start !!!!");
       try {
         let driver = Driver.create();

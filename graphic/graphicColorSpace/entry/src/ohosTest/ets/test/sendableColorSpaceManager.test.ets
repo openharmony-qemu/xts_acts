@@ -281,7 +281,7 @@ export default function sendableColorSpaceManagerTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testCreateErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testCreateErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testCreateErrorCode===="
       console.log(msg + ' begin')
       try {

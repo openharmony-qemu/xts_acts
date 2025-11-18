@@ -14,6 +14,20 @@
  */
 import InputPresetTest from './PresetTest/InputPresetTest.test';
 
+import SearchJsunitInfTest from './SearchTest/SearchJsunitInfTest.test';
+import SearchOnCutTest from './SearchTest/SearchOnCutTest.test';
+
+import TextAreaOnCutJsunitTest from './TextAreaTest/TextAreaOnCutJsunitTest.test';
+
+import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
+
 export default function testsuite() {
   InputPresetTest()
+  //SearchTest
+  SearchJsunitInfTest()
+  SearchOnCutTest()
+  //TextAreaTest
+  TextAreaOnCutJsunitTest()
+  // TextInputTest
+  TextInputOnEditChangeJsunitTest()
 }

@@ -1,0 +1,16 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/textPickerDialog/textPickerDialogBGBlurStyle",
+    "MainAbility/pages/textPickerDialog/textPickerDialogBgColor",
+    "MainAbility/pages/textPickerDialog/textPickerDialogDefaultTextStyle",
+    "MainAbility/pages/textPickerDialog/textPickerDialogDisableTextStyleAnimation",
+    "MainAbility/pages/textPickerDialog/textPickerDialogDisappearTextStyle",
+    "MainAbility/pages/textPickerDialog/textPickerDialogEnableHapticFeedback",
+    "MainAbility/pages/textPickerDialog/textPickerDialogSelectedArea",
+    "MainAbility/pages/textPickerDialog/textPickerDialogSelectedBgColor",
+    "MainAbility/pages/textPickerDialog/textPickerDialogSelectedTextStyle",
+    "MainAbility/pages/textPickerDialog/textPickerDialogShadow",
+    "MainAbility/pages/textPickerDialog/textPickerDialogTextStyle"
+  ]
+}

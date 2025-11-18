@@ -775,5 +775,26 @@ export default function aaImplicitStartTest() {
       expect(res).assertContain('Failed to verify the visibility of the target ability.');
       done();
     })
+
+    /*
+     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200
+     * @tc.name    check aa start unexported ability
+     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility -s timeout 3000" is successful
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   0
+     */
+    it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200', Level.LEVEL0, async (done: Function) => {
+      let res:string = "";
+      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility -s timeout 3000')
+        .then(data => {
+          res = data.stdResult;
+        }).catch((err:BusinessError) => {
+          hilog.info(0x0000, 'debuggabletest', '%{public}s',
+            'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200 err is: ' + JSON.stringify(err));
+        });
+      expect(res).assertContain('start ability successfully.');
+      done();
+    })
   })
 }
