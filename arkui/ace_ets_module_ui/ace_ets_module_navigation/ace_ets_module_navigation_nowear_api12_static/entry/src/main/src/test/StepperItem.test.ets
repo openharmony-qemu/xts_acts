@@ -60,13 +60,14 @@ export default function stepperItem() {
       })
 
     
-    /*
+    
+/*
      * @tc.number   sArkUX_Stage_StepperItem_static_0100
      * @tc.name     sArkUX_Stage_StepperItem_static_0100
      * @tc.desc     sArkUX_Stage_StepperItem_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('sArkUX_Stage_StepperItem_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('sArkUX_Stage_StepperItem_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[sArkUX_Stage_StepperItem_0100] START');
       setTimeout(() => {
         try {

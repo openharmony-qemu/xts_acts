@@ -21,20 +21,19 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage,Consume } from '@ohos.arkui.stateManagement';
 import uiObserver from '@ohos.arkui.observer';
 
 @Component
 struct UniqueIdPageTwo {
-  @Consume('stack') stack:NavPathStack;
+  @Consume('navPathStack') stack:NavPathStack;
 
   private text: string = '';
   private uniqueId: number  = -1;
 
   aboutToAppear() {
-    
     let navigationUniqueId = this.queryNavigationInfo()?.navigationId;
     if(navigationUniqueId) {
       this.uniqueId = Number(navigationUniqueId.valueOf());
@@ -62,12 +61,12 @@ struct UniqueIdPageTwo {
 
 @Component
 struct UniqueIdPageOne {
-  @Consume('stack') stack:NavPathStack;
+  @Consume('navPathStack') stack:NavPathStack;
 
   private text: string = '';
   private uniqueId: number  = -1;
 
-  info1: (info: uiObserver.NavDestinationInfo)=>void = (info: uiObserver.NavDestinationInfo) => {
+  info1: (info: uiObserver.NavDestinationInfo)=> void = (info: uiObserver.NavDestinationInfo) => {
     if (info && info.state == 8) {
       console.info('NavDestination state update navigationId', JSON.stringify(info));
       AppStorage.setOrCreate<string>('navDestinationName', info.name as string);
@@ -75,7 +74,6 @@ struct UniqueIdPageOne {
   }
 
   aboutToAppear() {
-    
     let navigationUniqueId = this.queryNavigationInfo()?.navigationId;
     if(navigationUniqueId) {
       this.uniqueId = Number(navigationUniqueId.valueOf());
@@ -92,19 +90,18 @@ struct UniqueIdPageOne {
         .height('5%')
       Button('uiObserver.on')
         .onClick((e: ClickEvent) => {
-          
+          // this.getUIContext().getUIObserver().on('navDestinationUpdateByUniqueId', this.uniqueId, this.info1);
         })
         .id('onId')
       Button('uiObserver.off')
         .onClick((e: ClickEvent) => {
-          uiObserver.offNavDestinationUpdate();
-          uiObserver.offNavDestinationUpdate({ navigationId: 'testId' });
-          
+          // uiObserver.off('navDestinationUpdate');
+          // uiObserver.off('navDestinationUpdate', { navigationId: 'testId' });
+          // this.getUIContext().getUIObserver().off('navDestinationUpdateByUniqueId', this.uniqueId, this.info1);
           console.info('close getNavigationInfoByUniqueId: ', this.uniqueId);
         })
         .id('offId')
       Button('push pageTwo').onClick((e: ClickEvent) => {
-        
         this.stack.pushPath(new NavPathInfo('pageTwo',null));
       })
         .id('pushTwoId')
@@ -120,7 +117,7 @@ struct UniqueIdPageOne {
 @Entry
 @Component
 struct UIContextNavDestinationUpdate {
-  
+  @Consume('navPathStack') stack: NavPathStack = new NavPathStack();
 
   @Builder
   PageBuilder(name: string) {
@@ -133,17 +130,17 @@ struct UIContextNavDestinationUpdate {
 
   build() {
     Column() {
-      
+      Navigation(this.stack) {
         Button('Push PageOne')
           .onClick((e: ClickEvent) => {
-            
+            this.stack.pushPath(new NavPathInfo('pageOne',null))
           })
           .id('pushOneId')
-      
-      
-      
-      
-      
+      }
+      .id('testId')
+      .title('Navigation')
+      .navDestination(this.PageBuilder)
+      .titleMode(NavigationTitleMode.Mini)
     }
     .width('100%')
     .height('100%')

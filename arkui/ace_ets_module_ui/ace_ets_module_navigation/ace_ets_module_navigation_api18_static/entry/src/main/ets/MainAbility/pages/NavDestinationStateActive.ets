@@ -18,12 +18,13 @@ import {
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,SheetMode,NavDestinationActiveReason, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
+,NavPathStack,NavDestinationInfo} from '@ohos.arkui.component';
 import uiObserver from '@ohos.arkui.observer'
+import { UIObserver } from '@ohos.arkui.UIContext';
 import {
   State,
   Link,
-  PropRef,Provide,Consume,StorageLink
+  Prop,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -36,7 +37,6 @@ struct PageOne {
     NavDestination() {
       Text('pageOne')
       Button('back').onClick((e:ClickEvent) => {
-
         this.stack.pop();
       })
       .height('5%')
@@ -49,33 +49,40 @@ struct PageOne {
 @Component
 struct NavDestinationStateActive {
   @Provide stack: NavPathStack = new NavPathStack();
-
+  observer:UIObserver = this.getUIContext().getUIObserver();
   @Builder
   PageBuilder(name: string) {
     PageOne()
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  aboutToAppear() {
+    try{
+      this.observer.onNavDestinationUpdate((info:NavDestinationInfo) => {
+        console.info('NavDestination state update', JSON.stringify(info));
+        if (info.state == uiObserver.NavDestinationState.ON_ACTIVE) {
+          AppStorage.setOrCreate('ON_ACTIVE', info.state);
+        }
+        if (info.state == uiObserver.NavDestinationState.ON_INACTIVE) {
+          AppStorage.setOrCreate('ON_INACTIVE', info.state);
+        }
+      });
+    }catch(error){
+      console.log("===============================erro " + error );
+    }
+
+  }
 
   aboutToDisappear() {
-    uiObserver.offNavDestinationUpdate();
+    this.observer.offNavDestinationUpdate();
   }
 
   build() {
     Column() {
       Navigation(this.stack) {
         Button('push').onClick((e:ClickEvent) => {
-          
+          console.log("======================================Button('push').onClick start");
+          this.stack.pushPath(new NavPathInfo('pageOne',null));
+          console.log("======================================Button('push').onClick end");
         })
         .height('5%')
         .id('pushId')

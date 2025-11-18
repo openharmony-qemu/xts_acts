@@ -20,10 +20,11 @@ NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestina
 Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
 FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,CalendarAlign,ToolbarItemStatus,NavigationMenuItem,SymbolRenderingStrategy,ToolbarItem, SafeAreaType,SafeAreaEdge,Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack,ItemState,Stepper,StepperItem} from '@ohos.arkui.component';
+import {StepperModifier} from '@ohos.arkui.modifier'
 import {
 State,
 Link,
-PropRef,Provide,Consume
+Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
@@ -31,47 +32,48 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct StepperModifierPage {
-  @State currentIndex: Int = 0
+  @State currentIndex: int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
   @State thirdState: ItemState = ItemState.Normal
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+  private stepperModifier: StepperModifier = new StepperModifier()
+    .onFinish(() => {
+      this.currentIndex = 0;
+      AppStorage.setOrCreate('currentIndex', this.currentIndex);
+      console.info('testTag onFinish')
+    })
+    .onSkip(() => {
+      this.currentIndex = 3;
+      AppStorage.setOrCreate('currentIndex', this.currentIndex);
+      console.info('testTag onSkip')
+    })
+    .onChange((prevIndex?: number, index?: number) => {
+      console.info('testTag onChange')
+      AppStorage.setOrCreate('currentIndex', index);
+      if (index) {
+        this.currentIndex = index as int
+      }
+    })
+    .onNext((index?: number, pendingIndex?: number) => {
+      console.info('testTag onNext')
+      console.info('testTag onNext index: ' + index + 'onNext pendingIndex: ' + pendingIndex)
+      AppStorage.setOrCreate('pendingIndex', pendingIndex);
+      if (pendingIndex) {
+        this.currentIndex = pendingIndex as int
+      }
+    })
+    .onPrevious((index?: number, pendingIndex?: number) => {
+      console.info('testTag onPreview')
+      console.info('testTag onPreview index: ' + index + 'onNext pendingIndex: ' + pendingIndex)
+      AppStorage.setOrCreate('pendingIndex', pendingIndex);
+      if (pendingIndex) {
+        this.currentIndex = pendingIndex as int
+      }
+    })
 
   build() {
+    
     NavDestination(){
       Stepper({
         index: this.currentIndex
@@ -126,7 +128,7 @@ struct StepperModifierPage {
         .prevLabel('fourPrevious')
       }
       .backgroundColor('#F1F3F5')
-      
+      .attributeModifier(this.stepperModifier)
     }
   }
 }

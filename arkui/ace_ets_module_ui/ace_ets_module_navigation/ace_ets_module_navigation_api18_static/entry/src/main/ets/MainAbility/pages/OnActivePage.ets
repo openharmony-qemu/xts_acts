@@ -7,7 +7,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume,StorageLink
+  Prop,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -20,15 +20,19 @@ struct OnActivePage {
        Button('Overlay').onClick((e:ClickEvent) => {
            this.getUIContext().getRouter().pushUrl({url: 'MainAbility/pages/OverlayTest'})
        }).id('overLayBtnId').height('10%')
+
       Button('基础场景').onClick((e:ClickEvent) => {
         this.getUIContext().getRouter().pushUrl({url: 'MainAbility/pages/Basic'})
       }).id('baseBtnId').height('10%')
+
       Button('CustomDialog').onClick((e:ClickEvent) => {
         this.getUIContext().getRouter().pushUrl({url: 'MainAbility/pages/CustomDialogTest'})
       }).id('dialogBtnId').height('10%')
+
       Button('半模态场景').onClick((e:ClickEvent) => {
         this.getUIContext().getRouter().pushUrl({url: 'MainAbility/pages/BasicSheet01'})
       }).id('halfBtnId').height('10%')
+
       Button('全模态场景').onClick((e:ClickEvent) => {
         this.getUIContext().getRouter().pushUrl({url: 'MainAbility/pages/BasicSheet02'})
       }).id('allBtnId').height('10%')

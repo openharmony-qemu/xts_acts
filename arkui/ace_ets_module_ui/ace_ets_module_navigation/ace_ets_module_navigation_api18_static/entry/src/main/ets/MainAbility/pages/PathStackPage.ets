@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume,StorageLink
+  Prop,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -52,8 +52,11 @@ struct PathStackPage {
         let popCallbackTwo: Callback<PopInfo> = (popupInfo: PopInfo) => {
           console.log('pop setPathStack pageTwo' + JSON.stringify(popupInfo.info))
         }
+        console.log("=========================================== push  curPathStack.push start")
         curPathStack.push(new NavPathInfo('navPathPageOne', 'setPathStack pageOne', popCallbackOne, false), new NavPathInfo('navPathPageTwo', 'setPathStack pageTwo', popCallbackTwo, true));
+        console.log("=========================================== push  curPathStack.push end")
         this.stack.setPathStack(curPathStack, true);
+        console.log("=========================================== this.stack.setPathStack end")
       })
         .id('pushId')
 

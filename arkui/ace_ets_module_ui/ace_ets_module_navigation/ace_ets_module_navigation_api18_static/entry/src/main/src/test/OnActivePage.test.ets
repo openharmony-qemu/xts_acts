@@ -29,6 +29,7 @@ import { UtilsTest } from './Util.test';
 import Utils from '../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { NavDestinationActiveReason} from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 import { Driver, ON,Component } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
@@ -40,7 +41,6 @@ import router from '@ohos.router';
 export default function OnActivePage() {
   describe('OnActivePage', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,7 +52,7 @@ export default function OnActivePage() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnActivePage state pages:" + JSON.stringify(pages));
         if (!("OnActivePage" == pages.name)) {
@@ -74,6 +74,7 @@ export default function OnActivePage() {
 
     
     
+
 /*
      * @tc.number   OnActivePage_static_0100
      * @tc.name     OnActivePage_static_0100
@@ -100,7 +101,7 @@ it('OnActivePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0100] btn3 click');
       await driver.delayMs(5000);
 
-      let testVal = AppStorage.get('onInactive')
+      let testVal = AppStorage.get<NavDestinationActiveReason>('onInactive')
       console.log('OnActivePage_static_0100 on onInactive value : ' + testVal)
       expect(testVal).assertEqual(4);
       AppStorage.delete('onInactive');
@@ -110,7 +111,7 @@ it('OnActivePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0100] btn4 click');
       await driver.delayMs(5000);
 
-      let testVal2 = AppStorage.get('onActive')
+      let testVal2 = AppStorage.get<NavDestinationActiveReason>('onActive')
       console.log('OnActivePage_static_0100 on onActive value : ' + testVal2)
       expect(testVal2).assertEqual(4);
       AppStorage.delete('onActive');
@@ -118,8 +119,9 @@ it('OnActivePage_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
 
-    
-    
+
+
+
 /*
      * @tc.number   OnActivePage_static_0200
      * @tc.name     OnActivePage_static_0200
@@ -136,11 +138,14 @@ it('OnActivePage_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0200] btn1 click');
       await driver.delayMs(1000);
 
-      let btn2= await (driver.findComponent(ON.id('pushId')) as Promise<Component>);
-      await btn2.click();
+      let btn2 = await driver.findComponent(ON.id('pushId')) as Component;
+      await CommonFunc.sleep(1000);
+      await btn2!.click();
+      await CommonFunc.sleep(4000);
+
       console.info('[OnActivePage_static_0200] btn2 click');
-      await driver.delayMs(3000);
-      let testVal = AppStorage.get('onInactive')
+      await driver.delayMs(2000);
+      let testVal = AppStorage.get<NavDestinationActiveReason>('onInactive')
       console.log('OnActivePage_static_0200 on onInactive value : ' + testVal)
       expect(testVal).assertEqual(0);
       AppStorage.delete('onInactive');
@@ -150,7 +155,7 @@ it('OnActivePage_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0200] btn3 click');
 
       await driver.delayMs(3000);
-      let testVal2 = AppStorage.get('onActive')
+      let testVal2 = AppStorage.get<NavDestinationActiveReason>('onActive')
       console.log('OnActivePage_0200 on onActive value : ' + testVal2)
       expect(testVal2).assertEqual(0);
       AppStorage.delete('onActive');
@@ -159,8 +164,9 @@ it('OnActivePage_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
 
-    
-    
+
+
+
 /*
      * @tc.number   OnActivePage_static_0300
      * @tc.name     OnActivePage_static_0300
@@ -187,7 +193,7 @@ it('OnActivePage_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0300] btn3 click');
       await driver.delayMs(3000);
 
-      let testVal = AppStorage.get('onInactive')
+      let testVal = AppStorage.get<NavDestinationActiveReason>('onInactive')
       console.log('OnActivePage_static_0300 on onInactive value : ' + testVal)
       expect(testVal).assertEqual(3);
       AppStorage.delete('onInactive');
@@ -197,7 +203,7 @@ it('OnActivePage_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0300] btn4 click');
 
       await driver.delayMs(3000);
-      let testVal2 = AppStorage.get('onActive')
+      let testVal2 = AppStorage.get<NavDestinationActiveReason>('onActive')
       console.log('OnActivePage_static_0300 on onActive value : ' + testVal2)
       expect(testVal2).assertEqual(3);
       AppStorage.delete('onActive');
@@ -206,8 +212,9 @@ it('OnActivePage_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
 
-    
-    
+
+
+
 /*
      * @tc.number   OnActivePage_static_0400
      * @tc.name     OnActivePage_static_0400
@@ -234,7 +241,7 @@ it('OnActivePage_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0400] btn3 click');
       await driver.delayMs(3000);
 
-      let testVal = AppStorage.get('onInactive')
+      let testVal = AppStorage.get<NavDestinationActiveReason>('onInactive')
       console.log('OnActivePage_static_0400 on onInactive value : ' + testVal)
       expect(testVal).assertEqual(2);
       AppStorage.delete('onInactive');
@@ -243,8 +250,9 @@ it('OnActivePage_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       done();
     });
 
-    
-    
+
+
+
 /*
      * @tc.number   OnActivePage_static_0500
      * @tc.name     OnActivePage_static_0500
@@ -271,7 +279,7 @@ it('OnActivePage_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0500] btn3 click');
       await driver.delayMs(3000);
 
-      let testVal = AppStorage.get('onInactive')
+      let testVal = AppStorage.get<NavDestinationActiveReason>('onInactive')
       console.log('OnActivePage_static_0500 on onInactive value : ' + testVal)
       expect(testVal).assertEqual(1);
       AppStorage.delete('onInactive');
@@ -281,7 +289,7 @@ it('OnActivePage_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[OnActivePage_static_0500] btn4 click');
 
       await driver.delayMs(3000);
-      let testVal2 = AppStorage.get('onActive')
+      let testVal2 = AppStorage.get<NavDestinationActiveReason>('onActive')
       console.log('OnActivePage_static_0500 on onActive value : ' + testVal2)
       expect(testVal2).assertEqual(1);
       AppStorage.delete('onActive');

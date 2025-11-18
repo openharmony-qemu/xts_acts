@@ -7,11 +7,13 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume,StorageLink
+  Prop,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import { CommonNavigation } from './CommonNavigation';
+
+
 
 export interface ClickItem {
   name: string;
@@ -22,26 +24,16 @@ export interface ClickItem {
 @Entry
 @Component
 struct Basic {
-  @StorageLink('isShow') isShow: boolean = false;
-  @StorageLink('isSheetShow') isSheetShow: boolean = false;
-  @State mode: SheetMode = SheetMode.OVERLAY
   pathStack: NavPathStack = new NavPathStack()
   clickItem: Array<ClickItem> = [
     {
       name: 'push pageOne',
       callback: () => {
-        
+        console.log("========================================== click")
         this.pathStack.pushPath(new NavPathInfo('pageOne',null))
       },
-      id: 'sheetPushId'
-    } as ClickItem, {
-    name: '开启半模态',
-    callback: () => {
-      this.isSheetShow = true;
-      this.mode = SheetMode.OVERLAY
-    },
-    id: 'openSheetId'
-  } as ClickItem
+      id: 'pushId'
+    } as ClickItem
   ]
 
   build() {
@@ -53,7 +45,8 @@ struct Basic {
           })
         }
       }.height('50%')
-      CommonNavigation({pathStack: this.pathStack})
+      CommonNavigation({pathStack: this.pathStack}) 
     }
   }
 }
+

@@ -71,7 +71,8 @@ export default function StepperModifierPage() {
     });
 
 
-        /*
+        
+/*
      * @tc.number   StepperModifierPage_static_0100
      * @tc.name     StepperModifierPage_static_0100
      * @tc.desc     StepperModifierPage_static_0100
@@ -101,7 +102,8 @@ it('StepperModifierPage_static_0100', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   StepperModifierPage_static_0200
      * @tc.name     StepperModifierPage_static_0200
      * @tc.desc     StepperModifierPage_static_0200
@@ -126,7 +128,8 @@ it('StepperModifierPage_static_0200', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   StepperModifierPage_static_0300
      * @tc.name     StepperModifierPage_static_0300
      * @tc.desc     StepperModifierPage_static_0300
@@ -161,7 +164,8 @@ it('StepperModifierPage_static_0300', Level.LEVEL0, async (done: () => void): Pr
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   StepperModifierPage_static_0400
      * @tc.name     StepperModifierPage_static_0400
      * @tc.desc     StepperModifierPage_static_0400

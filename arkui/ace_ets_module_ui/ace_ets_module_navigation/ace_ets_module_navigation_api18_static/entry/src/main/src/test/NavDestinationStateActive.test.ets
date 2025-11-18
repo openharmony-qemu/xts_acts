@@ -40,7 +40,6 @@ import router from '@ohos.router';
 export default function NavDestinationStateActive() {
   describe('NavDestinationStateActive', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -74,6 +73,7 @@ export default function NavDestinationStateActive() {
 
     
     
+
 /*
      * @tc.number   NavDestinationStateActive_static_0100
      * @tc.name     NavDestinationStateActive_static_0100
@@ -100,6 +100,7 @@ it('NavDestinationStateActive_static_0100', Level.LEVEL0, async (done: () => voi
 
     
     
+
 /*
      * @tc.number   NavDestinationStateActive_static_0200
      * @tc.name     NavDestinationStateActive_static_0200

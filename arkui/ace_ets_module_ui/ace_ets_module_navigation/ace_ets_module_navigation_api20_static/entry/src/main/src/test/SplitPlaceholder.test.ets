@@ -71,7 +71,8 @@ export default function SplitPlaceholder() {
     });
 
 
-        /*
+        
+/*
      * @tc.number   SplitPlaceholder_static_0100
      * @tc.name     SplitPlaceholder_static_0100
      * @tc.desc     SplitPlaceholder_static_0100
@@ -96,7 +97,8 @@ it('SplitPlaceholder_static_0100', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   SplitPlaceholder_static_0200
      * @tc.name     SplitPlaceholder_static_0200
      * @tc.desc     SplitPlaceholder_static_0200
@@ -119,7 +121,8 @@ it('SplitPlaceholder_static_0200', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   SplitPlaceholder_static_0300
      * @tc.name     SplitPlaceholder_static_0300
      * @tc.desc     SplitPlaceholder_static_0300
@@ -141,7 +144,8 @@ it('SplitPlaceholder_static_0300', Level.LEVEL0, async (done: () => void): Promi
       done();
     });
 
-        /*
+        
+/*
      * @tc.number   SplitPlaceholder_static_0400
      * @tc.name     SplitPlaceholder_static_0400
      * @tc.desc     SplitPlaceholder_static_0400

@@ -51,10 +51,10 @@ export default function stepperInterface006() {
         console.info("get stepperInterface006 state success " + JSON.stringify(pages));
         if (!("stepperInterface006" == pages.name)) {
           console.info("get stepperInterface006 state success " + JSON.stringify(pages.name));
-
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-
+          // console.info("push stepperInterface006 page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push stepperInterface006 page error: " + err);
@@ -66,12 +66,15 @@ export default function stepperInterface006() {
       console.info("stepperInterface006 after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_UI_COMPONENT_NAV_STEPPER_INTERFACE_0060
-     * @tc.name         stepperInterface_static_0060
-     * @tc.desc         stepperInterface0060
+    
+    
+/*
+     * @tc.number   stepperInterface_static_0060
+     * @tc.name     stepperInterface_static_0060
+     * @tc.desc     stepperInterface_static_0060
+     * @tc.level    Level.LEVEL0
      */
-    it('stepperInterface_static_0060',  Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('stepperInterface_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('stepperInterface0060 START');
       let driver: Driver = Driver.create();
       await driver.delayMs(1000);
@@ -80,15 +83,14 @@ export default function stepperInterface006() {
       console.info('text11111111');
       console.info(JSON.stringify(text1));
       await driver.assertComponentExist(ON.text('0'));
-      let button: Component = await driver.findComponent(ON.text('Next')) as Component;
+      let button:Component = await driver.findComponent(ON.text('Next')) as Component;
       await button.click();
       await driver.delayMs(1000);
       await driver.assertComponentExist(ON.text('1'));
       try{
         let button1: Component = await driver.findComponent(ON.text('Previous')) as Component;
         await button1.click();
-      }catch(err) {
-        err = err as BusinessError ;
+      }catch( err:BusinessError ){
         expect(err).assertFail()
       }
       await driver.delayMs(1000);

@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume,StorageLink
+  Prop,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -35,7 +35,7 @@ export interface ClickItem {
 
 @CustomDialog
 struct DialogComponent {
-  controller: CustomDialogController| null = null
+  controller?: CustomDialogController
   cancel: () => void = () => {}
   pathStack: NavPathStack = new NavPathStack()
 
