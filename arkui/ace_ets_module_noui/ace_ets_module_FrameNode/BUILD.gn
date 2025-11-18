@@ -18,12 +18,15 @@ group("ActsAceEtsModuleFrameNodeTest") {
     deps = [ 
       "ace_ets_module_FrameNode_api12:ActsAceEtsModuleFrameNodeApi12Test",
       "ace_ets_module_FrameNode01:ActsAceEtsModuleFrameNode01Test",
+      "ace_ets_module_FrameNode02:ActsAceEtsModuleFrameNode02Test",
     ]
   } else {
     deps = [
       "ace_ets_module_FrameNode_NoWear_api12:ActsAceEtsModuleFrameNodeNoWearApi12Test",
       "ace_ets_module_FrameNode_api12:ActsAceEtsModuleFrameNodeApi12Test",
       "ace_ets_module_FrameNode01:ActsAceEtsModuleFrameNode01Test",
+      "ace_ets_module_FrameNode02:ActsAceEtsModuleFrameNode02Test",
+      "ace_ets_module_FrameNode_NoWear:ActsAceEtsModuleFrameNodeNoWearTest",
     ]
   }
 }
