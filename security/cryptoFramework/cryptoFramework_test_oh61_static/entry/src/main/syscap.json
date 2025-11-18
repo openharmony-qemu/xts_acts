@@ -1,0 +1,32 @@
+{
+    "devices": {
+        "general": [],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Driver.HID.Extension",
+                    "SystemCapability.Driver.ExternalDevice",
+                    "SystemCapability.Driver.USB.Extension",
+                    "SystemCapability.Driver.DDK.Extension",
+                    "SystemCapability.Driver.UsbSerial.Extension",
+                    "SystemCapability.Driver.SCSI.Extension",
+                    "SystemCapability.Startup.SystemInfo",
+                    "SystemCapability.Security.CryptoFramework",
+                    "SystemCapability.Security.CryptoFramework.Key",
+                    "SystemCapability.Security.CryptoFramework.Key.SymKey",
+                    "SystemCapability.Security.CryptoFramework.Key.AsymKey",
+                    "SystemCapability.Security.CryptoFramework.Signature",
+                    "SystemCapability.Security.CryptoFramework.Cipher",
+                    "SystemCapability.Security.CryptoFramework.KeyAgreement",
+                    "SystemCapability.Security.CryptoFramework.MessageDigest",
+                    "SystemCapability.Security.CryptoFramework.Mac",
+                    "SystemCapability.Security.CryptoFramework.Kdf",
+                    "SystemCapability.Security.CryptoFramework.Rand",
+                    "SystemCapability.Utils.Lang",
+                    "SystemCapability.Communication.Bluetooth.Core",
+                    "SystemCapability.Security.Cert"
+                ]
+            }
+        ]
+    }
+}
