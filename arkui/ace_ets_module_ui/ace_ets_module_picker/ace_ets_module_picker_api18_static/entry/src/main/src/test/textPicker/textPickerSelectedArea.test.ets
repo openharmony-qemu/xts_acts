@@ -49,8 +49,9 @@ export default function textPickerSelectedAreaTest() {
         if (!('textPickerSelectedArea' == pages.name)) {
           console.info('get textPickerSelectedAreaTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          
+          // let result = await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push textPickerSelectedAreaTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push textPickerSelectedAreaTest page error:' + err);

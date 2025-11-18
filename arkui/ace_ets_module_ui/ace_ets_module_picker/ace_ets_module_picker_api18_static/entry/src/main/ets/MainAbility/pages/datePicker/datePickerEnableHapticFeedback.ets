@@ -80,6 +80,7 @@ struct DatePickerPage {
         .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
         .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
         .lunar(this.isLunar)
+        // .enableHapticFeedback(null)
         .onDateChange((value: Date) => {
           this.selectedDate = value
           console.info('select current date is: ' + value.toString())

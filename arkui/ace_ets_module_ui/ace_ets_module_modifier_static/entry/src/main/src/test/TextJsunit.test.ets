@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
-import Utils from './Utils';
+import Utils from './Utils.test';
 
 export default function textJsunit() {
   describe('textTest', () => {
@@ -58,13 +58,12 @@ export default function textJsunit() {
       }
     });
 
-    /**
-     * @tc.number textTest_static_0001
-     * @tc.name textTest_static_0001
-     * @tc.desc set textAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0001
+     * @tc.name     textTest_static_0001
+     * @tc.desc     textTest_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0001 START');
@@ -76,13 +75,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0002
-     * @tc.name textTest_static_0002
-     * @tc.desc set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0002
+     * @tc.name     textTest_static_0002
+     * @tc.desc     textTest_static_0002
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0002 START');
@@ -95,13 +93,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0003
-     * @tc.name textTest_static_0003
-     * @tc.desc set lineHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0003
+     * @tc.name     textTest_static_0003
+     * @tc.desc     textTest_static_0003
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0003 START');
@@ -113,13 +110,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0004
-     * @tc.name textTest_static_0004
-     * @tc.desc set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0004
+     * @tc.name     textTest_static_0004
+     * @tc.desc     textTest_static_0004
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0004 START');
@@ -131,13 +127,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0005
-     * @tc.name textTest_static_0005
-     * @tc.desc set textOverflow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0005
+     * @tc.name     textTest_static_0005
+     * @tc.desc     textTest_static_0005
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0005 START');
@@ -149,13 +144,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0006
-     * @tc.name textTest_static_0006
-     * @tc.desc set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0006
+     * @tc.name     textTest_static_0006
+     * @tc.desc     textTest_static_0006
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0006 START');
@@ -167,13 +161,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0007
-     * @tc.name textTest_static_0007
-     * @tc.desc set maxLines values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0007
+     * @tc.name     textTest_static_0007
+     * @tc.desc     textTest_static_0007
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0007 START');
@@ -185,13 +178,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0008
-     * @tc.name textTest_static_0008
-     * @tc.desc set textShadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0008
+     * @tc.name     textTest_static_0008
+     * @tc.desc     textTest_static_0008
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0008 START');
@@ -207,13 +199,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0009
-     * @tc.name textTest_static_0009
-     * @tc.desc set heightAdaptivePolicy values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0009
+     * @tc.name     textTest_static_0009
+     * @tc.desc     textTest_static_0009
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0009 START');
@@ -225,13 +216,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0010
-     * @tc.name textTest_static_0010
-     * @tc.desc set wordBreak values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0010
+     * @tc.name     textTest_static_0010
+     * @tc.desc     textTest_static_0010
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0010 START');
@@ -243,13 +233,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0011
-     * @tc.name textTest_static_0011
-     * @tc.desc Set textCase values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0011
+     * @tc.name     textTest_static_0011
+     * @tc.desc     textTest_static_0011
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0011 START');
@@ -261,49 +250,46 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0012
-     * @tc.name textTest_static_0012
-     * @tc.desc set draggable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0012
+     * @tc.name     textTest_static_0012
+     * @tc.desc     textTest_static_0012
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0012 START');
       let strJsonNew = inspector.getInspectorByKey('text1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textTest_static_0012 component is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('draggable')).assertEqual(undefined)
+      expect(objNew.getElement('$attrs').tryGetElement('draggable')).assertEqual(undefined)
       console.info('textTest_static_0012 END');
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0013
-     * @tc.name textTest_static_0013
-     * @tc.desc set textIndent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0013
+     * @tc.name     textTest_static_0013
+     * @tc.desc     textTest_static_0013
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0013 START');
       let strJsonNew = inspector.getInspectorByKey('text1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textTest_static_0013 component is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('textIndent')).assertEqual(undefined)
+      expect(objNew.getElement('$attrs').tryGetElement('textIndent')).assertEqual(undefined)
       console.info('textTest_static_0013 END');
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0014
-     * @tc.name textTest_static_0014
-     * @tc.desc Set baselineOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0014
+     * @tc.name     textTest_static_0014
+     * @tc.desc     textTest_static_0014
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0014 START');
@@ -315,13 +301,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0015
-     * @tc.name textTest_static_0015
-     * @tc.desc set copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0015
+     * @tc.name     textTest_static_0015
+     * @tc.desc     textTest_static_0015
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0015 START');
@@ -333,13 +318,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0016
-     * @tc.name textTest_static_0016
-     * @tc.desc set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0016
+     * @tc.name     textTest_static_0016
+     * @tc.desc     textTest_static_0016
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0016', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0016 START');
@@ -351,13 +335,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0017
-     * @tc.name textTest_static_0017
-     * @tc.desc set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0017
+     * @tc.name     textTest_static_0017
+     * @tc.desc     textTest_static_0017
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0017 START');
@@ -369,13 +352,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0018
-     * @tc.name TtextTest_static_0018
-     * @tc.desc set minFontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0018
+     * @tc.name     textTest_static_0018
+     * @tc.desc     textTest_static_0018
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0018 START');
@@ -387,13 +369,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0019
-     * @tc.name textTest_static_0019
-     * @tc.desc set decoration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0019
+     * @tc.name     textTest_static_0019
+     * @tc.desc     textTest_static_0019
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0019', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0019 START');
@@ -406,13 +387,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0020
-     * @tc.name textTest_static_0020
-     * @tc.desc set maxFontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0020
+     * @tc.name     textTest_static_0020
+     * @tc.desc     textTest_static_0020
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0020 START');
@@ -424,13 +404,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0021
-     * @tc.name textTest_static_0021
-     * @tc.desc set letterSpacing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0021
+     * @tc.name     textTest_static_0021
+     * @tc.desc     textTest_static_0021
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0021', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_00061 START');
@@ -442,13 +421,12 @@ export default function textJsunit() {
       done();
     });
 
-    /**
-     * @tc.number textTest_static_0022
-     * @tc.name textTest_static_0022
-     * @tc.desc Set baselineOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0022
+     * @tc.name     textTest_static_0022
+     * @tc.desc     textTest_static_0022
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0022', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0022 START');
@@ -461,13 +439,12 @@ export default function textJsunit() {
     });
 
 
-    /**
-     * @tc.number textTest_static_0023
-     * @tc.name textTest_static_0023
-     * @tc.desc Change wordBreak values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   textTest_static_0023
+     * @tc.name     textTest_static_0023
+     * @tc.desc     textTest_static_0023
+     * @tc.level    Level.LEVEL0
      */
     it('textTest_static_0023', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textTest_static_0023 START');

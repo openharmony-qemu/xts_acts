@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,13 +56,12 @@ export default function marqueeJsunit() {
       }
     });
 
-    /**
-     * @tc.number testMarquee_static_04001
-     * @tc.name testMarquee_static_04001
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testMarquee_static_04001
+     * @tc.name     testMarquee_static_04001
+     * @tc.desc     testMarquee_static_04001
+     * @tc.level    Level.LEVEL0
      */
     it('testMarquee_static_04001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_04001 START');
@@ -73,13 +72,12 @@ export default function marqueeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testMarquee_static_04002
-     * @tc.name testMarquee_static_04002
-     * @tc.desc Set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testMarquee_static_04002
+     * @tc.name     testMarquee_static_04002
+     * @tc.desc     testMarquee_static_04002
+     * @tc.level    Level.LEVEL0
      */
     it('testMarquee_static_04002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_04002 START');
@@ -90,13 +88,12 @@ export default function marqueeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testMarquee_static_04003
-     * @tc.name testMarquee_static_04003
-     * @tc.desc Set allowScale values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testMarquee_static_04003
+     * @tc.name     testMarquee_static_04003
+     * @tc.desc     testMarquee_static_04003
+     * @tc.level    Level.LEVEL0
      */
     it('testMarquee_static_04003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_04003 START');
@@ -107,13 +104,12 @@ export default function marqueeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testMarquee_static_04004
-     * @tc.name testMarquee_static_04004
-     * @tc.desc Set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testMarquee_static_04004
+     * @tc.name     testMarquee_static_04004
+     * @tc.desc     testMarquee_static_04004
+     * @tc.level    Level.LEVEL0
      */
     it('testMarquee_static_04004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_04004 START');
@@ -124,13 +120,12 @@ export default function marqueeJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testMarquee_static_04005
-     * @tc.name testMarquee_static_04005
-     * @tc.desc Set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testMarquee_static_04005
+     * @tc.name     testMarquee_static_04005
+     * @tc.desc     testMarquee_static_04005
+     * @tc.level    Level.LEVEL0
      */
     it('testMarquee_static_04005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_04005 START');
@@ -140,13 +135,12 @@ export default function marqueeJsunit() {
       console.info('testMarquee_static_04005 END');
       done();
     });
-    /**
-     * @tc.number testMarquee_static_04006
-     * @tc.name testMarquee_static_04006
-     * @tc.desc Change fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testMarquee_static_04006
+     * @tc.name     testMarquee_static_04006
+     * @tc.desc     testMarquee_static_04006
+     * @tc.level    Level.LEVEL0
      */
     it('testMarquee_static_04006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testMarquee_static_04006 START');
@@ -155,10 +149,10 @@ export default function marqueeJsunit() {
       await button.click();
      await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('MarqueeKey1'); 
+      let strJsonNew = inspector.getInspectorByKey('MarqueeKey1'); //测试组件的key名称
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("testMarquee_static_04006 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('fontSize')).assertEqual('5.00fp'); 
+      expect(objNew.getElement('$attrs').getString('fontSize')).assertEqual('5.00fp'); //
       console.info('testMarquee_static_04006 END');
       done();
     });

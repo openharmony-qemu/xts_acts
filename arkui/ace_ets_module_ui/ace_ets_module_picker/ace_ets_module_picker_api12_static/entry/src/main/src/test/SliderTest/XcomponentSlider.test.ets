@@ -68,11 +68,12 @@ export default function XComponentSliderTest() {
       console.info("RatingAdvancedTest after each called");
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_021
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_021
-     * @tc.desc        initial value 10
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_021
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_021
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_021
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_021', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider01")
@@ -87,11 +88,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_022
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_022
-     * @tc.desc        initial value 20
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_022
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_022
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_022
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_022', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider02")
@@ -106,11 +108,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_023
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_023
-     * @tc.desc        initial value 100
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_023
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_023
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_023
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_023', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider03")
@@ -125,11 +128,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_024
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_024
-     * @tc.desc        initial value 0
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_024
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_024
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_024
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_024', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider04")
@@ -144,11 +148,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_025
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_025
-     * @tc.desc        initial value 1000
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_025
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_025
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_025
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_025', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider05")
@@ -163,11 +168,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_026
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_026
-     * @tc.desc        initial value 90.5
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_026
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_026
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_026
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_026', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider06")
@@ -182,11 +188,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_027
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_027
-     * @tc.desc        initial value 90.2
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_027
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_027
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_027
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_027', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider07")
@@ -201,11 +208,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_033
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_033
-     * @tc.desc        step 0.01
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_033
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_033
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_033
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_033', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider08")
@@ -220,11 +228,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_034
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_034
-     * @tc.desc        Test slider
-     * @tc.level       step 2
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_034
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_034
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_034
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_034', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider09")
@@ -239,11 +248,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_035
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_035
-     * @tc.desc        step 50
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_035
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_035
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_035
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_035', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider10")
@@ -258,11 +268,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_036
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_036
-     * @tc.desc        step 10
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_036
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_036
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_036
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_036', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider11")
@@ -277,11 +288,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_037
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_037
-     * @tc.desc        direction = Axis.Vertical
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_037
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_037
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_037
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_037', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider12")
@@ -296,11 +308,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_038
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_038
-     * @tc.desc        direction = Axis.Horizontal
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_038
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_038
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_038
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_038', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider13")
@@ -315,11 +328,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_039
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_039
-     * @tc.desc        reverse = false
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_039
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_039
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_039
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_039', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider14")
@@ -334,11 +348,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_040
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_040
-     * @tc.desc        reverse = true
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_040
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_040
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_040
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_040', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider15")
@@ -353,11 +368,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041
-     * @tc.desc        style:SliderStyle.OutSet
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider16")
@@ -398,11 +414,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042
-     * @tc.desc        style:SliderStyle.InSet
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider17")
@@ -439,11 +456,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010
-     * @tc.desc        sliderBuilder {value：-1,min:-1,max:-1,step:-1}
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider18")
@@ -461,11 +479,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0020
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0020
-     * @tc.desc        sliderBuilder {value：0,min:0,max:5,step:0}
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0020
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0020
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0020
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0020', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider19")
@@ -483,11 +502,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0030
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0030
-     * @tc.desc        sliderBuilder {value：10,min:10,max:50,step:0.5}
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0030
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0030
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0030
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0030', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider20")
@@ -505,11 +525,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0040
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0040
-     * @tc.desc        sliderBuilder {value：10,min:10,max:50,step:100}
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0040
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0040
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0040
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0040', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider21")
@@ -527,11 +548,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0050
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0050
-     * @tc.desc        sliderBuilder {value：10,min:100,max:200,step:10}
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0050
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0050
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0050
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0050', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider22")
@@ -549,11 +571,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0060
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0060
-     * @tc.desc        sliderBuilder {value：10,min:90,max:50,step:10}
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0060
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0060
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0060
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0060', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider23")
@@ -571,11 +594,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0070
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0070
-     * @tc.desc        sliderBuilder {value：10,min:50,max:50,step:50}
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0070
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0070
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0070
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0070', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider24")
@@ -593,11 +617,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0090
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0090
-     * @tc.desc        triggerChange = null
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0090
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0090
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0090
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0090', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider25")
@@ -617,11 +642,12 @@ export default function XComponentSliderTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0100
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0100
-     * @tc.desc        triggerChange = undefined
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0100
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0100
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0100
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
       await routerPush("XcomponentSlider26")

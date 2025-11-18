@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,13 +58,12 @@ export default function polyLineJsunit() {
       }
     });
 
-    /**
-     * @tc.number testpolyLineStaticStatic
-     * @tc.name testpolyLineStaticStatic
-     * @tc.desc Set points values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testpolyLineStaticStatic
+     * @tc.name     testpolyLineStaticStatic
+     * @tc.desc     testpolyLineStaticStatic
+     * @tc.level    Level.LEVEL0
      */
     it('testpolyLineStaticStatic', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testpolyLineStaticStatic] START');
@@ -72,25 +71,24 @@ export default function polyLineJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testpolyLineStaticStatic] obj is : " + JSON.stringify(obj.getElement('$attrs')));
 
-      
+      //原生数据
       let strJson1 = inspector.getInspectorByKey('polyLine1');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[testpolyLineStaticStatic] obj is : " + JSON.stringify(obj1.getElement('$attrs')));
 
-      
+      //与原生做对比
       expect(obj.getElement('$attrs').getBoolean('points')).assertEqual(obj1.getElement('$attrs').getBoolean('points'));
 
       console.info('[testpolyLineStaticStatic] END');
       done();
     });
 
-    /**
-     * @tc.number testpolyLineStatic_001
-     * @tc.name testpolyLineStatic_001
-     * @tc.desc Change points values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testpolyLineStatic_001
+     * @tc.name     testpolyLineStatic_001
+     * @tc.desc     testpolyLineStatic_001
+     * @tc.level    Level.LEVEL0
      */
     it('testpolyLineStatic_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testpolyLineStatic_001 START');
@@ -99,15 +97,15 @@ export default function polyLineJsunit() {
       await button.click();
      await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('polyLine'); 
+      let strJsonNew = inspector.getInspectorByKey('polyLine'); //测试组件的key名称
       let objNew = JSON.parseJsonElement(strJsonNew);
 
-      let strJsonNew2 = inspector.getInspectorByKey('polyLine2'); 
+      let strJsonNew2 = inspector.getInspectorByKey('polyLine2'); //测试组件的key名称
       let objNew2 = JSON.parseJsonElement(strJsonNew2);
 
       console.info("testpolyLineStatic_001 objNew component  is: " + JSON.stringify(objNew.getElement('$attrs')));
       console.info("testpolyLineStatic_001 objNew2 component  is: " + JSON.stringify(objNew2.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getBoolean('points')).assertEqual(objNew2.getElement('$attrs').getBoolean('points')); 
+      expect(objNew.getElement('$attrs').getBoolean('points')).assertEqual(objNew2.getElement('$attrs').getBoolean('points')); //
       console.info('testpolyLineStatic_001 END');
       done();
     });

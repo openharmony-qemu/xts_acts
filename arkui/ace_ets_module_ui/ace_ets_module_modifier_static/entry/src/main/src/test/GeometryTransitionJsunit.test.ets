@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -62,13 +62,12 @@ export default function geometryTransitionJsunit() {
       console.info("geometryTransition after each called");
     });
 
-    /**
-     * @tc.number geometryTransitionTest_static_0100
-     * @tc.name geometryTransitionTest_static_0100
-     * @tc.desc Set geometryTransition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   geometryTransitionTest_static_0100
+     * @tc.name     geometryTransitionTest_static_0100
+     * @tc.desc     geometryTransitionTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
     it('geometryTransitionTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('geometryTransitionTest_static_0100 START');

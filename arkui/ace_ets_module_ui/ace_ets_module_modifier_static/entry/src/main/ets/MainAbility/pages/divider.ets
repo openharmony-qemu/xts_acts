@@ -12,43 +12,97 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
+  Entry,
+  Component,
+  $r,
+  Column,
+  ColumnOptions,
+  Divider,
+  Counter,
+  DataPanel,
+  DatePicker,
+  BorderImageOption,
+  BorderOptions,
+  AdaptiveColor,
+  BackgroundEffectOptions,
+  BorderStyle,
+  RepeatMode,
+  GradientDirection,
+  Image,
+  Checkbox,
+  Blank,
+  MarkStyle,
+  ResourceColor,
+  CheckboxGroup,
+  Text,
+  Toggle,
+  ToggleType,
+  FlexAlign,
+  Color,
+  Flex,
+  ButtonType,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  Week,
+  FontWeight,
+  Axis,
+  Margin,
+  Swiper,
+  ForEach,
+  PickerTextStyle,
+  CalendarAlign,
+  Date,
+  CalendarPicker,
+  EdgeEffect,
+  Curve,
+  SwiperDisplayMode,
+  ArrowPosition,
+  Select,
+  BlurStyle,
+  MenuAlignType,
+  TextInputController,
+  TextAlign,
+  AlphabetIndexer,
+  DividerAttribute,
+  LineCapStyle
+} from '@ohos.arkui.component';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { DividerModifier } from "@ohos.arkui.modifier";
 
 
+class CustomModifier extends DividerModifier {
+  applyDividerAttribute(instance: DividerAttribute): void {
+    // super.applyNormalAttribute?.(instance);
+  }
 
-
-
-
-
-
-
-
-
+  onChange1() {
+    this.color("#FF654321")
+  }
+}
 
 @Entry
 @Component
 struct BlankExample {
-
-
-
-
-
+    @State customModifier: DividerModifier = new CustomModifier()
+      .lineCap(LineCapStyle.Round)
+      .strokeWidth(10)
+      .color("#FF123456")
+      .vertical(false)
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-
+                (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Column() {
         Text('Horizontal divider111').fontSize(9).backgroundColor(Color.Gray)
         Divider()
-
+                  .attributeModifier(this.customModifier as CustomModifier)
           .key('divider')
         Text('Horizontal divider222').fontSize(9).backgroundColor(Color.Gray)
       }.backgroundColor(Color.Gray).padding(20)

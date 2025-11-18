@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,13 +58,12 @@ export default function toggleJsunit() {
       }
     });
 
-    /**
-     * @tc.number ToggleJsunitStatic001
-     * @tc.name ToggleJsunitStatic001
-     * @tc.desc Set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ToggleJsunitStatic001
+     * @tc.name     ToggleJsunitStatic001
+     * @tc.desc     ToggleJsunitStatic001
+     * @tc.level    Level.LEVEL0
      */
     it('ToggleJsunitStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ToggleJsunitStatic001] START');
@@ -76,13 +75,12 @@ export default function toggleJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ToggleJsunitStatic002
-     * @tc.name ToggleJsunitStatic002
-     * @tc.desc Set switchPointColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ToggleJsunitStatic002
+     * @tc.name     ToggleJsunitStatic002
+     * @tc.desc     ToggleJsunitStatic002
+     * @tc.level    Level.LEVEL0
      */
     it('ToggleJsunitStatic002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ToggleJsunitStatic002] START');
@@ -94,13 +92,12 @@ export default function toggleJsunit() {
       done();
     });
 
-    /**
-     * @tc.number ToggleJsunitStatic003
-     * @tc.name ToggleJsunitStatic003
-     * @tc.desc Change selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ToggleJsunitStatic003
+     * @tc.name     ToggleJsunitStatic003
+     * @tc.desc     ToggleJsunitStatic003
+     * @tc.level    Level.LEVEL0
      */
     it('ToggleJsunitStatic003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ToggleJsunitStatic003 START');
@@ -108,10 +105,10 @@ export default function toggleJsunit() {
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
-      let strJsonNew = inspector.getInspectorByKey('toggleCheckbox'); 
+      let strJsonNew = inspector.getInspectorByKey('toggleCheckbox'); //测试组件的key名称
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("ToggleJsunitStatic003 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('selectedColor')).assertEqual("#FF0000FF"); 
+      expect(objNew.getElement('$attrs').getString('selectedColor')).assertEqual("#FF0000FF"); //
       console.info('ToggleJsunitStatic003 END');
       done();
     });

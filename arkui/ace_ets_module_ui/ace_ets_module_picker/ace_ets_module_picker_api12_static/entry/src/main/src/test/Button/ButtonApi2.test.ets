@@ -65,10 +65,12 @@ export default function ButtonApi2() {
     afterEach(async () => {
     });
 
-    /**
-     * @tc.number ButtonApi2_static_0100
-     * @tc.name testButton
-     * @tc.desc
+    
+    /*
+     * @tc.number   ButtonApi2_static_0100
+     * @tc.name     ButtonApi2_static_0100
+     * @tc.desc     ButtonApi2_static_0100
+     * @tc.level    Level.LEVEL1
      */
     it('ButtonApi2_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>    {
       console.info('ButtonApi2_static_0100 START');

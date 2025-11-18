@@ -45,14 +45,15 @@ export default function TimePickerStartAndEnd() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get TimePickerAddApi state pages:' + JSON.stringify(pages));
-        if (!('timePickerStartAndEnd' == pages.name)) {
+        if (!('MainAbility/pages/timePicker/timePickerStartAndEnd' == pages.name)) {
           console.info('get TimePickerAddApi pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          
+          // let result = await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push TimePickerAddApi page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TimePickerAddApi page error:' + err);

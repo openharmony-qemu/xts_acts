@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,13 +56,12 @@ export default function spanJsunit() {
       }
     });
 
-    /**
-     * @tc.number test_span_static_001
-     * @tc.name test_span_static_001
-     * @tc.desc Set lineHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_001
+     * @tc.name     test_span_static_001
+     * @tc.desc     test_span_static_001
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_001] START');
@@ -74,13 +73,12 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_002
-     * @tc.name test_span_static_002
-     * @tc.desc Set textCase values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_002
+     * @tc.name     test_span_static_002
+     * @tc.desc     test_span_static_002
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_002] START');
@@ -92,13 +90,12 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_003
-     * @tc.name test_span_static_003
-     * @tc.desc Set letterSpacing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_003
+     * @tc.name     test_span_static_003
+     * @tc.desc     test_span_static_003
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_003] START');
@@ -110,32 +107,30 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_004
-     * @tc.name test_span_static_004
-     * @tc.desc Set decoration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_004
+     * @tc.name     test_span_static_004
+     * @tc.desc     test_span_static_004
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_004] START');
       let strJson = inspector.getInspectorByKey('SpanKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[test_span_static_004] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      let mDecoration = obj.getElement('$attrs').getElement('decoration');
+      let mDecoration = JSON.parseJsonElement(obj.getElement('$attrs').getString('decoration'));
       expect(mDecoration.getString('type')).assertEqual('TextDecorationType.LineThrough');
       console.info('[test_span_static_004] END');
       done();
     });
 
-    /**
-     * @tc.number test_span_static_005
-     * @tc.name test_span_static_005
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_005
+     * @tc.name     test_span_static_005
+     * @tc.desc     test_span_static_005
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_005] START');
@@ -147,32 +142,30 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_006
-     * @tc.name test_span_static_006
-     * @tc.desc Set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_006
+     * @tc.name     test_span_static_006
+     * @tc.desc     test_span_static_006
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_006] START');
       let strJson = inspector.getInspectorByKey('SpanKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[test_span_static_006] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      let mFont = obj.getElement('$attrs').getElement('font');
+      let mFont =JSON.parseJsonElement(obj.getElement('$attrs').getString('font'));
       expect(mFont.getString('size')).assertEqual('40.00fp');
       console.info('[test_span_static_006] END');
       done();
     });
 
-    /**
-     * @tc.number test_span_static_007
-     * @tc.name test_span_static_007
-     * @tc.desc Set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_007
+     * @tc.name     test_span_static_007
+     * @tc.desc     test_span_static_007
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_007] START');
@@ -184,13 +177,12 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_008
-     * @tc.name test_span_static_008
-     * @tc.desc Set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_008
+     * @tc.name     test_span_static_008
+     * @tc.desc     test_span_static_008
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_008] START');
@@ -204,13 +196,12 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_009
-     * @tc.name test_span_static_009
-     * @tc.desc Set fontStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_009
+     * @tc.name     test_span_static_009
+     * @tc.desc     test_span_static_009
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_009] START');
@@ -222,13 +213,12 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_010
-     * @tc.name test_span_static_010
-     * @tc.desc Set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_010
+     * @tc.name     test_span_static_010
+     * @tc.desc     test_span_static_010
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_span_static_010] START');
@@ -240,13 +230,12 @@ export default function spanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_span_static_011
-     * @tc.name test_span_static_011
-     * @tc.desc Change textCase values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_span_static_011
+     * @tc.name     test_span_static_011
+     * @tc.desc     test_span_static_011
+     * @tc.level    Level.LEVEL0
      */
     it('test_span_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('test_span_static_011 START');

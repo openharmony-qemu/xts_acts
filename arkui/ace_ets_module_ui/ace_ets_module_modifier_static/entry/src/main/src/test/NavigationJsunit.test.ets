@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -59,13 +59,12 @@ export default function navigationJsunit() {
       }
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1000
-     * @tc.name NavigationJsunit_static_1000
-     * @tc.desc Set minContentWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1000
+     * @tc.name     NavigationJsunit_static_1000
+     * @tc.desc     NavigationJsunit_static_1000
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -79,13 +78,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1001
-     * @tc.name NavigationJsunit_static_1001
-     * @tc.desc Set navBarWidthRange values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1001
+     * @tc.name     NavigationJsunit_static_1001
+     * @tc.desc     NavigationJsunit_static_1001
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -99,13 +97,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1002
-     * @tc.name NavigationJsunit_static_1002
-     * @tc.desc Set navBarWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1002
+     * @tc.name     NavigationJsunit_static_1002
+     * @tc.desc     NavigationJsunit_static_1002
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1002', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -119,13 +116,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1003
-     * @tc.name NavigationJsunit_static_1003
-     * @tc.desc Set navBarPosition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1003
+     * @tc.name     NavigationJsunit_static_1003
+     * @tc.desc     NavigationJsunit_static_1003
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1003', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -139,13 +135,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1004
-     * @tc.name NavigationJsunit_static_1004
-     * @tc.desc Set mode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1004
+     * @tc.name     NavigationJsunit_static_1004
+     * @tc.desc     NavigationJsunit_static_1004
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1004', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -159,13 +154,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1005
-     * @tc.name NavigationJsunit_static_1005
-     * @tc.desc Set backButtonIcon values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1005
+     * @tc.name     NavigationJsunit_static_1005
+     * @tc.desc     NavigationJsunit_static_1005
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1005', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -179,13 +173,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1006
-     * @tc.name NavigationJsunit_static_1006
-     * @tc.desc Set hideNavBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1006
+     * @tc.name     NavigationJsunit_static_1006
+     * @tc.desc     NavigationJsunit_static_1006
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1006', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -199,13 +192,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1007
-     * @tc.name NavigationJsunit_static_1007
-     * @tc.desc Set hideTitleBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1007
+     * @tc.name     NavigationJsunit_static_1007
+     * @tc.desc     NavigationJsunit_static_1007
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1007', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -219,13 +211,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1008
-     * @tc.name NavigationJsunit_static_1008
-     * @tc.desc Set subtitle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1008
+     * @tc.name     NavigationJsunit_static_1008
+     * @tc.desc     NavigationJsunit_static_1008
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1008', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -234,18 +225,17 @@ export default function navigationJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[NavigationJsunit_static_1008] component obj is: " + JSON.stringify(obj.getElement('$attrs')));
 
-      expect(obj.getElement('$attrs').getString('subtitle')).assertEqual('test');
+      expect(obj.getElement('$attrs').getString('title')).assertEqual('test');
       console.info('[NavigationJsunit_static_1008] END');
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1009
-     * @tc.name NavigationJsunit_static_1009
-     * @tc.desc Set hideBackButton values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1009
+     * @tc.name     NavigationJsunit_static_1009
+     * @tc.desc     NavigationJsunit_static_1009
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1009', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -259,13 +249,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1010
-     * @tc.name NavigationJsunit_static_1010
-     * @tc.desc Set titleMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1010
+     * @tc.name     NavigationJsunit_static_1010
+     * @tc.desc     NavigationJsunit_static_1010
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1010', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -279,13 +268,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1011
-     * @tc.name NavigationJsunit_static_1011
-     * @tc.desc Set hideToolBar values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1011
+     * @tc.name     NavigationJsunit_static_1011
+     * @tc.desc     NavigationJsunit_static_1011
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1011', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -299,13 +287,12 @@ export default function navigationJsunit() {
       done();
     });
 
-    /**
-     * @tc.number NavigationJsunit_static_1012
-     * @tc.name NavigationJsunit_static_1012
-     * @tc.desc Change minContentWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   NavigationJsunit_static_1012
+     * @tc.name     NavigationJsunit_static_1012
+     * @tc.desc     NavigationJsunit_static_1012
+     * @tc.level    Level.LEVEL0
      */
     it('NavigationJsunit_static_1012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[NavigationJsunit_static_1012] START');

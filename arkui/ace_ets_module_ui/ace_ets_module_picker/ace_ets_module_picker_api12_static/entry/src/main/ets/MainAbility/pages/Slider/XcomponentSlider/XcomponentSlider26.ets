@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox, Position,XComponent,
-  Slider,SliderConfiguration,SliderChangeMode,XComponentParameters,XComponentController,XComponentType,Slider,
+  Slider,SliderConfiguration,SurfaceRect,XComponentParameters,XComponentController,XComponentType,Slider,
   ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration,
-  SliderChangeMode,
+  SliderChangeMode,ContentModifier,SliderConfiguration,WrappedBuilder,wrapBuilder,CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -47,16 +47,16 @@ import { State } from '@ohos.arkui.stateManagement';
         step:config.step,
       })
         .width(config.max)
-        // .visibility((config.contentModifier as MySliderStyle26).showSlider?Visibility.Visible:Visibility.Hidden)
+        .visibility((config.contentModifier as MySliderStyle26).showSlider?Visibility.Visible:Visibility.Hidden)
         .showSteps(true)
-        .onChange((value: double, mode: SliderChangeMode) => {
+        .onChange((value: number, mode: SliderChangeMode) => {
           // config.triggerChange(undefined, undefined)
         })
-      // Text('当前状态：'+ ((config.contentModifier as MySliderStyle26).sliderChangeMode==0?'Begin'
-      //   :((config.contentModifier as MySliderStyle26).sliderChangeMode==1?'Moving'
-      //     :((config.contentModifier as MySliderStyle26).sliderChangeMode==2?'End'
-      //       :((config.contentModifier as MySliderStyle26).sliderChangeMode==3?'Click':'无')))))
-      //   .fontSize(10)
+      Text('当前状态：'+ ((config.contentModifier as MySliderStyle26).sliderChangeMode==0?'Begin'
+        :((config.contentModifier as MySliderStyle26).sliderChangeMode==1?'Moving'
+          :((config.contentModifier as MySliderStyle26).sliderChangeMode==2?'End'
+            :((config.contentModifier as MySliderStyle26).sliderChangeMode==3?'Click':'无')))))
+        .fontSize(10)
       Text('进度值：'+ config.value)
         .fontSize(10)
       Text('最小值：'+ config.min)
@@ -72,27 +72,27 @@ import { State } from '@ohos.arkui.stateManagement';
   .width('100%')
 }
 
-// class MySliderStyle26 implements ContentModifier<SliderConfiguration> {
-//   public showSlider:boolean=true
-//   public sliderChangeMode:number=0
-//   constructor(showSlider: boolean,sliderChangeMode:number) {
-//     this.showSlider = showSlider
-//     this.sliderChangeMode = sliderChangeMode
-//   }
-//   applyContent() : WrappedBuilder<[SliderConfiguration]> {
-//     return wrapBuilder(buildSlider26)
-//   }
-// }
+class MySliderStyle26 implements ContentModifier<SliderConfiguration> {
+  public showSlider:boolean=true
+  public sliderChangeMode:number=0
+  constructor(showSlider: boolean,sliderChangeMode:number) {
+    this.showSlider = showSlider
+    this.sliderChangeMode = sliderChangeMode
+  }
+  applyContent(): WrappedBuilder<CustomBuilderT<SliderConfiguration>>{
+    return wrapBuilder<CustomBuilderT<SliderConfiguration>>(buildSlider26)
+  }
+}
 
 @Entry
 @Component
 struct XSlider26 {
   @State showSlider:boolean=true
-  @State sliderValue: double = 10
-  @State sliderMin: double = 0
-  @State sliderMax: double = 100
-  @State sliderStep: double = 10
-  @State sliderChangeMode: int = 0
+  @State sliderValue: number = 10
+  @State sliderMin: number = 0
+  @State sliderMax: number = 100
+  @State sliderStep: number = 10
+  @State sliderChangeMode: number = 0
 
   build() {
     Column({ space: 8 } as ColumnOptions) {
@@ -106,12 +106,12 @@ struct XSlider26 {
         })
           .id('XSlider26')
           .showSteps(true)
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.sliderValue = value
             this.sliderChangeMode=mode
             console.info('【SliderLog】value:' + value + 'mode:' + mode.toString())
           })
-          // .contentModifier(new MySliderStyle26(this.showSlider,this.sliderChangeMode))
+          .contentModifier(new MySliderStyle26(this.showSlider,this.sliderChangeMode))
       }
       .width('100%')
     }.width('100%')

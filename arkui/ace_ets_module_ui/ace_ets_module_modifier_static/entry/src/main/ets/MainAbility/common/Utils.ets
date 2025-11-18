@@ -18,7 +18,7 @@ import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 import systemDateTime from '@ohos.systemDateTime';
 export default class Utils {
   static rect_left: number;
@@ -27,26 +27,22 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
-    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
-    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
-    CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
-    CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
-    CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
-    CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
-    return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
-    }
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+    });
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
+      "windowRect Top: " + AppStorage.get<number>("winTop"));
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
   static async sleep(time: int) : Promise<int>  {

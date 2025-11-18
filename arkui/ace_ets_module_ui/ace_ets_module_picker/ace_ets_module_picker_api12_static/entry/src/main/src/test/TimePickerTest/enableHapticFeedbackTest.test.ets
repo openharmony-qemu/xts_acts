@@ -62,13 +62,12 @@ export default function enableHapticFeedbackTest() {
       }
     });
 
-    /**
-     * @tc.number    closeBindSheet
-     * @tc.name      enableHapticFeedbackTest_static_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   enableHapticFeedbackTest_static_0100
+     * @tc.name     enableHapticFeedbackTest_static_0100
+     * @tc.desc     enableHapticFeedbackTest_static_0100
+     * @tc.level    Level.LEVEL1
      */
     it('enableHapticFeedbackTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> =>  {
       console.info('enableHapticFeedbackTest_static_0100 START');

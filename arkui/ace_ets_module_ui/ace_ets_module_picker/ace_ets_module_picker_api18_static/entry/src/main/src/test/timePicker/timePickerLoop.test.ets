@@ -43,14 +43,15 @@ export default function timePickerLoopTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get timePickerLoopTest state pages:' + JSON.stringify(pages));
-        if (!('timePickerLoop' == pages.name)) {
+        if (!('MainAbility/pages/timePicker/timePickerLoop' == pages.name)) {
           console.info('get timePickerLoopTest pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          
+          // let result = await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push timePickerLoopTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push timePickerLoopTest page error:' + err);

@@ -65,13 +65,12 @@ export default function indicatorBuilderTest() {
       console.info("indicatorBuilderTest after each called");
     });
 
-    /**
-     * @tc.number    indicatorBuilderTest_static_001
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   indicatorBuilderTest_static_001
+     * @tc.name     indicatorBuilderTest_static_001
+     * @tc.desc     indicatorBuilderTest_static_001
+     * @tc.level    Level.LEVEL1
      */
     it('indicatorBuilderTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> =>    {
       console.info('[indicatorBuilderTest_static_001] START');

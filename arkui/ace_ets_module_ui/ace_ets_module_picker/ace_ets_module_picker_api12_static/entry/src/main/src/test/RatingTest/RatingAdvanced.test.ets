@@ -47,11 +47,11 @@ export default function RatingAdvancedTest() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info(`get ${target} state pages:` + JSON.stringify(pages));
         console.info(`get ${target} pages.name:` + JSON.stringify(pages.name));
-        if (!(target == pages.name)) {
+        if (!(`MainAbility/pages/Rating/ratingAdvanced/${target}` == pages.name)) {
           routerInstance.pushUrl(options);
           // let result =  await routerInstance.pushUrl(options);
           await Utils.sleep(2000);
@@ -69,12 +69,13 @@ export default function RatingAdvancedTest() {
       console.info("RatingAdvancedTest after each called");
     });
 
-     /*
-      * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010
-      * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010
-      * @tc.desc        rating 2,stars 8,steps 2,click rating
-      * @tc.level       Level 3
-      */
+     
+    /*
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010
+     * @tc.level    Level.LEVEL3
+     */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0010] START');
       await routerPush("rating01")
@@ -100,11 +101,12 @@ export default function RatingAdvancedTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020
-     * @tc.desc        rating 0,stars 0,steps 1.5,click rating
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0020] START');
@@ -136,11 +138,12 @@ export default function RatingAdvancedTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0030
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0030
-     * @tc.desc        rating -1,stars -1,steps 0,click rating
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0030
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0030
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0030
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0030', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0030] START');
@@ -175,11 +178,12 @@ export default function RatingAdvancedTest() {
     });
 
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040
-     * @tc.desc        rating 0,stars 10,steps 6,click rating
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0040] START');
@@ -207,11 +211,12 @@ export default function RatingAdvancedTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0050
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0050
-     * @tc.desc        rating 8,stars 7,steps 10,click rating
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0050
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0050
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0050
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0050', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0050] START');
@@ -243,11 +248,12 @@ export default function RatingAdvancedTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0060
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0060
-     * @tc.desc        rating 5,stars 10,steps 0.3,click rating
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0060
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0060
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0060
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0060', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0060] START');
@@ -270,11 +276,12 @@ export default function RatingAdvancedTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0070
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0070
-     * @tc.desc        buildRating ,change indicator and click rating
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0070
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0070
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0070
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0070', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0070] START');
@@ -309,11 +316,12 @@ export default function RatingAdvancedTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080
-     * @tc.desc        buildRating ,change indicator and change stars
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080] START');
@@ -332,7 +340,7 @@ export default function RatingAdvancedTest() {
       let obj1 = JSON.parseJsonElement(strJson1);
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080] obj1.getElement('$attrs').getString('stars') is: " + obj1.getElement('$attrs').getString('stars'));
-      expect(obj1.getElement('$attrs').getString('stars')).assertContain(4);
+      expect(obj1.getElement('$attrs').getString('stars')).assertContain('4');
 
       let btn3 = await driver.findComponent(ON.id('ratingButton08_3')) as Component;
       await btn3!.click()
@@ -342,15 +350,16 @@ export default function RatingAdvancedTest() {
       let obj2 = JSON.parseJsonElement(strJson2);
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0080] obj2.getElement('$attrs').getString('stars') is: " + obj2.getElement('$attrs').getString('stars'));
-      expect(obj2.getElement('$attrs').getString('stars')).assertContain(5);
+      expect(obj2.getElement('$attrs').getString('stars')).assertContain('5');
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0200
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0200
-     * @tc.desc        triggerChange = null
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0200
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0200
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0200
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0200] START');
@@ -370,11 +379,12 @@ export default function RatingAdvancedTest() {
       done();
     });
 
+    
     /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0210
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0210
-     * @tc.desc        triggerChange = undefined
-     * @tc.level       Level 3
+     * @tc.number   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0210
+     * @tc.name     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0210
+     * @tc.desc     SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0210
+     * @tc.level    Level.LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0210', Level.LEVEL3, async (done: () => void): Promise<void> =>    {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_static_0210] START');

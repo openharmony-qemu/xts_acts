@@ -13,14 +13,16 @@
  * limitations under the License.
  */
 import { Entry, Column, Component,Builder, Margin, Row,TimePicker, Toggle, TimePickerFormat,ClickEvent,
-  Text, TextPicker,Color,Button,FontWeight,Color,ToggleType,ColumnOptions,ToggleConfiguration } from '@ohos.arkui.component'
+  Text, TextPicker,Color,Button,FontWeight,Color,ToggleType,ColumnOptions,ToggleConfiguration,ContentModifier,
+  ToggleConfiguration,WrappedBuilder,wrapBuilder,CustomBuilderT } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-// class MyToggleStyle1 implements ContentModifier<ToggleConfiguration> {
-//   constructor() { }
-//   applyContent(): WrappedBuilder<[ToggleConfiguration]> {
-//     return wrapBuilder(buildToggle1)
-//   }
-// }
+class MyToggleStyle1 implements ContentModifier<ToggleConfiguration> {
+  constructor() { }
+
+  applyContent(): WrappedBuilder<CustomBuilderT<ToggleConfiguration>>{
+    return wrapBuilder<CustomBuilderT<ToggleConfiguration>>(buildToggle1)
+  }
+}
 @Builder function buildToggle1(config: ToggleConfiguration) {
   Column({ space: 10 } as ColumnOptions) {
     Text('enabled status is: ' + config.enabled)
@@ -37,7 +39,7 @@ struct ToggleEnableTest {
   build() {
     Column({ space: 50 } as ColumnOptions) {
       Toggle({ type: ToggleType.Switch, isOn: false })
-        // .contentModifier(new MyToggleStyle1())
+        .contentModifier(new MyToggleStyle1())
         .enabled(true)
         .onChange((isOn: boolean):void => {
           console.info('Switch Log:' + isOn)

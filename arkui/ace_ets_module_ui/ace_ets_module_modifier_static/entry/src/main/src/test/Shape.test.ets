@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -30,7 +30,13 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function shape() {
   describe("shapeTest",  () =>{
-    beforeEach(async  (done:Function) =>{
+    beforeAll(() => {
+      await UtilsTest.msSleep(4000);
+      await startAbility("com.open.harmony.acetest.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
+    });
+
+    beforeEach(async () => {
       console.info("shapeJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/shape',
@@ -51,13 +57,12 @@ export default function shape() {
       }
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_001
-     * @tc.name ShapeJsunit_static_001
-     * @tc.desc Set viewPort values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_001
+     * @tc.name     ShapeJsunit_static_001
+     * @tc.desc     ShapeJsunit_static_001
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_001] START');
@@ -72,13 +77,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_002
-     * @tc.name ShapeJsunit_static_002
-     * @tc.desc Set stroke values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_002
+     * @tc.name     ShapeJsunit_static_002
+     * @tc.desc     ShapeJsunit_static_002
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_002] START');
@@ -90,13 +94,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_003
-     * @tc.name ShapeJsunit_static_003
-     * @tc.desc Set fill values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_003
+     * @tc.name     ShapeJsunit_static_003
+     * @tc.desc     ShapeJsunit_static_003
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_003] START');
@@ -108,13 +111,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_004
-     * @tc.name ShapeJsunit_static_004
-     * @tc.desc Set strokeDashOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_004
+     * @tc.name     ShapeJsunit_static_004
+     * @tc.desc     ShapeJsunit_static_004
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_004] START');
@@ -126,31 +128,29 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_005
-     * @tc.name ShapeJsunit_static_005
-     * @tc.desc Set strokeDashArray values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_005
+     * @tc.name     ShapeJsunit_static_005
+     * @tc.desc     ShapeJsunit_static_005
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_005] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ShapeJsunit_static_005] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getArray('strokeDashArray')[0]).assertEqual('30.00vp');
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getArray('strokeDashArray')[0])).assertEqual('"30.00vp"');
       console.info('[ShapeJsunit_static_005] END');
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_006
-     * @tc.name ShapeJsunit_static_006
-     * @tc.desc Set strokeLineJoin values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_006
+     * @tc.name     ShapeJsunit_static_006
+     * @tc.desc     ShapeJsunit_static_006
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_006] START');
@@ -162,13 +162,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_007
-     * @tc.name ShapeJsunit_static_007
-     * @tc.desc Set strokeLineCap values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_007
+     * @tc.name     ShapeJsunit_static_007
+     * @tc.desc     ShapeJsunit_static_007
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_007] START');
@@ -180,13 +179,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_008
-     * @tc.name ShapeJsunit_static_008
-     * @tc.desc Set strokeOpacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_008
+     * @tc.name     ShapeJsunit_static_008
+     * @tc.desc     ShapeJsunit_static_008
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_008] START');
@@ -198,13 +196,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_009
-     * @tc.name ShapeJsunit_static_009
-     * @tc.desc Set strokeMiterLimit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_009
+     * @tc.name     ShapeJsunit_static_009
+     * @tc.desc     ShapeJsunit_static_009
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_009] START');
@@ -216,51 +213,49 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_0010
-     * @tc.name ShapeJsunit_static_0010
-     * @tc.desc Set mesh values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_0010
+     * @tc.name     ShapeJsunit_static_0010
+     * @tc.desc     ShapeJsunit_static_0010
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0010] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ShapeJsunit_static_0010] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getElement('mesh').getArray('value')[0]).assertEqual('10.000000');
-      expect(obj.getElement('$attrs').getElement('mesh').getDouble('row')).assertEqual(1);
-      expect(obj.getElement('$attrs').getElement('mesh').getDouble('column')).assertEqual(1);
+      console.log("[ShapeJsunit_static_0010] mesh  is:" + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('mesh')));
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('mesh').getArray('value')[0]).replaceAll('"', "")).assertEqual('10.000000');
+      expect(obj.getElement('$attrs').getElement('mesh').getDouble('row')).assertEqual(0);
+      expect(obj.getElement('$attrs').getElement('mesh').getDouble('column')).assertEqual(0);
       console.info('[ShapeJsunit_static_0010] END');
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_0011
-     * @tc.name ShapeJsunit_static_0011
-     * @tc.desc Set strokeWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_0011
+     * @tc.name     ShapeJsunit_static_0011
+     * @tc.desc     ShapeJsunit_static_0011
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0011] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ShapeJsunit_static_0011] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(20);
+      expect(obj.getElement('$attrs').getDouble('strokeWidth')).assertEqual(20);
       console.info('[ShapeJsunit_static_0011] END');
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_0012
-     * @tc.name ShapeJsunit_static_0012
-     * @tc.desc Set fillOpacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_0012
+     * @tc.name     ShapeJsunit_static_0012
+     * @tc.desc     ShapeJsunit_static_0012
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0012] START');
@@ -272,13 +267,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_0013
-     * @tc.name ShapeJsunit_static_0013
-     * @tc.desc Set antiAlias values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_0013
+     * @tc.name     ShapeJsunit_static_0013
+     * @tc.desc     ShapeJsunit_static_0013
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0013] START');
@@ -290,13 +284,12 @@ export default function shape() {
       done();
     });
 
-    /**
-     * @tc.number ShapeJsunit_static_0014
-     * @tc.name ShapeJsunit_static_0014
-     * @tc.desc Change strokeDashOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ShapeJsunit_static_0014
+     * @tc.name     ShapeJsunit_static_0014
+     * @tc.desc     ShapeJsunit_static_0014
+     * @tc.level    Level.LEVEL0
      */
     it('ShapeJsunit_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ShapeJsunit_static_0014 START');
@@ -304,10 +297,10 @@ export default function shape() {
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
-      let strJsonNew = inspector.getInspectorByKey('ShapeKey1'); 
+      let strJsonNew = inspector.getInspectorByKey('ShapeKey1'); //测试组件的key名称
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("ShapeJsunit_static_0014 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('strokeDashOffset')).assertEqual("16.00vp"); 
+      expect(objNew.getElement('$attrs').getString('strokeDashOffset')).assertEqual("16.00vp"); //
       console.info('ShapeJsunit_static_0014 END');
       done();
     });

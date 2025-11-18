@@ -67,12 +67,13 @@ export default function ToggleContentModifier() {
     });
 
 
+    
     /*
-    * @tc.number      ToggleContentModifier_static_001
-    * @tc.name        ToggleContentModifier_static_001
-    * @tc.desc        Test triggerChange to trigger a switch selection status change
-    * @tc.level       Level 2
-    */
+     * @tc.number   ToggleContentModifier_static_001
+     * @tc.name     ToggleContentModifier_static_001
+     * @tc.desc     ToggleContentModifier_static_001
+     * @tc.level    Level.LEVEL2
+     */
     it('ToggleContentModifier_static_001', Level.LEVEL2, async (done: () => void): Promise<void> =>  {
       console.info('[ToggleContentModifier_static_001] START');
       await Utils.sleep(1000);

@@ -14,16 +14,17 @@
  */
 
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
-  ColumnOptions, Shape, Path, Flex, Builder, Margin, Radio, RadioIndicatorType, Rating, RatingConfiguration } from '@ohos.arkui.component'
+  ColumnOptions, Shape, Path, Flex, Builder, Margin, Radio, RadioIndicatorType, Rating, RatingConfiguration,
+  CustomBuilderT, wrapBuilder, WrappedBuilder, ContentModifier} from '@ohos.arkui.component'
 
-// class MyRatingStyle implements ContentModifier<RatingConfiguration> {
-//
-//   constructor() {}
-//
-//   applyContent() : WrappedBuilder<[RatingConfiguration]> {
-//     return wrapBuilder(buildRating)
-//   }
-// }
+class MyRatingStyle implements ContentModifier<RatingConfiguration> {
+
+  constructor() {}
+
+  applyContent(): WrappedBuilder<CustomBuilderT<RatingConfiguration>>{
+    return wrapBuilder<CustomBuilderT<RatingConfiguration>>(buildRating)
+  }
+}
 
 @Builder function buildRating(config: RatingConfiguration) {
   Column({space:10} as ColumnOptions) {
@@ -47,10 +48,10 @@ struct RatingContentModifierTest {
       })
         .stars(5)
         .width('100%')
-        .onChange((value: double):void => {
+        .onChange((value: number):void => {
           console.info('Rating change is'+ value);
         })
-        // .contentModifier(new MyRatingStyle())
+        .contentModifier(new MyRatingStyle())
 
     }
     .width('100%')

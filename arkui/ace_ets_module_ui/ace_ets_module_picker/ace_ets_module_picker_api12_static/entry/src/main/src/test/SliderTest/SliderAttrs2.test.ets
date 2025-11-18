@@ -68,12 +68,13 @@ export default function SliderAttrs2() {
     });
 
 
+    
     /*
-    * @tc.number      SliderAttrs2_static_001
-    * @tc.name        SliderAttrs2_static_001
-    * @tc.desc        Test SliderInteraction.SLIDE_AND_CLICK_UP
-    * @tc.level       Level 2
-    */
+     * @tc.number   SliderAttrs2_static_001
+     * @tc.name     SliderAttrs2_static_001
+     * @tc.desc     SliderAttrs2_static_001
+     * @tc.level    Level.LEVEL1
+     */
     it('SliderAttrs2_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SliderAttrs2_static_001] START');
       await Utils.sleep(1000);

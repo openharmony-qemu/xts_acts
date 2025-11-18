@@ -15,7 +15,7 @@
 
 import { describe, beforeEach, beforeAll, afterEach, it, expect, Level} from "../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
-import Utils from './Utils';
+import Utils from './Utils.test';
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,11 +58,11 @@ export default function scrollEnablePagingJsunit() {
         console.info("get scrollEnablePaging state pages:" + JSON.stringify(pages));
         if (pages == null || !("scrollEnablePaging" == pages.name)) {
           console.info("get scrollEnablePaging pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push scrollEnablePaging page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollEnablePaging page error:" + err);
@@ -70,30 +70,30 @@ export default function scrollEnablePagingJsunit() {
       console.info("scrollEnablePaging beforeEach end");
     });
 
-    /**
-     * @tc.number ArkUI_Stage_scrollEnablePaging_static_01
-     * @tc.name ArkUI_Stage_scrollEnablePaging_static_01
-     * @tc.desc Set scrollEnablePaging values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_scrollEnablePaging_static_01
+     * @tc.name     ArkUI_Stage_scrollEnablePaging_static_01
+     * @tc.desc     ArkUI_Stage_scrollEnablePaging_static_01
+     * @tc.level    Level.LEVEL0
      */
     it('ArkUI_Stage_scrollEnablePaging_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_scrollEnablePaging_static_01] START');
-     await UtilsTest.msSleep(2000)
+      await UtilsTest.msSleep(2000)
       let scrollRect = Utils.getComponentRect('ScrollTest');
       console.info(`ArkUI_Stage_scrollEnablePaging_static_01 get scrollRect is:` + JSON.stringify(scrollRect));
       let x = Utils.getRectHorizontalCenterX(scrollRect)
       let y = Utils.getRectVerticalCenterY(scrollRect)
       let driver = Driver.create();
-      
+      await driver.swipe(Math.floor(x) as int, Math.floor(scrollRect.bottom) - 50 as int, Math.floor(x) as int, (Math.floor(scrollRect.top) + 50)  as int);
       console.info('[ArkUI_Stage_scrollEnablePaging_static_01] driver.swipe end');
      await UtilsTest.msSleep(2000)
       try {
         let callBack = (backData: events_emitter.EventData) => {
           try {
             console.info(`ArkUI_Stage_scrollEnablePaging_static_01 get result is:` + JSON.stringify(backData));
-            expect(((backData?.data) as ItemN)?.itemNumber).assertEqual(7)
+            const data = backData.data as Record<String,undefined|null|Object>
+            expect(data['itemNumber'] as int).assertEqual(7)
             console.info(`ArkUI_Stage_scrollEnablePaging_static_01 END`);
           } catch (err) {
             console.info(`ArkUI_Stage_scrollEnablePaging_static_01 err:` + JSON.stringify(err));
@@ -108,7 +108,7 @@ export default function scrollEnablePagingJsunit() {
       } catch (err) {
         console.info(`ArkUI_Stage_scrollEnablePaging_static_01 err:` + JSON.stringify(err));
       }
-      
+      await driver.click(x as int , y as int);
     });
   })
 }

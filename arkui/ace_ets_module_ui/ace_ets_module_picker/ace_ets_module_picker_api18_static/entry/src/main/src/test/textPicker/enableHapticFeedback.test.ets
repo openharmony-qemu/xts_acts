@@ -51,8 +51,9 @@ export default function EnableHapticFeedbackTest() {
         if (!('enableHapticFeedback' == pages.name)) {
           console.info('get TextPickerAddApi pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          
+          // let result = await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
+          // console.info('push TextPickerAddApi page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TextPickerAddApi page error:' + err);

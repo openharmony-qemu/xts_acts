@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,13 +58,12 @@ export default function listItemJsunit() {
       }
     });
 
-    /**
-     * @tc.number testList_itemStatic00051
-     * @tc.name testList_itemStatic00051
-     * @tc.desc Set selected values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testList_itemStatic00051
+     * @tc.name     testList_itemStatic00051
+     * @tc.desc     testList_itemStatic00051
+     * @tc.level    Level.LEVEL0
      */
     it('testList_itemStatic00051', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('select testList_itemStatic00051 START');
@@ -76,13 +75,12 @@ export default function listItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testList_itemStatic00052
-     * @tc.name testList_itemStatic00052
-     * @tc.desc Set selectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testList_itemStatic00052
+     * @tc.name     testList_itemStatic00052
+     * @tc.desc     testList_itemStatic00052
+     * @tc.level    Level.LEVEL0
      */
     it('testList_itemStatic00052', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('select testList_itemStatic00052 START');
@@ -94,13 +92,12 @@ export default function listItemJsunit() {
       done();
     });
 
-    /**
-     * @tc.number testList_itemStatic00053
-     * @tc.name testList_itemStatic00053
-     * @tc.desc Change selectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   testList_itemStatic00053
+     * @tc.name     testList_itemStatic00053
+     * @tc.desc     testList_itemStatic00053
+     * @tc.level    Level.LEVEL0
      */
     it('testList_itemStatic00053', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testList_itemStatic00053 START');
@@ -109,7 +106,7 @@ export default function listItemJsunit() {
       await button.click();
      await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('ListItemKey1'); 
+      let strJsonNew = inspector.getInspectorByKey('ListItemKey1'); //测试组件的key名称
       console.info("testList_itemStatic00053 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getBoolean('selectable')).assertEqual(false);
       console.info('testList_itemStatic00053 END');

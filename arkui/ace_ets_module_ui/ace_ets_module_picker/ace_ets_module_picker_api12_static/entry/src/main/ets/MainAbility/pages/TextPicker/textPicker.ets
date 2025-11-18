@@ -23,8 +23,8 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct TextPickerDefaultPickerItemHeight {
-  private select: int = 1;
-  private fruits: string[] = ['1.apple', '2.orange', '3.peach', '4.grape'];
+  private select: int = 1
+  private fruits: string[] = ['1.apple', '2.orange', '3.peach', '4.grape']
 
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear TextPickerDefaultPickerItemHeight start`)
@@ -42,7 +42,7 @@ struct TextPickerDefaultPickerItemHeight {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })
         .defaultPickerItemHeight('80px')
-        .key("defaultPickerItemHeightText")
+        .id("defaultPickerItemHeightText")
 
     }.width("100%").height("100%")
   }

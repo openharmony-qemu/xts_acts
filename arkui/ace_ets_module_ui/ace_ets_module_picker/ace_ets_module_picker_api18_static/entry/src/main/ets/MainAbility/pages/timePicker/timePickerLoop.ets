@@ -34,7 +34,7 @@ struct TimePickerLoopExample {
         .loop(this.isLoop)
         .onChange((value: TimePickerResult) => {
           if (value.hour >= 0) {
-            this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+            this.selectedTime.setHours(value.hour, value.minute)
             console.info('select current date is: ' + JSON.stringify(value))
           }
         })

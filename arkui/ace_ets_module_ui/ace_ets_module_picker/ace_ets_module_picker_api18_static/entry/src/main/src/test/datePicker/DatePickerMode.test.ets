@@ -51,7 +51,8 @@ export default function datePickerMode() {
           console.info('get DatePicker state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await UtilsTest.msSleep(2000)
-          
+          // let result = await routerInstance.pushUrl(options)
+          // console.info('push DatePickerMode page success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push DatePicker page error ' + JSON.stringify(err));
@@ -70,12 +71,12 @@ export default function datePickerMode() {
     it('DatePicker_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0100';
-      console.info('[' + tagName + '] START============================');
+      
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_001');
       console.info('[' + tagName + '] Search end is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      console.info('[' + tagName + '] END ===========================');
+      
       done();
     });
 
@@ -91,12 +92,12 @@ export default function datePickerMode() {
     it('DatePicker_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0200';
-      console.info('[' + tagName + '] START============================');
+      
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_002');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.YEAR_AND_MONTH');
-      console.info('[' + tagName + '] END ===========================');
+      
       done();
     });
 
@@ -112,12 +113,12 @@ export default function datePickerMode() {
     it('DatePicker_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0300';
-      console.info('[' + tagName + '] START============================');
+      
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_003');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.MONTH_AND_DAY');
-      console.info('[' + tagName + '] END ===========================');
+      
       done();
     });
 
@@ -133,12 +134,12 @@ export default function datePickerMode() {
     it('DatePicker_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0400';
-      console.info('[' + tagName + '] START============================');
+      
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_004');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      console.info('[' + tagName + '] END ===========================');
+      
       done();
     });
 
@@ -154,12 +155,12 @@ export default function datePickerMode() {
     it('DatePicker_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0500';
-      console.info('[' + tagName + '] START============================');
+      
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_005');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      console.info('[' + tagName + '] END ===========================');
+      
       done();
     });
 
@@ -175,12 +176,12 @@ export default function datePickerMode() {
     it('DatePicker_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0600';
-      console.info('[' + tagName + '] START============================');
+      
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_006');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      console.info('[' + tagName + '] END ===========================');
+      
       done();
     });
 
@@ -196,12 +197,12 @@ export default function datePickerMode() {
     it('DatePicker_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
       let tagName = 'DatePicker_static_0700';
-      console.info('[' + tagName + '] START============================');
+      
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_007');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      console.info('[' + tagName + '] END ===========================');
+      
       done();
     });
   })

@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,13 +55,12 @@ export default function imageSpanJsunit() {
       }
     });
 
-    /**
-     * @tc.number imageSpanTest_static_0001
-     * @tc.name imageSpanTest_static_0001
-     * @tc.desc set verticalAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageSpanTest_static_0001
+     * @tc.name     imageSpanTest_static_0001
+     * @tc.desc     imageSpanTest_static_0001
+     * @tc.level    Level.LEVEL0
      */
     it('imageSpanTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest_static_0001 START');
@@ -74,13 +73,12 @@ export default function imageSpanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageSpanTest_static_0002
-     * @tc.name imageSpanTest_static_0002
-     * @tc.desc Change objectFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageSpanTest_static_0002
+     * @tc.name     imageSpanTest_static_0002
+     * @tc.desc     imageSpanTest_static_0002
+     * @tc.level    Level.LEVEL0
      */
     it('imageSpanTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -94,13 +92,12 @@ export default function imageSpanJsunit() {
       done();
     });
 
-    /**
-     * @tc.number imageSpanTest_static_0003
-     * @tc.name imageSpanTest_static_0003
-     * @tc.desc Change objectFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   imageSpanTest_static_0003
+     * @tc.name     imageSpanTest_static_0003
+     * @tc.desc     imageSpanTest_static_0003
+     * @tc.level    Level.LEVEL0
      */
     it('imageSpanTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

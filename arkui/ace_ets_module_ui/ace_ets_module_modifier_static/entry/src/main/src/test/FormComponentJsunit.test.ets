@@ -15,7 +15,7 @@
 
 import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,13 +56,12 @@ export default function formComponentJsunitJsunit() {
       }
     });
 
-    /**
-     * @tc.number test_formComponentJsunitStatic001
-     * @tc.name test_formComponentJsunitStatic001
-     * @tc.desc Set allowUpdate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_formComponentJsunitStatic001
+     * @tc.name     test_formComponentJsunitStatic001
+     * @tc.desc     test_formComponentJsunitStatic001
+     * @tc.level    Level.LEVEL0
      */
     it('test_formComponentJsunitStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_formComponentJsunitStatic001] START');
@@ -74,13 +73,12 @@ export default function formComponentJsunitJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_formComponentJsunitStatic002
-     * @tc.name test_formComponentJsunitStatic002
-     * @tc.desc Set dimension values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_formComponentJsunitStatic002
+     * @tc.name     test_formComponentJsunitStatic002
+     * @tc.desc     test_formComponentJsunitStatic002
+     * @tc.level    Level.LEVEL0
      */
     it('test_formComponentJsunitStatic002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_formComponentJsunitStatic002] START');
@@ -93,13 +91,12 @@ export default function formComponentJsunitJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_formComponentJsunitStatic003
-     * @tc.name test_formComponentJsunitStatic003
-     * @tc.desc Set moduleName values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_formComponentJsunitStatic003
+     * @tc.name     test_formComponentJsunitStatic003
+     * @tc.desc     test_formComponentJsunitStatic003
+     * @tc.level    Level.LEVEL0
      */
     it('test_formComponentJsunitStatic003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_formComponentJsunitStatic003] START');
@@ -112,13 +109,12 @@ export default function formComponentJsunitJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_formComponentJsunitStatic004
-     * @tc.name test_formComponentJsunitStatic004
-     * @tc.desc Set size values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_formComponentJsunitStatic004
+     * @tc.name     test_formComponentJsunitStatic004
+     * @tc.desc     test_formComponentJsunitStatic004
+     * @tc.level    Level.LEVEL0
      */
     it('test_formComponentJsunitStatic004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_formComponentJsunitStatic004] START');
@@ -132,13 +128,12 @@ export default function formComponentJsunitJsunit() {
       done();
     });
 
-    /**
-     * @tc.number test_formComponentJsunitStatic005
-     * @tc.name test_formComponentJsunitStatic005
-     * @tc.desc Set visibility values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_formComponentJsunitStatic005
+     * @tc.name     test_formComponentJsunitStatic005
+     * @tc.desc     test_formComponentJsunitStatic005
+     * @tc.level    Level.LEVEL0
      */
     it('test_formComponentJsunitStatic005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[test_formComponentJsunitStatic005] START');
@@ -149,19 +144,18 @@ export default function formComponentJsunitJsunit() {
       let strJson1 = inspector.getInspectorByKey('FormComponentKey2');
       console.info("[test_formComponentJsunitStatic005] JSON.parseJsonElement(strJson)1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)
         .getElement('$attrs')));
-      
+      //得到json值与 设置不一致，与原生json返回做对比验证
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visibility')).assertEqual(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility'));
       console.info('[test_formComponentJsunitStatic005] END');
       done();
     });
 
-    /**
-     * @tc.number test_formComponentJsunitStatic006
-     * @tc.name test_formComponentJsunitStatic006
-     * @tc.desc Change size values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+    
+    /*
+     * @tc.number   test_formComponentJsunitStatic006
+     * @tc.name     test_formComponentJsunitStatic006
+     * @tc.desc     test_formComponentJsunitStatic006
+     * @tc.level    Level.LEVEL0
      */
     it('test_formComponentJsunitStatic006', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

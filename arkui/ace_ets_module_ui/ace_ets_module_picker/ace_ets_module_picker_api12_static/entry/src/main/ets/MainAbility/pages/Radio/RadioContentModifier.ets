@@ -13,15 +13,16 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
-  ColumnOptions, Shape, Path, Flex, Builder, Margin, Radio,RadioConfiguration } from '@ohos.arkui.component'
+  ColumnOptions, Shape, Path, Flex, Builder, Margin, Radio,RadioConfiguration,RadioConfiguration,CustomBuilderT,
+  WrappedBuilder,wrapBuilder,ContentModifier
+} from '@ohos.arkui.component'
 
-// class MyRadioStyle implements ContentModifier<RadioConfiguration> {
-//   constructor() {}
-//   applyContent() : WrappedBuilder<[RadioConfiguration]>
-//   {
-//     return wrapBuilder(buildRadio)
-//   }
-// }
+class MyRadioStyle implements ContentModifier<RadioConfiguration> {
+  constructor() {}
+  applyContent(): WrappedBuilder<CustomBuilderT<RadioConfiguration>>{
+    return wrapBuilder<CustomBuilderT<RadioConfiguration>>(buildRadio)
+  }
+}
 
 @Builder function buildRadio(config: RadioConfiguration) {
   Column({ space:10 } as ColumnOptions) {
@@ -45,7 +46,7 @@ struct RadioContentModifierTest {
   build() {
     Column({ space: 50 } as ColumnOptions) {
       Radio({ value: 'Radio1', group: 'radioGroup' })
-        // .contentModifier(new MyRadioStyle())
+        .contentModifier(new MyRadioStyle())
         .checked(false)
 
     }.width('100%')

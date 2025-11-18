@@ -12,28 +12,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
-  ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration
+import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,CircleOptions,
+  ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration,
+  ContentModifier, RatingConfiguration, WrappedBuilder,wrapBuilder,CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-// class MyRatingStyle11 implements ContentModifier<RatingConfiguration> {
-//   private name: string = ''
-//   private style: number = 0
-//   constructor(value1: string, value2: number){
-//     this.name = value1
-//     this.style = value2
-//   }
-//   applyContent() : WrappedBuilder<[RatingConfiguration]>{
-//     return wrapBuilder(buildRating11)
-//   }
-// }
+class MyRatingStyle11 implements ContentModifier<RatingConfiguration> {
+  private name: string = ''
+  private style: number = 0
+  constructor(value1: string, value2: number){
+    this.name = value1
+    this.style = value2
+  }
+  applyContent(): WrappedBuilder<CustomBuilderT<RatingConfiguration>>{
+    return wrapBuilder<CustomBuilderT<RatingConfiguration>>(buildRating11)
+  }
+}
 
 @Builder function buildRating11(config: RatingConfiguration){
   Column() {
     Row() {
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .id('circle11')
         .fill(config.rating >= 0.4 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
@@ -48,16 +49,16 @@ import { State } from '@ohos.arkui.stateManagement';
             }
           }
         }).visibility(config.stars >= 1 ? Visibility.Visible : Visibility.Hidden)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 0.9 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
             // config.triggerChange(undefined);
           }
         }).visibility(config.stars >= 1 ? Visibility.Visible : Visibility.Hidden)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 1.4 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
@@ -71,16 +72,16 @@ import { State } from '@ohos.arkui.stateManagement';
             }
           }
         }).visibility(config.stars >= 2 ? Visibility.Visible : Visibility.Hidden).margin({left:10} as Margin)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 1.9 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
             // config.triggerChange(undefined);
           }
         }).visibility(config.stars >= 2 ? Visibility.Visible : Visibility.Hidden)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 2.4 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
@@ -94,16 +95,16 @@ import { State } from '@ohos.arkui.stateManagement';
             }
           }
         }).visibility(config.stars >= 3 ? Visibility.Visible : Visibility.Hidden).margin({left:10} as Margin)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 2.9 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
             // config.triggerChange(undefined);
           }
         }).visibility(config.stars >= 3 ? Visibility.Visible : Visibility.Hidden)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 3.4 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
@@ -117,16 +118,16 @@ import { State } from '@ohos.arkui.stateManagement';
             }
           }
         }).visibility(config.stars >= 4 ? Visibility.Visible : Visibility.Hidden).margin({left:10} as Margin)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 3.9 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
             // config.triggerChange(undefined);
           }
         }).visibility(config.stars >= 4 ? Visibility.Visible : Visibility.Hidden)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 4.4 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
@@ -140,8 +141,8 @@ import { State } from '@ohos.arkui.stateManagement';
             }
           }
         }).visibility(config.stars >= 5 ? Visibility.Visible : Visibility.Hidden).margin({left:10} as Margin)
-      // Circle({ width: 25, height: 25 })
-      Circle()
+      Circle({ width: 25, height: 25 } as CircleOptions)
+      
         .fill(config.rating >= 4.9 ? Color.Black : Color.Red)
         .onClick((event: ClickEvent) => {
           if (!config.indicator) {
@@ -156,10 +157,10 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct rating11 {
-  @State rating: double = 0;
+  @State rating: number = 0;
   @State ratingIndicator: boolean = true;
   @State ratingStars: int = 0;
-  @State ratingStepsize: double = 0.5;
+  @State ratingStepsize: number = 0.5;
   @State ratingEnabled: boolean = true;
   @State ratingClick:string = "can't click rating"
   build(){
@@ -181,11 +182,11 @@ struct rating11 {
           .backgroundColor(Color.Transparent)
           .width('100%')
           .height(50)
-          .onChange((value: double):void => {
+          .onChange((value: number):void => {
             console.info('Rating change is' + value);
             this.rating = value
           })
-          // .contentModifier(new MyRatingStyle11('hello', 3))
+          .contentModifier(new MyRatingStyle11('hello', 3))
       }
       .width('100%')
       .height('100%')

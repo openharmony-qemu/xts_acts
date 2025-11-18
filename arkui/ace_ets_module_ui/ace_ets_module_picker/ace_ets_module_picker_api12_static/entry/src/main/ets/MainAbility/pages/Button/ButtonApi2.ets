@@ -20,10 +20,7 @@ import {
   ClickEvent,
   Button,
   Text,
-  BarState,
-  TextAlign,
   Builder,
-  UIContext,
   wrapBuilder,
   Color,
   ContentModifier,
@@ -32,33 +29,33 @@ import {
   Circle,
   GestureEvent,
   FlexAlign,
-  TapGesture
+  TapGesture,
+  CircleOptions,CustomBuilderT
 } from '@ohos.arkui.component';
 
 import { State } from '@ohos.arkui.stateManagement';
 
-// class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
-//   x: number = 0
-//   y: number = 0
-//   selectedColor:Color = Color.Black
-//
-//   constructor(x : number, y: number,ColorType:Color) {
-//     this.x = x
-//     this.y = y
-//     this.selectedColor = ColorType
-//   }
-//   applyContent() : WrappedBuilder<ButtonConfiguration>
-//   {
-//     return wrapBuilder(buildButton1)
-//   }
-// }
+class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
+  x: number = 0
+  y: number = 0
+  selectedColor:Color = Color.Black
+
+  constructor(x : number, y: number,ColorType:Color) {
+    this.x = x
+    this.y = y
+    this.selectedColor = ColorType
+  }
+
+  applyContent():  WrappedBuilder<CustomBuilderT<ButtonConfiguration>>{
+    return wrapBuilder<CustomBuilderT<ButtonConfiguration>>(buildButton1)
+  }
+}
 
 @Builder function buildButton1(config: ButtonConfiguration) {
   Column() {
     Text(config.label).id('ButtonApi2_text1')
-    // Circle({ width: 150, height: 150 })
-    Circle()
-      // .fill(config.pressed ? (config.contentModifier as MyButtonStyle).selectedColor : Color.Black)
+    Circle({ width: 150, height: 150 } as CircleOptions)
+      .fill(config.pressed ? (config.contentModifier as MyButtonStyle).selectedColor : Color.Black)
       .gesture(
         TapGesture({count:1}).onAction((event: GestureEvent)=>{
           config.triggerClick(event.fingerList[0].localX,event.fingerList[0].localY)
@@ -77,7 +74,7 @@ struct ButtonApi2 {
   build() {
     Column() {
       Button(this.label)
-        // .contentModifier(new MyButtonStyle(this.positionX,this.positionY,Color.Red))
+        .contentModifier(new MyButtonStyle(this.positionX,this.positionY,Color.Red))
         .onClick((event: ClickEvent) => {
           this.label = 'after click'
         }).enabled(this.buttonEnabled)
