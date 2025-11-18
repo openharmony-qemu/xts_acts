@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { MessageManager, Callback } from '../../utils/MessageManager';
+import { MessageManager, Callback } from '../common/MessageManager';
 
 @Entry
 @Component

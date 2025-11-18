@@ -45,7 +45,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0001
      * @tc.name         testanimatorOnframe0001
-     * @tc.desic         aceanimatorOnframeEtsTest0001
+     * @tc.desc         aceanimatorOnframeEtsTest0001
      */
     it('testanimatorOnframe0001', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0001 START');
@@ -60,7 +60,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0002
      * @tc.name         testanimatorOnframe0002
-     * @tc.desic         aceanimatorOnframeEtsTest0002
+     * @tc.desc         aceanimatorOnframeEtsTest0002
      */
     it('testanimatorOnframe0002', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0002 START');
@@ -75,7 +75,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0003
      * @tc.name         testanimatorOnframe0003
-     * @tc.desic         aceanimatorOnframeEtsTest0003
+     * @tc.desc         aceanimatorOnframeEtsTest0003
      */
     it('testanimatorOnframe0003', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0003 START');
@@ -90,7 +90,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0004
      * @tc.name         testanimatorOnframe0004
-     * @tc.desic         aceanimatorOnframeEtsTest0004
+     * @tc.desc         aceanimatorOnframeEtsTest0004
      */
     it('testanimatorOnframe0004', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0004 START');
@@ -105,7 +105,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0005
      * @tc.name         testanimatorOnframe0005
-     * @tc.desic         aceanimatorOnframeEtsTest0005
+     * @tc.desc         aceanimatorOnframeEtsTest0005
      */
     it('testanimatorOnframe0005', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0005 START');
@@ -120,7 +120,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0006
      * @tc.name         testanimatorOnframe0006
-     * @tc.desic         aceanimatorOnframeEtsTest0006
+     * @tc.desc         aceanimatorOnframeEtsTest0006
      */
     it('testanimatorOnframe0006', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0006 START');
@@ -135,7 +135,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0007
      * @tc.name         testanimatorOnframe0007
-     * @tc.desic         aceanimatorOnframeEtsTest0007
+     * @tc.desc         aceanimatorOnframeEtsTest0007
      */
     it('testanimatorOnframe0007', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0007 START');
@@ -150,7 +150,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0009
      * @tc.name         testanimatorOnframe0009
-     * @tc.desic         aceanimatorOnframeEtsTest0009
+     * @tc.desc         aceanimatorOnframeEtsTest0009
      */
     it('testanimatorOnframe0009', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe009 START');
@@ -165,7 +165,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0010
      * @tc.name         testanimatorOnframe0010
-     * @tc.desic         aceanimatorOnframeEtsTest0010
+     * @tc.desc         aceanimatorOnframeEtsTest0010
      */
     it('testanimatorOnframe0010', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0010 START');
@@ -222,7 +222,7 @@ export default function animatorOnframeJsunit() {
     /*
      * @tc.number       testanimatorOnframe013
      * @tc.name         testanimatorOnframe013
-     * @tc.desic        test animator onCancel
+     * @tc.desc        test animator onCancel
      */
     it('testanimatorOnframe013', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe013 START');

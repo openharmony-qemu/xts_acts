@@ -44,7 +44,7 @@ export default function playModeReverseJsunit() {
     /*
  * @tc.number       SUB_ACE_BASIC_ETS_API_0001
  * @tc.name         testPlayModeReverse0001
- * @tc.desic         acePlayModeReverseEtsTest0001
+ * @tc.desc         acePlayModeReverseEtsTest0001
  */
     it('testPlayModeReverse0001', Level.LEVEL0, async (done: Function) => {
       console.info('PlayModeReverse testPlayModeReverse0001 START');
@@ -65,7 +65,7 @@ export default function playModeReverseJsunit() {
     /*
  * @tc.number       SUB_ACE_BASIC_ETS_API_0001
  * @tc.name         testPlayModeAlternate0001
- * @tc.desic         acePlayModeAlternateEtsTest0009
+ * @tc.desc         acePlayModeAlternateEtsTest0009
  */
     it('testPlayModeAlternate0001', Level.LEVEL0, async (done: Function) => {
       console.info('radioGroup testPlayModeAlternate0001 START');

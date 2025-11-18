@@ -16,7 +16,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect
 import router from '@ohos.router';
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../MainAbility/utils/Common';
-import { MessageManager, Callback } from '../MainAbility/utils/MessageManager';
+import { MessageManager, Callback } from '../MainAbility/common/MessageManager';
+
 export default function WorkerUseCurvesTest() {
   describe('WorkerUseCurvesTest', () => {
     beforeEach(async (done: Function) => {
@@ -43,6 +44,15 @@ export default function WorkerUseCurvesTest() {
       await CommonFunc.sleep(1000);
       console.info('WorkerUseCurves after each called');
     });
+
+    /**
+     * @tc.number WorkerUseCurves_0100
+     * @tc.name WorkerUseCurves_0100
+     * @tc.desc WorkerUseCurves_0100
+     * @tc.level Level 0
+     * @tc.type
+     * @tc.size
+     */
     it('WorkerUseCurves_0100', Level.LEVEL0, async (done: Function) => {
       console.info('WorkerUseCurves_0100 START');
       let driver = await Driver.create()

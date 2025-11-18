@@ -58,6 +58,12 @@ export default function animationCurveTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+
+    /**
+     * @tc.number ArkUX_ohos.curves_customCurve_1000
+     * @tc.desc ArkUX_ohos.curves_customCurve_1000
+     * @tc.level Level 0
+     */
     it('ArkUX_ohos.curves_customCurve_1000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1000 START');
       let fraction: ESObject
@@ -78,6 +84,12 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
+
+    /**
+     * @tc.number ArkUX_ohos.curves_customCurve_1100
+     * @tc.desc ArkUX_ohos.curves_customCurve_1100
+     * @tc.level Level 0
+     */
     it('ArkUX_ohos.curves_customCurve_1100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1000 START');
       let fraction1: ESObject
@@ -99,6 +111,12 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
+
+    /**
+     * @tc.number ArkUX_ohos.curves_customCurve_1200
+     * @tc.desc ArkUX_ohos.curves_customCurve_1200
+     * @tc.level Level 0
+     */
     it('ArkUX_ohos.curves_customCurve_1200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1200 START');
       let fraction2: ESObject
@@ -120,6 +138,12 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
+
+    /**
+     * @tc.number ArkUX_ohos.curves_customCurve_1300
+     * @tc.desc ArkUX_ohos.curves_customCurve_1300
+     * @tc.level Level 0
+     */
     it('ArkUX_ohos.curves_customCurve_1300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1300 START');
       let fraction3: ESObject
@@ -145,6 +169,12 @@ export default function animationCurveTest() {
         done();
       }, 500)
     });
+
+    /**
+     * @tc.number ArkUX_ohos.curves_customCurve_1400
+     * @tc.desc ArkUX_ohos.curves_customCurve_1400
+     * @tc.level Level 0
+     */
     it('ArkUX_ohos.curves_customCurve_1400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1400 START');
       let fraction5: ESObject

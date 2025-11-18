@@ -41,6 +41,12 @@ export default function  animationStatusJsunit() {
       await CommonFunc.sleep(1000);
       console.info("animationStatus after each called");
     });
+
+    /*
+    * @tc.number       animationStatus01
+    * @tc.name         animationStatus01
+    * @tc.desc         animationStatus01
+    */
     it('animationStatus01', Level.LEVEL0, async (done: Function) => {
       console.info('[animationStatus01] START');
       await CommonFunc.sleep(1000);
@@ -51,6 +57,12 @@ export default function  animationStatusJsunit() {
       console.info('[animationStatus01] END');
       done();
     });
+
+    /*
+    * @tc.number       animationStatus02
+    * @tc.name         animationStatus02
+    * @tc.desc         animationStatus02
+    */
     it('animationStatus02', Level.LEVEL0, async (done: Function) => {
       console.info('[animationStatus02] START');
       await CommonFunc.sleep(1000);
@@ -61,6 +73,12 @@ export default function  animationStatusJsunit() {
       console.info('[animationStatus02] END');
       done();
     });
+
+    /*
+    * @tc.number       animationStatus03
+    * @tc.name         animationStatus03
+    * @tc.desc         animationStatus03
+    */
     it('animationStatus03', Level.LEVEL0, async (done: Function) => {
       console.info('animationStatus03 START');
       await CommonFunc.sleep(1500);
@@ -82,6 +100,12 @@ export default function  animationStatusJsunit() {
       await CommonFunc.sleep(1000);
       console.info('animationStatus03 END');
     });
+
+    /*
+    * @tc.number       animationStatus04
+    * @tc.name         animationStatus04
+    * @tc.desc         animationStatus04
+    */
     it('animationStatus04', Level.LEVEL0, async (done: Function) => {
       console.info('animationStatus04 START');
       await CommonFunc.sleep(1500);

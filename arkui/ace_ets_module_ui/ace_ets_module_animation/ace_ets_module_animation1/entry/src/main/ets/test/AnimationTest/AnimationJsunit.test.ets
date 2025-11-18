@@ -16,8 +16,9 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect}
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
-import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
+import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter'
+
 export default function AnimationJsunit() {
   describe('AnimationJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -44,6 +45,7 @@ export default function AnimationJsunit() {
       await CommonFunc.sleep(1000);
       console.info("overlay after each called");
     });
+
      /**
      * @tc.number: SUB_ACE_TS_COMPONENT_AR000IGJGH_01
      * @tc.name : AnimationJsunit_0100

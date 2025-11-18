@@ -44,7 +44,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0001
      * @tc.name         testremoteWindow0001
-     * @tc.desic        acesremoteWindowEtsTest0001
+     * @tc.desc        acesremoteWindowEtsTest0001
      */
     it('testRemoteWindow0001', Level.LEVEL0, async (done: Function) => {
       console.info('remoteWindow testRemoteWindow0001 START');
@@ -59,7 +59,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0002
      * @tc.name         testRemoteWindow0002
-     * @tc.desic         aceRemoteWindowEtsTest0002
+     * @tc.desc         aceRemoteWindowEtsTest0002
      */
     it('testRemoteWindow0002', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow0002 START');
@@ -74,7 +74,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0003
      * @tc.name         testRemoteWindow0003
-     * @tc.desic         aceRemoteWindowEtsTest0003
+     * @tc.desc         aceRemoteWindowEtsTest0003
      */
     it('testRemoteWindow0003', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow0003 START');
@@ -89,7 +89,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0004
      * @tc.name         testRemoteWindow0004
-     * @tc.desic         aceRemoteWindowEtsTest0004
+     * @tc.desc         aceRemoteWindowEtsTest0004
      */
     it('testRemoteWindow0004', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow0004 START');
@@ -104,7 +104,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0005
      * @tc.name         testRemoteWindow0005
-     * @tc.desic         aceRemoteWindowEtsTest0005
+     * @tc.desc         aceRemoteWindowEtsTest0005
      */
     it('testRemoteWindow0005', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow0005 START');
@@ -119,7 +119,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0006
      * @tc.name         testRemoteWindow0006
-     * @tc.desic         aceRemoteWindowEtsTest0006
+     * @tc.desc         aceRemoteWindowEtsTest0006
      */
     it('testRemoteWindow0006', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow0006 START');
@@ -134,7 +134,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0007
      * @tc.name         testRemoteWindow0007
-     * @tc.desic         aceRemoteWindowEtsTest0007
+     * @tc.desc         aceRemoteWindowEtsTest0007
      */
     it('testRemoteWindow0007', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow0007 START');
@@ -149,7 +149,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0009
      * @tc.name         testRemoteWindow0009
-     * @tc.desic         aceRemoteWindowEtsTest0009
+     * @tc.desc         aceRemoteWindowEtsTest0009
      */
     it('testRemoteWindow0009', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow009 START');
@@ -164,7 +164,7 @@ export default function remoteWindowJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_0010
      * @tc.name         testRemoteWindow0010
-     * @tc.desic         aceRemoteWindowEtsTest0010
+     * @tc.desc         aceRemoteWindowEtsTest0010
      */
     it('testRemoteWindow0010', Level.LEVEL0, async (done: Function) => {
       console.info('RemoteWindow testRemoteWindow0010 START');
