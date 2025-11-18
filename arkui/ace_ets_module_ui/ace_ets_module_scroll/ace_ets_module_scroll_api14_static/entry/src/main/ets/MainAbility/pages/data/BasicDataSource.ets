@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 import {
-  IDataSource,
+  DataAddOperation,
   DataChangeListener,
+  DataChangeOperation,
+  DataMoveOperation,
   DataOperation,
   DataOperationType,
-  DataChangeOperation,
   DataReloadOperation,
-  DataMoveOperation,
-  DataAddOperation
+  IDataSource
 } from '@ohos.arkui.component'
 
 abstract class BasicDataSource<T> implements IDataSource<T> {
@@ -38,7 +38,7 @@ abstract class BasicDataSource<T> implements IDataSource<T> {
   }
 
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt();
+    const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       console.info('remove listener')
       this.listeners.splice(pos, 1)
@@ -94,12 +94,12 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 
   public getData(index: int): T {
     console.log("zxy List cacheCountTest3 getData = " + index)
-    return this.dataArray[index.toInt()]
+    return this.dataArray[index]
   }
 
   public addData(index: int, data: T): void {
-    this.dataArray.splice(index, 0, data) 
-    
+    this.dataArray.splice(index, 0, data) // 在index位置增加data
+    this.notifyDataAdd(index)
     this.notifyDatasetChange([
       { type: DataOperationType.ADD, index: index } as DataChangeOperation])
   }
@@ -113,18 +113,18 @@ export class MyDataSource<T> extends BasicDataSource<T> {
     this.dataArray.push(data)
     this.notifyDatasetChange([
       { type: DataOperationType.ADD, index: this.dataArray.length - 1 } as DataChangeOperation])
-    
+    // this.notifyDataAdd(this.dataArray.length - 1)
   }
 
   public deleteIndex(index: int): void {
-    this.dataArray.splice(index, 1) 
+    this.dataArray.splice(index, 1) // 在index位置删除1个数据
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: index, count: 1 } as DataAddOperation])
   }
 
   public deleteData(data: T): void {
     let index = this.dataArray.indexOf(data)
-    this.dataArray.splice(index.toInt(), 1) 
+    this.dataArray.splice(index, 1) // 在index位置删除1个数据
     this.notifyDatasetChange([
       { type: DataOperationType.DELETE, index: index, count: 1 } as DataAddOperation])
   }
@@ -134,7 +134,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
   }
 
   public changeData(index: int, data: T) {
-    this.dataArray[index.toInt()] = data
+    this.dataArray[index] = data
     this.notifyDataChange(index)
   }
 

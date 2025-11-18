@@ -12,29 +12,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
-  UiWindow,
-  ON,
-  MatchPattern,
   DisplayRotation,
+  MatchPattern,
+  ON,
+  PointerMatrix,
   ResizeDirection,
-  WindowMode,
-  PointerMatrix
+  UiWindow,
+  WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test'
+import { startAbility, UtilsTest } from '../Util.test'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -76,11 +76,11 @@ export default function enableScrollJsunit() {
 
 
     /*
-     * @tc.number    enableScrollJsunit_static_0100
-     * @tc.name      enableScrollJsunit_static_0100
-     * @tc.desc      enableScrollJsunit_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   enableScrollJsunit_static_0100
+       * @tc.name     enableScrollJsunit_static_0100
+       * @tc.desc     enableScrollJsunit_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('enableScrollJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enableScrollJsunit_static_0100] START');
       await CommonFunc.sleep(1000);

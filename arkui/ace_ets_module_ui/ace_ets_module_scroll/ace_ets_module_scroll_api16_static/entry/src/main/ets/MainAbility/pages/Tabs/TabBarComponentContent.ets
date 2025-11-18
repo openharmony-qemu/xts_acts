@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 import {
   Entry,
   Component,
@@ -38,8 +37,10 @@ import {
   Tabs,
   Margin,
   TabContent,
+  CustomBuilderT,
+  ComponentContent
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
@@ -69,12 +70,12 @@ struct TabBarComponentContent {
   @State setUndefinedIndex: number = 0;
   context: UIContext = this.getUIContext();
   private controller: TabsController = new TabsController();
+  tabBar1: ComponentContent<Params> = new ComponentContent<Params>(this.context, wrapBuilder(buildText),
+    new Params(this.message1));
+  @State setUndefined: (ComponentContent<Params> | undefined)[] = [
+    this.tabBar1, undefined
+  ]
 
-  
-  
-  
-  
-  
   build() {
     Row() {
       Column() {
@@ -90,15 +91,14 @@ struct TabBarComponentContent {
           .id('button2')
         Button('set null').margin(1)
           .onClick((e: ClickEvent) => {
-            this.setUndefinedIndex = 2
+            // this.setUndefinedIndex = 2
           })
           .id('button3')
         Tabs({ barPosition: BarPosition.Start, controller: this.controller }) {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor(Color.Blue).borderRadius('12vp')
           }
-
-          
+          .tabBar(() => {this.setUndefined[this.setUndefinedIndex.toInt()]})
         }
         .vertical(false)
         .barMode(BarMode.Fixed)

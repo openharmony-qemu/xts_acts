@@ -40,14 +40,12 @@ import {
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-
 @Entry
 @Component
 struct showDotIndicatorDemo {
   private indicatorController: IndicatorComponentController = new IndicatorComponentController()
   private swiperController: SwiperController = new SwiperController()
   @State list: number[] = [] as number[]
-
   aboutToAppear(): void {
     for (let i = 1; i <= 6; i++) {
       this.list.push(i);
@@ -72,12 +70,11 @@ struct showDotIndicatorDemo {
             this.indicatorController.showPrevious()
           })
       }.margin(10)
-
       Button('changeIndex')
         .id('indicator_changeIndex')
         .height('5%')
-        .onClick((e: ClickEvent) => {
-          this.indicatorController.changeIndex(3, false);
+        .onClick((e: ClickEvent)=>{
+          this.indicatorController.changeIndex(3,false);
           console.log('change Index 3');
         })
       Swiper(this.swiperController) {
@@ -85,7 +82,7 @@ struct showDotIndicatorDemo {
           Text(item.toString())
             .width('100%')
             .height(160)
-            .backgroundColor(0xAFEEEE)
+            .backgroundColor(Color.Red)
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }, (item: number) => item.toString())
@@ -100,7 +97,7 @@ struct showDotIndicatorDemo {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: Int) => {
+      .onChange((index: int) => {
         console.info(index.toString())
       })
 
@@ -117,8 +114,8 @@ struct showDotIndicatorDemo {
         .loop(true)
         .count(6)
         .vertical(true)
-        .onChange((index: Int) => {
-          console.log('current index: ' + index)
+        .onChange((index: int) => {
+          console.log('current index: ' + index )
         })
     }
   }

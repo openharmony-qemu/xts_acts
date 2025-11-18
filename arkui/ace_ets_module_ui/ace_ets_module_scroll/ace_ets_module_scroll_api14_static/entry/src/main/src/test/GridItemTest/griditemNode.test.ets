@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
@@ -22,9 +22,9 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -69,11 +69,11 @@ export default function GridItemNodeTest() {
 
 
     /*
-     * @tc.number    gridItemNode0100_static_01
-     * @tc.name      gridItemNode0100_static_01
-     * @tc.desc      gridItemNode0100_static_01
-     * @tc.level     2
-     */
+       * @tc.number   gridItemNode0100_static_01
+       * @tc.name     gridItemNode0100_static_01
+       * @tc.desc     gridItemNode0100_static_01
+       * @tc.level    Level.LEVEL0
+       */
     it('gridItemNode0100_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       let tagName = 'gridItemNode0100_static_01';

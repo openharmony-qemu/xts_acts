@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import {
   Entry,
   Component,
@@ -43,7 +42,11 @@ import {
   SwipeActionState,
   ListItem,
   Axis,
-  SwipeEdgeEffect
+  SwipeEdgeEffect,
+  ComponentContent,
+  TransitionEffect,
+  Curve,
+  CustomBuilder
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -93,15 +96,17 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList1_ListItem0')
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }).combine(
+          TransitionEffect.rotate({ z: 1, angle: 180 })))
         .swipeAction({
           end: {
-            
-            
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
+            // without onAction, no deleteArea
             onStateChange: (state: SwipeActionState) => {
+              console.info('xyb: swipe action state EXPANDED')
               if (state == SwipeActionState.COLLAPSED) {
                 console.info('MyList1_ListItem0 swipe action state COLLAPSED')
                 this.list1Item0State = 'end COLLAPSED'
@@ -136,14 +141,14 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList1_ListItem1')
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           end: {
-            
-            
+            //builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
+            // without onAction, no deleteArea
           },
           edgeEffect: SwipeEdgeEffect.Spring,
           onOffsetChange: (offset: number) => {
@@ -170,13 +175,13 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList2_ListItem0')
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           start: {
-            
+            //builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemStart)),
             actionAreaDistance: 5,
             onStateChange: (state: SwipeActionState) => {
               if (state == SwipeActionState.COLLAPSED) {
@@ -211,15 +216,15 @@ struct ListSwipe {
             .fontSize(16)
             .textAlign(TextAlign.Center)
             .borderRadius(10)
-            .backgroundColor(0xFFFFFF)
+            .backgroundColor('0xFFFFFF')
         }
         .key('MyList2_ListItem1')
-        
+        .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           start: {
-            
+            //builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
             actionAreaDistance: 5,
-            
+            // with onAction
             onAction: () => {
             },
             onStateChange: (state: SwipeActionState) => {
@@ -250,7 +255,7 @@ struct ListSwipe {
       }
       .divider({
         strokeWidth: 2,
-        color: 0xFF,
+        color: '0xFF',
         startMargin: 20,
         endMargin: 20
       })
@@ -275,25 +280,25 @@ struct ListSwipe {
         .key('swipe0100')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
       Text(this.list2Item0State)
         .key('swipe0300')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
       Text(this.closeButtonContent)
         .key('swipe0400')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
       Text(this.list1Item1Offset)
         .key('swipe0500')
         .width("60%")
         .height(80)
-        .backgroundColor(0x0000ff)
+        .backgroundColor('0x0000ff')
     }
     .padding(10)
-    .backgroundColor(0xDCDCDC)
+    .backgroundColor('0xDCDCDC')
     .width('100%')
     .height('100%')
   }

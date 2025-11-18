@@ -65,7 +65,7 @@ struct DigitIndicatorDemo1 {
             .fontSize(30)
         }, (item: number) => item.toString())
       }
-      .cachedCount(2)
+      // .cachedCount(2)
       .index(0)
       .autoPlay(false, undefined)
       .interval(2000)
@@ -73,7 +73,7 @@ struct DigitIndicatorDemo1 {
       .duration(1000)
       .itemSpace(0)
       .curve(Curve.Linear)
-      .onChange((index: Int) => {
+      .onChange((index: int) => {
         console.info(index.toString())
       })
 
@@ -88,7 +88,7 @@ struct DigitIndicatorDemo1 {
         .count(6)
         .vertical(true)
         .loop(false)
-        .onChange((index: Int) => {
+        .onChange((index: int) => {
           console.log('current index: ' + index)
         })
     }

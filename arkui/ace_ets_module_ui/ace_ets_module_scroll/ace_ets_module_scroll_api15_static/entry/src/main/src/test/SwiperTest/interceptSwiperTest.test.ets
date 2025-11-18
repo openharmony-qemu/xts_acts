@@ -12,8 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
-
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -28,7 +27,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router,UIContext } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -59,14 +58,11 @@ export default function interceptSwiperTest() {
         url: "MainAbility/pages/Swiper/interceptSwiper",
       }
       try {
-        interceptSwiperTest.clear();
         let pages = interceptSwiperTest.getState();
         console.info("get interceptSwiperTest state pages:" + JSON.stringify(pages));
-        if (!("interceptSwiper" == pages.name)) {
+        if (!("MainAbility/pages/Swiper/interceptSwiper" == pages.name)) {
           console.info("get interceptSwiperTest pages.name:" + JSON.stringify(pages.name));
           interceptSwiperTest.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push interceptSwiperTest page error:" + err);
@@ -78,13 +74,18 @@ export default function interceptSwiperTest() {
       console.info("interceptSwiperTest after each called");
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    interceptSwiperTest_static_0100
-     * @tc.name      interceptSwiperTest_static_0100
-     * @tc.desc      interceptSwiperTest_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   interceptSwiperTest_static_0100
+       * @tc.name     interceptSwiperTest_static_0100
+       * @tc.desc     interceptSwiperTest_static_0100
+       * @tc.level    Level.LEVEL1
+       */
     it('interceptSwiperTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[interceptSwiperTest_static_0100] START');
       await CommonFunc.sleep(1000);
@@ -96,8 +97,9 @@ export default function interceptSwiperTest() {
       let height = bottom - top;
       console.info("interceptSwiperTest_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let driver = Driver.create()
-      await driver.swipe((Math.round(right - UIContext.getFocusedUIContext()!.vp2px(20))).toInt(), (Math.round(top + height / 2)).toInt(),
-        (Math.round(left + UIContext.getFocusedUIContext()!.vp2px(20))).toInt(),
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      await driver.swipe((Math.round(right - uiContext.vp2px(20))).toInt(), (Math.round(top + height / 2)).toInt(),
+        (Math.round(left + uiContext.vp2px(20))).toInt(),
         (Math.round(top + height / 2)).toInt());
       await CommonFunc.sleep(2000);
       let swiperContent = await driver.findComponent(ON.id('swiper_intercept_text'));
@@ -109,11 +111,11 @@ export default function interceptSwiperTest() {
 
 
     /*
-     * @tc.number    interceptSwiperTest_static_0200
-     * @tc.name      interceptSwiperTest_static_0200
-     * @tc.desc      interceptSwiperTest_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   interceptSwiperTest_static_0200
+       * @tc.name     interceptSwiperTest_static_0200
+       * @tc.desc     interceptSwiperTest_static_0200
+       * @tc.level    Level.LEVEL1
+       */
     it('interceptSwiperTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[interceptSwiperTest_static_0200] START');
       await CommonFunc.sleep(1000);
@@ -125,8 +127,9 @@ export default function interceptSwiperTest() {
       let height = bottom - top;
       console.info("interceptSwiperTest_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let driver = Driver.create()
-      await driver.swipe((Math.round(left + UIContext.getFocusedUIContext()!.vp2px(20))).toInt(), (Math.round(top + height / 2)).toInt(),
-        (Math.round(right - UIContext.getFocusedUIContext()!.vp2px(20))).toInt(),
+      const uiContext = AppStorage.get<UIContext>('uiContext')!;
+      await driver.swipe((Math.round(left + uiContext.vp2px(20))).toInt(), (Math.round(top + height / 2)).toInt(),
+        (Math.round(right - uiContext.vp2px(20))).toInt(),
         (Math.round(top + height / 2)).toInt());
       await CommonFunc.sleep(2000);
       let swiperContent = await driver.findComponent(ON.id('swiper_intercept_text'));

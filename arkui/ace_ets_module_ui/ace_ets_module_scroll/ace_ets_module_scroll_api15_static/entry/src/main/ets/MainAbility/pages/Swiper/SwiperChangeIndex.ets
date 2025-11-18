@@ -12,44 +12,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
-
 import {
   Entry,
   Component,
   $r,
-  Column,
-  TextAlign,
-  Scroll,
-  ColumnOptions,
-  Scroller,
-  SwiperAnimationMode,
-  Row,
-  RowOptions,
-  Repeat,
-  RepeatItem,
-  Text,
-  TabsController,
-  Margin,
-  ClickEvent,
-  SwiperController,
-  Swiper,
-  ForEach,
-  Color,
-  Button,
-  Tabs,
-  TabContent,
-  SubTabBarStyle,
-  BarMode,
-  Alignment,
-  BarPosition,
+  Column,TextAlign,Scroll,
+  ColumnOptions,Scroller,SwiperAnimationMode,Row,RowOptions,Repeat,RepeatItem,
+  Text,TabsController,Margin,ClickEvent,SwiperController,Swiper,ForEach,
+  Color,Button,Tabs,TabContent,SubTabBarStyle,BarMode,Alignment,BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct SwiperExample {
@@ -59,13 +38,12 @@ struct SwiperExample {
   private swiperController3: SwiperController = new SwiperController()
   private swiperController4: SwiperController = new SwiperController()
   private swiperController5: SwiperController = new SwiperController()
-  @State currentIndex: Int = 0
+  @State currentIndex: number = 0
   @State modeIndex: number = 0
-  @State mode: (SwiperAnimationMode | boolean | null | undefined | number)[] = [SwiperAnimationMode.NO_ANIMATION,
+  @State mode: (SwiperAnimationMode | boolean| null | undefined | number)[] = [SwiperAnimationMode.NO_ANIMATION,
     SwiperAnimationMode.DEFAULT_ANIMATION, SwiperAnimationMode.FAST_ANIMATION,
-    true, false, undefined, null, -1, 3] as (SwiperAnimationMode | boolean | null | undefined | number)[]
-  @State indexList: (number | null | undefined)[] =
-    [2, 3, 79, -1, 80, 1000, 80, null, 85, undefined] as (number | null | undefined)[]
+    true, false, undefined, null, -1, 3] as (SwiperAnimationMode | boolean| null | undefined | number)[]
+  @State indexList: (number | null | undefined)[] = [ 2, 3, 79, -1, 80, 1000, 80,null, 85,undefined] as (number | null | undefined)[]
   @State index1: number = 0
   @State text1: string = ''
   @State text2: string = ''
@@ -78,44 +56,41 @@ struct SwiperExample {
     Scroll(this.scroller) {
       Column({ space: 5 } as ColumnOptions) {
         Row({ space: 5 } as RowOptions) {
-          Row({ space: 3 } as RowOptions) {
+          Row({space:3} as RowOptions){
             Text(this.text1).key('text1')
             Text(this.text2).key('text2')
             Text(this.text3).key('text3')
             Text(this.text4).key('text4')
             Text(this.text5).key('text5')
           }
-
           Button('1')
             .id('btn1')
             .onClick((e: ClickEvent) => {
-              this.swiperController.changeIndex(6, SwiperAnimationMode.FAST_ANIMATION)
+              this.swiperController.changeIndex(6, SwiperAnimationMode.FAST_ANIMATION )
             })
           Button('2')
             .id('btn2')
             .onClick((e: ClickEvent) => {
-              this.swiperController2.changeIndex(-1, SwiperAnimationMode.DEFAULT_ANIMATION)
+              this.swiperController2.changeIndex(-1, SwiperAnimationMode.DEFAULT_ANIMATION )
             })
           Button('3')
             .id('btn3')
             .onClick((e: ClickEvent) => {
-              this.swiperController3.changeIndex(1000, SwiperAnimationMode.NO_ANIMATION)
+              this.swiperController3.changeIndex(1000, SwiperAnimationMode.NO_ANIMATION )
             })
         }
-
-        Row() {
+        Row(){
           Button('4')
             .id('btn4')
             .onClick((e: ClickEvent) => {
-              
+              // this.swiperController4.changeIndex(null, SwiperAnimationMode.NO_ANIMATION )
             })
           Button('5')
             .id('btn5')
             .onClick((e: ClickEvent) => {
-              
+              this.swiperController5.changeIndex(undefined, SwiperAnimationMode.NO_ANIMATION )
             })
         }
-
         Swiper(this.swiperController) {
           Repeat<number>(this.arr)
             .each((obj: RepeatItem<number>) => {
@@ -129,10 +104,9 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper1')
-        .onChange((currentIndex: Int): void => {
-          this.text1 = currentIndex + ''
+        .onChange((currentIndex: int): void => {
+          this.text1 = currentIndex +''
         })
-
         Swiper(this.swiperController2) {
           Repeat<number>(this.arr)
             .each((obj: RepeatItem<number>) => {
@@ -146,10 +120,9 @@ struct SwiperExample {
         .height(50)
         .index(2)
         .id('swiper2')
-        .onChange((currentIndex: Int): void => {
-          this.text2 = currentIndex + ''
+        .onChange((currentIndex: int): void => {
+          this.text2 = currentIndex +''
         })
-
         Swiper(this.swiperController3) {
           Repeat<number>(this.arr)
             .each((obj: RepeatItem<number>) => {
@@ -163,10 +136,9 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper3')
-        .onChange((currentIndex: Int): void => {
-          this.text3 = currentIndex + ''
+        .onChange((currentIndex: int): void => {
+          this.text3 = currentIndex +''
         })
-
         Swiper(this.swiperController4) {
           Repeat<number>(this.arr)
             .each((obj: RepeatItem<number>) => {
@@ -180,10 +152,9 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper4')
-        .onChange((currentIndex: Int): void => {
-          this.text4 = currentIndex + ''
+        .onChange((currentIndex: int): void => {
+          this.text4 = currentIndex +''
         })
-
         Swiper(this.swiperController5) {
           Repeat<number>(this.arr)
             .each((obj: RepeatItem<number>) => {
@@ -197,8 +168,8 @@ struct SwiperExample {
         .height('10%')
         .index(2)
         .id('swiper5')
-        .onChange((currentIndex: Int): void => {
-          this.text5 = currentIndex + ''
+        .onChange((currentIndex: int): void => {
+          this.text5 = currentIndex +''
         })
 
       }.width('100%').height('100%')

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, it, expect, afterAll, Level } from '../../../../hypium/index'
 import router from '@ohos.router'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, Component, ON } from '@ohos.UiTest'
@@ -34,15 +34,13 @@ let tag: string = 'testTag';
 
 export default function ScrollEffectEdge() {
   const SUITE: string = 'ScrollEffectEdge'
-  const waitUiReadyMs = 1500
+  const waitUiReadyMs: number = 1500
 
   describe('ScrollEffectEdge', () => {
 
     beforeAll(() => {
       console.info("ScrollEffectEdge beforeEach start");
-
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
@@ -53,10 +51,9 @@ export default function ScrollEffectEdge() {
         url: "MainAbility/pages/Scroll/ScrollEffectEdge",
       }
       try {
-        ScrollEffectEdge.clear();
         let pages = ScrollEffectEdge.getState();
         console.info("get ScrollEffectEdge state pages:" + JSON.stringify(pages));
-        if (!("ScrollEffectEdge" == pages.name)) {
+        if (!("MainAbility/pages/Scroll/ScrollEffectEdge" == pages.name)) {
           console.info("get ScrollEffectEdge pages.name:" + JSON.stringify(pages.name));
           ScrollEffectEdge.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -66,13 +63,18 @@ export default function ScrollEffectEdge() {
       }
       console.info("ScrollEffectEdge beforeEach end");
     });
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
 
     /*
-     * @tc.number    ArkUI_Scroll_EffectEdge_static_0100
-     * @tc.name      ArkUI_Scroll_EffectEdge_static_0100
-     * @tc.desc      ArkUI_Scroll_EffectEdge_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Scroll_EffectEdge_static_0100
+       * @tc.name     ArkUI_Scroll_EffectEdge_static_0100
+       * @tc.desc     ArkUI_Scroll_EffectEdge_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Scroll_EffectEdge_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let json1 = inspector.getInspectorByKey('scroll1')
       await sleep(1000)
@@ -88,11 +90,11 @@ export default function ScrollEffectEdge() {
 
 
     /*
-     * @tc.number    ArkUI_Scroll_EffectEdge_static_0200
-     * @tc.name      ArkUI_Scroll_EffectEdge_static_0200
-     * @tc.desc      ArkUI_Scroll_EffectEdge_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Scroll_EffectEdge_static_0200
+       * @tc.name     ArkUI_Scroll_EffectEdge_static_0200
+       * @tc.desc     ArkUI_Scroll_EffectEdge_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Scroll_EffectEdge_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let json1 = inspector.getInspectorByKey('scroll2')
       await sleep(1000)
@@ -108,11 +110,11 @@ export default function ScrollEffectEdge() {
 
 
     /*
-     * @tc.number    ArkUI_Scroll_EffectEdge_static_0300
-     * @tc.name      ArkUI_Scroll_EffectEdge_static_0300
-     * @tc.desc      ArkUI_Scroll_EffectEdge_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Scroll_EffectEdge_static_0300
+       * @tc.name     ArkUI_Scroll_EffectEdge_static_0300
+       * @tc.desc     ArkUI_Scroll_EffectEdge_static_0300
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Scroll_EffectEdge_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let json1 = inspector.getInspectorByKey('list2')
       await sleep(1000)
@@ -128,11 +130,11 @@ export default function ScrollEffectEdge() {
 
 
     /*
-     * @tc.number    ArkUI_Scroll_EffectEdge_static_0400
-     * @tc.name      ArkUI_Scroll_EffectEdge_static_0400
-     * @tc.desc      ArkUI_Scroll_EffectEdge_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   ArkUI_Scroll_EffectEdge_static_0400
+       * @tc.name     ArkUI_Scroll_EffectEdge_static_0400
+       * @tc.desc     ArkUI_Scroll_EffectEdge_static_0400
+       * @tc.level    Level.LEVEL0
+       */
     it('ArkUI_Scroll_EffectEdge_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let json1 = inspector.getInspectorByKey('grid3')
       await sleep(1000)

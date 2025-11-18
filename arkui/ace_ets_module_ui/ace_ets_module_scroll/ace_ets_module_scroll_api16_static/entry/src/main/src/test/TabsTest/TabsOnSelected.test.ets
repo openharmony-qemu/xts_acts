@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -45,9 +45,8 @@ export default function TabsOnSelectedTest() {
   describe('TabsOnSelectedTest', () => {
     beforeAll(() => {
       console.info("TabsOnSelectedTest beforeEach start");
-
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
@@ -58,10 +57,9 @@ export default function TabsOnSelectedTest() {
         url: 'MainAbility/pages/Tabs/TabsOnSelected',
       }
       try {
-        tabsOnSelected.clear();
         let pages = tabsOnSelected.getState();
         console.info('get TabsOnSelected state pages: ' + JSON.stringify(pages));
-        if (!('TabsOnSelected' == pages.name)) {
+        if (!('MainAbility/pages/Tabs/TabsOnSelected' == pages.name)) {
           console.info('get TabsOnSelected pages.name: ' + JSON.stringify(pages.name));
           tabsOnSelected.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -78,14 +76,18 @@ export default function TabsOnSelectedTest() {
       await CommonFunc.sleep(1000);
       console.info('bindSheetRadius after each called');
     })
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
 
 
     /*
-     * @tc.number    TabsOnSelectedTest_static_0010
-     * @tc.name      TabsOnSelectedTest_static_0010
-     * @tc.desc      TabsOnSelectedTest_static_0010
-     * @tc.level     2
-     */
+       * @tc.number   TabsOnSelectedTest_static_0010
+       * @tc.name     TabsOnSelectedTest_static_0010
+       * @tc.desc     TabsOnSelectedTest_static_0010
+       * @tc.level    Level.LEVEL1
+       */
     it('TabsOnSelectedTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'TabsOnSelectedTest0010_static';
       console.info('[' + tagName + '] START============================');
@@ -93,7 +95,7 @@ export default function TabsOnSelectedTest() {
       let btn1 = await driver.findComponent(ON.text('blue'));
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('onSelected_0100_static');
+      let strJson: string = inspector.getInspectorByKey('onSelected_0100');
       console.info("[TabsOnSelectedTest0010] attrs is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("onSelected");
@@ -104,11 +106,11 @@ export default function TabsOnSelectedTest() {
 
 
     /*
-     * @tc.number    TabsOnSelectedTest_static_0020
-     * @tc.name      TabsOnSelectedTest_static_0020
-     * @tc.desc      TabsOnSelectedTest_static_0020
-     * @tc.level     2
-     */
+       * @tc.number   TabsOnSelectedTest_static_0020
+       * @tc.name     TabsOnSelectedTest_static_0020
+       * @tc.desc     TabsOnSelectedTest_static_0020
+       * @tc.level    Level.LEVEL1
+       */
     it('TabsOnSelectedTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'TabsOnSelectedTest0020_static';
       console.info('[' + tagName + '] START============================');
@@ -116,7 +118,7 @@ export default function TabsOnSelectedTest() {
       let btn1 = await driver.findComponent(ON.text('pink'));
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('onSelected_0100_static');
+      let strJson: string = inspector.getInspectorByKey('onSelected_0100');
       console.info("[TabsOnSelectedTest0020] attrs is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("onSelected");

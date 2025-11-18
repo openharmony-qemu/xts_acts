@@ -13,28 +13,28 @@
  * limitations under the License.
  */
 import {
-  Entry,
+  BarState,
+  Button,
+  ChildrenMainSize,
+  ClickEvent,
+  Color,
+  Column,
   Component,
+  Entry,
   Flex,
   FlexDirection,
-  ItemAlign,
-  Column,
-  Row,
-  Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
-  ListItem,
-  ListScroller,
-  ChildrenMainSize,
-  Color,
-  List,
-  GestureEvent,
   ForEach,
+  GestureEvent,
+  ItemAlign,
+  List,
+  ListItem,
   ListItemAlign,
+  ListScroller,
   LongPressGesture,
+  NodeContainer,
+  Row,
   TapGesture,
+  Text,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -51,7 +51,7 @@ struct ListIndexExample {
   @State itemBackgroundColorArr: boolean[] = [false]
 
   aboutToAppear() {
-    
+    // 初始化数据源。
     for (let i = 0; i < 10; i++) {
       this.arr.push(i)
     }
@@ -74,7 +74,7 @@ struct ListIndexExample {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
-              .backgroundColor(this.itemBackgroundColorArr[item.toInt()] ? 0x68B4FF : 0xFFFFFF)
+              // .backgroundColor(this.itemBackgroundColorArr[item.toInt()] ? 0x68B4FF : 0xFFFFFF)
           }
         }, (item: number) => item.toString())
       }
@@ -88,10 +88,14 @@ struct ListIndexExample {
       .gesture(
         LongPressGesture()
           .onAction((event: GestureEvent) => {
+            console.info('xyb: 1[itemIndexList_0100] START');
             if (event.fingerList[0] != undefined && event.fingerList[0].localX != undefined &&
               event.fingerList[0].localY != undefined) {
+              console.info('xyb: 2[itemIndexList_0100] START');
               this.listIndex = this.scroller.getItemIndex(event.fingerList[0].localX, event.fingerList[0].localY)
-              this.itemBackgroundColorArr[this.listIndex.toInt()] = true;
+              console.info('xyb: 3[itemIndexList_0100] START');
+              // this.itemBackgroundColorArr[this.listIndex.toInt()] = true;
+              console.info('xyb: 4[itemIndexList_0100] START');
             }
           })
       )

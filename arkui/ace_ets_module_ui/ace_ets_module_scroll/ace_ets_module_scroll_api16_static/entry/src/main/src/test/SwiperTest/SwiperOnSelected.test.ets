@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -47,7 +47,7 @@ export default function SwiperOnSelectedTest() {
       console.info("SwiperOnSelectedTest beforeEach start");
 
       await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
@@ -58,10 +58,9 @@ export default function SwiperOnSelectedTest() {
         url: 'MainAbility/pages/Swiper/SwiperOnSelected',
       }
       try {
-        swiperOnSelected.clear();
         let pages = swiperOnSelected.getState();
         console.info('get SwiperOnSelected state pages: ' + JSON.stringify(pages));
-        if (!('SwiperOnSelected' == pages.name)) {
+        if (!('MainAbility/pages/Swiper/SwiperOnSelected' == pages.name)) {
           console.info('get SwiperOnSelected pages.name: ' + JSON.stringify(pages.name));
           swiperOnSelected.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -74,6 +73,11 @@ export default function SwiperOnSelectedTest() {
       console.info('SwiperOnSelected beforeEach end');
     });
 
+    afterAll(() => {
+      const router = AppStorage.get<Router>("router") as Router
+      router.back()
+    });
+
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info('SwiperOnSelected after each called');
@@ -81,16 +85,16 @@ export default function SwiperOnSelectedTest() {
 
 
     /*
-     * @tc.number    SwiperOnSelectedTest_static_0010
-     * @tc.name      SwiperOnSelectedTest_static_0010
-     * @tc.desc      SwiperOnSelectedTest_static_0010
-     * @tc.level     2
-     */
+       * @tc.number   SwiperOnSelectedTest_static_0010
+       * @tc.name     SwiperOnSelectedTest_static_0010
+       * @tc.desc     SwiperOnSelectedTest_static_0010
+       * @tc.level    Level.LEVEL1
+       */
     it('SwiperOnSelectedTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'SwiperOnSelectedTest0010_static';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(5000);
-      let strJson: string = inspector.getInspectorByKey('TEXT_0010_static');
+      let strJson: string = inspector.getInspectorByKey('TEXT_0010');
       console.info("[SwiperOnSelectedTest0010] attrs is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("onSelected");
@@ -101,16 +105,16 @@ export default function SwiperOnSelectedTest() {
 
 
     /*
-     * @tc.number    SwiperOnSelectedTest_static_0020
-     * @tc.name      SwiperOnSelectedTest_static_0020
-     * @tc.desc      SwiperOnSelectedTest_static_0020
-     * @tc.level     2
-     */
+       * @tc.number   SwiperOnSelectedTest_static_0020
+       * @tc.name     SwiperOnSelectedTest_static_0020
+       * @tc.desc     SwiperOnSelectedTest_static_0020
+       * @tc.level    Level.LEVEL1
+       */
     it('SwiperOnSelectedTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'SwiperOnSelectedTest0020_static';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(5000);
-      let strJson: string = inspector.getInspectorByKey('TEXT_0020_static');
+      let strJson: string = inspector.getInspectorByKey('TEXT_0020');
       console.info("[SwiperOnSelectedTest0020] attrs is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("onSelected");

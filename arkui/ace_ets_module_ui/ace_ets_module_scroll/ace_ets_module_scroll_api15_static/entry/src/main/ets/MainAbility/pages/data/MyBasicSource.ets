@@ -12,8 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { IDataSource, DataChangeListener, DataOperation } from '@ohos.arkui.component';
-
+import {IDataSource, DataChangeListener, DataOperation} from '@ohos.arkui.component';
 export class MyBasicSource implements IDataSource<number> {
   private list: number[] = []
   private listeners: DataChangeListener[] = []
@@ -25,12 +24,11 @@ export class MyBasicSource implements IDataSource<number> {
   totalCount(): int {
     return this.list.length
   }
-
   getData(index: int): number {
     return this.list[index.toInt()]
   }
 
-  
+  //通知控制器数据批量修改
   notifyDatasetChange(operations: DataOperation[]): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange(operations);

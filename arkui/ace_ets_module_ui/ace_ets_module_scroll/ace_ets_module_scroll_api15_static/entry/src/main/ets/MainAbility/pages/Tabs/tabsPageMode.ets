@@ -39,22 +39,22 @@ import {
   Alignment,
   BarPosition,
 } from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
+class MyTabsModifier implements AttributeModifier<TabsAttribute> {
+  public isDark: boolean = false
 
-
-
-
-
-
-
-
-
-
-
+  applyNormalAttribute(instance: TabsAttribute): void {
+    if (this.isDark) {
+      instance.backgroundColor(Color.Red)
+    } else {
+      instance.backgroundColor(Color.Green)
+    }
+  }
+}
 
 @Entry
 @Component
@@ -62,12 +62,12 @@ struct TabsPageFlipModeDemo1 {
   private controller: TabsController = new TabsController()
   @State selfFadingFade: boolean = false;
   private data: MyDataSource = new MyDataSource() as MyDataSource;
-  
+  @State modifier: MyTabsModifier = new MyTabsModifier() as MyTabsModifier
   @State onWillShow: number = 0;
   @State onWillHide: number = 0;
   @State onChange: number = 0;
-  @State currentIndex: number = 0;
-  @State comingIndex: number = 0;
+  @State currentIndex: int = 0;
+  @State comingIndex: int = 0;
   @State onTabBarClick: number = 0;
   @State text1: string = '连续'
   @State PageFlipMode1: PageFlipMode = PageFlipMode.CONTINUOUS
@@ -152,7 +152,7 @@ struct TabsPageFlipModeDemo1 {
       }
       .id('tabs_pageFlipMode')
       .vertical(false)
-      
+      .attributeModifier(this.modifier)
       .pageFlipMode(this.PageFlipMode1)
       .scrollable(true)
       .barMode(BarMode.Scrollable)
@@ -168,11 +168,11 @@ struct TabsPageFlipModeDemo1 {
         this.onTabBarClick = index
       })
 
-      
-      
-      
-      
-      
+      .onContentWillChange((currentIndex: int, comingIndex: int): boolean => {
+        this.currentIndex = currentIndex
+        this.comingIndex = comingIndex
+        return true
+      })
     }
   }
 }

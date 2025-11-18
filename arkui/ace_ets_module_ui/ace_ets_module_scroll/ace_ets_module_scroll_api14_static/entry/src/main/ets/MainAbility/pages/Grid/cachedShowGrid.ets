@@ -13,22 +13,23 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
-  Column,
-  ScrollState,
-  Scroller,
-  Margin,
-  Grid,
-  ForEach,
-  GridItem,
   BarState,
+  Column,
+  Component,
+  Entry,
+  ForEach,
+  Grid,
+  GridItem,
   GridItemStyle,
+  Margin,
+  Scroller,
+  ScrollState,
   Text,
   TextAlign
 } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -36,27 +37,13 @@ struct cachedCountShowGridExample {
   @State arr: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
   scroller: Scroller = new Scroller()
   @State gridPosition: number = 0
-  @State clip1: boolean = false
-  @State show1: boolean | undefined = true
+  @StoragePropRef('clip1') clip1: boolean = false
+  @StoragePropRef('show1') show1: boolean | undefined = true
 
   onPageShow() {
     console.info('[Grid] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 125,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangClipShow);
-  }
-
-  private stateChangClipShow: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info('[stateChangClipShow] stateChangeEvent');
-    
-    
-    
-    
-    
-    
-    
+    AppStorage.setOrCreate<boolean>('clip1', false);
+    AppStorage.setOrCreate<boolean>('show1', true);
   }
 
   build() {
@@ -71,7 +58,7 @@ struct cachedCountShowGridExample {
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .borderRadius(10)
-              .backgroundColor(0xF9CF93)
+              .backgroundColor('0xF9CF93')
           }
         }, (item: string) => item)
       }
@@ -85,7 +72,7 @@ struct cachedCountShowGridExample {
       .width('90%')
       .height('40%')
       .scrollBar(BarState.On)
-      .backgroundColor(0xFAEEE0)
+      .backgroundColor('0xFAEEE0')
       .onScrollIndex((first: int, last: int) => {
         console.info(first.toString())
         console.info(last.toString())

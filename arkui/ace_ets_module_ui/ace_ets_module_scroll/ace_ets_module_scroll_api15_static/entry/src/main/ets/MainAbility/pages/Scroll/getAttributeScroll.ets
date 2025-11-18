@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 import {
   Entry,
   Column,
@@ -30,7 +29,8 @@ import {
   FontWeight,
   Button,
   ButtonType,
-  ClickEvent
+  ClickEvent,
+  Padding
 } from '@ohos.arkui.component'
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -40,27 +40,26 @@ class MyNodeController extends NodeController {
   public scroller: Scroller = new Scroller()
 
   makeNode(uiContext: UIContext): FrameNode | null {
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    const rootNode = typeNode.createScrollNode(uiContext);
+    rootNode.initialize(this.scroller);
+    rootNode.attribute.id('typeNode_scroll')
+      .width(200)
+      .height(200)
+      .backgroundColor(Color.Red)
+      .scrollBarWidth(4);
 
-    
-    
-    
-    
-    
-    return null
+    let columnNode = typeNode.createColumnNode(uiContext);
+    columnNode.attribute
+      .width(100)
+      .height(300)
+      .backgroundColor(Color.Yellow);
+    rootNode.appendChild(columnNode);
+
+    rootNode.setCrossLanguageOptions({
+      attributeSetting: true
+    });
+    console.log('jerry', rootNode.getCrossLanguageOptions());
+    return rootNode;
   }
 }
 
@@ -80,13 +79,13 @@ struct ScrollAttribute1 {
           console.info('isModifiable:' + node?.isModifiable());
           if (node) {
             console.info('ScrollAttribute1 TypeNode is exist')
-            
-            
-            
-            
-            
-            
-            
+            // const a = typeNode.getAttribute(node, 'Scroll');
+            // if (a != undefined) {
+            //   console.info('ScrollAttribute1 TypeNode scrollBarWidth 10')
+            //   a.scrollBarWidth(30);
+            //   a.enableScrollInteraction(true)
+            //   a.fadingEdge(false,{fadingEdgeLength:LengthMetrics.vp(20)})
+            // }
             console.info('bindController TypeNode is exist:new Scroller')
 
           } else {
@@ -102,9 +101,9 @@ struct ScrollAttribute1 {
           if (node) {
             console.info('bindController TypeNode is exist:new Scroller')
             try {
-              
+              // typeNode.bindController(node, this.scroller, 'Scroll')
               this.scroller.fling(-1000)
-              console.info('bindController TypeNode currentOffset:' + this.scroller.currentOffset()!.yOffset)
+              console.info('bindController TypeNode currentOffset:' + this.scroller.currentOffset()?.yOffset)
             } catch (e) {
               console.error('TypeNode error:' + e)
             }
@@ -117,12 +116,12 @@ struct ScrollAttribute1 {
       Text('ScrollFling: ' + this.num1)
         .id('scroll_fling_text')
         .onClick((e: ClickEvent) => {
-          this.num1 = Math.round(this.scroller.currentOffset()!.yOffset)
+          this.num1 = Math.round(this.scroller.currentOffset()?.yOffset ?? 0.0)
         })
       NodeContainer(this.myNodeController)
 
     }
-    
+    .padding({ left: 35, right: 35, top: 35 } as Padding)
     .width('100%')
     .height('100%')
   }

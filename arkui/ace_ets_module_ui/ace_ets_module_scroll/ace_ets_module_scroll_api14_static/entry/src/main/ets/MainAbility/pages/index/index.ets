@@ -13,24 +13,24 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Column,
-  Component,
-  Color,
-  Text,
-  Margin,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
   Button,
   ButtonType,
-  ClickEvent
+  ClickEvent,
+  Color,
+  Column,
+  Component,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FontWeight,
+  ItemAlign,
+  Margin,
+  Text
 } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -39,7 +39,8 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

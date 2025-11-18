@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { BusinessError } from '@ohos.base';
 import { Router } from '@ohos.arkui.UIContext';
@@ -23,9 +23,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest, startAbility } from '../Util.test';
+import { startAbility, UtilsTest } from '../Util.test';
 
 let testAbilityContext: common.UIAbilityContext;
 let domain: int = 0x0000;
@@ -55,11 +54,11 @@ export default function scrollAniFalse() {
         console.info("get scrollAniFalse state pages:" + JSON.stringify(pages));
         if (!("scrollAniFalse" == pages.name)) {
           console.info("get scrollAniFalse pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push scrollAniFalse page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push scrollAniFalse page error:" + err);
@@ -74,18 +73,18 @@ export default function scrollAniFalse() {
 
 
     /*
-     * @tc.number    scrollAniFalse_static_0100
-     * @tc.name      scrollAniFalse_static_0100
-     * @tc.desc      scrollAniFalse_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   scrollAniFalse_static_0100
+       * @tc.name     scrollAniFalse_static_0100
+       * @tc.desc     scrollAniFalse_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('scrollAniFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[scrollAniFalse_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('scroll_animation_false')) as Component;
       await btn.click();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(6000);
       let strJson = inspector.getInspectorByKey('scroll_false_onText');
       console.info("[scrollAniFalse_static_0100] component obj is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));

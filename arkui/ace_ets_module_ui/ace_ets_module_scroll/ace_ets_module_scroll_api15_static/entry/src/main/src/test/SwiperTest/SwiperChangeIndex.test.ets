@@ -12,7 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  it,
+  expect,
+  Level,
+  TestType,
+  Size,
+  afterAll
+} from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -55,18 +66,17 @@ export default function SwiperChangeIndexTest() {
     beforeEach(async (): Promise<void> => {
       console.info('SwiperChangeIndexTest beforeEach start');
       const swiperChangeIndex = AppStorage.get<Router>("router") as Router
+      swiperChangeIndex.clear();
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Swiper/SwiperChangeIndex',
       }
       try {
-        swiperChangeIndex.clear();
         let pages = swiperChangeIndex.getState();
         console.info('get SwiperChangeIndexTest state pages: ' + JSON.stringify(pages));
         if (!('SwiperChangeIndex' == pages.name)) {
           console.info('get SwiperChangeIndexTest state pages.name: ' + JSON.stringify(pages.name));
           swiperChangeIndex.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error('push SwiperChangeIndexTest page error: ' + err);
@@ -76,11 +86,11 @@ export default function SwiperChangeIndexTest() {
 
 
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
+       * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
+       * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100
+       * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+       */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0100 START");
@@ -101,11 +111,11 @@ export default function SwiperChangeIndexTest() {
 
 
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
+       * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
+       * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200
+       * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+       */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0200 START");
@@ -126,11 +136,11 @@ export default function SwiperChangeIndexTest() {
 
 
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
-     * @tc.level     2
-     */
+       * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
+       * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
+       * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300
+       * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+       */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0300 START");
@@ -151,11 +161,11 @@ export default function SwiperChangeIndexTest() {
 
 
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
-     * @tc.level     2
-     */
+       * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
+       * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
+       * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400
+       * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+       */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0400 START");
@@ -176,11 +186,11 @@ export default function SwiperChangeIndexTest() {
 
 
     /*
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
-     * @tc.name      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
-     * @tc.desc      SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
-     * @tc.level     2
-     */
+       * @tc.number   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
+       * @tc.name     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
+       * @tc.desc     SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500
+       * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+       */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500 START");
@@ -193,7 +203,7 @@ export default function SwiperChangeIndexTest() {
         let marq2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content');
         await CommonFunc.sleep(1000);
         console.info('JSON.parse(strJson2).$attrs.content ' + marq2)
-        expect(marq2).assertEqual("");
+        expect(marq2).assertEqual("0");
         await CommonFunc.sleep(1000);
         console.info('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_CHANGE_INDEX_static_0500 END');
         done();

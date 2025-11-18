@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -22,8 +22,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { UtilsTest, startAbility } from '../Util.test';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { startAbility, UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 let domain: int = 0x0000;
@@ -67,11 +67,11 @@ export default function nodeTypeGrid() {
 
 
     /*
-     * @tc.number    nodeTypeGrid_static_0100
-     * @tc.name      nodeTypeGrid_static_0100
-     * @tc.desc      nodeTypeGrid_static_0100
-     * @tc.level     2
-     */
+       * @tc.number   nodeTypeGrid_static_0100
+       * @tc.name     nodeTypeGrid_static_0100
+       * @tc.desc     nodeTypeGrid_static_0100
+       * @tc.level    Level.LEVEL0
+       */
     it('nodeTypeGrid_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeTypeGrid_static_0100 START');
       await CommonFunc.sleep(1000);
@@ -88,11 +88,11 @@ export default function nodeTypeGrid() {
 
 
     /*
-     * @tc.number    nodeTypeGrid_static_0200
-     * @tc.name      nodeTypeGrid_static_0200
-     * @tc.desc      nodeTypeGrid_static_0200
-     * @tc.level     2
-     */
+       * @tc.number   nodeTypeGrid_static_0200
+       * @tc.name     nodeTypeGrid_static_0200
+       * @tc.desc     nodeTypeGrid_static_0200
+       * @tc.level    Level.LEVEL0
+       */
     it('nodeTypeGrid_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('nodeTypeGrid_static_0200 START');
       await CommonFunc.sleep(1000);

@@ -14,28 +14,28 @@
  */
 import { BusinessError } from '@ohos.base';
 import {
-  Entry,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
+  BarState,
+  Button,
+  ClickEvent,
   Column,
   ColumnOptions,
-  Row,
-  Text,
-  Button,
-  NodeContainer,
-  ClickEvent,
-  BarState,
-  ListItem,
-  ListScroller,
-  Scroller,
-  Padding,
-  List,
-  Margin,
-  ForEach,
-  ListItemAlign,
+  Component,
   EdgeEffect,
+  Entry,
+  Flex,
+  FlexDirection,
+  ForEach,
+  ItemAlign,
+  List,
+  ListItem,
+  ListItemAlign,
+  ListScroller,
+  Margin,
+  NodeContainer,
+  Padding,
+  Row,
+  Scroller,
+  Text,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -56,24 +56,25 @@ struct getItemError {
         .id('getItemRect_err_text')
         .margin({ top: 5 } as Margin)
       Row() {
-        Button('error: 401')
+        Button('error: 401')//401
           .id('getItemRect_401')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
-              
-            } catch (error) {
+              // this.scroller.getItemRect(undefined)
+            } catch (error: Error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
           })
-        Button('error: 100004')
+        Button('error: 100004') //100004
           .id('getItemRect_100004')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
               this.scroller2.getItemRect(1)
-            } catch (error) {
+              console.info('Get error code: %{public}s' +  JSON.stringify(this.scroller2.getItemRect(1)));
+            } catch (error: Error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -84,24 +85,24 @@ struct getItemError {
         .id('getItemIndex_err_text')
         .margin({ top: 5 } as Margin)
       Row() {
-        Button('error: 401')
+        Button('error: 401')//401
           .id('getItemIndex_401')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
-              
-            } catch (error) {
+              // this.scroller.getItemIndex(undefined,2);
+            } catch (error: Error) {
               this.textResult2 = error.code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
           })
-        Button('error: 100004')
+        Button('error: 100004') //100004
           .id('getItemIndex_100004')
           .height('5%')
           .onClick((e: ClickEvent) => {
             try {
               this.scroller2.getItemIndex(1, 2);
-            } catch (error) {
+            } catch (error: Error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }

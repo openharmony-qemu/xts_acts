@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -31,7 +31,7 @@ export default class CommonFunc {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static async sleep(time: int): Promise<int> {
+  static async sleep(time:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         console.info(`sleep ${time} over...`)
@@ -42,71 +42,59 @@ export default class CommonFunc {
 
   static getComponentRect(key: string): RectValue {
     let strJson: string = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
     CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
     CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
     CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
     return CommonFunc.rect_value = {
-      left: CommonFunc.rect_left,
-      top: CommonFunc.rect_top,
-      right: CommonFunc.rect_right,
-      bottom: CommonFunc.rect_bottom
+      left: CommonFunc.rect_left, top: CommonFunc.rect_top, right: CommonFunc.rect_right, bottom: CommonFunc.rect_bottom
     }
   }
 
   static getComponentRectOnScreen(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " + AppStorage.get<number>("winTop") );
     CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
     CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
     CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
     CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
     return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+      "left": CommonFunc.rect_left, "top": CommonFunc.rect_top, "right": CommonFunc.rect_right, "bottom": CommonFunc.rect_bottom
     }
   }
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  //
+  // static setScreenOrientation(orientation: screen.Orientation) {
+  //   // 1 -- 2 |
+  //   let screenClass: screen.Screen | null = null;
+  //   screen.getAllScreens().then((data: Array<screen.Screen>) => {
+  //       screenClass = data[0];
+  //       console.log('Succeeded in getting all screens. Data:' + JSON.stringify(data));
+  //
+  //   }).catch((err: BusinessError) => {
+  //         console.log('Failed to get all screens. Cause: ' + JSON.stringify(err));
+  //         return;
+  //   });
+  //   try {
+  //       screenClass!.setOrientation(orientation, (err: BusinessError) => {
+  //       const errCode: number = err.code;
+  //       if (errCode) {
+  //           console.error('Failed to set the vertical orientation. Code: ' + JSON.stringify(err));
+  //           return;
+  //         }
+  //       console.info('Succeeded in setting the vertical orientation.');
+  //       });
+  //   } catch (exception) {
+  //     console.error('Failed to set the vertical orientation. Code: ' + JSON.stringify(exception));
+  //   };
+  // }
 }
 
 
