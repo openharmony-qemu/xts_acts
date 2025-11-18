@@ -33,16 +33,16 @@ class ClassA1 {
 @Component
 struct propArray {
   @State title: ModelArr[] = [new ModelArr(1), new ModelArr(2), new ModelArr(3)]
-  @State ClassA1: ClassA1 = new ClassA1("Hello", new ModelArr(6))
+  @State ClassA1: ClassA1 = new ClassA1('Hello', new ModelArr(6))
 
 
   build() {
     Column() {
       Text('title：' + JSON.stringify(this.title)).fontSize(9)
-      .key("initial_Array").height('5%')
+      .key('initial_Array').height('5%')
       Button('父组件Prop: change array').fontSize(9)
         .height('5%')
-        .key("parent_Array")
+        .key('parent_Array')
         .onClick(() => {
           // 改变某一个Array值
           this.title[0] = new ModelArr(8)
@@ -64,7 +64,7 @@ struct ChildArrProp {
 
       Button('子组件Prop:' + JSON.stringify(this.subTitle)).fontSize(9)
         .height('5%')
-        .key("sub_prop")
+        .key('sub_prop')
         .onClick(() => {
         this.subTitle[0] = new ModelArr(7)
       })

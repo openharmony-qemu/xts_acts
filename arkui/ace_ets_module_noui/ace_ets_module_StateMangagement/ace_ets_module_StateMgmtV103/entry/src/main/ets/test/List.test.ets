@@ -53,6 +53,8 @@ import ProvideConsume0080TestJsunit from './Provide/ProvideConsume0080TestJsunit
 import ProvideConsume0360TestJsunit from './Provide/ProvideConsume0360TestJsunit.test';
 import ProvideConsumeTest0010 from './Provide/ProvideConsumeTest0010.test';
 import ProvideJsunit from './Provide/ProvideJsunit.test.ets';
+import provide2 from './Provide/provide2.test.ets'
+
 import objectLinkNumber from './ObjectLink/objectLinkNumber.test.ets'
 import ObjectLink1 from './ObjectLink/ObjectLink1.test.ets'
 import ObjectLinkFirJsunit from './ObjectLink/ObjectLinkFirJsunit.test.ets';
@@ -64,6 +66,8 @@ import ObjectLinkNusJsunit from './ObjectLink/ObjectLinkNusJsunit.test.ets';
 import ObjectLinkArrayJsunit from './ObjectLink/ObjectLinkArrayJsunit.test.ets'
 import ObjectLinkMap from './ObjectLink/ObjectLinkMap.test';
 import ObjectLinkSet from './ObjectLink/ObjectLinkSet.test';
+import ObjectLink2 from './ObjectLink/ObjectLink2.test.ets'
+
 import extendTrackTest from './Track/extendTrackTest.test.ets';
 import localTrackTest from './Track/localTrackTest.test.ets';
 import provideTrackTest from './Track/provideTrackTest.test.ets';
@@ -115,6 +119,7 @@ export default function testsuite() {
     ProvideConsume0360TestJsunit();
     ProvideConsumeTest0010();
     ProvideJsunit();
+    provide2();
     objectLinkNumber();
     ObjectLink1();
     ObjectLinkFirJsunit();
@@ -126,6 +131,7 @@ export default function testsuite() {
     ObjectLinkArrayJsunit();
     ObjectLinkMap();
     ObjectLinkSet();
+    ObjectLink2();
     extendTrackTest();
     localTrackTest();
     provideTrackTest();

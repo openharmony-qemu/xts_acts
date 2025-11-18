@@ -43,5 +43,11 @@ export default class CommonFunc {
     }
     return result;
   }
-  
+
 }
+
+interface ObjectWithToString {
+  toObjectString?: () => string
+}
+
+class BaseObject {}

@@ -13,17 +13,17 @@
  * limitations under the License.
  */
 
-class sArrModel {
+class SArrModel {
   public value: number;
   constructor(value: number) {
     this.value = value;
   }
 }
 
-class sArrClassA {
+class SArrClassA {
   public value: string;
-  public data: sArrModel;
-  constructor(value: string, num: sArrModel) {
+  public data: SArrModel;
+  constructor(value: string, num: SArrModel) {
     this.value = value;
     this.data = num;
   }
@@ -32,58 +32,58 @@ class sArrClassA {
 @Entry
 @Component
 struct StateArray {
-  @State title: sArrModel[] = [new sArrModel(11), new sArrModel(1)]
-  @State ClassA: sArrClassA = new sArrClassA("Hello", new sArrModel(6))
+  @State title: SArrModel[] = [new SArrModel(11), new SArrModel(1)]
+  @State ClassA: SArrClassA = new SArrClassA('Hello', new SArrModel(6))
 
   build() {
     Column() {
-      Button("Reset").id("StateArray_reset").height('5%')
+      Button('Reset').id('StateArray_reset').height('5%')
         .onClick(() => {
-          this.title = [new sArrModel(11), new sArrModel(1)]
-          this.ClassA = new sArrClassA("Hello", new sArrModel(6))
+          this.title = [new SArrModel(11), new SArrModel(1)]
+          this.ClassA = new SArrClassA('Hello', new SArrModel(6))
         })
       Text('title：' + JSON.stringify(this.title)).fontSize(9)
         .height('5%')
-        .key("text_Array")
+        .key('text_Array')
       Button('Click to change value to the array').fontSize(9)
         .height('5%')
-        .key("change_Array")
+        .key('change_Array')
         .onClick(() => {
           // 改变某一个Array值
-          this.title[0] = new sArrModel(8)
+          this.title[0] = new SArrModel(8)
         })
 
       Button('Click to delete value to the array').fontSize(9)
         .height('5%')
-        .key("delete_Array")
+        .key('delete_Array')
         .onClick(() => {
           this.title.pop()
         })
 
       Button('Click to add value to the array').fontSize(9)
         .height('5%')
-        .key("add_Array")
+        .key('add_Array')
         .onClick(() => {
-          this.title.push(new sArrModel(12))
+          this.title.push(new SArrModel(12))
         })
 
       Text('ClassA：' + JSON.stringify(this.ClassA)).fontSize(9)
         .height('5%')
-        .key("text_ClassA")
+        .key('text_ClassA')
       Button('Click to change Parent Component Property Values').fontSize(9)
         .height('5%')
-        .key("change_Parent")
+        .key('change_Parent')
         .onClick(() => {
           // 动态修改父组件属性值
-          this.ClassA.value = "World"
+          this.ClassA.value = 'World'
         })
 
       Button('Click to change self Component Property Values').fontSize(9)
         .height('5%')
-        .key("change_Self")
+        .key('change_Self')
         .onClick(() => {
           // 动态修改自组件属性值
-          this.ClassA.data = new sArrModel(8)
+          this.ClassA.data = new SArrModel(8)
         })
     }.width('100%')
   }

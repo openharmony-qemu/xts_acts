@@ -30,12 +30,14 @@ import LinkClassArrJsunit from './Link/LinkClassArrJsunit.test.ets';
 import LinkSonJsunit from './Link/LinkSonJsunit.test.ets';
 import linkJsunit from './Link/LinkJsunit.test';
 import link1 from './Link/link1.test.ets'
+import link2 from './Link/link2.test.ets'
 import PropArray from './Prop/PropArray.test.ets'
 import PropArray1 from './Prop/PropArray1.test.ets'
 import PropColor from './Prop/PropColor.test.ets'
 import PropHight from './Prop/PropHight.test.ets'
 import PropNumber from './Prop/PropNumber.test.ets'
 import Prop1 from './Prop/Prop1.test.ets'
+import Prop2 from './Prop/Prop2.test.ets'
 import StateArray from './State/StateArray.test.ets'
 import StateArray1 from './State/StateArray1.test.ets'
 import StateColor from './State/StateColor.test.ets'
@@ -64,6 +66,7 @@ import StateSet from './State/StateSet.test';
 import stateManagementDARKJsunit from './State/stateManagement.test';
 import stateManagementGetSharedJsunit from './State/stateManagementNew.test';
 import state1 from './State/state1.test.ets'
+import state2 from './State/state2.test.ets'
 import NonUICallBackTest from './State/NonUICallBackTest.test';
 import CombinationState2Jsunit from './State/CombinationState2Jsunit.test.ets'
 import CombinationState3Jsunit from './State/CombinationState3Jsunit.test.ets'
@@ -101,6 +104,7 @@ export default function testsuite() {
     LinkSonJsunit();
     linkJsunit();
     link1();
+    link2();
     PropArray();
     PropArray1();
     PropColor();
@@ -120,6 +124,7 @@ export default function testsuite() {
     PropMap();
     PropSet();
     Prop1();
+    Prop2();
     StateArray();
     StateArray1();
     StateColor();
@@ -148,6 +153,7 @@ export default function testsuite() {
     stateManagementDARKJsunit();
     stateManagementGetSharedJsunit();
     state1();
+    state2();
     NonUICallBackTest();
     CombinationState2Jsunit();
     CombinationState3Jsunit();

@@ -48,7 +48,10 @@ export default function stateManagementDARKJsunit() {
     /*
      * @tc.number       SUB_ACE_BASIC_ETS_API_001
      * @tc.name         teststateManagementDARK001
-     * @tc.desic         acestateManagementDARKEtsTest001
+		 * @tc.desc      Frequently updating and modifying the values of parent components
+		 * @tc.level     Level 0
+		 * @tc.type
+		 * @tc.size
      */
     it('teststateManagementDARK001', Level.LEVEL0, async (done: Function) => {
       console.info('stateManagementDARK teststateManagementDARK001 START');

@@ -37,13 +37,13 @@ export default function StateNumberJsunit() {
     beforeEach(async (done: Function) => {
       console.info("StateNumberJsunit beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/State/StateNumber',
+        url: 'MainAbility/pages/State/StateNumber01',
       }
       try {
         router.clear();
         let pages = router.getState();
         console.info("get StateNumberJsunit state pages: " + JSON.stringify(pages));
-        if (!("StateNumber" == pages.name)) {
+        if (!("StateNumber01" == pages.name)) {
           console.info("get StateNumberJsunit state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
